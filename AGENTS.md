@@ -5,7 +5,7 @@
 - **Astro v7** + React 19 + TailwindCSS v4
 - **Static topic site** for practical coding-agent workflows, posts, slides, and curated resources
 - **Site**: <https://with-agents.dev>
-- **Repository**: `colmarius/with-agents` (keep private by default)
+- **Repository**: `colmarius/with-agents` (public source repository)
 - **Path aliases**: `@components`, `@types`, `@assets`, `@layouts`, `@utils`, `@scripts`
 
 ## Commands
@@ -63,8 +63,7 @@ Important routes:
 
 - Build output goes to `dist/`.
 - GitHub Pages is configured through GitHub Actions and `public/CNAME` for `with-agents.dev`.
-- Keep the source repository private unless the user explicitly approves making it public.
-- If private GitHub Pages is unavailable for the account, delay Pages or choose another host; do not make the source repo public automatically.
+- The source repository is public by explicit project decision; do not add private or sensitive material.
 
 ## dot-agents Work Items
 
@@ -90,4 +89,3 @@ Keep `.agents/research/` for reusable findings that apply across unrelated work.
 - Use `git status --short --branch` before staging.
 - Commit after each logical step with a clear message.
 - Keep generated directories (`node_modules/`, `dist/`, `.astro/`) out of commits.
-- Do not push or publish deployment settings that would require making the private source repo public without user approval.

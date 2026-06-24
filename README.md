@@ -48,7 +48,7 @@ The site is configured for a custom-domain GitHub Pages deployment at `https://w
 
 Manual GitHub setup:
 
-1. Create a **private** repository named `colmarius/with-agents`.
+1. Use the public repository `colmarius/with-agents`.
 2. Add the remote and push the first commit:
 
    ```bash
@@ -66,4 +66,4 @@ Manual GitHub setup:
    - Optional IPv6 `AAAA` records from GitHub Pages documentation.
 6. Enable **Enforce HTTPS** after DNS settles.
 
-Keep the source repository private by default. GitHub Pages output is public even when the source repository is private. If private-repository Pages is unavailable on the account, delay Pages or choose another host rather than making the source repository public without explicit approval.
+The source repository is public by explicit project decision. Do not commit private notes, secrets, drafts that should stay private, or account-only deployment details.
