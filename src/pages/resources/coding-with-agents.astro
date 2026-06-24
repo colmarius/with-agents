@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import CodingWithAgentsList from '../../components/resources/CodingWithAgents';
+import ResourcesNav from '../../components/resources/ResourcesNav.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const entries = await getCollection('summaries');
+const manifest = entries.map((e) => ({
+  slug: e.id.replace(/\//g, '__'),
+  resourceId: e.data.resourceId,
+  title: e.data.title,
+  date: e.data.date ?? null,
+  series: e.data.series ?? null,
+  episode: e.data.episode ?? null,
+}));
+---
+
+<Layout title="With Agents – Coding with Agents Resources">
+  <div class="max-w-4xl mx-auto">
+    <ResourcesNav active="coding-with-agents" />
+
+    <h1 class="text-3xl md:text-4xl font-light mb-4 text-gray-900">
+      Coding with Agents
+    </h1>
+    <p class="text-lg text-gray-600 mb-12 font-light leading-relaxed">
+      Podcasts, videos, and articles exploring AI-powered coding workflows, agentic design patterns, and the future of software development.
+    </p>
+
+    <CodingWithAgentsList client:load manifest={manifest} />
+  </div>
+</Layout>

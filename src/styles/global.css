@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary-50: #eef2ff;
+  --color-primary-100: #e0e7ff;
+  --color-primary-200: #c7d2fe;
+  --color-primary-300: #a5b4fc;
+  --color-primary-400: #818cf8;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-800: #3730a3;
+  --color-primary-900: #312e81;
+  --color-primary-950: #1e1b4b;
+
+  /* Customize typography plugin colors */
+  --color-prose-links: #4338ca;
+  --color-prose-links-hover: #6366f1;
+}
+
+@layer utilities {
+  /* Shared prose base: light by default */
+  .prose-base {
+    @apply prose prose-slate max-w-none;
+  }
+
+  /* Dark variant */
+  .dark .prose-base {
+    @apply prose-invert;
+  }
+
+  /* Post prose (same size as posts) */
+  .prose-post {
+    @apply prose-base;
+  }
+
+  /* Slide prose: slightly larger for readability */
+  .prose-slide {
+    @apply prose-base prose-lg sm:prose-xl;
+  }
+
+  /* Brand color for links - applied to both post and slide */
+  .prose-post :is(a),
+  .prose-slide :is(a) {
+    color: #4338ca !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 2px !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .prose-post :is(a):hover,
+  .prose-slide :is(a):hover {
+    color: #6366f1 !important;
+  }
+
+  .prose-post :is(a):focus-visible,
+  .prose-slide :is(a):focus-visible {
+    outline: 2px solid transparent !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5) !important;
+    border-radius: 0.125rem !important;
+  }
+
+  /* Restore list styling */
+  .prose-post :is(ul),
+  .prose-slide :is(ul) {
+    list-style-type: disc !important;
+    padding-left: 1.625em !important;
+  }
+
+  .prose-post :is(ol),
+  .prose-slide :is(ol) {
+    list-style-type: decimal !important;
+    padding-left: 1.625em !important;
+  }
+
+  .prose-post :is(ul > li),
+  .prose-slide :is(ul > li) {
+    list-style-type: disc !important;
+  }
+
+  .prose-post :is(ol > li),
+  .prose-slide :is(ol > li) {
+    list-style-type: decimal !important;
+  }
+
+  /* Remove extra top spacing on first heading in slides */
+  .prose-slide :where(h1, h2, h3, h4, h5, h6):first-child {
+    margin-top: 0;
+  }
+
+  /* Consistent code block styling */
+  .prose-base pre {
+    @apply bg-slate-50 border border-slate-200 rounded-md p-4;
+  }
+
+  .dark .prose-base pre {
+    @apply bg-slate-800 border-slate-700;
+  }
+
+  /* Inline code styling */
+  .prose-post code:not(pre code),
+  .prose-slide code:not(pre code) {
+    @apply font-medium bg-slate-100 px-1.5 py-0.5 rounded;
+  }
+
+  .dark .prose-post code:not(pre code),
+  .dark .prose-slide code:not(pre code) {
+    @apply bg-slate-700;
+  }
+
+  /* Shared Mermaid diagram styles */
+  .mermaid {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .mermaid svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .mermaid-loading {
+    opacity: 0;
+    min-height: 200px;
+  }
+
+  /* Rounded corners for Mermaid shapes */
+  .mermaid svg rect {
+    rx: 8;
+    ry: 8;
+  }
+
+  /* Style edge labels (Yes/No boxes) */
+  .mermaid .edgeLabel {
+    background-color: #ffffff !important;
+    padding: 4px 8px !important;
+    border-radius: 6px !important;
+    border: 1px solid #e2e8f0 !important;
+  }
+
+  .mermaid .edgeLabel rect {
+    fill: #ffffff !important;
+    stroke: #e2e8f0 !important;
+    stroke-width: 1 !important;
+  }
+
+  /* Hide empty edge labels */
+  .mermaid .edgeLabel:empty,
+  .mermaid .edgeLabel span:empty {
+    display: none !important;
+  }
+}

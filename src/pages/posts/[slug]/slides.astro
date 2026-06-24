@@ -1,0 +1,290 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BackNav from '@components/BackNav.astro';
+import '../../../styles/global.css';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+
+  const filteredPosts = import.meta.env.PROD
+    ? posts.filter((post) => !post.data.draft)
+    : posts;
+
+  return filteredPosts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<'posts'>;
+
+const post = Astro.props;
+const { Content } = await render(post);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{post.data.title} - Slides</title>
+    <style>
+      :global(.slide) {
+        display: none;
+      }
+
+      :global(.slide.active) {
+        display: block;
+      }
+
+      #source {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-slate-900 overflow-hidden">
+    <div
+      class="fixed top-0 left-0 right-0 h-14 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-50"
+    >
+      <BackNav href={`/posts/${post.id}`} label="Back to Post" />
+      <div
+        class="text-sm font-semibold text-slate-900 flex-1 text-center truncate px-4"
+      >
+        {post.data.title}
+      </div>
+      <div class="text-sm text-slate-600 min-w-16 text-right">
+        <span id="current">1</span> / <span id="total">1</span>
+      </div>
+    </div>
+
+    <div
+      id="slides-container"
+      class="fixed top-14 left-0 right-0 bottom-0 overflow-y-auto p-4 sm:p-8"
+    >
+    </div>
+
+    <div id="source">
+      <Content />
+    </div>
+
+    <div class="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 flex gap-2 z-50">
+      <button
+        class="w-10 h-10 sm:w-12 sm:h-12 bg-white border border-slate-200 rounded-lg text-slate-600 cursor-pointer flex items-center justify-center text-xl transition-all hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
+        id="prev-btn"
+        aria-label="Previous slide"
+      >
+        ←
+      </button>
+      <button
+        class="w-10 h-10 sm:w-12 sm:h-12 bg-white border border-slate-200 rounded-lg text-slate-600 cursor-pointer flex items-center justify-center text-xl transition-all hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
+        id="next-btn"
+        aria-label="Next slide"
+      >
+        →
+      </button>
+    </div>
+
+    <script is:inline>
+      // Shared Mermaid config (keep in sync with src/scripts/mermaid-config.ts)
+      const mermaidConfig = {
+        startOnLoad: false,
+        securityLevel: 'strict',
+        theme: 'default',
+        themeVariables: {
+          primaryColor: '#eef2ff',
+          primaryTextColor: '#1e1b4b',
+          primaryBorderColor: '#a5b4fc',
+          secondaryColor: '#f8fafc',
+          secondaryTextColor: '#0f172a',
+          secondaryBorderColor: '#e2e8f0',
+          tertiaryColor: '#ffffff',
+          tertiaryTextColor: '#0f172a',
+          tertiaryBorderColor: '#cbd5e1',
+          noteBkgColor: '#ffffff',
+          noteTextColor: '#0f172a',
+          noteBorderColor: '#e2e8f0',
+          lineColor: '#64748b',
+          textColor: '#0f172a',
+          mainBkg: '#ffffff',
+          secondBkg: '#f8fafc',
+          border1: '#e2e8f0',
+          border2: '#cbd5e1',
+          arrowheadColor: '#64748b',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+        },
+      };
+
+      // Inline version of renderMermaid for slides (scoped to specific element)
+      async function renderMermaidInline(root = document) {
+        const selectors = [
+          'pre > code.language-mermaid',
+          'pre > code.lang-mermaid',
+          'pre[data-language="mermaid"] > code',
+          'pre[class*="language-mermaid"] > code',
+        ].join(', ');
+
+        let codes = Array.from(root.querySelectorAll(selectors));
+
+        if (codes.length === 0) {
+          codes = Array.from(root.querySelectorAll('pre > code')).filter(
+            (code) => {
+              const text = code.textContent?.trim() || '';
+              return (
+                text.startsWith('flowchart') ||
+                text.startsWith('graph') ||
+                text.startsWith('sequenceDiagram') ||
+                text.startsWith('classDiagram') ||
+                text.startsWith('stateDiagram') ||
+                text.startsWith('erDiagram') ||
+                text.startsWith('journey') ||
+                text.startsWith('gantt') ||
+                text.startsWith('pie') ||
+                text.startsWith('gitGraph')
+              );
+            },
+          );
+        }
+
+        if (codes.length === 0 && !root.querySelector('.mermaid')) return;
+
+        for (const code of codes) {
+          const pre = code.closest('pre');
+          const div = document.createElement('div');
+          div.className = 'mermaid mermaid-loading';
+          div.textContent = code.textContent || '';
+          pre?.replaceWith(div);
+        }
+
+        const { default: mermaid } = await import(
+          'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs'
+        );
+        mermaid.initialize(mermaidConfig);
+
+        const mermaidElements = root.querySelectorAll('.mermaid');
+        if (mermaidElements.length > 0) {
+          await mermaid.run({ nodes: Array.from(mermaidElements) });
+        }
+
+        root.querySelectorAll('.mermaid-loading').forEach((el) => {
+          el.classList.remove('mermaid-loading');
+        });
+      }
+      // Split content by H2 headers using Range to handle Astro's wrapper elements
+      function splitIntoSlides() {
+        const source = document.getElementById('source');
+        const container = document.getElementById('slides-container');
+        const headings = Array.from(source.querySelectorAll('h2'));
+
+        // If no H2s found, treat entire content as one slide
+        if (headings.length === 0) {
+          const slideDiv = document.createElement('div');
+          slideDiv.className =
+            'slide prose-slide mx-auto max-w-3xl bg-white border border-slate-200 rounded-lg p-8 sm:p-12 shadow-sm';
+          slideDiv.dataset.index = 0;
+          Array.from(source.children).forEach((child) => {
+            slideDiv.appendChild(child.cloneNode(true));
+          });
+          container.appendChild(slideDiv);
+          return 1;
+        }
+
+        // Create slides using Range for each H2 section
+        headings.forEach((heading, index) => {
+          const range = document.createRange();
+          range.setStartBefore(heading);
+
+          if (index < headings.length - 1) {
+            range.setEndBefore(headings[index + 1]);
+          } else {
+            range.setEndAfter(source.lastChild || heading);
+          }
+
+          const slideDiv = document.createElement('div');
+          slideDiv.className =
+            'slide prose-slide mx-auto max-w-3xl bg-white border border-slate-200 rounded-lg p-8 sm:p-12 shadow-sm';
+          slideDiv.dataset.index = index;
+          slideDiv.appendChild(range.cloneContents());
+          container.appendChild(slideDiv);
+        });
+
+        return headings.length;
+      }
+
+      // Navigation state
+      let currentIndex = 0;
+      let totalSlides = 0;
+
+      async function updateSlide() {
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach((slide, index) => {
+          slide.classList.toggle('active', index === currentIndex);
+        });
+
+        document.getElementById('current').textContent = currentIndex + 1;
+        document.getElementById('prev-btn').disabled = currentIndex === 0;
+        document.getElementById('next-btn').disabled =
+          currentIndex === totalSlides - 1;
+
+        window.location.hash = currentIndex + 1;
+
+        // Render Mermaid on current slide if not already rendered
+        const currentSlide = slides[currentIndex];
+        if (currentSlide && !currentSlide.dataset.mermaidRendered) {
+          await renderMermaidInline(currentSlide);
+          currentSlide.dataset.mermaidRendered = 'true';
+        }
+      }
+
+      function nextSlide() {
+        if (currentIndex < totalSlides - 1) {
+          currentIndex++;
+          updateSlide();
+        }
+      }
+
+      function prevSlide() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlide();
+        }
+      }
+
+      // Initialize - split into slides then render Mermaid on visible slide
+      async function initialize() {
+        totalSlides = splitIntoSlides();
+        document.getElementById('total').textContent = totalSlides;
+
+        // Check hash for initial slide
+        const hash = window.location.hash.slice(1);
+        if (hash && !isNaN(hash)) {
+          const slideNum = parseInt(hash, 10) - 1;
+          if (slideNum >= 0 && slideNum < totalSlides) {
+            currentIndex = slideNum;
+          }
+        }
+
+        await updateSlide();
+      }
+
+      // Run initialization
+      initialize();
+
+      // Event listeners
+      document.getElementById('prev-btn').addEventListener('click', prevSlide);
+      document.getElementById('next-btn').addEventListener('click', nextSlide);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          prevSlide();
+        } else if (
+          e.key === 'ArrowRight' ||
+          e.key === 'ArrowDown' ||
+          e.key === ' '
+        ) {
+          e.preventDefault();
+          nextSlide();
+        }
+      });
+    </script>
+  </body>
+</html>

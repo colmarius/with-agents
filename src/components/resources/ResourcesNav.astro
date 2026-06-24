@@ -1,0 +1,27 @@
+---
+import BackNav from '@components/BackNav.astro';
+
+type ActiveSection = 'coding-with-agents';
+
+type Props = {
+  active?: ActiveSection;
+};
+
+const { active } = Astro.props;
+---
+
+<nav class="mb-10">
+  <BackNav href="/resources" label="Back to Resources" class="mb-6" />
+  <div class="flex flex-wrap gap-2">
+    <a
+      href="/resources/coding-with-agents"
+      class={`px-4 py-2 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 ${
+        active === 'coding-with-agents'
+          ? 'bg-gray-900 text-white shadow-sm'
+          : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 hover:border-gray-400'
+      }`}
+    >
+      Coding with Agents
+    </a>
+  </div>
+</nav>

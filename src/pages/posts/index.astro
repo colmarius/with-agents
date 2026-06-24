@@ -1,0 +1,144 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import { formatDate } from '@utils';
+
+const allPosts = await getCollection('posts');
+
+const posts = import.meta.env.PROD
+  ? allPosts.filter((post) => !post.data.draft)
+  : allPosts;
+
+const sortedPosts = posts.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout title="Posts - With Agents">
+	<div class="posts-container">
+		<header class="posts-header">
+			<h1 class="text-4xl md:text-5xl font-light mb-4 text-gray-900">Posts</h1>
+			<p class="text-xl text-gray-600 mb-16 font-light leading-relaxed">
+				Practical writing on coding agents, Amp workflows, and agent-friendly software engineering.
+			</p>
+		</header>
+
+		<div class="posts-list">
+			{sortedPosts.map((post) => (
+				<a href={`/posts/${post.id}`} class="post-card">
+					<h2>{post.data.title}</h2>
+					<p class="post-excerpt">{post.data.description}</p>
+					<div class="post-meta">
+						<time datetime={post.data.pubDate.toISOString()}>
+							{formatDate(post.data.pubDate)}
+						</time>
+						{post.data.tags && post.data.tags.length > 0 && (
+							<div class="post-card-tags">
+								{post.data.tags.map((tag) => (
+									<span class="tag">{tag}</span>
+								))}
+							</div>
+						)}
+					</div>
+				</a>
+			))}
+		</div>
+
+		{sortedPosts.length === 0 && (
+			<p class="no-posts">No posts yet. Check back soon!</p>
+		)}
+	</div>
+</Layout>
+
+<style>
+	.posts-container {
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.posts-header {
+		margin-bottom: 3rem;
+	}
+
+	.posts-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	.post-card {
+		display: block;
+		padding: 1.5rem;
+		border: 1px solid #e5e7eb;
+		border-radius: 0.5rem;
+		transition: all 0.2s ease;
+		background-color: white;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.post-card:hover {
+		border-color: #d1d5db;
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	}
+
+	.post-card:focus-visible {
+		outline: none;
+		box-shadow:
+			0 0 0 2px white,
+			0 0 0 4px rgba(99, 102, 241, 0.5);
+	}
+
+	.post-card h2 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		margin-bottom: 0.75rem;
+		color: #111827;
+	}
+
+	.post-excerpt {
+		font-size: 1rem;
+		color: #6b7280;
+		line-height: 1.6;
+		margin-bottom: 1rem;
+	}
+
+	.post-meta {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.post-meta time {
+		font-size: 0.875rem;
+		color: #4b5563;
+	}
+
+	.post-card-tags {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.tag {
+		display: inline-block;
+		padding: 0.25rem 0.5rem;
+		background-color: #f3f4f6;
+		color: #374151;
+		border-radius: 0.25rem;
+		font-size: 0.75rem;
+		font-weight: 500;
+	}
+
+	.no-posts {
+		text-align: center;
+		font-size: 1.125rem;
+		color: #6b7280;
+		padding: 3rem 0;
+	}
+
+	@media (max-width: 640px) {
+		.post-card h2 {
+			font-size: 1.25rem;
+		}
+	}
+</style>

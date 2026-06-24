@@ -1,0 +1,150 @@
+---
+type Props = {
+  currentPath: string;
+};
+
+const { currentPath } = Astro.props;
+
+const normalizedCurrentPath = currentPath.replace(/\/$/, '') || '/';
+
+const NAVIGATION_ITEMS = [
+  { link: '/', title: 'Home' },
+  { link: '/posts', title: 'Posts' },
+  { link: '/resources', title: 'Resources' },
+];
+
+const isActive = (link: string) =>
+  link === '/'
+    ? normalizedCurrentPath === '/'
+    : normalizedCurrentPath === link ||
+      normalizedCurrentPath.startsWith(`${link}/`);
+---
+
+<header class="flex items-center justify-between pb-20">
+  <a href="/" class="text-bold text-3xl hover:text-indigo-600 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 rounded-sm">
+    with-agents
+  </a>
+  <nav>
+    <ul class="hidden space-x-8 sm:flex">
+      {NAVIGATION_ITEMS.map((item) => (
+        <li>
+          <a
+            href={item.link}
+            class={`font-light uppercase hover:text-indigo-600 my-8 border-indigo-600 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 rounded-sm ${
+              isActive(item.link) ? 'text-indigo-600 border-b-2 pb-2' : ''
+            }`}
+          >
+            {item.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <button
+      type="button"
+      id="mobile-menu-button"
+      class="sm:hidden inline-flex items-center justify-center w-11 h-11 rounded-md text-gray-900 hover:text-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 relative z-50"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="Open menu"
+      onclick="toggleMobileMenu()"
+    >
+      <svg id="icon-hamburger" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <line x1="22" y1="2" x2="2" y2="22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="2" y1="2" x2="22" y2="22" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div
+      id="mobile-menu"
+      class="hide-menu-nav fixed inset-0 z-40 bg-white"
+      role="dialog"
+      aria-modal="true"
+    >
+      <ul class="flex flex-col w-full pt-20 divide-y divide-gray-200">
+        {NAVIGATION_ITEMS.map((item) => (
+          <li class="w-full">
+            <a
+              href={item.link}
+              onclick="closeMobileMenu()"
+              class={`block w-full px-6 py-4 text-lg font-medium text-gray-900 hover:bg-gray-50 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 ${
+                isActive(item.link) ? 'text-indigo-600 bg-indigo-50' : ''
+              }`}
+            >
+              {item.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .hide-menu-nav {
+    display: none;
+  }
+
+  .show-menu-nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+</style>
+
+<script>
+  function setMenuState(open: boolean) {
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.getElementById('mobile-menu-button');
+    const iconOpen = document.getElementById('icon-hamburger');
+    const iconClose = document.getElementById('icon-close');
+
+    if (open) {
+      menu?.classList.remove('hide-menu-nav');
+      menu?.classList.add('show-menu-nav');
+      btn?.setAttribute('aria-expanded', 'true');
+      btn?.setAttribute('aria-label', 'Close menu');
+      iconOpen?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    } else {
+      menu?.classList.remove('show-menu-nav');
+      menu?.classList.add('hide-menu-nav');
+      btn?.setAttribute('aria-expanded', 'false');
+      btn?.setAttribute('aria-label', 'Open menu');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  }
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const opening = menu?.classList.contains('hide-menu-nav');
+    setMenuState(!!opening);
+  }
+
+  function closeMobileMenu() {
+    setMenuState(false);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+
+  // @ts-ignore
+  window.toggleMobileMenu = toggleMobileMenu;
+  // @ts-ignore
+  window.closeMobileMenu = closeMobileMenu;
+</script>

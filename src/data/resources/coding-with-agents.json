@@ -1,0 +1,86 @@
+[
+  {
+    "id": 7,
+    "title": "Keynote: Linus Torvalds, Creator of Linux & Git, in Conversation with Dirk Hohndel",
+    "url": "https://www.youtube.com/watch?v=tWx769t1JKg",
+    "description": "Linus Torvalds shares his perspective on AI's impact on open source infrastructure, including crawler strain on kernel.org and AI-generated spam reports. He expresses skepticism about 'vibe coding' for serious maintenance while acknowledging AI as a great learning gateway for beginners. Compares AI to compilers—a tool that removes minutia rather than replacing developers—and predicts more software jobs, not fewer.",
+    "type": "video",
+    "source": "Open Source Summit",
+    "date": "2025-11-12",
+    "tags": ["Coding agents", "Trends", "Open source"]
+  },
+  {
+    "id": 6,
+    "title": "The Truth About Coding Agents: Why 90% of Your Time Is Now Code Review",
+    "subtitle": "Beyang Liu in conversation with a16z",
+    "url": "https://www.youtube.com/watch?v=Jxz4GJSG8ZA",
+    "description": "Beyang Liu discusses Sourcegraph's Amp agent and the shift in software engineering from coding to orchestrating agents, where 90% of time is spent on code review. Topics include the 'Smart' vs 'Fast' agent architecture, the rise of Chinese open source models for agentic tool use, and the transition to probabilistic software where developers manage intent while agents handle implementation logic.",
+    "type": "video",
+    "source": "a16z Deep Dives",
+    "date": "2025-11-25",
+    "tags": ["Coding agents", "Workflow", "Architecture", "Trends"]
+  },
+  {
+    "id": 5,
+    "title": "The Emerging Skillset of Wielding Coding Agents",
+    "subtitle": "Beyang Liu at AI Engineer Conference",
+    "url": "https://www.youtube.com/watch?v=F_RyElT_gJk",
+    "description": "Beyang Liu explores the evolution of AI coding agents from co-pilots to autonomous tools, covering controversial design decisions (autonomous edits, minimal UI, model coupling), Amp's implementation, and power user insights. Discusses best practices like detailed prompts, feedback loops, and sub-agents for complex tasks, while highlighting anti-patterns including micromanaging and underprompting.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2025-07-01",
+    "tags": ["Coding agents", "Workflow", "Practices", "Architecture"]
+  },
+  {
+    "id": 4,
+    "title": "Next Token – Series",
+    "url": "https://x.com/i/broadcasts/1MnxnPWoDwLGO",
+    "description": "A series featuring discussions, sharing experiences, and exploring the latest trends in AI agents and development practices.",
+    "type": "video",
+    "source": "X/Twitter",
+    "date": "2025-10-01",
+    "tags": ["Coding agents", "Workflow", "Practices"]
+  },
+  {
+    "id": 8,
+    "title": "Craft & Chaos - Series",
+    "url": "https://x.com/AmpCode/status/1998800449768665274",
+    "description": "The rebranded Build Crew live series featuring live coding sessions, Prompt Duel at Dawn challenges, and opportunities to win Amp Credits. Continues the community-driven format with AI agent best practices and real-time development.",
+    "type": "playlist",
+    "source": "Sourcegraph",
+    "date": "2025-12-10",
+    "tags": ["Coding agents", "Workflow", "Live coding"]
+  },
+  {
+    "id": 3,
+    "title": "Build Crew - Series",
+    "url": "https://www.youtube.com/playlist?list=PL6zLuuRVa1_g_ieW4LnrwhVo6bNHmRwEA",
+    "description": "A series from the Amp team covering AI agent best practices and prompting strategies. Topics include structured prompts, chain of thought prompting, using the Oracle sub-agent for complex reasoning, external memory management with short threads, and practical tips for effective agent collaboration. Features real-world development scenarios and insights from the Build Crew community.",
+    "type": "playlist",
+    "source": "Sourcegraph",
+    "date": "2025-10-08",
+    "tags": ["Coding agents", "Workflow", "Live coding"]
+  },
+  {
+    "id": 2,
+    "title": "Amp: The Emperor Has No Clothes",
+    "subtitle": "Quinn Slack & Thorsten Ball on Building Amp Code",
+    "url": "https://www.youtube.com/watch?v=b4rOVZWLW6E",
+    "description": "Sourcegraph's CEO and Amp Dictator discuss the philosophy behind Amp Code, their unconventional 15x/day shipping cadence without code reviews, and critical insights on coding agent architecture. Topics include why subagents and prompt optimizers may be misguided, the diminishing importance of model selectors, agent-friendly tooling, version control in an AI-first world, and how agents are transforming enterprise software development workflows.",
+    "type": "podcast",
+    "source": "Latent Space",
+    "date": "2025-09-26",
+    "duration": "1h 21m",
+    "tags": ["Coding agents", "Workflow", "Tools", "Architecture"]
+  },
+  {
+    "id": 1,
+    "title": "Raising an Agent - Series",
+    "url": "https://www.youtube.com/playlist?list=PL6zLuuRVa1_iUNbel-8MxxpqKIyesaubA",
+    "description": "An eight-part documentary series chronicling Sourcegraph's development of Amp, revealing groundbreaking insights on building practical coding agents. Topics include the shift from prompt to context engineering, the power of autonomous feedback loops, sub-agent architectures for context management, the \"Oracle\" pattern for multi-model reasoning, why codebases must adapt to agents, and evaluating LLM capabilities across providers. The team demonstrates why success depends on model quality over hidden tricks, treating agents as power tools rather than magic wands.",
+    "type": "playlist",
+    "source": "Sourcegraph",
+    "date": "2025-06-01",
+    "tags": ["Coding agents", "Tools", "LLMs"]
+  }
+]

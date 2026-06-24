@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+import Footer from '@components/Footer.astro';
+import Navigation from '@components/Navigation.astro';
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Practical coding-agent workflows, field guides, slides, and curated resources." />
+    <title>{title}</title>
+    <link rel="icon" type="image/png" href="/flashtocat.png" />
+
+    <style>
+      body {
+        transition: opacity 50ms ease-out;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <div class="mx-auto max-w-6xl px-8 py-16 sm:px-12 lg:px-16">
+      <div class="flex flex-col min-h-[80vh] justify-between">
+
+        <Navigation currentPath={currentPath} />
+
+        <main>
+          <slot />
+        </main>
+
+        <Footer />
+      </div>
+    </div>
+
+    <script>
+      const initPage = () => {
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 150ms ease-out';
+
+        requestAnimationFrame(() => {
+          document.body.style.opacity = '1';
+        });
+      };
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initPage();
+
+        const links = document.querySelectorAll('a[href^="/"], a[href^="./"], a[href^="../"]');
+
+        links.forEach(link => {
+          link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+
+            if (!href ||
+                href.startsWith('http') ||
+                href.startsWith('#') ||
+                (link as HTMLAnchorElement).target === '_blank' ||
+                link.hasAttribute('download')) {
+              return;
+            }
+
+            e.preventDefault();
+
+            document.body.style.opacity = '0';
+
+            setTimeout(() => {
+              window.location.href = href;
+            }, 150);
+          });
+        });
+      });
+
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+          initPage();
+        }
+      });
+    </script>
+  </body>
+</html>

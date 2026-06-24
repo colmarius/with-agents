@@ -1,0 +1,105 @@
+---
+import BackNav from '@components/BackNav.astro';
+import MermaidRenderer from '@components/MermaidRenderer.astro';
+import { formatDate } from '@utils';
+import Layout from './Layout.astro';
+
+type Props = {
+  slug: string;
+  title: string;
+  description: string;
+  pubDate: Date;
+  tags?: string[];
+};
+
+const { slug, title, description, pubDate, tags } = Astro.props;
+const isAgentPost = (tags || []).includes('AI Agents');
+---
+
+<Layout title={title}>
+	<article class="mx-auto max-w-2xl pb-16">
+		<nav class="mb-10" aria-label="Back">
+			<BackNav href="/posts" label="Back to Posts" />
+		</nav>
+		<header class="mb-12 pb-8 border-b border-slate-200">
+			<h1 class="text-4xl font-bold leading-tight text-slate-900 mb-4">{title}</h1>
+			<p class="text-lg text-slate-500 mb-3 leading-relaxed">{description}</p>
+			<time class="block text-sm text-slate-600 mb-3" datetime={pubDate.toISOString()}>
+				{formatDate(pubDate)}
+			</time>
+			<div class="flex items-center justify-between gap-4 flex-wrap">
+				{tags && tags.length > 0 && (
+					<div class="flex gap-2 flex-wrap">
+						{tags.map((tag) => (
+							<span class="inline-block px-3 py-1 bg-slate-100 text-slate-700 rounded-md text-sm font-medium">{tag}</span>
+						))}
+					</div>
+				)}
+				<a
+					href={`/posts/${slug}/slides`}
+					class="slides-link"
+					aria-label={`View "${title}" as slides`}
+				>
+					→ View as slides
+				</a>
+			</div>
+		</header>
+
+		<div class="prose-post">
+			<slot />
+		</div>
+
+		{isAgentPost && (
+			<div class="mt-16 border-t border-gray-200 pt-8">
+				<p class="text-gray-800 font-light text-lg">
+					<span class="text-gray-600">Looking for more resources?</span>
+					<a href="/resources/coding-with-agents" class="ml-1 text-indigo-700 hover:text-indigo-500 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 rounded-sm">
+						Visit the Coding with Agents hub →
+					</a>
+				</p>
+			</div>
+		)}
+	</article>
+</Layout>
+
+<MermaidRenderer />
+
+<style>
+	.slides-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.875rem;
+		color: #374151;
+		background: #fff;
+		border: 1px solid #e5e7eb;
+		border-radius: 0.375rem;
+		padding: 0.375rem 0.625rem;
+		text-decoration: none;
+		transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+		white-space: nowrap;
+	}
+
+	.slides-link:hover {
+		color: #111827;
+		background-color: #f9fafb;
+		border-color: #d1d5db;
+	}
+
+	.slides-link:focus-visible {
+		outline: 2px solid #3b82f6;
+		outline-offset: 2px;
+	}
+
+	@media (max-width: 640px) {
+		.flex {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.75rem;
+		}
+
+		h1 {
+			font-size: 2rem;
+		}
+	}
+</style>

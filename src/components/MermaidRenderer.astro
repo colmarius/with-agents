@@ -1,0 +1,31 @@
+---
+// Shared Mermaid diagram renderer component
+// Handles rendering Mermaid diagrams from code blocks and provides FOUC prevention
+---
+
+<script>
+  import { renderMermaid } from '@scripts/mermaid';
+
+  const run = () => renderMermaid();
+
+  // Initial load + Astro client navigations
+  document.addEventListener('DOMContentLoaded', run, { once: true });
+  document.addEventListener('astro:page-load', run);
+</script>
+
+<style is:global>
+  /* Hide raw Mermaid code blocks before JS runs (FOUC prevention) */
+  pre:has(> code.language-mermaid),
+  pre:has(> code.lang-mermaid),
+  pre[data-language="mermaid"],
+  pre[class*="language-mermaid"] {
+    display: none;
+  }
+  /* Fallback for browsers without :has() */
+  pre > code.language-mermaid,
+  pre > code.lang-mermaid,
+  pre[data-language="mermaid"] > code,
+  pre[class*="language-mermaid"] > code {
+    display: none;
+  }
+</style>
