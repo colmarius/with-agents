@@ -21,6 +21,8 @@ Coding agents become useful in real projects when they also know your local trut
 
 **Thesis:** make the repository carry that truth.
 
+By the end, you should have a sorting rule for what belongs in `AGENTS.md`, a skill, a work item, or an automated check.
+
 The practical loop:
 
 ```text
@@ -188,7 +190,7 @@ The work started as a gist and a rough talk idea. Instead of keeping the plan in
 - **Map:** `AGENTS.md` explains the Astro site, commands, content rules, and git workflow.
 - **Procedure:** planning and research skills shaped the work into a brief, sources, and an implementation plan.
 - **State:** `.agents/work/docs/durable-context-talk/` holds the brief, research, source notes, plan, and progress.
-- **Evidence:** the draft will be checked with Astro's content validation and production build.
+- **Evidence:** the draft is checked with Astro's content validation and production build before handoff.
 
 The result is not more ceremony for its own sake. It is a handoff path:
 
@@ -216,6 +218,8 @@ Then promote the fix into the smallest durable place:
 - package it as a skill
 - record it in a work item
 - enforce it with a check
+
+Yes, this is documentation — but documentation with a job. It is invoked by agents, versioned with the repo, and updated when it improves future runs.
 
 The point is not more documents. The point is better next runs.
 

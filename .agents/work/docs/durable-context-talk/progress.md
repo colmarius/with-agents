@@ -84,3 +84,17 @@ Do not create the public post yet. First, align the talk's emphasis with the use
 ## Updated Next Action
 
 - Preview and tune the slide deck in local dev at `/posts/durable-context-coding-agents/slides`; then incorporate user feedback and decide whether to keep as a concise talk post or expand later into a longer essay.
+
+## 2026-06-25 Small Polish Pass
+
+- Applied the Oracle-recommended polish edits to `src/content/posts/durable-context-coding-agents.md`:
+  - Added a clearer outcome promise on the title slide: the audience should know what belongs in `AGENTS.md`, a skill, a work item, or a check.
+  - Changed the running example's evidence wording from future tense to present-tense process language.
+  - Strengthened the close with the answer to "isn't this just documentation?": durable context is documentation with a job, invoked by agents, versioned with the repo, and updated when it improves future runs.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed.
+
+## Updated Next Action
+
+- Preview and tune the slide deck in local dev at `/posts/durable-context-coding-agents/slides`; then incorporate user feedback and decide whether to keep as a concise talk post or expand later into a longer essay.
