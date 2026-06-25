@@ -3,7 +3,8 @@ title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'A practical workflow for grounding coding agents in repo-local context: maps, procedures, durable state, and evidence.'
 pubDate: 2026-06-25
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
-draft: true
+draft: false
+unlisted: true
 order: 7
 ---
 

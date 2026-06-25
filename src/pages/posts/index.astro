@@ -5,11 +5,13 @@ import { formatDate } from '@utils';
 
 const allPosts = await getCollection('posts');
 
-const posts = import.meta.env.PROD
+const publishedPosts = import.meta.env.PROD
   ? allPosts.filter((post) => !post.data.draft)
   : allPosts;
 
-const sortedPosts = [...posts].sort(
+const listedPosts = publishedPosts.filter((post) => !post.data.unlisted);
+
+const sortedPosts = [...listedPosts].sort(
   (a, b) =>
     b.data.pubDate.getTime() - a.data.pubDate.getTime() ||
     a.data.order - b.data.order,

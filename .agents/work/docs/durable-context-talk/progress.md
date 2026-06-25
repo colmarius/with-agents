@@ -114,3 +114,21 @@ Do not create the public post yet. First, align the talk's emphasis with the use
 ## Updated Next Action
 
 - Use `meetup-organizer-gist.md` for organizer outreach as needed. Then preview and tune the slide deck in local dev at `/posts/durable-context-coding-agents/slides`; incorporate user feedback and decide whether to keep as a concise talk post or expand later into a longer essay.
+
+## 2026-06-25 Publish Post Direct-Link Only
+
+- User chose to publish the durable context post, then clarified it should not appear on `/posts` yet and should be available by direct link only.
+- Changed `src/content/posts/durable-context-coding-agents.md` from `draft: true` to `draft: false` so the post and slides routes are included in production builds.
+- Added `unlisted: true` to the post frontmatter.
+- Added an `unlisted` field to the posts content schema.
+- Updated `/posts` to filter out unlisted posts while still allowing direct routes to build.
+- Updated `index.md` to treat the post as direct-link published and make URL confirmation the next action.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed.
+  - Build output contains `dist/posts/durable-context-coding-agents/index.html` and `dist/posts/durable-context-coding-agents/slides/index.html`.
+  - Build output for `dist/posts/index.html` does not include "Your Repo Is the Memory".
+
+## Updated Next Action
+
+- Commit the direct-link-only publish change, push to `origin/main`, and confirm deployment status if available.
