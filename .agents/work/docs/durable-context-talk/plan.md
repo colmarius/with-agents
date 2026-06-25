@@ -36,7 +36,7 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
     - The "Agents Captain" / "say no to slop" decision is resolved.
   - Notes: Core source set is sufficient for drafting. Do not add more sources unless the draft uses a claim from Task 5.
 
-- [ ] **Task 4: Draft the slide-aware post**
+- [x] **Task 4: Draft the slide-aware post**
   - Scope: `src/content/posts/<slug>.md`
   - Depends on: Tasks 1-3
   - Acceptance:
@@ -47,8 +47,9 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
     - One running example appears in at least 2-3 sections; recommended example is this repo's slide-aware post workflow.
     - Every strong claim is directly sourced, reframed as personal workflow observation, or removed.
     - Content includes a concise summary/takeaway and links to cited sources.
+  - Notes: Initial draft created at `src/content/posts/durable-context-coding-agents.md` with 11 `##` sections.
 
-- [ ] **Task 5: Review whether optional source expansion is needed**
+- [x] **Task 5: Review whether optional source expansion is needed**
   - Scope: `src/content/posts/<slug>.md`, `.agents/work/docs/durable-context-talk/research.md`
   - Depends on: Task 4
   - Acceptance:
@@ -60,7 +61,7 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
       - hard productivity multipliers or "agents write most code now" generalizations;
       - dot-agents as a standard rather than one implementation.
     - If a claim is not worth sourcing, it is removed or reframed before preview.
-  - Notes: This is a narrow source-expansion gate, not open-ended research.
+  - Notes: Initial draft avoids these risky claim categories; no additional sources needed for this version.
 
 - [ ] **Task 6: Preview and tune the deck**
   - Scope: `src/content/posts/<slug>.md`, optionally `src/pages/posts/[slug]/slides.astro` only if a real presentation need appears

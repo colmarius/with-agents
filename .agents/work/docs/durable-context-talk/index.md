@@ -1,6 +1,6 @@
 # Durable Context Talk
 
-Status: planned
+Status: in-progress
 Category: docs
 Updated: 2026-06-25
 
@@ -15,15 +15,16 @@ Prepare a post/slide deck about durable context for AI coding agents, based on t
 - PRD: `prd.md`
 - Plan: `plan.md`
 - Progress: `progress.md`
+- Draft post: `src/content/posts/durable-context-coding-agents.md`
 - Decisions: none
 
 ## Next Action
 
-- Create `src/content/posts/durable-context-coding-agents.md` as `draft: true` with 10-11 `##` slide sections using the map → procedure → state → evidence spine. After drafting, run the optional source-expansion gate only for claims the draft actually makes.
+- Preview and tune `src/content/posts/durable-context-coding-agents.md` at `/posts/durable-context-coding-agents/slides`, then incorporate user feedback. Re-run the source-expansion gate only if edits add risky claims.
 
 ## Open Questions
 
 - [x] Who is the exact audience and venue? Default assumption for drafting: developers and technical leads already experimenting with coding agents. Venue can still tune tone later.
 - [x] Should the talk be primarily a conceptual warning, a practical workflow recipe, or a dot-agents product/workflow demo? Current default after Oracle: practical field guide with a conceptual hook; dot-agents appears as one concrete implementation, not the whole story.
 - [x] Can the "Agents Captain" / "say no to slop" OpenAI memo source be provided or should we replace it with the public OpenAI Harness Engineering article? Source provided: <https://x.com/gdb/status/2019566641491963946>. Keep OpenAI Harness Engineering as the more stable companion source.
-- [ ] Should the final post stay `draft: true` until after the talk, or publish immediately once the deck is ready?
+- [x] Should the final post stay `draft: true` until after the talk, or publish immediately once the deck is ready? Current draft is `draft: true`; publish decision remains later after review.
