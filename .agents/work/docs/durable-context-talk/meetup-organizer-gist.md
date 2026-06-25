@@ -6,7 +6,7 @@
 **Audience:** developers, tech leads, engineering managers, platform/DX engineers, and teams already experimenting with coding agents  
 **Style:** practical field guide, not a vendor demo
 
-## Short blurb
+## Talk summary
 
 AI coding agents are becoming useful fast, but they still do not know the local truth of your codebase. This talk shows how to make repo-local context durable so agents produce work that fits the project and humans can still understand, review, and maintain what gets merged.
 
