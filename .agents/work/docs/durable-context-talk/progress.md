@@ -50,3 +50,10 @@ Do not create the public post yet. First, align the talk's emphasis with the use
 ## Updated Next Action
 
 - Finish Task 3 source verification only where it affects the draft, then create `src/content/posts/durable-context-coding-agents.md` as `draft: true` with 10-11 `##` slide sections.
+
+## 2026-06-25 Source Expansion Gate
+
+- User asked to make "only add more sources if we want these claims" a separate plan phase.
+- Updated the plan so baseline source verification is complete and drafting can proceed.
+- Added a post-draft source-expansion gate: inspect the actual draft for risky claims and add sources only if those claims survive editing.
+- Risky claims to source-or-remove: study numbers, Mario Zechner/GitHub quality claims, exact AGENTS.md adoption counts, hard productivity multipliers, broad "agents write most code now" generalizations, and treating dot-agents as a standard.

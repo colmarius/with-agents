@@ -19,11 +19,11 @@ Prepare a post/slide deck about durable context for AI coding agents, based on t
 
 ## Next Action
 
-- Finish source verification only where it affects the draft, then create `src/content/posts/durable-context-coding-agents.md` as `draft: true` with 10-11 `##` slide sections using the map → procedure → state → evidence spine.
+- Create `src/content/posts/durable-context-coding-agents.md` as `draft: true` with 10-11 `##` slide sections using the map → procedure → state → evidence spine. After drafting, run the optional source-expansion gate only for claims the draft actually makes.
 
 ## Open Questions
 
-- [ ] Who is the exact audience and venue? The gist mentions Zurich AI Club, but tone changes if the audience is mostly engineers, managers, or AI-curious builders.
-- [ ] Should the talk be primarily a conceptual warning, a practical workflow recipe, or a dot-agents product/workflow demo? Current default after Oracle: practical field guide with a conceptual hook; dot-agents appears as one concrete implementation, not the whole story.
+- [x] Who is the exact audience and venue? Default assumption for drafting: developers and technical leads already experimenting with coding agents. Venue can still tune tone later.
+- [x] Should the talk be primarily a conceptual warning, a practical workflow recipe, or a dot-agents product/workflow demo? Current default after Oracle: practical field guide with a conceptual hook; dot-agents appears as one concrete implementation, not the whole story.
 - [x] Can the "Agents Captain" / "say no to slop" OpenAI memo source be provided or should we replace it with the public OpenAI Harness Engineering article? Source provided: <https://x.com/gdb/status/2019566641491963946>. Keep OpenAI Harness Engineering as the more stable companion source.
 - [ ] Should the final post stay `draft: true` until after the talk, or publish immediately once the deck is ready?

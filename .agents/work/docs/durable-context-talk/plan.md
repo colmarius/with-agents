@@ -11,13 +11,13 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
 
 ## Tasks
 
-- [ ] **Task 1: Align the content spine with the user**
+- [x] **Task 1: Align the content spine with the user**
   - Scope: `.agents/work/docs/durable-context-talk/prd.md`, `.agents/work/docs/durable-context-talk/index.md`
   - Depends on: none
   - Acceptance:
     - User has chosen or adjusted the working thesis, title direction, and whether the talk is conceptual, practical, or demo-led.
     - Open questions in `index.md` are updated with user decisions.
-  - Notes: Initial direction accepted by user on 2026-06-25; still resolve audience/emphasis before creating the public post draft.
+  - Notes: Direction accepted by user on 2026-06-25. Default audience/tone is developers and technical leads; practical field guide with a conceptual hook.
 
 - [x] **Task 2: Stress-test the research and plan**
   - Scope: `.agents/work/docs/durable-context-talk/research.md`
@@ -27,14 +27,14 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
     - Plan/research are updated with high-confidence changes from the review.
   - Notes: Oracle completed on 2026-06-25. Key changes: map → procedure → state → evidence spine, running example requirement, 11-slide default, source/claim guardrails.
 
-- [ ] **Task 3: Finish source verification**
+- [x] **Task 3: Complete baseline source verification**
   - Scope: `.agents/work/docs/durable-context-talk/research.md`, `.agents/work/docs/durable-context-talk/sources/`
   - Depends on: Task 2
   - Acceptance:
-    - Every quoted or numerical claim planned for the deck has a stable source link.
-    - Weak claims are removed, reframed, or explicitly marked as anecdotal.
+    - Every core claim planned for the first draft has a stable source link or local source note.
+    - Risky optional claims are listed for a post-draft source expansion gate.
     - The "Agents Captain" / "say no to slop" decision is resolved.
-  - Notes: Prefer primary sources. The X memo source has been provided; keep the local source note because X extraction can fail.
+  - Notes: Core source set is sufficient for drafting. Do not add more sources unless the draft uses a claim from Task 5.
 
 - [ ] **Task 4: Draft the slide-aware post**
   - Scope: `src/content/posts/<slug>.md`
@@ -48,18 +48,32 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
     - Every strong claim is directly sourced, reframed as personal workflow observation, or removed.
     - Content includes a concise summary/takeaway and links to cited sources.
 
-- [ ] **Task 5: Preview and tune the deck**
-  - Scope: `src/content/posts/<slug>.md`, optionally `src/pages/posts/[slug]/slides.astro` only if a real presentation need appears
+- [ ] **Task 5: Review whether optional source expansion is needed**
+  - Scope: `src/content/posts/<slug>.md`, `.agents/work/docs/durable-context-talk/research.md`
   - Depends on: Task 4
+  - Acceptance:
+    - Draft is checked against the source/claim table in `research.md`.
+    - Additional sources are added only if the draft makes one of these claims:
+      - numerical study claims from Anthropic, Wharton, MIT, or similar;
+      - Mario Zechner / average GitHub code quality claims;
+      - exact AGENTS.md adoption counts;
+      - hard productivity multipliers or "agents write most code now" generalizations;
+      - dot-agents as a standard rather than one implementation.
+    - If a claim is not worth sourcing, it is removed or reframed before preview.
+  - Notes: This is a narrow source-expansion gate, not open-ended research.
+
+- [ ] **Task 6: Preview and tune the deck**
+  - Scope: `src/content/posts/<slug>.md`, optionally `src/pages/posts/[slug]/slides.astro` only if a real presentation need appears
+  - Depends on: Task 5
   - Acceptance:
     - Slides are readable at `/posts/<slug>/slides` in local preview.
     - Any dense slide is split, shortened, or moved to post-only detail.
     - Timing estimate remains within 20 minutes.
   - Notes: Avoid slide-system changes unless speaker notes, title-slide generation, or post-only/slide-only content becomes necessary.
 
-- [ ] **Task 6: Final verification and publish decision**
+- [ ] **Task 7: Final verification and publish decision**
   - Scope: `src/content/posts/<slug>.md`, work item artifacts
-  - Depends on: Task 5
+  - Depends on: Task 6
   - Acceptance:
     - `npm run check` passes.
     - `npm run build` passes.
