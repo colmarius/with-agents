@@ -28,3 +28,25 @@ Do not create the public post yet. First, align the talk's emphasis with the use
 ## Next Action
 
 - User reviews the proposed thesis/title/outline and provides the next input.
+
+## 2026-06-25 Source Update
+
+- User accepted the direction for now and provided the source for the "Agents Captain / say no to slop" OpenAI memo: <https://x.com/gdb/status/2019566641491963946>.
+- Direct extraction from X failed in tooling, so the user-provided transcript was saved locally at `sources/openai-agentic-software-development-x-post.md`.
+- Research now treats this X memo as the culture/process source and the OpenAI Harness Engineering article as the stable companion source for repository-local knowledge and progressive disclosure.
+- Added the user's requested next step to the plan: run a stress/grill-me review with Oracle before drafting the post.
+
+## 2026-06-25 Oracle Stress-Test
+
+- Oracle recommendation: conditional go for a `draft: true` post after a short tightening pass.
+- Top risks: narrative sprawl, too much abstraction without a running example, timing/slide density, overclaiming from OpenAI or study sources, and the "isn't this just documentation?" objection.
+- Applied changes:
+  - Made **map → procedure → state → evidence** the practical spine.
+  - Changed the default deck to 11 slides with 16-18 minute target timing.
+  - Added a running-example requirement, preferably this repo's own slide-aware post workflow.
+  - Added a source/claim table and overclaiming guardrails.
+  - Marked no slide-renderer code changes before drafting.
+
+## Updated Next Action
+
+- Finish Task 3 source verification only where it affects the draft, then create `src/content/posts/durable-context-coding-agents.md` as `draft: true` with 10-11 `##` slide sections.

@@ -17,38 +17,49 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
   - Acceptance:
     - User has chosen or adjusted the working thesis, title direction, and whether the talk is conceptual, practical, or demo-led.
     - Open questions in `index.md` are updated with user decisions.
-  - Notes: Do this before creating the public post draft.
+  - Notes: Initial direction accepted by user on 2026-06-25; still resolve audience/emphasis before creating the public post draft.
 
-- [ ] **Task 2: Finish source verification**
+- [x] **Task 2: Stress-test the research and plan**
   - Scope: `.agents/work/docs/durable-context-talk/research.md`
   - Depends on: Task 1 can run in parallel if user input arrives first
+  - Acceptance:
+    - Oracle or equivalent reviewer has checked the content spine for narrative gaps, source risks, timing risk, and slide density.
+    - Plan/research are updated with high-confidence changes from the review.
+  - Notes: Oracle completed on 2026-06-25. Key changes: map → procedure → state → evidence spine, running example requirement, 11-slide default, source/claim guardrails.
+
+- [ ] **Task 3: Finish source verification**
+  - Scope: `.agents/work/docs/durable-context-talk/research.md`, `.agents/work/docs/durable-context-talk/sources/`
+  - Depends on: Task 2
   - Acceptance:
     - Every quoted or numerical claim planned for the deck has a stable source link.
     - Weak claims are removed, reframed, or explicitly marked as anecdotal.
     - The "Agents Captain" / "say no to slop" decision is resolved.
-  - Notes: Prefer primary sources. Use the public OpenAI Harness Engineering article unless the user provides the memo source.
+  - Notes: Prefer primary sources. The X memo source has been provided; keep the local source note because X extraction can fail.
 
-- [ ] **Task 3: Draft the slide-aware post**
+- [ ] **Task 4: Draft the slide-aware post**
   - Scope: `src/content/posts/<slug>.md`
-  - Depends on: Tasks 1 and 2
+  - Depends on: Tasks 1-3
   - Acceptance:
     - New Markdown post has valid frontmatter, `draft: true`, relevant tags, and an `order` value.
-    - Body has 10-12 `##` sections, each usable as a slide.
+    - Body has 10-11 `##` sections, each usable as a slide; 12th section only if needed for a backup objection/Q&A slide.
     - First `##` section functions as the title/promise slide because the slide generator does not include frontmatter title as a slide.
+    - The deck uses the **map → procedure → state → evidence** loop as the practical spine.
+    - One running example appears in at least 2-3 sections; recommended example is this repo's slide-aware post workflow.
+    - Every strong claim is directly sourced, reframed as personal workflow observation, or removed.
     - Content includes a concise summary/takeaway and links to cited sources.
 
-- [ ] **Task 4: Preview and tune the deck**
+- [ ] **Task 5: Preview and tune the deck**
   - Scope: `src/content/posts/<slug>.md`, optionally `src/pages/posts/[slug]/slides.astro` only if a real presentation need appears
-  - Depends on: Task 3
+  - Depends on: Task 4
   - Acceptance:
     - Slides are readable at `/posts/<slug>/slides` in local preview.
     - Any dense slide is split, shortened, or moved to post-only detail.
     - Timing estimate remains within 20 minutes.
   - Notes: Avoid slide-system changes unless speaker notes, title-slide generation, or post-only/slide-only content becomes necessary.
 
-- [ ] **Task 5: Final verification and publish decision**
+- [ ] **Task 6: Final verification and publish decision**
   - Scope: `src/content/posts/<slug>.md`, work item artifacts
-  - Depends on: Task 4
+  - Depends on: Task 5
   - Acceptance:
     - `npm run check` passes.
     - `npm run build` passes.
@@ -60,6 +71,8 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
 
 - Keep the initial work content-first. Do not change code just to support hypothetical presentation features.
 - The current slide renderer splits post HTML by `h2`; authoring discipline is the main slide constraint.
+- Do not overuse OpenAI as proof that all teams should work the same way. Use the X memo for culture/process vocabulary and Harness Engineering for durable repo-local context.
+- Prefer "comprehension debt" for the software-specific risk and "cognitive surrender" for the human posture/failure mode. Avoid switching among cognitive debt, comprehension debt, and technical debt without defining them.
 - If the final article needs long-form prose that would overload slides, consider one of two approaches later:
   - keep this as a concise talk post and write a deeper follow-up article, or
   - add explicit slide markers/post-only blocks to the renderer after scoping the smallest safe code change.
