@@ -9,7 +9,11 @@ const posts = import.meta.env.PROD
   ? allPosts.filter((post) => !post.data.draft)
   : allPosts;
 
-const sortedPosts = posts.sort((a, b) => a.data.order - b.data.order);
+const sortedPosts = [...posts].sort(
+  (a, b) =>
+    b.data.pubDate.getTime() - a.data.pubDate.getTime() ||
+    a.data.order - b.data.order,
+);
 ---
 
 <Layout title="Posts - With Agents">
