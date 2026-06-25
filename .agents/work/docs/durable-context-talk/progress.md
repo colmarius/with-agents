@@ -98,3 +98,19 @@ Do not create the public post yet. First, align the talk's emphasis with the use
 ## Updated Next Action
 
 - Preview and tune the slide deck in local dev at `/posts/durable-context-coding-agents/slides`; then incorporate user feedback and decide whether to keep as a concise talk post or expand later into a longer essay.
+
+## 2026-06-25 Meetup Organizer Gist
+
+- Read the original gist at <https://gist.github.com/colmarius/bff9fe53cb8a2f3aec0b469d39470924> and rewrote it around the current presentation direction.
+- Added `meetup-organizer-gist.md` as a concise organizer-facing proposal with:
+  - updated title and abstract;
+  - 20-minute outline;
+  - audience and format notes;
+  - attendee takeaways;
+  - source links;
+  - positioning that this is a practical field guide, not a single-tool demo.
+- Updated `index.md` artifacts and next action to include the organizer gist.
+
+## Updated Next Action
+
+- Use `meetup-organizer-gist.md` for organizer outreach as needed. Then preview and tune the slide deck in local dev at `/posts/durable-context-coding-agents/slides`; incorporate user feedback and decide whether to keep as a concise talk post or expand later into a longer essay.

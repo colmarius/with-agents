@@ -15,12 +15,13 @@ Prepare a post/slide deck about durable context for AI coding agents, based on t
 - PRD: `prd.md`
 - Plan: `plan.md`
 - Progress: `progress.md`
+- Meetup organizer gist: `meetup-organizer-gist.md`
 - Draft post: `src/content/posts/durable-context-coding-agents.md`
 - Decisions: none
 
 ## Next Action
 
-- Preview and tune `src/content/posts/durable-context-coding-agents.md` at `/posts/durable-context-coding-agents/slides`, then incorporate user feedback. Re-run the source-expansion gate only if edits add risky claims.
+- Use `meetup-organizer-gist.md` for organizer outreach as needed. Then preview and tune `src/content/posts/durable-context-coding-agents.md` at `/posts/durable-context-coding-agents/slides`, incorporate user feedback, and re-run the source-expansion gate only if edits add risky claims.
 
 ## Open Questions
 
