@@ -1,5 +1,17 @@
 [
   {
+    "id": 12,
+    "title": "I Hated Every Coding Agent, So I Built My Own — Mario Zechner (Pi)",
+    "subtitle": "Mario Zechner on why Pi strips coding agents down to a malleable core",
+    "url": "https://www.youtube.com/watch?v=Dli5slNaJu0",
+    "description": "Mario Zechner explains why he built Pi after Claude Code, OpenCode, and other agent harnesses stopped matching his need for predictable context, observability, and extensibility. The talk covers agent history from ChatGPT copying to agentic search, Claude Code feature bloat, OpenCode context-management pitfalls, Terminal-Bench and Terminus as evidence for minimal harnesses, Pi's four-tool design and TypeScript extension model, and lightweight defenses against agent-generated open-source spam.",
+    "type": "video",
+    "source": "Mastra",
+    "date": "2026-03-31",
+    "duration": "27m",
+    "tags": ["Coding agents", "Tools", "Workflow", "Open source"]
+  },
+  {
     "id": 11,
     "title": "Building Pi, and what makes self-modifying software so fascinating",
     "subtitle": "Mario Zechner and Armin Ronacher on Pi, agent workflows, and engineering judgment",
