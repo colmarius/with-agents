@@ -1,5 +1,65 @@
 [
   {
+    "id": 19,
+    "title": "LLMs are killing Agent Harness",
+    "subtitle": "Thorsten Ball on Amp, shrinking harnesses, and coordinating many agents",
+    "url": "https://www.youtube.com/watch?v=thMFsqe8kbQ",
+    "description": "Thorsten Ball argues that as frontier models improve, coding-agent products should remove clever harness scaffolding, expose models to simple tools and context, and focus on how humans organize many cheap, capable agents across new workflows.",
+    "type": "video",
+    "source": "Mayank Gupta",
+    "date": "2026-05-20",
+    "duration": "1h 20m",
+    "tags": ["Coding agents", "Amp", "Tools", "Workflow"]
+  },
+  {
+    "id": 18,
+    "title": "Collaborative AI Engineering: One Dev, Two Dozen Agents, Zero Alignment — Maggie Appleton, GitHub",
+    "subtitle": "Maggie Appleton on team alignment and multiplayer agent environments",
+    "url": "https://www.youtube.com/watch?v=ClWD8OEYgp8",
+    "description": "Maggie Appleton argues that coding agents make implementation cheap enough that team alignment becomes the bottleneck. The talk critiques single-player agent workflows and demos ACE, GitHub Next's prototype for shared sessions, cloud computers, previews, terminals, and agent collaboration.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-04-26",
+    "duration": "18m",
+    "tags": ["Coding agents", "Workflow", "Collaboration", "Tools"]
+  },
+  {
+    "id": 17,
+    "title": "The Friction is Your Judgment — Armin Ronacher & Cristina Poncela Cubeiro, Earendil",
+    "subtitle": "Armin Ronacher and Cristina Poncela Cubeiro on useful friction in agentic engineering",
+    "url": "https://www.youtube.com/watch?v=_Zcw_sVF6hU",
+    "description": "Armin Ronacher and Cristina Poncela Cubeiro argue that agentic coding needs the right friction: review checkpoints, modular codebases, deterministic rules, and human callouts for architecture, permissions, migrations, dependencies, and reliability decisions.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-04-18",
+    "duration": "19m",
+    "tags": ["Coding agents", "Workflow", "Practices", "Architecture"]
+  },
+  {
+    "id": 16,
+    "title": "Amp Code Founder on future of Coding Agents",
+    "subtitle": "Quinn Slack on Amp, Sourcegraph, and the business of frontier coding agents",
+    "url": "https://www.youtube.com/watch?v=_L8xxUXOTk0",
+    "description": "Quinn Slack explains why Amp split from Sourcegraph's enterprise motion, why it targets frontier users instead of every developer seat, how model-lab subscriptions reshape coding-agent economics, and why AI pressure may disrupt traditional SaaS assumptions.",
+    "type": "video",
+    "source": "Mayank Gupta",
+    "date": "2026-04-02",
+    "duration": "1h 9m",
+    "tags": ["Coding agents", "Amp", "Business", "Enterprise"]
+  },
+  {
+    "id": 15,
+    "title": "Pi Agent Creator on future of Agentic Coding",
+    "subtitle": "Mario Zechner on Pi, open agent harnesses, and developer control",
+    "url": "https://www.youtube.com/watch?v=PZ-sko1NWa0",
+    "description": "Mario Zechner explains why Pi stays minimal, open, and extensible; how its TUI and extension model let users shape their own agent workflows; and why human architecture, review, and open ecosystems still matter when coding agents can generate code quickly.",
+    "type": "video",
+    "source": "Mayank Gupta",
+    "date": "2026-03-28",
+    "duration": "1h 31m",
+    "tags": ["Coding agents", "Tools", "Workflow", "Open source"]
+  },
+  {
     "id": 14,
     "title": "Simon Willison: Engineering practices that make coding agents work",
     "subtitle": "Simon Willison on TDD, verification, sandboxing, and agentic engineering",
