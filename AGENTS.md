@@ -75,6 +75,8 @@ X-only livestreams or broadcasts do not need transcript sidecars. If an entry in
 3. After the final regeneration for a video, do an editorial transcript pass only when needed. Fix obvious source-faithful auto-caption issues: names, product/model casing, obvious substitutions, punctuation that changes meaning, and stray caption markers. Do not rewrite or editorialize the transcript.
 4. For a summary request, read the saved transcript and write/update the public summary by hand as normal content work. Update `src/data/resources/coding-with-agents.json` only if a new resource manifest entry is needed.
 
+When reviewing or updating transcript-backed summaries, compare the summary against the transcript before editing. Fix copied-forward episode content, placeholder summaries, unsupported claims, wrong speaker/name/model attributions, and misleading timestamp citations. Prefer concise timestamped bullets for the main transcript-backed themes. Keep external bio/context claims only when they are present in the transcript or already trusted in the resource manifest.
+
 Store committed transcripts under `src/content/transcripts/**` using the same relative slug as the matching summary. Example:
 
 ```text
