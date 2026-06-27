@@ -61,12 +61,16 @@ Important routes:
 
 ### YouTube transcript workflow
 
-Trigger this workflow when the user provides a YouTube video link/title, asks for a video summary, or asks to backfill resource data:
+Use this workflow when the user provides a YouTube video link/title or asks for a video summary.
 
-1. Fetch and save the transcript first.
-2. Review the saved transcript for obvious auto-caption issues before summarizing. Keep fixes small and source-faithful: names, product/model casing, obvious substitutions, punctuation that changes meaning, and stray caption markers. Do not rewrite or editorialize the transcript.
-3. Create or update the summary from the reviewed transcript.
-4. Create or update the resource manifest entry if needed.
+1. For a new YouTube video, save a transcript sidecar first:
+
+   ```sh
+   npm run youtube:transcript -- <youtube-url> --summary-slug <relative-summary-slug> --title "<video title>"
+   ```
+
+2. For a summary request, read the saved transcript and write/update the public summary by hand as normal content work. Update `src/data/resources/coding-with-agents.json` only if a new resource manifest entry is needed.
+3. Before summarizing, skim the saved transcript and fix only obvious source-faithful auto-caption issues: names, product/model casing, obvious substitutions, punctuation that changes meaning, and stray caption markers. Do not rewrite or editorialize the transcript.
 
 Store committed transcripts under `src/content/transcripts/**` using the same relative slug as the matching summary. Example:
 
@@ -75,9 +79,9 @@ src/content/summaries/coding-with-agents/raising-an-agent-episode-9.md
 src/content/transcripts/coding-with-agents/raising-an-agent-episode-9.md
 ```
 
-Transcript files must use this frontmatter contract: `title`, `resourceId`, `summarySlug`, `sourceUrl`, `videoId`, `capturedAt`, and optional `series`, `episode`, `channel`, `language`, `kind`, `durationSeconds`, `timestampMode`, and `chunkSeconds`. Prefer coarse timestamped chunks over per-caption timestamps for readability; use exact segment timestamps only when needed. Do not store transcripts under `src/content/summaries/**`, because those files are rendered as summaries.
+Transcript files must use this frontmatter contract: `title`, `summarySlug`, `sourceUrl`, `videoId`, `capturedAt`, and optional `series`, `episode`, `channel`, `language`, `kind`, and `durationSeconds`. Body text should live under `## Transcript` and use coarse timestamped chunks such as `[00:01:00] text...`; the timestamps are source anchors for checking and summary citations, not per-caption timing. Do not store transcripts under `src/content/summaries/**`, because those files are rendered as summaries.
 
-For new YouTube resources, follow: **YouTube link + title → saved transcript → transcript review/fixes → saved summary → resource manifest update**. For existing YouTube resources, backfill any missing transcript file before regenerating or rewriting its summary. Use `.agents/scripts/youtube-transcript-prefill.mjs` for local fetch/prefill/backfill/review workflow support.
+Do not create long-lived draft, review, or apply artifacts for summaries. Keep transcript capture scripted; keep summary writing as explicit agent/human editorial work from the saved transcript.
 
 ## Deployment Notes
 

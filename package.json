@@ -9,7 +9,7 @@
     "build": "astro build",
     "astro": "astro",
     "check": "astro check",
-    "youtube:prefill": "node .agents/scripts/youtube-transcript-prefill.mjs",
+    "youtube:transcript": "node .agents/scripts/save-youtube-transcript.mjs",
     "lint": "biome lint --write .",
     "lint:fix": "biome check --write ."
   },
