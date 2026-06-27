@@ -1,5 +1,17 @@
 [
   {
+    "id": 13,
+    "title": "A love letter to Pi | Lucas Meijer",
+    "subtitle": "Lucas Meijer on Pi, context management, and evaluating agent work",
+    "url": "https://www.youtube.com/watch?v=fdbXNWkpPMY",
+    "description": "Lucas Meijer shares practical habits for agent-assisted software engineering, from asking agents for HTML reports and making repositories easier to navigate, to defining evaluation criteria before a run and requesting videos, screenshots, and slide decks that make review faster. The talk becomes a hands-on Pi demo focused on tree-shaped context management, throwing away unhelpful side quests, custom slash-command extensions, virtual-terminal visibility for long-running tools, and self-modifying software that can adapt to the user's current task.",
+    "type": "video",
+    "source": "Build Monumental",
+    "date": "2026-03-25",
+    "duration": "27m",
+    "tags": ["Coding agents", "Workflow", "Tools", "Practices"]
+  },
+  {
     "id": 12,
     "title": "I Hated Every Coding Agent, So I Built My Own — Mario Zechner (Pi)",
     "subtitle": "Mario Zechner on why Pi strips coding agents down to a malleable core",
