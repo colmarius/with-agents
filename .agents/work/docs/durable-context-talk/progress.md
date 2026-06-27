@@ -132,3 +132,39 @@ Do not create the public post yet. First, align the talk's emphasis with the use
 ## Updated Next Action
 
 - Commit the direct-link-only publish change, push to `origin/main`, and confirm deployment status if available.
+
+## 2026-06-27 Source-Backed Article Upgrade
+
+- User feedback: the post/articles felt outdated and too simplistic; requested review and improvement of `src/content/posts/durable-context-coding-agents.md` against transcripts/summaries, with high-level visual slides as a separate later step.
+- Reused the existing work item instead of creating a duplicate.
+- Reviewed the current post and relevant local transcript-backed summaries/transcripts, especially:
+  - Simon Willison on proof-oriented coding-agent practice, red-green TDD, manual verification, scaffolds, sandboxing, and fake data.
+  - Maggie Appleton on implementation becoming cheap while alignment becomes the bottleneck.
+  - Armin Ronacher and Cristina Poncela Cubeiro on good friction, review overload, and codebase-as-agent-infrastructure.
+  - Mario Zechner/Pi on deterministic checks beating instructions alone, risk-based oversight, and keeping diffs smaller through review.
+  - Thorsten Ball on harness minimalism and the next problem being agent coordination/work preservation.
+  - Build Crew episode 7 on small focused threads, handoffs, research-to-implementation funnels, and markdown-first planning.
+- Consulted Oracle for an editorial upgrade plan. Recommendation: keep **map → procedure → state → evidence**, but reframe the article around current agent bottlenecks: alignment, coordination debt, proof stacks, good friction, context hygiene, and codebase structure as agent infrastructure.
+- Updated `research.md` with a 2026-06-27 revision source pass capturing the stronger insights and editorial implications.
+- Rewrote the post into 12 slide-aware `##` sections:
+  1. Your repo is the agent’s operating memory
+  2. Code got cheap; alignment got expensive
+  3. The model brings patterns, not your local truth
+  4. The debt is work nobody can reconstruct
+  5. Durable context is a control loop, not a document pile
+  6. Map: make project truth easy to find
+  7. Procedure: package workflows, not preferences
+  8. State: keep work alive across threads
+  9. Evidence: make the agent prove the work
+  10. Friction: route judgment to humans
+  11. Shape the codebase so agents can stay inside the lines
+  12. Start with one task, then promote what helped
+- Updated `plan.md` with Task 8 for this source-backed article upgrade and Task 9 for the separate high-level visual slide pass.
+- Verification:
+  - `rg -c '^## ' src/content/posts/durable-context-coding-agents.md` → 12
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed.
+
+## Updated Next Action
+
+- Review the upgraded direct-link post as the new article base. In a separate step, do Task 9: convert the 12-section article into a high-level visual slide pass with less text per slide and clearer visual metaphors.

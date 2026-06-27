@@ -18,6 +18,29 @@ The gist's "OpenAI memo / Agents Captain / say no to slop" point is now sourced 
 - Possible later code needs are presenter notes, slide-only/post-only content, or a generated title slide. Defer these until the content proves they are necessary.
 - Oracle stress-test recommendation: keep one memorable argument rather than a source-heavy tool tour. Use **map → procedure → state → evidence** as the practical spine, add one concrete running example, and target 10 content slides plus Q&A buffer.
 
+## 2026-06-27 Revision Source Pass
+
+The first public/direct-link draft was clear but too introductory. A source-backed upgrade should keep the **map → procedure → state → evidence** loop, but reframe the problem around current agent workflows: implementation got cheaper, while alignment, context hygiene, proof, and human judgment became the bottleneck.
+
+### Stronger insights to integrate
+
+- **Alignment is the new bottleneck:** Maggie Appleton’s collaborative AI engineering talk argues that agent speed pushes planning and alignment too late. If a local agent plan becomes a PR in minutes, the PR becomes the first shared checkpoint and teams accumulate coordination debt. Use this to strengthen the opening and expand beyond individual comprehension debt.
+- **Generation outpaces review:** Armin Ronacher and Cristina Poncela Cubeiro frame “friction” as judgment. Agents amplify code production while humans still carry responsibility, so durable context should route risky decisions to humans rather than remove every pause.
+- **Proof beats trust:** Simon Willison’s engineering-practices discussion supports a stronger evidence section: red-green TDD, running the service, exercising APIs with `curl`, browser/screenshot checks, conformance suites, sandboxing, and fake data where private data or tool execution is involved.
+- **Deterministic checks beat instructions alone:** Mario Zechner’s Pi/OpenClaw workflow shows that `AGENTS.md` guidance helps, but linters, typecheckers, smoke tests, pre-commit hooks, and similar checks are the durable rails that actually reject bad output.
+- **Context hygiene is state management:** Build Crew episode 7 adds operational detail for the state section: small focused threads, handoffs, research versus implementation modes, wide critique/report phases, and narrow surgical implementation threads.
+- **Codebase structure is context:** The Ronacher/Poncela and Willison material both support the idea that module boundaries, visible flow, simple cores, examples, scaffolds, fixtures, and fast tests are agent infrastructure, not just human DX.
+- **Harness minimalism:** Thorsten Ball’s “LLMs are killing Agent Harness” talk supports de-emphasizing tool taxonomy. As models improve, simple tools plus good context often beat elaborate harness layers; the next challenge is preserving and coordinating agent work.
+
+### Editorial implications
+
+- Lead with “code got cheap; alignment got expensive” before returning to “models know patterns, not local truth.”
+- Expand the failure mode from **comprehension debt** to **comprehension + coordination debt**.
+- Keep `AGENTS.md`, skills, work items, and checks as examples of the loop, not as a tool tour.
+- Add sections for **good friction** and **codebase as agent infrastructure**.
+- Compress the self-referential running example into the state section rather than giving it a whole slide.
+- Keep the post at 10-12 `##` sections so it remains a high-level slide base.
+
 ## Evidence
 
 ### Input gist

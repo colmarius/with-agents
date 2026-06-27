@@ -82,6 +82,28 @@ Create a post that doubles as a slide deck for a 20-minute presentation about du
     - `index.md` status and next action reflect whether the post remains draft or is ready to publish.
   - Notes: Run `npm run lint:fix` if formatting changes are needed.
 
+- [x] **Task 8: Source-backed article upgrade for a stronger slide base**
+  - Scope: `src/content/posts/durable-context-coding-agents.md`, `.agents/work/docs/durable-context-talk/research.md`, `.agents/work/docs/durable-context-talk/progress.md`
+  - Depends on: User feedback that the post/articles felt outdated and too simplistic
+  - Acceptance:
+    - Existing transcript-backed summaries are reviewed for stronger current insights before editing.
+    - Oracle reviews the current post and recommends a revised narrative/slide structure.
+    - The post remains slide-aware with 10-12 `##` sections.
+    - The revised post expands beyond basic `AGENTS.md` / skills / work-item taxonomy into alignment debt, context hygiene, proof stacks, good friction, and codebase-as-agent-infrastructure.
+    - Work-item research/progress capture the learnings and next step for high-level visual slides.
+    - `npm run check` and `npm run build` pass after the content edit.
+  - Notes: Completed on 2026-06-27 as a direct-link article revision. The next separate step is a high-level visual slide pass, not more article expansion.
+
+- [ ] **Task 9: High-level visual slide pass**
+  - Scope: `src/content/posts/durable-context-coding-agents.md`, optionally slide-specific rendering/content support only if proven necessary
+  - Depends on: Task 8
+  - Acceptance:
+    - Each `##` section has a compact slide takeaway and candidate visual metaphor.
+    - Dense article prose is either summarized for slides or moved to speaker/article detail if the slide renderer supports it later.
+    - The deck reads as high-level visuals first, text second.
+    - Any slide-system code change is scoped separately and only added if Markdown authoring cannot produce the needed presentation quality.
+  - Notes: Do this in a separate step after reviewing the upgraded article base.
+
 ## Implementation Notes
 
 - Keep the initial work content-first. Do not change code just to support hypothetical presentation features.
