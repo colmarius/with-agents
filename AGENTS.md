@@ -64,8 +64,9 @@ Important routes:
 Trigger this workflow when the user provides a YouTube video link/title, asks for a video summary, or asks to backfill resource data:
 
 1. Fetch and save the transcript first.
-2. Create or update the summary from the saved transcript.
-3. Create or update the resource manifest entry if needed.
+2. Review the saved transcript for obvious auto-caption issues before summarizing. Keep fixes small and source-faithful: names, product/model casing, obvious substitutions, punctuation that changes meaning, and stray caption markers. Do not rewrite or editorialize the transcript.
+3. Create or update the summary from the reviewed transcript.
+4. Create or update the resource manifest entry if needed.
 
 Store committed transcripts under `src/content/transcripts/**` using the same relative slug as the matching summary. Example:
 
@@ -74,9 +75,9 @@ src/content/summaries/coding-with-agents/raising-an-agent-episode-9.md
 src/content/transcripts/coding-with-agents/raising-an-agent-episode-9.md
 ```
 
-Transcript files must use this frontmatter contract: `title`, `resourceId`, `summarySlug`, `sourceUrl`, `videoId`, `capturedAt`, and optional `series`, `episode`, `channel`, `language`, `kind`, and `durationSeconds`. Preserve timestamps in the transcript body when available. Do not store transcripts under `src/content/summaries/**`, because those files are rendered as summaries.
+Transcript files must use this frontmatter contract: `title`, `resourceId`, `summarySlug`, `sourceUrl`, `videoId`, `capturedAt`, and optional `series`, `episode`, `channel`, `language`, `kind`, `durationSeconds`, `timestampMode`, and `chunkSeconds`. Prefer coarse timestamped chunks over per-caption timestamps for readability; use exact segment timestamps only when needed. Do not store transcripts under `src/content/summaries/**`, because those files are rendered as summaries.
 
-For new YouTube resources, follow: **YouTube link + title → saved transcript → saved summary → resource manifest update**. For existing YouTube resources, backfill any missing transcript file before regenerating or rewriting its summary. Until the transcript tooling is implemented, use `.agents/work/feature/youtube-transcript-summary-prefill/` as the active plan and tracking item.
+For new YouTube resources, follow: **YouTube link + title → saved transcript → transcript review/fixes → saved summary → resource manifest update**. For existing YouTube resources, backfill any missing transcript file before regenerating or rewriting its summary. Use `.agents/scripts/youtube-transcript-prefill.mjs` for local fetch/prefill/backfill/review workflow support.
 
 ## Deployment Notes
 

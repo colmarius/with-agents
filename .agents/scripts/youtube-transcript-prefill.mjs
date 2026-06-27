@@ -18,6 +18,10 @@ const draftsDir = path.join(
   rootDir,
   '.agents/work/feature/youtube-transcript-summary-prefill/drafts',
 );
+const transcriptReviewsDir = path.join(
+  rootDir,
+  '.agents/work/feature/youtube-transcript-summary-prefill/transcript-reviews',
+);
 
 const defaultUserAgent =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36';
@@ -26,12 +30,15 @@ const usage = `Usage:
   node .agents/scripts/youtube-transcript-prefill.mjs fetch <youtube-url> [options]
   node .agents/scripts/youtube-transcript-prefill.mjs prefill <youtube-url> [options]
   node .agents/scripts/youtube-transcript-prefill.mjs backfill [options]
+  node .agents/scripts/youtube-transcript-prefill.mjs review <transcript-path-or-slug> [options]
 
 Commands:
   fetch     Print normalized metadata and transcript availability for one URL.
   prefill   Fetch transcript, write src/content/transcripts/<summary-slug>.md,
             then write a non-published draft bundle under the work item.
   backfill  Audit existing summaries/resources and write missing transcript sidecars.
+  review    Create a non-published transcript review checklist with likely ASR
+            typos/issues to check before writing or publishing a summary.
 
 Options:
   --summary-slug <slug>  Relative summary slug, e.g. coding-with-agents/example.
@@ -46,6 +53,11 @@ Options:
   --lang <code>          Caption language to request. Default: en.
   --tags <csv>           Draft resource tags. Default: Coding agents,Workflow.
   --delay-ms <number>    Backfill delay between fetches. Default: 500.
+  --timestamp-mode <mode> Transcript body format: chunk, segment, or none.
+                         Default: chunk. Use segment for exact caption timing.
+  --chunk-seconds <num>  Approximate seconds per timestamped chunk. Default: 30.
+  --all                  For review, scan all transcript markdown files.
+  --max-findings <num>   For review, cap automated findings. Default: 200.
   --dry-run              Audit/compute paths without writing files.
   --force                Overwrite existing transcript/draft files.
   --no-draft             For prefill, write transcript only.
@@ -59,6 +71,7 @@ Notes:
 `;
 
 const booleanOptions = new Set([
+  'all',
   'dry-run',
   'force',
   'help',
@@ -70,6 +83,8 @@ const optionAliases = new Map([['h', 'help']]);
 
 const okExit = 0;
 const transcriptUnavailableExit = 2;
+const defaultTimestampMode = 'chunk';
+const defaultChunkSeconds = 30;
 
 const parseArgs = (argv) => {
   const [command = 'help', ...rest] = argv;
@@ -297,8 +312,93 @@ const normalizeTranscriptSegments = (segments) =>
     }))
     .filter((segment) => segment.text.length > 0);
 
-const transcriptLines = (segments) =>
-  segments.map((segment) => `[${timestamp(segment.offset)}] ${segment.text}`);
+const normalizeTimestampMode = (mode) => {
+  const normalized = String(mode ?? defaultTimestampMode).toLowerCase();
+  if (['chunk', 'segment', 'none'].includes(normalized)) {
+    return normalized;
+  }
+
+  throw new Error(
+    `Invalid --timestamp-mode ${mode}. Expected chunk, segment, or none.`,
+  );
+};
+
+const parseChunkSeconds = (value) => {
+  const seconds = Number(value ?? defaultChunkSeconds);
+  if (!Number.isFinite(seconds) || seconds < 10) {
+    throw new Error(
+      '--chunk-seconds must be a number greater than or equal to 10.',
+    );
+  }
+
+  return seconds;
+};
+
+const parseTranscriptFormatOptions = (options) => ({
+  timestampMode: normalizeTimestampMode(options['timestamp-mode']),
+  chunkSeconds: parseChunkSeconds(options['chunk-seconds']),
+});
+
+const transcriptText = (segments) =>
+  cleanText(segments.map((segment) => segment.text).join(' '));
+
+const shouldCloseTranscriptChunk = (chunkStart, segment, chunkSeconds) => {
+  const elapsed = segment.offset - chunkStart;
+  const hasSoftBoundary = /[.!?]["')\]]?$/.test(segment.text);
+
+  return (
+    elapsed >= chunkSeconds ||
+    (elapsed >= chunkSeconds * 0.75 && hasSoftBoundary)
+  );
+};
+
+const chunkTranscriptSegments = (segments, chunkSeconds) => {
+  const chunks = [];
+  let current = [];
+  let currentOffset = 0;
+
+  for (const segment of segments) {
+    if (current.length === 0) {
+      currentOffset = segment.offset;
+    }
+
+    current.push(segment);
+
+    if (shouldCloseTranscriptChunk(currentOffset, segment, chunkSeconds)) {
+      chunks.push({ offset: currentOffset, text: transcriptText(current) });
+      current = [];
+    }
+  }
+
+  if (current.length > 0) {
+    chunks.push({ offset: currentOffset, text: transcriptText(current) });
+  }
+
+  return chunks;
+};
+
+const transcriptLines = (
+  segments,
+  {
+    timestampMode = defaultTimestampMode,
+    chunkSeconds = defaultChunkSeconds,
+  } = {},
+) => {
+  const mode = normalizeTimestampMode(timestampMode);
+
+  if (mode === 'segment') {
+    return segments.map(
+      (segment) => `[${timestamp(segment.offset)}] ${segment.text}`,
+    );
+  }
+
+  const chunks = chunkTranscriptSegments(segments, chunkSeconds);
+  if (mode === 'none') {
+    return chunks.map((chunk) => chunk.text);
+  }
+
+  return chunks.map((chunk) => `[${timestamp(chunk.offset)}] ${chunk.text}`);
+};
 
 const fetchOembedMetadata = async (canonicalUrl) => {
   const url = new URL('https://www.youtube.com/oembed');
@@ -470,6 +570,8 @@ const renderTranscriptMarkdown = ({
   language,
   kind,
   durationSeconds,
+  timestampMode,
+  chunkSeconds,
   segments,
 }) => {
   if (segments.length === 0) {
@@ -489,9 +591,17 @@ const renderTranscriptMarkdown = ({
     ['language', language],
     ['kind', kind],
     ['durationSeconds', durationSeconds],
+    ['timestampMode', timestampMode],
+    ['chunkSeconds', timestampMode === 'chunk' ? chunkSeconds : undefined],
   ]);
 
-  return `---\n${frontmatter}\n---\n\n## Transcript\n\n${transcriptLines(segments).join('\n')}\n`;
+  return `---\n${frontmatter}\n---\n\n## Transcript\n\n${transcriptLines(
+    segments,
+    {
+      timestampMode,
+      chunkSeconds,
+    },
+  ).join('\n\n')}\n`;
 };
 
 const parseScalar = (value) => {
@@ -664,7 +774,7 @@ const makeDraftBundle = async ({
     ['date', date ?? metadata.publishDate ?? generatedAt.slice(0, 10)],
   ]);
 
-  const summaryDraft = `---\n${summaryFrontmatter}\n---\n\n# Draft summary for review\n\n> Draft generated from saved transcript source material. Do not publish without human/agent review.\n\n## Provenance\n\n- Source URL: <${sourceUrl}>\n- Video ID: \`${videoId}\`\n- Transcript path: \`${transcriptRelative}\`\n- Transcript availability: available\n- Transcript language: ${language ?? 'unknown'}\n- Transcript kind: ${kind ?? 'unknown'}\n- Transcript lines: ${lines.length}\n- Resource draft: \`${resourceDraftFilename}\` (${resourceDraftKind})\n- Generated at: ${generatedAt}\n\n## Reviewer prompt\n\nUse the saved transcript at \`${transcriptRelative}\` to write a concise resource summary compatible with \`src/content.config.ts\`. Preserve the frontmatter above, replace this draft body with reviewed summary content, and do not publish raw or unreviewed AI output.\n\n## Transcript excerpts\n\n### Opening\n\n${lines
+  const summaryDraft = `---\n${summaryFrontmatter}\n---\n\n# Draft summary for review\n\n> Draft generated from saved transcript source material. Do not publish without human/agent review.\n\n## Provenance\n\n- Source URL: <${sourceUrl}>\n- Video ID: \`${videoId}\`\n- Transcript path: \`${transcriptRelative}\`\n- Transcript availability: available\n- Transcript language: ${language ?? 'unknown'}\n- Transcript kind: ${kind ?? 'unknown'}\n- Transcript blocks: ${lines.length}\n- Resource draft: \`${resourceDraftFilename}\` (${resourceDraftKind})\n- Generated at: ${generatedAt}\n\n## Reviewer prompt\n\nUse the saved transcript at \`${transcriptRelative}\` to write a concise resource summary compatible with \`src/content.config.ts\`. First run or read the transcript review packet when available, preserve the frontmatter above, replace this draft body with reviewed summary content, and do not publish raw or unreviewed AI output.\n\n## Transcript excerpts\n\n### Opening\n\n${lines
     .slice(0, 8)
     .map((line) => `> ${line}`)
     .join('\n')}\n\n### Closing\n\n${lines
@@ -680,7 +790,7 @@ const makeDraftBundle = async ({
     resourceId,
     transcriptPath: transcriptRelative,
     transcriptAvailable: true,
-    transcriptLineCount: lines.length,
+    transcriptBlockCount: lines.length,
     language,
     kind,
     resourceDraftKind,
@@ -751,6 +861,7 @@ const writeTranscript = async ({ context, options }) => {
   } = context;
   const transcriptPath = safeContentPath(transcriptsDir, summarySlug);
   const metadata = fetched.metadata;
+  const transcriptFormat = parseTranscriptFormatOptions(options);
   const markdown = renderTranscriptMarkdown({
     title,
     resourceId,
@@ -764,6 +875,7 @@ const writeTranscript = async ({ context, options }) => {
     language: fetched.language,
     kind: fetched.kind,
     durationSeconds: metadata.durationSeconds,
+    ...transcriptFormat,
     segments: fetched.segments,
   });
 
@@ -833,6 +945,7 @@ const humanPrefillResult = (payload) => {
 
 const runFetch = async (inputUrl, options) => {
   const fetched = await fetchVideo(inputUrl, options);
+  const transcriptFormat = parseTranscriptFormatOptions(options);
   const payload = {
     videoId: fetched.metadata.videoId,
     canonicalUrl: fetched.metadata.canonicalUrl,
@@ -845,8 +958,13 @@ const runFetch = async (inputUrl, options) => {
     transcriptUnavailable: fetched.transcriptUnavailable,
     transcriptSegments: fetched.segments.length,
     transcriptText: fetched.transcriptAvailable
-      ? transcriptLines(fetched.segments).join('\n')
+      ? transcriptLines(fetched.segments, transcriptFormat).join('\n\n')
       : undefined,
+    timestampMode: transcriptFormat.timestampMode,
+    chunkSeconds:
+      transcriptFormat.timestampMode === 'chunk'
+        ? transcriptFormat.chunkSeconds
+        : undefined,
   };
 
   if (options.json) {
@@ -1136,6 +1254,250 @@ const humanBackfillResult = ({ targets = [], skipped = [], counts }) => {
   return lines.join('\n');
 };
 
+const reviewRules = [
+  {
+    id: 'possible-agents-as-asians',
+    label: 'Possible ASR substitution: agents → Asians',
+    pattern: /\basians\b/gi,
+    suggestion: 'Check whether this should be “agents”.',
+  },
+  {
+    id: 'one-on-one-spacing',
+    label: 'Missing hyphens/spaces',
+    pattern: /\boneonone\b/gi,
+    suggestion: 'Likely “one-on-one”.',
+  },
+  {
+    id: 'windurf',
+    label: 'Possible product-name typo',
+    pattern: /\bwindurf\b/gi,
+    suggestion: 'Likely “Windsurf”.',
+  },
+  {
+    id: 'agentic-as-gentic',
+    label: 'Possible ASR substitution',
+    pattern: /\bgentic\b/gi,
+    suggestion: 'Likely “agentic”.',
+  },
+  {
+    id: 'opus-decimal',
+    label: 'Possible model-name formatting',
+    pattern: /\bopus\s+45\b/gi,
+    suggestion: 'Check whether this should be “Opus 4.5”.',
+  },
+  {
+    id: 'thorsten-name',
+    label: 'Possible speaker-name typo',
+    pattern: /\bthorston\b/gi,
+    suggestion: 'Likely “Thorsten”.',
+  },
+  {
+    id: 'redacted-or-inaudible-marker',
+    label: 'Caption marker needs review',
+    pattern: /\[\s*_{2,}\s*\]/gi,
+    suggestion:
+      'Check the audio; replace with the heard word or mark as inaudible.',
+  },
+  {
+    id: 'noise-marker',
+    label: 'Noise/music marker',
+    pattern: /\[(music|laughter|applause)\]/gi,
+    suggestion: 'Keep only if it helps interpret the discussion.',
+  },
+];
+
+const timestampedLinePattern = /^\[(\d\d:\d\d:\d\d)\]\s*(.*)$/;
+
+const stripFrontmatter = (content) =>
+  content.replace(/^---\n[\s\S]*?\n---\n?/, '');
+
+const transcriptBody = (content) => {
+  const body = stripFrontmatter(content);
+  const marker = body.match(/## Transcript\s*\n/i);
+
+  if (!marker || marker.index === undefined) {
+    return body.trim();
+  }
+
+  return body.slice(marker.index + marker[0].length).trim();
+};
+
+const reviewSlugFromTranscriptPath = (filePath) =>
+  toPosixPath(path.relative(transcriptsDir, filePath)).replace(/\.md$/, '');
+
+const resolveTranscriptPath = async (input) => {
+  if (!input) {
+    throw new Error('Missing transcript path or summary slug for review.');
+  }
+
+  const directPath = path.resolve(rootDir, input);
+  if (
+    directPath.startsWith(`${rootDir}${path.sep}`) &&
+    (await fileExists(directPath))
+  ) {
+    return directPath;
+  }
+
+  return safeContentPath(transcriptsDir, input);
+};
+
+const escapeMarkdownTableCell = (value) =>
+  String(value ?? '')
+    .replace(/\|/g, '\\|')
+    .replace(/\n/g, ' ');
+
+const excerptForLine = (line, matchIndex, matchLength) => {
+  const start = Math.max(0, matchIndex - 70);
+  const end = Math.min(line.length, matchIndex + matchLength + 90);
+  const prefix = start > 0 ? '…' : '';
+  const suffix = end < line.length ? '…' : '';
+
+  return `${prefix}${line.slice(start, end)}${suffix}`;
+};
+
+const collectReviewFindings = (content, maxFindings) => {
+  const lines = content.split('\n');
+  const findings = [];
+
+  for (const [lineIndex, line] of lines.entries()) {
+    for (const rule of reviewRules) {
+      const pattern = new RegExp(rule.pattern.source, rule.pattern.flags);
+      for (const match of line.matchAll(pattern)) {
+        const timestampMatch = line.match(timestampedLinePattern);
+        findings.push({
+          ruleId: rule.id,
+          label: rule.label,
+          suggestion: rule.suggestion,
+          lineNumber: lineIndex + 1,
+          timestamp: timestampMatch?.[1],
+          match: match[0],
+          excerpt: excerptForLine(line, match.index ?? 0, match[0].length),
+        });
+
+        if (findings.length >= maxFindings) {
+          return findings;
+        }
+      }
+    }
+  }
+
+  return findings;
+};
+
+const transcriptBlocksFromContent = (content) => {
+  const body = transcriptBody(content);
+  const timestamped = body
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => timestampedLinePattern.test(line));
+
+  if (timestamped.length > 0) {
+    return timestamped;
+  }
+
+  return body
+    .split(/\n{2,}/)
+    .map((block) => cleanText(block))
+    .filter(Boolean);
+};
+
+const renderReviewMarkdown = ({
+  transcriptPath,
+  summarySlug,
+  frontmatter,
+  findings,
+  generatedAt,
+  maxFindings,
+  blockCount,
+}) => {
+  const transcriptRelative = repoRelative(transcriptPath);
+  const title = frontmatter.title ?? summarySlug;
+  const status = findings.length > 0 ? 'needs-review' : 'ready-for-skim';
+  const findingRows = findings
+    .map(
+      (finding) =>
+        `| ${finding.lineNumber} | ${finding.timestamp ?? '—'} | ${escapeMarkdownTableCell(finding.label)} | ${escapeMarkdownTableCell(finding.suggestion)} | ${escapeMarkdownTableCell(finding.excerpt)} |`,
+    )
+    .join('\n');
+  const findingsSection =
+    findings.length > 0
+      ? `| Line | Time | Issue | Suggested check | Excerpt |\n| --- | --- | --- | --- | --- |\n${findingRows}`
+      : 'No automated findings. Still skim the transcript before using it as source material.';
+  const truncatedNote =
+    findings.length >= maxFindings
+      ? `\n\n> Automated findings were capped at ${maxFindings}; rerun with --max-findings for more.`
+      : '';
+
+  return `# Transcript Review: ${title}\n\nStatus: ${status}\nGenerated: ${generatedAt}\nTranscript: \`${transcriptRelative}\`\nSummary slug: \`${summarySlug}\`\nTranscript blocks: ${blockCount}\nAutomated findings: ${findings.length}${truncatedNote}\n\n## Automated findings\n\n${findingsSection}\n\n## Review workflow\n\n1. Open the transcript sidecar and this review packet together.\n2. For each automated finding, use the nearby timestamp as a coarse video anchor and verify against the audio when the correction is not obvious.\n3. Fix small ASR/caption issues in the transcript only when the intended words are clear: names, product/model casing, obvious substitutions, punctuation that changes meaning, and stray caption markers.\n4. Do not summarize, editorialize, or rewrite speaker meaning in the transcript. If uncertain, leave the original text and note it below.\n5. After edits, rerun this review command and then use the reviewed transcript for the summary draft.\n\n## Corrections log\n\n- [ ] Pending review.\n\n## Notes\n\n- Coarse timestamps are intentionally anchors, not caption-level timing.\n- Keep a raw-video/source check for any correction that changes meaning.\n`;
+};
+
+const reviewTranscriptFile = async (transcriptPath, options) => {
+  const content = await readFile(transcriptPath, 'utf8');
+  const frontmatter = parseFrontmatter(content);
+  const summarySlug =
+    frontmatter.summarySlug ?? reviewSlugFromTranscriptPath(transcriptPath);
+  const reviewPath = path.join(
+    transcriptReviewsDir,
+    normalizeSummarySlug(summarySlug),
+    'review.md',
+  );
+  const maxFindings = Number(options['max-findings'] ?? 200);
+  const findings = collectReviewFindings(content, maxFindings);
+  const blocks = transcriptBlocksFromContent(content);
+  const generatedAt = new Date().toISOString();
+  const markdown = renderReviewMarkdown({
+    transcriptPath,
+    summarySlug,
+    frontmatter,
+    findings,
+    generatedAt,
+    maxFindings,
+    blockCount: blocks.length,
+  });
+  const write = await writeFileExclusive(reviewPath, markdown, {
+    force: Boolean(options.force),
+    dryRun: Boolean(options['dry-run']),
+  });
+
+  return {
+    transcriptPath: repoRelative(transcriptPath),
+    reviewPath: repoRelative(reviewPath),
+    summarySlug,
+    findings: findings.length,
+    status: findings.length > 0 ? 'needs-review' : 'ready-for-skim',
+    written: write.written,
+    dryRun: write.dryRun,
+  };
+};
+
+const runReview = async (input, options) => {
+  const transcriptPaths = options.all
+    ? await listMarkdownFiles(transcriptsDir)
+    : [await resolveTranscriptPath(input)];
+  const results = [];
+
+  for (const transcriptPath of transcriptPaths) {
+    results.push(await reviewTranscriptFile(transcriptPath, options));
+  }
+
+  if (options.json) {
+    print({ results }, options);
+  } else {
+    print(
+      [
+        'Transcript review complete:',
+        ...results.map(
+          (result) =>
+            `- ${result.summarySlug}: ${result.status}, ${result.findings} finding(s), ${result.reviewPath}`,
+        ),
+      ].join('\n'),
+      options,
+    );
+  }
+
+  return okExit;
+};
+
 const main = async () => {
   let parsed;
   try {
@@ -1166,6 +1528,13 @@ const main = async () => {
 
   if (command === 'backfill') {
     return runBackfill(options);
+  }
+
+  if (command === 'review') {
+    if (!positionals[0] && !options.all) {
+      fail('Missing transcript path or summary slug for review.');
+    }
+    return runReview(positionals[0], options);
   }
 
   fail(`Unknown command: ${command}\n\n${usage}`);

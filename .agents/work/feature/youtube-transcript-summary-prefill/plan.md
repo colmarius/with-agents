@@ -7,6 +7,7 @@ Create a local agent-assisted workflow for turning a YouTube video into a review
 - Fetch transcript/caption text and basic metadata from a YouTube URL.
 - Save transcript files under `src/content/transcripts/**`, mirrored to matching summary slugs.
 - Generate draft content aligned with `src/data/resources/coding-with-agents.json` and `src/content/summaries/**`.
+- Generate transcript review packets so obvious auto-caption issues can be checked before writing summaries.
 - Backfill missing transcript files for existing YouTube resources and summaries.
 - Keep publishing safe: drafts first, explicit apply later.
 - Make the workflow usable by agents through a small skill wrapper once the script behavior is stable.
@@ -56,6 +57,15 @@ Create a local agent-assisted workflow for turning a YouTube video into a review
     - Draft output includes enough provenance (source URL, transcript availability, generation date) for review.
     - The command can draft replacements for the placeholder Raising an Agent episode 9 and 10 summaries without publishing them automatically.
   - Notes: The script can generate a summary prompt bundle if no LLM API is added; the agent can then write the final summary from the transcript.
+
+- [x] **Task 3a: Add transcript review workflow**
+  - Scope: `.agents/scripts/`, review artifacts under this work item
+  - Depends on: Task 2
+  - Acceptance:
+    - The command can scan a saved transcript sidecar and write a non-published review packet under `.agents/work/feature/youtube-transcript-summary-prefill/transcript-reviews/**`.
+    - Review packets flag likely ASR/caption issues such as product/name/model typos, obvious substitutions, and noise markers without auto-applying edits.
+    - Summary drafts direct reviewers to check the saved transcript review packet before publishing.
+  - Notes: Keep this as a human/agent review workflow; do not automatically rewrite transcripts from heuristic findings.
 
 - [ ] **Task 4: Add reviewed apply mode**
   - Scope: `src/data/resources/coding-with-agents.json`, `src/content/summaries/**`, and script tests/guards

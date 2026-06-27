@@ -19,11 +19,12 @@ Seed targets after the workflow exists: fill the placeholder summaries for Raisi
 - Script: `.agents/scripts/youtube-transcript-prefill.mjs`
 - Transcript sidecars: `src/content/transcripts/**`
 - Draft bundles: `drafts/**`
+- Transcript review packets: `transcript-reviews/**`
 - Decisions: none
 
 ## Next Action
 
-- Review the draft bundles for Raising an Agent episodes 9 and 10, then write/publish reviewed summary bodies if desired.
+- Review the transcript review packets for Raising an Agent episodes 9 and 10, apply clear transcript fixes, rerun `review`, then write/publish reviewed summary bodies if desired.
 - Decide whether Task 4 apply mode is still needed, or whether draft-first plus manual review is enough for this site.
 - Defer Task 6 skill wrapper until the script interface has been used at least once more.
 
