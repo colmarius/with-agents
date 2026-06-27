@@ -13,6 +13,31 @@ Output:
 - a draft resource JSON object for `src/data/resources/coding-with-agents.json`
 - a draft summary markdown file compatible with `src/content.config.ts`
 
+## Transcript storage contract
+
+Committed transcripts should live under `src/content/transcripts/**`, mirroring the relative slug of the matching summary file:
+
+```text
+src/content/summaries/coding-with-agents/raising-an-agent-episode-9.md
+src/content/transcripts/coding-with-agents/raising-an-agent-episode-9.md
+```
+
+Each transcript markdown file should include:
+
+- `title`: video title
+- `resourceId`: matching resource ID from `src/data/resources/coding-with-agents.json`
+- `summarySlug`: matching summary slug, e.g. `coding-with-agents/raising-an-agent-episode-9`
+- `sourceUrl`: canonical video URL used for the transcript fetch
+- `videoId`: YouTube video ID
+- `capturedAt`: date the transcript was fetched
+- optional `series`, `episode`, `channel`, `language`, `kind`, `durationSeconds`
+
+Body convention:
+
+- Use a heading such as `## Transcript`.
+- Preserve timestamps when available, e.g. `[00:01:23] transcript text`.
+- Keep the transcript as source material; do not summarize or editorialize in the transcript file.
+
 ## Transcript extraction options
 
 1. **Node transcript package**
@@ -58,5 +83,7 @@ Local direct caption fetch notes:
 ## Content schema notes
 
 - Summary files require frontmatter fields from `src/content.config.ts`: `title`, `resourceId`, and optional `series`, `episode`, `date`.
+- Transcript files follow the frontmatter contract documented in `AGENTS.md` and this work item. Do not add an empty Astro `transcripts` collection before transcript files exist, because Astro warns on empty glob collections.
 - Series resources are grouped in `src/components/resources/CodingWithAgents.tsx` by matching `resourceId` and `series`.
 - A safe first version should draft files outside `src/` unless `--apply` is explicitly provided, to avoid accidentally publishing low-quality AI summaries.
+- Once apply mode exists, transcript files should be committed next to summaries by matching slug before summary generation/update.

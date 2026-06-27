@@ -6,7 +6,7 @@ Updated: 2026-06-27
 
 ## Summary
 
-Build a local workflow that takes a YouTube URL, fetches available transcript/caption text plus video metadata, and produces a draft coding-with-agents resource entry and summary markdown for human/agent review. The likely first version should be a repo-local script plus an optional agent skill wrapper, so the transcript fetch and file-prefill mechanics are deterministic while the final summary can still be reviewed by an agent/human before publishing.
+Build a local workflow that takes a YouTube URL, fetches available transcript/caption text plus video metadata, saves a committed transcript under `src/content/transcripts/**`, and produces a draft coding-with-agents resource entry and summary markdown for human/agent review. The likely first version should be a repo-local script plus an optional agent skill wrapper, so the transcript fetch and file-prefill mechanics are deterministic while the final summary can still be reviewed by an agent/human before publishing.
 
 Seed targets after the workflow exists: fill the placeholder summaries for Raising an Agent episodes 9 and 10.
 
@@ -22,6 +22,7 @@ Seed targets after the workflow exists: fill the placeholder summaries for Raisi
 
 - Implement Task 1 in `plan.md`: create the transcript/metadata fetcher and test it against `https://www.youtube.com/watch?v=DPgJjRdQWrg`.
 - After Task 2 is usable, generate reviewed summaries for `https://www.youtube.com/watch?v=2wjnV6F2arc` and `https://www.youtube.com/watch?v=4rx36wc9ugw`.
+- After Task 3 is usable, backfill transcript files for existing YouTube summaries/resources that do not yet have `src/content/transcripts/**` sidecars.
 
 ## Open Questions
 

@@ -23,7 +23,7 @@ Run `npm run check` and `npm run build` after code or content changes. Run `npm 
 ```text
 src/
 ├── components/    # Astro and React components
-├── content/       # Astro content collections (posts, summaries)
+├── content/       # Astro content collections and transcript source files
 ├── data/          # Resource manifests
 ├── hooks/         # React hooks
 ├── layouts/       # Astro layouts
@@ -58,6 +58,25 @@ Important routes:
 - Draft posts must use `draft: true`; production builds should not publish drafts.
 - When adding resources, keep `src/data/resources/coding-with-agents.json` and `src/content/summaries/**` aligned by `resourceId`.
 - Internal links should point only to routes that exist in this repository, unless intentionally linking to an external site.
+
+### YouTube transcript workflow
+
+Trigger this workflow when the user provides a YouTube video link/title, asks for a video summary, or asks to backfill resource data:
+
+1. Fetch and save the transcript first.
+2. Create or update the summary from the saved transcript.
+3. Create or update the resource manifest entry if needed.
+
+Store committed transcripts under `src/content/transcripts/**` using the same relative slug as the matching summary. Example:
+
+```text
+src/content/summaries/coding-with-agents/raising-an-agent-episode-9.md
+src/content/transcripts/coding-with-agents/raising-an-agent-episode-9.md
+```
+
+Transcript files must use this frontmatter contract: `title`, `resourceId`, `summarySlug`, `sourceUrl`, `videoId`, `capturedAt`, and optional `series`, `episode`, `channel`, `language`, `kind`, and `durationSeconds`. Preserve timestamps in the transcript body when available. Do not store transcripts under `src/content/summaries/**`, because those files are rendered as summaries.
+
+For new YouTube resources, follow: **YouTube link + title → saved transcript → saved summary → resource manifest update**. For existing YouTube resources, backfill any missing transcript file before regenerating or rewriting its summary. Until the transcript tooling is implemented, use `.agents/work/feature/youtube-transcript-summary-prefill/` as the active plan and tracking item.
 
 ## Deployment Notes
 
