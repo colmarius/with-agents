@@ -1,5 +1,17 @@
 [
   {
+    "id": 11,
+    "title": "Building Pi, and what makes self-modifying software so fascinating",
+    "subtitle": "Mario Zechner and Armin Ronacher on Pi, agent workflows, and engineering judgment",
+    "url": "https://www.youtube.com/watch?v=n5f51gtuGHE",
+    "description": "Mario Zechner and Armin Ronacher join Gergely Orosz to discuss Pi, a minimalist self-modifying coding agent; what 30 engineering-team interviews reveal about agent adoption; why automation bias, non-engineer code contributions, and agent-generated PRs stress review and open source; and why complexity, deliberate friction, and human judgment still matter in agentic workflows. The episode also compares MCP with CLIs and code execution as tool interfaces.",
+    "type": "video",
+    "source": "The Pragmatic Engineer",
+    "date": "2026-04-29",
+    "duration": "1h 34m",
+    "tags": ["Coding agents", "Workflow", "Tools", "Practices", "Open source"]
+  },
+  {
     "id": 10,
     "title": "Building Pi in a World of Slop — Mario Zechner",
     "subtitle": "Mario Zechner on Pi, self-modifying agents, and agent slop",
