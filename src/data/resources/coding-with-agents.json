@@ -1,5 +1,17 @@
 [
   {
+    "id": 10,
+    "title": "Building Pi in a World of Slop — Mario Zechner",
+    "subtitle": "Mario Zechner on Pi, self-modifying agents, and agent slop",
+    "url": "https://www.youtube.com/watch?v=RjfbvDXpFls",
+    "description": "Mario Zechner explains why he built Pi as a minimal, self-modifying coding-agent harness after frustrations with opaque context management and feature-heavy tooling. The talk covers Pi's small core and extension model, Terminal-Bench results, agent spam pressure on open-source maintainers, and a practical warning to slow down, scope agent tasks, and keep humans responsible for critical code.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-04-16",
+    "duration": "18m",
+    "tags": ["Coding agents", "Tools", "Workflow", "Open source"]
+  },
+  {
     "id": 9,
     "title": "Pi Building Pi, OpenClaw's Minimalist Coding Agent",
     "subtitle": "Mario Zechner on building and using Pi",
