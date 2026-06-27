@@ -1,23 +1,15 @@
-# Transcript Review: Raising An Agent Episode - Episode 10
+# Transcript Review: Raising an Agent Episode 10
 
-Status: needs-review
-Generated: 2026-06-27T15:46:49.616Z
+Status: ready-for-skim
+Generated: 2026-06-27T16:03:50.565Z
 Transcript: `src/content/transcripts/coding-with-agents/raising-an-agent-episode-10.md`
 Summary slug: `coding-with-agents/raising-an-agent-episode-10`
 Transcript blocks: 103
-Automated findings: 7
+Automated findings: 0
 
 ## Automated findings
 
-| Line | Time | Issue | Suggested check | Excerpt |
-| --- | --- | --- | --- | --- |
-| 24 | 00:00:55 | Possible speaker-name typo | Likely “Thorsten”. | …t episode 10. I'm Torston and here with me is Quinn. Hi Quinn. >> Hey Thorston. All right. Uh we shipped deep mode. There's a lot more stuff coming, but how have you be… |
-| 24 | 00:00:55 | Noise/music marker | Keep only if it helps interpret the discussion. | [00:00:55] [music] >> Hello and welcome to Raising an Agent episode 10. I'm Torston and here with me is Quin… |
-| 26 | 00:01:30 | Possible model-name formatting | Check whether this should be “Opus 4.5”. | [00:01:30] main mode with Opus 45 right now. Uh rush mode which uses a really fast model. Um let don't get let me get this … |
-| 168 | 00:40:32 | Possible ASR substitution: agents → Asians | Check whether this should be “agents”. | [00:40:32] you have Pi and OpenClaw with just Telegram interfaces and Asians running autonomously somewhere else. And it just goes to show like this is a crazy crazy … |
-| 196 | 00:48:18 | Noise/music marker | Keep only if it helps interpret the discussion. | … impressive. >> Yeah. >> So again like >> stuff is changing. >> Yeah. [laughter] >> Yeah. So, you know, we're going to figure out how we can change the concepts of a thre… |
-| 200 | 00:49:19 | Possible model-name formatting | Check whether this should be “Opus 4.5”. | …els and maybe even have a mode that is used in a different way. Maybe Opus 45 in smart mode will actually become interactive mode and it won't work like this and it'll… |
-| 224 | 00:55:36 | Noise/music marker | Keep only if it helps interpret the discussion. | …y coding. >> Happy hacking. Yeah, we'll talk to you. Bye-bye. >> Bye. [music] |
+No automated findings. Still skim the transcript before using it as source material.
 
 ## Review workflow
 
@@ -29,7 +21,8 @@ Automated findings: 7
 
 ## Corrections log
 
-- [ ] Pending review.
+- [x] Applied clear source-faithful fixes for model/product names, speaker names, obvious ASR substitutions, and stray noise/music markers.
+- [x] Reran review command; automated findings dropped from 7 to 0.
 
 ## Notes
 

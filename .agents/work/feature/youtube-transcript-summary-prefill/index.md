@@ -24,11 +24,11 @@ Seed targets after the workflow exists: fill the placeholder summaries for Raisi
 
 ## Next Action
 
-- Review the transcript review packets for Raising an Agent episodes 9 and 10, apply clear transcript fixes, rerun `review`, then write/publish reviewed summary bodies if desired.
-- Decide whether Task 4 apply mode is still needed, or whether draft-first plus manual review is enough for this site.
-- Defer Task 6 skill wrapper until the script interface has been used at least once more.
+- Decide whether to close this work item with draft-first/manual publishing as the accepted workflow, or implement optional Task 4 apply mode.
+- Defer Task 6 skill wrapper until the script interface has been used for another new YouTube resource.
+- If RA9/RA10 need editorial polish beyond transcript-backed summaries, handle that as content review rather than transcript tooling.
 
 ## Open Questions
 
 - [x] Should the first version add an npm transcript dependency to `package.json`, or should it remain an agent-only helper that uses an external CLI/package on demand? Added `youtube-transcript-plus@2.0.0` as a small local dev dependency.
-- [ ] Should the workflow only draft files for review, or should it support an explicit `--apply` mode that edits `src/data/resources/coding-with-agents.json` and `src/content/summaries/**`?
+- [ ] Should the workflow only draft files for review, or should it support an explicit `--apply` mode that edits `src/data/resources/coding-with-agents.json` and `src/content/summaries/**`? Draft-first plus manual publishing was enough for the RA9/RA10 seed summaries; a generalized apply mode remains optional.

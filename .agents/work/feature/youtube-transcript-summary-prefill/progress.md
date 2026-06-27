@@ -119,3 +119,34 @@ Verification:
 - `npm run build` passed with no empty collection warning.
 
 Next action: manually/agent-review the RA9 and RA10 review packets, apply only clear transcript fixes, rerun `review`, then draft the final public summaries.
+
+## 2026-06-27 RA9/RA10 Review and Summary Publishing
+
+- Applied conservative transcript fixes to the saved sidecars for Raising an Agent episodes 9 and 10.
+  - Fixed clear ASR issues in speaker names, model/product names, obvious substitutions such as `Asians` → `agents`, and stray noise/music markers.
+  - Kept the chunked timestamp structure intact; did not refetch or overwrite transcripts from YouTube after manual fixes.
+- Reran transcript review packets for the two seed episodes:
+  - `raising-an-agent-episode-9`: `13` automated findings → `0`; status `ready-for-skim`.
+  - `raising-an-agent-episode-10`: `7` automated findings → `0`; status `ready-for-skim`.
+- Replaced the public placeholder summaries with reviewed, transcript-backed summaries:
+  - `src/content/summaries/coding-with-agents/raising-an-agent-episode-9.md` → `The Assistant Is Dead, Long Live the Factory`.
+  - `src/content/summaries/coding-with-agents/raising-an-agent-episode-10.md` → `Killing the Sidebar`.
+- Left `src/data/resources/coding-with-agents.json` unchanged because both summaries belong to the existing Raising an Agent series resource (`resourceId: 1`).
+
+Commands run for this follow-up:
+
+```sh
+node .agents/scripts/youtube-transcript-prefill.mjs review coding-with-agents/raising-an-agent-episode-9 --force
+node .agents/scripts/youtube-transcript-prefill.mjs review coding-with-agents/raising-an-agent-episode-10 --force
+npm run check
+npm run build
+git status --short --branch
+```
+
+Verification:
+
+- `npm run check` passed with `0` errors and `0` warnings.
+- `npm run build` passed and generated the RA9/RA10 summary JSON routes with no empty collection warning.
+- `git status --short --branch` showed only the intended transcript/review/summary changes before progress/index updates.
+
+Next action: decide whether Task 4 apply mode is worth implementing after draft-first/manual publishing worked for the seed summaries; keep Task 6 skill wrapper deferred until the script has been used for another new YouTube resource.
