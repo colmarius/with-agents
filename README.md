@@ -40,30 +40,5 @@ src/
 
 ## Deployment
 
-The site is configured for a custom-domain GitHub Pages deployment at `https://with-agents.dev`:
-
-- `astro.config.mjs` sets `site: 'https://with-agents.dev'` and uses static output.
-- `.github/workflows/deploy.yml` uses the official Astro action with Node `22.18.0` and npm lockfile support.
-- `public/CNAME` contains `with-agents.dev`.
-
-Manual GitHub setup:
-
-1. Use the public repository `colmarius/with-agents`.
-2. Add the remote and push the first commit:
-
-   ```bash
-   git remote add origin git@github.com:colmarius/with-agents.git
-   git push -u origin main
-   ```
-
-3. In repository settings, enable **Pages** with **GitHub Actions** as the source.
-4. Add and verify the custom domain `with-agents.dev`.
-5. Configure DNS for the apex domain:
-   - `A 185.199.108.153`
-   - `A 185.199.109.153`
-   - `A 185.199.110.153`
-   - `A 185.199.111.153`
-   - Optional IPv6 `AAAA` records from GitHub Pages documentation.
-6. Enable **Enforce HTTPS** after DNS settles.
-
-The source repository is public by explicit project decision. Do not commit private notes, secrets, drafts that should stay private, or account-only deployment details.
+Pushes to `main` deploy to GitHub Pages via `.github/workflows/deploy.yml`.
+The production site uses the custom domain `with-agents.dev`, configured by `public/CNAME`.
