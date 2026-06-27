@@ -9,7 +9,11 @@
     "source": "Mayank Gupta",
     "date": "2026-05-20",
     "duration": "1h 20m",
-    "tags": ["Coding agents", "Amp", "Tools", "Workflow"]
+    "topics": [
+      "tools-harnesses",
+      "models-evaluation",
+      "prompting-orchestration"
+    ]
   },
   {
     "id": 18,
@@ -21,7 +25,7 @@
     "source": "AI Engineer",
     "date": "2026-04-26",
     "duration": "18m",
-    "tags": ["Coding agents", "Workflow", "Collaboration", "Tools"]
+    "topics": ["collaboration-teams", "tools-harnesses"]
   },
   {
     "id": 17,
@@ -33,7 +37,11 @@
     "source": "AI Engineer",
     "date": "2026-04-18",
     "duration": "19m",
-    "tags": ["Coding agents", "Workflow", "Practices", "Architecture"]
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "safety-permissions"
+    ]
   },
   {
     "id": 16,
@@ -45,7 +53,7 @@
     "source": "Mayank Gupta",
     "date": "2026-04-02",
     "duration": "1h 9m",
-    "tags": ["Coding agents", "Amp", "Business", "Enterprise"]
+    "topics": ["business-adoption", "models-evaluation"]
   },
   {
     "id": 15,
@@ -57,7 +65,11 @@
     "source": "Mayank Gupta",
     "date": "2026-03-28",
     "duration": "1h 31m",
-    "tags": ["Coding agents", "Tools", "Workflow", "Open source"]
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "open-source-ecosystem"
+    ]
   },
   {
     "id": 14,
@@ -69,7 +81,11 @@
     "source": "The Pragmatic Engineer",
     "date": "2026-03-19",
     "duration": "28m",
-    "tags": ["Coding agents", "Workflow", "Testing", "Security"]
+    "topics": [
+      "review-verification",
+      "safety-permissions",
+      "architecture-maintainability"
+    ]
   },
   {
     "id": 13,
@@ -81,7 +97,7 @@
     "source": "Build Monumental",
     "date": "2026-03-25",
     "duration": "27m",
-    "tags": ["Coding agents", "Workflow", "Tools", "Practices"]
+    "topics": ["tools-harnesses", "context-memory", "review-verification"]
   },
   {
     "id": 12,
@@ -93,7 +109,7 @@
     "source": "Mastra",
     "date": "2026-03-31",
     "duration": "27m",
-    "tags": ["Coding agents", "Tools", "Workflow", "Open source"]
+    "topics": ["tools-harnesses", "context-memory", "open-source-ecosystem"]
   },
   {
     "id": 11,
@@ -105,7 +121,11 @@
     "source": "The Pragmatic Engineer",
     "date": "2026-04-29",
     "duration": "1h 34m",
-    "tags": ["Coding agents", "Workflow", "Tools", "Practices", "Open source"]
+    "topics": [
+      "tools-harnesses",
+      "review-verification",
+      "open-source-ecosystem"
+    ]
   },
   {
     "id": 10,
@@ -117,7 +137,11 @@
     "source": "AI Engineer",
     "date": "2026-04-16",
     "duration": "18m",
-    "tags": ["Coding agents", "Tools", "Workflow", "Open source"]
+    "topics": [
+      "tools-harnesses",
+      "review-verification",
+      "open-source-ecosystem"
+    ]
   },
   {
     "id": 9,
@@ -129,7 +153,11 @@
     "source": "The Modern Software Developer",
     "date": "2026-06-12",
     "duration": "1h 31m",
-    "tags": ["Coding agents", "Workflow", "Tools", "Architecture"]
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "review-verification"
+    ]
   },
   {
     "id": 7,
@@ -139,7 +167,7 @@
     "type": "video",
     "source": "Open Source Summit",
     "date": "2025-11-12",
-    "tags": ["Coding agents", "Trends", "Open source"]
+    "topics": ["open-source-ecosystem", "review-verification"]
   },
   {
     "id": 6,
@@ -150,7 +178,7 @@
     "type": "video",
     "source": "a16z Deep Dives",
     "date": "2025-11-25",
-    "tags": ["Coding agents", "Workflow", "Architecture", "Trends"]
+    "topics": ["review-verification", "tools-harnesses", "models-evaluation"]
   },
   {
     "id": 5,
@@ -161,7 +189,11 @@
     "type": "video",
     "source": "AI Engineer",
     "date": "2025-07-01",
-    "tags": ["Coding agents", "Workflow", "Practices", "Architecture"]
+    "topics": [
+      "prompting-orchestration",
+      "tools-harnesses",
+      "architecture-maintainability"
+    ]
   },
   {
     "id": 4,
@@ -171,7 +203,7 @@
     "type": "playlist",
     "source": "Amp, Inc.",
     "date": "2025-10-01",
-    "tags": ["Coding agents", "Workflow", "Practices"]
+    "topics": ["prompting-orchestration", "review-verification"]
   },
   {
     "id": 8,
@@ -181,7 +213,7 @@
     "type": "playlist",
     "source": "Amp, Inc.",
     "date": "2025-12-10",
-    "tags": ["Coding agents", "Workflow", "Live coding"]
+    "topics": ["prompting-orchestration"]
   },
   {
     "id": 3,
@@ -191,7 +223,7 @@
     "type": "playlist",
     "source": "Amp, Inc.",
     "date": "2025-10-08",
-    "tags": ["Coding agents", "Workflow", "Live coding"]
+    "topics": ["prompting-orchestration", "context-memory", "models-evaluation"]
   },
   {
     "id": 2,
@@ -203,7 +235,11 @@
     "source": "Latent Space",
     "date": "2025-09-26",
     "duration": "1h 21m",
-    "tags": ["Coding agents", "Workflow", "Tools", "Architecture"]
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "business-adoption"
+    ]
   },
   {
     "id": 1,
@@ -213,6 +249,6 @@
     "type": "playlist",
     "source": "Amp, Inc.",
     "date": "2025-06-01",
-    "tags": ["Coding agents", "Tools", "LLMs"]
+    "topics": ["context-memory", "tools-harnesses", "models-evaluation"]
   }
 ]

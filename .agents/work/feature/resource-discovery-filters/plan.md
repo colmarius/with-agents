@@ -11,7 +11,7 @@ Add a focused discovery layer to the Coding with Agents resources page: one cont
 
 ## Tasks
 
-- [ ] **Task 1: Migrate resource metadata to controlled topics**
+- [x] **Task 1: Migrate resource metadata to controlled topics**
   - Scope: `src/data/resources/coding-with-agents.json`, `src/components/resources/CodingWithAgents.tsx`
   - Depends on: none
   - Acceptance:
@@ -21,7 +21,7 @@ Add a focused discovery layer to the Coding with Agents resources page: one cont
     - The resource UI type definitions no longer depend on `tags`.
   - Notes: Use the seed mapping in `research.md` unless a manifest description clearly contradicts it.
 
-- [ ] **Task 2: Add topic filter controls and client-side search**
+- [x] **Task 2: Add topic filter controls and client-side search**
   - Scope: `src/components/resources/CodingWithAgents.tsx`
   - Depends on: Task 1
   - Acceptance:
@@ -33,7 +33,7 @@ Add a focused discovery layer to the Coding with Agents resources page: one cont
     - Empty results show a helpful no-results message without breaking the summary modal.
   - Notes: Keep this first implementation client-side only. Do not add full transcript search or server-side indexing.
 
-- [ ] **Task 3: Preserve and clarify resource card metadata**
+- [x] **Task 3: Preserve and clarify resource card metadata**
   - Scope: `src/components/resources/CodingWithAgents.tsx`, `src/components/resources/ResourceListItem.tsx` only if needed
   - Depends on: Task 2
   - Acceptance:
@@ -43,7 +43,7 @@ Add a focused discovery layer to the Coding with Agents resources page: one cont
     - The card layout remains readable on mobile and desktop.
   - Notes: Avoid a visual redesign; make only navigation/understanding improvements needed for filters.
 
-- [ ] **Task 4: Validate the resource discovery slice**
+- [x] **Task 4: Validate the resource discovery slice**
   - Scope: resources page and project checks
   - Depends on: Tasks 1–3
   - Acceptance:

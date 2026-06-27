@@ -13,6 +13,28 @@ import MarkdownRenderer from './MarkdownRenderer';
 import ResourceListItem from './ResourceListItem';
 import { SummaryModal } from './SummaryModal';
 
+const TOPIC_OPTIONS = [
+  { slug: 'prompting-orchestration', label: 'Prompting & orchestration' },
+  { slug: 'context-memory', label: 'Context & memory' },
+  { slug: 'tools-harnesses', label: 'Tools & harnesses' },
+  { slug: 'review-verification', label: 'Review & verification' },
+  {
+    slug: 'architecture-maintainability',
+    label: 'Architecture & maintainability',
+  },
+  { slug: 'collaboration-teams', label: 'Collaboration & teams' },
+  { slug: 'safety-permissions', label: 'Safety & permissions' },
+  { slug: 'open-source-ecosystem', label: 'Open source ecosystem' },
+  { slug: 'models-evaluation', label: 'Models & evaluation' },
+  { slug: 'business-adoption', label: 'Business & adoption' },
+] as const;
+
+type Topic = (typeof TOPIC_OPTIONS)[number]['slug'];
+
+const TOPIC_LABELS = Object.fromEntries(
+  TOPIC_OPTIONS.map(({ slug, label }) => [slug, label]),
+) as Record<Topic, string>;
+
 type Resource = {
   id: number;
   title: string;
@@ -23,8 +45,10 @@ type Resource = {
   source: string;
   date: string;
   duration?: string;
-  tags?: string[];
+  topics: Topic[];
 };
+
+const resources = codingResources as Resource[];
 
 type ManifestEntry = {
   slug: string;
@@ -58,6 +82,8 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
   const [selectedResource, setSelectedResource] = useState<Resource | null>(
     null,
   );
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
   const [summaryContent, setSummaryContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [summaryRef, setSummaryRef] = useState<SummaryRef | null>(null);
@@ -70,9 +96,24 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
     null,
   );
 
+  const summaryEntriesByResourceId = useMemo(() => {
+    const entriesByResource = new Map<number, ManifestEntry[]>();
+
+    manifest.forEach((entry) => {
+      const entries = entriesByResource.get(entry.resourceId);
+      if (entries) {
+        entries.push(entry);
+      } else {
+        entriesByResource.set(entry.resourceId, [entry]);
+      }
+    });
+
+    return entriesByResource;
+  }, [manifest]);
+
   const resolveSummaryRef = useCallback(
     (resourceId: number): SummaryRef | null => {
-      const entries = manifest.filter((e) => e.resourceId === resourceId);
+      const entries = summaryEntriesByResourceId.get(resourceId) ?? [];
       if (entries.length === 0) return null;
 
       const hasSeries = entries.some((e) => e.series !== null);
@@ -87,12 +128,12 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
 
       return { kind: 'single', slug: entries[0].slug };
     },
-    [manifest],
+    [summaryEntriesByResourceId],
   );
 
   const latestEpisodeDates = useMemo(() => {
     const dates: Record<number, Date> = {};
-    (codingResources as Resource[]).forEach((r) => {
+    resources.forEach((r) => {
       const ref = resolveSummaryRef(r.id);
       if (ref?.kind === 'series' && ref.episodes.length > 0) {
         const latestDate = ref.episodes
@@ -114,13 +155,82 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
     [latestEpisodeDates],
   );
 
+  const getDisplayDateLabel = useCallback(
+    (resource: Resource): string => {
+      const dateLabel = formatDate(getDisplayDate(resource));
+      if (resource.type === 'playlist' && latestEpisodeDates[resource.id]) {
+        return `Latest summary: ${dateLabel}`;
+      }
+
+      return dateLabel;
+    },
+    [getDisplayDate, latestEpisodeDates],
+  );
+
   const sortedResources = useMemo(
     () =>
-      [...codingResources].sort(
+      [...resources].sort(
         (a, b) => getDisplayDate(b).getTime() - getDisplayDate(a).getTime(),
       ),
     [getDisplayDate],
   );
+
+  const normalizedSearchQuery = searchQuery.trim().toLowerCase();
+
+  const searchableTextByResourceId = useMemo(() => {
+    const searchText: Record<number, string> = {};
+
+    resources.forEach((resource) => {
+      const summaryTitles = (
+        summaryEntriesByResourceId.get(resource.id) ?? []
+      ).map((entry) => entry.title);
+      const topicLabels = resource.topics.map((topic) => TOPIC_LABELS[topic]);
+
+      searchText[resource.id] = [
+        resource.title,
+        resource.subtitle,
+        resource.description,
+        resource.source,
+        resource.type,
+        ...topicLabels,
+        ...summaryTitles,
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLowerCase();
+    });
+
+    return searchText;
+  }, [summaryEntriesByResourceId]);
+
+  const filteredResources = useMemo(
+    () =>
+      sortedResources.filter((resource) => {
+        const matchesSearch =
+          normalizedSearchQuery.length === 0 ||
+          (searchableTextByResourceId[resource.id] ?? '').includes(
+            normalizedSearchQuery,
+          );
+        const matchesTopic =
+          selectedTopic === null || resource.topics.includes(selectedTopic);
+
+        return matchesSearch && matchesTopic;
+      }),
+    [
+      normalizedSearchQuery,
+      searchableTextByResourceId,
+      selectedTopic,
+      sortedResources,
+    ],
+  );
+
+  const hasActiveFilters =
+    normalizedSearchQuery.length > 0 || selectedTopic !== null;
+
+  const handleClearFilters = () => {
+    setSearchQuery('');
+    setSelectedTopic(null);
+  };
 
   const getLinkText = (type: string) => {
     switch (type) {
@@ -228,82 +338,164 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
 
   return (
     <section>
+      <div className="mb-8 rounded-lg border border-gray-100 bg-white p-5 shadow-sm">
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="resource-search"
+              className="text-sm font-medium text-gray-700"
+            >
+              Search resources
+            </label>
+            <input
+              id="resource-search"
+              type="search"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search titles, sources, topics, or summaries"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/20"
+            />
+          </div>
+
+          <fieldset className="flex flex-col gap-3">
+            <legend className="text-sm font-medium text-gray-700">
+              Topics
+            </legend>
+            <div className="flex flex-wrap gap-2">
+              {TOPIC_OPTIONS.map(({ slug, label }) => {
+                const isSelected = selectedTopic === slug;
+
+                return (
+                  <button
+                    key={slug}
+                    type="button"
+                    aria-pressed={isSelected}
+                    onClick={() => setSelectedTopic(isSelected ? null : slug)}
+                    className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 ${
+                      isSelected
+                        ? 'border-gray-900 bg-gray-900 text-white'
+                        : 'border-gray-300 bg-white text-gray-700 hover:border-gray-500 hover:bg-gray-50'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+          </fieldset>
+
+          <div className="flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-gray-600" aria-live="polite">
+              {hasActiveFilters
+                ? `Showing ${filteredResources.length} of ${sortedResources.length} resources`
+                : `Showing ${sortedResources.length} resources`}
+            </p>
+            {hasActiveFilters && (
+              <Button variant="ghost" onClick={handleClearFilters}>
+                Clear filters
+              </Button>
+            )}
+          </div>
+        </div>
+      </div>
+
       <div className="space-y-8">
-        {sortedResources.map((resource) => (
-          <ResourceListItem
-            key={resource.id}
-            image={{
-              src: '',
-              alt: '',
-              className: 'hidden',
-            }}
-            title={resource.title}
-            badge={
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                {titleCase(resource.type)}
-              </span>
-            }
-            description={resource.description}
-            hideExternalLink={true}
-            metadata={
-              resource.subtitle && (
-                <p className="text-base font-medium text-gray-700 mb-1">
-                  {resource.subtitle}
-                </p>
-              )
-            }
-          >
-            <div className="flex flex-col gap-4 w-full">
-              <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:gap-4 md:items-start w-full">
-                <div className="flex flex-col gap-2">
-                  <div className="text-sm text-gray-500 flex items-center gap-x-4">
-                    <span className="font-medium">{resource.source}</span>
-                    <span>{formatDate(getDisplayDate(resource))}</span>
+        {filteredResources.length > 0 ? (
+          filteredResources.map((resource) => (
+            <ResourceListItem
+              key={resource.id}
+              image={{
+                src: '',
+                alt: '',
+                className: 'hidden',
+              }}
+              title={resource.title}
+              badge={
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                  {titleCase(resource.type)}
+                </span>
+              }
+              description={resource.description}
+              hideExternalLink={true}
+              metadata={
+                resource.subtitle && (
+                  <p className="text-base font-medium text-gray-700 mb-1">
+                    {resource.subtitle}
+                  </p>
+                )
+              }
+            >
+              <div className="flex flex-col gap-4 w-full">
+                <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:gap-4 md:items-start w-full">
+                  <div className="flex flex-col gap-2">
+                    <div className="text-sm text-gray-500 flex flex-wrap items-center gap-x-4 gap-y-1">
+                      <span className="font-medium">{resource.source}</span>
+                      <span>{getDisplayDateLabel(resource)}</span>
+                    </div>
+
+                    {resource.topics.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {resource.topics.map((topic) => (
+                          <span
+                            key={topic}
+                            className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs"
+                          >
+                            {TOPIC_LABELS[topic]}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
-                  {resource.tags && resource.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {resource.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex flex-wrap gap-2 md:justify-self-end md:flex-shrink-0">
-                  {summaryAvailability[resource.id] && (
+                  <div className="flex flex-wrap gap-2 md:justify-self-end md:flex-shrink-0">
+                    {summaryAvailability[resource.id] && (
+                      <Button
+                        variant="secondary"
+                        onClick={() => handleOpenSummary(resource)}
+                        aria-haspopup="dialog"
+                        aria-controls={`summary-modal-${resource.id}`}
+                      >
+                        <DocumentIcon />
+                        Read{' '}
+                        {resource.type === 'playlist' ? 'Summaries' : 'Summary'}
+                      </Button>
+                    )}
                     <Button
-                      variant="secondary"
-                      onClick={() => handleOpenSummary(resource)}
-                      aria-haspopup="dialog"
-                      aria-controls={`summary-modal-${resource.id}`}
+                      as="a"
+                      variant="primary"
+                      href={resource.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <DocumentIcon />
-                      Read{' '}
-                      {resource.type === 'playlist' ? 'Summaries' : 'Summary'}
+                      {getLinkText(resource.type)}
+                      <ExternalLinkIcon />
+                      <span className="sr-only">(opens in a new tab)</span>
                     </Button>
-                  )}
-                  <Button
-                    as="a"
-                    variant="primary"
-                    href={resource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {getLinkText(resource.type)}
-                    <ExternalLinkIcon />
-                    <span className="sr-only">(opens in a new tab)</span>
-                  </Button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </ResourceListItem>
-        ))}
+            </ResourceListItem>
+          ))
+        ) : (
+          <div className="rounded-lg border border-dashed border-gray-300 bg-white p-8 text-center">
+            <h2 className="text-lg font-medium text-gray-900">
+              No resources found
+            </h2>
+            <p className="mt-2 text-gray-600">
+              Try a different search term or clear the selected topic to see
+              more Coding with Agents resources.
+            </p>
+            {hasActiveFilters && (
+              <Button
+                variant="secondary"
+                onClick={handleClearFilters}
+                className="mt-4"
+              >
+                Clear filters
+              </Button>
+            )}
+          </div>
+        )}
       </div>
 
       <SummaryModal

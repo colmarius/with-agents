@@ -1,6 +1,6 @@
 # Resource discovery filters
 
-Status: planned
+Status: completed
 Category: feature
 Updated: 2026-06-27
 
@@ -20,7 +20,7 @@ Branch: `feature/resource-discovery-filters`
 
 ## Next Action
 
-- Implement Task 1 in `plan.md`: migrate the resource manifest from broad/freeform `tags` to one controlled `topics` field using the approved topic vocabulary.
+- Review and merge the completed resource discovery filters.
 
 ## Open Questions
 
