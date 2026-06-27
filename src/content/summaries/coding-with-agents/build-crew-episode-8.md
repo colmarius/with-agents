@@ -12,6 +12,6 @@ In this episode, the Build Crew hosted a live hacking session where participants
 
 *Summary coming soon - episode details will be added once the full recording is available.*
 
-Livestream: [Watch on X](https://x.com/AmpCode/status/1996263263102017873)
+Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=rCLvd_Csp-8)
 
 Build Crew: <https://buildcrew.team>

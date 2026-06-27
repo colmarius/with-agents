@@ -33,4 +33,4 @@ The discussion explores different philosophies among major LLM providers (Anthro
 
 The hosts debate the difficulty of setting up full VM/container environments for background agents (like GitHub Code Spaces or OpenAI/Google solutions). Their hypothesis is that a more effective and maintainable approach is to design background agents that use Continuous Integration (CI) for feedback (checking if tests pass/fail) rather than an on-demand build environment [26:09].
 
-Full video: <http://www.youtube.com/watch?v=Ai-ohf5RcEc>
+Full video: <https://www.youtube.com/watch?v=HVihMH5j8KQ>

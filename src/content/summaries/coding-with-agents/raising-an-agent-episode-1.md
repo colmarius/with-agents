@@ -20,4 +20,4 @@ Episode 1 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn
 
 - They conclude that the path to a perfect code agent is now primarily a software engineering problem—improving speed, cost, tool descriptions, and feedback loops—rather than waiting solely for fundamental model breakthroughs [18:57].
 
-Full video: <http://www.youtube.com/watch?v=Cor-t9xC1ck>
+Full video: <https://www.youtube.com/watch?v=auVu08nXKOw>

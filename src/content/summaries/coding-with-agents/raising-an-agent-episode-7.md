@@ -20,4 +20,4 @@ Episode 7 of the "Raising an Agent" series from Sourcegraph discusses strategies
 
 - The "Oracle" Agent: A new type of sub-agent, called the "Oracle," allows the primary agent (e.g., Anthropic Sonnet 4) to access other, "smarter" LLMs (like GPT-4, or 03) for higher-level reasoning, debugging, or planning. This combines the "agentic" capabilities of one model with the "intelligence" of another [48:48], [50:16].
 
-Full video: <https://youtu.be/hAEmt-FMyHA?si=AZzhMOq_i6-95Dbh>
+Full video: <https://www.youtube.com/watch?v=p8a0PePNWlA>

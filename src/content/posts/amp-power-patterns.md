@@ -586,4 +586,4 @@ Want to present this? Here's a 10-slide outline:
 **Resources:**
 
 - [Amp Manual](https://ampcode.com/manual) — Complete feature reference
-- [Raising an Agent](https://www.youtube.com/playlist?list=PL6zLuuRVa1_iUNbel-8MxxpqKIyesaubA) — Deep dive into Amp's architecture
+- [Raising an Agent](https://www.youtube.com/playlist?list=PLhToAAkWJ58f-en2ifL9n5ixjzDPWnV9u) — Deep dive into Amp's architecture

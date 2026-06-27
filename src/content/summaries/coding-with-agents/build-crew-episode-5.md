@@ -50,6 +50,6 @@ The group briefly discusses the value of **specialized agents** (like Librarian)
 
 Finally, AJ gives a glimpse into his work building **apps for AR glasses** on the Menra platform. His projects include a "clairvoyant" AI assistant and an app for sports teams that displays plays on a heads-up display during training.
 
-Full Video: [Watch on Youtube](https://www.youtube.com/watch?v=DCdZMNptyaw&list=PL6zLuuRVa1_g_ieW4LnrwhVo6bNHmRwEA)
+Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=dvcwFTtX2jY)
 
 Build Crew: <https://buildcrew.team>

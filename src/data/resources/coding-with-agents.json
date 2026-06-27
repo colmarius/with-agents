@@ -1,5 +1,17 @@
 [
   {
+    "id": 9,
+    "title": "Pi Building Pi, OpenClaw's Minimalist Coding Agent",
+    "subtitle": "Mario Zechner on building and using Pi",
+    "url": "https://www.youtube.com/watch?v=DPgJjRdQWrg",
+    "description": "Mario Zechner demonstrates how he uses Pi to maintain Pi itself, pairing a deliberately minimal agent harness with strong human architectural control. The session covers minimalist tool design, self-modifying agent extensions, issue triage with GitHub CLI, deterministic checks, transcript-like branch workflows, and why human taste and module boundaries still matter when agents can generate code at high volume.",
+    "type": "video",
+    "source": "The Modern Software Developer",
+    "date": "2026-06-12",
+    "duration": "1h 31m",
+    "tags": ["Coding agents", "Workflow", "Tools", "Architecture"]
+  },
+  {
     "id": 7,
     "title": "Keynote: Linus Torvalds, Creator of Linux & Git, in Conversation with Dirk Hohndel",
     "url": "https://www.youtube.com/watch?v=tWx769t1JKg",
@@ -34,10 +46,10 @@
   {
     "id": 4,
     "title": "Next Token – Series",
-    "url": "https://x.com/i/broadcasts/1MnxnPWoDwLGO",
+    "url": "https://www.youtube.com/playlist?list=PLhToAAkWJ58fssNaA7WgXYSvFA1B2P_t_",
     "description": "A series featuring discussions, sharing experiences, and exploring the latest trends in AI agents and development practices.",
-    "type": "video",
-    "source": "X/Twitter",
+    "type": "playlist",
+    "source": "Amp, Inc.",
     "date": "2025-10-01",
     "tags": ["Coding agents", "Workflow", "Practices"]
   },
@@ -47,17 +59,17 @@
     "url": "https://x.com/AmpCode/status/1998800449768665274",
     "description": "The rebranded Build Crew live series featuring live coding sessions, Prompt Duel at Dawn challenges, and opportunities to win Amp Credits. Continues the community-driven format with AI agent best practices and real-time development.",
     "type": "playlist",
-    "source": "Sourcegraph",
+    "source": "Amp, Inc.",
     "date": "2025-12-10",
     "tags": ["Coding agents", "Workflow", "Live coding"]
   },
   {
     "id": 3,
     "title": "Build Crew - Series",
-    "url": "https://www.youtube.com/playlist?list=PL6zLuuRVa1_g_ieW4LnrwhVo6bNHmRwEA",
+    "url": "https://www.youtube.com/playlist?list=PLhToAAkWJ58fNo36CAEqntC1Iq9RRuoxp",
     "description": "A series from the Amp team covering AI agent best practices and prompting strategies. Topics include structured prompts, chain of thought prompting, using the Oracle sub-agent for complex reasoning, external memory management with short threads, and practical tips for effective agent collaboration. Features real-world development scenarios and insights from the Build Crew community.",
     "type": "playlist",
-    "source": "Sourcegraph",
+    "source": "Amp, Inc.",
     "date": "2025-10-08",
     "tags": ["Coding agents", "Workflow", "Live coding"]
   },
@@ -76,10 +88,10 @@
   {
     "id": 1,
     "title": "Raising an Agent - Series",
-    "url": "https://www.youtube.com/playlist?list=PL6zLuuRVa1_iUNbel-8MxxpqKIyesaubA",
-    "description": "An eight-part documentary series chronicling Sourcegraph's development of Amp, revealing groundbreaking insights on building practical coding agents. Topics include the shift from prompt to context engineering, the power of autonomous feedback loops, sub-agent architectures for context management, the \"Oracle\" pattern for multi-model reasoning, why codebases must adapt to agents, and evaluating LLM capabilities across providers. The team demonstrates why success depends on model quality over hidden tricks, treating agents as power tools rather than magic wands.",
+    "url": "https://www.youtube.com/playlist?list=PLhToAAkWJ58f-en2ifL9n5ixjzDPWnV9u",
+    "description": "A multi-episode documentary series chronicling the Amp team's development of Amp, revealing groundbreaking insights on building practical coding agents. Topics include the shift from prompt to context engineering, the power of autonomous feedback loops, sub-agent architectures for context management, the \"Oracle\" pattern for multi-model reasoning, why codebases must adapt to agents, and evaluating LLM capabilities across providers. The team demonstrates why success depends on model quality over hidden tricks, treating agents as power tools rather than magic wands.",
     "type": "playlist",
-    "source": "Sourcegraph",
+    "source": "Amp, Inc.",
     "date": "2025-06-01",
     "tags": ["Coding agents", "Tools", "LLMs"]
   }

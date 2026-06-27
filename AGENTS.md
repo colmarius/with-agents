@@ -23,7 +23,7 @@ Run `npm run check` and `npm run build` after code or content changes. Run `npm 
 ```text
 src/
 ├── components/    # Astro and React components
-├── content/       # Astro content collections (posts, summaries)
+├── content/       # Astro content collections and transcript source files
 ├── data/          # Resource manifests
 ├── hooks/         # React hooks
 ├── layouts/       # Astro layouts
@@ -58,6 +58,30 @@ Important routes:
 - Draft posts must use `draft: true`; production builds should not publish drafts.
 - When adding resources, keep `src/data/resources/coding-with-agents.json` and `src/content/summaries/**` aligned by `resourceId`.
 - Internal links should point only to routes that exist in this repository, unless intentionally linking to an external site.
+
+### YouTube transcript workflow
+
+Use this workflow when the user provides a YouTube video link/title or asks for a video summary.
+
+1. For a new YouTube video, save a transcript sidecar first:
+
+   ```sh
+   npm run youtube:transcript -- <youtube-url> --summary-slug <relative-summary-slug> --title "<video title>"
+   ```
+
+2. For a summary request, read the saved transcript and write/update the public summary by hand as normal content work. Update `src/data/resources/coding-with-agents.json` only if a new resource manifest entry is needed.
+3. Before summarizing, skim the saved transcript and fix only obvious source-faithful auto-caption issues: names, product/model casing, obvious substitutions, punctuation that changes meaning, and stray caption markers. Do not rewrite or editorialize the transcript.
+
+Store committed transcripts under `src/content/transcripts/**` using the same relative slug as the matching summary. Example:
+
+```text
+src/content/summaries/coding-with-agents/raising-an-agent-episode-9.md
+src/content/transcripts/coding-with-agents/raising-an-agent-episode-9.md
+```
+
+Transcript files must use this frontmatter contract: `title`, `summarySlug`, `sourceUrl`, `videoId`, `capturedAt`, and optional `series`, `episode`, `channel`, `language`, `kind`, and `durationSeconds`. Body text should live under `## Transcript` and use coarse timestamped chunks such as `[00:01:00] text...`; the timestamps are source anchors for checking and summary citations, not per-caption timing. Do not store transcripts under `src/content/summaries/**`, because those files are rendered as summaries.
+
+Do not create long-lived draft, review, or apply artifacts for summaries. Keep transcript capture scripted; keep summary writing as explicit agent/human editorial work from the saved transcript.
 
 ## Deployment Notes
 

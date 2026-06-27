@@ -46,6 +46,6 @@ Ryan showcased **Mastra**, an open-source framework for building agentic workflo
 
 The session concluded with a look at the community leaderboard, tracking metrics like "Diff Maxer" (most lines changed) and "Agent Whisperer" (most messages sent), gamifying the process of coding with AI agents.
 
-Full Video: [Watch on Youtube](https://www.youtube.com/watch?v=fVx5M2GVjEQ)
+Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=fVx5M2GVjEQ)
 
 Build Crew: <https://buildcrew.team>

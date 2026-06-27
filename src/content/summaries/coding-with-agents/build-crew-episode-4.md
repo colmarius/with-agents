@@ -43,6 +43,6 @@ Thorsten gave a master class on two powerful Amp features and their key differen
 
 The episode wrapped up with a few final tips, including asking an agent questions you already know the answer to as a way to efficiently load context. The team highlighted that everyone is still figuring out the best way to work with these new tools and invited viewers to join the conversation at **buildcrew.team** for daily standups and community support.
 
-Full Video: [Watch on Youtube](https://www.youtube.com/watch?v=FJ9DWU7EOkM&list=PL6zLuuRVa1_g_ieW4LnrwhVo6bNHmRwEA)
+Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=9lsg6dU7EZQ)
 
 Build Crew: <https://buildcrew.team>

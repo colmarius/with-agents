@@ -34,4 +34,4 @@ Episode 3 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn
 
 - The Ideal Scenario: The ultimate goal is for this agent to function as the "ghost of a senior engineer," ready to perfectly answer any question about the codebase that a human senior developer would know, a capability every CTO would pay "a lot of money for" [26:47].
 
-Full video: <https://youtu.be/5A7MkiWeOjk?si=I-a6MU9_7G8_AM3n>
+Full video: <https://www.youtube.com/watch?v=N04FM1e3sbY>

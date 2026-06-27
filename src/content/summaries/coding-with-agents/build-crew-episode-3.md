@@ -57,6 +57,6 @@ Mike shares his coding tip:
 * **Sequential Sub-Agents**: Mike advocates for running sub-agents sequentially rather than in parallel to avoid context mixing and to ensure each step builds on the previous output.
 * **Delegation as a Core Skill**: Mike concludes by emphasizing that **leadership and delegation** are the most important skills to learn right now for effectively guiding and creating agents, applying human-to-human interaction principles to the agent world.
 
-Full Video: [Watch on Youtube](https://www.youtube.com/watch?v=VJB6n7r44EQ&list=PL6zLuuRVa1_g_ieW4LnrwhVo6bNHmRwEA)
+Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=VoZvTi27_Io)
 
 Build Crew: <https://buildcrew.team>

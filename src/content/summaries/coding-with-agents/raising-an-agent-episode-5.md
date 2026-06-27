@@ -34,4 +34,4 @@ The discussion highlighted emerging patterns and best practices for successfully
 
 - Next Frontiers: The team is focused on remote execution workflows, enabling users to kick off long-running tasks from anywhere and later revisit the generated diffs, addressing the issue of distraction and attention management [55:58]. They also see a future in more robust multi-agent workflows and the integration of deterministic hooks to enforce simple guardrails without confusing the core reasoning loop [00:01:01:04].
 
-The full video is available here: <http://www.youtube.com/watch?v=vSBGKF3vHe0>
+The full video is available here: <https://www.youtube.com/watch?v=M8kZLuukZgk>
