@@ -41,4 +41,4 @@ Episode 8 of "Raising an Agent" features Camden from the Amp Core team discussin
 * **Evolution of Engineering Roles**: Engineers in this new era need a broader understanding of business, product, and design, as the value of purely typing code diminishes. The ability to "wield code much faster" becomes paramount.
 * **Constant Change**: The overarching theme is that everything in the AI/agentic coding landscape is constantly changing, requiring nimbleness, short bets, and a continuous learning mindset.
 
-Full video: <https://youtu.be/ojAdu4vGYyI?si=UFYuFDvD-1Poh3pc>
+Full video: <https://www.youtube.com/watch?v=doTI08ukee0>

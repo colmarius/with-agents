@@ -41,6 +41,6 @@ The team concluded with quick-fire advice for improving agent development:
 * **"Don't Get Drunk on Tokens":** Even with massive context windows, don't try to fill them up. Keep your threads small, fork, and compact when necessary to reduce noise and maintain focus.
 * **Ask for Anything:** Do not limit what you ask an agent to do; you would be surprised at what the latest models are capable of achieving.
 
-Full Video: [Watch on Youtube](https://www.youtube.com/watch?v=VkV4p-eDPmM&list=PL6zLuuRVa1_g_ieW4LnrwhVo6bNHmRwEA&)
+Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=PLtf26LtCcQ)
 
 Build Crew: <https://buildcrew.team>

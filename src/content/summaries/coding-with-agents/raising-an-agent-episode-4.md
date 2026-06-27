@@ -22,4 +22,4 @@ Episode 4 of the "Raising an Agent" series from Sourcegraph discusses the profou
 
 - The core conclusion is that the developer's skill is shifting from writing code by hand to mastering the art of instructing and guiding the agent.
 
-Full video: <https://www.youtube.com/watch?v=Qwki2tkvqLo>
+Full video: <https://www.youtube.com/watch?v=2ITBH4dIfWY>

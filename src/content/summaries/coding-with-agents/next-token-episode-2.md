@@ -12,4 +12,4 @@ McKay Wrigley is the founder of Takeoff AI where he's building an AI coding tuto
 
 You can watch the full episode here:
 
-- X: <https://x.com/i/broadcasts/1nAKEEQQzjVKL>
+- YouTube: <https://www.youtube.com/watch?v=Q8F9N3ugSng>

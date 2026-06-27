@@ -45,6 +45,6 @@ The episode concludes with a philosophical discussion about whether you should b
 
 Brian's final advice to new, non-technical builders: "Find your tribe... The door is wide open right now. You can learn whatever you want to learn... you can just do stuff now. So go do stuff."
 
-Full Video: [Watch on Youtube](https://www.youtube.com/watch?v=1AJ7Ts2G2x0&list=PL6zLuuRVa1_g_ieW4LnrwhVo6bNHmRwEA)
+Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=maggx2Z57aw)
 
 Build Crew: <https://buildcrew.team>
