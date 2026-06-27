@@ -28,7 +28,7 @@ Create a local agent-assisted workflow for turning a YouTube video into a review
     - Future transcript files have a clear path and frontmatter contract.
   - Notes: Completed before implementation so future agents have a stable target structure.
 
-- [ ] **Task 1: Build transcript and metadata fetcher**
+- [x] **Task 1: Build transcript and metadata fetcher**
   - Scope: `.agents/scripts/` or a new repo-local tooling script; `package.json` only if a committed dependency is chosen
   - Depends on: Task 0
   - Acceptance:
@@ -37,7 +37,7 @@ Create a local agent-assisted workflow for turning a YouTube video into a review
     - Failures are explicit and actionable; the script does not silently produce empty summaries.
   - Notes: Prefer a maintained Node transcript package first; keep `yt-dlp` as an optional fallback if present.
 
-- [ ] **Task 2: Persist transcript sidecar files**
+- [x] **Task 2: Persist transcript sidecar files**
   - Scope: `src/content/transcripts/**`, transcript writer in tooling script, optional `src/content.config.ts` validation once real transcript files exist
   - Depends on: Task 1
   - Acceptance:
@@ -46,7 +46,7 @@ Create a local agent-assisted workflow for turning a YouTube video into a review
     - The script refuses to overwrite existing transcript files unless an explicit force flag is provided.
   - Notes: Transcript files are source material and may be committed before summaries are finalized. If adding an Astro `transcripts` collection for validation, add it with the first real transcript file so `npm run build` stays warning-free.
 
-- [ ] **Task 3: Generate draft resource and summary files**
+- [x] **Task 3: Generate draft resource and summary files**
   - Scope: draft output under `.agents/work/feature/youtube-transcript-summary-prefill/` or another non-published draft location
   - Depends on: Task 2
   - Acceptance:
@@ -66,7 +66,7 @@ Create a local agent-assisted workflow for turning a YouTube video into a review
     - Running `npm run check` and `npm run build` succeeds after applying a draft.
   - Notes: Keep this behind an explicit flag; do not auto-publish raw AI output.
 
-- [ ] **Task 5: Backfill existing YouTube transcripts**
+- [x] **Task 5: Backfill existing YouTube transcripts**
   - Scope: `src/content/transcripts/**`, existing YouTube URLs in `src/content/summaries/**` and `src/data/resources/coding-with-agents.json`
   - Depends on: Task 2
   - Acceptance:

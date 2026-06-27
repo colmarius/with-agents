@@ -1,0 +1,31 @@
+{
+  "draftAction": "use-existing-resource",
+  "note": "This summary uses an existing manifest resourceId. Do not append this object to src/data/resources/coding-with-agents.json as a new resource.",
+  "summaryResourceId": 1,
+  "existingResource": {
+    "id": 1,
+    "title": "Raising an Agent - Series",
+    "url": "https://www.youtube.com/playlist?list=PLhToAAkWJ58f-en2ifL9n5ixjzDPWnV9u",
+    "description": "A multi-episode documentary series chronicling the Amp team's development of Amp, revealing groundbreaking insights on building practical coding agents. Topics include the shift from prompt to context engineering, the power of autonomous feedback loops, sub-agent architectures for context management, the \"Oracle\" pattern for multi-model reasoning, why codebases must adapt to agents, and evaluating LLM capabilities across providers. The team demonstrates why success depends on model quality over hidden tricks, treating agents as power tools rather than magic wands.",
+    "type": "playlist",
+    "source": "Amp, Inc.",
+    "date": "2025-06-01",
+    "tags": [
+      "Coding agents",
+      "Tools",
+      "LLMs"
+    ]
+  },
+  "proposedVideo": {
+    "title": "Raising An Agent Episode - Episode 10",
+    "url": "https://www.youtube.com/watch?v=4rx36wc9ugw",
+    "description": "Draft description pending review of the saved transcript.",
+    "type": "video",
+    "source": "Amp, Inc.",
+    "date": "2026-02-05",
+    "tags": [
+      "Coding agents",
+      "Workflow"
+    ]
+  }
+}

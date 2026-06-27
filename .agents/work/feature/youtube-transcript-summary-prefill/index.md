@@ -1,6 +1,6 @@
 # YouTube Transcript Summary Prefill
 
-Status: planned
+Status: in-progress
 Category: feature
 Updated: 2026-06-27
 
@@ -16,15 +16,18 @@ Seed targets after the workflow exists: fill the placeholder summaries for Raisi
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
+- Script: `.agents/scripts/youtube-transcript-prefill.mjs`
+- Transcript sidecars: `src/content/transcripts/**`
+- Draft bundles: `drafts/**`
 - Decisions: none
 
 ## Next Action
 
-- Implement Task 1 in `plan.md`: create the transcript/metadata fetcher and test it against `https://www.youtube.com/watch?v=DPgJjRdQWrg`.
-- After Task 2 is usable, generate reviewed summaries for `https://www.youtube.com/watch?v=2wjnV6F2arc` and `https://www.youtube.com/watch?v=4rx36wc9ugw`.
-- After Task 3 is usable, backfill transcript files for existing YouTube summaries/resources that do not yet have `src/content/transcripts/**` sidecars.
+- Review the draft bundles for Raising an Agent episodes 9 and 10, then write/publish reviewed summary bodies if desired.
+- Decide whether Task 4 apply mode is still needed, or whether draft-first plus manual review is enough for this site.
+- Defer Task 6 skill wrapper until the script interface has been used at least once more.
 
 ## Open Questions
 
-- [ ] Should the first version add an npm transcript dependency to `package.json`, or should it remain an agent-only helper that uses an external CLI/package on demand?
+- [x] Should the first version add an npm transcript dependency to `package.json`, or should it remain an agent-only helper that uses an external CLI/package on demand? Added `youtube-transcript-plus@2.0.0` as a small local dev dependency.
 - [ ] Should the workflow only draft files for review, or should it support an explicit `--apply` mode that edits `src/data/resources/coding-with-agents.json` and `src/content/summaries/**`?

@@ -9,6 +9,7 @@
     "build": "astro build",
     "astro": "astro",
     "check": "astro check",
+    "youtube:prefill": "node .agents/scripts/youtube-transcript-prefill.mjs",
     "lint": "biome lint --write .",
     "lint:fix": "biome check --write ."
   },
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.1",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "youtube-transcript-plus": "2.0.0"
   }
 }
