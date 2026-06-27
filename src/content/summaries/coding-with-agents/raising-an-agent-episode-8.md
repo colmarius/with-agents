@@ -13,7 +13,7 @@ Episode 8 of "Raising an Agent" features Camden from the Amp Core team discussin
 * **Alloying Models** [01:09]: Amp's core philosophy is to integrate the best models from various providers to create a more effective coding product.
 * **Current Models in Use** [01:32]:
   * **Sonnet 4**: The primary driver for the main agent, excelling in tool calling, exploring codebases, and iterative self-correction.
-  * **03 (Opus)**: Used for the **Oracle agent** [01:46], a "smart deep thinking" agent for code review and planning.
+  * **OpenAI o3**: Used for the **Oracle agent** [01:46], a deep-reasoning agent for code review and planning.
   * **Gemini Flash**: Employed for quick and cost-effective **summarization** [02:08].
   * **Haiku**: Utilized for **title generation** [02:19].
   * **GPT-5**: Recently enabled as a primary agent for testing, marking a significant milestone as a contender for the main driver [02:27].
@@ -22,7 +22,8 @@ Episode 8 of "Raising an Agent" features Camden from the Amp Core team discussin
 
 * **Gemini Pro's Limitations** [03:02]: While good at "oneshotting" tasks, Gemini Pro struggled with complex, iterative tasks requiring codebase exploration and self-correction, often failing at low-level mechanics of tool calling schemas.
 * **Sonnet's Strengths** [07:05]: Sonnet demonstrates strong self-correction abilities, finding creative workarounds (e.g., using `sed` or `cat` commands) when initial file editing tools fail. The overlapping nature of its toolset, initially a concern, is now seen as an advantage for navigating errors.
-* **Open Models: Speed vs. Quality** [10:08]: Open models like Kimmy K2 and Qwen 3 Coder show promising tool-calling capabilities and impressive speed, especially with custom hardware (Croc, Cerebras) [11:16]. However, they are currently about 80% as effective as Sonnet for complex multi-step tasks.
+* **Opus Was Tested but Not Adopted** [09:35]: The team tried Opus separately from o3, but the extra cost and latency did not justify using it as Amp's main loop over Sonnet.
+* **Open Models: Speed vs. Quality** [10:08]: Open models like Kimi K2 and Qwen 3 Coder show promising tool-calling capabilities and impressive speed, especially with custom hardware such as Groq and Cerebras [11:16]. However, they are currently about 80% as effective as Sonnet for complex multi-step tasks.
 * **The "Exponential Decay" Problem** [06:31]: In multi-step tasks, even a small percentage of failure or degradation in each step can lead to a significant drop in overall reliability, making the "last 20%" of model quality crucial for fire-and-forget agentic workflows.
 * **GPT-5's Promise** [17:53]: GPT-5 is exciting due to its improved tool calling, making it a strong contender for the main agent driver. It also appears more "steerable" and responsive to instructions compared to Sonnet, which sometimes disregards commands due to its "strong personality" [25:01].
 
@@ -38,7 +39,7 @@ Episode 8 of "Raising an Agent" features Camden from the Amp Core team discussin
 
 * **Speed as a Game-Changer** [34:06]: Exploring the speed dimension of models is a key focus. Real-time feedback at high quality could eliminate the "distraction effect" [35:35] (where users switch tasks while waiting for agents) and require new UI abstractions to manage rapid tool calls.
 * **"Cutting with the Grain of the Model"** [49:18]: It's essential to align prompts and tools with a model's natural behavior and training, rather than fighting against its inherent "personality."
-* **Evolution of Engineering Roles**: Engineers in this new era need a broader understanding of business, product, and design, as the value of purely typing code diminishes. The ability to "wield code much faster" becomes paramount.
+* **Steering Users to Model Sweet Spots**: The goal is not to expose raw model names as a horse race, but to understand each model's strengths and guide users toward the workflows where that model is most effective [46:10].
 * **Constant Change**: The overarching theme is that everything in the AI/agentic coding landscape is constantly changing, requiring nimbleness, short bets, and a continuous learning mindset.
 
 Full video: <https://www.youtube.com/watch?v=doTI08ukee0>

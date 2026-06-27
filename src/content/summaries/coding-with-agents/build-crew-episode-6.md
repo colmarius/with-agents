@@ -14,9 +14,9 @@ In this episode, the Build Crew team (Thorsten Ball, Ryan Carson, and Graham McB
 
 The team kicks off with their weekly segment on what they've changed their minds about in AI development.
 
-* **Thorsten** is leaning towards making Amp **more opinionated**. He argues that the team has learned so much about what works (and what doesn't) that they should encode those best practices into the product's features, like the new `/handoff` command.
+* **Thorsten** is leaning towards making Amp **more opinionated**. He argues that the team has learned enough about what works to encode those practices into the product, guide users toward better workflows, and even remove generic features that push people in brittle directions.
 * **Brian** has changed his mind on **sub-agents**, finding that the main agent consistently produces higher-quality, more detailed results. He compares using sub-agents to a game of "telephone," where the original intent gets lost.
-* **Ryan** is all in on **Gemini 2.5 Flash**. He's found it to be an "unbelievable model" that is extremely fast, cheap (10 cents vs. half a cent for a similar task on Sonnet 4.5), and excellent at tool calling.
+* **Ryan** is all in on **Gemini 2.5 Flash**. He's found it to be an "unbelievable model" that is extremely fast, excellent at tool calling, and dramatically cheaper for his workflow: roughly half a cent for an interaction that cost around 10 cents with Sonnet 4.5.
 * **Graham** now believes Amp is building **"AI for developers"** rather than just a "coding agent." He sees Amp as a broader suite of specialized AI tools (like Librarian for search, Oracle for debugging) that help with all aspects of a developer's job.
 
 ### Guest Showcase: Building the Tool to Build the Tool
@@ -26,6 +26,7 @@ Build Crew member Brian Jones, who comes from the flooring industry, shares the 
 * **The Problem:** Brian started learning to code in February to build a complex app for his industry. He quickly ran into the major pitfalls of long-term AI projects: managing context, tracking tasks, and handing off work from one session to the next.
 * **The Solution:** Instead of building the app, he first built a **custom project management tool specifically for AI-driven development**.
 * **The Tool:** Brian's app manages projects, tasks, and context. It tracks every session, stores important decisions, saves context "handoffs" (similar to Amp's new feature), and even visualizes code dependencies. He built this complex tool entirely with the help of AI agents to solve his own workflow problems.
+* **One Task at a Time:** Brian cautions against assuming more parallel agents always help. His experience is that clear sequencing, explicit context, and finishing one task before starting the next often produce better results for large non-expert projects.
 
 ---
 

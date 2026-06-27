@@ -12,12 +12,12 @@ Episode 7 of the "Raising an Agent" series from Sourcegraph discusses strategies
 
 - The Agentic Mindset: The hosts stress that a coding agent is a "power tool" and should be treated like a full-time engineer, not a junior engineer. They function as autonomous "little robots" that, once given a task, will use tools to edit files, run tests, and self-correct until the task is complete [04:15]–[06:16].
 
-- Context Engineering: This new approach replaces "Prompt Engineering." It is vital to give the eager agent a highly specific and complete initial prompt to prevent it from going off-track or performing unwanted (and costly) work [07:49]–[08:37].
+- Up-Front Intent: Agent prompting needs clearer initial direction because the agent acts instead of stopping to ask clarifying questions. The more specific the task, constraints, and desired outcome, the less likely the agent is to wander into expensive or unwanted work [07:49]–[08:37].
 
-- Context Window Limitations: The Context Window is the agent's working memory, and its quality of reasoning degrades significantly as it fills up (e.g., after 60-70% capacity) [30:40]. It is crucial to keep the main agent's context focused and clean, which is often referred to as using a "clean slate" for each new task [32:22].
+- Context Engineering: The context window is the agent's working memory, and its reasoning quality degrades as it fills up. Context engineering means keeping each task's context focused, using clean threads, and avoiding irrelevant files or stale conversation history [30:40], [32:22].
 
 - The Role of Sub-Agents: To manage complex tasks and preserve the main context window, Sub-Agents are employed. These agents create a new, separate conversation space (context window) for self-contained sub-tasks, preventing the main agent from getting lost in a "rabbit hole" of intermediate steps. Sub-agents can also run in parallel [37:42], [43:01].
 
-- The "Oracle" Agent: A new type of sub-agent, called the "Oracle," allows the primary agent (e.g., Anthropic Sonnet 4) to access other, "smarter" LLMs (like GPT-4, or 03) for higher-level reasoning, debugging, or planning. This combines the "agentic" capabilities of one model with the "intelligence" of another [48:48], [50:16].
+- The "Oracle" Agent: Oracle uses OpenAI o3 as a reasoning, review, and planning sub-agent while Sonnet remains the main implementing agent. This combines Sonnet's practical tool-use loop with a separate model optimized for deeper analysis [48:48], [50:16].
 
 Full video: <https://www.youtube.com/watch?v=p8a0PePNWlA>

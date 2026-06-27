@@ -25,6 +25,8 @@ The team shared several tips and demos of new tools to improve agentic workflows
 
 Ryan gives a review of the new **Atlas browser from OpenAI**. He demonstrates its "Agent Mode," which allows you to give the browser a prompt and watch it simulate a user's journey. He uses it on AJ's website, asking the agent to "act like a user considering hiring him" and observing how it navigates the page. This provides a new way to get instant user experience (UX) feedback.
 
+The Atlas conversation leads into a broader point about browser and terminal interfaces for agents. The group discusses why terminal and TUI workflows can be powerful in an agentic world: they expose text and state directly to the agent, making email clients, file managers, and other programmable interfaces easier to inspect than opaque GUIs.
+
 #### **Amp's New "Handoff" Feature**
 
 Thorsten demos `/handoff`, a new feature for managing context in Amp. Instead of letting a thread get infinitely long, you can type `/handoff` with a new goal (e.g., "now test this feature"). An LLM then reads your current thread, extracts only the relevant files and context for the new task, and starts a brand new, focused thread for you.
@@ -48,7 +50,7 @@ Community guest AJ shared his top tips for working with agents in the command li
 
 The group briefly discusses the value of **specialized agents** (like Librarian) that do one job well, finding them more reliable and useful than complex, general-purpose sub-agents.
 
-Finally, AJ gives a glimpse into his work building **apps for AR glasses** on the Menra platform. His projects include a "clairvoyant" AI assistant and an app for sports teams that displays plays on a heads-up display during training.
+Finally, AJ gives a glimpse into his work building **apps for AR glasses** on the Mentra platform. His projects include a "clairvoyant" AI assistant and an app for sports teams that displays plays on a heads-up display during training.
 
 Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=dvcwFTtX2jY)
 

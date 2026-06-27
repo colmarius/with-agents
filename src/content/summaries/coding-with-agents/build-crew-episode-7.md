@@ -22,9 +22,9 @@ Torsten shared his strategy for getting higher-quality code from agents by keepi
 
 Mike demonstrated a sophisticated "research flow" for modernizing legacy codebases, specifically an Elixir package.
 
-* **The Oracle Approach:** Use a high-reasoning model (like GPT-4o or o1) to analyze the existing code and write detailed Markdown reports on every feature.
+* **The Oracle/Sub-Agent Approach:** Use high-reasoning analysis and focused sub-agents to inspect existing code and write detailed Markdown reports on every feature.
 * **Critique and Roast:** After the initial analysis, spin up sub-agents to "roast" the code and find design weaknesses.
-* **Markdown-First Development:** Mike noted a **5:1 ratio of Markdown to Code**. He generates extensive plans, critiques, and architectural documents before writing a single line of code. This "measure twice, cut once" approach prevents the agent from hallucinating inefficient solutions.
+* **Markdown-First Development:** Mike discussed a rough **5:1 ratio of planning/research effort to code-writing effort**, not necessarily literal file volume. He generates extensive plans, critiques, and architectural documents before writing code. This "measure twice, cut once" approach prevents the agent from hallucinating inefficient solutions.
 * **Opinionated API Design:** When refactoring, Mike focuses his energy on strictly defining the public API surface (types, inputs, outputs) and lets the agent handle the underlying implementation details.
 
 ### The Importance of `agents.md`

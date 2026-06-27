@@ -6,45 +6,27 @@ episode: 2
 date: "2025-10-01"
 ---
 
-## Mastering AI Agent Prompting and the Evolving Developer Role
+## Build Crew Live: Episode 2 Highlights
 
-Episode 2 of "Build Crew Live" dives into the dynamic world of AI coding agents, offering insights and best practices from Sourcegraph's Amp team and a product manager turned builder. The discussion centers around the newly launched **Build Crew community**, effective **prompting strategies**, and the **evolving role of developers** in an AI-first era.
+Episode 2 of "Build Crew Live" brings together Thorsten Ball, Nico, Ryan Carson, and Tim—an Amp product manager who started building with agents—to discuss how AI agents blur product and engineering roles, why small focused threads work, and how to preserve context across longer projects.
 
-### The Build Crew Community: Empowering AI Builders
+### Key Points Covered
 
-Sourcegraph has launched **Build Crew**, a free community designed for developers who are building with AI agents, regardless of whether they use Amp, Cursor, or other tools. The community aims to foster knowledge sharing and support among builders.
+* **Build Crew as a learning community**: The episode opens by framing Build Crew as a place for people using Amp, Cursor, Claude Code, Codex, and other tools to compare workflows, do standups, and learn from one another [00:00:00]-[00:00:56], [26:04]-[28:03].
 
-Key features of Build Crew:
+* **PMs and non-engineers can become builders**: Tim describes coming from product and filmmaking rather than professional coding, then using AI agents to build real software. The panel argues that the old product/design/engineering triangle starts to become a more fluid "blob" when agents lower the cost of implementation [04:10]-[09:27].
 
-* **Free Membership**: Open to all developers using AI agents.
-* **Amp Credits**: Amp users receive $100 in credits.
-* **Engagement Tools**: Includes a leaderboard, badges, and a private Twitter DM group for collaboration and support.
-* **Build Challenges**: Upcoming initiatives will involve community-wide build challenges to encourage learning and shared experiences.
+* **Use agents for bounded work you already understand**: Thorsten's practical tip is to give the agent small, known tasks—like fixing a VS Code integration bug—where the human knows the desired shape and can quickly review the result [10:20]-[13:22].
 
-### Masterful Prompting: Strategies for AI Agent Success
+* **Manual coding decreases, but review responsibility increases**: The group discusses how much code they now write by hand, when they still hand-edit load-bearing logic, and how reviewing generated code becomes the main skill [14:17]-[23:04].
 
-The Amp team emphasizes that effective interaction with AI agents hinges on **thoughtful and structured prompting**. They highlight several key strategies:
+* **Agent-friendly verification matters**: Ryan describes using Playwright, unified frontend/backend logs, and predictable dev accounts so the agent can test what it built and read the relevant output instead of relying on manual screenshots or scattered logs [17:08]-[20:17].
 
-* **Structured Prompts for Clarity**: Jason advocates for starting prompts with a clear **goal** and breaking down tasks into **phases**. Asking the agent to repeat its mission ensures understanding and alignment.
-* **Chain of Thought for Better Reasoning**: Thorsten explains that having the agent articulate its plan aloud (similar to "chain of thought" prompting) significantly improves results by keeping the plan in the agent's context window.
-* **Small, Focused Conversations**: Thorsten advises keeping agent conversations short and focused. Even for seemingly simple tasks, using an agent to handle typing or API lookups provides a speed-up.
-* **External Memory (Artifacts) for Context Management**: A crucial practice involves instructing agents to write distilled information (like plans, bug hypotheses, or overviews) into external files. These "artifacts" act as an explicit memory that can be referenced in new threads, preventing context overload and noise from previous, potentially "messy" conversations. This is compared to "cleaning your desk" before a new task.
-* **Deterministic Tools via Custom Slash Commands**: Nikolai (Nico) demonstrates creating custom slash commands (using bash scripts) to fetch structured information from external systems (e.g., Linear issues, GitHub PR comments). This provides a reliable and deterministic way to feed specific context into the agent's workflow, avoiding the "context pollution" often associated with generic MCPs.
-* **Slowing Down and Specificity**: Tyler stresses the importance of taking time to construct detailed and specific prompts, reducing the solution space for the agent.
-* **"Code is Cheap" Mentality**: The affordability of AI-generated code encourages experimentation, allowing developers to easily revert and try different approaches without significant cost.
-* **Don't Overload the Context Window**: Justin advises against filling the context window just because it's large, advocating for focused interactions.
-* **Explore Agent Capabilities**: Jason encourages users to be open-minded about what AI agents can achieve, as their capabilities are rapidly evolving.
+* **Custom slash commands provide deterministic context**: Nico demonstrates slash commands that fetch Linear issues and GitHub PR comments into a prompt. The goal is to feed the agent exact structured context, not ask it to discover everything through broad, noisy MCP-style tools [28:03]-[38:45].
 
-### The Evolving Role of Developers in an AI-First World
+* **Break big work into artifacts and fresh threads**: Tim explains the "loop of doom" that happens when a project gets too large for one conversation. His solution is to create PRDs, split them into granular tasks, write explicit artifacts, and restart with clean context when needed [41:39]-[57:45].
 
-The conversation highlights significant shifts in developer workflows and roles due to AI agents:
-
-* **Impact on Product Management and Engineering**: Tim, a product manager with no prior coding experience, illustrates how AI agents empower him to quickly prototype and build ideas, blurring the lines between traditional roles. Thorsten suggests the "triangle" of dev, product, and design is becoming a more integrated "blob."
-* **Reduced Manual Coding**: The team's experiences show a significant reduction in hand-written code, with some aiming for 0% manual coding. Developers are learning to review and refine AI-generated code.
-* **Learning Through Review**: Ryan notes that reviewing AI-generated code is a powerful way to learn about various aspects of software development, including DevOps and CI/CD.
-* **The "Imposter Syndrome" of Sharing Prompts**: The team addresses the initial reluctance many developers feel about sharing their prompts, comparing it to the early days of public code sharing on GitHub. They advocate for transparency to foster collective learning and improvement.
-* **Designing for Agents**: The discussion touches on the need for tooling and logging to become more "agent-friendly," with unified logs and deterministic tools that agents can easily interpret and utilize.
-* **More Accessible Development**: Tim's journey from surf movie maker to builder underscores how AI agents are democratizing software creation, empowering individuals with ideas to bring them to life without extensive coding backgrounds.
+* **Context hygiene is a discipline**: The panel uses the "don't cut fruit on the chicken board" metaphor for agent context: carry forward distilled plans and decisions, not every failed attempt from a messy thread [49:33]-[57:45].
 
 Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=VkV4p-eDPmM)
 

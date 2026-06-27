@@ -31,9 +31,10 @@ A question from the audience leads to a discussion about voice transcription too
 The core of the episode focuses on practical tips and insights into agentic coding:
 
 * **Thorsten's Tip: Custom Toolboxes for Amp**: Thorsten shares his experiment with building a single-website interface for an agent that can access custom tools. He demonstrates how Amp can create and use JavaScript scripts to automate tasks like generating coupon codes on platforms like Lemon Squeezy. The key takeaway is keeping scripts plain and external to Amp, with a thin wrapper for agent interaction. This allows for easy committal to a repo and sharing within the community.
-* **The Problem with MCP (Model Context Protocol)**: The discussion touches on the limitations of MCP, describing it as "too heavy weight" and "terrible for the internet" due to long-running processes, dependency management, and tool explosion. The concept of a **Minimal Context Protocol (MCP2)** is suggested as an alternative.
+* **The Problem with MCP (Model Context Protocol)**: The discussion touches on the limitations of MCP, describing it as "too heavy weight" and "terrible for the internet" due to long-running processes, dependency management, and tool explosion. The panel jokingly riffs on a lighter "minimal context protocol" rather than presenting MCP2 as a concrete proposal.
 * **Lua as a Sandbox for Agents**: An emerging idea in the Elixir world involves using a single Lua tool to allow agents to write and chain Lua scripts for various actions, acting as a sandboxed execution engine and enabling efficient, chained calls to multiple files as a single tool call.
 * **Camden's Tip: Encouraging Agents to Write Code**: Camden emphasizes the effectiveness of recent models (like GPT-5 and Sonnet 4.5) in writing small, one-off scripts to perform broad tasks across a codebase. He provides an example where Amp debugged an issue by building a bash script to manage logs, configure settings, and run Amp in a script. This highlights the agent's ability to self-correct and automate debugging processes.
+* **Memory Is Still Unsettled**: The group agrees that `AGENTS.md` files help, but do not yet provide coworker-like memory. Agents can remember the wrong things, and it remains hard to decide what should be persisted across threads [19:36]-[22:38].
 
 ### The Future of Agents: Background and Cloud Agents
 
@@ -43,7 +44,7 @@ The conversation shifts to the potential of background and cloud agents:
 * **Changing Workflows and Delegation**: The panel discusses how background agents will change the way people work, moving towards a model where humans delegate tasks and review drafts, acting more like "project managers".
 * **Different Interaction Models**: A distinction is drawn between CLI agents (interactive, pair-programming style) and cloud agents (asynchronous, request-based with a clear outcome in mind). Cloud agents are currently seen as more suitable for less complicated work or research.
 * **The "Swiss Cheese Model" for Agents**: Camden proposes a "Swiss cheese model" for fleets of agents, where each agent has unique knowledge gaps but layering them together allows for self-correction and comprehensive solutions.
-* **Single-threaded Limitations and Future Evolution**: Current background agents are viewed as single-threaded and heavy, often spinning up Docker containers. The future envisions a human interacting with one agent, which then delegates to hundreds of specialized agents in the background.
+* **Single-threaded Limitations and Future Evolution**: Current background agents are viewed as single-threaded and heavy, often spinning up Docker containers. Mike predicts that future workflows may involve a human interacting with one agent that delegates to many specialized agents in the background.
 * **Human Feedback Loop**: The importance of the human as a "tool" for the agent, providing a crucial feedback loop for keeping agents on track, is emphasized.
 * **Cost and Accessibility**: While acknowledging the potential expense of future large-scale agent systems, there's optimism about models becoming cheaper and more accessible, ensuring broader participation.
 * **Defining AGI and Human Work**: A discussion on the difficulty of defining Artificial General Intelligence (AGI) and the challenge of comparing agent performance against human work, which itself is hard to consistently define.
@@ -53,7 +54,7 @@ The conversation shifts to the potential of background and cloud agents:
 Mike shares his coding tip:
 
 * **Proving Correctness Beyond Unit Tests**: When building a task, it's crucial to think through how to prove its correctness beyond basic unit tests. This can involve scripts or logs that show the agent is performing as expected.
-* **Long-Running Threads and Self-Correction**: Mike aims to construct threads that operate as long as possible, often by writing a spec, having the agent figure out a plan, and then executing it with sub-agents. He uses a technique where he teaches Amp to fix itself through cycles of custom tooling and live fixture tests against LLM APIs.
+* **Long-Running Threads and Self-Correction**: Mike aims to construct threads that operate as long as possible, often by writing a spec, having the agent figure out a plan, and then executing it with sub-agents. He uses cycles of custom tooling and live tests—such as spinning up Fly.io infrastructure and publishing test packages—to prove that the agent's work really behaves correctly.
 * **Sequential Sub-Agents**: Mike advocates for running sub-agents sequentially rather than in parallel to avoid context mixing and to ensure each step builds on the previous output.
 * **Delegation as a Core Skill**: Mike concludes by emphasizing that **leadership and delegation** are the most important skills to learn right now for effectively guiding and creating agents, applying human-to-human interaction principles to the agent world.
 

@@ -31,7 +31,7 @@ This episode of the Latent Space podcast features a discussion with Quinn and Th
 * **Beyond Model Choice** [21:11]: The focus is not on maximizing revenue or user adoption today, as the landscape is changing rapidly. They prioritize building the best coding agent, even if it means foregoing features users *think* they want (like model choice or specific buttons) that would slow them down [22:06].
 * **Models as Implementation Details** [25:55]: The vision is a future where the specific model running becomes an implementation detail, with different models used in the background for various tasks (e.g., faster models for specific modes).
 * **Multi-Model Strategy** [30:11]: Amp already utilizes models from Anthropic, OpenAI, and Google, and is close to integrating a fast open-source model, leveraging the strengths and weaknesses of different providers.
-* **Cutting-Edge Models and Open Source** [27:39]: The rapid evolution of models, including open-source options like Qwen 3 Coder and Kimmy K2, means that reliance on a single provider or older models is not sustainable. A significant portion of the internal team now uses models other than Sonnet for their primary Amp interaction [28:36].
+* **Cutting-Edge Models and Open Source** [27:39]: The rapid evolution of models, including open-source options like Qwen 3 Coder and Kimi K2, means that reliance on a single provider or older models is not sustainable. A significant portion of the internal team now uses models other than Sonnet for their primary Amp interaction [28:36].
 * **The Problem of Non-Deterministic LLMs** [34:43]: A significant challenge is the non-deterministic nature of LLMs, where products built on them can appear to work but might fail in a small percentage of cases, leading to a "hangover" effect for users.
 
 ### Building for the Frontier: User Expectations and Feedback Loops
@@ -49,7 +49,7 @@ This episode of the Latent Space podcast features a discussion with Quinn and Th
 * **Code Review in an Agentic World** [01:06:32]: The rise of agents means that much of the code is written by agents and reviewed by at least one human, shifting the traditional code review paradigm not reflected in platforms like GitHub.
 * **Git and Version Control Systems** [01:08:03]: The discussion raises questions about whether existing tools like Git are well-designed for a future with agents that might generate more frequent merge conflicts due to parallel changes.
 * **Changing User Demands** [01:08:40]: Agentic coding might lead to a tolerance for less "perfect" software if it's much faster, cheaper, and personalized, altering user demands and standards.
-* **Engineering as Leadership** [58:16]: Mike emphasizes that the number one skill for engineers in this new world is not prompting or advanced coding techniques, but **leadership and delegation**, applying human-to-human interaction skills to guiding agents.
+* **Adoption Depends on Seeing Agents Work** [58:56]: The team argues that skeptics often change their minds once they see agents produce compounding effects inside a real codebase. Unlike older developer tools, agents may push companies to adapt codebases, tooling, and processes around the agent instead of expecting the tool to fit every existing habit.
 * **The Engineer as a Business Driver** [01:17:13]: Thorsten highlights that engineers need a broader understanding of business, product, and design, and the ability to wield code faster to achieve business goals, as the pure act of typing code will diminish in value.
 
 ### Conclusion and Call to Action
