@@ -168,3 +168,32 @@ Do not create the public post yet. First, align the talk's emphasis with the use
 ## Updated Next Action
 
 - Review the upgraded direct-link post as the new article base. In a separate step, do Task 9: convert the 12-section article into a high-level visual slide pass with less text per slide and clearer visual metaphors.
+
+## 2026-06-27 List Durable Context Post Only
+
+- User requested publishing/listing the durable-context article and hiding the other posts in production while keeping them visible locally.
+- Confirmed the posts routes already implement the desired split:
+  - production filters `draft: true` posts out of `/posts`, individual post pages, and slide pages;
+  - local dev includes draft posts.
+- Updated `src/content/posts/durable-context-coding-agents.md` from `unlisted: true` to `unlisted: false` while keeping `draft: false`.
+- Marked the other non-durable posts as `draft: true`:
+  - `agent-planning-workflow.md`
+  - `agent-workflows-that-stick.md`
+  - `amp-first-win-15-minutes.md`
+  - `amp-power-patterns.md`
+  - `coding-with-agents-2025.md`
+  - `simon-willison-engineering-practices-coding-agents.md`
+  - `what-is-an-agent.md`
+- `workshop-hands-on-agents.md` was already `draft: true`.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed.
+  - Build output under `dist/posts` contains only:
+    - `dist/posts/index.html`
+    - `dist/posts/durable-context-coding-agents/index.html`
+    - `dist/posts/durable-context-coding-agents/slides/index.html`
+  - `dist/posts/index.html` contains "Your Repo Is the Memory" and does not contain the hidden draft post titles checked: "LLM Agents: Tools in a Loop", "Simon Willison: Engineering Practices", or "Coding with Agents in 2025".
+
+## Updated Next Action
+
+- Commit the listed durable-context post / draft-only other posts change. Then continue with Task 9, the separate high-level visual slide pass, when ready.

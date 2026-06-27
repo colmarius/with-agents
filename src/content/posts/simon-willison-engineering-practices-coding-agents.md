@@ -3,7 +3,7 @@ title: 'Simon Willison: Engineering Practices That Make Coding Agents Work'
 description: 'A transcript-backed summary of Simon Willison’s Pragmatic Summit advice on TDD, manual verification, sandboxing, and staying ambitious with coding agents.'
 pubDate: 2026-06-27
 tags: ['AI Agents', 'Workflow', 'Testing', 'Security']
-draft: false
+draft: true
 order: 8
 ---
 

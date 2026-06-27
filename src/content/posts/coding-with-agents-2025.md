@@ -5,7 +5,7 @@ pubDate: 2025-11-07
 tags: ['AI Agents', 'Amp', 'Workflows']
 difficulty: 'beginner'
 readingTime: '20-30 min'
-draft: false
+draft: true
 order: 2
 ---
 

@@ -4,7 +4,7 @@ description: 'A field guide for keeping coding agents aligned with repo-local tr
 pubDate: 2026-06-25
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
-unlisted: true
+unlisted: false
 order: 7
 ---
 

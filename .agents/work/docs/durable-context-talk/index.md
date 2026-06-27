@@ -6,7 +6,7 @@ Updated: 2026-06-27
 
 ## Summary
 
-Prepare a post/slide deck about durable context for AI coding agents, based on the gist "Durable Context for AI Coding Agents: Working with the 'Lossy Encyclopedia'." The direct-link post now has a source-backed 12-section article base that reframes durable context around alignment debt, proof, context hygiene, good friction, and codebase-as-agent-infrastructure. The next step is a separate high-level visual slide pass.
+Prepare a post/slide deck about durable context for AI coding agents, based on the gist "Durable Context for AI Coding Agents: Working with the 'Lossy Encyclopedia'." The post now has a source-backed 12-section article base and is the only listed/published production post. The next step is a separate high-level visual slide pass.
 
 ## Artifacts
 
@@ -16,14 +16,14 @@ Prepare a post/slide deck about durable context for AI coding agents, based on t
 - Plan: `plan.md`
 - Progress: `progress.md`
 - Meetup organizer gist: `meetup-organizer-gist.md`
-- Direct-link published post: `src/content/posts/durable-context-coding-agents.md` (`unlisted: true`)
+- Listed published post: `src/content/posts/durable-context-coding-agents.md`
 - 2026-06-27 revision source pass: `research.md`
 - Active next plan task: `plan.md` Task 9, high-level visual slide pass
 - Decisions: none
 
 ## Next Action
 
-- Review the upgraded direct-link article base. Then do a separate high-level visual slide pass: reduce slide text, choose visual metaphors for each `##`, and only scope slide-renderer changes if Markdown authoring cannot produce the needed presentation quality.
+- Review the upgraded listed article. Then do a separate high-level visual slide pass: reduce slide text, choose visual metaphors for each `##`, and only scope slide-renderer changes if Markdown authoring cannot produce the needed presentation quality.
 
 ## Open Questions
 
