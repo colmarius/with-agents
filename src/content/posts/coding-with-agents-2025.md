@@ -267,7 +267,7 @@ Ready to put this into practice? Follow the recommended path:
 - [Coding with Agents Resources Hub](/resources/coding-with-agents) — Curated podcasts and videos
 - [Amp Manual](https://ampcode.com/manual) - Comprehensive guide
 - [How I Use Amp](https://ampcode.com/how-i-use-amp) - Thorsten Ball's workflow
-- [Raising an Agent](https://www.youtube.com/playlist?list=PLhToAAkWJ58f-en2ifL9n5ixjzDPWnV9u) - 8-part documentary on building Amp
+- [Raising an Agent](https://www.youtube.com/playlist?list=PLhToAAkWJ58f-en2ifL9n5ixjzDPWnV9u) - Documentary series on building Amp
 
 ---
 

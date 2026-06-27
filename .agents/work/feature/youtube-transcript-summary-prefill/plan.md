@@ -9,6 +9,12 @@ Create a local agent-assisted workflow for turning a YouTube video into a review
 - Keep publishing safe: drafts first, explicit apply later.
 - Make the workflow usable by agents through a small skill wrapper once the script behavior is stable.
 
+## Seed Targets
+
+- Raising an Agent Episode 9: <https://www.youtube.com/watch?v=2wjnV6F2arc>
+- Raising an Agent Episode 10: <https://www.youtube.com/watch?v=4rx36wc9ugw>
+- Example/test video for initial fetcher: <https://www.youtube.com/watch?v=DPgJjRdQWrg>
+
 ## Tasks
 
 - [ ] **Task 1: Build transcript and metadata fetcher**
@@ -27,6 +33,7 @@ Create a local agent-assisted workflow for turning a YouTube video into a review
     - The command produces a proposed resource JSON object with `title`, `url`, `description`, `type`, `source`, `date`, and tags.
     - The command produces a summary markdown draft with valid frontmatter shape for `src/content/summaries/**`.
     - Draft output includes enough provenance (source URL, transcript availability, generation date) for review.
+    - The command can draft replacements for the placeholder Raising an Agent episode 9 and 10 summaries without publishing them automatically.
   - Notes: The script can generate a summary prompt bundle if no LLM API is added; the agent can then write the final summary from the transcript.
 
 - [ ] **Task 3: Add reviewed apply mode**
