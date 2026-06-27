@@ -63,6 +63,8 @@ Important routes:
 
 Use this workflow when the user provides a YouTube video link/title or asks for a video summary.
 
+X-only livestreams or broadcasts do not need transcript sidecars. If an entry intentionally points only to X and no public YouTube recording/transcript is being summarized, say that explicitly in the summary body instead of leaving a "coming soon" placeholder.
+
 1. For a new YouTube video, save a transcript sidecar first:
 
    ```sh

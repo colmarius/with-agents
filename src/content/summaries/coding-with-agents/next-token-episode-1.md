@@ -8,6 +8,8 @@ date: "2025-10-01"
 
 This episode of the Next Token series features discussions about AI agents, sharing experiences from developers working with coding agents, and exploring the latest trends in agent-based development.
 
+No transcript sidecar is maintained for this X-only broadcast.
+
 You can watch the full episode here:
 
 - X: <https://x.com/i/broadcasts/1MnxnPWoDwLGO>
