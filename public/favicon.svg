@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="With Agents favicon">
-  <rect width="1024" height="1024" rx="220" fill="#18181B" />
-  <path d="M356 304 180 512l176 208" fill="none" stroke="#F8FAFC" stroke-linecap="round" stroke-linejoin="round" stroke-width="92" />
-  <path d="M668 304 844 512 668 720" fill="none" stroke="#F8FAFC" stroke-linecap="round" stroke-linejoin="round" stroke-width="92" />
-  <path d="M568 132 350 548h146l-44 344 226-452H534l34-308Z" fill="#FACC15" />
+  <rect width="1024" height="1024" rx="220" fill="#4f46e5" />
+  <path d="M413.5 241.3 A 288 288 0 1 0 610.5 241.3" fill="none" stroke="#ffffff" stroke-width="76" stroke-linecap="round" />
+  <path d="M610.5 161 L 540 252 L 681 252 Z" fill="#ffffff" />
+  <path d="M455 410 L 575 512 L 455 614" fill="none" stroke="#ffffff" stroke-width="82" stroke-linecap="round" stroke-linejoin="round" />
 </svg>
