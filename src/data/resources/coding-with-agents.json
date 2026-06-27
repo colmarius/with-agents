@@ -1,5 +1,17 @@
 [
   {
+    "id": 9,
+    "title": "Pi Building Pi, OpenClaw's Minimalist Coding Agent",
+    "subtitle": "Mario Zechner on building and using Pi",
+    "url": "https://www.youtube.com/watch?v=DPgJjRdQWrg",
+    "description": "Mario Zechner demonstrates how he uses Pi to maintain Pi itself, pairing a deliberately minimal agent harness with strong human architectural control. The session covers minimalist tool design, self-modifying agent extensions, issue triage with GitHub CLI, deterministic checks, transcript-like branch workflows, and why human taste and module boundaries still matter when agents can generate code at high volume.",
+    "type": "video",
+    "source": "The Modern Software Developer",
+    "date": "2026-06-12",
+    "duration": "1h 31m",
+    "tags": ["Coding agents", "Workflow", "Tools", "Architecture"]
+  },
+  {
     "id": 7,
     "title": "Keynote: Linus Torvalds, Creator of Linux & Git, in Conversation with Dirk Hohndel",
     "url": "https://www.youtube.com/watch?v=tWx769t1JKg",
