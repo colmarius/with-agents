@@ -37,4 +37,23 @@ Browser smoke check for `/resources/coding-with-agents`:
 - External resource buttons for representative video and playlist cards keep the expected outbound URLs.
 - Playlist resources with derived latest dates show `Latest summary:`.
 
+## 2026-06-27 — Mobile topic disclosure polish
+
+- Consulted Oracle on whether search/filter controls should be hidden by default.
+- Kept search, result count, and reset visible by default; collapsed only the topic pills on mobile.
+- Desktop keeps the full always-visible topic controls.
+- Mobile topic disclosure shows active state (`Topics: All` or `Topic: <label>`), uses `aria-expanded`/`aria-controls`, and resets closed when filters are cleared.
+
+Verification:
+
+- `npm run lint:fix` — no fixes applied.
+- `npm run check` — passed.
+- `npm run build` — passed.
+- Focused browser smoke check passed:
+  - desktop topic pills are visible by default and mobile topic toggle is hidden;
+  - mobile search remains visible, topics are collapsed by default, and expanding reveals all 10 topics;
+  - selecting `Context & memory` updates the collapsed header and narrows to 4 resources;
+  - no-results state and clear reset work on mobile;
+  - single-resource summary modal still opens on desktop.
+
 Next action: review and merge the completed resource discovery filters.

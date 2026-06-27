@@ -4,6 +4,7 @@ import { useIsMdUp } from '../../hooks';
 import { formatDate, titleCase } from '../../utils';
 import {
   Button,
+  ChevronDownIcon,
   CollapsibleButton,
   DocumentIcon,
   ExternalLinkIcon,
@@ -84,6 +85,7 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
   );
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
+  const [isTopicFiltersOpen, setIsTopicFiltersOpen] = useState(false);
   const [summaryContent, setSummaryContent] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [summaryRef, setSummaryRef] = useState<SummaryRef | null>(null);
@@ -226,10 +228,12 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
 
   const hasActiveFilters =
     normalizedSearchQuery.length > 0 || selectedTopic !== null;
+  const selectedTopicLabel = selectedTopic ? TOPIC_LABELS[selectedTopic] : null;
 
   const handleClearFilters = () => {
     setSearchQuery('');
     setSelectedTopic(null);
+    setIsTopicFiltersOpen(false);
   };
 
   const getLinkText = (type: string) => {
@@ -358,10 +362,35 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
           </div>
 
           <fieldset className="flex flex-col gap-3">
-            <legend className="text-sm font-medium text-gray-700">
+            <legend className="sr-only">Topics</legend>
+            <div
+              className="hidden text-sm font-medium text-gray-700 md:block"
+              aria-hidden="true"
+            >
               Topics
-            </legend>
-            <div className="flex flex-wrap gap-2">
+            </div>
+            <button
+              type="button"
+              aria-expanded={isTopicFiltersOpen}
+              aria-controls="resource-topic-filters"
+              onClick={() => setIsTopicFiltersOpen(!isTopicFiltersOpen)}
+              className="flex w-full items-center justify-between rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 md:hidden"
+            >
+              <span>
+                {selectedTopicLabel
+                  ? `Topic: ${selectedTopicLabel}`
+                  : 'Topics: All'}
+              </span>
+              <ChevronDownIcon
+                className={`w-5 h-5 transition-transform ${
+                  isTopicFiltersOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            <div
+              id="resource-topic-filters"
+              className={`${isTopicFiltersOpen ? 'flex' : 'hidden'} flex-wrap gap-2 md:flex`}
+            >
               {TOPIC_OPTIONS.map(({ slug, label }) => {
                 const isSelected = selectedTopic === slug;
 
