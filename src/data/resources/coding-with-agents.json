@@ -1,5 +1,17 @@
 [
   {
+    "id": 14,
+    "title": "Simon Willison: Engineering practices that make coding agents work",
+    "subtitle": "Simon Willison on TDD, verification, sandboxing, and agentic engineering",
+    "url": "https://www.youtube.com/watch?v=owmJyKVu5f8",
+    "description": "Simon Willison explains the practical engineering habits that make coding agents useful today: red-green TDD, manual verification with real commands, conformance-driven development, high-quality scaffolds, sandboxed execution, fake data for risky workflows, and human review for code that will be maintained.",
+    "type": "video",
+    "source": "The Pragmatic Engineer",
+    "date": "2026-03-19",
+    "duration": "28m",
+    "tags": ["Coding agents", "Workflow", "Testing", "Security"]
+  },
+  {
     "id": 13,
     "title": "A love letter to Pi | Lucas Meijer",
     "subtitle": "Lucas Meijer on Pi, context management, and evaluating agent work",
