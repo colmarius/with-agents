@@ -36,7 +36,8 @@ Options:
   --episode <number>     Optional transcript episode value.
   --lang <code>          Caption language to request. Default: en.
   --dry-run              Fetch and report paths without writing files.
-  --force                Overwrite an existing transcript file.
+  --force                Overwrite an existing transcript file, including any
+                         manual transcript fixes.
   --json                 Print machine-readable JSON.
   --help                 Show this help.
 
@@ -48,6 +49,10 @@ Notes:
   Transcript bodies use coarse ${chunkSeconds}-second timestamped chunks. The
   timestamps are source anchors for later transcript checks and summaries, not
   caption-level timing.
+
+  Regeneration is mechanical source capture. If a transcript needs typo/name
+  cleanup, run the final regeneration first, then edit the saved sidecar by
+  hand. A future --force run will replace those manual edits.
 `;
 
 const commandNames = new Set(['fetch', 'help', 'save']);
