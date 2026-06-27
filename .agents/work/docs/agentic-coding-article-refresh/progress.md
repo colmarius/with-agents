@@ -58,3 +58,16 @@
 ## Updated Next Action
 
 - Start a fresh implementation thread with `handoff-task-1.md` to fill `audit.md` for all draft posts.
+
+## 2026-06-28 Task 1 Audit Completed
+
+- Filled `audit.md` with one row for each of the eight draft posts, including current title, decision, target slug, overlap notes, source anchors, stale-claim checks, and frontmatter/navigation impact.
+- Recommended `make-the-agent-prove-it` as the next single article candidate, using the Simon Willison draft as source material only after it is reframed beyond the matching resource summary.
+- Roadmap from the audit:
+  - Refresh `coding-with-agents-2025` as `agentic-coding-2026`.
+  - Merge `agent-workflows-that-stick` and `agent-planning-workflow` into `small-threads-durable-state` with current `.agents/work/` v0.3 guidance.
+  - Refresh `amp-power-patterns` only as an optional Amp case study after close-to-publish product verification.
+  - Keep `workshop-hands-on-agents` private unless an event revives it.
+- Files changed: `audit.md`, `progress.md` only.
+- Open questions for the next task: whether the proof article or the 2026 field guide should publish first after the distinct-thesis gate, and which current public Amp source should be used for product verification before any Amp case study.
+- Verification: `git diff --check` passed after the audit and progress updates.
