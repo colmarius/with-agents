@@ -51,14 +51,104 @@ const slidesDescription = `${post.data.description} Slide view.`;
         display: block;
       }
 
+      :global(.slide-main > blockquote:first-of-type) {
+        border-left-color: #4f46e5;
+        color: #0f172a;
+        font-size: 1.35em;
+        line-height: 1.35;
+      }
+
+      :global(.slide-notes) {
+        display: none;
+        margin-top: 2rem;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 1.5rem;
+      }
+
+      :global(body.notes-visible .slide-notes) {
+        display: block;
+      }
+
+      :global(#source-appendices) {
+        display: none;
+      }
+
+      :global(body.notes-visible #source-appendices:not(:empty)) {
+        display: block;
+      }
+
+      :global(.slide pre:has(> code.language-mermaid)),
+      :global(.slide pre:has(> code.lang-mermaid)),
+      :global(.slide pre[data-language="mermaid"]),
+      :global(.slide pre[class*="language-mermaid"]),
+      :global(.slide-appendix pre:has(> code.language-mermaid)),
+      :global(.slide-appendix pre:has(> code.lang-mermaid)),
+      :global(.slide-appendix pre[data-language="mermaid"]),
+      :global(.slide-appendix pre[class*="language-mermaid"]) {
+        display: none;
+      }
+
+      :global(.slide pre > code.language-mermaid),
+      :global(.slide pre > code.lang-mermaid),
+      :global(.slide pre[data-language="mermaid"] > code),
+      :global(.slide pre[class*="language-mermaid"] > code),
+      :global(.slide-appendix pre > code.language-mermaid),
+      :global(.slide-appendix pre > code.lang-mermaid),
+      :global(.slide-appendix pre[data-language="mermaid"] > code),
+      :global(.slide-appendix pre[class*="language-mermaid"] > code) {
+        display: none;
+      }
+
       #source {
         display: none;
+      }
+
+      #appendix-link[hidden] {
+        display: none;
+      }
+
+      @media print {
+        :global(body) {
+          background: #fff !important;
+          overflow: visible !important;
+        }
+
+        :global(.slide-topbar),
+        :global(.slide-controls) {
+          display: none !important;
+        }
+
+        #slides-container {
+          position: static !important;
+          overflow: visible !important;
+          padding: 0 !important;
+        }
+
+        :global(.slide),
+        :global(.slide.active) {
+          display: block !important;
+          max-width: none !important;
+          min-height: auto !important;
+          margin: 0 0 2rem !important;
+          break-after: page;
+          box-shadow: none !important;
+        }
+
+        :global(.slide-notes),
+        :global(#source-appendices:not(:empty)) {
+          display: block !important;
+        }
+
+        :global(#source-appendices:not(:empty)) {
+          break-before: page;
+          margin-top: 0 !important;
+        }
       }
     </style>
   </head>
   <body class="bg-white text-slate-900 overflow-hidden">
     <div
-      class="fixed top-0 left-0 right-0 h-14 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-50"
+      class="slide-topbar fixed top-0 left-0 right-0 h-14 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-50"
     >
       <BackNav href={`/posts/${post.id}`} label="Back to Post" />
       <div
@@ -66,8 +156,26 @@ const slidesDescription = `${post.data.description} Slide view.`;
       >
         {post.data.title}
       </div>
-      <div class="text-sm text-slate-600 min-w-16 text-right">
-        <span id="current">1</span> / <span id="total">1</span>
+      <div class="flex items-center justify-end gap-2 text-sm text-slate-600">
+        <a
+          id="appendix-link"
+          href="#source-appendices"
+          hidden
+          class="rounded-md border border-slate-200 bg-white px-2 py-1 text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50"
+        >
+          Sources
+        </a>
+        <button
+          id="notes-btn"
+          type="button"
+          aria-pressed="false"
+          class="rounded-md border border-slate-200 bg-white px-2 py-1 text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50"
+        >
+          Notes
+        </button>
+        <div class="min-w-16 text-right" aria-live="polite">
+          <span id="current">1</span> / <span id="total">1</span>
+        </div>
       </div>
     </div>
 
@@ -75,13 +183,28 @@ const slidesDescription = `${post.data.description} Slide view.`;
       id="slides-container"
       class="fixed top-14 left-0 right-0 bottom-0 overflow-y-auto p-4 sm:p-8"
     >
+      <noscript>
+        <div class="mx-auto max-w-3xl bg-white border border-slate-200 rounded-lg p-8 sm:p-12 shadow-sm">
+          <h1 class="text-2xl font-semibold text-slate-900 mb-4">
+            JavaScript is required for slide navigation
+          </h1>
+          <p class="text-slate-700">
+            This generated slide view needs JavaScript. You can still read the
+            source article:
+            <a class="text-indigo-700 underline" href={`/posts/${post.id}`}>
+              {post.data.title}
+            </a>.
+          </p>
+        </div>
+      </noscript>
+      <div id="source-appendices" class="mx-auto max-w-3xl space-y-6"></div>
     </div>
 
     <div id="source">
       <Content />
     </div>
 
-    <div class="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 flex gap-2 z-50">
+    <div class="slide-controls fixed bottom-4 sm:bottom-8 right-4 sm:right-8 flex gap-2 z-50">
       <button
         class="w-10 h-10 sm:w-12 sm:h-12 bg-white border border-slate-200 rounded-lg text-slate-600 cursor-pointer flex items-center justify-center text-xl transition-all hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 disabled:opacity-30 disabled:cursor-not-allowed"
         id="prev-btn"
@@ -98,38 +221,354 @@ const slidesDescription = `${post.data.description} Slide view.`;
       </button>
     </div>
 
-    <script is:inline>
-      // Shared Mermaid config (keep in sync with src/scripts/mermaid-config.ts)
-      const mermaidConfig = {
-        startOnLoad: false,
-        securityLevel: 'strict',
-        theme: 'default',
-        themeVariables: {
-          primaryColor: '#eef2ff',
-          primaryTextColor: '#1e1b4b',
-          primaryBorderColor: '#a5b4fc',
-          secondaryColor: '#f8fafc',
-          secondaryTextColor: '#0f172a',
-          secondaryBorderColor: '#e2e8f0',
-          tertiaryColor: '#ffffff',
-          tertiaryTextColor: '#0f172a',
-          tertiaryBorderColor: '#cbd5e1',
-          noteBkgColor: '#ffffff',
-          noteTextColor: '#0f172a',
-          noteBorderColor: '#e2e8f0',
-          lineColor: '#64748b',
-          textColor: '#0f172a',
-          mainBkg: '#ffffff',
-          secondBkg: '#f8fafc',
-          border1: '#e2e8f0',
-          border2: '#cbd5e1',
-          arrowheadColor: '#64748b',
-          fontFamily: 'system-ui, -apple-system, sans-serif',
-        },
+    <script>
+      import { mermaidConfig } from '@scripts/mermaid-config';
+
+      const mermaidUrl =
+        'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      const importMermaid = new Function('url', 'return import(url)') as (
+        url: string,
+      ) => Promise<
+        typeof import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs')
+      >;
+      const slideClasses =
+        'slide prose-slide mx-auto max-w-3xl bg-white border border-slate-200 rounded-lg p-8 sm:p-12 shadow-sm';
+      const appendixClasses =
+        'slide-appendix prose-slide bg-white border border-slate-200 rounded-lg p-8 sm:p-12 shadow-sm';
+      const sourceHeadings = new Set(['sources', 'sources used']);
+
+      let currentIndex = 0;
+      let totalSlides = 0;
+
+      const getRequiredElement = <T extends HTMLElement>(id: string) => {
+        const element = document.getElementById(id);
+
+        if (!element) {
+          throw new Error(`Missing expected slide element: #${id}`);
+        }
+
+        return element as T;
       };
 
-      // Inline version of renderMermaid for slides (scoped to specific element)
-      async function renderMermaidInline(root = document) {
+      const normalizeHeadingText = (text: string) =>
+        text.replace(/\s+/g, ' ').trim().toLowerCase();
+
+      const isElement = (
+        node: Node | null | undefined,
+        tagName: string,
+      ): node is Element =>
+        node instanceof Element &&
+        node.tagName.toLowerCase() === tagName;
+
+      const isMeaningfulNode = (node: Node) => {
+        if (node.nodeType === Node.ELEMENT_NODE) return true;
+        return (
+          node.nodeType === Node.TEXT_NODE &&
+          (node.textContent ?? '').trim() !== ''
+        );
+      };
+
+      const firstMeaningfulIndex = (nodes: Node[], startIndex = 0) => {
+        for (let index = startIndex; index < nodes.length; index++) {
+          if (isMeaningfulNode(nodes[index])) return index;
+        }
+        return -1;
+      };
+
+      const looksLikeMermaid = (text: string) => {
+        const trimmed = text.trim();
+        return (
+          trimmed.startsWith('flowchart') ||
+          trimmed.startsWith('graph') ||
+          trimmed.startsWith('sequenceDiagram') ||
+          trimmed.startsWith('classDiagram') ||
+          trimmed.startsWith('stateDiagram') ||
+          trimmed.startsWith('erDiagram') ||
+          trimmed.startsWith('journey') ||
+          trimmed.startsWith('gantt') ||
+          trimmed.startsWith('pie') ||
+          trimmed.startsWith('gitGraph')
+        );
+      };
+
+      const isMermaidCode = (code: Element) => {
+        const className = code.className || '';
+        const parent = code.closest('pre');
+        return (
+          /(?:^|\s)(?:language|lang)-mermaid(?:\s|$)/.test(className) ||
+          parent?.dataset.language === 'mermaid' ||
+          parent?.className.includes('language-mermaid') ||
+          looksLikeMermaid(code.textContent || '')
+        );
+      };
+
+      const isTextDiagramCode = (code: Element) => {
+        const className = code.className || '';
+        const text = code.textContent || '';
+        return (
+          /(?:^|\s)(?:language|lang)-(?:text|plaintext|diagram|ascii)(?:\s|$)/.test(
+            className,
+          ) || /[╭╮╰╯┌┐└┘─│├┤┬┴┼→←↑↓]/.test(text)
+        );
+      };
+
+      const isVisualCodeBlock = (element: Node) => {
+        if (!isElement(element, 'pre')) return false;
+        const code = element.querySelector('code');
+        if (!code) return false;
+        return isMermaidCode(code) || isTextDiagramCode(code);
+      };
+
+      const nodeContainsOnlyImage = (node: Node): boolean => {
+        if (node.nodeType === Node.TEXT_NODE) {
+          return (node.textContent ?? '').trim() === '';
+        }
+
+        if (!(node instanceof Element)) return false;
+
+        const element = node;
+        if (element.tagName.toLowerCase() === 'img') return true;
+        if (element.tagName.toLowerCase() !== 'a') return false;
+
+        const childNodes = Array.from(element.childNodes).filter((child) =>
+          isMeaningfulNode(child),
+        );
+        return childNodes.length > 0 && childNodes.every(nodeContainsOnlyImage);
+      };
+
+      const isImageParagraph = (element: Node) => {
+        if (!isElement(element, 'p')) return false;
+        const childNodes = Array.from(element.childNodes).filter((child) =>
+          isMeaningfulNode(child),
+        );
+        return childNodes.length > 0 && childNodes.every(nodeContainsOnlyImage);
+      };
+
+      const isVisualBlock = (node: Node) => {
+        if (!(node instanceof Element)) return false;
+        const tagName = node.tagName.toLowerCase();
+        return (
+          isImageParagraph(node) ||
+          tagName === 'figure' ||
+          tagName === 'svg' ||
+          tagName === 'table' ||
+          isVisualCodeBlock(node)
+        );
+      };
+
+      const createSlide = (index: number, headingText: string) => {
+        const slide = document.createElement('section');
+        slide.className = slideClasses;
+        slide.dataset.index = String(index);
+        slide.id = `slide-${index + 1}`;
+        slide.setAttribute('aria-roledescription', 'slide');
+        slide.setAttribute('aria-label', headingText || `Slide ${index + 1}`);
+        return slide;
+      };
+
+      const createSectionFragment = (
+        source: HTMLElement,
+        heading: HTMLHeadingElement,
+        nextHeading?: HTMLHeadingElement,
+      ) => {
+        const range = document.createRange();
+        range.setStartBefore(heading);
+
+        if (nextHeading) {
+          range.setEndBefore(nextHeading);
+        } else {
+          range.setEndAfter(source.lastChild || heading);
+        }
+
+        return range.cloneContents();
+      };
+
+      const buildLegacySlide = (
+        fragment: DocumentFragment,
+        index: number,
+        headingText: string,
+      ) => {
+        const slide = createSlide(index, headingText);
+        slide.dataset.slideMode = 'legacy';
+        slide.appendChild(fragment);
+        return slide;
+      };
+
+      const buildStructuredSlide = (
+        fragment: DocumentFragment,
+        index: number,
+        headingText: string,
+      ) => {
+        const nodes = Array.from(fragment.childNodes);
+        const headingIndex = firstMeaningfulIndex(nodes);
+        const quoteIndex = firstMeaningfulIndex(nodes, headingIndex + 1);
+
+        if (headingIndex === -1 || !isElement(nodes[quoteIndex], 'blockquote')) {
+          return buildLegacySlide(fragment, index, headingText);
+        }
+
+        const mainIndexes = new Set([headingIndex, quoteIndex]);
+        let scanIndex = quoteIndex + 1;
+
+        while (scanIndex < nodes.length) {
+          const node = nodes[scanIndex];
+
+          if (!isMeaningfulNode(node)) {
+            scanIndex++;
+            continue;
+          }
+
+          if (!isVisualBlock(node)) break;
+
+          mainIndexes.add(scanIndex);
+          scanIndex++;
+        }
+
+        const slide = createSlide(index, headingText);
+        const main = document.createElement('div');
+        const notes = document.createElement('aside');
+        let notesHasContent = false;
+
+        slide.dataset.slideMode = 'structured';
+        main.className = 'slide-main';
+        notes.className = 'slide-notes';
+        notes.setAttribute('aria-label', `Notes for ${headingText || 'slide'}`);
+
+        for (const [nodeIndex, node] of nodes.entries()) {
+          if (mainIndexes.has(nodeIndex)) {
+            main.appendChild(node);
+          } else if (nodeIndex > headingIndex && isMeaningfulNode(node)) {
+            notesHasContent = true;
+            notes.appendChild(node);
+          }
+        }
+
+        slide.appendChild(main);
+
+        if (notesHasContent) {
+          const notesHeading = document.createElement('h3');
+          notesHeading.textContent = 'Notes';
+          notes.prepend(notesHeading);
+          slide.appendChild(notes);
+        }
+
+        return slide;
+      };
+
+      const appendAppendix = (
+        fragment: DocumentFragment,
+        headingText: string,
+      ) => {
+        const appendices = getRequiredElement<HTMLDivElement>('source-appendices');
+        const appendix = document.createElement('section');
+        appendix.className = appendixClasses;
+        appendix.setAttribute('aria-label', `${headingText} appendix`);
+        appendix.appendChild(fragment);
+        appendices.appendChild(appendix);
+      };
+
+      const insertSlide = (container: HTMLElement, slide: HTMLElement) => {
+        const appendices = getRequiredElement<HTMLDivElement>('source-appendices');
+        container.insertBefore(slide, appendices);
+      };
+
+      const splitIntoSlides = () => {
+        const source = getRequiredElement<HTMLDivElement>('source');
+        const container = getRequiredElement<HTMLDivElement>('slides-container');
+        const appendices = getRequiredElement<HTMLDivElement>('source-appendices');
+        const headings = Array.from(
+          source.querySelectorAll<HTMLHeadingElement>('h2'),
+        );
+        let slideCount = 0;
+
+        appendices.replaceChildren();
+
+        if (headings.length === 0) {
+          const slide = createSlide(0, document.title.replace(/ - Slides$/, ''));
+          slide.dataset.slideMode = 'legacy';
+          Array.from(source.children).forEach((child) => {
+            slide.appendChild(child.cloneNode(true));
+          });
+          insertSlide(container, slide);
+          return 1;
+        }
+
+        for (const [headingIndex, heading] of headings.entries()) {
+          const headingText = heading.textContent?.trim() ?? '';
+          const fragment = createSectionFragment(
+            source,
+            heading,
+            headings[headingIndex + 1],
+          );
+
+          if (sourceHeadings.has(normalizeHeadingText(headingText))) {
+            appendAppendix(fragment, headingText);
+            continue;
+          }
+
+          const slide = buildStructuredSlide(fragment, slideCount, headingText);
+          insertSlide(container, slide);
+          slideCount++;
+        }
+
+        return slideCount;
+      };
+
+      const updateSlideMetadata = () => {
+        const slides = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
+        totalSlides = slides.length;
+        getRequiredElement<HTMLElement>('total').textContent = String(totalSlides);
+
+        slides.forEach((slide, index) => {
+          const heading = slide.querySelector('h1, h2, h3');
+          const label = heading?.textContent?.trim() || `Slide ${index + 1}`;
+          slide.dataset.index = String(index);
+          slide.id = `slide-${index + 1}`;
+          slide.setAttribute(
+            'aria-label',
+            `${label} (${index + 1} of ${totalSlides})`,
+          );
+        });
+      };
+
+      const getHashSlideIndex = () => {
+        const match = window.location.hash.match(/^#?(\d+)$/);
+        if (!match) return null;
+
+        const parsed = Number.parseInt(match[1], 10) - 1;
+        if (Number.isNaN(parsed) || parsed < 0 || parsed >= totalSlides) {
+          return null;
+        }
+
+        return parsed;
+      };
+
+      const replaceHashForCurrentSlide = () => {
+        if (totalSlides === 0) return;
+
+        const url = new URL(window.location.href);
+        url.hash = String(currentIndex + 1);
+        window.history.replaceState(window.history.state, '', url);
+      };
+
+      const setNotesVisible = (isVisible: boolean, updateUrl = true) => {
+        const notesButton = getRequiredElement<HTMLButtonElement>('notes-btn');
+        document.body.classList.toggle('notes-visible', isVisible);
+        notesButton.setAttribute('aria-pressed', String(isVisible));
+        notesButton.textContent = isVisible ? 'Hide notes' : 'Notes';
+
+        if (!updateUrl) return;
+
+        const url = new URL(window.location.href);
+        if (isVisible) {
+          url.searchParams.set('notes', '1');
+        } else {
+          url.searchParams.delete('notes');
+        }
+        window.history.replaceState(window.history.state, '', url);
+      };
+
+      const renderMermaidInline = async (root: Document | Element = document) => {
         const selectors = [
           'pre > code.language-mermaid',
           'pre > code.lang-mermaid',
@@ -137,29 +576,13 @@ const slidesDescription = `${post.data.description} Slide view.`;
           'pre[class*="language-mermaid"] > code',
         ].join(', ');
 
-        let codes = Array.from(root.querySelectorAll(selectors));
+        let codes = Array.from(root.querySelectorAll<Element>(selectors));
 
         if (codes.length === 0) {
-          codes = Array.from(root.querySelectorAll('pre > code')).filter(
-            (code) => {
-              const text = code.textContent?.trim() || '';
-              return (
-                text.startsWith('flowchart') ||
-                text.startsWith('graph') ||
-                text.startsWith('sequenceDiagram') ||
-                text.startsWith('classDiagram') ||
-                text.startsWith('stateDiagram') ||
-                text.startsWith('erDiagram') ||
-                text.startsWith('journey') ||
-                text.startsWith('gantt') ||
-                text.startsWith('pie') ||
-                text.startsWith('gitGraph')
-              );
-            },
+          codes = Array.from(root.querySelectorAll<Element>('pre > code')).filter(
+            isMermaidCode,
           );
         }
-
-        if (codes.length === 0 && !root.querySelector('.mermaid')) return;
 
         for (const code of codes) {
           const pre = code.closest('pre');
@@ -169,136 +592,159 @@ const slidesDescription = `${post.data.description} Slide view.`;
           pre?.replaceWith(div);
         }
 
-        const { default: mermaid } = await import(
-          'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs'
+        const mermaidElements = Array.from(root.querySelectorAll('.mermaid')).filter(
+          (element) => element.getAttribute('data-processed') !== 'true',
         );
+
+        if (mermaidElements.length === 0) return;
+
+        const { default: mermaid } = await importMermaid(mermaidUrl);
         mermaid.initialize(mermaidConfig);
+        await mermaid.run({ nodes: mermaidElements });
 
-        const mermaidElements = root.querySelectorAll('.mermaid');
-        if (mermaidElements.length > 0) {
-          await mermaid.run({ nodes: Array.from(mermaidElements) });
-        }
-
-        root.querySelectorAll('.mermaid-loading').forEach((el) => {
-          el.classList.remove('mermaid-loading');
+        root.querySelectorAll('.mermaid-loading').forEach((element) => {
+          element.classList.remove('mermaid-loading');
         });
-      }
-      // Split content by H2 headers using Range to handle Astro's wrapper elements
-      function splitIntoSlides() {
-        const source = document.getElementById('source');
-        const container = document.getElementById('slides-container');
-        const headings = Array.from(source.querySelectorAll('h2'));
+      };
 
-        // If no H2s found, treat entire content as one slide
-        if (headings.length === 0) {
-          const slideDiv = document.createElement('div');
-          slideDiv.className =
-            'slide prose-slide mx-auto max-w-3xl bg-white border border-slate-200 rounded-lg p-8 sm:p-12 shadow-sm';
-          slideDiv.dataset.index = 0;
-          Array.from(source.children).forEach((child) => {
-            slideDiv.appendChild(child.cloneNode(true));
-          });
-          container.appendChild(slideDiv);
-          return 1;
+      const renderAllMermaid = async () => {
+        const renderRoots = document.querySelectorAll<HTMLElement>(
+          '.slide, .slide-appendix',
+        );
+
+        for (const root of renderRoots) {
+          if (root.dataset.mermaidRendered) continue;
+          await renderMermaidInline(root);
+          root.dataset.mermaidRendered = 'true';
         }
+      };
 
-        // Create slides using Range for each H2 section
-        headings.forEach((heading, index) => {
-          const range = document.createRange();
-          range.setStartBefore(heading);
+      const updateSlide = async () => {
+        const slides = Array.from(document.querySelectorAll<HTMLElement>('.slide'));
 
-          if (index < headings.length - 1) {
-            range.setEndBefore(headings[index + 1]);
-          } else {
-            range.setEndAfter(source.lastChild || heading);
-          }
-
-          const slideDiv = document.createElement('div');
-          slideDiv.className =
-            'slide prose-slide mx-auto max-w-3xl bg-white border border-slate-200 rounded-lg p-8 sm:p-12 shadow-sm';
-          slideDiv.dataset.index = index;
-          slideDiv.appendChild(range.cloneContents());
-          container.appendChild(slideDiv);
-        });
-
-        return headings.length;
-      }
-
-      // Navigation state
-      let currentIndex = 0;
-      let totalSlides = 0;
-
-      async function updateSlide() {
-        const slides = document.querySelectorAll('.slide');
         slides.forEach((slide, index) => {
           slide.classList.toggle('active', index === currentIndex);
         });
 
-        document.getElementById('current').textContent = currentIndex + 1;
-        document.getElementById('prev-btn').disabled = currentIndex === 0;
-        document.getElementById('next-btn').disabled =
-          currentIndex === totalSlides - 1;
+        getRequiredElement<HTMLElement>('current').textContent = String(
+          totalSlides === 0 ? 0 : currentIndex + 1,
+        );
+        getRequiredElement<HTMLButtonElement>('prev-btn').disabled = currentIndex === 0;
+        getRequiredElement<HTMLButtonElement>('next-btn').disabled =
+          totalSlides === 0 || currentIndex === totalSlides - 1;
 
-        window.location.hash = currentIndex + 1;
+        replaceHashForCurrentSlide();
 
-        // Render Mermaid on current slide if not already rendered
         const currentSlide = slides[currentIndex];
         if (currentSlide && !currentSlide.dataset.mermaidRendered) {
           await renderMermaidInline(currentSlide);
           currentSlide.dataset.mermaidRendered = 'true';
         }
-      }
+      };
 
-      function nextSlide() {
-        if (currentIndex < totalSlides - 1) {
-          currentIndex++;
-          updateSlide();
+      const nextSlide = () => {
+        if (currentIndex >= totalSlides - 1) return false;
+        currentIndex++;
+        void updateSlide();
+        return true;
+      };
+
+      const prevSlide = () => {
+        if (currentIndex <= 0) return false;
+        currentIndex--;
+        void updateSlide();
+        return true;
+      };
+
+      const focusedInteractiveElement = () => {
+        const activeElement = document.activeElement;
+        if (!activeElement || activeElement === document.body) return false;
+        return Boolean(
+          activeElement.closest(
+            'a, button, input, textarea, select, summary, [contenteditable="true"], [contenteditable=""], [role="button"], [role="link"], [role="textbox"]',
+          ),
+        );
+      };
+
+      const hasModifierKey = (event: KeyboardEvent) =>
+        event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
+
+      const handleKeydown = (event: KeyboardEvent) => {
+        if (focusedInteractiveElement() || hasModifierKey(event)) return;
+
+        let didNavigate = false;
+
+        if (event.key === 'n' || event.key === 'N') {
+          const isVisible = document.body.classList.contains('notes-visible');
+          setNotesVisible(!isVisible);
+          return;
         }
-      }
 
-      function prevSlide() {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateSlide();
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+          didNavigate = prevSlide();
+        } else if (
+          event.key === 'ArrowRight' ||
+          event.key === 'ArrowDown' ||
+          event.key === ' '
+        ) {
+          didNavigate = nextSlide();
         }
-      }
 
-      // Initialize - split into slides then render Mermaid on visible slide
-      async function initialize() {
-        totalSlides = splitIntoSlides();
-        document.getElementById('total').textContent = totalSlides;
+        if (didNavigate) event.preventDefault();
+      };
 
-        // Check hash for initial slide
-        const hash = window.location.hash.slice(1);
-        if (hash && !isNaN(hash)) {
-          const slideNum = parseInt(hash, 10) - 1;
-          if (slideNum >= 0 && slideNum < totalSlides) {
-            currentIndex = slideNum;
-          }
-        }
+      const initialize = async () => {
+        splitIntoSlides();
+        updateSlideMetadata();
+
+        const initialSlide = getHashSlideIndex();
+        if (initialSlide !== null) currentIndex = initialSlide;
+
+        setNotesVisible(
+          new URLSearchParams(window.location.search).get('notes') === '1',
+          false,
+        );
+
+        const appendixLink = getRequiredElement<HTMLAnchorElement>('appendix-link');
+        const appendices = getRequiredElement<HTMLDivElement>('source-appendices');
+        appendixLink.hidden = appendices.children.length === 0;
 
         await updateSlide();
-      }
+        await renderAllMermaid();
+      };
 
-      // Run initialization
-      initialize();
-
-      // Event listeners
-      document.getElementById('prev-btn').addEventListener('click', prevSlide);
-      document.getElementById('next-btn').addEventListener('click', nextSlide);
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-          prevSlide();
-        } else if (
-          e.key === 'ArrowRight' ||
-          e.key === 'ArrowDown' ||
-          e.key === ' '
-        ) {
-          e.preventDefault();
-          nextSlide();
-        }
+      getRequiredElement<HTMLButtonElement>('prev-btn').addEventListener('click', () => {
+        prevSlide();
       });
+      getRequiredElement<HTMLButtonElement>('next-btn').addEventListener('click', () => {
+        nextSlide();
+      });
+      getRequiredElement<HTMLButtonElement>('notes-btn').addEventListener('click', () => {
+        const isVisible = document.body.classList.contains('notes-visible');
+        setNotesVisible(!isVisible);
+      });
+      getRequiredElement<HTMLAnchorElement>('appendix-link').addEventListener(
+        'click',
+        (event: MouseEvent) => {
+          event.preventDefault();
+          setNotesVisible(true);
+          getRequiredElement<HTMLDivElement>('source-appendices').scrollIntoView({
+            block: 'start',
+          });
+        },
+      );
+      document.addEventListener('keydown', handleKeydown);
+      window.addEventListener('hashchange', () => {
+        const hashIndex = getHashSlideIndex();
+        if (hashIndex === null || hashIndex === currentIndex) return;
+        currentIndex = hashIndex;
+        void updateSlide();
+      });
+      window.addEventListener('beforeprint', () => {
+        void renderAllMermaid();
+      });
+
+      initialize();
     </script>
   </body>
 </html>

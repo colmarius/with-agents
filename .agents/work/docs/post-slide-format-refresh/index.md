@@ -1,6 +1,6 @@
 # Post and slide format refresh
 
-Status: planned
+Status: in-progress
 Category: docs
 Updated: 2026-06-28
 
@@ -8,7 +8,7 @@ Updated: 2026-06-28
 
 Plan and prepare a refactor of public posts and generated slide views so each article section can serve as both a concise presentation slide and richer reader/speaker notes. The recommended direction keeps Markdown posts as the single source of truth: each `##` section starts with a short slide-message blockquote, may include one immediate lightweight visual, and then continues as normal notes/article prose.
 
-No article migration or code refactor has been implemented yet. This work item records the current-state audit, option comparison, article-by-article target sketches, Oracle feedback, and a first implementation slice.
+Task 1 is implemented: the slide route now recognizes first-blockquote slide messages with notes, preserves legacy section slides as fallback, excludes source appendices from normal slide navigation, and supports notes/print/no-JS/keyboard behavior. No article migration has been started yet.
 
 ## Artifacts
 
@@ -21,7 +21,7 @@ No article migration or code refactor has been implemented yet. This work item r
 
 ## Next Action
 
-- Start a new implementation thread with `handoff-task-1.md` for `plan.md` Task 1: upgrade the slide route to recognize the first-blockquote slide-message convention while preserving legacy fallback, add notes/print/no-JS/keyboard/source-appendix behavior, and update the article-writing skill. Do not edit `src/content/posts/*.md` in Task 1.
+- Start `plan.md` Task 2: pilot the post/slide hybrid convention in `src/content/posts/agentic-coding-2026.md` only, then smoke-check article, slides, notes, and print modes.
 
 ## Resolved Decisions
 

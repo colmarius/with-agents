@@ -12,7 +12,7 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
 
 ## Tasks
 
-- [ ] **Task 1: Implement the backward-compatible slide/notes extractor**
+- [x] **Task 1: Implement the backward-compatible slide/notes extractor**
   - Scope: `src/pages/posts/[slug]/slides.astro`, `src/styles/global.css` if shared styles are needed, and `.agents/skills/article-writing/SKILL.md`. Do not change `src/content/posts/*.md` in Task 1.
   - Depends on: none
   - Acceptance:

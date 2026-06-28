@@ -50,6 +50,26 @@ skill adds the repeatable workflow and the checklists.
   durable-context as repo memory, prove-it as the evidence ladder, small-threads as
   the operating procedure, Amp as the case study.
 
+## Post/Slide Hybrid Structure
+
+Public posts double as generated slide decks. Keep Markdown posts as the single
+source of truth: each rendered `##` section is an article section and usually one
+presentation slide.
+
+- Start each rendered `##` section with a concise blockquote slide message when
+  practical.
+- Keep the blockquote presentation-friendly: usually one sentence, no citation
+  clutter, and no more than 1-3 short clauses.
+- Put citations, examples, caveats, prompts, and read-along context in normal
+  prose after the blockquote; that prose becomes speaker/reader notes in slide
+  mode.
+- Optional visuals may immediately follow the blockquote: Mermaid, text diagrams,
+  tables, inline SVG, figures, or Markdown images. Make them accessible with alt
+  text, captions, or nearby prose that does not rely on color/image-only meaning.
+- Use `## Sources` or `## Sources used` for source appendices. They are not normal
+  presentation slides; keep source detail available for article, notes, and print
+  modes.
+
 ## Workflow
 
 ### 1. Frame the job
@@ -109,6 +129,21 @@ When deletion is explicitly approved:
 - [ ] Active voice, short paragraphs, concrete examples.
 - [ ] No throat-clearing, no manifesto tone, no sales pitch.
 - [ ] 4–6 substantive sections plus `Sources` when practical.
+- [ ] Each rendered `##` usually starts with a concise slide-message blockquote.
+- [ ] Slide blockquotes are presentation-friendly: one sentence or 1-3 short
+      clauses, with citation clutter moved to notes/prose.
+
+### Article/slide coherence
+
+- [ ] Article mode reads naturally with the blockquote as the section takeaway.
+- [ ] Slide mode has a clear main message without notes-only context leaking onto
+      the slide.
+- [ ] Notes/prose after the blockquote carries citations, caveats, prompts, and
+      examples needed for read-along or speaker context.
+- [ ] Optional immediate visuals are accessible and understandable without relying
+      on color/image-only meaning.
+- [ ] `## Sources` / `## Sources used` is treated as an appendix, not a normal
+      presentation slide.
 
 ### Length
 
