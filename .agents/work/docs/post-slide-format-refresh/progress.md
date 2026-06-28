@@ -261,3 +261,45 @@
   - Browser-executed slide smoke remains skipped because headless Chrome `--dump-dom` hung in this environment during the durable-context migration. Content shape and built HTML were checked instead.
 - Next action:
   - Continue Task 4 with `src/content/posts/amp-factory-era-case-study.md`.
+
+## 2026-06-28 Task 4 Amp case study migration
+
+- Post migrated:
+  - `src/content/posts/amp-factory-era-case-study.md`
+  - Commit: `e58ab83` (`Migrate Amp case study to slide hybrid format`)
+- Baseline:
+  - H2 sections before migration: 7 normal sections plus exact `## Sources used` appendix.
+  - Word count before: 1,701.
+  - Word count after: 1,843.
+- What changed:
+  - Added concise first-blockquote slide messages to all 7 normal H2 sections.
+  - Repositioned and added Markdown-native text visuals for reusable Amp lessons: product-detail-to-contract framing, delegation ownership, context split, proof loop, orchestration frontier, and durable contracts.
+  - Left `## Sources used` without a blockquote so it remains a source appendix outside normal slide navigation.
+  - Kept Amp product claims, source checks, and timestamp-backed nuance in notes/article prose.
+- Verification:
+  - `git diff --check` passed.
+  - `npm run check` passed.
+  - `npm run build` passed.
+  - Static built-route smoke passed: article build includes 8 H2s, 7 blockquotes, and `Sources used`; slide build includes notes control, print CSS, source container, source-appendix container, and the first slide message.
+- Limitations / notes:
+  - Browser-executed slide smoke remains skipped because headless Chrome `--dump-dom` hung in this environment during the durable-context migration. Content shape and built HTML were checked instead.
+- Next action:
+  - Finish Task 4 work-item cleanup and move the next action to Task 5.
+
+## 2026-06-28 Task 4 completion
+
+- What changed:
+  - Completed migration of all remaining posts to the post/slide hybrid convention:
+    - `80e4e60` — durable context post.
+    - `941bf8b` — proof stack post.
+    - `c9ed660` — small threads post.
+    - `e58ab83` — Amp case study post.
+  - Marked Task 4 complete in `plan.md`.
+  - Updated `index.md` summary and next action for Task 5.
+- Verification:
+  - Each post migration ran `git diff --check`, `npm run check`, and `npm run build` successfully before its content commit.
+  - Final work-item cleanup ran `git diff --check` before staging.
+- Residual risks:
+  - Browser-executed slide smoke was not completed for Task 4 because local headless Chrome `--dump-dom` hung in this environment. Static built HTML and Markdown structure checks were used instead. Task 5 can decide whether richer visual work warrants a more robust browser verification path, potentially using the newly added `agent-browser` skill/CLI.
+- Next action:
+  - Start Task 5: reassess whether Markdown-native visuals are sufficient or whether MDX/richer visuals are justified.

@@ -52,7 +52,7 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
     - `npm run check` and `npm run build` pass after any code/content changes.
   - Notes: A checker is optional until migration pain proves it is worth maintaining.
 
-- [ ] **Task 4: Migrate remaining posts one at a time**
+- [x] **Task 4: Migrate remaining posts one at a time**
   - Scope: `src/content/posts/durable-context-coding-agents.md`, `src/content/posts/make-the-agent-prove-it.md`, `src/content/posts/small-threads-durable-state.md`, `src/content/posts/amp-factory-era-case-study.md`.
   - Depends on: Task 2
   - Acceptance:

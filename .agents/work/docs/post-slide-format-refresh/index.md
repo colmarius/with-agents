@@ -8,7 +8,7 @@ Updated: 2026-06-28
 
 Plan and prepare a refactor of public posts and generated slide views so each article section can serve as both a concise presentation slide and richer reader/speaker notes. The recommended direction keeps Markdown posts as the single source of truth: each `##` section starts with a short slide-message blockquote, may include one immediate lightweight visual, and then continues as normal notes/article prose.
 
-Tasks 1-3 are implemented; Task 4 is in progress. The slide route now recognizes first-blockquote slide messages with notes, preserves legacy section slides as fallback, excludes source appendices from normal slide navigation, and supports notes/print/no-JS/keyboard behavior. The pilot post `agentic-coding-2026.md` now has 7 blockquote-led normal slides with immediate Markdown-native visuals and `## Sources used` retained as a source appendix outside normal slide navigation. Authoring guidance now covers the convention in root `AGENTS.md` and the detailed `article-writing` skill; no checker was added yet because only one post is migrated and the legacy fallback remains intentional.
+Tasks 1-4 are implemented. The slide route now recognizes first-blockquote slide messages with notes, preserves legacy section slides as fallback, excludes source appendices from normal slide navigation, and supports notes/print/no-JS/keyboard behavior. All public posts now follow the post/slide hybrid convention: normal rendered `##` sections start with concise slide-message blockquotes and source appendices stay outside normal slide navigation. Authoring guidance covers the convention in root `AGENTS.md` and the detailed `article-writing` skill; no checker has been added yet.
 
 ## Artifacts
 
@@ -21,7 +21,7 @@ Tasks 1-3 are implemented; Task 4 is in progress. The slide route now recognizes
 
 ## Next Action
 
-- Continue Task 4 from `handoff-task-4.md`: migrate the remaining posts one at a time to the first-blockquote slide-message convention, using the pilot post and article-writing skill as the reference.
+- Start Task 5 from `plan.md`: reassess whether Markdown-native visuals are sufficient or whether MDX/richer visuals are justified after the completed migrations.
 
 ## Resolved Decisions
 
@@ -30,4 +30,4 @@ Tasks 1-3 are implemented; Task 4 is in progress. The slide route now recognizes
 
 ## Open Questions
 
-- None blocking Task 3.
+- None blocking Task 5.
