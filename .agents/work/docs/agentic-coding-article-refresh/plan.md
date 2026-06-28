@@ -26,7 +26,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - Frontmatter/navigation impact is listed for each publish candidate.
   - Notes: Start with the inventory in `research.md`, then verify by reading the relevant draft bodies.
 
-- [ ] **Task 2: Define the refreshed public article architecture**
+- [x] **Task 2: Define the refreshed public article architecture**
   - Scope: `.agents/work/docs/agentic-coding-article-refresh/research.md`, optional `prd.md` only if audience/positioning needs alignment
   - Depends on: Task 1
   - Acceptance:

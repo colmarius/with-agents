@@ -21,9 +21,10 @@ Review and refresh the draft post backlog now that only the durable-context arti
 
 ## Next Action
 
-- Use `handoff-task-2.md` to execute `plan.md` Task 2 in a fresh thread: turn the accepted audit path into a concise refreshed public article architecture, with `make-the-agent-prove-it` as the next single article candidate.
+- Prepare `make-the-agent-prove-it` as the next publish candidate: rewrite the Simon draft into a distinct proof-stack article, compare it against the matching resource summary, anchor claims to transcripts, and defer any frontmatter/navigation changes until that publish task.
 
 ## Open Questions
 
 - [x] Should the refreshed public series stay Amp-specific, or should Amp be one concrete tool inside broader agentic-coding guidance? Decision: broader agentic-coding guidance; Amp is one concrete tool/example when useful.
 - [x] Should near-publish transcript-backed posts like the Simon Willison article appear as posts, resource summaries, or both? Decision: no strong channel preference, but keep public posts few and high-signal; do not pollute posts with duplicated summary information unless the post adds a distinct, relevant thesis.
+- [ ] Which current public Amp product source should be used for close-to-publish verification before any Amp case study?

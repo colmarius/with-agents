@@ -77,3 +77,18 @@
 - User accepted the proposed path from the audit, including `make-the-agent-prove-it` as the next single article candidate.
 - Added `handoff-task-2.md` for a fresh planning thread to define the refreshed public article architecture before editing any post.
 - Updated `index.md` Next Action to point at Task 2 and marked Task 1 complete in `plan.md`.
+
+## 2026-06-28 Task 2 Architecture Completed
+
+- Added the refreshed public article architecture to `research.md` with the accepted order:
+  1. `durable-context-coding-agents` as the published anchor.
+  2. `make-the-agent-prove-it` as the next single article candidate.
+  3. `agentic-coding-2026` and `small-threads-durable-state` as follow-up articles.
+  4. `amp-power-patterns-factory-era` as an optional/deferred Amp case study after product verification.
+- Recorded article boundaries, non-overlap statements, required source anchors with transcript timestamp ranges, frontmatter/navigation expectations for later publish tasks, and final draft disposition.
+- Files changed: `research.md`, `progress.md`, `index.md`, and `plan.md` only.
+- Open question: which current public Amp product source should be used for close-to-publish verification before any Amp case study.
+
+## Updated Next Action
+
+- Prepare `make-the-agent-prove-it` as the next publish candidate: rewrite the Simon draft into a distinct proof-stack article, compare it against the matching resource summary, anchor claims to transcripts, then make any frontmatter/navigation changes only in that later publish task.
