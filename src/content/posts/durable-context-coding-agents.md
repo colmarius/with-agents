@@ -151,7 +151,7 @@ npm run build
 
 The full risk-scaled ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it). Evidence does not replace judgment; it gives judgment something concrete to inspect.
 
-## Route judgment to humans, and shape the code they review
+## Route judgment to humans
 
 > Preserve the friction that routes consequences to humans.
 

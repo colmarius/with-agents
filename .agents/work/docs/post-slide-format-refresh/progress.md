@@ -380,3 +380,24 @@
   - No trigger for route-level reveal, MDX, generated assets, or deck tooling. The needed reveal was handled cleanly with adjacent Markdown slides.
 - Next action:
   - If the durable-context talk still feels abrupt in a live dry-run, tune slide order/copy before considering route-level reveal. Otherwise repeat this dry-run pass for another post only when there is a concrete presentation use.
+
+## 2026-06-28 Durable-context live dry-run follow-up
+
+- Target post:
+  - `src/content/posts/durable-context-coding-agents.md`
+- Live browser dry-run:
+  - Used `agent-browser` against the deployed article and slide route at `https://with-agents.dev/posts/durable-context-coding-agents/`.
+  - Confirmed the deployed deck has 10 slides, the adjacent pile → loop buildup works, all slides fit in a 1440×900 viewport with notes hidden, and notes mode carries the longer explanation.
+- Presentation issue found:
+  - Slide 9’s heading named two ideas (“route judgment” and “shape the code”) while the visible slide primarily presents the human-judgment/risk-band idea.
+- What changed:
+  - Retitled the slide from `Route judgment to humans, and shape the code they review` to `Route judgment to humans` so the visible slide carries one idea. The code-shape discussion remains in notes/prose.
+  - No route, MDX, dependency, generated asset, or deck-tooling changes were made.
+- Progressive buildup:
+  - No additional buildup needed; the previous adjacent-slide buildup handled the main reveal.
+- Verification:
+  - `npm run check` passed.
+  - `npm run build` passed.
+  - `git diff --check` passed before commit.
+- Trigger evidence:
+  - No trigger for route-level reveal, MDX, generated assets, or deck tooling.
