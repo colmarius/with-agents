@@ -10,6 +10,12 @@ order: 4
 
 ## Small threads need durable state
 
+> Small threads work when durable state carries decisions between them.
+
+```text
+wide research → durable state → narrow implementation → recorded proof
+```
+
 The easiest way to make an agent task go sideways is to ask one thread to do every job: discover the codebase, debate the design, critique the plan, implement the change, debug the fallout, and remember what still needs doing next week. That is too many responsibilities for chat context. The better operating rule is simple:
 
 **Go wide for research and critique. Go narrow for implementation. Preserve only the useful task state.**
@@ -20,21 +26,25 @@ The procedure below is author synthesis. The source-backed pieces come from Buil
 
 ## Separate research threads from implementation threads
 
+> Research threads reduce uncertainty; implementation threads land one reviewable diff.
+
+```text
+wide research ──▶ critique ──▶ human decision ──▶ focused plan ──▶ small implementation thread
+```
+
 There are two useful kinds of agent thread.
 
 **Research threads are allowed to be wide.** They can search the codebase, inspect competing patterns, write reports, critique designs, and explore unknowns. Their job is not to land code; it is to reduce uncertainty.
 
 **Implementation threads should be narrow.** They start with a specific goal, the relevant files or work item, explicit scope limits, and a verification target. Their job is to make a small change you can review, test, and commit.
 
-Build Crew episode 7 shows both modes. A small directed thread can make a tiny implementation change when the human knows exactly what should happen [00:13:06]-[00:15:58]. A wider research flow can first produce overview reports, critiques, and a plan, then hand off into a fresh implementation thread [00:18:54]-[00:24:12]. The key move is the funnel:
-
-```text
-wide research ──▶ critique ──▶ human decision ──▶ focused plan ──▶ small implementation thread
-```
+Build Crew episode 7 shows both modes. A small directed thread can make a tiny implementation change when the human knows exactly what should happen [00:13:06]-[00:15:58]. A wider research flow can first produce overview reports, critiques, and a plan, then hand off into a fresh implementation thread [00:18:54]-[00:24:12]. The key move is the funnel on the slide.
 
 Do not carry the whole research transcript forward. Carry the decision.
 
 ## Use `.agents/work/` as the task container
+
+> A work item is task state, not a prompt pile.
 
 The current dot-agents shape is a work item:
 
@@ -49,6 +59,15 @@ The current dot-agents shape is a work item:
 A work item is not a pile of prompts. It is the durable state for one piece of multi-session work. Status lives in `index.md`; task checklists live in `plan.md` or focused files under `plans/`; progress goes in `progress.md`. Do not move plan files through `todo/`, `in-progress/`, and `completed/` folders — the status field is the source of truth. Keep work state attached to the work item unless it is reusable project knowledge that belongs in `AGENTS.md`, a skill, a script, an architecture note, or a reusable research note.
 
 ## What belongs in each file
+
+> Each work-item file answers one restart question.
+
+| File | Restart question |
+| --- | --- |
+| `index.md` | Where are we? |
+| `research.md` | What uncertainty did we reduce? |
+| `plan.md` | What contract are we executing? |
+| `progress.md` | What happened, and what is next? |
 
 Keep the files boring. Boring is what makes a fresh thread useful.
 
@@ -79,7 +98,7 @@ The point is not diary-writing. It is that a future thread can resume without tr
 
 ## Handoff prompts are compression with responsibility
 
-A handoff prompt is not "continue from the previous thread." It is a compact operating brief. Use one when the next thread should implement, review, verify, or repair a bounded slice. Include the work item path, the exact task or plan slice, files to read first, decisions already made, scope limits and non-goals, acceptance criteria, verification commands, stop conditions, and the expected final response.
+> Handoffs compress decisions, scope, and proof without carrying the whole chat.
 
 ```text
 Continue .agents/work/docs/example-refresh/.
@@ -99,9 +118,17 @@ Stop if the route decision requires a new product or navigation decision.
 Final response: summarize changes, publish status, files changed, verification, work-item updates, next action.
 ```
 
+A handoff prompt is not "continue from the previous thread." It is a compact operating brief. Use one when the next thread should implement, review, verify, or repair a bounded slice. Include the work item path, the exact task or plan slice, files to read first, decisions already made, scope limits and non-goals, acceptance criteria, verification commands, stop conditions, and the expected final response.
+
 The handoff should be small enough to paste and specific enough that the new thread does not need lore.
 
 ## Keep implementation threads committable
+
+> One implementation thread should aim at one coherent, reviewable commit.
+
+```text
+bounded diff → inspect → check → commit → progress log
+```
 
 "Start a new thread when the token count gets big" is too crude. Start a new implementation thread when the job changes: research is done and coding should begin, the agent starts debugging its own failed assumptions, you switch subsystem or ownership boundary, you want to compare two approaches, or the diff is ready and the next task is separate.
 
@@ -118,6 +145,8 @@ That prevents one chat from becoming the only place where the work makes sense.
 
 ## Verification is part of the state
 
+> Record the narrowest evidence that changes confidence.
+
 Do not make every article, feature, and bug fix repeat the whole proof-stack framework; link to [Make the Agent Prove It](/posts/make-the-agent-prove-it) when you need the full ladder. For day-to-day work items, record the narrowest evidence that changes confidence:
 
 - content or docs: rendered route, source anchors, links, `git diff --check`
@@ -128,6 +157,12 @@ Do not make every article, feature, and bug fix repeat the whole proof-stack fra
 Willison's default is to start with tests and then exercise the real system, because tests alone do not prove the server boots or the API behaves [00:04:41]-[00:07:33]. The durable-state move is to leave that evidence where the next reviewer can find it: in the progress log, the PR description, the committed test, or the artifact named by the work item.
 
 ## The operating procedure
+
+> Classify, research, plan, hand off, implement, verify, and promote.
+
+```text
+classify → research → plan → critique → handoff → implement → verify → promote
+```
 
 Use this for any agent task bigger than a tiny local edit.
 
