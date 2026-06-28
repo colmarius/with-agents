@@ -13,6 +13,7 @@ Review and refresh the draft post backlog now that only the durable-context arti
 - Research: `research.md`
 - Audit template/output: `audit.md`
 - Task 1 handoff prompt: `handoff-task-1.md`
+- Task 2 handoff prompt: `handoff-task-2.md`
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
@@ -20,7 +21,7 @@ Review and refresh the draft post backlog now that only the durable-context arti
 
 ## Next Action
 
-- Use `handoff-task-1.md` to execute `plan.md` Task 1 in a fresh thread: fill `audit.md` with one row per draft article and decide whether each should be refreshed, merged, retired, kept private, or treated as a publish candidate.
+- Use `handoff-task-2.md` to execute `plan.md` Task 2 in a fresh thread: turn the accepted audit path into a concise refreshed public article architecture, with `make-the-agent-prove-it` as the next single article candidate.
 
 ## Open Questions
 

@@ -12,7 +12,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
 
 ## Tasks
 
-- [ ] **Task 1: Audit each draft against current sources**
+- [x] **Task 1: Audit each draft against current sources**
   - Scope: `audit.md`, `src/content/posts/*.md`, `src/content/summaries/**`, `src/content/transcripts/**`
   - Depends on: none
   - Acceptance:

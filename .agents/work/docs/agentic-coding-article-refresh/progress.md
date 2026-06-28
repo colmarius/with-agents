@@ -71,3 +71,9 @@
 - Files changed: `audit.md`, `progress.md` only.
 - Open questions for the next task: whether the proof article or the 2026 field guide should publish first after the distinct-thesis gate, and which current public Amp source should be used for product verification before any Amp case study.
 - Verification: `git diff --check` passed after the audit and progress updates.
+
+## 2026-06-28 Task 2 Handoff Prompt
+
+- User accepted the proposed path from the audit, including `make-the-agent-prove-it` as the next single article candidate.
+- Added `handoff-task-2.md` for a fresh planning thread to define the refreshed public article architecture before editing any post.
+- Updated `index.md` Next Action to point at Task 2 and marked Task 1 complete in `plan.md`.
