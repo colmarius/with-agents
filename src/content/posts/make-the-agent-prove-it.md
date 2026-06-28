@@ -10,11 +10,7 @@ order: 3
 
 ## Make the agent prove it
 
-The most useful question in agentic coding is not "do I trust the model?" It is "what proof would make this change safe to accept?"
-
-Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The reviewer still signs the merge, so the agent should bring evidence.
-
-This article uses Simon Willison's Pragmatic Summit workflow as its primary source and adds an author-synthesis framework: a risk-scaled proof stack for one agent-produced change. The [durable-context Evidence section](/posts/durable-context-coding-agents#evidence-make-the-agent-prove-the-work) explains why evidence belongs in the repo-local operating loop; this is the tactical ladder to apply before you merge.
+> Trust starts with a proof question, not a model feeling.
 
 ```text
 ╭────────────────────────────────────────────╮
@@ -32,11 +28,17 @@ This article uses Simon Willison's Pragmatic Summit workflow as its primary sour
 ╰────────────────────────────────────────────╯
 ```
 
+The most useful question in agentic coding is not "do I trust the model?" It is "what proof would make this change safe to accept?"
+
+Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The reviewer still signs the merge, so the agent should bring evidence.
+
+This article uses Simon Willison's Pragmatic Summit workflow as its primary source and adds an author-synthesis framework: a risk-scaled proof stack for one agent-produced change. The [durable-context Evidence section](/posts/durable-context-coding-agents#evidence-make-the-agent-prove-the-work) explains why evidence belongs in the repo-local operating loop; this is the tactical ladder to apply before you merge.
+
 You rarely need every layer. You do need to choose layers deliberately.
 
 ## Start with the risk, not the prompt
 
-Before the agent edits files, decide what kind of proof the task deserves.
+> Risk chooses the proof stack before the prompt does.
 
 | Change type | Minimum proof before merge |
 | --- | --- |
@@ -47,11 +49,13 @@ Before the agent edits files, decide what kind of proof the task deserves.
 | Protocol, parser, import/export, standard | A conformance suite, golden fixtures, or tests derived from known-good implementations. |
 | Data, permissions, dependencies, migrations, security | Sandbox or mock data, deterministic checks, and an explicit human judgment call. |
 
+Before the agent edits files, decide what kind of proof the task deserves.
+
 That table is synthesis, not a quote. The source-backed pieces come from Willison's test/manual/conformance/sandboxing workflow [00:04:41]-[00:18:35], Mario Zechner's habit of reviewing agent diffs for unnecessary complexity and reinforcing rules with checks [00:29:43]-[00:42:55], and Ronacher and Poncela Cubeiro's argument that high-risk decisions should wake the human brain back up [00:14:01]-[00:17:55].
 
 ## Layer 1: make the first proof executable
 
-Willison's default agent instruction is short: tell the agent how to run the tests, then use red-green test-driven development [00:04:41]-[00:05:43]. The value is not ceremony. It forces the agent to state what would prove the task, watch that proof fail, then implement the smallest change that makes it pass [00:05:43]-[00:06:44]. He also argues the old "tests are too much extra work" excuse is weaker when an agent absorbs the typing cost [00:06:44]. Tests are not free to own, but they are much cheaper to ask for. If the code will live, require a reusable check.
+> Make the first proof executable before the agent changes code.
 
 ```text
 Before implementing, add or identify the failing test that proves this bug.
@@ -60,11 +64,13 @@ Implement the smallest fix.
 Run the targeted test, then the normal project check command.
 ```
 
+Willison's default agent instruction is short: tell the agent how to run the tests, then use red-green test-driven development [00:04:41]-[00:05:43]. The value is not ceremony. It forces the agent to state what would prove the task, watch that proof fail, then implement the smallest change that makes it pass [00:05:43]-[00:06:44]. He also argues the old "tests are too much extra work" excuse is weaker when an agent absorbs the typing cost [00:06:44]. Tests are not free to own, but they are much cheaper to ask for. If the code will live, require a reusable check.
+
 If the agent cannot explain what test would fail, that is information: you may be asking for an unclear behavior change, not a coding task.
 
 ## Layer 2: run the thing, not just the tests
 
-Passing tests do not prove the server boots, the route is wired, or the user-visible behavior works. Willison asks agents to start the application and exercise the new API with `curl`, because real-system checks find bugs the suite did not cover [00:06:44]-[00:07:33]. In review, do not accept "all tests pass" as the final sentence when the task touched a running system. Ask for the transcript:
+> Passing tests are not enough when the route, API, or UI has to work.
 
 ```text
 Command: npm run dev
@@ -73,11 +79,13 @@ Expected: 200 plus the new field
 Actual: pasted response or saved log path
 ```
 
+Passing tests do not prove the server boots, the route is wired, or the user-visible behavior works. Willison asks agents to start the application and exercise the new API with `curl`, because real-system checks find bugs the suite did not cover [00:06:44]-[00:07:33]. In review, do not accept "all tests pass" as the final sentence when the task touched a running system. Ask for the transcript.
+
 Willison described a small tool that builds a Markdown record of manual checks: command, output, next check, result [00:07:33]. The tool is incidental; the habit is the part to copy. Evidence should be reviewable without rerunning the entire agent conversation.
 
 ## Layer 3: use conformance when vibes are too weak
 
-Some work has a better oracle than your prompt. If you are implementing a protocol, parser, file format, auth flow, upload path, or compatibility layer, ask for conformance instead of taste. Willison gives two patterns: WebAssembly has a language-agnostic specification with expected inputs and outputs, and multipart upload behavior can be triangulated by building tests that pass against several existing frameworks, then using those tests to implement the new system [00:07:33]-[00:09:36]. That sharpens the prompt:
+> Use conformance when correctness has an external target.
 
 ```text
 Build or import the fixture suite.
@@ -86,9 +94,13 @@ Implement until the suite passes.
 Document any unsupported cases.
 ```
 
+Some work has a better oracle than your prompt. If you are implementing a protocol, parser, file format, auth flow, upload path, or compatibility layer, ask for conformance instead of taste. Willison gives two patterns: WebAssembly has a language-agnostic specification with expected inputs and outputs, and multipart upload behavior can be triangulated by building tests that pass against several existing frameworks, then using those tests to implement the new system [00:07:33]-[00:09:36]. That sharpens the prompt on the slide.
+
 Conformance does not eliminate review. It gives review a hard target.
 
 ## Layer 4: attach evidence the reviewer can inspect
+
+> Evidence should survive outside the private agent transcript.
 
 The higher the blast radius, the less useful a private agent transcript becomes. Put the evidence where the reviewer can see it: PR comment, work item, test log, screenshot, or artifact path. Useful evidence is boring and concrete:
 
@@ -102,7 +114,7 @@ Zechner's Pi workflow reinforces why evidence should be deterministic. He keeps 
 
 ## Layer 5: prove the blast radius is small
 
-Security and data work need proof before code proof. Willison's "lethal trifecta" frames the risk: private data access, exposure to malicious instructions, and an exfiltration path. His mitigation is to cut off at least one leg rather than hoping the model separates instructions from data [00:14:33]-[00:15:36], and to sandbox coding agents so a bad instruction or command has limited damage [00:15:36]-[00:16:30].
+> Boundary proof comes before code proof for security and data work.
 
 ```text
 What could the agent read?
@@ -111,9 +123,13 @@ What could the agent send out?
 What data did it use to test the change?
 ```
 
+Security and data work need proof before code proof. Willison's "lethal trifecta" frames the risk: private data access, exposure to malicious instructions, and an exfiltration path. His mitigation is to cut off at least one leg rather than hoping the model separates instructions from data [00:14:33]-[00:15:36], and to sandbox coding agents so a bad instruction or command has limited damage [00:15:36]-[00:16:30].
+
 Do not copy production data into an agent workspace to make a test realistic. Willison recommends investing in mock data and edge-case fixtures instead: generated users, synthetic records, and reproducible worst-case scenarios [00:17:33]-[00:18:35]. This is not advice to make permissive execution feel safe; it is the opposite. If the task involves secrets, private data, untrusted instructions, external network access, permissions, billing, or migrations, the proof stack must include a boundary check and a human decision.
 
 ## Layer 6: the reviewer must still understand the change
+
+> The top proof layer is human comprehension.
 
 The top layer is not another command. It is comprehension. Willison distinguishes throwaway tools from maintained systems: messy code may be acceptable for a one-off utility, but code that will live needs review and refactoring [00:09:36]-[00:10:39]. Zechner shows the same habit at the diff level: even when the agent finds the bug, he checks whether it introduced unnecessary helpers, duplication, or abstractions before wrapping up [00:29:43]-[00:31:43]. Ronacher and Poncela Cubeiro put it in process terms: let agents handle mechanical fixes, but call out dependencies, migrations, permissions, reliability, and architecture for human judgment [00:14:01]-[00:17:55]. The reviewer should be able to answer four questions:
 
@@ -126,7 +142,7 @@ If nobody can answer those, the agent is not done.
 
 ## A prompt you can reuse
 
-Use this before a non-trivial implementation task:
+> Give the agent its proof contract before it optimizes for done.
 
 ```text
 Before editing, classify this task as low, medium, or high risk.
@@ -147,9 +163,17 @@ Do not use production data. Create mock data or fixtures for edge cases.
 End with commands run, results, known gaps, and the files changed.
 ```
 
+Use this before a non-trivial implementation task.
+
 The wording matters less than the contract: the agent should know what proof it owes before it starts optimizing for completion.
 
 ## Done means evidence plus judgment
+
+> Done means evidence plus human judgment.
+
+```text
+checks → evidence → review → decision
+```
 
 Tests catch regressions. Real-system checks catch wiring problems. Conformance suites catch vague standards work. Screenshots, logs, and API output make review concrete. Sandboxes and mock data keep the blast radius small. Comprehension keeps the codebase from becoming a pile of passing checks nobody understands.
 
