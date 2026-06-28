@@ -16,12 +16,12 @@ Task 1 is implemented: the slide route now recognizes first-blockquote slide mes
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoff: `handoff-task-1.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`
 - Decisions: none
 
 ## Next Action
 
-- Start `plan.md` Task 2: pilot the post/slide hybrid convention in `src/content/posts/agentic-coding-2026.md` only, then smoke-check article, slides, notes, and print modes.
+- Start a new implementation thread with `handoff-task-2.md` for `plan.md` Task 2: pilot the post/slide hybrid convention in `src/content/posts/agentic-coding-2026.md` only, then smoke-check article, slides, notes, and print modes.
 
 ## Resolved Decisions
 

@@ -82,3 +82,21 @@
   - Structured first-blockquote content has no migrated post to inspect yet; Task 2 is the pilot content migration.
 - Next action:
   - Start Task 2: migrate only `src/content/posts/agentic-coding-2026.md` to the first-blockquote slide-message convention and rerun article/slide/notes/print checks.
+
+## 2026-06-28 Task 2 handoff prompt
+
+- What changed:
+  - Consulted Oracle on a paste-ready Task 2 implementation prompt.
+  - Added `handoff-task-2.md` for the pilot `agentic-coding-2026.md` article migration.
+  - Updated `index.md` and `plan.md` to reference the Task 2 handoff prompt.
+- Oracle prompt-review changes folded in:
+  - Capture before word count before editing.
+  - Make the expected 7 normal slides plus source appendix result explicit.
+  - Warn that intended slide visuals must sit immediately after the section blockquote.
+  - Strengthen timestamp/source verification for materially rewritten claims.
+  - Keep handoff references current in work-item artifacts.
+- Verification:
+  - Planning/work-item docs only; no `src/` code/content or skill files changed.
+  - `npm run check` and `npm run build` not required for this pass.
+- Next action:
+  - Start Task 2 from `handoff-task-2.md`.
