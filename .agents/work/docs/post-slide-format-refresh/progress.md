@@ -316,3 +316,39 @@
   - `npm run check` and `npm run build` not required for this planning update.
 - Next action:
   - Start Task 5 from `handoff-task-5.md`.
+
+## 2026-06-28 Task 5 presentation engagement decision
+
+- What I read:
+  - `AGENTS.md`
+  - `.agents/work/AGENTS.md`
+  - `.agents/work/docs/post-slide-format-refresh/index.md`
+  - `.agents/work/docs/post-slide-format-refresh/plan.md`
+  - `.agents/work/docs/post-slide-format-refresh/research.md`
+  - `.agents/work/docs/post-slide-format-refresh/progress.md`
+  - `src/pages/posts/[slug]/slides.astro`
+  - `.agents/skills/article-writing/SKILL.md`
+  - Migrated posts: `agentic-coding-2026.md`, `durable-context-coding-agents.md`, `make-the-agent-prove-it.md`, `small-threads-durable-state.md`, and `amp-factory-era-case-study.md`.
+  - Skipped `.agents/skills/agent-browser/SKILL.md` because this was a planning-only decision and browser execution would not change the strategy.
+- Post-migration evidence:
+  - The five public posts now have 41 normal slides plus four source appendices.
+  - All 41 normal slides have first-blockquote slide messages; sampled blockquote averages are roughly 9-11 words per post.
+  - 35 of 41 normal slides have immediate Markdown-native visuals: 31 text/code diagrams and four tables. Six slides are message-only.
+  - Visuals are content-specific workflow diagrams, matrices, ladders, and prompt/command excerpts rather than repeated reusable components.
+  - The route supports slide splitting, main/notes extraction, source appendices, notes/print/no-JS/keyboard behavior, and Mermaid rendering. It does not support within-slide fragments; adding them would require new syntax, fragment state, keyboard/hash behavior, print expansion, accessibility semantics, and no-JS behavior.
+- Decision matrix location:
+  - `research.md` section: “Task 5 presentation engagement / reveal matrix”.
+- Recommendation:
+  - Keep the Markdown-first slide route. It is sufficient for current presentation use after migration.
+  - Improve engagement through authoring strategy: one idea per slide, sparse visible text, notes-only nuance, and adjacent progressive buildup slides/static diagram stages where a dry-run shows the concept needs staged reveal.
+  - Treat generated visuals as a workflow, not a dependency: prompt/spec → agent or human refinement → committed accessible asset only for a named slide that text diagrams/tables cannot explain.
+  - Defer route-level fragments/overlays until duplicated buildup creates concrete maintenance pain and a narrow Markdown-visible, print-safe syntax is obvious.
+  - Defer MDX until multiple posts need the same reusable visual/interactive component or Markdown authoring becomes real maintenance pain.
+  - Defer a deck framework until presentation mode becomes a first-class deck product needing fragments, overlays, speaker tools, export, or rich animations beyond the article-projected route.
+- Implementation:
+  - No site implementation was warranted. Only work-item docs were updated.
+- Verification:
+  - Planning/work-item docs only; `npm run check` and `npm run build` were not required.
+  - `git diff --check` passed before commit.
+- Next action:
+  - If presentation quality needs another pass, run a dry presentation/edit pass for one target post or talk path and add Markdown-native adjacent buildup slides or static diagram stages only where the presenter actually needs progressive reveal.

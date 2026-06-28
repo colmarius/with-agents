@@ -63,7 +63,7 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
     - `npm run check` and `npm run build` pass after each logical migration batch.
   - Notes: Prefer one post per commit. Use the target sketches in `research.md` as direction, not mandatory copy.
 
-- [ ] **Task 5: Reassess presentation engagement, progressive reveal, and visual strategy**
+- [x] **Task 5: Reassess presentation engagement, progressive reveal, and visual strategy**
   - Scope: planning/work item only unless a clear, tiny documentation/work-item update is needed. This task should decide the next presentation-quality direction after migration, not implement a deck framework.
   - Depends on: Tasks 2-4
   - Acceptance:
@@ -73,7 +73,7 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
     - MDX is proposed only if multiple posts need the same reusable component or if raw Markdown becomes a real maintenance problem.
     - A deck framework is proposed only if presentation mode needs first-class deck features beyond the article-projected slide route.
     - Any proposed MDX, route-level reveal, generated-asset, or deck-framework path includes concrete benefits, implementation/migration cost, accessibility and print risks, agent-authoring risk, rollback/compatibility risks, and trigger evidence.
-  - Notes: Default answer should remain “Markdown-first; no MDX/deck framework yet” unless evidence changes. Consider progressive duplicate slides and static visual buildup before route-level fragments. Generated visuals should be treated as prompt/spec → agent or human refinement → accessible committed asset, not one-shot arbitrary image generation.
+  - Notes: Task 5 outcome is recorded in `research.md` under “Task 5 presentation engagement / reveal matrix” and in `progress.md`. Recommendation: keep Markdown-first slides; improve engagement through sparse visible messages, notes, and adjacent progressive buildup/static diagram stages during a presentation dry-run. Defer route-level fragments/overlays, generated static assets, MDX, and deck frameworks until their trigger evidence appears.
 
 ## Implementation notes
 
@@ -96,6 +96,7 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
 - Work item has current `index.md`, `research.md`, `plan.md`, and `progress.md`.
 - First implementation thread can start from Task 1 without redoing the research.
 - The recommended model supports slide-only, notes, article/read, print/handout, and lightweight visuals.
+- Task 5 records the engagement/reveal decision matrix and concrete trigger evidence for route-level reveal, generated assets, MDX, and deck-framework adoption.
 
 ## Verification
 
