@@ -59,6 +59,16 @@ Important routes:
 - When adding resources, keep `src/data/resources/coding-with-agents.json` and `src/content/summaries/**` aligned by `resourceId`.
 - Internal links should point only to routes that exist in this repository, unless intentionally linking to an external site.
 
+### Article writing
+
+When writing or refreshing public posts under `src/content/posts/`, follow this contract and load the `article-writing` skill for the full workflow and checklists.
+
+- **Audience:** experienced developers, tech leads, and agent-heavy practitioners who want practical coding-agent workflows.
+- **Tone:** direct, calm, source-backed, concise; skeptical but constructive. Not salesy, manifesto-like, or slangy.
+- **Concision:** important point first; active sentences; short paragraphs; concrete examples; no throat-clearing. Prefer the shortest version that keeps the argument.
+- **Source anchors:** anchors must support the specific claim they sit beside. Mark author synthesis as synthesis. Do not pad posts with repeated source recaps.
+- **Internal links:** link only to routes that exist in this repo. Never link retired drafts or old/unavailable article routes from public posts.
+
 ### YouTube transcript workflow
 
 Use this workflow when the user provides a YouTube video link/title or asks for a video summary.
