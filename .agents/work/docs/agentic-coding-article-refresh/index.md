@@ -16,6 +16,7 @@ Review and refresh the draft post backlog now that `agentic-coding-2026`, `durab
 - Task 1 handoff prompt: `handoff-task-1.md`
 - Task 2 handoff prompt: `handoff-task-2.md`
 - Task 6 handoff prompt: `handoff-task-6.md`
+- Task 7 handoff prompt: `handoff-task-7.md`
 - Published series map: `src/content/posts/agentic-coding-2026.md`
 - Published proof-stack post: `src/content/posts/make-the-agent-prove-it.md`
 - Published small-thread practice post: `src/content/posts/small-threads-durable-state.md`
@@ -26,7 +27,7 @@ Review and refresh the draft post backlog now that `agentic-coding-2026`, `durab
 
 ## Next Action
 
-- Task 7 is ready to start if desired. Use `research/amp-official-sources-2026.md` as the source-prep bundle, re-run the current Manual/Models/Plugin API/Chronicle sweep close to publication, then rework `amp-power-patterns.md` only as a broader Amp tool case study with verified product details.
+- Start Task 7 with `handoff-task-7.md` if the Amp case study is still desired. The handoff points to `research/amp-official-sources-2026.md`, requires a fresh Manual/Models/Plugin API/Chronicle sweep close to publication, and scopes `amp-power-patterns.md` as a broader Amp tool case study with verified product details.
 
 ## Open Questions
 

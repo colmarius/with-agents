@@ -250,3 +250,17 @@
 ## Updated Next Action
 
 - Start Task 7 only if the Amp case study is still desired. Use `research/amp-official-sources-2026.md`, re-run the Manual/Models/Plugin API/Chronicle sweep close to publication, then rewrite `amp-power-patterns.md` as a broader Amp tool case study with verified current product details and no stale practice-path links.
+
+## 2026-06-28 Oracle Review And Task 7 Handoff
+
+- Consulted Oracle to produce a paste-ready Task 7 implementation handoff prompt.
+- Saved the handoff as `handoff-task-7.md`.
+- The handoff scopes Task 7 to `amp-power-patterns.md`, requires a fresh current Amp Manual/Models/Plugin API/Chronicle source sweep close to publication, includes publish/defer decision gates, and calls out stale claims to remove: Oracle-as-mode, Handoff, fixed token thresholds, old model names, old speed/cost claims, VS Code/editor-sidebar assumptions, setup/install/pricing/free-tier claims, and draft-only links.
+- Updated `index.md` artifacts and Next Action to point future work at `handoff-task-7.md`.
+- Files changed: `index.md`, `progress.md`, and `handoff-task-7.md`.
+- Verification: `git diff --check` passed after saving the handoff and index update.
+- Skipped checks: `npm run check` and `npm run build` were not run because this was a work-item handoff-only update; no public content, frontmatter, navigation, or route output changed.
+
+## Updated Next Action
+
+- Start a fresh implementation thread with `handoff-task-7.md` if the Amp case study is still desired.
