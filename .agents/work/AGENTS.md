@@ -64,6 +64,8 @@ One active implementation thread should own a work item at a time. If `progress.
 
 When preparing a new implementation thread, ask for a paste-ready handoff prompt that names the work item path, the active plan task or phase, scope limits, expected artifact updates, verification commands, stop conditions, and expected final response.
 
+Store reusable paste-ready handoff prompts as separate files in the work item, outside `plan.md` or `plans/`. Use clear names such as `handoff-task-1.md`, `handoff-phase-2.md`, or `handoff-review.md`, then link them from `index.md` or the relevant plan section. Keep `plan.md` focused on tasks, acceptance criteria, constraints, and verification.
+
 ## Decisions
 
 Create a file under `decisions/` only when a decision would otherwise be repeated across research, requirements brief, plan, and chat. Link to the decision file from other artifacts instead of restating the full rationale.

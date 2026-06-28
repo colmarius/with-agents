@@ -32,4 +32,16 @@
   - Planning docs only; no `src/` code/content or skill files changed.
   - `npm run check` and `npm run build` not required for this pass.
 - Next action:
-  - Start Task 1 from the paste-ready prompt in `plan.md`.
+  - Superseded by the handoff prompt relocation entry below.
+
+## 2026-06-28 Handoff prompt relocation
+
+- What changed:
+  - Moved the paste-ready Task 1 implementation prompt out of `plan.md` into `handoff-task-1.md`.
+  - Updated `index.md` and `plan.md` to link to the separate handoff file.
+  - Updated `.agents/work/AGENTS.md` to make separate handoff prompt files the durable work-item convention.
+- Verification:
+  - Planning/guidance docs only; no `src/` code/content or skill files changed.
+  - `npm run check` and `npm run build` not required for this pass.
+- Next action:
+  - Start Task 1 from `handoff-task-1.md`.

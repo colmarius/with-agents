@@ -16,11 +16,12 @@ No article migration or code refactor has been implemented yet. This work item r
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
+- Handoff: `handoff-task-1.md`
 - Decisions: none
 
 ## Next Action
 
-- Implement `plan.md` Task 1 only: upgrade the slide route to recognize the first-blockquote slide-message convention while preserving legacy fallback, add notes/print/no-JS/keyboard/source-appendix behavior, and update the article-writing skill. Do not edit `src/content/posts/*.md` in Task 1.
+- Start a new implementation thread with `handoff-task-1.md` for `plan.md` Task 1: upgrade the slide route to recognize the first-blockquote slide-message convention while preserving legacy fallback, add notes/print/no-JS/keyboard/source-appendix behavior, and update the article-writing skill. Do not edit `src/content/posts/*.md` in Task 1.
 
 ## Resolved Decisions
 
