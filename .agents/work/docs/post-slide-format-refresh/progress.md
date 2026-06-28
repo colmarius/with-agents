@@ -189,3 +189,27 @@
   - `npm run check` and `npm run build` not required for this handoff step.
 - Next action:
   - Start Task 4 content migration with `src/content/posts/durable-context-coding-agents.md`.
+
+## 2026-06-28 Task 4 durable-context migration
+
+- Post migrated:
+  - `src/content/posts/durable-context-coding-agents.md`
+  - Commit: `80e4e60` (`Migrate durable context post to slide hybrid format`)
+- Baseline:
+  - H2 sections before migration: 9 normal sections, no `## Sources` / `## Sources used` appendix.
+  - Word count before: 1,697.
+  - Word count after: 1,815.
+- What changed:
+  - Added concise first-blockquote slide messages to all 9 normal H2 sections.
+  - Moved existing text diagrams/code visuals directly after the new slide messages where they are intended slide material.
+  - Added one lightweight text visual for the cheap-code/alignment section.
+  - Kept citations, source links, caveats, and explanatory prose in notes/article text after slide messages and visuals.
+- Verification:
+  - `git diff --check` passed.
+  - `npm run check` passed.
+  - `npm run build` passed.
+  - Static built-route smoke passed for article and slide artifacts: article build includes 9 H2s and 9 blockquotes; slide build includes notes control, print CSS, source container, and source-appendix container.
+- Limitations / notes:
+  - Headless Chrome `--dump-dom` hung even on a trivial data URL in this environment, so browser-executed slide smoke was not completed for this post. Content shape was checked against the route convention and built HTML instead.
+- Next action:
+  - Continue Task 4 with `src/content/posts/make-the-agent-prove-it.md`.
