@@ -176,6 +176,12 @@ Useful Oracle conclusions:
 - Presentation UX should include slide-only default, notes toggle/`?notes=1`, print CSS that shows notes, semantic `section` markup, no-JS fallback, better keyboard handling, and no noisy browser history on every navigation.
 - A later checker should validate H2 sections with missing blockquotes, long blockquotes, images without alt text, and accidental source-section slides.
 
+## Resolved decisions from planning grill
+
+- **Task 1 sequencing:** ship the backward-compatible slide-route extractor and article-writing skill update only. Do not migrate all posts, and do not make the pilot migration optional inside Task 1. Migrate `agentic-coding-2026.md` in Task 2 after the route behavior is reviewable.
+- **Visual asset convention:** early migrations should prefer Markdown-native visuals: Mermaid, text diagrams, small tables, inline SVG, or simple figures. If static image files are needed later, store them under `public/visuals/posts/<slug>/<descriptive-kebab-name>.<svg|webp|png>` and reference them as `/visuals/posts/<slug>/...` with accessible alt/caption text.
+- **Compatibility preflight:** because the convention is auto-detected from first blockquotes, the implementation thread must check current posts for H2 sections that already begin with a blockquote before changing extractor behavior. If any are found and are not intended slide messages, preserve legacy behavior or stop and report.
+
 ## Option comparison
 
 | Option | Authoring ergonomics | Portability | Astro compatibility | Migration cost | Visual support | Notes/speaker support | Reliability | Recommendation |
@@ -226,7 +232,7 @@ Mode model:
 - **Content schema:** no required schema change for the first slice. Consider optional `slides` metadata later only for `enabled`, `theme`, `excludeHeadings`, or migration flags.
 - **Slide extractor:** keep current client-side H2 extraction as the first small step, but split each section into `main` and `notes` based on the first-blockquote convention. Preserve legacy fallback.
 - **Layout boundaries:** if the slide route grows much larger, move extraction/navigation code into `src/scripts/` after behavior is proven. Do not start by adding a framework.
-- **Visual conventions:** prefer Mermaid, text diagrams, small tables, and inline SVG/HTML figures before adding custom components. If raster assets become necessary, use a predictable public path such as `public/visuals/posts/<slug>/` unless an MDX migration changes the asset story.
+- **Visual conventions:** prefer Mermaid, text diagrams, small tables, and inline SVG/HTML figures before adding custom components. If static images become necessary, use `public/visuals/posts/<slug>/` with descriptive filenames and accessible alt/caption text unless an MDX migration changes the asset story.
 - **Accessibility:** semantic `section`, readable headings, notes containers, no-JS fallback, focus-safe keyboard shortcuts, image alt text, and print-friendly order.
 - **Checks:** later add a small content checker for missing first blockquotes, overlong slide messages, missing image alt text, and source-section handling.
 - **Backwards compatibility:** first code slice should keep old posts usable; article migration can happen one post at a time.

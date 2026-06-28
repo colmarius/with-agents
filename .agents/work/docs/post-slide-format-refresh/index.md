@@ -20,9 +20,13 @@ No article migration or code refactor has been implemented yet. This work item r
 
 ## Next Action
 
-- Implement `plan.md` Task 1 only: upgrade the slide route to recognize the first-blockquote slide-message convention while preserving legacy fallback, add notes/print behavior, and update the article-writing skill. Do not migrate all posts in that first slice.
+- Implement `plan.md` Task 1 only: upgrade the slide route to recognize the first-blockquote slide-message convention while preserving legacy fallback, add notes/print/no-JS/keyboard/source-appendix behavior, and update the article-writing skill. Do not edit `src/content/posts/*.md` in Task 1.
+
+## Resolved Decisions
+
+- [x] Task 1 ships backward-compatible slide-route behavior and skill guidance only. Pilot `agentic-coding-2026.md` in Task 2; do not migrate all posts in Task 1.
+- [x] Prefer Mermaid/text/inline SVG for early migrations. If static images are needed later, use `public/visuals/posts/<slug>/` with accessible alt/caption text.
 
 ## Open Questions
 
-- [ ] Should the first coding slice migrate `agentic-coding-2026.md` as a pilot, or only ship the backward-compatible slide-route behavior first?
-- [ ] Should lightweight image assets live under `public/visuals/posts/<slug>/` by convention, or should the first migration avoid raster/image assets and use only Mermaid/text/SVG-in-Markdown?
+- None blocking Task 1.
