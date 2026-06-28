@@ -65,6 +65,7 @@ Verify your skill by loading it and checking:
 | Skill | Purpose |
 | ----- | ------- |
 | `adapt` | Analyze project and fill in AGENTS.md after installation |
+| `agent-browser` | Use agent-browser for browser automation and CLI-served browser skills |
 | `agent-work` | Create and maintain `.agents/work/` work items |
 | `article-writing` | Write, refresh, and retire public posts in the house style |
 | `feature-planning` | Turn context into plans and paste-ready handoff prompts |
