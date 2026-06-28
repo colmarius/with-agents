@@ -136,3 +136,20 @@
   - Timestamp-backed factual sentences were not materially rewritten; moved/added slide messages and visuals are author synthesis based on the existing section arguments.
 - Next action:
   - Start Task 3: add authoring/check reliability, including the short root `AGENTS.md` convention and an optional content checker only if it can stay reliable.
+
+## 2026-06-28 Task 3 handoff prompt
+
+- What changed:
+  - Consulted Oracle on a paste-ready Task 3 implementation prompt.
+  - Added `handoff-task-3.md` for the authoring/check reliability task.
+  - Updated `index.md` and `plan.md` to reference the Task 3 handoff prompt.
+- Oracle prompt-review changes folded in:
+  - Force an explicit guidance-only vs focused-checker decision before writing checker code.
+  - Warn that only one pilot post is migrated, so any checker must not fail known-unmigrated posts by default or block normal editing with expected Task 4 work.
+  - Keep checker scope small, dependency-light, and aligned with the actual slide extractor rules if it is added.
+  - Require progress logging of the checker decision, verification, limitations, and Task 4 follow-up.
+- Verification:
+  - Planning/work-item docs only; no `src/` code/content, root guidance, skill, package, or checker files changed.
+  - `npm run check` and `npm run build` not required for this pass.
+- Next action:
+  - Start Task 3 from `handoff-task-3.md`.

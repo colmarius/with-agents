@@ -16,12 +16,12 @@ Task 1 and Task 2 are implemented. The slide route now recognizes first-blockquo
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`
 - Decisions: none
 
 ## Next Action
 
-- Start Task 3 from `plan.md`: add authoring/check reliability after the pilot migration, including a short root `AGENTS.md` convention and an optional checker only if it can stay reliable.
+- Start a new implementation thread with `handoff-task-3.md` for `plan.md` Task 3: add authoring/check reliability after the pilot migration, including a short root `AGENTS.md` convention and an optional checker only if it can stay reliable.
 
 ## Resolved Decisions
 
