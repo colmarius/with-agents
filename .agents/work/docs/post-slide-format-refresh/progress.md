@@ -303,3 +303,16 @@
   - Browser-executed slide smoke was not completed for Task 4 because local headless Chrome `--dump-dom` hung in this environment. Static built HTML and Markdown structure checks were used instead. Task 5 can decide whether richer visual work warrants a more robust browser verification path, potentially using the newly added `agent-browser` skill/CLI.
 - Next action:
   - Start Task 5: reassess whether Markdown-native visuals are sufficient or whether MDX/richer visuals are justified.
+
+## 2026-06-28 Task 5 prompt reframing
+
+- What changed:
+  - Folded user feedback into Task 5: slides should become more engaging, visual, and presentation-friendly, with attention to progressive buildup, overlays/reveal, sparse visible text, and separately generated visual prompts/assets.
+  - Consulted Oracle for an updated paste-ready Task 5 prompt after gathering references on one-idea-per-slide, progressive disclosure, reveal.js/Slidev fragments, Quarto/reveal stacked overlays, slides-as-code tradeoffs, and AI diagram-generation limitations.
+  - Updated `plan.md` so Task 5 is now a presentation engagement / progressive reveal / visual strategy reassessment, with MDX/deck tooling treated as one option rather than the whole question.
+  - Added `handoff-task-5.md` and linked it from `index.md` and `plan.md`.
+- Verification:
+  - Work-item docs only; no `src/` code/content or skill files changed.
+  - `npm run check` and `npm run build` not required for this planning update.
+- Next action:
+  - Start Task 5 from `handoff-task-5.md`.

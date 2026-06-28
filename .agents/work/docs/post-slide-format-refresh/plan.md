@@ -63,14 +63,17 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
     - `npm run check` and `npm run build` pass after each logical migration batch.
   - Notes: Prefer one post per commit. Use the target sketches in `research.md` as direction, not mandatory copy.
 
-- [ ] **Task 5: Reassess whether MDX or richer visuals are justified**
-  - Scope: planning/work item only unless a clear implementation trigger exists.
+- [ ] **Task 5: Reassess presentation engagement, progressive reveal, and visual strategy**
+  - Scope: planning/work item only unless a clear, tiny documentation/work-item update is needed. This task should decide the next presentation-quality direction after migration, not implement a deck framework.
   - Depends on: Tasks 2-4
   - Acceptance:
-    - The work item records whether Markdown visuals are sufficient.
+    - The work item records whether the current Markdown-native slide model is sufficient for presentation use after migration.
+    - The reassessment compares at least these options: keep Markdown static visuals; add an authoring convention for progressive duplicate slides/static diagram buildup; add route-level fragments/overlays; add a generated static visual asset workflow; adopt MDX/components; adopt a deck framework.
+    - The recommendation accounts for the desired presentation style: one idea per slide, progressive buildup for complex concepts, sparse visible text with richer notes, technical-audience minimalism, accessible visuals, print/PDF fallback, and no gratuitous animation.
     - MDX is proposed only if multiple posts need the same reusable component or if raw Markdown becomes a real maintenance problem.
-    - Any proposed MDX migration includes concrete benefits, migration cost, and rollback/compatibility risks.
-  - Notes: Default answer should remain “no MDX yet” unless evidence changes.
+    - A deck framework is proposed only if presentation mode needs first-class deck features beyond the article-projected slide route.
+    - Any proposed MDX, route-level reveal, generated-asset, or deck-framework path includes concrete benefits, implementation/migration cost, accessibility and print risks, agent-authoring risk, rollback/compatibility risks, and trigger evidence.
+  - Notes: Default answer should remain “Markdown-first; no MDX/deck framework yet” unless evidence changes. Consider progressive duplicate slides and static visual buildup before route-level fragments. Generated visuals should be treated as prompt/spec → agent or human refinement → accessible committed asset, not one-shot arbitrary image generation.
 
 ## Implementation notes
 
@@ -108,3 +111,4 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
 - Task 2 pilot article migration prompt: `handoff-task-2.md`
 - Task 3 authoring/check reliability prompt: `handoff-task-3.md`
 - Task 4 remaining post migrations prompt: `handoff-task-4.md`
+- Task 5 presentation engagement/reveal strategy prompt: `handoff-task-5.md`

@@ -16,12 +16,12 @@ Tasks 1-4 are implemented. The slide route now recognizes first-blockquote slide
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5.md`
 - Decisions: none
 
 ## Next Action
 
-- Start Task 5 from `plan.md`: reassess whether Markdown-native visuals are sufficient or whether MDX/richer visuals are justified after the completed migrations.
+- Start Task 5 from `handoff-task-5.md`: reassess presentation engagement, progressive reveal, generated visual workflow, and whether Markdown-first slides are still sufficient before considering MDX or deck tooling.
 
 ## Resolved Decisions
 
