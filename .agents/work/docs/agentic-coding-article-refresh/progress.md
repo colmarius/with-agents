@@ -92,3 +92,30 @@
 ## Updated Next Action
 
 - Prepare `make-the-agent-prove-it` as the next publish candidate: rewrite the Simon draft into a distinct proof-stack article, compare it against the matching resource summary, anchor claims to transcripts, then make any frontmatter/navigation changes only in that later publish task.
+
+## 2026-06-28 Task 3 Proof-Stack Article Published
+
+- Rewrote the Simon Willison draft into `make-the-agent-prove-it`, a distinct proof-stack guide rather than a second talk recap.
+- Published decision: `draft: false`, `unlisted: false`, and renamed the post route to `/posts/make-the-agent-prove-it`.
+- Updated the homepage to link only to production-built public routes: the durable-context article, the new proof-stack article, the durable-context slide draft, and the resource hub.
+- Files changed:
+  - `src/content/posts/make-the-agent-prove-it.md`
+  - `src/content/posts/simon-willison-engineering-practices-coding-agents.md` removed as the old source slug
+  - `src/pages/index.astro`
+  - `.agents/work/docs/agentic-coding-article-refresh/index.md`
+  - `.agents/work/docs/agentic-coding-article-refresh/plan.md`
+  - `.agents/work/docs/agentic-coding-article-refresh/progress.md`
+- Source anchors used:
+  - Simon transcript `[00:04:41]-[00:18:35]` for red-green TDD, manual checks, conformance, sandboxing, and mock data.
+  - Pi transcript `[00:29:43]-[00:42:55]` for senior review of unnecessary complexity and deterministic checks.
+  - Friction transcript `[00:14:01]-[00:17:55]` for routing high-risk decisions back to humans.
+  - Durable-context Evidence section as the internal link/non-overlap check.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed and generated `/posts/make-the-agent-prove-it/index.html` plus its slide route.
+  - `git diff --check` passed.
+- Confirmed no unrelated draft articles changed. The new article has a proof-stack thesis, names its synthesis beyond the Simon resource summary, and avoids stale model/product/permissive-mode claims.
+
+## Updated Next Action
+
+- Run Task 4: refresh or merge the workflow/planning drafts into a focused `small-threads-durable-state` practice article using current `.agents/work/` guidance.

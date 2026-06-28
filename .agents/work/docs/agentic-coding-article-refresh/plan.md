@@ -39,7 +39,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - The homepage and `/posts` path expectations remain coherent with the publish plan.
   - Notes: Prefer fewer stronger posts over preserving every existing draft.
 
-- [ ] **Task 3: Prepare the next proof/evidence publish candidate if warranted**
+- [x] **Task 3: Prepare the next proof/evidence publish candidate if warranted**
   - Scope: likely `src/content/posts/simon-willison-engineering-practices-coding-agents.md` or a renamed proof/evidence article
   - Depends on: Task 2
   - Acceptance:

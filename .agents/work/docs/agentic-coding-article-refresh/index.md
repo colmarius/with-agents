@@ -1,6 +1,6 @@
 # Agentic coding article refresh
 
-Status: planned
+Status: in-progress
 Category: docs
 Updated: 2026-06-28
 
@@ -14,6 +14,7 @@ Review and refresh the draft post backlog now that only the durable-context arti
 - Audit template/output: `audit.md`
 - Task 1 handoff prompt: `handoff-task-1.md`
 - Task 2 handoff prompt: `handoff-task-2.md`
+- Published proof-stack post: `src/content/posts/make-the-agent-prove-it.md`
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
@@ -21,7 +22,7 @@ Review and refresh the draft post backlog now that only the durable-context arti
 
 ## Next Action
 
-- Prepare `make-the-agent-prove-it` as the next publish candidate: rewrite the Simon draft into a distinct proof-stack article, compare it against the matching resource summary, anchor claims to transcripts, and defer any frontmatter/navigation changes until that publish task.
+- Run Task 4: refresh or merge the workflow/planning drafts into a focused `small-threads-durable-state` practice article using current `.agents/work/` guidance.
 
 ## Open Questions
 
