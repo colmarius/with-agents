@@ -8,7 +8,7 @@ Updated: 2026-06-28
 
 Plan and prepare a refactor of public posts and generated slide views so each article section can serve as both a concise presentation slide and richer reader/speaker notes. The recommended direction keeps Markdown posts as the single source of truth: each `##` section starts with a short slide-message blockquote, may include one immediate lightweight visual, and then continues as normal notes/article prose.
 
-Task 1 and Task 2 are implemented. The slide route now recognizes first-blockquote slide messages with notes, preserves legacy section slides as fallback, excludes source appendices from normal slide navigation, and supports notes/print/no-JS/keyboard behavior. The pilot post `agentic-coding-2026.md` now has 7 blockquote-led normal slides with immediate Markdown-native visuals and `## Sources used` retained as a source appendix outside normal slide navigation.
+Tasks 1-3 are implemented. The slide route now recognizes first-blockquote slide messages with notes, preserves legacy section slides as fallback, excludes source appendices from normal slide navigation, and supports notes/print/no-JS/keyboard behavior. The pilot post `agentic-coding-2026.md` now has 7 blockquote-led normal slides with immediate Markdown-native visuals and `## Sources used` retained as a source appendix outside normal slide navigation. Authoring guidance now covers the convention in root `AGENTS.md` and the detailed `article-writing` skill; no checker was added yet because only one post is migrated and the legacy fallback remains intentional.
 
 ## Artifacts
 
@@ -21,7 +21,7 @@ Task 1 and Task 2 are implemented. The slide route now recognizes first-blockquo
 
 ## Next Action
 
-- Start a new implementation thread with `handoff-task-3.md` for `plan.md` Task 3: add authoring/check reliability after the pilot migration, including a short root `AGENTS.md` convention and an optional checker only if it can stay reliable.
+- Start Task 4 from `plan.md`: migrate the remaining posts one at a time to the first-blockquote slide-message convention, using the pilot post and article-writing skill as the reference.
 
 ## Resolved Decisions
 

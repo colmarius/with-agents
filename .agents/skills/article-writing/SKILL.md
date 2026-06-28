@@ -56,10 +56,17 @@ Public posts double as generated slide decks. Keep Markdown posts as the single
 source of truth: each rendered `##` section is an article section and usually one
 presentation slide.
 
+- Author against the route extractor: the first meaningful child after a normal
+  `##` heading should be a blockquote slide message. If a post has not been
+  migrated yet, leave legacy sections coherent until that post is migrated as a
+  whole.
 - Start each rendered `##` section with a concise blockquote slide message when
   practical.
 - Keep the blockquote presentation-friendly: usually one sentence, no citation
   clutter, and no more than 1-3 short clauses.
+- Only contiguous visual blocks immediately after the blockquote stay on the
+  slide. Once normal prose, lists, or non-visual code starts, the rest of the
+  section is speaker/reader notes.
 - Put citations, examples, caveats, prompts, and read-along context in normal
   prose after the blockquote; that prose becomes speaker/reader notes in slide
   mode.
@@ -68,7 +75,8 @@ presentation slide.
   text, captions, or nearby prose that does not rely on color/image-only meaning.
 - Use `## Sources` or `## Sources used` for source appendices. They are not normal
   presentation slides; keep source detail available for article, notes, and print
-  modes.
+  modes. Avoid variants like `## Sources consulted` unless you intentionally want
+  a normal slide.
 
 ## Workflow
 

@@ -68,6 +68,7 @@ When writing or refreshing public posts under `src/content/posts/`, follow this 
 - **Concision:** important point first; active sentences; short paragraphs; concrete examples; no throat-clearing. Prefer the shortest version that keeps the argument.
 - **Source anchors:** anchors must support the specific claim they sit beside. Mark author synthesis as synthesis. Do not pad posts with repeated source recaps.
 - **Internal links:** link only to routes that exist in this repo. Never link retired drafts or old/unavailable article routes from public posts.
+- **Post/slide convention:** public posts also generate `/slides` views. Normal rendered `##` sections should usually start with a concise blockquote slide message. Optional immediate visuals need accessible alt text, captions, or nearby explanatory prose. Use exact `## Sources` or `## Sources used` headings for source appendices; they are not normal slides.
 
 ### YouTube transcript workflow
 

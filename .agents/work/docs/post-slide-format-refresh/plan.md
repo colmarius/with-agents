@@ -42,7 +42,7 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
     - `npm run check` and `npm run build` pass.
   - Notes: Do not rewrite the full argument; migrate structure and trim only where it directly improves slide/read coherence.
 
-- [ ] **Task 3: Add authoring/check reliability**
+- [x] **Task 3: Add authoring/check reliability**
   - Scope: `.agents/skills/article-writing/SKILL.md`, optional `AGENTS.md`, optional checker script and `package.json` command.
   - Depends on: Task 1 and at least one pilot migration
   - Acceptance:

@@ -153,3 +153,27 @@
   - `npm run check` and `npm run build` not required for this pass.
 - Next action:
   - Start Task 3 from `handoff-task-3.md`.
+
+## 2026-06-28 Task 3 authoring/check reliability
+
+- Checker decision:
+  - Chose the guidance-only path for Task 3.
+  - Rationale: inspected the migrated pilot post and `src/pages/posts/[slug]/slides.astro`. The route still intentionally preserves legacy whole-section slides, and only `agentic-coding-2026.md` has migrated to the first-blockquote convention. A checker would need to be explicitly targeted and would still duplicate route/parser rules before Task 4 reveals whether the convention needs small adjustments. Adding one now would create maintenance cost or false-positive risk without enough migrated examples.
+- What changed:
+  - Added a short always-visible post/slide convention to root `AGENTS.md`.
+  - Tightened `.agents/skills/article-writing/SKILL.md` so the detailed workflow names the actual extractor rules: first meaningful blockquote after `##`, contiguous immediate visuals only, notes after the first non-visual block, and exact `## Sources` / `## Sources used` appendices.
+  - Did not add a checker script, npm command, package changes, slide-route changes, post migrations, or static visual assets.
+- Files changed:
+  - `AGENTS.md`
+  - `.agents/skills/article-writing/SKILL.md`
+  - `.agents/work/docs/post-slide-format-refresh/index.md`
+  - `.agents/work/docs/post-slide-format-refresh/plan.md`
+  - `.agents/work/docs/post-slide-format-refresh/progress.md`
+- Verification:
+  - `npm run check` passed.
+  - `npm run build` passed.
+  - `git diff --check` passed before staging.
+- Limitations / Task 4 follow-up:
+  - No automated slide-authoring checker exists yet. During Task 4, migrate one post at a time and inspect article/slide/notes/print behavior; reconsider a focused opt-in checker only after more posts use the convention and noisy edge cases are better understood.
+- Next action:
+  - Start Task 4: migrate the remaining posts one at a time.
