@@ -1,12 +1,12 @@
 # Agentic coding article refresh
 
-Status: in-progress
+Status: completed
 Category: docs
 Updated: 2026-06-28
 
 ## Summary
 
-Review and refresh the draft post backlog now that `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, and `small-threads-durable-state` are public. The public series is broader agentic-coding guidance: alignment, evidence, context hygiene, good friction, codebase infrastructure, and multi-agent/factory workflows. Amp can appear as one concrete tool and case study, not the whole framing.
+Review and refresh the draft post backlog now that `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, `small-threads-durable-state`, and `amp-factory-era-case-study` are public. The public series is broader agentic-coding guidance: alignment, evidence, context hygiene, good friction, codebase infrastructure, and multi-agent/factory workflows. Amp appears as one concrete tool case study, not the whole framing.
 
 ## Artifacts
 
@@ -20,6 +20,7 @@ Review and refresh the draft post backlog now that `agentic-coding-2026`, `durab
 - Published series map: `src/content/posts/agentic-coding-2026.md`
 - Published proof-stack post: `src/content/posts/make-the-agent-prove-it.md`
 - Published small-thread practice post: `src/content/posts/small-threads-durable-state.md`
+- Published Amp case study: `src/content/posts/amp-factory-era-case-study.md`
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
@@ -27,7 +28,7 @@ Review and refresh the draft post backlog now that `agentic-coding-2026`, `durab
 
 ## Next Action
 
-- Start Task 7 with `handoff-task-7.md` if the Amp case study is still desired. The handoff points to `research/amp-official-sources-2026.md`, requires a fresh Manual/Models/Plugin API/Chronicle sweep close to publication, and scopes `amp-power-patterns.md` as a broader Amp tool case study with verified product details.
+- No immediate action. The public article refresh is complete. Future work can revive `amp-first-win-15-minutes.md` or `workshop-hands-on-agents.md` only if a concrete tutorial/event need appears, and only after fresh product/setup verification.
 
 ## Open Questions
 

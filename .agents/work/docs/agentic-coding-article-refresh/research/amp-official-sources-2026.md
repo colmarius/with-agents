@@ -10,6 +10,34 @@ Use the current [Amp Manual](https://ampcode.com/manual), [Plugin API](https://a
 
 The future Task 7 article should be an Amp case study for factory-era coding-agent workflows: task sizing, delegation, context, review, feedback loops, and extensibility. It should not preserve the old draft’s stale feature catalog, Oracle-as-mode framing, Handoff section, fixed token thresholds, old model names, old speed/cost claims, or draft-only practice-path links.
 
+## Fresh Publication Sweep — 2026-06-28
+
+Re-ran the close-to-publication Amp source sweep before editing the article. No current first-party source contradicted the Task 7 thesis. The fresh sweep supported publishing a broader case study if exact model names, pricing, setup, UI keybindings, token thresholds, and stale Handoff guidance are omitted.
+
+Freshly checked canonical sources:
+
+- [Amp Manual](https://ampcode.com/manual): still lists built-in modes `deep`, `smart`, and `rush`; describes Oracle as a second-opinion model/tool rather than a mode; documents subagent isolation and final-summary behavior; documents Librarian for GitHub code research with default-branch-only search; documents `AGENTS.md`, skills, MCP, thread references, code review, Checks, permissions, plugins, and thread sharing visibility.
+- [Plugin API](https://ampcode.com/manual/plugin-api): supports events, commands, tools, UI, AI helpers, `createAgent`, `registerAgentMode`, built-in mode handles for `smart`/`deep`/`rush`, custom subagents, thread creation/append/wait APIs, and `parentThreadID`; still includes experimental API caveats.
+- [Models](https://ampcode.com/models): current mode and subagent model assignments remain high-churn; Task 7 article intentionally uses role-based mode descriptions instead of exact model names.
+- [Chronicle](https://ampcode.com/chronicle): latest/relevant product items checked include Agents Everywhere, Custom Agents, A Faster Librarian, Diffs, Faster Deep & Rush, End of Public Threads, Plugins Everywhere, Drop the Neo/Amp Rebuilt, Rush 2.0, npm Package Changes, current model announcements, The Coding Agent Is Dead, Liberating Code Review, and older historical items as stale-claim inventory only.
+
+Freshly checked current/relevant news and notes used for article claims:
+
+- [Amp Rebuilt](https://ampcode.com/news/neo): remote-controllable, compaction-first, plugin-powered CLI; auto-compaction; Handoff removed; thread references remain; permissions moved into Plugin API policy surface.
+- [Agents Everywhere](https://ampcode.com/news/agents-everywhere): current web/mobile/CLI surfaces for watching and driving active agents.
+- [Custom Agents](https://ampcode.com/news/custom-agents): plugins can create custom agents, run one-shot agents, create/continue threads, and connect background work to a parent thread.
+- [Diffs](https://ampcode.com/news/diffs): review/request changes/stage thread changes in Amp, with human-comprehension framing.
+- [Rush 2.0](https://ampcode.com/news/rush-2.0): qualitative boundary for `rush` as small, bounded, known-done work; avoid exact dated speed/cost claims.
+- [Faster Deep & Rush](https://ampcode.com/news/faster-deep-rush) and [A Faster Librarian](https://ampcode.com/news/a-faster-librarian): performance/model details are dated and should not be durable article claims.
+- [The End of Public Threads](https://ampcode.com/news/end-of-public-threads): public discoverable thread sharing removed; unlisted/workspace sharing remains.
+- [npm Package Changes](https://ampcode.com/news/npm-package-changes): old `@sourcegraph/amp` package name is stale; article avoids install instructions.
+- [Plugins Everywhere](https://ampcode.com/news/plugins-everywhere): plugin UI is current on web/TUI.
+- [Liberating Code Review](https://ampcode.com/news/liberating-code-review): `amp review`, review requests in threads, and `.agents/checks/` as review criteria backed by separate agents.
+- [The Coding Agent Is Dead](https://ampcode.com/news/the-coding-agent-is-dead): confirms old editor-extension/sidebar guidance is stale product-direction context.
+- [Feedback Loopable](https://ampcode.com/notes/feedback-loopable), [Mainframe Magic](https://ampcode.com/notes/mainframe-magic), and [How to Pair With an Agent](https://ampcode.com/notes/how-to-pair-with-an-agent): current workflow/case-study support for feedback loops, playgrounds, manifests, deterministic checks, and definition-of-done prompting.
+
+Task 7 publish decision from this sweep: publish a listed case study as `src/content/posts/amp-factory-era-case-study.md`, using Amp as the concrete example and deleting the stale old `amp-power-patterns.md` draft route. The slug intentionally avoids preserving the old “power patterns” route, because the article is no longer a feature catalog and the old route should remain absent from production output.
+
 ## Source Hierarchy for Task 7
 
 1. **Current canonical product docs:** Manual, Plugin API, Models, and current homepage/install/manual sections.

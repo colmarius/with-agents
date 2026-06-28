@@ -103,7 +103,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - Stop if `npm run check`, `npm run build`, `git diff --check`, route-output inspection, or draft-link inspection fails.
   - Notes: Keep Amp as a concrete example only when it clarifies broader agentic-coding guidance and product claims are either avoided or verified. Rename/replace the existing draft file rather than adding a parallel field-guide draft unless preserving the old file has a recorded reason.
 
-- [ ] **Task 7: Rework Amp-specific material as a broader tool case study**
+- [x] **Task 7: Rework Amp-specific material as a broader tool case study**
   - Scope: `amp-power-patterns.md`, current Amp docs/resources/threads as needed
   - Depends on: Task 2
   - Acceptance:
@@ -112,10 +112,10 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - The article avoids stale model names, speculative tool claims, and obsolete editor/sidebar assumptions.
     - The article teaches broader agentic-coding patterns using Amp as the example, rather than requiring the whole series to be Amp-specific.
     - Public Amp concepts are distinguished from internal/local workflow concepts before naming features.
-  - Notes: Consult Oracle or relevant threads before editing because product details age quickly.
+  - Notes: Completed on 2026-06-28 as the listed public case study `src/content/posts/amp-factory-era-case-study.md`. The old `src/content/posts/amp-power-patterns.md` draft route was deleted rather than preserved because the old title/slug framed the article as a stale feature catalog. The fresh source sweep is recorded in `research/amp-official-sources-2026.md`.
   - Prep: Use `research/amp-official-sources-2026.md` for the current Amp source bundle and stale-claim removal list; re-run the Manual/Models/Plugin API/Chronicle sweep close to publication.
 
-- [ ] **Task 8: Update site navigation after each publish decision**
+- [x] **Task 8: Update site navigation after each publish decision**
   - Scope: `src/pages/index.astro`, `src/pages/posts/index.astro`, relevant post frontmatter
   - Depends on: whichever publish task changes public inventory
   - Acceptance:
@@ -126,7 +126,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - If `unlisted: true`, the post is hidden from `/posts` but the production route still exists.
     - Homepage and internal links are updated when public inventory changes.
     - If slide output is not useful, the homepage does not link to that slide route until fixed.
-  - Notes: This task repeats whenever another article is published or hidden.
+  - Notes: Completed for the Task 7 publish decision on 2026-06-28. Homepage navigation now links to the five public articles and resource hub; `/posts` remains frontmatter-driven.
 
 ## Implementation Notes
 
@@ -142,7 +142,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
 
 ## Constraints / Decisions
 
-- Current public production posts: `src/content/posts/durable-context-coding-agents.md`, `src/content/posts/make-the-agent-prove-it.md`, and `src/content/posts/small-threads-durable-state.md`.
+- Current public production posts: `src/content/posts/agentic-coding-2026.md`, `src/content/posts/durable-context-coding-agents.md`, `src/content/posts/make-the-agent-prove-it.md`, `src/content/posts/small-threads-durable-state.md`, and `src/content/posts/amp-factory-era-case-study.md`.
 - Other posts are `draft: true` and should remain locally visible but production-hidden until refreshed.
 - Resources/summaries remain public and are the source library for future article updates.
 - User decision: broader agentic-coding guidance first; Amp is a concrete example/tool.

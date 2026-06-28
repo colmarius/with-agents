@@ -1,17 +1,17 @@
 # Research: Agentic Coding Article Refresh
 
 **Date:** 2026-06-28
-**Status:** public article architecture complete
-**Question:** How should the remaining draft posts be refreshed now that the first three public articles are live?
+**Status:** public article architecture complete; Task 7 case study published
+**Question:** How should the remaining draft posts be refreshed now that the refreshed public article series is live?
 
-## Current status after Task 7 source prep
+## Current status after Task 7 publication
 
-- `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, and `small-threads-durable-state` are now public production posts.
-- The earlier architecture sections for `make-the-agent-prove-it`, `small-threads-durable-state`, and `agentic-coding-2026` are historical implementation contracts that have been completed; use those posts as non-overlap anchors for Task 7.
-- Task 6 has published the field guide. The next optional implementation task is Task 7: rework `amp-power-patterns.md` as a broader Amp tool case study.
-- Focused Task 7 product/source prep lives in `research/amp-official-sources-2026.md`.
+- `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, `small-threads-durable-state`, and `amp-factory-era-case-study` are now public production posts.
+- The earlier architecture sections for `make-the-agent-prove-it`, `small-threads-durable-state`, `agentic-coding-2026`, and the Amp case study are historical implementation contracts that have been completed.
+- Task 7 published a listed Amp factory-era case study and deleted the stale `amp-power-patterns.md` draft route rather than preserving the old feature-catalog slug.
+- Focused Task 7 product/source prep and the fresh publication sweep live in `research/amp-official-sources-2026.md`.
 - `amp-first-win-15-minutes` remains `draft: true`, private/deferred; Task 6 already merged only its “one small verified task” pattern.
-- Amp-specific tutorials or case studies remain deferred until close-to-publish product verification.
+- Future Amp-specific tutorials remain deferred until close-to-publish product/setup verification.
 
 ## Recommendation
 
@@ -74,7 +74,7 @@ Do not republish the old practice-path posts as-is. Treat the current draft back
 2. **Proof article:** “Make the Agent Prove It” — tests, manual verification, browser/API evidence, sandboxing, reviewer comprehension. Source-backed by Simon.
 3. **Field guide:** “Agentic Coding in 2026” — what changed since the old beginner guide: cheap implementation, alignment, proof, friction, codebase infrastructure, orchestration.
 4. **Practice article:** “Small Threads, Durable State” — context hygiene, research vs implementation, handoffs, `.agents/work/`, and planning.
-5. **Tool case study:** “Amp Power Patterns in the Factory Era” — optional broader-guidance article using Amp as the concrete example after product verification.
+5. **Tool case study:** “Amp as a Factory-Era Coding-Agent Case Study” — published listed article using Amp as the concrete example after product verification.
 6. **Workshop handout:** only if needed for an event; otherwise keep draft.
 
 ## Refreshed Public Article Architecture

@@ -264,3 +264,58 @@
 ## Updated Next Action
 
 - Start a fresh implementation thread with `handoff-task-7.md` if the Amp case study is still desired.
+
+## 2026-06-28 Task 7 Amp Case Study Published
+
+- Publish decision: published and listed a broader Amp tool case study as `src/content/posts/amp-factory-era-case-study.md` with title “Amp as a Factory-Era Coding-Agent Case Study.” Chose this slug instead of preserving the old `amp-power-patterns` route because the rewritten article is a source-backed case study, not a stale feature catalog or old “power patterns” guide.
+- Source sweep performed immediately before editing and recorded in `research/amp-official-sources-2026.md`. Freshly checked sources:
+  - Canonical product bundle: Amp Manual, Plugin API, Models page, and Chronicle.
+  - Product/news pages: Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, Rush 2.0, Faster Deep & Rush, A Faster Librarian, End of Public Threads, npm Package Changes, Plugins Everywhere, Liberating Code Review, and The Coding Agent Is Dead.
+  - Workflow notes: Feedback Loopable, Mainframe Magic, and How to Pair With an Agent.
+  - Transcript-backed anchors: Amp founder interview `[00:13:37]-[00:18:05]`, `[00:25:47]-[00:33:15]`; Raising an Agent episode 9 `[00:10:18]-[00:17:24]`, `[00:25:29]-[00:40:38]`; Raising an Agent episode 10 `[00:00:55]-[00:27:57]`; Thorsten Ball harness talk `[00:36:43]-[00:49:24]`.
+- Fresh source sweep result: no current first-party source contradicted the case-study thesis. Current product facts used in the article are verified as of 2026-06-28; exact model names, install commands, pricing/free-tier claims, keybindings, token thresholds, and setup instructions were omitted.
+- Article shape:
+  - Amp is the concrete example; reusable lessons are task sizing, uncertainty, delegation contracts, context hygiene, proof loops, review, and orchestration.
+  - Current modes are treated as `rush`, `smart`, and `deep`; Oracle is described as a second-opinion tool, not a mode.
+  - Public Amp concepts are distinguished from local/internal workflow concepts: Amp Checks use `.agents/checks/`, while this repo’s work items use `.agents/work/` as local durable task state.
+  - Non-overlap links point to `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, and `small-threads-durable-state` for depth instead of recreating their frameworks.
+- Stale claims removed from public guidance:
+  - Oracle-as-mode framing.
+  - Mode tree omitting `deep`.
+  - Old exact model names.
+  - Old Rush speed/cost claims.
+  - Fixed 50-100k/thread-quality token thresholds.
+  - Handoff as current Amp product guidance.
+  - VS Code/sidebar/editor-extension instructions.
+  - Setup/install/package/pricing/free-tier claims.
+  - Generic “N subagents for N files” advice without independence/conflict/review caveats.
+  - Draft-only internal links.
+- Navigation/frontmatter:
+  - Frontmatter set to `draft: false`, `unlisted: false`, `pubDate: 2026-06-28`, `order: 10`, and current tags.
+  - Homepage now links to the Amp case study and describes the public path as five source-backed articles plus one slide draft and the resource hub.
+  - `/posts` remains frontmatter-controlled; no `src/pages/posts/index.astro` code change was needed.
+- Work-item updates:
+  - `index.md` marked the work item completed and added the published Amp case study artifact.
+  - `plan.md` marked Tasks 7 and 8 complete.
+  - `research.md` updated current status after Task 7 publication.
+  - `research/amp-official-sources-2026.md` now includes the fresh publication sweep and publish decision.
+  - `audit.md` records that the earlier `amp-power-patterns` audit row was superseded by the published case study.
+- Files changed:
+  - Added `src/content/posts/amp-factory-era-case-study.md`.
+  - Deleted `src/content/posts/amp-power-patterns.md`.
+  - Updated `src/pages/index.astro`.
+  - Updated work-item artifacts listed above.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed and generated `/posts/amp-factory-era-case-study/index.html` plus `/posts/amp-factory-era-case-study/slides/index.html`.
+  - `npm run lint:fix` passed with no fixes applied.
+  - `git diff --check` passed.
+  - `find dist/posts -maxdepth 3 -type f | sort` shows the five intended public post routes, their slide routes, and `/posts/index.html`.
+  - Route checks passed: `dist/posts/amp-factory-era-case-study/index.html` exists, `dist/posts/amp-factory-era-case-study/slides/index.html` exists, `dist/posts/amp-power-patterns` is absent, and `dist/posts/amp-power-patterns-factory-era` is absent.
+  - Draft-link scan `rg '/posts/(coding-with-agents-2025|amp-first-win-15-minutes|what-is-an-agent|agent-workflows-that-stick|agent-planning-workflow|amp-power-patterns)' src dist` returned matches only inside intentionally draft source files: `what-is-an-agent.md`, `amp-first-win-15-minutes.md`, and `workshop-hands-on-agents.md`. It returned no matches in `dist`, the new case-study source, or homepage/navigation.
+  - Built public-output stale-string scan for old exact model/package/speed/token/draft-route claims returned no matches in `dist/posts/amp-factory-era-case-study/index.html`, `dist/index.html`, or `dist/posts/index.html`.
+- Skipped checks: none of the required publication checks were skipped. Setup/pricing/install verification was intentionally not needed because the public article omits setup, pricing, and install instructions.
+
+## Updated Next Action
+
+- No immediate next action. The refreshed public article series is complete. Future work can revive `amp-first-win-15-minutes.md` or `workshop-hands-on-agents.md` only for a concrete tutorial/event need and only after fresh product/setup verification.
