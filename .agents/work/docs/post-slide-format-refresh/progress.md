@@ -177,3 +177,15 @@
   - No automated slide-authoring checker exists yet. During Task 4, migrate one post at a time and inspect article/slide/notes/print behavior; reconsider a focused opt-in checker only after more posts use the convention and noisy edge cases are better understood.
 - Next action:
   - Start Task 4: migrate the remaining posts one at a time.
+
+## 2026-06-28 Task 4 handoff prompt
+
+- What changed:
+  - Consulted Oracle for a paste-ready Task 4 implementation prompt.
+  - Added `handoff-task-4.md` for the remaining post migrations.
+  - Updated `index.md` and `plan.md` to reference the Task 4 handoff prompt.
+- Verification:
+  - Work-item docs only; no `src/` code/content changed in this handoff step.
+  - `npm run check` and `npm run build` not required for this handoff step.
+- Next action:
+  - Start Task 4 content migration with `src/content/posts/durable-context-coding-agents.md`.

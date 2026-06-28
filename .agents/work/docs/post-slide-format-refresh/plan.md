@@ -107,3 +107,4 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
 - Task 1 implementation prompt: `handoff-task-1.md`
 - Task 2 pilot article migration prompt: `handoff-task-2.md`
 - Task 3 authoring/check reliability prompt: `handoff-task-3.md`
+- Task 4 remaining post migrations prompt: `handoff-task-4.md`
