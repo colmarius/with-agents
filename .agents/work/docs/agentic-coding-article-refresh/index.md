@@ -23,10 +23,10 @@ Review and refresh the draft post backlog now that only the durable-context arti
 
 ## Next Action
 
-- Run Task 5: decide whether a first-win tutorial is still needed, without reviving stale Amp setup or draft-only practice-path links.
+- Run Task 6: rewrite the broad field guide as `agentic-coding-2026`, merging only the concise agent-loop definition and one-small-verified-task pattern while avoiding stale Amp setup claims and draft-only practice-path links.
 
 ## Open Questions
 
 - [x] Should the refreshed public series stay Amp-specific, or should Amp be one concrete tool inside broader agentic-coding guidance? Decision: broader agentic-coding guidance; Amp is one concrete tool/example when useful.
 - [x] Should near-publish transcript-backed posts like the Simon Willison article appear as posts, resource summaries, or both? Decision: no strong channel preference, but keep public posts few and high-signal; do not pollute posts with duplicated summary information unless the post adds a distinct, relevant thesis.
-- [ ] Which current public Amp product source should be used for close-to-publish verification before any Amp case study?
+- [ ] Which current public Amp product source should be used for close-to-publish verification before any Amp case study or revived Amp tutorial/handout?

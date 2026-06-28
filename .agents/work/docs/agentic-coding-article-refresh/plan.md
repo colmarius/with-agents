@@ -61,16 +61,29 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - Retired/private drafts remain `draft: true` and have no production links.
   - Notes: This is likely one refreshed practice article, not multiple overlapping posts.
 
-- [ ] **Task 5: Decide whether a first-win tutorial is still needed**
+- [x] **Task 5: Decide whether a first-win tutorial is still needed**
   - Scope: `amp-first-win-15-minutes.md`, optionally `workshop-hands-on-agents.md`
   - Depends on: Task 2
   - Acceptance:
     - The plan decides whether a first-win tutorial belongs in the near-term public roadmap or should stay private/deferred.
     - Any kept tutorial reflects current Amp workflow and verified commands.
     - Setup, pricing, install flow, and UI assumptions are either verified close to publish time or removed.
-  - Notes: Do not refresh this by default if the field guide/tool case study makes it redundant.
+  - Notes: Decision on 2026-06-28: do not keep a near-term standalone public tutorial. Merge only the useful “one small verifiable task” pattern into `agentic-coding-2026`; keep `amp-first-win-15-minutes.md` `draft: true`, private, and deferred. Revive it later only as an unlisted tutorial/handout if a concrete event or beginner handout need appears, and only after close-to-publish verification of current Amp setup, install flow, pricing, UI/editor assumptions, commands, and product terminology. Do not preserve stale setup claims, sidebar/shortcut assumptions, draft-only practice-path links, or unverified feature claims as public recommendations.
 
-- [ ] **Task 6: Rework Amp-specific material as a broader tool case study**
+- [ ] **Task 6: Rewrite the broad field guide as `agentic-coding-2026`**
+  - Scope: `coding-with-agents-2025.md`, `what-is-an-agent.md`, `amp-first-win-15-minutes.md`, public anchors, and source summaries/transcripts named in `research.md`
+  - Depends on: Tasks 2 and 5
+  - Acceptance:
+    - The old 2025 field guide is rewritten or replaced as `agentic-coding-2026` rather than republished under the stale 2025 framing.
+    - The article acts as the series map: cheap implementation, alignment, proof, useful friction, codebase infrastructure, context hygiene, and factory/orchestration workflows.
+    - The concise agent-loop definition from `what-is-an-agent` and the “one small verifiable task” pattern from `amp-first-win-15-minutes` are merged only where they serve the field-guide reader job.
+    - Internal links point only to current production routes or intentionally external sources.
+    - The article links to `durable-context-coding-agents`, `make-the-agent-prove-it`, and `small-threads-durable-state` for depth instead of duplicating their theses.
+    - Stale Amp setup, pricing, mode, UI/sidebar, shortcut, token-threshold, `.agents/plans/`, `.agents/context/`, and draft-only practice-path claims are removed unless verified close to publication.
+    - `draft` and `unlisted` frontmatter are set according to the publish decision, and `npm run check` plus `npm run build` pass if source/frontmatter/navigation changes are made.
+  - Notes: Do not start this rewrite during Task 5. Keep Amp as a concrete example only when it clarifies broader agentic-coding guidance and product claims are either avoided or verified.
+
+- [ ] **Task 7: Rework Amp-specific material as a broader tool case study**
   - Scope: `amp-power-patterns.md`, current Amp docs/resources/threads as needed
   - Depends on: Task 2
   - Acceptance:
@@ -81,7 +94,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - Public Amp concepts are distinguished from internal/local workflow concepts before naming features.
   - Notes: Consult Oracle or relevant threads before editing because product details age quickly.
 
-- [ ] **Task 7: Update site navigation after each publish decision**
+- [ ] **Task 8: Update site navigation after each publish decision**
   - Scope: `src/pages/index.astro`, `src/pages/posts/index.astro`, relevant post frontmatter
   - Depends on: whichever publish task changes public inventory
   - Acceptance:
@@ -108,7 +121,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
 
 ## Constraints / Decisions
 
-- Current public production post: `src/content/posts/durable-context-coding-agents.md`.
+- Current public production posts: `src/content/posts/durable-context-coding-agents.md`, `src/content/posts/make-the-agent-prove-it.md`, and `src/content/posts/small-threads-durable-state.md`.
 - Other posts are `draft: true` and should remain locally visible but production-hidden until refreshed.
 - Resources/summaries remain public and are the source library for future article updates.
 - User decision: broader agentic-coding guidance first; Amp is a concrete example/tool.

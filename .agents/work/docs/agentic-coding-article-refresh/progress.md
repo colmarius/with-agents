@@ -154,3 +154,17 @@
 ## Updated Next Action
 
 - Run Task 5: decide whether a first-win tutorial is still needed, without reviving stale Amp setup or draft-only practice-path links.
+
+## 2026-06-28 Task 5 First-Win Tutorial Decision
+
+- Decision: do not publish or refresh `amp-first-win-15-minutes.md` as a near-term standalone public article. Keep the draft private/deferred and merge only its useful “pick one small verifiable task, define success, run checks, review the diff, stop at evidence” pattern into the future `agentic-coding-2026` field guide.
+- Deferred option: revive the tutorial later only as an unlisted workshop/tutorial handout if a concrete beginner-handout need appears. That revival must verify current Amp setup, install flow, pricing, UI/editor assumptions, commands, and product terminology close to publication.
+- Draft content: left `src/content/posts/amp-first-win-15-minutes.md` untouched and `draft: true`; no stale setup claims or draft-only practice-path links were made public. `workshop-hands-on-agents.md` remains private supporting context only.
+- Files changed: `plan.md`, `progress.md`, and `index.md` only.
+- Source anchors and product docs consulted: read the first-win draft, workshop handout draft, old 2025 field-guide draft, `what-is-an-agent`, `amp-power-patterns`, and the three current public non-overlap anchors (`durable-context-coding-agents`, `make-the-agent-prove-it`, `small-threads-durable-state`). No current Amp product docs were consulted because the decision does not publish or keep a standalone Amp tutorial; product verification remains required before any future Amp tutorial or case study.
+- Plan update: marked Task 5 complete and added an explicit Task 6 for the missing `agentic-coding-2026` field-guide rewrite; renumbered the Amp case study and navigation follow-ups.
+- Verification: `git diff --check` passed. Reviewed the source/navigation diff scope; no source/frontmatter/navigation files changed, so `npm run check` and `npm run build` were not required for this planning-only update.
+
+## Updated Next Action
+
+- Run Task 6: rewrite the broad field guide as `agentic-coding-2026`, merging the agent-loop definition and one-small-verified-task pattern without reviving stale Amp setup claims or draft-only practice-path links.
