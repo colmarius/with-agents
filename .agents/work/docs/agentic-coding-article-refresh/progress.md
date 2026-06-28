@@ -119,3 +119,38 @@
 ## Updated Next Action
 
 - Run Task 4: refresh or merge the workflow/planning drafts into a focused `small-threads-durable-state` practice article using current `.agents/work/` guidance.
+
+## 2026-06-28 Task 4 Small-Thread Practice Article Published
+
+- Rewrote and published the workflow/planning material as `small-threads-durable-state`, a focused practice article for separating wide research/critique from narrow implementation and preserving task state in `.agents/work/`, handoff prompts, progress logs, and verification records.
+- Publish decision: `draft: false`, `unlisted: false`; production now builds `/posts/small-threads-durable-state` and its slide route.
+- Merged source draft decisions:
+  - `agent-workflows-that-stick.md`: carried over short threads, handoffs, staged diffs, feedback loops, and test-first proof habits.
+  - `agent-planning-workflow.md`: carried over plan-before-coding, critique before implementation, success criteria, progress updates, and when to skip planning.
+  - Removed the old source draft files after merging so stale `.agents/context/`, `.agents/plans/`, fixed token-threshold, and draft-only practice-path guidance is not preserved as local article routes.
+- Updated homepage navigation to link to the new production route alongside the durable-context article, proof-stack article, slide draft, and resource hub.
+- Files changed:
+  - `src/content/posts/small-threads-durable-state.md`
+  - `src/content/posts/agent-workflows-that-stick.md` removed after merge
+  - `src/content/posts/agent-planning-workflow.md` removed after merge
+  - `src/pages/index.astro`
+  - `.agents/work/docs/agentic-coding-article-refresh/index.md`
+  - `.agents/work/docs/agentic-coding-article-refresh/plan.md`
+  - `.agents/work/docs/agentic-coding-article-refresh/progress.md`
+- Source anchors used:
+  - Build Crew episode 7 transcript `[00:13:06]-[00:24:12]` for small directed threads, handoffs, and the research-to-implementation funnel.
+  - Maggie Appleton transcript `[00:03:35]-[00:06:49]` for alignment arriving too late when planning stays private until PR review.
+  - Simon Willison transcript `[00:04:41]-[00:07:33]` for test-first work plus manual real-system checks.
+  - Pi/OpenClaw transcript `[01:12:03]-[01:30:17]` for context control, human understanding, and module/API boundaries.
+  - Root `AGENTS.md`, `.agents/work/AGENTS.md`, and the `agent-work` skill for current dot-agents v0.3 work-item conventions.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed and generated `/posts/small-threads-durable-state/index.html` plus `/posts/small-threads-durable-state/slides/index.html`.
+  - `npm run lint:fix` passed with no fixes applied.
+  - `git diff --check` passed after the work-item update.
+  - Reviewed `dist/posts` and confirmed production routes are limited to `durable-context-coding-agents`, `make-the-agent-prove-it`, `small-threads-durable-state`, `/posts/index.html`, and the generated slide routes.
+- Confirmed the article is distinct from `durable-context-coding-agents` and `make-the-agent-prove-it`: it links to those articles for durable-memory and proof-stack depth, while owning the small-thread/work-item operating procedure.
+
+## Updated Next Action
+
+- Run Task 5: decide whether a first-win tutorial is still needed, without reviving stale Amp setup or draft-only practice-path links.

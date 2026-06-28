@@ -51,7 +51,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - `npm run check` and `npm run build` pass.
   - Notes: Simon is a likely first candidate only if it becomes a distinct article such as “Make the Agent Prove It,” not a duplicate of the resource summary.
 
-- [ ] **Task 4: Refresh or merge workflow/planning drafts**
+- [x] **Task 4: Refresh or merge workflow/planning drafts**
   - Scope: `agent-workflows-that-stick.md`, `agent-planning-workflow.md`
   - Depends on: Task 2
   - Acceptance:

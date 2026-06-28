@@ -15,6 +15,7 @@ Review and refresh the draft post backlog now that only the durable-context arti
 - Task 1 handoff prompt: `handoff-task-1.md`
 - Task 2 handoff prompt: `handoff-task-2.md`
 - Published proof-stack post: `src/content/posts/make-the-agent-prove-it.md`
+- Published small-thread practice post: `src/content/posts/small-threads-durable-state.md`
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
@@ -22,7 +23,7 @@ Review and refresh the draft post backlog now that only the durable-context arti
 
 ## Next Action
 
-- Run Task 4: refresh or merge the workflow/planning drafts into a focused `small-threads-durable-state` practice article using current `.agents/work/` guidance.
+- Run Task 5: decide whether a first-win tutorial is still needed, without reviving stale Amp setup or draft-only practice-path links.
 
 ## Open Questions
 
