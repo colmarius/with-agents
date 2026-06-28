@@ -1,12 +1,13 @@
 ---
 name: article-writing
-description: "Write and refresh public posts under src/content/posts with a consistent house style. Use when drafting, tightening, or retiring articles. Triggers on: write article, refresh post, tighten article, style pass, retire draft."
+description: "Write and refresh public posts under src/content/posts with a consistent house style. Use when drafting, tightening, retiring, or removing articles. Triggers on: write article, refresh post, tighten article, style pass, retire draft, remove draft."
 ---
 
 # Article Writing Skill
 
 Write and maintain the public coding-agent series with a consistent, source-backed
-house style. Use this skill for new posts, refresh passes, and draft retirement.
+house style. Use this skill for new posts, refresh passes, draft retirement, and
+explicitly approved draft removal.
 
 The always-visible contract lives in root `AGENTS.md` under "Article writing." This
 skill adds the repeatable workflow and the checklists.
@@ -82,7 +83,7 @@ npm run build
 Run `npm run lint:fix` if formatting changed. Record per-post word counts
 before/after and verification results in the active work item's `progress.md`.
 
-## Retiring A Draft
+## Retiring Or Removing A Draft
 
 When a draft is stale but should not be deleted:
 
@@ -92,6 +93,13 @@ When a draft is stale but should not be deleted:
   revive only after fresh source/product verification.
 - Remove old setup instructions, stale route links, old product/UI claims, and old
   article-route references from the body.
+
+When deletion is explicitly approved:
+
+- Delete the draft file instead of leaving a retired note.
+- Confirm no public source or built route links to the removed slug.
+- Update any active work item or release note so future agents know the route was
+  intentionally removed rather than accidentally hidden.
 
 ## Checklists
 
@@ -120,10 +128,11 @@ When a draft is stale but should not be deleted:
 - [ ] No links to retired drafts or removed routes.
 - [ ] Series cross-links keep their roles coherent.
 
-### Draft retirement
+### Draft retirement/removal
 
-- [ ] `draft: true` kept; frontmatter valid.
-- [ ] Body is a short retired-draft note only.
+- [ ] If retained, `draft: true` kept; frontmatter valid.
+- [ ] If retained, body is a short retired-draft note only.
+- [ ] If deleted, no public source or built route links to the removed slug remain.
 - [ ] No stale setup, routes, or product claims remain.
 
 ### Verification
@@ -136,6 +145,6 @@ When a draft is stale but should not be deleted:
 ## Definition Of Done
 
 The post carries one clear argument in the house style, every source anchor and
-internal link checks out, length targets are met or explained, drafts are retired
-(not deleted) when stale, and `npm run check` + `npm run build` pass with results
-recorded in the work item.
+internal link checks out, length targets are met or explained, stale drafts are
+retired or explicitly deleted, and `npm run check` + `npm run build` pass with
+results recorded in the work item.

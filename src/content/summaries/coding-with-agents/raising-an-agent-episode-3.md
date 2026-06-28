@@ -6,13 +6,13 @@ episode: 3
 date: "2025-06-01"
 ---
 
-Episode 3 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn and software engineer Torsten, delves into the cultural shift in coding, the necessity of fine-tuned feedback loops, and the future of code search powered by agentic models.
+Episode 3 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn and software engineer Thorsten, delves into the cultural shift in coding, the necessity of fine-tuned feedback loops, and the future of code search powered by agentic models.
 
 ### The New Developer Mental Model
 
 - The "Paint by Numbers" Approach: The hosts agree that the developer's role is shifting from manually writing every line to guiding and instructing the agent [03:51]. The human must "draw the lines in the sand"—defining the architecture, intent, and constraints—while the agent efficiently "fills in the numbers" (writing the boilerplate, imports, and component logic) [04:17].
 
-- Laziness as Productivity: Torsten finds himself asking the agent to handle even minor tasks, like changing five lines, because it eliminates the "toil" of version control, testing, commit messages, and PR creation, making him faster overall [07:23].
+- Laziness as Productivity: Thorsten finds himself asking the agent to handle even minor tasks, like changing five lines, because it eliminates the "toil" of version control, testing, commit messages, and PR creation, making him faster overall [07:23].
 
 ### Capturing Intent with Thread Sharing
 
@@ -28,7 +28,7 @@ Episode 3 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn
 
 ### Code Search as a Senior Engineer Ghost
 
-- The "Search Agent" Concept: Torsten built an inner agent specifically for code search. When the main agent has a semantic question (e.g., "How does authentication work?"), it delegates to this inner "search agent," which uses various tools (keyword search, file globbing, directory listing) to find and summarize the answer [25:34].
+- The "Search Agent" Concept: Thorsten built an inner agent specifically for code search. When the main agent has a semantic question (e.g., "How does authentication work?"), it delegates to this inner "search agent," which uses various tools (keyword search, file globbing, directory listing) to find and summarize the answer [25:34].
 
 - Preventing Context "Pollution": The search agent operates with its own context window, ensuring that irrelevant or fallible search results (like old, complex migration files) do not "dirty" the main agent's working context [31:31].
 

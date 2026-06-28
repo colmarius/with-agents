@@ -12,10 +12,10 @@ In this episode, the Build Crew discusses strategies for optimizing agent workfl
 
 ### Optimizing Agent Workflows with Small Threads
 
-Torsten shared his strategy for getting higher-quality code from agents by keeping interactions focused and modular.
+Thorsten shared his strategy for getting higher-quality code from agents by keeping interactions focused and modular.
 
 * **Small, Focused Threads:** Instead of long, winding conversations, use short invocations with clear inputs and outputs. Smaller context windows often lead to better reasoning and less degradation of quality.
-* **The "Bob and Weave" Technique:** An iterative process where the developer directs the agent, reviews the output, and then pivots to a new, clean thread for the next task. For example, Torsten used one thread to optimize an API request (reducing data fetched from 3.5MB to 35 bytes) and a completely separate thread to port that logic to a different part of the codebase where code sharing wasn't possible.
+* **The "Bob and Weave" Technique:** An iterative process where the developer directs the agent, reviews the output, and then pivots to a new, clean thread for the next task. For example, Thorsten used one thread to optimize an API request (reducing data fetched from 3.5MB to 35 bytes) and a completely separate thread to port that logic to a different part of the codebase where code sharing wasn't possible.
 * **Be the Director:** You still need to know your architecture. The agent is the implementer, but the human must direct it to avoid pitfalls like inappropriate code sharing between isolated systems.
 
 ### Deep Refactoring with "Research Flows"

@@ -16,7 +16,7 @@ const { slug, title, description, pubDate, tags } = Astro.props;
 const isAgentPost = (tags || []).includes('AI Agents');
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description} canonicalPath={`/posts/${slug}`} ogType="article">
 	<article class="mx-auto max-w-2xl pb-16">
 		<nav class="mb-10" aria-label="Back">
 			<BackNav href="/posts" label="Back to Posts" />

@@ -20,6 +20,12 @@ type Props = CollectionEntry<'posts'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+const canonicalUrl = new URL(
+  `/posts/${post.id}`,
+  Astro.site ?? Astro.url.origin,
+).toString();
+const slidesTitle = `${post.data.title} - Slides`;
+const slidesDescription = `${post.data.description} Slide view.`;
 ---
 
 <!doctype html>
@@ -27,7 +33,15 @@ const { Content } = await render(post);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{post.data.title} - Slides</title>
+    <meta name="description" content={slidesDescription} />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={slidesTitle} />
+    <meta property="og:description" content={slidesDescription} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary" />
+    <title>{slidesTitle}</title>
     <style>
       :global(.slide) {
         display: none;
