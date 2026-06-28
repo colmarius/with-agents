@@ -13,8 +13,8 @@ const listedPosts = publishedPosts.filter((post) => !post.data.unlisted);
 
 const sortedPosts = [...listedPosts].sort(
   (a, b) =>
-    b.data.pubDate.getTime() - a.data.pubDate.getTime() ||
-    a.data.order - b.data.order,
+    a.data.order - b.data.order ||
+    b.data.pubDate.getTime() - a.data.pubDate.getTime(),
 );
 ---
 

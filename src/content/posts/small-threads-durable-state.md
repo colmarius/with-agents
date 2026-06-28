@@ -5,7 +5,7 @@ pubDate: 2026-06-28
 tags: ['AI Agents', 'Workflows', 'Planning', 'dot-agents']
 draft: false
 unlisted: false
-order: 9
+order: 4
 ---
 
 ## Small threads need durable state

@@ -5,7 +5,7 @@ pubDate: 2026-06-28
 tags: ['AI Agents', 'Workflow', 'Testing', 'Review']
 draft: false
 unlisted: false
-order: 8
+order: 3
 ---
 
 ## Make the agent prove it

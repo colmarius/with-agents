@@ -5,7 +5,7 @@ pubDate: 2026-06-28
 tags: ['AI Agents', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false
-order: 6
+order: 1
 ---
 
 ## Agentic coding in 2026 is an alignment problem

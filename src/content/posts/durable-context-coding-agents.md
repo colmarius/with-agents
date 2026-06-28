@@ -5,7 +5,7 @@ pubDate: 2026-06-25
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: false
-order: 7
+order: 2
 ---
 
 ## Your repo is the agent's operating memory

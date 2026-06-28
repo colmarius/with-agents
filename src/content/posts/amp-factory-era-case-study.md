@@ -5,7 +5,7 @@ pubDate: 2026-06-28
 tags: ['AI Agents', 'Amp', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false
-order: 10
+order: 5
 ---
 
 ## Amp is the example, not the whole lesson
