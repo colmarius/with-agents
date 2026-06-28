@@ -184,3 +184,44 @@
 ## Updated Next Action
 
 - Start a fresh implementation thread with `handoff-task-6.md` to execute Task 6.
+
+## 2026-06-28 Task 6 Field Guide Published
+
+- Publish decision: published and listed `agentic-coding-2026` as the source-backed series map. It is not an Amp setup/tutorial/product guide and avoids unverified Amp setup, pricing, UI/sidebar, shortcut, mode, model, token-threshold, and tool-availability claims.
+- Files changed:
+  - Renamed/replaced `src/content/posts/coding-with-agents-2025.md` with `src/content/posts/agentic-coding-2026.md`.
+  - Updated `src/pages/index.astro` so the homepage primary CTA, card grid, and “What is public now” list point to the new public route and only production-built routes.
+  - Updated this work item: `index.md`, `plan.md`, and `progress.md`.
+- Source anchors checked and used:
+  - Maggie Appleton summary/transcript: `src/content/summaries/coding-with-agents/collaborative-ai-engineering-maggie-appleton.md` and `src/content/transcripts/coding-with-agents/collaborative-ai-engineering-maggie-appleton.md` [00:01:53]-[00:06:49] for cheap implementation, late alignment, and coordination debt.
+  - Simon Willison summary/transcript: `src/content/summaries/coding-with-agents/simon-willison-engineering-practices-that-make-coding-agents-work.md` and matching transcript [00:04:41]-[00:18:35] for red-green tests, manual checks, conformance, sandboxing, and mock data.
+  - Friction summary/transcript: `src/content/summaries/coding-with-agents/the-friction-is-your-judgment-armin-ronacher-cristina-poncela-cubeiro.md` and matching transcript [00:02:55]-[00:17:55] for pressure, review overload, agent-generated entropy, codebase infrastructure, checks, and human decision routing.
+  - Pi/OpenClaw summary/transcript: `src/content/summaries/coding-with-agents/pi-building-pi-openclaws-minimalist-coding-agent.md` and matching transcript [00:06:45]-[00:11:14], [00:29:08]-[00:42:55], [01:12:03]-[01:30:17] for risk-based delegation, complexity control, deterministic checks, context control, and module/API boundaries.
+  - Build Crew episode 7 summary/transcript: `src/content/summaries/coding-with-agents/build-crew-episode-7.md` and matching transcript [00:13:06]-[00:24:12] for small directed threads, research reports, critique, planning, and handoffs.
+  - Raising an Agent episode 9 summary/transcript: `src/content/summaries/coding-with-agents/raising-an-agent-episode-9.md` and matching transcript [00:10:18]-[00:17:24], [00:25:29]-[00:40:38] for agent-native codebases, feedback loops, longer leashes, and factory workflows.
+  - Raising an Agent episode 10 summary/transcript: `src/content/summaries/coding-with-agents/raising-an-agent-episode-10.md` and matching transcript [00:00:55]-[00:10:17] for longer-running, well-scoped agent work.
+  - Harness summary/transcript: `src/content/summaries/coding-with-agents/llms-are-killing-agent-harness.md` and matching transcript [00:22:27]-[00:49:24], including [00:41:36]-[00:43:42] for the agent-loop definition and many-agent coordination problem.
+  - Current production depth posts: `src/content/posts/durable-context-coding-agents.md`, `src/content/posts/make-the-agent-prove-it.md`, and `src/content/posts/small-threads-durable-state.md` for non-overlap and reading-path links.
+- Merged source-draft material:
+  - From `what-is-an-agent.md`: only the concise “LLM calling tools in a loop toward a goal” definition.
+  - From `amp-first-win-15-minutes.md`: only the “one small verified task” pattern: define done, pick proof, let the agent loop, review the diff, stop at evidence.
+- Frontmatter/order/navigation decision:
+  - `title: 'Agentic Coding in 2026: A Practical Field Guide'`
+  - `pubDate: 2026-06-28`, `draft: false`, `unlisted: false`, `order: 6`.
+  - Chose `order: 6` so `/posts` lists the series map before the same-day proof-stack (`order: 8`) and small-thread (`order: 9`) articles; the durable-context anchor remains listed after them because it has an earlier publication date.
+  - Homepage now uses the field guide as the primary CTA and first card; the “What is public now” list now names the four public articles, the existing durable-context slide draft, and the resource hub.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed.
+  - `npm run lint:fix` passed with no fixes applied.
+  - `git diff --check` passed after site and work-item updates.
+  - Route checks passed: `dist/posts/agentic-coding-2026/index.html` exists, `dist/posts/agentic-coding-2026/slides/index.html` exists, and `dist/posts/coding-with-agents-2025` is absent.
+  - `find dist/posts -maxdepth 3 -type f | sort` shows only `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, `small-threads-durable-state`, their slide routes, and `/posts/index.html`.
+  - Generated post HTML includes the article title, production depth links, resource link, slide link, and visible `Sources used` section.
+  - Built homepage links only to production routes and the resource hub.
+  - Draft-link scan command `rg '/posts/(coding-with-agents-2025|amp-first-win-15-minutes|what-is-an-agent|agent-workflows-that-stick|agent-planning-workflow|amp-power-patterns)' src dist` returned matches only inside intentionally draft source files (`what-is-an-agent.md`, `amp-first-win-15-minutes.md`, `amp-power-patterns.md`, `workshop-hands-on-agents.md`). It returned no matches in `dist`, `src/content/posts/agentic-coding-2026.md`, or `src/pages/index.astro`.
+- Skipped checks: no separate product-doc verification was run because the published article removes Amp product setup/pricing/UI/mode/tool claims instead of asserting them.
+
+## Updated Next Action
+
+- Decide whether to start Task 7. If yes, gather current public Amp product sources first, then rework `amp-power-patterns.md` only as a broader tool case study with verified product details. If not, pause with the four-article public series complete and leave the remaining Amp tutorial/workshop drafts private.

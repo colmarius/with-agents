@@ -70,7 +70,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - Setup, pricing, install flow, and UI assumptions are either verified close to publish time or removed.
   - Notes: Decision on 2026-06-28: do not keep a near-term standalone public tutorial. Merge only the useful “one small verifiable task” pattern into `agentic-coding-2026`; keep `amp-first-win-15-minutes.md` `draft: true`, private, and deferred. Revive it later only as an unlisted tutorial/handout if a concrete event or beginner handout need appears, and only after close-to-publish verification of current Amp setup, install flow, pricing, UI/editor assumptions, commands, and product terminology. Do not preserve stale setup claims, sidebar/shortcut assumptions, draft-only practice-path links, or unverified feature claims as public recommendations.
 
-- [ ] **Task 6: Rewrite the broad field guide as `agentic-coding-2026`**
+- [x] **Task 6: Rewrite the broad field guide as `agentic-coding-2026`**
   - Scope: `coding-with-agents-2025.md`, `what-is-an-agent.md`, `amp-first-win-15-minutes.md`, public anchors, and source summaries/transcripts named in `research.md`
   - Depends on: Tasks 2 and 5
   - Acceptance:
