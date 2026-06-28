@@ -10,6 +10,12 @@ order: 5
 
 ## Amp is the example, not the whole lesson
 
+> Amp is useful here because its product details point to reusable work contracts.
+
+```text
+Amp detail → reusable contract → workflow habit
+```
+
 Amp is the concrete case study here; the reusable lessons are task sizing, uncertainty, delegation contracts, context hygiene, proof loops, review, and orchestration. The product details below were re-checked against Amp's current [Manual](https://ampcode.com/manual), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), and [Chronicle](https://ampcode.com/chronicle) on 2026-06-28.
 
 For the broader map, read [Agentic Coding in 2026](/posts/agentic-coding-2026). For durable repo-local memory, read [Your Repo Is the Memory](/posts/durable-context-coding-agents). For proof mechanics, read [Make the Agent Prove It](/posts/make-the-agent-prove-it). For small-thread operating practice, read [Small Threads, Durable State](/posts/small-threads-durable-state).
@@ -17,6 +23,8 @@ For the broader map, read [Agentic Coding in 2026](/posts/agentic-coding-2026). 
 This article deliberately avoids setup, pricing, UI shortcuts, exact current models, token thresholds, and installation commands. Those details churn too quickly for the job.
 
 ## Match mode to uncertainty, not urgency
+
+> Choose worker depth by uncertainty, not by how fast you want the answer.
 
 Amp's current manual lists three built-in modes: `rush`, `smart`, and `deep` (verified 2026-06-28). Treat them as different contracts, not a status ladder.
 
@@ -38,6 +46,16 @@ The [Rush 2.0](https://ampcode.com/news/rush-2.0) announcement is explicit about
 
 ## Delegate with contracts, not vibes
 
+> More agents only help when each delegate has a job, boundary, and proof target.
+
+```text
+worker owns a bounded task
+critic owns uncertainty
+researcher owns external prior art
+review/checks own repeatable invariants
+human owns irreversible judgment
+```
+
 Amp's manual supports subagents, Oracle, Librarian, review, and Checks, but each has a boundary.
 
 **Subagents are for independent work.** The manual says they have their own context, can do multi-step work, and are useful for parallel work across different code areas. It also says they work in isolation: they cannot communicate with each other, you cannot guide them mid-task, and the main agent receives their final summary rather than the step-by-step transcript. That makes the safe contract narrow:
@@ -55,19 +73,19 @@ Review and integrate the results in the main thread.
 
 **Review and Checks turn critique into a repeatable gate.** The current manual says Amp can review code via `amp review` or by asking the main agent, and that Checks are user-defined criteria scoped to parts of a codebase. The [Liberating Code Review](https://ampcode.com/news/liberating-code-review) announcement adds the detail: Checks live in `.agents/checks/`, and the review tool runs separate agents per check so each criterion is more likely to be examined.
 
-The reusable pattern is not "launch more agents." It is:
-
-```text
-worker owns a bounded task
-critic owns uncertainty
-researcher owns external prior art
-review/checks own repeatable invariants
-human owns irreversible judgment
-```
+The reusable pattern is not "launch more agents." It is to give each delegate the kind of ownership shown on the slide.
 
 That human-judgment boundary is source-backed by Quinn Slack's Amp discussion: he distinguishes core API/data work, where humans should scrutinize agent output, from low-risk internal tools where more code can be delegated safely [00:25:47]-[00:30:37].
 
 ## Context is product state plus repo state
+
+> Product context helps, but repo-local task state still carries the decisions.
+
+```text
+Amp threads / skills / plugins  +  AGENTS.md / work items / checks
+             │                                  │
+             ╰────────── current work contract ─╯
+```
 
 [Amp Rebuilt](https://ampcode.com/news/neo) says the rebuilt CLI is remote-controllable, compaction-first, and plugin-powered: Amp now auto-compacts when context fills, Handoff is gone, and thread references still exist, so you can reference another thread and Amp will read it and extract relevant information.
 
@@ -84,6 +102,13 @@ Amp can preserve and retrieve product context, but your repo still needs to pres
 
 ## Make the factory prove its work
 
+> Longer-running workers need faster reality checks.
+
+```text
+Do not ask the agent to be trustworthy.
+Give it a loop where reality can say "no."
+```
+
 Factory-era agent work fails when the only sensor is a human reading a giant diff after the fact. Amp's current surfaces push proof closer to the work:
 
 - [Diffs](https://ampcode.com/news/diffs) lets users review, request changes on, and stage thread changes directly in Amp; its own framing is "Outsource your coding, but not your understanding of the code."
@@ -92,20 +117,13 @@ Factory-era agent work fails when the only sensor is a human reading a giant dif
 - [Mainframe Magic](https://ampcode.com/notes/mainframe-magic) shows the factory version: source maps, manifests, task queues, compiler gates, and smoke tests before a migrated program is marked complete.
 - [How to Pair With an Agent](https://ampcode.com/notes/how-to-pair-with-an-agent) reduces the prompt contract to direction, reference, definition of done, and a feedback loop: "Trust isn't a feeling, it's a passing test suite."
 
-Those examples are Amp-specific, but the lesson is general:
-
-```text
-Do not ask the agent to be trustworthy.
-Give it a loop where reality can say "no."
-```
+Those examples are Amp-specific, but the lesson on the slide is general.
 
 [Make the Agent Prove It](/posts/make-the-agent-prove-it) owns the full proof stack. The Amp version is shorter: if you want longer-running workers, invest in the checks, logs, fixtures, screenshots, CLIs, review surfaces, and human-comprehension gates that let those workers show their work.
 
 ## Orchestration is the frontier, and it is still high-churn
 
-Amp's direction is no longer "one assistant in one sidebar." The [Agents, Everywhere](https://ampcode.com/news/agents-everywhere) announcement describes watching and driving active Amp agents across web, mobile, and CLI. The [Custom Agents](https://ampcode.com/news/custom-agents) announcement and the [Plugin API](https://ampcode.com/manual/plugin-api) show how plugins can create custom agents, run them once, create threads, append messages, wait for responses, and connect background work to a parent thread.
-
-That is the factory frontier: not one smarter worker, but many workers with contracts, state, proof, and review. It is also the highest-churn part of the product — plugin APIs include experimental surfaces, and model assignments and UI details change — which is why this article avoids incidental details. Use the direction, not the details:
+> More active agents require stronger triage, contracts, proof, and review.
 
 ```text
 more active threads → stronger task triage
@@ -114,9 +132,19 @@ plugin hooks       → policy and proof closer to the loop
 diff/review UI     → human understanding stays attached
 ```
 
+Amp's direction is no longer "one assistant in one sidebar." The [Agents, Everywhere](https://ampcode.com/news/agents-everywhere) announcement describes watching and driving active Amp agents across web, mobile, and CLI. The [Custom Agents](https://ampcode.com/news/custom-agents) announcement and the [Plugin API](https://ampcode.com/manual/plugin-api) show how plugins can create custom agents, run them once, create threads, append messages, wait for responses, and connect background work to a parent thread.
+
+That is the factory frontier: not one smarter worker, but many workers with contracts, state, proof, and review. It is also the highest-churn part of the product — plugin APIs include experimental surfaces, and model assignments and UI details change — which is why this article avoids incidental details. Use the direction, not the details:
+
 The transcript-backed sources explain why this matters. Raising an Agent episode 9 frames the shift as "the assistant is dead, long live the factory": feed agents tasks they are likely to succeed on, then improve the codebase so more tasks become safe to delegate [00:25:29]-[00:27:56]. Thorsten Ball's harness talk says the hard problem is increasingly where agents run, how their work is tracked, how results are preserved, and how humans coordinate many cheap workers [00:43:42]-[00:49:24].
 
 ## The contracts that survive
+
+> Product details churn; task contracts are the durable lesson.
+
+```text
+uncertainty → delegation contract → proof loop → human judgment
+```
 
 Tool details change; the work contracts do not. When Amp changes again, keep these:
 
