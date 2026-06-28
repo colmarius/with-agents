@@ -352,3 +352,31 @@
   - `git diff --check` passed before commit.
 - Next action:
   - If presentation quality needs another pass, run a dry presentation/edit pass for one target post or talk path and add Markdown-native adjacent buildup slides or static diagram stages only where the presenter actually needs progressive reveal.
+
+## 2026-06-28 Durable-context presentation dry-run pass
+
+- Target post:
+  - `src/content/posts/durable-context-coding-agents.md`
+- Presentation issue found:
+  - The original “Durable context is a control loop, not a document pile” slide did two jobs at once: reject the document-pile anti-pattern and introduce the full control loop. In a talk, that is a useful moment for progressive buildup.
+  - The `Map: make project truth easy to find` slide was the one normal durable-context slide without an immediate visual.
+  - The `Procedure` slide visual was a long one-line sentence, which was less projection-friendly than a staged sequence.
+- What changed:
+  - Split the central control-loop section into adjacent slides: first “stop treating context as a pile,” then the full durable-context loop.
+  - Added a Markdown-native `AGENTS.md` map visual to the map slide.
+  - Reworked the procedure visual into a vertical Trigger → Steps → Evidence → Human decision sequence.
+  - Left citations and explanatory source context in notes/prose; no route, MDX, dependency, generated asset, or deck-tooling changes were made.
+- Progressive buildup:
+  - Added through adjacent Markdown sections/slides, not route-level fragments. The deck now has 10 normal slides, all with first-blockquote slide messages and immediate text-diagram visuals.
+- Word count:
+  - Before: 1,815 words.
+  - After: 1,897 words.
+- Verification:
+  - `npm run check` passed.
+  - `npm run build` passed.
+  - Structured Markdown check confirmed every normal rendered H2 has a first blockquote and immediate text-diagram visual.
+  - `git diff --check` passed before commit.
+- Trigger evidence:
+  - No trigger for route-level reveal, MDX, generated assets, or deck tooling. The needed reveal was handled cleanly with adjacent Markdown slides.
+- Next action:
+  - If the durable-context talk still feels abrupt in a live dry-run, tune slide order/copy before considering route-level reveal. Otherwise repeat this dry-run pass for another post only when there is a concrete presentation use.

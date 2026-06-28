@@ -42,9 +42,23 @@ The model also does not carry your local truth. Simon Willison describes LLMs as
 
 The risk is not simply "AI writes bad code." It is that work appears faster than humans can understand and review it. Addy Osmani calls the human posture [cognitive surrender](https://addyosmani.com/blog/cognitive-surrender/): the AI output quietly becomes your output, and the bill arrives as **comprehension debt** — code the team owns but cannot explain. Teams also accumulate **coordination debt**: plans nobody saw until the PR, duplicate work across parallel agents, and tests that pass but nobody understands. As Ronacher and Poncela Cubeiro's [The Friction is Your Judgment](https://www.youtube.com/watch?v=_Zcw_sVF6hU) puts it, generation now outpaces review while responsibility still sits with humans. Durable context is the control surface for keeping understanding attached to the work.
 
-## Durable context is a control loop, not a document pile
+## First, stop treating context as a pile
 
-> Durable context is a loop that changes the next run, not a pile of files.
+> More context only helps when it changes the next run.
+
+```text
+pile of docs          control loop
+------------          ------------
+store everything  →   preserve what changed behavior
+make agents read it   delete what nobody uses
+hope it sticks        promote the repeatable fix
+```
+
+The failure mode is not too little documentation; it is documentation with no job. Use a small loop instead of a giant instruction file.
+
+## Durable context is a control loop
+
+> Map, procedure, state, and evidence become durable when you promote what worked.
 
 ```text
 ╭──────────╮    ╭────────────╮    ╭────────╮    ╭──────────╮
@@ -53,8 +67,6 @@ The risk is not simply "AI writes bad code." It is that work appears faster than
       ▲                                                    │
       ╰──────── promote what helped the next run ◀─────────╯
 ```
-
-Use a small loop instead of a giant instruction file.
 
 - **Map:** where should the agent look?
 - **Procedure:** how do we repeat this workflow?
@@ -68,6 +80,14 @@ Use a small loop instead of a giant instruction file.
 
 > A good `AGENTS.md` is a map to project truth, not a giant manual.
 
+```text
+AGENTS.md
+├─ commands that prove the project still works
+├─ boundaries the agent should not cross
+├─ gotchas that cost a prior run time
+╰─ links to deeper docs, scripts, checks, and work items
+```
+
 [`AGENTS.md`](https://agents.md/) is a predictable place for project guidance: setup commands, checks, conventions, security notes, and gotchas. But the best `AGENTS.md` is a map, not a manual. OpenAI's [Harness Engineering](https://openai.com/index/harness-engineering/) write-up describes the failure mode of one giant instructions file: context is scarce, too much guidance becomes non-guidance, and stale instructions are hard to verify. Their pattern is to treat `AGENTS.md` as a table of contents and keep deeper knowledge in structured repo-local docs.
 
 Good map content is the project overview and ownership boundaries, the commands agents should run first, the paths that matter for common work, "watch out" rules, security constraints, and links to deeper docs, work items, scripts, or checks. When an agent repeats a mistake, either update the map near the relevant code, add a deterministic check, or decide the rule was not worth preserving. Root guidance stays short; directory-specific rules belong close to the files they govern.
@@ -77,12 +97,18 @@ Good map content is the project overview and ownership boundaries, the commands 
 > Package workflows only when they have repeatable steps and proof.
 
 ```text
-When should this run? → What steps happen? → What evidence is required? → When should a human decide?
+Trigger
+  ↓
+Steps
+  ↓
+Evidence
+  ↓
+Human decision
 ```
 
 Some context is not a rule; it is a workflow. [Agent Skills](https://agentskills.io/home) package repeatable procedures as folders with a `SKILL.md` and optional scripts, references, and assets. OpenAI's [Codex Skills docs](https://developers.openai.com/codex/skills) describe the same progressive-disclosure idea: the agent sees skill metadata first, then loads full instructions when the task calls for it.
 
-Use a skill, script, or checklist when work has repeatable inputs, steps, and proof — a release checklist, a migration routine, or a content publication workflow. Do not package every preference: a style rule belongs in the map or the linter. Also resist overbuilding the harness. Mario Zechner's [Pi workflow](https://www.youtube.com/watch?v=DPgJjRdQWrg) and Ball's harness critique point to a simple default: if shell commands, files, Git, scripts, and a short procedure are enough, start there. Good procedures answer the four questions on the slide.
+Use a skill, script, or checklist when work has repeatable inputs, steps, and proof — a release checklist, a migration routine, or a content publication workflow. Do not package every preference: a style rule belongs in the map or the linter. Also resist overbuilding the harness. Mario Zechner's [Pi workflow](https://www.youtube.com/watch?v=DPgJjRdQWrg) and Ball's harness critique point to a simple default: if shell commands, files, Git, scripts, and a short procedure are enough, start there. Good procedures make the sequence on the slide explicit.
 
 ## State: keep work alive across threads
 
