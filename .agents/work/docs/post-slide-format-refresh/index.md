@@ -8,7 +8,7 @@ Updated: 2026-06-28
 
 Plan and prepare a refactor of public posts and generated slide views so each article section can serve as both a concise presentation slide and richer reader/speaker notes. The recommended direction keeps Markdown posts as the single source of truth: each `##` section starts with a short slide-message blockquote, may include one immediate lightweight visual, and then continues as normal notes/article prose.
 
-Task 1 is implemented: the slide route now recognizes first-blockquote slide messages with notes, preserves legacy section slides as fallback, excludes source appendices from normal slide navigation, and supports notes/print/no-JS/keyboard behavior. No article migration has been started yet.
+Task 1 and Task 2 are implemented. The slide route now recognizes first-blockquote slide messages with notes, preserves legacy section slides as fallback, excludes source appendices from normal slide navigation, and supports notes/print/no-JS/keyboard behavior. The pilot post `agentic-coding-2026.md` now has 7 blockquote-led normal slides with immediate Markdown-native visuals and `## Sources used` retained as a source appendix outside normal slide navigation.
 
 ## Artifacts
 
@@ -21,7 +21,7 @@ Task 1 is implemented: the slide route now recognizes first-blockquote slide mes
 
 ## Next Action
 
-- Start a new implementation thread with `handoff-task-2.md` for `plan.md` Task 2: pilot the post/slide hybrid convention in `src/content/posts/agentic-coding-2026.md` only, then smoke-check article, slides, notes, and print modes.
+- Start Task 3 from `plan.md`: add authoring/check reliability after the pilot migration, including a short root `AGENTS.md` convention and an optional checker only if it can stay reliable.
 
 ## Resolved Decisions
 
@@ -30,4 +30,4 @@ Task 1 is implemented: the slide route now recognizes first-blockquote slide mes
 
 ## Open Questions
 
-- None blocking Task 1.
+- None blocking Task 3.

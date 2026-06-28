@@ -31,7 +31,7 @@ This plan turns the current whole-section slide splitter into a minimal slide/no
     - `npm run check` and `npm run build` pass.
   - Notes: Keep this slice small. Do not introduce MDX, a new deck framework, a custom remark parser, or post-content migration. Read `src/components/MermaidRenderer.astro` and `src/scripts/mermaid-config.ts` before changing Mermaid behavior. Use `history.replaceState` rather than pushing a new history entry on every slide navigation if hash behavior changes.
 
-- [ ] **Task 2: Pilot one article migration**
+- [x] **Task 2: Pilot one article migration**
   - Scope: `src/content/posts/agentic-coding-2026.md`, plus work-item progress updates.
   - Depends on: Task 1
   - Acceptance:

@@ -100,3 +100,39 @@
   - `npm run check` and `npm run build` not required for this pass.
 - Next action:
   - Start Task 2 from `handoff-task-2.md`.
+
+## 2026-06-28 Task 2 pilot article migration
+
+- What changed:
+  - Migrated `src/content/posts/agentic-coding-2026.md` to the post/slide hybrid convention.
+  - Added concise first-blockquote slide messages to all 7 non-appendix rendered `##` sections.
+  - Kept `## Sources used` as the exact source appendix heading and did not add a slide-message blockquote there.
+  - Added immediate Markdown-native slide visuals after each normal section blockquote: text diagrams/code-fence visuals and small tables. No static assets were added.
+  - Kept citations, timestamp anchors, caveats, examples, and source-backed context in prose after the slide message/visual so they appear as notes.
+- Files changed:
+  - `src/content/posts/agentic-coding-2026.md`
+  - `.agents/work/docs/post-slide-format-refresh/index.md`
+  - `.agents/work/docs/post-slide-format-refresh/plan.md`
+  - `.agents/work/docs/post-slide-format-refresh/progress.md`
+- Word counts:
+  - Before: 1,788 words (`wc -w src/content/posts/agentic-coding-2026.md` before editing).
+  - After: 2,052 words.
+  - Net: +264 words, mostly from slide-message blockquotes and lightweight visual scaffolding.
+- Manual smoke checks:
+  - Built the site, served `dist/` locally, and inspected the pilot with headless Chrome through the Chrome DevTools Protocol.
+  - Article route `/posts/agentic-coding-2026` remains readable: rendered H1 is present, the article has 8 rendered H2 sections, 7 blockquotes, the exact `Sources used` appendix heading, intro prose, and a slides link.
+  - Slide route `/posts/agentic-coding-2026/slides` shows 7 normal slides, all in structured mode, all blockquote-led, with normal headings only; `Sources used` is excluded from normal slide headings/counts.
+  - `/posts/agentic-coding-2026/slides?notes=1` starts with notes visible, notes button `aria-pressed="true"`, and first-slide notes include citation/context after the slide message (`[00:41:36]` was present).
+  - Source appendix access works: the Sources link is visible, clicking it keeps notes visible with `?notes=1`, and the appendix heading remains `Sources used`.
+  - Visuals are readable/accessibility-safe: all 7 normal slides include one immediate text/table visual (`pre` or `table`), no image alt text is needed, and no meaning depends on color alone.
+  - Print/handout media emulation shows slides and notes without the fixed/overflow slide layout: all slides and notes display as blocks, topbar/controls are hidden, the container is static with visible overflow, and the source appendix displays.
+  - Internal links in the article point to existing routes; local HTTP checks returned 200 for `/posts/durable-context-coding-agents/`, `/posts/make-the-agent-prove-it/`, `/posts/small-threads-durable-state/`, `/posts/amp-factory-era-case-study/`, and `/resources/coding-with-agents/`.
+- Verification:
+  - `npm run check` passed.
+  - `npm run build` passed.
+  - `git diff --check` passed after the content and work-item updates.
+- Blockers/unverified items:
+  - No blockers.
+  - Timestamp-backed factual sentences were not materially rewritten; moved/added slide messages and visuals are author synthesis based on the existing section arguments.
+- Next action:
+  - Start Task 3: add authoring/check reliability, including the short root `AGENTS.md` convention and an optional content checker only if it can stay reliable.

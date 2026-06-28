@@ -10,6 +10,14 @@ order: 1
 
 ## Agentic coding in 2026 is an alignment problem
 
+> The hard part is no longer asking an agent for code; it is deciding the work, proof, and judgment boundaries.
+
+```text
+intent → constraints → proof → human judgment
+                  │
+                  ╰─ agent loop: act, observe, adjust
+```
+
 The old field-guide question was "how do I get a coding agent to write code?"
 
 The 2026 question is sharper: **what work should the agent do, what evidence should it produce, and what should stay in human judgment?**
@@ -34,33 +42,47 @@ The loop is simple. The hard part is making it serve the right work.
 
 ## Cheap code moves the bottleneck to alignment
 
+> If code got cheap, alignment cannot stay implicit.
+
+```text
+issue → private plan → fast PR
+          ▲              │
+          ╰─ share intent, constraints, decisions, and evidence before review
+```
+
 Maggie Appleton's [Collaborative AI Engineering](https://www.youtube.com/watch?v=ClWD8OEYgp8) is the cleanest source for the shift: implementation is becoming fast and cheap, so the hard question moves from "can we build it?" to "should we build it?" [00:01:53]-[00:02:42]. That does not remove planning. It moves planning onto the critical path.
 
 Her warning is that the implementation window has collapsed while the alignment machinery has not caught up. Issues turn into pull requests in minutes, local plan modes stay private, and the pull request becomes the first shared checkpoint when it is already late [00:03:35]-[00:05:12]. The cost shows up as wasted work, duplicated work, merge conflicts, surprise features, and review queues nobody understands [00:04:24]-[00:05:12].
-
-The field-guide rule is:
-
-```text
-If code got cheap, alignment cannot stay implicit.
-```
 
 Put intent, constraints, decisions, and evidence where the next person or agent can find them before the diff becomes the only artifact. The deeper version lives in [Your Repo Is the Memory](/posts/durable-context-coding-agents): repo-local context is the control loop that keeps fast implementation attached to shared truth.
 
 ## Make proof non-optional
 
+> Trust is a proof stack, not a feeling.
+
+```text
+human judgment
+     ↑
+risk boundaries
+     ↑
+real system behavior
+     ↑
+targeted tests
+```
+
 Cheap code is only useful when the result can be checked.
 
 Simon Willison's Pragmatic Summit workflow starts with red-green test-driven development: tell the agent how to run the tests, make it write or identify the failing proof, then implement only enough to pass [00:04:41]-[00:06:44]. He then makes agents exercise the real system, because passing tests do not prove a server boots or an API behaves [00:06:44]-[00:07:33]. For standards work he uses conformance suites; for risky execution he stresses sandboxing and mock data instead of production data [00:07:33]-[00:18:35].
 
-The series rule is:
-
-```text
-No proof, no merge.
-```
-
-Different tasks need different proof. A copy edit needs rendered output and a link check. A helper bug needs a failing test that turns green. A UI change may need a screenshot or trace. A parser or upload path may need fixtures or conformance checks. A security, migration, billing, or data change needs boundaries plus a human decision. The tactical ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it); the field-guide headline is to ask for evidence before the agent optimizes for being done.
+The series rule is simple: no proof, no merge. Different tasks need different proof. A copy edit needs rendered output and a link check. A helper bug needs a failing test that turns green. A UI change may need a screenshot or trace. A parser or upload path may need fixtures or conformance checks. A security, migration, billing, or data change needs boundaries plus a human decision. The tactical ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it); the field-guide headline is to ask for evidence before the agent optimizes for being done.
 
 ## Keep good friction and shape the codebase as infrastructure
+
+> Remove bad friction, but preserve the friction that routes consequences to people.
+
+| Usually safe to delegate | Humans should explicitly own |
+| --- | --- |
+| Reversible internal edits, mechanical cleanup, narrow fixes with proof | Dependencies, permissions, migrations, reliability, security and data boundaries, public API or architecture shape |
 
 "Remove friction" is the wrong default when generation outpaces review.
 
@@ -81,13 +103,15 @@ That last point matters more as loops get longer. Raising an Agent episode 9 fra
 
 ## Keep context wide, implementation narrow, and start small
 
-One long thread should not be responsible for everything.
-
-Build Crew episode 7 shows two useful modes. A tiny directed thread works when the human knows exactly what should happen and can name the files, constraints, and expected output [00:13:06]-[00:15:58]. A research flow works when uncertainty is high: analyze broadly, write reports, critique the design, narrow into a plan, then hand off to an implementation thread [00:18:54]-[00:24:12]. That gives a durable pattern:
+> Research wide, implement narrow, and preserve the state between them.
 
 ```text
 wide research → critique → human decision → narrow implementation → evidence
 ```
+
+One long thread should not be responsible for everything.
+
+Build Crew episode 7 shows two useful modes. A tiny directed thread works when the human knows exactly what should happen and can name the files, constraints, and expected output [00:13:06]-[00:15:58]. A research flow works when uncertainty is high: analyze broadly, write reports, critique the design, narrow into a plan, then hand off to an implementation thread [00:18:54]-[00:24:12]. That gives the durable pattern shown above.
 
 Do not carry every exploratory transcript into the implementation loop. Carry the decision, the relevant files, the constraints, and the proof target. [Small Threads, Durable State](/posts/small-threads-durable-state) owns the operating procedure for `.agents/work/` work items, handoffs, progress logs, and verification records.
 
@@ -113,6 +137,14 @@ That pattern is supported by Willison's test-first and manual-check workflow [00
 
 ## Factory workflows are emerging, but they raise the bar
 
+> Parallel agents amplify the workflow you already have.
+
+```text
+task briefs → agent lanes → proof gate → human review
+                    │
+                    ╰─ durable work state keeps outputs recoverable
+```
+
 The frontier is moving from "one assistant beside one developer" toward longer-running, parallel, factory-like workflows. Treat that as an emerging direction, not a shortcut around alignment and review.
 
 Raising an Agent episode 9 frames the shift as "the assistant is dead, long live the factory": if agents can take a longer leash, fetch context, verify work, and run in parallel, teams can investigate more immediately and try more variants [00:25:29]-[00:31:43]. Episode 10 makes it concrete: some agent work is becoming less like a rapid chat and more like writing a well-scoped brief, sending the agent away, and checking the result later [00:00:55]-[00:10:17]. Ball's harness argument points to the same next problem: as model capability absorbs old harness tricks, the hard question shifts to where agents run, how work is tracked and preserved, and how humans coordinate many cheap workers [00:36:43]-[00:49:24].
@@ -129,6 +161,16 @@ So the factory-era checklist is not "launch more agents." It is:
 Parallelism amplifies whatever system you already have. Weak alignment, proof, friction, infrastructure, and context hygiene mean more agents produce more debt. Strong loops make more agents a real lever. [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) works one tool through these contracts.
 
 ## Where to go next
+
+> Pick the article that matches the bottleneck you are actually feeling.
+
+| If the pain is... | Read... |
+| --- | --- |
+| Shared context keeps disappearing | [Your Repo Is the Memory](/posts/durable-context-coding-agents) |
+| Review needs stronger evidence | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
+| Threads are too large to restart | [Small Threads, Durable State](/posts/small-threads-durable-state) |
+| You want a concrete tool case study | [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) |
+| You want the talks behind the series | [The coding-with-agents resource hub](/resources/coding-with-agents) |
 
 The through-line is simple: align before code is cheap, prove before merge, keep useful friction, shape the codebase as infrastructure, keep context hygienic, start with one verified task, and only then scale into factory workflows. From here, follow the deeper article that matches your current pain point.
 
