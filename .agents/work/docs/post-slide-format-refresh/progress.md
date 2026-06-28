@@ -213,3 +213,27 @@
   - Headless Chrome `--dump-dom` hung even on a trivial data URL in this environment, so browser-executed slide smoke was not completed for this post. Content shape was checked against the route convention and built HTML instead.
 - Next action:
   - Continue Task 4 with `src/content/posts/make-the-agent-prove-it.md`.
+
+## 2026-06-28 Task 4 proof-stack migration
+
+- Post migrated:
+  - `src/content/posts/make-the-agent-prove-it.md`
+  - Commit: `941bf8b` (`Migrate proof stack post to slide hybrid format`)
+- Baseline:
+  - H2 sections before migration: 10 normal sections plus exact `## Sources used` appendix.
+  - Word count before: 1,600.
+  - Word count after: 1,716.
+- What changed:
+  - Added concise first-blockquote slide messages to all 10 normal H2 sections.
+  - Repositioned the proof-stack ladder, risk table, red-green prompt, real-system transcript, conformance prompt, blast-radius questions, reusable prompt, and closing evidence flow as immediate slide visuals where appropriate.
+  - Left `## Sources used` without a blockquote so it remains a source appendix outside normal slide navigation.
+  - Kept timestamps, source context, and review caveats in notes/article prose.
+- Verification:
+  - `git diff --check` passed.
+  - `npm run check` passed.
+  - `npm run build` passed.
+  - Static built-route smoke passed: article build includes 11 H2s, 10 blockquotes, and `Sources used`; slide build includes notes control, print CSS, source container, source-appendix container, and the first slide message.
+- Limitations / notes:
+  - Browser-executed slide smoke remains skipped because headless Chrome `--dump-dom` hung in this environment during the durable-context migration. Content shape and built HTML were checked instead.
+- Next action:
+  - Continue Task 4 with `src/content/posts/small-threads-durable-state.md`.
