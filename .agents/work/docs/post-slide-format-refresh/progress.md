@@ -237,3 +237,27 @@
   - Browser-executed slide smoke remains skipped because headless Chrome `--dump-dom` hung in this environment during the durable-context migration. Content shape and built HTML were checked instead.
 - Next action:
   - Continue Task 4 with `src/content/posts/small-threads-durable-state.md`.
+
+## 2026-06-28 Task 4 small-threads migration
+
+- Post migrated:
+  - `src/content/posts/small-threads-durable-state.md`
+  - Commit: `c9ed660` (`Migrate small threads post to slide hybrid format`)
+- Baseline:
+  - Rendered H2 sections before migration: 8 normal sections plus exact `## Sources used` appendix. Two additional `##` strings are inside a fenced progress-template code block and are not rendered slide sections.
+  - Word count before: 1,551.
+  - Word count after: 1,725.
+- What changed:
+  - Added concise first-blockquote slide messages to all 8 normal rendered H2 sections.
+  - Repositioned existing workflow visuals and examples directly after slide messages: research funnel, work-item tree, handoff prompt, Git quality gate, and operating procedure.
+  - Added small Markdown-native visuals for the opening workflow, file-role table, committable-thread pipeline, and operating loop.
+  - Left `## Sources used` without a blockquote so it remains a source appendix outside normal slide navigation.
+- Verification:
+  - `git diff --check` passed.
+  - `npm run check` passed.
+  - `npm run build` passed.
+  - Static built-route smoke passed: article build includes 9 rendered H2s, 8 blockquotes, and `Sources used`; slide build includes notes control, print CSS, source container, source-appendix container, and the first slide message.
+- Limitations / notes:
+  - Browser-executed slide smoke remains skipped because headless Chrome `--dump-dom` hung in this environment during the durable-context migration. Content shape and built HTML were checked instead.
+- Next action:
+  - Continue Task 4 with `src/content/posts/amp-factory-era-case-study.md`.
