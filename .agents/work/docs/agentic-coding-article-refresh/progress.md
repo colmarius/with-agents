@@ -168,3 +168,19 @@
 ## Updated Next Action
 
 - Run Task 6: rewrite the broad field guide as `agentic-coding-2026`, merging the agent-loop definition and one-small-verified-task pattern without reviving stale Amp setup claims or draft-only practice-path links.
+
+## 2026-06-28 Oracle Review And Task 6 Handoff
+
+- Consulted Oracle on the completed work-item state after Task 5 and the remaining Task 6 next step.
+- Addressed high-confidence feedback before implementation:
+  - Updated stale `index.md`/`research.md` wording that still implied only the durable-context article was public.
+  - Tightened Task 6 around rename/replace behavior, old route absence, source anchors, non-overlap boundaries, frontmatter/navigation rules, verification, route checks, draft-link checks, and stop conditions.
+  - Added current-status notes to `research.md` and `audit.md` so older roadmap sections are clearly historical after Tasks 3-5.
+  - Clarified that the open Amp product-source question does not block Task 6 if Amp product claims are avoided or kept illustrative.
+- Asked Oracle for a paste-ready Task 6 implementation prompt and saved it as `handoff-task-6.md`.
+- Files changed: `index.md`, `plan.md`, `research.md`, `audit.md`, `progress.md`, and `handoff-task-6.md`.
+- Verification: `git diff --check` passed after the work-item updates.
+
+## Updated Next Action
+
+- Start a fresh implementation thread with `handoff-task-6.md` to execute Task 6.

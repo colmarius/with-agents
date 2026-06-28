@@ -2,7 +2,15 @@
 
 **Date:** 2026-06-28
 **Status:** public article architecture complete
-**Question:** How should the draft posts be refreshed now that only the durable-context article is public?
+**Question:** How should the remaining draft posts be refreshed now that the first three public articles are live?
+
+## Current status after Task 5
+
+- `durable-context-coding-agents`, `make-the-agent-prove-it`, and `small-threads-durable-state` are now public production posts.
+- The earlier architecture sections for `make-the-agent-prove-it` and `small-threads-durable-state` are historical implementation contracts that have been completed; use those posts as non-overlap anchors for Task 6.
+- The next implementation task is `agentic-coding-2026`.
+- `amp-first-win-15-minutes` remains `draft: true`, private/deferred, and should contribute only the “one small verified task” pattern to Task 6.
+- Amp-specific tutorials or case studies remain deferred until close-to-publish product verification.
 
 ## Recommendation
 

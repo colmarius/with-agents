@@ -74,14 +74,34 @@ Review and refresh the draft article backlog into a smaller, current public seri
   - Scope: `coding-with-agents-2025.md`, `what-is-an-agent.md`, `amp-first-win-15-minutes.md`, public anchors, and source summaries/transcripts named in `research.md`
   - Depends on: Tasks 2 and 5
   - Acceptance:
-    - The old 2025 field guide is rewritten or replaced as `agentic-coding-2026` rather than republished under the stale 2025 framing.
+    - `src/content/posts/coding-with-agents-2025.md` is renamed/replaced as `src/content/posts/agentic-coding-2026.md`; do not leave both a stale 2025 field-guide file and a new 2026 field-guide file unless the old file remains `draft: true` and the reason is recorded.
+    - The old `/posts/coding-with-agents-2025` route remains absent from production output.
     - The article acts as the series map: cheap implementation, alignment, proof, useful friction, codebase infrastructure, context hygiene, and factory/orchestration workflows.
     - The concise agent-loop definition from `what-is-an-agent` and the “one small verifiable task” pattern from `amp-first-win-15-minutes` are merged only where they serve the field-guide reader job.
-    - Internal links point only to current production routes or intentionally external sources.
-    - The article links to `durable-context-coding-agents`, `make-the-agent-prove-it`, and `small-threads-durable-state` for depth instead of duplicating their theses.
+    - The published article includes a `Sources used` section or equivalent visible source note.
+    - Substantive claims are anchored to transcript timestamps, summary paths, official docs, current production posts, or are clearly framed as author synthesis/opinion.
+    - Timestamped claims are checked against the saved transcripts, not copied forward from old drafts.
+    - Unsupported productivity multipliers, current-model capability claims, pricing claims, tool availability claims, or workflow universals are removed or caveated.
+    - Non-overlap is enforced section-by-section: `durable-context-coding-agents` owns repo-local memory, promotion, and durable context; `make-the-agent-prove-it` owns proof-stack mechanics; `small-threads-durable-state` owns small-thread, handoff, and `.agents/work/` operating procedure; `agentic-coding-2026` introduces those ideas briefly as the series map, then links to the public posts for depth instead of recreating their frameworks, tables, or procedures.
+    - Frontmatter is current: title, description, `pubDate`, tags, `draft: false`, `unlisted: false` if publishing, and an intentional `order` relative to the three existing public posts.
+    - If published/listed, homepage navigation is updated deliberately to include or intentionally omit `/posts/agentic-coding-2026`, and the decision is recorded in `progress.md`.
+    - Internal links point only to current production routes, the resource hub, or intentional external sources.
+    - The article must not link to draft-only routes such as `/posts/amp-first-win-15-minutes`, `/posts/what-is-an-agent`, `/posts/agent-workflows-that-stick`, `/posts/agent-planning-workflow`, or `/posts/amp-power-patterns`.
     - Stale Amp setup, pricing, mode, UI/sidebar, shortcut, token-threshold, `.agents/plans/`, `.agents/context/`, and draft-only practice-path claims are removed unless verified close to publication.
-    - `draft` and `unlisted` frontmatter are set according to the publish decision, and `npm run check` plus `npm run build` pass if source/frontmatter/navigation changes are made.
-  - Notes: Do not start this rewrite during Task 5. Keep Amp as a concrete example only when it clarifies broader agentic-coding guidance and product claims are either avoided or verified.
+    - `npm run check`, `npm run build`, and `git diff --check` pass.
+    - Production output includes `/posts/agentic-coding-2026/index.html` and `/posts/agentic-coding-2026/slides/index.html` if the article is published.
+    - Production output does not include `/posts/coding-with-agents-2025`.
+    - Built/source output is checked for draft-only internal links: `/posts/amp-first-win-15-minutes`, `/posts/what-is-an-agent`, `/posts/agent-workflows-that-stick`, `/posts/agent-planning-workflow`, and `/posts/amp-power-patterns`.
+    - Verification results and any skipped checks are recorded in `progress.md`.
+  - Stop conditions:
+    - Stop if publishing `agentic-coding-2026` would leave a stale public `/posts/coding-with-agents-2025` route or duplicate field-guide files without a recorded reason.
+    - Stop if the rewrite needs Amp setup, pricing, install, mode, UI/sidebar, shortcut, model, token-threshold, or feature claims that have not been verified from current official/product sources; prefer removing the claim over publishing unverified product detail.
+    - Stop if the article starts duplicating the proof-stack, durable-context, or `.agents/work/` operating-procedure articles instead of summarizing and linking to them.
+    - Stop if a major claim cannot be traced to a transcript timestamp, summary/source path, official source, existing public post, or clearly marked author synthesis.
+    - Stop if the article would link to draft-only post routes or revive the old practice path.
+    - Stop if the publication decision changes from a listed public article to a draft or unlisted handout; record the reason and update navigation expectations before continuing.
+    - Stop if `npm run check`, `npm run build`, `git diff --check`, route-output inspection, or draft-link inspection fails.
+  - Notes: Keep Amp as a concrete example only when it clarifies broader agentic-coding guidance and product claims are either avoided or verified. Rename/replace the existing draft file rather than adding a parallel field-guide draft unless preserving the old file has a recorded reason.
 
 - [ ] **Task 7: Rework Amp-specific material as a broader tool case study**
   - Scope: `amp-power-patterns.md`, current Amp docs/resources/threads as needed

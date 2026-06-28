@@ -26,6 +26,8 @@ Use this file for `plan.md` Task 1. Fill one row per draft before editing or pub
 
 ## Near-Term Roadmap From Audit
 
+> Current note after Task 5: Tasks 3 and 4 have since published `make-the-agent-prove-it` and `small-threads-durable-state`. Treat the roadmap below as historical audit output except for the remaining `agentic-coding-2026`, deferred Amp tutorial/case-study, and private workshop dispositions.
+
 1. **Next single article candidate:** `make-the-agent-prove-it`.
    - Use `src/content/posts/simon-willison-engineering-practices-coding-agents.md` as source material, not as publish-ready copy.
    - Gate before editing: the article must become a proof-stack guide, not a second version of `src/content/summaries/coding-with-agents/simon-willison-engineering-practices-that-make-coding-agents-work.md`.
