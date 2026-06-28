@@ -11,6 +11,7 @@ Review and refresh the draft post backlog now that `agentic-coding-2026`, `durab
 ## Artifacts
 
 - Research: `research.md`
+- Task 7 Amp source prep: `research/amp-official-sources-2026.md`
 - Audit template/output: `audit.md`
 - Task 1 handoff prompt: `handoff-task-1.md`
 - Task 2 handoff prompt: `handoff-task-2.md`
@@ -25,10 +26,10 @@ Review and refresh the draft post backlog now that `agentic-coding-2026`, `durab
 
 ## Next Action
 
-- Decide whether to start Task 7. If yes, gather current public Amp product sources first, then rework `amp-power-patterns.md` only as a broader tool case study with verified product details. If not, pause with the four-article public series complete and leave the remaining Amp tutorial/workshop drafts private.
+- Task 7 is ready to start if desired. Use `research/amp-official-sources-2026.md` as the source-prep bundle, re-run the current Manual/Models/Plugin API/Chronicle sweep close to publication, then rework `amp-power-patterns.md` only as a broader Amp tool case study with verified product details.
 
 ## Open Questions
 
 - [x] Should the refreshed public series stay Amp-specific, or should Amp be one concrete tool inside broader agentic-coding guidance? Decision: broader agentic-coding guidance; Amp is one concrete tool/example when useful.
 - [x] Should near-publish transcript-backed posts like the Simon Willison article appear as posts, resource summaries, or both? Decision: no strong channel preference, but keep public posts few and high-signal; do not pollute posts with duplicated summary information unless the post adds a distinct, relevant thesis.
-- [ ] Which current public Amp product source should be used for close-to-publish verification before any Amp case study or revived Amp tutorial/handout? Not blocking Task 6 if Amp product claims are avoided or kept purely illustrative.
+- [x] Which current public Amp product source should be used for close-to-publish verification before any Amp case study or revived Amp tutorial/handout? Decision: use the current Amp Manual, Plugin API, Models page, and a fresh Chronicle/latest-news sweep as the canonical product-source bundle; use dated notes only as dated workflow examples, and re-check before publication.

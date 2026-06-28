@@ -4,12 +4,13 @@
 **Status:** public article architecture complete
 **Question:** How should the remaining draft posts be refreshed now that the first three public articles are live?
 
-## Current status after Task 5
+## Current status after Task 7 source prep
 
-- `durable-context-coding-agents`, `make-the-agent-prove-it`, and `small-threads-durable-state` are now public production posts.
-- The earlier architecture sections for `make-the-agent-prove-it` and `small-threads-durable-state` are historical implementation contracts that have been completed; use those posts as non-overlap anchors for Task 6.
-- The next implementation task is `agentic-coding-2026`.
-- `amp-first-win-15-minutes` remains `draft: true`, private/deferred, and should contribute only the “one small verified task” pattern to Task 6.
+- `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, and `small-threads-durable-state` are now public production posts.
+- The earlier architecture sections for `make-the-agent-prove-it`, `small-threads-durable-state`, and `agentic-coding-2026` are historical implementation contracts that have been completed; use those posts as non-overlap anchors for Task 7.
+- Task 6 has published the field guide. The next optional implementation task is Task 7: rework `amp-power-patterns.md` as a broader Amp tool case study.
+- Focused Task 7 product/source prep lives in `research/amp-official-sources-2026.md`.
+- `amp-first-win-15-minutes` remains `draft: true`, private/deferred; Task 6 already merged only its “one small verified task” pattern.
 - Amp-specific tutorials or case studies remain deferred until close-to-publish product verification.
 
 ## Recommendation

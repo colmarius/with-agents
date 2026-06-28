@@ -113,6 +113,7 @@ Review and refresh the draft article backlog into a smaller, current public seri
     - The article teaches broader agentic-coding patterns using Amp as the example, rather than requiring the whole series to be Amp-specific.
     - Public Amp concepts are distinguished from internal/local workflow concepts before naming features.
   - Notes: Consult Oracle or relevant threads before editing because product details age quickly.
+  - Prep: Use `research/amp-official-sources-2026.md` for the current Amp source bundle and stale-claim removal list; re-run the Manual/Models/Plugin API/Chronicle sweep close to publication.
 
 - [ ] **Task 8: Update site navigation after each publish decision**
   - Scope: `src/pages/index.astro`, `src/pages/posts/index.astro`, relevant post frontmatter

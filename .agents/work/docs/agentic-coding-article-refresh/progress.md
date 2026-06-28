@@ -225,3 +225,28 @@
 ## Updated Next Action
 
 - Decide whether to start Task 7. If yes, gather current public Amp product sources first, then rework `amp-power-patterns.md` only as a broader tool case study with verified product details. If not, pause with the four-article public series complete and leave the remaining Amp tutorial/workshop drafts private.
+
+## 2026-06-28 Task 7 Amp Official Source Prep
+
+- Prepared the requested local context for the next optional Amp case-study task. Added `research/amp-official-sources-2026.md` as a focused source bundle for reworking `amp-power-patterns.md` later.
+- Sources read and recorded:
+  - Current canonical docs: Amp Manual, Manual plugins section, Plugin API reference, Models page, Chronicle index.
+  - Recent product/news sources: Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, Rush 2.0, Faster Deep & Rush, Opus 4.8, A Faster Librarian, End of Public Threads, npm Package Changes, Plugins Everywhere, Liberating Code Review, Agentic Review, Agent Skills, Efficient MCP Tool Loading, Slashing Custom Commands, Handoff/Handoff Please, and The Coding Agent Is Dead.
+  - User-named older/context sources: Context Management in Amp and 200k Tokens Is Plenty; both are explicitly archived and recorded as durable-principle-only sources, not current Handoff/token-threshold guidance.
+  - Additional recent workflow notes: Feedback Loopable, Mainframe Magic, and How to Pair With an Agent.
+- Oracle consulted after the first evidence pass. Incorporated its high-confidence feedback: Oracle is not a mode; include `deep` as the hard-work mode; remove old Rush/model/speed claims; treat Handoff as obsolete product guidance; use archived context pages only for durable principles; record Librarian default-branch limits; and frame plugin/custom-agent APIs as current but high-churn advanced surfaces.
+- Source-prep decisions:
+  - Canonical Task 7 product source bundle: current Manual, Plugin API, Models page, and a fresh Chronicle/latest-news sweep.
+  - Dated Chronicle/news/notes pages can anchor product direction or workflow examples only with date context.
+  - The old `amp-power-patterns.md` draft should be rewritten as an Amp factory-era case study, not refreshed as a feature catalog.
+  - Remove or reverify Oracle-as-mode, Handoff, fixed token thresholds, old model names, old Rush cost/speed claims, VS Code/editor-sidebar assumptions, old install package names, pricing/free-tier claims, and draft-only practice-path links.
+- Work-item updates:
+  - `index.md` now points to the Task 7 source-prep bundle and marks the Amp product-source open question answered with a re-check-before-publication caveat.
+  - `research.md` now reflects that Task 6 is complete and Task 7 source prep exists.
+  - `plan.md` Task 7 now references the prep note.
+- Verification: `git diff --check` passed after the work-item updates.
+- Skipped checks: `npm run check` and `npm run build` were not run because this was work-item research only; no public content, frontmatter, navigation, or route output changed.
+
+## Updated Next Action
+
+- Start Task 7 only if the Amp case study is still desired. Use `research/amp-official-sources-2026.md`, re-run the Manual/Models/Plugin API/Chronicle sweep close to publication, then rewrite `amp-power-patterns.md` as a broader Amp tool case study with verified current product details and no stale practice-path links.
