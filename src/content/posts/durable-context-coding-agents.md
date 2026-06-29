@@ -108,7 +108,7 @@ Human decision
 
 Some context is not a rule; it is a workflow. [Agent Skills](https://agentskills.io/home) package repeatable procedures as folders with a `SKILL.md` and optional scripts, references, and assets. OpenAI's [Codex Skills docs](https://developers.openai.com/codex/skills) describe the same progressive-disclosure idea: the agent sees skill metadata first, then loads full instructions when the task calls for it.
 
-Use a skill, script, or checklist when work has repeatable inputs, steps, and proof — a release checklist, a migration routine, or a content publication workflow. Do not package every preference: a style rule belongs in the map or the linter. Also resist overbuilding the harness. Mario Zechner's [Pi workflow](https://www.youtube.com/watch?v=DPgJjRdQWrg) and Ball's harness critique point to a simple default: if shell commands, files, Git, scripts, and a short procedure are enough, start there. Good procedures make the sequence on the slide explicit.
+Use a skill, script, or checklist when work has repeatable inputs, steps, and proof — a release checklist, a migration routine, or a content publication workflow. Do not package every preference: a style rule belongs in the map or the linter. Also resist overbuilding the harness. Mario Zechner's [Pi workflow](https://www.youtube.com/watch?v=DPgJjRdQWrg) and Ball's harness critique point to a simple default: if shell commands, files, Git, scripts, and a short procedure are enough, start there. Good procedures make the sequence explicit: trigger, steps, evidence, and the human decision.
 
 ## State: keep work alive across threads
 
@@ -120,7 +120,7 @@ wide research → critique → human judgment → plan → focused implementatio
 
 Long-running agent work has two failure modes: **thread death**, where useful context disappears when the chat ends, and **context pollution**, where a long thread drags stale searches and irrelevant files into the next decision. The answer is durable state plus small focused threads.
 
-In [Build Crew episode 7](https://www.youtube.com/watch?v=fVx5M2GVjEQ), the useful pattern is the funnel on the slide.
+In [Build Crew episode 7](https://www.youtube.com/watch?v=fVx5M2GVjEQ), the useful pattern is a funnel: wide research, critique, human judgment, a focused plan, implementation, and evidence.
 
 Research threads can go wide; implementation threads should be narrow; handoffs preserve the useful context while resetting the noise. [`dot-agents`](https://dot-agents.dev/) is one lightweight implementation: a `.agents/` workspace with work items, research notes, plans, progress logs, and handoff prompts. [Small Threads, Durable State](/posts/small-threads-durable-state) is the day-to-day procedure. A fresh thread should be able to answer: what are we doing, why, what sources are trusted, what is next, and what should not be reopened.
 
@@ -166,6 +166,8 @@ Red    → permissions, migrations, billing, security, reliability, architecture
 Greg Brockman's [agentic software development note](https://x.com/gdb/status/2019566641491963946) puts it bluntly: keep a human accountable for merged code, at the same review bar as human-written work. The goal is not timid agents; it is visible risk. Agents are good at making progress and bad at feeling the discomfort that tells a senior engineer "this fallback is too convenient." Durable context should encode where the human brain must reactivate.
 
 Code structure is part of that context, because agents copy local patterns aggressively. Ronacher and Poncela Cubeiro describe the codebase itself as infrastructure for the agent: clear module boundaries, visible data flow, simple cores with explicit public APIs, examples worth copying, fast focused tests, and fewer hidden magical conventions. If the first integration is sloppy, the next run copies the slop; if it is clear and tested, the next run has a better path to follow.
+
+As more agents run in parallel, write the contract before the work starts: the job, boundary, trusted inputs, proof target, summary format, and stop conditions. Parallel agents do not remove coordination work; they make weak coordination fail faster.
 
 ## Start with one task, then promote what helped
 
