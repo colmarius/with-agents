@@ -51,11 +51,100 @@ const slidesDescription = `${post.data.description} Slide view.`;
         display: block;
       }
 
+      :global(.slide.active[data-layout='cover']) {
+        display: flex;
+        min-height: min(72vh, 46rem);
+        align-items: center;
+        justify-content: center;
+      }
+
+      :global(body.notes-visible .slide.active[data-layout='cover']) {
+        display: block;
+        min-height: auto;
+      }
+
       :global(.slide-main > blockquote:first-of-type) {
         border-left-color: #4f46e5;
         color: #0f172a;
         font-size: 1.35em;
         line-height: 1.35;
+      }
+
+      :global(.slide-main > blockquote:first-of-type small) {
+        display: block;
+        margin-top: 0.75rem;
+        color: #64748b;
+        font-size: 0.55em;
+        font-weight: 400;
+        line-height: 1.4;
+      }
+
+      :global(.slide[data-layout='cover'] .slide-main) {
+        width: 100%;
+        text-align: center;
+      }
+
+      :global(.slide[data-layout='cover'] .slide-main > h2) {
+        margin-bottom: clamp(1.75rem, 4vw, 3.5rem);
+        font-size: clamp(2.6rem, 6vw, 5rem);
+        line-height: 1.05;
+      }
+
+      :global(.slide[data-layout='cover'] .slide-main > blockquote:first-of-type) {
+        margin: 0 auto;
+        border-left: 0;
+        padding: 0;
+        font-size: clamp(1.5rem, 3vw, 3rem);
+      }
+
+      :global(.slide[data-layout='cover'] .slide-main > blockquote:first-of-type p) {
+        margin: 0;
+      }
+
+      :global(.slide[data-layout='cover'] .slide-main > blockquote:first-of-type small) {
+        margin-top: clamp(1.5rem, 3vw, 2.5rem);
+        font-size: 0.42em;
+      }
+
+      :global(.slide[data-message='small'] .slide-main > blockquote:first-of-type) {
+        font-size: 1.05em;
+      }
+
+      :global(.slide[data-message='quiet'] .slide-main > blockquote:first-of-type) {
+        border-left-color: #cbd5e1;
+        color: #475569;
+        font-size: 1.1em;
+      }
+
+      :global(.slide.slide-compact) {
+        padding: 1.5rem;
+      }
+
+      :global(.slide[data-layout='text'] .slide-main) {
+        font-size: 1.05rem;
+      }
+
+      :global(.slide[data-layout='text'] .slide-main :is(ul, ol)) {
+        margin-top: 1rem;
+      }
+
+      :global(.slide[data-layout='split'] .slide-main) {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 2rem;
+        align-items: center;
+      }
+
+      :global(.slide[data-layout='split'] .slide-main > h2) {
+        grid-column: 1 / -1;
+      }
+
+      :global(.slide[data-layout='split'] .slide-main > blockquote:first-of-type) {
+        grid-column: 1;
+      }
+
+      :global(.slide[data-layout='split'] .slide-main > :is(pre, table, figure, svg, .mermaid, p:has(img))) {
+        grid-column: 2;
       }
 
       :global(.slide-notes) {
@@ -236,6 +325,20 @@ const slidesDescription = `${post.data.description} Slide view.`;
       const appendixClasses =
         'slide-appendix prose-slide bg-white border border-slate-200 rounded-lg p-8 sm:p-12 shadow-sm';
       const sourceHeadings = new Set(['sources', 'sources used']);
+      const validSlideLayouts = new Set([
+        'message',
+        'visual',
+        'text',
+        'split',
+        'cover',
+      ]);
+      const validMessageSizes = new Set(['normal', 'small', 'quiet']);
+
+      type SlideConfig = {
+        layout?: string;
+        message?: string;
+        classTokens: string[];
+      };
 
       let currentIndex = 0;
       let totalSlides = 0;
@@ -252,6 +355,56 @@ const slidesDescription = `${post.data.description} Slide view.`;
 
       const normalizeHeadingText = (text: string) =>
         text.replace(/\s+/g, ' ').trim().toLowerCase();
+
+      const emptySlideConfig = (): SlideConfig => ({ classTokens: [] });
+
+      const parseSlideConfig = (text: string | null | undefined) => {
+        const trimmed = text?.trim() ?? '';
+        if (!trimmed.startsWith('slide:')) return null;
+
+        const config = emptySlideConfig();
+        const body = trimmed.slice('slide:'.length).trim();
+
+        for (const rawLine of body.split(/\r?\n/)) {
+          const line = rawLine.trim();
+          if (!line) continue;
+
+          const match = line.match(/^([a-z]+)\s*:\s*(.+)$/i);
+          if (!match) continue;
+
+          const [, key, rawValue] = match;
+          const value = rawValue.trim();
+
+          if (key === 'layout' && validSlideLayouts.has(value)) {
+            config.layout = value;
+          } else if (key === 'message' && validMessageSizes.has(value)) {
+            config.message = value;
+          } else if (key === 'class') {
+            config.classTokens.push(
+              ...value
+                .split(/\s+/)
+                .filter((token) => /^[a-z0-9_-]+$/i.test(token)),
+            );
+          }
+        }
+
+        return config;
+      };
+
+      const mergeSlideConfig = (target: SlideConfig, source: SlideConfig) => {
+        target.layout = source.layout ?? target.layout;
+        target.message = source.message ?? target.message;
+        target.classTokens.push(...source.classTokens);
+      };
+
+      const applySlideConfig = (slide: HTMLElement, config: SlideConfig) => {
+        slide.dataset.layout = config.layout ?? 'message';
+        slide.dataset.message = config.message ?? 'normal';
+
+        for (const token of new Set(config.classTokens)) {
+          slide.classList.add(`slide-${token}`);
+        }
+      };
 
       const isElement = (
         node: Node | null | undefined,
@@ -273,6 +426,46 @@ const slidesDescription = `${post.data.description} Slide view.`;
           if (isMeaningfulNode(nodes[index])) return index;
         }
         return -1;
+      };
+
+      const isNotesDelimiter = (node: Node) =>
+        (isElement(node, 'p') &&
+          normalizeHeadingText(node.textContent ?? '') === 'notes:') ||
+        (node.nodeType === Node.COMMENT_NODE &&
+          ['notes', 'notes:'].includes(normalizeHeadingText(node.textContent ?? '')));
+
+      const findNotesDelimiterIndex = (nodes: Node[], startIndex: number) => {
+        for (let index = startIndex; index < nodes.length; index++) {
+          if (isNotesDelimiter(nodes[index])) return index;
+        }
+
+        return -1;
+      };
+
+      const getSlideConfig = (nodes: Node[], headingIndex: number) => {
+        const config = emptySlideConfig();
+        const configIndexes = new Set<number>();
+
+        for (let index = headingIndex + 1; index < nodes.length; index++) {
+          const node = nodes[index];
+
+          if (node.nodeType === Node.TEXT_NODE && !isMeaningfulNode(node)) {
+            continue;
+          }
+
+          if (node.nodeType === Node.COMMENT_NODE) {
+            const parsed = parseSlideConfig(node.textContent);
+            if (parsed) {
+              mergeSlideConfig(config, parsed);
+              configIndexes.add(index);
+              continue;
+            }
+          }
+
+          if (isMeaningfulNode(node)) break;
+        }
+
+        return { config, configIndexes };
       };
 
       const looksLikeMermaid = (text: string) => {
@@ -390,6 +583,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
       ) => {
         const slide = createSlide(index, headingText);
         slide.dataset.slideMode = 'legacy';
+        applySlideConfig(slide, emptySlideConfig());
         slide.appendChild(fragment);
         return slide;
       };
@@ -401,16 +595,31 @@ const slidesDescription = `${post.data.description} Slide view.`;
       ) => {
         const nodes = Array.from(fragment.childNodes);
         const headingIndex = firstMeaningfulIndex(nodes);
+        const { config, configIndexes } = getSlideConfig(nodes, headingIndex);
         const quoteIndex = firstMeaningfulIndex(nodes, headingIndex + 1);
+        const notesIndex = findNotesDelimiterIndex(nodes, headingIndex + 1);
 
-        if (headingIndex === -1 || !isElement(nodes[quoteIndex], 'blockquote')) {
+        if (
+          headingIndex === -1 ||
+          (notesIndex === -1 && !isElement(nodes[quoteIndex], 'blockquote'))
+        ) {
           return buildLegacySlide(fragment, index, headingText);
         }
 
         const mainIndexes = new Set([headingIndex, quoteIndex]);
         let scanIndex = quoteIndex + 1;
 
-        while (scanIndex < nodes.length) {
+        if (notesIndex !== -1) {
+          mainIndexes.clear();
+          mainIndexes.add(headingIndex);
+
+          for (let nodeIndex = headingIndex + 1; nodeIndex < notesIndex; nodeIndex++) {
+            if (configIndexes.has(nodeIndex)) continue;
+            if (isMeaningfulNode(nodes[nodeIndex])) mainIndexes.add(nodeIndex);
+          }
+        }
+
+        while (notesIndex === -1 && scanIndex < nodes.length) {
           const node = nodes[scanIndex];
 
           if (!isMeaningfulNode(node)) {
@@ -430,6 +639,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
         let notesHasContent = false;
 
         slide.dataset.slideMode = 'structured';
+        applySlideConfig(slide, config);
         main.className = 'slide-main';
         notes.className = 'slide-notes';
         notes.setAttribute('aria-label', `Notes for ${headingText || 'slide'}`);
@@ -437,7 +647,12 @@ const slidesDescription = `${post.data.description} Slide view.`;
         for (const [nodeIndex, node] of nodes.entries()) {
           if (mainIndexes.has(nodeIndex)) {
             main.appendChild(node);
-          } else if (nodeIndex > headingIndex && isMeaningfulNode(node)) {
+          } else if (
+            nodeIndex > headingIndex &&
+            nodeIndex !== notesIndex &&
+            !configIndexes.has(nodeIndex) &&
+            isMeaningfulNode(node)
+          ) {
             notesHasContent = true;
             notes.appendChild(node);
           }

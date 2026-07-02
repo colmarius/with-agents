@@ -9,10 +9,16 @@ order: 2
 ---
 
 ## Your Repo Is the Memory
+<!-- slide:
+layout: cover
+class: title
+-->
 
 > Chat is RAM. The repo is disk.
 >
 > <small>Marius Colacioiu · Founder & Head of Engineering @ Norm</small>
+
+<!-- notes -->
 
 Durable context for AI coding agents: keeping intent, decisions, and proof attached to fast code.
 
