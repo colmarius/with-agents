@@ -1,5 +1,5 @@
 ---
-title: 'Durable Context for Coding Agents: Keep Intent Attached to Fast Code'
+title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'A slide-first field guide to AGENTS.md, Agent Skills, dot-agents work items, and review checkpoints for keeping coding agents aligned.'
 pubDate: 2026-07-02
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
@@ -7,6 +7,30 @@ draft: true
 unlisted: true
 order: 2
 ---
+
+## Your Repo Is the Memory
+
+> Durable context for AI coding agents: keep intent, decisions, and proof attached to fast code.
+
+| If you are... | This is useful for... |
+| --- | --- |
+| Letting agents change real code | Keeping the agent aligned with project truth. |
+| Reviewing agent PRs late | Moving checkpoints earlier than the diff. |
+| Running work across threads, tools, or teammates | Making context survive the chat. |
+
+The hook is simple: agents can now produce substantial code faster than most teams can align around it. The question is where the intent, constraints, decisions, and proof should live when chat is temporary and the repository is the system of record.
+
+## About the author
+
+> Marius Colacioiu is a Zürich-based engineering leader building startup products and teams.
+
+| Focus | Details |
+| --- | --- |
+| Today | Founder and Head of Engineering at Norm, building products for building energy efficiency. |
+| Background | 14+ years helping startups build from early product foundations to growing engineering teams. |
+| Past startup work | Ledgy, BuddyBroker/XING, Gild, Sportboom; plus growth engineering at On. |
+
+My work has mostly been close to the messy middle where product, engineering, hiring, delivery, and operations overlap. That is also where coding agents are most useful — and where missing context becomes expensive fastest.
 
 ## Start with the checkpoint you already trust
 
@@ -297,6 +321,7 @@ Someone has to own the loop: notice what helped, promote it, delete stale guidan
 
 ## Sources used
 
+- Marius Colacioiu, [personal site](https://marius-colacioiu.com) and [CV](https://marius-colacioiu.com/cv) — source for the short author slide.
 - Noperator, [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) — source for the "substantial form without discernible intent" framing.
 - Maggie Appleton, [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) — source for the alignment bottleneck and collaborative AI engineering framing.
 - Addy Osmani, [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) — source for the surrender/debt framing and the gap between generated code and human understanding.
