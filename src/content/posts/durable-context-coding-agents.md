@@ -1,189 +1,364 @@
 ---
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
-description: 'A field guide for keeping coding agents aligned with repo-local truth, shared state, proof, and human judgment.'
-pubDate: 2026-06-25
+description: 'A slide-first field guide to AGENTS.md, Agent Skills, dot-agents work items, and review checkpoints for keeping coding agents aligned.'
+pubDate: 2026-07-02
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: false
 order: 2
 ---
 
-## Your repo is the agent's operating memory
+<!--
+Maintenance note for agents:
+durable-context-coding-agents.md is the canonical public article/deck for this talk.
+durable-context-coding-agents-v2.md is the richer slide-first alternate derived from the same material.
 
-> Chat is working memory; the repo is durable memory.
+When changing this canonical file, also review durable-context-coding-agents-v2.md in the same diff and either:
+- mirror factual, source, terminology, and section-order changes where applicable, or
+- leave v2 intentionally different because it is the richer slide-first alternate.
+
+durable-context-coding-agents-v3.md is an image-only experiment and is not part of the canonical/v2 sync contract.
+Do not publish, rename, delete, or replace draft variants without explicit human approval.
+-->
+
+## Your Repo Is the Memory
+<!-- slide:
+layout: cover
+class: title
+-->
+
+> Chat is RAM. The repo is disk.
+>
+> <small>Marius Colacioiu · Founder & Head of Engineering @ Norm</small>
+
+Notes:
+
+Durable context for AI coding agents: keeping intent, decisions, and proof attached to fast code.
+
+At Norm, we build a data OS for real estate portfolios: a shared foundation for building data, investment planning, sustainability reporting, and CAPEX work. My work has mostly been close to the messy middle where product, engineering, hiring, delivery, and operations overlap. That is also where coding agents are most useful — and where missing context becomes expensive fastest.
+
+## Coding agents made implementation cheap
+<!-- slide:
+layout: visual
+class: alignment-flow
+-->
+
+> They did not make alignment free.
+
+<figure class="agent-speed-flow" aria-label="Fast agent implementation pushes alignment pressure into project memory">
+  <div class="agent-speed-flow__grid">
+    <div class="agent-speed-flow__card">
+      <span>agent writes</span>
+      <strong>fast</strong>
+    </div>
+    <div class="agent-speed-flow__card">
+      <span>team reviews</span>
+      <strong>late</strong>
+    </div>
+    <div class="agent-speed-flow__card">
+      <span>intent</span>
+      <strong>disappears</strong>
+    </div>
+  </div>
+  <div class="agent-speed-flow__arrow" aria-hidden="true">↓</div>
+  <figcaption>Where should the memory live?</figcaption>
+</figure>
+
+The hook is simple: agents can now produce substantial code faster than most teams can align around it. This talk is about where the intent, constraints, decisions, and proof should live when chat is temporary and the repository is the system of record.
+
+## Start with the checkpoint you already trust
+
+> Ask where the human first becomes accountable, then move that checkpoint earlier.
 
 ```text
-chat thread ── think / explore / decide ──▶ repo-local context
-     ▲                                           │
-     ╰──────── next agent run starts here ◀──────╯
+Who uses coding agents?
+  ↓
+How much do they delegate?
+  ↓
+Where is the first real checkpoint?
+plan → trace → diff → PR review → incident review
 ```
 
-Coding agents are good enough that "can the model write code?" is no longer the useful question. The better one is: **what environment are we asking the agent to think inside?**
+Before prescribing a workflow, locate the room. A team that uses agents for autocomplete has a different problem from a team running three terminal agents against the same repo. A senior engineer who reads every plan has a different risk profile from one who sees only the final pull request.
 
-The model brings broad programming patterns. The tools give it hands. The repository should carry the local truth that makes its work fit this project: intent and constraints, current architecture boundaries, repeated workflows, decisions and rejected options, and proof that a task is actually done.
+Three questions make the rest of this talk practical:
 
-The skill is deciding what to promote.
+- Do you use coding agents, and how much work do you let them do?
+- What is your first checkpoint with the agent: prompt, plan, work trace, local diff, or PR?
+- How much of the output do you actually review: the plan, the commands run, the code changes, the tests, the final PR description?
 
-By the end you should have a sorting rule for what belongs in `AGENTS.md`, a skill or script, a work item, an architecture note, or an automated check.
+Durable context is not a documentation hobby. It is the way to put the checkpoint where it can still change the work.
+
+## The problem is fast form without shared intent
+
+> Generative AI makes form cheap; intent no longer arrives automatically.
+
+```text
+unclear intent + capable generator = convincing artifact
+                                     with unclear ownership
+```
+
+The failure mode is not only hallucinated code. It is code-shaped output that looks substantial before anyone has made the intent explicit.
+
+Noperator's essay [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) names the pathology precisely: "generative AI can produce substantial form with minimally applied intent," and "the pathology of generative AI is that it too easily allows substantial form without discernible intent." That mistake is harder to make when creating by hand because manual creation forces more intent into the artifact as you go.
+
+Coding agents compress that friction. They can create files, tests, docs, migrations, screenshots, and PRs from a vague instruction. That is useful, but it changes the review problem: reviewers must recover intent from the output unless the team put intent somewhere durable first.
 
 ## Code got cheap; alignment got expensive
 
-> Fast implementation makes hidden local truth a review bottleneck.
+> When implementation collapses to minutes, alignment moves onto the critical path.
 
 ```text
-cheap code → late alignment → coordination debt
-                 │
-                 ╰─ durable context makes decisions visible earlier
+old path:    plan ── discuss ── build ── review
+agent path:  prompt ───────────────▶ PR
+                         ▲
+            all missing alignment lands here
 ```
 
-Maggie Appleton's [Collaborative AI Engineering](https://www.youtube.com/watch?v=ClWD8OEYgp8) makes the shift clear: when implementation collapses from days to minutes, planning and alignment move to the critical path rather than disappearing. If a plan lives only inside one developer's agent thread, the pull request becomes the first shared checkpoint — too late for many decisions. Thorsten Ball's [agent-harness argument](https://www.youtube.com/watch?v=thMFsqe8kbQ) points the same way: as individual agents get more capable, the hard problem moves up to where agents run, how their work is preserved, and how humans coordinate many cheap workers.
+Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) makes the economic shift clear: writing code is getting fast and cheap, so the hard question becomes not "how do we build it?" but "should we build it?" She points out that the old implementation window created many alignment touchpoints. Agents collapse that window, so teams lose the informal conversations, draft PRs, issue comments, and course corrections that used to happen while the work was still forming.
 
-The model also does not carry your local truth. Simon Willison describes LLMs as [a lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/): they compress public knowledge, but the compression is lossy. Agents can search, read files, and run tests, but that does not make local truth automatic. The problem is not that the model knows nothing; it knows too many plausible things and not enough about which one is true here. For project-specific work it needs anchors: the exact command that runs the fast test, the one UI primitive to use, the module boundary that must not be crossed, the security constraint that is not obvious in code, the decision from last week that never made it into a README.
+The pull request then inherits too many jobs. It must explain the goal, recover the plan, expose hidden assumptions, prove the implementation, and coordinate reviewers who were not present while the agent worked. That is too late for many decisions.
 
-The risk is not simply "AI writes bad code." It is that work appears faster than humans can understand and review it. Addy Osmani calls the human posture [cognitive surrender](https://addyosmani.com/blog/cognitive-surrender/): the AI output quietly becomes your output, and the bill arrives as **comprehension debt** — code the team owns but cannot explain. Teams also accumulate **coordination debt**: plans nobody saw until the PR, duplicate work across parallel agents, and tests that pass but nobody understands. As Ronacher and Poncela Cubeiro's [The Friction is Your Judgment](https://www.youtube.com/watch?v=_Zcw_sVF6hU) puts it, generation now outpaces review while responsibility still sits with humans. Durable context is the control surface for keeping understanding attached to the work.
+Durable context moves some alignment back before generation: the plan, constraints, accepted tradeoffs, owner, proof target, and stop conditions live where another engineer or agent can inspect them before the diff becomes the only artifact.
 
-## First, stop treating context as a pile
+## Cognitive surrender turns speed into debt
 
-> More context only helps when it changes the next run.
+> If nobody can explain the generated code, the team owns comprehension debt.
 
 ```text
-pile of docs          control loop
-------------          ------------
-store everything  →   preserve what changed behavior
-make agents read it   delete what nobody uses
-hope it sticks        promote the repeatable fix
+fast generation
+  ↓
+large diff
+  ↓
+shallow review
+  ↓
+code the team owns but cannot explain
 ```
 
-The failure mode is not too little documentation; it is documentation with no job. Use a small loop instead of a giant instruction file.
+Addy Osmani's public post on [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) defines the posture as stopping construction of the answer: the AI output becomes "your" output, and you inherit its confidence without doing the underlying reasoning. His [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) article frames the bill: the gap between how much code exists and how much of it any human genuinely understands. Tests can be green while understanding is not.
 
-## Durable context is a control loop
+That is the practical meaning of cognitive surrender in agent work. The AI output quietly becomes "our" output; the team inherits confidence without doing the underlying reasoning. The risk is not that every generated line is wrong. The risk is that nobody knows which implicit decisions were made, why they were acceptable, and where the next change will break.
 
-> Map, procedure, state, and evidence become durable when you promote what worked.
+Durable context does not slow agents down for ceremony. It keeps understanding attached to the work: what we asked for, why it matters, what changed, what proof exists, what is still uncertain, and where a human made the call.
+
+## The model is not your project memory
+
+> The model knows public patterns; it does not know which pattern is true here.
 
 ```text
-╭──────────╮    ╭────────────╮    ╭────────╮    ╭──────────╮
-│   Map    │───▶│ Procedure  │───▶│ State  │───▶│ Evidence │
-╰──────────╯    ╰────────────╯    ╰────────╯    ╰──────────╯
-      ▲                                                    │
-      ╰──────── promote what helped the next run ◀─────────╯
+LLM memory:  broad, compressed, lossy public knowledge
+repo truth:  exact commands, boundaries, decisions, constraints
+agent work:  useful only when the second shapes the first
 ```
 
-- **Map:** where should the agent look?
-- **Procedure:** how do we repeat this workflow?
-- **State:** what happened on this task, and what is next?
-- **Evidence:** how do we know the work is done?
-- **Promotion:** what should survive into future runs?
+Simon Willison describes LLMs as [a lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/): they compress a huge amount of public knowledge, but the compression loses details. His practical advice is to develop intuition for where lossiness matters and, for specific technical work, provide a correct example instead of expecting the model to know exact facts.
 
-`AGENTS.md`, Agent Skills, `.agents/work/`, checklists, scripts, tests, and dashboards are only useful when they change future agent behavior or human review quality. If an artifact does not help the next run, delete it or move it out of the way.
+Most serious coding tasks are full of exact facts. The fast test command. The one UI primitive this repo uses. The migration rule. The security constraint. The product decision from last week. The module boundary that is obvious to the team and invisible to the model.
 
-## Map: make project truth easy to find
+If that truth lives only in a chat thread, it dies with the thread. If it lives in files, checks, and work items inside the repo, the next run can use it.
 
-> A good `AGENTS.md` is a map to project truth, not a giant manual.
+## Move review earlier than the PR
+
+> Review should start with intent, then trace, then diff, then proof.
+
+```text
+1. Plan       Does this solve the right problem?
+2. Trace      Did the agent inspect and change the right things?
+3. Diff       Is the implementation coherent and maintainable?
+4. Evidence   What proves it works, and what remains uncertain?
+```
+
+The PR diff is still necessary. It is no longer enough.
+
+Planning review catches wrong work before it is generated. Trace review catches suspicious behavior: skipped files, broad edits, repeated failed commands, ignored test failures, or a tool run that changed more than expected. Diff review checks the implementation. Evidence review checks whether the proof matches the risk.
+
+The checkpoint does not have to be heavy. For small tasks it might be one paragraph and one test command. For risky tasks it might be a written plan, a reviewer signoff, a browser trace, a migration dry run, and an explicit rollback note. The important shift is that the human sees the intent before the agent has produced a large artifact that is socially hard to throw away.
+
+## The repo is the disk; chat is RAM
+
+> Chats are working memory; repo-local files are durable memory.
+
+```text
+chat thread ── explore / decide / implement ──▶ repo-local context
+     ▲                                                │
+     ╰──────────── next person or agent starts here ◀─╯
+```
+
+This is the core idea behind `dot-agents`: put the operating context for agentic work in versioned, repo-local files. Not everything belongs there. The chat can stay messy. The repo should preserve the parts that change future behavior.
+
+Think of chat as RAM: fast, useful, temporary, and full of intermediate noise. Think of files as disk: slower to write, easier to share, easier to review, and available to the next engineer, the next agent, the next machine, and the next session.
+
+The judgment is deciding what to flush to disk.
+
+## AGENTS.md is the map
+
+> `AGENTS.md` tells the agent where project truth starts, not everything it could ever need.
 
 ```text
 AGENTS.md
-├─ commands that prove the project still works
-├─ boundaries the agent should not cross
-├─ gotchas that cost a prior run time
-╰─ links to deeper docs, scripts, checks, and work items
+├─ project shape and ownership boundaries
+├─ commands that prove common work
+├─ rules that agents must not rediscover
+╰─ links to skills, work items, checks, and deeper docs
 ```
 
-[`AGENTS.md`](https://agents.md/) is a predictable place for project guidance: setup commands, checks, conventions, security notes, and gotchas. But the best `AGENTS.md` is a map, not a manual. OpenAI's [Harness Engineering](https://openai.com/index/harness-engineering/) write-up describes the failure mode of one giant instructions file: context is scarce, too much guidance becomes non-guidance, and stale instructions are hard to verify. Their pattern is to treat `AGENTS.md` as a table of contents and keep deeper knowledge in structured repo-local docs.
+[`AGENTS.md`](https://agents.md/) gives coding agents a predictable place to start. Use it for the instructions that should apply before any task-specific context exists: the stack, common commands, coding conventions, dangerous paths, security rules, and where deeper guidance lives.
 
-Good map content is the project overview and ownership boundaries, the commands agents should run first, the paths that matter for common work, "watch out" rules, security constraints, and links to deeper docs, work items, scripts, or checks. When an agent repeats a mistake, either update the map near the relevant code, add a deterministic check, or decide the rule was not worth preserving. Root guidance stays short; directory-specific rules belong close to the files they govern.
+A useful `AGENTS.md` is short enough to be read and specific enough to change behavior. For this repo, examples include: run `npm run check` and `npm run build` after code or content changes; keep content frontmatter compatible with `src/content.config.ts`; store YouTube transcripts under `src/content/transcripts/**`, not summaries; use `type` aliases rather than `interface`.
 
-## Procedure: package workflows, not preferences
+Do not turn the map into a junk drawer. If a rule applies only under `src/content/posts/`, put it near that work or in a skill. If a mistake can be caught deterministically, add a check. If a workflow has steps and evidence, package it as a procedure.
 
-> Package workflows only when they have repeatable steps and proof.
+## Agent Skills are procedures
+
+> Package workflows when the trigger, steps, evidence, and human decision repeat.
 
 ```text
-Trigger
-  ↓
-Steps
-  ↓
-Evidence
-  ↓
-Human decision
+skill = trigger + steps + tools/assets + proof target
+
+"write article" → article-writing skill
+"research API"  → research skill
+"run server"    → tmux skill
 ```
 
-Some context is not a rule; it is a workflow. [Agent Skills](https://agentskills.io/home) package repeatable procedures as folders with a `SKILL.md` and optional scripts, references, and assets. OpenAI's [Codex Skills docs](https://developers.openai.com/codex/skills) describe the same progressive-disclosure idea: the agent sees skill metadata first, then loads full instructions when the task calls for it.
+Some context is not a rule; it is a procedure. [Agent Skills](https://agentskills.io/home) package repeatable workflows as folders with instructions and optional scripts, references, or assets. OpenAI's [Codex Skills docs](https://developers.openai.com/codex/skills) describe the same progressive-disclosure shape: the agent sees lightweight metadata first and loads the full instructions only when the task calls for them.
 
-Use a skill, script, or checklist when work has repeatable inputs, steps, and proof — a release checklist, a migration routine, or a content publication workflow. Do not package every preference: a style rule belongs in the map or the linter. Also resist overbuilding the harness. Mario Zechner's [Pi workflow](https://www.youtube.com/watch?v=DPgJjRdQWrg) and Ball's harness critique point to a simple default: if shell commands, files, Git, scripts, and a short procedure are enough, start there. Good procedures make the sequence explicit: trigger, steps, evidence, and the human decision.
+Use a skill when a workflow has a recognizable trigger and a repeatable path to proof: writing or refreshing an article, collecting research, preparing a release, running a browser check, capturing a transcript, or managing a long-running server. The skill should answer four questions:
 
-## State: keep work alive across threads
+- When should this load?
+- What steps should the agent follow?
+- What files, scripts, or references does it need?
+- What evidence proves the workflow is done?
 
-> Long work needs restartable task state, not a longer chat.
+Do not package preferences as skills. A style preference belongs in `AGENTS.md`, a formatter, or a linter. A skill earns its place when it prevents a future run from rediscovering the workflow.
+
+## dot-agents keeps task state alive
+
+> Long work needs restartable state, not a heroic chat transcript.
 
 ```text
-wide research → critique → human judgment → plan → focused implementation → evidence
+.agents/work/<category>/<task>/
+├─ index.md       current status and next action
+├─ research.md    trusted findings and source notes
+├─ plan.md        implementation-ready plan
+├─ progress.md    checks, blockers, decisions, handoffs
+╰─ decisions/     durable calls that should not be reopened
 ```
 
-Long-running agent work has two failure modes: **thread death**, where useful context disappears when the chat ends, and **context pollution**, where a long thread drags stale searches and irrelevant files into the next decision. The answer is durable state plus small focused threads.
+`dot-agents` is a lightweight file convention for long-running agent work. It separates the noisy exploration from the state that needs to survive: what we are doing, why, what we trust, what we decided, what remains, and how the next thread should continue.
 
-In [Build Crew episode 7](https://www.youtube.com/watch?v=fVx5M2GVjEQ), the useful pattern is a funnel: wide research, critique, human judgment, a focused plan, implementation, and evidence.
+The workflow is simple:
 
-Research threads can go wide; implementation threads should be narrow; handoffs preserve the useful context while resetting the noise. [`dot-agents`](https://dot-agents.dev/) is one lightweight implementation: a `.agents/` workspace with work items, research notes, plans, progress logs, and handoff prompts. [Small Threads, Durable State](/posts/small-threads-durable-state) is the day-to-day procedure. A fresh thread should be able to answer: what are we doing, why, what sources are trusted, what is next, and what should not be reopened.
+```text
+Context → Plan → Handoff Prompt → Implement → Record Progress → Promote
+```
 
-## Evidence: make the agent prove the work
+Research threads can go wide. Implementation threads should be narrow. The work item connects them without dragging every stale search, false start, or abandoned option into the next run. [Small Threads, Durable State](/posts/small-threads-durable-state) is the tactical version of this loop.
+
+## Evidence keeps judgment attached to the diff
 
 > Proof belongs where the next reviewer can see it.
 
 ```text
-╭────────────────────────────────────────────╮
-│ Reviewer can explain the diff and tradeoff │
-├────────────────────────────────────────────┤
-│ Logs, traces, screenshots, browser flows   │
-├────────────────────────────────────────────┤
-│ API checks, curl, smoke tests, conformance │
-├────────────────────────────────────────────┤
-│ Unit tests, typecheck, lint, build         │
-╰────────────────────────────────────────────╯
+low risk    format, lint, focused test
+medium      typecheck, integration test, screenshot, curl
+high        trace, migration dry run, rollback, human signoff
 ```
 
-Willison's coding-agent practice is proof-oriented: start with tests, make the agent run them, then make it exercise the real system when unit tests are not enough. Evidence is not one command. It is a proof stack matched to the risk of the change.
+Evidence is part of durable context because "done" is otherwise too easy to say. An agent can produce a confident final answer after a failed test, a skipped check, or an unreviewed assumption. The reviewer needs proof that matches the risk.
 
-UI work may need a screenshot or Playwright trace; API work, `curl` against a running server; standards work, a conformance suite; risky execution, sandboxing, fake data, and proof that secrets or production data were not exposed. Zechner's Pi demo makes the same point: deterministic checks beat instructions alone, because models may ignore style rules under pressure while formatters, linters, typecheckers, and pre-commit hooks reject bad output automatically. For this repo, the minimum evidence after content changes is:
+For a content change in this repo, the normal proof is:
 
 ```bash
 npm run check
 npm run build
 ```
 
-The full risk-scaled ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it). Evidence does not replace judgment; it gives judgment something concrete to inspect.
+For UI work, evidence may include a screenshot or browser trace. For API work, it may include `curl` output or an integration test. For migrations, it may include a dry run and rollback note. The full ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it).
 
-## Route judgment to humans
+Evidence does not replace judgment. It gives judgment something concrete to inspect.
 
-> Preserve the friction that routes consequences to humans.
+## The control loop decides what survives
+
+> Preserve what changed future behavior; delete or ignore the rest.
 
 ```text
-Green  → format, lint, small local fixes, generated tests
-Yellow → behavior changes, API shape, dependencies, public copy
-Red    → permissions, migrations, billing, security, reliability, architecture
+╭──────────╮    ╭────────────╮    ╭────────╮    ╭──────────╮
+│   Map    │───▶│ Procedure  │───▶│ State  │───▶│ Evidence │
+╰──────────╯    ╰────────────╯    ╰────────╯    ╰──────────╯
+      ▲                                                    │
+      ╰──────────── promote what helped the next run ◀─────╯
 ```
 
-"Remove friction" is the wrong default for agent work. Bad friction asks for approval on every tiny edit. Good friction routes irreversible or high-risk decisions to humans and lets agents handle mechanical loops.
+The point is not to collect more context. The point is to run a promotion loop.
 
-Greg Brockman's [agentic software development note](https://x.com/gdb/status/2019566641491963946) puts it bluntly: keep a human accountable for merged code, at the same review bar as human-written work. The goal is not timid agents; it is visible risk. Agents are good at making progress and bad at feeling the discomfort that tells a senior engineer "this fallback is too convenient." Durable context should encode where the human brain must reactivate.
+- **Map:** Where should the agent start, and what must it not miss?
+- **Procedure:** What repeatable workflow should it follow?
+- **State:** What happened on this task, and what is next?
+- **Evidence:** How do we know the work is done?
+- **Promotion:** What artifact should survive because it made the next run better?
 
-Code structure is part of that context, because agents copy local patterns aggressively. Ronacher and Poncela Cubeiro describe the codebase itself as infrastructure for the agent: clear module boundaries, visible data flow, simple cores with explicit public APIs, examples worth copying, fast focused tests, and fewer hidden magical conventions. If the first integration is sloppy, the next run copies the slop; if it is clear and tested, the next run has a better path to follow.
+When an agent misses the same command twice, update the map. When a sequence repeats, make a skill or script. When task context spans sessions, create a work item. When a mistake is mechanically detectable, add a check. When ambiguity keeps returning, write the architecture note or example the agent should copy.
 
-As more agents run in parallel, write the contract before the work starts: the job, boundary, trusted inputs, proof target, summary format, and stop conditions. Parallel agents do not remove coordination work; they make weak coordination fail faster.
+## Durable context travels across people and environments
 
-## Start with one task, then promote what helped
+> Repo-local context survives the agent, the laptop, the teammate, and the thread.
+
+```text
+human laptop ─┐
+cloud VM      ├──▶ repo-local context ──▶ same commands, rules, state, proof
+CI runner     │
+next teammate ┘
+```
+
+This is the benefit that makes the work worth doing. A chat transcript helps the person in that chat. Repo-local context helps the next person, the next agent, and the next environment.
+
+Cross-session durability means a fresh thread can start from the current plan instead of asking the user to reconstruct it. Cross-engineer durability means a teammate can inspect the same intent, constraints, and proof without being in the original chat. Cross-environment durability means the cloud agent, local terminal, CI runner, and review process all point at the same commands and conventions.
+
+That portability matters because agent stacks will keep changing. The durable artifact should not be a vendor-specific memory blob if a simple file, script, test, or work item can carry the truth.
+
+## The before and after is mundane in the best way
+
+> Durable context makes agent work less magical and more reviewable.
+
+| Before durable context | After durable context |
+| --- | --- |
+| New thread asks, "What are we doing?" | New thread opens the work item and continues. |
+| Agent rediscovers commands by trial and error. | `AGENTS.md` and skills point to the known checks. |
+| Review starts with a surprising diff. | Review starts with intent, constraints, and proof target. |
+| Useful decisions are buried in chat. | Decisions are linked from the task state. |
+| Every agent gets a slightly different setup. | Repo-local files make the setup portable. |
+
+In my own agent work, the improvement is rarely dramatic in the moment. It is smaller and more valuable: fewer repeated questions, fewer re-discovered commands, fewer giant diffs with missing intent, and cleaner handoffs when a thread gets long.
+
+The agent does not become wise because a folder exists. It becomes easier to steer because the steering surface is visible. The human can review the plan, the trace, the diff, and the evidence instead of trying to infer all of that from the final code.
+
+## Start with one repeated pain
 
 > Promote the smallest artifact that makes the next run better.
 
 ```text
 missed command       → AGENTS.md
 repeated workflow    → skill / script / checklist
-long-running task    → work item / plan / progress log
+lost task state      → .agents/work item
 repeated mistake     → lint / test / pre-commit check
-repeated ambiguity   → architecture note / example / fixture
+repeated ambiguity   → architecture note / example
 high-risk decision   → human review rule
 ```
 
-Do not begin by designing the perfect agent operating model. Start with one repeated pain: the agent misses the build command, loses task state between threads, opens a giant diff, or says "done" without proof. Then promote the smallest useful fix.
+Do not start by designing the perfect agent operating model. Start with one repeated pain.
 
-Someone has to own the loop: notice where agents struggle, preserve what helps, delete stale guidance, and keep the next run better than the last. This is documentation with a job — invoked by agents, versioned with the repo, and updated when it improves future work. As [Strangest Loop](https://strangestloop.io/essays/things-that-arent-doing-the-thing) puts it: "The only thing that is doing the thing is doing the thing."
+If agents keep missing the same build command, add it to `AGENTS.md`. If publishing a post requires the same sequence every time, make or load a skill. If work spans multiple sessions, create a work item. If review keeps finding the same class of bug, write a deterministic check. If a decision keeps getting reopened, write down the decision and link it from the task.
+
+Someone has to own the loop: notice what helped, promote it, delete stale guidance, and keep the next run better than the last.
 
 **Start with one real task. Write down what made the agent better. Repeat.**
+
+## Sources used
+
+- Noperator, [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) — source for the "substantial form without discernible intent" framing.
+- Maggie Appleton, [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) — source for the alignment bottleneck and collaborative AI engineering framing.
+- Addy Osmani, [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) — source for the surrender/debt framing and the gap between generated code and human understanding.
+- Simon Willison, [Lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/) — source for the lossy-compression mental model and the advice to provide correct examples for exact technical work.
+- [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
+- [`dot-agents`](https://dot-agents.dev/) and [Small Threads, Durable State](/posts/small-threads-durable-state) — source material for file-backed task state and handoffs.
+- [Make the Agent Prove It](/posts/make-the-agent-prove-it) — internal companion piece for the evidence ladder.
