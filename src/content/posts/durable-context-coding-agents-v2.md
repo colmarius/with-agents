@@ -3,7 +3,7 @@ title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'A richer slide-first alternate deck for durable context, repo memory, review checkpoints, and dot-agents workflows.'
 pubDate: 2026-07-02
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
-draft: true
+draft: false
 unlisted: true
 order: 3
 ---
