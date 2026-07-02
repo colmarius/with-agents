@@ -63,6 +63,16 @@ const slidesDescription = `${post.data.description} Slide view.`;
         min-height: auto;
       }
 
+      :global(.slide.active[data-layout='image']) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      :global(body.notes-visible .slide.active[data-layout='image']) {
+        display: block;
+      }
+
       :global(.slide-main > blockquote:first-of-type) {
         border-left-color: #4f46e5;
         color: #0f172a;
@@ -145,6 +155,72 @@ const slidesDescription = `${post.data.description} Slide view.`;
 
       :global(.slide[data-layout='split'] .slide-main > :is(pre, table, figure, svg, .mermaid, p:has(img))) {
         grid-column: 2;
+      }
+
+      :global(.slide[data-layout='image']) {
+        aspect-ratio: 16 / 9;
+        width: min(calc(100vw - 4rem), calc((100vh - 7rem) * 16 / 9));
+        max-width: 90rem;
+        overflow: hidden;
+        border: 0;
+        background: transparent;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      :global(.slide[data-layout='image'] .slide-main) {
+        width: 100%;
+        height: 100%;
+      }
+
+      :global(.slide[data-layout='image'] .slide-main > h2) {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      :global(.slide[data-layout='image'] .slide-main > p:has(> img:only-child)) {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+
+      :global(.slide[data-layout='image'] .slide-main img) {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        object-fit: contain;
+      }
+
+      :global(body.notes-visible .slide[data-layout='image']) {
+        aspect-ratio: auto;
+        overflow: visible;
+        border: 1px solid #e2e8f0;
+        background: #fff;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgb(15 23 42 / 0.08);
+      }
+
+      :global(body.notes-visible .slide[data-layout='image'] .slide-main),
+      :global(body.notes-visible .slide[data-layout='image'] .slide-main > p:has(> img:only-child)) {
+        height: auto;
+      }
+
+      :global(body.notes-visible .slide[data-layout='image'] .slide-main img) {
+        height: auto;
       }
 
       :global(.slide-notes) {
@@ -328,6 +404,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
       const validSlideLayouts = new Set([
         'message',
         'visual',
+        'image',
         'text',
         'split',
         'cover',
@@ -598,16 +675,30 @@ const slidesDescription = `${post.data.description} Slide view.`;
         const { config, configIndexes } = getSlideConfig(nodes, headingIndex);
         const quoteIndex = firstMeaningfulIndex(nodes, headingIndex + 1);
         const notesIndex = findNotesDelimiterIndex(nodes, headingIndex + 1);
+        const firstBodyNode = nodes[quoteIndex];
+        const startsWithBlockquote = isElement(firstBodyNode, 'blockquote');
+        const supportsVisualOnly = ['visual', 'image'].includes(
+          config.layout ?? '',
+        );
+        const startsWithVisual = firstBodyNode
+          ? isVisualBlock(firstBodyNode)
+          : false;
 
         if (
           headingIndex === -1 ||
-          (notesIndex === -1 && !isElement(nodes[quoteIndex], 'blockquote'))
+          (notesIndex === -1 &&
+            !startsWithBlockquote &&
+            !(supportsVisualOnly && startsWithVisual))
         ) {
           return buildLegacySlide(fragment, index, headingText);
         }
 
-        const mainIndexes = new Set([headingIndex, quoteIndex]);
+        const mainIndexes = new Set([headingIndex]);
         let scanIndex = quoteIndex + 1;
+
+        if (startsWithBlockquote || (supportsVisualOnly && startsWithVisual)) {
+          mainIndexes.add(quoteIndex);
+        }
 
         if (notesIndex !== -1) {
           mainIndexes.clear();
