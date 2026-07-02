@@ -8,6 +8,18 @@ unlisted: true
 order: 2
 ---
 
+<!--
+Maintenance note for agents:
+durable-context-coding-agents-v2.md and durable-context-coding-agents-v3.md are parallel draft decks for the same talk.
+
+When changing v2, also review v3 in the same diff and either:
+- mirror factual, source, terminology, and section-order changes where applicable, or
+- leave v3 intentionally different because it is the richer slide-first alternate.
+
+Do not publish, rename, delete, or replace the canonical public post durable-context-coding-agents.md without explicit human approval.
+durable-context-coding-agents-v4.md is an image-only experiment and is not part of the v2/v3 sync contract.
+-->
+
 ## Your Repo Is the Memory
 <!-- slide:
 layout: cover
