@@ -34,7 +34,7 @@ Notes:
 
 Durable context for AI coding agents: keeping intent, decisions, and proof attached to fast code.
 
-At Norm, we build a data OS for real estate portfolios: a shared foundation for building data, investment planning, sustainability reporting, and CAPEX work. My work has mostly been close to the messy middle where product, engineering, hiring, delivery, and operations overlap. That is also where coding agents are most useful — and where missing context becomes expensive fastest.
+At Norm, we build a data OS for real estate portfolios: a shared foundation for building data, investment planning, sustainability reporting, and CAPEX work. My work has mostly been close to the messy middle where product, engineering, and operations overlap. That is also where coding agents are most useful — and where missing context becomes expensive fastest.
 
 ## Coding agents made implementation cheap
 <!-- slide:

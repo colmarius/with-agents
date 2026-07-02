@@ -35,34 +35,18 @@ Notes:
 
 Durable context for AI coding agents: keeping intent, decisions, and proof attached to fast code.
 
-At Norm, we build a data OS for real estate portfolios: a shared foundation for building data, investment planning, sustainability reporting, and CAPEX work. My work has mostly been close to the messy middle where product, engineering, hiring, delivery, and operations overlap. That is also where coding agents are most useful — and where missing context becomes expensive fastest.
+At Norm, we build a data OS for real estate portfolios: a shared foundation for building data, investment planning, sustainability reporting, and CAPEX work. My work has mostly been close to the messy middle where product, engineering, and operations overlap. That is also where coding agents are most useful — and where missing context becomes expensive fastest.
 
 ## Coding agents made implementation cheap
 <!-- slide:
-layout: visual
-class: alignment-flow
+layout: cover
 -->
 
 > They did not make alignment free.
 
-<figure class="agent-speed-flow" aria-label="Fast agent implementation pushes alignment pressure into project memory">
-  <div class="agent-speed-flow__grid">
-    <div class="agent-speed-flow__card">
-      <span>agent writes</span>
-      <strong>fast</strong>
-    </div>
-    <div class="agent-speed-flow__card">
-      <span>team reviews</span>
-      <strong>late</strong>
-    </div>
-    <div class="agent-speed-flow__card">
-      <span>intent</span>
-      <strong>disappears</strong>
-    </div>
-  </div>
-  <div class="agent-speed-flow__arrow" aria-hidden="true">↓</div>
-  <figcaption>Where should the memory live?</figcaption>
-</figure>
+Where should the memory live?
+
+Notes:
 
 The hook is simple: agents can now produce substantial code faster than most teams can align around it. This talk is about where the intent, constraints, decisions, and proof should live when chat is temporary and the repository is the system of record.
 
