@@ -18,7 +18,7 @@ class: title
 >
 > <small>Marius Colacioiu · Founder & Head of Engineering @ Norm</small>
 
-<!-- notes -->
+Notes:
 
 Durable context for AI coding agents: keeping intent, decisions, and proof attached to fast code.
 
