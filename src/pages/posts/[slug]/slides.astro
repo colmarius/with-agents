@@ -258,6 +258,193 @@ const slidesDescription = `${post.data.description} Slide view.`;
         text-align: center;
       }
 
+      :global(.slide .talk-figure) {
+        max-width: 48rem;
+        margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+      }
+
+      :global(.slide .talk-path) {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+      }
+
+      :global(.slide .talk-node) {
+        display: inline-flex;
+        min-height: 3.25rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cbd5e1;
+        border-radius: 999px;
+        background: #fff;
+        padding: 0.65rem 1rem;
+        color: #334155;
+        font-size: clamp(0.85rem, 1.6vw, 1rem);
+        font-weight: 700;
+        line-height: 1.15;
+        text-align: center;
+      }
+
+      :global(.slide .talk-node--accent) {
+        border-color: var(--color-primary-300);
+        background: var(--color-primary-50);
+        color: var(--color-primary-800);
+      }
+
+      :global(.slide .talk-arrow) {
+        color: var(--color-primary-600);
+        font-weight: 800;
+      }
+
+      :global(.slide .talk-grid) {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+        margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+      }
+
+      :global(.slide .talk-grid--3) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      :global(.slide .talk-card) {
+        border: 1px solid #e2e8f0;
+        border-radius: 1rem;
+        background: #f8fafc;
+        padding: 1rem;
+      }
+
+      :global(.slide .talk-card--accent) {
+        border-color: var(--color-primary-200);
+        background: linear-gradient(180deg, var(--color-primary-50), #fff);
+      }
+
+      :global(.slide .talk-card--dark) {
+        border-color: rgb(148 163 184 / 0.2);
+        background: #111827;
+        color: #f8fafc;
+      }
+
+      :global(.slide .talk-card span) {
+        display: block;
+        color: #64748b;
+        font-size: 0.78rem;
+        font-weight: 750;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      :global(.slide .talk-card--dark span) {
+        color: #94a3b8;
+      }
+
+      :global(.slide .talk-card strong) {
+        display: block;
+        margin-top: 0.45rem;
+        color: #0f172a;
+        font-size: clamp(1.1rem, 2vw, 1.45rem);
+        line-height: 1.1;
+      }
+
+      :global(.slide .talk-card--dark strong) {
+        color: #f8fafc;
+      }
+
+      :global(.slide .talk-card p) {
+        margin: 0.55rem 0 0;
+        color: #475569;
+        font-size: clamp(0.9rem, 1.6vw, 1rem);
+        line-height: 1.45;
+      }
+
+      :global(.slide .talk-card--dark p) {
+        color: #cbd5e1;
+      }
+
+      :global(.slide .talk-stack) {
+        display: grid;
+        gap: 0.65rem;
+        margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+      }
+
+      :global(.slide .talk-stack__item) {
+        display: grid;
+        grid-template-columns: minmax(7rem, 0.4fr) minmax(0, 1fr);
+        gap: 1rem;
+        align-items: center;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.9rem;
+        background: #fff;
+        padding: 0.85rem 1rem;
+      }
+
+      :global(.slide .talk-stack__item strong) {
+        color: var(--color-primary-700);
+        font-size: 1rem;
+        line-height: 1.1;
+      }
+
+      :global(.slide .talk-stack__item span) {
+        color: #334155;
+        font-size: clamp(0.95rem, 1.8vw, 1.12rem);
+        line-height: 1.25;
+      }
+
+      :global(.slide .talk-loop) {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+      }
+
+      :global(.slide .talk-loop__item) {
+        border: 1px solid var(--color-primary-200);
+        border-radius: 1rem;
+        background: var(--color-primary-50);
+        padding: 1rem 0.75rem;
+        color: var(--color-primary-900);
+        font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+        font-weight: 750;
+        line-height: 1.15;
+        text-align: center;
+      }
+
+      :global(.slide .talk-note) {
+        margin: 1.25rem auto 0;
+        color: #475569;
+        font-size: clamp(1rem, 1.8vw, 1.2rem);
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      :global(.slide .talk-callout) {
+        margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+        border-left: 4px solid var(--color-primary-500);
+        border-radius: 0.9rem;
+        background: var(--color-primary-50);
+        padding: 1rem 1.25rem;
+        color: #1e293b;
+        font-size: clamp(1.05rem, 1.9vw, 1.25rem);
+        line-height: 1.35;
+      }
+
+      @media (max-width: 48rem) {
+        :global(.slide .talk-grid),
+        :global(.slide .talk-grid--3),
+        :global(.slide .talk-loop) {
+          grid-template-columns: 1fr;
+        }
+
+        :global(.slide .talk-stack__item) {
+          grid-template-columns: 1fr;
+          gap: 0.25rem;
+        }
+      }
+
       :global(.slide[data-layout='image']) {
         aspect-ratio: 16 / 9;
         width: min(calc(100vw - 4rem), calc((100vh - 7rem) * 16 / 9));
