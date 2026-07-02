@@ -157,6 +157,107 @@ const slidesDescription = `${post.data.description} Slide view.`;
         grid-column: 2;
       }
 
+      :global(.slide.active.slide-alignment-flow) {
+        display: flex;
+        min-height: min(72vh, 46rem);
+        align-items: center;
+        justify-content: center;
+      }
+
+      :global(body.notes-visible .slide.active.slide-alignment-flow) {
+        display: block;
+        min-height: auto;
+      }
+
+      :global(.slide.slide-alignment-flow .slide-main) {
+        width: 100%;
+      }
+
+      :global(.slide.slide-alignment-flow .slide-main > h2) {
+        max-width: 18ch;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+        font-size: clamp(2.35rem, 5vw, 4.25rem);
+        line-height: 1.05;
+      }
+
+      :global(.slide.slide-alignment-flow .slide-main > blockquote:first-of-type) {
+        max-width: 34rem;
+        margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+        border-left: 0;
+        padding-left: 0;
+        text-align: center;
+        font-size: clamp(1.3rem, 2.5vw, 2.1rem);
+      }
+
+      :global(.slide.slide-alignment-flow .slide-main > blockquote:first-of-type p) {
+        margin: 0;
+      }
+
+      :global(.slide .agent-speed-flow) {
+        max-width: 46rem;
+        margin: clamp(2rem, 4vw, 3.25rem) auto 0;
+      }
+
+      :global(.slide .agent-speed-flow__grid) {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.75rem;
+        border-radius: 1.5rem;
+        background: #111827;
+        padding: 0.875rem;
+        box-shadow: 0 1rem 2.5rem rgb(15 23 42 / 0.18);
+      }
+
+      :global(.slide .agent-speed-flow__card) {
+        display: flex;
+        min-height: 7.25rem;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid rgb(148 163 184 / 0.25);
+        border-radius: 1rem;
+        background: rgb(15 23 42 / 0.82);
+        padding: 1rem;
+        text-align: center;
+      }
+
+      :global(.slide .agent-speed-flow__card span) {
+        color: #94a3b8;
+        font-size: clamp(0.72rem, 1.2vw, 0.85rem);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        text-transform: uppercase;
+      }
+
+      :global(.slide .agent-speed-flow__card strong) {
+        display: block;
+        margin-top: 0.4rem;
+        color: #f8fafc;
+        font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+        font-weight: 750;
+        line-height: 1.05;
+      }
+
+      :global(.slide .agent-speed-flow__arrow) {
+        margin: 0.8rem 0 0.45rem;
+        color: #4f46e5;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1;
+        text-align: center;
+      }
+
+      :global(.slide .agent-speed-flow figcaption) {
+        margin: 0;
+        color: #0f172a;
+        font-size: clamp(1.35rem, 2.8vw, 2.2rem);
+        font-weight: 750;
+        line-height: 1.1;
+        text-align: center;
+      }
+
       :global(.slide[data-layout='image']) {
         aspect-ratio: 16 / 9;
         width: min(calc(100vw - 4rem), calc((100vh - 7rem) * 16 / 9));
