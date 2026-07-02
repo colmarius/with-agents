@@ -11,26 +11,12 @@ order: 2
 ## Your Repo Is the Memory
 
 > Chat is RAM. The repo is disk.
+>
+> <small>Marius Colacioiu · Founder & Head of Engineering @ Norm</small>
 
 Durable context for AI coding agents: keeping intent, decisions, and proof attached to fast code.
 
-## About Marius
-
-> Marius Colacioiu is a Zürich-based engineering leader building startup products and teams.
-
-```text
-╭────────────────────────────────────────────────────╮
-│ Today                                              │
-│ Founder & Head of Engineering at Norm              │
-│ Building a data OS for real estate portfolios      │
-├────────────────────────────────────────────────────┤
-│ Before                                             │
-│ 14+ years in startup product and engineering teams │
-│ Ledgy · BuddyBroker/XING · Gild · Sportboom · On   │
-╰────────────────────────────────────────────────────╯
-```
-
-Norm consolidates building data so real estate teams can plan investments, sustainability reporting, and CAPEX work from a reliable foundation. My work has mostly been close to the messy middle where product, engineering, hiring, delivery, and operations overlap. That is also where coding agents are most useful — and where missing context becomes expensive fastest.
+At Norm, we build a data OS for real estate portfolios: a shared foundation for building data, investment planning, sustainability reporting, and CAPEX work. My work has mostly been close to the messy middle where product, engineering, hiring, delivery, and operations overlap. That is also where coding agents are most useful — and where missing context becomes expensive fastest.
 
 ## Coding agents made implementation cheap
 
