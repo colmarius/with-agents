@@ -1,6 +1,6 @@
 ---
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
-description: 'A slide-first field guide to AGENTS.md, Agent Skills, dot-agents work items, and review checkpoints for keeping coding agents aligned.'
+description: 'An alternate title-slide draft of the durable-context coding-agents presentation.'
 pubDate: 2026-07-02
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: true
@@ -10,9 +10,16 @@ order: 2
 
 ## Your Repo Is the Memory
 
-> Chat is RAM. The repo is disk.
+> Durable context for AI coding agents.
 
-Durable context for AI coding agents: keeping intent, decisions, and proof attached to fast code.
+```text
+╭──────────────╮
+│ chat = RAM   │
+│ repo = disk  │
+╰──────────────╯
+```
+
+Keeping intent, decisions, and proof attached to fast code.
 
 ## About Marius
 
