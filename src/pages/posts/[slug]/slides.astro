@@ -493,6 +493,39 @@ const slidesDescription = `${post.data.description} Slide view.`;
         object-fit: contain;
       }
 
+      :global(body.image-only-slide-active:not(.notes-visible)) {
+        background: #020617;
+      }
+
+      :global(body.image-only-slide-active:not(.notes-visible) .slide-topbar) {
+        display: none;
+      }
+
+      :global(body.image-only-slide-active:not(.notes-visible) #slides-container) {
+        top: 0;
+        overflow: hidden;
+        background: #020617;
+        padding: 0;
+      }
+
+      :global(body.image-only-slide-active:not(.notes-visible) .slide-controls) {
+        opacity: 0;
+        transition: opacity 150ms ease;
+      }
+
+      :global(body.image-only-slide-active:not(.notes-visible) .slide-controls:hover),
+      :global(body.image-only-slide-active:not(.notes-visible) .slide-controls:focus-within) {
+        opacity: 1;
+      }
+
+      :global(body.image-only-slide-active:not(.notes-visible) .slide.active[data-layout='image'].slide-image-only) {
+        aspect-ratio: auto;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        max-width: none;
+      }
+
       :global(body.notes-visible .slide[data-layout='image']) {
         aspect-ratio: auto;
         overflow: visible;
@@ -1230,6 +1263,11 @@ const slidesDescription = `${post.data.description} Slide view.`;
         replaceHashForCurrentSlide();
 
         const currentSlide = slides[currentIndex];
+        document.body.classList.toggle(
+          'image-only-slide-active',
+          currentSlide?.matches("[data-layout='image'].slide-image-only") ?? false,
+        );
+
         if (currentSlide && !currentSlide.dataset.mermaidRendered) {
           await renderMermaidInline(currentSlide);
           currentSlide.dataset.mermaidRendered = 'true';
