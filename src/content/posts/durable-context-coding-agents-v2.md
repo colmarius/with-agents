@@ -324,7 +324,7 @@ layout: text
 > Package workflows when the trigger, steps, evidence, and human decision repeat.
 
 <figure class="talk-figure" aria-label="Agent skill components">
-  <div class="talk-callout"><strong>skill = trigger + steps + tools/assets + proof target</strong></div>
+  <div class="talk-callout"><strong>skill = trigger + steps + scripts/assets + proof target</strong></div>
   <div class="talk-grid talk-grid--3">
     <div class="talk-card"><span>trigger</span><strong>recognizable task</strong></div>
     <div class="talk-card"><span>procedure</span><strong>repeatable path</strong></div>

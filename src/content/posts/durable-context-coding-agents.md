@@ -197,7 +197,7 @@ Do not turn the map into a junk drawer. If a rule applies only under `src/conten
 > Package workflows when the trigger, steps, evidence, and human decision repeat.
 
 ```text
-skill = trigger + steps + tools/assets + proof target
+skill = trigger + steps + scripts/assets + proof target
 
 "write article" → article-writing skill
 "research API"  → research skill
