@@ -30,7 +30,7 @@ class: title
 >
 > <small>Marius Colacioiu · Founder & Head of Engineering @ Norm</small>
 
-Notes:
+<!-- notes -->
 
 Durable context for AI coding agents: keeping intent, decisions, and proof attached to fast code.
 
@@ -106,7 +106,7 @@ layout: text
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 Before prescribing a workflow, locate the real checkpoint. A team using agents as autocomplete has a different problem from a team running several terminal agents against the same repo. A senior engineer who reviews every plan has a different risk profile from one who sees only the final pull request.
 
@@ -139,7 +139,7 @@ layout: visual
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 The failure mode is not only hallucinated code. It is code-shaped output that looks substantial before anyone has made the intent explicit.
 
@@ -169,7 +169,7 @@ layout: visual
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) makes the economic shift clear: writing code is getting fast and cheap, so the hard question becomes not "how do we build it?" but "should we build it?" Agents collapse the old implementation window, taking many informal alignment moments with it: conversations, draft PRs, issue comments, and course corrections while the work is still cheap to redirect.
 
@@ -196,7 +196,7 @@ layout: visual
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 Addy Osmani's public post on [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) defines the posture as inheriting AI output without doing the underlying reasoning. His [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) article frames the bill: the gap between how much code exists and how much of it any human genuinely understands.
 
@@ -228,7 +228,7 @@ layout: text
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 Simon Willison describes LLMs as [a lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/): they compress a huge amount of public knowledge, but the compression loses details. Serious coding tasks are full of details the model cannot infer: the fast test command, the one UI primitive this repo uses, the migration rule, the security constraint, the product decision from last week, or the module boundary that is obvious to the team.
 
@@ -255,7 +255,7 @@ layout: cover
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 This is the core idea behind `dot-agents`: put operating context for agentic work in versioned, repo-local files. Chat can stay messy. The repo should preserve the parts that change future behavior.
 
@@ -281,7 +281,7 @@ layout: text
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 Durable context is useful because it filters, not because it hoards. Keep accepted constraints, proof commands, decisions, task state, examples the agent should copy, and mistakes that should become checks. Leave behind transient prompts, abandoned hypotheses, duplicate logs, and explanations that only made sense in the moment.
 
@@ -302,7 +302,7 @@ layout: visual
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 Each layer answers a different question. The map tells the agent where project truth starts. Procedures tell it how repeated work should happen. State says what is true for this task right now. Proof shows whether the work is done. Promotion turns one task's lesson into reusable guidance. Keeping those layers distinct prevents `AGENTS.md`, skills, and work items from becoming one big junk drawer.
 
@@ -324,7 +324,7 @@ layout: text
 
 <p class="talk-note">Not a junk drawer.</p>
 
-Notes:
+<!-- notes -->
 
 [`AGENTS.md`](https://agents.md/) gives coding agents a predictable place to start. Use it for instructions that apply before task-specific context exists: stack, commands, coding conventions, dangerous paths, security rules, and links to deeper guidance.
 
@@ -350,7 +350,7 @@ layout: text
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 Some context is not a rule; it is a procedure. [Agent Skills](https://agentskills.io/home) package repeatable workflows as folders with instructions and optional scripts, references, or assets. OpenAI's [Codex Skills docs](https://developers.openai.com/codex/skills) describe the same progressive-disclosure shape: the agent sees lightweight metadata first and loads the full instructions only when the task calls for them.
 
@@ -374,7 +374,7 @@ layout: text
 ╰─ decisions/     durable calls that should not be reopened
 ```
 
-Notes:
+<!-- notes -->
 
 `dot-agents` is a lightweight file convention for long-running agent work. It separates noisy exploration from the state that needs to survive: what we are doing, why, what we trust, what we decided, what remains, and how the next thread should continue.
 
@@ -398,7 +398,7 @@ layout: text
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 The PR diff is still necessary. It is no longer enough. Planning review catches wrong work before it is generated. Trace review catches suspicious behavior: skipped files, broad edits, repeated failed commands, ignored test failures, or a tool run that changed more than expected. Diff review checks the implementation. Evidence review checks whether the proof matches the risk.
 
@@ -419,7 +419,7 @@ layout: text
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 Evidence is part of durable context because "done" is otherwise too easy to say. An agent can produce a confident final answer after a failed test, a skipped check, or an unreviewed assumption. The reviewer needs proof that matches the risk.
 
@@ -450,7 +450,7 @@ layout: visual
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 The point is not to collect more context. The point is to run a promotion loop. When an agent misses the same command twice, update the map. When a sequence repeats, make a skill or script. When task context spans sessions, create a work item. When a mistake is mechanically detectable, add a check. When ambiguity keeps returning, write the architecture note or example the agent should copy.
 
@@ -469,7 +469,7 @@ layout: text
   </div>
 </figure>
 
-Notes:
+<!-- notes -->
 
 This is the benefit that makes the work worth doing. A chat transcript helps the person in that chat. Repo-local context helps the next person, the next agent, and the next environment.
 
@@ -492,7 +492,7 @@ layout: text
 | Useful decisions are buried in chat. | Decisions are linked from the task state. |
 | Every agent gets a slightly different setup. | Repo-local files make the setup portable. |
 
-Notes:
+<!-- notes -->
 
 The agent does not become wise because a folder exists. It becomes easier to steer because the steering surface is visible. The human can review the plan, trace, diff, and evidence instead of inferring all of that from the final code.
 
@@ -516,7 +516,7 @@ layout: text
 
 <p class="talk-callout"><strong>Start with one real task. Write down what made the agent better. Repeat.</strong></p>
 
-Notes:
+<!-- notes -->
 
 Do not design the perfect agent operating model. Start with one repeated pain. Someone has to own the loop: notice what helped, promote it, delete stale guidance, and keep the next run better than the last.
 
