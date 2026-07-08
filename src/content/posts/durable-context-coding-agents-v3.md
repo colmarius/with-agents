@@ -184,3 +184,11 @@ class: image-only
 -->
 
 ![Generated slide showing task-local learning distilled from work items and evidence into reusable repo guidance, so the next task starts smarter.](/slides/durable-context-coding-agents-v3/Slide-19.png)
+
+## Thank you
+<!-- slide:
+layout: image
+class: image-only
+-->
+
+![Generated closing slide saying thank you and keep context close to the work, with AGENTS.md, skills, work items, and repo-local context flowing into a dot-agents folder between a human and robot feedback loop.](/slides/durable-context-coding-agents-v3/Slide-20.png)
