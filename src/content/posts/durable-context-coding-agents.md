@@ -55,7 +55,7 @@ Where is the first real checkpoint?
 plan → trace → diff → PR review → incident review
 ```
 
-Before prescribing a workflow, locate the real checkpoint. A team using agents as autocomplete has a different problem from a team running several terminal agents against the same repo.
+Before prescribing a workflow, locate the real checkpoint. A team using agents as autocomplete has a different problem from a team running several terminal agents against the same repo. A senior engineer who reviews every plan has a different risk profile from one who sees only the final pull request.
 
 Ask three questions:
 
@@ -76,7 +76,7 @@ unclear intent + capable generator = convincing artifact
 
 The failure mode is not only hallucinated code. It is code-shaped output that looks substantial before anyone has made the intent explicit.
 
-Noperator's essay [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) names the pathology: "generative AI can produce substantial form with minimally applied intent," and "substantial form without discernible intent." Agents compress the friction that used to force intent into the artifact. Reviewers then have to recover intent from the output unless the team put it somewhere durable first.
+Noperator's essay [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) names the pathology: "generative AI can produce substantial form with minimally applied intent," and "substantial form without discernible intent." Agents compress the friction that used to force intent into the artifact. They can create files, tests, docs, migrations, screenshots, and PRs from a vague instruction; reviewers then have to recover intent from the output unless the team put it somewhere durable first.
 
 ## The PR inherits too many jobs
 
@@ -89,9 +89,9 @@ agent path:  prompt ───────────────▶ PR
             all missing alignment lands here
 ```
 
-Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) makes the economic shift clear: writing code is getting fast and cheap, so the hard question becomes not "how do we build it?" but "should we build it?" Agents collapse the old implementation window, taking many informal alignment moments with it.
+Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) makes the economic shift clear: writing code is getting fast and cheap, so the hard question becomes not "how do we build it?" but "should we build it?" Agents collapse the old implementation window, taking many informal alignment moments with it: conversations, draft PRs, issue comments, and course corrections while the work is still cheap to redirect.
 
-The pull request then inherits too many jobs. It must explain the goal, recover the plan, expose hidden assumptions, prove the implementation, and coordinate reviewers who were not present while the agent worked.
+The pull request then inherits too many jobs. It must explain the goal, recover the plan, expose hidden assumptions, prove the implementation, and coordinate reviewers who were not present while the agent worked. That is too late for many decisions.
 
 Durable context moves some alignment back before generation. The plan, constraints, accepted tradeoffs, proof target, and stop conditions live where another engineer or agent can inspect them before the diff becomes the only artifact.
 
@@ -111,7 +111,7 @@ code the team owns but cannot explain
 
 Addy Osmani's public post on [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) defines the posture as inheriting AI output without doing the underlying reasoning. His [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) article frames the bill: the gap between how much code exists and how much of it any human genuinely understands.
 
-Tests can be green while understanding is not. Durable context keeps that understanding attached to the work: what we asked for, why it matters, what changed, what proof exists, what is uncertain, and where a human made the call.
+Tests can be green while understanding is not. The risk is not that every generated line is wrong; it is that nobody knows which implicit decisions were made, why they were acceptable, or where the next change will break. Durable context keeps that understanding attached to the work: what we asked for, why it matters, what changed, what proof exists, what is uncertain, and where a human made the call.
 
 ## The model is not your project memory
 
@@ -123,7 +123,9 @@ repo truth:  exact commands, boundaries, decisions, constraints
 agent work:  useful only when the second shapes the first
 ```
 
-Simon Willison describes LLMs as [a lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/): they compress a huge amount of public knowledge, but the compression loses details. Serious coding tasks are full of details the model cannot infer: the fast test command, the one UI primitive this repo uses, the migration rule, the security constraint, the product decision from last week.
+Simon Willison describes LLMs as [a lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/): they compress a huge amount of public knowledge, but the compression loses details. Serious coding tasks are full of details the model cannot infer: the fast test command, the one UI primitive this repo uses, the migration rule, the security constraint, the product decision from last week, or the module boundary that is obvious to the team.
+
+For exact technical work, a correct repo-local example beats expecting the model to infer the rule.
 
 If that truth lives only in a chat thread, it dies with the thread. If it lives in files, checks, and work items inside the repo, the next run can use it.
 
@@ -188,6 +190,8 @@ AGENTS.md
 
 A useful `AGENTS.md` is short enough to be read and specific enough to change behavior. It should tell the agent what not to rediscover, not everything the project knows.
 
+Good entries are concrete: the fast check command, a frontmatter rule, a transcript location, a security constraint, or the UI primitive this repo uses.
+
 Do not turn the map into a junk drawer. If a rule applies only under `src/content/posts/`, put it near that work or in a skill. If a mistake can be caught deterministically, add a check. If a workflow has steps and evidence, package it as a procedure.
 
 ## Agent Skills are procedures
@@ -211,7 +215,7 @@ Use a skill when a workflow has a recognizable trigger and a repeatable path to 
 - What files, scripts, or references does it need?
 - What evidence proves the workflow is done?
 
-Do not package preferences as skills. A skill earns its place when it prevents a future run from rediscovering the workflow.
+Do not package preferences as skills. A style preference belongs in `AGENTS.md`, a formatter, or a linter. A skill earns its place when it prevents a future run from rediscovering the workflow.
 
 ## dot-agents keeps task state alive
 
@@ -226,7 +230,7 @@ Do not package preferences as skills. A skill earns its place when it prevents a
 ╰─ decisions/     durable calls that should not be reopened
 ```
 
-`dot-agents` is a lightweight file convention for long-running agent work. It separates noisy exploration from the state that needs to survive: what we are doing, what we trust, what we decided, what remains, and how the next thread should continue.
+`dot-agents` is a lightweight file convention for long-running agent work. It separates noisy exploration from the state that needs to survive: what we are doing, why, what we trust, what we decided, what remains, and how the next thread should continue.
 
 The workflow is simple:
 
@@ -251,7 +255,7 @@ The PR diff is still necessary. It is no longer enough.
 
 Planning review catches wrong work before it is generated. Trace review catches skipped files, broad edits, repeated failed commands, ignored test failures, or a tool run that changed more than expected. Diff review checks the implementation. Evidence review checks whether the proof matches the risk.
 
-The checkpoint does not have to be heavy. For small tasks it might be one paragraph and one test command. For risky tasks it might be a plan, reviewer signoff, browser trace, migration dry run, and rollback note.
+The checkpoint does not have to be heavy. For small tasks it might be one paragraph and one test command. For risky tasks it might be a plan, reviewer signoff, browser trace, migration dry run, and rollback note. The important shift is that the human sees intent before the agent has produced a large artifact that is socially hard to throw away.
 
 ## Evidence keeps judgment attached to the diff
 
@@ -263,7 +267,7 @@ medium      typecheck, integration test, screenshot, curl
 high        trace, migration dry run, rollback, human signoff
 ```
 
-Evidence is part of durable context because "done" is otherwise too easy to say. The reviewer needs proof that matches the risk.
+Evidence is part of durable context because "done" is otherwise too easy to say. An agent can produce a confident final answer after a failed test, a skipped check, or an unreviewed assumption. The reviewer needs proof that matches the risk.
 
 For a content change in this repo, the normal proof is:
 
@@ -303,6 +307,8 @@ next teammate ┘
 
 This is the benefit that makes the work worth doing. A chat transcript helps the person in that chat. Repo-local context helps the next person, the next agent, and the next environment.
 
+Cross-session durability lets a fresh thread start from the current plan. Cross-engineer durability lets a teammate inspect the same intent, constraints, and proof. Cross-environment durability keeps the cloud agent, local terminal, CI runner, and review process pointed at the same commands and conventions.
+
 That portability matters because agent stacks will keep changing. The durable artifact should not be a vendor-specific memory blob if a simple file, script, test, or work item can carry the truth.
 
 ## The before and after is mundane
@@ -332,7 +338,7 @@ repeated ambiguity   → architecture note / example
 high-risk decision   → human review rule
 ```
 
-Do not design the perfect agent operating model. Start with one repeated pain. Notice what helped, promote it, delete stale guidance, and keep the next run better than the last.
+Do not design the perfect agent operating model. Start with one repeated pain. Someone has to own the loop: notice what helped, promote it, delete stale guidance, and keep the next run better than the last.
 
 **Start with one real task. Write down what made the agent better. Repeat.**
 
