@@ -3,7 +3,7 @@ title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents (Image Dec
 description: 'An image-only alternate deck for comparing generated presentation slides against the Markdown-native durable-context deck.'
 pubDate: 2026-07-02
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
-draft: true
+draft: false
 unlisted: true
 order: 4
 ---
