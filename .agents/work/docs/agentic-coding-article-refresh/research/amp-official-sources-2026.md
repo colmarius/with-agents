@@ -1,14 +1,30 @@
 # Research: Amp Official Sources for Task 7
 
 **Date:** 2026-06-28
-**Status:** complete for Task 7 prep; re-check before publication
+**Last updated:** 2026-07-08
+**Status:** complete for Task 7 prep and 2026-07-08 case-study refresh; re-check before future publication
 **Question:** Which current public Amp sources should anchor a future `amp-power-patterns` rewrite, and which older Amp claims are stale or risky?
 
 ## Recommendation
 
-Use the current [Amp Manual](https://ampcode.com/manual), [Plugin API](https://ampcode.com/manual/plugin-api), [Models](https://ampcode.com/models), and a fresh [Chronicle](https://ampcode.com/chronicle) sweep as the canonical product-source bundle for Task 7. Treat dated Chronicle/news/notes pages as evidence of product direction or workflow examples, not timeless feature documentation. For any public article, mark product details as “verified as of 2026-06-28” or avoid exact product claims entirely.
+Use the current [Amp Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Plugin API](https://ampcode.com/manual/plugin-api), [Models](https://ampcode.com/models), and a fresh [Chronicle](https://ampcode.com/chronicle) sweep as the canonical product-source bundle for Task 7-style maintenance. Treat dated Chronicle/news/notes pages as evidence of product direction or workflow examples, not timeless feature documentation. For any public article, mark product details with the verification date or avoid exact product claims entirely.
 
 The future Task 7 article should be an Amp case study for factory-era coding-agent workflows: task sizing, delegation, context, review, feedback loops, and extensibility. It should not preserve the old draft’s stale feature catalog, Oracle-as-mode framing, Handoff section, fixed token thresholds, old model names, old speed/cost claims, or draft-only practice-path links.
+
+The 2026-07-08 refresh updates the published case study for remote execution: agents in orbs, project-configured orb sizing, remote thread creation from ampcode.com onto any opted-in runner, and the repo/environment work needed to make headless agents productive. Keep exact orb prices, sizes, flags, keybindings, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+
+## Refresh Sweep — 2026-07-08
+
+Freshly checked sources:
+
+- [Chronicle](https://ampcode.com/chronicle): newest relevant items are Agents, Anywhere (2026-07-08), More Orb Sizes (2026-07-03), Read Bigger Threads (2026-07-02), Putting an Agent in an Orb (2026-07-02 note), Agents in Orbs (2026-06-30), and Custom Agents (2026-06-19).
+- [Agents, Anywhere](https://ampcode.com/news/agents-anywhere): ampcode.com can start new agents on any opted-in machine where `amp` is running; runner mode is headless and waits to start/run new threads; multiple runners can run on one host if they use different directories.
+- [Agents in Orbs](https://ampcode.com/news/agents-in-orbs): orb-backed threads run on fresh remote machines containing code, plugins, and tools; users can control them like local agents, review/browse files, use a terminal, sync changes locally, and launch orb threads from CLI/TUI surfaces.
+- [More Orb Sizes](https://ampcode.com/news/more-orb-sizes) and the [Orbs manual](https://ampcode.com/manual/orbs): orb CPU/memory/disk and pricing are configurable per project and high-churn; the manual is canonical for projects, secrets/env vars, setup/resume lifecycle hooks, included tools, billing, pausing, and current sizes.
+- [Putting an Agent in an Orb](https://ampcode.com/notes/putting-an-agent-in-an-orb): best workflow source for making remote agents effective through `.agents/setup`, `.agents/resume`, idempotent dev-server scripts, dev auth endpoints, preflight JSON, port metadata, logs, screenshot artifacts, and AGENTS.md guidance.
+- [Read Bigger Threads](https://ampcode.com/news/read-bigger-threads): `read_thread` is now a subagent that searches long/compacted threads, checks for newer revisions or reverts, and can inspect the current thread. Use this as product-context direction, not as a reason to stop recording durable repo-local decisions.
+
+Article-maintenance decision: update `src/content/posts/amp-factory-era-case-study.md` to treat orbs/runners as another factory-era contract: where the agent runs, how the environment is prepared, how humans inspect and sync the work, and what proof comes back. Do not turn the article into an Orbs tutorial.
 
 ## Fresh Publication Sweep — 2026-06-28
 
@@ -40,9 +56,9 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 
 ## Source Hierarchy for Task 7
 
-1. **Current canonical product docs:** Manual, Plugin API, Models, and current homepage/install/manual sections.
-2. **Recent first-party product changes:** Chronicle items from May-June 2026, especially Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, Rush 2.0, Faster Deep & Rush, Opus 4.8, End of Public Threads, npm Package Changes, and Plugins Everywhere.
-3. **Recent first-party workflow notes:** Feedback Loopable, Mainframe Magic, How to Pair With an Agent, and Liberating Code Review.
+1. **Current canonical product docs:** Manual, Orbs manual, Plugin API, Models, and current homepage/install/manual sections.
+2. **Recent first-party product changes:** Chronicle items from May-July 2026, especially Agents Anywhere, Agents in Orbs, More Orb Sizes, Read Bigger Threads, Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, Rush 2.0, Faster Deep & Rush, Opus 4.8, End of Public Threads, npm Package Changes, and Plugins Everywhere.
+3. **Recent first-party workflow notes:** Putting an Agent in an Orb, Feedback Loopable, Mainframe Magic, How to Pair With an Agent, and Liberating Code Review.
 4. **Archived guidance:** Context Management in Amp and 200k Tokens Is Plenty only for durable principles; do not use them for current Handoff/token-threshold guidance.
 5. **Old local draft material:** `src/content/posts/amp-power-patterns.md` only as raw material to replace, not as an authority.
 
@@ -52,6 +68,9 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 - Oracle is **not** a mode. It is a second-opinion tool/subagent for complex reasoning, planning, debugging, or review.
 - Current model assignments are on `/models` and age quickly. As of this research pass: `deep` uses GPT-5.5, `smart` uses Claude Opus 4.8, `rush` uses GPT-5.5, Oracle uses GPT-5.5, Librarian uses GPT-5.5, search uses Gemini 3 Flash, and Painter uses GPT Image 2.
 - Amp now supports web/mobile/CLI surfaces for watching and driving active agent threads. Use this as a current product-direction point, not as a generic coding-agent requirement.
+- Amp now supports orb-backed remote agents and opted-in remote thread creation from ampcode.com onto any machine running Amp. Use this as remote-execution/orchestration direction, not as setup guidance.
+- Orbs are fresh remote machines associated with projects and configured through project settings; `.agents/setup` and `.agents/resume` are current repo lifecycle hooks for preparing and resuming orb work. Exact sizes/prices/flags should be verified from the Orbs manual immediately before publication.
+- `read_thread` has been rewritten for long, compacted threads. This reduces product-context loss, but public workflow guidance should still keep decisions, acceptance criteria, and proof in repo-local state.
 - Plugins are the current extensibility surface: events, tools, commands, UI, AI classification, configuration, thread APIs, custom agents, custom modes, and custom subagents.
 - Project/user/system `AGENTS.md`, skills, checks, MCP configuration, thread references, review, and thread sharing are all current manual concepts.
 - Librarian can search public GitHub and connected private GitHub repositories, but the manual says it reads only the default branch.
@@ -68,6 +87,7 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 - Old VS Code extension/sidebar assumptions. The February 2026 “Coding Agent Is Dead” post announced killing the editor extensions; May/June 2026 sources describe rebuilt web/mobile/CLI surfaces and a new sidebar. Verify UI details immediately before publishing.
 - Setup/install claims using `@sourcegraph/amp`; npm Package Changes says the CLI package is now `@ampcode/cli`, with direct installation recommended.
 - Pricing/free-tier claims unless reverified from current pricing/manual pages at publication time.
+- Exact orb sizes, prices, CLI flags, runner setup details, keybindings, or UI screenshots unless reverified from the current Orbs manual and latest news on the publication date.
 - Draft-only route links: `/posts/amp-first-win-15-minutes`, `/posts/what-is-an-agent`, `/posts/agent-workflows-that-stick`, `/posts/agent-planning-workflow`, `/posts/amp-power-patterns`, and `/posts/coding-with-agents-2025`.
 - Generic “use N subagents for N files” advice without independence, conflict, and review caveats.
 
@@ -75,7 +95,7 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 
 ### Amp Manual — <https://ampcode.com/manual>
 
-**Recency/status:** current canonical manual; force-refetched 2026-06-28.
+**Recency/status:** current canonical manual; force-refetched 2026-06-28 and 2026-07-08.
 **Best use:** primary source for current product terminology and feature existence.
 
 Key points:
@@ -87,7 +107,7 @@ Key points:
 - Subagents are useful for independent multi-step work, large-output operations, or parallel work, but they are isolated, cannot be guided mid-task, and only return final summaries.
 - Oracle is a read-only second-opinion model/tool for complex reasoning/review/debugging, not a mode.
 - Librarian searches external codebases on GitHub, including connected private repos, and only default branches.
-- Plugins, skills, MCP, code review/checks, permissions, CLI execute/stream JSON, thread sharing, and remote control are current product areas.
+- Plugins, skills, MCP, code review/checks, permissions, CLI execute/stream JSON, thread sharing, remote control, remote thread creation, and orbs are current product areas.
 
 Task 7 use:
 
@@ -116,7 +136,7 @@ Task 7 use:
 
 ### Plugin API Reference — <https://ampcode.com/manual/plugin-api>
 
-**Recency/status:** current generated/reference documentation; force-refetched 2026-06-28.
+**Recency/status:** current generated/reference documentation; force-refetched 2026-06-28 and 2026-07-08.
 **Best use:** precise API capabilities when discussing custom agents/orchestration.
 
 Key points:
@@ -134,11 +154,16 @@ Task 7 use:
 
 ### Amp Chronicle — <https://ampcode.com/chronicle>
 
-**Recency/status:** current release/news index; force-refetched 2026-06-28.
+**Recency/status:** current release/news index; force-refetched 2026-06-28 and 2026-07-08.
 **Best use:** latest-product-change sweep before editing/publishing.
 
 Important recent items:
 
+- 2026-07-08 Agents Anywhere: start new agents remotely from ampcode.com on any opted-in machine or headless runner that can run `amp`.
+- 2026-07-03 More Orb Sizes: project-level orb CPU/memory choices; exact prices and sizes are date-sensitive.
+- 2026-07-02 Read Bigger Threads: `read_thread` became a subagent for long/compacted threads that checks for revisions and reverts.
+- 2026-07-02 Putting an Agent in an Orb note: making a codebase work for headless remote agents through setup/resume hooks, dev auth, preflight checks, logs, and screenshots.
+- 2026-06-30 Agents in Orbs: launch Amp agents remotely in fresh orbs; inspect files, use terminal, sync changes, and run multiple agents without local resource clashes.
 - 2026-06-19 Custom Agents: plugins can create agents, run them once, and keep talking to their threads.
 - 2026-06-18 A Faster Librarian: current performance/model note for Librarian; exact numbers are date-sensitive.
 - 2026-06-16 Diffs: review and stage changes directly in Amp.
@@ -161,7 +186,7 @@ Task 7 use:
 
 ### Models — <https://ampcode.com/models>
 
-**Recency/status:** current model matrix; force-refetched 2026-06-28.
+**Recency/status:** current model matrix; force-refetched 2026-06-28 and 2026-07-08.
 **Best use:** current mode/subagent/system model assignments if model names must appear.
 
 Key points:
@@ -169,12 +194,12 @@ Key points:
 - Modes are framed as a combination of system prompt, tools, and model.
 - Current mode assignments: Deep = GPT-5.5, Smart = Claude Opus 4.8, Rush = GPT-5.5.
 - Current subagent assignments: Review = GPT-5.5, Search = Gemini 3 Flash, Oracle = GPT-5.5, Librarian = GPT-5.5, Read Thread = GLM 5.2.
-- System models include View Media = Gemini 3 Flash, Painter = GPT Image 2, Titling = Claude Haiku 4.5.
+- System models include View Media = Gemini 3 Flash, Painter = GPT Image 2, Titling = Claude Haiku 4.5, and Compaction = GPT-5.4.
 
 Task 7 use:
 
 - Prefer role-based descriptions (`rush` for bounded tasks, `deep` for hard tasks) over model names.
-- If model names survive, mark them verified as of 2026-06-28 and expect churn.
+- If model names survive, mark them verified as of the publication date and expect churn.
 
 ### Amp Rebuilt — <https://ampcode.com/news/neo>
 
@@ -211,6 +236,74 @@ Task 7 use:
 
 - Good source for factory-era UI/orchestration framing.
 - Avoid over-indexing on exact keybindings/screens/UI unless reverified immediately before publish.
+
+### Agents Anywhere — <https://ampcode.com/news/agents-anywhere>
+
+**Recency/status:** 2026-07-08 product announcement.
+**Best use:** latest source for starting agents remotely from ampcode.com on machines other than Amp-managed orbs.
+
+Key points:
+
+- Users can start new agents remotely from ampcode.com anywhere they can run `amp`.
+- Remote thread creation must be enabled; each started Amp client accepts and runs new threads in its working directory.
+- Runner mode is headless and waits to start/run new threads.
+- Multiple runners can run on the same machine if started in different directories; runners are identified by host and working directory.
+
+Task 7 use:
+
+- Use as the newest source for “controlling and creating agents from the web” and for the factory-era idea that the agent runner can be any prepared machine.
+- Avoid exact commands/settings in public prose unless writing a tutorial and rechecking on publish day.
+
+### Agents in Orbs and Orbs Manual — <https://ampcode.com/news/agents-in-orbs>, <https://ampcode.com/manual/orbs>
+
+**Recency/status:** 2026-06-30 product announcement plus current Orbs manual, force-refetched 2026-07-08.
+**Best use:** current source for Amp-managed remote machines where agents can run without local resource contention.
+
+Key points:
+
+- Orbs are remote machines where an Amp agent can run without supervision; a new orb thread gets a fresh clone of the repository plus project configuration.
+- The product surfaces include file browsing/review, an orb terminal, local sync of remote changes, CLI/TUI ways to start orb-backed threads, project selection, and project-scoped secrets/env vars.
+- The manual says committed `.agents/setup` and `.agents/resume` scripts run from the repo root as lifecycle hooks for fresh/resumed orbs.
+- The manual lists current included tools, current sizes/pricing, billing, and pausing; those details are explicitly date-sensitive.
+
+Task 7 use:
+
+- Use as the main source for remote execution and environment-boundary claims.
+- Frame orbs as another contract to design for: repo bootstrap, secrets, tools, proof, and human inspection.
+- Do not publish exact sizes/prices/commands unless freshly reverified.
+
+### Putting an Agent in an Orb — <https://ampcode.com/notes/putting-an-agent-in-an-orb>
+
+**Recency/status:** 2026-07-02 workflow note following the Orbs launch.
+**Best use:** strongest concrete example of making a codebase work for a headless remote agent.
+
+Key points:
+
+- Amp’s own repo uses `.agents/setup` to prepare databases, seed users, install toolchains/dependencies, and write orb-specific AGENTS.md guidance.
+- `.agents/resume` is for fast idempotent wake-up repair.
+- Their agent-friendly dev environment uses a dev-server skill/script, port metadata, development auth endpoints, preflight JSON, logs, browser console forwarding, and screenshot artifacts.
+- The note’s practical thesis: “don’t make them guess.” Put how to run, authenticate, observe, and verify in codebase tooling and docs.
+
+Task 7 use:
+
+- Use as proof-loop/environment-contract support, especially when saying remote agents need repo-local setup and inspectable feedback paths.
+- Avoid presenting Amp-internal endpoint names as a universal recipe; use them as examples of agent-friendly affordances.
+
+### Read Bigger Threads — <https://ampcode.com/news/read-bigger-threads>
+
+**Recency/status:** 2026-07-02 product announcement.
+**Best use:** current source for long-thread context retrieval and compaction-era thread references.
+
+Key points:
+
+- `read_thread` is now a subagent tuned to extract information from long threads.
+- It searches the thread, reads messages, and checks whether later work revised, superseded, reverted, or contradicted earlier findings.
+- It works on the current thread as well as explicitly referenced threads.
+
+Task 7 use:
+
+- Use to update context claims: Amp product context retrieval is stronger than in the June sweep.
+- Still recommend durable repo-local decision/proof records for information that future work must trust.
 
 ### Custom Agents — <https://ampcode.com/news/custom-agents>
 

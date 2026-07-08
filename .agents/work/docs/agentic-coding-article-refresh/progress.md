@@ -319,3 +319,38 @@
 ## Updated Next Action
 
 - No immediate next action. The refreshed public article series is complete. Future work can revive `amp-first-win-15-minutes.md` or `workshop-hands-on-agents.md` only for a concrete tutorial/event need and only after fresh product/setup verification.
+
+## 2026-07-08 Amp Case Study Orbs Refresh
+
+- Trigger: refresh `src/content/posts/amp-factory-era-case-study.md` for the latest Amp Chronicle/news items about running agents in orbs and controlling/starting agents from the web.
+- Fresh sources checked:
+  - [Chronicle](https://ampcode.com/chronicle), force-refetched 2026-07-08.
+  - [Agents, Anywhere](https://ampcode.com/news/agents-anywhere): remote thread creation from ampcode.com onto any opted-in machine/runner that can run Amp.
+  - [Agents in Orbs](https://ampcode.com/news/agents-in-orbs): remote orb-backed agents, file browsing/review, terminal access, local sync, and multi-agent remote execution direction.
+  - [More Orb Sizes](https://ampcode.com/news/more-orb-sizes) and [Orbs manual](https://ampcode.com/manual/orbs): project-configured orb runtime, pricing/size caveats, projects, secrets/env vars, included tools, and `.agents/setup` / `.agents/resume` lifecycle hooks.
+  - [Putting an Agent in an Orb](https://ampcode.com/notes/putting-an-agent-in-an-orb): repo/environment patterns for headless agents, including setup/resume hooks, idempotent dev-server scripts, dev auth, preflight JSON, logs, and screenshots.
+  - [Read Bigger Threads](https://ampcode.com/news/read-bigger-threads): long-thread `read_thread` rewrite.
+  - [Models](https://ampcode.com/models) and [Plugin API](https://ampcode.com/manual/plugin-api), force-refetched 2026-07-08 for mode/plugin claims that remain in the case study.
+- Article changes:
+  - Added remote execution as a reusable contract in the intro and description.
+  - Updated verification date from 2026-06-28 to 2026-07-08.
+  - Expanded the context section to cover orbs, remote runners, long-thread context retrieval, and repo lifecycle hooks.
+  - Expanded the proof section with remote inspection/sync and the “Putting an Agent in an Orb” workflow note.
+  - Expanded the orchestration section to cover web/mobile/CLI control, orbs, runners, configurable remote runtime, custom agents, plugin hooks, and diff/review UI.
+  - Kept exact prices, orb sizes, setup commands, keybindings, and model names out of article prose except source names/dates.
+- Local context updates:
+  - Updated `research/amp-official-sources-2026.md` with the 2026-07-08 sweep, new source hierarchy, current product facts, stale-claim warnings, and per-resource notes for Agents Anywhere, Agents in Orbs/Orbs manual, Putting an Agent in an Orb, and Read Bigger Threads.
+  - Updated `index.md` date/summary/next action to reflect the completed refresh.
+- Word counts:
+  - `src/content/posts/amp-factory-era-case-study.md`: 1,843 words before, 2,106 words after.
+  - `research/amp-official-sources-2026.md`: 5,630 words after update.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed and generated `/posts/amp-factory-era-case-study/index.html` plus its slides route.
+  - `git diff --check` passed.
+  - `npm run lint:fix` was attempted first but failed on pre-existing Biome issues under `.agents/references/dot-agents/site/` (`useButtonType`, unused `copyCommand`, and descending specificity warnings). No unrelated source changes remain from that attempt.
+  - Scoped `npx biome check --write src/content/posts/amp-factory-era-case-study.md .agents/work/docs/agentic-coding-article-refresh/research/amp-official-sources-2026.md` processed no files because Markdown paths are ignored by the Biome config.
+
+## Updated Next Action
+
+- No immediate next action. Future Amp article updates should re-run the Manual/Orbs/Models/Plugin API/Chronicle source sweep before publishing exact product claims.
