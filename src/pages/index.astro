@@ -30,53 +30,92 @@ import Layout from '@layouts/Layout.astro';
       </div>
     </section>
 
-    <section class="grid gap-6 md:grid-cols-2">
-      <a href="/posts/durable-context-coding-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Context anchor</p>
-        <h2 class="mb-3 text-2xl font-light text-gray-900">Your Repo Is the Memory</h2>
-        <p class="text-gray-600 leading-relaxed">A field guide for keeping coding agents aligned with repo-local truth, shared state, proof, and human judgment.</p>
-      </a>
-      <a href="/posts/agentic-coding-2026" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Series map</p>
-        <h2 class="mb-3 text-2xl font-light text-gray-900">Agentic Coding in 2026</h2>
-        <p class="text-gray-600 leading-relaxed">A practical field guide to cheap implementation, alignment, proof, useful friction, codebase infrastructure, context hygiene, and factory-era workflows.</p>
-      </a>
-      <a href="/posts/make-the-agent-prove-it" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Proof stack</p>
-        <h2 class="mb-3 text-2xl font-light text-gray-900">Make the Agent Prove It</h2>
-        <p class="text-gray-600 leading-relaxed">A risk-scaled ladder for tests, real-system checks, conformance suites, evidence artifacts, sandboxing, and review.</p>
-      </a>
-      <a href="/posts/small-threads-durable-state" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Workflow practice</p>
-        <h2 class="mb-3 text-2xl font-light text-gray-900">Small Threads, Durable State</h2>
-        <p class="text-gray-600 leading-relaxed">A day-to-day procedure for wide research, narrow implementation, work items, handoffs, progress logs, and verification records.</p>
-      </a>
-      <a href="/posts/amp-factory-era-case-study" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Tool case study</p>
-        <h2 class="mb-3 text-2xl font-light text-gray-900">Amp as a Factory-Era Case Study</h2>
-        <p class="text-gray-600 leading-relaxed">A current Amp example for task sizing, delegation contracts, context hygiene, proof loops, review, and orchestration.</p>
-      </a>
-      <a href="/resources/coding-with-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-        <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Resource hub</p>
-        <h2 class="mb-3 text-2xl font-light text-gray-900">Curated talks and summaries</h2>
-        <p class="text-gray-600 leading-relaxed">Podcasts, videos, and articles with notes you can scan before watching.</p>
-      </a>
+    <section class="space-y-6">
+      <div class="space-y-3">
+        <p class="text-sm font-medium uppercase tracking-[0.2em] text-indigo-600">
+          Core entry points
+        </p>
+        <h2 class="text-3xl font-light text-gray-900">
+          Start by the problem you need to solve.
+        </h2>
+        <p class="max-w-3xl text-gray-600 leading-relaxed">
+          These are the current entry points for using coding agents deliberately: keep context durable, scale proof to risk, preserve useful handoffs, and trace claims back to source material.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <a href="/posts/durable-context-coding-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Context anchor</p>
+          <h3 class="mb-3 text-2xl font-light text-gray-900">Your Repo Is the Memory</h3>
+          <p class="text-gray-600 leading-relaxed">A field guide for keeping coding agents aligned with repo-local truth, shared state, proof, and human judgment.</p>
+        </a>
+        <a href="/posts/agentic-coding-2026" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Series map</p>
+          <h3 class="mb-3 text-2xl font-light text-gray-900">Agentic Coding in 2026</h3>
+          <p class="text-gray-600 leading-relaxed">A practical field guide to cheap implementation, alignment, proof, useful friction, codebase infrastructure, context hygiene, and factory-era workflows.</p>
+        </a>
+        <a href="/posts/make-the-agent-prove-it" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Proof stack</p>
+          <h3 class="mb-3 text-2xl font-light text-gray-900">Make the Agent Prove It</h3>
+          <p class="text-gray-600 leading-relaxed">A risk-scaled ladder for tests, real-system checks, conformance suites, evidence artifacts, sandboxing, and review.</p>
+        </a>
+        <a href="/posts/small-threads-durable-state" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Workflow practice</p>
+          <h3 class="mb-3 text-2xl font-light text-gray-900">Small Threads, Durable State</h3>
+          <p class="text-gray-600 leading-relaxed">A day-to-day procedure for wide research, narrow implementation, work items, handoffs, progress logs, and verification records.</p>
+        </a>
+        <a href="/posts/amp-factory-era-case-study" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Tool case study</p>
+          <h3 class="mb-3 text-2xl font-light text-gray-900">Amp as a Factory-Era Case Study</h3>
+          <p class="text-gray-600 leading-relaxed">A current Amp example for task sizing, delegation contracts, context hygiene, proof loops, review, and orchestration.</p>
+        </a>
+        <a href="/resources/coding-with-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Source trail</p>
+          <h3 class="mb-3 text-2xl font-light text-gray-900">Curated talks and summaries</h3>
+          <p class="text-gray-600 leading-relaxed">Podcasts, videos, articles, and transcript-backed notes you can scan before watching.</p>
+        </a>
+      </div>
     </section>
 
     <section class="rounded-2xl bg-slate-50 p-8 md:p-10">
-      <h2 class="text-3xl font-light text-gray-900 mb-4">What is public now</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        For now, the public writing path is intentionally narrow: five source-backed articles, generated slide views for each article, and the resource library that feeds future revisions.
-      </p>
-      <ol class="space-y-3 text-gray-700">
-        <li><a class="text-indigo-700 hover:text-indigo-500" href="/posts/durable-context-coding-agents">1. Start with the durable-context article</a></li>
-        <li><a class="text-indigo-700 hover:text-indigo-500" href="/posts/agentic-coding-2026">2. Read the 2026 field guide</a></li>
-        <li><a class="text-indigo-700 hover:text-indigo-500" href="/posts/make-the-agent-prove-it">3. Read the proof-stack article</a></li>
-        <li><a class="text-indigo-700 hover:text-indigo-500" href="/posts/small-threads-durable-state">4. Read the small-thread workflow article</a></li>
-        <li><a class="text-indigo-700 hover:text-indigo-500" href="/posts/amp-factory-era-case-study">5. Read the Amp factory-era case study</a></li>
-        <li><a class="text-indigo-700 hover:text-indigo-500" href="/posts/durable-context-coding-agents/slides">6. Preview a generated slide view</a></li>
-        <li><a class="text-indigo-700 hover:text-indigo-500" href="/resources/coding-with-agents">7. Browse the source talks, transcripts, and summaries</a></li>
-      </ol>
+      <div class="space-y-3 mb-8">
+        <p class="text-sm font-medium uppercase tracking-[0.2em] text-indigo-600">
+          How to use this site
+        </p>
+        <h2 class="text-3xl font-light text-gray-900">
+          Treat the site as a workflow map, not just an archive.
+        </h2>
+        <p class="max-w-3xl text-gray-700 leading-relaxed">
+          The public pages are designed for different moments: learning a pattern, sharing it with a team, checking the evidence behind a claim, or finding the full index.
+        </p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2">
+        <div class="rounded-xl border border-slate-200 bg-white/70 p-5">
+          <h3 class="mb-2 text-lg font-medium text-gray-900">Read a guide for an operating pattern</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Use the field guides when you need a practical model for context, proof, delegation, handoffs, or review.
+          </p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-white/70 p-5">
+          <h3 class="mb-2 text-lg font-medium text-gray-900">Open slides when you need to brief people</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Each post header includes a “View as slides” link, so the same source-backed writing can become a talk outline or team review.
+          </p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-white/70 p-5">
+          <h3 class="mb-2 text-lg font-medium text-gray-900">Trace claims through the resource library</h3>
+          <p class="text-gray-600 leading-relaxed">
+            The resources page collects talks, videos, articles, and transcript-backed summaries that ground the writing.
+          </p>
+        </div>
+        <div class="rounded-xl border border-slate-200 bg-white/70 p-5">
+          <h3 class="mb-2 text-lg font-medium text-gray-900">Use the archive when you want everything</h3>
+          <p class="text-gray-600 leading-relaxed">
+            The homepage stays curated. The <a class="text-indigo-700 hover:text-indigo-500" href="/posts">posts archive</a> carries the listed writing, and the <a class="text-indigo-700 hover:text-indigo-500" href="/resources">resources index</a> points to the maintained resource collections.
+          </p>
+        </div>
+      </div>
     </section>
   </div>
 </Layout>
