@@ -87,7 +87,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing chat as temporary RAM and repo-local context as durable disk for the next person or agent.](/slides/durable-context-coding-agents-v3/Slide-8.png)
+![Generated slide showing messy chat distilled into durable repo-local context that preserves the parts that change future behavior.](/slides/durable-context-coding-agents-v3/Slide-8.png)
 
 ## What should survive?
 <!-- slide:
@@ -175,4 +175,12 @@ layout: image
 class: image-only
 -->
 
-![Generated slide comparing before and after durable context for new threads, commands, review, and buried decisions.](/slides/durable-context-coding-agents-v3/Slide-18.png)
+![Generated slide comparing reactive, low-context agent work with structured durable context that makes reviews start from intent and proof.](/slides/durable-context-coding-agents-v3/Slide-18.png)
+
+## Promotion closes the loop
+<!-- slide:
+layout: image
+class: image-only
+-->
+
+![Generated slide showing task-local learning distilled from work items and evidence into reusable repo guidance, so the next task starts smarter.](/slides/durable-context-coding-agents-v3/Slide-19.png)
