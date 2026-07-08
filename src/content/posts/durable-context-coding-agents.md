@@ -5,7 +5,7 @@ pubDate: 2026-07-02
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: false
-order: 2
+order: 1
 ---
 
 <!--
