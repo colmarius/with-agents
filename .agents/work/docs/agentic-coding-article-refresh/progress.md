@@ -354,3 +354,27 @@
 ## Updated Next Action
 
 - No immediate next action. Future Amp article updates should re-run the Manual/Orbs/Models/Plugin API/Chronicle source sweep before publishing exact product claims.
+
+## 2026-07-09 Amp Case Study Dial Refresh
+
+- Trigger: update `src/content/posts/amp-factory-era-case-study.md` and `research/amp-official-sources-2026.md` for Amp's new [The Dial](https://ampcode.com/news/the-dial) announcement.
+- Fresh source checked:
+  - [The Dial](https://ampcode.com/news/the-dial): Amp's built-in modes are now `low`, `medium`, `high`, and `ultra`, replacing `smart`, `deep`, `rush`, and `large`; `medium` is the default; reasoning effort is part of the tier; every mode has an oracle for second opinions; plugins can still register custom modes.
+- Article changes:
+  - Replaced the old `rush`/`smart`/`deep` task-sizing section with a low/medium/high/ultra dial section.
+  - Kept the reusable contract: turn capability down when both done-ness and path are clear; turn it up when the agent must discover more to be right.
+  - Added The Dial to the orchestration and sources sections without adding exact current model assignments.
+- Local context updates:
+  - Updated `research/amp-official-sources-2026.md` with a 2026-07-09 refresh sweep, current safe facts, stale-claim warnings, and superseded notes for manual/model/plugin mode naming.
+  - Updated `index.md` date, summary, and next action caveat.
+- Word counts after update:
+  - `src/content/posts/amp-factory-era-case-study.md`: 2,167 words.
+  - `research/amp-official-sources-2026.md`: 6,027 words.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed and generated `/posts/amp-factory-era-case-study/index.html` plus its slides route.
+  - `git diff --check` passed.
+
+## Updated Next Action
+
+- No immediate next action after verification. Future Amp article updates should re-run the Manual/Orbs/Models/Plugin API/Chronicle source sweep before publishing exact product claims, especially after mode/model announcements.

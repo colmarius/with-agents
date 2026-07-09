@@ -1,8 +1,8 @@
 # Research: Amp Official Sources for Task 7
 
 **Date:** 2026-06-28
-**Last updated:** 2026-07-08
-**Status:** complete for Task 7 prep and 2026-07-08 case-study refresh; re-check before future publication
+**Last updated:** 2026-07-09
+**Status:** complete for Task 7 prep and 2026-07-09 case-study refresh; re-check before future publication
 **Question:** Which current public Amp sources should anchor a future `amp-power-patterns` rewrite, and which older Amp claims are stale or risky?
 
 ## Recommendation
@@ -11,13 +11,21 @@ Use the current [Amp Manual](https://ampcode.com/manual), [Orbs manual](https://
 
 The future Task 7 article should be an Amp case study for factory-era coding-agent workflows: task sizing, delegation, context, review, feedback loops, and extensibility. It should not preserve the old draft’s stale feature catalog, Oracle-as-mode framing, Handoff section, fixed token thresholds, old model names, old speed/cost claims, or draft-only practice-path links.
 
-The 2026-07-08 refresh updates the published case study for remote execution: agents in orbs, project-configured orb sizing, remote thread creation from ampcode.com onto any opted-in runner, and the repo/environment work needed to make headless agents productive. Keep exact orb prices, sizes, flags, keybindings, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+The 2026-07-09 refresh updates the published case study for Amp's new mode dial: `low`, `medium`, `high`, and `ultra` replace `smart`, `deep`, `rush`, and `large` as built-in modes. The 2026-07-08 refresh updated the article for remote execution: agents in orbs, project-configured orb sizing, remote thread creation from ampcode.com onto any opted-in runner, and the repo/environment work needed to make headless agents productive. Keep exact orb prices, sizes, flags, keybindings, model assignments, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+
+## Refresh Sweep — 2026-07-09
+
+Freshly checked source:
+
+- [The Dial](https://ampcode.com/news/the-dial): Amp's built-in agent modes are now `low`, `medium`, `high`, and `ultra`; they replace `smart`, `deep`, `rush`, and `large`. The product framing is capability-versus-cost, with `medium` as the default, `low` for exact bounded work, `high` for hard changes in known areas, and `ultra` for clear outcomes with many unknowns. Reasoning effort is now part of the tier rather than a separate knob. Each built-in tier has an oracle for second opinions. Plugins can still register custom modes, and classic mode plugins exist for users who want the old names back.
+
+Article-maintenance decision: update `src/content/posts/amp-factory-era-case-study.md` so the task-sizing section talks about the dial rather than the old `rush`/`smart`/`deep` built-ins. Keep the reusable claim stable: choose the smallest capable worker when done-ness and path are clear; turn capability up when the agent must discover more before the change can be right. Do not include exact current model assignments in article prose because The Dial itself says the wiring will change as models improve.
 
 ## Refresh Sweep — 2026-07-08
 
 Freshly checked sources:
 
-- [Chronicle](https://ampcode.com/chronicle): newest relevant items are Agents, Anywhere (2026-07-08), More Orb Sizes (2026-07-03), Read Bigger Threads (2026-07-02), Putting an Agent in an Orb (2026-07-02 note), Agents in Orbs (2026-06-30), and Custom Agents (2026-06-19).
+- [Chronicle](https://ampcode.com/chronicle): newest relevant items are The Dial (2026-07-09), Agents, Anywhere (2026-07-08), More Orb Sizes (2026-07-03), Read Bigger Threads (2026-07-02), Putting an Agent in an Orb (2026-07-02 note), Agents in Orbs (2026-06-30), and Custom Agents (2026-06-19).
 - [Agents, Anywhere](https://ampcode.com/news/agents-anywhere): ampcode.com can start new agents on any opted-in machine where `amp` is running; runner mode is headless and waits to start/run new threads; multiple runners can run on one host if they use different directories.
 - [Agents in Orbs](https://ampcode.com/news/agents-in-orbs): orb-backed threads run on fresh remote machines containing code, plugins, and tools; users can control them like local agents, review/browse files, use a terminal, sync changes locally, and launch orb threads from CLI/TUI surfaces.
 - [More Orb Sizes](https://ampcode.com/news/more-orb-sizes) and the [Orbs manual](https://ampcode.com/manual/orbs): orb CPU/memory/disk and pricing are configurable per project and high-churn; the manual is canonical for projects, secrets/env vars, setup/resume lifecycle hooks, included tools, billing, pausing, and current sizes.
@@ -57,16 +65,16 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 ## Source Hierarchy for Task 7
 
 1. **Current canonical product docs:** Manual, Orbs manual, Plugin API, Models, and current homepage/install/manual sections.
-2. **Recent first-party product changes:** Chronicle items from May-July 2026, especially Agents Anywhere, Agents in Orbs, More Orb Sizes, Read Bigger Threads, Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, Rush 2.0, Faster Deep & Rush, Opus 4.8, End of Public Threads, npm Package Changes, and Plugins Everywhere.
+2. **Recent first-party product changes:** Chronicle items from May-July 2026, especially The Dial, Agents Anywhere, Agents in Orbs, More Orb Sizes, Read Bigger Threads, Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, Rush 2.0, Faster Deep & Rush, Opus 4.8, End of Public Threads, npm Package Changes, and Plugins Everywhere.
 3. **Recent first-party workflow notes:** Putting an Agent in an Orb, Feedback Loopable, Mainframe Magic, How to Pair With an Agent, and Liberating Code Review.
 4. **Archived guidance:** Context Management in Amp and 200k Tokens Is Plenty only for durable principles; do not use them for current Handoff/token-threshold guidance.
 5. **Old local draft material:** `src/content/posts/amp-power-patterns.md` only as raw material to replace, not as an authority.
 
 ## Current Product Facts Safe to Use Carefully
 
-- Amp currently presents three built-in modes: `deep`, `smart`, and `rush`. `deep` is for deep reasoning/complex work, `smart` is the state-of-the-art general mode, and `rush` is for fast, bounded tasks.
+- Amp currently presents four built-in dial tiers: `low`, `medium`, `high`, and `ultra`. They replace the old `smart`, `deep`, `rush`, and `large` built-ins. `medium` is the default; `low` is for exact bounded work; `high` is for hard changes in known areas; `ultra` is for clear outcomes where the path has many unknowns.
 - Oracle is **not** a mode. It is a second-opinion tool/subagent for complex reasoning, planning, debugging, or review.
-- Current model assignments are on `/models` and age quickly. As of this research pass: `deep` uses GPT-5.5, `smart` uses Claude Opus 4.8, `rush` uses GPT-5.5, Oracle uses GPT-5.5, Librarian uses GPT-5.5, search uses Gemini 3 Flash, and Painter uses GPT Image 2.
+- Current model assignments are on `/models` and age quickly. The Dial lists current under-the-hood wiring for `low`/`medium`/`high`/`ultra`, but also says that wiring will change as models improve. Prefer dial-level capability descriptions over model names in durable public prose.
 - Amp now supports web/mobile/CLI surfaces for watching and driving active agent threads. Use this as a current product-direction point, not as a generic coding-agent requirement.
 - Amp now supports orb-backed remote agents and opted-in remote thread creation from ampcode.com onto any machine running Amp. Use this as remote-execution/orchestration direction, not as setup guidance.
 - Orbs are fresh remote machines associated with projects and configured through project settings; `.agents/setup` and `.agents/resume` are current repo lifecycle hooks for preparing and resuming orb work. Exact sizes/prices/flags should be verified from the Orbs manual immediately before publication.
@@ -79,7 +87,7 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 
 ## Stale or High-Risk Claims to Remove from the Old Draft
 
-- “Oracle mode” and any mode decision tree that omits `deep`.
+- “Oracle mode,” old built-in mode trees centered on `rush`/`smart`/`deep`, and any mode decision tree that omits the current `low`/`medium`/`high`/`ultra` dial.
 - Old model claims such as Rush using Claude Haiku 4.5, Smart using Claude Sonnet 4.5, or Oracle using GPT-5.
 - Exact old speed/cost claims such as “Rush is 67% cheaper, 50% faster.” If performance is discussed, use recent dated sources and prefer qualitative framing.
 - Fixed token thresholds such as “start new threads around 50-100k” or “quality degrades beyond 100k.” The current 200k note is archived and explicitly says auto-compaction makes longer threads fine/productive.
@@ -95,12 +103,12 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 
 ### Amp Manual — <https://ampcode.com/manual>
 
-**Recency/status:** current canonical manual; force-refetched 2026-06-28 and 2026-07-08.
+**Recency/status:** current canonical manual; force-refetched 2026-06-28 and 2026-07-08; mode naming superseded by The Dial on 2026-07-09.
 **Best use:** primary source for current product terminology and feature existence.
 
 Key points:
 
-- Amp is described as a frontier coding agent for terminal and editor, with three modes: `deep`, `smart`, and `rush`.
+- The 2026-07-08 pass described Amp as a frontier coding agent for terminal and editor, with three modes: `deep`, `smart`, and `rush`; The Dial supersedes that mode naming with `low`, `medium`, `high`, and `ultra`.
 - Prompting guidance emphasizes explicit outcomes, one thread per task, naming known files/commands, using `AGENTS.md`, and telling the agent how to verify its work.
 - `AGENTS.md` files are included from cwd/parents, subtree guidance when files are read, and user/system locations. Mentioned files and glob-scoped guidance are supported.
 - Thread references are current: users can reference Amp thread URLs/IDs; Amp extracts relevant information from the referenced thread.
@@ -111,8 +119,8 @@ Key points:
 
 Task 7 use:
 
-- Anchor current terminology, limitations, and safe feature descriptions here.
-- Use the manual to correct the old draft’s Oracle/mode/subagent/Librarian sections.
+- Anchor current limitations and safe feature descriptions here.
+- Use the manual to correct the old draft’s Oracle/subagent/Librarian sections, but use The Dial for current built-in mode names.
 - Avoid copying install/pricing details unless the article truly needs them; reverify close to publication.
 
 ### Manual Plugins Section — <https://ampcode.com/manual#plugins>
@@ -136,14 +144,14 @@ Task 7 use:
 
 ### Plugin API Reference — <https://ampcode.com/manual/plugin-api>
 
-**Recency/status:** current generated/reference documentation; force-refetched 2026-06-28 and 2026-07-08.
+**Recency/status:** current generated/reference documentation; force-refetched 2026-06-28 and 2026-07-08; built-in mode naming should be rechecked after The Dial.
 **Best use:** precise API capabilities when discussing custom agents/orchestration.
 
 Key points:
 
 - Example plugin covers `session.start`, `tool.call`, `tool.result`, `agent.start`, `agent.end`, commands, UI, tools, thread append, runtime/config, and `amp.ai.ask`.
 - Current API includes `createAgent`, `getBuiltinAgent`, `registerAgentMode`, thread handles, thread append/wait/cancel/messages, command availability, plugin tools, and helpers for tool calls/files.
-- Built-in agent handles support `smart`, `deep`, and `rush`.
+- The 2026-07-08 pass showed built-in agent handles for `smart`, `deep`, and `rush`; after The Dial, recheck exact handles before publishing plugin code examples.
 - Custom agents can run one-shot or create background threads; `parentThreadID` connects spawned work to a parent thread.
 - Some APIs are marked experimental or compatibility aliases; plugin/custom-agent details can churn.
 
@@ -154,11 +162,12 @@ Task 7 use:
 
 ### Amp Chronicle — <https://ampcode.com/chronicle>
 
-**Recency/status:** current release/news index; force-refetched 2026-06-28 and 2026-07-08.
+**Recency/status:** current release/news index; force-refetched 2026-06-28 and 2026-07-08; The Dial checked directly on 2026-07-09.
 **Best use:** latest-product-change sweep before editing/publishing.
 
 Important recent items:
 
+- 2026-07-09 The Dial: built-in modes are now `low`, `medium`, `high`, and `ultra`, replacing `smart`, `deep`, `rush`, and `large`; reasoning effort is part of the tier; plugins can still register custom modes.
 - 2026-07-08 Agents Anywhere: start new agents remotely from ampcode.com on any opted-in machine or headless runner that can run `amp`.
 - 2026-07-03 More Orb Sizes: project-level orb CPU/memory choices; exact prices and sizes are date-sensitive.
 - 2026-07-02 Read Bigger Threads: `read_thread` became a subagent for long/compacted threads that checks for revisions and reverts.
@@ -186,19 +195,19 @@ Task 7 use:
 
 ### Models — <https://ampcode.com/models>
 
-**Recency/status:** current model matrix; force-refetched 2026-06-28 and 2026-07-08.
+**Recency/status:** model matrix force-refetched 2026-06-28 and 2026-07-08; mode assignments below are superseded by The Dial's 2026-07-09 wiring and should be rechecked from `/models` before publication.
 **Best use:** current mode/subagent/system model assignments if model names must appear.
 
 Key points:
 
 - Modes are framed as a combination of system prompt, tools, and model.
-- Current mode assignments: Deep = GPT-5.5, Smart = Claude Opus 4.8, Rush = GPT-5.5.
+- Superseded 2026-07-08 mode assignments: Deep = GPT-5.5, Smart = Claude Opus 4.8, Rush = GPT-5.5. The Dial replaced these built-ins with `low`/`medium`/`high`/`ultra` and says exact wiring will change.
 - Current subagent assignments: Review = GPT-5.5, Search = Gemini 3 Flash, Oracle = GPT-5.5, Librarian = GPT-5.5, Read Thread = GLM 5.2.
 - System models include View Media = Gemini 3 Flash, Painter = GPT Image 2, Titling = Claude Haiku 4.5, and Compaction = GPT-5.4.
 
 Task 7 use:
 
-- Prefer role-based descriptions (`rush` for bounded tasks, `deep` for hard tasks) over model names.
+- Prefer dial-level descriptions (`low` for exact bounded tasks, `medium` as default, `high` for hard changes, `ultra` for unknown paths) over model names.
 - If model names survive, mark them verified as of the publication date and expect churn.
 
 ### Amp Rebuilt — <https://ampcode.com/news/neo>
@@ -635,8 +644,8 @@ Task 7 use:
 
 Consulted Oracle on 2026-06-28 after the first evidence pass. High-confidence feedback incorporated here:
 
-- Do not frame Oracle as a mode; current modes are `rush`, `smart`, and `deep`.
-- Include `deep` as the hard-work mode and make Oracle the second-opinion planning/review/debugging tool.
+- Do not frame Oracle as a mode. This remains true after The Dial: current built-in tiers are `low`, `medium`, `high`, and `ultra`; Oracle is a second-opinion planning/review/debugging tool.
+- Use The Dial for current mode naming; treat the earlier `rush`/`smart`/`deep` framing as superseded product terminology.
 - Remove old model names and Rush numbers rather than refreshing them into the main copy.
 - Treat Handoff as obsolete for current Amp product guidance.
 - Use archived context pages only for durable principles.
@@ -652,7 +661,7 @@ Working title: **Amp Power Patterns in the Factory Era** or **Amp as a Factory-E
 Suggested structure:
 
 1. **Tools change; patterns persist.** Amp is the example, while the reusable lessons are task sizing, feedback loops, review, context hygiene, and delegation.
-2. **Match mode to uncertainty.** `rush` for bounded known-done tasks; `smart` for general strong work; `deep` for hard/complex tasks; Oracle for second-opinion planning/review/debugging.
+2. **Set the dial by uncertainty.** `low` for exact bounded tasks; `medium` as the default; `high` for hard work in a known area; `ultra` for clear outcomes with many unknowns; Oracle for second-opinion planning/review/debugging.
 3. **Delegate with contracts.** Subagents for independent work, Oracle for critique, Librarian for external/default-branch code research, review/check agents for codified review criteria.
 4. **Context is product plus repo state.** Use auto-compaction, thread references, `AGENTS.md`, skills, and lazy-loaded MCP; link to public context articles for durable state instead of recreating them.
 5. **Make the factory prove its work.** Use Diffs, `amp review`, Checks, Feedback Loopable, and Mainframe Magic as Amp-specific proof-loop examples; link to `make-the-agent-prove-it` for mechanics.
@@ -661,7 +670,7 @@ Suggested structure:
 
 ## Follow-Up Before Editing or Publishing Task 7
 
-- [ ] Re-run the Chronicle/manual/models/plugin API sweep on the publish date.
+- [ ] Re-run the Chronicle/manual/models/plugin API sweep on the publish date, especially after mode/model announcements like The Dial.
 - [ ] Decide whether the article needs exact model names; if not, omit them.
 - [ ] Decide whether install/setup/pricing appears; if yes, verify from current official pages right before publish.
 - [ ] Check whether current manual still says Handoff is absent and auto-compaction/thread references are the right framing.
