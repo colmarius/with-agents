@@ -518,6 +518,12 @@ const slidesDescription = `${post.data.description} Slide view.`;
         opacity: 1;
       }
 
+      @media (max-width: 48rem) {
+        :global(body.image-only-slide-active:not(.notes-visible) .slide-controls) {
+          opacity: 1;
+        }
+      }
+
       :global(body.image-only-slide-active:not(.notes-visible) .slide.active[data-layout='image'].slide-image-only) {
         aspect-ratio: auto;
         width: 100vw;
