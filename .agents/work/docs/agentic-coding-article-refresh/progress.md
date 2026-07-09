@@ -375,6 +375,16 @@
   - `npm run build` passed and generated `/posts/amp-factory-era-case-study/index.html` plus its slides route.
   - `git diff --check` passed.
 
+## 2026-07-09 (later): Full Amp source re-verification sweep
+
+- Re-verified every Amp product claim in `amp-factory-era-case-study.md` against live sources: Manual (Oracle "second opinion" wording, subagent isolation, Librarian default-branch-only search, `amp review` + Checks, thread visibility private/workspace/group/unlisted), Orbs manual (fresh clones, `.agents/setup`/`.agents/resume`, browse/terminal/`amp sync`), The Dial (four tiers, per-tier oracle, deprecated modes as classic plugins), Amp Rebuilt (auto-compaction at 90%, Handoff gone, thread references), Models page (tier/model assignments consistent with The Dial), and Chronicle (no announcements newer than Agents, Anywhere, already cited).
+- All claims held; no corrections needed.
+- Article changes (minimal):
+  - Bumped the sweep verification date to 2026-07-09 in the intro and Sources used.
+  - Added one verified clause in the orchestration section: deprecated modes were repackaged as installable classic plugins on the same plugin API.
+- Word count after update: `src/content/posts/amp-factory-era-case-study.md`: 2,175 words.
+- Verification: `npm run check` passed (0 errors/warnings/hints); `npm run build` passed (18 pages).
+
 ## Updated Next Action
 
 - No immediate next action after verification. Future Amp article updates should re-run the Manual/Orbs/Models/Plugin API/Chronicle source sweep before publishing exact product claims, especially after mode/model announcements.

@@ -8,7 +8,7 @@ Updated: 2026-07-09
 
 Review and refresh the draft post backlog now that `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, `small-threads-durable-state`, and `amp-factory-era-case-study` are public. The public series is broader agentic-coding guidance: alignment, evidence, context hygiene, good friction, codebase infrastructure, and multi-agent/factory workflows. Amp appears as one concrete tool case study, not the whole framing.
 
-On 2026-07-09, the Amp case study was refreshed for [The Dial](https://ampcode.com/news/the-dial): `low`, `medium`, `high`, and `ultra` now replace `smart`, `deep`, `rush`, and `large` as the built-in mode framing. On 2026-07-08, the case study was refreshed against the latest Amp Chronicle/news sources for agents in orbs, configurable orb sizes, remote thread creation from ampcode.com, and long-thread context retrieval.
+On 2026-07-09 (later pass), all Amp product claims in the case study were re-verified against the live Manual, Orbs manual, Models page, The Dial, Amp Rebuilt, and Chronicle; all claims held, the sweep date was bumped, and a verified classic-plugins clause was added. On 2026-07-09, the Amp case study was refreshed for [The Dial](https://ampcode.com/news/the-dial): `low`, `medium`, `high`, and `ultra` now replace `smart`, `deep`, `rush`, and `large` as the built-in mode framing. On 2026-07-08, the case study was refreshed against the latest Amp Chronicle/news sources for agents in orbs, configurable orb sizes, remote thread creation from ampcode.com, and long-thread context retrieval.
 
 ## Artifacts
 
