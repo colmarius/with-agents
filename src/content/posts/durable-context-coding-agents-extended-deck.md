@@ -10,13 +10,13 @@ order: 3
 
 <!--
 Maintenance note for agents:
-durable-context-coding-agents-v2.md is the richer slide-first alternate for the canonical public article/deck in durable-context-coding-agents.md.
+durable-context-coding-agents-extended-deck.md is the richer slide-first alternate for the canonical public article/deck in durable-context-coding-agents.md.
 
-When changing v2, also review durable-context-coding-agents.md in the same diff and either:
+When changing the extended deck, also review durable-context-coding-agents.md in the same diff and either:
 - mirror factual, source, terminology, and section-order changes where applicable, or
-- leave v2 intentionally different because it is the richer slide-first alternate.
+- leave the extended deck intentionally different because it is the richer slide-first alternate.
 
-durable-context-coding-agents-image-deck.md is an image-only experiment and is not part of the canonical/v2 sync contract.
+durable-context-coding-agents-image-deck.md is an image-only experiment and is not part of the canonical/extended-deck sync contract.
 Do not publish, rename, delete, or replace the canonical public post without explicit human approval.
 -->
 

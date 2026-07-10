@@ -11,7 +11,7 @@ order: 4
 <!--
 Maintenance note for agents:
 durable-context-coding-agents-image-deck.md is an image-only experiment for the durable-context talk.
-It is not part of the canonical/v2 sync contract.
+It is not part of the canonical/extended-deck sync contract.
 
 Slide images live in public/slides/durable-context-coding-agents-image-deck/.
 Do not publish, rename, delete, or replace the canonical public post without explicit human approval.
