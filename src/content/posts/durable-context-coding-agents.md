@@ -17,7 +17,7 @@ When changing this canonical file, also review durable-context-coding-agents-v2.
 - mirror factual, source, terminology, and section-order changes where applicable, or
 - leave v2 intentionally different because it is the richer slide-first alternate.
 
-durable-context-coding-agents-v3.md is an image-only experiment and is not part of the canonical/v2 sync contract.
+durable-context-coding-agents-image-deck.md is an image-only experiment and is not part of the canonical/v2 sync contract.
 Do not publish, rename, delete, or replace draft variants without explicit human approval.
 -->
 
@@ -31,7 +31,7 @@ class: title
 
 Coding agents can now produce substantial code faster than many teams can align around it. The question is where the intent, constraints, decisions, and proof should live when the chat thread is temporary and the repository is the system of record.
 
-This post is the practical version: what to keep in the repo, what to leave in chat, and how to make the next agent run start smarter than the last one. If you prefer the visual deck, start with the [image-slide version](/posts/durable-context-coding-agents-v3/slides/#1).
+This post is the practical version: what to keep in the repo, what to leave in chat, and how to make the next agent run start smarter than the last one. If you prefer the visual deck, start with the [image-slide version](/posts/durable-context-coding-agents-image-deck/slides/#1).
 
 ## Coding agents made implementation cheap
 <!-- slide:
