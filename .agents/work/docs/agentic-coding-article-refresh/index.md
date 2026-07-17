@@ -2,13 +2,13 @@
 
 Status: completed
 Category: docs
-Updated: 2026-07-09
+Updated: 2026-07-17
 
 ## Summary
 
 Review and refresh the draft post backlog now that `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, `small-threads-durable-state`, and `amp-factory-era-case-study` are public. The public series is broader agentic-coding guidance: alignment, evidence, context hygiene, good friction, codebase infrastructure, and multi-agent/factory workflows. Amp appears as one concrete tool case study, not the whole framing.
 
-On 2026-07-09 (later pass), all Amp product claims in the case study were re-verified against the live Manual, Orbs manual, Models page, The Dial, Amp Rebuilt, and Chronicle; all claims held, the sweep date was bumped, and a verified classic-plugins clause was added. On 2026-07-09, the Amp case study was refreshed for [The Dial](https://ampcode.com/news/the-dial): `low`, `medium`, `high`, and `ultra` now replace `smart`, `deep`, `rush`, and `large` as the built-in mode framing. On 2026-07-08, the case study was refreshed against the latest Amp Chronicle/news sources for agents in orbs, configurable orb sizes, remote thread creation from ampcode.com, and long-thread context retrieval.
+On 2026-07-17, the Amp case study and field guide were refreshed for [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent): Amp agents can now spawn full threads across local machines, orbs, and runners, then exchange messages and files. The case study now distinguishes that primitive from isolated built-in subagents and treats target executor, transfer inputs, budget, stop conditions, proof, return paths, and integration ownership as delegation contracts. Current billing rules were verified from the Manual's pricing section; the supplied `/pricing` route currently returns 404 and was not published. Earlier July passes cover The Dial, orbs, runners, and long-thread retrieval.
 
 ## Artifacts
 
@@ -30,7 +30,7 @@ On 2026-07-09 (later pass), all Amp product claims in the case study were re-ver
 
 ## Next Action
 
-- No immediate action. The public article refresh is complete. Future Amp article changes should re-run the Manual/Orbs/Models/Plugin API/Chronicle sweep before publishing exact product claims, especially after mode/model announcements like The Dial.
+- No immediate action. The public article refresh is complete. Future Amp article changes should re-run the Manual/Orbs/Models/Plugin API/Chronicle/pricing sweep before publishing exact product claims, especially after orchestration, mode/model, or billing announcements.
 
 ## Open Questions
 

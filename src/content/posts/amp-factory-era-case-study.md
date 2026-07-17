@@ -1,6 +1,6 @@
 ---
 title: 'Amp as a Factory-Era Coding-Agent Case Study'
-description: 'A source-backed Amp case study for task sizing, delegation contracts, remote execution, context hygiene, proof loops, review, and orchestration without turning the broader agentic-coding series into an Amp manual.'
+description: 'A source-backed Amp case study for task sizing, delegation contracts, remote execution, agent-to-agent orchestration, cost governance, proof loops, and review without turning the broader agentic-coding series into an Amp manual.'
 pubDate: 2026-06-28
 tags: ['AI Agents', 'Amp', 'Workflows', 'Agentic Coding']
 draft: false
@@ -16,11 +16,11 @@ order: 5
 Amp detail → reusable contract → workflow habit
 ```
 
-Amp is the concrete case study here; the reusable lessons are task sizing, uncertainty, delegation contracts, remote execution, context hygiene, proof loops, review, and orchestration. The product details below were swept against Amp's current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), and [Chronicle](https://ampcode.com/chronicle) on 2026-07-09, including [The Dial](https://ampcode.com/news/the-dial).
+Amp is the concrete case study here; the reusable lessons are task sizing, uncertainty, delegation contracts, remote execution, agent-to-agent coordination, cost governance, context hygiene, proof loops, review, and orchestration. The product details below were swept against Amp's current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), and [Chronicle](https://ampcode.com/chronicle) on 2026-07-17, including [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent), [Agents, Anywhere](https://ampcode.com/news/agents-anywhere), [The Dial](https://ampcode.com/news/the-dial), and the Manual's current [pricing section](https://ampcode.com/manual#pricing).
 
 For the broader map, read [Agentic Coding in 2026](/posts/agentic-coding-2026). For durable repo-local memory, read [Your Repo Is the Memory](/posts/durable-context-coding-agents). For proof mechanics, read [Make the Agent Prove It](/posts/make-the-agent-prove-it). For small-thread operating practice, read [Small Threads, Durable State](/posts/small-threads-durable-state).
 
-This article deliberately avoids setup walkthroughs, pricing, exact orb sizes, UI shortcuts, exact current models, token thresholds, and installation commands. Those details churn too quickly for the job.
+This article deliberately avoids setup walkthroughs, exact orb prices and sizes, UI shortcuts, exact current models, token thresholds, and installation commands. Those details churn too quickly for the job. It includes only the billing rules that materially affect the work contract, with a verification date.
 
 ## Set the dial by uncertainty, not urgency
 
@@ -37,6 +37,8 @@ This article deliberately avoids setup walkthroughs, pricing, exact orb sizes, U
 | Second opinion, critique, or adversarial review | Oracle | "Inspect the plan, bug, diff, or design and tell me what I am missing." |
 
 **Oracle is still a critique contract, not the implementation worker.** The Dial says every built-in tier has an oracle backing second opinions, and the manual describes Oracle as a "second opinion" model for complex reasoning or analysis. Use that before or after implementation; do not confuse reviewer capacity with ownership of the edit.
+
+**Cost belongs in the same contract.** Amp's [pricing documentation](https://ampcode.com/manual#pricing) says it passes actual LLM and certain tool costs through with zero markup for individuals and non-enterprise workspaces, with no subscription or commitment and a $5 minimum credit purchase; Enterprise usage is 50% more expensive (verified 2026-07-17). That makes the dial and fan-out direct budget choices. Before launching parallel workers, set the worker count, capability tier, stop condition, and evidence each worker must return.
 
 ```text
 If "done" and "how" are clear, turn the dial down.
@@ -66,6 +68,15 @@ Use subagents only when the work is independent enough that
 parallel progress will not create merge conflicts or hidden coupling.
 Give each subagent its files, scope limit, proof target, and expected summary.
 Review and integrate the results in the main thread.
+```
+
+That isolation boundary still applies to built-in subagents. [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent) adds a different primitive: an Amp agent can spawn full threads in an orb, on the local machine, or on another runner, then send messages and files between them. It can offload a side quest, fan out tests, recover useful files from old work, or coordinate a change in another project. The stronger primitive needs a stronger contract:
+
+```text
+Name the target project and execution environment.
+Send only the files and context the worker needs.
+Set a budget, stop condition, proof target, and return message.
+Keep integration ownership in one place.
 ```
 
 **Oracle is for critique and hard judgment.** Ask it to review a plan, stress-test a migration, inspect a diff, identify likely race conditions, or propose proof that would actually cover a bug. It is most useful when the main agent might make the locally obvious but globally wrong edit.
@@ -134,14 +145,18 @@ Those examples are Amp-specific, but the lesson on the slide is general.
 ```text
 web/mobile/CLI control → active-thread triage
 orbs and runners       → explicit environment contracts
+spawned threads        → delegated work across projects and machines
+messages and files     → explicit inputs and return paths
 custom agents          → clearer delegation contracts
 plugin hooks           → policy and proof closer to the loop
 diff/review UI         → human understanding stays attached
 ```
 
-Amp's direction is no longer "one assistant in one sidebar." [Agents, Everywhere](https://ampcode.com/news/agents-everywhere) describes watching and driving active Amp agents across web, mobile, and CLI. [Agents in Orbs](https://ampcode.com/news/agents-in-orbs) adds remote machines where agents can run without occupying your laptop. [More Orb Sizes](https://ampcode.com/news/more-orb-sizes) confirms that remote runtime is a project-level choice, and [Agents, Anywhere](https://ampcode.com/news/agents-anywhere) extends remote creation from ampcode.com to any opted-in machine or headless runner. [The Dial](https://ampcode.com/news/the-dial) adds a simpler default allocation interface: choose low/medium/high/ultra capability by task difficulty, while plugins can still register custom modes — Amp even repackaged the deprecated modes as installable classic plugins on that same API. The [Custom Agents](https://ampcode.com/news/custom-agents) announcement and the [Plugin API](https://ampcode.com/manual/plugin-api) show how plugins can create custom agents, run them once, create threads, append messages, wait for responses, and connect background work to a parent thread.
+Amp's direction is no longer "one assistant in one sidebar." [Agents, Everywhere](https://ampcode.com/news/agents-everywhere) describes watching and driving active Amp agents across web, mobile, and CLI. [Agents in Orbs](https://ampcode.com/news/agents-in-orbs) adds remote machines where agents can run without occupying your laptop. [More Orb Sizes](https://ampcode.com/news/more-orb-sizes) confirms that remote runtime is a project-level choice, and [Agents, Anywhere](https://ampcode.com/news/agents-anywhere) extends remote creation from ampcode.com to any opted-in machine or headless runner.
 
-That is the factory frontier: not one smarter worker, but many workers with contracts, state, environment boundaries, proof, and review. It is also the highest-churn part of the product — plugin APIs include experimental surfaces, and exact flags, orb shapes, model assignments, and UI details change — which is why this article avoids incidental details. Use the direction, not the details:
+[From Agent to Agent](https://ampcode.com/news/from-agent-to-agent) moves orchestration inside the loop: an agent can now create those threads itself, exchange messages and files with them, and coordinate work across projects or execution environments. The [Custom Agents](https://ampcode.com/news/custom-agents) announcement and the [Plugin API](https://ampcode.com/manual/plugin-api) provide the lower-level extension surface for creating agents, appending messages, waiting for responses, and connecting background work to a parent thread. [The Dial](https://ampcode.com/news/the-dial) adds the allocation control: choose low/medium/high/ultra capability by task difficulty, while plugins can still register custom modes — Amp even repackaged the deprecated modes as installable classic plugins on that same API.
+
+That is the factory frontier: not one smarter worker, but many workers with contracts, state, environment boundaries, budgets, return paths, proof, and review. It is also the highest-churn part of the product — plugin APIs include experimental surfaces, and exact flags, orb shapes, model assignments, and UI details change — which is why this article avoids incidental details. Use the direction, not the details.
 
 The transcript-backed sources explain why this matters. Raising an Agent episode 9 frames the shift as "the assistant is dead, long live the factory": feed agents tasks they are likely to succeed on, then improve the codebase so more tasks become safe to delegate [00:25:29]-[00:27:56]. Thorsten Ball's harness talk says the hard problem is increasingly where agents run, how their work is tracked, how results are preserved, and how humans coordinate many cheap workers [00:43:42]-[00:49:24].
 
@@ -156,18 +171,19 @@ uncertainty → delegation contract → proof loop → human judgment
 Tool details change; the work contracts do not. When Amp changes again, keep these:
 
 1. Size the task to the uncertainty.
-2. Give every delegate a contract.
+2. Give every delegate a scope, environment, budget, return path, and proof target.
 3. Keep product context separate from repo-local task state and environment setup.
 4. Require proof before acceptance.
 5. Preserve human judgment for consequences the agent cannot own.
-6. Treat orchestration APIs as frontier surfaces, not beginner defaults.
+6. Bound parallelism so the factory cannot create spend or review debt without a stop condition.
+7. Treat orchestration APIs as frontier surfaces, not beginner defaults.
 
 That is the pattern worth copying even when the product underneath it moves.
 
 ## Sources used
 
-- Official Amp product sweep: [Amp Manual](https://ampcode.com/manual), [Amp Orbs manual](https://ampcode.com/manual/orbs), [Amp Plugin API](https://ampcode.com/manual/plugin-api), [Amp Models](https://ampcode.com/models), and [Amp Chronicle](https://ampcode.com/chronicle), verified 2026-07-09, including [The Dial](https://ampcode.com/news/the-dial).
-- Current Amp news checked for product direction: [The Dial](https://ampcode.com/news/the-dial), [Agents, Anywhere](https://ampcode.com/news/agents-anywhere), [More Orb Sizes](https://ampcode.com/news/more-orb-sizes), [Read Bigger Threads](https://ampcode.com/news/read-bigger-threads), [Agents in Orbs](https://ampcode.com/news/agents-in-orbs), [Amp Rebuilt](https://ampcode.com/news/neo), [Agents, Everywhere](https://ampcode.com/news/agents-everywhere), [Custom Agents](https://ampcode.com/news/custom-agents), [Diffs](https://ampcode.com/news/diffs), [Rush 2.0](https://ampcode.com/news/rush-2.0), [Liberating Code Review](https://ampcode.com/news/liberating-code-review), and [The End of Public Threads](https://ampcode.com/news/end-of-public-threads).
+- Official Amp product sweep: [Amp Manual](https://ampcode.com/manual), including [pricing](https://ampcode.com/manual#pricing), [Amp Orbs manual](https://ampcode.com/manual/orbs), [Amp Plugin API](https://ampcode.com/manual/plugin-api), [Amp Models](https://ampcode.com/models), and [Amp Chronicle](https://ampcode.com/chronicle), verified 2026-07-17.
+- Current Amp news checked for product direction: [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent), [Agents, Anywhere](https://ampcode.com/news/agents-anywhere), [The Dial](https://ampcode.com/news/the-dial), [More Orb Sizes](https://ampcode.com/news/more-orb-sizes), [Read Bigger Threads](https://ampcode.com/news/read-bigger-threads), [Agents in Orbs](https://ampcode.com/news/agents-in-orbs), [Amp Rebuilt](https://ampcode.com/news/neo), [Agents, Everywhere](https://ampcode.com/news/agents-everywhere), [Custom Agents](https://ampcode.com/news/custom-agents), [Diffs](https://ampcode.com/news/diffs), [Liberating Code Review](https://ampcode.com/news/liberating-code-review), and [The End of Public Threads](https://ampcode.com/news/end-of-public-threads).
 - Amp workflow notes checked for feedback-loop and factory examples: [Putting an Agent in an Orb](https://ampcode.com/notes/putting-an-agent-in-an-orb), [Feedback Loopable](https://ampcode.com/notes/feedback-loopable), [Mainframe Magic](https://ampcode.com/notes/mainframe-magic), and [How to Pair With an Agent](https://ampcode.com/notes/how-to-pair-with-an-agent).
 - Transcript-backed source anchors: [Amp founder interview](https://www.youtube.com/watch?v=_L8xxUXOTk0) [00:25:47]-[00:33:15]; [Raising an Agent episode 9](https://www.youtube.com/watch?v=2wjnV6F2arc) [00:10:18]-[00:17:24], [00:25:29]-[00:40:38]; [Raising an Agent episode 10](https://www.youtube.com/watch?v=4rx36wc9ugw) [00:10:17]-[00:27:57]; [Thorsten Ball, "LLMs are killing Agent Harness"](https://www.youtube.com/watch?v=thMFsqe8kbQ) [00:36:43]-[00:49:24].
 - Internal non-overlap anchors: [Agentic Coding in 2026](/posts/agentic-coding-2026), [Your Repo Is the Memory](/posts/durable-context-coding-agents), [Make the Agent Prove It](/posts/make-the-agent-prove-it), and [Small Threads, Durable State](/posts/small-threads-durable-state).

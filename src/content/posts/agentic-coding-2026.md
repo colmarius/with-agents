@@ -149,6 +149,8 @@ The frontier is moving from "one assistant beside one developer" toward longer-r
 
 Raising an Agent episode 9 frames the shift as "the assistant is dead, long live the factory": if agents can take a longer leash, fetch context, verify work, and run in parallel, teams can investigate more immediately and try more variants [00:25:29]-[00:31:43]. Episode 10 makes it concrete: some agent work is becoming less like a rapid chat and more like writing a well-scoped brief, sending the agent away, and checking the result later [00:00:55]-[00:10:17]. Ball's harness argument points to the same next problem: as model capability absorbs old harness tricks, the hard question shifts to where agents run, how work is tracked and preserved, and how humans coordinate many cheap workers [00:36:43]-[00:49:24].
 
+Amp's July 17 [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent) announcement is a current product example of that direction: an agent can spawn full threads on local machines, in remote orbs, or on other runners, then exchange messages and files across those threads. That makes execution environments, transfer boundaries, budgets, return paths, and integration ownership part of the task brief. The [Amp case study](/posts/amp-factory-era-case-study) covers those contracts in detail.
+
 So the factory-era checklist is not "launch more agents." It is:
 
 - feed agents tasks that are likely to succeed
@@ -184,3 +186,4 @@ The through-line is simple: align before code is cheap, prove before merge, keep
 - [Raising an Agent episode 9, "The Assistant Is Dead, Long Live the Factory"](https://www.youtube.com/watch?v=2wjnV6F2arc), especially [00:10:18]-[00:17:24] and [00:25:29]-[00:40:38] on agent-native codebases, feedback loops, and factory-era workflows.
 - [Raising an Agent episode 10, "Killing the Sidebar"](https://www.youtube.com/watch?v=4rx36wc9ugw), especially [00:00:55]-[00:10:17] on longer-running, well-scoped agent work.
 - [Thorsten Ball, "LLMs are killing Agent Harness"](https://www.youtube.com/watch?v=thMFsqe8kbQ), especially [00:22:27]-[00:49:24] on thinner harnesses, the agent loop, and coordinating many cheap agents.
+- [Amp, "From Agent to Agent"](https://ampcode.com/news/from-agent-to-agent), verified 2026-07-17, for agent-created threads and message/file exchange across local, orb, runner, and cross-project work.

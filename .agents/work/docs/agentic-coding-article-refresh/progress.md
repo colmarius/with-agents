@@ -388,3 +388,34 @@
 ## Updated Next Action
 
 - No immediate next action after verification. Future Amp article updates should re-run the Manual/Orbs/Models/Plugin API/Chronicle source sweep before publishing exact product claims, especially after mode/model announcements.
+
+## 2026-07-17 Amp Agent-to-Agent and Pricing Refresh
+
+- Trigger: refresh Amp research and Amp-related public posts against [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent), [Agents, Anywhere](https://ampcode.com/news/agents-anywhere), [The Dial](https://ampcode.com/news/the-dial), [Chronicle](https://ampcode.com/chronicle), and the supplied pricing URL.
+- Fresh source findings:
+  - Agents can now spawn full Amp threads in orbs, on the local machine, or on other runners, then exchange messages and files across threads.
+  - This is a separate primitive from built-in subagents, which the current Manual still describes as isolated workers that cannot communicate and only return final summaries.
+  - Agents, Anywhere remains opt-in; interactive clients accept remote work in their working directory, while `amp --no-tui` provides a headless runner.
+  - The Dial remains `low`, `medium`, `high`, and `ultra`, with `medium` as the default and an oracle for every tier.
+  - `https://ampcode.com/pricing` returned HTTP 404. The live canonical source is the Manual's [pricing section](https://ampcode.com/manual#pricing): usage pass-through with zero markup for individuals and non-enterprise workspaces, no subscription or commitment, a $5 minimum credit purchase, and a 50% Enterprise usage premium.
+- Public article changes:
+  - `amp-factory-era-case-study.md` now distinguishes isolated subagents from spawned full threads and adds executor/project, transferred inputs, budget, stop condition, proof, return path, and integration ownership to the delegation contract.
+  - The case study now treats mode choice and worker fan-out as cost-governance decisions, using only date-stamped billing facts and linking to the live Manual section rather than the dead `/pricing` route.
+  - `agentic-coding-2026.md` now uses From Agent to Agent as a current concrete example of the broader factory-workflow direction and points readers to the case study for the operating contract.
+- Research/work-item changes:
+  - Updated `research/amp-official-sources-2026.md` through 2026-07-17 with a fresh source sweep, safe current facts, stale-link warning, and focused From Agent to Agent and pricing notes.
+  - Updated `index.md` date, summary, and future source-sweep guidance.
+- Word counts:
+  - `src/content/posts/amp-factory-era-case-study.md`: 2,179 before, 2,460 after.
+  - `src/content/posts/agentic-coding-2026.md`: 2,052 before, 2,139 after.
+  - `research/amp-official-sources-2026.md`: 6,027 before, 6,789 after.
+  - This focused refresh grew the posts instead of applying the normal 20-30% refresh cut because it adds a materially new orchestration primitive and its cost boundary to already-trimmed public articles; duplicated release-note detail stayed in research rather than article prose.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed and generated both updated post routes and slide routes (18 pages total).
+  - `git diff --check` passed as part of the chained verification command.
+  - `npm run lint:fix` was not run because only Markdown changed and the Biome configuration ignores these files; the known repo-wide command also reports pre-existing issues under `.agents/references/dot-agents/site/`.
+
+## Updated Next Action
+
+- No immediate action. Future Amp article changes should re-run the Manual/Orbs/Models/Plugin API/Chronicle/pricing sweep before publishing exact product claims, especially after orchestration, mode/model, or billing announcements.

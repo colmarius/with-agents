@@ -1,17 +1,30 @@
-# Research: Amp Official Sources for Task 7
+# Research: Amp Official Sources for Case-Study Maintenance
 
 **Date:** 2026-06-28
-**Last updated:** 2026-07-09
-**Status:** complete for Task 7 prep and 2026-07-09 case-study refresh; re-check before future publication
-**Question:** Which current public Amp sources should anchor a future `amp-power-patterns` rewrite, and which older Amp claims are stale or risky?
+**Last updated:** 2026-07-17
+**Status:** complete through the 2026-07-17 case-study refresh; re-check before future publication
+**Question:** Which current public Amp sources should anchor case-study maintenance, and which older Amp claims are stale or risky?
 
 ## Recommendation
 
-Use the current [Amp Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Plugin API](https://ampcode.com/manual/plugin-api), [Models](https://ampcode.com/models), and a fresh [Chronicle](https://ampcode.com/chronicle) sweep as the canonical product-source bundle for Task 7-style maintenance. Treat dated Chronicle/news/notes pages as evidence of product direction or workflow examples, not timeless feature documentation. For any public article, mark product details with the verification date or avoid exact product claims entirely.
+Use the current [Amp Manual](https://ampcode.com/manual), including its [pricing section](https://ampcode.com/manual#pricing), [Orbs manual](https://ampcode.com/manual/orbs), [Plugin API](https://ampcode.com/manual/plugin-api), [Models](https://ampcode.com/models), and a fresh [Chronicle](https://ampcode.com/chronicle) sweep as the canonical product-source bundle for case-study maintenance. Treat dated Chronicle/news/notes pages as evidence of product direction or workflow examples, not timeless feature documentation. For any public article, mark product details with the verification date or avoid exact product claims entirely.
 
-The future Task 7 article should be an Amp case study for factory-era coding-agent workflows: task sizing, delegation, context, review, feedback loops, and extensibility. It should not preserve the old draft’s stale feature catalog, Oracle-as-mode framing, Handoff section, fixed token thresholds, old model names, old speed/cost claims, or draft-only practice-path links.
+The published article should remain an Amp case study for factory-era coding-agent workflows: task sizing, delegation, context, review, feedback loops, extensibility, agent-to-agent coordination, and cost governance. It should not regress to the old draft's stale feature catalog, Oracle-as-mode framing, Handoff section, fixed token thresholds, old model names, old speed/cost claims, or draft-only practice-path links.
 
-The 2026-07-09 refresh updates the published case study for Amp's new mode dial: `low`, `medium`, `high`, and `ultra` replace `smart`, `deep`, `rush`, and `large` as built-in modes. The 2026-07-08 refresh updated the article for remote execution: agents in orbs, project-configured orb sizing, remote thread creation from ampcode.com onto any opted-in runner, and the repo/environment work needed to make headless agents productive. Keep exact orb prices, sizes, flags, keybindings, model assignments, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+The 2026-07-17 refresh adds Amp's agent-to-agent orchestration contract: agents can spawn full threads locally, in orbs, or on other runners, then exchange messages and files across them. It also records current billing rules because fan-out has direct cost implications. The 2026-07-09 refresh updated the published case study for Amp's mode dial, and the 2026-07-08 refresh covered remote execution. Keep exact orb prices, sizes, flags, keybindings, model assignments, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+
+## Refresh Sweep — 2026-07-17
+
+Freshly checked sources:
+
+- [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent): an Amp agent can spawn other agents as full threads in orbs, on the local machine, or on another machine/runner. Agents can send messages and files to each other. First-party examples include offloading side quests while the parent continues, fanning tests out across low-mode workers, recovering files from abandoned threads, sending a test matrix to another machine, and coordinating API documentation in another project.
+- [Agents, Anywhere](https://ampcode.com/news/agents-anywhere): remote thread creation remains opt-in. An enabled interactive client accepts new threads in its working directory; `amp --no-tui` starts a headless runner. Multiple runners can run on one host when they use different directories.
+- [The Dial](https://ampcode.com/news/the-dial): `low`, `medium`, `high`, and `ultra` remain the four built-in capability/cost tiers. `medium` is the default; every tier has an oracle; plugins can register custom modes. Exact model wiring is explicitly expected to change.
+- [Chronicle](https://ampcode.com/chronicle): From Agent to Agent is the newest product announcement as of 2026-07-17, after The Dial and Agents, Anywhere.
+- Supplied [pricing URL](https://ampcode.com/pricing): returned HTTP 404 on 2026-07-17. Do not publish this dead link. The current canonical first-party source is the Manual's [Pricing section](https://ampcode.com/manual#pricing).
+- [Manual pricing section](https://ampcode.com/manual#pricing): Amp bills actual LLM and certain tool usage. Individuals and non-enterprise workspaces pay provider API pricing with zero markup, no subscription or commitment, and a $5 minimum credit purchase. Enterprise usage is 50% more expensive and requires an initial $1,000 purchase that grants the same amount of Enterprise usage. Unused credits expire after one year of account inactivity; workspace credits are pooled.
+
+Article-maintenance decision: distinguish isolated built-in subagents from the new full-thread agent-to-agent primitive. Add target executor/project, transferred files/context, budget, stop condition, proof target, return message, and integration ownership to the delegation contract. Include only billing facts that materially affect task sizing and fan-out, date-stamp them, and keep exact orb prices and model assignments out of durable prose.
 
 ## Refresh Sweep — 2026-07-09
 
@@ -65,13 +78,14 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 ## Source Hierarchy for Task 7
 
 1. **Current canonical product docs:** Manual, Orbs manual, Plugin API, Models, and current homepage/install/manual sections.
-2. **Recent first-party product changes:** Chronicle items from May-July 2026, especially The Dial, Agents Anywhere, Agents in Orbs, More Orb Sizes, Read Bigger Threads, Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, Rush 2.0, Faster Deep & Rush, Opus 4.8, End of Public Threads, npm Package Changes, and Plugins Everywhere.
+2. **Recent first-party product changes:** Chronicle items from May-July 2026, especially From Agent to Agent, The Dial, Agents Anywhere, Agents in Orbs, More Orb Sizes, Read Bigger Threads, Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, End of Public Threads, npm Package Changes, and Plugins Everywhere.
 3. **Recent first-party workflow notes:** Putting an Agent in an Orb, Feedback Loopable, Mainframe Magic, How to Pair With an Agent, and Liberating Code Review.
 4. **Archived guidance:** Context Management in Amp and 200k Tokens Is Plenty only for durable principles; do not use them for current Handoff/token-threshold guidance.
 5. **Old local draft material:** `src/content/posts/amp-power-patterns.md` only as raw material to replace, not as an authority.
 
 ## Current Product Facts Safe to Use Carefully
 
+- Amp agents can spawn full Amp threads in orbs, on the local machine, or on another runner, then exchange messages and files. Keep this separate from built-in subagents, which the Manual still describes as isolated workers that return final summaries.
 - Amp currently presents four built-in dial tiers: `low`, `medium`, `high`, and `ultra`. They replace the old `smart`, `deep`, `rush`, and `large` built-ins. `medium` is the default; `low` is for exact bounded work; `high` is for hard changes in known areas; `ultra` is for clear outcomes where the path has many unknowns.
 - Oracle is **not** a mode. It is a second-opinion tool/subagent for complex reasoning, planning, debugging, or review.
 - Current model assignments are on `/models` and age quickly. The Dial lists current under-the-hood wiring for `low`/`medium`/`high`/`ultra`, but also says that wiring will change as models improve. Prefer dial-level capability descriptions over model names in durable public prose.
@@ -84,6 +98,7 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 - Librarian can search public GitHub and connected private GitHub repositories, but the manual says it reads only the default branch.
 - Amp does not ask for approval before running tools by default. Permissions can still be implemented via plugins or legacy settings. Frame this as a configurable security boundary, not a blanket recommendation.
 - Manual thread sharing currently supports private, workspace-shared, group-shared, and unlisted visibility. Chronicle says public discoverable thread sharing was removed on 2026-06-02.
+- Current billing is usage-based. Individuals and non-enterprise workspaces pay provider API prices with zero markup and no subscription or commitment; Enterprise usage carries a 50% premium. Treat worker count and dial tier as budget controls, and verify exact purchasing/credit rules from the Manual before publication.
 
 ## Stale or High-Risk Claims to Remove from the Old Draft
 
@@ -95,6 +110,7 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 - Old VS Code extension/sidebar assumptions. The February 2026 “Coding Agent Is Dead” post announced killing the editor extensions; May/June 2026 sources describe rebuilt web/mobile/CLI surfaces and a new sidebar. Verify UI details immediately before publishing.
 - Setup/install claims using `@sourcegraph/amp`; npm Package Changes says the CLI package is now `@ampcode/cli`, with direct installation recommended.
 - Pricing/free-tier claims unless reverified from current pricing/manual pages at publication time.
+- Links to `https://ampcode.com/pricing`; that supplied route returned HTTP 404 on 2026-07-17. Link to `https://ampcode.com/manual#pricing` while it remains canonical.
 - Exact orb sizes, prices, CLI flags, runner setup details, keybindings, or UI screenshots unless reverified from the current Orbs manual and latest news on the publication date.
 - Draft-only route links: `/posts/amp-first-win-15-minutes`, `/posts/what-is-an-agent`, `/posts/agent-workflows-that-stick`, `/posts/agent-planning-workflow`, `/posts/amp-power-patterns`, and `/posts/coding-with-agents-2025`.
 - Generic “use N subagents for N files” advice without independence, conflict, and review caveats.
@@ -162,11 +178,12 @@ Task 7 use:
 
 ### Amp Chronicle — <https://ampcode.com/chronicle>
 
-**Recency/status:** current release/news index; force-refetched 2026-06-28 and 2026-07-08; The Dial checked directly on 2026-07-09.
+**Recency/status:** current release/news index; force-refetched 2026-06-28, 2026-07-08, and 2026-07-17; The Dial checked directly on 2026-07-09 and 2026-07-17.
 **Best use:** latest-product-change sweep before editing/publishing.
 
 Important recent items:
 
+- 2026-07-17 From Agent to Agent: agents can spawn full threads across local machines, orbs, and other runners, then send messages and files between threads.
 - 2026-07-09 The Dial: built-in modes are now `low`, `medium`, `high`, and `ultra`, replacing `smart`, `deep`, `rush`, and `large`; reasoning effort is part of the tier; plugins can still register custom modes.
 - 2026-07-08 Agents Anywhere: start new agents remotely from ampcode.com on any opted-in machine or headless runner that can run `amp`.
 - 2026-07-03 More Orb Sizes: project-level orb CPU/memory choices; exact prices and sizes are date-sensitive.
@@ -192,6 +209,41 @@ Task 7 use:
 
 - Re-run Chronicle before publication; this is the source most likely to reveal stale product claims.
 - Use dated announcements for direction and examples, not timeless claims.
+
+### From Agent to Agent — <https://ampcode.com/news/from-agent-to-agent>
+
+**Recency/status:** 2026-07-17 product announcement; newest Chronicle item on the refresh date.
+**Best use:** current source for agent-driven orchestration across full Amp threads and executors.
+
+Key points:
+
+- An Amp agent can spawn another agent in an orb, on the local machine, or on another machine/runner.
+- Agents can send messages and files to each other across threads.
+- First-party examples cover unrelated side quests, parallel browser testing, recovering useful files from abandoned work, test execution on another machine, and cross-project documentation.
+- This is distinct from built-in subagents: it creates addressable threads with execution environments and transfer paths rather than isolated in-turn workers that only summarize back.
+
+Case-study use:
+
+- Treat agent-to-agent work as a delegation protocol: target project/executor, inputs, budget, stop condition, proof, return message, and integration owner.
+- Do not translate the examples into generic "spawn many agents" advice. Fan-out is useful only when work is independent and review/cost remain bounded.
+
+### Pricing — <https://ampcode.com/manual#pricing>
+
+**Recency/status:** current canonical Manual section, checked 2026-07-17. The user-supplied `https://ampcode.com/pricing` route returned HTTP 404 on the same date.
+**Best use:** current billing rules that affect task sizing, mode choice, and parallelism.
+
+Key points:
+
+- Amp charges for actual LLM and certain tool usage.
+- Individuals and non-enterprise workspaces pay provider API prices with zero markup.
+- There is no subscription or commitment; the minimum credit purchase is $5.
+- Enterprise usage is 50% more expensive and currently starts with a one-time $1,000 purchase that grants $1,000 of Enterprise usage.
+- Unused credits expire after one year of account inactivity; workspace credits are pooled.
+
+Case-study use:
+
+- Cost is part of the work contract when selecting a dial tier or fanning work out to multiple agents.
+- Date-stamp exact purchasing and premium claims. Keep per-model and per-orb prices out of durable prose unless a tutorial requires them and they are reverified immediately before publication.
 
 ### Models — <https://ampcode.com/models>
 
