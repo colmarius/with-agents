@@ -7,24 +7,25 @@
 
 ## Recommendation
 
-Use the current [Amp Manual](https://ampcode.com/manual), including its [pricing section](https://ampcode.com/manual#pricing), [Orbs manual](https://ampcode.com/manual/orbs), [Plugin API](https://ampcode.com/manual/plugin-api), [Models](https://ampcode.com/models), and a fresh [Chronicle](https://ampcode.com/chronicle) sweep as the canonical product-source bundle for case-study maintenance. Treat dated Chronicle/news/notes pages as evidence of product direction or workflow examples, not timeless feature documentation. For any public article, mark product details with the verification date or avoid exact product claims entirely.
+Use the current [Amp Manual](https://ampcode.com/manual), [Pricing page](https://ampcode.com/pricing), [Orbs manual](https://ampcode.com/manual/orbs), [Plugin API](https://ampcode.com/manual/plugin-api), [Models](https://ampcode.com/models), and a fresh [Chronicle](https://ampcode.com/chronicle) sweep as the canonical product-source bundle for case-study maintenance. Treat dated Chronicle/news/notes pages as evidence of product direction or workflow examples, not timeless feature documentation. For any public article, mark product details with the verification date or avoid exact product claims entirely. If first-party surfaces conflict, record the contradiction and prefer the newer dedicated page or announcement for the changed feature.
 
 The published article should remain an Amp case study for factory-era coding-agent workflows: task sizing, delegation, context, review, feedback loops, extensibility, agent-to-agent coordination, and cost governance. It should not regress to the old draft's stale feature catalog, Oracle-as-mode framing, Handoff section, fixed token thresholds, old model names, old speed/cost claims, or draft-only practice-path links.
 
-The 2026-07-17 refresh adds Amp's agent-to-agent orchestration contract: agents can spawn full threads locally, in orbs, or on other runners, then exchange messages and files across them. It also records current billing rules because fan-out has direct cost implications. The 2026-07-09 refresh updated the published case study for Amp's mode dial, and the 2026-07-08 refresh covered remote execution. Keep exact orb prices, sizes, flags, keybindings, model assignments, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+The 2026-07-17 refresh adds Amp's agent-to-agent orchestration contract: agents can spawn other agents as their own Amp threads locally, in orbs, or on other runners, then exchange messages and files across them. It also records the launch of optional subscriptions alongside continuing pay-as-you-go billing because fan-out has direct cost implications. The 2026-07-09 refresh updated the published case study for Amp's mode dial, and the 2026-07-08 refresh covered remote execution. Keep exact subscription prices and quotas, orb prices, sizes, flags, keybindings, model assignments, and UI screenshots out of durable prose unless they are reverified immediately before publication.
 
 ## Refresh Sweep — 2026-07-17
 
 Freshly checked sources:
 
-- [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent): an Amp agent can spawn other agents as full threads in orbs, on the local machine, or on another machine/runner. Agents can send messages and files to each other. First-party examples include offloading side quests while the parent continues, fanning tests out across low-mode workers, recovering files from abandoned threads, sending a test matrix to another machine, and coordinating API documentation in another project.
+- [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent): an Amp agent can spawn other agents as their own Amp threads in orbs, on the local machine, or on another machine/runner. Agents can send messages and files to each other. First-party examples include offloading side quests while the parent continues, fanning tests out across low-mode workers, recovering files from abandoned threads, sending a test matrix to another machine, and coordinating API documentation in another project.
 - [Agents, Anywhere](https://ampcode.com/news/agents-anywhere): remote thread creation remains opt-in. An enabled interactive client accepts new threads in its working directory; `amp --no-tui` starts a headless runner. Multiple runners can run on one host when they use different directories.
 - [The Dial](https://ampcode.com/news/the-dial): `low`, `medium`, `high`, and `ultra` remain the four built-in capability/cost tiers. `medium` is the default; every tier has an oracle; plugins can register custom modes. Exact model wiring is explicitly expected to change.
-- [Chronicle](https://ampcode.com/chronicle): From Agent to Agent is the newest product announcement as of 2026-07-17, after The Dial and Agents, Anywhere.
-- Supplied [pricing URL](https://ampcode.com/pricing): returned HTTP 404 on 2026-07-17. Do not publish this dead link. The current canonical first-party source is the Manual's [Pricing section](https://ampcode.com/manual#pricing).
-- [Manual pricing section](https://ampcode.com/manual#pricing): Amp bills actual LLM and certain tool usage. Individuals and non-enterprise workspaces pay provider API pricing with zero markup, no subscription or commitment, and a $5 minimum credit purchase. Enterprise usage is 50% more expensive and requires an initial $1,000 purchase that grants the same amount of Enterprise usage. Unused credits expire after one year of account inactivity; workspace credits are pooled.
+- [Subscriptions, At Last](https://ampcode.com/news/subscriptions): optional monthly subscriptions launched in beta on 2026-07-17. Megawatt is $20/month with 750 hours of small orbs, $20 of agent usage, and low/medium modes; Gigawatt is $200/month with 1,000 hours of large orbs, $200 of agent usage, and all modes. The announcement explicitly says pay-as-you-go remains available and subscriptions are not required.
+- [Chronicle](https://ampcode.com/chronicle): two product announcements share the latest date, 2026-07-17 — From Agent to Agent and Subscriptions, At Last — after The Dial and Agents, Anywhere.
+- [Pricing page](https://ampcode.com/pricing): the supplied URL initially returned HTTP 404 during the 2026-07-17 sweep, then went live with the subscription launch and now returns HTTP 200. It presents optional Megawatt and Gigawatt subscriptions alongside pay-as-you-go at API prices. Treat the exact beta plan prices, included agent usage, orb-hour quotas, and mode restrictions as high-churn details.
+- [Manual pricing section](https://ampcode.com/manual#pricing): the opening now recommends an optional monthly subscription and links to the dedicated pricing page. Its pay-as-you-go details still say individuals and non-enterprise workspaces pay provider API pricing with zero markup, with a $5 minimum credit purchase; Enterprise usage is 50% more expensive and requires an initial $1,000 purchase that grants the same amount of Enterprise usage. A later sentence still says “There is no subscription or commitment for Amp,” contradicting the new subscription guidance on the same page. Treat that sentence as stale, not as current billing policy.
 
-Article-maintenance decision: distinguish isolated built-in subagents from the new full-thread agent-to-agent primitive. Add target executor/project, transferred files/context, budget, stop condition, proof target, return message, and integration ownership to the delegation contract. Include only billing facts that materially affect task sizing and fan-out, date-stamp them, and keep exact orb prices and model assignments out of durable prose.
+Article-maintenance decision: distinguish isolated built-in subagents from spawned threads. Add target executor/project, transferred files/context, budget, stop condition, proof target, return message, and integration ownership to the delegation contract. In durable public prose, say subscriptions are optional and pay-as-you-go remains available; omit exact beta plan prices, quotas, orb prices, and model assignments.
 
 ## Refresh Sweep — 2026-07-09
 
@@ -85,7 +86,7 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 
 ## Current Product Facts Safe to Use Carefully
 
-- Amp agents can spawn full Amp threads in orbs, on the local machine, or on another runner, then exchange messages and files. Keep this separate from built-in subagents, which the Manual still describes as isolated workers that return final summaries.
+- Amp agents can spawn other agents as their own Amp threads in orbs, on the local machine, or on another runner, then exchange messages and files. Keep spawned threads separate from built-in subagents, which the Manual still describes as isolated workers that return final summaries.
 - Amp currently presents four built-in dial tiers: `low`, `medium`, `high`, and `ultra`. They replace the old `smart`, `deep`, `rush`, and `large` built-ins. `medium` is the default; `low` is for exact bounded work; `high` is for hard changes in known areas; `ultra` is for clear outcomes where the path has many unknowns.
 - Oracle is **not** a mode. It is a second-opinion tool/subagent for complex reasoning, planning, debugging, or review.
 - Current model assignments are on `/models` and age quickly. The Dial lists current under-the-hood wiring for `low`/`medium`/`high`/`ultra`, but also says that wiring will change as models improve. Prefer dial-level capability descriptions over model names in durable public prose.
@@ -98,7 +99,7 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 - Librarian can search public GitHub and connected private GitHub repositories, but the manual says it reads only the default branch.
 - Amp does not ask for approval before running tools by default. Permissions can still be implemented via plugins or legacy settings. Frame this as a configurable security boundary, not a blanket recommendation.
 - Manual thread sharing currently supports private, workspace-shared, group-shared, and unlisted visibility. Chronicle says public discoverable thread sharing was removed on 2026-06-02.
-- Current billing is usage-based. Individuals and non-enterprise workspaces pay provider API prices with zero markup and no subscription or commitment; Enterprise usage carries a 50% premium. Treat worker count and dial tier as budget controls, and verify exact purchasing/credit rules from the Manual before publication.
+- Amp now offers optional beta subscriptions with included agent and orb usage while retaining pay-as-you-go at provider API prices. The Manual says individuals and non-enterprise workspaces pay zero markup on pay-as-you-go usage; its later “no subscription” sentence is stale and contradicts both its own opening guidance and the dedicated Pricing page. Treat worker count and dial tier as budget controls, and reverify subscription tiers, included usage, Enterprise pricing, and credit rules before publication.
 
 ## Stale or High-Risk Claims to Remove from the Old Draft
 
@@ -109,8 +110,8 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 - Handoff as current product guidance. Amp Rebuilt says Handoff is gone; current guidance should use auto-compaction, thread references, and durable repo/work-item state instead.
 - Old VS Code extension/sidebar assumptions. The February 2026 “Coding Agent Is Dead” post announced killing the editor extensions; May/June 2026 sources describe rebuilt web/mobile/CLI surfaces and a new sidebar. Verify UI details immediately before publishing.
 - Setup/install claims using `@sourcegraph/amp`; npm Package Changes says the CLI package is now `@ampcode/cli`, with direct installation recommended.
-- Pricing/free-tier claims unless reverified from current pricing/manual pages at publication time.
-- Links to `https://ampcode.com/pricing`; that supplied route returned HTTP 404 on 2026-07-17. Link to `https://ampcode.com/manual#pricing` while it remains canonical.
+- Pricing, subscription, free-tier, or Enterprise-premium claims unless reverified from the dedicated Pricing page, current Manual, and latest billing announcement at publication time.
+- Treat the Manual's “There is no subscription or commitment for Amp” sentence as stale while it conflicts with the same Manual's subscription guidance, the live Pricing page, and the subscription announcement.
 - Exact orb sizes, prices, CLI flags, runner setup details, keybindings, or UI screenshots unless reverified from the current Orbs manual and latest news on the publication date.
 - Draft-only route links: `/posts/amp-first-win-15-minutes`, `/posts/what-is-an-agent`, `/posts/agent-workflows-that-stick`, `/posts/agent-planning-workflow`, `/posts/amp-power-patterns`, and `/posts/coding-with-agents-2025`.
 - Generic “use N subagents for N files” advice without independence, conflict, and review caveats.
@@ -183,7 +184,8 @@ Task 7 use:
 
 Important recent items:
 
-- 2026-07-17 From Agent to Agent: agents can spawn full threads across local machines, orbs, and other runners, then send messages and files between threads.
+- 2026-07-17 From Agent to Agent: agents can spawn other agents as their own threads across local machines, orbs, and other runners, then send messages and files between spawned threads.
+- 2026-07-17 Subscriptions, At Last: optional beta plans add included agent and orb usage while pay-as-you-go remains available.
 - 2026-07-09 The Dial: built-in modes are now `low`, `medium`, `high`, and `ultra`, replacing `smart`, `deep`, `rush`, and `large`; reasoning effort is part of the tier; plugins can still register custom modes.
 - 2026-07-08 Agents Anywhere: start new agents remotely from ampcode.com on any opted-in machine or headless runner that can run `amp`.
 - 2026-07-03 More Orb Sizes: project-level orb CPU/memory choices; exact prices and sizes are date-sensitive.
@@ -212,8 +214,8 @@ Task 7 use:
 
 ### From Agent to Agent — <https://ampcode.com/news/from-agent-to-agent>
 
-**Recency/status:** 2026-07-17 product announcement; newest Chronicle item on the refresh date.
-**Best use:** current source for agent-driven orchestration across full Amp threads and executors.
+**Recency/status:** 2026-07-17 product announcement; one of two Chronicle items on the refresh date.
+**Best use:** current source for agent-driven orchestration across spawned Amp threads and executors.
 
 Key points:
 
@@ -227,35 +229,37 @@ Case-study use:
 - Treat agent-to-agent work as a delegation protocol: target project/executor, inputs, budget, stop condition, proof, return message, and integration owner.
 - Do not translate the examples into generic "spawn many agents" advice. Fan-out is useful only when work is independent and review/cost remain bounded.
 
-### Pricing — <https://ampcode.com/manual#pricing>
+### Pricing — <https://ampcode.com/pricing>
 
-**Recency/status:** current canonical Manual section, checked 2026-07-17. The user-supplied `https://ampcode.com/pricing` route returned HTTP 404 on the same date.
+**Recency/status:** dedicated page checked 2026-07-17 after it went live; subscription plans are explicitly beta. Cross-checked against [Subscriptions, At Last](https://ampcode.com/news/subscriptions) and the Manual's [Pricing section](https://ampcode.com/manual#pricing).
 **Best use:** current billing rules that affect task sizing, mode choice, and parallelism.
 
 Key points:
 
-- Amp charges for actual LLM and certain tool usage.
-- Individuals and non-enterprise workspaces pay provider API prices with zero markup.
-- There is no subscription or commitment; the minimum credit purchase is $5.
-- Enterprise usage is 50% more expensive and currently starts with a one-time $1,000 purchase that grants $1,000 of Enterprise usage.
-- Unused credits expire after one year of account inactivity; workspace credits are pooled.
+- Megawatt is $20/month and currently includes 750 hours of small orbs plus $20 of agent usage restricted to low and medium modes.
+- Gigawatt is $200/month and currently includes 1,000 hours of large orbs plus $200 of agent usage across all modes.
+- Subscriptions are optional. Pay-as-you-go remains available at API prices for all features.
+- The Manual says individuals and non-enterprise workspaces pay provider API prices with zero markup and that the minimum credit purchase is $5.
+- The Manual says Enterprise usage is 50% more expensive and currently starts with a one-time $1,000 purchase that grants $1,000 of Enterprise usage.
+- The Manual is temporarily internally inconsistent: its opening recommends subscriptions, while a later legacy sentence still says there is no subscription or commitment. Do not use the latter as current policy.
 
 Case-study use:
 
 - Cost is part of the work contract when selecting a dial tier or fanning work out to multiple agents.
-- Date-stamp exact purchasing and premium claims. Keep per-model and per-orb prices out of durable prose unless a tutorial requires them and they are reverified immediately before publication.
+- Keep the public article durable: say optional subscriptions include agent/orb usage and pay-as-you-go remains available. Date-stamp and reverify exact beta tier prices, included usage, mode restrictions, credit rules, and the Enterprise premium before publishing them.
 
 ### Models — <https://ampcode.com/models>
 
-**Recency/status:** model matrix force-refetched 2026-06-28 and 2026-07-08; mode assignments below are superseded by The Dial's 2026-07-09 wiring and should be rechecked from `/models` before publication.
+**Recency/status:** model matrix force-refetched 2026-06-28, 2026-07-08, and 2026-07-17; the July 8 assignments below are retained only as a superseded snapshot.
 **Best use:** current mode/subagent/system model assignments if model names must appear.
 
 Key points:
 
 - Modes are framed as a combination of system prompt, tools, and model.
 - Superseded 2026-07-08 mode assignments: Deep = GPT-5.5, Smart = Claude Opus 4.8, Rush = GPT-5.5. The Dial replaced these built-ins with `low`/`medium`/`high`/`ultra` and says exact wiring will change.
-- Current subagent assignments: Review = GPT-5.5, Search = Gemini 3 Flash, Oracle = GPT-5.5, Librarian = GPT-5.5, Read Thread = GLM 5.2.
-- System models include View Media = Gemini 3 Flash, Painter = GPT Image 2, Titling = Claude Haiku 4.5, and Compaction = GPT-5.4.
+- Superseded 2026-07-08 subagent snapshot: Review = GPT-5.5, Search = Gemini 3 Flash, Oracle = GPT-5.5, Librarian = GPT-5.5, Read Thread = GLM 5.2. Do not label these assignments current.
+- Current Oracle detail checked 2026-07-17: the standalone Oracle uses GPT-5.6 Sol with high reasoning; in `high` mode, where GPT-5.6 Sol is the main model, Oracle uses Claude Fable 5 so the second opinion comes from a different frontier model.
+- Superseded 2026-07-08 system-model snapshot: View Media = Gemini 3 Flash, Painter = GPT Image 2, Titling = Claude Haiku 4.5, and Compaction = GPT-5.4. The 2026-07-17 Models page already lists Compaction as GPT-5.6 Sol, illustrating why exact wiring should stay out of durable prose.
 
 Task 7 use:
 
@@ -724,7 +728,8 @@ Suggested structure:
 
 - [ ] Re-run the Chronicle/manual/models/plugin API sweep on the publish date, especially after mode/model announcements like The Dial.
 - [ ] Decide whether the article needs exact model names; if not, omit them.
-- [ ] Decide whether install/setup/pricing appears; if yes, verify from current official pages right before publish.
+- [ ] If pricing appears, reverify subscription tiers, prices, included agent/orb usage, mode restrictions, pay-as-you-go rules, the Enterprise premium, and whether the Manual pricing contradiction has been fixed.
+- [ ] If exact model wiring appears, reverify it from the Models page and Manual; never promote a dated model snapshot as current.
 - [ ] Check whether current manual still says Handoff is absent and auto-compaction/thread references are the right framing.
 - [ ] Verify current UI/keybinding/sidebar details only if screenshots or instructions survive.
 - [ ] Compare rewritten article against `agentic-coding-2026`, `make-the-agent-prove-it`, and `small-threads-durable-state` to avoid overlap.

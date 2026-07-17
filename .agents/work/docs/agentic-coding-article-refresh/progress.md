@@ -419,3 +419,35 @@
 ## Updated Next Action
 
 - No immediate action. Future Amp article changes should re-run the Manual/Orbs/Models/Plugin API/Chronicle/pricing sweep before publishing exact product claims, especially after orchestration, mode/model, or billing announcements.
+
+## 2026-07-17 Oracle Review and Subscription Correction
+
+- Trigger: follow up on the Amp refresh with an Oracle consistency/factual review of the public case study and its research record.
+- Review findings independently verified against the live [Pricing page](https://ampcode.com/pricing), [Subscriptions, At Last](https://ampcode.com/news/subscriptions), [Chronicle](https://ampcode.com/chronicle), [Manual](https://ampcode.com/manual), and [Models page](https://ampcode.com/models):
+  - Optional beta subscriptions launched on 2026-07-17; pay-as-you-go remains available.
+  - Chronicle has two announcements dated 2026-07-17, not one newest announcement.
+  - The dedicated `/pricing` route initially returned 404 during the sweep, then went live and now returns HTTP 200.
+  - The Manual is temporarily internally inconsistent: its opening recommends subscriptions, while a later legacy sentence still says there is no subscription or commitment.
+  - The research's July 8 subagent-model assignments were stale and needed an explicit superseded label. Current Oracle wiring was reverified but remains too high-churn for public article prose.
+- Public article changes:
+  - Replaced the false no-subscription claim with durable guidance: optional subscriptions include agent/orb usage, while pay-as-you-go remains available at provider API prices with zero markup for individuals and non-enterprise workspaces.
+  - Kept exact beta plan prices, quotas, mode restrictions, and the Enterprise premium out of public prose.
+  - Standardized terminology to “spawn other agents as their own Amp threads” and then “spawned threads.”
+  - Removed the repeated message/file explanation from the orchestration section and tightened the source appendix around canonical sources and announcements central to surviving claims.
+- Research/work-item changes:
+  - Recorded exact Megawatt/Gigawatt prices, included agent/orb usage, mode restrictions, optional pay-as-you-go, and the Manual contradiction.
+  - Reclassified the July 8 model assignments as superseded and added explicit reverification caveats for subscription details, Enterprise pricing, exact model wiring, and the Manual contradiction.
+  - Left `agentic-coding-2026.md` unchanged because its brief orchestration example remains accurate and the Oracle review found no consistency issue there.
+- Word counts:
+  - `src/content/posts/amp-factory-era-case-study.md`: 2,460 before, 2,439 after.
+  - `research/amp-official-sources-2026.md`: 6,789 before, 7,197 after; the growth records exact volatile pricing/model evidence kept out of the public article.
+- Verification:
+  - `npm run check` passed with 0 errors/warnings/hints.
+  - `npm run build` passed and generated 18 pages, including the case-study article and slide routes.
+  - `git diff --check` passed.
+  - Pricing, subscription, agent-to-agent, runner, dial, and Chronicle URLs all returned HTTP 200.
+  - Built output contains the corrected optional-subscription/pay-as-you-go guidance and no current no-subscription claim.
+
+## Updated Next Action
+
+- No immediate action. Future Amp refreshes should reverify the dedicated Pricing page, subscription announcement, Manual contradiction, Enterprise pricing, and exact model wiring before publishing volatile details.
