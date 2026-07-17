@@ -1,5 +1,20 @@
 [
   {
+    "id": 21,
+    "title": "State of Agentic Coding - Series",
+    "url": "https://www.youtube.com/playlist?list=PLg3sejGUAdUZMKADp-KCcC6m5qKjD88bT",
+    "description": "Armin Ronacher and Ben Vinegar track the fast-moving practice and industry of agentic coding through monthly conversations about models, harnesses, software quality, open source, infrastructure, economics, and the changing role of developers. Episode 8 adds Pi creator Mario Zechner for a discussion of reinforcement learning, model regressions, open weights, trust, and the cost of keeping up.",
+    "type": "playlist",
+    "source": "Armin Ronacher",
+    "date": "2025-12-15",
+    "topics": [
+      "tools-harnesses",
+      "models-evaluation",
+      "business-adoption",
+      "open-source-ecosystem"
+    ]
+  },
+  {
     "id": 20,
     "title": "Raising an Agent Season 2 - Series",
     "url": "https://ampcode.com/podcast/season-02/episode-01",
