@@ -1,5 +1,15 @@
 [
   {
+    "id": 20,
+    "title": "Raising an Agent Season 2 - Series",
+    "url": "https://ampcode.com/podcast/season-02/episode-01",
+    "description": "The second season of Amp's documentary podcast follows the team's move from locally managed coding agents to remote-controllable, parallel agents running in isolated environments. The opening episode covers Amp Neo, ephemeral orbs, the declining importance of personalized local development, standardized team environments, and the implications for testing, review, CI, and software delivery.",
+    "type": "playlist",
+    "source": "Amp, Inc.",
+    "date": "2026-07-17",
+    "topics": ["tools-harnesses", "collaboration-teams", "review-verification"]
+  },
+  {
     "id": 19,
     "title": "LLMs are killing Agent Harness",
     "subtitle": "Thorsten Ball on Amp, shrinking harnesses, and coordinating many agents",
