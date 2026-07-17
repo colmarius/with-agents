@@ -3,7 +3,7 @@ title: "Context Engineering"
 resourceId: 1
 series: "raising-an-agent"
 episode: 7
-date: "2025-06-01"
+date: "2025-07-22"
 ---
 
 Episode 7 of the "Raising an Agent" series from Sourcegraph discusses strategies for working with coding agents, focusing on the shift from older chat-based LLMs to autonomous agentic development.
@@ -21,3 +21,5 @@ Episode 7 of the "Raising an Agent" series from Sourcegraph discusses strategies
 - The "Oracle" Agent: Oracle uses OpenAI o3 as a reasoning, review, and planning sub-agent while Sonnet remains the main implementing agent. This combines Sonnet's practical tool-use loop with a separate model optimized for deeper analysis [48:48], [50:16].
 
 Full video: <https://www.youtube.com/watch?v=p8a0PePNWlA>
+
+Episode page: <https://ampcode.com/podcast/episode-7>

@@ -3,7 +3,7 @@ title: "Power Tool Philosophy"
 resourceId: 1
 series: "raising-an-agent"
 episode: 5
-date: "2025-06-01"
+date: "2025-05-14"
 ---
 
 Episode 5 of the "Raising an Agent" series explains Amp's power-tool philosophy: strong models plus a simple tool loop, curated feedback, and human architectural judgment beat magical thinking or piles of generic tools.
@@ -27,3 +27,5 @@ Episode 5 of the "Raising an Agent" series explains Amp's power-tool philosophy:
 - **Remote and multi-agent workflows are the next frontier**: The hosts point toward remote execution, revisiting diffs from phone or web, parallel agents, deterministic guardrails, and attention management as agents run longer and produce more work [55:15]-[01:02:23].
 
 Full video: <https://www.youtube.com/watch?v=M8kZLuukZgk>
+
+Episode page: <https://ampcode.com/podcast/episode-5>

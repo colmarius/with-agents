@@ -20,3 +20,5 @@ Episode 9 of "Raising an Agent" returns after a four-month break with a thesis: 
 - **Deep mode is teased as the next factory primitive**: The episode closes by hinting at a mode for longer-running work where the agent goes off, researches, and returns with a result instead of asking the human for each next step [38:43]-[40:38].
 
 Full video: <https://www.youtube.com/watch?v=2wjnV6F2arc>
+
+Episode page: <https://ampcode.com/podcast/episode-9>

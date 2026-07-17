@@ -21,3 +21,5 @@ Episode 10 of "Raising an Agent" explains Amp's deep mode launch, the decision t
 - **Manual context management may be fading**: The episode ends by revisiting another old assumption: as models such as GPT-5.2 become better at researching after compaction, automatic handoff and hidden context-window management become more viable, though clear task boundaries still matter [43:49]-[49:19].
 
 Full video: <https://www.youtube.com/watch?v=4rx36wc9ugw>
+
+Episode page: <https://ampcode.com/podcast/episode-10>

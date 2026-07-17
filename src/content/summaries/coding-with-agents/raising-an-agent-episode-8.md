@@ -3,7 +3,7 @@ title: "Model Evaluation"
 resourceId: 1
 series: "raising-an-agent"
 episode: 8
-date: "2025-06-01"
+date: "2025-08-21"
 ---
 
 Episode 8 of "Raising an Agent" features Camden from the Amp Core team discussing how they evaluate and integrate different Large Language Models (LLMs) and models into their agentic coding tool, Amp.
@@ -43,3 +43,5 @@ Episode 8 of "Raising an Agent" features Camden from the Amp Core team discussin
 * **Constant Change**: The overarching theme is that everything in the AI/agentic coding landscape is constantly changing, requiring nimbleness, short bets, and a continuous learning mindset.
 
 Full video: <https://www.youtube.com/watch?v=doTI08ukee0>
+
+Episode page: <https://ampcode.com/podcast/episode-8>

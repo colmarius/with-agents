@@ -258,7 +258,7 @@
     "description": "A multi-episode documentary series chronicling the Amp team's development of Amp, revealing groundbreaking insights on building practical coding agents. Topics include the shift from prompt to context engineering, the power of autonomous feedback loops, sub-agent architectures for context management, the \"Oracle\" pattern for multi-model reasoning, why codebases must adapt to agents, and evaluating LLM capabilities across providers. The team demonstrates why success depends on model quality over hidden tricks, treating agents as power tools rather than magic wands.",
     "type": "playlist",
     "source": "Amp, Inc.",
-    "date": "2025-06-01",
+    "date": "2025-03-06",
     "topics": ["context-memory", "tools-harnesses", "models-evaluation"]
   }
 ]

@@ -3,7 +3,7 @@ title: "No Token Limits"
 resourceId: 1
 series: "raising-an-agent"
 episode: 2
-date: "2025-06-01"
+date: "2025-03-13"
 ---
 
 Episode 2 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn and software engineer Thorsten, continues the discussion on prototyping their AI-fueled code editing agent. They focus on the agent's effectiveness, where it currently fails, and the groundbreaking implications of not limiting its operational costs.
@@ -33,3 +33,5 @@ The hosts discuss the commercial trade-off between speed/cost and agent quality:
 They conclude that the goal is to create a company-level "AI intern"—an agent trained on the codebase that can be cloned and given to every developer, with a code review agent serving as a safety net [28:39].
 
 Full video: <https://www.youtube.com/watch?v=4N814ziAn4o>
+
+Episode page: <https://ampcode.com/podcast/episode-2>

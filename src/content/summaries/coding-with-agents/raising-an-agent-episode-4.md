@@ -3,7 +3,7 @@ title: "Code Quality Shifts"
 resourceId: 1
 series: "raising-an-agent"
 episode: 4
-date: "2025-06-01"
+date: "2025-04-04"
 ---
 
 Episode 4 of the "Raising an Agent" series examines how coding agents change what developers value: code becomes cheaper, generated mistakes feel different, and repositories may need to preserve the conversational context behind changes.
@@ -23,3 +23,5 @@ Episode 4 of the "Raising an Agent" series examines how coding agents change wha
 - **Raw demos and guardrails matter**: Showing the model fail is useful because agents still make dumb mistakes, like clobbering files or getting distracted by irrelevant open buffers. Better safeguards, clearer context, and source-faithful demos help users understand what is real [28:05]-[32:54].
 
 Full video: <https://www.youtube.com/watch?v=2ITBH4dIfWY>
+
+Episode page: <https://ampcode.com/podcast/episode-4>

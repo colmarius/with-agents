@@ -3,7 +3,7 @@ title: "Sub-Agents & Sonnet"
 resourceId: 1
 series: "raising-an-agent"
 episode: 6
-date: "2025-06-01"
+date: "2025-05-29"
 ---
 
 Episode 6 of the "Raising an Agent" series explains how Claude Sonnet 4 changed the size of tasks Amp could take on, why sub-agents became more useful, and how the team thinks about background agents and practical feedback loops.
@@ -25,3 +25,5 @@ Episode 6 of the "Raising an Agent" series explains how Claude Sonnet 4 changed 
 - **Practical tips make apps easier for agents to verify**: The episode closes with concrete workflow advice: use Playwright MCP and screenshots, create Storybook-style component pages, add local auth bypasses, and let agents generate seed data for UI states [32:55]-[34:57].
 
 Full video: <https://www.youtube.com/watch?v=HVihMH5j8KQ>
+
+Episode page: <https://ampcode.com/podcast/episode-6>

@@ -3,7 +3,7 @@ title: "Search Agent"
 resourceId: 1
 series: "raising-an-agent"
 episode: 3
-date: "2025-06-01"
+date: "2025-03-28"
 ---
 
 Episode 3 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn and software engineer Thorsten, delves into the cultural shift in coding, the necessity of fine-tuned feedback loops, and the future of code search powered by agentic models.
@@ -35,3 +35,5 @@ Episode 3 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn
 - The Ideal Scenario: The ultimate goal is for this agent to function as the "ghost of a senior engineer," ready to perfectly answer any question about the codebase that a human senior developer would know, a capability every CTO would pay "a lot of money for" [26:47].
 
 Full video: <https://www.youtube.com/watch?v=N04FM1e3sbY>
+
+Episode page: <https://ampcode.com/podcast/episode-3>

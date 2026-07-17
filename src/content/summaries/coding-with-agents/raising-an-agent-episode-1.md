@@ -3,7 +3,7 @@ title: "Feedback Loops"
 resourceId: 1
 series: "raising-an-agent"
 episode: 1
-date: "2025-06-01"
+date: "2025-03-06"
 ---
 
 Episode 1 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn and software engineer Thorsten, serves as a diary of their excitement while prototyping a new AI-fueled code editing tool. They discuss the surprising capabilities of the latest large language models (LLMs) in a developer environment and the shift in their approach to building AI tools.
@@ -21,3 +21,5 @@ Episode 1 of the "Raising an Agent" series from Sourcegraph, featuring CEO Quinn
 - They conclude that the path to a perfect code agent is now primarily a software engineering problem—improving speed, cost, tool descriptions, and feedback loops—rather than waiting solely for fundamental model breakthroughs [18:57].
 
 Full video: <https://www.youtube.com/watch?v=auVu08nXKOw>
+
+Episode page: <https://ampcode.com/podcast/episode-1>
