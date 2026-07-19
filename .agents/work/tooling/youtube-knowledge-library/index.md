@@ -14,11 +14,12 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: none
+- Handoff: `handoff-task-1.md`
 - Decisions: none
 
 ## Next Action
 
-- Implement Task 1 in `plan.md`: establish `src/content/youtube/` as a committed source-only library and extract reusable transcript capture without changing the existing public transcript command.
+- Use `handoff-task-1.md` to implement Task 1: establish `src/content/youtube/` as a committed source-only library and extract reusable transcript capture without changing the existing public transcript command.
 
 ## Open Questions
 
