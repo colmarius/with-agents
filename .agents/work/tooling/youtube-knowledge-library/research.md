@@ -44,11 +44,9 @@ src/content/youtube/
 ├── AGENTS.md
 ├── catalog.json
 ├── authors/
-│   └── <author-slug>/
-│       └── index.md
+│   └── <author-slug>.md
 ├── playlists/
 │   └── <playlist-slug>/
-│       ├── changes.ndjson
 │       ├── manifest.json
 │       └── overview.md
 └── videos/
@@ -60,26 +58,27 @@ src/content/youtube/
 
 `catalog.json` is the machine-readable registry. It should contain stable author IDs, display names/aliases, playlist IDs and slugs, author relationships, `transcriptLanguage`, and `summaryLanguage`. API credentials do not belong there. Include an invariant marker such as `publication: "source-only"` so validation can detect accidental bundling.
 
-Video ID is the stable storage key. Playlist manifests own membership and order; author IDs provide the cross-playlist grouping. A video directory remains available when an item is removed from a playlist. The append-only `changes.ndjson` and normal git history record observed playlist mutations.
+Video ID is the stable storage key. Playlist manifests own membership and order; the catalog owns playlist-to-author relationships. A video directory remains available when an item is removed from a playlist. Git history of each committed `manifest.json` is the change log; a second append-only event file would duplicate state and add commit noise.
 
-Author `index.md` files should hold source links, tracked playlists, current synthesis, and editorial notes about changes across the author's work. They should not duplicate machine-owned playlist membership from `catalog.json` or manifests.
+Author Markdown files should hold source links, current synthesis, and editorial notes about changes across the author's work. They may link to tracked playlists but should not duplicate machine-owned membership from `catalog.json` or manifests. “Author” is an explicit editorial subject grouping; it must not be inferred from a video's uploader/channel because uploader, speaker, and subject can differ.
 
 ## Sync and Capture Semantics
 
 Keep discovery separate from transcript capture:
 
-1. `sync` fetches and normalizes every configured playlist, compares it to the current manifest, prints a concise change set, appends observed changes, and atomically replaces the current manifest.
+1. `sync` fetches and normalizes every configured playlist, compares it to the current manifest, prints a concise change set, and atomically replaces the manifest only when its meaningful content changed.
 2. `capture` processes only videos without a captured transcript. It runs sequentially with a small delay and supports `--limit` for safe batches.
 3. `status` reports playlist and author relationships, transcript state, summary state, and stale/missing synthesis.
 
-The normalized state should distinguish:
+Most processing state should be derived instead of persisted:
 
-- `pending`: never attempted.
-- `captured`: transcript exists and records actual language and caption kind.
-- `unavailable`: a non-transient caption/video condition was observed.
-- `retryable`: a transient network, throttling, or upstream failure was observed.
+- `captured`: `transcript.md` exists and records actual language and caption kind.
+- `pending`: a video is present in a manifest but has neither a transcript nor a persisted non-transient failure.
+- `unavailable`: `metadata.json` records a non-transient caption/video failure and its attempt time.
 
-Capture must never overwrite an existing transcript or summary by default. A retry should update attempt metadata but preserve prior source content unless the user explicitly requests a destructive regeneration. Playlist removal must never delete a captured video directory.
+Transient network, throttling, and upstream failures should write no persisted state; the video remains pending and the next capture run retries it naturally. `--retry` re-attempts recorded unavailable videos. Capture must never overwrite an existing transcript or summary by default, and playlist removal must never delete a captured video directory.
+
+The manifest should omit volatile sync timestamps so an unchanged sync writes zero bytes and leaves git clean. Deleted/private playlist entries should be normalized as unavailable during sync when the API exposes placeholder titles or missing video details, preventing pointless transcript requests.
 
 Raw video/audio binaries are out of scope because they would make the public source repository unnecessarily large. The library stores records, transcripts, summaries, and synthesis.
 
@@ -99,7 +98,7 @@ Each library summary should record:
 
 Italian auto-caption text may be paraphrased into English, but translated caption text must not be presented as a verbatim quotation. Timestamps remain valid evidence anchors. Claims about change over time must use video publication dates, not playlist position, because playlist order can change.
 
-Each playlist overview should synthesize the per-video summaries rather than rereading every raw transcript on each update. It should include coverage, current thesis, stable ideas, emerging ideas, revisions/tensions, and practical implications, with video/timestamp anchors. An author index can then compare playlist overviews and relevant per-video summaries. Every overview must label author claims separately from editorial synthesis.
+Each playlist overview should synthesize the per-video summaries rather than rereading every raw transcript on each update. It should include coverage, current thesis, stable ideas, emerging ideas, revisions/tensions, and practical implications, with video/timestamp anchors. Playlist overviews and author files should record `coveredVideoIds` in frontmatter so `status` can derive staleness concretely. Every overview must label author claims separately from editorial synthesis.
 
 ## Publication and Operational Risks
 
