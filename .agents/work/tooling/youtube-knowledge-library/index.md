@@ -14,13 +14,14 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`
 - Decisions: none
 
 ## Next Action
 
-- Derive the bounded Task 5b capture/summary handoff from Task 5a's actual
-  status and throttle evidence.
+- Use `handoff-task-5b.md` for the first bounded capture/summary backfill batch;
+  derive the following batch from its actual status, transcript sizes, and
+  throttle evidence.
 
 ## Open Questions
 
