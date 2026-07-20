@@ -19,8 +19,9 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Use `handoff-task-5d.md` for the third bounded backfill batch, then derive
-  Task 5e from its actual source sizes and throttle/unavailable evidence.
+- Derive a dedicated Task 5e handoff from Task 5d's actual source/editorial
+  sizes and the cumulative fourteen-attempt throttle/unavailable evidence.
+  Do not begin another capture batch without that handoff.
 
 ## Open Questions
 
