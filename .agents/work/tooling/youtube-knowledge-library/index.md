@@ -14,14 +14,14 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`, `handoff-task-5i.md`, `handoff-task-5j.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`, `handoff-task-5i.md`, `handoff-task-5j.md`, `handoff-task-5k.md`
 - Decisions: none
 
 ## Next Action
 
-- Derive a dedicated Task 5k handoff from Task 5j's actual maximum-four
-  evidence. Do not begin another capture batch, update synthesis, check off
-  Task 5, or start Task 6 while preparing the handoff.
+- Execute only the tenth bounded backfill batch from `handoff-task-5k.md` in a
+  dedicated implementation thread. Keep the four-attempt ceiling, then
+  derive Task 5l from actual outcomes without starting synthesis or Task 6.
 
 ## Open Questions
 
