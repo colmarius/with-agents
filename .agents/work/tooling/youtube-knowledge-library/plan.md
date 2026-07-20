@@ -26,7 +26,7 @@ Add a committed, source-only YouTube knowledge library that reuses the repositor
     - The new `npm run youtube:library` entry point always writes within `src/content/youtube/`; path containment and non-destructive writes have focused tests.
   - Notes: Keep the existing public-sidecar and new library entry points separate rather than adding a user-controlled output directory. Do not download video/audio media.
 
-- [ ] **Task 2: Add complete playlist synchronization**
+- [x] **Task 2: Add complete playlist synchronization**
   - Scope: library CLI, `src/content/youtube/catalog.json`, playlist manifests, focused tests, and `package.json`
   - Depends on: Task 1
   - Acceptance:

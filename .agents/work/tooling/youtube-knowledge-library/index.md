@@ -19,7 +19,7 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Use `handoff-task-2.md` to implement Task 2: add complete playlist synchronization through the YouTube Data API, with deterministic manifests, pagination, change reporting, and atomic no-op-safe writes.
+- Prepare a dedicated Task 3 handoff, then implement Task 3: idempotent transcript capture and useful status reporting.
 
 ## Open Questions
 
