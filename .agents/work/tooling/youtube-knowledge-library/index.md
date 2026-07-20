@@ -14,16 +14,14 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`, `handoff-task-5i.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`, `handoff-task-5i.md`, `handoff-task-5j.md`
 - Decisions: none
 
 ## Next Action
 
-- Derive a dedicated Task 5j handoff from the actual evidence recorded after
-  the [Task 5i handoff](handoff-task-5i.md). Retain the maximum-four plan: one
-  `--limit 2` command per playlist, no refill, and immediate stop on throttle.
-  Do not execute Task 5j, update synthesis, check off Task 5, or start Task 6
-  in this thread.
+- Execute only the ninth bounded backfill batch from `handoff-task-5j.md` in a
+  dedicated implementation thread. Keep the four-attempt ceiling, then
+  derive Task 5k from actual outcomes without starting synthesis or Task 6.
 
 ## Open Questions
 
