@@ -1,0 +1,13 @@
+{
+  "videoId": "qipoQGqMCp0",
+  "attemptedAt": "2026-07-20T20:53:07.216Z",
+  "requestedLanguage": "it",
+  "availableLanguages": [
+    "en",
+    "en"
+  ],
+  "unavailable": {
+    "errorName": "LanguageUnavailable",
+    "detail": "Requested transcript language \"it\" is unavailable. Available languages: en, en."
+  }
+}
