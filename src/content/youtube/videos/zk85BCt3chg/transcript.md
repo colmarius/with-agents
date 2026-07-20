@@ -1,0 +1,30 @@
+---
+title: "Come funziona davvero un modello di trascrizione del parlato?"
+sourceUrl: "https://www.youtube.com/watch?v=zk85BCt3chg"
+videoId: "zk85BCt3chg"
+capturedAt: "2026-07-20T22:32:36.299Z"
+channel: "Salvatore Sanfilippo"
+language: "it"
+kind: "caption"
+durationSeconds: 559
+---
+
+## Transcript
+
+[00:00:01] Una delle forme di intelligenza artificiale con cui tutti noi abbiamo in assoluto avuto a che fare di più negli ultimi anni sono i modelli di trascrizione del testo. Tu parli e l'intelligenza artificiale trascrive in testo quello che tu stai dicendo. Questo video è un esperimento di spiegazione di un modello di trascrizione proprio nei dettagli di come funziona, in un video di pochi minuti. In particolare farò riferimento a un modello che per ora sto studiando e sto implementando, che è Qwen3-ASR, il quale esiste in due taglie: 0,6 miliardi e 1,7 miliardi di parametri. Rilascerò l'inferenza ottimizzata credo proprio oggi o domani.
+
+[00:00:57] Com'è che funziona un modello di trascrizione? Allora, tanto per iniziare, io ho un file audio, una registrazione audio. Togliamo di mezzo le compressioni. In che formato è questa trascrizione? È un insieme di sample. Che significa? Significa che se, per esempio, il mio file è a 16 kHz (che è proprio la frequenza di campionamento che accetta Qwen), ma di solito i file sono a 44 kHz... se ascoltate la musica si usa una frequenza più alta per avere un range di frequenze più ampio, quindi per poter rappresentare anche delle frequenze più alte nel brano. Questo perché c'è un teorema che dice che abbiamo bisogno almeno del doppio della frequenza di campionamento per rappresentare una data frequenza massima nel file.
+
+[00:01:54] Facciamo l'esempio di 16 kHz: significa che 16.000 volte al secondo io controllerò se nel microfono c'è una compressione o una depressione dell'aria e di quanto è questa variazione. Quindi questo file di input, questi sample, di solito sono registrati a 16 bit: un numero che va da -32.000 e qualcosa a +32.000 e qualcosa, che ci dice in quel momento l'onda elastica dell'aria in che stato era. Praticamente, se avete mai caricato in un software di editing audio un file, avete visto il plotting della forma d'onda: ecco, i sample sono quelli, il valore in ogni momento di quella forma d'onda, né più né meno.
+
+[00:02:50] I modelli non gestiscono direttamente la forma d'onda; si potrebbe fare, ma sprecheremmo un'enorme quantità di pesi nel modello per reinventare la ruota, ovvero la Trasformata di Fourier veloce (FFT). Il modello dovrebbe imparare da capo a trasformare il file audio dal dominio del tempo al dominio delle frequenze. Per cui noi lo aiutiamo: facciamo la Trasformata di Fourier e ci troviamo non più nella forma d'onda, ma affettiamo il file in fette di 80 millisecondi. Per questi 80 ms popoliamo dei "bin", che possono essere per esempio 128, in cui ogni bin rappresenta una frequenza. Questa operazione genera quelle che si chiamano Mel. La differenza è che la Mel si basa su un modello psicoacustico. Siccome noi non sentiamo tutte le frequenze allo stesso modo (la
+
+[00:04:09] Trasformata di Fourier ti dice per ogni frequenza qual è esattamente l'energia, ma l'orecchio in realtà è più sensibile a certe frequenze e meno ad altre), questi bin sono spaziati in modo da essere molto più simili al modo in cui l'orecchio percepisce i suoni. E siccome noi vogliamo riconoscere una cosa che è pensata per essere ascoltata dall'orecchio, questa intuizione psicoacustica aiuta i modelli a funzionare meglio. Quindi, a questo punto, ho diviso il file in pezzi e ho fatto la Trasformata di Fourier in questi segmenti. Tra l'altro, questa operazione si fa con un overlap: c'è una sovrapposizione tra i pezzettini che è utile. A quel punto inizia la rete neurale vera e propria, perché finora si è trattato di un preprocessing algoritmico.
+
+[00:05:23] La rete neurale inizia di solito con una convoluzione 2D (o a volte 1D, ma nei modelli moderni è 2D). E voi direte: "Ma come 2D? Il file audio non è una cosa bidimensionale, è una lista di sample". Beh, non più. Dopo che abbiamo trasformato il file audio con la Mel, che è una rappresentazione nel dominio delle frequenze, in realtà lo spettrogramma è come un'immagine. Ha senso quindi che delle "affettature" vicine abbiano delle feature che vogliamo catturare assieme. Si fa questa convoluzione e c'è un downsampling che stringe di 8 volte le informazioni. Quello di Qwen è un downsampling molto aggressivo; se non mi sbaglio, Whisper di OpenAI ha un downsampling 4x.
+
+[00:06:31] Ci ritroviamo quindi con queste Mel preprocessate e strette. A questo punto c'è la Self-Attention, con la proiezione K, Q, V, perché dobbiamo mettere in relazione ognuno di questi segmenti con gli altri, dato che parlano delle stesse parole. Finalmente ottengo in output degli embedding che sono stati "attenzionati" agli altri campioni vocali vicini. Questa parte era l'Encoder.
+
+[00:07:28] A questo punto viene la parte facile: il Decoder. Il Decoder non è altro che un LLM. Immaginatevi GPT-2, ma ovviamente con le modifiche della modernità: c'è RoPE, gli embedding posizionali non sono più learned, non c'è più ReLU ma GeLU, non ci sono più i bias... insomma tutte le caratteristiche degli LLM moderni. È un Transformer Decoder-only, ma con una Cross-Attention tra il testo che ha già generato (i token) e quello che è uscito dall'Encoder. Tu devi generare del testo condizionato sia dall'audio che dal testo precedente. Se hai già prodotto una parola, ovviamente non la riscriverai perché l'hai già elaborata.
+
+[00:08:33] Questo è esattamente come funzionano i modelli di trascrizione. Ovviamente la fase di encoding e quella di decoding vengono eseguite in modo distinto quando si fa la trascrizione "offline". Io ho tutto il file sin dall'inizio, quindi genero tutte le Mel, faccio tutto l'encoding passando i campioni dalla convoluzione 2D e dalla Self-Attention, poi prendo tutti questi embedding e passo alla fase successiva di decoding con l'LLM, ottenendo la mia bellissima trascrizione.
