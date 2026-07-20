@@ -201,23 +201,36 @@ export const parseLibraryArgs = (argv) => {
     throw new Error(`Unknown command: ${command}`);
   }
 
-  if (command !== 'sync' && argv.length > 1) {
+  if (command === 'status' && argv.length > 1) {
     const extra = argv[1];
     const kind = extra.startsWith('-') ? 'options' : 'arguments';
     throw new Error(`Command ${command} does not accept ${kind}.`);
   }
 
-  if (command !== 'sync') {
+  if (command === 'help' || command === 'status') {
     return { command };
   }
 
   const playlistSlugs = [];
   let dryRun = false;
+  let force = false;
+  let retry = false;
+  let limit;
 
   for (let index = 1; index < argv.length; index += 1) {
     const argument = argv[index];
-    if (argument === '--dry-run') {
+    if (command === 'sync' && argument === '--dry-run') {
       dryRun = true;
+      continue;
+    }
+
+    if (command === 'capture' && argument === '--force') {
+      force = true;
+      continue;
+    }
+
+    if (command === 'capture' && argument === '--retry') {
+      retry = true;
       continue;
     }
 
@@ -231,13 +244,44 @@ export const parseLibraryArgs = (argv) => {
       continue;
     }
 
-    if (argument.startsWith('-')) {
-      throw new Error(`Unknown sync option: ${optionName(argument)}`);
+    if (command === 'capture' && argument === '--limit') {
+      const value = argv[index + 1];
+      if (!value || value.startsWith('-')) {
+        throw new Error('Option --limit requires a value.');
+      }
+      if (!/^[1-9]\d*$/.test(value)) {
+        throw new Error('Option --limit must be a positive integer.');
+      }
+      limit = Number(value);
+      if (!Number.isSafeInteger(limit)) {
+        throw new Error('Option --limit must be a positive integer.');
+      }
+      index += 1;
+      continue;
     }
-    throw new Error('Sync does not accept positional arguments.');
+
+    if (argument.startsWith('-')) {
+      throw new Error(`Unknown ${command} option: ${optionName(argument)}`);
+    }
+    throw new Error(
+      `${command[0].toUpperCase()}${command.slice(1)} does not accept positional arguments.`,
+    );
   }
 
-  return { command, playlistSlugs, dryRun };
+  if (command === 'sync') {
+    return { command, playlistSlugs, dryRun };
+  }
+
+  if (force && retry) {
+    throw new Error('Capture options --force and --retry cannot be combined.');
+  }
+  if (force && playlistSlugs.length === 0 && limit === undefined) {
+    throw new Error(
+      'Capture --force requires at least one --playlist or --limit scope.',
+    );
+  }
+
+  return { command, playlistSlugs, limit, retry, force };
 };
 
 export const selectCatalogPlaylists = (catalog, playlistSlugs = []) => {
@@ -534,12 +578,12 @@ const readExistingFile = async (filePath) => {
   }
 };
 
-export const writeManifestAtomic = async (
+export const writeJsonAtomic = async (
   filePath,
-  manifest,
+  value,
   { dryRun = false } = {},
 ) => {
-  const contents = serializePlaylistManifest(manifest);
+  const contents = `${JSON.stringify(value, null, 2)}\n`;
   const existing = await readExistingFile(filePath);
   const changed =
     existing === undefined || !existing.equals(Buffer.from(contents, 'utf8'));
@@ -577,6 +621,9 @@ export const writeManifestAtomic = async (
     dryRun: false,
   };
 };
+
+export const writeManifestAtomic = async (filePath, manifest, options = {}) =>
+  writeJsonAtomic(filePath, manifest, options);
 
 const readManifest = async (filePath, playlistId) => {
   const contents = await readExistingFile(filePath);

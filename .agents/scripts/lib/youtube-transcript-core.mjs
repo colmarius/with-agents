@@ -401,12 +401,16 @@ const strictLanguageUnavailableReason = ({
 export const fetchVideo = async (inputUrl, options = {}) => {
   const lang = options.lang ?? defaultLanguage;
   const strictLanguage = Boolean(options.strictLanguage);
+  const listLanguagesImpl = options.listLanguagesImpl ?? listLanguages;
+  const fetchTranscriptImpl = options.fetchTranscriptImpl ?? fetchTranscript;
+  const fetchFallbackMetadataImpl =
+    options.fetchFallbackMetadataImpl ?? fetchFallbackMetadata;
   const { videoId, canonicalUrl } = normalizeYoutubeUrl(inputUrl);
-  const fallbackMetadataPromise = fetchFallbackMetadata(canonicalUrl);
+  const fallbackMetadataPromise = fetchFallbackMetadataImpl(canonicalUrl);
   let languageSelection;
 
   try {
-    const languages = await listLanguages(canonicalUrl, {
+    const languages = await listLanguagesImpl(canonicalUrl, {
       retries: Number(options.retries ?? 1),
       retryDelay: 750,
       userAgent: defaultUserAgent,
@@ -421,8 +425,9 @@ export const fetchVideo = async (inputUrl, options = {}) => {
         metadata: { videoId, canonicalUrl, ...fallbackMetadata },
         requestedLanguage: lang,
         availableLanguages: [],
+        transcriptErrorName: error?.name,
         transcriptAvailable: false,
-        transcriptUnavailable: `Could not list available transcript languages: ${error.name ?? 'TranscriptError'}: ${error.message ?? String(error)}`,
+        transcriptUnavailable: `Could not list available transcript languages: ${error?.name ?? 'TranscriptError'}: ${error?.message ?? String(error)}`,
         segments: [],
       };
     }
@@ -434,6 +439,7 @@ export const fetchVideo = async (inputUrl, options = {}) => {
       metadata: { videoId, canonicalUrl, ...fallbackMetadata },
       requestedLanguage: languageSelection.requestedLanguage,
       availableLanguages: languageSelection.availableLanguages,
+      transcriptErrorName: 'LanguageUnavailable',
       transcriptAvailable: false,
       transcriptUnavailable: strictLanguageUnavailableReason(languageSelection),
       segments: [],
@@ -443,7 +449,7 @@ export const fetchVideo = async (inputUrl, options = {}) => {
   const transcriptLanguage = strictLanguage ? languageSelection.language : lang;
 
   try {
-    const result = await fetchTranscript(canonicalUrl, {
+    const result = await fetchTranscriptImpl(canonicalUrl, {
       lang: transcriptLanguage,
       retries: Number(options.retries ?? 1),
       retryDelay: 750,
@@ -489,6 +495,7 @@ export const fetchVideo = async (inputUrl, options = {}) => {
       metadata: { videoId, canonicalUrl, ...fallbackMetadata },
       requestedLanguage: lang,
       availableLanguages: languageSelection?.availableLanguages,
+      transcriptErrorName: error?.name,
       language: languageSelection?.language ?? lang,
       kind: strictLanguage
         ? languageSelection?.kind
@@ -496,7 +503,7 @@ export const fetchVideo = async (inputUrl, options = {}) => {
           ? 'auto-generated'
           : undefined,
       transcriptAvailable: false,
-      transcriptUnavailable: `${error.name ?? 'TranscriptError'}: ${error.message ?? String(error)}`,
+      transcriptUnavailable: `${error?.name ?? 'TranscriptError'}: ${error?.message ?? String(error)}`,
       segments: [],
     };
   }

@@ -1,8 +1,24 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, readdir, readFile, rm, stat } from 'node:fs/promises';
+import {
+  mkdir,
+  mkdtemp,
+  readdir,
+  readFile,
+  rm,
+  stat,
+  writeFile,
+} from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
+import {
+  buildLibraryStatus,
+  captureCatalogVideos,
+  captureDelayMs,
+  classifyTranscriptFailure,
+  formatLibraryStatus,
+  readStatusFrontmatter,
+} from './lib/youtube-library-capture-status.mjs';
 import {
   diffPlaylistManifests,
   fetchPlaylistItems,
@@ -91,6 +107,78 @@ const availableEntry = (videoId, position, title = videoId) => ({
   available: true,
 });
 
+const multiPlaylistCatalog = () => {
+  const catalog = validCatalog();
+  catalog.playlists.push({
+    ...catalog.playlists[0],
+    id: 'second',
+    slug: 'second',
+    title: 'Second Playlist',
+  });
+  catalog.relationships[0].playlistIds.push('second');
+  return catalog;
+};
+
+const writeFixture = async (filePath, contents) => {
+  await mkdir(path.dirname(filePath), { recursive: true });
+  await writeFile(
+    filePath,
+    Buffer.isBuffer(contents) || typeof contents === 'string'
+      ? contents
+      : `${JSON.stringify(contents, null, 2)}\n`,
+    'utf8',
+  );
+};
+
+const fixturePaths = (root) => ({
+  manifestPathForPlaylist: (playlist) =>
+    path.join(root, 'playlists', playlist.slug, 'manifest.json'),
+  videoPathForFile: (videoId, fileName) =>
+    path.join(root, 'videos', videoId, fileName),
+  overviewPathForPlaylist: (playlist) =>
+    path.join(root, 'playlists', playlist.slug, 'overview.md'),
+  authorPathForAuthor: (author) =>
+    path.join(root, 'authors', `${author.slug}.md`),
+});
+
+const writeManifestFixture = async (paths, playlist, entries) => {
+  await writeFixture(paths.manifestPathForPlaylist(playlist), {
+    playlistId: playlist.id,
+    entries,
+  });
+};
+
+const successfulTranscript = (videoId, title = `Fetched ${videoId}`) => ({
+  metadata: {
+    videoId,
+    canonicalUrl: `https://www.youtube.com/watch?v=${videoId}`,
+    title,
+    channel: 'Fixture Channel',
+    durationSeconds: 125,
+  },
+  requestedLanguage: 'it',
+  availableLanguages: ['it-IT'],
+  language: 'it-IT',
+  kind: 'auto-generated',
+  transcriptAvailable: true,
+  segments: [
+    { text: `Transcript for ${videoId}.`, offset: 0, duration: 5 },
+    { text: 'A later thought.', offset: 65, duration: 4 },
+  ],
+});
+
+const unavailableTranscript = (errorName, availableLanguages = ['en']) => ({
+  metadata: {},
+  requestedLanguage: 'it',
+  availableLanguages,
+  transcriptErrorName: errorName,
+  transcriptAvailable: false,
+  transcriptUnavailable: `${errorName}: fixture failure`,
+  segments: [],
+});
+
+const fixedNow = () => new Date('2026-07-20T00:00:00.000Z');
+
 test('loads and validates the committed source-only catalog', async () => {
   const catalog = await loadCatalog();
 
@@ -138,7 +226,7 @@ test('library paths cannot escape the fixed root', () => {
   assert.throws(() => libraryPath('/tmp/transcript.md'));
 });
 
-test('sync CLI parsing supports all playlists, subsets, and dry runs', () => {
+test('library CLI parsing supports sync, bounded capture modes, and strict status', () => {
   assert.deepEqual(parseLibraryArgs([]), { command: 'help' });
   assert.deepEqual(parseLibraryArgs(['sync']), {
     command: 'sync',
@@ -160,7 +248,30 @@ test('sync CLI parsing supports all playlists, subsets, and dry runs', () => {
       dryRun: true,
     },
   );
-  assert.deepEqual(parseLibraryArgs(['capture']), { command: 'capture' });
+  assert.deepEqual(parseLibraryArgs(['capture']), {
+    command: 'capture',
+    playlistSlugs: [],
+    limit: undefined,
+    retry: false,
+    force: false,
+  });
+  assert.deepEqual(
+    parseLibraryArgs([
+      'capture',
+      '--playlist',
+      'second',
+      '--limit',
+      '2',
+      '--retry',
+    ]),
+    {
+      command: 'capture',
+      playlistSlugs: ['second'],
+      limit: 2,
+      retry: true,
+      force: false,
+    },
+  );
   assert.deepEqual(parseLibraryArgs(['status']), { command: 'status' });
   assert.throws(
     () => parseLibraryArgs(['sync', '--playlist']),
@@ -173,14 +284,46 @@ test('sync CLI parsing supports all playlists, subsets, and dry runs', () => {
       !error.message.includes('secret'),
   );
   assert.throws(
+    () => parseLibraryArgs(['capture', '--limit']),
+    /requires a value/,
+  );
+  for (const value of ['0', '-1', '1.5', 'nope', '999999999999999999999']) {
+    assert.throws(
+      () => parseLibraryArgs(['capture', '--limit', value]),
+      /positive integer|requires a value/,
+    );
+  }
+  assert.throws(
+    () => parseLibraryArgs(['capture', '--force', '--retry', '--limit', '1']),
+    /cannot be combined/,
+  );
+  assert.throws(
+    () => parseLibraryArgs(['capture', '--force']),
+    /requires at least one --playlist or --limit/,
+  );
+  assert.deepEqual(
+    parseLibraryArgs(['capture', '--force', '--playlist', 'playlist']),
+    {
+      command: 'capture',
+      playlistSlugs: ['playlist'],
+      limit: undefined,
+      retry: false,
+      force: true,
+    },
+  );
+  assert.throws(
     () => parseLibraryArgs(['capture', '--output=/tmp/secret']),
     (error) =>
-      error.message.includes('does not accept options') &&
+      error.message.includes('Unknown capture option: --output') &&
       !error.message.includes('/tmp/secret'),
   );
   assert.throws(
     () => parseLibraryArgs(['status', '--credentials=secret']),
     (error) => !error.message.includes('secret'),
+  );
+  assert.throws(
+    () => parseLibraryArgs(['status', '--json']),
+    /does not accept options/,
   );
   assert.throws(
     () => parseLibraryArgs(['--api-key=secret']),
@@ -595,4 +738,723 @@ test('unchanged sync reporting is explicit', () => {
   });
 
   assert.equal(report, 'playlist (PL123):\n  no changes');
+});
+
+test('classifies only known durable failures as unavailable', () => {
+  for (const errorName of [
+    'YoutubeTranscriptVideoUnavailableError',
+    'YoutubeTranscriptDisabledError',
+    'YoutubeTranscriptNotAvailableError',
+    'YoutubeTranscriptNotAvailableLanguageError',
+    'LanguageUnavailable',
+  ]) {
+    assert.deepEqual(classifyTranscriptFailure(errorName), {
+      outcome: 'unavailable',
+      stop: false,
+    });
+  }
+  assert.deepEqual(
+    classifyTranscriptFailure('YoutubeTranscriptTooManyRequestError'),
+    { outcome: 'transient', stop: true },
+  );
+  assert.deepEqual(classifyTranscriptFailure('UnknownNetworkError'), {
+    outcome: 'transient',
+    stop: false,
+  });
+  for (const errorName of [
+    'YoutubeTranscriptInvalidLangError',
+    'YoutubeTranscriptInvalidVideoIdError',
+  ]) {
+    assert.deepEqual(classifyTranscriptFailure(errorName), {
+      outcome: 'fatal',
+      stop: true,
+    });
+  }
+});
+
+test('captures a globally deduped deterministic queue sequentially and idempotently', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-capture-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = multiPlaylistCatalog();
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('shared-video', 1, 'Shared manifest title'),
+    availableEntry('first-video', 0, 'First manifest title'),
+    {
+      ...availableEntry('private-video', 2),
+      available: false,
+      unavailableReason: 'private',
+    },
+  ]);
+  await writeManifestFixture(paths, catalog.playlists[1], [
+    availableEntry('second-video', 0, 'Second manifest title'),
+    availableEntry('shared-video', 1, 'Duplicate title'),
+  ]);
+  const fetchedVideoIds = [];
+  const sleeps = [];
+
+  const first = await captureCatalogVideos({
+    catalog,
+    ...paths,
+    fetchVideoImpl: async (input, options) => {
+      const videoId = new URL(input).searchParams.get('v');
+      fetchedVideoIds.push(videoId);
+      assert.deepEqual(options, { lang: 'it', strictLanguage: true });
+      return successfulTranscript(videoId);
+    },
+    sleep: async (milliseconds) => sleeps.push(milliseconds),
+    now: fixedNow,
+  });
+
+  assert.equal(first.exitCode, 0);
+  assert.deepEqual(fetchedVideoIds, [
+    'first-video',
+    'shared-video',
+    'second-video',
+  ]);
+  assert.deepEqual(sleeps, [captureDelayMs, captureDelayMs]);
+  const transcript = await readFile(
+    paths.videoPathForFile('first-video', 'transcript.md'),
+    'utf8',
+  );
+  assert.match(transcript, /^---\ntitle: "Fetched first-video"/);
+  assert.match(
+    transcript,
+    /sourceUrl: "https:\/\/www\.youtube\.com\/watch\?v=first-video"/,
+  );
+  assert.match(transcript, /capturedAt: "2026-07-20T00:00:00.000Z"/);
+  assert.match(transcript, /channel: "Fixture Channel"/);
+  assert.match(transcript, /language: "it-IT"/);
+  assert.match(transcript, /kind: "auto-generated"/);
+  assert.match(transcript, /durationSeconds: 125/);
+  assert.doesNotMatch(transcript, /summarySlug|series|episode/);
+  assert.match(
+    transcript,
+    /## Transcript\n\n\[00:00:00\] Transcript for first-video\. A later thought\./,
+  );
+  assert.deepEqual(
+    JSON.parse(
+      await readFile(
+        paths.videoPathForFile('first-video', 'metadata.json'),
+        'utf8',
+      ),
+    ),
+    {
+      videoId: 'first-video',
+      capturedAt: '2026-07-20T00:00:00.000Z',
+      requestedLanguage: 'it',
+      language: 'it-IT',
+      kind: 'auto-generated',
+    },
+  );
+
+  let repeatFetches = 0;
+  const second = await captureCatalogVideos({
+    catalog,
+    ...paths,
+    fetchVideoImpl: async () => {
+      repeatFetches += 1;
+      return successfulTranscript('unexpected');
+    },
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(second.exitCode, 0);
+  assert.equal(second.queued, 0);
+  assert.equal(repeatFetches, 0);
+});
+
+test('capture honors catalog-order subsets and applies a positive limit after filtering', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-capture-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = multiPlaylistCatalog();
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('first-video', 0),
+  ]);
+  await writeManifestFixture(paths, catalog.playlists[1], [
+    availableEntry('second-a', 0),
+    availableEntry('second-b', 1),
+  ]);
+  const fetchedVideoIds = [];
+
+  const result = await captureCatalogVideos({
+    catalog,
+    playlistSlugs: ['second'],
+    limit: 1,
+    ...paths,
+    fetchVideoImpl: async (input) => {
+      const videoId = new URL(input).searchParams.get('v');
+      fetchedVideoIds.push(videoId);
+      return successfulTranscript(videoId);
+    },
+    sleep: async () => {},
+    now: fixedNow,
+  });
+
+  assert.equal(result.exitCode, 0);
+  assert.equal(result.queued, 1);
+  assert.deepEqual(fetchedVideoIds, ['second-a']);
+  await assert.rejects(
+    readFile(paths.videoPathForFile('first-video', 'transcript.md'), 'utf8'),
+    { code: 'ENOENT' },
+  );
+});
+
+test('capture fails before fetching for missing manifests and conflicting languages', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-capture-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = multiPlaylistCatalog();
+  let fetches = 0;
+  const fetchVideoImpl = async () => {
+    fetches += 1;
+    return successfulTranscript('unexpected');
+  };
+
+  await assert.rejects(
+    captureCatalogVideos({
+      catalog,
+      ...paths,
+      fetchVideoImpl,
+      sleep: async () => {},
+      now: fixedNow,
+    }),
+    /Playlist playlist is not synced.*Run `npm run youtube:library -- sync --playlist playlist` first/,
+  );
+  assert.equal(fetches, 0);
+
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('shared-video', 0),
+  ]);
+  catalog.playlists[1].transcriptLanguage = 'en';
+  await writeManifestFixture(paths, catalog.playlists[1], [
+    availableEntry('shared-video', 0),
+  ]);
+  await assert.rejects(
+    captureCatalogVideos({
+      catalog,
+      ...paths,
+      fetchVideoImpl,
+      sleep: async () => {},
+      now: fixedNow,
+    }),
+    /Conflicting transcript languages for video shared-video: playlist=it, second=en/,
+  );
+  assert.equal(fetches, 0);
+});
+
+test('default, retry, and force modes have distinct derived-state selection', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-capture-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('captured-video', 0),
+    availableEntry('unavailable-video', 1),
+    availableEntry('pending-video', 2),
+  ]);
+  await writeFixture(
+    paths.videoPathForFile('captured-video', 'transcript.md'),
+    'existing transcript',
+  );
+  await writeFixture(
+    paths.videoPathForFile('unavailable-video', 'metadata.json'),
+    {
+      videoId: 'unavailable-video',
+      attemptedAt: '2026-07-19T00:00:00.000Z',
+      requestedLanguage: 'it',
+      availableLanguages: [],
+      unavailable: {
+        errorName: 'YoutubeTranscriptDisabledError',
+        detail: 'disabled',
+      },
+    },
+  );
+
+  await assert.rejects(
+    captureCatalogVideos({ catalog, force: true, retry: true, ...paths }),
+    /cannot be combined/,
+  );
+  await assert.rejects(
+    captureCatalogVideos({ catalog, force: true, ...paths }),
+    /requires at least one --playlist or --limit/,
+  );
+
+  const defaultFetches = [];
+  const initial = await captureCatalogVideos({
+    catalog,
+    ...paths,
+    fetchVideoImpl: async (input) => {
+      const videoId = new URL(input).searchParams.get('v');
+      defaultFetches.push(videoId);
+      return successfulTranscript(videoId);
+    },
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(initial.exitCode, 0);
+  assert.deepEqual(defaultFetches, ['pending-video']);
+
+  const retryFetches = [];
+  const retried = await captureCatalogVideos({
+    catalog,
+    retry: true,
+    ...paths,
+    fetchVideoImpl: async (input) => {
+      const videoId = new URL(input).searchParams.get('v');
+      retryFetches.push(videoId);
+      return successfulTranscript(videoId);
+    },
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(retried.exitCode, 0);
+  assert.deepEqual(retryFetches, ['unavailable-video']);
+
+  const warnings = [];
+  const forceFetches = [];
+  const forced = await captureCatalogVideos({
+    catalog,
+    force: true,
+    playlistSlugs: ['playlist'],
+    ...paths,
+    fetchVideoImpl: async (input) => {
+      const videoId = new URL(input).searchParams.get('v');
+      forceFetches.push(videoId);
+      return successfulTranscript(videoId, `Forced ${videoId}`);
+    },
+    sleep: async () => {},
+    now: fixedNow,
+    onWarning: (warning) => warnings.push(warning),
+  });
+  assert.equal(forced.exitCode, 0);
+  assert.deepEqual(forceFetches, [
+    'captured-video',
+    'unavailable-video',
+    'pending-video',
+  ]);
+  assert.deepEqual(warnings, [
+    'WARNING: --force will overwrite 3 existing transcripts.',
+  ]);
+});
+
+test('all persisted unavailable failures write metadata only and successful retry replaces it', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-capture-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  const errorNames = [
+    'YoutubeTranscriptVideoUnavailableError',
+    'YoutubeTranscriptDisabledError',
+    'YoutubeTranscriptNotAvailableError',
+    'YoutubeTranscriptNotAvailableLanguageError',
+    'LanguageUnavailable',
+  ];
+  const entries = errorNames.map((errorName, position) =>
+    availableEntry(`video-${position}`, position, errorName),
+  );
+  await writeManifestFixture(paths, catalog.playlists[0], entries);
+
+  const unavailable = await captureCatalogVideos({
+    catalog,
+    ...paths,
+    fetchVideoImpl: async (input) => {
+      const videoId = new URL(input).searchParams.get('v');
+      const index = Number(videoId.slice('video-'.length));
+      return unavailableTranscript(errorNames[index]);
+    },
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(unavailable.exitCode, 2);
+  assert.equal(unavailable.results.length, errorNames.length);
+
+  for (const [index, errorName] of errorNames.entries()) {
+    const videoId = `video-${index}`;
+    assert.deepEqual(
+      JSON.parse(
+        await readFile(
+          paths.videoPathForFile(videoId, 'metadata.json'),
+          'utf8',
+        ),
+      ),
+      {
+        videoId,
+        attemptedAt: '2026-07-20T00:00:00.000Z',
+        requestedLanguage: 'it',
+        availableLanguages: ['en'],
+        unavailable: {
+          errorName,
+          detail: `${errorName}: fixture failure`,
+        },
+      },
+    );
+    await assert.rejects(
+      readFile(paths.videoPathForFile(videoId, 'transcript.md'), 'utf8'),
+      { code: 'ENOENT' },
+    );
+  }
+
+  let defaultFetches = 0;
+  const skipped = await captureCatalogVideos({
+    catalog,
+    ...paths,
+    fetchVideoImpl: async () => {
+      defaultFetches += 1;
+      return successfulTranscript('unexpected');
+    },
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(skipped.queued, 0);
+  assert.equal(defaultFetches, 0);
+
+  const retried = await captureCatalogVideos({
+    catalog,
+    retry: true,
+    ...paths,
+    fetchVideoImpl: async (input) => {
+      const videoId = new URL(input).searchParams.get('v');
+      return successfulTranscript(videoId);
+    },
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(retried.exitCode, 0);
+  assert.equal(retried.results.length, errorNames.length);
+  for (let index = 0; index < errorNames.length; index += 1) {
+    const metadata = JSON.parse(
+      await readFile(
+        paths.videoPathForFile(`video-${index}`, 'metadata.json'),
+        'utf8',
+      ),
+    );
+    assert.equal(metadata.capturedAt, '2026-07-20T00:00:00.000Z');
+    assert.equal('unavailable' in metadata, false);
+  }
+});
+
+test('transient failures write nothing, throttling stops the remaining queue, and delay stays bounded', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-capture-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  const videoIds = [
+    'network-video',
+    'empty-video',
+    'rate-video',
+    'later-video',
+  ];
+  await writeManifestFixture(
+    paths,
+    catalog.playlists[0],
+    videoIds.map((videoId, position) => availableEntry(videoId, position)),
+  );
+  const fetches = [];
+  const sleeps = [];
+
+  const result = await captureCatalogVideos({
+    catalog,
+    ...paths,
+    fetchVideoImpl: async (input) => {
+      const videoId = new URL(input).searchParams.get('v');
+      fetches.push(videoId);
+      if (videoId === 'network-video') {
+        throw new Error('socket reset');
+      }
+      if (videoId === 'empty-video') {
+        return { ...successfulTranscript(videoId), segments: [] };
+      }
+      return unavailableTranscript('YoutubeTranscriptTooManyRequestError');
+    },
+    sleep: async (milliseconds) => sleeps.push(milliseconds),
+    now: fixedNow,
+  });
+
+  assert.equal(result.exitCode, 2);
+  assert.equal(result.remaining, 1);
+  assert.deepEqual(fetches, ['network-video', 'empty-video', 'rate-video']);
+  assert.deepEqual(sleeps, [captureDelayMs, captureDelayMs]);
+  assert.deepEqual(
+    result.results.map((entry) => entry.outcome),
+    ['transient', 'transient', 'transient'],
+  );
+  for (const videoId of videoIds) {
+    await assert.rejects(
+      readFile(paths.videoPathForFile(videoId, 'metadata.json'), 'utf8'),
+      { code: 'ENOENT' },
+    );
+    await assert.rejects(
+      readFile(paths.videoPathForFile(videoId, 'transcript.md'), 'utf8'),
+      { code: 'ENOENT' },
+    );
+  }
+});
+
+test('fatal typed transcript errors stop with exit 1 and no writes', async (t) => {
+  for (const [caseIndex, errorName] of [
+    'YoutubeTranscriptInvalidLangError',
+    'YoutubeTranscriptInvalidVideoIdError',
+  ].entries()) {
+    const root = await mkdtemp(
+      path.join(os.tmpdir(), `youtube-fatal-${caseIndex}-`),
+    );
+    t.after(() => rm(root, { recursive: true, force: true }));
+    const paths = fixturePaths(root);
+    const catalog = validCatalog();
+    await writeManifestFixture(paths, catalog.playlists[0], [
+      availableEntry('fatal-video', 0),
+      availableEntry('later-video', 1),
+    ]);
+    let fetches = 0;
+    const result = await captureCatalogVideos({
+      catalog,
+      ...paths,
+      fetchVideoImpl: async () => {
+        fetches += 1;
+        return unavailableTranscript(errorName);
+      },
+      sleep: async () => {},
+      now: fixedNow,
+    });
+
+    assert.equal(result.exitCode, 1);
+    assert.equal(result.remaining, 1);
+    assert.equal(fetches, 1);
+    await assert.rejects(
+      readFile(paths.videoPathForFile('fatal-video', 'metadata.json'), 'utf8'),
+      { code: 'ENOENT' },
+    );
+  }
+});
+
+test('force replaces transcript and metadata while preserving a sibling summary byte-for-byte', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-force-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('force-video', 0),
+  ]);
+  await writeFixture(
+    paths.videoPathForFile('force-video', 'transcript.md'),
+    'old transcript',
+  );
+  await writeFixture(paths.videoPathForFile('force-video', 'metadata.json'), {
+    old: 'metadata',
+  });
+  const summary = Buffer.from('---\nstatus: reviewed\n---\n\nHuman summary.\n');
+  await writeFixture(
+    paths.videoPathForFile('force-video', 'summary.md'),
+    summary,
+  );
+
+  const result = await captureCatalogVideos({
+    catalog,
+    force: true,
+    limit: 1,
+    ...paths,
+    fetchVideoImpl: async () => successfulTranscript('force-video'),
+    sleep: async () => {},
+    now: fixedNow,
+  });
+
+  assert.equal(result.exitCode, 0);
+  assert.match(
+    await readFile(
+      paths.videoPathForFile('force-video', 'transcript.md'),
+      'utf8',
+    ),
+    /Transcript for force-video/,
+  );
+  assert.deepEqual(
+    await readFile(paths.videoPathForFile('force-video', 'summary.md')),
+    summary,
+  );
+  assert.deepEqual(
+    JSON.parse(
+      await readFile(
+        paths.videoPathForFile('force-video', 'metadata.json'),
+        'utf8',
+      ),
+    ),
+    {
+      videoId: 'force-video',
+      capturedAt: '2026-07-20T00:00:00.000Z',
+      requestedLanguage: 'it',
+      language: 'it-IT',
+      kind: 'auto-generated',
+    },
+  );
+});
+
+test('tolerant status frontmatter reads only status and covered video IDs', () => {
+  assert.deepEqual(
+    readStatusFrontmatter(
+      '---\nstatus: "reviewed"\ncoveredVideoIds: [video-a, "video-b"]\nother: ignored\n---\n',
+    ),
+    { status: 'reviewed', coveredVideoIds: ['video-a', 'video-b'] },
+  );
+  assert.deepEqual(
+    readStatusFrontmatter(
+      "---\nstatus: draft\ncoveredVideoIds:\n  - video-a\n  - 'video-b'\n---\n",
+    ),
+    { status: 'draft', coveredVideoIds: ['video-a', 'video-b'] },
+  );
+  assert.deepEqual(readStatusFrontmatter('No frontmatter'), {
+    status: undefined,
+    coveredVideoIds: [],
+  });
+  assert.deepEqual(
+    readStatusFrontmatter(
+      '---\nstatus: [reviewed]\ncoveredVideoIds: [broken\n',
+    ),
+    { status: undefined, coveredVideoIds: [] },
+  );
+});
+
+test('status reports derived playlist and author states, synthesis staleness, and not-synced playlists', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-status-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = multiPlaylistCatalog();
+  catalog.playlists.push({
+    ...catalog.playlists[0],
+    id: 'third',
+    slug: 'third',
+    title: 'Third Playlist',
+  });
+  catalog.relationships[0].playlistIds.push('third');
+  catalog.authors.push({
+    id: 'second-author',
+    slug: 'second-author',
+    displayName: 'Second Author',
+  });
+  catalog.relationships.push({
+    authorId: 'second-author',
+    playlistIds: ['third'],
+  });
+
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('captured-missing', 0),
+    availableEntry('captured-draft', 1),
+    availableEntry('captured-reviewed', 2),
+    availableEntry('pending-video', 3),
+    availableEntry('unavailable-video', 4),
+    {
+      ...availableEntry('private-video', 5),
+      available: false,
+      unavailableReason: 'private',
+    },
+  ]);
+  await writeManifestFixture(paths, catalog.playlists[2], [
+    availableEntry('captured-reviewed', 0),
+    availableEntry('third-reviewed', 1),
+  ]);
+  for (const videoId of [
+    'captured-missing',
+    'captured-draft',
+    'captured-reviewed',
+    'third-reviewed',
+  ]) {
+    await writeFixture(
+      paths.videoPathForFile(videoId, 'transcript.md'),
+      `transcript ${videoId}`,
+    );
+  }
+  await writeFixture(
+    paths.videoPathForFile('captured-draft', 'summary.md'),
+    '---\nstatus: unexpected\n---\n',
+  );
+  await writeFixture(
+    paths.videoPathForFile('captured-reviewed', 'summary.md'),
+    '---\nstatus: reviewed\n---\n',
+  );
+  await writeFixture(
+    paths.videoPathForFile('third-reviewed', 'summary.md'),
+    '---\nstatus: reviewed\n---\n',
+  );
+  await writeFixture(
+    paths.videoPathForFile('unavailable-video', 'metadata.json'),
+    {
+      videoId: 'unavailable-video',
+      unavailable: { errorName: 'LanguageUnavailable', detail: 'no Italian' },
+    },
+  );
+  await writeFixture(
+    paths.overviewPathForPlaylist(catalog.playlists[0]),
+    '---\ncoveredVideoIds: [captured-draft]\n---\n',
+  );
+  await writeFixture(
+    paths.authorPathForAuthor(catalog.authors[1]),
+    '---\ncoveredVideoIds: [captured-reviewed]\n---\n',
+  );
+
+  const status = await buildLibraryStatus({ catalog, ...paths });
+  assert.deepEqual(status.playlists[0].totals, {
+    entries: 6,
+    available: 5,
+    manifestUnavailable: 1,
+  });
+  assert.deepEqual(status.playlists[0].states, {
+    captured: 3,
+    pending: 1,
+    unavailable: 1,
+  });
+  assert.deepEqual(status.playlists[0].unavailableVideoIds, [
+    'unavailable-video',
+  ]);
+  assert.deepEqual(status.playlists[0].summaries, {
+    missing: 1,
+    draft: 1,
+    reviewed: 1,
+  });
+  assert.deepEqual(status.playlists[0].synthesis, {
+    state: 'stale',
+    missingVideoIds: ['captured-reviewed'],
+  });
+  assert.equal(status.playlists[1].synced, false);
+  assert.deepEqual(status.playlists[2].synthesis, {
+    state: 'missing',
+    missingVideoIds: ['captured-reviewed', 'third-reviewed'],
+  });
+  assert.equal(status.authors[0].videoTotal, 6);
+  assert.deepEqual(status.authors[0].states, {
+    captured: 4,
+    pending: 1,
+    unavailable: 1,
+  });
+  assert.deepEqual(status.authors[0].synthesis, {
+    state: 'missing',
+    missingVideoIds: ['captured-draft', 'captured-reviewed', 'third-reviewed'],
+  });
+  assert.deepEqual(status.authors[1].synthesis, {
+    state: 'stale',
+    missingVideoIds: ['third-reviewed'],
+  });
+
+  const report = formatLibraryStatus(status);
+  assert.match(report, /Playlist playlist \(Example Playlist\):/);
+  assert.match(
+    report,
+    /manifest: 6 entries; 5 available; 1 unavailable\/private\/deleted/,
+  );
+  assert.match(
+    report,
+    /summaries among captured: 1 missing; 1 draft\/not-reviewed; 1 reviewed/,
+  );
+  assert.match(
+    report,
+    /overview\.md: stale; missing covered video IDs: captured-reviewed/,
+  );
+  assert.match(
+    report,
+    /Playlist second \(Second Playlist\):\n {2}manifest: not synced/,
+  );
+  assert.match(report, /videos: 6 deduped/);
+  assert.match(
+    report,
+    /authors\/second-author\.md: stale; missing covered video IDs: third-reviewed/,
+  );
 });
