@@ -14,14 +14,13 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`
 - Decisions: none
 
 ## Next Action
 
-- Derive a dedicated Task 5f handoff from Task 5e's actual source/editorial and
-  throttle/unavailable evidence. Do not begin another capture batch, update
-  synthesis, or start Task 6 without that handoff.
+- Use `handoff-task-5f.md` for the fifth bounded backfill batch, including the
+  expected cross-playlist shared-video effects, then derive Task 5g from actuals.
 
 ## Open Questions
 
