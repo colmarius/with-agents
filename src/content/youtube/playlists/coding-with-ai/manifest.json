@@ -1,0 +1,245 @@
+{
+  "playlistId": "PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA",
+  "entries": [
+    {
+      "videoId": "XZZ_ddBvELc",
+      "position": 0,
+      "title": "Controllare le idee è più importante di guardare il codice",
+      "publishedAt": "2026-07-13T06:00:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WoaulxVqUUA",
+      "position": 1,
+      "title": "Altre considerazioni su Claude Fable",
+      "publishedAt": "2026-06-10T16:23:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ro9ZPPoajJg",
+      "position": 2,
+      "title": "Claude Fable",
+      "publishedAt": "2026-06-10T09:53:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WiJ2SaI-BtY",
+      "position": 3,
+      "title": "Mi chiedo (anche grazie a RIP) perché io sia stato così disponibile alla programmazione automatica",
+      "publishedAt": "2026-05-26T08:36:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "H5cvtoSxdxI",
+      "position": 4,
+      "title": "DeepSeek PRO 2-bit quants running on DwarfStar, building a C compiler",
+      "publishedAt": "2026-05-25T16:56:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "1HTtYNaCtcM",
+      "position": 5,
+      "title": "La programmazione è ancora interessante",
+      "publishedAt": "2026-05-22T17:00:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IoE3Hi2zpwk",
+      "position": 6,
+      "title": "Ha davvero senso oggi l'inferenza locale?",
+      "publishedAt": "2026-05-17T17:50:57Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "SiOadQFUx2k",
+      "position": 7,
+      "title": "Un nuovo tipo di test potrebbe presto emergere",
+      "publishedAt": "2026-05-16T11:10:46Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jaB2cor6zWI",
+      "position": 8,
+      "title": "Sul porting di Bun da Zig a Rust",
+      "publishedAt": "2026-05-15T09:54:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2Jn6Z2nr-44",
+      "position": 9,
+      "title": "Lo strano clamore suscitato da DS4 (Dwarf Star 4 :)",
+      "publishedAt": "2026-05-11T19:57:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9AjeHE_VReY",
+      "position": 10,
+      "title": "DS4: ora su GitHub",
+      "publishedAt": "2026-05-08T17:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "l6lxgYeVZqs",
+      "position": 11,
+      "title": "Essere Linus Torvalds",
+      "publishedAt": "2026-05-07T16:51:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Yajmt1CeiHg",
+      "position": 12,
+      "title": "Vlog sugli sviluppi di DS4",
+      "publishedAt": "2026-05-06T16:33:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "uxAhuNPSBuE",
+      "position": 13,
+      "title": "Progressi su DeepSeek v4: KV cache su disco",
+      "publishedAt": "2026-05-03T21:00:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "todMmp6AGCE",
+      "position": 14,
+      "title": "Dimostrazione pratica di DeepSeek v4 Flash in locale con 128GB di RAM",
+      "publishedAt": "2026-05-02T16:10:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "N-iwRfCFbHE",
+      "position": 15,
+      "title": "Alcuni test sui recenti modelli alternativi",
+      "publishedAt": "2026-04-25T05:00:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Yy7pRTHbbf4",
+      "position": 16,
+      "title": "DeepSeek v4",
+      "publishedAt": "2026-04-24T10:09:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "c95W__muKyI",
+      "position": 17,
+      "title": "Quale coding agent? Bisogna non sceglierne nessuno in particolare",
+      "publishedAt": "2026-04-23T17:00:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pJ11diFOjqo",
+      "position": 18,
+      "title": "Analizziamo la stessa patch con Kimi 2.6, Opus 4.7, GPT 5.4",
+      "publishedAt": "2026-04-20T17:23:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sMl3V0vjvjE",
+      "position": 19,
+      "title": "Claude Code vs. Codex",
+      "publishedAt": "2026-03-18T10:08:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NDBQq_NzxiE",
+      "position": 20,
+      "title": "Qwen 3.5",
+      "publishedAt": "2026-03-05T10:12:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "id9QG-mQSOo",
+      "position": 21,
+      "title": "Fatica da programmazione automatica",
+      "publishedAt": "2026-02-17T11:37:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0buzDrn0aIY",
+      "position": 22,
+      "title": "Non credo che le specifiche rimpiazzeranno il codice, tuttavia...",
+      "publishedAt": "2026-02-10T18:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "yFa1BHzkzn8",
+      "position": 23,
+      "title": "Il paper di Anthropic su AI e competenze, e una prova sul campo di flux2.c",
+      "publishedAt": "2026-01-31T18:09:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "D1_wPWzNkJ4",
+      "position": 24,
+      "title": "Sfere che si scontrano: un modo errato per testare gli LLM",
+      "publishedAt": "2025-02-04T17:04:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sJ5E7P1i5b8",
+      "position": 25,
+      "title": "[parte 2] Qwen 2.5 72B contro la rete neurale che stampa il logo di Twitter.",
+      "publishedAt": "2025-01-29T15:07:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "oNhkt0kKWA8",
+      "position": 26,
+      "title": "I fine tune di DeepSeek funzionano bene? Mettiamo alla prova il 32B.",
+      "publishedAt": "2025-01-29T09:01:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "rCIZflYEpEk",
+      "position": 27,
+      "title": "Coding with AI episode 3: fixing a real world bug in Redis vector sets with LLMs",
+      "publishedAt": "2025-01-13T16:13:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qipoQGqMCp0",
+      "position": 28,
+      "title": "Coding with AI episode 2: adding UTF-8 support in the Kilo editor with Claude & some human help",
+      "publishedAt": "2025-01-07T22:13:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_pLlet9Jrzc",
+      "position": 29,
+      "title": "Coding with AI episode 1: Claude Sonnet 3.5 vs DeepSeek v3 for coding analysis and modifications",
+      "publishedAt": "2025-01-05T10:39:48Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

@@ -1,0 +1,509 @@
+{
+  "playlistId": "PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
+  "entries": [
+    {
+      "videoId": "8gg-oJr4dTY",
+      "position": 0,
+      "title": "Come funzionano DeepSeek R1 e R1-Zero",
+      "publishedAt": "2025-01-21T08:52:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2VnxJafIfEI",
+      "position": 1,
+      "title": "Non chiamate DeepSeek R1 ciò che non lo è.",
+      "publishedAt": "2025-01-25T17:01:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "T5b69_8f5MI",
+      "position": 2,
+      "title": "Lezione sugli embedding e sulla ricerca vettoriale",
+      "publishedAt": "2025-01-22T16:42:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8gg-oJr4dTY",
+      "position": 3,
+      "title": "Come funzionano DeepSeek R1 e R1-Zero",
+      "publishedAt": "2025-01-21T08:52:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "wb7WMD8BtCQ",
+      "position": 4,
+      "title": "Le reti neurali sono algoritmi o diversi sistemi computazionali?",
+      "publishedAt": "2024-12-22T16:03:56Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vIUzIYpmb9Q",
+      "position": 5,
+      "title": "OpenAI o3: un paio di ragionamenti in libertà su questo nuovo modello e sulle direzioni della AI",
+      "publishedAt": "2024-12-21T13:17:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YODJnfuRPAY",
+      "position": 6,
+      "title": "Rassegna stampa: Meta e il paper dei Large Concept Model",
+      "publishedAt": "2025-01-07T18:53:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9mHKjgFMsQA",
+      "position": 7,
+      "title": "Binary quantization of vectors, does it work for vector search?",
+      "publishedAt": "2025-01-28T11:34:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "MUE3iBpAzOw",
+      "position": 8,
+      "title": "GPT 4.5: cosa ci dice delle frontiere della AI?",
+      "publishedAt": "2025-02-28T15:04:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2tIdZ43Fchk",
+      "position": 9,
+      "title": "Reti neurali: il mistero della generalizzazione nelle reti profonde",
+      "publishedAt": "2025-03-20T18:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "TlGrAretPQw",
+      "position": 10,
+      "title": "I grandi LLM pensano: i nuovi sconvolgenti studi di Anthropic sulla comprensione della AI",
+      "publishedAt": "2025-03-30T16:14:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "497EK7ZQ2FY",
+      "position": 11,
+      "title": "Ciò che importa di più del \"prediction is / is-not reasoning\": pensare agli LLM in altro modo",
+      "publishedAt": "2025-03-31T17:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Z0v-S7HQeAs",
+      "position": 12,
+      "title": "Platone e la generalità delle rappresentazioni nella AI",
+      "publishedAt": "2025-05-23T17:00:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3BpNGPUz_qI",
+      "position": 13,
+      "title": "Il principio dell'energia libera e i modelli reasoning",
+      "publishedAt": "2025-06-11T17:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "MWUHmOqapi0",
+      "position": 14,
+      "title": "Un commento a un post di Giorgio Gilestro",
+      "publishedAt": "2025-06-25T17:36:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ihqzaOSCDZ8",
+      "position": 15,
+      "title": "Macchine parlanti: Guido Vetere e il System 0",
+      "publishedAt": "2025-07-18T19:08:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qmgavo2_Svo",
+      "position": 16,
+      "title": "Cosa significa conoscere? Ragionamenti attorno al recente articolo di Vetere",
+      "publishedAt": "2025-07-31T19:27:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PHsxD4X2V2A",
+      "position": 17,
+      "title": "L'abbaglio dell'architettura dei modelli ricorrenti gerarchici",
+      "publishedAt": "2025-08-18T10:19:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "KoHgQIFsgTU",
+      "position": 18,
+      "title": "Viaggio concettuale nella Chain of Thoughts dei modelli \"thinking\"",
+      "publishedAt": "2025-08-24T17:15:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "KNUw11_4Btc",
+      "position": 19,
+      "title": "Un paio di idee sui Transformer che vale la pena di ricordare",
+      "publishedAt": "2025-09-04T16:33:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "u_tE4Q1Xwoc",
+      "position": 20,
+      "title": "Perché credo poco nella attention lineare delle alternative ai Transformer",
+      "publishedAt": "2025-09-22T16:52:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "mJyxKkfYWuQ",
+      "position": 21,
+      "title": "Sono i token o le GPU il più grande fattore limitante per gli LLM?",
+      "publishedAt": "2025-09-29T16:25:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "LG3q-sqMG0g",
+      "position": 22,
+      "title": "Database vettoriali e richiamo: approfondimento del concetto.",
+      "publishedAt": "2025-09-30T15:00:43Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2F1xWHKaras",
+      "position": 23,
+      "title": "Sugli LLM, l'intervista a Sutton, la bitter lesson e le forme a priori nel cervello dei mammiferi",
+      "publishedAt": "2025-10-10T10:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "R2TABSq1VNg",
+      "position": 24,
+      "title": "Tre diversi tipi di AGI",
+      "publishedAt": "2025-10-27T17:19:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "witc6AVdm84",
+      "position": 25,
+      "title": "Usare BERT come un diffusion model",
+      "publishedAt": "2025-10-24T16:45:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sVF85x1Wh7g",
+      "position": 26,
+      "title": "Gli LLM sanno stimare la complessità dei problemi che affrontano",
+      "publishedAt": "2025-11-07T17:45:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "gzcPQ-j1IPo",
+      "position": 27,
+      "title": "Rischi esistenziali e stilistici dell'AI: commento all'ultimo video di Guido Vetere",
+      "publishedAt": "2025-11-10T17:29:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "siN_nlOovA8",
+      "position": 28,
+      "title": "Come costringere le AI a dirci ciò che non vogliono: breve analisi di due paper",
+      "publishedAt": "2025-11-24T12:53:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eTnUphIXr84",
+      "position": 29,
+      "title": "AI: Estrarre un prompt da uno stile non funziona. Lo style transfer lo si fa attraverso gli esempi.",
+      "publishedAt": "2025-11-27T13:17:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ariy-Czkexc",
+      "position": 30,
+      "title": "Esiste davvero il libero arbitrio? In che modo questa domanda si mescola alla AI?",
+      "publishedAt": "2025-12-01T18:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eyj_YqLxZfo",
+      "position": 31,
+      "title": "Qualche riflessione sulla recente intervista a Ilya Sutskever",
+      "publishedAt": "2025-12-03T18:00:55Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BBAD-8vanro",
+      "position": 32,
+      "title": "DeepSeek 3.2: a un anno dal v3.0-base, DeepSeek brilla ancora con una attention pseudo-lineare",
+      "publishedAt": "2025-12-04T16:37:44Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WDlQOnj8G_U",
+      "position": 33,
+      "title": "LLM come surroganti del ragionamento",
+      "publishedAt": "2025-12-19T08:40:50Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "S1uKhBd72oI",
+      "position": 34,
+      "title": "Riflessioni di fine 2025 sulla AI",
+      "publishedAt": "2025-12-24T06:00:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NyzGqn4m9Bc",
+      "position": 35,
+      "title": "Le AI ci danno sempre ragione? Facciamo un test",
+      "publishedAt": "2025-12-27T09:49:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YOD3l69B8iw",
+      "position": 36,
+      "title": "VLOG del 21 gennaio 2026: come fissarsi sui coding agent (Flux.2 Klein, novità per Redis, e altro).",
+      "publishedAt": "2026-01-22T12:30:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JR0agWj8HMY",
+      "position": 37,
+      "title": "Il software si mangerà il mondo (ancora di più)",
+      "publishedAt": "2026-01-23T19:09:50Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "n3rdoQnN7Co",
+      "position": 38,
+      "title": "Kimi K2.5 (bonus point: Open Weights è Open Source?)",
+      "publishedAt": "2026-01-28T17:30:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0buzDrn0aIY",
+      "position": 39,
+      "title": "Non credo che le specifiche rimpiazzeranno il codice, tuttavia...",
+      "publishedAt": "2026-02-10T18:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zk85BCt3chg",
+      "position": 40,
+      "title": "Come funziona davvero un modello di trascrizione del parlato?",
+      "publishedAt": "2026-02-12T17:01:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0IOASo6hodM",
+      "position": 41,
+      "title": "L'inferenza locale non è lo scopo dei modelli aperti",
+      "publishedAt": "2026-02-18T17:23:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "k2bvZnXGzJc",
+      "position": 42,
+      "title": "La biologia e la cosmologia non possono ignorare la moderna AI",
+      "publishedAt": "2026-02-20T16:39:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "94hDVOGiAvw",
+      "position": 43,
+      "title": "L'ipocrisia della distillazione e Harry Potter come prova fallace di violazione del copyright",
+      "publishedAt": "2026-02-25T14:39:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "4YISBw_4vLU",
+      "position": 44,
+      "title": "Gli LLM Frankenstein per elisione o duplicazione dei blocchi del transformer",
+      "publishedAt": "2026-03-16T17:30:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "S8iuzrkYpIk",
+      "position": 45,
+      "title": "Il nuovo paper del team di Kimi: Attention Residuals",
+      "publishedAt": "2026-03-23T17:30:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZEmLtpNA_2k",
+      "position": 46,
+      "title": "Proviamo a capire TurboQuant",
+      "publishedAt": "2026-03-28T11:15:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "KM_73zFwlVY",
+      "position": 47,
+      "title": "Applicare TurboQuant (modificato) alla ricerca vettoriale",
+      "publishedAt": "2026-03-30T15:54:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "todMmp6AGCE",
+      "position": 48,
+      "title": "Dimostrazione pratica di DeepSeek v4 Flash in locale con 128GB di RAM",
+      "publishedAt": "2026-05-02T16:10:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "uxAhuNPSBuE",
+      "position": 49,
+      "title": "Progressi su DeepSeek v4: KV cache su disco",
+      "publishedAt": "2026-05-03T21:00:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Yajmt1CeiHg",
+      "position": 50,
+      "title": "Vlog sugli sviluppi di DS4",
+      "publishedAt": "2026-05-06T16:33:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9AjeHE_VReY",
+      "position": 51,
+      "title": "DS4: ora su GitHub",
+      "publishedAt": "2026-05-08T17:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2Jn6Z2nr-44",
+      "position": 52,
+      "title": "Lo strano clamore suscitato da DS4 (Dwarf Star 4 :)",
+      "publishedAt": "2026-05-11T19:57:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CBoPGYCyArQ",
+      "position": 53,
+      "title": "Vlog 13 maggio 2026: il peso delle responsabilità e l'hardware in regalo",
+      "publishedAt": "2026-05-13T11:52:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "E20rvkH6QKE",
+      "position": 54,
+      "title": "Sulla specializzazione degli LLM e il training di DS4 Flash",
+      "publishedAt": "2026-05-19T17:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "d-J_QK71nYc",
+      "position": 55,
+      "title": "Il legame tra le conoscenze che possiede un modello e la sua capacità di ragionamento",
+      "publishedAt": "2026-05-21T09:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IMGJL9ZghJg",
+      "position": 56,
+      "title": "I nuovi meccanismi di attenzione sparsa confermano che l’attenzione è un problema quadratico",
+      "publishedAt": "2026-05-28T06:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aAWdlLfJmqw",
+      "position": 57,
+      "title": "Distributed inference in DwarfStar",
+      "publishedAt": "2026-05-28T11:26:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "x6Vq0IWoLUs",
+      "position": 58,
+      "title": "Fare l'inferenza in streaming dal disco SSD",
+      "publishedAt": "2026-06-05T17:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ibcqRGQ7BKY",
+      "position": 59,
+      "title": "Un modello energetico-computazionale del token",
+      "publishedAt": "2026-06-16T16:07:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7-n0HWtAg2Y",
+      "position": 60,
+      "title": "I camion delle bibite e l'inferenza speculativa negli LLM",
+      "publishedAt": "2026-07-01T18:08:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hcpJK1_iuQw",
+      "position": 61,
+      "title": "Undici mesi fa il rilascio di GPT-5 deludeva quasi tutti. Eppure ora siamo in una fase nuova.",
+      "publishedAt": "2026-07-05T05:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "rqXLtmCPcwk",
+      "position": 62,
+      "title": "DwarfStar: un mondo di fork è un buon posto dove vivere",
+      "publishedAt": "2026-07-10T09:05:11Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}
