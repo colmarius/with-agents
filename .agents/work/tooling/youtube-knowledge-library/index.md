@@ -19,9 +19,11 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Use `handoff-task-5b.md` for the first bounded capture/summary backfill batch;
-  derive the following batch from its actual status, transcript sizes, and
-  throttle evidence.
+- Derive a dedicated Task 5c handoff from Task 5b's actuals, retaining a
+  maximum of two attempts per playlist (four total), no refill, and
+  stop-on-throttle behavior. Do not enlarge the batch: Task 5b completed
+  without throttling, but its transcripts ranged from 241 to 4,350 words and
+  totaled 8,538 source words.
 
 ## Open Questions
 

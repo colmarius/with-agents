@@ -315,3 +315,121 @@
 
 - Derive the bounded Task 5b capture/summary handoff from Task 5a's actual
   status and throttle evidence.
+
+## 2026-07-20 — Task 5b bounded backfill batch complete
+
+### Preflight and capture outcomes
+
+- The worktree was clean before capture. `npm run youtube:library -- help`
+  exited 0, and the baseline `status` command exited 0 with the exact Task 5a
+  state: `ai-concepts` at 63 entries/2 captured/61 pending,
+  `coding-with-ai` at 30 entries/1 captured/29 pending, and author `antirez`
+  at 86 deduped/2 captured/84 pending. Both playlists had zero recorded
+  unavailable videos and zero missing summaries among captured videos; both
+  overviews were current and the author file was missing.
+- `capture --playlist ai-concepts --limit 2` ran exactly once and exited 0:
+  `captured 2VnxJafIfEI`, then `captured T5b69_8f5MI`.
+- `capture --playlist coding-with-ai --limit 2` ran exactly once and exited 0:
+  `captured WoaulxVqUUA`, then `captured ro9ZPPoajJg`.
+- All four successes record `requestedLanguage: it` and `language: it`.
+  `2VnxJafIfEI` and `ro9ZPPoajJg` are auto-generated captions;
+  `T5b69_8f5MI` and `WoaulxVqUUA` are captions. Directory, metadata, and
+  transcript IDs match; every transcript is non-empty and has coarse chunks
+  under `## Transcript`.
+- Each selected ID occurs in its command's playlist manifest with the title
+  and publication date used by the summary. None of the four new IDs is shared
+  across the two manifests, and no mutable-title discrepancy occurred.
+- There were no unavailable or transient outcomes, no fatal exit, no
+  `TooManyRequest`, no stopped queue, and no retry, force, refill, sync, or
+  repeated capture command.
+
+### Generated capture artifacts and source sizes
+
+- `2VnxJafIfEI`: `metadata.json` and `transcript.md`; 1,580 bytes, 241 words,
+  2 timestamp chunks.
+- `T5b69_8f5MI`: `metadata.json` and `transcript.md`; 25,878 bytes, 4,350
+  words, 30 timestamp chunks.
+- `WoaulxVqUUA`: `metadata.json` and `transcript.md`; 10,588 bytes, 1,805
+  words, 12 timestamp chunks.
+- `ro9ZPPoajJg`: `metadata.json` and `transcript.md`; 12,509 bytes, 2,142
+  words, 16 timestamp chunks.
+- Batch source total: 50,555 bytes, 8,538 words, and 60 chunks. This is 6,212
+  words more, or 3.67 times, Task 5a's 2,326 source words, despite containing
+  only twice as many videos. The 241–4,350-word range is material sizing
+  evidence for later batches.
+- Generated capture artifacts were committed before editorial work as
+  `3a5e075` (`capture YouTube backfill batch 1 transcripts`). Staged
+  `git diff --check` passed and the commit contained only the eight new
+  transcript/metadata files.
+
+### Source-checked summaries and editorial sizes
+
+- Read every complete transcript, metadata record, and selected manifest
+  entry before writing one real draft `summary.md` per captured video. No
+  placeholder, overview revision, or author synthesis was created.
+- `2VnxJafIfEI/summary.md`: 1,728 bytes, 235 words, 2 verified Key Ideas
+  timestamp endpoints.
+- `T5b69_8f5MI/summary.md`: 3,779 bytes, 497 words, 14 verified Key Ideas
+  timestamp endpoints.
+- `WoaulxVqUUA/summary.md`: 3,076 bytes, 413 words, 10 verified Key Ideas
+  timestamp endpoints.
+- `ro9ZPPoajJg/summary.md`: 3,193 bytes, 418 words, 12 verified Key Ideas
+  timestamp endpoints.
+- Batch summary total: 11,776 bytes, 1,563 words, and 38 verified timestamp
+  endpoints. This is 845 words more, or 2.18 times, Task 5a's 718 summary
+  words.
+- A targeted contract/provenance check passed for all summaries: exact ordered
+  frontmatter, manifest title and publication date, metadata language and
+  caption kind, draft status, caption-kind-adapted disclosure as the first
+  body line, exact heading order, an anchor on every Key Ideas bullet, every
+  referenced endpoint present as a sibling transcript chunk, and both source
+  links present. Claims and caveats were checked against the full transcripts.
+- Summaries were committed separately as `bed8190` (`add YouTube backfill
+  batch 1 summaries`). Staged `git diff --check` passed and the commit
+  contained only the four new summary files.
+
+### Final status and verification
+
+- Final `npm run youtube:library -- status` exited 0. `ai-concepts` has 63
+  entries, 4 captured entries representing 3 unique videos, 59 pending, 0
+  unavailable-recorded, and 0 missing summaries; its overview is intentionally
+  stale for `2VnxJafIfEI` and `T5b69_8f5MI`.
+- `coding-with-ai` has 30 entries, 3 captured entries/videos, 27 pending, 0
+  unavailable-recorded, and 0 missing summaries; its overview is intentionally
+  stale for `WoaulxVqUUA` and `ro9ZPPoajJg`.
+- Author `antirez` remains at 86 deduped videos, now with 6 captured and 80
+  pending. `authors/antirez.md` remains intentionally missing and reports all
+  six summarized IDs: `8gg-oJr4dTY`, `2VnxJafIfEI`, `T5b69_8f5MI`,
+  `XZZ_ddBvELc`, `WoaulxVqUUA`, and `ro9ZPPoajJg`.
+- `npm run lint:fix` made no changes and exited 1 solely on the known
+  pre-existing `.agents/references/dot-agents/site/` baseline: one
+  `useButtonType` error, one unused-function warning, and two
+  descending-specificity warnings. No reference files were modified.
+- `node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs`:
+  all 40 tests passed; exit 0.
+- `npm run check`: passed with 0 errors, warnings, or hints; exit 0.
+- `npm run build`: passed; 18 pages built; exit 0.
+- `rg -n "source-only" dist/` and
+  `rg -n "src/content/youtube" src/content.config.ts src/pages src/components src/layouts`
+  each returned no matches (expected `rg` exit 1), preserving the production
+  and import boundaries.
+- Final corpus `git diff --check` passed, and the worktree was clean before
+  this progress update.
+
+### Blockers, deviations, and Task 5c recommendation
+
+- No blocker or scope deviation occurred. Sync, overview updates, author
+  synthesis, Task 5 completion, and Task 6 remain undone. Tasks 5 and 6 stay
+  unchecked.
+- Recommend keeping Task 5c at a maximum of four capture attempts: one
+  `--limit 2` command per playlist, with no refill and the existing immediate
+  stop-on-throttle rule. Four sequential attempts showed no throttle and the
+  resulting 8,538-word source batch was completed with full editorial checks,
+  so reducing the attempt count is not yet required. Do not enlarge it: the
+  18-fold transcript-size spread and the 3.67-times Task 5a source context show
+  that video count alone is a weak predictor of editorial load.
+
+### Next action
+
+- Prepare a dedicated Task 5c handoff using the evidence-based maximum-four
+  size above. Do not begin capture without that handoff.
