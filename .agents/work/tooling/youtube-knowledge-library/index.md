@@ -14,16 +14,13 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`
 - Decisions: none
 
 ## Next Action
 
-- Derive a dedicated Task 5c handoff from Task 5b's actuals, retaining a
-  maximum of two attempts per playlist (four total), no refill, and
-  stop-on-throttle behavior. Do not enlarge the batch: Task 5b completed
-  without throttling, but its transcripts ranged from 241 to 4,350 words and
-  totaled 8,538 source words.
+- Use `handoff-task-5c.md` for the second bounded capture/summary backfill
+  batch, then derive Task 5d from its actual source sizes and throttle evidence.
 
 ## Open Questions
 
