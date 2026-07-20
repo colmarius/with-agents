@@ -14,12 +14,12 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`
 - Decisions: none
 
 ## Next Action
 
-- Prepare and implement Task 4: encode the editorial summary and synthesis workflow.
+- Use `handoff-task-4.md` to implement Task 4: encode the editorial summary and synthesis workflow.
 
 ## Open Questions
 
