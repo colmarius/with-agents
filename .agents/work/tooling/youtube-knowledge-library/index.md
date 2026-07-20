@@ -14,13 +14,14 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`
 - Decisions: none
 
 ## Next Action
 
-- Prepare and implement Task 5: prove the source-only thin slice, then backfill
-  in bounded batches.
+- Set `YOUTUBE_API_KEY` in the runner environment, then use
+  `handoff-task-5a.md` to prove the real source-only thin slice before deriving
+  bounded backfill batches.
 
 ## Open Questions
 
