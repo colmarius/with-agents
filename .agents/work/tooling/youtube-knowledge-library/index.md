@@ -19,9 +19,8 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Set `YOUTUBE_API_KEY` in the runner environment, then use
-  `handoff-task-5a.md` to prove the real source-only thin slice before deriving
-  bounded backfill batches.
+- Derive the bounded Task 5b capture/summary handoff from Task 5a's actual
+  status and throttle evidence.
 
 ## Open Questions
 

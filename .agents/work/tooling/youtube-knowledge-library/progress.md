@@ -178,3 +178,140 @@
 ### Next action
 
 - Task 5: prove the source-only thin slice, then backfill in bounded batches.
+
+## 2026-07-20 — Task 5a real-data thin slice complete
+
+### Real playlist synchronization
+
+- Credential preflight passed without printing the key: the worktree was
+  clean, `YOUTUBE_API_KEY` was non-empty, and
+  `npm run youtube:library -- help` exited 0.
+- The first real `npm run youtube:library -- sync` added 63 `ai-concepts`
+  entries and 30 `coding-with-ai` entries. The manifests match the catalog
+  playlist IDs, are position-sorted, and contain 63 and 30 available entries
+  respectively with no manifest-unavailable entries.
+- `ai-concepts` has 62 unique IDs among its 63 entries because
+  `8gg-oJr4dTY` occurs at positions 0 and 3 in the real playlist.
+  `coding-with-ai` has 30 unique IDs.
+- Initial manifest commit: `192da2f` (`sync YouTube playlist manifests`).
+- The repeat real sync reported `no changes` for both playlists. Manifest
+  SHA-256 values remained
+  `06cff56a2db7531bcefb9489c65f8feac249ff0c74d2aff47d2196f0e09ab653`
+  and
+  `ee7f8cc5c3390b1151465b57b7f07362e951f9297a50cdf3e164cb94677dbac4`;
+  both modification times remained `1784536383`, and the worktree stayed
+  clean.
+
+### Baseline and final status
+
+- Baseline `ai-concepts`: 63 manifest entries, 63 available, 0
+  manifest-unavailable; 0 captured, 63 pending, 0 unavailable-recorded; no
+  captured-summary states; overview missing.
+- Baseline `coding-with-ai`: 30 manifest entries, 30 available, 0
+  manifest-unavailable; 0 captured, 30 pending, 0 unavailable-recorded; no
+  captured-summary states; overview missing.
+- Baseline author `antirez`: 86 deduped videos; 0 captured, 86 pending, 0
+  unavailable-recorded; author synthesis missing.
+- Final `ai-concepts`: 63 manifest entries, 63 available, 0
+  manifest-unavailable; 2 captured entries representing 1 unique video, 61
+  pending entries, 0 unavailable-recorded; 0 missing summaries, 2
+  draft/not-reviewed summary occurrences, 0 reviewed; overview current.
+- Final `coding-with-ai`: 30 manifest entries, 30 available, 0
+  manifest-unavailable; 1 captured entry/video, 29 pending, 0
+  unavailable-recorded; 0 missing summaries, 1 draft/not-reviewed, 0
+  reviewed; overview current.
+- Final author `antirez`: 86 deduped videos; 2 captured, 84 pending, 0
+  unavailable-recorded. `authors/antirez.md` remains intentionally missing
+  and reports missing covered IDs `8gg-oJr4dTY` and `XZZ_ddBvELc`.
+
+### Bounded capture outcomes
+
+- Attempt 1 for `ai-concepts`, using
+  `capture --playlist ai-concepts --limit 1`, captured `8gg-oJr4dTY` and
+  exited 0. Metadata records language `it` and caption kind `caption`; the
+  8,088-byte, 1,286-word transcript has 11 coarse timestamp chunks.
+- Attempt 1 for `coding-with-ai`, using
+  `capture --playlist coding-with-ai --limit 1`, captured `XZZ_ddBvELc` and
+  exited 0. Metadata records language `it` and caption kind
+  `auto-generated`; the 6,348-byte, 1,040-word transcript has 8 coarse
+  timestamp chunks.
+- The captured IDs are distinct. Both playlist attempts succeeded on the
+  first bounded command, so there were no retry attempts, persisted
+  unavailable records, transient failures, throttle signals, or stopped
+  queues.
+- Capture commit: `8a52373` (`capture thin-slice YouTube transcripts`).
+
+### Editorial artifacts and source checks
+
+- Added draft summaries at
+  `src/content/youtube/videos/8gg-oJr4dTY/summary.md` and
+  `src/content/youtube/videos/XZZ_ddBvELc/summary.md` after reading each full
+  transcript, metadata record, and matching manifest entry.
+- Added draft thin-slice overviews at
+  `src/content/youtube/playlists/ai-concepts/overview.md` and
+  `src/content/youtube/playlists/coding-with-ai/overview.md`. No author
+  synthesis was created.
+- Summary frontmatter key order and title/publication/language/caption
+  provenance were checked against the committed sources. Targeted searches
+  confirmed all 18 Key Ideas timestamp references exist in the sibling
+  transcripts. The playlist overviews add 16 timestamp references; all exist
+  in the corresponding transcript, and both relative summary links resolve to
+  their intended source path.
+- The summaries are 2,545 bytes/333 words for `8gg-oJr4dTY` and 2,951
+  bytes/385 words for `XZZ_ddBvELc`. The observed editorial context for two
+  source-checked summaries was 14,436 transcript bytes, 2,326 transcript
+  words, and 19 timestamp chunks; each summary required a full transcript
+  read plus targeted anchor checks.
+- Editorial commit: `a445f4f` (`add thin-slice YouTube summaries and overviews`).
+
+### Coverage interpretation
+
+- In thin-slice overviews, `pending video IDs` means summaries that exist but
+  are not incorporated. That count is zero for both playlists. Uncaptured
+  transcript work is reported as counts rather than long ID lists.
+- `ai-concepts` reports both manifest-entry and unique-video counts because
+  the real manifest duplicates `8gg-oJr4dTY`: 2 captured manifest entries are
+  1 captured unique ID and 2 draft summary occurrences are 1 summary file.
+  Its remaining uncaptured work is 61 entries/unique IDs.
+- `coding-with-ai` has no duplicate entry in the thin slice; its remaining
+  uncaptured work is 29 entries/unique IDs.
+
+### Verification
+
+- Final `npm run youtube:library -- status`: exited 0 with both overviews
+  current and all captured entries summarized as drafts; the intentionally
+  missing author synthesis is reported as expected.
+- `node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs`:
+  all 40 tests passed.
+- `npm run lint:fix`: made no changes and exited 1 only on the known
+  pre-existing `.agents/references/dot-agents/site/` diagnostics: one
+  `useButtonType` error, one unused-function warning, and two
+  descending-specificity warnings. No unrelated reference files were
+  modified.
+- `npm run check`: passed with 0 errors, warnings, or hints.
+- `npm run build`: passed; 18 pages built.
+- `rg -n "src/content/youtube" src/content.config.ts src/pages src/components src/layouts`:
+  no registration or import matches.
+- `rg -n "source-only" dist/`: no matches.
+- `git diff --check` passed for commits `192da2f`, `8a52373`, and `a445f4f`.
+
+### Blockers, deviations, and Task 5b inputs
+
+- No workflow blocker, unavailable caption, transient failure, or throttle was
+  observed. Task 5b therefore has no live throttle threshold evidence yet and
+  must retain bounded capture batches and the existing stop-on-throttle rule.
+- The only data-shape deviation from a simple one-entry thin slice is the real
+  duplicate `ai-concepts` playlist item described above; global video-ID
+  deduplication still produced one transcript and one summary.
+- Task 5b starts with 61 pending entries/unique IDs in `ai-concepts`, 29 in
+  `coding-with-ai`, and 84 pending deduped author videos across both playlists.
+  Two summaries consumed complete source contexts of 1,286 and 1,040 words
+  and produced 333- and 385-word drafts, which is the concrete context/output
+  sizing evidence for bounded editorial batches.
+- Broad backfill, full overview revision, author synthesis, Task 6, and Task 5
+  completion remain out of scope and undone.
+
+### Next action
+
+- Derive the bounded Task 5b capture/summary handoff from Task 5a's actual
+  status and throttle evidence.
