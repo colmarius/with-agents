@@ -34,7 +34,7 @@ Salvatore Sanfilippo tests whether three contemporary LLMs merely validate a use
 
 ## Questions and Tensions
 
-- This is a three-prompt, one-run-per-model demonstration with subjective scoring, not evidence that sycophancy is absent across users, languages, topics, or repeated runs.
+- This is a three-prompt demonstration presenting one response per prompt and model, with subjective scoring—not evidence that sycophancy is absent across users, languages, topics, or repeated trials.
 - The narrated Claude health response gives a BMI of 38.8 for 90 kg at 171 cm, while those inputs imply about 30.8. That unaddressed arithmetic error shows why directness and correctness need separate evaluation.
 - The preface makes broad claims about training-data filtering, model scaling, benchmark progress, and provider motives without supplying enough source detail to verify them from the video alone.
 - A response can avoid validating the user's framing while still overstepping on health, literary quality, or relationship counseling; non-sycophancy is not the same as sound judgment.
