@@ -19,7 +19,7 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Use `handoff-task-3.md` to implement Task 3: idempotent transcript capture and useful status reporting.
+- Prepare and implement Task 4: encode the editorial summary and synthesis workflow.
 
 ## Open Questions
 

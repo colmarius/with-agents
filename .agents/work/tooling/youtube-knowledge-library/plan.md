@@ -40,7 +40,7 @@ Add a committed, source-only YouTube knowledge library that reuses the repositor
     - Errors and logs never contain the API key or full API request query strings.
   - Notes: The official API is the only enumeration backend in the first implementation. Keep the normalization boundary small enough to replace it later if necessary.
 
-- [ ] **Task 3: Add idempotent transcript capture and useful status reporting**
+- [x] **Task 3: Add idempotent transcript capture and useful status reporting**
   - Scope: library CLI, shared transcript module, `src/content/youtube/videos/**`, and focused tests
   - Depends on: Task 2
   - Acceptance:

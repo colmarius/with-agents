@@ -72,3 +72,49 @@
 ### Next action
 
 - Task 3: add idempotent transcript capture and useful status reporting. Do not begin it without a dedicated Task 3 handoff.
+
+## 2026-07-20 — Task 3 complete
+
+### Changes
+
+- Implemented deterministic sequential capture in catalog and manifest-position order with global video-ID deduplication, manifest-unavailable skips, selected-playlist filtering, positive limits, strict pre-fetch language-conflict validation, and a fixed 1500 ms delay between attempts only.
+- Derived pending, captured, and unavailable state from transcript and metadata file existence. Default capture processes pending videos only, `--retry` processes persisted unavailable videos only, and bounded `--force` re-fetches selected videos with an overwrite-count warning while preserving sibling summaries.
+- Added exact capture-provenance and persisted-unavailable metadata shapes through the generalized Task 2 atomic JSON writer. Successful retries replace unavailable metadata; transient, throttled, empty-caption, and fatal outcomes write no failure state or empty transcript.
+- Surfaced `transcriptErrorName` from caught transcript-package errors and the strict `LanguageUnavailable` mismatch without changing the existing `youtube:transcript` JSON or human payload selection or its `transcriptUnavailable` strings.
+- Classified typed failures as required: known video/caption/language unavailability persists, TooManyRequest and unknown/network/empty-caption failures remain transient, and invalid language/video ID failures stop with exit 1. Unknown names default to transient.
+- Added human-readable playlist and author status reporting for manifest totals, derived transcript states, unavailable IDs, missing/draft-or-unrecognized/reviewed summaries, not-synced playlists, relationship-level video deduplication, and missing/stale synthesis coverage.
+- Added a minimal tolerant frontmatter reader for only `status` and inline/block `coveredVideoIds`; malformed or unrecognized editorial fields degrade to undefined/empty rather than introducing a YAML dependency or Task 4 contracts.
+- Implementation commit: `ea95f78` (`add idempotent YouTube transcript capture`). No playlist manifests, video directories, transcripts, metadata, summaries, overviews, or author files were added under `src/content/youtube/`.
+
+### Typed failure caveat
+
+- `youtube-transcript-plus` can surface exhausted watch-page HTTP failures, including some 5xx responses, as `YoutubeTranscriptVideoUnavailableError`. That typed name is persisted per the package contract; `--retry` is the recovery path when a transient upstream failure was classified as persistent.
+
+### Verification
+
+- `node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs`: 40 tests passed.
+- `npm run youtube:library -- help`: exit 0 and documents capture selection/modes/scope plus option-free human status.
+- `npm run youtube:library -- capture`: exit 1 with a clear `ai-concepts` not-synced/run-sync-first error and no writes.
+- `npm run youtube:library -- status`: exit 0 and reports both configured playlists as not synced plus the empty derived author aggregate.
+- `npm run youtube:library -- capture --force`: exit 1 on the missing playlist/limit scope guard.
+- `npm run youtube:library -- status --json`: exit 1 because status accepts no options or JSON mode.
+- `npm run youtube:library -- capture --playlist nope`: exit 1 with the configured-playlist list before any manifest read or fetch.
+- `npx biome check .agents/scripts`: passed with no fixes.
+- `npm run lint:fix`: made no changes and exits 1 only on the known pre-existing `.agents/references/dot-agents/site/` diagnostics (one `useButtonType` error plus the unused-function and two descending-specificity warnings). No reference files were changed.
+- `npm run check`: passed with 0 errors, warnings, or hints.
+- `npm run build`: passed; 18 pages built.
+- `rg -n "src/content/youtube" src/content.config.ts src/pages src/components src/layouts`: no matches.
+- `rg -n "source-only" dist/`: no matches.
+- `git diff --check`: passed; pre-commit status contained only the six intended implementation files, and the corpus tree still contains only `AGENTS.md` and `catalog.json`.
+
+### Deferred verification
+
+- Real keyed playlist synchronization, network transcript capture, populated-corpus status, and the optional live `youtube:transcript` regression remain deferred to the Tasks 5/6 thin slice because no playlist manifests or `YOUTUBE_API_KEY` are available. Fixture/injected-boundary completion is sufficient for Task 3; no corpus files were fabricated.
+
+### Blockers and deviations
+
+- None. Task 3 stayed within its allowed files and did not begin Task 4 editorial contracts/content or Tasks 5–6 corpus/publication work.
+
+### Next action
+
+- Task 4: encode the editorial summary and synthesis workflow.
