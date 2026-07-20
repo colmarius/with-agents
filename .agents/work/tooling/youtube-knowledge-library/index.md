@@ -14,12 +14,12 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`
 - Decisions: none
 
 ## Next Action
 
-- Prepare a dedicated Task 3 handoff, then implement Task 3: idempotent transcript capture and useful status reporting.
+- Use `handoff-task-3.md` to implement Task 3: idempotent transcript capture and useful status reporting.
 
 ## Open Questions
 
