@@ -14,14 +14,13 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`
 - Decisions: none
 
 ## Next Action
 
-- Derive a dedicated Task 5e handoff from Task 5d's actual source/editorial
-  sizes and the cumulative fourteen-attempt throttle/unavailable evidence.
-  Do not begin another capture batch without that handoff.
+- Use `handoff-task-5e.md` for the fourth bounded backfill batch, then derive
+  Task 5f from its actual source/editorial and throttle/unavailable evidence.
 
 ## Open Questions
 
