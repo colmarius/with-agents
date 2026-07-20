@@ -19,9 +19,9 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Execute only the twelfth bounded backfill batch from `handoff-task-5m.md`
-  in a dedicated implementation thread. Keep the four-attempt ceiling, then
-  derive Task 5n from actual outcomes without starting synthesis or Task 6.
+- Derive a dedicated Task 5n handoff from the actual twelfth-batch outcomes
+  recorded in `progress.md`. Retain the four-attempt ceiling; do not begin
+  another capture batch, synthesis, or Task 6 while preparing the handoff.
 
 ## Open Questions
 
