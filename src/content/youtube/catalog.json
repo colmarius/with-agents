@@ -1,0 +1,35 @@
+{
+  "publication": "source-only",
+  "authors": [
+    {
+      "id": "antirez",
+      "slug": "antirez",
+      "displayName": "Salvatore Sanfilippo"
+    }
+  ],
+  "playlists": [
+    {
+      "id": "PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
+      "slug": "ai-concepts",
+      "title": "AI concepts",
+      "transcriptLanguage": "it",
+      "summaryLanguage": "en"
+    },
+    {
+      "id": "PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA",
+      "slug": "coding-with-ai",
+      "title": "Coding with AI",
+      "transcriptLanguage": "it",
+      "summaryLanguage": "en"
+    }
+  ],
+  "relationships": [
+    {
+      "authorId": "antirez",
+      "playlistIds": [
+        "PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
+        "PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA"
+      ]
+    }
+  ]
+}
