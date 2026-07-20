@@ -19,9 +19,11 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Execute only the eighth bounded backfill batch from `handoff-task-5i.md` in
-  a dedicated implementation thread. Keep the four-attempt ceiling, then
-  derive Task 5j from actual outcomes without starting synthesis or Task 6.
+- Derive a dedicated Task 5j handoff from the actual evidence recorded after
+  the [Task 5i handoff](handoff-task-5i.md). Retain the maximum-four plan: one
+  `--limit 2` command per playlist, no refill, and immediate stop on throttle.
+  Do not execute Task 5j, update synthesis, check off Task 5, or start Task 6
+  in this thread.
 
 ## Open Questions
 
