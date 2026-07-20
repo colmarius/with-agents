@@ -14,14 +14,14 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`
 - Decisions: none
 
 ## Next Action
 
-- Derive a dedicated Task 5h handoff from the actual Task 5g evidence recorded
-  in `progress.md`. Retain the maximum-four planned-attempt ceiling; do not
-  begin another capture batch, synthesis, or Task 6 while preparing it.
+- Execute only the seventh bounded backfill batch from `handoff-task-5h.md` in
+  a dedicated implementation thread. Keep the four-attempt ceiling, then
+  derive Task 5i from actual outcomes without starting synthesis or Task 6.
 
 ## Open Questions
 
