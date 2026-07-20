@@ -14,12 +14,12 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoff: `handoff-task-1.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`
 - Decisions: none
 
 ## Next Action
 
-- Implement Task 2: add complete playlist synchronization through the YouTube Data API, with deterministic manifests, pagination, change reporting, and atomic no-op-safe writes.
+- Use `handoff-task-2.md` to implement Task 2: add complete playlist synchronization through the YouTube Data API, with deterministic manifests, pagination, change reporting, and atomic no-op-safe writes.
 
 ## Open Questions
 
