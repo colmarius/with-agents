@@ -19,8 +19,9 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Use `handoff-task-5f.md` for the fifth bounded backfill batch, including the
-  expected cross-playlist shared-video effects, then derive Task 5g from actuals.
+- Prepare a dedicated `handoff-task-5g.md` from Task 5f's measured
+  maximum-four evidence and expected shared-video effect. Do not begin another
+  capture batch without that handoff.
 
 ## Open Questions
 
