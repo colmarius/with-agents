@@ -13,7 +13,7 @@ Add a committed, source-only YouTube knowledge library that reuses the repositor
 
 ## Tasks
 
-- [ ] **Task 1: Establish the committed library boundary and reusable transcript core**
+- [x] **Task 1: Establish the committed library boundary and reusable transcript core**
   - Scope: `src/content/youtube/AGENTS.md`, `src/content/youtube/catalog.json`, `package.json`, `.agents/scripts/save-youtube-transcript.mjs`, a shared transcript module under `.agents/scripts/`, and the new generic library CLI under `.agents/scripts/`
   - Depends on: none
   - Acceptance:
