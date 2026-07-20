@@ -19,10 +19,10 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Execute only the AI-only twentieth bounded backfill batch from
-  `handoff-task-5u.md` in a dedicated implementation thread. Keep the
-  two-attempt ceiling, then derive Task 5v from actual outcomes without
-  starting synthesis, completing Task 5, or beginning Task 6.
+- Derive a dedicated Task 5v handoff from Task 5u's two-success AI-only
+  outcome, retaining a maximum of two attempts and the expected heads
+  `94hDVOGiAvw` and `4YISBw_4vLU`. Do not start another capture batch,
+  synthesis, Task 5 completion, or Task 6 while preparing that handoff.
 
 ## Open Questions
 
