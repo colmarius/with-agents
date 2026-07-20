@@ -14,16 +14,15 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`, `handoff-task-5i.md`, `handoff-task-5j.md`, `handoff-task-5k.md`, `handoff-task-5l.md`, `handoff-task-5m.md`, `handoff-task-5n.md`, `handoff-task-5o.md`, `handoff-task-5p.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`, `handoff-task-5i.md`, `handoff-task-5j.md`, `handoff-task-5k.md`, `handoff-task-5l.md`, `handoff-task-5m.md`, `handoff-task-5n.md`, `handoff-task-5o.md`, `handoff-task-5p.md`, `handoff-task-5q.md`
 - Decisions: none
 
 ## Next Action
 
-- Derive a dedicated Task 5q handoff from the actual Task 5p evidence: run at
-  most one `ai-concepts --limit 2` capture command, with expected heads
-  `BBAD-8vanro` and `WDlQOnj8G_U`. Do not recommend an empty
-  `coding-with-ai` command now that its pending queue is zero, and do not
-  start synthesis, complete Task 5, or start Task 6.
+- Execute only the AI-only sixteenth bounded backfill batch from
+  `handoff-task-5q.md` in a dedicated implementation thread. Keep the
+  two-attempt ceiling, then derive Task 5r from actual outcomes without
+  starting synthesis or Task 6.
 
 ## Open Questions
 
