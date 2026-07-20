@@ -19,9 +19,10 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Execute only the fourteenth bounded backfill batch from `handoff-task-5o.md`
-  in a dedicated implementation thread. Keep the four-attempt ceiling, then
-  derive Task 5p from actual outcomes without starting synthesis or Task 6.
+- Derive a dedicated Task 5p handoff from the actual Task 5o outcomes only.
+  Size it at a maximum of three planned attempts: one sequential `--limit 2`
+  command per playlist, with two AI heads and the coding playlist's single
+  remaining pending video. Do not execute it, start synthesis, or start Task 6.
 
 ## Open Questions
 
