@@ -34,6 +34,156 @@ src/content/youtube/
 - Author files, playlist overviews, and video summaries are editorial
   Markdown. Scripts must not silently generate or replace them.
 
+## Editorial workflow
+
+Video summaries, playlist overviews, and author syntheses are explicit
+agent/human editorial work from committed transcripts and summaries. Sync,
+capture, and status tooling must not silently generate or replace them, and no
+LLM API belongs in this workflow. New editorial artifacts begin as `draft`.
+Set `reviewed` only after an explicit human or dedicated review pass.
+
+The status tooling currently reads only `status` and `coveredVideoIds`, and it
+does so tolerantly. All other frontmatter is durable editorial provenance.
+
+### Video summaries
+
+Store each summary at `videos/<video-id>/summary.md`. Use this exact
+frontmatter key order:
+
+```yaml
+---
+title: "<original video title>"
+videoId: <video-id>
+sourceUrl: "https://www.youtube.com/watch?v=<video-id>"
+publishedAt: "<ISO 8601 video publication date from the manifest>"
+sourceLanguage: <actual captured language from metadata.json, e.g. it-IT>
+summaryLanguage: en
+captionKind: auto-generated
+status: draft
+---
+```
+
+Omit `publishedAt` only when the playlist manifest has no video publication
+date. Copy `sourceLanguage` and `captionKind` from `metadata.json`, and copy
+`publishedAt` from the playlist manifest; do not re-fetch or infer these
+values. `captionKind` must be `auto-generated` or `caption`, matching the
+metadata `kind`. `status` must be `draft` or `reviewed`; status tooling treats
+any other value as draft/not reviewed. Only `status` is currently machine-read
+from summary frontmatter.
+
+When `sourceLanguage` differs from `summaryLanguage`, the first body line must
+be this italic disclosure, adapted only for the actual languages and caption
+kind:
+
+```markdown
+*All English wording below is an editorial translation/paraphrase of the Italian auto-generated captions; nothing is a verbatim quotation.*
+```
+
+Never wrap translated caption text in quotation marks or present it as
+verbatim. Timestamped, source-faithful paraphrase is allowed. After the
+disclosure, write a concise one- or two-paragraph framing, followed by these
+exact headings in order:
+
+```markdown
+## Key Ideas
+
+## Practical Implications
+
+## Questions and Tensions
+
+## Source
+```
+
+Use concise Key Ideas bullets with transcript anchors in `[HH:MM:SS]` or
+`[HH:MM:SS]-[HH:MM:SS]` form that match the sibling transcript chunks. The
+Source section must contain the canonical video URL and
+`[transcript.md](./transcript.md)`.
+
+### Playlist overviews
+
+Store each overview at `playlists/<playlist-slug>/overview.md`. Use this exact
+frontmatter key order and two-space-indented block-list form:
+
+```yaml
+---
+title: "<playlist title from catalog.json>"
+status: draft
+coveredVideoIds:
+  - <video-id>
+  - <video-id>
+---
+```
+
+`status` must be `draft` or `reviewed`. `coveredVideoIds` must list every video
+summary incorporated into the current overview and must be updated on each
+revision. Status tooling marks an overview stale when an existing summary's
+video ID is missing. Use these exact headings in order:
+
+```markdown
+## Coverage
+
+## Current Thesis
+
+## Stable Ideas
+
+## Emerging Ideas
+
+## Revisions and Tensions
+
+## Practical Implications
+```
+
+Coverage must state the manifest count, summary count, incorporated count, and
+pending video IDs. Synthesize per-video summaries; do not silently regenerate
+an overview from raw transcripts or live YouTube data.
+
+In every section, keep author claims visibly separate from editorial
+synthesis. Every bullet stating an author's claim must include a source anchor:
+a relative summary link, or a video ID plus a transcript timestamp. Every
+editorial interpretation bullet must begin `Editorial:`. Claims about sequence
+or change over time must cite video publication dates plus timestamped
+evidence; never infer chronology from mutable playlist position.
+
+### Author syntheses
+
+Keep author files flat at `authors/<author-slug>.md`, where the file name is the
+catalog author slug. Use this exact frontmatter key order and
+two-space-indented block-list form:
+
+```yaml
+---
+authorId: <catalog author id>
+status: draft
+coveredVideoIds:
+  - <video-id>
+---
+```
+
+`authorId` must match the catalog author ID. `status` must be `draft` or
+`reviewed`. Across all related playlists, `coveredVideoIds` has the same
+revision and staleness semantics as playlist overviews. Use these exact
+headings in order:
+
+```markdown
+## Source Identities
+
+## Cross-Playlist Synthesis
+
+## Changes Over Time
+```
+
+Source Identities contains explicitly confirmed editorial links such as a
+channel URL, personal site, or GitHub profile. Configure identity through
+catalog author/relationship data and state it explicitly here. Never infer
+author identity from uploader or channel metadata: uploader, speaker, and
+subject can differ.
+
+Do not duplicate machine-owned playlist relationships or manifest membership.
+Link to playlist overviews with relative links instead. Cross-Playlist
+Synthesis follows the same anchored-author-claim versus `Editorial:`
+interpretation rule as playlist overviews. Changes Over Time must use
+publication dates and timestamped evidence, never playlist order.
+
 ## Language fidelity
 
 Capture transcripts only in each playlist's configured `transcriptLanguage`.
