@@ -118,3 +118,63 @@
 ### Next action
 
 - Task 4: encode the editorial summary and synthesis workflow.
+
+## 2026-07-20 — Task 4 complete
+
+### Contract decisions
+
+- Documented exact, ordered frontmatter contracts for per-video summaries,
+  playlist overviews, and flat author synthesis files. New artifacts use
+  `draft`; only an explicit human or dedicated review pass sets `reviewed`.
+- Standardized `coveredVideoIds` as a two-space-indented block list for
+  playlist and author synthesis, with revision coverage and Task 3 staleness
+  semantics. Only `status` and `coveredVideoIds` are currently machine-read;
+  the remaining keys preserve editorial provenance.
+- Required summary provenance to come from committed records: actual source
+  language and caption kind from `metadata.json`, and publication date from
+  the playlist manifest when present, without re-fetching or inference.
+- Required the language/caption-kind-adapted translation/paraphrase disclosure
+  as the first summary body line when source and summary languages differ,
+  prohibited presenting translated captions as verbatim quotations, and
+  standardized transcript timestamp anchors and body heading order.
+- Defined playlist coverage reporting and synthesis from per-video summaries,
+  with anchored author claims visibly separated from `Editorial:`
+  interpretation in every section.
+- Defined explicit, confirmed author identity links without uploader/channel
+  inference or duplication of catalog relationships and manifest membership.
+  Sequence and change-over-time claims require publication dates and
+  timestamped evidence, never mutable playlist order.
+- Kept all summaries and syntheses as explicit agent/human editorial work. Sync,
+  capture, and status must not silently generate or replace them, and no LLM
+  API is part of the workflow.
+- Editorial contract commit: `926e669` (`document YouTube library editorial contracts`).
+
+### Verification
+
+- Existing tolerant-reader parse check returned
+  `{ status: 'draft', coveredVideoIds: [ 'abc' ] }` for the documented
+  two-space-indented block list.
+- `node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs`:
+  all 40 tests passed.
+- `npm run lint:fix`: made no changes and exited 1 only on the known pre-existing
+  `.agents/references/dot-agents/site/` diagnostics (one `useButtonType` error,
+  one unused-function warning, and two descending-specificity warnings).
+- `npm run check`: passed with 0 errors, warnings, or hints.
+- `npm run build`: passed; 18 pages built.
+- `rg -n "src/content/youtube" src/content.config.ts src/pages src/components src/layouts`:
+  no matches.
+- `rg -n "source-only" dist/`: no matches after the build.
+- `find src/content/youtube -type f -print | sort`: showed only `AGENTS.md` and
+  `catalog.json`.
+- `git diff --check`: passed. Before the editorial commit, status showed only
+  `src/content/youtube/AGENTS.md`; no unrelated formatting was introduced.
+
+### Blockers and deviations
+
+- None. No corpus/editorial artifacts, examples, placeholders, templates,
+  commands, dependencies, tests, production code, or CLI behavior were added
+  or changed. Tasks 5–6 were not started.
+
+### Next action
+
+- Task 5: prove the source-only thin slice, then backfill in bounded batches.

@@ -19,7 +19,8 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Use `handoff-task-4.md` to implement Task 4: encode the editorial summary and synthesis workflow.
+- Prepare and implement Task 5: prove the source-only thin slice, then backfill
+  in bounded batches.
 
 ## Open Questions
 

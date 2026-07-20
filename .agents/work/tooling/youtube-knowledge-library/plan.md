@@ -55,7 +55,7 @@ Add a committed, source-only YouTube knowledge library that reuses the repositor
     - `npm run youtube:library -- status` reports playlist totals, derived author relationships and transcript states, missing/draft/reviewed summaries, and missing or stale playlist/author overviews in human-readable form.
   - Notes: Use typed transcript failures where available. Do not treat every upstream exception as permanently unavailable or add machine-readable status output until a consumer needs it.
 
-- [ ] **Task 4: Encode the editorial summary and synthesis workflow**
+- [x] **Task 4: Encode the editorial summary and synthesis workflow**
   - Scope: `src/content/youtube/AGENTS.md`, committed video summaries, playlist overviews, and author files; CLI templates/tests only where required
   - Depends on: Task 3
   - Acceptance:
