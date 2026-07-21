@@ -3684,3 +3684,17 @@
 - Derive a dedicated Task 5v handoff from this actual AI-only maximum-two
   evidence. Do not begin another capture batch, recommend an empty Coding
   command, update synthesis, complete Task 5, or start Task 6 in this thread.
+
+## 2026-07-21 — Task 5u orchestrator source-check corrections
+
+- Review commit `cf6c8dc` corrected three source-fidelity claims without
+  changing generated artifacts, capture state, or queue accounting: it exposed
+  the transcript's unresolved DeepSeek parameter conflict, removed unsupported
+  auditing/adaptation implications, and restored the exoplanet transmission as
+  hypothetical rather than observed.
+- The correction changed `0IOASo6hodM/summary.md` from 800 to 812 words and
+  `k2bvZnXGzJc/summary.md` from 750 to 744 words, a net batch increase of 6.
+  Corrected Task 5u editorial words are 1,556; Tasks 5b–5u summary words are
+  33,926; the complete corpus is 125,972 transcript words and 34,649 summary
+  words. Current summary range is 235–812 words. These figures supersede the
+  pre-review counts in the Task 5u completion entry.
