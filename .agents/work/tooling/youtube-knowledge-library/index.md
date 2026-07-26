@@ -14,15 +14,15 @@ Build a committed, source-only library that discovers changes in configured YouT
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`, `handoff-task-5i.md`, `handoff-task-5j.md`, `handoff-task-5k.md`, `handoff-task-5l.md`, `handoff-task-5m.md`, `handoff-task-5n.md`, `handoff-task-5o.md`, `handoff-task-5p.md`, `handoff-task-5q.md`, `handoff-task-5r.md`, `handoff-task-5s.md`, `handoff-task-5t.md`, `handoff-task-5u.md`, `handoff-task-5v.md`, `handoff-task-5w.md`, `handoff-task-5x.md`, `handoff-task-5y.md`, `handoff-task-5z.md`, `handoff-task-5aa.md`
+- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5a.md`, `handoff-task-5b.md`, `handoff-task-5c.md`, `handoff-task-5d.md`, `handoff-task-5e.md`, `handoff-task-5f.md`, `handoff-task-5g.md`, `handoff-task-5h.md`, `handoff-task-5i.md`, `handoff-task-5j.md`, `handoff-task-5k.md`, `handoff-task-5l.md`, `handoff-task-5m.md`, `handoff-task-5n.md`, `handoff-task-5o.md`, `handoff-task-5p.md`, `handoff-task-5q.md`, `handoff-task-5r.md`, `handoff-task-5s.md`, `handoff-task-5t.md`, `handoff-task-5u.md`, `handoff-task-5v.md`, `handoff-task-5w.md`, `handoff-task-5x.md`, `handoff-task-5y.md`, `handoff-task-5z.md`, `handoff-task-5aa.md`, `handoff-task-5ab.md`
 - Decisions: none
 
 ## Next Action
 
-- Task 5aa is complete and recorded from `handoff-task-5aa.md`. Derive a
-  dedicated Task 5ab handoff from the actual remaining AI-only queue and its
-  maximum-two recommendation. Do not begin that capture batch, update
-  synthesis, complete Task 5, or start Task 6 while deriving the handoff.
+- Execute only the AI-only twenty-seventh bounded backfill batch from
+  `handoff-task-5ab.md` in a dedicated implementation thread. Keep the
+  two-attempt ceiling, then derive Task 5ac from actual outcomes without
+  starting synthesis, completing Task 5, or beginning Task 6.
 
 ## Open Questions
 
