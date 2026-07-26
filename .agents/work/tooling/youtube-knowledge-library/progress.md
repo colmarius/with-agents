@@ -5134,3 +5134,193 @@
 - Derive a dedicated Task 5ac handoff from this actual AI-only one-attempt
   final-batch evidence. Do not begin that capture, update synthesis, complete
   Task 5, or start Task 6 in this thread.
+
+## 2026-07-26 — Task 5ac final bounded backfill batch complete
+
+### Preflight and exact capture outcome
+
+- The worktree was clean at committed baseline
+  `be5eec9389ac411d5af04426b94da2eee68986b5` before capture.
+  `npm run youtube:library -- --help` exited 0, and baseline `status` exited 0
+  with the exact committed Task 5ab state: `ai-concepts` at 63 entries/59
+  captured occurrences representing 58 unique videos/1 pending/3
+  unavailable, `coding-with-ai` at 30 entries/25 captured/0 pending/5
+  unavailable, and author `antirez` at 86 deduped/77 captured/1 pending/8
+  unavailable. Both playlists had zero missing summaries, 59 and 25
+  draft/not-reviewed summary occurrences respectively, intentionally stale
+  overviews, and a missing author synthesis.
+- The direct pre-batch `wc -w` recount matched the handoff baseline at
+  151,136 transcript words and 47,376 summary words across 77 captured
+  videos. Individual transcripts spanned 241–5,055 words and summaries
+  235–1,288 words. All eight protected unavailable-record hashes matched
+  before capture.
+- The sole expected head `rqXLtmCPcwk` had no local artifact directory and
+  occurred exactly once in `ai-concepts`, at position 62, and zero times in
+  `coding-with-ai`. Its selected manifest entry contained title bytes
+  `DwarfStar: un mondo di fork è un buon posto dove vivere` and publication
+  date `2026-07-10T09:05:11Z`.
+- The one allowed command,
+  `npm run youtube:library -- capture --playlist ai-concepts --limit 1`, ran
+  exactly once and exited 0. Its authoritative output was `captured
+  rqXLtmCPcwk`.
+- No Coding capture command, refill, retry, force, sync, repeated capture
+  command, ordinary transient failure, durable unavailable outcome,
+  throttle/`TooManyRequest` signal, stopped queue, or fatal result occurred.
+  The one planned attempt was consumed by the success.
+- The record has `requestedLanguage: it`, `language: it`, and
+  `kind: auto-generated`. Directory, metadata, transcript, source URL, and
+  video IDs match; the transcript is non-empty and has 10 coarse timestamp
+  chunks under `## Transcript`.
+- The summary uses the selected AI manifest entry as authoritative
+  provenance. Manifest and generated transcript titles match byte-for-byte,
+  and no shared membership or conflicting provenance occurred.
+
+### Generated capture artifacts and source size
+
+- `rqXLtmCPcwk`: 152-byte `metadata.json`, captured at
+  `2026-07-26T21:24:31.314Z`; transcript 8,143 bytes, 1,374 `wc -w` words,
+  and 10 timestamp chunks.
+- The metadata and transcript total 8,295 generated capture bytes. No typed
+  unavailable record or new unavailable hash was added.
+- Generated capture artifacts were committed before editorial work as
+  `2cc32fb16c47553381873b78521d62c0c341f72b` (`capture YouTube backfill
+  batch 28 transcripts`), containing only the new metadata/transcript pair.
+  Staged `git diff --check` passed.
+
+### Source-checked summary and editorial size
+
+- Read the complete transcript and metadata record plus the selected AI
+  manifest entry before writing one real English draft summary. No external
+  source was used to upgrade transcript claims into established facts.
+- The summary separates the reported eight-L40S hardware and current
+  1,900-prefill/50-generation-token-per-second results from projected
+  100–150 and 200–300 aggregate generation rates. It exposes the caption
+  conflict around unquantized versus four-bit execution and preserves unknown
+  model/checkpoint, quantization and compute formats, workload, run count,
+  correctness, power, latency, throughput, baseline, and reproducibility.
+- Project and fork lineage, agent and contributor roles, repository/release
+  status, licensing, compatibility, migration, security, maintenance,
+  governance, adoption, and future merging remain unresolved rather than
+  inferred. The proposed managed-inference company and open-source ecosystem
+  criticism remain a prospective business idea and speaker opinion, not an
+  operating company, community consensus, or established market result.
+- A focused source audit found no blocking mistranslation, attribution,
+  provenance, timestamp, technical-distinction, unsupported-number, or
+  claim-inflation issue. Two optional precision edits described the starting
+  point as a DwarfStar-related online fork and the batching work as proposed or
+  in progress rather than assigning a firmer status than the captions support.
+- No completed merge, stable compatibility, independent recommendation,
+  measured batched speedup, production readiness, legal conclusion,
+  successful future delivery, or unsupported current claim was inferred. No
+  placeholder, translated verbatim quotation, overview revision, playlist
+  synthesis, or author synthesis was created.
+- `summary.md` is 8,453 bytes and 1,144 `wc -w` words, with 9 Key Ideas
+  bullets and 17 verified timestamp endpoints. The contract/provenance checker
+  exited 0 for exact ordered frontmatter, selected-manifest title and
+  publication date, metadata language and caption kind, draft status,
+  caption-kind-adapted first-line disclosure, exact heading order, an anchor
+  on every Key Ideas bullet, every endpoint's presence in the sibling
+  transcript, and both canonical source links.
+- The summary was committed separately as
+  `d31cf8e21e9f9b1ac2518b8243ff07e7cb4e6f36` (`add YouTube backfill batch
+  28 summary`), containing only the new summary file. Staged
+  `git diff --check` passed.
+
+### Playlist effects and final status
+
+- The success changed only `ai-concepts` and the deduped author aggregate.
+  Coding had no command or accounting change, and there was no transient,
+  unavailable, or shared-membership effect.
+- Final `status` exited 0. `ai-concepts` has 63 entries, 60 captured
+  occurrences representing 59 unique videos, 0 pending, 3
+  unavailable-recorded (`9mHKjgFMsQA`, `LG3q-sqMG0g`, and `aAWdlLfJmqw`),
+  0 missing summaries, and 60 draft/not-reviewed summary occurrences. Its
+  untouched overview gained stale ID `rqXLtmCPcwk`.
+- `coding-with-ai` remains at 30 entries, 25 captured, 0 pending, 5
+  unavailable-recorded (`H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`,
+  `qipoQGqMCp0`, and `_pLlet9Jrzc`), 0 missing summaries, and 25
+  draft/not-reviewed summaries. Its untouched overview gained no stale ID.
+- Author `antirez` has 86 deduped videos, 78 captured, 0 pending, and 8
+  unavailable-recorded. `authors/antirez.md` remains missing and reports all
+  78 summarized IDs. The full-success status projection matched actual status
+  exactly.
+- Both playlist capture queues and the deduped author capture queue are now
+  empty. This ends bounded transcript/summary backfill only; Task 5 remains in
+  progress pending separate playlist-overview, author-synthesis, review, and
+  final-verification phases.
+
+### Verification
+
+- `node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs`:
+  all 40 tests passed; exit 0.
+- `npm run lint:fix` exited 1 only on the known
+  `.agents/references/dot-agents/site/` baseline: one `useButtonType` error,
+  one unused-function warning, and two descending-specificity warnings. It
+  reformatted exactly the eight unavailable JSON records; all were restored
+  byte-for-byte.
+- The restored SHA-256 values are
+  `c5ddc8de1fb1dccf0113b00cbe25ba6370e73703e1949dd26df17ddfa63b82ae`
+  (`H5cvtoSxdxI`),
+  `f4e903f16b9a3378a045d296dc8feb38193a28bd6fe69ba1a8e6ac758fac88bb`
+  (`9mHKjgFMsQA`),
+  `0aed612127ab0203225472dce215febd2cbf3ed75414e1d1ba788309e203c7fd`
+  (`LG3q-sqMG0g`),
+  `dd29fef436b30df96abe8bba269a9bae63e6f3de090eaac707c454d3d651be5c`
+  (`D1_wPWzNkJ4`),
+  `42e44b620b445ae1709b2fd9e78be8d81124f4c2ed129a9890dc8b11b5511084`
+  (`rCIZflYEpEk`),
+  `1a17a2274920be7ff1dbf65965964df347d8a1e622f6e8d0c6b32d67813d7554`
+  (`qipoQGqMCp0`),
+  `031a889e6a805d73c42211120e56ff04933fe79f9893e76e5227bf3a3445c5a5`
+  (`_pLlet9Jrzc`), and
+  `d16efcfdeb1520c364e2a0f3092d570d2bc1844e98c4f61ec47661289191bf92`
+  (`aAWdlLfJmqw`). No new unavailable record or hash was added.
+- The generated-byte drift comparison between capture commit `2cc32fb` and
+  the current metadata/transcript pair exited 0 before and after lint
+  restoration. All protected hashes remained exact, and no generated capture
+  byte remained modified.
+- `npm run check`: passed with 0 errors, warnings, or hints; exit 0.
+- `npm run build`: passed; 18 pages built; exit 0.
+- `rg -n "src/content/youtube" src/content.config.ts src/pages src/components src/layouts`
+  and `rg -n "source-only" dist/` each found no matches (expected raw `rg`
+  exit 1), preserving the import and production boundaries.
+- `git show --check` passed for both corpus commits, `git diff --check`
+  passed, and the worktree was clean before this progress update. This
+  progress/index record is the third ordered commit, with message `record
+  YouTube backfill batch 28 progress`.
+
+### Cumulative evidence and post-backfill recommendation
+
+- Task 5ac transformed 1,374 source words into 1,144 summary words in its one
+  successful attempt. Across Tasks 5b–5ac, the twenty-eight bounded backfill
+  batches produced 150,182 transcript words and 47,797 summary words across
+  76 captures and 8 durable strict-language unavailable outcomes.
+- All 86 planned attempts through Tasks 5a–5ac produced 78 captures and 8
+  durable strict-language unavailable records: a 90.7% capture rate and 9.3%
+  durable-unavailable rate. There were zero ordinary transient failures, zero
+  fatal errors, zero `TooManyRequest` signals, zero stopped queues, and no
+  retries.
+- Direct final `wc -w` recount gives the complete source-checked corpus
+  152,510 transcript words and 48,520 summary words across 78 captured videos.
+  Individual transcripts remain 241–5,055 words and summaries remain
+  235–1,288 words.
+- There is no remaining capture queue in either playlist. Derive a separate
+  final-playlist-overviews handoff from this actual zero-pending state; do not
+  combine overview updates with author synthesis, Task 5 completion, or Task 6
+  without their own bounded phases and verification.
+
+### Blockers, deviations, and next action
+
+- The only required verification with a nonzero result was the expected
+  `npm run lint:fix` reference baseline. One initial ad hoc artifact validator
+  also exited 1 because it incorrectly expected `sourceUrl` in the established
+  capture-metadata shape and did not strip YAML quotes; direct inspection and
+  a corrected validator passed without changing the generated artifacts.
+- The source audit's two optional precision edits stayed within the one-summary
+  boundary. No capture-result, scope, content, or commit-boundary deviation
+  occurred.
+- Sync, overview updates, author synthesis, Task 5 completion, Task 6,
+  retries, force, refill, and additional capture remain undone; Tasks 5 and 6
+  stay unchecked. Nothing was pushed.
+- Next derive a dedicated final-playlist-overviews handoff. Do not begin that
+  overview work, author synthesis, Task 5 completion, or Task 6 in this thread.

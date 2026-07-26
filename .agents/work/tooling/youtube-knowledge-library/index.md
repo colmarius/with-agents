@@ -19,9 +19,9 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Run only Task 5ac from `handoff-task-5ac.md` in a dedicated implementation
-  thread. Do not begin playlist or author synthesis, complete Task 5, or begin
-  Task 6 in parallel.
+- Derive a dedicated final-playlist-overviews handoff from the actual
+  zero-pending post-backfill state. Do not begin overview work, author
+  synthesis, complete Task 5, or begin Task 6 in parallel.
 
 ## Open Questions
 
