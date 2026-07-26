@@ -4299,3 +4299,216 @@
 - Derive a dedicated Task 5y handoff from this actual AI-only maximum-two
   evidence. Do not begin another capture batch, recommend an empty Coding
   command, update synthesis, complete Task 5, or start Task 6 in this thread.
+
+## 2026-07-26 — Task 5y twenty-fourth bounded backfill batch complete
+
+### Preflight and exact capture outcomes
+
+- The worktree was clean at committed baseline
+  `2ecfb86312501dcb8eb4adc194b9cd3a5f7c6301` before capture.
+  `npm run youtube:library -- --help` exited 0, and baseline `status` exited 0
+  with the exact committed Task 5x state: `ai-concepts` at 63 entries/52
+  captured occurrences representing 51 unique videos/9 pending/2
+  unavailable, `coding-with-ai` at 30 entries/25 captured/0 pending/5
+  unavailable, and author `antirez` at 86 deduped/70 captured/9 pending/7
+  unavailable. Both playlists had zero missing summaries, 52 and 25
+  draft/not-reviewed summary occurrences respectively, intentionally stale
+  overviews, and a missing author synthesis.
+- The direct pre-batch recount matched the handoff baseline at 136,693
+  transcript words and 39,688 summary words across 70 captured videos. All
+  seven protected unavailable-record hashes matched before capture.
+- Both expected heads had no local artifact directory and occurred exactly
+  once in `ai-concepts` and zero times in `coding-with-ai`: `E20rvkH6QKE` at
+  AI position 54 and `d-J_QK71nYc` at AI position 55.
+- The one allowed command,
+  `npm run youtube:library -- capture --playlist ai-concepts --limit 2`, ran
+  exactly once and exited 0. Its authoritative output lines were `captured
+  E20rvkH6QKE` and `captured d-J_QK71nYc`, in that order.
+- No Coding capture command, refill, retry, force, sync, repeated capture
+  command, ordinary transient failure, durable unavailable outcome,
+  throttle/`TooManyRequest` signal, stopped queue, or fatal result occurred.
+  The maximum-two attempt boundary was consumed by the two successes.
+- Both records have `requestedLanguage: it`, `language: it`, and
+  `kind: auto-generated`. Directory, metadata, transcript, source URL, and
+  video IDs match; both transcripts are non-empty and have 13 and 7 coarse
+  timestamp chunks respectively under `## Transcript`.
+- Both summaries use their selected AI manifest entries as authoritative
+  provenance. Manifest and generated transcript titles match byte-for-byte,
+  and no shared membership or conflicting provenance occurred.
+
+### Generated capture artifacts and source sizes
+
+- `E20rvkH6QKE`: 152-byte `metadata.json`; transcript 10,381 bytes, 1,645
+  `wc -w` words, and 13 timestamp chunks.
+- `d-J_QK71nYc`: 152-byte `metadata.json`; transcript 6,294 bytes, 997
+  `wc -w` words, and 7 timestamp chunks.
+- Successful-source total: 16,675 transcript bytes, 2,642 `wc -w` words, and
+  20 timestamp chunks. The two metadata records add 304 bytes, for 16,979
+  generated capture bytes. No typed unavailable record was added.
+- Generated capture artifacts were committed before editorial work as
+  `7735681a430414322a7c635428a8b1e5ca6aede9` (`capture YouTube backfill
+  batch 24 transcripts`), containing only the two metadata/transcript pairs.
+  Staged `git diff --check` passed.
+
+### Source-checked summaries and editorial sizes
+
+- Read both complete transcripts and metadata records plus both selected AI
+  manifest entries before writing one real English draft summary per
+  successful capture. No external source was used to upgrade transcript
+  claims into established facts.
+- The LLM-specialization/DS4-Flash summary separates Sanfilippo's conceptual
+  argument, his account of generalist training and later specialist
+  distillation, the explanation he attributes to an unnamed developers'
+  paper, informal capability comparisons, and speculation about future
+  specialist releases. Model identity and size, architecture, data,
+  curriculum, objectives, compute, precision, checkpoints, evaluation,
+  comparisons, capability, local-load timing, cost, and reproducibility
+  remain explicitly qualified or unknown.
+- A focused source audit found that the first draft had misattributed the
+  reinforcement-feedback versus full-logit-distribution explanation to
+  Sanfilippo and had implied that no paper was referenced. Before the summary
+  commit, the draft was corrected to attribute the explanation to the unnamed
+  developers' paper, state that the paper is not titled or linked, and clarify
+  that the expert distribution is used to adjust generalist training weights
+  rather than implying inference-time steering.
+- The knowledge/reasoning summary distinguishes recalled factual knowledge,
+  domain concepts used in problem solving, information supplied by retrieval,
+  reasoning performance, speaker interpretation, and the unspecified prior
+  ten-question observation. It does not promote anecdotes or conceptual
+  claims into established causation or conclusions about intelligence,
+  scaling, transfer, retrieval augmentation, or benchmark performance.
+- No run count, selection method, completed future release, reproduced
+  training result, generalized model comparison, or unsupported current claim
+  was inferred. No placeholder, translated verbatim quotation, overview
+  revision, playlist synthesis, or author synthesis was created.
+- `E20rvkH6QKE/summary.md`: 7,321 bytes, 985 words, 10 Key Ideas bullets, and
+  18 verified timestamp endpoints.
+- `d-J_QK71nYc/summary.md`: 6,391 bytes, 879 words, 9 Key Ideas bullets, and
+  16 verified timestamp endpoints.
+- Batch summary total: 13,712 bytes, 1,864 words, 19 anchored Key Ideas
+  bullets, and 34 verified timestamp endpoints. The contract/provenance
+  checker exited 0 after the source-audit correction for exact ordered
+  frontmatter, selected-manifest title and publication date, metadata language
+  and caption kind, draft status, caption-kind-adapted first-line disclosure,
+  exact heading order, an anchor on every Key Ideas bullet, every endpoint's
+  presence in the sibling transcript, and both canonical source links. Every
+  cited span and technical, quantitative, training, capability, comparison,
+  causal, or future statement was checked against the complete transcript.
+- Summaries were committed separately as
+  `8a8a2c93da689b9993e7dd5c47f8b97376a73997` (`add YouTube backfill batch
+  24 summaries`), containing only the two new summary files. Staged
+  `git diff --check` passed.
+
+### Playlist effects and final status
+
+- Both successes changed only `ai-concepts` and the deduped author aggregate.
+  Coding had no command or accounting change, and there was no transient,
+  unavailable, or shared-membership effect.
+- Final `status` exited 0. `ai-concepts` has 63 entries, 54 captured entries
+  representing 53 unique videos, 7 pending, 2 unavailable-recorded
+  (`9mHKjgFMsQA` and `LG3q-sqMG0g`), 0 missing summaries, and 54
+  draft/not-reviewed summary occurrences. Its untouched overview gained stale
+  IDs `E20rvkH6QKE` and `d-J_QK71nYc`.
+- `coding-with-ai` remains at 30 entries, 25 captured, 0 pending, 5
+  unavailable-recorded (`H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`,
+  `qipoQGqMCp0`, and `_pLlet9Jrzc`), 0 missing summaries, and 25
+  draft/not-reviewed summaries. Its untouched overview gained no stale ID.
+- Author `antirez` has 86 deduped videos, 72 captured, 7 pending, and 7
+  unavailable-recorded. `authors/antirez.md` remains missing and reports all
+  72 summarized IDs.
+
+### Verification
+
+- `node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs`:
+  all 40 tests passed; exit 0.
+- `npm run lint:fix` exited 1 only on the known
+  `.agents/references/dot-agents/site/` baseline: one `useButtonType` error,
+  one unused-function warning, and two descending-specificity warnings. It
+  reformatted only the seven unavailable JSON records; all were restored
+  byte-for-byte. Their SHA-256 values remain
+  `c5ddc8de1fb1dccf0113b00cbe25ba6370e73703e1949dd26df17ddfa63b82ae`
+  (`H5cvtoSxdxI`),
+  `f4e903f16b9a3378a045d296dc8feb38193a28bd6fe69ba1a8e6ac758fac88bb`
+  (`9mHKjgFMsQA`),
+  `0aed612127ab0203225472dce215febd2cbf3ed75414e1d1ba788309e203c7fd`
+  (`LG3q-sqMG0g`),
+  `dd29fef436b30df96abe8bba269a9bae63e6f3de090eaac707c454d3d651be5c`
+  (`D1_wPWzNkJ4`),
+  `42e44b620b445ae1709b2fd9e78be8d81124f4c2ed129a9890dc8b11b5511084`
+  (`rCIZflYEpEk`),
+  `1a17a2274920be7ff1dbf65965964df347d8a1e622f6e8d0c6b32d67813d7554`
+  (`qipoQGqMCp0`), and
+  `031a889e6a805d73c42211120e56ff04933fe79f9893e76e5227bf3a3445c5a5`
+  (`_pLlet9Jrzc`). No new unavailable record or hash was added.
+- The generated-byte drift comparison between capture commit `7735681` and
+  the current metadata/transcript pairs exited 0. All protected hashes
+  remained exact after lint restoration, and no generated capture byte
+  remained modified.
+- `npm run check`: passed with 0 errors, warnings, or hints; exit 0.
+- `npm run build`: passed; 18 pages built; exit 0.
+- `rg -n "src/content/youtube" src/content.config.ts src/pages src/components src/layouts`
+  and `rg -n "source-only" dist/` each found no matches (expected raw `rg`
+  exit 1), preserving the import and production boundaries.
+- `git show --check` passed for both corpus commits, `git diff --check`
+  passed, and the worktree was clean before this progress update.
+
+### Task 5b–5y comparison and Task 5z recommendation
+
+- Batch source/summary words through the bounded backfill are: Task 5b
+  8,538/1,563; 5c 3,123/1,391; 5d 5,979/1,418; 5e 7,317/1,817; 5f
+  8,945/2,068; 5g 6,446/1,943; 5h 11,966/2,444; 5i 9,011/2,287; 5j
+  6,800/1,970; 5k 5,632/2,086; 5l 4,351/1,681; 5m 7,472/1,653; 5n
+  6,922/2,228; 5o 5,042/1,252; 5p 3,919/1,324; 5q 3,388/1,261; 5r
+  6,510/1,308; 5s 6,492/1,362; 5t 3,164/1,314; corrected 5u
+  2,627/1,556; 5v 4,050/1,630; 5w 3,799/1,620; 5x 2,872/1,789;
+  and 5y 2,642/1,864.
+- Relative to Task 5x, Task 5y had 230 fewer source words (8.0% fewer) and 75
+  more summary words (4.2% more). Relative to record-sized Task 5h, it had
+  9,324 fewer source words (77.9% fewer) and 580 fewer summary words (23.7%
+  fewer).
+- Task 5y's successful transcripts ranged from 997 to 1,645 words, a
+  1.65-fold spread, and its summaries ranged from 879 to 985 words, a
+  1.12-fold spread. Across Tasks 5b–5y, individual transcripts still span
+  241–5,055 words, a 21.0-fold range, while summaries now span 235–985 words,
+  a 4.19-fold range. Those twenty-four backfill batches produced 137,007
+  transcript words and 40,829 summary words across 70 captures and 7 durable
+  strict-language unavailable outcomes.
+- All 79 planned attempts through Tasks 5a–5y produced 72 captures and 7
+  durable strict-language unavailable records: a 91.1% capture rate and 8.9%
+  durable-unavailable rate. There were zero ordinary transient failures, zero
+  fatal errors, zero `TooManyRequest` signals, zero stopped queues, and no
+  retries. Direct `wc -w` recount gives the complete source-checked corpus
+  139,335 transcript words and 41,552 summary words across 72 captured videos.
+- Keep Task 5z at a maximum of two planned attempts: exactly one future
+  `npm run youtube:library -- capture --playlist ai-concepts --limit 2`
+  command, with no refill and immediate stop on throttle. Do not include a
+  `coding-with-ai` capture command because that playlist remains at zero
+  pending. Seventy-nine attempts without a transient/throttle/fatal result and
+  this batch's two successes do not justify shrinking to one; the continuing
+  241–5,055-word source range and expanded 235–985-word editorial range do not
+  justify enlarging beyond two.
+- The remaining AI-only queue has 7 pending IDs, in order:
+  `IMGJL9ZghJg`, `aAWdlLfJmqw`, `x6Vq0IWoLUs`, `ibcqRGQ7BKY`,
+  `7-n0HWtAg2Y`, `hcpJK1_iuQw`, and `rqXLtmCPcwk`. Coding remains at zero
+  pending.
+- From the current committed corpus state, the actual next Task 5z AI heads
+  are `IMGJL9ZghJg` (position 56) and `aAWdlLfJmqw` (position 57); actual
+  future CLI output must remain authoritative. Both IDs occur once in
+  `ai-concepts` and zero times in `coding-with-ai`. Full success would project
+  `ai-concepts` to 56 captured occurrences representing 55 unique videos/5
+  pending/2 unavailable, leave `coding-with-ai` at 25 captured/0 pending/5
+  unavailable, and move author `antirez` to 74 captured/5 pending/7
+  unavailable, with zero missing summaries after editorial work. The AI
+  overview would gain two stale IDs and the Coding overview none.
+
+### Blockers, deviations, and next action
+
+- The only nonzero verification was the expected `npm run lint:fix` baseline.
+  The focused source-audit correction was made within the summary boundary
+  before the summary commit; no task blocker or scope deviation remained.
+- Sync, overview updates, author synthesis, Task 5 completion, Task 6,
+  retries, force, and additional capture remain undone; Tasks 5 and 6 stay
+  unchecked. Task 5z was not started, and nothing was pushed.
+- Derive a dedicated Task 5z handoff from this actual AI-only maximum-two
+  evidence. Do not begin another capture batch, recommend an empty Coding
+  command, update synthesis, complete Task 5, or start Task 6 in this thread.
