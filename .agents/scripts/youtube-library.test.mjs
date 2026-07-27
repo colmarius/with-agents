@@ -817,7 +817,7 @@ test('captures a globally deduped deterministic queue sequentially and idempoten
     paths.videoPathForFile('first-video', 'transcript.md'),
     'utf8',
   );
-  assert.match(transcript, /^---\ntitle: "Fetched first-video"/);
+  assert.match(transcript, /^---\ntitle: "First manifest title"/);
   assert.match(
     transcript,
     /sourceUrl: "https:\/\/www\.youtube\.com\/watch\?v=first-video"/,
@@ -832,6 +832,12 @@ test('captures a globally deduped deterministic queue sequentially and idempoten
     transcript,
     /## Transcript\n\n\[00:00:00\] Transcript for first-video\. A later thought\./,
   );
+  const sharedTranscript = await readFile(
+    paths.videoPathForFile('shared-video', 'transcript.md'),
+    'utf8',
+  );
+  assert.match(sharedTranscript, /^---\ntitle: "Shared manifest title"/);
+  assert.doesNotMatch(sharedTranscript, /Duplicate title|Fetched shared-video/);
   assert.deepEqual(
     JSON.parse(
       await readFile(
@@ -1234,8 +1240,10 @@ test('force replaces transcript and metadata while preserving a sibling summary 
   t.after(() => rm(root, { recursive: true, force: true }));
   const paths = fixturePaths(root);
   const catalog = validCatalog();
+  const manifestTitle = 'Generic\u00a0title';
+  const fetchedTitle = 'Generic title';
   await writeManifestFixture(paths, catalog.playlists[0], [
-    availableEntry('force-video', 0),
+    availableEntry('force-video', 0, manifestTitle),
   ]);
   await writeFixture(
     paths.videoPathForFile('force-video', 'transcript.md'),
@@ -1255,19 +1263,22 @@ test('force replaces transcript and metadata while preserving a sibling summary 
     force: true,
     limit: 1,
     ...paths,
-    fetchVideoImpl: async () => successfulTranscript('force-video'),
+    fetchVideoImpl: async () =>
+      successfulTranscript('force-video', fetchedTitle),
     sleep: async () => {},
     now: fixedNow,
   });
 
   assert.equal(result.exitCode, 0);
-  assert.match(
-    await readFile(
-      paths.videoPathForFile('force-video', 'transcript.md'),
-      'utf8',
-    ),
-    /Transcript for force-video/,
+  const transcript = await readFile(
+    paths.videoPathForFile('force-video', 'transcript.md'),
+    'utf8',
   );
+  const renderedTitle = transcript.match(/^title: (.+)$/m);
+  assert.ok(renderedTitle);
+  assert.equal(JSON.parse(renderedTitle[1]), manifestTitle);
+  assert.notEqual(JSON.parse(renderedTitle[1]), fetchedTitle);
+  assert.match(transcript, /Transcript for force-video/);
   assert.deepEqual(
     await readFile(paths.videoPathForFile('force-video', 'summary.md')),
     summary,

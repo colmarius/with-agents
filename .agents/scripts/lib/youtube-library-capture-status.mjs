@@ -327,10 +327,14 @@ const captureOne = async ({
       };
     }
 
+    const manifestTitle =
+      typeof candidate.manifestTitle === 'string'
+        ? candidate.manifestTitle
+        : '';
     const title =
-      cleanText(metadata.title) ||
-      cleanText(candidate.manifestTitle) ||
-      `YouTube video ${candidate.videoId}`;
+      manifestTitle.trim().length > 0
+        ? manifestTitle
+        : cleanText(metadata.title) || `YouTube video ${candidate.videoId}`;
     const transcript = renderTranscriptMarkdown({
       title,
       sourceUrl:
