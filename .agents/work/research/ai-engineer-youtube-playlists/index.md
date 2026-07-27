@@ -30,20 +30,19 @@ Reliability`, then `Coding Agents`.
 
 ## Next Action
 
-- Confirm language settings and the author-optional model, then plan the minimal
-  validator and contract change. Onboard and sync all three playlists together,
-  compute their manifest overlap, and only then begin staged capture.
+- Stress-test the confirmed research, incorporate review feedback, and write
+  ordered implementation plans. The first implementation plan should make
+  author relationships optional before catalog onboarding or source capture.
 
 ## Open Questions
 
 - [x] Initial tracking set: `SWE Agents: AI Engineer World's Fair 2025`, `Agent
       Reliability: AI Engineer World's Fair 2025`, and `Coding Agents @ AI
       Engineer` (decided 2026-07-27).
-- [ ] Should multi-speaker playlists be allowed to omit author relationships,
-      making the playlist overview their highest-level synthesis?
-- [ ] Confirm `transcriptLanguage` and `summaryLanguage` explicitly before
-      onboarding; the likely values are English and English, but they must not
-      be inferred from uploader metadata.
-- [ ] Compute pairwise and total overlap from synced manifests; the current
-      research does not establish `Coding Agents` overlap with the two bounded
-      tracks.
+- [x] Multi-speaker playlists may omit author relationships, making the
+      playlist overview their highest-level synthesis (decided 2026-07-27).
+- [x] Use `transcriptLanguage: en` and `summaryLanguage: en` for all three
+      playlists (explicitly confirmed 2026-07-27).
+- [x] Live-page precheck: 63 visible occurrences represent 61 unique IDs. The
+      two bounded tracks share two IDs; `Coding Agents` shares none with either
+      bounded track. Synced manifests must verify this before capture.

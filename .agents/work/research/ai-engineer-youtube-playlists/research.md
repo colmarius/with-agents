@@ -34,16 +34,23 @@ The initial tracking set will contain all three shortlisted playlists:
 2. `Agent Reliability: AI Engineer World's Fair 2025`.
 3. `Coding Agents @ AI Engineer`.
 
+The user also explicitly approved author-optional multi-speaker playlists and
+confirmed `transcriptLanguage: en` and `summaryLanguage: en` for all three on
+2026-07-27.
+
 This changes onboarding scope, not the evidence behind the ranking. Add and
 sync all three together after the author-optional prerequisite and explicit
 language confirmation. Keep capture and editorial work staged in the order
 above. Complete and review the two bounded playlist overviews before drafting
 the larger, actively maintained `Coding Agents` overview.
 
-Sync all three manifests before capture and compute the pairwise and total
-video-ID overlap from those manifests. The six-ID overlap recorded elsewhere in
-this research is between `Coding Agents` and `Agent & Harness Engineering`; it
-does not establish overlap with the two selected bounded tracks.
+A fresh live-page precheck found 18 visible `SWE Agents` IDs, 8 visible `Agent
+Reliability` IDs, and 37 visible `Coding Agents` IDs. `SWE Agents` and `Agent
+Reliability` share `Dj0b_cEBHBI` and `n991Yxo1aOI`; `Coding Agents` shares no
+visible ID with either bounded track. The 63 visible occurrences therefore
+represent 61 unique IDs, with no ID present in all three. Synced manifests must
+still recompute and supersede these values before capture because playlist
+pages omit one card-counted item from each collection and membership is mutable.
 
 Do not onboard any of these playlists as belonging to an `AI Engineer` author.
 The channel is the event producer and curator; the talks have different
@@ -307,9 +314,9 @@ explicitly provided.
 - The YouTube library contract documents author-optional multi-speaker
   playlists and requires speaker and relevant affiliation attribution in their
   overviews.
-- The catalog gains exactly the three selected playlist IDs, unique slugs, and
-  explicitly confirmed transcript and summary languages. It gains no `AI
-  Engineer` author or relationship.
+- The catalog gains exactly the three selected playlist IDs, unique slugs,
+  `transcriptLanguage: en`, and `summaryLanguage: en`. It gains no `AI Engineer`
+  author or relationship.
 - All three manifests are synced before capture. The visible-count gaps and the
   pairwise and total overlap are recorded from manifest data rather than
   inferred from channel pages.
@@ -336,8 +343,10 @@ explicitly provided.
   is actively updated. New summaries will make its overview stale under the
   current `coveredVideoIds` contract, so maintenance needs an explicit overview
   revision cadence.
-- **Unknown selected-set overlap:** do not state a unique-video total for all
-  three selected playlists until their synced manifests establish membership.
+- **Pre-sync overlap only:** the live-page precheck found 61 unique visible IDs
+  across 63 occurrences, with only two IDs shared by the bounded tracks and no
+  visible `Coding Agents` overlap. Do not use these as final coverage numbers;
+  synced manifests must establish authoritative membership.
 - **Caption availability:** do not assume every conference talk has usable
   English captions. Capture must use the explicitly configured language and
   record unavailable caption tracks faithfully.
@@ -465,8 +474,10 @@ video totals. Playlist membership and counts can change.
 
 - [x] Initial tracking set includes the two recommended 2025 tracks and `Coding
       Agents @ AI Engineer` (decided 2026-07-27).
-- [ ] Approve or revise the author-optional playlist model before catalog edits.
-- [ ] Explicitly confirm source transcript and summary language values before
-      onboarding.
-- [ ] Sync all three manifests and record their pairwise and total overlap
-      before capture.
+- [x] Multi-speaker playlists may omit author relationships; their playlist
+      overview is the highest-level synthesis (decided 2026-07-27).
+- [x] Use English source transcripts and English summaries, represented as
+      `transcriptLanguage: en` and `summaryLanguage: en` (confirmed 2026-07-27).
+- [x] Precheck current live membership: 63 visible occurrences, 61 unique IDs,
+      two IDs shared by the bounded tracks, and no visible `Coding Agents`
+      overlap. Recompute from synced manifests before capture.
