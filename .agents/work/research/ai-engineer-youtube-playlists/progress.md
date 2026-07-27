@@ -59,3 +59,25 @@
 - Keep the overall work item `in-progress` and execute
   [Plan 02](./plans/02-onboard-and-sync-playlists.md). Plan 02, catalog
   onboarding, playlist sync, and source capture were not started in Plan 01.
+
+## 2026-07-27 — Plan 02 blocked at catalog preflight
+
+- The worktree was clean and `YOUTUBE_API_KEY` was available as a non-empty
+  environment value; its value was not printed, persisted, or passed on the
+  command line.
+- Preflight found a conflict between Plan 02's committed-catalog acceptance
+  assertion and the protected Antirez catalog state. The current catalog and
+  Plan 01 commit `ab9ef45` use playlist slugs `ai-concepts` and
+  `coding-with-ai`, while Plan 02 requires the exact five-slug assertion to
+  begin with `antirez` and `antirez-english`.
+- Repository history confirms `antirez-english` has never been a catalog
+  playlist slug. Changing the catalog to satisfy that assertion would rename
+  existing Antirez playlist identities and conflict with the explicit rule not
+  to change existing Antirez catalog values or data.
+- Stop condition applied before catalog mutation. No remote check, sync,
+  capture, manifest write, editorial work, public-resource change, or Plan 03
+  work was performed.
+- Blocker: confirm that the committed-catalog test should preserve the actual
+  Antirez slugs and assert, in order, `ai-concepts`, `coding-with-ai`,
+  `swe-agents-2025`, `agent-reliability-2025`, and `coding-agents`; otherwise
+  provide an explicit migration scope for the protected Antirez identities.
