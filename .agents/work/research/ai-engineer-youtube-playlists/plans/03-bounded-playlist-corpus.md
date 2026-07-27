@@ -14,7 +14,7 @@ review gate before starting the larger active Coding Agents corpus.
 
 ## Tasks
 
-- [ ] **Task 1: Establish the bounded capture baseline and stop protocol**
+- [x] **Task 1: Establish the bounded capture baseline and stop protocol**
   - Scope: selected sync/status for `ai-engineer-swe-agents-2025` and
     `ai-engineer-agent-reliability-2025`, work-item `progress.md`
   - Depends on: Plan 02 complete

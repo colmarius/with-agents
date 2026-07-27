@@ -214,3 +214,59 @@
 - Keep the overall work item `in-progress` and execute Tasks 1 and 2 of
   [Plan 03](./plans/03-bounded-playlist-corpus.md), stopping after the single
   SWE Agents thin slice before any broad backfill.
+
+## 2026-07-27 — Plan 03 Task 1 completed
+
+### Credential and remote baseline
+
+- Started from a clean `ai-engineer-videos` worktree. Confirmed `.env` exists,
+  is untracked, and is ignored before sourcing it only into the command process.
+  Confirmed `YOUTUBE_API_KEY` is non-empty without printing, persisting, or
+  passing its value on the command line.
+- Credential gate operations:
+
+  ```sh
+  test -f .env
+  git ls-files --error-unmatch .env # expected exit 1
+  git check-ignore -q .env
+  set -a; . ./.env; set +a; test -n "${YOUTUBE_API_KEY:-}"
+  ```
+
+- Ran exactly one selected read-only remote check:
+
+  ```sh
+  set -a; . ./.env; set +a
+  npm run youtube:library -- check --playlist ai-engineer-swe-agents-2025 --playlist ai-engineer-agent-reliability-2025 --json
+  ```
+
+- The check exited `0`; both remote fetches completed with zero errors and no
+  additions, removals, moves, retitles, or availability changes. No sync was
+  needed, no manifest changed, the mandatory public-impact review had no
+  changed ID to inspect, and no no-op manifest commit was created.
+
+### Capture baseline and session protocol
+
+- `npm run youtube:library -- status` exited `0` and reported:
+  - SWE Agents: 19 manifest entries, 18 available, 1 manifest-unavailable
+    private entry, 0 captured, 18 pending, and 0 caption-unavailable-recorded.
+  - Agent Reliability: 9 manifest entries, 8 available, 1
+    manifest-unavailable private entry, 0 captured, 8 pending, and 0
+    caption-unavailable-recorded.
+- Manifest and available overlap are both 2 IDs: `Dj0b_cEBHBI` and
+  `n991Yxo1aOI`. The bounded manifests therefore contain 28 occurrences / 26
+  unique IDs, while their available entries contain 26 occurrences / 24 unique
+  IDs.
+- Stop protocol: the thin slice uses one `--limit 1` capture command; later
+  sessions use one `--limit 2` capture command; never refill a limit in the
+  same session; stop immediately on throttling. Exit `1` stops for
+  investigation. Exit `2` with a transient/throttled outcome and remaining
+  candidates pauses until a later session. Exit `2` caused only by durably
+  recorded unavailable captions is accepted and documented. Determine the
+  cause from per-video `transient` versus `unavailable` report lines, not the
+  exit code alone. Retry remains a separate explicit Mode D operation and must
+  never be combined with force.
+
+### Next action
+
+- Run Plan 03 Task 2's one allowed SWE Agents `--limit 1` capture command. Do
+  not capture Agent Reliability or refill the thin-slice limit in this session.
