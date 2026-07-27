@@ -1,5 +1,5 @@
 ---
-title: "Kimi K2.5 (bonus point: Open Weights è Open Source?)"
+title: "Kimi K2.5 (bonus point: Open Weights è Open Source?)"
 sourceUrl: "https://www.youtube.com/watch?v=n3rdoQnN7Co"
 videoId: "n3rdoQnN7Co"
 capturedAt: "2026-07-20T22:32:33.084Z"

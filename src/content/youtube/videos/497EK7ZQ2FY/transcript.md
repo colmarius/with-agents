@@ -1,5 +1,5 @@
 ---
-title: "Ciò che importa di più del \"prediction is / is-not reasoning\": pensare agli LLM in altro modo"
+title: "Ciò che importa di più del \"prediction is / is-not reasoning\": pensare agli LLM in altro modo"
 sourceUrl: "https://www.youtube.com/watch?v=497EK7ZQ2FY"
 videoId: "497EK7ZQ2FY"
 capturedAt: "2026-07-20T09:42:06.089Z"

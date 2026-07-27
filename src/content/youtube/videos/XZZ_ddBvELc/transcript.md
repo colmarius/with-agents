@@ -1,5 +1,5 @@
 ---
-title: "Controllare le idee è più importante di guardare il codice"
+title: "Controllare le idee è più importante di guardare il codice"
 sourceUrl: "https://www.youtube.com/watch?v=XZZ_ddBvELc"
 videoId: "XZZ_ddBvELc"
 capturedAt: "2026-07-20T08:33:59.450Z"
