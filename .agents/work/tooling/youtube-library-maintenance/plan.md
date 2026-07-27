@@ -17,7 +17,7 @@ explicit agent/human review.
 
 ## Tasks
 
-- [ ] **Task 1: Add the structured read-only check command**
+- [x] **Task 1: Add the structured read-only check command**
   - Scope: `.agents/scripts/youtube-library.mjs`,
     `.agents/scripts/lib/youtube-library-core.mjs`,
     `.agents/scripts/lib/youtube-library-capture-status.mjs`, and

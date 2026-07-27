@@ -9,7 +9,7 @@ export const catalogPath = resolveContainedPath(libraryRoot, 'catalog.json');
 const playlistItemsEndpoint =
   'https://www.googleapis.com/youtube/v3/playlistItems';
 
-const commandNames = new Set(['capture', 'help', 'status', 'sync']);
+const commandNames = new Set(['capture', 'check', 'help', 'status', 'sync']);
 const forbiddenCredentialKey =
   /^(?:api[-_]?key|credentials?|secrets?|youtube[-_]?api[-_]?key)$/i;
 
@@ -214,6 +214,7 @@ export const parseLibraryArgs = (argv) => {
   const playlistSlugs = [];
   let dryRun = false;
   let force = false;
+  let json = false;
   let retry = false;
   let limit;
 
@@ -221,6 +222,11 @@ export const parseLibraryArgs = (argv) => {
     const argument = argv[index];
     if (command === 'sync' && argument === '--dry-run') {
       dryRun = true;
+      continue;
+    }
+
+    if (command === 'check' && argument === '--json') {
+      json = true;
       continue;
     }
 
@@ -270,6 +276,9 @@ export const parseLibraryArgs = (argv) => {
 
   if (command === 'sync') {
     return { command, playlistSlugs, dryRun };
+  }
+  if (command === 'check') {
+    return { command, playlistSlugs, json };
   }
 
   if (force && retry) {
@@ -693,6 +702,58 @@ export const synchronizeCatalogPlaylists = async ({
     });
     results.push(result);
     onResult(result);
+  }
+
+  return results;
+};
+
+const sanitizePlaylistCheckError = (error, apiKey) => {
+  const fallback = 'Remote playlist check failed.';
+  const message =
+    typeof error?.message === 'string'
+      ? error.message.replace(/\s+/g, ' ').trim()
+      : '';
+  if (
+    message.length === 0 ||
+    message.length > 200 ||
+    message.includes(apiKey) ||
+    /https?:\/\//i.test(message) ||
+    /[?&]/.test(message) ||
+    /(?:^|\s)[^\s=]+=[^\s]+/.test(message)
+  ) {
+    return fallback;
+  }
+  return message;
+};
+
+export const checkCatalogPlaylists = async ({
+  catalog,
+  playlistSlugs = [],
+  environment = process.env,
+  fetchImpl = globalThis.fetch,
+  manifestPathForPlaylist = (playlist) =>
+    libraryPath(`playlists/${playlist.slug}/manifest.json`),
+}) => {
+  const playlists = selectCatalogPlaylists(catalog, playlistSlugs);
+  const apiKey = readYoutubeApiKey(environment);
+  const results = [];
+
+  for (const playlist of playlists) {
+    try {
+      const result = await synchronizePlaylist({
+        playlist,
+        apiKey,
+        dryRun: true,
+        fetchImpl,
+        manifestPath: manifestPathForPlaylist(playlist),
+      });
+      results.push({ playlist, result });
+    } catch (error) {
+      results.push({
+        playlist,
+        error: { message: sanitizePlaylistCheckError(error, apiKey) },
+      });
+    }
   }
 
   return results;

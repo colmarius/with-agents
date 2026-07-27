@@ -2,7 +2,9 @@
 import {
   buildLibraryStatus,
   captureCatalogVideos,
+  checkLibrary,
   formatCaptureResult,
+  formatLibraryCheckReport,
   formatLibraryStatus,
 } from './lib/youtube-library-capture-status.mjs';
 import {
@@ -18,6 +20,9 @@ const usage = `Usage:
   npm run youtube:library -- <command>
 
 Commands:
+  check [--playlist <slug>]... [--json]
+           Compare remote playlists with committed manifests and combine the
+           result with local library status. This command never writes files.
   sync [--playlist <slug>]... [--dry-run]
            Synchronize all configured playlists, or a selected subset, through
            the YouTube Data API. Fetch and report only with --dry-run.
@@ -52,6 +57,19 @@ const main = async () => {
       onResult: (result) => console.log(formatPlaylistSyncReport(result)),
     });
     return okExit;
+  }
+
+  if (command === 'check') {
+    const check = await checkLibrary({
+      catalog,
+      playlistSlugs: options.playlistSlugs,
+    });
+    console.log(
+      options.json
+        ? JSON.stringify(check.report, null, 2)
+        : formatLibraryCheckReport(check.report),
+    );
+    return check.exitCode;
   }
 
   if (command === 'capture') {

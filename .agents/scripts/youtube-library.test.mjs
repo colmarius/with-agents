@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import {
   mkdir,
   mkdtemp,
@@ -15,11 +16,14 @@ import {
   buildLibraryStatus,
   captureCatalogVideos,
   captureDelayMs,
+  checkLibrary,
   classifyTranscriptFailure,
+  formatLibraryCheckReport,
   formatLibraryStatus,
   readStatusFrontmatter,
 } from './lib/youtube-library-capture-status.mjs';
 import {
+  checkCatalogPlaylists,
   diffPlaylistManifests,
   fetchPlaylistItems,
   formatPlaylistSyncReport,
@@ -130,6 +134,40 @@ const writeFixture = async (filePath, contents) => {
   );
 };
 
+const snapshotTree = async (root) => {
+  const snapshot = [];
+  const visit = async (directory, relativeDirectory = '.') => {
+    const directoryStat = await stat(directory);
+    snapshot.push({
+      path: relativeDirectory,
+      type: 'directory',
+      mtimeMs: directoryStat.mtimeMs,
+    });
+    const entries = await readdir(directory, { withFileTypes: true });
+    entries.sort((left, right) => left.name.localeCompare(right.name));
+    for (const entry of entries) {
+      const relativePath =
+        relativeDirectory === '.'
+          ? entry.name
+          : path.join(relativeDirectory, entry.name);
+      const entryPath = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        await visit(entryPath, relativePath);
+        continue;
+      }
+      const entryStat = await stat(entryPath);
+      snapshot.push({
+        path: relativePath,
+        type: 'file',
+        mtimeMs: entryStat.mtimeMs,
+        contents: (await readFile(entryPath)).toString('base64'),
+      });
+    }
+  };
+  await visit(root);
+  return snapshot;
+};
+
 const fixturePaths = (root) => ({
   manifestPathForPlaylist: (playlist) =>
     path.join(root, 'playlists', playlist.slug, 'manifest.json'),
@@ -226,8 +264,28 @@ test('library paths cannot escape the fixed root', () => {
   assert.throws(() => libraryPath('/tmp/transcript.md'));
 });
 
-test('library CLI parsing supports sync, bounded capture modes, and strict status', () => {
+test('library CLI parsing supports check, sync, bounded capture modes, and strict status', () => {
   assert.deepEqual(parseLibraryArgs([]), { command: 'help' });
+  assert.deepEqual(parseLibraryArgs(['check']), {
+    command: 'check',
+    playlistSlugs: [],
+    json: false,
+  });
+  assert.deepEqual(
+    parseLibraryArgs([
+      'check',
+      '--playlist',
+      'second',
+      '--json',
+      '--playlist',
+      'first',
+    ]),
+    {
+      command: 'check',
+      playlistSlugs: ['second', 'first'],
+      json: true,
+    },
+  );
   assert.deepEqual(parseLibraryArgs(['sync']), {
     command: 'sync',
     playlistSlugs: [],
@@ -324,6 +382,24 @@ test('library CLI parsing supports sync, bounded capture modes, and strict statu
   assert.throws(
     () => parseLibraryArgs(['status', '--json']),
     /does not accept options/,
+  );
+  assert.throws(
+    () => parseLibraryArgs(['check', '--dry-run']),
+    /Unknown check option: --dry-run/,
+  );
+  assert.throws(
+    () => parseLibraryArgs(['check', '--api-key=secret']),
+    (error) =>
+      error.message.includes('Unknown check option: --api-key') &&
+      !error.message.includes('secret'),
+  );
+  assert.throws(
+    () => parseLibraryArgs(['check', 'playlist']),
+    /Check does not accept positional arguments/,
+  );
+  assert.throws(
+    () => parseLibraryArgs(['sync', '--json']),
+    /Unknown sync option: --json/,
   );
   assert.throws(
     () => parseLibraryArgs(['--api-key=secret']),
@@ -738,6 +814,379 @@ test('unchanged sync reporting is explicit', () => {
   });
 
   assert.equal(report, 'playlist (PL123):\n  no changes');
+});
+
+test('check combines changed and no-op remote results with selected local status deterministically', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-check-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = multiPlaylistCatalog();
+  const firstEntries = [
+    availableEntry('old-video', 0, 'Old title'),
+    availableEntry('missing-summary', 1, 'Missing summary'),
+    availableEntry('pending-video', 2, 'Pending video'),
+    availableEntry('privacy-video', 3, 'Privacy video'),
+    {
+      videoId: 'manifest-unavailable',
+      position: 4,
+      title: 'Private video',
+      privacyStatus: 'private',
+      available: false,
+      unavailableReason: 'private',
+    },
+  ];
+  const secondEntries = [availableEntry('second-video', 0, 'Second video')];
+  await writeManifestFixture(paths, catalog.playlists[0], firstEntries);
+  await writeManifestFixture(paths, catalog.playlists[1], secondEntries);
+  for (const videoId of ['old-video', 'missing-summary', 'second-video']) {
+    await writeFixture(
+      paths.videoPathForFile(videoId, 'transcript.md'),
+      `transcript ${videoId}`,
+    );
+  }
+  await writeFixture(
+    paths.videoPathForFile('old-video', 'summary.md'),
+    '---\nstatus: draft\n---\n',
+  );
+  await writeFixture(
+    paths.videoPathForFile('second-video', 'summary.md'),
+    '---\nstatus: reviewed\n---\n',
+  );
+  await writeFixture(paths.videoPathForFile('privacy-video', 'metadata.json'), {
+    videoId: 'privacy-video',
+    unavailable: { errorName: 'LanguageUnavailable', detail: 'fixture' },
+  });
+  await writeFixture(
+    paths.overviewPathForPlaylist(catalog.playlists[0]),
+    '---\ncoveredVideoIds: [old-video]\n---\n',
+  );
+  await writeFixture(
+    paths.authorPathForAuthor(catalog.authors[0]),
+    '---\ncoveredVideoIds: [old-video]\n---\n',
+  );
+
+  const remoteItems = new Map([
+    [
+      'playlist',
+      [
+        playlistItem({ videoId: 'new-video', position: 0, title: 'New video' }),
+        playlistItem({
+          videoId: 'old-video',
+          position: 1,
+          title: 'New title',
+        }),
+        playlistItem({
+          videoId: 'missing-summary',
+          position: 2,
+          title: 'Missing summary',
+        }),
+        playlistItem({
+          videoId: 'privacy-video',
+          position: 3,
+          title: 'Privacy video',
+          publishedAt: null,
+          privacyStatus: 'private',
+        }),
+        playlistItem({
+          videoId: 'manifest-unavailable',
+          position: 4,
+          title: 'Private video',
+          publishedAt: null,
+          privacyStatus: 'private',
+        }),
+      ],
+    ],
+    [
+      'second',
+      [
+        playlistItem({
+          videoId: 'second-video',
+          position: 0,
+          title: 'Second video',
+        }),
+      ],
+    ],
+  ]);
+  const requestedPlaylistIds = [];
+  const fetchImpl = async (input) => {
+    const playlistId = new URL(input).searchParams.get('playlistId');
+    requestedPlaylistIds.push(playlistId);
+    return response({ items: remoteItems.get(playlistId) });
+  };
+  const before = await snapshotTree(root);
+  const options = {
+    catalog,
+    playlistSlugs: ['second', 'playlist'],
+    environment: { YOUTUBE_API_KEY: 'fixture-key' },
+    fetchImpl,
+    ...paths,
+  };
+
+  const first = await checkLibrary(options);
+  const second = await checkLibrary(options);
+  const selected = await checkLibrary({
+    ...options,
+    playlistSlugs: ['second'],
+  });
+
+  assert.equal(first.exitCode, 0);
+  assert.deepEqual(first, second);
+  assert.deepEqual(requestedPlaylistIds, [
+    'playlist',
+    'second',
+    'playlist',
+    'second',
+    'second',
+  ]);
+  assert.deepEqual(
+    first.report.playlists.map((playlist) => playlist.slug),
+    ['playlist', 'second'],
+  );
+  assert.equal(first.report.playlists[0].firstSync, false);
+  assert.deepEqual(
+    first.report.playlists[0].remote.diff.additions.map(
+      (entry) => entry.videoId,
+    ),
+    ['new-video'],
+  );
+  assert.deepEqual(
+    first.report.playlists[0].remote.diff.removals.map(
+      (entry) => entry.videoId,
+    ),
+    ['pending-video'],
+  );
+  assert.equal(first.report.playlists[0].remote.diff.moves.length, 2);
+  assert.equal(first.report.playlists[0].remote.diff.retitles.length, 1);
+  assert.equal(first.report.playlists[0].remote.diff.privacyChanges.length, 1);
+  assert.equal(first.report.playlists[1].remote.changed, false);
+  assert.deepEqual(first.report.playlists[0].local, {
+    synced: true,
+    totals: { entries: 5, available: 4, manifestUnavailable: 1 },
+    transcripts: { captured: 2, pending: 1, unavailable: 1 },
+    unavailableVideoIds: ['privacy-video'],
+    summaries: { missing: 1, draft: 1, reviewed: 0 },
+    overview: { state: 'current', missingVideoIds: [] },
+  });
+  assert.deepEqual(first.report.authors, [
+    {
+      slug: 'author',
+      playlists: ['playlist', 'second'],
+      videoTotal: 5,
+      transcripts: { captured: 3, pending: 1, unavailable: 1 },
+      synthesis: { state: 'stale', missingVideoIds: ['second-video'] },
+    },
+  ]);
+  assert.deepEqual(
+    selected.report.playlists.map((playlist) => playlist.slug),
+    ['second'],
+  );
+  assert.deepEqual(selected.report.authors, first.report.authors);
+  assert.deepEqual(first.report.summary, {
+    remoteChanges: {
+      playlists: 1,
+      firstSyncs: 0,
+      additions: 1,
+      removals: 1,
+      moves: 2,
+      retitles: 1,
+      availabilityChanges: 1,
+    },
+    pendingTranscripts: 1,
+    missingSummaries: 1,
+    staleSyntheses: 2,
+    errors: 0,
+  });
+
+  const human = formatLibraryCheckReport(first.report);
+  assert.match(human, /YouTube library check \(read-only\)/);
+  assert.match(human, /Remote: changes are what a later sync would apply/);
+  assert.match(human, /Local: state comes from committed manifests/);
+  assert.match(
+    human,
+    /1 additions; 1 removals; 2 moves; 1 retitles; 1 availability changes/,
+  );
+  assert.match(
+    human,
+    /local transcripts: 2 captured; 1 pending; 1 unavailable-recorded/,
+  );
+  assert.match(human, /Author author:/);
+  const json = JSON.stringify(first.report, null, 2);
+  assert.doesNotMatch(json, /checkedAt|timestamp|fixture-key/);
+  assert.deepEqual(await snapshotTree(root), before);
+});
+
+test('check reports first sync without creating a manifest directory', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-check-first-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  const before = await snapshotTree(root);
+
+  const result = await checkLibrary({
+    catalog,
+    environment: { YOUTUBE_API_KEY: 'fixture-key' },
+    fetchImpl: async () =>
+      response({
+        items: [
+          playlistItem({
+            videoId: 'first-video',
+            position: 0,
+            title: 'First video',
+          }),
+        ],
+      }),
+    ...paths,
+  });
+
+  assert.equal(result.exitCode, 0);
+  assert.equal(result.report.playlists[0].firstSync, true);
+  assert.deepEqual(result.report.playlists[0].local, { synced: false });
+  assert.equal(result.report.playlists[0].remote.changed, true);
+  assert.deepEqual(result.report.summary.remoteChanges, {
+    playlists: 1,
+    firstSyncs: 1,
+    additions: 1,
+    removals: 0,
+    moves: 0,
+    retitles: 0,
+    availabilityChanges: 0,
+  });
+  assert.match(formatLibraryCheckReport(result.report), /first sync/);
+  assert.deepEqual(await snapshotTree(root), before);
+});
+
+test('check returns a sanitized useful partial report and continues in catalog order', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-check-partial-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = multiPlaylistCatalog();
+  for (const playlist of catalog.playlists) {
+    await writeManifestFixture(paths, playlist, [
+      availableEntry(`${playlist.slug}-video`, 0, `${playlist.slug} video`),
+    ]);
+  }
+  const apiKey = 'partial-secret-key';
+  const requestedPlaylistIds = [];
+  const before = await snapshotTree(root);
+
+  const result = await checkLibrary({
+    catalog,
+    environment: { YOUTUBE_API_KEY: apiKey },
+    fetchImpl: async (input) => {
+      const playlistId = new URL(input).searchParams.get('playlistId');
+      requestedPlaylistIds.push(playlistId);
+      if (playlistId === 'playlist') {
+        return response(
+          {
+            error: {
+              message: `Request https://example.test/list?key=${apiKey}`,
+            },
+          },
+          { ok: false, status: 500, statusText: 'Internal Server Error' },
+        );
+      }
+      return response({
+        items: [
+          playlistItem({
+            videoId: 'second-video',
+            position: 0,
+            title: 'second video',
+          }),
+        ],
+      });
+    },
+    ...paths,
+  });
+
+  assert.equal(result.exitCode, 2);
+  assert.deepEqual(requestedPlaylistIds, ['playlist', 'second']);
+  assert.equal(result.report.playlists[0].remote.fetched, false);
+  assert.equal(result.report.playlists[1].remote.fetched, true);
+  assert.equal(result.report.summary.errors, 1);
+  const json = JSON.stringify(result.report);
+  assert.doesNotMatch(json, /partial-secret-key|https?:\/\/|[?&]key=|stack/i);
+  assert.match(
+    formatLibraryCheckReport(result.report),
+    /remote: error: playlistItems\.list failed for playlist playlist page 1: HTTP 500/,
+  );
+  assert.deepEqual(await snapshotTree(root), before);
+});
+
+test('check sanitizes unexpected per-playlist errors without aborting later playlists', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-check-error-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const catalog = multiPlaylistCatalog();
+  const apiKey = 'unexpected-secret';
+  const before = await snapshotTree(root);
+
+  const results = await checkCatalogPlaylists({
+    catalog,
+    environment: { YOUTUBE_API_KEY: apiKey },
+    fetchImpl: async () => response({ items: [] }),
+    manifestPathForPlaylist: (playlist) => {
+      if (playlist.slug === 'playlist') {
+        throw new Error(
+          `GET https://example.test/list?part=snippet&key=${apiKey}\n    at fixture`,
+        );
+      }
+      return path.join(root, playlist.slug, 'manifest.json');
+    },
+  });
+
+  assert.deepEqual(results[0], {
+    playlist: catalog.playlists[0],
+    error: { message: 'Remote playlist check failed.' },
+  });
+  assert.equal(results[1].result.write.written, false);
+  assert.equal(results[1].result.write.existed, false);
+  assert.doesNotMatch(
+    JSON.stringify(results),
+    /unexpected-secret|https?:\/\/|stack/i,
+  );
+  assert.deepEqual(await snapshotTree(root), before);
+});
+
+test('check fatal preflight and local report failures produce exit 1 without remote requests', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-check-fatal-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  let requests = 0;
+  const fetchImpl = async () => {
+    requests += 1;
+    return response({ items: [] });
+  };
+
+  await assert.rejects(
+    checkLibrary({ catalog, environment: {}, fetchImpl, ...paths }),
+    /YOUTUBE_API_KEY is required/,
+  );
+  assert.equal(requests, 0);
+
+  await writeFixture(paths.manifestPathForPlaylist(catalog.playlists[0]), '{');
+  await assert.rejects(
+    checkLibrary({
+      catalog,
+      environment: { YOUTUBE_API_KEY: 'fixture-key' },
+      fetchImpl,
+      ...paths,
+    }),
+    /Manifest for playlist playlist contains invalid JSON/,
+  );
+  assert.equal(requests, 0);
+
+  const cli = spawnSync(
+    process.execPath,
+    ['.agents/scripts/youtube-library.mjs', 'check', '--json'],
+    {
+      cwd: process.cwd(),
+      encoding: 'utf8',
+      env: { ...process.env, YOUTUBE_API_KEY: '' },
+    },
+  );
+  assert.equal(cli.status, 1);
+  assert.equal(cli.stdout, '');
+  assert.match(cli.stderr, /YOUTUBE_API_KEY is required/);
 });
 
 test('classifies only known durable failures as unavailable', () => {

@@ -1,6 +1,6 @@
 # YouTube library maintenance workflow
 
-Status: planned
+Status: in-progress
 Category: tooling
 Updated: 2026-07-27
 
@@ -18,13 +18,13 @@ boundaries.
 - Research: `research.md`
 - PRD: `prd.md`
 - Plan: `plan.md`
-- Progress: none
+- Progress: `progress.md`
 - Decisions: none
 
 ## Next Action
 
-- Implement Task 1 in `plan.md`: add the read-only structured `check` command
-  and focused contract tests without changing sync, capture, or status behavior.
+- Implement Task 2 in `plan.md`: add the maintenance skill and discovery
+  triggers without broadening the deterministic library command surface.
 
 ## Open Questions
 
