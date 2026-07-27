@@ -116,3 +116,101 @@
 - Next action: restore `YOUTUBE_API_KEY` in the current executor environment,
   then rerun the selected read-only check for all three namespaced playlist
   slugs. Do not sync until all three remote identity reports succeed.
+
+## 2026-07-27 — Plan 02 completed
+
+### Read-only identity validation and authoritative sync
+
+- The credential blocker was resolved by verifying that the local `.env` was
+  untracked and ignored, then exporting it only into each YouTube command's
+  process. The credential value was never printed, passed on the command line,
+  written to command output, or committed.
+- The selected JSON check exited `0` for all three playlists with no partial
+  failures. It reported first-sync additions of 19, 9, and 38 entries. Every
+  researched visible ID/title was present; the Coding Agents representative
+  set and dash-leading `-QFHIoCo-Ko` were present as expected.
+- The three extra entries were private placeholders: `jBr-EERbXJw` in SWE
+  Agents, `WnTq5Mc5bIU` in Agent Reliability, and `pAbRL0h_SNs` in Coding
+  Agents. Membership therefore established all three intended playlist
+  identities and explained every live card/visible gap.
+- One selected sync created only the three namespaced `manifest.json` files.
+  The authoritative sync report matched the check membership. Commit `bac6a1e`
+  contains exactly those manifests; no machine-owned value was manually
+  changed.
+
+### Manifest-derived counts and overlap
+
+- `ai-engineer-swe-agents-2025`: 19 entries, 18 available, 1 unavailable;
+  `jBr-EERbXJw` is recorded as private with no `publishedAt`.
+- `ai-engineer-agent-reliability-2025`: 9 entries, 8 available, 1 unavailable;
+  `WnTq5Mc5bIU` is recorded as private with no `publishedAt`.
+- `ai-engineer-coding-agents`: 38 entries, 37 available, 1 unavailable;
+  `pAbRL0h_SNs` is recorded as private with no `publishedAt`.
+- Every available entry is public and has a supplied `publishedAt`; positions
+  are contiguous and every manifest has unique video IDs.
+- Full-membership pairwise intersections:
+  - SWE Agents × Agent Reliability: 2 — `Dj0b_cEBHBI`, `n991Yxo1aOI`.
+  - SWE Agents × Coding Agents: 0 — no IDs.
+  - Agent Reliability × Coding Agents: 0 — no IDs.
+- Available-video pairwise intersections are identical: 2 IDs for SWE Agents ×
+  Agent Reliability (`Dj0b_cEBHBI`, `n991Yxo1aOI`) and no IDs for either pair
+  involving Coding Agents.
+- Full-membership all-three intersection: 0 — no IDs. Available-video
+  all-three intersection: 0 — no IDs.
+- Full membership totals 66 occurrences and 64 unique IDs. Available membership
+  totals 63 occurrences and 61 unique IDs.
+- These figures supersede the live-page precheck. Its 18/8/37 and 63/61 values
+  describe available membership exactly; adding the three distinct private
+  placeholders produces the authoritative 19/9/38 and 66/64 full-membership
+  baseline. The earlier 19/18, 9/8, and 38/37 gaps are each reconciled as one
+  API-typed private entry, with no guessed regional or deletion reason.
+
+### Public impact and additions review
+
+- Safe playlist-ID searches in `src/content/posts`, `src/content/summaries`,
+  and `src/data/resources` returned no matches for all three IDs (expected
+  `rg` exit `1`). Decision for each: `keep`; no public artifact references a
+  playlist identity, so no fix is required.
+- Existing public per-video artifacts were inspected for selected-manifest
+  videos `F_RyElT_gJk`, `ClWD8OEYgp8`, and `RjfbvDXpFls`. They remain oriented
+  to individual talks, identify AI Engineer as the source, and make no playlist
+  coverage claim. The Maggie Appleton and Mario Zechner resource dates match
+  manifest UTC publication dates. Beyang Liu's resource uses `2025-07-01`
+  while the manifest timestamp is `2025-06-30T22:54:36Z`; decision: `keep`,
+  because the one-day local-calendar boundary does not establish an incorrect
+  public date.
+- Public resources contain no corpus counts or playlist-level thesis requiring
+  revision. The additions reinforce existing themes around agent supervision,
+  alignment, evaluation, harnesses, and review, but source-only onboarding does
+  not materially change any public thesis. No public resource was edited.
+
+### Verification, commits, and scope
+
+- `npm run lint:fix`: passed (`144` files checked); it reformatted the same
+  eight pre-existing Antirez unavailable-caption metadata files. The exact
+  formatter-only diff was inspected and those eight clean-at-start files were
+  restored before further verification.
+- `npm run youtube:library -- status`: passed; all five playlists are synced,
+  the AI Engineer states are 19/18/1, 9/8/1, and 38/37/1 with no captures, and
+  Antirez remains the only author section.
+- Final selected JSON check: exit `0`; all three fetched successfully with no
+  additions, removals, moves, retitles, availability changes, or errors.
+- Combined library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files, zero errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches (expected exit `1`).
+- `git diff --check` passed, and the worktree was clean before work-item-only
+  updates.
+- Relevant implementation commits: `54ec50f` (source-namespaced Antirez slug
+  migration), `68e005e` (AI Engineer catalog/test), and `bac6a1e` (three
+  authoritative manifests). The earlier stop/progress commits remain an honest
+  record of the resolved preflight and executor credential blockers.
+- No capture command ran. No video metadata, transcript, summary, overview,
+  author, post, or resource artifact was created or edited for AI Engineer.
+  Plan 03 was not started. Blockers: none.
+
+### Next action
+
+- Keep the overall work item `in-progress` and execute Tasks 1 and 2 of
+  [Plan 03](./plans/03-bounded-playlist-corpus.md), stopping after the single
+  SWE Agents thin slice before any broad backfill.

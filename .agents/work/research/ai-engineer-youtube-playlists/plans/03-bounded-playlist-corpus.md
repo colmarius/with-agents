@@ -15,8 +15,8 @@ review gate before starting the larger active Coding Agents corpus.
 ## Tasks
 
 - [ ] **Task 1: Establish the bounded capture baseline and stop protocol**
-  - Scope: selected sync/status for `swe-agents-2025` and
-    `agent-reliability-2025`, work-item `progress.md`
+  - Scope: selected sync/status for `ai-engineer-swe-agents-2025` and
+    `ai-engineer-agent-reliability-2025`, work-item `progress.md`
   - Depends on: Plan 02 complete
   - Acceptance:
     - A fresh selected check/sync is reviewed before capture, and any membership
@@ -35,11 +35,12 @@ review gate before starting the larger active Coding Agents corpus.
 
 - [ ] **Task 2: Prove the SWE Agents editorial thin slice**
   - Scope: one candidate under `src/content/youtube/videos/<video-id>/`,
-    `src/content/youtube/playlists/swe-agents-2025/overview.md`, work-item
-    `progress.md`
+    `src/content/youtube/playlists/ai-engineer-swe-agents-2025/overview.md`,
+    work-item `progress.md`
   - Depends on: Task 1
   - Acceptance:
-    - Run exactly one scoped `capture --playlist swe-agents-2025 --limit 1`.
+    - Run exactly one scoped
+      `capture --playlist ai-engineer-swe-agents-2025 --limit 1`.
     - Review the final transcript source-faithfully, correcting only obvious
       caption errors such as names, products, models, and meaning-changing
       punctuation.
@@ -54,7 +55,7 @@ review gate before starting the larger active Coding Agents corpus.
 
 - [ ] **Task 3: Backfill and synthesize SWE Agents in two-video batches**
   - Scope: remaining available SWE Agents video directories and
-    `playlists/swe-agents-2025/overview.md`
+    `playlists/ai-engineer-swe-agents-2025/overview.md`
   - Depends on: Task 2
   - Acceptance:
     - Each capture session runs one `--limit 2` command and follows Task 1's
@@ -71,11 +72,13 @@ review gate before starting the larger active Coding Agents corpus.
     overview mechanically from raw transcripts.
 
 - [ ] **Task 4: Prove and backfill Agent Reliability**
-  - Scope: `src/content/youtube/playlists/agent-reliability-2025/`, relevant
-    global video directories, work-item `progress.md`
+  - Scope:
+    `src/content/youtube/playlists/ai-engineer-agent-reliability-2025/`,
+    relevant global video directories, work-item `progress.md`
   - Depends on: Task 3
   - Acceptance:
-    - Start with one `capture --playlist agent-reliability-2025 --limit 1`
+    - Start with one
+      `capture --playlist ai-engineer-agent-reliability-2025 --limit 1`
       transcript/summary/overview thin slice under the same attribution rules.
     - Continue with one `--limit 2` command per later session under Task 1's
       stop protocol.

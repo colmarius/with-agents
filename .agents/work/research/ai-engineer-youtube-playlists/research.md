@@ -318,9 +318,9 @@ source-library mutation should occur before that prerequisite passes.
 
 | Slug | Playlist ID | Exact catalog title |
 | --- | --- | --- |
-| `swe-agents-2025` | `PLcfpQ4tk2k0UwfWS-f6KDInzHc3um4naZ` | SWE Agents: AI Engineer World's Fair 2025 |
-| `agent-reliability-2025` | `PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai` | Agent Reliability: AI Engineer World's Fair 2025 |
-| `coding-agents` | `PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt` | Coding Agents @ AI Engineer |
+| `ai-engineer-swe-agents-2025` | `PLcfpQ4tk2k0UwfWS-f6KDInzHc3um4naZ` | SWE Agents: AI Engineer World's Fair 2025 |
+| `ai-engineer-agent-reliability-2025` | `PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai` | Agent Reliability: AI Engineer World's Fair 2025 |
+| `ai-engineer-coding-agents` | `PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt` | Coding Agents @ AI Engineer |
 
 Every entry uses `transcriptLanguage: en`, `summaryLanguage: en`, and
 `multiSpeaker: true` and appears in no author relationship.

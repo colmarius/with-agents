@@ -14,31 +14,34 @@ stops before caption capture.
 
 ## Tasks
 
-- [ ] **Task 1: Add the three pinned catalog entries**
+- [x] **Task 1: Add the three pinned catalog entries**
   - Scope: `src/content/youtube/catalog.json`,
     `.agents/scripts/youtube-library.test.mjs`
   - Depends on: Plan 01 complete
   - Acceptance:
-    - Add `swe-agents-2025` with ID
+    - Add `ai-engineer-swe-agents-2025` with ID
       `PLcfpQ4tk2k0UwfWS-f6KDInzHc3um4naZ` and exact title `SWE Agents: AI
       Engineer World's Fair 2025`.
-    - Add `agent-reliability-2025` with ID
+    - Add `ai-engineer-agent-reliability-2025` with ID
       `PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai` and exact title `Agent Reliability: AI
       Engineer World's Fair 2025`.
-    - Add `coding-agents` with ID
+    - Add `ai-engineer-coding-agents` with ID
       `PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt` and exact title `Coding Agents @ AI
       Engineer`.
     - Every new entry has `transcriptLanguage: en`, `summaryLanguage: en`, and
       `multiSpeaker: true`.
     - No `AI Engineer` author or relationship is added; existing Antirez entries
       and relationships are unchanged.
-    - The committed-catalog test asserts the exact five slugs `antirez`,
-      `antirez-english`, `swe-agents-2025`, `agent-reliability-2025`, and
-      `coding-agents` without weakening source-only or Antirez checks.
+    - The committed-catalog test asserts the exact five slugs
+      `antirez-ai-concepts`, `antirez-coding-with-ai`,
+      `ai-engineer-swe-agents-2025`,
+      `ai-engineer-agent-reliability-2025`, and
+      `ai-engineer-coding-agents` without weakening source-only or Antirez
+      checks.
   - Notes: Review and commit the catalog/test change before any network-written
     manifest change.
 
-- [ ] **Task 2: Validate all three remote playlist identities**
+- [x] **Task 2: Validate all three remote playlist identities**
   - Scope: read-only YouTube library check for the three selected slugs
   - Depends on: Task 1
   - Acceptance:
@@ -55,10 +58,11 @@ stops before caption capture.
   - Notes: Use repeated `--playlist` flags. Exit `2` is a useful partial report,
     not permission to ignore a failed playlist.
 
-- [ ] **Task 3: Synchronize all three manifests authoritatively**
-  - Scope: `src/content/youtube/playlists/swe-agents-2025/manifest.json`,
-    `src/content/youtube/playlists/agent-reliability-2025/manifest.json`,
-    `src/content/youtube/playlists/coding-agents/manifest.json`
+- [x] **Task 3: Synchronize all three manifests authoritatively**
+  - Scope:
+    `src/content/youtube/playlists/ai-engineer-swe-agents-2025/manifest.json`,
+    `src/content/youtube/playlists/ai-engineer-agent-reliability-2025/manifest.json`,
+    `src/content/youtube/playlists/ai-engineer-coding-agents/manifest.json`
   - Depends on: Task 2
   - Acceptance:
     - One selected sync names all three slugs with repeated `--playlist` flags.
@@ -70,7 +74,7 @@ stops before caption capture.
   - Notes: Commit the three authoritative manifests separately from the catalog
     edit so review can distinguish configuration from remote data.
 
-- [ ] **Task 4: Record authoritative counts, overlap, and public impact**
+- [x] **Task 4: Record authoritative counts, overlap, and public impact**
   - Scope: work-item `progress.md`, final manifest review, public reference
     searches
   - Depends on: Task 3
@@ -105,8 +109,8 @@ stops before caption capture.
 
 ## Constraints / Decisions
 
-- Exact slugs, IDs, titles, languages, and `multiSpeaker: true` values are
-  already decided in the research.
+- Source-namespaced slugs, IDs, titles, languages, and `multiSpeaker: true`
+  values are decided in the research and the approved Plan 02 progress record.
 - All three playlists sync before the first caption capture.
 - AI Engineer remains curator/source channel, not author.
 - Public post/resource work is explicitly out of scope.
@@ -121,7 +125,7 @@ stops before caption capture.
 ## Verification
 
 - `npm run youtube:library -- status`
-- `npm run youtube:library -- check --playlist swe-agents-2025 --playlist agent-reliability-2025 --playlist coding-agents --json`
+- `npm run youtube:library -- check --playlist ai-engineer-swe-agents-2025 --playlist ai-engineer-agent-reliability-2025 --playlist ai-engineer-coding-agents --json`
 - `node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs`
 - `npm run check`
 - `npm run build`

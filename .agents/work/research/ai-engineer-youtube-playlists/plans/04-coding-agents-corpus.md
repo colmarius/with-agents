@@ -16,8 +16,8 @@ staleness as a reason for automatic editorial rewrites.
 ## Tasks
 
 - [ ] **Task 1: Refresh the active-playlist baseline**
-  - Scope: selected check/sync for `coding-agents`, manifest diff, work-item
-    `progress.md`
+  - Scope: selected check/sync for `ai-engineer-coding-agents`, manifest diff,
+    work-item `progress.md`
   - Depends on: Plan 03 Task 5 passes
   - Acceptance:
     - A fresh read-only check and authoritative selected sync are reviewed before
@@ -33,11 +33,11 @@ staleness as a reason for automatic editorial rewrites.
 
 - [ ] **Task 2: Prove the Coding Agents editorial thin slice**
   - Scope: one pending Coding Agents video directory,
-    `src/content/youtube/playlists/coding-agents/overview.md`, work-item
-    `progress.md`
+    `src/content/youtube/playlists/ai-engineer-coding-agents/overview.md`,
+    work-item `progress.md`
   - Depends on: Task 1
   - Acceptance:
-    - Run exactly one `capture --playlist coding-agents --limit 1`.
+    - Run exactly one `capture --playlist ai-engineer-coding-agents --limit 1`.
     - Review the transcript source-faithfully and write one deliberate draft
       summary whose framing names supported speaker(s) and affiliation(s).
     - Create the draft overview with exact headings, current Coverage math, one
@@ -52,8 +52,9 @@ staleness as a reason for automatic editorial rewrites.
     work-item `progress.md`
   - Depends on: Task 2
   - Acceptance:
-    - Each capture session runs one `capture --playlist coding-agents --limit 2`
-      command and follows Task 1's stop protocol.
+    - Each capture session runs one
+      `capture --playlist ai-engineer-coding-agents --limit 2` command and
+      follows Task 1's stop protocol.
     - Every successful final capture receives an editorial transcript pass and
       a deliberate draft summary during the same bounded session.
     - Existing global video artifacts are reused without force or overwrite if
@@ -68,7 +69,7 @@ staleness as a reason for automatic editorial rewrites.
 
 - [ ] **Task 4: Review the complete cross-event synthesis**
   - Scope: all Coding Agents summaries and
-    `playlists/coding-agents/overview.md`, work-item `progress.md`
+    `playlists/ai-engineer-coding-agents/overview.md`, work-item `progress.md`
   - Depends on: Task 3
   - Acceptance:
     - A dedicated review verifies every speaker/affiliation attribution,
