@@ -70,6 +70,10 @@ When writing or refreshing public posts under `src/content/posts/`, follow this 
 - **Internal links:** link only to routes that exist in this repo. Never link retired drafts or old/unavailable article routes from public posts.
 - **Post/slide convention:** public posts also generate `/slides` views. Normal rendered `##` sections should usually start with a concise blockquote slide message. Optional immediate visuals need accessible alt text, captions, or nearby explanatory prose. Use exact `## Sources` or `## Sources used` headings for source appendices; they are not normal slides.
 
+### YouTube library maintenance
+
+When asked to check, sync, or update tracked YouTube playlists, retry unavailable library captions, or add a tracked playlist, load the `maintaining-youtube-library` skill. Standalone-video summaries continue to use the transcript workflow below. Follow [`src/content/youtube/AGENTS.md`](src/content/youtube/AGENTS.md); keep that tree source-only and never publish it through Astro.
+
 ### YouTube transcript workflow
 
 Use this workflow when the user provides a YouTube video link/title or asks for a video summary.

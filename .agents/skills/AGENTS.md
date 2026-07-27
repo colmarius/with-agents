@@ -69,5 +69,6 @@ Verify your skill by loading it and checking:
 | `agent-work` | Create and maintain `.agents/work/` work items |
 | `article-writing` | Write, refresh, and retire public posts in the house style |
 | `feature-planning` | Turn context into plans and paste-ready handoff prompts |
+| `maintaining-youtube-library` | Check, sync, extend, and retry the source-only YouTube library safely |
 | `research` | Research technical topics, saving work-local or reusable findings |
 | `tmux` | Manage background processes using tmux windows for servers and long-running tasks |
