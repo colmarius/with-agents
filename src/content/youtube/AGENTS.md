@@ -26,13 +26,20 @@ src/content/youtube/
         └── transcript.md
 ```
 
-- `catalog.json` owns configured authors, playlists, relationships, and
-  source/summary languages.
+- `catalog.json` owns configured authors, playlists, relationships,
+  source/summary languages, and explicit multi-speaker attribution decisions.
+- Every playlist must use exactly one attribution mode: appear in at least one
+  author relationship, or set `multiSpeaker: true`. The marker is valid only
+  when its value is exactly `true`, and a marked playlist must not appear in an
+  author relationship.
 - Playlist manifests own playlist membership and order.
 - Video IDs are the global storage key. Keep one video directory even when a
   video belongs to several playlists or later leaves a playlist.
 - Author files, playlist overviews, and video summaries are editorial
   Markdown. Scripts must not silently generate or replace them.
+- A multi-speaker playlist is intentionally author-less. Its playlist overview
+  is its highest-level synthesis; do not create an author synthesis or treat its
+  uploader or source channel as its author.
 
 ## Editorial workflow
 
@@ -94,6 +101,10 @@ exact headings in order:
 ## Source
 ```
 
+For a video in a `multiSpeaker: true` playlist, the framing must name every
+relevant speaker and relevant affiliation supported by the source title,
+description, or transcript. Do not infer either from uploader metadata.
+
 Use concise Key Ideas bullets with transcript anchors in `[HH:MM:SS]` or
 `[HH:MM:SS]-[HH:MM:SS]` form that match the sibling transcript chunks. The
 Source section must contain the canonical video URL and
@@ -134,8 +145,12 @@ video ID is missing. Use these exact headings in order:
 ```
 
 Coverage must state the manifest count, summary count, incorporated count, and
-pending video IDs. Synthesize per-video summaries; do not silently regenerate
-an overview from raw transcripts or live YouTube data.
+pending video IDs. A tracked AI Engineer `multiSpeaker: true` playlist must
+additionally report manifest, available, captured, summarized, incorporated,
+pending, and unavailable counts; identify AI Engineer as the curator/source
+channel, never as the author; and state that speakers and affiliations vary per
+video. Synthesize per-video summaries; do not silently regenerate an overview
+from raw transcripts or live YouTube data.
 
 In every section, keep author claims visibly separate from editorial
 synthesis. Every bullet stating an author's claim must include a source anchor:
@@ -143,6 +158,10 @@ a relative summary link, or a video ID plus a transcript timestamp. Every
 editorial interpretation bullet must begin `Editorial:`. Claims about sequence
 or change over time must cite video publication dates plus timestamped
 evidence; never infer chronology from mutable playlist position.
+
+In a `multiSpeaker: true` overview, every non-editorial claim must also name the
+speaker and relevant affiliation supported by the source, in addition to its
+source anchor. The playlist overview remains the highest-level synthesis.
 
 ### Author syntheses
 

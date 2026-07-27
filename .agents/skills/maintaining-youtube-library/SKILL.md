@@ -62,8 +62,9 @@ Enter this mode only when the user explicitly requests repository mutation.
 
 6. Review committed transcripts before deliberately writing editorial work.
    Keep every new or revised editorial artifact at `draft`. Refresh each affected
-   playlist overview in the same session as its new summaries, then review the
-   author synthesis after a related playlist overview changes.
+   playlist overview in the same session as its new summaries. Review the author
+   synthesis after an overview changes only when that playlist has an author
+   relationship.
 7. Never silently generate, promote, publish, replace, or overwrite editorial
    work. Never use routine `--force`; require explicit destructive-operation
    approval before force regeneration, then keep it narrowly bounded.
@@ -75,36 +76,41 @@ Do not create or use an `add` subcommand or catalog wizard.
 
 1. Apply the same clean-or-understood tree gate as Mode B. If the onboarding is
    more than a small single-session update, create or continue a work item and
-   plan bounded batches.
-2. Obtain explicit values for the playlist ID, author relationship, transcript
-   language, and summary language. Do not infer author identity or language
-   settings.
+   plan bounded batches. One onboarding work item may add and sync several
+   selected playlists together.
+2. For every selected playlist, obtain an explicit playlist ID, explicit
+   transcript and summary languages, and exactly one attribution decision: an
+   author relationship or `multiSpeaker: true`. Do not infer author identity,
+   multi-speaker status, or language settings.
 3. Manually edit `src/content/youtube/catalog.json`, review the exact diff, and
    validate it with the existing commands:
 
    ```sh
    npm run youtube:library -- status
-   npm run youtube:library -- check --playlist <slug>
+   npm run youtube:library -- check [--playlist <slug>]...
    ```
 
-4. After explicit mutation intent is confirmed, sync only that playlist and
-   treat its sync report as authoritative:
+4. After explicit mutation intent is confirmed, sync only the selected
+   playlists and treat each sync report as authoritative:
 
    ```sh
-   npm run youtube:library -- sync --playlist <slug>
+   npm run youtube:library -- sync [--playlist <slug>]...
    ```
 
-5. Review the addition's public impact as described below. Prove one complete
-   thin slice before a broad backfill:
+5. Review each addition's public impact as described below. Before any broad
+   backfill, prove one complete thin slice for every playlist with a separate
+   command per slug:
 
    ```sh
    npm run youtube:library -- capture --playlist <slug> --limit 1
    ```
 
-   Review that transcript, write its draft summary deliberately, and update the
-   draft playlist overview under the authoritative contract.
-6. Continue only in bounded batches. Review the author synthesis after the
-   related playlist overview changes, then run the mutating-workflow checks.
+   Review each transcript, write its draft summary deliberately, and update its
+   draft playlist overview under the authoritative contract before broad
+   backfill for that playlist.
+6. Continue only in bounded batches. Review the author synthesis after a related
+   playlist overview changes only when that playlist has an author relationship,
+   then run the mutating-workflow checks.
 
 ## Mode D — Retry Unavailable Captions
 
@@ -131,15 +137,20 @@ change before completing a mutating workflow.
 1. For every retitled, removed, or availability-changed video ID, run:
 
    ```sh
-   rg -l '<video-id>' src/content/posts src/content/summaries src/data/resources
+   rg -l -e '<video-id>' src/content/posts src/content/summaries src/data/resources
    ```
 
 2. Inspect every matching artifact. Record an explicit `keep` or `fix` decision
    for every hit in the active work item's `progress.md` or the commit message.
    Do not assume a retitle is harmless or automatically rewrite public prose.
-3. Search playlist IDs in the same public paths when playlist-level identity or
-   availability changes, inspect every hit, and record the same decisions.
-4. For additions, review public playlist orientation, resource dates, corpus
+3. For a retitled video in a tracked `multiSpeaker: true` playlist, also inspect
+   `src/content/youtube/videos/<video-id>/summary.md` and review whether its
+   framing still attributes the correct speakers and affiliations. Record a
+   `keep` or `fix` decision, but never rewrite editorial prose automatically.
+4. Search playlist IDs with the same `rg -l -e '<playlist-id>'` form in the
+   public paths when playlist-level identity or availability changes, inspect
+   every hit, and record the same decisions.
+5. For additions, review public playlist orientation, resource dates, corpus
    counts, and material thesis changes. Record the conclusion, but do not
    automatically edit public content.
 
