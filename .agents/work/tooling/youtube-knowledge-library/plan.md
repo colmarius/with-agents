@@ -81,7 +81,7 @@ Add a committed, source-only YouTube knowledge library that reuses the repositor
     - Transcript and summary batches are committed as normal source changes without adding public resource-manifest entries or routes.
   - Notes: Do not force the full backfill into one agent context or commit. Record batch progress and stop cleanly when upstream caption access is throttled.
 
-- [ ] **Task 6: Validate the source-only publication boundary and workflow**
+- [x] **Task 6: Validate the source-only publication boundary and workflow**
   - Scope: changed generic tooling, project checks, library command smoke checks, build output, and work-item artifacts
   - Depends on: Tasks 1–5
   - Acceptance:

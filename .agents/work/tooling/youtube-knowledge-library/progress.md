@@ -5757,3 +5757,175 @@
 - Task 5 is now checked. Task 6 remains unchecked and unstarted. No network,
   sync, capture, retry, refill, force, regeneration, source/tooling edit, or
   push occurred in this rerun.
+
+## 2026-07-27 — Task 6 workflow and publication-boundary validation complete
+
+### Title-provenance fix and first commit boundary
+
+- Preflight started from clean committed handoff head `9f91ff1`, with Tasks
+  1–5 checked, Task 6 unchecked, and `src/content/youtube/` byte-identical to
+  repaired source baseline `2413bbd`. The handoff/index commit above completed
+  Task 5 baseline `13c34e1` was the only expected later history.
+- Library capture now uses the first selected manifest entry's title whenever
+  it is nonempty after trimming and passes that original string to Markdown
+  rendering without `cleanText` normalization. A blank manifest title falls
+  back to the existing cleaned fetched-metadata title, then to
+  `YouTube video <id>`. Shared transcript normalization/rendering and the
+  public single-video CLI were not changed.
+- Existing fixture tests now require the deterministic capture title to come
+  from the manifest, require the duplicate shared-video capture to keep the
+  first selected manifest title, and require force replacement to preserve a
+  generic manifest U+00A0 NBSP despite a divergent ordinary-space fetched
+  title while leaving the sibling summary byte-identical.
+- Targeted `npx biome check --write` on the two touched files passed with no
+  fixes. Both focused Node files passed 40/40 before commit, and
+  `git diff --check` passed. Commit `d3a1866` (`preserve YouTube manifest title
+  provenance`) contains exactly
+  `.agents/scripts/lib/youtube-library-capture-status.mjs` and
+  `.agents/scripts/youtube-library.test.mjs`.
+
+### Acceptance 1 — built-in deterministic workflow tests
+
+- Final `node --test .agents/scripts/youtube-library.test.mjs
+  .agents/scripts/youtube-transcript-core.test.mjs` exited 0 with 40 tests,
+  0 failures, and no added test framework or dependency.
+- Passing test names map directly to the required behavior: `normalizes public
+  entries...`, `omits a missing video publication date...`, and the typed
+  private/deleted tests cover pure playlist normalization; `fetches every
+  playlistItems.list page...` covers complete pagination; `diffs additions,
+  removals, moves, retitles, and availability changes` covers playlist
+  diffing; both fixed-root tests cover path containment; serialization,
+  atomic-create/replace/no-op, dry-run, unchanged-reporting, and globally
+  deduped sequential/idempotent-capture tests cover deterministic idempotent
+  writes and duplicate video-ID capture.
+- The exact, regional, requested/available-language, strict mismatch, typed
+  failure, and durable-unavailable/retry tests cover strict language behavior.
+  The transient/throttle test proves no metadata/transcript write, pending
+  behavior, and queue stop; the fatal test proves fail-stop/no-write behavior.
+  Default/retry/force selection, core non-destructive write, dry-run, and
+  force/sibling-summary tests cover non-destructive and explicit-force
+  semantics. Both frontmatter/status tests cover derived status and synthesis
+  currency.
+- Manifest-title preservation is covered by the first-manifest shared-video
+  assertion and the generic NBSP force fixture. A separate injected-boundary
+  run used only a temporary fixture root and fetched-metadata stubs for the
+  three repaired IDs. It made zero network and corpus writes and proved exact
+  manifest titles, including U+00A0 at code-point indexes 22 for
+  `497EK7ZQ2FY`, 38 for `n3rdoQnN7Co`, and 25 for `XZZ_ddBvELc`.
+
+### Acceptance 2 — public single-video compatibility
+
+- `.agents/scripts/save-youtube-transcript.mjs` is byte-identical to Task 1
+  extraction commit `0770b68`. `d3a1866` has no diff in that CLI,
+  `youtube-transcript-core.mjs`, `youtube-library-core.mjs`,
+  `youtube-library.mjs`, package files, or dependencies, so the shared public
+  normalization/rendering and JSON/human payload construction are untouched.
+- `npm run youtube:transcript -- --help` exited 0 with the established
+  save/fetch command surface and summary-slug, title, channel, series,
+  episode, language, dry-run, force, JSON, and help options. The focused core
+  tests passed in both the implementation and final runs.
+- Committed Task 1 real-smoke record `e0c9cac` remains authoritative instead
+  of repeating mutable network access: fetch exit 0, compatible video ID,
+  canonical URL, title/channel, duration, language/kind and JSON payload
+  fields, 86 segments, 11 chunks, canonical transcript path shape, and no
+  write. The unchanged CLI code preserves the corresponding human fields.
+
+### Acceptance 3 — real-playlist evidence versus fixture evidence
+
+- Real-run evidence remains immutable Task 5 history. Initial real sync commit
+  `192da2f` contains complete 63-entry AI and 30-entry Coding manifests; AI's
+  count necessarily crossed the 50-item page boundary. The committed repeat
+  sync reported `no changes`, clean status, unchanged mtimes `1784536383`, and
+  unchanged manifest hashes
+  `06cff56a2db7531bcefb9489c65f8feac249ff0c74d2aff47d2196f0e09ab653`
+  and
+  `ee7f8cc5c3390b1151465b57b7f07362e951f9297a50cdf3e164cb94677dbac4`.
+  Current hashes still match, and `192da2f85b14462da07b2d14cfb80fd72b67e1de`
+  remains the last manifest-modifying commit.
+- Real AI manifest positions 0 and 3 both contain `8gg-oJr4dTY`; one global
+  video directory and the Task 5a capture record prove real deduplication.
+  Current successful metadata records all 78 captures as requested/actual
+  Italian `it` with valid caption kind. Eight real metadata-only
+  `LanguageUnavailable` outcomes preserve requested and available languages.
+  The 28 capture and 28 summary backfill commits cover 86 planned outcomes =
+  78 unique captures + 8 unavailable records. Committed batch evidence records
+  zero ordinary transient, throttle/`TooManyRequest`, stopped, fatal, retry,
+  refill, force, or sync outcomes during backfill.
+- Fixture/injected-boundary evidence, not a fabricated real result, supplies
+  request-level complete pagination, exact-versus-regional language matching,
+  strict unavailable behavior, global queue deduplication, transient-no-write
+  pending behavior, and stop-on-throttle behavior. No live upstream command
+  was run in Task 6.
+
+### Acceptance 4 — current library and corpus integrity
+
+- Library help and status exited 0. Status is exactly AI
+  `63 entries / 60 captured / 0 pending / 3 unavailable / 0 missing summaries
+  / 60 drafts`, Coding `30/25/0/5/0/25`, and author
+  `86 deduped / 78 captured / 0 pending / 8 unavailable`; both overviews and
+  `authors/antirez.md` are current.
+- A read-only checker resolved exactly 86 manifest IDs to 86 video
+  directories: 78 complete metadata/transcript/summary trios and 8 typed
+  metadata-only unavailable records. All 78 transcript titles and all 78
+  summary titles byte-match selected manifest provenance, with zero mismatch.
+  Direct `wc -w` totals remain 152,510 transcript words and 48,520 summary
+  words.
+- The eight post-lint protected unavailable SHA-256 values remain, in handoff
+  order:
+  `c5ddc8de1fb1dccf0113b00cbe25ba6370e73703e1949dd26df17ddfa63b82ae`,
+  `f4e903f16b9a3378a045d296dc8feb38193a28bd6fe69ba1a8e6ac758fac88bb`,
+  `0aed612127ab0203225472dce215febd2cbf3ed75414e1d1ba788309e203c7fd`,
+  `dd29fef436b30df96abe8bba269a9bae63e6f3de090eaac707c454d3d651be5c`,
+  `42e44b620b445ae1709b2fd9e78be8d81124f4c2ed129a9890dc8b11b5511084`,
+  `1a17a2274920be7ff1dbf65965964df347d8a1e622f6e8d0c6b32d67813d7554`,
+  `031a889e6a805d73c42211120e56ff04933fe79f9893e76e5227bf3a3445c5a5`,
+  and
+  `d16efcfdeb1520c364e2a0f3092d570d2bc1844e98c4f61ec47661289191bf92`.
+  The complete source tree remains byte-identical to `2413bbd`.
+
+### Acceptance 5 — project and publication boundary
+
+- Final `npm run check` exited 0 with 0 errors, warnings, or hints. Final
+  `npm run build` exited 0 and reported exactly 18 pages; direct
+  `find dist -name index.html` also counted 18. No output path contains a
+  YouTube library route.
+- Both fail-closed boundary guards passed with expected raw `rg` exit 1: no
+  `src/content/youtube` registration/import in content config, pages,
+  components, or layouts, and no catalog `source-only` marker in `dist/`.
+  A public-resource guard found no library source path, playlist ID, or
+  playlist-source reference under `src/data/resources` or `public`.
+- Task 6 has no corpus, content-config, route, component, layout, public,
+  public-resource, package, dependency, catalog, manifest, transcript,
+  metadata, summary, overview, or author change. The implementation commit
+  changes only the two prescribed generic tooling/test files.
+
+### Acceptance 6 — quality, restoration, scope, and completion
+
+- `npm run lint:fix` exited 1 only for the allowed reference-site baseline:
+  one `useButtonType` error, one unused-function warning, and two
+  descending-specificity warnings. Biome reported 8 fixed files, exactly the
+  known unavailable metadata records. Each was restored from a byte backup,
+  compared with its backup, re-hashed to the protected values above, and the
+  tree returned clean. No broad ignore or Biome configuration change was made.
+- Post-restoration final checks all passed: 40/40 focused tests, library help
+  and status, `npm run check`, `npm run build`, page count, both publication
+  guards, public-resource guard, source comparison with `2413bbd`, public CLI
+  comparison with `0770b68`, cumulative scope checks, `git diff --check`, and
+  `git show --check d3a1866`.
+- One read-only history audit initially used the wrong summary-commit subject
+  pattern, found all 28 capture commits but zero summaries, and exited 1. The
+  corrected matcher found all 28 actual `add YouTube backfill batch ...
+  summar...` commits. A later bookkeeping-state assertion also exited 1
+  because `rg -c` returned an empty string rather than `0` for no unchecked
+  task; a line-count assertion then proved 6 checked and 0 unchecked. These
+  verifier-only corrections changed no repository file and did not weaken
+  acceptance. The known lint baseline is the only required verification
+  nonzero.
+- No live network, sync, capture, retry, refill, force, transcript fetch/save,
+  regeneration, mutating corpus command, YouTube corpus source edit, or push
+  occurred. All six tasks are now checked, and the work item is complete. All
+  78 per-video summaries, both playlist overviews, and the author synthesis
+  remain `draft` (81 editorial artifacts, 0 reviewed) for optional manual
+  editorial review; status has zero pending videos, zero missing summaries,
+  and current synthesis. Final bookkeeping is committed separately as this
+  completion commit and contains only `plan.md`, `progress.md`, and `index.md`.
