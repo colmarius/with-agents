@@ -81,6 +81,8 @@ published.
       publication boundary.
 - [ ] Document manual catalog editing and one-video thin-slice validation for
       adding a playlist; do not add an `add` subcommand.
+- [ ] For every retitled, removed, or availability-changed video ID, require a
+      public-content search and an explicit keep/fix decision for every hit.
 
 ### Optional / Later
 
@@ -105,6 +107,9 @@ published.
 - `sync` output is authoritative if it differs from an earlier check result.
 - Public content remains independently authored and is never a library script
   output.
+- Public-impact review is mandatory for retitles, removals, and availability
+  changes. The skill discovers affected artifacts with `rg` by video ID and
+  records a keep/fix decision in the commit message or progress record.
 - No npm short alias, central derivative registry, or scripted catalog wizard in
   the first implementation.
 
@@ -125,12 +130,10 @@ published.
 
 ## Open Questions
 
-- [ ] **Public-citation guarantee:** when a video already cited in public content
-      is retitled, removed from a playlist, or goes private/deleted, should the
-      skill require `rg` discovery and an explicit keep/fix decision for every
-      matching public artifact? Recommended default: **yes**. This is cheap,
-      keeps site knowledge out of deterministic source tooling, and prevents the
-      workflow's most plausible silent public regression.
+- [x] **Public-citation guarantee:** require `rg` discovery and an explicit
+      keep/fix decision for every public artifact matching a retitled, removed,
+      or availability-changed video ID. The user selected the recommended
+      mandatory policy.
 - [ ] **Deferred scheduling preference:** when scheduling is implemented, should
       changes create/update one issue or only appear in the Actions job summary?
       This does not block the first implementation slice.

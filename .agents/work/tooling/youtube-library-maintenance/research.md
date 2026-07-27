@@ -174,10 +174,9 @@ secret for `YOUTUBE_API_KEY`, and a user choice of notification behavior. A
 maintenance session must re-run check/sync because scheduled output is advisory
 and may be stale.
 
-## Remaining decision
+## Decision outcome
 
-The only first-slice decision that materially needs user preference is whether
-public-impact discovery is a mandatory workflow guarantee or only optional
-editorial guidance. Oracle recommends making it mandatory: for every retitled,
-removed, or availability-changed video ID, search public content and record an
-explicit keep/fix decision for every hit.
+The user selected the recommended mandatory public-impact guarantee. For every
+retitled, removed, or availability-changed video ID, the skill must search public
+content and record an explicit keep/fix decision for every hit. This remains
+skill-level orchestration rather than source-tooling or catalog knowledge.

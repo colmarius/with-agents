@@ -1,6 +1,6 @@
 # YouTube library maintenance workflow
 
-Status: researching
+Status: planned
 Category: tooling
 Updated: 2026-07-27
 
@@ -17,18 +17,16 @@ boundaries.
 
 - Research: `research.md`
 - PRD: `prd.md`
-- Plan: none
+- Plan: `plan.md`
 - Progress: none
 - Decisions: none
 
 ## Next Action
 
-- Resolve the public-citation response question below with the user, record the
-  decision in `prd.md`, then create the implementation-ready `plan.md`.
+- Implement Task 1 in `plan.md`: add the read-only structured `check` command
+  and focused contract tests without changing sync, capture, or status behavior.
 
 ## Open Questions
 
-- [ ] When a publicly cited video is retitled, removed from a playlist, or goes
-  private/deleted, must the workflow require a public-content search and an
-  explicit keep/fix decision for every hit? Recommended default: yes; use
-  `rg` by video ID and record the decision in the commit message.
+- None for the first implementation. Notification behavior for the deferred
+  scheduled workflow remains intentionally undecided in `prd.md`.
