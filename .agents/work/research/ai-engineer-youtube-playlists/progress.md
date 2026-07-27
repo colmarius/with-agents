@@ -81,3 +81,38 @@
   Antirez slugs and assert, in order, `ai-concepts`, `coding-with-ai`,
   `swe-agents-2025`, `agent-reliability-2025`, and `coding-agents`; otherwise
   provide an explicit migration scope for the protected Antirez identities.
+
+## 2026-07-27 — Plan 02 resumed with source-namespaced slugs
+
+- The user approved replacing the earlier slug assumptions with a consistent
+  source namespace. Commit `54ec50f` changed the existing Antirez slugs to
+  `antirez-ai-concepts` and `antirez-coding-with-ai`, moved both manifest and
+  overview pairs byte-for-byte, and updated the two author-synthesis links.
+  Playlist IDs, relationships, manifest data, video data, and editorial prose
+  were unchanged.
+- Migration validation passed: the focused committed-catalog test passed,
+  source-library references to the old paths/slugs returned no matches, and
+  `status` preserved the 63-entry and 30-entry playlist states plus the
+  86-video deduped Antirez author state.
+- Commit `68e005e` added exactly the three approved catalog entries as
+  `ai-engineer-swe-agents-2025`,
+  `ai-engineer-agent-reliability-2025`, and
+  `ai-engineer-coding-agents`. Each uses the pinned playlist ID and title,
+  English transcript/summary languages, and `multiSpeaker: true`; no author or
+  relationship was added.
+- Focused catalog validation passed (`2/2`). `status` reported all three AI
+  Engineer playlists as `manifest: not synced` and retained Antirez as the
+  only author section.
+
+### Remote-check blocker
+
+- The first selected JSON check exited `1` before making a remote request:
+  `YOUTUBE_API_KEY` was no longer available after the workspace executor was
+  replaced. The variable had been non-empty during the original preflight,
+  but the replacement executor did not inherit it.
+- The failed command produced no JSON playlist report; its temporary file was
+  removed. No sync, manifest write, capture, editorial work, public-resource
+  change, or Plan 03 work was performed.
+- Next action: restore `YOUTUBE_API_KEY` in the current executor environment,
+  then rerun the selected read-only check for all three namespaced playlist
+  slugs. Do not sync until all three remote identity reports succeed.
