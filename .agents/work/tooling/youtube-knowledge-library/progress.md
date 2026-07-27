@@ -5422,3 +5422,92 @@
 - Tasks 5 and 6 remain unchecked. Next derive only a separate bounded handoff
   for `src/content/youtube/authors/antirez.md`; do not write that synthesis,
   complete Task 5, or begin Task 6 in the handoff-derivation phase.
+
+## 2026-07-27 — Antirez author synthesis complete
+
+### Coverage and source-identity boundary
+
+- Read both approved playlist overviews and all 78 unique committed summaries
+  completely before drafting. The six cross-playlist IDs (`0buzDrn0aIY`,
+  `todMmp6AGCE`, `uxAhuNPSBuE`, `Yajmt1CeiHg`, `9AjeHE_VReY`, and
+  `2Jn6Z2nr-44`) were considered once in author coverage and were not treated
+  as important because of shared membership.
+- `authors/antirez.md` covers exactly all 78 unique summarized IDs once in
+  catalog relationship playlist order and first manifest-occurrence order.
+  It excludes all eight metadata-only unavailable IDs, deduplicates both the
+  repeated AI occurrence of `8gg-oJr4dTY` and the six shared IDs, and uses the
+  exact contracted `authorId: antirez`, `status: draft`, frontmatter key order,
+  and heading order.
+- Source Identities preserves the minimal catalog-only boundary: author ID and
+  slug `antirez`, display name Salvatore Sanfilippo, and catalog relationships
+  to the linked `AI concepts` and `Coding with AI` overviews. It states that no
+  external identity URL is configured and adds no channel, uploader, personal,
+  biographical, or externally researched identity claim.
+
+### Synthesis and chronology audit
+
+- The 1,090-word, 11,167-byte artifact is 111 lines with 19 body bullets:
+  2 source-identity bullets, 12 cross-playlist synthesis bullets, and 5
+  chronology bullets. Ten bullets begin with exact `Editorial:` prefixes. Its
+  64 resolved Markdown links comprise 60 representative-summary links and 4
+  occurrences of the two playlist-overview links.
+- The cross-playlist synthesis compares rather than concatenates the approved
+  overviews. It relates source-supported accounts of representations,
+  reasoning, evidence, and model limits to agent supervision, behavioral
+  testing, local inference, and DwarfStar systems work without forcing
+  continuity, causation, a unified worldview, or project lineage.
+- A bullet-by-bullet source audit preserved Sanfilippo's observations and
+  interpretations, paper and third-party descriptions, informal tests,
+  project reports, demonstrations, measurements, plans, forecasts, and
+  editorial synthesis as distinct evidence types. It did not promote them to
+  independent reproduction, settled scientific or legal conclusions,
+  production readiness, completed future work, or current general capability.
+- All 5 Changes Over Time bullets use manifest publication chronology rather
+  than playlist order. Their 13 date-summary-timestamp evidence pairs match
+  the selected manifest provenance, and all 26 timestamp endpoints exist as
+  sibling-transcript chunk markers. An independent pre-commit review found two
+  narrow ranges ending before their final supported clauses; both ranges and
+  one optional related range were widened to the verified transcript endpoints
+  before commit, and the final review found no blocker.
+
+### Commit, status, and unchanged accounting
+
+- Commit `766b32584fc2e9502c8d85dfab6dce8d9c802d1b` (`add YouTube
+  antirez author synthesis`) contains only
+  `src/content/youtube/authors/antirez.md`: 111 insertions in one new file.
+- Final `status` exited 0. Both playlist overviews and the author synthesis are
+  current with no missing covered IDs. `ai-concepts` remains at 63 entries/60
+  captured occurrences/0 pending/3 unavailable/0 missing summaries/60 drafts;
+  `coding-with-ai` remains at 30/25/0/5/0/25; author `antirez` remains at 86
+  deduped IDs/78 captured/0 pending/8 unavailable.
+- Corpus accounting remains 78 transcript/summary pairs, 152,510 transcript
+  words, and 48,520 summary words. All 248 pre-existing YouTube source files
+  remain byte-identical to clean baseline `d8a3155`; the synthesis commit adds
+  only the contracted author file.
+
+### Verification, deviations, and next phase
+
+- `node --test .agents/scripts/youtube-library.test.mjs
+  .agents/scripts/youtube-transcript-core.test.mjs`: all 40 tests passed;
+  exit 0. The focused author checker passed exact key/status/author/heading and
+  covered-set contracts, all link resolution, author-claim anchors,
+  `Editorial:` prefixes, date provenance, and transcript endpoints.
+- `npm run lint:fix` exited 1 only on the known
+  `.agents/references/dot-agents/site/` baseline: one `useButtonType` error,
+  one unused-function warning, and two descending-specificity warnings. It
+  rewrote exactly the eight unavailable metadata records; all were restored
+  byte-for-byte, and all eight protected SHA-256 values matched.
+- `npm run check` passed with 0 errors, warnings, or hints. `npm run build`
+  passed with 18 pages. Both source-only boundary `rg` checks found no matches
+  with expected raw exit 1. `git diff --check`, `git show --check` for the
+  synthesis commit, the baseline-byte comparison, and the clean pre-bookkeeping
+  tree check passed.
+- No capture, sync, retry, force, refill, existing YouTube artifact edit,
+  external identity research, source-boundary change, dedicated final Task 5
+  verification/checkoff phase, Task 6 work, or push occurred. The expected
+  lint baseline was the only nonzero verification; there was no final content,
+  accounting, chronology, scope, or commit-boundary deviation.
+- Tasks 5 and 6 remain unchecked. Next derive only the dedicated final Task 5
+  verification/checkoff handoff from the completed corpus, overviews, and
+  author synthesis; do not perform that verification or begin Task 6 in this
+  bookkeeping phase.

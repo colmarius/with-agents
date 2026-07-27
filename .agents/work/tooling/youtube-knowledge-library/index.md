@@ -19,9 +19,9 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Run only the author synthesis phase from `handoff-author-antirez.md` in a
-  dedicated implementation thread. Do not complete Task 5 or begin Task 6 in
-  parallel.
+- Derive only the dedicated final Task 5 verification/checkoff handoff from
+  the completed author synthesis. Do not check Task 5 or Task 6, perform that
+  verification, or begin Task 6 in parallel.
 
 ## Open Questions
 
