@@ -1,0 +1,77 @@
+{
+  "playlistId": "PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai",
+  "entries": [
+    {
+      "videoId": "8kMaTybvDUw",
+      "position": 0,
+      "title": "12-Factor Agents: Patterns of reliable LLM applications — Dex Horthy, HumanLayer",
+      "publishedAt": "2025-07-03T20:50:54Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WnTq5Mc5bIU",
+      "position": 1,
+      "title": "Private video",
+      "privacyStatus": "private",
+      "available": false,
+      "unavailableReason": "private"
+    },
+    {
+      "videoId": "kTnfJszFxCg",
+      "position": 2,
+      "title": "3 ingredients for building reliable enterprise agents - Harrison Chase, LangChain/LangGraph",
+      "publishedAt": "2025-07-23T15:51:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8SUJEqQNClw",
+      "position": 3,
+      "title": "Agents vs Workflows: Why Not Both? — Sam Bhagwat, Mastra.ai",
+      "publishedAt": "2025-08-01T16:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "1izYWsokr9s",
+      "position": 4,
+      "title": "Scaling AI Agents Without Breaking Reliability — Preeti Somal, Temporal",
+      "publishedAt": "2025-07-28T15:15:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "n991Yxo1aOI",
+      "position": 5,
+      "title": "Vibe Coding with Confidence — Itamar Friedman, Qodo",
+      "publishedAt": "2025-08-06T15:59:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Dj0b_cEBHBI",
+      "position": 6,
+      "title": "Useful General Intelligence — Danielle Perszyk, Amazon AGI",
+      "publishedAt": "2025-08-02T13:15:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sl3icG-IjHo",
+      "position": 7,
+      "title": "How to Build Planning Agents without losing control - Yogendra Miraje, Factset",
+      "publishedAt": "2025-07-23T15:51:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WJjInLeaJjo",
+      "position": 8,
+      "title": "Building Agents at Cloud Scale — Antje Barth, AWS",
+      "publishedAt": "2025-08-02T18:15:06Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}
