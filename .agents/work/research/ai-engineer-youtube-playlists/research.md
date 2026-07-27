@@ -264,10 +264,11 @@ revised from captured transcripts before publication.
    overview with coding-specific talks to distinguish workflows, planning,
    verification, evaluation, durable execution, and operational scale.
 3. **From code generation to harness engineering, 2024–2026.** After the two
-   bounded overviews are reviewed, use publication dates in the active Coding
-   Agents collection to examine the apparent shift toward context, skills,
-   orchestration, software factories, architecture, and review. Playlist order
-   cannot support chronology.
+   bounded overviews are reviewed, examine the apparent shift toward context,
+   skills, orchestration, software factories, architecture, and review. Treat
+   manifest `publishedAt` as upload time, not necessarily talk time; chronology
+   needs corroboration from the event year, title, or transcript and can never
+   rely on playlist order.
 4. **Context is an operational system, not a larger prompt.** Revisit when the
    Context Engineering, Skills, Memory, and Platform Engineering lists are
    fuller. Their current titles suggest a useful combined thesis but do not yet
@@ -291,38 +292,94 @@ single-speaker playlists but unsafe here:
 
 Smallest safe approach before onboarding:
 
-1. Let configured playlists omit an author relationship.
-2. Keep author status and synthesis only for playlists with a genuine author
-   relationship.
+1. Add `multiSpeaker: true` to intentionally author-less playlists. Validation
+   must require every playlist to have either an author relationship or this
+   marker, but never both, preserving accidental-orphan protection for Antirez.
+2. Keep the existing runtime model: playlist status is independent, while
+   author status and synthesis include only playlists reached through genuine
+   author relationships.
 3. Make each multi-speaker playlist overview the top-level synthesis.
-4. Require each claim in a multi-speaker overview to name the speaker and,
-   where relevant, affiliation as well as linking the source summary or
-   timestamp.
-5. Record AI Engineer as source-channel/curator provenance, not as the author.
+4. Keep attribution in editorial prose rather than adding inert frontmatter:
+   every summary's framing paragraph names the speaker and relevant affiliation,
+   and every overview claim repeats that attribution with its source anchor.
+5. Require each multi-speaker overview's Coverage section to identify AI
+   Engineer as the curator/source channel and state that speakers and
+   affiliations vary per video; never present the channel as the author.
 
-The implementation should update the validator test and the YouTube library
-contract. No catalog or source-library mutation should occur until that change
-is approved and the onboarding values required by the maintenance workflow are
-explicitly provided.
+The prerequisite implementation must update the validator and tests, the
+YouTube library contract, and the `maintaining-youtube-library` skill. The skill
+must accept either an author relationship or an explicit multi-speaker decision,
+support several playlists in one onboarding work item, retain a per-playlist
+thin slice, make public-impact searches safe for dash-leading IDs, and inspect a
+multi-speaker summary's attribution when a title changes. No catalog or
+source-library mutation should occur before that prerequisite passes.
+
+### Pinned catalog entries
+
+| Slug | Playlist ID | Exact catalog title |
+| --- | --- | --- |
+| `swe-agents-2025` | `PLcfpQ4tk2k0UwfWS-f6KDInzHc3um4naZ` | SWE Agents: AI Engineer World's Fair 2025 |
+| `agent-reliability-2025` | `PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai` | Agent Reliability: AI Engineer World's Fair 2025 |
+| `coding-agents` | `PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt` | Coding Agents @ AI Engineer |
+
+Every entry uses `transcriptLanguage: en`, `summaryLanguage: en`, and
+`multiSpeaker: true` and appears in no author relationship.
+
+## Adversarial Review Outcome
+
+An Ultra stress/grill review returned **ready with changes**. Oracle then
+adjudicated the findings against the implementation and live YouTube pages.
+
+Accepted corrections:
+
+- The maintenance skill is part of the prerequisite, not merely operational
+  documentation after implementation.
+- Intentional authorlessness needs the explicit `multiSpeaker: true` marker so
+  authored playlists retain orphan protection.
+- Tests must cover marker validation, author-less status/check behavior, the
+  committed catalog expansion, and the dash-leading `-QFHIoCo-Ko` video ID.
+- Attribution and curator provenance need pinned prose locations, and title
+  changes must trigger review of multi-speaker summary attribution.
+- Capture requires a deterministic thin-slice, batch, throttle, and exit-code
+  protocol rather than an unspecified positive limit.
+- Upload timestamps alone cannot support the longitudinal post angle.
+
+Rejected correction:
+
+- The review claimed the first 14 inventory playlist IDs were truncated. Live
+  checks on 2026-07-27 reconfirmed representative short IDs—including
+  `PLKLSkgrxaJAU`, `PLJ7eF79yCUHc`, `PLM1x6AvuYX54`, and `PLEHFHSBaOThI`—at
+  their expected official YouTube pages. YouTube emits these short IDs in its
+  own links; they must not be length-normalized or replaced.
 
 ## Implementation Acceptance Criteria
 
-- Catalog validation accepts playlists without author relationships while
-  preserving all existing checks for unknown authors, unknown playlists,
-  duplicate IDs, and empty relationship playlist lists. The current Antirez
-  catalog remains valid without changes.
+- Catalog validation accepts `multiSpeaker: true` playlists without author
+  relationships, rejects unmarked orphans, rejects a multi-speaker playlist in
+  an author relationship, and preserves all existing relationship and uniqueness
+  checks. The current Antirez catalog remains valid without changes.
+- Focused tests prove the marker rules and author-less playlist behavior through
+  status/check reporting without inventing runtime changes outside validation.
+  An existing capture/path fixture gains the dash-leading `-QFHIoCo-Ko` ID.
 - The YouTube library contract documents author-optional multi-speaker
-  playlists and requires speaker and relevant affiliation attribution in their
-  overviews.
-- The catalog gains exactly the three selected playlist IDs, unique slugs,
-  `transcriptLanguage: en`, and `summaryLanguage: en`. It gains no `AI Engineer`
-  author or relationship.
+  playlists, summary-framing and overview attribution, and curator provenance
+  in each overview's Coverage section.
+- The maintenance skill accepts an author relationship or explicit multi-speaker
+  decision during onboarding, supports selected multi-playlist sync before
+  capture, retains one thin slice per playlist, uses `rg -l -e '<video-id>'` for
+  dash-leading IDs, and reviews summary attribution after relevant retitles.
+- The catalog gains exactly the three pinned entries above and no `AI Engineer`
+  author or relationship. The committed-catalog test changes in the same step.
 - All three manifests are synced before capture. The visible-count gaps and the
   pairwise and total overlap are recorded from manifest data rather than
   inferred from channel pages.
 - Capture is playlist-scoped and staged `SWE Agents` → `Agent Reliability` →
-  `Coding Agents`, with positive limits for incremental batches where useful.
-  Shared videos remain stored once by video ID.
+  `Coding Agents`. Each playlist starts with `--limit 1`, transcript review, one
+  draft summary, and an overview thin slice; later captures use `--limit 2`, no
+  refill in the same session, and immediate stop on throttling. Exit `1` is
+  fatal; exit `2` from transient/throttle outcomes pauses the session; exit `2`
+  from recorded unavailable captions is an expected state. Shared videos remain
+  stored once by video ID.
 - The two bounded playlist overviews receive a multi-speaker attribution review
   before work begins on the `Coding Agents` overview. Shared video IDs appear
   in every overview that incorporates their summaries.
@@ -356,15 +413,18 @@ explicitly provided.
 - **Vendor bias:** speaker affiliation is material evidence context. A post that
   merges claims without attribution would become aggregated marketing rather
   than a source-backed synthesis.
-- **Language configuration:** English is the likely source and summary language
-  for these talks, but the maintenance contract requires explicit values. Do
-  not infer or write them into the catalog without confirmation.
+- **Language availability:** English source and summary configuration is
+  confirmed. Individual videos can still lack a matching English caption track;
+  record requested and available languages rather than substituting another
+  track.
 
 ## Complete Channel Playlist Inventory
 
 This is the live channel-card inventory captured on 2026-07-27. Counts are
 YouTube's displayed playlist-card counts, not independently verified available
-video totals. Playlist membership and counts can change.
+video totals. Playlist membership and counts can change. YouTube currently uses
+both short and long playlist IDs in this inventory; representative short IDs
+were revalidated against their official playlist pages on 2026-07-27.
 
 | # | Videos | Playlist ID | Playlist title |
 | ---: | ---: | --- | --- |
