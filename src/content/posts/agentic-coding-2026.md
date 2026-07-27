@@ -26,6 +26,7 @@ This article is the map for the series. It is grounded in the source talks liste
 
 - [Your Repo Is the Memory](/posts/durable-context-coding-agents) for durable repo-local context.
 - [Make the Agent Prove It](/posts/make-the-agent-prove-it) for proof-stack mechanics.
+- [Behavior Over Explanation](/posts/behavior-over-explanation) for the evidence discipline behind that proof stack: why observed behavior, not a fluent explanation, settles model and agent claims.
 - [Small Threads, Durable State](/posts/small-threads-durable-state) for handoffs, work items, and context hygiene.
 - [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) for one tool worked through end to end.
 - [The coding-with-agents resource hub](/resources/coding-with-agents) for the underlying talks and summaries.
@@ -170,6 +171,7 @@ Parallelism amplifies whatever system you already have. Weak alignment, proof, f
 | --- | --- |
 | Shared context keeps disappearing | [Your Repo Is the Memory](/posts/durable-context-coding-agents) |
 | Review needs stronger evidence | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
+| A model explanation is plausible, but behavior disagrees | [Behavior Over Explanation](/posts/behavior-over-explanation) |
 | Threads are too large to restart | [Small Threads, Durable State](/posts/small-threads-durable-state) |
 | You want a concrete tool case study | [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) |
 | You want the talks behind the series | [The coding-with-agents resource hub](/resources/coding-with-agents) |

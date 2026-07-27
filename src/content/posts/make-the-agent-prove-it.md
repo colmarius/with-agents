@@ -32,7 +32,7 @@ The most useful question in agentic coding is not "do I trust the model?" It is 
 
 Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The reviewer still signs the merge, so the agent should bring evidence.
 
-This article uses Simon Willison's Pragmatic Summit workflow as its primary source and adds an author-synthesis framework: a risk-scaled proof stack for one agent-produced change. The [durable-context Evidence section](/posts/durable-context-coding-agents#evidence-make-the-agent-prove-the-work) explains why evidence belongs in the repo-local operating loop; this is the tactical ladder to apply before you merge.
+This article uses Simon Willison's Pragmatic Summit workflow as its primary source and adds an author-synthesis framework: a risk-scaled proof stack for one agent-produced change. The [durable-context Evidence section](/posts/durable-context-coding-agents#evidence-make-the-agent-prove-the-work) explains why evidence belongs in the repo-local operating loop; this is the tactical ladder to apply before you merge. [Behavior Over Explanation](/posts/behavior-over-explanation) makes the methodological case behind that ladder: observed behavior should outrank a plausible explanation.
 
 You rarely need every layer. You do need to choose layers deliberately.
 

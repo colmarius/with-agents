@@ -116,6 +116,23 @@ boundaries.
   - Notes: Do not publish all per-video summaries as a shortcut if the post does
     not pass.
 
+- [x] **Task 5: Integrate the synthesis into public reading paths**
+  - Scope: `src/pages/index.astro`, `src/content/posts/agentic-coding-2026.md`,
+    and `src/content/posts/make-the-agent-prove-it.md`
+  - Depends on: Task 4
+  - Acceptance:
+    - Keep the homepage curated and add one evidence-discipline card without
+      introducing automatic latest-post logic or a separate feature block.
+    - Add the synthesis to the field guide's series map and problem-to-post
+      table as the methodological companion to the proof stack.
+    - Add one reciprocal link from the proof-stack article, while avoiding
+      repetitive backlinks in already link-dense companion posts.
+    - Confirm the homepage layout and new route at desktop and mobile widths;
+      run `npm run check` and `npm run build`.
+  - Notes: Oracle reviewed the integration and recommended this three-file
+    boundary. Future author-specific syntheses should not automatically expand
+    the series map.
+
 ## Implementation Notes
 
 - Preserve `src/content/youtube/` as a source-only evidence workspace. Public

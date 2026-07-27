@@ -10,7 +10,8 @@ Published a small, reviewed learning surface from the completed source-only
 Salvatore Sanfilippo YouTube corpus without exposing the internal library. The
 release includes one thesis-driven post about evidence, judgment, and
 coding-agent supervision, complemented by two playlist-level entries in the
-existing Coding with Agents resource hub.
+existing Coding with Agents resource hub. The homepage, series map, and proof
+stack now provide selective reading paths into the synthesis.
 
 The post is argument-shaped; the resource summaries are navigation-shaped.
 Public English prose is paraphrase of Italian captions, not quotation, and every

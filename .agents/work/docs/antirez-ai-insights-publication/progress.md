@@ -80,3 +80,44 @@ manifest passes its targeted Biome check.
 
 None. A DwarfStar/local-inference article remains an optional separate work item,
 not unfinished scope for this release.
+
+## 2026-07-27 — Public reading-path integration
+
+### Review and changes
+
+The homepage is manually curated rather than collection-driven. Before this
+follow-up it contained every listed series post except the new synthesis. Oracle
+recommended preserving that model: add one normal card instead of introducing a
+more prominent `Latest` block or automatic post selection.
+
+- Added `Behavior Over Explanation` to the homepage as the `Evidence discipline`
+  entry, between the Amp case study and the terminal resource-hub card.
+- Added the synthesis to the `Agentic Coding in 2026` series map and its
+  problem-to-post table.
+- Added one reciprocal link from `Make the Agent Prove It`, distinguishing the
+  synthesis's methodological case from the proof stack's tactical ladder.
+- Left durable context, small threads, the Amp case study, resource components,
+  and both playlist summaries unchanged; their existing paths are sufficient.
+
+Article word counts changed only by the links: `agentic-coding-2026.md` went from
+2,139 to 2,177 words, and `make-the-agent-prove-it.md` from 1,716 to 1,733.
+
+### Verification
+
+- Scoped Biome check/write for `src/pages/index.astro`: passed with no fixes.
+- `npm run check`: passed with 0 errors, 0 warnings, and 0 hints.
+- `npm run build`: passed with 20 pages; homepage and both edited post/slide
+  routes were regenerated.
+- Link audit: the new synthesis now has selective inbound paths from the
+  homepage, field guide, proof stack, and both playlist summaries.
+- Desktop browser: seven homepage cards, no horizontal overflow; the new card
+  aligns beside the Amp card and the resource hub remains the terminal card.
+- Mobile browser at 390 px: seven 311 px-wide stacked cards with no horizontal
+  overflow; full-page screenshot review found no clipping or overlap.
+- Route check: the homepage link resolves to the published synthesis with the
+  expected page title and no browser errors.
+
+### Next action
+
+None. Keep future author-specific syntheses in the resource hub unless one earns
+a distinct role in the series map.
