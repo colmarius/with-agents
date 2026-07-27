@@ -51,9 +51,9 @@ speakers. The smallest safe prerequisite is to allow a playlist to have no
 author relationship so its playlist overview, with explicit per-speaker
 attribution, is the highest-level synthesis.
 
-**Confidence:** high on the initial two-playlist recommendation and the
-attribution constraint; medium on long-term playlist stability because the
-channel was still publishing and reorganizing 2026 talks during inspection.
+**Confidence:** high on the three-playlist tracking scope and the attribution
+constraint; medium on long-term playlist stability because the channel was
+still publishing and reorganizing 2026 talks during inspection.
 
 ## Research Method
 
