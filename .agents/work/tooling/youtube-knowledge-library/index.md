@@ -19,9 +19,9 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Run only the Task 5 title-provenance repair from
-  `handoff-task-5-title-provenance-repair.md` in a dedicated implementation
-  thread. Keep Tasks 5–6 unchecked and do not begin Task 6 in parallel.
+- Derive only a new dedicated final Task 5 verification/checkoff rerun handoff
+  from repaired source baseline `2413bbd` and the committed repair record.
+  Keep Tasks 5–6 unchecked and do not begin Task 6 in parallel.
 
 ## Open Questions
 

@@ -5526,3 +5526,79 @@
   verification/checkoff handoff from the completed corpus, overviews, and
   author synthesis; do not perform that verification or begin Task 6 in this
   bookkeeping phase.
+
+## 2026-07-27 — Task 5 transcript title provenance repaired
+
+### Failed-gate blocker and Unicode diagnosis
+
+- The dedicated final Task 5 acceptance gate stopped before checkoff because
+  exactly three transcript frontmatter titles differed byte-for-byte from
+  their selected manifest provenance. A fail-closed in-memory checker parsed
+  quoted `title:` scalars as JSON rather than comparing escaped Markdown
+  source lines. Before repair it found 78 captured transcript/summary pairs,
+  exactly 3 transcript mismatches, 0 summary mismatches, and 0 conflicting
+  title/date provenances across the 6 cross-playlist IDs.
+- Each mismatch was one ordinary U+0020 space (`20`) where the selected
+  manifest and already-correct summary use U+00A0 NBSP (`c2 a0`):
+  `497EK7ZQ2FY` between `più` and `del` at zero-based title code-point index
+  22, `n3rdoQnN7Co` between `è` and `Open` at index 38, and
+  `XZZ_ddBvELc` between `più` and `importante` at index 25. Embedded quotation
+  marks in the first title retain their existing JSON/YAML escaping.
+- Exact before/after transcript evidence is: `497EK7ZQ2FY`, 8,877 bytes /
+  `52641b9650c6c8ac166abfccd7fc0f941ab890a592df42875307ae966e7e4916`
+  to 8,878 /
+  `d83b057054b1cc76dac84a3a32cf1ec05582c8d24a2dccb52d31763367cacc93`;
+  `n3rdoQnN7Co`, 13,656 /
+  `0c04a0f96508507580207b557baa4fa57404f4e9679c17bee55a344a02d0003a`
+  to 13,657 /
+  `b79255675cd7d6a8f6b5df782a2b9777ba44e915011b71898a55fee33be266a4`;
+  and `XZZ_ddBvELc`, 6,348 /
+  `4f6a8ad6d4ad509c77a473df136db6b2da422bcb60d3439bf6d4caae05f495e8`
+  to 6,349 /
+  `5efbae1ce46c253ccf7829805843942d0cc2dd2a4aa8ea6953acc62f0de96f93`.
+  Each file grew by exactly one byte.
+
+### Integrity, corpus accounting, and status
+
+- For each repaired transcript, the only byte delta from authoritative source
+  baseline `7460dad` is the title's U+0020-to-U+00A0 substitution; every byte
+  from `sourceUrl:` through EOF is identical. All three metadata and summary
+  files remain byte-identical to that baseline. Focused checks passed exact
+  metadata, summary frontmatter/order, source URL, ID, manifest publication
+  date, language/kind, disclosure, heading, Key Ideas anchor, transcript
+  endpoint, title-escaping, and body contracts.
+- The post-repair corpus checker parsed all 78 transcript and all 78 summary
+  titles and found 0 mismatches and 0 shared-ID provenance conflicts. Direct
+  `wc -w` totals are unchanged at 152,510 transcript words and 48,520 summary
+  words; this environment continues to treat the NBSP as a word separator.
+- Final `status` exited 0 with both overviews and the author synthesis current.
+  `ai-concepts` remains at 63 entries/60 captured occurrences/0 pending/3
+  unavailable/0 missing summaries/60 drafts; `coding-with-ai` remains at
+  30/25/0/5/0/25; author `antirez` remains at 86 deduped IDs/78 captured/0
+  pending/8 unavailable.
+- Source commit `2413bbd` (`correct YouTube transcript title provenance`)
+  contains exactly the three one-line transcript substitutions. No other path
+  under `src/content/youtube/` differs from `7460dad`; metadata, summaries,
+  manifests, overviews, author synthesis, tooling, tests, packages, and public
+  site data were not changed.
+
+### Verification, deviations, and next action
+
+- All 40 focused Node tests passed. `npm run check` passed with 0 errors,
+  warnings, or hints. `npm run build` passed with exactly 18 pages. Both
+  source-only boundary `rg` checks found no matches with expected raw exit 1.
+  The all-title checker, three focused contract/anchor checks,
+  `git diff --word-diff=porcelain`, byte/code-point inspection,
+  `git diff --check`, `git show --check`, and clean pre-bookkeeping tree check
+  passed.
+- `npm run lint:fix` exited 1 only on the known
+  `.agents/references/dot-agents/site/` baseline: one `useButtonType` error,
+  one unused-function warning, and two descending-specificity warnings. It
+  rewrote exactly the eight known unavailable metadata records; all were
+  restored byte-for-byte and all eight protected SHA-256 values matched.
+  This expected lint baseline was the only check deviation.
+- No network, sync, capture, retry, force, refill, regeneration, Task 6 work,
+  or push occurred. Tasks 5 and 6 remain unchecked: this repair removes the
+  blocker but does not rerun or satisfy Task 5 acceptance. Next derive only a
+  new dedicated final Task 5 verification/checkoff rerun handoff from repaired
+  source baseline `2413bbd` and this bookkeeping record.
