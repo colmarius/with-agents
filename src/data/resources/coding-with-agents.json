@@ -1,5 +1,30 @@
 [
   {
+    "id": 23,
+    "title": "AI concepts — Salvatore Sanfilippo",
+    "url": "https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
+    "description": "An Italian-language research notebook on model representations, reasoning, interpretability, architecture claims, open weights, local inference, and efficiency. The guided summary frames the playlist as conceptual grounding for evaluating coding agents rather than as a settled theory of AI.",
+    "type": "playlist",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-07-10",
+    "topics": ["models-evaluation", "tools-harnesses", "open-source-ecosystem"]
+  },
+  {
+    "id": 22,
+    "title": "Coding with AI — Salvatore Sanfilippo",
+    "url": "https://www.youtube.com/playlist?list=PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA",
+    "description": "An Italian-language playlist about coding-agent supervision, specifications, behavioral testing, model evaluation, developer attention, and local inference. The guided summary offers a short route through the most useful starting points.",
+    "type": "playlist",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-07-13",
+    "topics": [
+      "review-verification",
+      "models-evaluation",
+      "architecture-maintainability",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 21,
     "title": "State of Agentic Coding - Series",
     "url": "https://www.youtube.com/playlist?list=PLg3sejGUAdUZMKADp-KCcC6m5qKjD88bT",

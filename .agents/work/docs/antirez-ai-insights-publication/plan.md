@@ -15,7 +15,7 @@ boundaries.
 
 ## Tasks
 
-- [ ] **Task 1: Select and review the public evidence chain**
+- [x] **Task 1: Select and review the public evidence chain**
   - Scope: `src/content/youtube/authors/antirez.md`, both playlist overviews,
     selected `src/content/youtube/videos/<video-id>/{summary,transcript}.md`, and
     both playlist manifests
@@ -39,7 +39,7 @@ boundaries.
     leave an internal summary as `draft` unless the whole artifact receives a
     dedicated review.
 
-- [ ] **Task 2: Add the two playlist orientations to the resource hub**
+- [x] **Task 2: Add the two playlist orientations to the resource hub**
   - Scope: `src/data/resources/coding-with-agents.json` and two new files under
     `src/content/summaries/coding-with-agents/`
   - Depends on: Task 1
@@ -64,7 +64,7 @@ boundaries.
     `Coding with AI` and `2026-07-10` for `AI concepts`). No component, route,
     or schema change is expected.
 
-- [ ] **Task 3: Draft the thesis-driven synthesis post**
+- [x] **Task 3: Draft the thesis-driven synthesis post**
   - Scope: one new `src/content/posts/*.md` file
   - Depends on: Task 1
   - Acceptance:
@@ -92,7 +92,7 @@ boundaries.
     do not exceed the current field guide merely to represent more of the
     corpus.
 
-- [ ] **Task 4: Run the editorial stop/go and release checks**
+- [x] **Task 4: Run the editorial stop/go and release checks**
   - Scope: the new post, the two resource summaries, the resource manifest, and
     generated output
   - Depends on: Tasks 2 and 3
