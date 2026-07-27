@@ -69,7 +69,7 @@ Add a committed, source-only YouTube knowledge library that reuses the repositor
     - Playlist overview and author frontmatter record `coveredVideoIds`, which `status` uses to report missing/stale synthesis.
   - Notes: Summaries and syntheses remain explicit agent/human editorial work. Do not add an LLM API or silent auto-generation to the synchronization script.
 
-- [ ] **Task 5: Prove the source-only thin slice, then backfill in batches**
+- [x] **Task 5: Prove the source-only thin slice, then backfill in batches**
   - Scope: `src/content/youtube/**` only, plus work-item progress artifacts
   - Depends on: Tasks 1–4
   - Acceptance:

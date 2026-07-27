@@ -19,9 +19,10 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Run only the final Task 5 verification/checkoff rerun from
-  `handoff-final-task-5-verification-rerun.md` in a dedicated implementation
-  thread. Keep Task 6 unchecked and do not begin it in parallel.
+- Derive only a dedicated Task 6 verification/final-review handoff. It must
+  explicitly assess whether force recapture should preserve manifest title
+  whitespace instead of applying `cleanText` normalization. Keep Task 6
+  unchecked and do not begin it during handoff derivation.
 
 ## Open Questions
 

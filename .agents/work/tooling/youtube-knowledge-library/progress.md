@@ -5602,3 +5602,158 @@
   blocker but does not rerun or satisfy Task 5 acceptance. Next derive only a
   new dedicated final Task 5 verification/checkoff rerun handoff from repaired
   source baseline `2413bbd` and this bookkeeping record.
+
+## 2026-07-27 — Final Task 5 verification rerun complete
+
+### Acceptance verdicts and immutable inputs
+
+- All six Task 5 acceptance items passed in a fresh fail-closed rerun from
+  clean committed head `8f5f7ee4f4360b811e20db59485bfa329b5c48ce`.
+  `src/content/youtube/` had no diff from repaired source baseline `2413bbd`,
+  and the preflight worktree was clean. `npm run youtube:library -- --help`
+  and `npm run youtube:library -- status` both exited 0.
+- Status exactly matched the gate: `ai-concepts` has 63 entries, 60 captured
+  occurrences, 0 pending, 3 unavailable, 0 missing summaries, and 60 drafts;
+  `coding-with-ai` has 30/25/0/5/0/25; author `antirez` has 86 deduped IDs,
+  78 captured, 0 pending, and 8 unavailable. Both playlist overviews and
+  `authors/antirez.md` are current.
+- The current manifest SHA-256 values remain
+  `06cff56a2db7531bcefb9489c65f8feac249ff0c74d2aff47d2196f0e09ab653`
+  for AI and
+  `ee7f8cc5c3390b1151465b57b7f07362e951f9297a50cdf3e164cb94677dbac4`
+  for Coding. `192da2f85b14462da07b2d14cfb80fd72b67e1de` remains the
+  last modifying commit for both. Task 5a's committed repeat-real-sync
+  evidence records `no changes`, unchanged mtimes `1784536383`, unchanged
+  hashes, and a clean tree. A no-op command cannot produce a Git object, so
+  its execution/mtime evidence is necessarily audited from committed progress;
+  current bytes and last-modifying history independently corroborate it.
+- Thin-slice history passed: `8a52373` contains only the metadata/transcript
+  pairs for `8gg-oJr4dTY` and `XZZ_ddBvELc`; `a445f4f` contains their complete
+  English draft summaries and both initial overviews. Their Italian
+  `caption`/`auto-generated` provenance and summary/transcript anchors remain
+  valid. Broad batch 1 begins only afterward at `3a5e075`.
+- Bounded-backfill history passed: exactly 28 post-thin-slice capture commits
+  and 28 corresponding summary commits produced 86 planned outcomes = 78
+  successful unique captures + 8 durable strict-language unavailable records.
+  Committed batch evidence records no ordinary transient, fatal,
+  `TooManyRequest`/throttle, stopped, or retry outcome and no refill, force, or
+  sync during backfill. Git cannot reconstruct an unlogged command, but every
+  committed batch record and artifact/commit boundary is consistent and no
+  contrary evidence exists. The focused test rerun proves transient failures
+  persist nothing and remain pending, while throttling stops the remaining
+  queue.
+
+### Corpus, provenance, and repair evidence
+
+- A fresh in-memory checker parsed quoted title scalars and passed the complete
+  source contract. The 63 AI entries represent 62 unique IDs with only the
+  duplicate `8gg-oJr4dTY`; Coding has 30 entries/30 unique IDs; the catalog
+  relationship union has 86 IDs; six captured IDs are shared; and shared
+  title/date provenance conflicts are zero.
+- All 86 manifest IDs resolve to exactly 86 video directories: 78 nonempty,
+  complete metadata/transcript/summary trios and 8 exact typed metadata-only
+  unavailable directories, with no partial or orphan directory. Successful
+  records all have matching IDs, requested language `it`, actual `it` or
+  `it-*`, and kind `caption` or `auto-generated`; unavailable records have the
+  established strict-language shape and no transcript or summary.
+- All 78 transcripts have matching IDs, canonical URLs, language/kind, and
+  nonempty timestamp chunks. The checker counted 1,135 unique transcript
+  chunk anchors. All 78 parsed transcript titles and all 78 parsed summary
+  titles byte-match selected manifest provenance; mismatch and shared-conflict
+  counts are zero.
+- All 78 summaries passed exact ordered frontmatter, manifest date/title,
+  metadata language/kind, English/draft status, caption-kind-adapted first-line
+  disclosure, exact headings, non-placeholder content, canonical source links,
+  and complete timestamp contracts. Their 576 Key Ideas bullets all have
+  sibling-transcript anchors, and all 1,067 timestamp endpoints exist.
+- Direct `wc -w` totals in this environment remain 152,510 transcript words
+  and 48,520 summary words across 78 pairs. The eight protected unavailable
+  hashes remain, in handoff order:
+  `c5ddc8de1fb1dccf0113b00cbe25ba6370e73703e1949dd26df17ddfa63b82ae`,
+  `f4e903f16b9a3378a045d296dc8feb38193a28bd6fe69ba1a8e6ac758fac88bb`,
+  `0aed612127ab0203225472dce215febd2cbf3ed75414e1d1ba788309e203c7fd`,
+  `dd29fef436b30df96abe8bba269a9bae63e6f3de090eaac707c454d3d651be5c`,
+  `42e44b620b445ae1709b2fd9e78be8d81124f4c2ed129a9890dc8b11b5511084`,
+  `1a17a2274920be7ff1dbf65965964df347d8a1e622f6e8d0c6b32d67813d7554`,
+  `031a889e6a805d73c42211120e56ff04933fe79f9893e76e5227bf3a3445c5a5`,
+  and
+  `d16efcfdeb1520c364e2a0f3092d570d2bc1844e98c4f61ec47661289191bf92`.
+- The failed gate at `7460dad` left Tasks 5–6 unchecked and recorded exactly
+  three transcript-title mismatches: `497EK7ZQ2FY`, `n3rdoQnN7Co`, and
+  `XZZ_ddBvELc`. Repair `2413bbd` changes only their first `title:` lines.
+  Each replaces one U+0020 byte (`20`) with one U+00A0 code point (`c2 a0`)
+  and grows by one byte. Current size/hash pairs are 8,878 /
+  `d83b057054b1cc76dac84a3a32cf1ec05582c8d24a2dccb52d31763367cacc93`,
+  13,657 /
+  `b79255675cd7d6a8f6b5df782a2b9777ba44e915011b71898a55fee33be266a4`,
+  and 6,349 /
+  `5efbae1ce46c253ccf7829805843942d0cc2dd2a4aa8ea6953acc62f0de96f93`.
+  Every byte from `sourceUrl:` through EOF matches `7460dad`; exactly those
+  three YouTube paths changed in the repair. `97be208` changes only progress
+  and index and checks off no task.
+
+### Synthesis, source fidelity, and scope
+
+- Both playlist overview contracts passed exact title/status/key/headings,
+  deterministic first-manifest coverage, no duplicate or unavailable covered
+  ID, link resolution, and current-state checks. AI covers exactly 59 IDs with
+  103 summary links; Coding covers 25 with 77.
+- The author contract passed exact `authorId: antirez`, draft status,
+  frontmatter/headings, and catalog relationship/first-occurrence ordering for
+  all 78 covered IDs. It has both resolving overview targets, 60 resolving
+  summary links, 12 `Editorial:` bullets, 5 chronology bullets, and 13
+  manifest-date/summary/timestamp tuples whose 26 endpoints all exist. Source
+  Identities contains only the two catalog-supported identity statements.
+- Source-fidelity history remains additive and reviewably scoped:
+  `6703244` corrects one summary methodology claim; `cf6c8dc` corrects source
+  claims in two summaries; `fcdf492` corrects AI-overview attribution;
+  `7a9bdc7` corrects author-synthesis attribution; and `2413bbd` corrects the
+  three title bytes. Their progress records are `0a4df28`, `d8a3155`,
+  `0479c10`, and `97be208`. No history was rewritten and all editorial status
+  remains `draft`.
+- Task 5 scope from post-Task-4 baseline `5f0b210` contains only
+  `src/content/youtube/**` and this work item's artifacts/handoffs. No Task 5
+  change touches tooling, tests, packages, `src/content.config.ts`, routes,
+  components, layouts, `src/data/resources`, `public/`, public resource
+  manifests, or unrelated content. The source tree is neither registered nor
+  imported, no route/resource entry exists, and build output contains no
+  source-only marker.
+
+### Commands, deviations, and Task 6 boundary
+
+- `npm run youtube:library -- --help`: exit 0.
+- `npm run youtube:library -- status`: exit 0 with the exact accepted matrix.
+- Corpus and synthesis in-memory checkers: exit 0 with the counts above.
+- Direct word-count, protected-hash, repair-size/hash, body-identity,
+  thin-slice/history, batch-count, commit-scope, and forbidden-path checks:
+  exit 0. One initial ad hoc byte-inspection heredoc had a local JavaScript
+  syntax error and exited 1 before reading or writing corpus data; the
+  corrected invocation exited 0 and proved all three exact byte/code-point
+  deltas. This verifier-only correction had no repository effect.
+- `node --test .agents/scripts/youtube-library.test.mjs
+  .agents/scripts/youtube-transcript-core.test.mjs`: exit 0; 40/40 passed.
+- `npm run lint:fix`: exit 1 only on the allowed
+  `.agents/references/dot-agents/site/` baseline: one `useButtonType` error,
+  one unused-function warning, and two descending-specificity warnings. Biome
+  rewrote exactly the eight unavailable metadata files; they were restored
+  byte-for-byte, all protected hashes re-matched, and the tree returned clean.
+- `npm run check`: exit 0 with 0 errors, warnings, or hints.
+- `npm run build`: exit 0 with exactly 18 pages. Direct `find` also counted 18
+  built `index.html` pages.
+- Both boundary `rg` commands returned raw exit 1 with no matches, as expected:
+  no `src/content/youtube` registration/import and no `source-only` string in
+  `dist/`. Their fail-closed wrappers exited 0.
+- `git diff --check`, `git diff --check 5f0b210..HEAD`, and `git show --check`
+  for the manifest, thin-slice, first/final batches, four corrections,
+  overview, author, failed-gate, repair, repair-record, and rerun-handoff
+  commits all passed. The source baseline and pre-checkoff tree returned clean.
+- Non-blocking Task 6 caveat: `cleanText` currently collapses `\s+` to U+0020
+  before rendering a fetched title. A future explicit `--force` recapture
+  would therefore normalize the three manifest NBSPs to ordinary spaces.
+  Default capture is non-destructive, Task 5 used no force operation, and the
+  repaired committed corpus is authoritative. Task 6 must explicitly decide
+  whether that force-only workflow/tooling behavior should change; Task 5 did
+  not edit tooling or fabricate a current mismatch.
+- Task 5 is now checked. Task 6 remains unchecked and unstarted. No network,
+  sync, capture, retry, refill, force, regeneration, source/tooling edit, or
+  push occurred in this rerun.
