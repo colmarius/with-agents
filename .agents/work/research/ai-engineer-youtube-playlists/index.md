@@ -1,6 +1,6 @@
 # AI Engineer YouTube playlist tracking
 
-Status: planned
+Status: in-progress
 Category: research
 Updated: 2026-07-27
 
@@ -30,14 +30,14 @@ Reliability`, then `Coding Agents`.
   3. [Build the bounded AI Engineer playlist corpus](./plans/03-bounded-playlist-corpus.md)
   4. [Build and maintain the Coding Agents corpus](./plans/04-coding-agents-corpus.md)
 - Handoff: [Implement Plan 01 multi-speaker library support](./handoff-plan-01.md)
-- Progress: none
+- Progress: [progress.md](./progress.md)
 - Decisions: recorded below
 
 ## Next Action
 
-- Execute [Plan 01](./plans/01-multi-speaker-library-support.md), starting with
-  its validator invariant and focused tests. Do not add the three AI Engineer
-  catalog entries until Plan 01 is complete.
+- Execute [Plan 02](./plans/02-onboard-and-sync-playlists.md), starting with its
+  catalog preflight and exact three-playlist addition. Plan 01 is complete; no
+  catalog onboarding, sync, or capture was started as part of it.
 
 ## Open Questions
 
@@ -69,3 +69,5 @@ Reliability`, then `Coding Agents`.
   incorporated accepted Oracle feedback into `research.md`.
 - 2026-07-27: Finalized four ordered implementation plans after Oracle review,
   splitting bounded and active editorial work at an attribution gate.
+- 2026-07-27: Completed Plan 01 multi-speaker validation, runtime-path tests,
+  editorial attribution contract, and maintenance workflow updates.

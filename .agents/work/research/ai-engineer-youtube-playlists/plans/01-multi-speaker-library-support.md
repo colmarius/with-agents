@@ -15,7 +15,7 @@ maintenance workflow with that model.
 
 ## Tasks
 
-- [ ] **Task 1: Add the explicit multi-speaker catalog invariant**
+- [x] **Task 1: Add the explicit multi-speaker catalog invariant**
   - Scope: `.agents/scripts/lib/youtube-library-core.mjs`,
     `.agents/scripts/youtube-library.test.mjs`
   - Depends on: none
@@ -30,7 +30,7 @@ maintenance workflow with that model.
   - Notes: Change only validation unless a focused test proves a runtime path
     actually depends on author relationships.
 
-- [ ] **Task 2: Prove author-less playlists work through existing reporting**
+- [x] **Task 2: Prove author-less playlists work through existing reporting**
   - Scope: `.agents/scripts/youtube-library.test.mjs`, existing status/check
     fixtures and formatters
   - Depends on: Task 1
@@ -45,7 +45,7 @@ maintenance workflow with that model.
       requiring a production-code change.
   - Notes: Prefer extending existing fixtures over adding parallel test helpers.
 
-- [ ] **Task 3: Define multi-speaker editorial attribution**
+- [x] **Task 3: Define multi-speaker editorial attribution**
   - Scope: `src/content/youtube/AGENTS.md`
   - Depends on: Task 1
   - Acceptance:
@@ -64,7 +64,7 @@ maintenance workflow with that model.
   - Notes: Preserve the exact existing summary and overview frontmatter key
     order.
 
-- [ ] **Task 4: Align playlist onboarding and public-impact review**
+- [x] **Task 4: Align playlist onboarding and public-impact review**
   - Scope: `.agents/skills/maintaining-youtube-library/SKILL.md`,
     `.agents/scripts/youtube-library.test.mjs`
   - Depends on: Tasks 1 and 3
