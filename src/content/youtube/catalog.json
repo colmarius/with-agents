@@ -21,6 +21,30 @@
       "title": "Coding with AI",
       "transcriptLanguage": "it",
       "summaryLanguage": "en"
+    },
+    {
+      "id": "PLcfpQ4tk2k0UwfWS-f6KDInzHc3um4naZ",
+      "slug": "ai-engineer-swe-agents-2025",
+      "title": "SWE Agents: AI Engineer World's Fair 2025",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
+    },
+    {
+      "id": "PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai",
+      "slug": "ai-engineer-agent-reliability-2025",
+      "title": "Agent Reliability: AI Engineer World's Fair 2025",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
+    },
+    {
+      "id": "PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt",
+      "slug": "ai-engineer-coding-agents",
+      "title": "Coding Agents @ AI Engineer",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
     }
   ],
   "relationships": [

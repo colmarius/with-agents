@@ -227,7 +227,16 @@ test('loads and validates the committed source-only catalog', async () => {
 
   assert.equal(catalog.publication, 'source-only');
   assert.equal(catalog.authors[0].id, 'antirez');
-  assert.equal(catalog.playlists.length, 2);
+  assert.deepEqual(
+    catalog.playlists.map((playlist) => playlist.slug),
+    [
+      'antirez-ai-concepts',
+      'antirez-coding-with-ai',
+      'ai-engineer-swe-agents-2025',
+      'ai-engineer-agent-reliability-2025',
+      'ai-engineer-coding-agents',
+    ],
+  );
 });
 
 test('catalog validation requires the publication boundary', () => {
