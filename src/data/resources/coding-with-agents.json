@@ -1,5 +1,21 @@
 [
   {
+    "id": 24,
+    "title": "Architecture, AI agents, and product empathy with Robert C. Martin",
+    "subtitle": "Robert C. Martin on durable architecture, agent guardrails, and customer understanding",
+    "url": "https://www.youtube.com/watch?v=RxxxGkFIUJ0",
+    "description": "Robert C. Martin and Kent C. Dodds discuss why software architecture remains durable as agents take over more implementation, how structural metrics and tests can close the agent feedback loop, why design judgment still depends on experience, and why engineers need direct empathy for the people using their products.",
+    "type": "video",
+    "source": "Kent C. Dodds (plus)",
+    "date": "2026-07-22",
+    "duration": "44m",
+    "topics": [
+      "architecture-maintainability",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 23,
     "title": "AI concepts — Salvatore Sanfilippo",
     "url": "https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
