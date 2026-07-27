@@ -5446,22 +5446,34 @@
 
 ### Synthesis and chronology audit
 
-- The 1,090-word, 11,167-byte artifact is 111 lines with 19 body bullets:
-  2 source-identity bullets, 12 cross-playlist synthesis bullets, and 5
-  chronology bullets. Ten bullets begin with exact `Editorial:` prefixes. Its
-  64 resolved Markdown links comprise 60 representative-summary links and 4
-  occurrences of the two playlist-overview links.
+- The corrected 1,096-word, 11,195-byte artifact is 111 lines with 19 body
+  bullets: 2 source-identity bullets, 12 cross-playlist synthesis bullets, and
+  5 chronology bullets. Twelve bullets begin with exact `Editorial:` prefixes.
+  Its 64 resolved Markdown links comprise 60 representative-summary links and
+  4 occurrences of the two playlist-overview links.
 - The cross-playlist synthesis compares rather than concatenates the approved
   overviews. It relates source-supported accounts of representations,
   reasoning, evidence, and model limits to agent supervision, behavioral
   testing, local inference, and DwarfStar systems work without forcing
   continuity, causation, a unified worldview, or project lineage.
-- A bullet-by-bullet source audit preserved Sanfilippo's observations and
-  interpretations, paper and third-party descriptions, informal tests,
-  project reports, demonstrations, measurements, plans, forecasts, and
-  editorial synthesis as distinct evidence types. It did not promote them to
-  independent reproduction, settled scientific or legal conclusions,
-  production readiness, completed future work, or current general capability.
+- The implementation-phase bullet-by-bullet source audit preserved
+  Sanfilippo's observations and interpretations, paper and third-party
+  descriptions, informal tests, project reports, demonstrations,
+  measurements, plans, forecasts, and editorial synthesis as distinct
+  evidence types.
+- The orchestrator's independent post-commit audit found two narrow
+  attribution issues in Cross-Playlist Synthesis. One bullet implied that
+  informal tests isolated reasoning style from representational capacity;
+  another combined DwarfStar project reports with an editorial classification
+  of their evidence. Commit `7a9bdc7` (`correct YouTube author synthesis
+  attribution`) changed only those two bullets: both now begin `Editorial:`,
+  the model-test synthesis names its confounded factors and says the sources
+  isolate no single cause, and the DwarfStar evidence boundary remains
+  explicit. The independent chronology/identity audit and the other ten
+  cross-playlist bullets found no blocker. The final synthesis does not
+  promote source material to independent reproduction, settled scientific or
+  legal conclusions, production readiness, completed future work, or current
+  general capability.
 - All 5 Changes Over Time bullets use manifest publication chronology rather
   than playlist order. Their 13 date-summary-timestamp evidence pairs match
   the selected manifest provenance, and all 26 timestamp endpoints exist as
@@ -5475,6 +5487,8 @@
 - Commit `766b32584fc2e9502c8d85dfab6dce8d9c802d1b` (`add YouTube
   antirez author synthesis`) contains only
   `src/content/youtube/authors/antirez.md`: 111 insertions in one new file.
+- Follow-up commit `7a9bdc7` (`correct YouTube author synthesis attribution`)
+  contains only the two cross-playlist bullet corrections described above.
 - Final `status` exited 0. Both playlist overviews and the author synthesis are
   current with no missing covered IDs. `ai-concepts` remains at 63 entries/60
   captured occurrences/0 pending/3 unavailable/0 missing summaries/60 drafts;
@@ -5502,11 +5516,12 @@
   with expected raw exit 1. `git diff --check`, `git show --check` for the
   synthesis commit, the baseline-byte comparison, and the clean pre-bookkeeping
   tree check passed.
-- No capture, sync, retry, force, refill, existing YouTube artifact edit,
+- No capture, sync, retry, force, refill, pre-existing YouTube artifact edit,
   external identity research, source-boundary change, dedicated final Task 5
   verification/checkoff phase, Task 6 work, or push occurred. The expected
-  lint baseline was the only nonzero verification; there was no final content,
-  accounting, chronology, scope, or commit-boundary deviation.
+  lint baseline was the only required nonzero verification. The source-audit
+  corrections are recorded above; there is no remaining content, accounting,
+  chronology, scope, or commit-boundary blocker.
 - Tasks 5 and 6 remain unchecked. Next derive only the dedicated final Task 5
   verification/checkoff handoff from the completed corpus, overviews, and
   author synthesis; do not perform that verification or begin Task 6 in this
