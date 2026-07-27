@@ -111,15 +111,20 @@ const availableEntry = (videoId, position, title = videoId) => ({
   available: true,
 });
 
-const multiPlaylistCatalog = () => {
+const multiPlaylistCatalog = ({ secondIsMultiSpeaker = false } = {}) => {
   const catalog = validCatalog();
-  catalog.playlists.push({
+  const secondPlaylist = {
     ...catalog.playlists[0],
     id: 'second',
     slug: 'second',
     title: 'Second Playlist',
-  });
-  catalog.relationships[0].playlistIds.push('second');
+  };
+  if (secondIsMultiSpeaker) {
+    secondPlaylist.multiSpeaker = true;
+  } else {
+    catalog.relationships[0].playlistIds.push('second');
+  }
+  catalog.playlists.push(secondPlaylist);
   return catalog;
 };
 
@@ -252,6 +257,34 @@ test('catalog validation rejects broken relationships', () => {
   assert.throws(
     () => validateCatalog(catalog),
     /references an unknown playlist/,
+  );
+});
+
+test('catalog validation requires exactly one playlist attribution mode', () => {
+  const catalog = multiPlaylistCatalog({ secondIsMultiSpeaker: true });
+  assert.equal(validateCatalog(catalog), catalog);
+
+  const orphan = structuredClone(catalog);
+  delete orphan.playlists[1].multiSpeaker;
+  assert.throws(
+    () => validateCatalog(orphan),
+    /Playlist second has no author relationship/,
+  );
+
+  for (const value of [false, 'true', 1, null, undefined]) {
+    const invalidMarker = structuredClone(catalog);
+    invalidMarker.playlists[1].multiSpeaker = value;
+    assert.throws(
+      () => validateCatalog(invalidMarker),
+      /multiSpeaker must be true when present/,
+    );
+  }
+
+  const conflicting = structuredClone(catalog);
+  conflicting.relationships[0].playlistIds.push('second');
+  assert.throws(
+    () => validateCatalog(conflicting),
+    /cannot have both an author relationship and multiSpeaker: true/,
   );
 });
 
@@ -820,7 +853,7 @@ test('check combines changed and no-op remote results with selected local status
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-check-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const paths = fixturePaths(root);
-  const catalog = multiPlaylistCatalog();
+  const catalog = multiPlaylistCatalog({ secondIsMultiSpeaker: true });
   const firstEntries = [
     availableEntry('old-video', 0, 'Old title'),
     availableEntry('missing-summary', 1, 'Missing summary'),
@@ -914,6 +947,22 @@ test('check combines changed and no-op remote results with selected local status
     return response({ items: remoteItems.get(playlistId) });
   };
   const before = await snapshotTree(root);
+  const status = await buildLibraryStatus({ catalog, ...paths });
+  assert.deepEqual(
+    status.playlists.map((playlistStatus) => playlistStatus.playlist.slug),
+    ['playlist', 'second'],
+  );
+  assert.deepEqual(
+    status.authors[0].playlists.map((playlist) => playlist.slug),
+    ['playlist'],
+  );
+  const statusHuman = formatLibraryStatus(status);
+  assert.match(statusHuman, /Playlist second \(Second Playlist\):/);
+  assert.match(
+    statusHuman,
+    /Author author \(Example Author\):\n {2}playlists: playlist\n/,
+  );
+  assert.doesNotMatch(statusHuman, /playlists: playlist, second/);
   const options = {
     catalog,
     playlistSlugs: ['second', 'playlist'],
@@ -970,17 +1019,17 @@ test('check combines changed and no-op remote results with selected local status
   assert.deepEqual(first.report.authors, [
     {
       slug: 'author',
-      playlists: ['playlist', 'second'],
-      videoTotal: 5,
-      transcripts: { captured: 3, pending: 1, unavailable: 1 },
-      synthesis: { state: 'stale', missingVideoIds: ['second-video'] },
+      playlists: ['playlist'],
+      videoTotal: 4,
+      transcripts: { captured: 2, pending: 1, unavailable: 1 },
+      synthesis: { state: 'current', missingVideoIds: [] },
     },
   ]);
   assert.deepEqual(
     selected.report.playlists.map((playlist) => playlist.slug),
     ['second'],
   );
-  assert.deepEqual(selected.report.authors, first.report.authors);
+  assert.deepEqual(selected.report.authors, []);
   assert.deepEqual(first.report.summary, {
     remoteChanges: {
       playlists: 1,
@@ -993,7 +1042,7 @@ test('check combines changed and no-op remote results with selected local status
     },
     pendingTranscripts: 1,
     missingSummaries: 1,
-    staleSyntheses: 2,
+    staleSyntheses: 1,
     errors: 0,
   });
 
@@ -1009,8 +1058,14 @@ test('check combines changed and no-op remote results with selected local status
     human,
     /local transcripts: 2 captured; 1 pending; 1 unavailable-recorded/,
   );
-  assert.match(human, /Author author:/);
+  assert.match(human, /Playlist second \(second\):/);
+  assert.match(
+    human,
+    /Author author:\n {2}local related playlists: playlist\n/,
+  );
+  assert.doesNotMatch(human, /local related playlists:.*second/);
   const json = JSON.stringify(first.report, null, 2);
+  assert.match(json, /"slug": "second"/);
   assert.doesNotMatch(json, /checkedAt|timestamp|fixture-key/);
   assert.deepEqual(await snapshotTree(root), before);
 });
@@ -1319,16 +1374,16 @@ test('captures a globally deduped deterministic queue sequentially and idempoten
   assert.equal(repeatFetches, 0);
 });
 
-test('capture honors catalog-order subsets and applies a positive limit after filtering', async (t) => {
+test('capture remains playlist-based for multi-speaker playlists and dash-leading video IDs', async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-capture-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const paths = fixturePaths(root);
-  const catalog = multiPlaylistCatalog();
+  const catalog = multiPlaylistCatalog({ secondIsMultiSpeaker: true });
   await writeManifestFixture(paths, catalog.playlists[0], [
     availableEntry('first-video', 0),
   ]);
   await writeManifestFixture(paths, catalog.playlists[1], [
-    availableEntry('second-a', 0),
+    availableEntry('-QFHIoCo-Ko', 0),
     availableEntry('second-b', 1),
   ]);
   const fetchedVideoIds = [];
@@ -1349,7 +1404,14 @@ test('capture honors catalog-order subsets and applies a positive limit after fi
 
   assert.equal(result.exitCode, 0);
   assert.equal(result.queued, 1);
-  assert.deepEqual(fetchedVideoIds, ['second-a']);
+  assert.deepEqual(fetchedVideoIds, ['-QFHIoCo-Ko']);
+  assert.match(
+    await readFile(
+      paths.videoPathForFile('-QFHIoCo-Ko', 'transcript.md'),
+      'utf8',
+    ),
+    /sourceUrl: "https:\/\/www\.youtube\.com\/watch\?v=-QFHIoCo-Ko"/,
+  );
   await assert.rejects(
     readFile(paths.videoPathForFile('first-video', 'transcript.md'), 'utf8'),
     { code: 'ENOENT' },

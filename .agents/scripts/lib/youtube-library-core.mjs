@@ -88,6 +88,14 @@ export const validateCatalog = (catalog) => {
     ]) {
       assertNonEmptyString(playlist[key], `catalog.playlists[${index}].${key}`);
     }
+    if (
+      Object.hasOwn(playlist, 'multiSpeaker') &&
+      playlist.multiSpeaker !== true
+    ) {
+      throw new Error(
+        `catalog.playlists[${index}].multiSpeaker must be true when present.`,
+      );
+    }
   });
 
   assertUnique(
@@ -149,9 +157,15 @@ export const validateCatalog = (catalog) => {
     }
   });
 
-  for (const playlistId of playlistIds) {
-    if (!relatedPlaylistIds.has(playlistId)) {
-      throw new Error(`Playlist ${playlistId} has no author relationship.`);
+  for (const playlist of catalog.playlists) {
+    const hasAuthorRelationship = relatedPlaylistIds.has(playlist.id);
+    if (hasAuthorRelationship && playlist.multiSpeaker === true) {
+      throw new Error(
+        `Playlist ${playlist.id} cannot have both an author relationship and multiSpeaker: true.`,
+      );
+    }
+    if (!hasAuthorRelationship && playlist.multiSpeaker !== true) {
+      throw new Error(`Playlist ${playlist.id} has no author relationship.`);
     }
   }
 
