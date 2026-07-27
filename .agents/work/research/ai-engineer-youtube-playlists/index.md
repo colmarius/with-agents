@@ -16,10 +16,10 @@ Agents` collection.
 Unlike the single-speaker Antirez corpus, these playlists contain many
 speakers. Multi-speaker validation and the three-playlist onboarding are now
 complete without misattributing the corpus to the AI Engineer channel. The
-authoritative manifests contain 19, 9, and 38 entries respectively. The first
-SWE Agents transcript, draft summary, and draft overview thin slice is complete;
-broader capture remains staged: `SWE Agents`, `Agent Reliability`, then `Coding
-Agents`.
+authoritative manifests contain 19, 9, and 38 entries respectively. Three SWE
+Agents videos are captured, summarized, and incorporated into the draft
+overview; 15 available SWE Agents videos remain pending. Broader capture remains
+staged: `SWE Agents`, `Agent Reliability`, then `Coding Agents`.
 
 ## Artifacts
 
@@ -40,9 +40,10 @@ Agents`.
 ## Next Action
 
 - Execute Task 3 of [Plan 03](./plans/03-bounded-playlist-corpus.md): continue
-  SWE Agents in a later session with exactly one `--limit 2` capture command,
-  then review and summarize each successful capture and refresh the overview.
-  Do not refill that bounded batch in the same session.
+  the 15 pending available SWE Agents videos in a later session with exactly
+  one `--limit 2` capture command, then review and summarize each successful
+  capture and refresh the overview. Do not refill that bounded batch in the
+  same session.
 
 ## Open Questions
 

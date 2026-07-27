@@ -355,3 +355,154 @@
   with exactly one SWE Agents `--limit 2` capture command, follow the same exit
   protocol, review each successful transcript, write deliberate summaries, and
   refresh the overview. Stop this session before that broad backfill begins.
+
+## 2026-07-27 — Plan 03 Task 3 batch 1 completed
+
+### Credential and authoritative baseline
+
+- Started from a clean `ai-engineer-videos` worktree. Confirmed `.env` exists,
+  is untracked, and is ignored before sourcing it only into the YouTube command
+  processes. Confirmed `YOUTUBE_API_KEY` is non-empty without printing,
+  persisting, or passing its value on the command line.
+- Ran exactly one selected read-only remote check:
+
+  ```sh
+  npm run youtube:library -- check --playlist ai-engineer-swe-agents-2025
+  ```
+
+- The check exited `0`; the remote fetch completed with zero errors and no
+  additions, removals, moves, retitles, or availability changes. No sync was
+  needed, no manifest changed, there was no changed ID requiring mandatory
+  public-impact review, and no no-op manifest commit was created.
+- Pre-capture `npm run youtube:library -- status` exited `0` and reported SWE
+  Agents at 19 manifest entries, 18 available, 1 manifest-unavailable private
+  entry, 1 captured, 17 pending, and 0 caption-unavailable-recorded. The next
+  two candidate directories, `Lue8K2jqfKk` and `Dc3qOA9WOnE`, did not exist.
+
+### Single bounded capture outcome
+
+- Ran exactly one capture command in this session:
+
+  ```sh
+  npm run youtube:library -- capture --playlist ai-engineer-swe-agents-2025 --limit 2
+  ```
+
+- The command exited `0` with exactly two per-video outcomes:
+  - `captured Lue8K2jqfKk`
+  - `captured Dc3qOA9WOnE`
+- Both captures contain English auto-generated caption metadata and complete
+  transcripts: 1,092 seconds for `Lue8K2jqfKk` and 934 seconds for
+  `Dc3qOA9WOnE`. No unavailable, transient, throttled, or fatal outcome
+  occurred.
+- No second capture command ran and the limit was not refilled. Neither
+  `--retry` nor `--force` was used.
+
+### Transcript review and attribution
+
+- Read both complete final transcripts and made only obvious source-faithful
+  caption corrections.
+- `Lue8K2jqfKk` corrections:
+  - Normalized `quad code`, `cloud code`, `Quad`, and related variants to
+    `Claude Code` or `Claude`; `Enthropic` to `Anthropic`; `quad pro plan` and
+    `cloud max` to `Claude Pro plan` and `Claude Max`; and `quadi/code` to
+    `claude.ai/code`.
+  - Corrected `TLDDR` to `TL;DR`, `1930s4s` to `1930s, '40s`, `growing out` to
+    `growing up`, and `cobalt` to `COBOL`.
+  - Corrected `ids` to `IDEs`, `IPMO29` to `IBM 029`, `Ed` to `ed`, `Chem
+    Thompson at at the labs` to `Ken Thompson at Bell Labs`, `Small Talk 80`
+    to `Smalltalk-80`, and obvious product/tool casing for `Smalltalk`,
+    `Cursor`, `Windsurf`, `Devin`, `iTerm2`, `tmux`, and `Puppeteer`.
+  - Corrected `lowle` to `low-level`, `better lesson` to `Bitter Lesson`,
+    `coral areas` to `corollaries`, `claw-p` / `cloudp` to `claude -p`, `10%
+    exported` to `10% explored`, and the obvious `codebased`, `git`, `bash`,
+    `slashcomand`, `flash commands`, IDE, worktree, GitHub Actions, and
+    Shift+Tab forms.
+  - Restored the supported `CLAUDE.md`, CLI `--help`, slash-command, memory,
+    plan-mode, and parallel-Claude terminology without rewriting normal spoken
+    disfluencies.
+- `Dc3qOA9WOnE` corrections:
+  - Corrected `can needs` / `AI really struck can influence` to `needs` / `AI
+    really can influence`, `CIS admins` to `sysadmins`, `payraises` to `pay
+    raises`, and `49s` to `four nines`.
+  - Added meaning-preserving punctuation around `rest in peace, Stack
+    Overflow` so it does not imply Jeff Atwood is dead; corrected `all codes
+    has` to `all code has`, `an microservices architecture` to `a
+    microservices architecture`, and `an adventure system` to `an event-driven
+    system`.
+  - Corrected product and technical terms including `get` to `Git`, `Sonic 35`
+    to `Sonnet 3.5`, the duplicated `not touching code` to `not touching AI`,
+    `ffstruure` to `infrastructure`, `llinter` / `llinters` to `linter` /
+    `linters`, `leak code` to `LeetCode`, `lexographically` to
+    `lexicographically`, `LM` to `LLM`, and `augment` to `Augment`.
+- The source title and `[00:00:00]` introduction support Boris Cherny as the
+  only presented speaker, a member of technical staff at Anthropic, and the
+  creator of Claude Code. The summary therefore names Boris Cherny
+  (Anthropic), with all speaker claims timestamped.
+- The source title supports Chris Kelly and Augment Code; the transcript also
+  identifies his position as an Augment view at `[00:07:03]-[00:08:05]` and
+  closes by directing attendees to Augment at `[00:15:01]`. He is the only
+  presented speaker, so the summary names Chris Kelly (Augment Code), with all
+  speaker claims timestamped.
+- AI Engineer remains only the curator/source channel and was not treated as an
+  author or used to infer either speaker or affiliation.
+
+### Editorial artifacts and coverage
+
+- Added deliberate draft summaries for `Lue8K2jqfKk` and `Dc3qOA9WOnE` with
+  the exact source-only frontmatter and heading order. Publication timestamps
+  came from the manifest; `sourceLanguage: en` and `captionKind:
+  auto-generated` came from each `metadata.json`. No translation disclosure is
+  needed because both source and summary languages are English.
+- Refreshed the draft SWE Agents overview, adding only `Lue8K2jqfKk` and
+  `Dc3qOA9WOnE` to the existing `tbDDYKRFjhk` coverage. Every non-editorial
+  speaker claim names its supported speaker and affiliation and links to a
+  source summary; every editorial interpretation begins `Editorial:`.
+- The overview continues to identify AI Engineer as curator/source channel,
+  not author, states that speakers and affiliations vary by video, avoids
+  playlist-position chronology, and limits recurring ideas to claims supported
+  by the incorporated summaries.
+- Exact post-batch SWE Agents state: 19 manifest, 18 available, 3 captured, 3
+  summarized, 3 incorporated, 15 available pending, 1 manifest-unavailable
+  private entry (`jBr-EERbXJw`), and 0 caption-unavailable-recorded.
+- Remaining pending available IDs: `F_RyElT_gJk`, `o_hhkJtlbSs`,
+  `MI83buT_23o`, `eOxOzcw70f0`, `x_1EumTaXeE`, `Dj0b_cEBHBI`,
+  `JVuNPL5QO8Q`, `X4BwOu0GWb8`, `iheWKg2Tkrk`, `n991Yxo1aOI`,
+  `TswQeKftnaw`, `Fzb1a24hF-o`, `6NIr_cYPglk`, `Zniw5c9_jx8`, and
+  `tHJSZ1-ZqcA`.
+
+### Verification, commits, and scope
+
+- `npm run lint:fix`: passed (`147` files checked); it reformatted exactly the
+  same eight clean-at-start Antirez unavailable-caption metadata files. The
+  formatter-only array-layout diff was inspected and those eight files were
+  restored byte-for-byte before the remaining checks.
+- `npm run youtube:library -- status`: passed; SWE Agents is 19 manifest / 18
+  available / 1 manifest-unavailable, with 3 captured, 15 pending, 0
+  caption-unavailable-recorded, 3 draft summaries, and a current overview.
+  Agent Reliability remains 9 manifest / 8 available / 1
+  manifest-unavailable, with 0 captured and 8 pending.
+- Combined library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files; zero errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches (expected exit `1`).
+- The read-only coverage checker confirmed every captured ID has metadata and
+  transcript, every summarized ID has a summary, `coveredVideoIds` is
+  duplicate-free and exactly matches the 3 incorporated summaries, and the
+  19 / 18 / 3 / 3 / 3 / 15 / 1 / 0 coverage math reconciles.
+- `git diff --check` passed and the worktree was clean before this work-item
+  record.
+- `763d412` — metadata and reviewed transcripts for both successful captures
+  only.
+- `386e05c` — two deliberate draft summaries and the refreshed SWE Agents
+  overview only.
+- Blockers: none. No Agent Reliability or Coding Agents capture, retry, force
+  operation, public artifact, AI Engineer author/relationship/synthesis,
+  Task 4/5 work, or Plan 04 work began. Plan 03 Task 3 remains unchecked while
+  15 available SWE Agents videos remain pending.
+
+### Next action
+
+- Keep the work item `in-progress`. In a later session, continue Plan 03 Task 3
+  with exactly one SWE Agents `--limit 2` capture command, review and summarize
+  every successful capture, refresh the overview, and do not refill that
+  bounded batch in the same session.
