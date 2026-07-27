@@ -1,6 +1,6 @@
 # AI Engineer YouTube playlist tracking
 
-Status: researching
+Status: planned
 Category: research
 Updated: 2026-07-27
 
@@ -24,15 +24,19 @@ Reliability`, then `Coding Agents`.
 
 - Research: [research.md](./research.md)
 - PRD: none
-- Plan: none
+- Plans:
+  1. [Multi-speaker YouTube library support](./plans/01-multi-speaker-library-support.md)
+  2. [Onboard and sync the AI Engineer playlists](./plans/02-onboard-and-sync-playlists.md)
+  3. [Build the bounded AI Engineer playlist corpus](./plans/03-bounded-playlist-corpus.md)
+  4. [Build and maintain the Coding Agents corpus](./plans/04-coding-agents-corpus.md)
 - Progress: none
-- Decisions: none
+- Decisions: recorded below
 
 ## Next Action
 
-- Stress-test the confirmed research, incorporate review feedback, and write
-  ordered implementation plans. The first implementation plan should make
-  author relationships optional before catalog onboarding or source capture.
+- Execute [Plan 01](./plans/01-multi-speaker-library-support.md), starting with
+  its validator invariant and focused tests. Do not add the three AI Engineer
+  catalog entries until Plan 01 is complete.
 
 ## Open Questions
 
@@ -46,3 +50,21 @@ Reliability`, then `Coding Agents`.
 - [x] Live-page precheck: 63 visible occurrences represent 61 unique IDs. The
       two bounded tracks share two IDs; `Coding Agents` shares none with either
       bounded track. Synced manifests must verify this before capture.
+
+## Decisions
+
+- Complete and review the two bounded 2025 corpora before starting the active
+  Coding Agents corpus.
+- Defer public post and resource implementation to a later work item after the
+  source corpus and playlist overviews are reviewed.
+
+## Timeline
+
+- 2026-07-27: Researched the 80-playlist channel inventory and selected the
+  initial three-playlist tracking set.
+- 2026-07-27: Confirmed author-less multi-speaker playlists and English source
+  and summary languages; completed the live overlap precheck.
+- 2026-07-27: Stress-tested the research in an Ultra grill thread and
+  incorporated accepted Oracle feedback into `research.md`.
+- 2026-07-27: Finalized four ordered implementation plans after Oracle review,
+  splitting bounded and active editorial work at an attribution gate.
