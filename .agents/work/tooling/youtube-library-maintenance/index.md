@@ -1,6 +1,6 @@
 # YouTube library maintenance workflow
 
-Status: in-progress
+Status: completed
 Category: tooling
 Updated: 2026-07-27
 
@@ -23,10 +23,11 @@ boundaries.
 
 ## Next Action
 
-- Implement Task 2 in `plan.md`: add the maintenance skill and discovery
-  triggers without broadening the deterministic library command surface.
+- None. The implementation and verification are complete. Notification behavior
+  for a deferred scheduler remains intentionally unresolved for a later work
+  item.
 
 ## Open Questions
 
-- None for the first implementation. Notification behavior for the deferred
-  scheduled workflow remains intentionally undecided in `prd.md`.
+- Notification behavior for a deferred scheduled workflow remains intentionally
+  undecided in `prd.md`; it does not affect this completed work item.

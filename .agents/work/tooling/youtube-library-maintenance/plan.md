@@ -54,7 +54,7 @@ explicit agent/human review.
     a focused module only if combining remote and local reports would otherwise
     give an existing module two unrelated responsibilities.
 
-- [ ] **Task 2: Add the maintenance skill and discovery triggers**
+- [x] **Task 2: Add the maintenance skill and discovery triggers**
   - Scope: `.agents/skills/maintaining-youtube-library/SKILL.md`,
     `.agents/skills/AGENTS.md`, and root `AGENTS.md`
   - Depends on: Task 1
@@ -91,7 +91,7 @@ explicit agent/human review.
   - Notes: Do not add skill-local scripts, a central dependency registry, an
     `add` subcommand, `youtube:update`, or a short npm alias.
 
-- [ ] **Task 3: Verify the complete maintenance contract**
+- [x] **Task 3: Verify the complete maintenance contract**
   - Scope: Task 1–2 changes, existing public/source boundaries, and this work
     item's `plan.md`, `progress.md`, and `index.md`
   - Depends on: Tasks 1 and 2
