@@ -2,7 +2,7 @@
 
 Status: in-progress
 Category: tooling
-Updated: 2026-07-26
+Updated: 2026-07-27
 
 ## Summary
 
@@ -19,9 +19,10 @@ Build a committed, source-only library that discovers changes in configured YouT
 
 ## Next Action
 
-- Run only the final playlist overview phase from
-  `handoff-final-playlist-overviews.md` in a dedicated implementation thread.
-  Do not begin author synthesis, complete Task 5, or begin Task 6 in parallel.
+- Derive only a separate bounded handoff for the missing
+  `src/content/youtube/authors/antirez.md` synthesis from the current playlist
+  overviews and committed summaries. Do not write the synthesis, complete
+  Task 5, or begin Task 6 in the handoff-derivation phase.
 
 ## Open Questions
 

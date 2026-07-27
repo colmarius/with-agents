@@ -5324,3 +5324,92 @@
   stay unchecked. Nothing was pushed.
 - Next derive a dedicated final-playlist-overviews handoff. Do not begin that
   overview work, author synthesis, Task 5 completion, or Task 6 in this thread.
+
+## 2026-07-27 — Final playlist overviews complete
+
+### Coverage and unchanged corpus accounting
+
+- Read all 59 unique `ai-concepts` summaries and all 25 `coding-with-ai`
+  summaries completely before drafting. The six shared summaries
+  (`0buzDrn0aIY`, `todMmp6AGCE`, `uxAhuNPSBuE`, `Yajmt1CeiHg`,
+  `9AjeHE_VReY`, and `2Jn6Z2nr-44`) were assessed in each playlist context
+  rather than treated as significant because of duplicate membership.
+- `ai-concepts` now covers all 59 unique summarized IDs exactly once in
+  first-manifest-occurrence order. Its 63 manifest entries represent 62
+  unique IDs; 60 captured occurrences represent 59 unique transcript/summary
+  pairs because `8gg-oJr4dTY` occurs twice. All 59 unique summaries and all
+  60 summarized occurrences are incorporated. Pending is zero; the three
+  metadata-only unavailable IDs remain `9mHKjgFMsQA`, `LG3q-sqMG0g`, and
+  `aAWdlLfJmqw`.
+- `coding-with-ai` now covers all 25 unique summarized IDs exactly once in
+  manifest order. Its 30 entries are unique; 25 are captured, summarized, and
+  incorporated. Pending is zero; the five metadata-only unavailable IDs
+  remain `H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`, `qipoQGqMCp0`, and
+  `_pLlet9Jrzc`.
+- Final `status` exited 0 and marks both overviews current with no missing
+  covered IDs. Capture and summary accounting remains unchanged: author
+  `antirez` has 86 deduped IDs, 78 captured, 0 pending, and 8 unavailable;
+  `authors/antirez.md` remains missing.
+- Direct corpus accounting remains 78 transcript/summary pairs, 152,510
+  transcript words, and 48,520 summary words. Every metadata, transcript, and
+  per-video summary byte is unchanged from baseline
+  `3e6d28e2fefc8ac5659f3af60fdc15fd1b87f20e`.
+
+### Thematic and source audit
+
+- `ai-concepts/overview.md` is 114 lines, 1,257 words, and 14,116 bytes. It
+  has 26 thematic bullets, including 15 explicit `Editorial:` bullets, and
+  102 summary links covering all 59 unique summarized IDs. The synthesis
+  spans representations and reasoning, training and evaluation limits,
+  selective architecture and efficiency, open/local inference, and bounded
+  DwarfStar project reports without converting analogy, informal tests,
+  forecasts, or project measurements into established conclusions.
+- `coding-with-ai/overview.md` is 80 lines, 1,139 words, and 11,759 bytes. It
+  has 26 thematic bullets, including 14 explicit `Editorial:` bullets, and 77
+  summary links covering all 25 summarized IDs. The synthesis spans expert
+  supervision, specifications and review, behavioral QA, agent selection and
+  steerability, developer attention, local inference, and DwarfStar reports
+  while retaining the sources' personal and provisional evidence boundaries.
+- The exact frontmatter titles/status/key order, complete ordered covered
+  sets, heading order, all relative links, source existence, and visible
+  incorporation of every covered ID passed a focused checker. The overviews
+  contain no sequence or change-over-time claim that depends on mutable
+  playlist position.
+- Two independent bullet-by-bullet source audits read the cited summaries and
+  checked attribution, recurrence for Stable Ideas, paper and third-party
+  descriptions, implementation versus plan, reported versus independently
+  reproduced measurements, forecasts, legal and licensing boundaries,
+  caption uncertainty, and `Editorial:` prefixes. The final re-audit found no
+  blocker. No author synthesis or external fact was introduced.
+
+### Commit and verification
+
+- Commit `4a2fdbe` (`finalize YouTube playlist overviews`) contains only
+  `src/content/youtube/playlists/ai-concepts/overview.md` and
+  `src/content/youtube/playlists/coding-with-ai/overview.md`: 146 insertions
+  and 28 deletions.
+- `node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs`:
+  all 40 tests passed; exit 0.
+- `npm run lint:fix` exited 1 only on the known
+  `.agents/references/dot-agents/site/` baseline: one `useButtonType` error,
+  one unused-function warning, and two descending-specificity warnings. It
+  reformatted exactly the eight unavailable metadata records; all were
+  restored byte-for-byte, and all eight handoff SHA-256 values matched.
+- `npm run check`: passed with 0 errors, warnings, or hints; exit 0.
+- `npm run build`: passed; 18 pages built; exit 0.
+- `rg -n "src/content/youtube" src/content.config.ts src/pages src/components src/layouts`
+  and `rg -n "source-only" dist/` each found no matches (expected raw `rg`
+  exit 1), preserving the import and production boundaries.
+- `git diff --check`, `git show --check`, the overview contract checker, the
+  baseline artifact-byte comparison, all eight unavailable hashes, and the
+  clean pre-bookkeeping worktree check passed.
+
+### Deviations and next-phase boundary
+
+- No source, content, accounting, chronology, scope, or commit-boundary
+  deviation occurred. The only expected nonzero verification was the known
+  lint baseline. No capture, sync, retry, force, refill, per-video edit,
+  author synthesis, final verification phase, or push occurred.
+- Tasks 5 and 6 remain unchecked. Next derive only a separate bounded handoff
+  for `src/content/youtube/authors/antirez.md`; do not write that synthesis,
+  complete Task 5, or begin Task 6 in the handoff-derivation phase.
