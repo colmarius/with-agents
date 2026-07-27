@@ -26,6 +26,25 @@ with-agents.dev, but its 38-video channel card (37 visible during inspection),
 cross-event scope, and continuing 2026 additions make it a poor first test of a
 new multi-speaker editorial workflow.
 
+### Decision update — 2026-07-27
+
+The initial tracking set will contain all three shortlisted playlists:
+
+1. `SWE Agents: AI Engineer World's Fair 2025`.
+2. `Agent Reliability: AI Engineer World's Fair 2025`.
+3. `Coding Agents @ AI Engineer`.
+
+This changes onboarding scope, not the evidence behind the ranking. Add and
+sync all three together after the author-optional prerequisite and explicit
+language confirmation. Keep capture and editorial work staged in the order
+above. Complete and review the two bounded playlist overviews before drafting
+the larger, actively maintained `Coding Agents` overview.
+
+Sync all three manifests before capture and compute the pairwise and total
+video-ID overlap from those manifests. The six-ID overlap recorded elsewhere in
+this research is between `Coding Agents` and `Agent & Harness Engineering`; it
+does not establish overlap with the two selected bounded tracks.
+
 Do not onboard any of these playlists as belonging to an `AI Engineer` author.
 The channel is the event producer and curator; the talks have different
 speakers. The smallest safe prerequisite is to allow a playlist to have no
@@ -124,18 +143,21 @@ Visible videos during inspection:
 
 ### 3. Coding Agents @ AI Engineer
 
-- **Why next:** strongest direct fit and the only mature cross-event collection
-  whose name exactly matches the site's core topic.
+- **Why third in the capture sequence:** strongest direct fit and the only
+  mature cross-event collection whose name exactly matches the site's core
+  topic, but the multi-speaker editorial format should be proven on the bounded
+  tracks first.
 - **Current size:** 38 videos on the channel card; 37 visible during playlist
   inspection.
 - **Current themes:** coding benchmarks, context limits, skills, developer role
   changes, architecture and review, orchestration, software factories, IDEs,
   productivity, and security.
 - **Maintenance cost:** the page already included recent 2026 talks, so every
-  addition can make its overview stale. Prove attribution and review practices
-  on the bounded pilot before accepting this tail.
+  addition can make its overview stale. Onboarding accepts this tail; staged
+  editorial work limits the cost of changing the attribution format.
 - **Observed overlap:** six visible IDs overlapped the `Agent & Harness
-  Engineering` collection and two overlapped `Claws & Personal Agents`.
+  Engineering` collection and two overlapped `Claws & Personal Agents`. This
+  does not establish overlap with the other two selected playlists.
 
 Representative visible titles:
 
@@ -234,10 +256,11 @@ revised from captured transcripts before publication.
 2. **A reliability stack for coding agents.** Combine the Agent Reliability
    overview with coding-specific talks to distinguish workflows, planning,
    verification, evaluation, durable execution, and operational scale.
-3. **From code generation to harness engineering, 2024–2026.** After the pilot,
-   use publication dates in the active Coding Agents collection to examine the
-   apparent shift toward context, skills, orchestration, software factories,
-   architecture, and review. Playlist order cannot support chronology.
+3. **From code generation to harness engineering, 2024–2026.** After the two
+   bounded overviews are reviewed, use publication dates in the active Coding
+   Agents collection to examine the apparent shift toward context, skills,
+   orchestration, software factories, architecture, and review. Playlist order
+   cannot support chronology.
 4. **Context is an operational system, not a larger prompt.** Revisit when the
    Context Engineering, Skills, Memory, and Platform Engineering lists are
    fuller. Their current titles suggest a useful combined thesis but do not yet
@@ -275,6 +298,31 @@ contract. No catalog or source-library mutation should occur until that change
 is approved and the onboarding values required by the maintenance workflow are
 explicitly provided.
 
+## Implementation Acceptance Criteria
+
+- Catalog validation accepts playlists without author relationships while
+  preserving all existing checks for unknown authors, unknown playlists,
+  duplicate IDs, and empty relationship playlist lists. The current Antirez
+  catalog remains valid without changes.
+- The YouTube library contract documents author-optional multi-speaker
+  playlists and requires speaker and relevant affiliation attribution in their
+  overviews.
+- The catalog gains exactly the three selected playlist IDs, unique slugs, and
+  explicitly confirmed transcript and summary languages. It gains no `AI
+  Engineer` author or relationship.
+- All three manifests are synced before capture. The visible-count gaps and the
+  pairwise and total overlap are recorded from manifest data rather than
+  inferred from channel pages.
+- Capture is playlist-scoped and staged `SWE Agents` → `Agent Reliability` →
+  `Coding Agents`, with positive limits for incremental batches where useful.
+  Shared videos remain stored once by video ID.
+- The two bounded playlist overviews receive a multi-speaker attribution review
+  before work begins on the `Coding Agents` overview. Shared video IDs appear
+  in every overview that incorporates their summaries.
+- `Coding Agents` overview staleness caused by new uploads is treated as an
+  expected maintenance state with an explicit revision cadence, not as a
+  reason to overwrite editorial work automatically.
+
 ## Risks and Follow-up Checks
 
 - **Visible count gaps:** `Coding Agents` showed 38 on its channel card but 37
@@ -284,6 +332,12 @@ explicitly provided.
 - **Mutable membership:** event playlists can still be edited. Sync manifests
   before making overlap or coverage claims, and use video publication dates,
   never playlist position, for changes-over-time analysis.
+- **Active staleness tail:** `Coding Agents` is now initial scope even though it
+  is actively updated. New summaries will make its overview stale under the
+  current `coveredVideoIds` contract, so maintenance needs an explicit overview
+  revision cadence.
+- **Unknown selected-set overlap:** do not state a unique-video total for all
+  three selected playlists until their synced manifests establish membership.
 - **Caption availability:** do not assume every conference talk has usable
   English captions. Capture must use the explicitly configured language and
   record unavailable caption tracks faithfully.
@@ -409,7 +463,10 @@ video totals. Playlist membership and counts can change.
 
 ## Open Questions
 
-- [ ] Confirm whether to onboard the two recommended 2025 tracks together.
+- [x] Initial tracking set includes the two recommended 2025 tracks and `Coding
+      Agents @ AI Engineer` (decided 2026-07-27).
 - [ ] Approve or revise the author-optional playlist model before catalog edits.
 - [ ] Explicitly confirm source transcript and summary language values before
       onboarding.
+- [ ] Sync all three manifests and record their pairwise and total overlap
+      before capture.
