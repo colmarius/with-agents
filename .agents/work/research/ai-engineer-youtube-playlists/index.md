@@ -29,6 +29,7 @@ Reliability`, then `Coding Agents`.
   2. [Onboard and sync the AI Engineer playlists](./plans/02-onboard-and-sync-playlists.md)
   3. [Build the bounded AI Engineer playlist corpus](./plans/03-bounded-playlist-corpus.md)
   4. [Build and maintain the Coding Agents corpus](./plans/04-coding-agents-corpus.md)
+- Handoff: [Implement Plan 01 multi-speaker library support](./handoff-plan-01.md)
 - Progress: none
 - Decisions: recorded below
 
