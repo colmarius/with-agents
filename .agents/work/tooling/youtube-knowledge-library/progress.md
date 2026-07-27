@@ -5375,12 +5375,21 @@
   incorporation of every covered ID passed a focused checker. The overviews
   contain no sequence or change-over-time claim that depends on mutable
   playlist position.
-- Two independent bullet-by-bullet source audits read the cited summaries and
-  checked attribution, recurrence for Stable Ideas, paper and third-party
-  descriptions, implementation versus plan, reported versus independently
-  reproduced measurements, forecasts, legal and licensing boundaries,
-  caption uncertainty, and `Editorial:` prefixes. The final re-audit found no
-  blocker. No author synthesis or external fact was introduced.
+- The implementation-phase bullet-by-bullet source audits read the cited
+  summaries and checked attribution, recurrence for Stable Ideas, paper and
+  third-party descriptions, implementation versus plan, reported versus
+  independently reproduced measurements, forecasts, legal and licensing
+  boundaries, caption uncertainty, and `Editorial:` prefixes.
+- The orchestrator's independent post-commit audit found one narrow AI
+  Stable Ideas attribution issue: a bullet named failed replications without
+  citing the summary containing the attempted replication and framed a
+  cross-summary methodological conclusion as a repeated speaker claim. Commit
+  `fcdf492` (`correct YouTube AI overview source attribution`) changed only
+  that bullet to explicit `Editorial:` synthesis, softened it to methods that
+  provide checks while retaining their own evidentiary limits, and added the
+  supporting `siN_nlOovA8` summary link. The Coding overview audit and the
+  remainder of the AI overview audit found no blocker. No author synthesis or
+  external fact was introduced.
 
 ### Commit and verification
 
