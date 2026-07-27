@@ -33,7 +33,7 @@ review gate before starting the larger active Coding Agents corpus.
     Never combine retry with force. Caption retry is a separate explicit Mode D
     decision, not routine backfill behavior.
 
-- [ ] **Task 2: Prove the SWE Agents editorial thin slice**
+- [x] **Task 2: Prove the SWE Agents editorial thin slice**
   - Scope: one candidate under `src/content/youtube/videos/<video-id>/`,
     `src/content/youtube/playlists/ai-engineer-swe-agents-2025/overview.md`,
     work-item `progress.md`

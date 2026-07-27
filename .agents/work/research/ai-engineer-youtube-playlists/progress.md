@@ -270,3 +270,88 @@
 
 - Run Plan 03 Task 2's one allowed SWE Agents `--limit 1` capture command. Do
   not capture Agent Reliability or refill the thin-slice limit in this session.
+
+## 2026-07-27 — Plan 03 Task 2 completed
+
+### Bounded capture outcome
+
+- Ran exactly one capture command in this session:
+
+  ```sh
+  npm run youtube:library -- capture --playlist ai-engineer-swe-agents-2025 --limit 1
+  ```
+
+- The command exited `0` with the single outcome `captured tbDDYKRFjhk`. It
+  created English auto-generated caption metadata and a 1,092-second transcript
+  for `Does AI Actually Boost Developer Productivity? (100k Devs Study) - Yegor
+  Denisov-Blanch, Stanford`. No transient, throttled, fatal, or durable
+  caption-unavailable outcome occurred.
+- No second capture command ran and the limit was not refilled. Agent
+  Reliability, broad SWE Agents backfill, and Coding Agents capture were not
+  started. Neither `--retry` nor `--force` was used.
+
+### Transcript review and attribution
+
+- Reviewed the complete transcript and made only these obvious source-faithful
+  caption corrections:
+  - `Marcus` → `Mark`; `one-sizefits-all` → `one-size-fits-all`.
+  - `datadriven` → `data-driven`; `professor Kasinski` → `Professor Kosinski`.
+  - `impact on AI on deaf productivity` → `impact of AI on dev productivity`;
+    `service shouldn't` → `surveys shouldn't`.
+  - `git` / `sha` → `Git` / `SHA`; `new ones` → `nuance`.
+  - `coobo hasll elixir` → `COBOL, Haskell, Elixir`; `Cobalt` → `COBOL`.
+  - `no lima` → `NoLiMa`; `1,00` → `1,000`.
+- The source title names Yegor Denisov-Blanch and Stanford; the transcript also
+  supports his Stanford affiliation at `[00:01:03]-[00:03:57]`. He is the only
+  speaker presented in the talk, so the draft summary names him and Stanford
+  without inventing any additional speaker or affiliation. AI Engineer remains
+  the curator/source channel and was not treated as the author.
+- Every speaker claim in the summary has a transcript timestamp. Every
+  non-editorial overview claim names Yegor Denisov-Blanch (Stanford) and links
+  to the source summary. Every editorial interpretation begins `Editorial:`.
+
+### Deliberate editorial artifacts and coverage
+
+- Added one draft summary with the exact source-only frontmatter and heading
+  order. It distinguishes the speaker's reported findings from editorial
+  implications and questions; no translation disclosure is needed because the
+  captured and summary languages are both English.
+- Added the draft SWE Agents overview with the exact heading order and only
+  `tbDDYKRFjhk` in `coveredVideoIds`. Coverage is: 19 manifest entries, 18
+  available, 1 captured, 1 summarized, 1 incorporated, 17 available pending, 1
+  manifest-unavailable private entry (`jBr-EERbXJw`), and 0 caption-unavailable
+  outcomes. The overview lists all 17 pending IDs and explicitly says AI
+  Engineer is the curator/source channel rather than the author, with speakers
+  and affiliations varying by video.
+
+### Verification and commits
+
+- `npm run lint:fix`: passed (`145` files checked); it made the known
+  formatter-only changes to the same eight clean-at-start Antirez
+  unavailable-caption metadata files. The exact diff was inspected and all
+  eight files were restored byte-for-byte before the remaining checks.
+- `npm run youtube:library -- status`: passed; SWE Agents is 19 manifest / 18
+  available / 1 manifest-unavailable, with 1 captured, 17 pending, 0
+  caption-unavailable-recorded, 1 draft summary, and a current overview. Agent
+  Reliability remains 9 / 8 / 1 with no captures and no overview.
+- Combined library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files; zero errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches (expected exit `1`).
+- The read-only bounded checker confirmed SWE Agents at 19 / 18 / 1 captured /
+  1 summarized / 17 pending / 1 manifest-unavailable with exactly 1 incorporated
+  ID, and Agent Reliability unchanged at 9 / 8 / 0 captured / 0 summarized / 8
+  pending / 1 manifest-unavailable.
+- `git diff --check` passed for the final work-item update.
+- `21c0c9a` — bounded baseline and Task 1 progress only.
+- `a5a5134` — `tbDDYKRFjhk` metadata and reviewed transcript only.
+- `e9529d5` — deliberate draft summary and SWE Agents overview only.
+- Blockers: none. No public content, author, relationship, post, resource,
+  catalog, manifest, Agent Reliability source, or Plan 04 artifact changed.
+
+### Next action
+
+- Keep the work item `in-progress`. In a later session, execute Plan 03 Task 3
+  with exactly one SWE Agents `--limit 2` capture command, follow the same exit
+  protocol, review each successful transcript, write deliberate summaries, and
+  refresh the overview. Stop this session before that broad backfill begins.
