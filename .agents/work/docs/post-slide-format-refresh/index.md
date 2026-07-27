@@ -18,7 +18,6 @@ Task 5 found the Markdown-first model still sufficient after migration: the five
 - PRD: none
 - Plan: `plan.md`
 - Progress: `progress.md`
-- Handoffs: `handoff-task-1.md`, `handoff-task-2.md`, `handoff-task-3.md`, `handoff-task-4.md`, `handoff-task-5.md`
 - Decisions: none
 
 ## Next Action
