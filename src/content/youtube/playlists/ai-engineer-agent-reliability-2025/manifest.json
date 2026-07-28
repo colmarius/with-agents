@@ -72,6 +72,22 @@
       "publishedAt": "2025-08-02T18:15:06Z",
       "privacyStatus": "public",
       "available": true
+    },
+    {
+      "videoId": "Ib5t2RLtxvM",
+      "position": 9,
+      "title": "From Agent Traces to Agent Simulations — Rustem Feyzkhanov, Snorkel AI",
+      "publishedAt": "2026-07-25T01:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xIt_mTQp6mY",
+      "position": 10,
+      "title": "Loop Engineering from First Principles — Kyle Mistele, HumanLayer",
+      "publishedAt": "2026-07-25T20:41:40Z",
+      "privacyStatus": "public",
+      "available": true
     }
   ]
 }
