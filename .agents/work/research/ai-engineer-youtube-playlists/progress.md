@@ -654,3 +654,150 @@
   with exactly one SWE Agents `--limit 2` capture command, review and summarize
   every successful capture, refresh the overview, and do not refill that
   bounded batch in the same session.
+
+## 2026-07-28 — Plan 03 Task 3 batch 3 completed
+
+### Credential and authoritative baseline
+
+- Started from a clean `ai-engineer-videos` worktree. Confirmed `.env` exists,
+  is untracked, and is ignored before sourcing it only into the YouTube command
+  processes. Confirmed `YOUTUBE_API_KEY` is non-empty without printing,
+  persisting, or passing its value on the command line.
+- Ran exactly one selected read-only remote check:
+
+  ```sh
+  npm run youtube:library -- check --playlist ai-engineer-swe-agents-2025
+  ```
+
+- The check exited `0`; the remote fetch completed with zero errors and no
+  additions, removals, moves, retitles, or availability changes. No sync was
+  needed, no manifest changed, there was no changed ID requiring mandatory
+  public-impact review, and no no-op manifest commit was created.
+- Pre-capture `npm run youtube:library -- status` exited `0` and reported SWE
+  Agents at 19 manifest entries, 18 available, 1 manifest-unavailable private
+  entry, 5 captured, 13 pending, and 0 caption-unavailable-recorded. The next
+  two candidate directories, `MI83buT_23o` and `eOxOzcw70f0`, did not exist.
+
+### Single bounded capture outcome
+
+- Ran exactly one capture command in this session:
+
+  ```sh
+  npm run youtube:library -- capture --playlist ai-engineer-swe-agents-2025 --limit 2
+  ```
+
+- The command exited `0` with exactly two per-video outcomes:
+  - `captured MI83buT_23o`
+  - `captured eOxOzcw70f0`
+- Both captures contain English auto-generated caption metadata and complete
+  transcripts: 972 seconds for `MI83buT_23o` and 4,772 seconds for
+  `eOxOzcw70f0`. No unavailable, transient, throttled, or fatal outcome
+  occurred.
+- No second capture command ran and the limit was not refilled. Neither
+  `--retry` nor `--force` was used.
+
+### Transcript review and attribution
+
+- Read both complete final transcripts and made only obvious source-faithful
+  caption corrections.
+- `MI83buT_23o` corrections:
+  - Corrected every `Devon` / `devon` product reference to `Devin`; corrected
+    `GPT3`, `GPT3.5`, and `GP4` to `GPT-3`, `GPT-3.5`, and `GPT-4`.
+  - Corrected `deep wiki` to `DeepWiki`, `llinter` to `linter`, `boiler plate`
+    to `boilerplate`, and the duplicated `uninter interrupted` to
+    `uninterrupted`.
+  - Normalized the product names `Linear` and `Slack`; normal spoken
+    disfluencies and uncertain wording were preserved.
+- `eOxOzcw70f0` corrections:
+  - Corrected recurring `VIP`, `VIPE`, `wipe`, and `white` caption substitutions
+    to the source-faithful `vibe coding`, `structured vibes`, and `spec-driven`
+    forms; corrected the speaker name `Harold` to `Harald`.
+  - Corrected products, models, and organizations including `VS Code`, `GitHub
+    Copilot`, `Claude Sonnet 4`, `React`, `Vite`, `Material UI`, `Fluent`,
+    `Three.js`, `Playwright`, `GistPad`, `Context7`, `Anthropic`, `Gemma 3`,
+    `Ollama`, `OpenRouter`, `Perplexity R1`, `DeepSeek R1`, `Gemini`, and
+    `Groq`.
+  - Corrected MCP and editor terms including `MCPs`, `mcp.json`, `.vscode`,
+    `stdio`, `HTTP`, `Command Palette`, `auto-approve`, and `library ID`, plus
+    the demonstrated paths `.github/copilot-instructions.md`,
+    `.github/instructions/*.instructions.md`, and `.github/chatmodes` and the
+    command `npm run dev`.
+  - Preserved workshop questions, normal disfluencies, and uncertain phrases
+    rather than smoothing or guessing at them.
+- The source title supports Scott Wu and Cognition, while the transcript's
+  first-person introduction establishes that the speaker is describing the
+  team's work building Devin. The summary names Scott Wu of Cognition without
+  inferring any additional role.
+- The source title credits Harald Kirschner and Christopher Harrison as
+  speakers. At `[00:25:01]`, Kirschner identifies himself and says he works on
+  VS Code. The captions do not separately identify Harrison, distinguish his
+  contributions, or state his affiliation. The summary therefore names both
+  source-credited speakers, records only Kirschner's supported VS Code
+  affiliation, attributes substantive claims only to Kirschner, and explicitly
+  leaves Harrison's affiliation and individual claims unassigned.
+- AI Engineer remains only the curator/source channel and was not treated as an
+  author or used to infer any speaker or affiliation. All summary speaker
+  claims have title or transcript anchors; all non-editorial overview claims
+  name their supported speaker and affiliation and link to a source summary.
+
+### Deliberate editorial artifacts and coverage
+
+- Added deliberate draft summaries for `MI83buT_23o` and `eOxOzcw70f0` with
+  the exact source-only frontmatter and heading order. Publication timestamps
+  came from the manifest; `sourceLanguage: en` and `captionKind:
+  auto-generated` came from each `metadata.json`. No translation disclosure is
+  needed because both source and summary languages are English.
+- Refreshed the draft SWE Agents overview, adding only the two successfully
+  summarized IDs to the existing five covered IDs. Every non-editorial speaker
+  claim names its supported speaker and affiliation and links to a source
+  summary; every editorial interpretation begins `Editorial:`.
+- The overview continues to identify AI Engineer as curator/source channel,
+  not author, states that speakers and affiliations vary by video, avoids
+  playlist-position chronology, and limits recurring ideas to the incorporated
+  summaries.
+- Exact post-batch SWE Agents state: 19 manifest, 18 available, 7 captured, 7
+  summarized, 7 incorporated, 11 available pending, 1 manifest-unavailable
+  private entry (`jBr-EERbXJw`), and 0 caption-unavailable-recorded.
+- Remaining pending available IDs: `x_1EumTaXeE`, `Dj0b_cEBHBI`,
+  `JVuNPL5QO8Q`, `X4BwOu0GWb8`, `iheWKg2Tkrk`, `n991Yxo1aOI`,
+  `TswQeKftnaw`, `Fzb1a24hF-o`, `6NIr_cYPglk`, `Zniw5c9_jx8`, and
+  `tHJSZ1-ZqcA`.
+
+### Verification, commits, and scope
+
+- `npm run lint:fix`: passed (`151` files checked); it reformatted exactly the
+  same eight clean-at-start Antirez unavailable-caption metadata files. The
+  formatter-only array-layout diff was inspected and those eight files were
+  restored byte-for-byte before the remaining checks.
+- `npm run youtube:library -- status`: passed; SWE Agents is 19 manifest / 18
+  available / 1 manifest-unavailable, with 7 captured, 11 pending, 0
+  caption-unavailable-recorded, 7 draft summaries, and a current overview.
+  Agent Reliability remains 9 manifest / 8 available / 1
+  manifest-unavailable, with 0 captured and 8 pending. Coding Agents remains 38
+  manifest / 37 available / 1 manifest-unavailable, with 0 captured and 37
+  pending.
+- Combined library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files; zero errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches (expected exit `1`).
+- The read-only coverage checker confirmed every captured ID has metadata and
+  transcript, every summarized ID has a summary, `coveredVideoIds` is
+  duplicate-free and exactly matches the 7 incorporated summaries, and the
+  19 / 18 / 7 / 7 / 7 / 11 / 1 / 0 coverage math reconciles.
+- `git diff --check` passed and the source/editorial worktree was clean before
+  this work-item record.
+- `b8b3547` — metadata and reviewed transcripts for both successful captures
+  only.
+- `5ca5a47` — two deliberate draft summaries and the refreshed SWE Agents
+  overview only.
+- Blockers: none. No Agent Reliability or Coding Agents capture, retry, force
+  operation, public artifact, AI Engineer author/relationship/synthesis,
+  Task 4/5 work, or Plan 04 work began. Plan 03 Task 3 remains unchecked while
+  11 available SWE Agents videos remain pending.
+
+### Next action
+
+- Keep the work item `in-progress`. In a later session, continue Plan 03 Task 3
+  with exactly one SWE Agents `--limit 2` capture command, review and summarize
+  every successful capture, refresh the overview, and do not refill that
+  bounded batch in the same session.
