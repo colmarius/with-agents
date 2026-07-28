@@ -479,3 +479,30 @@
 ## Updated Next Action
 
 - If continuing the public refresh, update only `src/content/posts/amp-factory-era-case-study.md` and its source date. Keep exact schedule, webhook, multiplayer, OIDC, Puck/Slack, model, and pricing mechanics in research unless the article needs them.
+
+## 2026-07-28 Amp Service-Boundary Case-Study Refresh
+
+- Trigger: apply the recommended public-content follow-up from the Chronicle and Manual research sweep, then verify and commit it.
+- Public article changes in `src/content/posts/amp-factory-era-case-study.md`:
+  - Updated the canonical source-sweep and volatile billing/mode verification dates to 2026-07-28.
+  - Reframed the orchestration section from manually launched parallel workers to a service boundary that includes Puck/Slack triage, scheduled and event-triggered wake-ups, spawned threads, multiplayer control, and proof surfaces.
+  - Added durable safety contracts for trigger authentication, trusted metadata versus untrusted event content, at-least-once idempotency, short-lived identity and least privilege, collaborator access/expiry, billing ownership, proof/output, escalation, and cleanup.
+  - Kept exact webhook limits, multiplayer durations, OIDC commands/claims, pricing quotas, model wiring, and UI mechanics out of public prose.
+  - Tightened delegation, context, and proof sections to offset the new material and preserve non-overlap with the broader field guide and proof-stack post.
+- Word count:
+  - Before: 2,439 words.
+  - After: 2,285 words, a 154-word reduction (6.3%). This is smaller than the normal 20-30% refresh cut because the pass adds a materially new service-boundary contract; existing sections were still consolidated enough to make the article shorter overall.
+- Related-content decision:
+  - Left `agentic-coding-2026.md`, transcript-backed summaries, homepage copy, resource manifests, and navigation unchanged; the refreshed case study owns the product-specific detail.
+- Verification:
+  - `npm run check` passed with 0 errors, warnings, or hints.
+  - `npm run build` passed and generated 20 pages, including the refreshed article and slides route.
+  - Built article and slide HTML contain the service-boundary heading, trust contract, new first-party source links, and 2026-07-28 verification date.
+  - Internal post links resolve to existing source files/routes.
+  - Every linked Amp Manual, Chronicle, pricing, news, and notes URL in the article returned HTTP 200.
+  - `git diff --check` passed.
+  - `npm run lint:fix` was not run because the touched public file is Markdown and Biome has no Markdown formatting pass; formatting was checked through the rendered build and `git diff --check`.
+
+## Updated Next Action
+
+- No immediate action. Re-run the first-party source sweep before the next Amp product-claim change.

@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-28
 **Last updated:** 2026-07-28
-**Status:** complete through the 2026-07-28 source sweep; targeted public case-study refresh recommended
+**Status:** complete through the 2026-07-28 source and public case-study refresh
 **Question:** Which current public Amp sources should anchor case-study maintenance, and which older Amp claims are stale or risky?
 
 ## Recommendation
@@ -28,7 +28,7 @@ Freshly checked sources:
 - [Models](https://ampcode.com/models): now lists Puck as a separate meta-agent using GPT-5.6 Terra, alongside updated mode, subagent, and system-model assignments. This reinforces the existing decision to keep exact model wiring out of durable public prose.
 - [Pricing page](https://ampcode.com/pricing): optional beta subscriptions and pay-as-you-go remain available. The page now also documents linked ChatGPT and X subscriptions, workspace billing behavior, and mode-access caveats. Keep those exact terms in dated research rather than the public case-study thesis.
 
-Article-maintenance decision: apply a targeted refresh to `src/content/posts/amp-factory-era-case-study.md`. Extend its orchestration contract from spawned workers to scheduled and event-triggered work: define who or what may wake the agent, which event fields are trusted, how duplicate delivery is handled, what identity and permissions it receives, who can join the environment, who owns spend and integration, when access or recurrence expires, and how the loop stops. Update the source verification date and links. `agentic-coding-2026.md` remains accurate and does not need another release-detail paragraph; the transcript-backed resource summaries should remain historical rather than being rewritten as current product docs.
+Article-maintenance decision, applied 2026-07-28: `src/content/posts/amp-factory-era-case-study.md` now extends its orchestration contract from spawned workers to scheduled and event-triggered work. It covers who or what may wake the agent, trusted versus untrusted event data, duplicate delivery, identity and permissions, multiplayer access, spend ownership, expiry, proof, and cleanup without copying volatile setup details into public prose. `agentic-coding-2026.md` remains accurate and does not need another release-detail paragraph; transcript-backed resource summaries remain historical rather than being rewritten as current product docs.
 
 ## Refresh Sweep — 2026-07-17
 
