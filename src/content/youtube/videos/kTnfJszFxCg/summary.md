@@ -6,7 +6,7 @@ publishedAt: "2025-07-23T15:51:25Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 The [source title](https://www.youtube.com/watch?v=kTnfJszFxCg) identifies Harrison Chase with LangChain/LangGraph. Chase frames enterprise-agent adoption as an expected-value problem: increase the value produced when an agent succeeds and its probability of success, while reducing the cost when it fails. [00:01:58]-[00:02:47]

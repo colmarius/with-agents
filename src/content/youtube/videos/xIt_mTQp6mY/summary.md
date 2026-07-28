@@ -6,10 +6,10 @@ publishedAt: "2026-07-25T20:41:40Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
-[Kyle Mistele of HumanLayer](https://www.youtube.com/watch?v=xIt_mTQp6mY) presents a way to build coding-agent loops for large, consequential codebases without giving up incremental changes or human review. He maps control theory's sensors, controllers, actuators, feedback, and disturbances onto an automated code-migration workflow used at HumanLayer.
+[Kyle Mistele of HumanLayer](https://www.youtube.com/watch?v=xIt_mTQp6mY) presents a way to build coding-agent loops for large, consequential codebases without giving up incremental changes or human review. [00:00:59]-[00:06:08] He maps control theory's sensors, controllers, actuators, feedback, and disturbances onto an automated code-migration workflow used at HumanLayer. [00:04:02]-[00:16:13]
 
 Editorial: The talk's central contribution is not loop automation by itself, but a set of constraints that keeps automation reviewable: measurable targets, deterministic selection where possible, small pull requests, persistent human feedback, and backpressure when review has not caught up.
 

@@ -6,7 +6,7 @@ publishedAt: "2025-07-28T15:15:00Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 [Preeti Somal of Temporal](https://www.youtube.com/watch?v=1izYWsokr9s) presents agentic AI applications as distributed systems whose long-running state, parallel work, tool calls, human interaction, and unreliable dependencies require orchestration. She argues that Temporal can move retry, failure-handling, state, and visibility concerns out of application business logic and into durable workflows. [00:00:55]-[00:03:53]
@@ -15,7 +15,7 @@ status: draft
 
 - Agents must cope with unreliable LLM and tool calls while maintaining state, coordinating parallel processes, and supporting human approvals; without reliability, users will not trust them. [00:00:55]-[00:02:49]
 - Temporal's SDKs organize application logic around code-defined workflows while the platform handles execution reliability and other plumbing. [00:02:49]-[00:03:53]
-- In the ticket-booking example, signals provide workflow input, queries expose state, and activities wrap tools; retry behavior does not need to be written into the workflow itself. [00:09:54]-[00:10:42]
+- In the ticket-booking example, signals provide workflow input, interactions are managed through signals and queries, and activities wrap tools; retry behavior does not need to be written into the workflow itself. [00:09:54]-[00:10:42]
 - Workflow history records agent execution and can be inspected or exported for compliance and debugging. [00:10:42]-[00:11:32]
 - Application workers remain in the developer's environment and CI/CD practices, while Temporal Cloud maintains execution state and manages failures, retries, reliability, and scaling. [00:12:36]
 

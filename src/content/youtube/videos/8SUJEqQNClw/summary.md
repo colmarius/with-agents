@@ -6,7 +6,7 @@ publishedAt: "2025-08-01T16:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 The [source title](https://www.youtube.com/watch?v=8SUJEqQNClw) identifies Sam Bhagwat of Mastra.ai as the speaker. Bhagwat argues against treating agents and workflows as competing abstractions. He presents them as composable primitives: agents provide flexible, iterative behavior, while workflows add explicit structure and control where reliability requires it. [00:07:16]-[00:11:20]

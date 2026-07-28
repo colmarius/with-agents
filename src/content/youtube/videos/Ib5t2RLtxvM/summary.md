@@ -6,7 +6,7 @@ publishedAt: "2026-07-25T01:00:02Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 [Rustem Feyzkhanov of Snorkel AI](https://www.youtube.com/watch?v=Ib5t2RLtxvM) argues that production traces should feed private, repeatable simulation benchmarks that reproduce an agent's tools, services, policies, and workflows. He presents benchmark construction as an engineering discipline spanning task environments, oracle solutions, verifiers, release gates, and continuing expansion from observed failures. [00:00:01]-[00:04:34]

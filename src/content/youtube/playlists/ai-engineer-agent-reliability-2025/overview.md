@@ -1,6 +1,6 @@
 ---
 title: "Agent Reliability: AI Engineer World's Fair 2025"
-status: draft
+status: reviewed
 coveredVideoIds:
   - 8kMaTybvDUw
   - kTnfJszFxCg

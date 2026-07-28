@@ -6,7 +6,7 @@ publishedAt: "2025-07-23T15:51:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 [The source title identifies Yogendra Miraje and Factset](https://www.youtube.com/watch?v=sl3icG-IjHo); in the talk, he introduces himself as Yogi and says he works at FactSet, which he describes as a financial data and software company [00:00:03]. Miraje presents a blueprint-based architecture intended to retain control while allowing an agent to plan dynamic workflows [00:05:18]-[00:09:21].

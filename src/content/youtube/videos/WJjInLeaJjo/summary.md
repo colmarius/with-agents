@@ -6,7 +6,7 @@ publishedAt: "2025-08-02T18:15:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 In [Building Agents at Cloud Scale — Antje Barth, AWS](https://www.youtube.com/watch?v=WJjInLeaJjo), Antje Barth of AWS presents a model-driven approach to building and operating agents. She moves from Alexa+ and Amazon Q Developer to Strands Agents, tool retrieval, and remotely hosted MCP servers. [00:01:40]-[00:16:30]
@@ -18,7 +18,7 @@ In [Building Agents at Cloud Scale — Antje Barth, AWS](https://www.youtube.com
 - Strands Agents connects models and tools through a small Python SDK, defaults to Amazon Bedrock, and also supports other model providers and custom providers. [00:08:22]-[00:10:17]
 - An internal AWS agent manages more than 6,000 tools by storing tool descriptions in a knowledge base, retrieving relevant tools for a task, and placing only those tools into model context. [00:10:17]-[00:11:21]
 - The demonstrated remote-MCP pattern deploys an MCP server as an AWS Lambda function, uses Streamable HTTP and authorization, stores session data in DynamoDB, and connects from a Strands Agents client through an API Gateway URL. [00:12:18]-[00:16:30]
-- Barth frames MCP and forthcoming A2A support as steps toward agents collaborating across services and with other agents. [00:17:23]-[00:18:27]
+- Barth frames MCP and forthcoming A2A support as steps toward agents collaborating across services and with other agents. [00:12:18] [00:17:23]-[00:18:27]
 
 ## Practical Implications
 

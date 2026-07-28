@@ -6,7 +6,7 @@ publishedAt: "2025-07-03T20:50:54Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 The [source title](https://www.youtube.com/watch?v=8kMaTybvDUw) identifies Dex Horthy of HumanLayer as the speaker. Horthy argues that reliable agents should be engineered as understandable software: LLMs supply structured decisions inside application-owned prompts, context, state, control flow, deterministic code, and human collaboration rather than operating as opaque autonomous systems. [00:02:55]-[00:15:09]
