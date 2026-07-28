@@ -1135,3 +1135,124 @@
   Agents capture, shared-ID recapture, retry, force operation, public artifact,
   AI Engineer author/relationship/author synthesis, Task 5 work, Plan 04 work,
   or new handoff file began in this thin-slice session.
+
+## 2026-07-28 — Plan 03 Task 4 Agent Reliability corpus completed
+
+### Continuation baseline and bounded capture outcomes
+
+- Continued from the clean Task 4 thin-slice checkpoint `3cebf95` and its
+  complete selected Agent Reliability check/sync. The authoritative manifest
+  remained 11 entries / 10 available / 1 private (`WnTq5Mc5bIU`), and the
+  manifest overlap with SWE Agents remained exactly `n991Yxo1aOI` and
+  `Dj0b_cEBHBI`.
+- The local ignored `.env` remained untracked and clean. `YOUTUBE_API_KEY` was
+  sourced only inside the capture command processes and was never printed.
+- Ran four later-session bounded capture cycles. Each cycle used exactly:
+
+  ```sh
+  npm run youtube:library -- capture --playlist ai-engineer-agent-reliability-2025 --limit 2
+  ```
+
+- Cycle 1 exited `0`: `captured kTnfJszFxCg`; `captured 8SUJEqQNClw`.
+- Cycle 2 exited `0`: `captured 1izYWsokr9s`; `captured sl3icG-IjHo`.
+- Cycle 3 exited `0`: `captured WJjInLeaJjo`; `captured Ib5t2RLtxvM`.
+- Cycle 4 exited `0`: `captured xIt_mTQp6mY`. It had one candidate because
+  only one available ID remained; it did not refill from another playlist.
+- These seven `captured` lines were the complete per-video reports. There were
+  no unavailable, transient, throttled, or fatal outcomes. No retry, force, or
+  additional capture command ran after the available queue reached zero.
+
+### Transcript review, attribution, and editorial artifacts
+
+- `kTnfJszFxCg`: corrected LangGraph, RAG, coding-agent, observability,
+  evaluation, and human-in-the-loop terminology. The title/transcript support
+  Harrison Chase and LangChain/LangGraph; no role was inferred.
+- `8SUJEqQNClw`: corrected `Building Effective Agents`, swyx, Latent Space,
+  OpenAI, Laurie Voss, FAANG, LangChain, Mastra, MastraX, LLM, and related
+  terms. The title/transcript support Sam Bhagwat and Mastra.ai.
+- `1izYWsokr9s`: corrected Preeti, Temporal, Temporal Cloud, Code Exchange,
+  Gorgias, Timbuk2, mission-critical, feature-delivery velocity, and test/dev
+  environment. The title/transcript support Preeti Somal and Temporal.
+- `sl3icG-IjHo`: corrected FactSet, ChatGPT, ReAct-based, LangChain,
+  LLMCompiler, LangGraph, NVIDIA, LLM-as-judge, human-in-the-loop,
+  aspect-based evaluation, and the meaning-changing tool/microservice
+  relationship. The title/transcript support Yogendra Miraje and FactSet.
+- `WJjInLeaJjo`: corrected AI Engineer World's Fair, Amazon Q Developer,
+  Strands Agents, Claude 3.7 Sonnet, Ollama, Anthropic, Meta, Llama, OpenAI,
+  LiteLLM, RAG, MCP, FastMCP, Streamable HTTP, Cognito, DynamoDB, Lambda, API
+  Gateway, and related protocol/authentication terms. The title/transcript
+  support Antje Barth and AWS.
+- `Ib5t2RLtxvM`: corrected Rustem, SWE-bench, Terminal-Bench, Co-Bench,
+  harness, and Arize. The title/transcript support Rustem Feyzkhanov and
+  Snorkel AI.
+- `xIt_mTQp6mY`: corrected LLMs, Kyle Mistele, HumanLayer, Jeff Huntley,
+  Peter Steinberger, Boris Cherny, Matt Pocock, Aiden Bai, OpenClaw, Claude
+  Code, OpenCode, React Doctor, Effect, OpenAPI, Next.js, ESLint, ast-grep,
+  Pyright, grep, ripgrep, GitHub Actions, Infrastructure as Code, Postgres,
+  monorepo, RPC, APM, and meaning-changing compounds and punctuation. The
+  title/transcript support Kyle Mistele and HumanLayer; no role was inferred.
+- Normal spoken disfluencies and uncertain wording were preserved. Each
+  successful capture received one deliberate draft summary with exact
+  frontmatter and heading order, manifest-owned `publishedAt`, metadata-owned
+  language/caption kind, anchored speaker claims, and `Editorial:` prefixes on
+  editorial interpretation. No same-language English summary needed a
+  translation disclosure.
+- Refreshed the Agent Reliability draft overview after every cycle. The final
+  `coveredVideoIds` list is duplicate-free and exactly matches all 10
+  incorporated summaries. Every non-editorial claim names its supported
+  speaker and affiliation and links to the relative summary; AI Engineer
+  remains the curator/source channel rather than author.
+- Reused the single global summaries for `n991Yxo1aOI` and `Dj0b_cEBHBI`
+  without recapture, regeneration, specialization, overwrite, or duplicate
+  directories. Their final summary blob IDs remain
+  `2de3a66410db15f7230b33fc88be42b654d0b9fb` and
+  `1243930f9cc00b2f6442fb24519df92769cabe26`.
+
+### Final coverage, verification, and commits
+
+- Exact final Agent Reliability state: 11 manifest, 10 available, 10 captured,
+  10 summarized, 10 incorporated, 0 available pending, 1
+  manifest-unavailable private entry (`WnTq5Mc5bIU`), and 0
+  caption-unavailable-recorded. There are no remaining pending available IDs.
+- `npm run lint:fix`: passed (`170` files checked). It reformatted exactly the
+  eight expected clean-at-start Antirez unavailable-caption metadata files;
+  their formatter-only diffs were inspected and those files were restored
+  byte-for-byte.
+- `npm run youtube:library -- status`: passed. Agent Reliability reports 11
+  manifest / 10 available / 1 private, 10 captured, 0 pending, 0
+  caption-unavailable-recorded, 10 draft summaries, and a current overview.
+  SWE Agents remains complete; Coding Agents remains untouched at 38 manifest /
+  37 available / 0 captured.
+- Combined YouTube library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files; 0 errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches with expected exit
+  `1`.
+- The read-only coverage checker confirmed every available Agent Reliability ID
+  has `metadata.json`, `transcript.md`, and `summary.md`; overview coverage is
+  duplicate-free and exactly matches all incorporated summary links; pending
+  and unavailable counts reconcile; the overlap remains the two shared IDs;
+  and private `WnTq5Mc5bIU` remains distinct from the zero
+  caption-unavailable-recorded outcomes.
+- `git diff --check` passed. The source/editorial commit boundaries and exact
+  file sets were inspected:
+  - `8aa3e29`: metadata and transcripts for `kTnfJszFxCg` and `8SUJEqQNClw`.
+  - `04fa445`: summaries for those two IDs and the Agent Reliability overview.
+  - `7730c0b`: metadata and transcripts for `1izYWsokr9s` and `sl3icG-IjHo`.
+  - `907d8dc`: summaries for those two IDs and the overview.
+  - `98a2d88`: metadata and transcripts for `WJjInLeaJjo` and `Ib5t2RLtxvM`.
+  - `7ebde97`: summaries for those two IDs and the overview.
+  - `478c048`: metadata and transcript for `xIt_mTQp6mY`.
+  - `1b9c49f`: summary for `xIt_mTQp6mY` and the complete available-corpus
+    overview.
+- Blockers: none. Plan 03 Task 4 is complete. No SWE Agents or Coding Agents
+  capture, shared-ID recapture, retry, force operation, public artifact, AI
+  Engineer author/relationship/author synthesis, Task 5 implementation, or Plan
+  04 work began during this continuation.
+
+### Next action
+
+- Keep the work item `in-progress`. In a later session, run Plan 03 Task 5's
+  dedicated bounded multi-speaker review gate across the completed SWE Agents
+  and Agent Reliability summaries and overviews. Record an explicit pass or
+  required corrections before starting Plan 04.

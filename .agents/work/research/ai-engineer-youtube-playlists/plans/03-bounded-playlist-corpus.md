@@ -71,7 +71,7 @@ review gate before starting the larger active Coding Agents corpus.
   - Notes: Keep batches and commits reviewable; do not generate summaries or the
     overview mechanically from raw transcripts.
 
-- [ ] **Task 4: Prove and backfill Agent Reliability**
+- [x] **Task 4: Prove and backfill Agent Reliability**
   - Scope:
     `src/content/youtube/playlists/ai-engineer-agent-reliability-2025/`,
     relevant global video directories, work-item `progress.md`

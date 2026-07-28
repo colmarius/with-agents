@@ -19,10 +19,11 @@ complete without misattributing the corpus to the AI Engineer channel. The
 authoritative manifests contain 19, 11, and 38 entries respectively. All 18
 available SWE Agents videos are captured, summarized, and incorporated into the
 draft overview; its remaining manifest entry is private. The Agent Reliability
-thin slice now covers 3 of 10 available entries, including 2 shared global SWE
-Agents artifacts, with 7 available entries pending and 1 manifest entry
-private. Plan 03 Task 4 remains active. Broader capture remains staged: finish
-`Agent Reliability`, then `Coding Agents`.
+corpus is also complete for all 10 available entries, including 2 shared global
+SWE Agents artifacts; all 10 are captured, summarized, and incorporated into
+the draft overview, with its remaining manifest entry private. Plan 03 Task 4
+is complete. Broader capture remains staged behind the bounded multi-speaker
+review gate, then `Coding Agents`.
 
 ## Artifacts
 
@@ -42,12 +43,11 @@ private. Plan 03 Task 4 remains active. Broader capture remains staged: finish
 
 ## Next Action
 
-- Continue Task 4 of [Plan 03](./plans/03-bounded-playlist-corpus.md) in a later
-  session with exactly one Agent Reliability `--limit 2` capture command, then
-  review and summarize every successful capture and refresh the draft overview
-  under the multi-speaker attribution rules. Do not refill the bounded batch in
-  the same session, and continue preserving the two globally shared SWE Agents
-  artifacts without recapture or overwrite.
+- Run Task 5 of [Plan 03](./plans/03-bounded-playlist-corpus.md): perform the
+  dedicated bounded multi-speaker attribution and overview review gate across
+  SWE Agents and Agent Reliability. Record an explicit pass or the required
+  corrections before starting Plan 04; do not begin Coding Agents capture until
+  that gate passes.
 
 ## Open Questions
 
@@ -100,3 +100,7 @@ private. Plan 03 Task 4 remains active. Broader capture remains staged: finish
   created the draft overview. Coverage is 11 manifest / 10 available / 3
   captured / 3 summarized / 3 incorporated / 7 pending / 1 private / 0
   caption-unavailable-recorded.
+- 2026-07-28: Completed Agent Reliability in four bounded continuation batches.
+  All 10 available videos are captured, summarized, and incorporated, the two
+  shared SWE Agents artifacts remain globally reused without recapture, and
+  Plan 03 Task 4 is complete.
