@@ -92,7 +92,7 @@ review gate before starting the larger active Coding Agents corpus.
   - Notes: Recompute overlap from manifests; do not assume the precheck's two
     shared IDs remain authoritative.
 
-- [ ] **Task 5: Run the bounded multi-speaker review gate**
+- [x] **Task 5: Run the bounded multi-speaker review gate**
   - Scope: all bounded playlist summaries and both overviews, work-item
     `progress.md`
   - Depends on: Tasks 3 and 4

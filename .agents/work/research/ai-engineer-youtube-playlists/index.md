@@ -18,12 +18,13 @@ speakers. Multi-speaker validation and the three-playlist onboarding are now
 complete without misattributing the corpus to the AI Engineer channel. The
 authoritative manifests contain 19, 11, and 38 entries respectively. All 18
 available SWE Agents videos are captured, summarized, and incorporated into the
-draft overview; its remaining manifest entry is private. The Agent Reliability
+reviewed overview; its remaining manifest entry is private. The Agent Reliability
 corpus is also complete for all 10 available entries, including 2 shared global
 SWE Agents artifacts; all 10 are captured, summarized, and incorporated into
-the draft overview, with its remaining manifest entry private. Plan 03 Task 4
-is complete. Broader capture remains staged behind the bounded multi-speaker
-review gate, then `Coding Agents`.
+the reviewed overview, with its remaining manifest entry private. The dedicated
+bounded multi-speaker review gate passed for all 26 unique global summaries and
+both playlist overviews, completing Plan 03. `Coding Agents` remains untouched
+and is the next planned corpus under Plan 04.
 
 ## Artifacts
 
@@ -43,11 +44,9 @@ review gate, then `Coding Agents`.
 
 ## Next Action
 
-- Run Task 5 of [Plan 03](./plans/03-bounded-playlist-corpus.md): perform the
-  dedicated bounded multi-speaker attribution and overview review gate across
-  SWE Agents and Agent Reliability. Record an explicit pass or the required
-  corrections before starting Plan 04; do not begin Coding Agents capture until
-  that gate passes.
+- Run Task 1 of [Plan 04](./plans/04-coding-agents-corpus.md): refresh and review
+  the active Coding Agents playlist baseline before any capture. Plan 04 has not
+  started, and Coding Agents remains at 38 manifest / 37 available / 0 captured.
 
 ## Open Questions
 
@@ -104,3 +103,7 @@ review gate, then `Coding Agents`.
   All 10 available videos are captured, summarized, and incorporated, the two
   shared SWE Agents artifacts remain globally reused without recapture, and
   Plan 03 Task 4 is complete.
+- 2026-07-28: Passed Plan 03 Task 5's bounded multi-speaker review gate after
+  deliberately reviewing all 26 unique summaries and both overviews, making
+  four source-supported claim/anchor corrections, and setting all 28 editorial
+  artifacts to `reviewed`. Plan 03 is complete; Plan 04 remains unstarted.

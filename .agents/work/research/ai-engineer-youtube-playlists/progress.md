@@ -1256,3 +1256,147 @@
   dedicated bounded multi-speaker review gate across the completed SWE Agents
   and Agent Reliability summaries and overviews. Record an explicit pass or
   required corrections before starting Plan 04.
+
+## 2026-07-28 — Plan 03 Task 5 bounded multi-speaker review gate passed
+
+### Starting state and read-only reconciliation
+
+- Started from clean commit `a9c4a423813d3994e2799343a75f48d2ae674941`
+  (`a9c4a42`, `complete Agent Reliability backfill task`) on branch
+  `ai-engineer-videos`; `git status --short --branch` contained only the branch
+  header and `git diff --check` passed.
+- `npm run youtube:library -- status` reconciled the expected local-only
+  baseline without a remote check, sync, or capture:
+  - SWE Agents: 19 manifest / 18 available / 18 captured / 18 summarized / 18
+    incorporated / 0 available pending / 1 manifest-private
+    (`jBr-EERbXJw`) / 0 caption-unavailable-recorded.
+  - Agent Reliability: 11 manifest / 10 available / 10 captured / 10 summarized
+    / 10 incorporated / 0 available pending / 1 manifest-private
+    (`WnTq5Mc5bIU`) / 0 caption-unavailable-recorded.
+- The read-only checker recomputed 28 playlist-summary occurrences and 26 unique
+  global summaries. The exact overlap remained `Dj0b_cEBHBI` and
+  `n991Yxo1aOI`; each has one global video directory and appears once in each
+  relevant overview's duplicate-free coverage list.
+- Both private manifest entries remained distinct from the zero recorded
+  caption-unavailable outcomes. Coding Agents remained 38 manifest / 37
+  available / 0 captured.
+
+### Deliberate summary review decisions
+
+- Reviewed every unique summary against its manifest entry, `metadata.json`,
+  complete summary, and relevant transcript context. The review checked exact
+  provenance and key order, required heading order, source links, speaker and
+  affiliation support, timestamped claims, technical terminology, quotation
+  fidelity, `Editorial:` labeling, and same-language disclosure behavior.
+- Explicit `keep` decisions after source review:
+  - `tbDDYKRFjhk`: kept Yegor Denisov-Blanch / Stanford attribution and study
+    framing.
+  - `Lue8K2jqfKk`: kept Boris Cherny / Anthropic attribution and Claude Code
+    framing.
+  - `Dc3qOA9WOnE`: kept Chris Kelly / Augment Code attribution.
+  - `F_RyElT_gJk`: kept Beyang Liu / Sourcegraph attribution and Amp framing.
+  - `o_hhkJtlbSs`: kept Robert Brennan / OpenHands attribution.
+  - `MI83buT_23o`: kept Scott Wu / Cognition attribution.
+  - `eOxOzcw70f0`: kept the explicit qualification that the source title names
+    Harald Kirschner and Christopher Harrison, while only Kirschner identifies
+    himself with VS Code in the captured captions. No claim or unsupported
+    affiliation is assigned to Harrison; this satisfies the plan's
+    resolve-or-explicitly-qualify rule without uploader inference.
+  - `x_1EumTaXeE`: kept Josh Albrecht / Imbue attribution.
+  - `Dj0b_cEBHBI`: kept Danielle Perszyk / Amazon AGI attribution and one global
+    summary for both playlists.
+  - `X4BwOu0GWb8`: kept Rustin Banks / Google Labs and Jules attribution.
+  - `iheWKg2Tkrk`: kept Eno Reyes / Factory attribution.
+  - `n991Yxo1aOI`: kept Itamar Friedman / Qodo attribution and one global
+    summary for both playlists.
+  - `TswQeKftnaw`: kept Tomas Reimers / Graphite attribution.
+  - `Fzb1a24hF-o`: kept Kyle Penfound and Jeremy Adams / Dagger attribution.
+  - `6NIr_cYPglk`: kept Forrest Brazeal as an Augment Code partner, explicitly
+    not an employee, and Matt Ball as an Augment Code solutions architect.
+  - `Zniw5c9_jx8`: kept Eric Hou / Augment Code attribution.
+  - `tHJSZ1-ZqcA`: kept Christopher Harrison and John Peck / GitHub attribution,
+    with technical claims assigned only where the transcript supports them.
+  - `8kMaTybvDUw`: kept Dex Horthy / HumanLayer attribution.
+  - `kTnfJszFxCg`: kept Harrison Chase / LangChain-LangGraph attribution.
+  - `8SUJEqQNClw`: kept Sam Bhagwat / Mastra.ai attribution.
+  - `sl3icG-IjHo`: kept Yogendra “Yogi” Miraje / FactSet attribution.
+  - `Ib5t2RLtxvM`: kept Rustem Feyzkhanov / Snorkel AI attribution.
+- Made four smallest source-supported corrections before promotion:
+  - `JVuNPL5QO8Q` (Kevin Hou / Windsurf): removed an unsupported causal claim
+    that SWE-1 was trained on the shared-timeline representation and stated the
+    narrower transcript-supported claim that it was trained for
+    software-engineering workflows.
+  - `1izYWsokr9s` (Preeti Somal / Temporal): replaced the unsupported
+    characterization that queries expose state with the transcript's statement
+    that signals and queries manage interactions.
+  - `WJjInLeaJjo` (Antje Barth / AWS): added the missing `[00:12:18]` anchor for
+    forthcoming A2A support while retaining the collaboration evidence at
+    `[00:17:23]-[00:18:27]`.
+  - `xIt_mTQp6mY` (Kyle Mistele / HumanLayer): added transcript anchors to both
+    substantive framing claims about reviewable consequential-codebase loops
+    and HumanLayer's control-loop migration workflow.
+- All 26 summaries passed after those corrections and were set to
+  `status: reviewed`. There are 26 reviewed and 0 draft unique bounded
+  summaries.
+
+### Deliberate overview review decisions
+
+- Reviewed both overviews against the catalog, manifests, incorporated
+  summaries, and transcript context where needed. Their frontmatter key order,
+  two-space coverage lists, heading order, claim attribution, relative summary
+  anchors, `Editorial:` labels, chronology cautions, publication provenance,
+  and coverage math passed without prose corrections.
+- Kept both duplicate-free `coveredVideoIds` lists unchanged: 18 exact
+  incorporated SWE IDs and 10 exact incorporated Reliability IDs. Both shared
+  IDs remain represented in both overviews without duplicate global artifacts.
+- Kept AI Engineer identified only as curator/source channel and kept the
+  explicit statement that speakers and affiliations vary by video.
+- Set both overviews to `status: reviewed`. Final overview state is 2 reviewed
+  and 0 draft.
+
+### Gate result, verification, and commits
+
+- **Gate result: PASS.** All 26 unique summaries and both overviews passed the
+  dedicated source-only multi-speaker contract; every attribution is supported
+  or explicitly source-limited, all structural and coverage assertions
+  reconcile, and no unresolved discrepancy remains. Plan 03 Task 5 is checked.
+- `npm run lint:fix`: passed (`170` files checked). Biome reformatted exactly
+  the eight expected clean-at-start Antirez unavailable-caption metadata files;
+  their formatter-only diffs were inspected and those eight files were restored
+  byte-for-byte. No bounded artifact required formatter changes.
+- `npm run youtube:library -- status`: passed. SWE reports 18 reviewed / 0
+  draft summaries and a current overview; Reliability reports 10 reviewed / 0
+  draft summaries and a current overview; Coding Agents remains untouched.
+- Combined YouTube library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files; 0 errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches with expected exit
+  `1`: no application import of `src/content/youtube` and no source-only catalog
+  marker in `dist`.
+- The final read-only structural and coverage checker confirmed all 28 available
+  playlist occurrences have metadata, transcripts, and summaries; there are 26
+  unique global summaries; all summary provenance matches manifest and metadata
+  values; all headings and transcript anchors are valid; both overview coverage
+  sets exactly match incorporated summary links; pending, private, and
+  caption-unavailable counts reconcile; both shared IDs use one global directory
+  each and appear in both overviews; and all 26 summaries plus both overviews are
+  reviewed.
+- `git diff --check` passed after each editorial boundary and after final
+  verification. Commit boundaries:
+  - `4b00409` (`review SWE Agents bounded corpus`): the SWE overview and 18 SWE
+    summary files, including the two shared global summaries; source correction
+    only in `JVuNPL5QO8Q`, with status promotion after all 18 reviews.
+  - `de249cc` (`review Agent Reliability bounded corpus`): the Reliability
+    overview and 8 Reliability-only summary files; source corrections in
+    `1izYWsokr9s`, `WJjInLeaJjo`, and `xIt_mTQp6mY`, with status promotion after
+    all 8 Reliability-only reviews.
+- Blockers: none. Work-item status remains `in-progress` because Plan 04 remains.
+
+### Scope confirmation and next action
+
+- No capture, sync, retry, force, transcript rewrite, public post, public
+  summary, resource-manifest, Astro publication, AI Engineer author,
+  relationship, author synthesis, Coding Agents capture, or Plan 04 work began.
+- Next action is Plan 04 Task 1: refresh and review the active Coding Agents
+  playlist baseline before any capture. This session stops at the passed Plan 03
+  Task 5 gate.
