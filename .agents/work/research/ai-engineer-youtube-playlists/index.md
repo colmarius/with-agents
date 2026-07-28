@@ -16,10 +16,11 @@ Agents` collection.
 Unlike the single-speaker Antirez corpus, these playlists contain many
 speakers. Multi-speaker validation and the three-playlist onboarding are now
 complete without misattributing the corpus to the AI Engineer channel. The
-authoritative manifests contain 19, 9, and 38 entries respectively. Seven SWE
-Agents videos are captured, summarized, and incorporated into the draft
-overview; 11 available SWE Agents videos remain pending. Broader capture remains
-staged: `SWE Agents`, `Agent Reliability`, then `Coding Agents`.
+authoritative manifests contain 19, 9, and 38 entries respectively. All 18
+available SWE Agents videos are captured, summarized, and incorporated into the
+draft overview; its remaining manifest entry is private. Plan 03 Task 3 is
+complete. Broader capture remains staged: `Agent Reliability`, then `Coding
+Agents`.
 
 ## Artifacts
 
@@ -39,11 +40,11 @@ staged: `SWE Agents`, `Agent Reliability`, then `Coding Agents`.
 
 ## Next Action
 
-- Execute Task 3 of [Plan 03](./plans/03-bounded-playlist-corpus.md): continue
-  the 11 pending available SWE Agents videos in a later session with exactly
-  one `--limit 2` capture command, then review and summarize each successful
-  capture and refresh the overview. Do not refill that bounded batch in the
-  same session.
+- Execute Task 4 of [Plan 03](./plans/03-bounded-playlist-corpus.md): begin the
+  Agent Reliability thin slice with exactly one selected `--limit 1` capture
+  command, then review and summarize the successful capture and create the
+  draft overview under the multi-speaker attribution rules. Preserve the two
+  globally shared SWE Agents artifacts without recapture or overwrite.
 
 ## Open Questions
 
@@ -88,3 +89,6 @@ staged: `SWE Agents`, `Agent Reliability`, then `Coding Agents`.
   are now captured, summarized, and incorporated, with 13 available pending.
 - 2026-07-28: Completed a third two-video SWE Agents backfill batch; 7 videos
   are now captured, summarized, and incorporated, with 11 available pending.
+- 2026-07-28: Completed the remaining bounded SWE Agents batches; all 18
+  available videos are captured, summarized, and incorporated, with the sole
+  remaining manifest entry private. Plan 03 Task 3 is complete.

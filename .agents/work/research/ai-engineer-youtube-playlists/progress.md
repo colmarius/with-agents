@@ -801,3 +801,170 @@
   with exactly one SWE Agents `--limit 2` capture command, review and summarize
   every successful capture, refresh the overview, and do not refill that
   bounded batch in the same session.
+
+## 2026-07-28 — Plan 03 Task 3 remaining SWE Agents corpus completed
+
+### Credential and authoritative baseline
+
+- Continued from a clean `ai-engineer-videos` worktree after the recorded
+  seven-video baseline. Confirmed `.env` remained ignored and untracked and
+  confirmed `YOUTUBE_API_KEY` was non-empty without printing it.
+- Ran one selected read-only check before the continuation:
+
+  ```sh
+  npm run youtube:library -- check --playlist ai-engineer-swe-agents-2025
+  ```
+
+- The check exited `0` after a complete remote fetch and reported no additions,
+  removals, moves, retitles, or availability changes. No sync, public-impact
+  fix, manifest diff, no-op sync, or manifest commit was needed.
+- The authoritative pre-capture state was 19 manifest entries, 18 available, 1
+  private (`jBr-EERbXJw`), 7 captured, 7 summarized, 7 incorporated, 11
+  available pending, and 0 caption-unavailable-recorded.
+
+### Bounded capture outcomes
+
+- Ran six bounded SWE Agents capture commands in sequence while completing the
+  user's request to continue the remaining Task 3 work. Every command used the
+  same exact form, no command was refilled, and each cycle's successful
+  captures received transcript review, summaries, overview incorporation, and
+  reviewable commits before the next cycle:
+
+  ```sh
+  npm run youtube:library -- capture --playlist ai-engineer-swe-agents-2025 --limit 2
+  ```
+
+- Command 1 exited `0`: `captured x_1EumTaXeE`; `captured Dj0b_cEBHBI`.
+- Command 2 exited `0`: `captured JVuNPL5QO8Q`; `captured X4BwOu0GWb8`.
+- Command 3 exited `0`: `captured iheWKg2Tkrk`; `captured n991Yxo1aOI`.
+- Command 4 exited `0`: `captured TswQeKftnaw`; `captured Fzb1a24hF-o`.
+- Command 5 exited `0`: `captured 6NIr_cYPglk`; `captured Zniw5c9_jx8`.
+- Command 6 exited `0`: `captured tHJSZ1-ZqcA`; only one candidate remained,
+  so the playlist-scoped command selected one and did not refill elsewhere.
+- No unavailable, transient, throttled, or fatal outcome occurred. No
+  `--retry`, `--force`, second command to replace an outcome, Agent Reliability
+  capture command, or Coding Agents capture command was used.
+
+### Transcript review and attribution
+
+- Read every complete final transcript and made only obvious source-faithful
+  corrections while preserving normal spoken disfluencies and uncertain
+  wording.
+- `x_1EumTaXeE`: corrected Josh Albrecht, Imbue, Sculptor, docstrings,
+  custom-tailored, linters, Ruff, Pylint, Claude Code, well-stated, half-solved,
+  and related technical forms. The title and transcript support Josh Albrecht,
+  CTO of Imbue, as the speaker.
+- `Dj0b_cEBHBI`: corrected Nova Act, Engelbart, GUI, Pydantic, Caltrain,
+  complementary, wrappers, read-only, general-purpose, and related wording.
+  The title and transcript support Danielle Perszyk, a cognitive scientist at
+  Amazon's experimental AGI SF lab.
+- `JVuNPL5QO8Q`: corrected Windsurf, Codeium, autocomplete, MCP, SWE-1,
+  SWE-bench, Netlify, meta-learning, evaluations, and related terms. The
+  transcript supports Kevin Hou, who leads product at Windsurf.
+- `X4BwOu0GWb8`: corrected AOL classifieds, text-based, ChatGPT, Jules,
+  Playwright, Puppeteer, GitHub, Google, and related names. The transcript
+  supports Rustin Banks, a product manager with Google Labs, while the source
+  title associates the talk with Google Jules.
+- `iheWKg2Tkrk`: corrected GPT-3.5, Factory, high-quality, agent-native, Andrej
+  Karpathy, heuristics, LLM, Granola, Notion, Linear, Jira, Sentry, `rm -rf`,
+  PRD, and related terms. The source title supports Eno Reyes of Factory.
+- `n991Yxo1aOI`: corrected Itamar Friedman, Qodo, Qodo Merge, Claude Code,
+  Codex CLI, IDE, SDLC, post-commit, output schema, agent-to-agent, Karpathy,
+  and related terms. The title and transcript support Itamar Friedman, CEO and
+  co-founder of Qodo.
+- `TswQeKftnaw`: corrected AI-powered, ORM, LLM/LLMs, open-source, codebase,
+  mind-read, downvote, caveat, Graphite capitalization, and related
+  meaning-changing forms. The title and transcript support Tomas Reimers, a
+  co-founder of Graphite.
+- `Fzb1a24hF-o`: corrected Dagger, Dagger Cloud, Dagger CLI, Daggerverse,
+  Docker, Podman, WinGet, LLMs, IDEs, PRs, GitHub Actions, Ollama, Bedrock,
+  Claude 3.5, MCP, Pydantic, OpenAI Agents, and related code and product terms.
+  The source title and introduction support Kyle Penfound and Jeremy Adams of
+  Dagger.
+- `6NIr_cYPglk`: corrected Forrest Brazeal, Augment Agent, Augment Code,
+  augmentcode.com, IDEs, customer-managed encryption keys, ISO 42001, AGC,
+  1201/1202 alarm forms, no VAC area, `TL;DR`, and related code terms. The
+  source supports Forrest Brazeal as an Augment Code friend and partner who
+  explicitly is not an employee, and Matt Ball as an Augment Code solutions
+  architect.
+- `Zniw5c9_jx8`: corrected Augment, Augment Agent, vibe-coded, agentic AI,
+  `git bisect`, Augment Slackbot, Linear, Storybook, gRPC, Granola, VS Code,
+  context-or-knowledge gap, the missing percentage sign in the reported 23%
+  maintenance figure, and related wording. The title and transcript support
+  Eric Hou, a member of technical staff at Augment Code.
+- `tHJSZ1-ZqcA`: corrected GitHub, Codespaces, Coding Agent, ephemeral,
+  Copilot, `.instructions.md`, `applyTo`, React, JSX/TSX, Svelte, `.svelte`,
+  MCP, VS Code, and related code and product forms. The introduction supports
+  Christopher Harrison and John Peck as GitHub enterprise advocates.
+- AI Engineer remains only the curator/source channel and was never treated as
+  author or used to infer a speaker or affiliation. Every summary framing names
+  all supported speakers and relevant affiliations; all overview speaker claims
+  name the supported speaker and affiliation and link to a source summary.
+
+### Deliberate editorial artifacts and final coverage
+
+- Added eleven deliberate draft summaries using exact source-only frontmatter
+  and heading order. Every `publishedAt` came from the manifest; every
+  `sourceLanguage: en` and `captionKind: auto-generated` came from the captured
+  metadata. No translation disclosure was needed.
+- Refreshed the draft SWE Agents overview after every cycle. Its exact heading
+  order is preserved, `coveredVideoIds` is duplicate-free, all 18 available
+  summaries are incorporated, AI Engineer remains identified as curator/source
+  channel rather than author, and editorial synthesis remains prefixed with
+  `Editorial:`.
+- Exact final state: 19 manifest, 18 available, 18 captured, 18 summarized, 18
+  incorporated, 0 available pending, 1 manifest-unavailable private entry
+  (`jBr-EERbXJw`), and 0 caption-unavailable-recorded.
+- The global Agent Reliability status now sees the two shared IDs
+  `Dj0b_cEBHBI` and `n991Yxo1aOI` as captured and summarized. No Agent
+  Reliability capture, summary-specific rewrite, or overview work began.
+
+### Verification, commits, and scope
+
+- `npm run lint:fix`: passed (`162` files checked). It reformatted exactly the
+  eight expected clean-at-start Antirez unavailable-caption metadata files;
+  the formatter-only array-layout diff was inspected and those eight files were
+  restored byte-for-byte before the remaining checks.
+- `npm run youtube:library -- status`: passed. SWE Agents reports 19 manifest /
+  18 available / 1 private, 18 captured, 0 pending, 0
+  caption-unavailable-recorded, 18 draft summaries, and a current overview.
+  Agent Reliability reports 9 manifest / 8 available / 1 private, 2 globally
+  shared captures and summaries, 6 pending, and no overview. Coding Agents
+  remains 38 manifest / 37 available / 1 private, 0 captured, and 37 pending.
+- Combined library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files; zero errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches with expected exit
+  `1`.
+- The corrected read-only coverage checker confirmed every captured ID has
+  `metadata.json` and `transcript.md`, every summarized ID has `summary.md`,
+  `coveredVideoIds` is duplicate-free and exactly matches all 18 incorporated
+  summaries, and the 19 / 18 / 18 / 18 / 18 / 0 / 1 / 0 math reconciles. An
+  initial checker invocation used the wrong manifest key (`videos` rather than
+  `entries`), failed read-only with `KeyError`, and the corrected invocation
+  passed without changing files.
+- `git diff --check` passed; the worktree was clean before this work-item
+  update.
+- Source/editorial commits and inspected file boundaries:
+  - `8292965` / `1b2f01b`: `x_1EumTaXeE`, `Dj0b_cEBHBI` captures, then their
+    summaries and overview.
+  - `ae8873c` / `18379b2`: `JVuNPL5QO8Q`, `X4BwOu0GWb8` captures, then their
+    summaries and overview.
+  - `4bdca04` / `f9725c8`: `iheWKg2Tkrk`, `n991Yxo1aOI` captures, then their
+    summaries and overview.
+  - `0ad0d9b` / `76f3414`: `TswQeKftnaw`, `Fzb1a24hF-o` captures, then their
+    summaries and overview.
+  - `4521fdd` / `60b4881`: `6NIr_cYPglk`, `Zniw5c9_jx8` captures, then their
+    summaries and overview.
+  - `697098a` / `75cccf4`: `tHJSZ1-ZqcA` capture, then its summary and the
+    complete available-corpus overview.
+- Blockers: none. No retry, force operation, public artifact, AI Engineer
+  author/relationship/synthesis, Task 4/5 implementation, or Plan 04 work
+  began. Plan 03 Task 3 is complete.
+
+### Next action
+
+- Keep the work item `in-progress`. In a later session, execute Plan 03 Task 4:
+  begin Agent Reliability with exactly one selected `--limit 1` thin-slice
+  capture, preserve the two shared global artifacts without recapture, write
+  deliberate editorial artifacts, and create the Agent Reliability overview.

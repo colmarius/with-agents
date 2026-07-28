@@ -53,7 +53,7 @@ review gate before starting the larger active Coding Agents corpus.
       `Editorial:`.
   - Notes: Same-language English summaries need no translation disclosure.
 
-- [ ] **Task 3: Backfill and synthesize SWE Agents in two-video batches**
+- [x] **Task 3: Backfill and synthesize SWE Agents in two-video batches**
   - Scope: remaining available SWE Agents video directories and
     `playlists/ai-engineer-swe-agents-2025/overview.md`
   - Depends on: Task 2
