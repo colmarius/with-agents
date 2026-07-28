@@ -506,3 +506,151 @@
   with exactly one SWE Agents `--limit 2` capture command, review and summarize
   every successful capture, refresh the overview, and do not refill that
   bounded batch in the same session.
+
+## 2026-07-28 — Plan 03 Task 3 batch 2 completed
+
+### Credential and authoritative baseline
+
+- Started from a clean `ai-engineer-videos` worktree. Confirmed `.env` exists,
+  is untracked, and is ignored before sourcing it only into the YouTube command
+  processes. Confirmed `YOUTUBE_API_KEY` is non-empty without printing,
+  persisting, or passing its value on the command line.
+- Ran exactly one selected read-only remote check:
+
+  ```sh
+  npm run youtube:library -- check --playlist ai-engineer-swe-agents-2025
+  ```
+
+- The check exited `0`; the remote fetch completed with zero errors and no
+  additions, removals, moves, retitles, or availability changes. No sync was
+  needed, no manifest changed, there was no changed ID requiring mandatory
+  public-impact review, and no no-op manifest commit was created.
+- Pre-capture `npm run youtube:library -- status` exited `0` and reported SWE
+  Agents at 19 manifest entries, 18 available, 1 manifest-unavailable private
+  entry, 3 captured, 15 pending, and 0 caption-unavailable-recorded. The next
+  two candidate directories, `F_RyElT_gJk` and `o_hhkJtlbSs`, did not exist.
+
+### Single bounded capture outcome
+
+- Ran exactly one capture command in this session:
+
+  ```sh
+  npm run youtube:library -- capture --playlist ai-engineer-swe-agents-2025 --limit 2
+  ```
+
+- The command exited `0` with exactly two per-video outcomes:
+  - `captured F_RyElT_gJk`
+  - `captured o_hhkJtlbSs`
+- Both captures contain English auto-generated caption metadata and complete
+  transcripts: 2,105 seconds for `F_RyElT_gJk` and 1,006 seconds for
+  `o_hhkJtlbSs`. No unavailable, transient, throttled, or fatal outcome
+  occurred.
+- No second capture command ran and the limit was not refilled. Neither
+  `--retry` nor `--force` was used.
+
+### Transcript review and attribution
+
+- Read both complete final transcripts and made only obvious source-faithful
+  caption corrections.
+- `F_RyElT_gJk` corrections:
+  - Corrected speaker and organization names including `Bang` to `Beyang`,
+    `Source Graph` to `Sourcegraph`, `Enthropic` to `Anthropic`, `Jesse
+    Friselle` to `Jessie Frazelle`, and `Thomas Tachek` to `Thomas Ptacek`;
+    normalized `Hacker News`, `Cursor`, and the stated `top 0.1%` figure.
+  - Corrected model and retrieval terms including `Chat GBT` / `chat GBD` to
+    `ChatGPT`, `GPD3` / `GBD3.5` / `GPD4` to `GPT-3` / `GPT-3.5` / `GPT-4`,
+    `ragbot` to `RAG bot`, and recurring `LMS` / `LM` forms to `LLMs` / `LLM`.
+  - Corrected products and technical terms including `Kodi` to `Cody`, `AMP`
+    to `Amp`, `VS code` to `VS Code`, `playrite` to `Playwright`, `postgress`
+    to `Postgres`, `GP` to `grep`, `spelt` to `Svelte`, and `storybook` to
+    `Storybook`.
+  - Corrected obvious caption forms for agentic UI, subagents, antipatterns,
+    linters, `Command+Enter`, the 170K-token context point, `TL;DR`, `tmux`,
+    and the meaning-changing `agent decoding` to `agentic coding`; normal
+    spoken disfluencies were preserved.
+- `o_hhkJtlbSs` corrections:
+  - Corrected `Open Hands` / `Open Devon` to `OpenHands` / `OpenDevin`, the
+    separate product reference `Devon` to `Devin`, and recurring OpenHands
+    product, community, mention, trajectory, and repository forms.
+  - Corrected `AIdriven`, `interloop`, `idees`, and `LM` to `AI-driven`, `inner
+    loop`, `IDEs`, and `LLM`; removed the repeated caption fragment before
+    `abstract syntax tree`.
+  - Corrected technical terms including `longunning`, `croft`, `RMRF`,
+    `thirdparty`, and `lease privilege` to `long-running`, `cruft`, `rm -rf`,
+    `third-party`, and `least privilege`.
+  - Corrected recurring `poll request` to `pull request`, `rope task` to `rote
+    task`, plus `React`, `Terraform`, and the `All-Hands-AI/OpenHands`
+    repository form without smoothing normal spoken disfluencies.
+- The source title and `[00:00:00]` introduction support Beyang Liu as the only
+  presented speaker, CTO and co-founder of Sourcegraph, with the transcript
+  presenting Amp from `[00:11:20]`. The summary therefore names Beyang Liu and
+  Sourcegraph and describes Amp as the presented product without inventing any
+  additional speaker or affiliation.
+- The source title supports Robert Brennan and OpenHands, while the
+  `[00:00:01]` introduction says that he and his team created OpenHands,
+  formerly OpenDevin. He is the only presented speaker; the summary names
+  Robert Brennan of OpenHands but does not infer an unsupported corporate role.
+- AI Engineer remains only the curator/source channel and was not treated as an
+  author or used to infer either speaker or affiliation. All summary speaker
+  claims have transcript anchors; all non-editorial overview claims name their
+  supported speaker and affiliation and link to a source summary.
+
+### Deliberate editorial artifacts and coverage
+
+- Added deliberate draft summaries for `F_RyElT_gJk` and `o_hhkJtlbSs` with
+  the exact source-only frontmatter and heading order. Publication timestamps
+  came from the manifest; `sourceLanguage: en` and `captionKind:
+  auto-generated` came from each `metadata.json`. No translation disclosure is
+  needed because both source and summary languages are English.
+- Refreshed the draft SWE Agents overview, adding only the two successfully
+  summarized IDs to the existing three covered IDs. Every non-editorial
+  speaker claim names its supported speaker and affiliation and links to a
+  source summary; every editorial interpretation begins `Editorial:`.
+- The overview continues to identify AI Engineer as curator/source channel,
+  not author, states that speakers and affiliations vary by video, avoids
+  playlist-position chronology, and limits recurring ideas to the incorporated
+  summaries.
+- Exact post-batch SWE Agents state: 19 manifest, 18 available, 5 captured, 5
+  summarized, 5 incorporated, 13 available pending, 1 manifest-unavailable
+  private entry (`jBr-EERbXJw`), and 0 caption-unavailable-recorded.
+- Remaining pending available IDs: `MI83buT_23o`, `eOxOzcw70f0`,
+  `x_1EumTaXeE`, `Dj0b_cEBHBI`, `JVuNPL5QO8Q`, `X4BwOu0GWb8`,
+  `iheWKg2Tkrk`, `n991Yxo1aOI`, `TswQeKftnaw`, `Fzb1a24hF-o`,
+  `6NIr_cYPglk`, `Zniw5c9_jx8`, and `tHJSZ1-ZqcA`.
+
+### Verification, commits, and scope
+
+- `npm run lint:fix`: passed (`149` files checked); it reformatted exactly the
+  same eight clean-at-start Antirez unavailable-caption metadata files. The
+  formatter-only array-layout diff was inspected and those eight files were
+  restored byte-for-byte before the remaining checks.
+- `npm run youtube:library -- status`: passed; SWE Agents is 19 manifest / 18
+  available / 1 manifest-unavailable, with 5 captured, 13 pending, 0
+  caption-unavailable-recorded, 5 draft summaries, and a current overview.
+  Agent Reliability remains 9 manifest / 8 available / 1
+  manifest-unavailable, with 0 captured and 8 pending.
+- Combined library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files; zero errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches (expected exit `1`).
+- The read-only coverage checker confirmed every captured ID has metadata and
+  transcript, every summarized ID has a summary, `coveredVideoIds` is
+  duplicate-free and exactly matches the 5 incorporated summaries, and the
+  19 / 18 / 5 / 5 / 5 / 13 / 1 / 0 coverage math reconciles.
+- `git diff --check` passed and the source/editorial worktree was clean before
+  this work-item record.
+- `993f05d` — metadata and reviewed transcripts for both successful captures
+  only.
+- `f686e43` — two deliberate draft summaries and the refreshed SWE Agents
+  overview only.
+- Blockers: none. No Agent Reliability or Coding Agents capture, retry, force
+  operation, public artifact, AI Engineer author/relationship/synthesis,
+  Task 4/5 work, or Plan 04 work began. Plan 03 Task 3 remains unchecked while
+  13 available SWE Agents videos remain pending.
+
+### Next action
+
+- Keep the work item `in-progress`. In a later session, continue Plan 03 Task 3
+  with exactly one SWE Agents `--limit 2` capture command, review and summarize
+  every successful capture, refresh the overview, and do not refill that
+  bounded batch in the same session.
