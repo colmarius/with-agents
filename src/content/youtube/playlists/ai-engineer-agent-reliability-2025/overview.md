@@ -5,13 +5,15 @@ coveredVideoIds:
   - 8kMaTybvDUw
   - kTnfJszFxCg
   - 8SUJEqQNClw
+  - 1izYWsokr9s
   - n991Yxo1aOI
   - Dj0b_cEBHBI
+  - sl3icG-IjHo
 ---
 
 ## Coverage
 
-The manifest contains 11 entries: 10 available and 1 unavailable private entry (`WnTq5Mc5bIU`). Five available entries are captured, summarized, and incorporated here; 5 remain pending (`1izYWsokr9s`, `sl3icG-IjHo`, `WJjInLeaJjo`, `Ib5t2RLtxvM`, and `xIt_mTQp6mY`), and 0 caption-unavailable outcomes have been recorded.
+The manifest contains 11 entries: 10 available and 1 unavailable private entry (`WnTq5Mc5bIU`). Seven available entries are captured, summarized, and incorporated here; 3 remain pending (`WJjInLeaJjo`, `Ib5t2RLtxvM`, and `xIt_mTQp6mY`), and 0 caption-unavailable outcomes have been recorded.
 
 AI Engineer is the curator and source channel for this multi-speaker playlist, not its author. Speakers and affiliations vary by video and must be established from each video's source title, description, or transcript.
 
@@ -20,18 +22,22 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Dex Horthy (HumanLayer) argues that reliable agents should be engineered as understandable software whose prompts, context, state, control flow, deterministic code, and human interactions remain application-owned. ([summary](../../videos/8kMaTybvDUw/summary.md))
 - Harrison Chase (LangChain/LangGraph) frames enterprise-agent adoption as an expected-value problem combining success probability, successful-outcome value, failure cost, and operating cost. ([summary](../../videos/kTnfJszFxCg/summary.md))
 - Sam Bhagwat (Mastra.ai) treats agents and workflows as composable primitives whose balance of model autonomy and explicit structure should vary by application segment. ([summary](../../videos/8SUJEqQNClw/summary.md))
+- Preeti Somal (Temporal) presents agentic applications as distributed systems whose long-running state, parallel work, tool calls, human interaction, and unreliable dependencies require durable orchestration. ([summary](../../videos/1izYWsokr9s/summary.md))
 - Itamar Friedman (Qodo) argues that production confidence comes from composable end-to-end workflows connecting context, generation, testing, review, organizational practices, and explicit success criteria. ([summary](../../videos/n991Yxo1aOI/summary.md))
 - Danielle Perszyk (Amazon AGI) frames reliability as both controllable atomic action and alignment with human goals, agency, creativity, productivity, strategic thinking, and flow. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
-- Editorial: Across the five incorporated talks, reliability spans software control, expected value, selective determinism, lifecycle verification, and human outcomes; this remains a thesis for the incorporated subset, not a claim about the five pending talks.
+- Yogendra Miraje (FactSet) presents a blueprint-based planning architecture that constrains tools, reduces planner load, exposes a reviewable high-level plan, and evaluates components as well as end-to-end behavior. ([summary](../../videos/sl3icG-IjHo/summary.md))
+- Editorial: Across the seven incorporated talks, reliability spans software control, expected value, selective determinism, durable execution, explicit planning, lifecycle verification, and human outcomes; this remains a thesis for the incorporated subset, not a claim about the three pending talks.
 
 ## Stable Ideas
 
 - Dex Horthy (HumanLayer) recommends owning prompts, context construction, state, control flow, error handling, and human escalation around small agent loops. ([summary](../../videos/8kMaTybvDUw/summary.md))
 - Harrison Chase (LangChain/LangGraph) recommends deterministic control for required sequences, observability and evaluation for legibility, and reversible or human-approved boundaries for consequential actions. ([summary](../../videos/kTnfJszFxCg/summary.md))
 - Sam Bhagwat (Mastra.ai) recommends adding narrower calls, deterministic sequencing, or workflow boundaries where an agent's nondeterministic behavior is unreliable. ([summary](../../videos/8SUJEqQNClw/summary.md))
+- Preeti Somal (Temporal) recommends code-defined workflows whose platform-managed state, retries, signals, queries, and history keep reliability plumbing separate from application business logic. ([summary](../../videos/1izYWsokr9s/summary.md))
 - Itamar Friedman (Qodo) recommends relevant codebase context, connected specialist workflows, testing, review, organizational practices, and explicit success and failure criteria. ([summary](../../videos/n991Yxo1aOI/summary.md))
 - Danielle Perszyk (Amazon AGI) recommends composing complex workflows from reliable atomic interactions with granular developer control and shared environmental state. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
-- Editorial: All five incorporated talks support building broader agent behavior from observable, constrained components rather than treating model autonomy as sufficient evidence of reliability.
+- Yogendra Miraje (FactSet) recommends high-level natural-language blueprints, capability-oriented tool contracts, validation brakes, recursion limits, and aspect-specific evaluation. ([summary](../../videos/sl3icG-IjHo/summary.md))
+- Editorial: All seven incorporated talks support building broader agent behavior from observable, constrained components rather than treating model autonomy as sufficient evidence of reliability.
 - Dex Horthy (HumanLayer) makes human contact an explicit agent action and demonstrates human correction inside a deployment workflow. ([summary](../../videos/8kMaTybvDUw/summary.md))
 - Harrison Chase (LangChain/LangGraph) treats approval, correction, clarification, and rollback as interaction patterns that let background agents remain supervised without requiring step-by-step prompting. ([summary](../../videos/kTnfJszFxCg/summary.md))
 - Danielle Perszyk (Amazon AGI) argues that automation should increase human leverage and agency rather than merely transfer more decisions to an autonomous system. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
@@ -42,8 +48,10 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Dex Horthy (HumanLayer) proposes small agentic loops embedded in deterministic workflows, with agentic scope expanding only as teams can engineer reliable behavior at the model's capability boundary. ([summary](../../videos/8kMaTybvDUw/summary.md))
 - Harrison Chase (LangChain/LangGraph) distinguishes event-triggered ambient agents from fully autonomous ones and proposes an intermediate sync-to-async pattern initiated by a human but completed in the background. ([summary](../../videos/kTnfJszFxCg/summary.md))
 - Sam Bhagwat (Mastra.ai) presents agents, tools, workflow steps, nested workflows, and dynamic tool selection as combinations of simple primitives rather than one mandatory orchestration model. ([summary](../../videos/8SUJEqQNClw/summary.md))
+- Preeti Somal (Temporal) presents workflow history as both an execution-debugging record and an exportable compliance artifact while keeping application workers in the developer's environment. ([summary](../../videos/1izYWsokr9s/summary.md))
 - Itamar Friedman (Qodo) presents sequential CLI pipelines as a current composition mechanism and A2A discovery and communication as a future model for specialized concurrent agents. ([summary](../../videos/n991Yxo1aOI/summary.md))
 - Danielle Perszyk (Amazon AGI) proposes evaluating human-agent interactions through human outcomes and treating useful products and diverse communities as inputs to agent development. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
+- Yogendra Miraje (FactSet) proposes a blueprint generator, planner, executor, and joiner as separate control points that can replan within limits while remaining interpretable to technical and nontechnical collaborators. ([summary](../../videos/sl3icG-IjHo/summary.md))
 - Editorial: The incorporated talks expose several scaling axes—larger model-controlled regions, background concurrency, composable specialist stages, selective workflow structure, and richer human-interaction feedback—but do not yet establish which produces the most reliable systems.
 
 ## Revisions and Tensions
@@ -51,8 +59,11 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Dex Horthy (HumanLayer) says some proposed agents should remain deterministic scripts and argues that framework convenience can become an obstacle when teams need token-level control. ([summary](../../videos/8kMaTybvDUw/summary.md))
 - Harrison Chase (LangChain/LangGraph) argues that ambient operation can increase valuable concurrency while insisting that ambient does not mean fully autonomous. ([summary](../../videos/kTnfJszFxCg/summary.md))
 - Sam Bhagwat (Mastra.ai) favors readable workflow control over graph-oriented framework APIs while acknowledging that working application evidence can outweigh immature orchestration theory. ([summary](../../videos/8SUJEqQNClw/summary.md))
+- Preeti Somal (Temporal) argues that outsourcing execution reliability accelerates application development. ([summary](../../videos/1izYWsokr9s/summary.md))
+- Editorial: Somal's proposed design also introduces a platform and programming-model dependency around application state.
 - Itamar Friedman (Qodo) predicts specialized agent swarms while reporting that A2A use among practitioners he asked was effectively absent. ([summary](../../videos/n991Yxo1aOI/summary.md))
 - Danielle Perszyk (Amazon AGI) warns that increased automation can reduce human agency even when the underlying system becomes more capable. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
+- Yogendra Miraje (FactSet) advises against agentic workflows for fixed repetitive work, strict deterministic or safety-critical settings, and low-latency or cost-constrained environments. ([summary](../../videos/sl3icG-IjHo/summary.md))
 - Editorial: These cautions limit a simple “more autonomy is more reliable” thesis: teams still need to justify where an agent is appropriate, whether coordination complexity is warranted, and whether the result advances the user's larger goal.
 - Editorial: Playlist position is not evidence of chronology; no claim about change over time is made from the current manifest order.
 
@@ -62,6 +73,8 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Editorial: Evaluate proposed agent work through expected value and recoverability, not success rate alone, and include review capacity in the operating cost.
 - Editorial: Keep prompts, context assembly, tool decisions, credentials, errors, and model outputs inspectable so failures can be reproduced and corrected.
 - Editorial: Add workflow structure at unreliable boundaries while keeping the resulting execution path readable to the team responsible for production behavior.
+- Editorial: Separate business logic from durable execution state and failure policy, but assess the operational and migration consequences of the orchestration platform that owns that state.
+- Editorial: Make high-level plans reviewable, restrict the tools available to each planning context, and evaluate plan quality, tool selection, execution, and presentation separately.
 - Editorial: Compose broader workflows from bounded actions and specialist stages, then test the behavior of the composition rather than assuming component reliability transfers automatically.
 - Editorial: Evaluate whether an agent increases human control, leverage, and decision quality in addition to measuring task completion and model capability.
-- Editorial: Treat this overview as provisional until the five pending available videos are captured, summarized, and incorporated; the private manifest entry remains unavailable.
+- Editorial: Treat this overview as provisional until the three pending available videos are captured, summarized, and incorporated; the private manifest entry remains unavailable.
