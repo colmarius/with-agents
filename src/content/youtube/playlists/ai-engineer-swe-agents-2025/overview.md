@@ -19,11 +19,12 @@ coveredVideoIds:
   - Fzb1a24hF-o
   - 6NIr_cYPglk
   - Zniw5c9_jx8
+  - tHJSZ1-ZqcA
 ---
 
 ## Coverage
 
-The manifest contains 19 entries: 18 available and 1 unavailable private entry (`jBr-EERbXJw`). Of the available entries, 17 are captured, 17 are summarized, 17 are incorporated here, and 1 remains pending; 0 caption-unavailable outcomes have been recorded. Pending ID: `tHJSZ1-ZqcA`.
+The manifest contains 19 entries: 18 available and 1 unavailable private entry (`jBr-EERbXJw`). All 18 available entries are captured, summarized, and incorporated here; 0 remain pending and 0 caption-unavailable outcomes have been recorded.
 
 AI Engineer is the curator and source channel for this multi-speaker playlist, not its author. Speakers and affiliations vary by video and must be established from each video's source title, description, or transcript.
 
@@ -46,7 +47,8 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Kyle Penfound and Jeremy Adams (Dagger) present coding agents as compositions of portable software-delivery environments, scoped tools, prompts, deterministic checks, and deployment workflows shared with developers and CI. ([summary](../../videos/Fzb1a24hF-o/summary.md))
 - Forrest Brazeal (Augment Code partner, not employee) and Matt Ball (Augment Code) present legacy-code modernization as a sequence of repository understanding, explicit behavior tests, bounded conversion, and human resolution of ambiguous semantics. ([summary](../../videos/6NIr_cYPglk/summary.md))
 - Eric Hou (Augment Code) argues that engineers should mentor fast but perpetually junior agents with context, constraints, evaluation, and shared organizational knowledge. ([summary](../../videos/Zniw5c9_jx8/summary.md))
-- Editorial: The seventeen incorporated talks frame agent adoption as a combination of empirical measurement, adaptable tooling, workflow composition, feedback design, staged and parallel autonomy, human augmentation, knowledge infrastructure, and production responsibility rather than a code-volume contest, but 17 of 18 available videos cannot establish a playlist-wide consensus.
+- Christopher Harrison and John Peck (GitHub) present Copilot collaboration as explicit context and intent operating inside bounded environments, repository instructions, existing DevOps checks, and independent human review. ([summary](../../videos/tHJSZ1-ZqcA/summary.md))
+- Editorial: Across all 18 available talks, agent adoption is framed as a combination of empirical measurement, adaptable tooling, workflow composition, feedback design, staged and parallel autonomy, human augmentation, knowledge infrastructure, and production responsibility rather than a code-volume contest; shared themes do not imply agreement on product claims or implementation details.
 
 ## Stable Ideas
 
@@ -68,7 +70,8 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Kyle Penfound and Jeremy Adams (Dagger) recommend giving agents scoped repository tools and the same isolated build and test functions used by developers and CI. ([summary](../../videos/Fzb1a24hF-o/summary.md))
 - Forrest Brazeal (Augment Code partner, not employee) and Matt Ball (Augment Code) recommend indexed repository context, chat-based investigation, tests, human interpretation, and modular changes for legacy work. ([summary](../../videos/6NIr_cYPglk/summary.md))
 - Eric Hou (Augment Code) recommends explicit outcomes, organizational context, constraints, evaluation, and reusable memories as conditions for scaling agent work. ([summary](../../videos/Zniw5c9_jx8/summary.md))
-- Editorial: All fifteen workflow-focused talks support context, feedback, or verification as recurring conditions for useful agent work, although the playlist does not yet establish which implementations are most effective.
+- Christopher Harrison and John Peck (GitHub) recommend readable code, explicit intent, versioned instructions, scoped environments, existing CI checks, and independent review around Copilot work. ([summary](../../videos/tHJSZ1-ZqcA/summary.md))
+- Editorial: All sixteen workflow-focused talks support context, feedback, or verification as recurring conditions for useful agent work, although the playlist does not establish which implementations are most effective.
 - Beyang Liu (Sourcegraph) says humans remain responsible for shipped code even when several agents work in parallel. ([summary](../../videos/F_RyElT_gJk/summary.md))
 - Robert Brennan (OpenHands) says a named human should own each agent-authored pull request and its eventual breakage. ([summary](../../videos/o_hhkJtlbSs/summary.md))
 - Editorial: The incorporated workflow talks consistently move human work toward task framing, review, and accountability rather than removing responsibility for production changes.
@@ -92,7 +95,8 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Kyle Penfound and Jeremy Adams (Dagger) treat environment and workflow functions as portable components usable by humans, CI, and multiple agent frameworks. ([summary](../../videos/Fzb1a24hF-o/summary.md))
 - Forrest Brazeal (Augment Code partner, not employee) uses chat to predict legacy behavior and agents to encode tests and modular modernization, while requiring human review of semantic ambiguity. ([summary](../../videos/6NIr_cYPglk/summary.md))
 - Eric Hou (Augment Code) proposes institutional knowledge infrastructure and parallel prototypes as ways to spread individual agent practices and test divergent product decisions. ([summary](../../videos/Zniw5c9_jx8/summary.md))
-- Editorial: Task segmentation, composable interfaces, disposable implementation attempts, context isolation, reusable workflow controls, review-action measurement, sequential pipelines, parallel variation, organizational memory, human-outcome evaluation, legacy-behavior preservation, and change-oriented code review are candidates for comparison against the remaining talk.
+- Christopher Harrison and John Peck (GitHub) present repository-scoped instruction files and MCP servers as complementary context layers for interactive and issue-driven agents. ([summary](../../videos/tHJSZ1-ZqcA/summary.md))
+- Editorial: Task segmentation, composable interfaces, disposable implementation attempts, context isolation, reusable workflow controls, review-action measurement, sequential pipelines, parallel variation, organizational memory, human-outcome evaluation, legacy-behavior preservation, and change-oriented code review are the main comparison axes across the available corpus.
 
 ## Revisions and Tensions
 
@@ -113,9 +117,10 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Kyle Penfound and Jeremy Adams (Dagger) require agent changes to pass predefined tests while acknowledging that agents can alter those tests and that the live result still needed work. ([summary](../../videos/Fzb1a24hF-o/summary.md))
 - Forrest Brazeal (Augment Code partner, not employee) demonstrates a prepared lunar-descent simulator passing while warning that the agent can be persuaded toward opposite scheduler-priority interpretations. ([summary](../../videos/6NIr_cYPglk/summary.md))
 - Eric Hou (Augment Code) reports a large multi-service remediation completed through parallel agents while acknowledging a final round of human polish. ([summary](../../videos/Zniw5c9_jx8/summary.md))
+- Christopher Harrison and John Peck (GitHub) present Coding Agent as bounded by network, branch, workflow, and review controls while acknowledging that probabilistic output may touch more than the requested file. ([summary](../../videos/tHJSZ1-ZqcA/summary.md))
 - Editorial: Cherny's and Liu's emphasis on flexible, low-level delegation is compatible with Kelly's and Brennan's production discipline only if teams add sufficient context, verification, review, access control, and accountability around the model.
 - Editorial: Wu's expanding autonomy tiers, Kirschner's staged guardrails, Albrecht's layered checks, Perszyk's human-agency framing, Hou's final-approval target, Banks's merge bottleneck, Reyes's enterprise controls, and Friedman's adoption caveat reinforce that unattended execution should grow only with the environment, feedback, review, integration capacity, security boundaries, and human outcomes around it.
-- Editorial: Later summaries must test whether other speakers support, qualify, or conflict with the measurement and workflow claims here; playlist order is not evidence of chronological change.
+- Editorial: Publication-order claims require dated evidence; playlist order is not evidence of chronological change.
 
 ## Practical Implications
 
@@ -127,5 +132,6 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Editorial: Evaluate automated review with validity, developer response, and resulting code changes while retaining independent measures of severity and production outcomes.
 - Editorial: For legacy modernization, establish an independent behavioral oracle and domain review before accepting a model's interpretation of unfamiliar or safety-critical code.
 - Editorial: Treat shared organizational knowledge as governed infrastructure with provenance, freshness, permissions, retention rules, and leakage controls.
+- Editorial: Keep agent-generated changes inside the normal DevOps path and treat network access, MCP tools, credentials, workflow execution, and merge authority as separately reviewable permissions.
 - Editorial: Evaluate whether automation increases human control, creativity, productivity, and strategic capacity rather than treating model autonomy or activity as the goal.
-- Editorial: Keep this overview provisional until the remaining pending available video is summarized and incorporated.
+- Editorial: This overview covers every available video; the private manifest entry remains unavailable and is not represented in the synthesis.
