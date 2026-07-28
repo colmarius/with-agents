@@ -6,7 +6,7 @@ publishedAt: "2025-07-27T22:30:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Kyle Penfound and Jeremy Adams of Dagger build a coding agent from a containerized software-delivery workflow and connect it to GitHub. ([source title](https://www.youtube.com/watch?v=Fzb1a24hF-o)) Their workshop treats agent tools, environments, tests, and deployment as composable code, with the same Dagger functions available to developers, CI, and agents. [00:00:00]-[00:06:58]

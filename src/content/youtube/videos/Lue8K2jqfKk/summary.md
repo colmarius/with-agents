@@ -6,7 +6,7 @@ publishedAt: "2025-07-04T16:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Boris Cherny of Anthropic, who identifies himself as the creator of Claude Code, argues that coding-model capability is improving faster than product teams can determine the right interface for it. [00:00:00]-[00:00:56] He presents Claude Code's deliberately simple, general approach and then describes workflows built around context gathering, planning, verification, tool use, and parallel agent sessions. [00:07:06]-[00:17:54]

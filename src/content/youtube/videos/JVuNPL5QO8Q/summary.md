@@ -6,10 +6,10 @@ publishedAt: "2025-06-23T15:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
-Kevin Hou, who leads product at Windsurf, presents the company's product and model strategy for extending a coding agent across a developer's full workflow. [00:00:00] He describes a shared human-AI timeline that combines editor activity, external context, organizational practices, tools, and partial task state, then argues that training on that representation can produce assistance better matched to software engineering than code-only benchmarks. [00:01:51]-[00:04:33] [00:10:02]-[00:14:50]
+Kevin Hou, who leads product at Windsurf, presents the company's product and model strategy for extending a coding agent across a developer's full workflow. [00:00:00] He describes a shared human-AI timeline that combines editor activity, external context, organizational practices, tools, and partial task state, then argues that a model trained for software-engineering workflows can produce assistance better matched to that work than code-only benchmarks. [00:01:51]-[00:04:33] [00:10:02]-[00:14:50]
 
 ## Key Ideas
 

@@ -6,7 +6,7 @@ publishedAt: "2025-07-25T23:06:43Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Rustin Banks, a Google Labs product manager working on Jules, presents the asynchronous coding agent as a way to run independent tasks or competing implementation attempts in parallel. [00:00:03]-[00:01:59] His central constraint is verification: parallel work is useful only when tasks begin with a clear success condition and end with tests, review, and a workable merge process. [00:10:34]-[00:12:30]

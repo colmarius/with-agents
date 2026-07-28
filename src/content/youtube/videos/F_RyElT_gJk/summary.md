@@ -6,7 +6,7 @@ publishedAt: "2025-06-30T22:54:36Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Beyang Liu, CTO and co-founder of Sourcegraph, presents Amp and argues that coding-agent skill requires changing interaction patterns as model capabilities move beyond chatbot-era interfaces. [00:00:00]-[00:07:09] Drawing on Amp's design and reported power-user behavior, he recommends less inner-loop micromanagement, detailed prompts, explicit context and feedback loops, agent-assisted code understanding and review, subagents, and selective parallelism. [00:11:20]-[00:33:38]

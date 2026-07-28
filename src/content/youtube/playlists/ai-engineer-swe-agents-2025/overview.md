@@ -1,6 +1,6 @@
 ---
 title: "SWE Agents: AI Engineer World's Fair 2025"
-status: draft
+status: reviewed
 coveredVideoIds:
   - tbDDYKRFjhk
   - Lue8K2jqfKk

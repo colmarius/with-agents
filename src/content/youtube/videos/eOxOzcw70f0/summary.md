@@ -6,7 +6,7 @@ publishedAt: "2025-08-03T04:30:57Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 The source title credits Harald Kirschner and Christopher Harrison as speakers. ([source title](https://www.youtube.com/watch?v=eOxOzcw70f0)) In the captured workshop, Kirschner identifies himself as working on VS Code; the captions do not separately identify Harrison or state his affiliation, so this summary does not assign individual claims to Harrison. [00:25:01] Kirschner presents AI-assisted development as a progression from exploratory "YOLO" vibe coding through structured guardrails to spec-driven workflows with reusable instructions, prompts, tools, and tests. [00:00:01]-[00:04:59] [00:31:40]-[01:18:23]

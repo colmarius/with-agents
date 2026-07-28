@@ -6,7 +6,7 @@ publishedAt: "2025-07-25T23:11:00Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Eno Reyes of Factory presents "agent-native development" as an organizational shift from developers executing individual implementation steps toward orchestrating agents across planning, coding, review, and operations. ([source title](https://www.youtube.com/watch?v=iheWKg2Tkrk)) He argues that this depends less on unconstrained vibe coding than on centralized context, standardized process, reliable checks, organizational memory, parallel infrastructure, and enterprise controls. [00:00:55]-[00:03:56] [00:13:43]-[00:15:49]

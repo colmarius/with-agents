@@ -6,7 +6,7 @@ publishedAt: "2025-07-23T17:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Yegor Denisov-Blanch of Stanford presents results from a large-scale, longitudinal and cross-sectional study of software-engineering productivity, and argues that AI's effect depends on the work rather than following a universal uplift. [00:01:03]-[00:03:57] He reports that AI can increase delivered code while also creating rework, leaving a smaller net productivity gain that varies with task complexity, project maturity, language popularity, codebase size, and context length. [00:09:49]-[00:17:09]

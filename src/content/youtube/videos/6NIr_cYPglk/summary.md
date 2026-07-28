@@ -6,7 +6,7 @@ publishedAt: "2025-06-27T10:46:59Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Forrest Brazeal, a friend and partner of Augment Code who says he does not work for the company, and Matt Ball, an Augment Code solutions architect, demonstrate using Augment Agent to investigate and modernize Apollo Guidance Computer code. [00:00:00]-[00:00:55] Their legacy-code workflow combines indexed repository context, question answering, bounded implementation, tests, and human interpretation. [00:01:59]-[00:02:56] [00:11:54]-[00:14:25]

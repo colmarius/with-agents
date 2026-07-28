@@ -6,7 +6,7 @@ publishedAt: "2025-08-06T15:59:51Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Itamar Friedman, CEO and co-founder of Qodo, argues that enterprise coding agents become consequential when they move beyond autocomplete and chat into composable end-to-end workflows spanning the software lifecycle. [00:00:01]-[00:04:19] He presents the CLI as an orchestration layer for specialized research, generation, coverage, and review agents, with context, organizational practices, executable checks, and explicit success criteria supplying the "confidence" missing from unconstrained vibe coding. [00:09:22]-[00:19:36]

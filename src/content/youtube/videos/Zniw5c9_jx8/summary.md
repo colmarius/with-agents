@@ -6,7 +6,7 @@ publishedAt: "2025-07-24T15:01:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Eric Hou, a member of technical staff at Augment Code, argues that teams should treat coding agents as fast but perpetually junior collaborators: provide outcomes, context, constraints, structured environments, evaluation, and reusable organizational knowledge rather than merely assigning tickets. [00:00:03] [00:04:46]-[00:10:10] He extends that mentoring model from individual work to shared knowledge infrastructure and parallel product exploration. [00:10:10]-[00:17:46]

@@ -6,7 +6,7 @@ publishedAt: "2025-07-25T23:10:11Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Robert Brennan of OpenHands, who says his team created the open-source agent formerly known as OpenDevin, argues that coding will shrink while software engineering remains centered on critical thinking, user needs, architecture, and organizational goals. [00:00:01]-[00:02:09] He explains the agent loop and recommends small verifiable tasks, clear instructions, sandboxed execution, tightly scoped credentials, disposable experiments, code review, and explicit human ownership. [00:03:04]-[00:12:16]

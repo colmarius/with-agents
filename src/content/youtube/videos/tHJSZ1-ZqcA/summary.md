@@ -6,7 +6,7 @@ publishedAt: "2025-06-27T10:11:01Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 GitHub enterprise advocates Christopher Harrison and John Peck lead a hands-on GitHub Copilot workshop focused on context, Coding Agent, repository instructions, MCP integrations, and the review controls around delegated changes. [00:00:14]-[00:01:07] Harrison's central message is that AI changes how work is delegated but does not replace explicit intent, readable code, bounded environments, tests, security checks, or human review. [00:03:05]-[00:07:43] [00:52:21]-[00:54:25]

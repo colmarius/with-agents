@@ -6,7 +6,7 @@ publishedAt: "2025-08-02T13:15:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Danielle Perszyk, a cognitive scientist at Amazon AGI's San Francisco lab, reframes general intelligence as something that emerges through interactions rather than residing entirely within one person or model. [00:00:00] [00:13:37]-[00:14:42] She presents Nova Act as an early computer-use system whose reliable, controllable UI actions could support products that augment human agency while gathering the interaction data needed for more aligned agents. [00:07:28]-[00:11:36] [00:18:42]-[00:19:36]

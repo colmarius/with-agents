@@ -6,7 +6,7 @@ publishedAt: "2025-07-25T23:07:05Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Scott Wu of Cognition presents a product-builder's account of how Devin's workloads expanded from repetitive migrations to isolated fixes, broader multi-file work, interactive codebase exploration, and parallel backlog execution. ([source title](https://www.youtube.com/watch?v=MI83buT_23o)) He argues that a coding agent's useful task horizon has been growing quickly and that each increase changes the interface, context, testing, and human-escalation problems the system must solve. [00:00:00]-[00:15:57]

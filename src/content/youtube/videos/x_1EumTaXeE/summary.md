@@ -6,7 +6,7 @@ publishedAt: "2025-07-25T23:10:37Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Josh Albrecht, CTO of Imbue, presents lessons from Sculptor, the company's experimental coding-agent environment. [00:00:03]-[00:01:06] He focuses on the gap between generated prototypes and production-quality changes, arguing that teams should use agents not only to write code but also to expose defects early enough for humans or agents to correct them. [00:02:11]-[00:03:53]

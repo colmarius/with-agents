@@ -6,7 +6,7 @@ publishedAt: "2025-08-03T04:32:17Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Chris Kelly of Augment Code argues that generating code is not equivalent to engineering production software: teams still have to make architectural decisions, understand complex-system behavior, and change software safely. [00:00:01]-[00:07:03] He proposes adapting established engineering practices for agents through codebase context, reproducible environments, fast tests, defined tasks, code review, explicit rules, and iterative planning. [00:07:03]-[00:15:01]

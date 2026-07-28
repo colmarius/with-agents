@@ -6,7 +6,7 @@ publishedAt: "2025-07-22T19:50:08Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Tomas Reimers, a co-founder of Graphite, describes lessons from building Diamond, Graphite's AI code reviewer. ([source title](https://www.youtube.com/watch?v=TswQeKftnaw)) He argues that useful automated review depends on restricting models to findings they can make reliably and comments developers actually want, then measuring both correctness and whether comments lead to code changes. [00:00:00]-[00:02:06] [00:06:11]-[00:09:17]
