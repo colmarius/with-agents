@@ -968,3 +968,170 @@
   begin Agent Reliability with exactly one selected `--limit 1` thin-slice
   capture, preserve the two shared global artifacts without recapture, write
   deliberate editorial artifacts, and create the Agent Reliability overview.
+
+## 2026-07-28 — Plan 03 Task 4 Agent Reliability thin slice completed
+
+### Credential, selected check, and authoritative manifest
+
+- Started from a clean `ai-engineer-videos` worktree at commit `1e602b2`.
+  `YOUTUBE_API_KEY` was not exported, so confirmed that the local `.env` was
+  ignored, untracked, and clean, then sourced it only inside the selected check,
+  sync, and capture command processes without printing the credential.
+- Ran exactly one selected read-only check:
+
+  ```sh
+  npm run youtube:library -- check --playlist ai-engineer-agent-reliability-2025
+  ```
+
+- The check exited `0` after a complete remote fetch and reported 2 additions,
+  0 removals, 0 moves, 0 retitles, and 0 availability changes. Because changes
+  existed, ran only the selected Agent Reliability sync; it exited `0` and was
+  treated as authoritative:
+
+  ```sh
+  npm run youtube:library -- sync --playlist ai-engineer-agent-reliability-2025
+  ```
+
+- The exact manifest diff added public entries `Ib5t2RLtxvM` at position 9
+  (`From Agent Traces to Agent Simulations — Rustem Feyzkhanov, Snorkel AI`)
+  and `xIt_mTQp6mY` at position 10 (`Loop Engineering from First Principles —
+  Kyle Mistele, HumanLayer`). No other manifest field changed.
+- Mandatory public-impact decisions:
+  - `Ib5t2RLtxvM` — **keep**: no match in `src/content/posts`,
+    `src/content/summaries`, or `src/data/resources`; the source-only addition
+    required no public playlist orientation, resource-date, corpus-count, or
+    material-thesis fix.
+  - `xIt_mTQp6mY` — **keep**: no match in the same public paths; the source-only
+    addition required no public playlist orientation, resource-date,
+    corpus-count, or material-thesis fix.
+- Committed the manifest-only authoritative change as `006fec3` (`sync Agent
+  Reliability playlist`) before capture. Its exact file list contains only
+  `src/content/youtube/playlists/ai-engineer-agent-reliability-2025/manifest.json`.
+- Recomputed available-manifest overlap after the sync. The authoritative
+  Agent Reliability/SWE Agents overlap remains exactly `n991Yxo1aOI` and
+  `Dj0b_cEBHBI`.
+- Exact pre-capture Agent Reliability state from `youtube:library status`: 11
+  manifest, 10 available, 1 manifest-unavailable private entry
+  (`WnTq5Mc5bIU`), 2 globally shared captures, 2 draft summaries, 8 available
+  pending, 0 caption-unavailable-recorded, and no overview. The pending IDs in
+  manifest order were `8kMaTybvDUw`, `kTnfJszFxCg`, `8SUJEqQNClw`,
+  `1izYWsokr9s`, `sl3icG-IjHo`, `WJjInLeaJjo`, `Ib5t2RLtxvM`, and
+  `xIt_mTQp6mY`.
+
+### Single bounded capture outcome
+
+- Confirmed that the expected first candidate, `8kMaTybvDUw`, had no existing
+  artifact directory or editorial summary. Recorded SHA-256 hashes for all six
+  files under the two shared global directories before capture.
+- Ran exactly one Task 4 capture command, once:
+
+  ```sh
+  npm run youtube:library -- capture --playlist ai-engineer-agent-reliability-2025 --limit 1
+  ```
+
+- The command exited `0`. Its complete per-video report contained one outcome:
+  `captured 8kMaTybvDUw`. There were no unavailable, transient, throttled, or
+  fatal outcome lines and no replacement capture was run.
+- Post-command hashes for `n991Yxo1aOI` and `Dj0b_cEBHBI` matched the pre-command
+  hashes for metadata, transcript, and summary files, and their git diff was
+  empty. The command did not recapture, regenerate, or overwrite either shared
+  global artifact.
+
+### Transcript review and attribution
+
+- Read the complete final `8kMaTybvDUw` transcript and made only obvious
+  source-faithful caption corrections while preserving normal disfluencies and
+  uncertain garbled wording.
+- Corrected recurring `LM`/`LMS` forms to `LLM`/`LLMs`, plus `LLM-based` and
+  `LLM-as-judge`; corrected `deck` and `DAG orchestra` to `DAG` and `DAG
+  orchestrators`.
+- Corrected technical and product forms including `Makefile`, `OpenAI`, `RAG`,
+  `HumanLayer`, `ChatGPT`, `Slack`, `NotebookLM`, `shadcn`,
+  `create-12-factor-agent`, `outer-loop`, `end-to-end`, `rollback`, and
+  `12-factor agents`; restored the title `Go To Statement Considered Harmful`
+  and the `goto` term.
+- Corrected meaning-changing caption phrases including `longunning` to
+  `long-running`, `extractions` to `abstractions`, `air pending errors` to
+  `pending errors`, and `my tech` to `my take`, plus obvious percentage and
+  numeric punctuation. Did not smooth the remaining spoken grammar or guess at
+  uncertain phrases.
+- The source title identifies Dex Horthy and HumanLayer; the transcript also
+  describes HumanLayer's deployment workflow and startup work. The summary
+  therefore names Dex Horthy of HumanLayer and infers no additional role. No
+  uploader/channel metadata was used for speaker or affiliation attribution.
+- Committed only capture-owned metadata and the reviewed transcript as
+  `5181e0f` (`capture Agent Reliability thin slice`). Its exact file list is:
+  - `src/content/youtube/videos/8kMaTybvDUw/metadata.json`
+  - `src/content/youtube/videos/8kMaTybvDUw/transcript.md`
+
+### Deliberate summary, shared reuse, and overview
+
+- Added one deliberate draft summary for `8kMaTybvDUw` with exact contracted
+  frontmatter and heading order. `publishedAt: "2025-07-03T20:50:54Z"` came
+  from the authoritative manifest; `sourceLanguage: en` and `captionKind:
+  auto-generated` came from `metadata.json`. No translation disclosure is
+  needed for the same-language English summary.
+- The summary anchors the title-supported Dex Horthy/HumanLayer attribution and
+  all substantive speaker claims. Every editorial interpretation begins
+  `Editorial:`.
+- Created the draft Agent Reliability overview and incorporated exactly the new
+  `8kMaTybvDUw` summary plus the existing shared `n991Yxo1aOI` and
+  `Dj0b_cEBHBI` summaries. The shared summaries were reused globally without
+  specialization, rewriting, regeneration, or duplication.
+- The overview keeps the contracted frontmatter and heading order, identifies
+  AI Engineer only as curator/source channel, states that speakers and
+  affiliations vary by video, names supported speakers and affiliations in
+  every non-editorial claim, links every such claim to a relative summary, and
+  prefixes every editorial interpretation with `Editorial:`. It makes no
+  playlist-position chronology claim and limits synthesis to the three
+  incorporated summaries.
+- `coveredVideoIds` is duplicate-free and exactly matches the incorporated
+  summaries: `8kMaTybvDUw`, `n991Yxo1aOI`, and `Dj0b_cEBHBI`.
+- Committed only the deliberate summary and overview as `d5ab5fc` (`add Agent
+  Reliability editorial thin slice`). Its exact file list is:
+  - `src/content/youtube/videos/8kMaTybvDUw/summary.md`
+  - `src/content/youtube/playlists/ai-engineer-agent-reliability-2025/overview.md`
+
+### Post-slice coverage and verification
+
+- Exact Agent Reliability state: 11 manifest, 10 available, 3 captured, 3
+  summarized, 3 incorporated, 7 available pending, 1 manifest-unavailable
+  private entry (`WnTq5Mc5bIU`), and 0 caption-unavailable-recorded.
+- Remaining pending available IDs in manifest order: `kTnfJszFxCg`,
+  `8SUJEqQNClw`, `1izYWsokr9s`, `sl3icG-IjHo`, `WJjInLeaJjo`,
+  `Ib5t2RLtxvM`, and `xIt_mTQp6mY`.
+- `npm run lint:fix`: passed (`163` files checked). It reformatted exactly the
+  eight expected clean-at-start Antirez unavailable-caption metadata files.
+  The formatter-only array-layout diff was inspected and those eight files were
+  restored byte-for-byte; no other file changed.
+- `npm run youtube:library -- status`: passed; Agent Reliability reports 11
+  manifest / 10 available / 1 private, 3 captured, 7 pending, 0
+  caption-unavailable-recorded, 3 draft summaries, and a current overview. SWE
+  Agents remains complete, and Coding Agents remains untouched at 38 manifest /
+  37 available / 0 captured.
+- Combined YouTube library/transcript tests: `46/46` passed.
+- `npm run check`: passed (`39` files; 0 errors, warnings, or hints).
+- `npm run build`: passed (`20` pages built).
+- Both source-only boundary searches returned no matches with expected exit
+  `1`.
+- The read-only coverage checker confirmed every captured Agent Reliability ID
+  has `metadata.json` and `transcript.md`, every summarized ID has `summary.md`,
+  both shared IDs reuse one global directory, `coveredVideoIds` is
+  duplicate-free and exactly matches incorporated summary links, pending and
+  unavailable counts reconcile, and private `WnTq5Mc5bIU` remains distinct from
+  the 0 caption-unavailable-recorded outcomes.
+- `git diff --check` passed, and the worktree was clean before this work-item
+  record.
+- Blockers: none. Task 4 remains unchecked because 7 available Agent
+  Reliability entries remain pending.
+
+### Next action and scope boundary
+
+- Keep the work item `in-progress`. In a later session, continue Plan 03 Task 4
+  with exactly one Agent Reliability `--limit 2` capture command, review and
+  summarize every successful capture, refresh the draft overview, and do not
+  refill the bounded batch in the same session.
+- No second capture command, later `--limit 2` batch, SWE Agents capture, Coding
+  Agents capture, shared-ID recapture, retry, force operation, public artifact,
+  AI Engineer author/relationship/author synthesis, Task 5 work, Plan 04 work,
+  or new handoff file began in this thin-slice session.
