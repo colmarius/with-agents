@@ -7,11 +7,13 @@ coveredVideoIds:
   - Dc3qOA9WOnE
   - F_RyElT_gJk
   - o_hhkJtlbSs
+  - MI83buT_23o
+  - eOxOzcw70f0
 ---
 
 ## Coverage
 
-The manifest contains 19 entries: 18 available and 1 unavailable private entry (`jBr-EERbXJw`). Of the available entries, 5 are captured, 5 are summarized, 5 are incorporated here, and 13 remain pending; 0 caption-unavailable outcomes have been recorded. Pending IDs: `MI83buT_23o`, `eOxOzcw70f0`, `x_1EumTaXeE`, `Dj0b_cEBHBI`, `JVuNPL5QO8Q`, `X4BwOu0GWb8`, `iheWKg2Tkrk`, `n991Yxo1aOI`, `TswQeKftnaw`, `Fzb1a24hF-o`, `6NIr_cYPglk`, `Zniw5c9_jx8`, and `tHJSZ1-ZqcA`.
+The manifest contains 19 entries: 18 available and 1 unavailable private entry (`jBr-EERbXJw`). Of the available entries, 7 are captured, 7 are summarized, 7 are incorporated here, and 11 remain pending; 0 caption-unavailable outcomes have been recorded. Pending IDs: `x_1EumTaXeE`, `Dj0b_cEBHBI`, `JVuNPL5QO8Q`, `X4BwOu0GWb8`, `iheWKg2Tkrk`, `n991Yxo1aOI`, `TswQeKftnaw`, `Fzb1a24hF-o`, `6NIr_cYPglk`, `Zniw5c9_jx8`, and `tHJSZ1-ZqcA`.
 
 AI Engineer is the curator and source channel for this multi-speaker playlist, not its author. Speakers and affiliations vary by video and must be established from each video's source title, description, or transcript.
 
@@ -22,7 +24,9 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Chris Kelly (Augment Code) argues that code generation does not replace the architectural decisions, production safeguards, and maintenance responsibility of software engineering. ([summary](../../videos/Dc3qOA9WOnE/summary.md))
 - Beyang Liu (Sourcegraph) argues that agentic models require different application and interaction patterns, and presents detailed prompts, explicit feedback loops, code review, subagents, and parallel sessions as parts of the emerging skill set. ([summary](../../videos/F_RyElT_gJk/summary.md))
 - Robert Brennan (OpenHands) argues that coding will shrink without eliminating software engineering, and recommends small verifiable tasks, isolation, clear instructions, code review, and explicit human ownership. ([summary](../../videos/o_hhkJtlbSs/summary.md))
-- Editorial: The five incorporated talks frame agent adoption as a combination of empirical measurement, adaptable tooling, feedback design, and production responsibility rather than a code-volume contest, but 5 of 18 available videos cannot establish a playlist-wide consensus.
+- Scott Wu (Cognition) presents coding-agent progress as a sequence of expanding workload tiers whose interface, context, testing, and human-escalation requirements change as tasks grow. ([summary](../../videos/MI83buT_23o/summary.md))
+- Harald Kirschner (VS Code) presents AI-assisted development as a progression from exploratory vibe coding through structured guardrails to spec-driven workflows. ([summary](../../videos/eOxOzcw70f0/summary.md))
+- Editorial: The seven incorporated talks frame agent adoption as a combination of empirical measurement, adaptable tooling, feedback design, staged autonomy, and production responsibility rather than a code-volume contest, but 7 of 18 available videos cannot establish a playlist-wide consensus.
 
 ## Stable Ideas
 
@@ -33,7 +37,9 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Chris Kelly (Augment Code) recommends fast tests, reproducible environments, documented standards, and clearly bounded tasks for agent work. ([summary](../../videos/Dc3qOA9WOnE/summary.md))
 - Beyang Liu (Sourcegraph) recommends directing agents toward project-specific context, build commands, tests, and fast visual feedback loops. ([summary](../../videos/F_RyElT_gJk/summary.md))
 - Robert Brennan (OpenHands) recommends small tasks with a clear definition of done, detailed instructions, and results that a human can verify. ([summary](../../videos/o_hhkJtlbSs/summary.md))
-- Editorial: All four workflow-focused talks support context and verification as recurring conditions for useful agent work, although the playlist does not yet establish which implementations are most effective.
+- Scott Wu (Cognition) says broader agent workloads required reproducible repository setup, codebase context, confidence-based escalation, and iterative self-testing. ([summary](../../videos/MI83buT_23o/summary.md))
+- Harald Kirschner (VS Code) recommends versioned instructions, scoped tools, working-state commits, and explicit pause-and-review points as workflows become more consequential. ([summary](../../videos/eOxOzcw70f0/summary.md))
+- Editorial: All six workflow-focused talks support context and verification as recurring conditions for useful agent work, although the playlist does not yet establish which implementations are most effective.
 - Beyang Liu (Sourcegraph) says humans remain responsible for shipped code even when several agents work in parallel. ([summary](../../videos/F_RyElT_gJk/summary.md))
 - Robert Brennan (OpenHands) says a named human should own each agent-authored pull request and its eventual breakage. ([summary](../../videos/o_hhkJtlbSs/summary.md))
 - Editorial: The incorporated workflow talks consistently move human work toward task framing, review, and accountability rather than removing responsibility for production changes.
@@ -45,7 +51,9 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Chris Kelly (Augment Code) expects code review to become more important as agents produce more code and argues that current file-ordered review interfaces are inadequate. ([summary](../../videos/Dc3qOA9WOnE/summary.md))
 - Beyang Liu (Sourcegraph) favors a simple, composable agent interface and describes subagents as a way to isolate context for longer work. ([summary](../../videos/F_RyElT_gJk/summary.md))
 - Robert Brennan (OpenHands) treats generated code as cheap enough to discard and retry when an agent's approach is substantially wrong. ([summary](../../videos/o_hhkJtlbSs/summary.md))
-- Editorial: Task segmentation, composable interfaces, disposable implementation attempts, context isolation, and change-oriented code review are candidates for comparison against later speakers' approaches.
+- Scott Wu (Cognition) argues that each increase in useful task length changes the product bottleneck and describes interactive planning followed by asynchronous execution as one response to more complex work. ([summary](../../videos/MI83buT_23o/summary.md))
+- Harald Kirschner (VS Code) presents reusable prompts, custom modes, and constrained tool sets as ways to encode recurring team practices and narrow an agent's operating context. ([summary](../../videos/eOxOzcw70f0/summary.md))
+- Editorial: Task segmentation, composable interfaces, disposable implementation attempts, context isolation, reusable workflow controls, and change-oriented code review are candidates for comparison against later speakers' approaches.
 
 ## Revisions and Tensions
 
@@ -54,11 +62,15 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Chris Kelly (Augment Code) emphasizes that models generate patterns while production engineering still requires contextual judgment, safeguards, and responsibility. ([summary](../../videos/Dc3qOA9WOnE/summary.md))
 - Beyang Liu (Sourcegraph) argues that agents should make edits without requesting approval at every step, while keeping humans responsible for the code they ship. ([summary](../../videos/F_RyElT_gJk/summary.md))
 - Robert Brennan (OpenHands) warns that automatically merging agent output accumulates technical debt and requires a human review and ownership path. ([summary](../../videos/o_hhkJtlbSs/summary.md))
+- Scott Wu (Cognition) predicts rapid growth in agent task length while also saying that each capability increase creates a different interface and control problem. ([summary](../../videos/MI83buT_23o/summary.md))
+- Harald Kirschner (VS Code) limits unconstrained vibe coding to prototypes and learning, then adds shared stacks, instructions, specifications, and review as work becomes durable. ([summary](../../videos/eOxOzcw70f0/summary.md))
 - Editorial: Cherny's and Liu's emphasis on flexible, low-level delegation is compatible with Kelly's and Brennan's production discipline only if teams add sufficient context, verification, review, access control, and accountability around the model.
+- Editorial: Wu's expanding autonomy tiers and Kirschner's staged guardrails reinforce that unattended execution should grow only with the environment, feedback, and review mechanisms around it.
 - Editorial: Later summaries must test whether other speakers support, qualify, or conflict with the measurement and workflow claims here; playlist order is not evidence of chronological change.
 
 ## Practical Implications
 
 - Editorial: Track delivered functionality and rework when evaluating coding agents, then segment outcomes by the characteristics of the task and codebase.
 - Editorial: Give agents explicit project context, bounded tasks, isolated access, and tools, then require observable verification and named human review of production consequences.
-- Editorial: Keep this overview provisional until more of the 13 pending available videos are summarized and incorporated.
+- Editorial: Scale from disposable exploration to structured and asynchronous work only when reproducible environments, scoped tools, tests, escalation paths, and review capacity support the larger blast radius.
+- Editorial: Keep this overview provisional until more of the 11 pending available videos are summarized and incorporated.
