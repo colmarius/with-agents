@@ -1,8 +1,8 @@
 # Research: Amp Official Sources for Case-Study Maintenance
 
 **Date:** 2026-06-28
-**Last updated:** 2026-07-17
-**Status:** complete through the 2026-07-17 case-study refresh; re-check before future publication
+**Last updated:** 2026-07-28
+**Status:** complete through the 2026-07-28 source sweep; targeted public case-study refresh recommended
 **Question:** Which current public Amp sources should anchor case-study maintenance, and which older Amp claims are stale or risky?
 
 ## Recommendation
@@ -11,7 +11,24 @@ Use the current [Amp Manual](https://ampcode.com/manual), [Pricing page](https:/
 
 The published article should remain an Amp case study for factory-era coding-agent workflows: task sizing, delegation, context, review, feedback loops, extensibility, agent-to-agent coordination, and cost governance. It should not regress to the old draft's stale feature catalog, Oracle-as-mode framing, Handoff section, fixed token thresholds, old model names, old speed/cost claims, or draft-only practice-path links.
 
-The 2026-07-17 refresh adds Amp's agent-to-agent orchestration contract: agents can spawn other agents as their own Amp threads locally, in orbs, or on other runners, then exchange messages and files across them. It also records the launch of optional subscriptions alongside continuing pay-as-you-go billing because fan-out has direct cost implications. The 2026-07-09 refresh updated the published case study for Amp's mode dial, and the 2026-07-08 refresh covered remote execution. Keep exact subscription prices and quotas, orb prices, sizes, flags, keybindings, model assignments, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+The 2026-07-28 sweep shows Amp moving beyond agent-to-agent thread spawning into longer-lived, event-driven orchestration: Puck and Slack can coordinate work, agents can schedule their own wake-ups, workspace members can share control of orb threads, and durable webhooks can wake orbs from external events. OIDC workload identity gives outbound orb access a short-lived, claim-scoped trust path. These additions do not invalidate the public case study's contracts; they make lifecycle, identity, event trust, idempotency, access, ownership, and recurring-spend boundaries more important. Keep exact subscription prices and quotas, orb prices, sizes, flags, keybindings, model assignments, webhook limits, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+
+## Refresh Sweep — 2026-07-28
+
+Freshly checked sources:
+
+- [Chronicle](https://ampcode.com/chronicle): the newest release sequence is [Event Driven Orbs](https://ampcode.com/news/event-driven-orbs) (2026-07-23), [Multiplayer](https://ampcode.com/news/multiplayer) (2026-07-22), [Right on Schedule](https://ampcode.com/news/schedule) (2026-07-21), [Meet Puck](https://ampcode.com/news/meet-puck) and [Amp Is Now In Slack](https://ampcode.com/news/slack-integration) (both 2026-07-20), [Subscriptions, At Last](https://ampcode.com/news/subscriptions) (2026-07-18), [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent) (2026-07-17), and [Secrets of the Orb](https://ampcode.com/news/secrets-of-the-orb) (2026-07-14).
+- [Amp Manual](https://ampcode.com/manual): now documents the four current modes; project and changes-workflow management; thread finding and archiving; runners; schedules; Slack; multiplayer; current skill and MCP precedence; and corrected pricing language. The former internal pricing contradiction is gone: subscriptions are recommended, while pay-as-you-go credits require no subscription or commitment.
+- [Orbs manual](https://ampcode.com/manual/orbs) and [OIDC guide](https://ampcode.com/manual/orbs/oidc): orbs can mint short-lived RS256 OIDC identity tokens for one audience. Relying services must verify signature, issuer, audience, expiry, and identity claims; an audience is not an authorization secret. The current guide recommends immutable workspace/project/user/thread IDs over email and gives GCP, AWS, and Tailscale federation recipes.
+- [Meet Puck](https://ampcode.com/news/meet-puck) and [Amp Is Now In Slack](https://ampcode.com/news/slack-integration): Puck is an explicitly experimental, always-available meta-agent for finding/managing threads, creating projects, and launching/coordinating agents. Slack mentions route to each user's Puck, which can search Slack context, answer codebase questions, manage threads, and initiate agent work.
+- [Right on Schedule](https://ampcode.com/news/schedule): an agent can save a one-time or recurring prompt, wake its existing thread, and continue with its context and history. The release explicitly composes schedules with Slack, Puck, skills, and spawned agents. Treat completion conditions, recurrence, budget, notification destination, and schedule cleanup as part of the work contract.
+- [Multiplayer](https://ampcode.com/news/multiplayer) and the Manual's multiplayer section: a non-private orb thread can temporarily give workspace members the ability to message the agent and access the orb's files, changes, portals, secrets, and shared terminal. The thread owner pays the agent and orb costs. The current default duration is three hours and can be changed or ended; access automatically expires.
+- [Event Driven Orbs](https://ampcode.com/news/event-driven-orbs): a project plugin can register a durable webhook that stores an external event and wakes the owning orb even when it is paused. The release's GitHub example verifies signatures, deduplicates delivery, passes trusted metadata separately, and treats issue text as untrusted input rather than instructions. Handlers can continue the owning thread or spawn a fresh orb thread and post results back to the originating service.
+- [Plugin API](https://ampcode.com/manual/plugin-api): `createAgent`, `getBuiltinAgent`, and `registerAgentMode` are now first-class top-level APIs, while experimental aliases remain for compatibility. Built-in handles are `low`, `medium`, `high`, and `ultra`; deprecated `rush`, `smart`, and `deep` handles map to replacements. `createWebhook` is still experimental: its capability URL is a credential, delivery is at least once, effects must be idempotent by `event.id`, handlers have a 30-second deadline before retry, and the current endpoint limit is a burst of 10 events refilling at 10 per minute.
+- [Models](https://ampcode.com/models): now lists Puck as a separate meta-agent using GPT-5.6 Terra, alongside updated mode, subagent, and system-model assignments. This reinforces the existing decision to keep exact model wiring out of durable public prose.
+- [Pricing page](https://ampcode.com/pricing): optional beta subscriptions and pay-as-you-go remain available. The page now also documents linked ChatGPT and X subscriptions, workspace billing behavior, and mode-access caveats. Keep those exact terms in dated research rather than the public case-study thesis.
+
+Article-maintenance decision: apply a targeted refresh to `src/content/posts/amp-factory-era-case-study.md`. Extend its orchestration contract from spawned workers to scheduled and event-triggered work: define who or what may wake the agent, which event fields are trusted, how duplicate delivery is handled, what identity and permissions it receives, who can join the environment, who owns spend and integration, when access or recurrence expires, and how the loop stops. Update the source verification date and links. `agentic-coding-2026.md` remains accurate and does not need another release-detail paragraph; the transcript-backed resource summaries should remain historical rather than being rewritten as current product docs.
 
 ## Refresh Sweep — 2026-07-17
 
@@ -20,10 +37,10 @@ Freshly checked sources:
 - [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent): an Amp agent can spawn other agents as their own Amp threads in orbs, on the local machine, or on another machine/runner. Agents can send messages and files to each other. First-party examples include offloading side quests while the parent continues, fanning tests out across low-mode workers, recovering files from abandoned threads, sending a test matrix to another machine, and coordinating API documentation in another project.
 - [Agents, Anywhere](https://ampcode.com/news/agents-anywhere): remote thread creation remains opt-in. An enabled interactive client accepts new threads in its working directory; `amp --no-tui` starts a headless runner. Multiple runners can run on one host when they use different directories.
 - [The Dial](https://ampcode.com/news/the-dial): `low`, `medium`, `high`, and `ultra` remain the four built-in capability/cost tiers. `medium` is the default; every tier has an oracle; plugins can register custom modes. Exact model wiring is explicitly expected to change.
-- [Subscriptions, At Last](https://ampcode.com/news/subscriptions): optional monthly subscriptions launched in beta on 2026-07-17. Megawatt is $20/month with 750 hours of small orbs, $20 of agent usage, and low/medium modes; Gigawatt is $200/month with 1,000 hours of large orbs, $200 of agent usage, and all modes. The announcement explicitly says pay-as-you-go remains available and subscriptions are not required.
-- [Chronicle](https://ampcode.com/chronicle): two product announcements share the latest date, 2026-07-17 — From Agent to Agent and Subscriptions, At Last — after The Dial and Agents, Anywhere.
+- [Subscriptions, At Last](https://ampcode.com/news/subscriptions): the beta subscription page was first observed during this sweep and now carries the canonical publication date 2026-07-18. Megawatt is $20/month with 750 hours of small orbs, $20 of agent usage, and low/medium modes; Gigawatt is $200/month with 1,000 hours of large orbs, $200 of agent usage, and all modes. The announcement explicitly says pay-as-you-go remains available and subscriptions are not required.
+- [Chronicle](https://ampcode.com/chronicle): From Agent to Agent is dated 2026-07-17; the subscription announcement now carries 2026-07-18. Both followed The Dial and Agents, Anywhere.
 - [Pricing page](https://ampcode.com/pricing): the supplied URL initially returned HTTP 404 during the 2026-07-17 sweep, then went live with the subscription launch and now returns HTTP 200. It presents optional Megawatt and Gigawatt subscriptions alongside pay-as-you-go at API prices. Treat the exact beta plan prices, included agent usage, orb-hour quotas, and mode restrictions as high-churn details.
-- [Manual pricing section](https://ampcode.com/manual#pricing): the opening now recommends an optional monthly subscription and links to the dedicated pricing page. Its pay-as-you-go details still say individuals and non-enterprise workspaces pay provider API pricing with zero markup, with a $5 minimum credit purchase; Enterprise usage is 50% more expensive and requires an initial $1,000 purchase that grants the same amount of Enterprise usage. A later sentence still says “There is no subscription or commitment for Amp,” contradicting the new subscription guidance on the same page. Treat that sentence as stale, not as current billing policy.
+- [Manual pricing section](https://ampcode.com/manual#pricing): at the time of this sweep, the opening recommended an optional monthly subscription while a later sentence still said “There is no subscription or commitment for Amp.” The 2026-07-28 Manual fixes this: pay-as-you-go credits, rather than Amp as a whole, require no subscription or commitment.
 
 Article-maintenance decision: distinguish isolated built-in subagents from spawned threads. Add target executor/project, transferred files/context, budget, stop condition, proof target, return message, and integration ownership to the delegation contract. In durable public prose, say subscriptions are optional and pay-as-you-go remains available; omit exact beta plan prices, quotas, orb prices, and model assignments.
 
@@ -79,7 +96,7 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 ## Source Hierarchy for Task 7
 
 1. **Current canonical product docs:** Manual, Orbs manual, Plugin API, Models, and current homepage/install/manual sections.
-2. **Recent first-party product changes:** Chronicle items from May-July 2026, especially From Agent to Agent, The Dial, Agents Anywhere, Agents in Orbs, More Orb Sizes, Read Bigger Threads, Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, End of Public Threads, npm Package Changes, and Plugins Everywhere.
+2. **Recent first-party product changes:** Chronicle items from May-July 2026, especially Event Driven Orbs, Multiplayer, Right on Schedule, Meet Puck, Amp Is Now In Slack, From Agent to Agent, Secrets of the Orb, The Dial, Agents Anywhere, Agents in Orbs, More Orb Sizes, Read Bigger Threads, Amp Rebuilt, Agents Everywhere, Custom Agents, Diffs, End of Public Threads, npm Package Changes, and Plugins Everywhere.
 3. **Recent first-party workflow notes:** Putting an Agent in an Orb, Feedback Loopable, Mainframe Magic, How to Pair With an Agent, and Liberating Code Review.
 4. **Archived guidance:** Context Management in Amp and 200k Tokens Is Plenty only for durable principles; do not use them for current Handoff/token-threshold guidance.
 5. **Old local draft material:** `src/content/posts/amp-power-patterns.md` only as raw material to replace, not as an authority.
@@ -87,19 +104,23 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 ## Current Product Facts Safe to Use Carefully
 
 - Amp agents can spawn other agents as their own Amp threads in orbs, on the local machine, or on another runner, then exchange messages and files. Keep spawned threads separate from built-in subagents, which the Manual still describes as isolated workers that return final summaries.
+- Agents can attach one-time or recurring schedules to a thread, wake with a saved prompt, and continue with that thread's context and history. Treat recurrence, completion, notification, spend, and cleanup as explicit contracts rather than assuming a scheduled agent will stop itself safely.
+- Puck is an experimental meta-agent for managing Amp projects and threads and launching/coordinating agents. Slack mentions route through the user's Puck. Use Puck/Slack as current orchestration direction, not as a stable API or generic requirement.
+- Event-driven orb plugins can register durable webhooks that wake paused orbs and either continue the owning thread or launch another. The capability URL must be protected, external payloads remain untrusted, signature verification belongs in the integration, and at-least-once delivery requires idempotent effects.
+- Multiplayer temporarily exposes a non-private orb thread's agent, files, changes, portals, secrets, and shared terminal to workspace members. The thread owner owns billing. Access scope and expiry therefore belong in the same delegation contract as worker scope and budget.
 - Amp currently presents four built-in dial tiers: `low`, `medium`, `high`, and `ultra`. They replace the old `smart`, `deep`, `rush`, and `large` built-ins. `medium` is the default; `low` is for exact bounded work; `high` is for hard changes in known areas; `ultra` is for clear outcomes where the path has many unknowns.
 - Oracle is **not** a mode. It is a second-opinion tool/subagent for complex reasoning, planning, debugging, or review.
 - Current model assignments are on `/models` and age quickly. The Dial lists current under-the-hood wiring for `low`/`medium`/`high`/`ultra`, but also says that wiring will change as models improve. Prefer dial-level capability descriptions over model names in durable public prose.
 - Amp now supports web/mobile/CLI surfaces for watching and driving active agent threads. Use this as a current product-direction point, not as a generic coding-agent requirement.
 - Amp now supports orb-backed remote agents and opted-in remote thread creation from ampcode.com onto any machine running Amp. Use this as remote-execution/orchestration direction, not as setup guidance.
-- Orbs are fresh remote machines associated with projects and configured through project settings; `.agents/setup` and `.agents/resume` are current repo lifecycle hooks for preparing and resuming orb work. Exact sizes/prices/flags should be verified from the Orbs manual immediately before publication.
+- Orbs are fresh remote machines associated with projects and configured through project settings; `.agents/setup` and `.agents/resume` are current repo lifecycle hooks for preparing and resuming orb work. Orbs can mint short-lived OIDC identity tokens, but relying services must authorize immutable claims as well as checking the audience. Exact sizes/prices/flags should be verified from the Orbs manual immediately before publication.
 - `read_thread` has been rewritten for long, compacted threads. This reduces product-context loss, but public workflow guidance should still keep decisions, acceptance criteria, and proof in repo-local state.
-- Plugins are the current extensibility surface: events, tools, commands, UI, AI classification, configuration, thread APIs, custom agents, custom modes, and custom subagents.
+- Plugins are the current extensibility surface: events, tools, commands, UI, AI classification, configuration, thread APIs, custom agents, custom modes, custom subagents, and experimental durable webhooks. Core agent creation and mode registration are now first-class APIs; webhook registration remains experimental.
 - Project/user/system `AGENTS.md`, skills, checks, MCP configuration, thread references, review, and thread sharing are all current manual concepts.
 - Librarian can search public GitHub and connected private GitHub repositories, but the manual says it reads only the default branch.
 - Amp does not ask for approval before running tools by default. Permissions can still be implemented via plugins or legacy settings. Frame this as a configurable security boundary, not a blanket recommendation.
 - Manual thread sharing currently supports private, workspace-shared, group-shared, and unlisted visibility. Chronicle says public discoverable thread sharing was removed on 2026-06-02.
-- Amp now offers optional beta subscriptions with included agent and orb usage while retaining pay-as-you-go at provider API prices. The Manual says individuals and non-enterprise workspaces pay zero markup on pay-as-you-go usage; its later “no subscription” sentence is stale and contradicts both its own opening guidance and the dedicated Pricing page. Treat worker count and dial tier as budget controls, and reverify subscription tiers, included usage, Enterprise pricing, and credit rules before publication.
+- Amp now offers optional beta subscriptions with included agent and orb usage while retaining pay-as-you-go at provider API prices. The Manual says individuals and non-enterprise workspaces pay zero markup on pay-as-you-go usage, and its former internal contradiction has been fixed. Treat worker count, dial tier, recurring schedules, and event-triggered wake-ups as budget controls, and reverify subscription tiers, included usage, Enterprise pricing, and credit rules before publication.
 
 ## Stale or High-Risk Claims to Remove from the Old Draft
 
@@ -111,8 +132,10 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 - Old VS Code extension/sidebar assumptions. The February 2026 “Coding Agent Is Dead” post announced killing the editor extensions; May/June 2026 sources describe rebuilt web/mobile/CLI surfaces and a new sidebar. Verify UI details immediately before publishing.
 - Setup/install claims using `@sourcegraph/amp`; npm Package Changes says the CLI package is now `@ampcode/cli`, with direct installation recommended.
 - Pricing, subscription, free-tier, or Enterprise-premium claims unless reverified from the dedicated Pricing page, current Manual, and latest billing announcement at publication time.
-- Treat the Manual's “There is no subscription or commitment for Amp” sentence as stale while it conflicts with the same Manual's subscription guidance, the live Pricing page, and the subscription announcement.
+- Do not quote the Manual's former “There is no subscription or commitment for Amp” sentence as current policy. The Manual now correctly says pay-as-you-go credits require no subscription or commitment.
 - Exact orb sizes, prices, CLI flags, runner setup details, keybindings, or UI screenshots unless reverified from the current Orbs manual and latest news on the publication date.
+- Exact schedule recurrence rules, webhook rate limits/deadlines, multiplayer durations, Puck capabilities, Slack permissions, OIDC claims, portal behavior, or plugin signatures unless reverified from the current Manual and Plugin API.
+- Any claim that an external event body is trusted agent instruction, or that a webhook handler runs exactly once. Current guidance separates verified metadata from untrusted content and documents at-least-once delivery.
 - Draft-only route links: `/posts/amp-first-win-15-minutes`, `/posts/what-is-an-agent`, `/posts/agent-workflows-that-stick`, `/posts/agent-planning-workflow`, `/posts/amp-power-patterns`, and `/posts/coding-with-agents-2025`.
 - Generic “use N subagents for N files” advice without independence, conflict, and review caveats.
 
@@ -120,19 +143,21 @@ Task 7 publish decision from this sweep: publish a listed case study as `src/con
 
 ### Amp Manual — <https://ampcode.com/manual>
 
-**Recency/status:** current canonical manual; force-refetched 2026-06-28 and 2026-07-08; mode naming superseded by The Dial on 2026-07-09.
+**Recency/status:** current canonical manual; force-refetched 2026-06-28, 2026-07-08, and 2026-07-28. The current page now incorporates The Dial and the July 20-22 orchestration releases.
 **Best use:** primary source for current product terminology and feature existence.
 
 Key points:
 
-- The 2026-07-08 pass described Amp as a frontier coding agent for terminal and editor, with three modes: `deep`, `smart`, and `rush`; The Dial supersedes that mode naming with `low`, `medium`, `high`, and `ultra`.
+- The Manual now directly documents `low`, `medium`, `high`, and `ultra`; the 2026-07-08 `deep`/`smart`/`rush` snapshot is superseded.
 - Prompting guidance emphasizes explicit outcomes, one thread per task, naming known files/commands, using `AGENTS.md`, and telling the agent how to verify its work.
 - `AGENTS.md` files are included from cwd/parents, subtree guidance when files are read, and user/system locations. Mentioned files and glob-scoped guidance are supported.
 - Thread references are current: users can reference Amp thread URLs/IDs; Amp extracts relevant information from the referenced thread.
 - Subagents are useful for independent multi-step work, large-output operations, or parallel work, but they are isolated, cannot be guided mid-task, and only return final summaries.
 - Oracle is a read-only second-opinion model/tool for complex reasoning/review/debugging, not a mode.
 - Librarian searches external codebases on GitHub, including connected private repos, and only default branches.
-- Plugins, skills, MCP, code review/checks, permissions, CLI execute/stream JSON, thread sharing, remote control, remote thread creation, and orbs are current product areas.
+- Projects now include repository identity and configurable Ship/Push to Branch/Custom Ship changes workflows. The Manual also documents finding and archiving threads.
+- Plugins, skills, MCP, code review/checks, permissions, CLI execute/stream JSON, thread sharing, remote control, remote thread creation, orbs, schedules, Slack, and multiplayer are current product areas.
+- The current pricing section no longer contradicts the subscription launch: it recommends subscriptions and separately says pay-as-you-go credits require no subscription or commitment.
 
 Task 7 use:
 
@@ -161,16 +186,17 @@ Task 7 use:
 
 ### Plugin API Reference — <https://ampcode.com/manual/plugin-api>
 
-**Recency/status:** current generated/reference documentation; force-refetched 2026-06-28 and 2026-07-08; built-in mode naming should be rechecked after The Dial.
+**Recency/status:** current generated/reference documentation; force-refetched 2026-06-28, 2026-07-08, and 2026-07-28. Core agent APIs are now first-class; durable webhooks are experimental.
 **Best use:** precise API capabilities when discussing custom agents/orchestration.
 
 Key points:
 
 - Example plugin covers `session.start`, `tool.call`, `tool.result`, `agent.start`, `agent.end`, commands, UI, tools, thread append, runtime/config, and `amp.ai.ask`.
-- Current API includes `createAgent`, `getBuiltinAgent`, `registerAgentMode`, thread handles, thread append/wait/cancel/messages, command availability, plugin tools, and helpers for tool calls/files.
-- The 2026-07-08 pass showed built-in agent handles for `smart`, `deep`, and `rush`; after The Dial, recheck exact handles before publishing plugin code examples.
-- Custom agents can run one-shot or create background threads; `parentThreadID` connects spawned work to a parent thread.
-- Some APIs are marked experimental or compatibility aliases; plugin/custom-agent details can churn.
+- Current first-class API includes `createAgent`, `getBuiltinAgent`, `registerAgentMode`, cross-thread handles, thread append/wait/cancel/messages, command availability, plugin tools, and helpers for tool calls/files.
+- Built-in handles are `low`, `medium`, `high`, and `ultra`. Deprecated `rush`, `smart`, and `deep` handles are compatibility aliases that spawn replacement modes.
+- Custom agents can run one-shot or create background threads on local, orb, or runner executors; `parentThreadID` connects spawned work to a parent thread, and orb thread creation can request a multiplayer TTL.
+- Experimental `createWebhook` registers a durable capability URL scoped to a plugin and owning orb thread. Delivery is at least once; handlers must use `event.id` for idempotency and finish within the current 30-second deadline or be retried.
+- Some APIs and exact signatures remain experimental or compatibility aliases; plugin/custom-agent/webhook details can churn.
 
 Task 7 use:
 
@@ -179,13 +205,19 @@ Task 7 use:
 
 ### Amp Chronicle — <https://ampcode.com/chronicle>
 
-**Recency/status:** current release/news index; force-refetched 2026-06-28, 2026-07-08, and 2026-07-17; The Dial checked directly on 2026-07-09 and 2026-07-17.
+**Recency/status:** current release/news index; force-refetched 2026-06-28, 2026-07-08, 2026-07-17, and 2026-07-28.
 **Best use:** latest-product-change sweep before editing/publishing.
 
 Important recent items:
 
+- 2026-07-23 Event Driven Orbs: durable plugin webhooks can wake paused orbs from external HTTP events; integrations own verification, filtering, idempotency, and safe handling of untrusted payloads.
+- 2026-07-22 Multiplayer: workspace members can temporarily share control of a non-private orb thread and its agent, portal, changes, files, and terminal.
+- 2026-07-21 Right on Schedule: agents can save one-time or recurring prompts, wake, and continue with existing context/history.
+- 2026-07-20 Meet Puck: experimental meta-agent/home base for finding/managing work and launching/coordinating agents.
+- 2026-07-20 Amp Is Now In Slack: Slack mentions route through personal Puck instances for codebase questions, thread management, context search, and agent work.
+- 2026-07-18 Subscriptions, At Last: optional beta plans add included agent and orb usage while pay-as-you-go remains available.
 - 2026-07-17 From Agent to Agent: agents can spawn other agents as their own threads across local machines, orbs, and other runners, then send messages and files between spawned threads.
-- 2026-07-17 Subscriptions, At Last: optional beta plans add included agent and orb usage while pay-as-you-go remains available.
+- 2026-07-14 Secrets of the Orb: Amp-managed orbs can mint short-lived OIDC tokens with workspace/project/user/thread identity claims for workload federation.
 - 2026-07-09 The Dial: built-in modes are now `low`, `medium`, `high`, and `ultra`, replacing `smart`, `deep`, `rush`, and `large`; reasoning effort is part of the tier; plugins can still register custom modes.
 - 2026-07-08 Agents Anywhere: start new agents remotely from ampcode.com on any opted-in machine or headless runner that can run `amp`.
 - 2026-07-03 More Orb Sizes: project-level orb CPU/memory choices; exact prices and sizes are date-sensitive.
@@ -214,7 +246,7 @@ Task 7 use:
 
 ### From Agent to Agent — <https://ampcode.com/news/from-agent-to-agent>
 
-**Recency/status:** 2026-07-17 product announcement; one of two Chronicle items on the refresh date.
+**Recency/status:** 2026-07-17 product announcement; followed by the July 20-23 Puck, Slack, schedule, multiplayer, and event-trigger releases.
 **Best use:** current source for agent-driven orchestration across spawned Amp threads and executors.
 
 Key points:
@@ -229,9 +261,91 @@ Case-study use:
 - Treat agent-to-agent work as a delegation protocol: target project/executor, inputs, budget, stop condition, proof, return message, and integration owner.
 - Do not translate the examples into generic "spawn many agents" advice. Fan-out is useful only when work is independent and review/cost remain bounded.
 
+### Secrets of the Orb and OIDC Manual — <https://ampcode.com/news/secrets-of-the-orb>, <https://ampcode.com/manual/orbs/oidc>
+
+**Recency/status:** 2026-07-14 announcement plus current dedicated guide, force-refetched 2026-07-28.
+**Best use:** current source for workload identity and least-privilege access from Amp-managed orbs.
+
+Key points:
+
+- An orb can mint an RS256-signed OIDC token for one audience with `amp orb id-token`; the default lifetime is 10 minutes and the documented configurable range is 60 seconds to one hour.
+- Tokens carry standard identity claims plus available workspace, project, user, thread, and verified-email claims. The subject combines the stable identity segments available to that orb.
+- An audience identifies the recipient but is not an authorization secret. Relying services must verify signature, issuer, audience, and expiry, then authorize immutable identity claims such as workspace/project/user/thread IDs.
+- The guide covers GCP workload identity federation, AWS IAM federation, and Tailscale trust credentials. The release frames this as safer than injecting long-lived credentials into every orb.
+
+Case-study use:
+
+- Add identity and granted permissions to the remote-execution contract; do not imply that putting a task in an orb automatically makes production access safe.
+- Keep commands, claims, TTL ranges, and provider recipes in research/tutorial material rather than the broad case study.
+
+### Meet Puck and Amp in Slack — <https://ampcode.com/news/meet-puck>, <https://ampcode.com/news/slack-integration>
+
+**Recency/status:** two 2026-07-20 product announcements; Puck is explicitly labeled an experiment.
+**Best use:** current source for meta-agent coordination and chat-triggered agent work.
+
+Key points:
+
+- Puck is an always-available assistant on ampcode.com that can find and archive threads, create projects, start agents in projects or orbs, and coordinate/fan out work.
+- Slack mentions send a request to the mentioning user's personal Puck. The integration can answer codebase questions, start investigations or fixes, find/manipulate threads, and search Slack for relevant context.
+- The announcement examples include responding to screenshot bug reports and production alerts. These are product examples, not evidence that unsupervised incident response is safe by default.
+
+Case-study use:
+
+- Treat Puck as a triage/coordinator role and Slack as another external-input/notification boundary.
+- Keep authorization, channel context, target project, action scope, proof, notification, and escalation explicit; do not present chat mention as sufficient approval for high-impact work.
+
+### Right on Schedule — <https://ampcode.com/news/schedule>
+
+**Recency/status:** 2026-07-21 product announcement; schedules are also documented in the current Manual.
+**Best use:** current source for time-triggered continuation of an Amp thread.
+
+Key points:
+
+- Agents can create one-time or recurring schedules. When a schedule fires, the owning thread wakes with a saved prompt and continues with its context and history.
+- First-party examples include polling a backfill until completion, later feature-flag cleanup, daily query investigation, and hourly error triage that spawns more threads and reports to Slack.
+- Schedules compose with Puck, Slack, skills, and agent-to-agent thread creation, which makes recurring fan-out possible as well as recurring observation.
+
+Case-study use:
+
+- Add cadence, completion condition, maximum duration/spend, escalation destination, and schedule deletion to the delegation contract.
+- Prefer finite monitoring that clears itself when the stated condition is reached over indefinite recurrence without an owner.
+
+### Multiplayer — <https://ampcode.com/news/multiplayer>
+
+**Recency/status:** 2026-07-22 product announcement; access and billing behavior confirmed in the 2026-07-28 Manual.
+**Best use:** current source for shared human control of one orb-backed unit of work.
+
+Key points:
+
+- A non-private orb thread can temporarily become multiplayer. Workspace members can send messages and access the orb's files, changes, portals, secrets, and shared terminal.
+- The current Manual says multiplayer lasts three hours by default, can be extended or ended, and expires automatically. All agent and orb costs stay with the thread owner.
+- The release frames the orb as a unit that increasingly combines problem description, code, running computation, and review artifacts.
+
+Case-study use:
+
+- Multiplayer makes collaborator identity, access scope, authority to steer, billing ownership, and expiry part of the environment contract.
+- Do not frame multiplayer as ordinary thread sharing: it grants live environment and secret access, not merely visibility into a conversation.
+
+### Event Driven Orbs — <https://ampcode.com/news/event-driven-orbs>
+
+**Recency/status:** 2026-07-23 product announcement; `createWebhook` contract checked in the Plugin API on 2026-07-28 and still marked experimental.
+**Best use:** current source for external events that durably wake and drive orb work.
+
+Key points:
+
+- A plugin can register a durable webhook for its owning orb thread. The URL survives plugin reloads and orb restarts, and an incoming request can wake a paused orb.
+- The GitHub example verifies the provider signature, deduplicates delivery, scopes accepted repositories/events, starts a fresh read-only orb thread with trusted metadata, and keeps issue text classified as untrusted input rather than instructions.
+- A handler can append to the owning thread, launch a fresh local/orb/runner thread, preserve durable state, stop after a matching event, or post results to the originating service.
+- The capability URL is a credential. The current Plugin API documents at-least-once delivery, `event.id` for idempotency, a 30-second handler deadline before retry, and a current endpoint rate limit. These exact limits are high-churn implementation details.
+
+Case-study use:
+
+- Extend the orchestration contract with trigger authenticity, allowed event scope, trusted metadata, untrusted content handling, idempotency, execution permissions, retry behavior, budget, output destination, and endpoint deletion.
+- This is the strongest new source for the article's broader lesson: once agents become event-driven services, operational safety matters as much as prompt quality.
+
 ### Pricing — <https://ampcode.com/pricing>
 
-**Recency/status:** dedicated page checked 2026-07-17 after it went live; subscription plans are explicitly beta. Cross-checked against [Subscriptions, At Last](https://ampcode.com/news/subscriptions) and the Manual's [Pricing section](https://ampcode.com/manual#pricing).
+**Recency/status:** dedicated page checked 2026-07-17 and force-refetched 2026-07-28; subscription plans are explicitly beta. Cross-checked against the 2026-07-18 [Subscriptions, At Last](https://ampcode.com/news/subscriptions) announcement and the Manual's [Pricing section](https://ampcode.com/manual#pricing).
 **Best use:** current billing rules that affect task sizing, mode choice, and parallelism.
 
 Key points:
@@ -241,7 +355,8 @@ Key points:
 - Subscriptions are optional. Pay-as-you-go remains available at API prices for all features.
 - The Manual says individuals and non-enterprise workspaces pay provider API prices with zero markup and that the minimum credit purchase is $5.
 - The Manual says Enterprise usage is 50% more expensive and currently starts with a one-time $1,000 purchase that grants $1,000 of Enterprise usage.
-- The Manual is temporarily internally inconsistent: its opening recommends subscriptions, while a later legacy sentence still says there is no subscription or commitment. Do not use the latter as current policy.
+- The former Manual contradiction is fixed. The current wording recommends subscriptions while correctly saying pay-as-you-go credits require no subscription or commitment.
+- The current Pricing page also includes linked third-party subscriptions, workspace billing behavior, and high/ultra access caveats. These are volatile plan details rather than durable workflow guidance.
 
 Case-study use:
 
@@ -250,7 +365,7 @@ Case-study use:
 
 ### Models — <https://ampcode.com/models>
 
-**Recency/status:** model matrix force-refetched 2026-06-28, 2026-07-08, and 2026-07-17; the July 8 assignments below are retained only as a superseded snapshot.
+**Recency/status:** model matrix force-refetched 2026-06-28, 2026-07-08, 2026-07-17, and 2026-07-28; the July 8 assignments below are retained only as a superseded snapshot.
 **Best use:** current mode/subagent/system model assignments if model names must appear.
 
 Key points:
@@ -258,7 +373,8 @@ Key points:
 - Modes are framed as a combination of system prompt, tools, and model.
 - Superseded 2026-07-08 mode assignments: Deep = GPT-5.5, Smart = Claude Opus 4.8, Rush = GPT-5.5. The Dial replaced these built-ins with `low`/`medium`/`high`/`ultra` and says exact wiring will change.
 - Superseded 2026-07-08 subagent snapshot: Review = GPT-5.5, Search = Gemini 3 Flash, Oracle = GPT-5.5, Librarian = GPT-5.5, Read Thread = GLM 5.2. Do not label these assignments current.
-- Current Oracle detail checked 2026-07-17: the standalone Oracle uses GPT-5.6 Sol with high reasoning; in `high` mode, where GPT-5.6 Sol is the main model, Oracle uses Claude Fable 5 so the second opinion comes from a different frontier model.
+- Current Oracle detail rechecked 2026-07-28: the standalone Oracle uses GPT-5.6 Sol with high reasoning; in `high` mode, where GPT-5.6 Sol is the main model, Oracle uses Claude Fable 5 so the second opinion comes from a different frontier model.
+- The 2026-07-28 page adds Puck as a separate meta-agent using GPT-5.6 Terra. Keep the role distinction; omit the exact model from durable public prose.
 - Superseded 2026-07-08 system-model snapshot: View Media = Gemini 3 Flash, Painter = GPT Image 2, Titling = Claude Haiku 4.5, and Compaction = GPT-5.4. The 2026-07-17 Models page already lists Compaction as GPT-5.6 Sol, illustrating why exact wiring should stay out of durable prose.
 
 Task 7 use:
@@ -321,7 +437,7 @@ Task 7 use:
 
 ### Agents in Orbs and Orbs Manual — <https://ampcode.com/news/agents-in-orbs>, <https://ampcode.com/manual/orbs>
 
-**Recency/status:** 2026-06-30 product announcement plus current Orbs manual, force-refetched 2026-07-08.
+**Recency/status:** 2026-06-30 product announcement plus current Orbs manual, force-refetched 2026-07-08 and 2026-07-28.
 **Best use:** current source for Amp-managed remote machines where agents can run without local resource contention.
 
 Key points:
@@ -329,6 +445,7 @@ Key points:
 - Orbs are remote machines where an Amp agent can run without supervision; a new orb thread gets a fresh clone of the repository plus project configuration.
 - The product surfaces include file browsing/review, an orb terminal, local sync of remote changes, CLI/TUI ways to start orb-backed threads, project selection, and project-scoped secrets/env vars.
 - The manual says committed `.agents/setup` and `.agents/resume` scripts run from the repo root as lifecycle hooks for fresh/resumed orbs.
+- The current manual adds OIDC workload identity, supervised services through `.amp/services.yaml`, authenticated portal URLs, and portal manifests under `.amp/portals/`.
 - The manual lists current included tools, current sizes/pricing, billing, and pausing; those details are explicitly date-sensitive.
 
 Task 7 use:
@@ -710,7 +827,7 @@ Consulted Oracle on 2026-06-28 after the first evidence pass. High-confidence fe
 - Treat plugin/custom-agent APIs as current but high-churn advanced surfaces.
 - Frame permissions as a configurable security boundary, not a blanket recommendation.
 
-## Recommended Task 7 Article Frame
+## Recommended Public Article Refresh
 
 Working title: **Amp Power Patterns in the Factory Era** or **Amp as a Factory-Era Coding-Agent Case Study**.
 
@@ -721,14 +838,18 @@ Suggested structure:
 3. **Delegate with contracts.** Subagents for independent work, Oracle for critique, Librarian for external/default-branch code research, review/check agents for codified review criteria.
 4. **Context is product plus repo state.** Use auto-compaction, thread references, `AGENTS.md`, skills, and lazy-loaded MCP; link to public context articles for durable state instead of recreating them.
 5. **Make the factory prove its work.** Use Diffs, `amp review`, Checks, Feedback Loopable, and Mainframe Magic as Amp-specific proof-loop examples; link to `make-the-agent-prove-it` for mechanics.
-6. **Orchestration is the frontier.** Use Agents Everywhere, Custom Agents, and Plugin API to show current direction without overpromising stability.
-7. **What not to copy forward.** Explicitly remove Oracle-as-mode, Handoff, token thresholds, old models, old speed/cost, old VS Code/sidebar assumptions, stale install claims, and draft-only links.
+6. **Orchestration is becoming a service boundary.** Use agent-to-agent threads, Puck/Slack, schedules, multiplayer, and event-driven orbs to show the move from manually launched workers to time- and event-triggered work without turning the article into release notes.
+7. **Identity, trust, and lifecycle are part of the contract.** Add OIDC identity, trigger authenticity, trusted metadata versus untrusted event bodies, at-least-once idempotency, collaborator access/expiry, recurring spend, and explicit cleanup.
+8. **What not to copy forward.** Explicitly remove Oracle-as-mode, Handoff, token thresholds, old models, old speed/cost, old VS Code/sidebar assumptions, stale install claims, and draft-only links.
 
 ## Follow-Up Before Editing or Publishing Task 7
 
 - [ ] Re-run the Chronicle/manual/models/plugin API sweep on the publish date, especially after mode/model announcements like The Dial.
 - [ ] Decide whether the article needs exact model names; if not, omit them.
-- [ ] If pricing appears, reverify subscription tiers, prices, included agent/orb usage, mode restrictions, pay-as-you-go rules, the Enterprise premium, and whether the Manual pricing contradiction has been fixed.
+- [ ] If pricing appears, reverify subscription tiers, prices, included agent/orb usage, linked-provider behavior, mode restrictions, pay-as-you-go rules, and the Enterprise premium.
+- [ ] Reverify schedules, multiplayer, OIDC, Puck/Slack, and Event Driven Orbs from the current Manual and Chronicle; keep exact mechanics out unless they are necessary.
+- [ ] If webhooks appear, reverify `createWebhook` stability, authentication, delivery/retry semantics, idempotency key, deadline, rate limits, and deletion behavior from the current Plugin API.
+- [ ] State the service-era contract in durable terms: trigger, trusted/untrusted inputs, identity/permissions, owner, budget, proof/output, retry behavior, expiry, and stop/cleanup condition.
 - [ ] If exact model wiring appears, reverify it from the Models page and Manual; never promote a dated model snapshot as current.
 - [ ] Check whether current manual still says Handoff is absent and auto-compaction/thread references are the right framing.
 - [ ] Verify current UI/keybinding/sidebar details only if screenshots or instructions survive.

@@ -451,3 +451,31 @@
 ## Updated Next Action
 
 - No immediate action. Future Amp refreshes should reverify the dedicated Pricing page, subscription announcement, Manual contradiction, Enterprise pricing, and exact model wiring before publishing volatile details.
+
+## 2026-07-28 Amp Chronicle and Manual Research Refresh
+
+- Trigger: check the newest Amp Chronicle posts and current Manual, update local research, and identify affected public or related content.
+- Fresh source findings:
+  - The newest Chronicle sequence is Secrets of the Orb (2026-07-14), From Agent to Agent (2026-07-17), Subscriptions, At Last (canonical page date 2026-07-18), Puck and Slack (2026-07-20), schedules (2026-07-21), multiplayer (2026-07-22), and event-driven orbs (2026-07-23).
+  - Amp's direction has moved from manually launched parallel workers toward time- and event-triggered agent services: scheduled threads retain context, Puck/Slack coordinate work, multiplayer shares live orb control, and durable webhooks can wake paused orbs.
+  - The resulting durable contracts are trigger authenticity, trusted metadata versus untrusted payload content, at-least-once idempotency, short-lived identity and least privilege, collaborator scope/expiry, owner/budget, proof/output destination, retry behavior, and explicit stop/cleanup.
+  - Orb OIDC tokens are short-lived and carry workspace/project/user/thread claims, but the audience is not authorization; relying services must verify the token and authorize immutable identity claims.
+  - The Manual now uses the current `low`/`medium`/`high`/`ultra` names and documents schedules, Slack, multiplayer, project changes workflows, thread finding/archiving, current skill/MCP precedence, and corrected pricing wording.
+  - The Plugin API now exposes core agent creation/mode APIs at the top level. Durable `createWebhook` remains experimental and documents at-least-once delivery, `event.id` idempotency, handler deadlines, and endpoint limits.
+  - The former Manual subscription contradiction is fixed. The subscription announcement's canonical date is 2026-07-18, not the 2026-07-17 date recorded in the previous review.
+- Research/work-item changes:
+  - Updated `research/amp-official-sources-2026.md` through 2026-07-28 with a fresh sweep, current safe facts, stale/high-risk claims, dedicated notes for OIDC, Puck/Slack, schedules, multiplayer, and event-driven orbs, and a focused public-refresh recommendation.
+  - Updated `index.md` with the current research summary and recommended follow-up.
+- Content assessment:
+  - Recommend a targeted refresh of `src/content/posts/amp-factory-era-case-study.md`; its claims remain accurate, but its orchestration section stops at spawned threads and now misses the stronger service-boundary lesson.
+  - Leave `src/content/posts/agentic-coding-2026.md` unchanged: its brief From Agent to Agent example remains accurate, and adding every Amp release would make the broad field guide less durable.
+  - Leave transcript-backed summaries unchanged: their old modes, Handoff, subscriptions, and product statements are historical claims anchored to the recordings, not current documentation.
+  - No homepage, resource-manifest, or navigation correction is required.
+- Verification:
+  - All cited canonical pages were force-refetched on 2026-07-28.
+  - `git diff --check` passed.
+  - Site checks were not run because only `.agents/work/` research metadata changed; no rendered Astro content or code changed.
+
+## Updated Next Action
+
+- If continuing the public refresh, update only `src/content/posts/amp-factory-era-case-study.md` and its source date. Keep exact schedule, webhook, multiplayer, OIDC, Puck/Slack, model, and pricing mechanics in research unless the article needs them.
