@@ -2009,3 +2009,130 @@
 - No second capture, refill, retry, force, sync, Task 4, public-content or
   resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
   Engineer author, relationship, or synthesis was created or performed.
+
+## 2026-07-29 — Plan 04 Task 3 fourth two-video Coding Agents batch completed
+
+### Starting state and single bounded capture
+
+- Started on branch `ai-engineer-videos` from the expected clean commit
+  `c222904790da548d7ec8d7066bf8858bcbe87c75` (`c222904`, `record third
+  Coding Agents backfill batch`). `git status --short --branch` contained only
+  the branch header, so the worktree was clean and separable.
+- The accepted third-batch baseline was 38 manifest / 37 available / 7
+  captured / 7 summarized / 7 incorporated / 30 available pending / 1
+  manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded. Coding
+  Agents remained `multiSpeaker: true`, English source and summary languages,
+  and intentionally author-less with no AI Engineer relationship or synthesis.
+- The existing `.env` is ignored by `.gitignore` and was loaded only into the
+  capture command process. The session ran exactly one capture command:
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`.
+  It exited `0` and reported, in order, `captured HEFSExa0xl0` and
+  `captured EcqMYoIV57A`.
+- Both attempted slots succeeded. There was no transient, throttle, durable
+  unavailable-caption, partial, or fatal outcome. The session did not refill,
+  retry, force, run a second capture, sync, or select another playlist.
+
+### Per-video source and editorial decisions
+
+- `HEFSExa0xl0` is manifest position 7, titled `Teaching Coding Agents to do
+  Spreadsheets - Nuno Campos, Witan Labs`, published `2026-07-08T09:03:25Z`,
+  public, and available. Capture wrote English auto-generated-caption metadata
+  at `2026-07-29T20:32:52.837Z` and a complete 1,148-second transcript with 19
+  preserved timestamp chunks.
+  - The source-faithful transcript pass removed only clear duplicated words and
+    normalized unambiguous terms or substitutions including Node.js, REPL,
+    TypeScript, C#, state-of-the-art, and `in practice`. It preserved chunk
+    boundaries, speaker disfluencies, and uncertain phrasing rather than
+    reconstructing cleaner prose.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and uses the contracted heading and Source-link order. It identifies Nuno
+    Campos of Witan Labs from the source title and his first-name introduction.
+    Claims about the internal benchmark, failed representations, the persistent
+    REPL, spreadsheet feedback engines, domain reminders, trace inspection, and
+    evaluation limits all use valid sibling-transcript anchors.
+- `EcqMYoIV57A` is manifest position 8, titled `Why More Context Makes Your
+  Agent Dumber and What to Do About It — Nupur Sharma, Qodo`, published
+  `2026-06-08T15:00:17Z`, public, and available. Capture wrote English
+  auto-generated-caption metadata at `2026-07-29T20:32:56.578Z` and a complete
+  1,587-second transcript with 26 preserved timestamp chunks.
+  - The source-faithful transcript pass normalized source-supported and
+    unambiguous caption forms including Qodo, DevSecOps, multi-agents, MCPs,
+    U-curve, critic node, LangChain, and SOC 2, and removed clear duplicated or
+    split words. It preserved unidentified audience turns and uncertain Q&A
+    phrases such as `shs it back`, `coding radio agent`, and `your mer` rather
+    than guessing at missing words.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and uses the contracted heading and Source-link order. It identifies Nupur
+    Sharma of Qodo from the source title and her self-identification. Claims
+    about Qodo's observed context-position pattern, retrieval tradeoffs, bounded
+    exploration, specialist and judge agents, and Q&A calibration signals all
+    use valid sibling-transcript anchors; unidentified audience members are not
+    assigned names or affiliations.
+- AI Engineer is not treated as either video's speaker, author, or affiliation.
+  No additional speaker or affiliation is asserted beyond source-supported
+  titles and speaker statements.
+
+### Overview coverage and synthesis boundary
+
+- Refreshed the existing draft Coding Agents overview from all nine deliberate
+  summaries. Its duplicate-free `coveredVideoIds` list is exactly
+  `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`,
+  `q4Tr-DknG2M`, `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`, and
+  `EcqMYoIV57A`, matching every incorporated summary in manifest order.
+- Coverage now reconciles to 38 manifest / 37 available / 9 captured / 9
+  summarized / 9 incorporated / 28 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded (no IDs).
+- The exact 28 available pending IDs are `li0SaBt9RDM`, `ugUeZ8-b-u0`,
+  `7gujZrJ9L5I`, `W-SX_srBa3Y`, `5Sui_OnSRlY`, `TeGsFFNqRLA`,
+  `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`,
+  `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`,
+  `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`,
+  `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`,
+  `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`,
+  `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- The overview preserves correct prior synthesis, identifies AI Engineer only
+  as curator/source channel, and states that speakers and affiliations vary.
+  Every non-editorial claim names one source-supported speaker and affiliation
+  and includes a summary plus valid transcript anchors. Every cross-video
+  interpretation begins `Editorial:`. The nine-video synthesis explicitly
+  avoids consensus, completeness, and playlist-order chronology claims.
+
+### Commits and verification
+
+- `aa0b83189f2bbc875fbbf016d0d270e362922c2c` (`aa0b831`, `capture fourth
+  Coding Agents backfill batch`) contains only the two generated metadata files
+  and the two source-faithfully cleaned transcripts.
+- `389e958b16ae55a6a60999b599e2b5cd22e97760` (`389e958`, `summarize fourth
+  Coding Agents backfill batch`) contains only the two deliberate draft
+  summaries and the refreshed draft overview.
+- `npm run lint:fix` passed after checking 179 files and reformatted exactly the
+  eight known clean-at-start Antirez unavailable-caption metadata files. Their
+  formatter-only array diffs were inspected, and exactly those eight files were
+  restored byte-for-byte; no batch artifact required a formatter change.
+- `npm run youtube:library -- status` passed and reported Coding Agents as 38
+  manifest / 37 available / 9 captured / 28 pending / 1 manifest-unavailable /
+  0 caption-unavailable / 9 draft summaries / current overview.
+- The combined YouTube library and transcript suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. `git diff --check` passed at
+  both content commit boundaries and after verification.
+- The focused read-only editorial checker reconciled exact manifest states,
+  summary provenance, contracted headings and Source links, sibling-transcript
+  anchors, exact duplicate-free overview coverage, counts and IDs, and the
+  author-less multi-speaker attribution mode.
+- The work-item index and this progress section form the fourth reviewable batch
+  commit; its hash is reported in the completion response. Blockers: none.
+
+### Scope confirmation and next action
+
+- Plan 04 Task 3 remains unchecked because 28 available manifest IDs are still
+  pending. Work-item status remains `in-progress`; Task 4 did not start.
+- Next action is the next bounded Task 3 two-video Coding Agents session: run
+  exactly one selected `capture --limit 2` command under the fixed stop
+  protocol and do not refill that session.
+- No second capture, refill, retry, force, sync, Task 4, public-content or
+  resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
+  Engineer author, relationship, or synthesis was created or performed.
