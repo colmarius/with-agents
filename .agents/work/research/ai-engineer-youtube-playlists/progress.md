@@ -2417,3 +2417,156 @@
 - No second capture, refill, retry, force, sync, Task 4, public-content or
   resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
   Engineer author, relationship, or synthesis was created or performed.
+
+## 2026-07-29 — Plan 04 Task 3 seventh two-video Coding Agents batch completed
+
+### Starting state and single bounded capture
+
+- Started on branch `ai-engineer-videos` from the exact expected clean commit
+  `edf1ef2ddc5aedae3c504388ff4e076995145603` (`edf1ef2`, `record sixth
+  Coding Agents backfill batch`). `git status --short --branch` contained only
+  the branch header.
+- The accepted sixth-batch baseline was 38 manifest / 37 available / 13
+  captured / 13 summarized / 13 incorporated / 24 available pending / 1
+  manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded. Coding
+  Agents remained `multiSpeaker: true`, English source and summary languages,
+  and intentionally author-less with no AI Engineer relationship or synthesis.
+- Loaded the `agent-work` and `maintaining-youtube-library` skills and read the
+  work-item index, Plan 04, latest progress, YouTube `AGENTS.md`, catalog,
+  manifest, current overview, status, and adjacent editorial artifacts before
+  mutation. An initial read-only status probe incorrectly supplied the strict
+  `status` command with `--playlist`; it exited `1` with the expected option
+  rejection and changed no files. The valid unscoped status command passed in
+  final verification.
+- The existing `.env` was confirmed present and ignored by Git, and it was
+  loaded only inside the capture command's shell process. The session ran
+  exactly one capture command:
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`.
+  It exited `0` and reported, in manifest order, `captured 5Sui_OnSRlY` and
+  `captured TeGsFFNqRLA`.
+- Both attempted slots succeeded. There was no transient, throttle, durable
+  unavailable-caption, partial, or fatal capture outcome. The session did not
+  refill, retry, force, run a second capture, sync, or select another playlist.
+
+### Per-video source and editorial decisions
+
+- `5Sui_OnSRlY` is manifest position 14, titled `The Missing Primitive for
+  Agent Swarms — Lou Bichard, Ona`, published `2026-05-23T16:00:06Z`, public,
+  and available. Capture wrote English auto-generated-caption metadata at
+  `2026-07-29T22:16:07.294Z` and a complete 1,116-second transcript with 19
+  mechanically verified unique timestamp chunks from `[00:00:14]` through
+  `[00:17:33]`.
+  - The source-faithful transcript pass normalized the title-supported Ona name
+    and unambiguous forms including Claude Code, n8n, OpenClaw, and `acpx`; it
+    corrected clear substitutions such as `contact` for `context` and removed
+    a few duplicated words. It preserved chunk boundaries, disfluencies,
+    unidentified audience turns, and uncertain forms such as `Fabro` and
+    `eight way` rather than inventing replacements.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and identifies Lou Bichard as Ona's field CTO from the source title and his
+    `[00:00:14]` self-identification. Claims about software-factory scope,
+    swarms, fleets, event triggers, harness engineering, VM isolation, the Ona
+    demonstration, lifecycle micro-steps, and coordination mechanisms all use
+    valid sibling-transcript anchors. Questions preserve the absence of
+    comparative reliability, cost, quality, and failure-recovery evidence.
+- `TeGsFFNqRLA` is manifest position 15, titled `Fast Models Need Slow
+  Developers — Sarah Chieng, Cerebras`, published `2026-05-22T18:00:06Z`,
+  public, and available. Capture wrote English auto-generated-caption metadata
+  at `2026-07-29T22:16:10.553Z` and a complete 1,081-second transcript with 20
+  mechanically verified unique timestamp chunks from `[00:00:16]` through
+  `[00:17:30]`.
+  - The source-faithful transcript pass normalized the title-supported Sarah
+    Chieng name and unambiguous forms including Baseten, KV cache, Claude Code,
+    and Codex Spark; it removed clear duplicated or substituted words while
+    preserving chunk boundaries and uncertain claims such as the NVIDIA/Groq
+    price fragment and the `AWS premium` caption rather than supplying missing
+    source detail.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and identifies Chieng as Cerebras's head of developer experience from
+    `[00:01:08]`. Claims about the stated model-speed comparison, inference
+    stack, planner/executor split, reusable skills, repeated verification,
+    variant selection, active steering, and four-file external memory all use
+    valid sibling-transcript anchors. Questions explicitly preserve missing
+    benchmark methodology, total validation cost, review-load, and concurrent
+    session evidence.
+- AI Engineer is not treated as either video's speaker, author, or affiliation.
+  No additional speaker or affiliation is asserted beyond the source-supported
+  manifest titles and speaker self-identifications.
+
+### Overview coverage and synthesis boundary
+
+- Refreshed the existing draft Coding Agents overview from all fifteen
+  deliberate summaries. Its duplicate-free `coveredVideoIds` list exactly
+  matches every summary ID in manifest order, ending with `5Sui_OnSRlY` and
+  `TeGsFFNqRLA`.
+- Coverage now reconciles to 38 manifest / 37 available / 15 captured / 15
+  summarized / 15 incorporated / 22 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded (no IDs).
+- The exact 22 available pending IDs are `dyHpnnlkTc8`, `VaS2h-dY1-4`,
+  `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`,
+  `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`,
+  `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`,
+  `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`,
+  `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- The overview identifies AI Engineer only as curator/source channel and states
+  that speakers and affiliations vary. Every new non-editorial claim names Lou
+  Bichard / Ona or Sarah Chieng / Cerebras and includes a resolving summary link
+  plus valid sibling-transcript anchors. Every new cross-video interpretation
+  begins `Editorial:`. The fifteen-video synthesis explicitly rejects a
+  consensus inference and makes no playlist-order chronology claim.
+
+### Commits and verification
+
+- `1ddca10bfae0a0bf8702376c053adb1175146f38` (`1ddca10`, `capture seventh
+  Coding Agents backfill batch`) contains only the two generated metadata files
+  and the two source-faithfully cleaned transcripts.
+- `75f2a7718c1dd6f92648daf9b68c97bd53011a18` (`75f2a77`, `summarize seventh
+  Coding Agents backfill batch`) contains only the two deliberate draft
+  summaries and the refreshed draft overview.
+- `npm run lint:fix` exited `0` after checking 185 files and reformatted exactly
+  the eight known clean-at-start Antirez unavailable-caption metadata files:
+  `9mHKjgFMsQA`, `D1_wPWzNkJ4`, `H5cvtoSxdxI`, `LG3q-sqMG0g`,
+  `_pLlet9Jrzc`, `aAWdlLfJmqw`, `qipoQGqMCp0`, and `rCIZflYEpEk`. The complete
+  eight-file diff was inspected and contained only `availableLanguages` array
+  compaction. Exactly those files were restored, the full pre-lint source-tree
+  SHA-256 listing re-matched byte-for-byte, and the tree returned clean. No
+  seventh-batch artifact required a formatter change.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 15 captured / 22 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 15 draft summaries / current
+  overview.
+- The combined YouTube library and transcript suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker.
+- `git diff --check`, both content-commit `git show --check` audits, and staged
+  file-set audits passed. The two content commits modify exactly seven intended
+  Coding Agents files: two metadata files, two transcripts, two summaries, and
+  the playlist overview.
+- The read-only structural, provenance, anchor, coverage, and attribution
+  checker passed for all fifteen summaries and the overview: every decoded
+  frontmatter value and key order matches manifest/metadata provenance; every
+  Source link resolves; every summary and overview anchor endpoint matches a
+  sibling transcript chunk; overview coverage and pending/private/unavailable
+  IDs are exact; and author-less multi-speaker attribution remains intact.
+- The work-item index and this true-EOF progress section form the seventh
+  reviewable batch commit; its hash is reported in the completion response.
+  Blockers: none.
+
+### Scope confirmation, uncertainties, and next action
+
+- Plan 04 Task 3 remains unchecked because 22 available manifest IDs are still
+  pending. Work-item status remains `in-progress`; Task 4 did not start.
+- Remaining uncertainty is limited to ambiguous auto-caption fragments retained
+  verbatim in the cleaned transcripts and the evidence limitations stated in
+  the two draft summaries. In particular, the transcript does not resolve
+  Bichard's `Fabro` / `eight way` fragments or Chieng's NVIDIA/Groq price and
+  `AWS premium` fragments; no unsupported correction or attribution was made.
+- Next action is another bounded Task 3 two-video Coding Agents session: run
+  exactly one selected `capture --limit 2` command under the fixed stop
+  protocol and do not refill that session.
+- No second capture, refill, retry, force, sync, Task 4, public-content or
+  resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
+  Engineer author, relationship, or synthesis was created or performed.
