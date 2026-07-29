@@ -27,9 +27,13 @@ both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
 one-video editorial thin slice now passes: 38 manifest / 37 available / 1
 captured / 1 summarized / 1 incorporated / 36 available pending / 1 private / 0
-caption-unavailable-recorded. The draft summary and current draft overview use
-source-supported James Shi / Datacurve attribution without creating an AI
-Engineer author or relationship. Plan 04 Tasks 1 and 2 are complete.
+caption-unavailable-recorded. The first Task 3 batch captured, summarized, and
+incorporated two more videos, bringing Coding Agents to 38 manifest / 37
+available / 3 captured / 3 summarized / 3 incorporated / 34 available pending /
+1 private / 0 caption-unavailable-recorded. The draft summaries and current
+draft overview use source-supported James Shi / Datacurve, Jason Liu / OpenAI,
+and James Russo / HeyGen attribution without creating an AI Engineer author or
+relationship. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
 
 ## Artifacts
 
@@ -49,10 +53,9 @@ Engineer author or relationship. Plan 04 Tasks 1 and 2 are complete.
 
 ## Next Action
 
-- Run Task 3 of [Plan 04](./plans/04-coding-agents-corpus.md): backfill Coding
-  Agents in resumable two-video batches, beginning with exactly one selected
-  `capture --limit 2` session and applying the fixed stop protocol. Task 3 has
-  not started.
+- Continue Task 3 of [Plan 04](./plans/04-coding-agents-corpus.md) with the next
+  bounded Coding Agents session: run exactly one selected `capture --limit 2`
+  command, apply the fixed stop protocol, and do not refill the session.
 
 ## Open Questions
 
@@ -121,3 +124,7 @@ Engineer author or relationship. Plan 04 Tasks 1 and 2 are complete.
   `Yk87oUPVaxU`, including source-faithful transcript cleanup, one draft summary,
   and the draft author-less multi-speaker overview. Plan 04 Task 2 passed; Task
   3 remains unstarted.
+- 2026-07-29: Completed the first bounded Plan 04 Task 3 session for
+  `il1c1a2FufU` and `Cz4v1WHVyZc`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 3 incorporated videos and 34 available
+  pending. Task 3 remains unchecked for the next no-refill two-video session.

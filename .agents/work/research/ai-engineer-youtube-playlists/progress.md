@@ -1629,3 +1629,126 @@
   retry, force, extra transcript or summary, public post/summary/resource edit,
   bounded-corpus edit, Astro publication, schedule, handoff file, global
   artifact deletion, or AI Engineer author/relationship/synthesis began.
+
+## 2026-07-29 — Plan 04 Task 3 first two-video Coding Agents batch completed
+
+### Starting state and single bounded capture
+
+- Started on branch `ai-engineer-videos` from the expected clean commit
+  `9c8cf865fd83b59b284503530e38ff0e23cef566` (`9c8cf86`, `record Coding
+  Agents thin-slice completion`). `git status --short --branch` contained only
+  the branch header, so the worktree was clean and separable.
+- The accepted Task 2 baseline was 38 manifest / 37 available / 1 captured / 1
+  summarized / 1 incorporated / 36 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded. Coding Agents remained
+  `multiSpeaker: true`, English source and summary languages, and intentionally
+  author-less with no AI Engineer relationship or synthesis.
+- With the existing ignored `.env` loaded only into the command process, the
+  session ran exactly one capture command:
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`.
+  It exited `0` and reported, in order, `captured il1c1a2FufU` and
+  `captured Cz4v1WHVyZc`.
+- Both attempted slots succeeded. There was no transient, throttle, durable
+  unavailable-caption, partial, or fatal outcome. The session did not refill,
+  retry, force, run a second capture, sync, or select another playlist.
+
+### Per-video source and editorial decisions
+
+- `il1c1a2FufU` is manifest position 1, titled `Full Workshop: Setting Yourself
+  Up for Success —Jason Liu, OpenAI Codex`, published
+  `2026-07-24T15:00:06Z`, public, and available. Capture wrote English
+  auto-generated-caption metadata at `2026-07-29T19:42:48.332Z` and a complete
+  4,502-second transcript with 75 preserved timestamp chunks.
+  - The source-faithful transcript pass normalized clear caption errors for
+    `Codex`, `subagents`, and `pull requests` in the opening workflow material.
+    It preserved Q&A voices, disfluencies, chunk boundaries, and meaning and did
+    not rewrite uncertain product phrases or editorialize the source.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and uses the contracted heading and Source-link order. It frames Jason Liu
+    as working at OpenAI, supported by the manifest title and his
+    self-identification at `[00:00:55]`. It also records that audience members
+    participate and that Liu identifies one brief respondent only as Charlie;
+    the captured source does not establish Charlie's full name or affiliation.
+    No audience or Charlie claim is assigned beyond the supported Q&A material.
+- `Cz4v1WHVyZc` is manifest position 2, titled `HTML Is All Agents Need — James
+  Russo, HeyGen`, published `2026-07-21T18:54:01Z`, public, and available.
+  Capture wrote English auto-generated-caption metadata at
+  `2026-07-29T19:42:51.820Z` and a complete 913-second transcript with 17
+  preserved timestamp chunks.
+  - The source-faithful transcript pass normalized source-supported casing and
+    obvious substitutions for `Hyperframes`, `Three.js`, `Claude Code`,
+    `evaluating`, and `AI Engineer World's Fair`. It preserved all chunk
+    boundaries and claims without rewriting speech.
+  - The deliberate draft summary names James Russo as Hyperframes co-creator
+    and tech lead at HeyGen, supported by the title and `[00:00:01]`. All claims
+    about the HTML format, deterministic rendering, skills, reported adoption,
+    creative limitations, and benchmark plans use valid sibling-transcript
+    anchors. No uploader-derived speaker, affiliation, quotation, or
+    attribution was introduced.
+
+### Overview coverage and synthesis boundary
+
+- Refreshed the existing draft Coding Agents overview from the three deliberate
+  summaries. Its duplicate-free `coveredVideoIds` list is exactly
+  `Yk87oUPVaxU`, `il1c1a2FufU`, and `Cz4v1WHVyZc`, matching every incorporated
+  summary.
+- Coverage now reconciles to 38 manifest / 37 available / 3 captured / 3
+  summarized / 3 incorporated / 34 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded (no IDs).
+- The exact 34 available pending IDs are `1P1hJ36rxM0`, `q4Tr-DknG2M`,
+  `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`, `EcqMYoIV57A`,
+  `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`, `W-SX_srBa3Y`,
+  `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`, `VaS2h-dY1-4`,
+  `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`,
+  `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`,
+  `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`,
+  `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`,
+  `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- The overview retains the source-supported thin-slice claims, identifies AI
+  Engineer only as curator/source channel, and states that speakers and
+  affiliations vary. Every non-editorial claim names James Shi / Datacurve,
+  Jason Liu / OpenAI, or James Russo / HeyGen and includes a summary plus
+  timestamp anchor. Every cross-video interpretation begins `Editorial:`. The
+  three-video synthesis explicitly avoids consensus, completeness, and
+  playlist-order chronology claims.
+
+### Commits and verification
+
+- `0b51c518e2a9c0aeac85c29fa8f7fda01b1e680c` (`0b51c51`, `capture Coding
+  Agents two-video batch`) contains only the two generated metadata files and
+  the two source-faithfully cleaned transcripts.
+- `897913dac8c097497ee3e2c865bfbd6eff5270c5` (`897913d`, `summarize Coding
+  Agents two-video batch`) contains only the two deliberate draft summaries and
+  the refreshed draft overview.
+- `npm run lint:fix` passed after checking 173 files and reformatted exactly the
+  eight known clean-at-start Antirez unavailable-caption metadata files. Their
+  formatter-only array diffs were inspected, and exactly those eight files were
+  restored byte-for-byte; no batch artifact required a formatter change.
+- `npm run youtube:library -- status` passed and reported Coding Agents as 38
+  manifest / 37 available / 3 captured / 34 pending / 1 manifest-unavailable /
+  0 caption-unavailable / 3 draft summaries / current overview.
+- The combined YouTube library and transcript suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. `git diff --check` passed at
+  each commit boundary and after verification.
+- The read-only structural checker reconciled exact counts and pending/private
+  IDs; summary provenance, heading order, source links, and valid transcript
+  anchors; exact duplicate-free overview coverage and heading order;
+  author-less multi-speaker attribution; unchecked Task 3; `in-progress`
+  status; and agreement with the next Task 3 no-refill action.
+- The work-item index and this progress section form the third reviewable batch
+  commit; its hash is reported in the completion response. Blockers: none.
+
+### Scope confirmation and next action
+
+- Plan 04 Task 3 remains unchecked because 34 available manifest IDs are still
+  pending. Work-item status remains `in-progress`; Task 4 did not start.
+- Next action is the next bounded Task 3 two-video Coding Agents session: run
+  exactly one selected `capture --limit 2` command under the fixed stop
+  protocol and do not refill that session.
+- No second capture, refill, retry, force, sync, Task 4, public-content or
+  resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
+  Engineer author, relationship, or synthesis was created or performed.
