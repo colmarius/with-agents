@@ -25,16 +25,16 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Four Task 3 batches have captured,
-summarized, and incorporated eight more videos, bringing Coding Agents to 38
-manifest / 37 available / 9 captured / 9 summarized / 9 incorporated / 28
+one-video editorial thin slice now passes. Five Task 3 batches have captured,
+summarized, and incorporated ten more videos, bringing Coding Agents to 38
+manifest / 37 available / 11 captured / 11 summarized / 11 incorporated / 26
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
 Lee Robinson / Cursor, Theo Browne / `@t3dotgg`, Bennet Fenner / Zed, Nuno
-Campos / Witan Labs, and Nupur Sharma / Qodo attribution without creating an AI
-Engineer author or relationship. Plan 04 Tasks 1 and 2 are complete; Task 3
-remains in progress.
+Campos / Witan Labs, Nupur Sharma / Qodo, Priscila Andre de Oliveira / Sentry,
+and Daniel Szoke / Sentry attribution without creating an AI Engineer author or
+relationship. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
 
 ## Artifacts
 
@@ -140,4 +140,8 @@ remains in progress.
 - 2026-07-29: Completed the fourth bounded Plan 04 Task 3 session for
   `HEFSExa0xl0` and `EcqMYoIV57A`; both videos are captured, summarized, and
   incorporated. Coding Agents now has 9 incorporated videos and 28 available
+  pending. Task 3 remains unchecked for the next no-refill two-video session.
+- 2026-07-29: Completed the fifth bounded Plan 04 Task 3 session for
+  `li0SaBt9RDM` and `ugUeZ8-b-u0`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 11 incorporated videos and 26 available
   pending. Task 3 remains unchecked for the next no-refill two-video session.

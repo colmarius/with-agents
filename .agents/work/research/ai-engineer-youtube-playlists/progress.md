@@ -2136,3 +2136,138 @@
 - No second capture, refill, retry, force, sync, Task 4, public-content or
   resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
   Engineer author, relationship, or synthesis was created or performed.
+
+## 2026-07-29 — Plan 04 Task 3 fifth two-video Coding Agents batch completed
+
+### Starting state and single bounded capture
+
+- Started on branch `ai-engineer-videos` from the expected clean commit
+  `94489cf66d6cfe812e91bb979777f016de6ab7c4` (`94489cf`, `correct Coding
+  Agents transcript chunk count`). `git status --short --branch` contained only
+  the branch header, so the worktree was clean and separable.
+- The accepted fourth-batch baseline was 38 manifest / 37 available / 9
+  captured / 9 summarized / 9 incorporated / 28 available pending / 1
+  manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded. Coding
+  Agents remained `multiSpeaker: true`, English source and summary languages,
+  and intentionally author-less with no AI Engineer relationship or synthesis.
+- The existing `.env` is ignored by `.gitignore` and was loaded only into the
+  capture command process. The session ran exactly one capture command:
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`.
+  It exited `0` and reported, in order, `captured li0SaBt9RDM` and
+  `captured ugUeZ8-b-u0`.
+- Both attempted slots succeeded. There was no transient, throttle, durable
+  unavailable-caption, partial, or fatal outcome. The session did not refill,
+  retry, force, run a second capture, sync, or select another playlist.
+
+### Per-video source and editorial decisions
+
+- `li0SaBt9RDM` is manifest position 9, titled `The AI Skill I Rely On Daily —
+  Priscila Andre de Oliveira, Sentry`, published `2026-05-27T17:00:06Z`,
+  public, and available. Capture wrote English auto-generated-caption metadata
+  at `2026-07-29T21:35:32.040Z` and a complete 1,024-second transcript with 18
+  mechanically verified timestamp chunks.
+  - The source-faithful transcript pass normalized the title-supported speaker
+    name, obvious substitutions, duplicated fragments, and unambiguous product
+    or technical forms including Priscila, npm, Fair Source, Claude, Claude
+    Code, Opus, `any`, and TODOs. It preserved chunk boundaries, disfluencies,
+    incomplete statistical phrasing, and uncertain phrases such as `Daniel can`,
+    `Jack Nation's`, and `keynote code` rather than inventing replacements.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and uses the contracted heading and Source-link order. It identifies Priscila
+    Andre de Oliveira as a senior software engineer at Sentry from the manifest
+    title and `[00:00:07]` introduction. Claims about her 116-session usage
+    classification, local comprehension skill, repository demonstration,
+    pull-request review, and understanding-before-planning step all use valid
+    sibling-transcript anchors.
+- `ugUeZ8-b-u0` is manifest position 10, titled `Why Rust is the Ideal Language
+  for Vibe-Coding — Daniel Szoke, Sentry`, published `2026-05-27T15:00:06Z`,
+  public, and available. Capture wrote English auto-generated-caption metadata
+  at `2026-07-29T21:35:35.292Z` and a complete 984-second transcript with 18
+  mechanically verified timestamp chunks.
+  - The source-faithful transcript pass normalized the speaker's title-supported
+    name and unambiguous technical forms including Daniel Szoke, ChatGPT,
+    `any`, `Send`, and `Rc<RefCell<i32>>`; it also removed clear duplicated or
+    substituted words. It preserved chunk boundaries, speaker qualifications,
+    and the talk's stated compiler-versus-tests argument without upgrading it
+    into a general empirical comparison.
+  - The deliberate draft summary identifies Daniel Szoke as Sentry's Rust SDK
+    maintainer from his `[00:00:14]` self-identification. Claims about common
+    agent-coding languages, model and test fallibility, Rust's compiler
+    constraints, the concurrency example, and compile-revise loops all use valid
+    sibling-transcript anchors. Questions explicitly preserve the missing
+    cross-language cost and defect-rate evidence.
+- AI Engineer is not treated as either video's speaker, author, or affiliation.
+  No additional speaker or affiliation is asserted beyond the source-supported
+  manifest titles and speaker introductions.
+
+### Overview coverage and synthesis boundary
+
+- Refreshed the existing draft Coding Agents overview from all eleven deliberate
+  summaries. Its duplicate-free `coveredVideoIds` list is exactly
+  `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`,
+  `q4Tr-DknG2M`, `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`,
+  `EcqMYoIV57A`, `li0SaBt9RDM`, and `ugUeZ8-b-u0`, matching every incorporated
+  summary in manifest order.
+- Coverage now reconciles to 38 manifest / 37 available / 11 captured / 11
+  summarized / 11 incorporated / 26 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded (no IDs).
+- The exact 26 available pending IDs are `7gujZrJ9L5I`, `W-SX_srBa3Y`,
+  `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`, `VaS2h-dY1-4`,
+  `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`,
+  `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`,
+  `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`,
+  `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`,
+  `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- The overview preserves correct prior synthesis, identifies AI Engineer only
+  as curator/source channel, and states that speakers and affiliations vary.
+  Every new non-editorial claim names Priscila Andre de Oliveira / Sentry or
+  Daniel Szoke / Sentry and includes a summary plus valid transcript anchors.
+  Every cross-video interpretation begins `Editorial:`. The eleven-video
+  synthesis explicitly avoids consensus, completeness, and playlist-order
+  chronology claims.
+
+### Commits and verification
+
+- `cf30f9f034f82e0b10602d6218c798a8b511d9b0` (`cf30f9f`, `capture fifth
+  Coding Agents backfill batch`) contains only the two generated metadata files
+  and the two source-faithfully cleaned transcripts.
+- `057b415d0fb9a37ba806635936bc02cee2048c15` (`057b415`, `summarize fifth
+  Coding Agents backfill batch`) contains only the two deliberate draft
+  summaries and the refreshed draft overview.
+- `npm run lint:fix` passed after checking 181 files and reformatted exactly the
+  eight known clean-at-start Antirez unavailable-caption metadata files. Their
+  formatter-only array diffs were inspected, and exactly those eight files were
+  restored byte-for-byte; no batch artifact required a formatter change.
+- `npm run youtube:library -- status` passed and reported Coding Agents as 38
+  manifest / 37 available / 11 captured / 26 pending / 1 manifest-unavailable /
+  0 caption-unavailable / 11 draft summaries / current overview.
+- The combined YouTube library and transcript suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. `git diff --check` passed at
+  both content commit boundaries and after verification.
+- The final read-only structural, provenance, anchor, coverage, attribution, and
+  work-item checker passed: manifest states and exact pending/private IDs
+  reconcile; all eleven summaries have exact provenance, heading order, Source
+  links, and sibling-transcript anchors; overview coverage is exact and
+  duplicate-free; attribution remains author-less and multi-speaker; Task 3 is
+  unchecked; status is `in-progress`; and the Next Action remains the next
+  no-refill Task 3 session.
+- The work-item index and this progress section form the fifth reviewable batch
+  commit; its hash is reported in the completion response. Blockers: none.
+
+### Scope confirmation, uncertainties, and next action
+
+- Plan 04 Task 3 remains unchecked because 26 available manifest IDs are still
+  pending. Work-item status remains `in-progress`; Task 4 did not start.
+- Remaining uncertainty is limited to ambiguous auto-caption fragments retained
+  verbatim in the cleaned transcripts and the evidence limitations stated in
+  the two draft summaries; no unsupported correction or attribution was made.
+- Next action is the next bounded Task 3 two-video Coding Agents session: run
+  exactly one selected `capture --limit 2` command under the fixed stop
+  protocol and do not refill that session.
+- No second capture, refill, retry, force, sync, Task 4, public-content or
+  resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
+  Engineer author, relationship, or synthesis was created or performed.
