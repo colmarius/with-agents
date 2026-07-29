@@ -25,14 +25,15 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Two Task 3 batches have captured,
-summarized, and incorporated four more videos, bringing Coding Agents to 38
-manifest / 37 available / 5 captured / 5 summarized / 5 incorporated / 32
+one-video editorial thin slice now passes. Three Task 3 batches have captured,
+summarized, and incorporated six more videos, bringing Coding Agents to 38
+manifest / 37 available / 7 captured / 7 summarized / 7 incorporated / 30
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
-and Lee Robinson / Cursor attribution without creating an AI Engineer author or
-relationship. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
+Lee Robinson / Cursor, Theo Browne / `@t3dotgg`, and Bennet Fenner / Zed
+attribution without creating an AI Engineer author or relationship. Plan 04
+Tasks 1 and 2 are complete; Task 3 remains in progress.
 
 ## Artifacts
 
@@ -130,4 +131,8 @@ relationship. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
 - 2026-07-29: Completed the second bounded Plan 04 Task 3 session for
   `1P1hJ36rxM0` and `q4Tr-DknG2M`; both videos are captured, summarized, and
   incorporated. Coding Agents now has 5 incorporated videos and 32 available
+  pending. Task 3 remains unchecked for the next no-refill two-video session.
+- 2026-07-29: Completed the third bounded Plan 04 Task 3 session for
+  `xUnRQ9vLXxo` and `HsxQICTLF84`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 7 incorporated videos and 30 available
   pending. Task 3 remains unchecked for the next no-refill two-video session.

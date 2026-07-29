@@ -1884,3 +1884,128 @@
 - No second capture, refill, retry, force, sync, Task 4, public-content or
   resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
   Engineer author, relationship, or synthesis was created or performed.
+
+## 2026-07-29 — Plan 04 Task 3 third two-video Coding Agents batch completed
+
+### Starting state and single bounded capture
+
+- Started on branch `ai-engineer-videos` from the expected clean commit
+  `440ad3e0553029de46749b325b09825caab9071a` (`440ad3e`, `correct Coding
+  Agents batch commit references`). `git status --short --branch` contained
+  only the branch header, so the worktree was clean and separable.
+- The accepted second-batch baseline was 38 manifest / 37 available / 5
+  captured / 5 summarized / 5 incorporated / 32 available pending / 1
+  manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded. Coding
+  Agents remained `multiSpeaker: true`, English source and summary languages,
+  and intentionally author-less with no AI Engineer relationship or synthesis.
+- The existing `.env` is ignored by `.gitignore` and was loaded only into the
+  capture command process. The session ran exactly one capture command:
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`.
+  It exited `0` and reported, in order, `captured xUnRQ9vLXxo` and
+  `captured HsxQICTLF84`.
+- Both attempted slots succeeded. There was no transient, throttle, durable
+  unavailable-caption, partial, or fatal outcome. The session did not refill,
+  retry, force, run a second capture, sync, or select another playlist.
+
+### Per-video source and editorial decisions
+
+- `xUnRQ9vLXxo` is manifest position 5, titled `Everything we knew about
+  software has changed — Theo Browne, @t3dotgg`, published
+  `2026-07-08T19:59:33Z`, public, and available. Capture wrote English
+  auto-generated-caption metadata at `2026-07-29T20:15:19.881Z` and a complete
+  961-second transcript with 19 preserved timestamp chunks.
+  - The source-faithful transcript pass normalized unambiguous caption errors
+    and product casing including `GNU Screen`, `Git`, `agents`, `auth`,
+    `full-stack`, and `npm`, plus a few clear duplicated or substituted words.
+    It preserved chunk boundaries, tone, claims, and uncertain phrases such as
+    `we they I`, `G brain tier`, and `Like bit coming soon` rather than guessing.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and uses the contracted heading and Source-link order. It identifies Theo
+    Browne with `@t3dotgg` only because the source title supports that framing.
+    Claims about model eras, inherited developer habits, shifted project tiers,
+    scheduled Markdown workflows, product breadth, and reliability limits all
+    use valid sibling-transcript anchors.
+- `HsxQICTLF84` is manifest position 6, titled `Building an ACP-Compatible Agent
+  Live — Bennet Fenner, Zed`, published `2026-07-08T12:00:07Z`, public, and
+  available. Capture wrote English auto-generated-caption metadata at
+  `2026-07-29T20:15:23.190Z` and a complete 1,099-second transcript with 20
+  preserved timestamp chunks.
+  - The source-faithful transcript pass normalized the source-supported speaker
+    name and terms including Bennet Fenner, Claude Code, Agent Client Protocol,
+    JSON-RPC, OpenCode, Cursor, OpenClaw, Zed, ACP, `fs.readFile`, unsaved
+    changes, and Claude Opus. It preserved live-demo failures, disfluencies,
+    chunk boundaries, and uncertain file-name wording without reconstructing
+    code that was not present in the captions.
+  - The deliberate draft summary names Bennet Fenner of Zed from the manifest
+    title and his `[00:00:14]` self-identification. Claims about ACP's protocol
+    boundary, session lifecycle, model and tool updates, client-provided file
+    and terminal capabilities, duplicated demo output, production limits, and
+    standard-I/O transport all use valid sibling-transcript anchors.
+- AI Engineer is not treated as either video's speaker, author, or affiliation.
+  No additional speaker or affiliation is asserted beyond source-supported
+  titles and speaker statements.
+
+### Overview coverage and synthesis boundary
+
+- Refreshed the existing draft Coding Agents overview from all seven deliberate
+  summaries. Its duplicate-free `coveredVideoIds` list is exactly
+  `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`,
+  `q4Tr-DknG2M`, `xUnRQ9vLXxo`, and `HsxQICTLF84`, matching every incorporated
+  summary in manifest order.
+- Coverage now reconciles to 38 manifest / 37 available / 7 captured / 7
+  summarized / 7 incorporated / 30 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded (no IDs).
+- The exact 30 available pending IDs are `HEFSExa0xl0`, `EcqMYoIV57A`,
+  `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`, `W-SX_srBa3Y`,
+  `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`, `VaS2h-dY1-4`,
+  `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`,
+  `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`,
+  `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`,
+  `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`,
+  `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- The overview preserves correct prior synthesis, identifies AI Engineer only
+  as curator/source channel, and states that speakers and affiliations vary.
+  Every non-editorial claim names one source-supported speaker and affiliation
+  and includes a summary plus valid transcript anchors. Every cross-video
+  interpretation begins `Editorial:`. The seven-video synthesis explicitly
+  avoids consensus, completeness, and playlist-order chronology claims.
+
+### Commits and verification
+
+- `6c3d19e54efbea50ca5e2f22ae9019530ef19e08` (`6c3d19e`, `capture third
+  Coding Agents backfill batch`) contains only the two generated metadata files
+  and the two source-faithfully cleaned transcripts.
+- `d9fbf936808a77a95c70c82c2bd658d5ecea9f93` (`d9fbf93`, `summarize third
+  Coding Agents backfill batch`) contains only the two deliberate draft
+  summaries and the refreshed draft overview.
+- `npm run lint:fix` passed after checking 177 files and reformatted exactly the
+  eight known clean-at-start Antirez unavailable-caption metadata files. Their
+  formatter-only array diffs were inspected, and exactly those eight files were
+  restored byte-for-byte; no batch artifact required a formatter change.
+- `npm run youtube:library -- status` passed and reported Coding Agents as 38
+  manifest / 37 available / 7 captured / 30 pending / 1 manifest-unavailable /
+  0 caption-unavailable / 7 draft summaries / current overview.
+- The combined YouTube library and transcript suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. `git diff --check` passed at
+  both content commit boundaries and after verification.
+- The focused read-only editorial checker reconciled exact manifest states,
+  summary provenance, contracted headings and Source links, sibling-transcript
+  anchors, exact duplicate-free overview coverage, counts and IDs, and the
+  author-less multi-speaker attribution mode.
+- The work-item index and this progress section form the third reviewable batch
+  commit; its hash is reported in the completion response. Blockers: none.
+
+### Scope confirmation and next action
+
+- Plan 04 Task 3 remains unchecked because 30 available manifest IDs are still
+  pending. Work-item status remains `in-progress`; Task 4 did not start.
+- Next action is the next bounded Task 3 two-video Coding Agents session: run
+  exactly one selected `capture --limit 2` command under the fixed stop
+  protocol and do not refill that session.
+- No second capture, refill, retry, force, sync, Task 4, public-content or
+  resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
+  Engineer author, relationship, or synthesis was created or performed.
