@@ -1524,3 +1524,108 @@
 - Scope confirmation: no capture, retry, force, transcript, summary, overview,
   public-content or resource edit, AI Engineer author/relationship/synthesis,
   Task 2, or broader Plan 04 work began.
+
+## 2026-07-29 — Plan 04 Task 2 Coding Agents editorial thin slice passed
+
+### Starting state and capture outcome
+
+- Started on branch `ai-engineer-videos` from clean commit
+  `0bb9d0f7c0f2c5b43e60064df2eb2a1007fdd896` (`0bb9d0f`, `refresh
+  Coding Agents baseline`). Both the full worktree and
+  `src/content/youtube` were clean and separable.
+- The accepted Task 1 baseline was 38 manifest / 37 available / 0 captured / 37
+  available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable-recorded / 0 summaries / missing overview, with no Coding
+  Agents overlap, duplicate manifest ID, or global source artifact to reuse.
+  Catalog attribution remained `multiSpeaker: true`, English transcript and
+  summary languages, and no author relationship.
+- With the existing ignored `.env` loaded only into the command process, the
+  session ran exactly one capture command:
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 1`.
+  It exited `0` and reported `captured Yk87oUPVaxU`. There was no transient,
+  throttle, durable unavailable-caption, partial, or fatal outcome.
+- The session did not refill, retry, force, run another capture, or select
+  another playlist. The selected manifest entry is position 0,
+  `Yk87oUPVaxU`, titled `DeepSWE: A Contamination-Resistant Coding Benchmark —
+  James Shi, Datacurve`, published `2026-07-26T18:10:56Z` and available/public.
+
+### Transcript and summary editorial decisions
+
+- Capture created English auto-generated-caption metadata and a complete
+  1,054-second transcript. The metadata records `language: en`,
+  `kind: auto-generated`, and capture time `2026-07-29T19:28:09.111Z`.
+- The complete transcript received a source-faithful editorial pass because the
+  auto-captions inconsistently rendered source-supported names and contained
+  obvious substitutions. The pass normalized Datacurve, DeepSWE, SWE-bench
+  Pro, Claude, TypeScript, Artificial Analysis, Codeforces, mini-SWE-agent, and
+  several unambiguous words such as `multipart`, `terse`, `high-value`, and
+  `training`. It preserved all 17 timestamp chunks, speaker meaning,
+  repetitions, and claims and did not rewrite or editorialize the source.
+- Exactly one deliberate draft summary was written at
+  `videos/Yk87oUPVaxU/summary.md`. Its frontmatter title and `publishedAt` come
+  from the manifest; `sourceLanguage` and `captionKind` come from metadata; its
+  canonical URL, `videoId`, `summaryLanguage: en`, `status: draft`, heading
+  order, and Source links follow the source-library contract.
+- Attribution names James Shi as the presenting speaker and Datacurve as his
+  affiliation, supported by the title and his self-introduction at
+  `[00:00:01]`. Serena is mentioned in the transcript only as the absent
+  scheduled presenter and receives no talk claim. AI Engineer is not treated as
+  speaker, author, or affiliation. Every substantive summary claim has a valid
+  sibling-transcript timestamp or range; there is no unsupported quotation or
+  attribution.
+
+### Draft overview and final coverage
+
+- Created exactly one draft playlist overview at
+  `playlists/ai-engineer-coding-agents/overview.md` with the catalog title,
+  exact frontmatter and heading order, and `coveredVideoIds` containing only
+  `Yk87oUPVaxU`.
+- Coverage reconciles exactly to 38 manifest / 37 available / 1 captured / 1
+  summarized / 1 incorporated / 36 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded. All 36 pending available IDs
+  are listed explicitly.
+- The overview identifies AI Engineer only as curator/source channel and states
+  that speakers and affiliations vary by video. Every speaker claim names James
+  Shi and Datacurve and links to the summary plus valid transcript anchors.
+  Every editorial interpretation begins `Editorial:`. The Current Thesis and
+  Stable Ideas sections explicitly decline to infer a cross-event or stable
+  thesis from one incorporated video.
+- Coding Agents remains intentionally author-less and `multiSpeaker: true`.
+  No AI Engineer author, author relationship, or author synthesis was created.
+
+### Commits, verification, and next action
+
+- `8b6e1414f58540950c95f81b70352bfc26f0f5f9` (`8b6e141`, `capture Coding
+  Agents thin-slice transcript`) contains only the selected metadata and
+  source-faithfully cleaned transcript.
+- `cb4c19c91aee0dc40053d6690f93430e286bc7fe` (`cb4c19c`, `add Coding
+  Agents editorial thin slice`) contains only the deliberate draft summary and
+  draft overview.
+- `npm run lint:fix` passed after checking 171 files. It reformatted exactly the
+  eight known clean-at-start Antirez unavailable-caption metadata files; their
+  formatter-only array diffs were inspected and all eight files were restored
+  byte-for-byte, leaving no unrelated change.
+- `npm run youtube:library -- status` passed and reported Coding Agents as 38
+  manifest / 37 available / 1 captured / 36 pending / 1 manifest-unavailable /
+  0 caption-unavailable / 1 draft summary / current overview.
+- The combined YouTube library and transcript suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. Final `git diff --check` and
+  the Task 2 structural checker passed, including counts, provenance, exact
+  headings, transcript anchors, overview coverage, author-less multi-speaker
+  attribution, checked Task 2, `in-progress` status, and Task 3 Next Action
+  agreement.
+- **Task 2 result: PASS.** Every thin-slice acceptance condition is satisfied,
+  so Plan 04 Task 2 is checked. Work-item status remains `in-progress`.
+- The plan checkbox, work-item index, and this progress section form the third
+  reviewable Task 2 commit; its hash is reported in the completion response.
+- Blockers: none.
+- Next action is Plan 04 Task 3's first resumable two-video Coding Agents batch.
+  Task 3 has not started.
+- Scope confirmation: no Task 3 capture or implementation, second capture,
+  retry, force, extra transcript or summary, public post/summary/resource edit,
+  bounded-corpus edit, Astro publication, schedule, handoff file, global
+  artifact deletion, or AI Engineer author/relationship/synthesis began.

@@ -31,7 +31,7 @@ staleness as a reason for automatic editorial rewrites.
       outcome-aware handling of exit `2`.
   - Notes: Use `rg -l -e` for IDs such as `-QFHIoCo-Ko`.
 
-- [ ] **Task 2: Prove the Coding Agents editorial thin slice**
+- [x] **Task 2: Prove the Coding Agents editorial thin slice**
   - Scope: one pending Coding Agents video directory,
     `src/content/youtube/playlists/ai-engineer-coding-agents/overview.md`,
     work-item `progress.md`

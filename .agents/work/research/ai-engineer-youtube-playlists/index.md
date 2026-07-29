@@ -24,11 +24,12 @@ SWE Agents artifacts; all 10 are captured, summarized, and incorporated into
 the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
-has now been refreshed by a selected check and authoritative no-op sync: 38
-manifest / 37 available / 0 captured / 37 pending / 1 private / 0
-caption-unavailable-recorded / 0 summaries, with no overview, overlap, duplicate
-manifest ID, or existing global source artifact. Plan 04 Task 1 passed without
-capturing or creating editorial work.
+was refreshed by a selected check and authoritative no-op sync, and its
+one-video editorial thin slice now passes: 38 manifest / 37 available / 1
+captured / 1 summarized / 1 incorporated / 36 available pending / 1 private / 0
+caption-unavailable-recorded. The draft summary and current draft overview use
+source-supported James Shi / Datacurve attribution without creating an AI
+Engineer author or relationship. Plan 04 Tasks 1 and 2 are complete.
 
 ## Artifacts
 
@@ -48,10 +49,10 @@ capturing or creating editorial work.
 
 ## Next Action
 
-- Run Task 2 of [Plan 04](./plans/04-coding-agents-corpus.md): prove the Coding
-  Agents editorial thin slice with exactly one selected `capture --limit 1`
-  session, then review that transcript and deliberately create its draft summary
-  and the draft playlist overview. Task 2 has not started.
+- Run Task 3 of [Plan 04](./plans/04-coding-agents-corpus.md): backfill Coding
+  Agents in resumable two-video batches, beginning with exactly one selected
+  `capture --limit 2` session and applying the fixed stop protocol. Task 3 has
+  not started.
 
 ## Open Questions
 
@@ -116,3 +117,7 @@ capturing or creating editorial work.
   and authoritative no-op sync, reconciled 38 manifest / 37 available / 37
   pending / 1 private with no overlap or existing global source artifacts, and
   passed Plan 04 Task 1 without starting capture or editorial work.
+- 2026-07-29: Completed the one-video Coding Agents editorial thin slice for
+  `Yk87oUPVaxU`, including source-faithful transcript cleanup, one draft summary,
+  and the draft author-less multi-speaker overview. Plan 04 Task 2 passed; Task
+  3 remains unstarted.
