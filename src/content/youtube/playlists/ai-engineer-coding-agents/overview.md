@@ -15,13 +15,15 @@ coveredVideoIds:
   - ugUeZ8-b-u0
   - 7gujZrJ9L5I
   - W-SX_srBa3Y
+  - 5Sui_OnSRlY
+  - TeGsFFNqRLA
 ---
 
 ## Coverage
 
-This draft covers 38 manifest entries: 37 available, 13 captured, 13 summarized, 13 incorporated, 24 available pending, 1 manifest-private, and 0 caption-unavailable. AI Engineer is the curator and source channel, not the author; speakers and affiliations vary by video.
+This draft covers 38 manifest entries: 37 available, 15 captured, 15 summarized, 15 incorporated, 22 available pending, 1 manifest-private, and 0 caption-unavailable. AI Engineer is the curator and source channel, not the author; speakers and affiliations vary by video.
 
-The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`, `q4Tr-DknG2M`, `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`, `EcqMYoIV57A`, `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`, and `W-SX_srBa3Y`. The manifest-private ID is `pAbRL0h_SNs`. The 24 available pending IDs are `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`. There are no caption-unavailable IDs.
+The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`, `q4Tr-DknG2M`, `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`, `EcqMYoIV57A`, `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`, `W-SX_srBa3Y`, `5Sui_OnSRlY`, and `TeGsFFNqRLA`. The manifest-private ID is `pAbRL0h_SNs`. The 22 available pending IDs are `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`. There are no caption-unavailable IDs.
 
 ## Current Thesis
 
@@ -38,11 +40,13 @@ The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1
 - Daniel Szoke of Sentry argues that Rust's compiler-enforced constraints give coding agents deterministic feedback that complements tests and probabilistic review (`ugUeZ8-b-u0` [00:04:59]-[00:05:50], [00:09:26]-[00:15:13]; [summary](../../videos/ugUeZ8-b-u0/summary.md)).
 - Ian Ballantyne and KP Sawhney of Google DeepMind present agent scale as an operational problem spanning harnesses, shared workspaces, quotas, skill curation, observability, evaluation, model fallback, and automated review (`7gujZrJ9L5I` [00:04:03]-[00:08:55], [00:12:37]-[00:19:53], [00:20:56]-[00:24:00]; [summary](../../videos/7gujZrJ9L5I/summary.md)).
 - Michael Richman of Bitly, presenting Cmd+Ctrl, frames unpredictable agent interruptions and fragmented session state as coordination problems that need cross-device notification, interaction, and organization (`W-SX_srBa3Y` [00:00:07]-[00:04:41], [00:09:38]-[00:12:14]; [summary](../../videos/W-SX_srBa3Y/summary.md)).
-- Editorial: These thirteen perspectives span benchmark construction, ongoing work coordination, generated-media tooling, software architecture, model training, product scope, agent/client interoperability, domain execution, context routing, repository comprehension, compiler feedback, organization-scale operations, and cross-device supervision; that breadth is not evidence of consensus or a complete cross-event thesis.
+- Lou Bichard of Ona identifies coordination among agents as the missing infrastructure layer after runtimes, orchestration, and triggers, and proposes lifecycle gates, workflow state, durable execution, and a possible CLI boundary as parts of the solution (`5Sui_OnSRlY` [00:05:07]-[00:07:01], [00:10:48]-[00:17:33]; [summary](../../videos/5Sui_OnSRlY/summary.md)).
+- Sarah Chieng of Cerebras argues that faster inference amplifies unreviewed code as well as productive work and calls for model routing, repeated checks, active developer steering, bounded tasks, and externalized session state (`TeGsFFNqRLA` [00:00:16]-[00:02:10], [00:07:18]-[00:16:38]; [summary](../../videos/TeGsFFNqRLA/summary.md)).
+- Editorial: These fifteen perspectives span benchmark construction, ongoing work coordination, generated-media tooling, software architecture, model training, product scope, agent/client interoperability, domain execution, context routing, repository comprehension, compiler feedback, organization-scale operations, cross-device supervision, multi-agent coordination, and fast-inference workflows; that breadth is not evidence of consensus or a complete cross-event thesis.
 
 ## Stable Ideas
 
-- Editorial: No idea is classified as stable across the playlist after thirteen incorporated videos.
+- Editorial: No idea is classified as stable across the playlist after fifteen incorporated videos.
 
 ## Emerging Ideas
 
@@ -59,7 +63,9 @@ The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1
 - Daniel Szoke of Sentry says agents can use Rust's detailed compiler errors inside an autonomous revision loop, turning rejected programs into feedback before production (`ugUeZ8-b-u0` [00:09:26]-[00:15:13]; [summary](../../videos/ugUeZ8-b-u0/summary.md)).
 - Ian Ballantyne and KP Sawhney of Google DeepMind describe agent infrastructure that combines shared files, hierarchical traces, curated skills, task-specific evaluations, quota controls, and review systems rather than relying on one unrestricted model call (`7gujZrJ9L5I` [00:04:03]-[00:08:55], [00:12:37]-[00:19:53], [00:21:59]-[00:24:00]; [summary](../../videos/7gujZrJ9L5I/summary.md)).
 - Michael Richman of Bitly says a cross-tool control plane can expose session attention states and let an operator continue the same agent conversation across terminal, mobile, web, and cloud environments (`W-SX_srBa3Y` [00:04:41]-[00:12:14]; [summary](../../videos/W-SX_srBa3Y/summary.md)).
-- Editorial: Benchmark construction, durable context, verification loops, output substrates, architecture, training environments, project scope, interoperability, scripting interfaces, context routing, comprehension skills, compiler constraints, observability, quota-aware routing, and session coordination may all belong to coding-agent system design rather than a neutral layer around the model, but this remains a hypothesis for later summaries to test.
+- Lou Bichard of Ona says multi-agent work needs an explicit coordination layer that can decompose lifecycle stages, preserve workflow state, gate progress, and operate across local and remote environments (`5Sui_OnSRlY` [00:10:48]-[00:12:47], [00:15:44]-[00:16:38]; [summary](../../videos/5Sui_OnSRlY/summary.md)).
+- Sarah Chieng of Cerebras says successful trajectories can become reusable skills and that plan, progress, verification, and agent state should be externalized so bounded sessions can resume after context loss (`TeGsFFNqRLA` [00:09:13]-[00:10:14], [00:14:55]-[00:16:38]; [summary](../../videos/TeGsFFNqRLA/summary.md)).
+- Editorial: Benchmark construction, durable context, verification loops, output substrates, architecture, training environments, project scope, interoperability, scripting interfaces, context routing, comprehension skills, compiler constraints, observability, quota-aware routing, session coordination, lifecycle gates, and model-speed-aware task design may all belong to coding-agent system design rather than a neutral layer around the model, but this remains a hypothesis for later summaries to test.
 
 ## Revisions and Tensions
 
@@ -76,7 +82,9 @@ The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1
 - Daniel Szoke of Sentry says tests and code review remain necessary but can share model fallibility, while compiler guarantees cover only particular invalid program classes rather than intended behavior (`ugUeZ8-b-u0` [00:04:59]-[00:05:50], [00:09:26]-[00:10:21], [00:15:13]; [summary](../../videos/ugUeZ8-b-u0/summary.md)).
 - Ian Ballantyne and KP Sawhney of Google DeepMind report blunt quota controls, difficult skill evaluation, internal-only observability, and incomplete visibility into subagent relationships, leaving both operating cost and evaluation design unsettled (`7gujZrJ9L5I` [00:10:55]-[00:16:44], [00:18:50]-[00:19:53]; [summary](../../videos/7gujZrJ9L5I/summary.md)).
 - Michael Richman of Bitly says agents still require unpredictable intervention and that supervising many sessions is cognitively exhausting, even as Cmd+Ctrl makes those sessions reachable from more places (`W-SX_srBa3Y` [00:00:07]-[00:02:05], [00:13:01]-[00:15:00]; [summary](../../videos/W-SX_srBa3Y/summary.md)).
-- Editorial: The incorporated speakers identify different limits—benchmark coverage, autonomous-action safety, creative quality, software assurance, evaluation validity, production depth, protocol maturity, execution fidelity, context coordination, research validation, behavioral correctness, quota allocation, infrastructure observability, and supervisory load—so these talks do not support a general claim that coding-agent work is solved.
+- Lou Bichard of Ona calls runtimes, orchestration, and triggers effectively solved while also acknowledging unresolved coordination, gates, compliance, security, protocol, and interface design (`5Sui_OnSRlY` [00:05:07]-[00:09:56], [00:12:47]-[00:17:33]; [summary](../../videos/5Sui_OnSRlY/summary.md)).
+- Sarah Chieng of Cerebras warns that faster inference can produce unverified technical debt and consume context more quickly; she recommends human selection and active steering rather than many unattended sessions (`TeGsFFNqRLA` [00:07:18]-[00:13:55], [00:14:55]-[00:16:38]; [summary](../../videos/TeGsFFNqRLA/summary.md)).
+- Editorial: The incorporated speakers identify different limits—benchmark coverage, autonomous-action safety, creative quality, software assurance, evaluation validity, production depth, protocol maturity, execution fidelity, context coordination, research validation, behavioral correctness, quota allocation, infrastructure observability, supervisory load, coordination standards, and human review capacity—so these talks do not support a general claim that coding-agent work is solved.
 
 ## Practical Implications
 
@@ -93,4 +101,6 @@ The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1
 - Editorial: Put deterministic compiler and static-analysis feedback inside the agent loop while retaining tests and review for behavioral correctness.
 - Editorial: Treat per-user quota, model fallback, trace observability, skill curation, and task-specific evaluation as first-class operating requirements before scaling agent use across an organization.
 - Editorial: Aggregate cross-tool session state and notify on explicit attention transitions, but preserve interruption boundaries so remote reachability does not become continuous supervision.
+- Editorial: Model multi-agent coordination as explicit workflow state with bounded worker responsibilities, visible gates, and recoverable message paths rather than relying on pull requests or tickets alone.
+- Editorial: Use faster inference to shorten the feedback loop, not to enlarge unchecked diffs; keep planning, verification criteria, progress state, and human decisions visible across bounded sessions.
 - Editorial: Revise this overview only from deliberately reviewed summaries, preserve per-speaker attribution, and do not infer chronology from playlist order.
