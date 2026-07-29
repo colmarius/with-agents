@@ -1400,3 +1400,127 @@
 - Next action is Plan 04 Task 1: refresh and review the active Coding Agents
   playlist baseline before any capture. This session stops at the passed Plan 03
   Task 5 gate.
+
+## 2026-07-29 — Plan 04 Task 1 active Coding Agents baseline passed
+
+### Starting state and pre-sync reconciliation
+
+- Started on branch `ai-engineer-videos` from clean commit
+  `9ff5db839cdf55bf311a2038ed24e019afaf0c98` (`9ff5db8`, `pass bounded
+  multi-speaker review gate`). `git status --short --branch` contained only the
+  branch header, and `git status --short -- src/content/youtube` was empty.
+- `npm run youtube:library -- status` passed and reported the committed Coding
+  Agents baseline as 38 manifest / 37 available / 0 captured / 37 available
+  pending / 1 manifest-private / 0 caption-unavailable-recorded / 0 summaries,
+  with `overview.md` missing.
+- An in-memory read-only checker reconciled all 38 unique manifest IDs: the sole
+  manifest-unavailable ID was `pAbRL0h_SNs` (`privacyStatus: private`,
+  `unavailableReason: private`); no Coding Agents ID had a global
+  `src/content/youtube/videos/<video-id>/` directory; there were no duplicate
+  Coding Agents manifest IDs; and `-QFHIoCo-Ko` was the sole leading-dash ID.
+- Pre-sync overlap was empty against every other tracked playlist, including
+  SWE Agents, Agent Reliability, Antirez AI Concepts, and Antirez Coding with
+  AI. The catalog kept Coding Agents at `multiSpeaker: true`, English transcript
+  and summary languages, and no author relationship.
+
+### Selected check, authoritative sync, and public-impact review
+
+- The selected read-only command
+  `npm run youtube:library -- check --playlist ai-engineer-coding-agents`, with
+  the existing ignored `.env` loaded only inside the command process, exited
+  `0` with a complete report: 0 additions, 0 removals, 0 moves, 0 retitles, 0
+  availability changes, and no partial or transient failure.
+- After reconfirming `src/content/youtube` was clean, the authoritative selected
+  command
+  `npm run youtube:library -- sync --playlist ai-engineer-coding-agents`, with
+  the same process-local environment loading, exited `0` and reported `no
+  changes`.
+- The exact Coding Agents manifest `git diff` was empty. The authoritative diff
+  therefore contained no additions, removals, moves, retitles, availability
+  changes, publication-date changes, or changed video IDs. No source manifest
+  commit was created.
+- Mandatory public-impact decision: **keep / no correction required**. Because
+  the authoritative changed-ID list was empty, no exact-ID public search or
+  retitled-summary inspection was required for that list, and no per-ID `fix`
+  or `block` decision was needed. Playlist identity, membership, orientation,
+  counts, dates, and public framing were unchanged.
+- The advisory baseline review identified existing public artifacts outside the
+  source-only YouTube library for `ClWD8OEYgp8` and `RjfbvDXpFls`. They are not
+  global `src/content/youtube/videos/` artifacts and the no-op sync did not
+  change either ID, so Task 1 neither reuses nor edits them.
+
+### Final authoritative baseline and independent review
+
+- The post-sync read-only structural checker passed with the same authoritative
+  baseline: 38 manifest / 38 unique IDs / 37 available / 0 captured / 37
+  available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable-recorded (no IDs) / 0 summaries / missing overview.
+  Available, private, captured, pending, and caption-unavailable states reconcile
+  exactly; the pre-sync-to-post-sync change is zero in every category.
+- Exact overlap remained empty with SWE Agents and Agent Reliability and also
+  with both Antirez playlists. No Coding Agents ID has an existing global source
+  directory to reuse, no transcript, summary, or overview was created, there are
+  no duplicate Coding Agents IDs, and the sole leading-dash ID remains
+  `-QFHIoCo-Ko`.
+- Coding Agents remains intentionally author-less and `multiSpeaker: true`. AI
+  Engineer remains the curator/source channel, never the author; no author
+  relationship or author synthesis exists.
+- Read-only high-mode child review:
+  [Coding Agents baseline reconciliation](https://ampcode.com/threads/T-019faf4b-6884-77ba-9bf3-a1858d0397a9)
+  independently inspected the live synchronized manifest, all other tracked
+  manifests, catalog attribution, and global source directories. It made no
+  mutations, found no Coding Agents discrepancy, and recommended passing the
+  baseline gate. It also noted an unrelated pre-existing duplicate
+  `8gg-oJr4dTY` in Antirez AI Concepts; this does not overlap Coding Agents and
+  is outside Task 1.
+
+### Fixed protocol for later capture sessions
+
+- Plan 04 Task 2 must run exactly one
+  `capture --playlist ai-engineer-coding-agents --limit 1` thin slice.
+- Every later capture session may run exactly one
+  `capture --playlist ai-engineer-coding-agents --limit 2`; never refill during
+  the same session, and stop immediately on throttling.
+- Exit `1` is fatal and stops for investigation. Exit `2` must be interpreted
+  from per-video outcomes: a transient or throttled outcome with remaining
+  candidates pauses until a later session; only durably recorded unavailable
+  captions may be accepted and documented.
+- Never combine retry with force. Retry is a separate explicit Mode D decision,
+  and routine backfill never uses force capture.
+
+### Task decision, verification, and next action
+
+- **Task 1 result: PASS.** The selected check and sync completed safely, the
+  authoritative no-op diff is fully understood, the empty changed-ID set has an
+  explicit public-impact decision, final counts and overlap reconcile, the
+  later-session capture protocol is fixed, and no attribution, provenance,
+  availability, or public-impact issue remains. Plan 04 Task 1 is checked.
+- `npm run lint:fix` passed after checking 170 files. It reformatted exactly the
+  eight expected clean-at-start Antirez unavailable-caption metadata files; the
+  formatter-only diff was inspected and those eight files were restored
+  byte-for-byte, leaving `src/content/youtube` clean.
+- `npm run youtube:library -- status` passed and reproduced the authoritative
+  38 / 37 / 0 captured / 37 pending / 1 manifest-unavailable / 0
+  caption-unavailable / 0 summary / missing-overview Coding Agents state.
+- The combined YouTube library and transcript test suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker.
+- The final read-only structural checker passed: Coding Agents IDs are unique;
+  manifest and capture states reconcile; private `pAbRL0h_SNs` remains distinct
+  from zero caption-unavailable outcomes; all cross-playlist intersections and
+  global source artifact sets are empty; no Coding Agents transcript, summary,
+  or overview exists; attribution remains author-less and multi-speaker; and the
+  checked Task 1, unchecked Task 2, `in-progress` status, and Task 2 Next Action
+  agree. Final `git diff --check` passed.
+- Commit boundary: the selected sync was a no-op, so there is no source-library
+  commit. The Plan 04 checkbox plus work-item index and progress updates form the
+  sole Task 1 work-item commit; its hash is reported in the completion response.
+- Blockers: none. Work-item status remains `in-progress`.
+- Next action is Plan 04 Task 2's exact one-video Coding Agents editorial thin
+  slice. Task 2 has not started.
+- Scope confirmation: no capture, retry, force, transcript, summary, overview,
+  public-content or resource edit, AI Engineer author/relationship/synthesis,
+  Task 2, or broader Plan 04 work began.

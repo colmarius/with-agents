@@ -2,7 +2,7 @@
 
 Status: in-progress
 Category: research
-Updated: 2026-07-28
+Updated: 2026-07-29
 
 ## Summary
 
@@ -23,8 +23,12 @@ corpus is also complete for all 10 available entries, including 2 shared global
 SWE Agents artifacts; all 10 are captured, summarized, and incorporated into
 the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
-both playlist overviews, completing Plan 03. `Coding Agents` remains untouched
-and is the next planned corpus under Plan 04.
+both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
+has now been refreshed by a selected check and authoritative no-op sync: 38
+manifest / 37 available / 0 captured / 37 pending / 1 private / 0
+caption-unavailable-recorded / 0 summaries, with no overview, overlap, duplicate
+manifest ID, or existing global source artifact. Plan 04 Task 1 passed without
+capturing or creating editorial work.
 
 ## Artifacts
 
@@ -44,9 +48,10 @@ and is the next planned corpus under Plan 04.
 
 ## Next Action
 
-- Run Task 1 of [Plan 04](./plans/04-coding-agents-corpus.md): refresh and review
-  the active Coding Agents playlist baseline before any capture. Plan 04 has not
-  started, and Coding Agents remains at 38 manifest / 37 available / 0 captured.
+- Run Task 2 of [Plan 04](./plans/04-coding-agents-corpus.md): prove the Coding
+  Agents editorial thin slice with exactly one selected `capture --limit 1`
+  session, then review that transcript and deliberately create its draft summary
+  and the draft playlist overview. Task 2 has not started.
 
 ## Open Questions
 
@@ -107,3 +112,7 @@ and is the next planned corpus under Plan 04.
   deliberately reviewing all 26 unique summaries and both overviews, making
   four source-supported claim/anchor corrections, and setting all 28 editorial
   artifacts to `reviewed`. Plan 03 is complete; Plan 04 remains unstarted.
+- 2026-07-29: Refreshed the active Coding Agents baseline with a selected check
+  and authoritative no-op sync, reconciled 38 manifest / 37 available / 37
+  pending / 1 private with no overlap or existing global source artifacts, and
+  passed Plan 04 Task 1 without starting capture or editorial work.

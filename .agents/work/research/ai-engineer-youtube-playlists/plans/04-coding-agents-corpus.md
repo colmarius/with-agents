@@ -15,7 +15,7 @@ staleness as a reason for automatic editorial rewrites.
 
 ## Tasks
 
-- [ ] **Task 1: Refresh the active-playlist baseline**
+- [x] **Task 1: Refresh the active-playlist baseline**
   - Scope: selected check/sync for `ai-engineer-coding-agents`, manifest diff,
     work-item `progress.md`
   - Depends on: Plan 03 Task 5 passes
