@@ -2037,7 +2037,7 @@
 - `HEFSExa0xl0` is manifest position 7, titled `Teaching Coding Agents to do
   Spreadsheets - Nuno Campos, Witan Labs`, published `2026-07-08T09:03:25Z`,
   public, and available. Capture wrote English auto-generated-caption metadata
-  at `2026-07-29T20:32:52.837Z` and a complete 1,148-second transcript with 19
+  at `2026-07-29T20:32:52.837Z` and a complete 1,148-second transcript with 20
   preserved timestamp chunks.
   - The source-faithful transcript pass removed only clear duplicated words and
     normalized unambiguous terms or substitutions including Node.js, REPL,
