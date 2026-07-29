@@ -1841,10 +1841,10 @@
 
 ### Commits and verification
 
-- `387fa5d241695307715a6db88a9ea8d3f6e7bd66` (`387fa5d`, `capture second
+- `387fa5d659c6e013ccdbd75b6510764acdd08080` (`387fa5d`, `capture second
   Coding Agents backfill batch`) contains only the two generated metadata files
   and the two source-faithfully cleaned transcripts.
-- `a9bb20764f05098188e720c33f0e5c3fc0be7ef5` (`a9bb207`, `summarize second
+- `a9bb2076e713d814489e0d3f6529d3bf5b419dc1` (`a9bb207`, `summarize second
   Coding Agents backfill batch`) contains only the two deliberate draft
   summaries and the refreshed draft overview.
 - `npm run lint:fix` passed after checking 175 files and reformatted exactly the
@@ -1868,8 +1868,11 @@
   duplicate-free; attribution remains author-less and multi-speaker; Task 3 is
   unchecked; status is `in-progress`; and the Next Action remains the next
   no-refill Task 3 session.
-- The work-item index and this progress section form the third reviewable batch
-  commit; its hash is reported in the completion response. Blockers: none.
+- `b6c18f8be52999f9014539f175cc4ceb9ecf4fb2` (`b6c18f8`, `record second
+  Coding Agents backfill batch`) contains only the work-item index and this
+  progress section. A separate non-amending work-item-only correction records
+  the exact expanded commit hashes above; its hash is reported in the completion
+  response. Blockers: none.
 
 ### Scope confirmation and next action
 
