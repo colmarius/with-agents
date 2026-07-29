@@ -9,13 +9,15 @@ coveredVideoIds:
   - q4Tr-DknG2M
   - xUnRQ9vLXxo
   - HsxQICTLF84
+  - HEFSExa0xl0
+  - EcqMYoIV57A
 ---
 
 ## Coverage
 
-This draft covers 38 manifest entries: 37 available, 7 captured, 7 summarized, 7 incorporated, 30 available pending, 1 manifest-private, and 0 caption-unavailable. AI Engineer is the curator and source channel, not the author; speakers and affiliations vary by video.
+This draft covers 38 manifest entries: 37 available, 9 captured, 9 summarized, 9 incorporated, 28 available pending, 1 manifest-private, and 0 caption-unavailable. AI Engineer is the curator and source channel, not the author; speakers and affiliations vary by video.
 
-The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`, `q4Tr-DknG2M`, `xUnRQ9vLXxo`, and `HsxQICTLF84`. The manifest-private ID is `pAbRL0h_SNs`. The 30 available pending IDs are `HEFSExa0xl0`, `EcqMYoIV57A`, `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`, `W-SX_srBa3Y`, `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`. There are no caption-unavailable IDs.
+The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`, `q4Tr-DknG2M`, `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`, and `EcqMYoIV57A`. The manifest-private ID is `pAbRL0h_SNs`. The 28 available pending IDs are `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`, `W-SX_srBa3Y`, `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`. There are no caption-unavailable IDs.
 
 ## Current Thesis
 
@@ -26,11 +28,13 @@ The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1
 - Lee Robinson of Cursor presents model training as linked feedback and optimization loops whose evaluations, generated tasks, targeted rewards, compute, and research agents help produce later models (`q4Tr-DknG2M` [00:00:54]-[00:01:57], [00:08:51]-[00:10:55], [00:14:43]-[00:19:09]; [summary](../../videos/q4Tr-DknG2M/summary.md)).
 - Theo Browne, identified in the source title as `@t3dotgg`, argues that stronger model orchestration lowers old project-size constraints and should push developers to challenge inherited workflows and attempt wider products (`xUnRQ9vLXxo` [00:01:48]-[00:03:29], [00:06:08]-[00:09:29], [00:13:06]-[00:15:40]; [summary](../../videos/xUnRQ9vLXxo/summary.md)).
 - Bennet Fenner of Zed presents ACP as a common interface through which coding agents and clients can exchange session, text, tool, file, and terminal updates (`HsxQICTLF84` [00:00:14]-[00:01:06], [00:07:35]-[00:13:04], [00:14:52]-[00:16:42]; [summary](../../videos/HsxQICTLF84/summary.md)).
-- Editorial: These seven perspectives span benchmark construction, ongoing work coordination, generated-media tooling, software architecture, model training, product scope, and agent/client interoperability; that breadth is not evidence of consensus or a complete cross-event thesis.
+- Nuno Campos of Witan Labs presents a persistent scripting interface plus high-fidelity calculation and rendering as the combination that most improved his team's spreadsheet agent (`HEFSExa0xl0` [00:04:21]-[00:11:50]; [summary](../../videos/HEFSExa0xl0/summary.md)).
+- Nupur Sharma of Qodo argues that relevant context selection, bounded exploration, specialist agents, and an integrating judge are more useful than giving one agent all available context (`EcqMYoIV57A` [00:03:13]-[00:04:17], [00:08:31]-[00:15:31]; [summary](../../videos/EcqMYoIV57A/summary.md)).
+- Editorial: These nine perspectives span benchmark construction, ongoing work coordination, generated-media tooling, software architecture, model training, product scope, agent/client interoperability, domain execution, and context routing; that breadth is not evidence of consensus or a complete cross-event thesis.
 
 ## Stable Ideas
 
-- Editorial: No idea is classified as stable across the playlist after seven incorporated videos.
+- Editorial: No idea is classified as stable across the playlist after nine incorporated videos.
 
 ## Emerging Ideas
 
@@ -41,7 +45,9 @@ The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1
 - Lee Robinson of Cursor says held-out engineering tasks, reward-hacking controls, scalable environment generation, and targeted textual feedback shape whether training rewards intended model behavior (`q4Tr-DknG2M` [00:04:55]-[00:10:55]; [summary](../../videos/q4Tr-DknG2M/summary.md)).
 - Theo Browne, identified in the source title as `@t3dotgg`, says some formerly service-sized workflows can become scheduled Markdown instructions and that agent-assisted teams can attempt wider product surfaces when users can extend missing vertical behavior (`xUnRQ9vLXxo` [00:09:29]-[00:12:09], [00:13:06]-[00:15:40]; [summary](../../videos/xUnRQ9vLXxo/summary.md)).
 - Bennet Fenner of Zed shows ACP carrying model streams and structured tool lifecycle updates while client capabilities expose editor-owned file state and terminal interaction (`HsxQICTLF84` [00:07:35]-[00:13:04], [00:14:52]-[00:16:42]; [summary](../../videos/HsxQICTLF84/summary.md)).
-- Editorial: Benchmark construction, durable context, verification loops, output substrates, architecture, training environments, project scope, and interoperability may all belong to coding-agent system design rather than a neutral layer around the model, but this remains a hypothesis for later summaries to test.
+- Nuno Campos of Witan Labs says persistent REPL state lets agents compose tools and interleave reasoning, while formula and rendering engines provide the feedback needed to verify spreadsheet work (`HEFSExa0xl0` [00:06:08]-[00:11:50]; [summary](../../videos/HEFSExa0xl0/summary.md)).
+- Nupur Sharma of Qodo says context engines, hierarchical summaries, knowledge graphs, iterative retrieval, and critic nodes trade off indexing, processing, setup, cost, and latency rather than offering one universal context solution (`EcqMYoIV57A` [00:04:17]-[00:08:31]; [summary](../../videos/EcqMYoIV57A/summary.md)).
+- Editorial: Benchmark construction, durable context, verification loops, output substrates, architecture, training environments, project scope, interoperability, scripting interfaces, and context routing may all belong to coding-agent system design rather than a neutral layer around the model, but this remains a hypothesis for later summaries to test.
 
 ## Revisions and Tensions
 
@@ -52,7 +58,9 @@ The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1
 - Lee Robinson of Cursor says removing Git history and limiting network access can reduce public-evaluation reward hacking, while acknowledging that those restrictions differ from real engineering environments (`q4Tr-DknG2M` [00:06:52]-[00:08:51]; [summary](../../videos/q4Tr-DknG2M/summary.md)).
 - Theo Browne, identified in the source title as `@t3dotgg`, says he does not know what now qualifies as too big and distinguishes quickly adding a database product surface from matching RDS reliability (`xUnRQ9vLXxo` [00:12:09]-[00:14:51]; [summary](../../videos/xUnRQ9vLXxo/summary.md)).
 - Bennet Fenner of Zed encounters duplicated live-demo events, warns that the generated example is not production code, and describes remote ACP transport as future work (`HsxQICTLF84` [00:13:04]-[00:14:52], [00:16:42]-[00:17:38]; [summary](../../videos/HsxQICTLF84/summary.md)).
-- Editorial: The incorporated speakers identify different limits—benchmark coverage, autonomous-action safety, creative quality, software assurance, evaluation validity, production depth, and protocol maturity—so these talks do not support a general claim that coding-agent work is solved.
+- Nuno Campos of Witan Labs warns that low-fidelity spreadsheet engines can degrade results and says deterministic evaluation is preferable where the task permits it but cannot replace an LLM judge in every case (`HEFSExa0xl0` [00:10:46]-[00:11:50], [00:13:49]-[00:14:51], [00:17:41]-[00:18:28]; [summary](../../videos/HEFSExa0xl0/summary.md)).
+- Nupur Sharma of Qodo identifies scaling, processing, setup, cost, and latency limits across context strategies and responds to audience concerns about whether specialist agents retain enough shared architectural perspective (`EcqMYoIV57A` [00:05:21]-[00:08:31], [00:17:25]-[00:25:37]; [summary](../../videos/EcqMYoIV57A/summary.md)).
+- Editorial: The incorporated speakers identify different limits—benchmark coverage, autonomous-action safety, creative quality, software assurance, evaluation validity, production depth, protocol maturity, execution fidelity, and context coordination—so these talks do not support a general claim that coding-agent work is solved.
 
 ## Practical Implications
 
@@ -63,4 +71,6 @@ The incorporated video IDs are `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1
 - Editorial: Separate anti-cheating benchmark conditions from realistic tool-enabled evaluations, and automate experiment operations without hiding escalation paths or the human research decisions that shape the loop.
 - Editorial: Test whether stronger orchestration justifies broader assignments and wider product surfaces, but measure reliability, security, support, and operational depth separately from implementation speed.
 - Editorial: For interoperable agent interfaces, keep the model/tool loop separate from the client adapter and make sessions, streamed output, tool state, editor-owned files, terminal access, and transport limitations explicit.
+- Editorial: When tool calls form an awkward implicit scripting language, test a composable stateful interface and invest in domain feedback engines whose outputs match the production environment.
+- Editorial: Route only relevant context into specialist work, constrain open-ended exploration, and give the integration step enough organization-specific evidence to evaluate combined results.
 - Editorial: Revise this overview only from deliberately reviewed summaries, preserve per-speaker attribution, and do not infer chronology from playlist order.
