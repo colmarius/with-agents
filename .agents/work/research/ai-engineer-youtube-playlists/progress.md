@@ -2271,3 +2271,149 @@
 - No second capture, refill, retry, force, sync, Task 4, public-content or
   resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
   Engineer author, relationship, or synthesis was created or performed.
+
+## 2026-07-29 — Plan 04 Task 3 sixth two-video Coding Agents batch completed
+
+### Starting state and single bounded capture
+
+- Started on branch `ai-engineer-videos` from the exact expected clean commit
+  `38e5a7d1b64b897e445c598398caa10956534ae2` (`38e5a7d`, `record fifth
+  Coding Agents backfill batch`). `git status --short --branch` contained only
+  the branch header.
+- The accepted fifth-batch baseline was 38 manifest / 37 available / 11
+  captured / 11 summarized / 11 incorporated / 26 available pending / 1
+  manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded. Coding
+  Agents remained `multiSpeaker: true`, English source and summary languages,
+  and intentionally author-less with no AI Engineer relationship or synthesis.
+- The existing `.env` was confirmed ignored by `.gitignore` and was loaded only
+  inside the capture command's subshell process. The session ran exactly one
+  capture command:
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`.
+  It exited `0` and reported, in order, `captured 7gujZrJ9L5I` and
+  `captured W-SX_srBa3Y`.
+- Both attempted slots succeeded. There was no transient, throttle, durable
+  unavailable-caption, partial, or fatal outcome. The session did not refill,
+  retry, force, run a second capture, sync, or select another playlist.
+
+### Per-video source and editorial decisions
+
+- `7gujZrJ9L5I` is manifest position 11, titled `How Google DeepMind Runs
+  Agents at Scale — KP Sawhney & Ian Ballantyne, Google DeepMind`, published
+  `2026-05-24T18:00:06Z`, public, and available. Capture wrote English
+  auto-generated-caption metadata at `2026-07-29T21:56:40.791Z` and a complete
+  1,512-second transcript with 25 mechanically verified unique timestamp
+  chunks from `[00:00:14]` through `[00:24:00]`.
+  - The source-faithful transcript pass normalized the title-supported Ian
+    Ballantyne and KP Sawhney names and unambiguous product or technical forms
+    including Antigravity, Flash, Interactions API, I/O, OpenClaw, Ultra, Pro,
+    and Jules. It removed one clear duplicated `SRE` while preserving chunk
+    boundaries, disfluencies, unidentified audience turns, and uncertain forms
+    such as `Gemma 4`, `PA`, `SRIs`, and `guardrail CLI` rather than inventing
+    replacements.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and identifies Ballantyne as a Google DeepMind developer relations engineer
+    and Sawhney as a software engineer in DeepMind's AI platform team from
+    `[00:00:14]`. Claims about Antigravity, shared workspaces, skill curation,
+    quota and model routing, observability, evaluation, and automated review use
+    valid sibling-transcript anchors.
+- `W-SX_srBa3Y` is manifest position 12, titled `Let's Talk About FOMAT: Fear
+  of Missing Agent Time — Michael Richman, Cmd+Ctrl`, published
+  `2026-05-24T16:00:06Z`, public, and available. Capture wrote English
+  auto-generated-caption metadata at `2026-07-29T21:56:44.282Z` and a complete
+  977-second transcript with 18 mechanically verified unique timestamp chunks
+  from `[00:00:07]` through `[00:15:48]`.
+  - The source-faithful transcript pass normalized the title-supported Michael
+    Richman name and unambiguous product or technical forms including Command
+    and Control, Cursor, AgentCraft, Claude Code, OpenCode, and lifecycle, and
+    removed one clear duplicated `the`. It preserved chunk boundaries,
+    disfluencies, and uncertain phrases such as `mm date tomorrow` rather than
+    reconstructing smoother prose.
+  - The deliberate draft summary copies exact manifest and metadata provenance.
+    It identifies Richman from the source title and his self-description as a
+    Bitly engineering leader who co-leads its AI coding-tools strategy; it
+    records Cmd+Ctrl as the source-title identity without treating AI Engineer
+    as his affiliation. Claims about FOMAT, cross-device session interaction,
+    notification, session organization, the daemon/control-plane architecture,
+    agent choreography, and supervisory load use valid sibling anchors.
+
+### Overview coverage and synthesis boundary
+
+- Refreshed the existing draft Coding Agents overview from all thirteen
+  deliberate summaries. Its duplicate-free `coveredVideoIds` list exactly
+  matches all summary IDs in manifest order, ending with `7gujZrJ9L5I` and
+  `W-SX_srBa3Y`.
+- Coverage now reconciles to 38 manifest / 37 available / 13 captured / 13
+  summarized / 13 incorporated / 24 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded (no IDs).
+- The exact 24 available pending IDs are `5Sui_OnSRlY`, `TeGsFFNqRLA`,
+  `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`,
+  `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`,
+  `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`,
+  `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`,
+  `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`,
+  `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- The overview identifies AI Engineer only as curator/source channel and states
+  that speakers and affiliations vary. Every non-editorial claim names a
+  source-supported speaker and affiliation and includes a resolving summary
+  link plus valid sibling-transcript anchors. Every cross-video interpretation
+  begins `Editorial:`. The thirteen-video synthesis explicitly rejects a
+  consensus inference and makes no playlist-order chronology claim.
+
+### Commits and verification
+
+- `f9fec53dd9511612b74153db14f700beea562670` (`f9fec53`, `capture sixth
+  Coding Agents backfill batch`) contains only the two generated metadata files
+  and the two source-faithfully cleaned transcripts.
+- `fc2fc565f2d006ca650cc2dfc5dfb49dbfa28f28` (`fc2fc56`, `summarize sixth
+  Coding Agents backfill batch`) contains only the two deliberate draft
+  summaries and the refreshed draft overview.
+- `npm run lint:fix` exited `0` after checking 183 files and reformatted exactly
+  the eight known clean-at-start Antirez unavailable-caption metadata files.
+  The exact eight-file set and formatter-only stat were audited, only those
+  files were restored, their pre-lint SHA-256 hashes re-matched, and the tree
+  returned clean. No batch artifact required a formatter change.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 13 captured / 24 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 13 draft summaries / current
+  overview.
+- The combined YouTube library and transcript suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker.
+- `git diff --check`, both content-commit `git show --check` audits, and the
+  cumulative diff check from `38e5a7d` passed. The two content commits modify
+  exactly seven intended Coding Agents files: two metadata files, two
+  transcripts, two summaries, and the playlist overview.
+- The final read-only structural, provenance, anchor, coverage, attribution,
+  and work-item checks passed. All 13 summaries have exact decoded frontmatter
+  provenance and key order, resolving Source links, and valid sibling anchor
+  endpoints; overview coverage and pending/private/unavailable IDs are exact;
+  author-less multi-speaker attribution remains intact; Task 3 and Task 4 are
+  unchecked; status is `in-progress`; and Next Action remains another Task 3
+  `--limit 2` session.
+- One initial read-only all-summary checker compared an escaped quoted manifest
+  title as raw text and rejected the existing `1P1hJ36rxM0` summary. The
+  corrected checker decoded frontmatter quoting and passed all 13 summaries.
+  This verifier-only correction made no repository change and did not weaken
+  the provenance assertion.
+- The work-item index and this true-EOF progress section form the sixth
+  reviewable batch commit; its hash is reported in the completion response.
+  Blockers: none.
+
+### Scope confirmation, uncertainties, and next action
+
+- Plan 04 Task 3 remains unchecked because 24 available manifest IDs are still
+  pending. Work-item status remains `in-progress`; Task 4 did not start.
+- Remaining uncertainty is limited to ambiguous auto-caption fragments retained
+  verbatim in the cleaned transcripts, internal Google implementation details
+  the speakers withheld, and evidence limitations stated in the two draft
+  summaries. Richman's Bitly self-affiliation and the source title's Cmd+Ctrl
+  identity are kept distinct; no unsupported attribution was inferred.
+- Next action is another bounded Task 3 two-video Coding Agents session: run
+  exactly one selected `capture --limit 2` command under the fixed stop
+  protocol and do not refill that session.
+- No second capture, refill, retry, force, sync, Task 4, public-content or
+  resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
+  Engineer author, relationship, or synthesis was created or performed.
