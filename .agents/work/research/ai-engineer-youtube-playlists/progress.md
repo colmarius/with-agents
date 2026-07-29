@@ -1752,3 +1752,132 @@
 - No second capture, refill, retry, force, sync, Task 4, public-content or
   resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
   Engineer author, relationship, or synthesis was created or performed.
+
+## 2026-07-29 — Plan 04 Task 3 second two-video Coding Agents batch completed
+
+### Starting state and single bounded capture
+
+- Started on branch `ai-engineer-videos` from the expected clean commit
+  `b8358822825c9e701473f263e04355321898ba1e` (`b835882`, `record first Coding
+  Agents backfill batch`). `git status --short --branch` contained only the
+  branch header, so the worktree was clean and separable.
+- The accepted first-batch baseline was 38 manifest / 37 available / 3 captured /
+  3 summarized / 3 incorporated / 34 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded. Coding Agents remained
+  `multiSpeaker: true`, English source and summary languages, and intentionally
+  author-less with no AI Engineer relationship or synthesis.
+- The existing `.env` is ignored by `.gitignore` and was loaded only into the
+  capture command process. The session ran exactly one capture command:
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`.
+  It exited `0` and reported, in order, `captured 1P1hJ36rxM0` and
+  `captured q4Tr-DknG2M`.
+- Both attempted slots succeeded. There was no transient, throttle, durable
+  unavailable-caption, partial, or fatal outcome. The session did not refill,
+  retry, force, run a second capture, sync, or select another playlist.
+
+### Per-video source and editorial decisions
+
+- `1P1hJ36rxM0` is manifest position 3, titled `"Software engineering is not
+  about writing code" — Benoit Schillings, Google DeepMind VP of Research`,
+  published `2026-07-17T15:24:44Z`, public, and available. Capture wrote English
+  auto-generated-caption metadata at `2026-07-29T19:59:06.812Z` and a complete
+  1,226-second transcript with 21 preserved timestamp chunks.
+  - The source-faithful transcript pass normalized source-supported names and
+    obvious substitutions including Benoit Schillings, Waymo, DeepMind,
+    AlphaZero, SWE-bench, Lean, self-play, vibe coding, chain of thought, and
+    several unambiguous words or phrases. It preserved chunk boundaries,
+    disfluencies, predictions, and claims and left uncertain wording untouched.
+  - The deliberate draft summary copies exact manifest and metadata provenance
+    and uses the contracted heading and Source-link order. It names Benoit
+    Schillings as Google DeepMind vice president of research, supported by the
+    title and stage introduction at `[00:00:01]`, and anchors every substantive
+    claim about syntax generation, architecture, self-play, security,
+    evaluation, multimodality, and model-oriented languages to the sibling
+    transcript.
+- `q4Tr-DknG2M` is manifest position 4, titled `Recursive Model Improvement —
+  Lee Robinson, Cursor, SpaceXAI`, published `2026-07-15T20:13:51Z`, public, and
+  available. Capture wrote English auto-generated-caption metadata at
+  `2026-07-29T19:59:10.642Z` and a complete 1,232-second transcript with 22
+  preserved timestamp chunks.
+  - The source-faithful transcript pass normalized source-supported casing and
+    names including Cursor, AI Engineer, Kimi, Datadog, A/B, and Buc-ee's. It
+    preserved chunk boundaries, meaning, and uncertain organizational wording
+    rather than inferring a relationship from the uploader or title.
+  - The deliberate draft summary names Lee Robinson as a machine-learning
+    engineer focused on model behavior at Cursor, supported by the stage
+    introduction at `[00:00:01]`. It does not infer a SpaceXAI affiliation from
+    the title. Claims about feedback loops, evaluation reward hacking, generated
+    tasks, textual feedback, compute, research agents, and derivative models all
+    use valid sibling-transcript anchors.
+- AI Engineer is not treated as either video's speaker, author, or affiliation.
+  No additional speaker or affiliation is asserted beyond the source-supported
+  talk introductions and speaker statements.
+
+### Overview coverage and synthesis boundary
+
+- Refreshed the existing draft Coding Agents overview from all five deliberate
+  summaries. Its duplicate-free `coveredVideoIds` list is exactly
+  `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`, and
+  `q4Tr-DknG2M`, matching every incorporated summary in manifest order.
+- Coverage now reconciles to 38 manifest / 37 available / 5 captured / 5
+  summarized / 5 incorporated / 32 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable-recorded (no IDs).
+- The exact 32 available pending IDs are `xUnRQ9vLXxo`, `HsxQICTLF84`,
+  `HEFSExa0xl0`, `EcqMYoIV57A`, `li0SaBt9RDM`, `ugUeZ8-b-u0`,
+  `7gujZrJ9L5I`, `W-SX_srBa3Y`, `5Sui_OnSRlY`, `TeGsFFNqRLA`,
+  `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`,
+  `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`,
+  `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`,
+  `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`,
+  `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`,
+  `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- The overview preserves correct prior synthesis, identifies AI Engineer only as
+  curator/source channel, and states that speakers and affiliations vary. Every
+  non-editorial speaker claim names James Shi / Datacurve, Jason Liu / OpenAI,
+  James Russo / HeyGen, Benoit Schillings / Google DeepMind, or Lee Robinson /
+  Cursor and includes a summary plus valid transcript anchors. Every cross-video
+  interpretation begins `Editorial:`. The five-video synthesis explicitly avoids
+  consensus, completeness, and playlist-order chronology claims.
+
+### Commits and verification
+
+- `387fa5d241695307715a6db88a9ea8d3f6e7bd66` (`387fa5d`, `capture second
+  Coding Agents backfill batch`) contains only the two generated metadata files
+  and the two source-faithfully cleaned transcripts.
+- `a9bb20764f05098188e720c33f0e5c3fc0be7ef5` (`a9bb207`, `summarize second
+  Coding Agents backfill batch`) contains only the two deliberate draft
+  summaries and the refreshed draft overview.
+- `npm run lint:fix` passed after checking 175 files and reformatted exactly the
+  eight known clean-at-start Antirez unavailable-caption metadata files. Their
+  formatter-only array diffs were inspected, and exactly those eight files were
+  restored byte-for-byte; no batch artifact required a formatter change.
+- `npm run youtube:library -- status` passed and reported Coding Agents as 38
+  manifest / 37 available / 5 captured / 32 pending / 1 manifest-unavailable /
+  0 caption-unavailable / 5 draft summaries / current overview.
+- The combined YouTube library and transcript suite passed `46/46`;
+  `npm run check` passed for 39 files with 0 errors, warnings, or hints; and
+  `npm run build` passed with 20 pages built.
+- Both source-only boundary searches returned no matches with expected exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. `git diff --check` passed at
+  each commit boundary and after verification.
+- The final read-only structural, provenance, anchor, coverage, attribution, and
+  work-item checker passed: manifest states and exact pending/private IDs
+  reconcile; all five summaries have exact provenance, heading order, Source
+  links, and sibling-transcript anchors; overview coverage is exact and
+  duplicate-free; attribution remains author-less and multi-speaker; Task 3 is
+  unchecked; status is `in-progress`; and the Next Action remains the next
+  no-refill Task 3 session.
+- The work-item index and this progress section form the third reviewable batch
+  commit; its hash is reported in the completion response. Blockers: none.
+
+### Scope confirmation and next action
+
+- Plan 04 Task 3 remains unchecked because 32 available manifest IDs are still
+  pending. Work-item status remains `in-progress`; Task 4 did not start.
+- Next action is the next bounded Task 3 two-video Coding Agents session: run
+  exactly one selected `capture --limit 2` command under the fixed stop
+  protocol and do not refill that session.
+- No second capture, refill, retry, force, sync, Task 4, public-content or
+  resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
+  Engineer author, relationship, or synthesis was created or performed.
