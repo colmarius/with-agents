@@ -47,7 +47,7 @@ staleness as a reason for automatic editorial rewrites.
       before any broad Coding Agents capture.
   - Notes: Do not infer a cross-event thesis from a single thin-slice video.
 
-- [ ] **Task 3: Backfill Coding Agents in resumable two-video batches**
+- [x] **Task 3: Backfill Coding Agents in resumable two-video batches**
   - Scope: remaining available Coding Agents video directories, overview,
     work-item `progress.md`
   - Depends on: Task 2

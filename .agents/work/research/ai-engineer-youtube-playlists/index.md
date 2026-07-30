@@ -57,9 +57,12 @@ exists. Gunjan Patel / Palo Alto Networks, whose proposed CI system is explicitl
 a side project rather than a company product, and Quinn Slack / Sourcegraph are
 now represented too. Morgante Pell / Grit with his spoken five years at Google
 Cloud and Kevin Hou / Codeium with his spoken product-engineering-lead role
-complete the available source set. Plan 04 Tasks 1 and 2 are complete; Task 3
-remains in progress pending its separate final selected check/sync and
-authoritative public-impact/baseline reconciliation gate.
+complete the available source set. Plan 04 Tasks 1 through 3 are complete. Task
+3's final selected read-only check exited `0` with no remote changes or errors,
+and the authoritative selected sync exited `0` as a no-op. The reconciled Coding
+Agents baseline remains 38 manifest / 37 available / 37 captured / 37 summarized
+/ 37 incorporated / 0 pending / 1 private / 0 caption-unavailable. Task 4 remains
+unchecked and did not start.
 
 ## Artifacts
 
@@ -79,11 +82,10 @@ authoritative public-impact/baseline reconciliation gate.
 
 ## Next Action
 
-- Finish Task 3 of [Plan 04](./plans/04-coding-agents-corpus.md) in a separate
-  gate: run the selected read-only check and then the authoritative selected
-  sync for `ai-engineer-coding-agents`, inspect the exact diff, perform the
-  mandatory public-impact review for every changed ID, reconcile zero pending
-  and the final counts, and decide whether to check Task 3.
+- Run a dedicated [Plan 04 Task 4](./plans/04-coding-agents-corpus.md) complete
+  cross-event synthesis review: verify every Coding Agents speaker and
+  affiliation attribution, timestamp and summary anchor, editorial label, and
+  `coveredVideoIds` entry without beginning Task 5 or changing scope.
 
 ## Open Questions
 
@@ -248,3 +250,9 @@ authoritative public-impact/baseline reconciliation gate.
   product-engineering-lead roles remain source-explicit. Task 3 stays unchecked
   for a separate final selected check/sync and authoritative reconciliation
   gate; Task 4 did not start.
+- 2026-07-30: Passed Plan 04 Task 3's separate final reconciliation gate. The
+  selected read-only check found no remote changes or errors, the authoritative
+  selected sync was a no-op, and the complete local reconciliation retained 38
+  manifest / 37 available / 37 captured / 37 summarized / 37 incorporated / 0
+  pending / 1 private / 0 caption-unavailable. Task 4 remains unchecked and did
+  not start.

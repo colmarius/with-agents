@@ -3899,3 +3899,115 @@
   author, relationship, synthesis, schedule, handoff, deletion or duplicate
   directory, remote check, sync, Task 3 completion, Task 4, or broader Plan 04
   work began.
+
+## 2026-07-30 — Plan 04 Task 3 final selected check/sync reconciliation gate passed
+
+### Selected remote check and authoritative sync
+
+- Started as sole mutating owner from clean commit
+  `4aa9eb2a75f4e8eb70b3005974ff12fdfcf272ab` on `ai-engineer-videos` with the
+  required 38 manifest / 37 available / 37 captured / 37 summarized / 37
+  incorporated / 0 pending / 1 private (`pAbRL0h_SNs`) / 0
+  caption-unavailable Coding Agents baseline. Loaded the `agent-work` and
+  `maintaining-youtube-library` skills. Confirmed `.env` is ignored with
+  `git check-ignore` without reading or printing it; it was loaded only inside
+  each of the two remote command processes.
+- Exactly one selected read-only
+  `npm run youtube:library -- check --playlist ai-engineer-coding-agents`
+  exited `0`. Its complete report said the remote fetch succeeded with no
+  changes: 0 additions, 0 removals, 0 moves, 0 retitles, and 0 availability
+  changes. Local state was 38 manifest / 37 available / 1
+  unavailable-private-deleted, 37 captured / 0 pending / 0
+  unavailable-recorded, 0 missing summaries / 37 draft-not-reviewed / 0
+  reviewed, and a current overview. The summary reported 0 changed playlists,
+  0 first syncs, zero for every remote change type, 0 pending transcripts, 0
+  missing summaries, 0 missing or stale syntheses, and 0 errors. There was no
+  publication-date change, partial result, transient failure, or fatal result.
+- Reconfirmed `src/content/youtube/` clean, then ran exactly one authoritative
+  `npm run youtube:library -- sync --playlist ai-engineer-coding-agents`.
+  It exited `0` and reported `no changes`. The selected manifest had no diff,
+  and its working-tree and `HEAD` blob hashes were both
+  `6f9d51ef5b8f8ae5f822b0d559148510555b1b89`. No global check or sync ran.
+  The authoritative sync was a no-op, so no manifest commit exists.
+
+### Authoritative diff and public-impact review
+
+- The authoritative changed-ID set is empty: no additions, removals, moves,
+  retitles, availability changes, or publication-date changes. Consequently,
+  there was no changed ID against which to run the required exact-ID
+  `rg -l -e` search and no per-ID public hit to classify. The explicit overall
+  decision is `keep`: all existing source summaries, overview framing, public
+  posts, public summaries, and resource data remain unchanged. No `fix` or
+  `block` decision exists.
+- Addition-specific orientation, corpus-count/date, all-manifest overlap, and
+  existing-global-artifact review was not applicable because there was no
+  addition. Retitle/availability global-summary framing and attribution review
+  was not applicable because there was no retitle or availability change. No
+  provenance or attribution question was introduced.
+
+### Complete local reconciliation
+
+- Final authoritative local state remains 38 manifest / 37 available / 37
+  captured / 37 summarized / 37 incorporated / 0 available pending / 1
+  manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable (no IDs). Private is
+  explicitly distinct from caption-unavailable and pending. All 37 available
+  IDs resolve to one global metadata, English transcript, and draft summary
+  set. The private ID has no transcript or summary. The leading-dash ID
+  `-QFHIoCo-Ko` resolves normally with all three source artifacts.
+- The selected manifest has 38 unique IDs, contiguous exact positions, no
+  duplicate, and no overlap or global-artifact reuse with any of the other four
+  tracked manifests. Existing cross-manifest reuse remains confined to
+  `n991Yxo1aOI` and `Dj0b_cEBHBI` between Agent Reliability and SWE Agents, and
+  `0buzDrn0aIY`, `todMmp6AGCE`, `uxAhuNPSBuE`, `Yajmt1CeiHg`, `9AjeHE_VReY`,
+  and `2Jn6Z2nr-44` between the two Antirez playlists. The only within-manifest
+  duplicate elsewhere remains the existing `8gg-oJr4dTY` occurrence in
+  `antirez-ai-concepts`; Coding Agents has none. Across all tracked manifests,
+  161 occurrences represent 152 unique IDs.
+- All 37 Coding Agents summaries retain exact manifest title, video ID,
+  canonical source URL, publication date, captured source language, summary
+  language, caption kind, and draft-status frontmatter in contracted order;
+  exact heading order; canonical source and sibling-transcript links; and 1,556
+  resolving timestamp endpoints. The overview retains its exact six headings,
+  37 duplicate-free `coveredVideoIds` matching available manifest order, honest
+  counts and exact private/pending/caption-unavailable IDs, 111 linked named
+  claims, and 442 resolving timestamp endpoints.
+- The catalog still has Coding Agents as author-less `multiSpeaker: true`, with
+  no author relationship or author synthesis. AI Engineer remains only the
+  curator/source channel, never an author, speaker, or affiliation. The
+  source-only application and build boundaries remain intact.
+
+### Verification and state transition
+
+- `npm run lint:fix` exited `0` after checking 207 files and fixed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `LG3q-sqMG0g`, `aAWdlLfJmqw`, `H5cvtoSxdxI`, `D1_wPWzNkJ4`,
+  `rCIZflYEpEk`, `qipoQGqMCp0`, and `_pLlet9Jrzc`. Their complete diff was only
+  `availableLanguages` array compaction, and parsed JSON was identical. Exactly
+  those files were restored byte-for-byte; their post-restore SHA-256 hashes
+  matched the pre-lint values recorded in the preceding final capture session.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 37 captured / 0 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 37 draft summaries / current
+  overview. The combined YouTube library and transcript test command passed
+  `46/46`. `npm run check` passed for 39 files with 0 errors, warnings, or
+  hints. `npm run build` passed with 20 pages.
+- Both source-only no-match searches returned expected raw exit `1`: no
+  application source imports `src/content/youtube`, and built output contains
+  no source-only publication marker. The first comprehensive read-only
+  structural checker reached all corpus assertions but exited `1` on a brittle
+  line-wrap match for the index's pre-gate Next Action; a whitespace-normalized
+  correction passed without any file change. All subsequent reconciliation
+  assertions passed. `git diff --check` and the final committed structural,
+  scope, and clean-state checks are completed around the work-item commit.
+- Plan 04 Task 3 is checked. Task 4 remains unchecked and did not start. Work
+  item status remains `in-progress`. Next Action is a dedicated Plan 04 Task 4
+  complete cross-event synthesis review. This work-item commit contains only
+  `index.md`, `plans/04-coding-agents-corpus.md`, and this true-EOF
+  `progress.md` section; no manifest commit or source/public/editorial file
+  change exists.
+
+### Scope confirmation
+
+- No capture, retry, force, transcript, summary, overview, bounded-playlist,
+  catalog, manifest, author, relationship, synthesis, public content/resource,
+  deletion, schedule, handoff, Task 4, Task 5, or broader Plan 04 work began.
