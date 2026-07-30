@@ -25,9 +25,9 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Ten Task 3 batches have captured,
-summarized, and incorporated twenty more videos, bringing Coding Agents to 38
-manifest / 37 available / 21 captured / 21 summarized / 21 incorporated / 16
+one-video editorial thin slice now passes. Eleven Task 3 batches have captured,
+summarized, and incorporated twenty-two more videos, bringing Coding Agents to
+38 manifest / 37 available / 23 captured / 23 summarized / 23 incorporated / 14
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
@@ -39,8 +39,11 @@ Michael Richman / Bitly presenting Cmd+Ctrl, Lou Bichard / Ona, and Sarah Chieng
 Solmaz's separate TextCortex work remains explicit. Ara Khan / Cline and Lawrence
 Jones / incident.io, Brian Scanlan / Intercom, Madison Faulkner / NEA with her
 former Meta AI researcher role, and Hugo Santos / Namespace with his former
-Google microservices role are now also represented. No AI Engineer author or
-relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
+Google microservices role, Vincent Koc / OpenClaw with his Comet
+evaluation-research role, and Matthias Luebken / Tavon with his spoken company
+name auto-captioned as `Seven AI` are now also represented; the source does not
+reconcile Luebken's two company names. No AI Engineer author or relationship
+exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
 
 ## Artifacts
 
@@ -174,3 +177,10 @@ relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progr
   AI researcher role, and Hugo Santos / Namespace with his former Google
   microservices role are source-supported. Task 3 remains unchecked for the
   next no-refill two-video session.
+- 2026-07-30: Completed the eleventh bounded Plan 04 Task 3 session for
+  `4VhbYlfC7Gs` and `vAIDdLKB6-w`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 23 incorporated videos and 14 available
+  pending. Vincent Koc's OpenClaw and Comet roles are source-supported;
+  Matthias Luebken's title attribution to Tavon remains separate from the
+  spoken company name auto-captioned as `Seven AI`. Task 3 remains unchecked
+  for the next no-refill two-video session.

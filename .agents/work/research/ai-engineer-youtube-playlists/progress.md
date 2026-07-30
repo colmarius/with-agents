@@ -2869,3 +2869,120 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
   04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 eleventh Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `0fe07cb1197e8080fae4aae2450b3e4a0b87d27e` on `ai-engineer-videos` with 38
+  manifest / 37 available / 21 captured / 21 summarized / 21 incorporated / 16
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed `.env` was ignored through `git check-ignore` without reading it;
+  it was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `4VhbYlfC7Gs` and `vAIDdLKB6-w` in manifest order.
+  Both slots succeeded. No second capture, refill, retry, force, sync, check,
+  alternate playlist, transient, throttle, unavailable, partial, fatal, or
+  capture-disconnect outcome occurred. Neither ID reused an existing global
+  directory.
+- `4VhbYlfC7Gs`, `Malleable Evals: Why Are We Evaluating Adaptive Systems with
+  Static Tests? — Vincent Koc, OpenClaw`, produced a 905-second English
+  auto-generated transcript with 16 unique chunks from `[00:00:07]` through
+  `[00:14:04]`. Its source-faithful pass normalized only manifest-supported
+  OpenClaw casing and preserved uncertain caption fragments including `friendly
+  can car`, `ARC-I2` / `ARC-I3`, and `Kapathy's auto research` rather than
+  guessing unsupported corrections. No summary or overview claim depends on
+  those fragments.
+- The `4VhbYlfC7Gs` draft summary uses the source title for Vincent Koc's
+  OpenClaw attribution, his `[00:01:05]` Comet evaluation-research role, and his
+  `[00:04:02]` OpenClaw core-contributor statement. It anchors the static-test
+  gap, malleable harness, intent-engineering, trace-curated suite, telemetry,
+  and end-state claims while preserving the unfinished Comet demonstration and
+  unresolved evaluator-drift, privacy, and reward-definition limits.
+- `vAIDdLKB6-w`, `A Piece of Pi: Embedding The OpenClaw Coding Agent In Your
+  Product — Matthias Luebken, Tavon`, produced a 1,242-second English
+  auto-generated transcript with 22 unique chunks from `[00:00:15]` through
+  `[00:20:08]`. Its source-faithful pass normalized manifest- or
+  context-supported OpenClaw, `AGENT.md`, `CUSTOMER.md`, NVIDIA OpenShell, and
+  LLM forms without changing chunk boundaries.
+- The `vAIDdLKB6-w` draft summary keeps the source-title Matthias Luebken /
+  Tavon attribution separate from the small European company name rendered as
+  `Seven AI` by the auto-captions at `[00:00:15]-[00:01:03]`; the source does
+  not establish whether they are the same organization. Ambiguous `Cohere` /
+  Claude desktop, `Arendelle`, and Pi function/package-name fragments were
+  retained rather than guessed, and no summary or overview claim depends on
+  them. The summary anchors the core agent loop, hooks and events, coding-agent
+  runtime, Pi extension, OpenClaw composition, and customer-specific sales
+  workflow while preserving its pattern-maturity, sandbox, quality, cost, and
+  failure-recovery limits.
+- AI Engineer remains curator/source only, never speaker, author, or
+  affiliation. No author relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 23 duplicate-free `coveredVideoIds` exactly match every
+  Coding Agents summary ID in manifest order, ending with `4VhbYlfC7Gs` and
+  `vAIDdLKB6-w`.
+- Final state is 38 manifest / 37 available / 23 captured / 23 summarized / 23
+  incorporated / 14 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 14 available pending IDs are `ow1we5PzK-o`, `2TLXsxkz0zI`,
+  `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`,
+  `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`,
+  `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Vincent Koc with his exact OpenClaw
+  and Comet provenance and Matthias Luebken with the distinct Tavon /
+  auto-captioned `Seven AI` provenance; each claim has a resolving summary link
+  and valid sibling-transcript anchors. New cross-video interpretation begins
+  `Editorial:` and does not infer consensus or chronology from playlist order.
+
+### Commits and verification
+
+- `224f12dcb28efb1834b0b1fc3de39e71c6ff4a27` (`capture eleventh Coding
+  Agents backfill batch`) contains exactly the two generated metadata files and
+  two source-faithfully reviewed transcripts.
+  `1e72d5685c223fdb1324a6c750a0da04fe3ea3ef` (`summarize eleventh Coding
+  Agents backfill batch`) contains exactly the two deliberate draft summaries
+  and refreshed draft overview. Both commits pass `git show --check`, and exact
+  path-boundary audits pass.
+- `npm run lint:fix` exited `0` after checking 193 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `D1_wPWzNkJ4`, `H5cvtoSxdxI`, `LG3q-sqMG0g`, `_pLlet9Jrzc`,
+  `aAWdlLfJmqw`, `qipoQGqMCp0`, and `rCIZflYEpEk`. The complete diff contained
+  only `availableLanguages` array compaction; all parsed JSON remained
+  identical. Exactly those files were restored, and every post-restore SHA-256
+  hash matched its pre-lint hash.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 23 captured / 14 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 23 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed `46/46`;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker.
+- The corrected read-only structural, frontmatter, source-link, chunk, anchor,
+  coverage, and attribution checker passed all 23 summaries and the overview
+  with exact counts, pending/private/unavailable IDs, and author-less
+  `multiSpeaker: true` catalog state. Its first complete invocation failed only
+  because the checker expected one exact curly-quote punctuation sequence for
+  `Seven AI`; it made no repository changes, and the corrected invocation
+  passed. A brief executor connection loss occurred only before a read-only
+  checker invocation was acknowledged; durable state was inspected, and the
+  sole capture was never repeated.
+- The index and this true-EOF section form the eleventh work-item commit; its
+  full hash is reported in the completion response after final staged-path,
+  commit-boundary, diff, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 14 available manifest IDs remain
+  pending and the zero-pending plus final-sync acceptance criterion cannot yet
+  pass. Task 4 stays unchecked and did not start. Work-item status remains
+  `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
+  04 work began.
