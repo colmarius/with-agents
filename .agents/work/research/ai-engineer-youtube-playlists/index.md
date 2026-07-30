@@ -25,9 +25,9 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Nine Task 3 batches have captured,
-summarized, and incorporated eighteen more videos, bringing Coding Agents to 38
-manifest / 37 available / 19 captured / 19 summarized / 19 incorporated / 18
+one-video editorial thin slice now passes. Ten Task 3 batches have captured,
+summarized, and incorporated twenty more videos, bringing Coding Agents to 38
+manifest / 37 available / 21 captured / 21 summarized / 21 incorporated / 16
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
@@ -37,7 +37,9 @@ Daniel Szoke / Sentry, Ian Ballantyne and KP Sawhney / Google DeepMind, and
 Michael Richman / Bitly presenting Cmd+Ctrl, Lou Bichard / Ona, and Sarah Chieng
 / Cerebras, Liam Hampton / Microsoft, and Onur Solmaz / OpenClaw attribution;
 Solmaz's separate TextCortex work remains explicit. Ara Khan / Cline and Lawrence
-Jones / incident.io are now also represented. No AI Engineer author or
+Jones / incident.io, Brian Scanlan / Intercom, Madison Faulkner / NEA with her
+former Meta AI researcher role, and Hugo Santos / Namespace with his former
+Google microservices role are now also represented. No AI Engineer author or
 relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
 
 ## Artifacts
@@ -165,3 +167,10 @@ relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progr
   `yUmS-F9IX90` and `L2r6vLlLgs8`; both videos are captured, summarized, and
   incorporated. Coding Agents now has 19 incorporated videos and 18 available
   pending. Task 3 remains unchecked for the next no-refill two-video session.
+- 2026-07-30: Completed the tenth bounded Plan 04 Task 3 session for
+  `4_VQBbs2iQA` and `VktrqzQgytY`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 21 incorporated videos and 16 available
+  pending. Brian Scanlan / Intercom, Madison Faulkner / NEA with her former Meta
+  AI researcher role, and Hugo Santos / Namespace with his former Google
+  microservices role are source-supported. Task 3 remains unchecked for the
+  next no-refill two-video session.

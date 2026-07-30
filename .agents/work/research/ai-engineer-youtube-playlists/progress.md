@@ -2752,3 +2752,120 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
   04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 tenth Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `d8501517646f9bff3cb83289ffff637a644c1b63` on `ai-engineer-videos` with 38
+  manifest / 37 available / 19 captured / 19 summarized / 19 incorporated / 18
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed the ignored `.env` existed with `git check-ignore` and did not read
+  it. It was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `4_VQBbs2iQA` and `VktrqzQgytY` in manifest order.
+  Both slots succeeded. No second capture, refill, retry, force, sync, check,
+  alternate playlist, transient, throttle, unavailable, partial, fatal, or
+  executor-disconnect outcome occurred. Neither ID reused an existing global
+  directory.
+- `4_VQBbs2iQA`, `How Building with AI Can Double the Throughput of Your
+  Engineering Team — Brian Scanlan, Intercom`, produced a 1,308-second English
+  auto-generated transcript with 23 unique chunks from `[00:00:07]` through
+  `[00:21:02]`. Its transcript pass normalized source-supported or unambiguous
+  forms including forward-deployed, Claude, Claude Code, Intercom-specific,
+  Snowflake, Rails, session syncing, and skill without changing chunk
+  boundaries. Its exact-provenance draft summary identifies Scanlan and
+  Intercom from the manifest title, his self-introduction, and his senior
+  principal engineer role; it anchors the 2x goal and metric, staffed adoption,
+  platform standardization, durable skills, reported throughput, automatic
+  approval, and telemetry claims while distinguishing internal activity data
+  from demonstrated productivity.
+- The source title spells the speaker's surname `Scanlan`, while the closing
+  auto-caption renders his contact domain as `brian.scanlon.ie`; the summary
+  follows the manifest title and does not infer a correction from the domain.
+  Other unresolved `4_VQBbs2iQA` caption fragments—including the frontier-model
+  and weekly-resolution wording, `Divora`, `engineering captures`, `VAEGI`, and
+  the malformed final product/design phrases—remain source-faithfully retained,
+  and no cited claim depends on them.
+- `VktrqzQgytY`, `CI/CD Is Dead, Agents Need Continuous Compute and Computers —
+  Hugo Santos and Madison Faulkner`, produced a 1,117-second English
+  auto-generated transcript with 20 unique chunks from `[00:00:07]` through
+  `[00:17:46]`. Its transcript pass normalized source-supported or unambiguous
+  forms including CI/CD, Meta AI, formerly, DevOps, GitHub Actions, Copilot,
+  Linear, Claude Code, Amp, Cursor, and Factory without changing chunk
+  boundaries. Its exact-provenance draft summary uses Faulkner's
+  self-identification as an NEA partner and former Meta AI researcher and her
+  introduction of Santos as Namespace CEO and former Google microservices lead.
+  It separately anchors Faulkner's acceleration/cache framing and Santos's
+  intent, stateful validation, specialist-review, pre-merge, and continuous-CI
+  architecture.
+- Unresolved `VktrqzQgytY` caption fragments such as the customer name `Fall`,
+  `street handoffs`, `stop on mind`, and `Amp flat fans` remain retained rather
+  than guessed; neither the summary nor overview depends on them. AI Engineer
+  remains curator/source only, never speaker, author, or affiliation. No author
+  relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 21 duplicate-free `coveredVideoIds` exactly match all summary
+  IDs in manifest order, ending with `4_VQBbs2iQA` and `VktrqzQgytY`.
+- Final state is 38 manifest / 37 available / 21 captured / 21 summarized / 21
+  incorporated / 16 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 16 available pending IDs are `4VhbYlfC7Gs`, `vAIDdLKB6-w`,
+  `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`,
+  `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`,
+  `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`,
+  `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Brian Scanlan / Intercom, Madison
+  Faulkner / NEA with her former Meta AI researcher role, and Hugo Santos /
+  Namespace with his former Google microservices role; each has a resolving
+  summary link and valid sibling-transcript anchors. New cross-video
+  interpretation begins `Editorial:` and does not infer consensus or chronology
+  from playlist order.
+
+### Commits and verification
+
+- `c6c7f4848a90d61c3ae16de1edf165722439951e` (`capture tenth Coding Agents
+  backfill batch`) contains exactly two metadata files and two source-faithfully
+  reviewed transcripts. `e49f13016c92943d97187e85ffeb9c3f9c3a8358`
+  (`summarize tenth Coding Agents backfill batch`) contains exactly two draft
+  summaries and the refreshed draft overview. Both commits pass `git show
+  --check`, and exact path-boundary audits pass.
+- `npm run lint:fix` exited `0` after checking 191 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `D1_wPWzNkJ4`, `H5cvtoSxdxI`, `LG3q-sqMG0g`, `_pLlet9Jrzc`,
+  `aAWdlLfJmqw`, `qipoQGqMCp0`, and `rCIZflYEpEk`. The complete diff contained
+  only `availableLanguages` array compaction and all parsed JSON matched `HEAD`.
+  Exactly those files were restored; all eight post-restore SHA-256 hashes
+  matched their pre-lint hashes.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 21 captured / 16 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 21 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed 46/46;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker.
+- The read-only structural, frontmatter, source-link, chunk, anchor, coverage,
+  and attribution checker passed all 21 summaries and the overview with exact
+  counts, pending/private/unavailable IDs, and author-less `multiSpeaker: true`
+  catalog state. Its first invocation failed only because the in-memory checker
+  compared an existing escaped quoted YAML title literally; it made no
+  repository changes, and the corrected complete invocation passed.
+- The index and this true-EOF section form the tenth work-item commit; its full
+  hash is reported in the completion response after final staged-path,
+  commit-boundary, diff, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 16 available manifest IDs remain
+  pending and the final-sync criterion cannot yet pass. Task 4 stays unchecked
+  and did not start. Work-item status remains `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
+  04 work began.
