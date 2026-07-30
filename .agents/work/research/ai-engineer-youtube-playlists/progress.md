@@ -3365,3 +3365,124 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
   04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 fifteenth Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `29d8f5b9a792e496b4f689f98bce44e756d75d26` on `ai-engineer-videos` with 38
+  manifest / 37 available / 29 captured / 29 summarized / 29 incorporated / 8
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed `.env` was ignored through `git check-ignore` without reading or
+  printing it; it was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `kR64LOqBBCU` and `-QFHIoCo-Ko` in manifest order. Both
+  slots succeeded. No second capture, refill, retry, force, sync, remote check,
+  alternate playlist, transient, throttle, unavailable, partial, or fatal
+  capture outcome occurred. Neither ID reused an existing global directory.
+- `kR64LOqBBCU`, `AgentCraft: Putting the Orc in Orchestration — Ido Salomon`,
+  produced a 678-second English auto-generated transcript with 13 unique chunks
+  from `[00:00:07]` through `[00:10:55]`. Its source-faithful pass normalized
+  source-title-supported Ido Salomon and AgentCraft plus unambiguous Cursor,
+  Claude Code, Codex, OpenClaw, Git, and related phrasing without changing chunk
+  boundaries.
+- The `kR64LOqBBCU` draft summary uses Salomon's spoken AgentCraft creator role,
+  keeps AI Engineer out of the attribution, and anchors the orchestration
+  bottleneck, game-inspired visibility and attention controls, repository
+  lineage and collision state, container campaigns, review bundles, and shared
+  human-agent workspaces. The unresolved auto-caption forms `MC I` and `MC apps`
+  remain unchanged and support no summary or overview claim.
+- `-QFHIoCo-Ko`, `Full Walkthrough: Workflow for AI Coding — Matt Pocock`,
+  produced a 5,790-second English auto-generated transcript with 107 unique
+  chunks from `[00:00:07]` through `[01:35:54]`. Its source-faithful pass
+  normalized unambiguous product, file, command, book, and practice forms,
+  including HumanLayer, Grill Me, OpenSpec, Cucumber, tracer bullets,
+  `CLAUDE.md`, Claude Code, `npx vitest`, Course Video Manager, worktree, SQLite,
+  and Slido, without changing chunk boundaries.
+- The `-QFHIoCo-Ko` draft summary names Matt Pocock from the source title, his
+  spoken teacher role, and his referenced AI Hero and Course Video Manager
+  projects without inventing an employer affiliation. It anchors bounded
+  contexts, human-agent alignment, PRDs and traceable vertical issues, AFK
+  implementation, TDD and feedback, fresh-context review, manual QA, deep
+  modules, push/pull guidance, and Sandcastle's parallel worktree flow.
+- The Matt Pocock source retains unresolved remote-room, secondary-person-name,
+  audience-question, and live-interface fragments rather than guessing them;
+  no summary or overview claim depends on those fragments. His context limits,
+  workflow recommendations, TDD and architecture claims, and parallel-agent
+  flow are presenter experience or demonstrations rather than comparative
+  evidence. The workshop's automated checks precede a live missing-table QA
+  failure, and the source is inconsistent about whether the generated PRD is
+  human reviewed.
+- AI Engineer remains curator/source only, never speaker, author, or
+  affiliation. Anonymous participants remain unnamed and unaffiliated. No
+  author relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 31 duplicate-free `coveredVideoIds` exactly match every
+  Coding Agents summary ID in manifest order, ending with `kR64LOqBBCU` and
+  `-QFHIoCo-Ko`.
+- Final state is 38 manifest / 37 available / 31 captured / 31 summarized / 31
+  incorporated / 6 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 6 available pending IDs are `RjfbvDXpFls`, `1oySeF37SZc`,
+  `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Ido Salomon / AgentCraft and Matt
+  Pocock with his spoken teacher role; each has a resolving summary link and
+  valid sibling-transcript anchors. New cross-video interpretation begins
+  `Editorial:` and does not infer consensus, uploader authorship, playlist
+  chronology, company relationships, or comparative evidence.
+
+### Commits and verification
+
+- `9949512327bfd8bda82f05542f0ba7ca570ab761` (`capture fifteenth Coding
+  Agents backfill batch`) contains exactly the two generated metadata files and
+  two source-faithfully reviewed transcripts.
+  `cae4eab7efa626d200393fd2c711b19827a25273` (`summarize fifteenth Coding
+  Agents backfill batch`) contains exactly the two deliberate draft summaries
+  and refreshed draft overview. Both commits pass exact path-boundary audits.
+- `npm run lint:fix` exited `0` after checking 201 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `LG3q-sqMG0g`, `aAWdlLfJmqw`, `H5cvtoSxdxI`, `D1_wPWzNkJ4`,
+  `rCIZflYEpEk`, `qipoQGqMCp0`, and `_pLlet9Jrzc`. The complete diff contained
+  only `availableLanguages` array compaction and all parsed JSON remained
+  identical. Exactly those files were restored, and every post-restore SHA-256
+  hash matched its pre-lint hash.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 31 captured / 6 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 31 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed `46/46`;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. All required gate commands
+  passed on their first invocation. One preliminary complete-checker invocation
+  failed only because trimming Git porcelain removed the first line's status
+  column padding; the corrected read-only invocation passed, and neither
+  checker invocation changed repository state.
+- The final read-only structural, frontmatter, source-link, chunk, anchor,
+  coverage, attribution, work-item-state, and path-boundary checker passed all
+  31 summaries and the overview: 958 unique ordered transcript chunks, 1,293
+  resolving summary-anchor endpoints, 93 named linked overview claims, and 374
+  resolving overview-anchor endpoints. It also passed exact final counts and
+  pending/private/unavailable IDs, manifest-order coverage, author-less
+  `multiSpeaker: true` catalog state, AI Engineer's curator/source-only
+  boundary, unchecked Tasks 3 and 4, matching Next Action, true-EOF progress,
+  exact commit groups, and the nine-path session boundary.
+- The index and this true-EOF section form the fifteenth work-item commit; its
+  full hash is reported in the completion response after final staged-path,
+  commit-boundary, diff, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 6 available manifest IDs remain
+  pending and the zero-pending plus final-sync acceptance criterion cannot yet
+  pass. Task 4 stays unchecked and did not start. Work-item status remains
+  `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, final sync, or
+  broader Plan 04 work began.

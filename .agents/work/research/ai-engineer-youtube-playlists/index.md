@@ -25,9 +25,9 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Fourteen Task 3 batches have captured,
-summarized, and incorporated twenty-eight more videos, bringing Coding Agents to
-38 manifest / 37 available / 29 captured / 29 summarized / 29 incorporated / 8
+one-video editorial thin slice now passes. Fifteen Task 3 batches have captured,
+summarized, and incorporated thirty more videos, bringing Coding Agents to
+38 manifest / 37 available / 31 captured / 31 summarized / 31 incorporated / 6
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
@@ -47,9 +47,12 @@ former Block and Goose provenance, and Chris Parsons / Cherrypick with his
 spoken CTO, startup, agency, and agile background are now also represented.
 Louis Knight-Webb / Vibe Kanban and Katia Gil Guzman and Vaibhav Srivastav /
 OpenAI's Developer Experience team are now represented, as are Eric Zakariasson
-/ Cursor and Maggie Appleton / GitHub with her spoken GitHub Next team role. No
-AI Engineer author or relationship exists. Plan 04 Tasks 1 and 2 are complete;
-Task 3 remains in progress.
+/ Cursor and Maggie Appleton / GitHub with her spoken GitHub Next team role. Ido
+Salomon / AgentCraft and Matt Pocock, who identifies himself as a teacher and
+references his AI Hero site and Course Video Manager repository without
+supplying an employer affiliation, are now also represented. No AI Engineer
+author or relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3
+remains in progress.
 
 ## Artifacts
 
@@ -208,4 +211,11 @@ Task 3 remains in progress.
   incorporated. Coding Agents now has 29 incorporated videos and 8 available
   pending. Eric Zakariasson's Cursor and Maggie Appleton's GitHub and GitHub
   Next attributions are source-supported. Task 3 remains unchecked for the next
+  no-refill two-video session.
+- 2026-07-30: Completed the fifteenth bounded Plan 04 Task 3 session for
+  `kR64LOqBBCU` and `-QFHIoCo-Ko`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 31 incorporated videos and 6 available
+  pending. Ido Salomon's AgentCraft creator role and Matt Pocock's teacher, AI
+  Hero, and Course Video Manager provenance are source-supported without an
+  inferred employer affiliation. Task 3 remains unchecked for the next
   no-refill two-video session.
