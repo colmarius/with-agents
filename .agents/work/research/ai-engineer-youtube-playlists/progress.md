@@ -4156,3 +4156,140 @@
 - `git diff --check`, all status checks, exact staged-diff inspection, final
   commit boundaries, and the clean-worktree check passed around the separate
   editorial and work-item commits.
+
+## 2026-07-30 — Plan 04 Task 5 active-playlist maintenance cadence recorded
+
+### Starting state and local baseline
+
+- Started as sole mutating owner on `ai-engineer-videos` from the required clean
+  commit `6d71340393bb345cb0525644e559d287178186b6` (`complete Coding Agents Task
+  4 review`). The initial branch/status, exact HEAD, and `git diff --check`
+  gates passed. Loaded the `agent-work` and `maintaining-youtube-library`
+  skills before changing work-item state. This task used only local,
+  read-only source inspection and status reconciliation.
+- `npm run youtube:library -- status` established the Task 5 local baseline:
+  38 manifest / 37 available / 37 captured / 37 reviewed summaries / 37
+  incorporated / 0 available pending / 1 private (`pAbRL0h_SNs`) / 0
+  caption-unavailable, with a reviewed current overview. Private remains
+  distinct from caption-unavailable and pending. The selected manifest has no
+  duplicate IDs, and its 37 available IDs match the overview's duplicate-free
+  `coveredVideoIds` in exact manifest order.
+- Coding Agents remains author-less with `multiSpeaker: true`; it has no author
+  relationship or author synthesis. AI Engineer remains only the curator and
+  source channel, never the author, speaker, or affiliation. This baseline has
+  no Coding Agents overlap or reused global artifact; future sessions must
+  recompute rather than assume those counts remain zero.
+
+### Routine monitoring is read-only
+
+- A routine monitor may run only the selected read-only command
+  `npm run youtube:library -- check --playlist ai-engineer-coding-agents` and
+  report additions, retitles, removals, moves, availability changes,
+  publication-date changes, and expected overview staleness. It must not
+  silently sync, capture, edit a summary, refresh the overview, or otherwise
+  turn reported remote state into immediate repository mutation.
+- Check exit `0` is a complete report even when it reports changes. Exit `2` is
+  only a useful partial report: when the baseline cannot be established, it
+  does not authorize sync or any other mutation. Exit `1` stops the workflow.
+  A routine report is advisory; it never starts the explicit update protocol.
+- Overview staleness between deliberate update sessions is an expected visible
+  status-tool state, not an error and not permission for tooling to regenerate,
+  rewrite, or silently repair editorial work. No recurring schedule exists and
+  none should be created unless the user explicitly asks for one.
+
+### One explicitly authorized bounded update session
+
+- A future update occurs only after explicit mutation authorization. It is
+  exactly one bounded, reviewable maintenance session, never an automatic
+  response to a routine check. Start from a clean worktree or one whose changes
+  are fully understood and safely separable. Run exactly one selected check,
+  then exactly one selected authoritative
+  `npm run youtube:library -- sync --playlist ai-engineer-coding-agents`; the
+  sync report and manifest diff, not the earlier check, are authoritative.
+- Inspect and record every authoritative addition, retitle, removal, move,
+  availability change, and publication-date change. For every changed video or
+  playlist identity, membership, or availability ID—including every ID affected
+  by a publication-date change—run the exact-ID public-impact search
+  `rg -l -e '<id>' src/content/posts src/content/summaries src/data/resources`.
+  This form is mandatory and safe for the leading-dash ID `-QFHIoCo-Ko`.
+- Recompute and record manifest, available/unavailable, captured, available
+  pending, private, caption-unavailable, missing/draft/reviewed summary,
+  incorporated and overview-current/stale, all-manifest overlap, and existing
+  global-artifact reuse counts. Record the resulting authoritative baseline and
+  leave every still-pending ID explicit for a later bounded session.
+
+### Changed-ID and public-impact decisions
+
+- For every addition, review the playlist's public orientation, corpus-count and
+  publication-date implications, existing global-artifact reuse, overlap, and
+  whether any public description becomes materially misleading. For every
+  retitle or availability change, inspect all public references. For a retitled
+  multi-speaker video with an existing global summary, additionally review the
+  summary framing for source-supported speaker and affiliation attribution.
+- Inspect every public match and record an explicit `keep`, `fix`, or `block`
+  decision. If a public correction is required or source provenance remains
+  unresolved, stop rather than silently broadening the source-only maintenance
+  session into public or speculative editorial work.
+- A playlist removal changes membership only. It never deletes the global video
+  directory, transcript, metadata, summary, or any other global source artifact.
+  Reuse an existing global video artifact when an added ID already exists; never
+  duplicate, force-regenerate, overwrite, or move it under a playlist.
+
+### Capture and editorial limits inside that session
+
+- After the authoritative diff and impact review, run no more than one selected,
+  bounded capture command and capture at most two pending Coding Agents videos,
+  normally
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`.
+  Never refill or run a second capture command in that session, even when fewer
+  than two candidates complete. Stop immediately on throttle. Capture exit `1`
+  is fatal.
+- Interpret capture exit `2` per video: a transient or throttle outcome pauses
+  the session with remaining candidates still pending; only a durably recorded
+  caption-unavailable outcome may be accepted and documented. Retry is a
+  separate, explicitly authorized Mode D decision, never a routine continuation.
+  Never combine retry with force, and never use routine force.
+- For each successful capture, first review the committed transcript
+  source-faithfully. Then deliberately create or update its summary at `draft`
+  and refresh the Coding Agents overview from the deliberately reviewed
+  summaries in the same explicit update session. Keep every new or revised
+  editorial artifact at `draft` until a later explicit dedicated review promotes
+  it to `reviewed`; tooling must never generate, rewrite, or promote it silently.
+- Preserve the exact attribution, evidence-anchor, `Editorial:`, heading,
+  provenance, and coverage contracts. Preserve AI Engineer's curator-only status
+  and the playlist's author-less `multiSpeaker: true` state. The refreshed
+  overview must state honest counts and explicit pending, private, and
+  caption-unavailable IDs.
+
+### Baselines, commits, and completion decision
+
+- Finish each explicit update by recording its new authoritative baseline and
+  any still-pending tail for a later bounded session. Keep future commits
+  reviewable: commit a changed manifest sync separately, capture artifacts
+  separately, editorial artifacts separately, and work-item state separately.
+- Task 5 passes: the durable routine-check, explicit-update, changed-ID,
+  capture, editorial, staleness, exit-code, baseline, and commit contracts are
+  now unambiguous. Plan 04 Tasks 1 through 5 and every Plan 01 through 03 task
+  remain checked. Plans 01 through 04, their acceptance conditions, and the
+  required verification pass, so Plan 04 and the full research work item are
+  complete. Blockers: none.
+- This Task 5 execution uses exactly one work-item commit containing only
+  `index.md`, `plans/04-coding-agents-corpus.md`, and this true-EOF
+  `progress.md` section. Next Action: no immediate implementation action.
+  Future work is either routine selected read-only monitoring or a separately,
+  explicitly authorized bounded Coding Agents update under this cadence; no
+  schedule is implied.
+
+### Verification and scope confirmation
+
+- Verification covers formatting with byte-for-byte restoration of only the
+  eight known semantic-preserving Antirez metadata formatting changes, local
+  library status, all 46 library/transcript tests, Astro/TypeScript checks, the
+  production build, both source-only no-match boundaries, `git diff --check`,
+  exact staged and committed path boundaries, an in-memory structural and
+  maintenance-contract checker, and final clean branch/HEAD/worktree state.
+- No remote check, sync, capture, retry, force, credential or `.env` access,
+  source transcript/metadata/summary/overview, catalog/manifest, public
+  content/resource, author/relationship/synthesis, Astro publication code,
+  skill, schedule, handoff, plan change beyond the Task 5 checkbox, or broader
+  work occurred.

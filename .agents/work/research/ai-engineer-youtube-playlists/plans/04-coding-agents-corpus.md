@@ -84,7 +84,7 @@ staleness as a reason for automatic editorial rewrites.
   - Notes: The research's provisional “code generation to harness engineering”
     angle is a hypothesis, not an acceptance criterion.
 
-- [ ] **Task 5: Record the active-playlist maintenance cadence**
+- [x] **Task 5: Record the active-playlist maintenance cadence**
   - Scope: work-item `progress.md`, playlist status, maintenance handoff notes
   - Depends on: Task 4
   - Acceptance:
