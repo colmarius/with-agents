@@ -2647,3 +2647,108 @@
   session.
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, Task 4, or broader Plan 04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 ninth Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `10031b25b7d3db32dff6708a2de0ebb3c7dd604a` on `ai-engineer-videos` with 38
+  manifest / 37 available / 17 captured / 17 summarized / 17 incorporated / 20
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- The ignored `.env` was loaded only inside the sole capture process. Exactly
+  one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `yUmS-F9IX90` and `L2r6vLlLgs8` in manifest order.
+  Both slots succeeded. No second capture, refill, retry, force, sync, check,
+  alternate playlist, transient, throttle, unavailable, partial, or fatal
+  outcome occurred. Executor disconnects happened only around non-capture reads
+  and edits; durable outputs were inspected before work resumed, and capture was
+  never repeated.
+- `yUmS-F9IX90`, `Don't Build Slop (4 Levels of AI Agent Maturity) - Ara Khan,
+  Cline`, produced a 1,131-second English auto-generated transcript with 19
+  unique chunks from `[00:00:14]` through `[00:17:47]`. The transcript pass
+  normalized title- or context-supported forms including Ara Khan, Cline,
+  FOMO, Claude Code, CI/CD, OpenRouter, Kanban, and slop without changing chunk
+  boundaries. Its exact-provenance draft summary identifies Khan and Cline from
+  the manifest title plus his `[00:03:06]` self-affiliation, and anchors the
+  four-level heuristic, state-machine model, prompt pruning, testable agent
+  interface, provider-API warning, Kanban supervision, and cloud-agent claims.
+- `L2r6vLlLgs8`, `Fighting AI with AI — Lawrence Jones, Incident`, produced a
+  1,048-second English auto-generated transcript with 19 unique chunks from
+  `[00:00:07]` through `[00:16:58]`. The transcript pass normalized the
+  title-supported Lawrence Jones name and unambiguous incident.io, Claude Code,
+  Codex, Go, Loki, RCA, runbook, and backtest forms without changing chunk
+  boundaries. Its exact-provenance draft summary uses Jones's `[00:00:07]`
+  founding-engineer self-identification and anchors the eval CLI, red-green
+  runbook, filesystem trace export, daily backtest, resumable Scrapbook
+  analysis, and production-observation workflow.
+- Ambiguous caption fragments were retained rather than guessed. In particular,
+  Khan's model list and cloud-machine phrase at `[00:10:02]` and `[00:14:55]`
+  remain unresolved, as does Jones's `human use ... agents` fragment at
+  `[00:16:09]`. The summaries do not depend on those fragments and explicitly
+  preserve missing benchmark, reliability, security, cost, grader-validation,
+  and rollback evidence as limitations.
+- AI Engineer remains curator/source only, never speaker, author, or
+  affiliation. No author relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 19 duplicate-free `coveredVideoIds` exactly match all summary
+  IDs in manifest order, ending with `yUmS-F9IX90` and `L2r6vLlLgs8`.
+- Final state is 38 manifest / 37 available / 19 captured / 19 summarized / 19
+  incorporated / 18 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 18 available pending IDs are `4_VQBbs2iQA`, `VktrqzQgytY`,
+  `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`,
+  `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`,
+  `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`,
+  `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Ara Khan / Cline or Lawrence Jones /
+  incident.io and include resolving summary links plus valid sibling-transcript
+  anchors. New cross-video interpretation is prefixed `Editorial:`; no
+  consensus or playlist-order chronology is inferred.
+
+### Commits and verification
+
+- `8f94209d48bc44311d39e2d0e882b553e1eb76d7` contains only the two generated
+  metadata files and two source-faithfully reviewed transcripts.
+- `f3e7a1bb9926a7bb7f398028db2c73419d2a9f13` contains only the two deliberate
+  draft summaries and refreshed draft overview.
+- `npm run lint:fix` exited `0` after checking 189 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `D1_wPWzNkJ4`, `H5cvtoSxdxI`, `LG3q-sqMG0g`, `_pLlet9Jrzc`,
+  `aAWdlLfJmqw`, `qipoQGqMCp0`, and `rCIZflYEpEk`. The complete diff contained
+  only `availableLanguages` array compaction; parsed JSON remained identical.
+  Exactly those files were restored, and all eight pre-lint SHA-256 hashes
+  re-matched.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 19 captured / 18 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 19 draft summaries / current
+  overview.
+- The combined YouTube library and transcript suite passed `46/46`; Astro check
+  passed for 39 files with 0 errors, warnings, or hints; and the production
+  build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`. Both content commits passed `git show --check`, and their exact four-file
+  source and three-file editorial boundaries matched the staged-path audits.
+- The read-only structural, frontmatter, source-link, chunk, anchor, coverage,
+  and attribution checker passed all 19 summaries and the overview with the
+  exact final counts and author-less `multiSpeaker: true` catalog state. The
+  checker's first two invocations failed only from corrected JavaScript parsing
+  defects and made no repository changes; the corrected complete invocation
+  passed.
+- The index and this true-EOF section form the ninth work-item commit; its full
+  hash is reported in the completion response after final diff, staged-path,
+  commit-boundary, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 18 available manifest IDs remain
+  pending and the final-sync criterion cannot yet pass. Task 4 stays unchecked
+  and did not start. Work-item status remains `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
+  04 work began.

@@ -25,9 +25,9 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Eight Task 3 batches have captured,
-summarized, and incorporated sixteen more videos, bringing Coding Agents to 38
-manifest / 37 available / 17 captured / 17 summarized / 17 incorporated / 20
+one-video editorial thin slice now passes. Nine Task 3 batches have captured,
+summarized, and incorporated eighteen more videos, bringing Coding Agents to 38
+manifest / 37 available / 19 captured / 19 summarized / 19 incorporated / 18
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
@@ -36,9 +36,9 @@ Campos / Witan Labs, Nupur Sharma / Qodo, Priscila Andre de Oliveira / Sentry,
 Daniel Szoke / Sentry, Ian Ballantyne and KP Sawhney / Google DeepMind, and
 Michael Richman / Bitly presenting Cmd+Ctrl, Lou Bichard / Ona, and Sarah Chieng
 / Cerebras, Liam Hampton / Microsoft, and Onur Solmaz / OpenClaw attribution;
-Solmaz's separate TextCortex work remains explicit. No AI Engineer author or
-relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in
-progress.
+Solmaz's separate TextCortex work remains explicit. Ara Khan / Cline and Lawrence
+Jones / incident.io are now also represented. No AI Engineer author or
+relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
 
 ## Artifacts
 
@@ -160,4 +160,8 @@ progress.
 - 2026-07-30: Completed the eighth bounded Plan 04 Task 3 session for
   `dyHpnnlkTc8` and `VaS2h-dY1-4`; both videos are captured, summarized, and
   incorporated. Coding Agents now has 17 incorporated videos and 20 available
+  pending. Task 3 remains unchecked for the next no-refill two-video session.
+- 2026-07-30: Completed the ninth bounded Plan 04 Task 3 session for
+  `yUmS-F9IX90` and `L2r6vLlLgs8`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 19 incorporated videos and 18 available
   pending. Task 3 remains unchecked for the next no-refill two-video session.
