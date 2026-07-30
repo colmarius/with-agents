@@ -2570,3 +2570,80 @@
 - No second capture, refill, retry, force, sync, Task 4, public-content or
   resource edit, bounded-corpus edit, schedule, handoff, global deletion, or AI
   Engineer author, relationship, or synthesis was created or performed.
+
+## 2026-07-30 — Plan 04 Task 3 eighth Coding Agents batch completed
+
+### Capture and editorial result
+
+- Started from clean commit
+  `588aa5392f9e5e2c81eed25fefe874a8f3c509c7` on `ai-engineer-videos` with 38
+  manifest / 37 available / 15 captured / 15 summarized / 15 incorporated / 22
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- The ignored `.env` was loaded only inside the sole capture process. Exactly
+  one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `dyHpnnlkTc8` and `VaS2h-dY1-4` in manifest order.
+  Both slots succeeded. No second capture, refill, retry, force, sync, other
+  playlist, transient, throttle, unavailable, partial, or fatal outcome
+  occurred. Neither ID reused an existing global directory.
+- `dyHpnnlkTc8`, `Cooking with Agents in VS Code — Liam Hampton, Microsoft`,
+  produced a 1,023-second English auto-generated transcript with 19 unique
+  chunks from `[00:00:16]` through `[00:16:31]`. Its exact-provenance draft
+  summary uses the source title for Hampton's Microsoft attribution and anchors
+  its execution-mode, three-agent-demo, Autopilot, isolation, and VS Code
+  customization claims while retaining missing cost, quality, safeguard, and
+  cross-agent-integration evidence as limitations.
+- `VaS2h-dY1-4`, `Scaling Agents on Kubernetes with acpx and ACP — Onur
+  Solmaz, OpenClaw`, produced a 1,140-second English auto-generated transcript
+  with 20 unique chunks from `[00:00:15]` through `[00:18:09]`. Its
+  exact-provenance draft summary uses the title and transcript for Solmaz's
+  OpenClaw maintainer role, keeps his expressly disclosed TextCortex Kubernetes
+  work separate, and anchors its ACP, `acpx`, pull-request workflow, and
+  disposable-agent claims while retaining missing measurement and safeguard
+  evidence as limitations.
+- Both transcripts received source-faithful editorial passes. Ambiguous caption
+  fragments and speaker disfluencies were retained rather than guessed. AI
+  Engineer remains curator/source only, never speaker, author, or affiliation;
+  no author relationship or synthesis was created.
+
+### Reconciliation and independent gate
+
+- The overview's 17 duplicate-free `coveredVideoIds` exactly match all summary
+  IDs in manifest order. Final state is 38 manifest / 37 available / 17
+  captured / 17 summarized / 17 incorporated / 20 pending / 1
+  manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable (no IDs).
+- Pending IDs are `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`,
+  `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`,
+  `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`,
+  `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`,
+  `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and
+  `DuZXbinJ4Uc`.
+- The high-mode [implementation
+  thread](https://ampcode.com/threads/T-019fb046-a2dc-763b-b5a8-7e798cf4f8fd)
+  owned capture and editorial mutations. After its runner disconnected, the
+  orchestrator independently verified summary frontmatter and heading order,
+  Source links, every summary and new overview anchor, chunk counts, coverage,
+  AI Engineer's author-less `multiSpeaker: true` state, and the
+  OpenClaw/TextCortex distinction. No source or editorial remediation was
+  required; the orchestrator completed the interrupted work-item and gate.
+
+### Commits, verification, and next action
+
+- `4fa68bc7cabbd14116a4454de5df02733bd01deb` contains only two metadata files
+  and two reviewed transcripts. `f404f73820f22b6cccac0ef433213791e17d3709`
+  contains only two draft summaries and the refreshed draft overview.
+- `npm run lint:fix` passed after checking 187 files. Its only changes were the
+  known eight Antirez metadata formatting diffs; those exact files were
+  inspected, restored, and hash-checked against their clean pre-lint bytes.
+  Library status passed with the counts above; tests passed 46/46; Astro check
+  passed with 0 diagnostics; build passed with 20 pages; both source-only
+  searches returned expected no-match exit `1`; and all commit, diff,
+  structural, provenance, anchor, attribution, staged-file, and clean-worktree
+  checks passed.
+- The index and this true-EOF section form the eighth work-item commit; its hash
+  is reported in the completion response. Blockers: none. Plan 04 Task 3 stays
+  unchecked with 20 available IDs pending; Task 4 remains unchecked and did not
+  start. Next Action remains one later no-refill Task 3 `capture --limit 2`
+  session.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, Task 4, or broader Plan 04 work began.
