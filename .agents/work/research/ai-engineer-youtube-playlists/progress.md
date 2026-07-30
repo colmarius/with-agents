@@ -3486,3 +3486,121 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, final sync, or
   broader Plan 04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 sixteenth Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `85ca2eca4e68a1670695895bf804d7c9372620a9` on `ai-engineer-videos` with 38
+  manifest / 37 available / 31 captured / 31 summarized / 31 incorporated / 6
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed `.env` was ignored through `git check-ignore` without reading or
+  printing it; it was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `RjfbvDXpFls` and `1oySeF37SZc` in manifest order. Both
+  slots succeeded. No second capture, refill, retry, force, sync, remote check,
+  alternate playlist, transient, throttle, unavailable, partial, fatal, or tool
+  acknowledgement-loss outcome occurred. Neither ID reused an existing global
+  directory.
+- `RjfbvDXpFls`, `Building pi in a World of Slop — Mario Zechner`, produced an
+  1,105-second English auto-generated transcript captured at
+  `2026-07-30T12:03:33.242Z`, with 21 unique ordered chunks from `[00:00:07]`
+  through `[00:17:41]`. Its full source-faithful pass normalized unambiguous Pi,
+  Claude Code, Ghostty, Anthropic, OpenCode, CORS, Terminal-Bench, TUI, YOLO,
+  OpenClaw, and tldraw forms without changing chunk boundaries.
+- The `RjfbvDXpFls` draft summary identifies Zechner from the source title and
+  uses his spoken statement that he built Pi without inventing an employer
+  affiliation. It anchors his harness-context critique, Pi's minimal extension
+  model, security posture, open-source intake burden, accumulated-error
+  argument, bounded task criteria, review limits, and human decision boundary.
+  These are presenter experience, demonstrations, and shown benchmark claims,
+  not comparative evidence.
+- Zechner's source retains censored or malformed phrases, an unresolved precise
+  leaderboard-harness name, an OSS-tracker label, examples around `[00:12:26]`,
+  and closing shorthand around `[00:16:50]` rather than guessing them. No
+  summary or overview claim depends on those fragments.
+- `1oySeF37SZc`, `GitHub Next Explorations: Rahul Pandita`, produced a
+  1,097-second English auto-generated transcript captured at
+  `2026-07-30T12:03:37.354Z`, with 20 unique ordered chunks from `[00:00:13]`
+  through `[00:18:17]`. Its full source-faithful pass normalized unambiguous
+  SpecLang, Next Edit Suggestions, Copilot Workspace, Monaspace, and code
+  documentation forms without changing chunk boundaries.
+- The `1oySeF37SZc` draft summary uses Pandita's spoken GitHub Next researcher
+  role and anchors Next's exploration gates, Next Edit Suggestions, the inner
+  loop, user-control goals, and the Copilot Workspace demonstration. It keeps
+  the prepared cached demo, small edit scope, undefined product-gate metrics,
+  corrected terminal suggestion, and talk-time product status as evidence
+  limits rather than inferring current status from the later manifest upload
+  date. Unclear live-demo syntax wording supports no claim.
+- AI Engineer remains curator/source only, never speaker, author, or
+  affiliation. Anonymous audience members remain unnamed and unaffiliated. No
+  author relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 33 duplicate-free `coveredVideoIds` exactly match every
+  Coding Agents summary ID in manifest order, ending with `RjfbvDXpFls` and
+  `1oySeF37SZc`.
+- Final state is 38 manifest / 37 available / 33 captured / 33 summarized / 33
+  incorporated / 4 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 4 available pending IDs are `prttz9_1XDc`, `Up6WVA07QdE`,
+  `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Mario Zechner as Pi's builder without
+  an employer affiliation and Rahul Pandita as a GitHub Next researcher; each
+  has a resolving summary link and valid sibling-transcript anchors. New
+  cross-video interpretation begins `Editorial:` and does not infer consensus,
+  uploader authorship, playlist chronology, current product status, or
+  comparative quality.
+
+### Commits and verification
+
+- `d2856c4f5599336d53fdf8a891fc4d6fd8bd7f37` (`capture sixteenth Coding
+  Agents backfill batch`) contains exactly the two generated metadata files and
+  two source-faithfully reviewed transcripts.
+  `59b3024243981571b5db8cda2db40ed31651a9dc` (`summarize sixteenth Coding
+  Agents backfill batch`) contains exactly the two deliberate draft summaries
+  and refreshed draft overview. Both commits pass exact path-boundary audits.
+- `npm run lint:fix` exited `0` after checking 203 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `LG3q-sqMG0g`, `aAWdlLfJmqw`, `H5cvtoSxdxI`, `D1_wPWzNkJ4`,
+  `rCIZflYEpEk`, `qipoQGqMCp0`, and `_pLlet9Jrzc`. The complete diff contained
+  only `availableLanguages` array compaction and all parsed JSON remained
+  identical. Exactly those files were restored, and every post-restore SHA-256
+  hash matched its pre-lint hash.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 33 captured / 4 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 33 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed `46/46`;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. All required gate commands
+  and the complete structural checker passed on their first invocation; no
+  preliminary command or checker failures occurred.
+- The final read-only structural, frontmatter, source-link, chunk, anchor,
+  coverage, attribution, work-item-state, and path-boundary checker passed all
+  33 summaries and the overview: 999 unique ordered transcript chunks, 1,392
+  resolving summary-anchor endpoints, 99 named linked overview claims, and 399
+  resolving overview-anchor endpoints. It also passed exact final counts and
+  pending/private/unavailable IDs, manifest-order coverage, author-less
+  `multiSpeaker: true` catalog state, AI Engineer's curator/source-only
+  boundary, unchecked Tasks 3 and 4, matching Next Action, true-EOF progress,
+  exact commit groups, and the nine-path session boundary.
+- The index and this true-EOF section form the sixteenth work-item commit; its
+  full hash is reported in the completion response after final staged-path,
+  commit-boundary, diff, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 4 available manifest IDs remain
+  pending and the zero-pending plus final-sync acceptance criterion cannot yet
+  pass. Task 4 stays unchecked and did not start. Work-item status remains
+  `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, final sync, or
+  broader Plan 04 work began.

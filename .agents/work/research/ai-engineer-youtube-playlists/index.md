@@ -25,9 +25,9 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Fifteen Task 3 batches have captured,
-summarized, and incorporated thirty more videos, bringing Coding Agents to
-38 manifest / 37 available / 31 captured / 31 summarized / 31 incorporated / 6
+one-video editorial thin slice now passes. Sixteen Task 3 batches have captured,
+summarized, and incorporated thirty-two more videos, bringing Coding Agents to
+38 manifest / 37 available / 33 captured / 33 summarized / 33 incorporated / 4
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
@@ -50,9 +50,10 @@ OpenAI's Developer Experience team are now represented, as are Eric Zakariasson
 / Cursor and Maggie Appleton / GitHub with her spoken GitHub Next team role. Ido
 Salomon / AgentCraft and Matt Pocock, who identifies himself as a teacher and
 references his AI Hero site and Course Video Manager repository without
-supplying an employer affiliation, are now also represented. No AI Engineer
-author or relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3
-remains in progress.
+supplying an employer affiliation, are now also represented. Mario Zechner, who
+says he built Pi without supplying an employer affiliation, and Rahul Pandita /
+GitHub Next are now represented too. No AI Engineer author or relationship
+exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
 
 ## Artifacts
 
@@ -219,3 +220,9 @@ remains in progress.
   Hero, and Course Video Manager provenance are source-supported without an
   inferred employer affiliation. Task 3 remains unchecked for the next
   no-refill two-video session.
+- 2026-07-30: Completed the sixteenth bounded Plan 04 Task 3 session for
+  `RjfbvDXpFls` and `1oySeF37SZc`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 33 incorporated videos and 4 available
+  pending. Mario Zechner's Pi-builder role and absent employer affiliation and
+  Rahul Pandita's GitHub Next researcher role remain source-explicit. Task 3
+  remains unchecked for the next no-refill two-video session.
