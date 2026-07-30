@@ -3742,3 +3742,160 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, final sync, or
   broader Plan 04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 final Coding Agents capture/editorial session completed
+
+### Capture and source review
+
+- Started from clean commit
+  `933c95245f48be425a48e8876d8f8932d783c60d` on `ai-engineer-videos` with 38
+  manifest / 37 available / 35 captured / 35 summarized / 35 incorporated / 2
+  available pending (`Ve-akpov78Q`, `DuZXbinJ4Uc`, manifest order) / 1
+  manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed `.env` was ignored through `git check-ignore` without reading or
+  printing it; it was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `Ve-akpov78Q` and `DuZXbinJ4Uc` in manifest order. Both
+  slots succeeded. No second capture, refill, retry, force, sync, remote check,
+  alternate playlist, transient, throttle, unavailable, partial, fatal, or tool
+  acknowledgement-loss outcome occurred. Neither ID reused an existing global
+  directory.
+- `Ve-akpov78Q`, `Code Generation and Maintenance at Scale: Morgante Pell`,
+  produced a 1,133-second English auto-generated transcript captured at
+  `2026-07-30T12:49:50.338Z`, with 18 unique ordered chunks from `[00:00:00]`
+  through `[00:17:49]`. Its complete source-faithful pass normalized
+  unambiguous Morgante Pell, Grit, Google Cloud, Kubernetes, Kustomize,
+  Terraform, OpenTelemetry, GritQL, Log4j, Claude Sonnet 3.5, TypeScript, TSC,
+  LSP, TS Server, Firecracker, AWS Lambda, GPT-4o, and related forms without
+  changing chunk boundaries.
+- The `Ve-akpov78Q` draft summary uses Pell's source-title name, spoken Grit
+  founder role, and spoken five years working at Google Cloud. It anchors his
+  mature-codebase framing, coordinated-change workflow, combined static and
+  semantic retrieval, compiler and language-server feedback, checkpointed
+  parallel search, and edit-format argument. Customer migration, pull-request,
+  code-volume, prompt-chain, reliability, and cost numbers remain
+  commercially interested presenter claims rather than comparative evidence.
+- Pell's source retains the clipped `Cen` fragment around `[00:03:09]` and
+  other malformed connective wording rather than guessing it. No summary or
+  overview claim depends on those fragments. The talk does not supply
+  repositories, acceptance criteria, defect and rollback data, review-load
+  measurements, GritQL recall or false positives, snapshot-isolation evidence,
+  or independent comparisons.
+- `DuZXbinJ4Uc`, `How Codeium Breaks Through the Ceiling for Retrieval: Kevin
+  Hou`, produced a 1,121-second English auto-generated transcript captured at
+  `2026-07-30T12:49:54.458Z`, with 18 unique ordered chunks from `[00:00:00]`
+  through `[00:17:59]`. Its complete source-faithful pass normalized
+  unambiguous Kevin Hou, Codeium, IDE, ChatGPT, GitHub Copilot, Stack Overflow,
+  RAG, Gemini, Exafunction, M query, AST, Figma, VS Code, JetBrains, Vim, Emacs,
+  and related forms without changing chunk boundaries.
+- The `DuZXbinJ4Uc` draft summary uses Hou's source-title name, his presentation
+  from Codeium, and his spoken product-engineering-lead role. It anchors his
+  multi-document retrieval problem, recall-at-50 evaluation, commit-to-files
+  proxy dataset, model-based candidate ranking, workspace signals, vertically
+  integrated infrastructure, and online product-feedback loop. Benchmark,
+  cost, compute, speed, quality, adoption, and market statements remain Codeium
+  claims rather than independent comparative evidence.
+- Hou's source leaves the exact name of a charted benchmark and the captioned
+  San Francisco ride reference unresolved rather than assigning unsupported
+  names. No summary or overview claim depends on either fragment. The talk does
+  not provide the retrieval dataset, splits, leakage controls, labels,
+  ablations, confidence estimates, workload distribution, end-to-end cost, or
+  correctness and security outcomes needed for an independent comparison.
+- AI Engineer remains curator/source only, never speaker, author, or
+  affiliation. No anonymous participant was named or affiliated. No author
+  relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 37 duplicate-free `coveredVideoIds` exactly match every
+  available Coding Agents summary ID in manifest order, ending with
+  `Ve-akpov78Q` and `DuZXbinJ4Uc`.
+- Final local state is 38 manifest / 37 available / 37 captured / 37 summarized
+  / 37 incorporated / 0 available pending / 1 manifest-private
+  (`pAbRL0h_SNs`) / 0 caption-unavailable (no IDs).
+- New non-editorial overview claims name Morgante Pell as Grit's founder with
+  his spoken five years at Google Cloud and Kevin Hou with Codeium and his
+  spoken product-engineering-lead role. Each claim has a resolving summary link
+  and valid sibling-transcript anchors.
+- New cross-video interpretation begins `Editorial:` and does not infer
+  consensus, uploader authorship, playlist chronology, present-day company or
+  product status, unsupported affiliations, or comparative quality.
+
+### Commits and verification
+
+- `6525a5affa773a87009c5fbc8741a78a82a7696e` (`capture final Coding Agents
+  backfill batch`) contains exactly the two generated metadata files and two
+  source-faithfully reviewed transcripts.
+  `8c4c0d2e1611d5389d0a2999bb0c559d8f66a1ec` (`summarize final Coding Agents
+  backfill batch`) contains exactly the two deliberate draft summaries and the
+  refreshed draft overview. Both commits passed pre-commit status,
+  staged-path, staged-diff, and path-boundary audits.
+- `npm run lint:fix` exited `0` after checking 207 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `LG3q-sqMG0g`, `aAWdlLfJmqw`, `H5cvtoSxdxI`, `D1_wPWzNkJ4`,
+  `rCIZflYEpEk`, `qipoQGqMCp0`, and `_pLlet9Jrzc`. The complete diff contained
+  only `availableLanguages` array compaction and all parsed JSON remained
+  identical. Exactly those files were restored; every post-restore SHA-256
+  hash matched its pre-lint value: `f4e903f16b9a3378a045d296dc8feb38193a28bd6fe69ba1a8e6ac758fac88bb`,
+  `0aed612127ab0203225472dce215febd2cbf3ed75414e1d1ba788309e203c7fd`,
+  `d16efcfdeb1520c364e2a0f3092d570d2bc1844e98c4f61ec47661289191bf92`,
+  `c5ddc8de1fb1dccf0113b00cbe25ba6370e73703e1949dd26df17ddfa63b82ae`,
+  `dd29fef436b30df96abe8bba269a9bae63e6f3de090eaac707c454d3d651be5c`,
+  `42e44b620b445ae1709b2fd9e78be8d81124f4c2ed129a9890dc8b11b5511084`,
+  `1a17a2274920be7ff1dbf65965964df347d8a1e622f6e8d0c6b32d67813d7554`,
+  and `031a889e6a805d73c42211120e56ff04933fe79f9893e76e5227bf3a3445c5a5`
+  in the listed ID order.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 37 captured / 0 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 37 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed `46/46`;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. `git diff --check` and every
+  required status, staged-path, and scope audit passed.
+- One preliminary read-only editorial checker exited `1` after all corpus
+  assertions because it counted `AI Engineer` in both the overview title and
+  required Coverage statement while expecting one occurrence; the corrected
+  body-only attribution assertion passed without an artifact change. The first
+  JSON semantic-comparison helper also exited `1` before restoration because
+  its Node `execFileSync` encoding argument used the wrong form; the corrected
+  helper proved all eight files semantically identical before restoring only
+  those paths. The comprehensive pre-work checker's first invocation trimmed
+  the leading status character from its first porcelain line, and its second
+  invocation treated a wrapped `Task 4 stays unchecked` phrase as contiguous;
+  NUL-delimited status parsing and whitespace-normalized prose checks corrected
+  both helper assertions. No capture, editorial, or repository state was lost
+  or repeated.
+- The final read-only structural, frontmatter, source-link, chunk, anchor,
+  coverage, attribution, work-item-state, commit-scope, and path-boundary
+  checker passed all 37 summaries and the overview: 1,070 unique ordered
+  transcript chunks, 1,556 resolving summary-anchor endpoints, 111 named linked
+  overview claims, and 442 resolving overview-anchor endpoints. It also passed
+  exact final counts and private/unavailable IDs, zero pending, manifest-order
+  coverage, author-less `multiSpeaker: true` catalog state, AI Engineer's
+  curator/source-only boundary, unchecked Tasks 3 and 4, the final selected
+  check/sync gate as Next Action, true-EOF progress, exact three commit groups,
+  and the nine-path session boundary.
+- The index and this true-EOF section form the final capture/editorial
+  work-item commit; its full hash is reported in the completion response after
+  final staged-path, commit-boundary, diff, and clean-state audits. Blockers:
+  none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked even with zero local pending because it still
+  requires a separate final selected read-only check, authoritative selected
+  sync, exact diff review, mandatory public-impact review for every changed ID,
+  and authoritative count reconciliation before deciding completion. Task 4
+  stays unchecked and did not start. Work-item status remains `in-progress`.
+- Next Action is that smallest final Task 3 gate: run the selected read-only
+  check and then authoritative selected sync for
+  `ai-engineer-coding-agents`, inspect the exact diff, perform mandatory
+  public-impact review for every changed ID, reconcile zero pending and final
+  counts, and decide whether to check Task 3.
+- No public content/resource, bounded-playlist artifact, catalog, manifest,
+  author, relationship, synthesis, schedule, handoff, deletion or duplicate
+  directory, remote check, sync, Task 3 completion, Task 4, or broader Plan 04
+  work began.

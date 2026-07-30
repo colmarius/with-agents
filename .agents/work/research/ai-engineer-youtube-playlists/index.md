@@ -25,11 +25,10 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Seventeen Task 3 batches have
-captured, summarized, and incorporated thirty-four more videos, bringing Coding
-Agents to 38 manifest / 37 available / 35 captured / 35 summarized / 35
-incorporated / 2 available pending / 1 private / 0
-caption-unavailable-recorded. The draft
+one-video editorial thin slice now passes. Eighteen Task 3 batches have captured,
+summarized, and incorporated thirty-six more videos, bringing Coding Agents to
+38 manifest / 37 available / 37 captured / 37 summarized / 37 incorporated / 0
+available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
 Lee Robinson / Cursor, Theo Browne / `@t3dotgg`, Bennet Fenner / Zed, Nuno
@@ -56,8 +55,11 @@ says he built Pi without supplying an employer affiliation, and Rahul Pandita /
 GitHub Next are now represented too. No AI Engineer author or relationship
 exists. Gunjan Patel / Palo Alto Networks, whose proposed CI system is explicitly
 a side project rather than a company product, and Quinn Slack / Sourcegraph are
-now represented too. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in
-progress.
+now represented too. Morgante Pell / Grit with his spoken five years at Google
+Cloud and Kevin Hou / Codeium with his spoken product-engineering-lead role
+complete the available source set. Plan 04 Tasks 1 and 2 are complete; Task 3
+remains in progress pending its separate final selected check/sync and
+authoritative public-impact/baseline reconciliation gate.
 
 ## Artifacts
 
@@ -77,9 +79,11 @@ progress.
 
 ## Next Action
 
-- Continue Task 3 of [Plan 04](./plans/04-coding-agents-corpus.md) with the next
-  bounded Coding Agents session: run exactly one selected `capture --limit 2`
-  command, apply the fixed stop protocol, and do not refill the session.
+- Finish Task 3 of [Plan 04](./plans/04-coding-agents-corpus.md) in a separate
+  gate: run the selected read-only check and then the authoritative selected
+  sync for `ai-engineer-coding-agents`, inspect the exact diff, perform the
+  mandatory public-impact review for every changed ID, reconcile zero pending
+  and the final counts, and decide whether to check Task 3.
 
 ## Open Questions
 
@@ -236,3 +240,11 @@ progress.
   pending. Gunjan Patel's Palo Alto Networks role and side-project boundary and
   Quinn Slack's Sourcegraph co-founder role remain source-explicit. Task 3
   remains unchecked for the next no-refill two-video session.
+- 2026-07-30: Completed the eighteenth and final capture/editorial Plan 04 Task
+  3 session for `Ve-akpov78Q` and `DuZXbinJ4Uc`; both videos are captured,
+  summarized, and incorporated. Coding Agents now has all 37 available videos
+  incorporated and zero available pending. Morgante Pell's Grit founder role
+  and spoken five years at Google Cloud and Kevin Hou's Codeium and
+  product-engineering-lead roles remain source-explicit. Task 3 stays unchecked
+  for a separate final selected check/sync and authoritative reconciliation
+  gate; Task 4 did not start.
