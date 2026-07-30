@@ -25,9 +25,9 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Thirteen Task 3 batches have captured,
-summarized, and incorporated twenty-six more videos, bringing Coding Agents to
-38 manifest / 37 available / 27 captured / 27 summarized / 27 incorporated / 10
+one-video editorial thin slice now passes. Fourteen Task 3 batches have captured,
+summarized, and incorporated twenty-eight more videos, bringing Coding Agents to
+38 manifest / 37 available / 29 captured / 29 summarized / 29 incorporated / 8
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
@@ -46,9 +46,10 @@ reconcile Luebken's two company names. Luke Alvoeiro / Factory with his spoken
 former Block and Goose provenance, and Chris Parsons / Cherrypick with his
 spoken CTO, startup, agency, and agile background are now also represented.
 Louis Knight-Webb / Vibe Kanban and Katia Gil Guzman and Vaibhav Srivastav /
-OpenAI's Developer Experience team are now represented. No AI Engineer author
-or relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in
-progress.
+OpenAI's Developer Experience team are now represented, as are Eric Zakariasson
+/ Cursor and Maggie Appleton / GitHub with her spoken GitHub Next team role. No
+AI Engineer author or relationship exists. Plan 04 Tasks 1 and 2 are complete;
+Task 3 remains in progress.
 
 ## Artifacts
 
@@ -202,3 +203,9 @@ progress.
   pending. Louis Knight-Webb's Vibe Kanban and Katia Gil Guzman and Vaibhav
   Srivastav's OpenAI Developer Experience attributions are source-supported.
   Task 3 remains unchecked for the next no-refill two-video session.
+- 2026-07-30: Completed the fourteenth bounded Plan 04 Task 3 session for
+  `rnDm57Py54A` and `ClWD8OEYgp8`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 29 incorporated videos and 8 available
+  pending. Eric Zakariasson's Cursor and Maggie Appleton's GitHub and GitHub
+  Next attributions are source-supported. Task 3 remains unchecked for the next
+  no-refill two-video session.

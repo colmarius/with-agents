@@ -3232,3 +3232,136 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
   04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 fourteenth Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `36dfbbefc8cebd0645e3f272bb238c413271d7e8` on `ai-engineer-videos` with 38
+  manifest / 37 available / 27 captured / 27 summarized / 27 incorporated / 10
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed `.env` was ignored through `git check-ignore` without reading or
+  printing it; it was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `rnDm57Py54A` and `ClWD8OEYgp8` in manifest order. Both
+  slots succeeded. No second capture, refill, retry, force, sync, remote check,
+  alternate playlist, transient, throttle, unavailable, partial, or fatal
+  capture outcome occurred. Neither ID reused an existing global directory.
+- `rnDm57Py54A`, `Building your own software factory — Eric Zakariasson,
+  Cursor`, produced a 5,016-second English auto-generated transcript with 85
+  unique chunks from `[00:00:14]` through `[01:22:51]`. Its source-faithful
+  transcript pass normalized title- or context-supported Cursor, Karpathy,
+  Cursor Directory, Next.js, SOP, MCP, `AGENTS.md`, Playwright, Vitest, Bugbot,
+  SDLC, OrbStack, ClickHouse, Postgres, Redis, Electron, Supabase, Turso,
+  Claude Code, Vercel Blob, SQL Server, C#, Aspire, and other unambiguous forms
+  without changing chunk boundaries.
+- The `rnDm57Py54A` draft summary keeps title-supported Eric Zakariasson /
+  Cursor distinct from his spoken Cursor engineer, developer-experience, and
+  product role. It anchors his software-factory layers, repository patterns,
+  guardrails and enablers, verification, isolated environments, parallel-work
+  boundaries, feedback loops, human decision points, architecture review,
+  security automation, and issue-triggered agent examples while preserving his
+  opening statement that a complete autonomous factory does not yet exist.
+  Anonymous audience participants remain unnamed and unaffiliated.
+- Unresolved `rnDm57Py54A` live-demo and audience fragments—including `produ
+  direction`, `team whole`, `cdvoom`, and `selfages`—remain retained rather
+  than guessed; no summary or overview claim depends on them. One audience
+  question addresses the speaker as `Isaac` despite the source title and
+  spoken self-introduction supporting Eric; that utterance remains source
+  faithful and does not change the summary attribution. Product demos and
+  self-reported operating practices do not provide comparative quality, cost,
+  security, or large-fleet reliability evidence.
+- `ClWD8OEYgp8`, `Collaborative AI Engineering: One Dev, Two Dozen Agents,
+  Zero Alignment — Maggie Appleton, GitHub`, produced a 1,062-second English
+  auto-generated transcript with 21 unique chunks from `[00:00:07]` through
+  `[00:17:26]`. Its source-faithful pass normalized source-supported GitHub
+  Next and the clear `Claudes`, `dream`, and omitted `showing` substitutions,
+  plus punctuation that restored Appleton's craftsmanship statement, without
+  changing chunk boundaries.
+- The `ClWD8OEYgp8` draft summary uses the source title for Maggie Appleton /
+  GitHub and her spoken staff research engineer, design background, and GitHub
+  Next team provenance. It anchors the coordination bottleneck, lost early
+  alignment points, non-code context, ACE's shared cloud sessions, multiplayer
+  prompting, collaborative plans, backward-compatible pull requests, activity
+  summaries, and quality-over-volume conclusion while keeping ACE's
+  pre-preview prototype and unevaluated collaboration/security boundaries
+  explicit.
+- The captions do not consistently resolve every teammate name in the ACE demo,
+  so those participants remain unnamed and unaffiliated. AI Engineer remains
+  curator/source only, never speaker, author, or affiliation. No author
+  relationship or synthesis was created.
+- Three executor acknowledgement losses occurred only after the successful
+  capture, during long-transcript reading, the first staging attempt, and the
+  first verification fan-out. Durable files and Git state were inspected after
+  each; the sole capture was never rerun.
+
+### Overview reconciliation
+
+- The overview's 29 duplicate-free `coveredVideoIds` exactly match every
+  Coding Agents summary ID in manifest order, ending with `rnDm57Py54A` and
+  `ClWD8OEYgp8`.
+- Final state is 38 manifest / 37 available / 29 captured / 29 summarized / 29
+  incorporated / 8 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 8 available pending IDs are `kR64LOqBBCU`, `-QFHIoCo-Ko`,
+  `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`,
+  `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Eric Zakariasson / Cursor and Maggie
+  Appleton / GitHub Next; each has a resolving summary link and valid sibling
+  transcript anchors. New cross-video interpretation begins `Editorial:` and
+  does not infer consensus, uploader authorship, playlist chronology, or a
+  complete cross-event thesis.
+
+### Commits and verification
+
+- `396290aa7541d14e7cc228936a474be62ddd7ed4` (`capture fourteenth Coding
+  Agents backfill batch`) contains exactly the two generated metadata files and
+  two source-faithfully reviewed transcripts.
+  `240c726609eb573e1f3d0137d06d36d4324038b4` (`summarize fourteenth Coding
+  Agents backfill batch`) contains exactly the two deliberate draft summaries
+  and refreshed draft overview. Both commits pass `git show --check`, and exact
+  path-boundary audits pass.
+- `npm run lint:fix` exited `0` after checking 199 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `D1_wPWzNkJ4`, `H5cvtoSxdxI`, `LG3q-sqMG0g`, `_pLlet9Jrzc`,
+  `aAWdlLfJmqw`, `qipoQGqMCp0`, and `rCIZflYEpEk`. The complete diff contained
+  only `availableLanguages` array compaction and all parsed JSON remained
+  identical. Exactly those files were restored, and every post-restore SHA-256
+  hash matched its pre-lint hash.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 29 captured / 8 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 29 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed `46/46`;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker.
+- The final read-only structural, frontmatter, source-link, chunk, anchor,
+  coverage, attribution, work-item-state, and path-boundary checker passed all
+  29 summaries and the overview: 838 unique ordered transcript chunks, 1,196
+  resolving summary-anchor endpoints, 87 named linked overview claims, and 347
+  resolving overview-anchor endpoints. It also passed exact final counts and
+  pending/private/unavailable IDs, manifest-order coverage, author-less
+  `multiSpeaker: true` catalog state, AI Engineer's curator/source-only
+  boundary, unchecked Tasks 3 and 4, matching Next Action, true-EOF progress,
+  exact commit groups, and the nine-path session boundary. Three preliminary
+  invocations failed only because of checker syntax, leading-whitespace, and
+  Git-porcelain parsing assumptions before the corrected complete invocation
+  passed; none made repository changes.
+- The index and this true-EOF section form the fourteenth work-item commit; its
+  full hash is reported in the completion response after final staged-path,
+  commit-boundary, diff, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 8 available manifest IDs remain
+  pending and the zero-pending plus final-sync acceptance criterion cannot yet
+  pass. Task 4 stays unchecked and did not start. Work-item status remains
+  `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
+  04 work began.
