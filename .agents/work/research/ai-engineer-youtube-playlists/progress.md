@@ -3113,3 +3113,122 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
   04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 thirteenth Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `3f89abdd2f490a73f01392dac52d1b66055a0da3` on `ai-engineer-videos` with 38
+  manifest / 37 available / 25 captured / 25 summarized / 25 incorporated / 12
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed `.env` was ignored through `git check-ignore` without reading it;
+  it was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `W76woOYHlvY` and `MhHEGMFCEB0` in manifest order.
+  Both slots succeeded. No second capture, refill, retry, force, sync, check,
+  alternate playlist, transient, throttle, unavailable, partial, or fatal
+  capture outcome occurred. Neither ID reused an existing global directory.
+- `W76woOYHlvY`, `Software Engineering Is Becoming Plan and Review — Louis
+  Knight-Webb, Vibe Kanban`, produced a 1,223-second English auto-generated
+  transcript with 22 unique chunks from `[00:00:07]` through `[00:19:48]`.
+  Its source-faithful pass normalized manifest- or context-supported Louis
+  Knight-Webb, Vibe Kanban, SWE-bench, OpenAI, Claude Code, and Git worktree
+  forms without changing chunk boundaries. The source title supplies his full
+  name while the raw caption introduction rendered `Louie`; the summary keeps
+  those provenance sources distinct.
+- The `W76woOYHlvY` draft summary uses the source title for Knight-Webb's Vibe
+  Kanban attribution and his spoken founder and London AI Tinkers provenance.
+  It anchors the plan-versus-review framing, task-type heuristic, longer-turn
+  tradeoff, multi-workstream interface, code-review and deployment needs, live
+  shutdown demo, and self-reported usage-versus-business-model tension.
+- `MhHEGMFCEB0`, `OpenAI Codex Masterclass  — Vaibhav Srivastav & Katia Gil
+  Guzman`, produced a 3,718-second English auto-generated transcript with 64
+  unique chunks from `[00:00:14]` through `[01:01:05]`. Its source-faithful
+  pass normalized title-supported Katia Gil Guzman and Vaibhav Srivastav,
+  their spoken OpenAI Developer Experience affiliation, Codex, Claude Code,
+  model, WebSocket, worktree, TOML, Git, and other unambiguous product forms
+  without changing chunk boundaries.
+- The raw `MhHEGMFCEB0` captions rendered the title-supplied speakers as
+  `Katya Gribuzina`, `VB`, and `Karthik`; the manifest title, introduction,
+  handoffs, and later OpenAI statement support the normalized names and shared
+  affiliation. Alternating `Imagen` / `ImageGen` / `Image Gen`, `Should have
+  used park`, the `.sessions` / `.codex` path phrasing, and the after-tool-use
+  versus shown pre-tool-use hook ambiguity remain retained rather than guessed.
+  The summary avoids asserting one image-feature spelling and makes the hook
+  inconsistency explicit.
+- The `MhHEGMFCEB0` draft summary names both speakers and their OpenAI Developer
+  Experience affiliation, keeps unnamed attendees unaffiliated, and anchors
+  the model/harness layers, app/worktree workflow, plugins, automations, demos,
+  code review, sub-agents, role access, guardian approvals, hooks, cloud
+  handoff, trust boundary, product metrics, and live-demo limits.
+- Three brief executor acknowledgement losses occurred only during transcript
+  editing and the first commit attempt. Durable file and Git state was
+  inspected after each; the sole successful capture was never rerun. AI
+  Engineer remains curator/source only, never speaker, author, or affiliation.
+  No author relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 27 duplicate-free `coveredVideoIds` exactly match every
+  Coding Agents summary ID in manifest order, ending with `W76woOYHlvY` and
+  `MhHEGMFCEB0`.
+- Final state is 38 manifest / 37 available / 27 captured / 27 summarized / 27
+  incorporated / 10 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 10 available pending IDs are `rnDm57Py54A`, `ClWD8OEYgp8`,
+  `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`,
+  `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Louis Knight-Webb / Vibe Kanban and
+  Katia Gil Guzman and Vaibhav Srivastav / OpenAI Developer Experience; each
+  has a resolving summary link and valid sibling-transcript anchors. New
+  cross-video interpretation begins `Editorial:` and does not infer consensus,
+  uploader authorship, playlist chronology, or a complete cross-event thesis.
+
+### Commits and verification
+
+- `3b337164ec7d380304d48e36420061c8a3922b06` (`capture thirteenth Coding
+  Agents backfill batch`) contains exactly the two generated metadata files and
+  two source-faithfully reviewed transcripts.
+  `1573456f771cb751d72d53a77aea61918faa752a` (`summarize thirteenth Coding
+  Agents backfill batch`) contains exactly the two deliberate draft summaries
+  and refreshed draft overview. Both commits pass `git show --check`, and exact
+  path-boundary audits pass.
+- `npm run lint:fix` exited `0` after checking 197 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `D1_wPWzNkJ4`, `H5cvtoSxdxI`, `LG3q-sqMG0g`, `_pLlet9Jrzc`,
+  `aAWdlLfJmqw`, `qipoQGqMCp0`, and `rCIZflYEpEk`. The complete diff contained
+  only `availableLanguages` array compaction. Exactly those files were
+  restored, and every post-restore SHA-256 hash matched its pre-lint hash.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 27 captured / 10 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 27 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed `46/46`;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker.
+- The read-only structural, frontmatter, source-link, chunk, anchor, coverage,
+  and attribution checker passed all 27 summaries and the overview: 732 unique
+  ordered transcript chunks, 1,085 resolving summary-anchor endpoints, 81
+  named linked overview claims, and 325 resolving overview-anchor endpoints.
+  It also passed exact counts and pending/private/unavailable IDs, frontmatter
+  provenance and key order, exact heading order, manifest-order coverage,
+  author-less `multiSpeaker: true` catalog state, and the AI Engineer
+  curator/source-only boundary.
+- The index and this true-EOF section form the thirteenth work-item commit; its
+  full hash is reported in the completion response after final staged-path,
+  commit-boundary, diff, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 10 available manifest IDs remain
+  pending and the zero-pending plus final-sync acceptance criterion cannot yet
+  pass. Task 4 stays unchecked and did not start. Work-item status remains
+  `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
+  04 work began.

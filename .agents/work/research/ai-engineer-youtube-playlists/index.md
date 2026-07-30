@@ -25,9 +25,9 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Twelve Task 3 batches have captured,
-summarized, and incorporated twenty-four more videos, bringing Coding Agents to
-38 manifest / 37 available / 25 captured / 25 summarized / 25 incorporated / 12
+one-video editorial thin slice now passes. Thirteen Task 3 batches have captured,
+summarized, and incorporated twenty-six more videos, bringing Coding Agents to
+38 manifest / 37 available / 27 captured / 27 summarized / 27 incorporated / 10
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
@@ -44,9 +44,11 @@ evaluation-research role, and Matthias Luebken / Tavon with his spoken company
 name auto-captioned as `Seven AI` are also represented; the source does not
 reconcile Luebken's two company names. Luke Alvoeiro / Factory with his spoken
 former Block and Goose provenance, and Chris Parsons / Cherrypick with his
-spoken CTO, startup, agency, and agile background are now also represented. No
-AI Engineer author or relationship exists. Plan 04 Tasks 1 and 2 are complete;
-Task 3 remains in progress.
+spoken CTO, startup, agency, and agile background are now also represented.
+Louis Knight-Webb / Vibe Kanban and Katia Gil Guzman and Vaibhav Srivastav /
+OpenAI's Developer Experience team are now represented. No AI Engineer author
+or relationship exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in
+progress.
 
 ## Artifacts
 
@@ -194,3 +196,9 @@ Task 3 remains in progress.
   Parsons's source-title Cherrypick attribution and spoken professional
   background are source-supported. Task 3 remains unchecked for the next
   no-refill two-video session.
+- 2026-07-30: Completed the thirteenth bounded Plan 04 Task 3 session for
+  `W76woOYHlvY` and `MhHEGMFCEB0`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 27 incorporated videos and 10 available
+  pending. Louis Knight-Webb's Vibe Kanban and Katia Gil Guzman and Vaibhav
+  Srivastav's OpenAI Developer Experience attributions are source-supported.
+  Task 3 remains unchecked for the next no-refill two-video session.
