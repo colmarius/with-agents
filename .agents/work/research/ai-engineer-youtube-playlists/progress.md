@@ -2986,3 +2986,130 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
   04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 twelfth Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `1156d8048ae8ad2fe9455bad59c678a1baffd118` on `ai-engineer-videos` with 38
+  manifest / 37 available / 23 captured / 23 summarized / 23 incorporated / 14
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed `.env` was ignored through `git check-ignore` without reading it;
+  it was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `ow1we5PzK-o` and `2TLXsxkz0zI` in manifest order.
+  Both slots succeeded. No second capture, refill, retry, force, sync, check,
+  alternate playlist, transient, throttle, unavailable, partial, fatal, or
+  executor-disconnect outcome occurred. Neither ID reused an existing global
+  directory.
+- `ow1we5PzK-o`, `The Multi-Agent Architecture That Actually Ships — Luke
+  Alvoeiro, Factory`, produced a 1,110-second English auto-generated transcript
+  with 21 unique chunks from `[00:00:07]` through `[00:18:13]`. Its
+  source-faithful transcript pass normalized source-supported or unambiguous
+  Agentic AI Foundation, sunk-cost, subagent, codebase, Mission Control, and
+  `AGENTS.md` forms without changing chunk boundaries.
+- The `ow1we5PzK-o` draft summary identifies Luke Alvoeiro and Factory from the
+  manifest title, then keeps his spoken role leading Factory's core agent
+  harness and his former Block / Goose / Agentic AI Foundation provenance
+  explicit. It anchors the five-part taxonomy, Missions role separation,
+  pre-implementation validation contract, behavior checks, structured
+  handoffs, serial mutation, role-specific model selection, and prompt/skill
+  orchestration claims while distinguishing reported multi-day production use
+  and the Slack-clone slide from comparative evidence.
+- Unresolved `ow1we5PzK-o` caption fragments such as `mission What's it?` and
+  the final `Open Droid` phrasing remain retained rather than guessed; neither
+  the summary nor overview depends on those fragments. The source title gives
+  Alvoeiro's full name while the spoken introduction supplies only `Luke`, so
+  those provenance sources remain distinct.
+- `2TLXsxkz0zI`, `Ralph Loops: Build Dumb AI Loops That Ship — Chris Parsons,
+  Cherrypick`, produced a 6,505-second English auto-generated transcript with
+  112 unique chunks from `[00:00:14]` through `[01:47:56]`. Its
+  source-faithful pass normalized source-supported or unambiguous N8N, Geoffrey
+  Huntley, Nano Banana Pro, Claude Code, Ralph loop, `claude -p`, tmux,
+  `CLAUDE.md`, OpenClaw, Andrej Karpathy, symlink, `npx skills`, Steve Yegge's
+  Gas Town, monorepo, and CI/CD forms without changing chunk boundaries.
+- The `2TLXsxkz0zI` draft summary identifies Chris Parsons and Cherrypick from
+  the manifest title and separately records his spoken former CTO, startup and
+  scale-up, agency CEO, agile-consulting, and current team-advisory background.
+  Anonymous workshop participants remain unnamed and unaffiliated. The summary
+  anchors the repeated-prompt primitive, serial next-ticket selection,
+  project-specific skills, feedback and recovery, sandbox and permission
+  boundaries, fresh-context review, durable state, human stop points, team
+  contention, theory-of-constraints, and CI/CD claims while preserving the toy
+  demo, subjective skill evaluation, and code/test shared-misunderstanding
+  limits.
+- Unresolved `2TLXsxkz0zI` caption fragments—including `Methos` / `Mythos`,
+  `hard head`, `Docker sandbox code`, `Air skills` / `S- skills`, `Mina
+  Jovovich`, `Lianne`, and `Mythril saw`—remain source-faithfully retained, and
+  no summary or overview claim depends on them. AI Engineer remains
+  curator/source only, never speaker, author, or affiliation. No author
+  relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 25 duplicate-free `coveredVideoIds` exactly match every
+  Coding Agents summary ID in manifest order, ending with `ow1we5PzK-o` and
+  `2TLXsxkz0zI`.
+- Final state is 38 manifest / 37 available / 25 captured / 25 summarized / 25
+  incorporated / 12 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 12 available pending IDs are `W76woOYHlvY`, `MhHEGMFCEB0`,
+  `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`,
+  `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`,
+  `Ve-akpov78Q`, and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Luke Alvoeiro / Factory with his
+  former Block and Goose provenance and Chris Parsons / Cherrypick; each claim
+  has a resolving summary link and valid sibling-transcript anchors. New
+  cross-video interpretation begins `Editorial:` and does not infer consensus,
+  uploader authorship, playlist chronology, or a complete cross-event thesis.
+
+### Commits and verification
+
+- `4211257a78386ed5fbcc631df05b038c594e8a31` (`capture twelfth Coding Agents
+  backfill batch`) contains exactly the two generated metadata files and two
+  source-faithfully reviewed transcripts.
+  `c3282c6ac1ad3da0cbe1d1058082ffaa1c102a72` (`summarize twelfth Coding
+  Agents backfill batch`) contains exactly the two deliberate draft summaries
+  and refreshed draft overview. Both commits pass `git show --check`, and exact
+  path-boundary audits pass.
+- `npm run lint:fix` exited `0` after checking 195 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `D1_wPWzNkJ4`, `H5cvtoSxdxI`, `LG3q-sqMG0g`, `_pLlet9Jrzc`,
+  `aAWdlLfJmqw`, `qipoQGqMCp0`, and `rCIZflYEpEk`. The complete diff contained
+  only `availableLanguages` array compaction; all parsed JSON remained
+  identical. Exactly those files were restored, and every post-restore SHA-256
+  hash matched its pre-lint hash.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 25 captured / 12 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 25 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed `46/46`;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker.
+- The corrected read-only structural, frontmatter, source-link, chunk, anchor,
+  coverage, and attribution checker passed all 25 summaries and the overview:
+  646 unique ordered transcript chunks, 989 resolving summary anchors, 75 named
+  linked overview claims, and 295 resolving overview anchors. It also passed
+  the exact final counts, pending/private/unavailable IDs, author-less
+  `multiSpeaker: true` catalog state, and AI Engineer curator/source-only
+  boundary. Its first invocation had a JavaScript arrow-function syntax error
+  before file evaluation; it made no repository changes, and the corrected
+  complete invocation passed.
+- The index and this true-EOF section form the twelfth work-item commit; its full
+  hash is reported in the completion response after final staged-path,
+  commit-boundary, diff, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 12 available manifest IDs remain
+  pending and the zero-pending plus final-sync acceptance criterion cannot yet
+  pass. Task 4 stays unchecked and did not start. Work-item status remains
+  `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, or broader Plan
+  04 work began.

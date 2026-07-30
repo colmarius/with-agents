@@ -25,9 +25,9 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Eleven Task 3 batches have captured,
-summarized, and incorporated twenty-two more videos, bringing Coding Agents to
-38 manifest / 37 available / 23 captured / 23 summarized / 23 incorporated / 14
+one-video editorial thin slice now passes. Twelve Task 3 batches have captured,
+summarized, and incorporated twenty-four more videos, bringing Coding Agents to
+38 manifest / 37 available / 25 captured / 25 summarized / 25 incorporated / 12
 available pending / 1 private / 0 caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
@@ -41,9 +41,12 @@ Jones / incident.io, Brian Scanlan / Intercom, Madison Faulkner / NEA with her
 former Meta AI researcher role, and Hugo Santos / Namespace with his former
 Google microservices role, Vincent Koc / OpenClaw with his Comet
 evaluation-research role, and Matthias Luebken / Tavon with his spoken company
-name auto-captioned as `Seven AI` are now also represented; the source does not
-reconcile Luebken's two company names. No AI Engineer author or relationship
-exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
+name auto-captioned as `Seven AI` are also represented; the source does not
+reconcile Luebken's two company names. Luke Alvoeiro / Factory with his spoken
+former Block and Goose provenance, and Chris Parsons / Cherrypick with his
+spoken CTO, startup, agency, and agile background are now also represented. No
+AI Engineer author or relationship exists. Plan 04 Tasks 1 and 2 are complete;
+Task 3 remains in progress.
 
 ## Artifacts
 
@@ -184,3 +187,10 @@ exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
   Matthias Luebken's title attribution to Tavon remains separate from the
   spoken company name auto-captioned as `Seven AI`. Task 3 remains unchecked
   for the next no-refill two-video session.
+- 2026-07-30: Completed the twelfth bounded Plan 04 Task 3 session for
+  `ow1we5PzK-o` and `2TLXsxkz0zI`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 25 incorporated videos and 12 available
+  pending. Luke Alvoeiro's Factory, former Block, and Goose provenance and Chris
+  Parsons's source-title Cherrypick attribution and spoken professional
+  background are source-supported. Task 3 remains unchecked for the next
+  no-refill two-video session.
