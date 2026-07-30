@@ -6,7 +6,7 @@ publishedAt: "2026-05-27T17:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Priscila Andre de Oliveira, a senior software engineer at Sentry, describes using coding agents in a large, frequently changing codebase where quality and comprehension still matter. Her review of 116 agent sessions classified 67% of her usage as comprehension and 2% as code generation, leading her to encode recurring investigation prompts in a local skill called “catch me up” ([00:00:07]-[00:02:36], [00:09:36]-[00:10:27]).

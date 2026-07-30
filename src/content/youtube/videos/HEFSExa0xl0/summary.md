@@ -6,7 +6,7 @@ publishedAt: "2026-07-08T09:03:25Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Nuno Campos of Witan Labs describes four months of work to make coding agents effective at spreadsheet tasks. He reports moving an internal financial-analysis benchmark from about 50% to 92% accuracy, while emphasizing that spreadsheets hide formulas, inputs, layout, and semantic ambiguity behind a visual interface that language models do not directly perceive ([00:00:15]-[00:02:24]).

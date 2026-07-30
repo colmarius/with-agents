@@ -6,7 +6,7 @@ publishedAt: "2026-05-13T13:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Madison Faulkner, an NEA partner focused on infrastructure and developer tools and a former Meta AI researcher, and Hugo Santos, Namespace's CEO and a former Google microservices lead, argue that agent-generated change volume will exceed the delayed feedback and merge model of traditional CI/CD ([00:00:07]-[00:02:55]).

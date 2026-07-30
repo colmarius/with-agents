@@ -6,7 +6,7 @@ publishedAt: "2024-07-31T20:04:07Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Kevin Hou, named in the source title, speaks from Codeium and says he leads its product engineering team ([00:00:00], [00:11:37]). He argues that repository-aware generation needs several relevant files and artifacts, while fixed-dimensional embedding retrieval is poorly matched to that multi-document requirement.

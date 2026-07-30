@@ -6,7 +6,7 @@ publishedAt: "2026-04-29T16:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Katia Gil Guzman and Vaibhav Srivastav, named in the source title, identify themselves as members of OpenAI's London-based Developer Experience team. Gil Guzman presents the Codex overview, plugins, automations, and application demos; Srivastav presents model and app changes, code review, sub-agents, and experimental controls. Unnamed attendees ask the closing questions ([00:00:14]-[00:01:17], [00:04:11], [00:26:24], [00:57:25]-[01:01:05]).

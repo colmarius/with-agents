@@ -6,7 +6,7 @@ publishedAt: "2026-05-22T18:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Sarah Chieng, head of developer experience at Cerebras, argues that faster code generation can amplify poor development habits as readily as it accelerates useful work. She presents Codex Spark as a Cerebras and OpenAI model that generates 1,200 tokens per second and contrasts it with the 40-to-60-token-per-second range she assigns to other model families ([00:00:16]-[00:02:10]).

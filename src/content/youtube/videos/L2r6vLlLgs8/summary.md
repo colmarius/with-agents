@@ -6,7 +6,7 @@ publishedAt: "2026-05-17T16:30:07Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Lawrence Jones, a founding engineer at incident.io, describes internal tools for understanding and changing the company's AI SRE product. The product can run hundreds of telemetry queries and cross-reference logs, metrics, traces, historical incidents, and code, creating investigation traces too large for a person to evaluate routinely without assistance ([00:00:07]-[00:03:01]).

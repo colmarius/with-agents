@@ -6,7 +6,7 @@ publishedAt: "2026-07-08T19:59:33Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Theo Browne, identified in the source title as `@t3dotgg`, argues that newer coding models have progressed from reliable tool calls to longer-running work and then orchestration. He says developers will miss that shift if they keep assigning old-sized tasks and preserving workflows or identities built around earlier constraints ([00:00:54]-[00:03:29], [00:06:08]-[00:09:29]).

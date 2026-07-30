@@ -6,7 +6,7 @@ publishedAt: "2026-04-28T18:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Eric Zakariasson, identified with Cursor in the source title, introduces himself as a Cursor engineer working across developer experience and product. He presents lessons from dogfooding Cursor while stressing that neither the product nor the company is yet a complete autonomous software factory; unnamed audience participants supply the extended Q&A ([00:00:14], [00:20:33]-[01:22:51]).

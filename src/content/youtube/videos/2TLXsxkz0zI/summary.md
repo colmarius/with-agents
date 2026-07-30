@@ -6,7 +6,7 @@ publishedAt: "2026-05-04T14:00:17Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Chris Parsons, identified with Cherrypick in the source title, describes himself as a former CTO, startup and scale-up builder, agency CEO, agile consultant, and current adviser helping teams adopt AI. Anonymous workshop participants contribute questions and observations, but the source supplies no names or affiliations for them ([00:01:52]-[00:02:55], [00:19:47]-[00:20:49]).

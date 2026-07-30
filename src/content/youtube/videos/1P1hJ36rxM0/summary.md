@@ -6,7 +6,7 @@ publishedAt: "2026-07-17T15:24:44Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Benoit Schillings, introduced as vice president of research at Google DeepMind, argues that generating syntax is no longer the central software-engineering bottleneck. He distinguishes writing a function from changing and architecting large systems, where specification, decomposition, security, and long-term consequences still matter ([00:00:01]-[00:01:06], [00:06:19]-[00:08:11]).

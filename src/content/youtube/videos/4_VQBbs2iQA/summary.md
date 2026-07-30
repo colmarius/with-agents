@@ -6,7 +6,7 @@ publishedAt: "2026-05-15T13:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Brian Scanlan of Intercom, as identified by the source title and his introduction, describes the company's effort to double engineering throughput. As a senior principal engineer on Intercom's platform group, he frames the effort as an operating-model change spanning executive expectations, a dedicated enablement team, one coding-agent platform, organization-specific guidance, reusable skills, telemetry, and automated review—not merely faster code completion ([00:02:56]-[00:07:41], [00:15:18]-[00:18:07]).

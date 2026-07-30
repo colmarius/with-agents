@@ -6,7 +6,7 @@ publishedAt: "2026-05-23T16:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Lou Bichard, field CTO at Ona, defines a “software factory” as incrementally moving the human out of proactive operation so work can flow through the software-development lifecycle. He distinguishes that goal from one developer merely supervising many parallel agents and says the technology is still early ([00:00:14]-[00:02:19]).

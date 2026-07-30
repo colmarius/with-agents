@@ -6,7 +6,7 @@ publishedAt: "2025-02-08T21:31:24Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Rahul Pandita, named in the source title, introduces himself as a researcher at GitHub Next. He explains Next's experimental path from functional prototype through internal dogfooding and possible technical preview or product transfer, then presents Next Edit Suggestions and Copilot Workspace as two explorations into AI-assisted software development ([00:00:13], [00:03:53]-[00:05:48]).

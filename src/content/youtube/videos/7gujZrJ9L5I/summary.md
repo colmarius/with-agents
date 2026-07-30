@@ -6,7 +6,7 @@ publishedAt: "2026-05-24T18:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Ian Ballantyne, a developer relations engineer at Google DeepMind, and KP Sawhney, a software engineer in DeepMind's AI platform team, pair an Antigravity demonstration with a discussion of internal agent infrastructure. Ballantyne shows a coding agent planning, editing, controlling a browser, inspecting the DOM, and producing review artifacts; Sawhney describes work on Deep Research and on adapting the same harness beyond coding ([00:00:14]-[00:05:06]).

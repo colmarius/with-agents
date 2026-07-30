@@ -6,7 +6,7 @@ publishedAt: "2026-07-21T18:54:01Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 James Russo, co-creator and tech lead of Hyperframes at HeyGen, argues that coding agents can create video more effectively through HTML, CSS, and JavaScript than through a custom video DSL. He presents Hyperframes as an open-source browser-based renderer that converts agent-authored web content into deterministic video frames ([00:00:01]-[00:02:48], [00:05:39]-[00:08:18]).

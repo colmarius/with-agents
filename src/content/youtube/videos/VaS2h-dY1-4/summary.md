@@ -6,7 +6,7 @@ publishedAt: "2026-05-21T15:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Onur Solmaz, identified with OpenClaw in the source title, says he became an OpenClaw maintainer while working on agent interoperability and orchestration. He also distinguishes that open-source role from his work at TextCortex, which supplies the Kubernetes orchestration example in the final part of the talk ([00:01:12]-[00:02:15], [00:14:21]-[00:18:09]).

@@ -6,7 +6,7 @@ publishedAt: "2026-07-15T20:13:51Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Lee Robinson, introduced as a machine-learning engineer focused on model behavior at Cursor, describes model development as linked outer and inner loops. Product feedback and usage inform evaluations and training data, while harder tasks, reward design, experiments, and additional compute accelerate improvement within each training cycle ([00:00:01]-[00:01:57], [00:04:55]-[00:05:57]).

@@ -6,7 +6,7 @@ publishedAt: "2026-05-19T15:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Ara Khan of Cline, as identified by the source title and his own introduction, presents four levels for deciding how much agent infrastructure a problem warrants: prototype with a framework, build a state-machine-based agent, organize parallel work through a Kanban interface, and move execution to cloud agents when shared scale matters ([00:02:05]-[00:04:09], [00:12:50]-[00:15:46]).

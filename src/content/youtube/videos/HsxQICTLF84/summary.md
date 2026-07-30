@@ -6,7 +6,7 @@ publishedAt: "2026-07-08T12:00:07Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Bennet Fenner of Zed demonstrates how to adapt a minimal TypeScript coding agent to the Agent Client Protocol (ACP), a JSON-RPC-based interface intended to let agents and editor clients interoperate. His starting agent has only read and edit tools plus a stateless model loop; the live changes add sessions, prompts, cancellation, streamed model text, and tool-call updates ([00:00:14]-[00:06:46], [00:07:35]-[00:13:04]).

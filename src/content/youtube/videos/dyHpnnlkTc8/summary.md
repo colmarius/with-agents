@@ -6,7 +6,7 @@ publishedAt: "2026-05-21T17:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Liam Hampton of Microsoft, as identified by the source title, presents VS Code as a common interface for local, background, and cloud coding agents. He assigns those execution modes according to how closely a developer wants to steer the task: local for hands-on work, background for partial delegation in a Git worktree, and cloud for work he is comfortable handing off ([00:02:10]-[00:04:50]).

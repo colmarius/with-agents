@@ -6,7 +6,7 @@ publishedAt: "2026-05-27T15:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Daniel Szoke, the Rust SDK maintainer at Sentry, argues that choosing a language because a model can write runnable code on its first attempt optimizes the wrong property. He contrasts Python and TypeScript's flexibility with Rust's compiler-enforced type, memory, null, and concurrency constraints, presenting failed compilation as deterministic feedback an agent can use inside its implementation loop ([00:00:14]-[00:04:59], [00:09:26]-[00:14:22]).

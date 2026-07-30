@@ -6,7 +6,7 @@ publishedAt: "2026-07-24T15:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Jason Liu, who identifies himself as working at OpenAI, leads a Codex workshop on bringing context into agents, organizing long-running work, and letting agents act through plugins, browser and computer use, and coordinated threads. He presents pinned threads, memory, skills, and recurring wake-ups as parts of one evolving operating model rather than isolated prompting tricks ([00:00:01]-[00:07:11], [00:33:52]-[00:41:08]).

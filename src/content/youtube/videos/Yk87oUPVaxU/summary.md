@@ -6,7 +6,7 @@ publishedAt: "2026-07-26T18:10:56Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 James Shi, a founding engineer at Datacurve, presents DeepSWE as a long-horizon software-engineering benchmark built from 113 original tasks across 91 repositories and five programming languages. He frames original task authorship, reduced repository concentration, and verifier isolation as defenses against contamination, solution leakage, and implementation-specific grading ([00:00:01]-[00:03:08], [00:12:26]-[00:15:37]).

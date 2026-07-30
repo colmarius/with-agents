@@ -6,7 +6,7 @@ publishedAt: "2026-04-16T22:58:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Mario Zechner, named in the source title, says he built Pi and structures this talk as three acts: why he replaced other coding-agent harnesses with a small extensible one, how automated traffic affected his open-source project after OpenClaw embedded it, and why he believes developers should constrain generated code and retain critical decisions. The source provides no employer affiliation ([00:00:07]-[00:00:54], [00:10:32]-[00:12:26]).

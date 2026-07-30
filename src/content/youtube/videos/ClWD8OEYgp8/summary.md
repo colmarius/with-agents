@@ -6,7 +6,7 @@ publishedAt: "2026-04-26T15:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Maggie Appleton, identified with GitHub in the source title, introduces herself as a GitHub staff research engineer with a design background and describes GitHub Next as the company's lab for experimental work. She argues for collaborative rather than single-player agentic software development and demonstrates ACE, the team's Agent Collaboration Environment research prototype ([00:00:07], [00:06:01]-[00:06:49]).

@@ -6,7 +6,7 @@ publishedAt: "2024-10-17T18:52:20Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Morgante Pell, named in the source title, introduces himself as the founder of Grit and says he worked at Google Cloud for five years. He presents Grit as infrastructure for one expert to plan, execute, and review coordinated changes across large existing codebases rather than generate a new application from one prompt ([00:00:00]-[00:03:09]).

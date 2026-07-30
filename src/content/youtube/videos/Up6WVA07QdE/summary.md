@@ -6,7 +6,7 @@ publishedAt: "2024-11-20T20:28:33Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Quinn Slack, named in the source title, identifies himself as a Sourcegraph co-founder and says he has been building its code-search and code-AI products since 2013. He uses Sourcegraph's experience with Cody to argue that code-AI attention and stated interest should not be mistaken for sustained developer use ([00:00:00]-[00:01:03]).

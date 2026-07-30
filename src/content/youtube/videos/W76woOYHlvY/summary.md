@@ -6,7 +6,7 @@ publishedAt: "2026-05-02T21:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Louis Knight-Webb, identified with Vibe Kanban in the source title, says he founded Vibe Kanban and started the London chapter of AI Tinkers. He frames the talk around what software engineers do as coding agents absorb more implementation work ([00:00:07]-[00:01:10]).

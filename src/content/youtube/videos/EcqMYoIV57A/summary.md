@@ -6,7 +6,7 @@ publishedAt: "2026-06-08T15:00:17Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Nupur Sharma of Qodo draws on agentic code-review work and a DevSecOps background to argue that larger context windows do not ensure relevant decisions. She reports a U-shaped pattern in Qodo's benchmarking: agents attend strongly to initial and final inputs while information in the middle can receive less attention ([00:00:14]-[00:04:17]).

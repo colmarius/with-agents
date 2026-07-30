@@ -6,7 +6,7 @@ publishedAt: "2026-05-06T15:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Luke Alvoeiro, identified with Factory in the source title, says he leads Factory's core agent harness. He also says that while working at Block he started the project that became the open-source Goose coding agent, later donated to the Agentic AI Foundation ([00:00:07]).

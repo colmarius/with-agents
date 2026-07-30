@@ -6,7 +6,7 @@ publishedAt: "2026-05-12T16:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Vincent Koc, identified with OpenClaw in the source title, says he works on evaluation research at Comet and is an OpenClaw core contributor. He argues that static benchmarks and offline test suites cannot by themselves track agent applications whose harnesses, skills, users, and operating conditions adapt after deployment ([00:01:05]-[00:04:02], [00:08:27]-[00:11:04]).

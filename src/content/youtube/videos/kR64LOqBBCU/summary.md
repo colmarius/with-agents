@@ -6,7 +6,7 @@ publishedAt: "2026-04-25T16:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Ido Salomon, named in the source title, introduces himself as the creator of AgentCraft and demonstrates that experimental product. He presents game-inspired controls for supervising coding-agent sessions, then extends the interface from individual visibility and intervention to autonomous campaigns and shared human-agent workspaces ([00:00:07]-[00:01:54], [00:04:31]-[00:10:01]).

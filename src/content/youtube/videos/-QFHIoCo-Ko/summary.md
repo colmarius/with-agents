@@ -6,7 +6,7 @@ publishedAt: "2026-04-24T15:15:38Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Matt Pocock, named in the source title, introduces himself as a teacher and later references his AI Hero website and Course Video Manager repository; the source supplies no employer affiliation. In this workshop he develops an AI-coding workflow from idea alignment through a PRD, traceable Kanban issues, AFK implementation, automated feedback, manual QA, code review, and parallel branch integration. Anonymous attendees supply questions and exercise feedback ([00:00:07]-[00:01:07], [00:09:06], [00:33:20]-[00:34:15]).

@@ -6,7 +6,7 @@ publishedAt: "2024-11-27T19:56:40Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Gunjan Patel, named in the source title, introduces himself as a director of engineering at Palo Alto Networks. He explicitly presents the proposed self-evolving-code system as a side project rather than a Palo Alto Networks product ([00:00:00]).

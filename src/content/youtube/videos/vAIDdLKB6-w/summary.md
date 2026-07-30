@@ -6,7 +6,7 @@ publishedAt: "2026-05-11T17:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Matthias Luebken, identified with Tavon in the source title, says he is building agents for organizations at a small European company whose name the auto-generated captions render as “Seven AI.” The source does not establish whether those two company names refer to the same organization, so both provenances remain separate here ([00:00:15]-[00:01:03]).

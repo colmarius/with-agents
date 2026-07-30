@@ -6,7 +6,7 @@ publishedAt: "2026-05-24T16:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Michael Richman, who says he leads engineering teams and co-leads AI coding-tools strategy at Bitly, presents Command and Control, identified as Cmd+Ctrl in the source title. He defines “fear of missing agent time” as the delay created when an agent needs input or finishes while its operator is away from the development machine ([00:00:07]-[00:02:57]).
