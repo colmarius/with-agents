@@ -25,10 +25,11 @@ the reviewed overview, with its remaining manifest entry private. The dedicated
 bounded multi-speaker review gate passed for all 26 unique global summaries and
 both playlist overviews, completing Plan 03. The active `Coding Agents` baseline
 was refreshed by a selected check and authoritative no-op sync, and its
-one-video editorial thin slice now passes. Sixteen Task 3 batches have captured,
-summarized, and incorporated thirty-two more videos, bringing Coding Agents to
-38 manifest / 37 available / 33 captured / 33 summarized / 33 incorporated / 4
-available pending / 1 private / 0 caption-unavailable-recorded. The draft
+one-video editorial thin slice now passes. Seventeen Task 3 batches have
+captured, summarized, and incorporated thirty-four more videos, bringing Coding
+Agents to 38 manifest / 37 available / 35 captured / 35 summarized / 35
+incorporated / 2 available pending / 1 private / 0
+caption-unavailable-recorded. The draft
 summaries and current draft overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
 Lee Robinson / Cursor, Theo Browne / `@t3dotgg`, Bennet Fenner / Zed, Nuno
@@ -53,7 +54,10 @@ references his AI Hero site and Course Video Manager repository without
 supplying an employer affiliation, are now also represented. Mario Zechner, who
 says he built Pi without supplying an employer affiliation, and Rahul Pandita /
 GitHub Next are now represented too. No AI Engineer author or relationship
-exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
+exists. Gunjan Patel / Palo Alto Networks, whose proposed CI system is explicitly
+a side project rather than a company product, and Quinn Slack / Sourcegraph are
+now represented too. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in
+progress.
 
 ## Artifacts
 
@@ -225,4 +229,10 @@ exists. Plan 04 Tasks 1 and 2 are complete; Task 3 remains in progress.
   incorporated. Coding Agents now has 33 incorporated videos and 4 available
   pending. Mario Zechner's Pi-builder role and absent employer affiliation and
   Rahul Pandita's GitHub Next researcher role remain source-explicit. Task 3
+  remains unchecked for the next no-refill two-video session.
+- 2026-07-30: Completed the seventeenth bounded Plan 04 Task 3 session for
+  `prttz9_1XDc` and `Up6WVA07QdE`; both videos are captured, summarized, and
+  incorporated. Coding Agents now has 35 incorporated videos and 2 available
+  pending. Gunjan Patel's Palo Alto Networks role and side-project boundary and
+  Quinn Slack's Sourcegraph co-founder role remain source-explicit. Task 3
   remains unchecked for the next no-refill two-video session.

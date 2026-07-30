@@ -3604,3 +3604,141 @@
 - No public content/resource, bounded-corpus artifact, author, relationship,
   synthesis, schedule, handoff, deletion, manifest sync, Task 4, final sync, or
   broader Plan 04 work began.
+
+## 2026-07-30 — Plan 04 Task 3 seventeenth Coding Agents batch completed
+
+### Capture and source review
+
+- Started from clean commit
+  `4a5222df496171669975b71d8bdaedb80219000b` on `ai-engineer-videos` with 38
+  manifest / 37 available / 33 captured / 33 summarized / 33 incorporated / 4
+  pending / 1 manifest-private (`pAbRL0h_SNs`) / 0 caption-unavailable.
+- Confirmed `.env` was ignored through `git check-ignore` without reading or
+  printing it; it was loaded only inside the sole capture process. Exactly one
+  `npm run youtube:library -- capture --playlist ai-engineer-coding-agents --limit 2`
+  exited `0`, capturing `prttz9_1XDc` and `Up6WVA07QdE` in manifest order. Both
+  slots succeeded. No second capture, refill, retry, force, sync, remote check,
+  alternate playlist, transient, throttle, unavailable, partial, fatal, or tool
+  acknowledgement-loss outcome occurred. Neither ID reused an existing global
+  directory.
+- `prttz9_1XDc`, `Enhancing Quality and Security in CI: Gunjan Patel`, produced
+  a 1,107-second English auto-generated transcript captured at
+  `2026-07-30T12:25:13.963Z`, with 17 unique ordered chunks from `[00:00:00]`
+  through `[00:17:14]`. Its source-faithful pass normalized Gunjan Patel, Palo
+  Alto Networks, self-evolving code, Sourcegraph Cody, GitHub Copilot,
+  `context.yaml`, Jira, PII, IaC, SAST, GPT-3.5, and related unambiguous forms
+  without changing chunk boundaries.
+- The `prttz9_1XDc` draft summary uses Patel's spoken director-of-engineering
+  role at Palo Alto Networks and his explicit statement that the proposed
+  “ghost pilot” is a side project rather than a company product. It anchors the
+  CI pipeline, staged testing, organization context, role-specific security
+  review, advisory fixes, and human decision boundary while keeping the
+  reported Kubernetes result separate from reproducible evidence.
+- Patel's source leaves his friend's auto-captioned name, the “Odyssey Journey”
+  phrase, the exact Go statement name, and other malformed fragments unresolved
+  rather than guessing them. No summary or overview claim depends on those
+  fragments. The source does not resolve conflicting intent artifacts or report
+  CI latency, cost, test quality, security recall, false positives, or
+  sensitive-context controls; its follow-up-question path was unimplemented and
+  the promised repository updates are not inferred to have happened later.
+- `Up6WVA07QdE`, `The AI emperor has no DAUs  why most devs still don't use code
+  AI: Quinn Slack`, produced a 1,124-second English auto-generated transcript
+  captured at `2026-07-30T12:25:17.651Z`, with 18 unique ordered chunks from
+  `[00:00:00]` through `[00:17:56]`. Its source-faithful pass normalized Quinn
+  Slack, Sourcegraph, Bleacher Report, GitHub Copilot, ChatGPT, OpenAI,
+  Anthropic, ARR, MAU, DAU, Cody, Cursor, Codespaces, Sam Altman, and related
+  unambiguous forms without changing chunk boundaries.
+- The `Up6WVA07QdE` draft summary uses Slack's spoken Sourcegraph co-founder
+  role and anchors his adoption estimates, reported barriers, market model,
+  daily dogfooding, frequency-versus-verification product heuristic, explicit
+  manual controls, and dehyping recommendation. It keeps the mixed-denominator
+  5% estimate, private-information-based ARR estimate, Sourcegraph commercial
+  interest, company claims, and 20–30% productivity statement explicit as
+  presenter claims rather than independent evidence.
+- Slack's source retains a clipped title, several unresolved person/company
+  names, and shortcut wording rather than guessing them. No summary or overview
+  claim depends on those fragments, and no current adoption or product status
+  is inferred from the later manifest upload date. Anonymous audience
+  participants remain unnamed and unaffiliated.
+- AI Engineer remains curator/source only, never speaker, author, or
+  affiliation. No author relationship or synthesis was created.
+
+### Overview reconciliation
+
+- The overview's 35 duplicate-free `coveredVideoIds` exactly match every
+  Coding Agents summary ID in manifest order, ending with `prttz9_1XDc` and
+  `Up6WVA07QdE`.
+- Final state is 38 manifest / 37 available / 35 captured / 35 summarized / 35
+  incorporated / 2 available pending / 1 manifest-private (`pAbRL0h_SNs`) / 0
+  caption-unavailable (no IDs).
+- The exact 2 available pending IDs are `Ve-akpov78Q` and `DuZXbinJ4Uc`.
+- New non-editorial overview claims name Gunjan Patel / Palo Alto Networks with
+  the side-project boundary and Quinn Slack / Sourcegraph; each has a resolving
+  summary link and valid sibling-transcript anchors. New cross-video
+  interpretation begins `Editorial:` and does not infer consensus, uploader
+  authorship, playlist chronology, current status, or comparative quality.
+
+### Commits and verification
+
+- `dda39010c19fad40bbb61cecb7d5551ef00f245f` (`capture seventeenth Coding
+  Agents backfill batch`) contains exactly the two generated metadata files and
+  two source-faithfully reviewed transcripts.
+  `ac47ab3ca91cd75d7383bf9bb653ad0cf100abb3` (`summarize seventeenth Coding
+  Agents backfill batch`) contains exactly the two deliberate draft summaries
+  and refreshed draft overview. Both commits passed pre-commit status,
+  staged-path, staged-diff, and path-boundary audits.
+- `npm run lint:fix` exited `0` after checking 205 files and changed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `LG3q-sqMG0g`, `aAWdlLfJmqw`, `H5cvtoSxdxI`, `D1_wPWzNkJ4`,
+  `rCIZflYEpEk`, `qipoQGqMCp0`, and `_pLlet9Jrzc`. The complete diff contained
+  only `availableLanguages` array compaction and all parsed JSON remained
+  identical. Exactly those files were restored; every post-restore SHA-256 hash
+  matched its pre-lint value: `f4e903f16b9a3378a045d296dc8feb38193a28bd6fe69ba1a8e6ac758fac88bb`,
+  `0aed612127ab0203225472dce215febd2cbf3ed75414e1d1ba788309e203c7fd`,
+  `d16efcfdeb1520c364e2a0f3092d570d2bc1844e98c4f61ec47661289191bf92`,
+  `c5ddc8de1fb1dccf0113b00cbe25ba6370e73703e1949dd26df17ddfa63b82ae`,
+  `dd29fef436b30df96abe8bba269a9bae63e6f3de090eaac707c454d3d651be5c`,
+  `42e44b620b445ae1709b2fd9e78be8d81124f4c2ed129a9890dc8b11b5511084`,
+  `1a17a2274920be7ff1dbf65965964df347d8a1e622f6e8d0c6b32d67813d7554`,
+  and `031a889e6a805d73c42211120e56ff04933fe79f9893e76e5227bf3a3445c5a5`
+  in the listed ID order.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 35 captured / 2 pending / 1
+  manifest-unavailable / 0 caption-unavailable / 35 draft summaries / current
+  overview. The combined YouTube library and transcript suite passed `46/46`;
+  Astro check passed for 39 files with 0 errors, warnings, or hints; and the
+  production build passed with 20 pages.
+- Both source-only boundary searches returned no matches with expected raw exit
+  `1`: application code does not import `src/content/youtube`, and built output
+  does not contain the source-only catalog marker. All required mutating gate
+  commands passed. One preliminary read-only manifest-entry inspection exited
+  `1` because it assumed a `videos` array instead of the actual `entries` key;
+  the corrected inspection passed. The complete structural checker's first
+  read-only invocation also exited `1` because it compared raw quoted
+  frontmatter without JSON-escaping an older manifest title's embedded quotes;
+  the corrected checker passed. Neither failure made a repository change.
+- The final read-only structural, frontmatter, source-link, chunk, anchor,
+  coverage, attribution, work-item-state, commit-scope, and path-boundary
+  checker passed all 35 summaries and the overview: 1,034 unique ordered
+  transcript chunks, 1,474 resolving summary-anchor endpoints, 105 named linked
+  overview claims, and 422 resolving overview-anchor endpoints. It also passed
+  exact final counts and pending/private/unavailable IDs, manifest-order
+  coverage, author-less `multiSpeaker: true` catalog state, AI Engineer's
+  curator/source-only boundary, unchecked Tasks 3 and 4, matching Next Action,
+  true-EOF progress, the exact three commit groups, and the nine-path session
+  boundary.
+- The index and this true-EOF section form the seventeenth work-item commit; its
+  full hash is reported in the completion response after final staged-path,
+  commit-boundary, diff, and clean-state audits. Blockers: none.
+
+### Scope and next action
+
+- Plan 04 Task 3 stays unchecked because 2 available manifest IDs remain
+  pending and the zero-pending plus final-sync acceptance criterion cannot yet
+  pass. Task 4 stays unchecked and did not start. Work-item status remains
+  `in-progress`.
+- Next Action remains one later bounded Task 3 two-video Coding Agents session
+  under the fixed stop protocol, with exactly one capture command and no refill.
+- No public content/resource, bounded-corpus artifact, author, relationship,
+  synthesis, schedule, handoff, deletion, manifest sync, Task 4, final sync, or
+  broader Plan 04 work began.
