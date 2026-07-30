@@ -67,7 +67,7 @@ staleness as a reason for automatic editorial rewrites.
   - Notes: A transient exit `2` ends the session even when the two-video limit
     was not filled. Resume later; never refill immediately.
 
-- [ ] **Task 4: Review the complete cross-event synthesis**
+- [x] **Task 4: Review the complete cross-event synthesis**
   - Scope: all Coding Agents summaries and
     `playlists/ai-engineer-coding-agents/overview.md`, work-item `progress.md`
   - Depends on: Task 3

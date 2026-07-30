@@ -4011,3 +4011,148 @@
 - No capture, retry, force, transcript, summary, overview, bounded-playlist,
   catalog, manifest, author, relationship, synthesis, public content/resource,
   deletion, schedule, handoff, Task 4, Task 5, or broader Plan 04 work began.
+
+## 2026-07-30 — Plan 04 Task 4 complete cross-event synthesis review passed
+
+### Starting state and dedicated source review
+
+- Started as sole mutating owner on `ai-engineer-videos` from the required clean
+  commit `2ccdb535337bd91815b49fdff5a9b25645885764` (`complete Coding Agents Task
+  3 reconciliation gate`). The initial branch/status, exact HEAD, and
+  `git diff --check` gates passed. Loaded the `agent-work` and
+  `maintaining-youtube-library` skills before changing source-library or
+  work-item state.
+- Deliberately reviewed the complete Coding Agents source set in manifest order:
+  the `summary.md`, sibling `transcript.md`, and `metadata.json` for
+  `Yk87oUPVaxU`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`,
+  `q4Tr-DknG2M`, `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`,
+  `EcqMYoIV57A`, `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`,
+  `W-SX_srBa3Y`, `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`,
+  `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`,
+  `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`,
+  `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`,
+  `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`,
+  `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and
+  `DuZXbinJ4Uc`. Each pass covered framing, Key Ideas, Practical Implications,
+  Questions and Tensions, every named speaker and relevant affiliation or role,
+  title-supported versus spoken identity, product and commercial attribution,
+  caveats, exact provenance frontmatter, headings, canonical source/transcript
+  links, and every timestamp/range endpoint against committed transcript chunks.
+- Reviewed the complete Coding Agents `overview.md` against all 37 reviewed
+  summaries, plus the committed catalog and selected manifest for attribution,
+  author-less multi-speaker state, membership, order, availability, and coverage.
+  No remote source, credential, capture, retry, force, check, sync, transcript
+  regeneration, or public research was used.
+
+### Evidence, attribution, and coverage decision
+
+- The dedicated editorial pass found no summary or overview claim requiring a
+  source-content correction. All framing and section claims remained supported
+  by committed title/transcript evidence, and no ambiguous auto-caption fragment
+  was silently repaired or made load-bearing. Every available summary passed, so
+  all 37 summary statuses changed from `draft` to `reviewed`.
+- The overview passed the full contracted review and changed from `draft` to
+  `reviewed`. Its now-inaccurate self-description changed from `This draft` to
+  `This overview`; no speaker claim, synthesis claim, anchor, link, coverage ID,
+  or count changed.
+- Structural/source checks confirmed 38 unique contiguous manifest entries, 37
+  available and one private (`pAbRL0h_SNs`), 37 captured, 37 summarized, 37
+  incorporated, 0 pending, and 0 caption-unavailable. The 37 duplicate-free
+  `coveredVideoIds` equal all available manifest IDs in exact manifest order.
+  Across 1,070 transcript chunks, all 1,556 summary anchor endpoints and all 442
+  overview anchor endpoints resolve. All 111 non-editorial overview claims (one
+  claim per available video in each of Current Thesis, Emerging Ideas, and
+  Revisions and Tensions) name supported speakers and relevant affiliations,
+  link to the correct summary, and use source anchors. All 42 editorial bullets
+  begin `Editorial:`.
+- Speaker claims remain visibly distinct from synthesis. The overview explicitly
+  rejects corpus-wide consensus, classifies no idea as stable, and presents the
+  possible move from code generation toward harness/system engineering only as
+  an editorial hypothesis. It contains no cross-video chronology claim and does
+  not use playlist order or manifest upload dates to imply talk timing. The two
+  ordinary relative-time terms occur only inside anchored single-speaker claims
+  about model-training iteration and earlier feedback, not corpus chronology.
+- Coding Agents remains author-less with `multiSpeaker: true`, has no author
+  relationship or author synthesis, and uses AI Engineer only as playlist title
+  plus curator/source-channel identification, never as author, speaker, or
+  affiliation.
+
+### Retained source uncertainty and commercial caveats
+
+- Title-supported identities remain distinct from spoken self-identification and
+  spoken roles. Anonymous workshop and Q&A participants remain unnamed and
+  unaffiliated. All 37 transcripts remain explicitly auto-generated source
+  evidence; harmless ambiguous caption fragments were retained without invented
+  correction, and no accepted claim depends on them.
+- Matthias Luebken's Tavon title provenance remains separate from the spoken
+  company name auto-captioned as `Seven AI`; the committed source does not
+  reconcile them. Luke Alvoeiro's full name and Factory association remain
+  title-supported, while Factory harness, former Block role, and Goose provenance
+  remain separately spoken. Onur Solmaz's OpenClaw maintainer role remains
+  separate from his TextCortex work, and Gunjan Patel's Palo Alto Networks
+  employment remains separate from the explicitly described side project.
+- Quinn Slack's Sourcegraph/Cody adoption and market statements remain presenter
+  estimates with mixed provenance and commercial interest; Morgante Pell's Grit
+  customer/product results and Kevin Hou's Codeium benchmark/infrastructure
+  claims remain company-reported and caveated. Mario Zechner/Pi and Rahul
+  Pandita/GitHub Next retain separately supported provenance. These limitations
+  are documented uncertainty, not blockers to source-faithful review.
+
+### Status, commits, scope, and next action
+
+- Plan 04 Task 4 passes and is checked. Exact status is 37 reviewed summaries,
+  0 draft summaries, and one reviewed current overview. Task 5 remains unchecked
+  and did not start. Blockers: none.
+- Editorial commit `d3d941caba69cbc8918e4725f6b48b1bcf45681b` contains exactly
+  the 37 Coding Agents `videos/<id>/summary.md` files and
+  `playlists/ai-engineer-coding-agents/overview.md`: 37 status-only transitions,
+  the overview status transition, and the one matching Coverage wording change.
+  The follow-up work-item commit contains only `index.md`,
+  `plans/04-coding-agents-corpus.md`, and this true-EOF `progress.md` section;
+  its full hash is reported in the completion response after the final staged
+  path and clean-state audits.
+- No manifest, catalog, metadata, transcript, bounded-track artifact, public
+  post/summary/resource, author, relationship, Astro publication boundary,
+  schedule, handoff, or other out-of-scope file changed. No capture, retry,
+  force, check, sync, credentials, remote/public research, Task 5, or broader
+  Plan 04 work began.
+- Next Action is [Plan 04 Task 5](./plans/04-coding-agents-corpus.md): record the
+  active-playlist maintenance cadence. Do not begin it in Task 4.
+
+### Verification
+
+- `npm run lint:fix` exited `0` after checking 207 files and fixed exactly the
+  eight known Antirez unavailable-caption metadata files: `9mHKjgFMsQA`,
+  `LG3q-sqMG0g`, `aAWdlLfJmqw`, `H5cvtoSxdxI`, `D1_wPWzNkJ4`,
+  `rCIZflYEpEk`, `qipoQGqMCp0`, and `_pLlet9Jrzc`. Their exact diff only
+  compacted `availableLanguages` arrays, parsed JSON remained identical, and
+  only those eight clean-at-start files were restored byte-for-byte. Their
+  post-restore SHA-256 hashes exactly matched the recorded pre-lint values.
+- `npm run youtube:library -- status` exited `0` and reported Coding Agents as
+  38 manifest / 37 available / 37 captured / 0 pending / 1 manifest-unavailable
+  / 0 caption-unavailable / 0 missing summaries / 0 draft-not-reviewed / 37
+  reviewed summaries / current overview. The combined YouTube library and
+  transcript test command passed `46/46`.
+- `npm run check` passed for 39 files with 0 errors, warnings, or hints.
+  `npm run build` passed with 20 pages. Both required source-only boundary
+  searches produced no matches with expected raw exit `1`: application source
+  does not import `src/content/youtube`, and built output does not contain the
+  source-only publication marker.
+- The comprehensive read-only structural/editorial checker passed exact corpus,
+  provenance, headings, source/transcript links, timestamp resolution, overview
+  links, coverage order, attribution prefixes, editorial labeling, chronology,
+  hypothesis/consensus caveats, catalog boundary, work-item state, true-EOF,
+  source/build boundary, and commit-path assertions. Its final report was 38
+  manifest / 37 available / private `pAbRL0h_SNs` / 0 pending / 0
+  caption-unavailable, 1,070 transcript chunks, 37 reviewed summaries, 1,556
+  summary endpoints, one reviewed overview, 37 covered IDs, 111 attributed
+  linked speaker claims, 42 labeled editorial bullets, and 442 overview
+  endpoints, with no failures. One earlier checker invocation correctly exposed
+  two checker assumptions (42 editorial bullets rather than an expected 43, and
+  source-anchored single-speaker relative-time wording rather than cross-video
+  chronology); a later comprehensive invocation initially did not execute
+  because hyphenated object keys were unquoted. Corrected checkers passed without
+  changing source claims.
+- `git diff --check`, all status checks, exact staged-diff inspection, final
+  commit boundaries, and the clean-worktree check passed around the separate
+  editorial and work-item commits.

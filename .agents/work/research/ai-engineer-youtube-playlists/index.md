@@ -28,8 +28,8 @@ was refreshed by a selected check and authoritative no-op sync, and its
 one-video editorial thin slice now passes. Eighteen Task 3 batches have captured,
 summarized, and incorporated thirty-six more videos, bringing Coding Agents to
 38 manifest / 37 available / 37 captured / 37 summarized / 37 incorporated / 0
-available pending / 1 private / 0 caption-unavailable-recorded. The draft
-summaries and current draft overview use source-supported James Shi / Datacurve,
+available pending / 1 private / 0 caption-unavailable-recorded. The reviewed
+summaries and reviewed overview use source-supported James Shi / Datacurve,
 Jason Liu / OpenAI, James Russo / HeyGen, Benoit Schillings / Google DeepMind,
 Lee Robinson / Cursor, Theo Browne / `@t3dotgg`, Bennet Fenner / Zed, Nuno
 Campos / Witan Labs, Nupur Sharma / Qodo, Priscila Andre de Oliveira / Sentry,
@@ -57,12 +57,15 @@ exists. Gunjan Patel / Palo Alto Networks, whose proposed CI system is explicitl
 a side project rather than a company product, and Quinn Slack / Sourcegraph are
 now represented too. Morgante Pell / Grit with his spoken five years at Google
 Cloud and Kevin Hou / Codeium with his spoken product-engineering-lead role
-complete the available source set. Plan 04 Tasks 1 through 3 are complete. Task
-3's final selected read-only check exited `0` with no remote changes or errors,
-and the authoritative selected sync exited `0` as a no-op. The reconciled Coding
-Agents baseline remains 38 manifest / 37 available / 37 captured / 37 summarized
-/ 37 incorporated / 0 pending / 1 private / 0 caption-unavailable. Task 4 remains
-unchecked and did not start.
+complete the available source set. Plan 04 Tasks 1 through 4 are complete. The
+dedicated Task 4 review passed all 37 summaries and the complete overview against
+committed source evidence: 1,556 summary and 442 overview anchor endpoints
+resolve, all 111 named overview claims retain source-supported attribution and
+links, all 42 editorial bullets are labeled, and no unsupported cross-video
+chronology or consensus claim remains. Coverage is 38 manifest / 37 available /
+37 captured / 37 summarized / 37 incorporated / 0 pending / 1 private / 0
+caption-unavailable. All 37 summaries and the overview are `reviewed`. Task 5
+remains unchecked and did not start.
 
 ## Artifacts
 
@@ -82,10 +85,8 @@ unchecked and did not start.
 
 ## Next Action
 
-- Run a dedicated [Plan 04 Task 4](./plans/04-coding-agents-corpus.md) complete
-  cross-event synthesis review: verify every Coding Agents speaker and
-  affiliation attribution, timestamp and summary anchor, editorial label, and
-  `coveredVideoIds` entry without beginning Task 5 or changing scope.
+- Run [Plan 04 Task 5](./plans/04-coding-agents-corpus.md): record the
+  active-playlist maintenance cadence.
 
 ## Open Questions
 
