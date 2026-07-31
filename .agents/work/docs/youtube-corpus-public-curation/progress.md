@@ -62,3 +62,18 @@
 - Bounded the Task 7 reusable audit to historically repeated structural checks
   and removed its metadata-formatting item (now Task 0).
 - Next action: implement Task 0.
+
+## 2026-07-31 — Task 0 complete: canonical writer-owned JSON formatting
+
+- Added a narrow `biome.json` override disabling only the formatter for
+  `src/content/youtube/videos/*/metadata.json` and
+  `src/content/youtube/playlists/*/manifest.json`; `catalog.json` and all other
+  JSON stay Biome-formatted.
+- Added a committed-tree test in `youtube-library.test.mjs` asserting every
+  writer-owned JSON file (149 metadata + 5 manifests) is byte-identical to
+  `JSON.stringify(value, null, 2)` plus one trailing newline.
+- Verified: `npx biome check src/content/youtube` clean; `npm run lint:fix`
+  produces no source-tree churn; library test suite passes 47/47; negative
+  case confirmed (a deliberately collapsed metadata file fails the new test
+  and was restored byte-for-byte).
+- Next action: Task 1 public-source reconciliation.

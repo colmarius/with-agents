@@ -34,6 +34,15 @@
   },
   "overrides": [
     {
+      "includes": [
+        "src/content/youtube/videos/*/metadata.json",
+        "src/content/youtube/playlists/*/manifest.json"
+      ],
+      "formatter": {
+        "enabled": false
+      }
+    },
+    {
       "includes": ["**/*.svelte", "**/*.astro", "**/*.vue"],
       "linter": {
         "rules": {

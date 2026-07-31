@@ -17,7 +17,7 @@ surface and promote only the workflow rules that proved generally reusable.
 
 ## Tasks
 
-- [ ] **Task 0: Canonicalize writer-owned generated JSON formatting**
+- [x] **Task 0: Canonicalize writer-owned generated JSON formatting**
   - Scope: `biome.json`, `.agents/scripts/youtube-library.test.mjs`
   - Depends on: none
   - Acceptance:

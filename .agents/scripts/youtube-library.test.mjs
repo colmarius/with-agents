@@ -29,6 +29,7 @@ import {
   formatPlaylistSyncReport,
   isPlaylistDiffEmpty,
   libraryPath,
+  libraryRoot,
   loadCatalog,
   normalizePlaylistManifest,
   parseLibraryArgs,
@@ -237,6 +238,37 @@ test('loads and validates the committed source-only catalog', async () => {
       'ai-engineer-coding-agents',
     ],
   );
+});
+
+test('committed writer-owned JSON keeps the canonical writer format', async () => {
+  const writerOwnedFiles = [];
+  const videosRoot = libraryPath('videos');
+  for (const entry of await readdir(videosRoot, { withFileTypes: true })) {
+    if (!entry.isDirectory()) {
+      continue;
+    }
+    writerOwnedFiles.push(path.join(videosRoot, entry.name, 'metadata.json'));
+  }
+  const playlistsRoot = libraryPath('playlists');
+  for (const entry of await readdir(playlistsRoot, { withFileTypes: true })) {
+    if (!entry.isDirectory()) {
+      continue;
+    }
+    writerOwnedFiles.push(
+      path.join(playlistsRoot, entry.name, 'manifest.json'),
+    );
+  }
+
+  assert.ok(writerOwnedFiles.length > 0, 'expected writer-owned JSON files');
+  for (const filePath of writerOwnedFiles) {
+    const contents = await readFile(filePath, 'utf8');
+    const canonical = `${JSON.stringify(JSON.parse(contents), null, 2)}\n`;
+    assert.equal(
+      contents,
+      canonical,
+      `${path.relative(libraryRoot, filePath)} must stay byte-identical to JSON.stringify(value, null, 2) plus a trailing newline`,
+    );
+  }
 });
 
 test('catalog validation requires the publication boundary', () => {
