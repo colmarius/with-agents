@@ -224,3 +224,46 @@
   lint is clean; Astro check has zero diagnostics; production build completes
   with 20 pages; diff checks clean.
 - Next action: Task 4 curated Coding Agents playlist orientation.
+
+## 2026-07-31 — Task 4 complete: guided Coding Agents playlist resource
+
+- Added resource `26`, `Coding Agents @ AI Engineer — guided playlist`, and the
+  aligned public summary
+  `coding-agents-ai-engineer-guided-playlist.md` in commit `5927c1b`.
+- The summary identifies AI Engineer only as curator and source channel. It
+  explicitly organizes the route by reader question rather than playlist
+  position or chronology, avoids a mutable playlist count, and does not imply
+  multi-speaker consensus.
+- The eight selected stops and reader jobs are:
+  - Maggie Appleton, GitHub Next — align product, business, design, and
+    organizational context before implementation shifts the burden to review.
+  - Priscila Andre de Oliveira, Sentry — investigate and understand an
+    unfamiliar repository before planning or implementation.
+  - Daniel Szoke, Sentry — place deterministic compiler feedback inside the
+    agent loop without treating it as behavioral proof.
+  - Mario Zechner, Pi creator with no employer affiliation supplied by the
+    source — choose how much control and security policy a minimal harness
+    should own.
+  - Matt Pocock, teacher with no employer affiliation supplied by the source —
+    follow a human-led path from alignment and vertical slices through fresh
+    review, manual QA, and integration.
+  - Ian Ballantyne and KP Sawhney, Google DeepMind — operate agents with quotas,
+    model fallback, curated skills, shared workspaces, trajectory observability,
+    task-specific evaluation, and review.
+  - Brian Scanlan, Intercom — staff adoption as change management and inspect
+    throughput claims alongside review capacity, defects, and outcomes.
+  - Quinn Slack, Sourcegraph co-founder — distinguish attention, subscriptions,
+    exposure, and sustained use while accounting for commercial interest.
+- Appleton and Zechner are called out as existing dedicated public companions;
+  the route also links the reviewed Beyang Liu talk for a related view of
+  context, review, subagents, and selective parallelism. No SWE Agents or Agent
+  Reliability playlist resource was added.
+- Each stop's speaker, affiliation, claims, timestamp ranges, and caveats were
+  checked against its individually reviewed source summary. All nine cited
+  tracked videos are reviewed, and the Coding Agents overview is reviewed.
+- Verified: lint clean; the public guard passes with 152 tracked videos, 5
+  playlists, 43 tracked public references, 26 resources, and 51 public
+  summaries; all focused guard tests pass; library status has no pending
+  captures; Astro check has zero diagnostics; production build completes with
+  the aligned summary JSON and resource route; diff checks clean.
+- Next action: Task 5 section-level overlap gate and article decision.

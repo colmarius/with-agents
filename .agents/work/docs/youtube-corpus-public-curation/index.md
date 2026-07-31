@@ -23,7 +23,9 @@ promoted only those ten passing artifacts. A full review is not justified now;
 the remaining 54 unreferenced Antirez summaries stay draft behind the planned
 public-source guard. Task 3 added that guard plus playlist-level status checks,
 duplicate-aware resource validation, and explicit read-only duplicate-manifest
-reporting.
+reporting. Task 4 added the only planned Coding Agents playlist resource: an
+eight-stop, question-led route that keeps AI Engineer in the curator role and
+grounds each recommendation in reviewed speaker evidence.
 
 ## Artifacts
 
@@ -35,8 +37,9 @@ reporting.
 
 ## Next Action
 
-- Run Task 4: add one Coding Agents playlist resource and its human-curated
-  guided summary with 6–10 source-supported stops.
+- Run Task 5: compare the proposed team/adoption measurement article section by
+  section against every public post, consult Oracle, and record the selected
+  article outcome.
 
 ## Open Questions
 

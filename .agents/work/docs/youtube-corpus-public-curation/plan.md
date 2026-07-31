@@ -127,7 +127,7 @@ surface and promote only the workflow rules that proved generally reusable.
   - Notes: Keep exceptions explicit and small; do not silently promote source
     summaries to make a check pass.
 
-- [ ] **Task 4: Add a curated Coding Agents playlist orientation**
+- [x] **Task 4: Add a curated Coding Agents playlist orientation**
   - Scope: `src/data/resources/coding-with-agents.json`, one matching file under
     `src/content/summaries/coding-with-agents/`, reviewed Coding Agents source
     summaries and overview
