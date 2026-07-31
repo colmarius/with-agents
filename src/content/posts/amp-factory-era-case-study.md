@@ -47,8 +47,6 @@ If "done" and "how" are clear, turn the dial down.
 If "done" is clear but "how" is uncertain, turn it up.
 ```
 
-That generalizes beyond Amp: cheaper, faster agents help when the task has a tight success condition and are dangerous when speed hides uncertainty. The useful question is not "how urgent is this?" It is "how much does the model need to discover before the change can be right?"
-
 ## Delegate with contracts, not vibes
 
 > More agents only help when each delegate has a job, boundary, and proof target.
@@ -177,8 +175,6 @@ Tool details change; the work contracts do not. When Amp changes again, keep the
 5. Keep product context separate from repo-local state, environment setup, and cleanup instructions.
 6. Require proof before acceptance and human judgment where consequences demand it.
 7. Bound parallelism and recurrence so the factory cannot create spend or review debt without a stop condition.
-
-That is the pattern worth copying even when the product underneath it moves.
 
 ## Sources used
 

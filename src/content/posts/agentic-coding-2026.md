@@ -18,18 +18,7 @@ intent → constraints → proof → human judgment
                   ╰─ agent loop: act, observe, adjust
 ```
 
-The old field-guide question was "how do I get a coding agent to write code?"
-
-The 2026 question is sharper: **what work should the agent do, what evidence should it produce, and what should stay in human judgment?**
-
-This article is the map for the series. It is grounded in the source talks listed at the end, then points to deeper articles for the parts that deserve their own operating procedure:
-
-- [Your Repo Is the Memory](/posts/durable-context-coding-agents) for durable repo-local context.
-- [Make the Agent Prove It](/posts/make-the-agent-prove-it) for proof-stack mechanics.
-- [Behavior Over Explanation](/posts/behavior-over-explanation) for the evidence discipline behind that proof stack: why observed behavior, not a fluent explanation, settles model and agent claims.
-- [Small Threads, Durable State](/posts/small-threads-durable-state) for handoffs, work items, and context hygiene.
-- [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) for one tool worked through end to end.
-- [The coding-with-agents resource hub](/resources/coding-with-agents) for the underlying talks and summaries.
+This article is the map for the series.
 
 The working definition is intentionally boring: **an agent is an LLM calling tools in a loop toward a goal.** It reads files, runs commands, edits code, observes the result, and loops until it can stop or should ask for help. Thorsten Ball makes the same point in harness terms: the magic is "just a loop" plus model capability, context, and tools [00:41:36]-[00:43:42].
 
@@ -38,8 +27,6 @@ goal → choose tool → act → observe → adjust
    ▲                                  │
    ╰──────────── stop, prove, or ask ◀╯
 ```
-
-The loop is simple. The hard part is making it serve the right work.
 
 ## Cheap code moves the bottleneck to alignment
 
@@ -71,8 +58,6 @@ real system behavior
 targeted tests
 ```
 
-Cheap code is only useful when the result can be checked.
-
 Simon Willison's Pragmatic Summit workflow starts with red-green test-driven development: tell the agent how to run the tests, make it write or identify the failing proof, then implement only enough to pass [00:04:41]-[00:06:44]. He then makes agents exercise the real system, because passing tests do not prove a server boots or an API behaves [00:06:44]-[00:07:33]. For standards work he uses conformance suites; for risky execution he stresses sandboxing and mock data instead of production data [00:07:33]-[00:18:35].
 
 The series rule is simple: no proof, no merge. Different tasks need different proof. A copy edit needs rendered output and a link check. A helper bug needs a failing test that turns green. A UI change may need a screenshot or trace. A parser or upload path may need fixtures or conformance checks. A security, migration, billing, or data change needs boundaries plus a human decision. The tactical ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it); the field-guide headline is to ask for evidence before the agent optimizes for being done.
@@ -84,8 +69,6 @@ The series rule is simple: no proof, no merge. Different tasks need different pr
 | Usually safe to delegate | Humans should explicitly own |
 | --- | --- |
 | Reversible internal edits, mechanical cleanup, narrow fixes with proof | Dependencies, permissions, migrations, reliability, security and data boundaries, public API or architecture shape |
-
-"Remove friction" is the wrong default when generation outpaces review.
 
 Armin Ronacher and Cristina Poncela Cubeiro describe the trap: agent output creates pressure to ship faster, the next prompt feels addictive, and teams start mistaking fast output for efficient work [00:02:55]-[00:04:46]. Code production outnumbers the people who can responsibly review it [00:05:40]-[00:06:30], and agents optimize locally for code that runs; they do not feel the discomfort that warns a senior engineer about a fallback, hidden default, or brittle recovery path [00:06:30]-[00:08:25].
 
@@ -110,13 +93,11 @@ That last point matters more as loops get longer. Raising an Agent episode 9 fra
 wide research → critique → human decision → narrow implementation → evidence
 ```
 
-One long thread should not be responsible for everything.
-
 Build Crew episode 7 shows two useful modes. A tiny directed thread works when the human knows exactly what should happen and can name the files, constraints, and expected output [00:13:06]-[00:15:58]. A research flow works when uncertainty is high: analyze broadly, write reports, critique the design, narrow into a plan, then hand off to an implementation thread [00:18:54]-[00:24:12]. That gives the durable pattern shown above.
 
 Do not carry every exploratory transcript into the implementation loop. Carry the decision, the relevant files, the constraints, and the proof target. [Small Threads, Durable State](/posts/small-threads-durable-state) owns the operating procedure for `.agents/work/` work items, handoffs, progress logs, and verification records.
 
-The way in is one small verified task, not a factory:
+Start with one small verified task:
 
 1. Pick one real task with a clear "done" signal.
 2. Define the proof before editing.
@@ -133,8 +114,6 @@ Make the smallest change.
 Run the targeted check again, then the project-level check if relevant.
 End with files changed, commands run, results, and any known gaps.
 ```
-
-That pattern is supported by Willison's test-first and manual-check workflow [00:04:41]-[00:07:33], Build Crew's small directed threads [00:13:06]-[00:15:58], and the Raising an Agent feedback-loop discussion [00:10:18]-[00:17:24].
 
 ## Factory workflows are emerging, but they raise the bar
 
@@ -161,8 +140,6 @@ So the factory-era checklist is not "launch more agents." It is:
 - route irreversible or high-risk decisions to humans
 - constrain workflows that create review debt faster than the team can absorb it
 
-Parallelism amplifies whatever system you already have. Weak alignment, proof, friction, infrastructure, and context hygiene mean more agents produce more debt. Strong loops make more agents a real lever. [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) works one tool through these contracts.
-
 ## Where to go next
 
 > Pick the article that matches the bottleneck you are actually feeling.
@@ -175,8 +152,6 @@ Parallelism amplifies whatever system you already have. Weak alignment, proof, f
 | Threads are too large to restart | [Small Threads, Durable State](/posts/small-threads-durable-state) |
 | You want a concrete tool case study | [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) |
 | You want the talks behind the series | [The coding-with-agents resource hub](/resources/coding-with-agents) |
-
-The through-line is simple: align before code is cheap, prove before merge, keep useful friction, shape the codebase as infrastructure, keep context hygienic, start with one verified task, and only then scale into factory workflows. From here, follow the deeper article that matches your current pain point.
 
 ## Sources used
 
