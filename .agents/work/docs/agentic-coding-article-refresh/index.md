@@ -2,13 +2,15 @@
 
 Status: completed
 Category: docs
-Updated: 2026-07-28
+Updated: 2026-07-31
 
 ## Summary
 
 Review and refresh the draft post backlog now that `agentic-coding-2026`, `durable-context-coding-agents`, `make-the-agent-prove-it`, `small-threads-durable-state`, and `amp-factory-era-case-study` are public. The public series is broader agentic-coding guidance: alignment, evidence, context hygiene, good friction, codebase infrastructure, and multi-agent/factory workflows. Amp appears as one concrete tool case study, not the whole framing.
 
-On 2026-07-28, the local Amp source research and public case study were refreshed for the newest Chronicle and Manual changes: OIDC orb identity, Puck and Slack coordination, schedules, multiplayer, and event-driven orbs. The case study now treats Amp's newest direction as a shift from manually launched parallel workers toward time- and event-triggered agent services, with explicit trigger trust, idempotency, identity/permissions, collaborator access, ownership, spend, expiry, proof, and cleanup contracts. It also records that the Manual now documents the current mode names and fixes its former subscription/pay-as-you-go contradiction, while core plugin agent APIs are first-class and durable webhooks remain experimental.
+On 2026-07-31, the Amp source research was refreshed for the two July 29 Chronicle announcements. Amp's default-model migration behind the Dial supports a durable capability/context/review contract, but its usage telemetry is not a controlled quality comparison. Amp Labs' embedded Westpac partnership establishes current enterprise modernization work, but the announcement does not provide delivery outcomes, architecture, security, or governance evidence. The research keeps those boundaries explicit so the public case study does not turn product direction into proof.
+
+The prior refresh covered OIDC orb identity, Puck and Slack coordination, schedules, multiplayer, and event-driven orbs. The case study treats those releases as a shift from manually launched parallel workers toward time- and event-triggered agent services, with explicit trigger trust, idempotency, identity/permissions, collaborator access, ownership, spend, expiry, proof, and cleanup contracts. It also records that the Manual now documents the current mode names and fixes its former subscription/pay-as-you-go contradiction, while core plugin agent APIs are first-class and durable webhooks remain experimental.
 
 The prior public refresh covered [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent): Amp agents can spawn other agents as their own threads across local machines, orbs, and runners, then exchange messages and files. The case study distinguishes that primitive from isolated built-in subagents and treats target executor, transfer inputs, budget, stop conditions, proof, return paths, and integration ownership as delegation contracts. A follow-up review corrected billing guidance after the 2026-07-18 [Subscriptions, At Last](https://ampcode.com/news/subscriptions) announcement and the dedicated [Pricing page](https://ampcode.com/pricing) went live: optional subscriptions now coexist with pay-as-you-go, while exact beta plan details remain in research rather than durable public prose. Earlier July passes cover The Dial, orbs, runners, and long-thread retrieval.
 
@@ -28,7 +30,7 @@ The prior public refresh covered [From Agent to Agent](https://ampcode.com/news/
 
 ## Next Action
 
-- No immediate action. Future Amp article changes should re-run the Manual/Orbs/Models/Plugin API/Chronicle/pricing sweep, especially after changes to schedules, event triggers, identity, multiplayer, modes/models, or billing.
+- Refresh `src/content/posts/amp-factory-era-case-study.md` from the 2026-07-31 research, then run the article verification and review loop. Future changes should continue to re-run the Manual/Orbs/Models/Plugin API/Chronicle/pricing sweep, especially after changes to schedules, event triggers, identity, multiplayer, modes/models, or billing.
 
 ## Open Questions
 

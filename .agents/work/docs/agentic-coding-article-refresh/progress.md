@@ -506,3 +506,16 @@
 ## Updated Next Action
 
 - No immediate action. Re-run the first-party source sweep before the next Amp product-claim change.
+
+## 2026-07-31 Video Check and Amp Chronicle Research Refresh
+
+- Confirmed that the requested YouTube video, [LLMs are killing Agent Harness](https://www.youtube.com/watch?v=thMFsqe8kbQ), was already added in commit `b287096` as resource 19 with a transcript sidecar and timestamped editorial summary. The manifest metadata, `resourceId`, source URL, transcript frontmatter, and summary anchors remain aligned, so no duplicate resource or regeneration was needed.
+- Force-refetched the Amp Chronicle and both announcements published after the previous 2026-07-28 sweep:
+  - [Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model) reports Amp's default-model migration behind the Dial and product-usage telemetry showing broad adoption of the new `medium` default.
+  - [Banking on the Frontier](https://ampcode.com/news/amp-labs-westpac) announces an embedded Amp Labs team working with Westpac engineers on enterprise technology, including data-system migration and modernization.
+- Updated `research/amp-official-sources-2026.md` with the exact dated evidence and its limits. The model post is usage telemetry, not a controlled output-quality comparison; the Westpac post is a partnership announcement, not evidence of delivery outcomes, governance, or safety at scale.
+- Updated `index.md` with the current synthesis and next action.
+
+## Updated Next Action
+
+- Refresh `src/content/posts/amp-factory-era-case-study.md` from the new research, then complete source, link, site, and Oracle review.

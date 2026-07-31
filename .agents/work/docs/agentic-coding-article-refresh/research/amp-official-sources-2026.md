@@ -1,8 +1,8 @@
 # Research: Amp Official Sources for Case-Study Maintenance
 
 **Date:** 2026-06-28
-**Last updated:** 2026-07-28
-**Status:** complete through the 2026-07-28 source and public case-study refresh
+**Last updated:** 2026-07-31
+**Status:** complete through the 2026-07-31 source refresh
 **Question:** Which current public Amp sources should anchor case-study maintenance, and which older Amp claims are stale or risky?
 
 ## Recommendation
@@ -11,7 +11,21 @@ Use the current [Amp Manual](https://ampcode.com/manual), [Pricing page](https:/
 
 The published article should remain an Amp case study for factory-era coding-agent workflows: task sizing, delegation, context, review, feedback loops, extensibility, agent-to-agent coordination, and cost governance. It should not regress to the old draft's stale feature catalog, Oracle-as-mode framing, Handoff section, fixed token thresholds, old model names, old speed/cost claims, or draft-only practice-path links.
 
-The 2026-07-28 sweep shows Amp moving beyond agent-to-agent thread spawning into longer-lived, event-driven orchestration: Puck and Slack can coordinate work, agents can schedule their own wake-ups, workspace members can share control of orb threads, and durable webhooks can wake orbs from external events. OIDC workload identity gives outbound orb access a short-lived, claim-scoped trust path. These additions do not invalidate the public case study's contracts; they make lifecycle, identity, event trust, idempotency, access, ownership, and recurring-spend boundaries more important. Keep exact subscription prices and quotas, orb prices, sizes, flags, keybindings, model assignments, webhook limits, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+The 2026-07-31 sweep adds two complementary directions. Amp's [Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model) reports that users largely accepted a default-model swap when it arrived behind the new Dial, reinforcing a task-level contract based on capability, context, and review rather than a fixed model brand. [Banking on the Frontier](https://ampcode.com/news/amp-labs-westpac) announces an embedded Amp Labs team working with Westpac engineers on enterprise technology, including data-system migration and modernization. The former is product telemetry rather than a controlled quality study; the latter is a partnership announcement rather than evidence of outcomes, governance, or safety. Use both as dated product-direction evidence, not universal proof.
+
+The prior sweep shows Amp moving beyond agent-to-agent thread spawning into longer-lived, event-driven orchestration: Puck and Slack can coordinate work, agents can schedule their own wake-ups, workspace members can share control of orb threads, and durable webhooks can wake orbs from external events. OIDC workload identity gives outbound orb access a short-lived, claim-scoped trust path. These additions do not invalidate the public case study's contracts; they make lifecycle, identity, event trust, idempotency, access, ownership, and recurring-spend boundaries more important. Keep exact subscription prices and quotas, orb prices, sizes, flags, keybindings, model assignments, webhook limits, usage percentages, customer claims, and UI screenshots out of durable prose unless they are reverified immediately before publication.
+
+## Refresh Sweep — 2026-07-31
+
+Freshly checked sources:
+
+- [Chronicle](https://ampcode.com/chronicle): two announcements dated 2026-07-29 now follow Event Driven Orbs: [Banking on the Frontier](https://ampcode.com/news/amp-labs-westpac) and [Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model).
+- [Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model): Amp says the Dial changed its default from `smart` on Claude Opus 4.8 to `medium` on GPT-5.6 Sol. Its production telemetry says `smart` handled 55% of new threads the day before the Dial, reached zero a week later, the four Dial modes handled 93% of new threads in the reported final week, `medium` handled two-thirds, and 69% of Dial users never changed from `medium`. Amp also says almost nobody installed its classic-mode plugins and that it received no complaints about the swap.
+- The model post's durable product claim is abstraction: users express task difficulty through the Dial while Amp owns model evaluation and routing. Its workflow claim is that task difficulty, supplied context, and review matter more than choosing among current frontier model brands. Treat that second claim as Amp's interpretation of its usage data, not as a controlled comparison of output quality; no complaint and low plugin adoption do not prove identical results across models, users, or tasks.
+- [Banking on the Frontier](https://ampcode.com/news/amp-labs-westpac): Amp Labs has partnered with Westpac and is building a Sydney-based team to work alongside Westpac engineers. The announcement names migration and modernization of data systems used by millions as an example of the intended enterprise work.
+- The Westpac post gives no project scope, architecture, security or governance controls, benchmarks, shipped outcomes, or customer testimonial. It supports a narrow direction claim—Amp is pairing agents with an embedded engineering team in a high-consequence enterprise setting—not a claim that the approach has already transformed delivery or proven safe at scale.
+
+Article-maintenance recommendation: refresh the case study's verification date and use the model-switch telemetry, with the caveat above, to strengthen its existing distinction between durable task contracts and volatile model wiring. Mention the Westpac partnership only if it supports the article's human-judgment boundary; describe it as current embedded work, not a completed case-study result. Do not add the model names, telemetry percentages, team roster, or marketing language to durable public prose.
 
 ## Refresh Sweep — 2026-07-28
 
