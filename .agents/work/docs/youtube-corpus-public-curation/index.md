@@ -43,10 +43,10 @@ read-only structural audit plus an explicit human editorial-review checklist.
 
 ## Next Action
 
-- Run Task 8: obtain the final Oracle review, remediate only high-confidence
-  in-scope findings, promote unique durable rules, run the full verification
-  gate, and clean only completed superseded work items that pass the deletion
-  audit.
+- Continue Task 8: obtain the final Oracle review of Tasks 1–7 and the recorded
+  promotion/deletion audit, remediate only high-confidence in-scope findings,
+  run the full verification gate, and delete only the five completed,
+  superseded candidates in the separate cleanup commit.
 
 ## Open Questions
 

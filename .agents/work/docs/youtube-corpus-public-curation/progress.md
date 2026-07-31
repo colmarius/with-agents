@@ -441,3 +441,28 @@
   clean.
 - Next action: Task 8 final Oracle review, durable-rule promotion audit, full
   verification, and safe completed-work-item cleanup.
+
+## 2026-07-31 — Task 8 pre-cleanup durable-rule promotion audit
+
+Five completed work-item candidates were inspected against current skills,
+guidance, implementation, and repository references. No candidate has a surviving
+path or slug reference outside the deletion set. The only candidate-to-candidate
+references are historical statements in `post-slide-format-refresh` saying the
+article-refresh directory was absent in that earlier checkout; both files are in
+the proposed deletion set and are not live dependencies.
+
+| Candidate directory | Completion and surviving references | Unique durable rules | Promoted destination / superseding artifact | Deletion safety decision |
+| --- | --- | --- | --- | --- |
+| `.agents/work/docs/agentic-coding-article-refresh/` | `completed`; no live path/slug reference. | Amp publication-day recheck of Manual, Orbs, Models, Plugin API, Chronicle, and Pricing; canonical-versus-dated source hierarchy and conflict handling; six-part incorporation gate (thesis fit, evidence strength, durability, novelty, claim-to-caveat ratio, load-bearing value); `incorporate` / `research-only` / `ignore` classification; transcript-backed post distinctness from its matching resource summary. | Promoted to `.agents/skills/article-writing/SKILL.md`. Current public posts preserve the article outcomes; dated product snapshots remain recoverable from Git and are not durable policy. | Safe after this promotion. |
+| `.agents/work/docs/post-slide-format-refresh/` | `completed`; no live path/slug reference. | One idea and sparse text per slide; dry-run before adding machinery; adjacent Markdown/static-diagram buildup before fragments; explicit escalation triggers for fragments, MDX, and a deck framework; static visual path and accessibility convention. | Promoted to `.agents/skills/article-writing/SKILL.md`. Root `AGENTS.md`, the skill's hybrid contract, and `src/pages/posts/[slug]/slides.astro` supersede the implemented route rules. The optional content-checker idea is deliberately not promoted: it was unimplemented backlog whose value/noise threshold was never established. | Safe after this promotion. |
+| `.agents/work/research/ai-engineer-youtube-playlists/` | `completed`; no live path/slug reference. | Exact Coding Agents maintenance cadence: selected read-only monitoring; explicit one-check/one-sync authorization; authoritative changed-ID and public-impact decisions; complete baseline; one capture command/two-video cap/no refill; throttle and exit handling; draft/review boundary; separate sync/capture/editorial/work-item commits; credential boundary. | Promoted to `.agents/skills/maintaining-youtube-library/SKILL.md`. `src/content/youtube/AGENTS.md` continues to own source/editorial contracts. | Safe after this promotion. |
+| `.agents/work/tooling/youtube-knowledge-library/` | `completed`; no live path/slug reference. | None not already represented in current source-library guidance and tooling. Historical corpus counts, hashes, implementation narrative, and old batch evidence are not durable rules. | Superseded by `src/content/youtube/AGENTS.md`, the maintenance skill, library scripts/tests, and committed source-library artifacts. | Safe without another promotion. |
+| `.agents/work/tooling/youtube-library-maintenance/` | `completed`; no live path/slug reference. | None not already represented in the current maintenance skill. The unresolved scheduler-notification option is deliberately not promoted and creates no schedule obligation. | Superseded by `.agents/skills/maintaining-youtube-library/SKILL.md`, current CLI/tests, and source-library guidance. The current exact-ID `rg -l -e` rule supersedes the historical unsafe form. | Safe without another promotion. |
+
+Promotion decision: preserve concise reusable contracts, not historical evidence or
+obsolete implementation detail. Git history remains the archive for the removed
+work items. The active `youtube-corpus-public-curation` work item is not a cleanup
+candidate and remains in place. Next action: review these promotions and the full
+Task 1–7 outcome with Oracle, remediate high-confidence in-scope findings, then
+perform the final verification and delete only the five audited candidates in a
+separate cleanup commit.

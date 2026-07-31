@@ -70,6 +70,51 @@ Enter this mode only when the user explicitly requests repository mutation.
    approval before force regeneration, then keep it narrowly bounded.
 8. Finish with the mutating-workflow checks below and reviewable commits.
 
+## Coding Agents Bounded Maintenance Contract
+
+`ai-engineer-coding-agents` is an active cross-event playlist with a stricter
+session contract than the generic maintenance path:
+
+- Routine monitoring is read-only and selected-playlist only:
+  `npm run youtube:library -- check --playlist ai-engineer-coding-agents`.
+  Report additions, retitles, removals, moves, availability changes,
+  publication-date changes, and expected overview staleness. Do not sync,
+  capture, edit, or create a schedule from that report. Exit `0` is complete,
+  exit `2` is partial and authorizes no mutation, and exit `1` stops the
+  workflow.
+- A mutating update requires explicit authorization and is exactly one bounded,
+  reviewable session. Start from understood Git state, run exactly one selected
+  check, then exactly one selected authoritative sync. Treat the sync report and
+  manifest diff—not the earlier check—as authoritative.
+- Inspect and record every authoritative change. Run the exact-ID public-impact
+  search for every affected identity, membership, availability, or
+  publication-date ID, including leading-dash IDs, and record `keep`, `fix`, or
+  `block`. Stop rather than broadening source maintenance when a public
+  correction is required or provenance is unresolved.
+- Recompute the manifest, available/unavailable, captured, pending, private,
+  caption-unavailable, missing/draft/reviewed summary, incorporated,
+  overview-current/stale, overlap, and global-artifact-reuse baseline. Leave the
+  still-pending tail explicit for a later session.
+- After impact review, run at most one selected capture command for at most two
+  pending videos, normally `capture --playlist ai-engineer-coding-agents
+  --limit 2`. Never refill or run a second capture command in the same session,
+  even if fewer than two items finish. Stop immediately on throttle. Exit `1` is
+  fatal; interpret exit `2` per item and pause with unfinished items pending.
+  Retry is a separate explicit decision, never an automatic continuation.
+- For each successful capture, review the transcript source-faithfully, write or
+  update the summary at `draft`, and deliberately refresh the overview in that
+  session. A later dedicated review is required for any `reviewed` promotion.
+  Preserve source-supported speaker/affiliation attribution, `Editorial:`
+  labels, the curator-only AI Engineer boundary, and author-less
+  `multiSpeaker: true` state.
+- Keep commits reviewable and separate: manifest sync, capture artifacts,
+  editorial artifacts, and work-item state. Record the final baseline and
+  pending tail before ending the session.
+
+The credential boundary for this contract is strict: load credentials only in the
+selected remote command process, never print or persist them, and do not load them
+for local status, audit, or editorial review.
+
 ## Mode C — Add a Tracked Playlist
 
 Do not create or use an `add` subcommand or catalog wizard.

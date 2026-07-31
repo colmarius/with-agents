@@ -37,6 +37,44 @@ skill adds the repeatable workflow and the checklists.
 - Do not add new product claims (for example, about Amp) unless verified against
   current first-party sources.
 
+## Product Freshness And Incorporation
+
+Before publishing or materially changing an Amp product claim, recheck the current
+[Amp Manual](https://ampcode.com/manual),
+[Orbs manual](https://ampcode.com/manual/orbs),
+[Models page](https://ampcode.com/models),
+[Plugin API](https://ampcode.com/manual/plugin-api),
+[Chronicle](https://ampcode.com/chronicle), and
+[Pricing page](https://ampcode.com/pricing). Treat canonical documentation as the
+current product authority. Use dated announcements and workflow notes as dated
+direction or examples, not timeless feature documentation. Date-stamp exact
+product details as verified on the publication date or omit them. If first-party
+sources conflict, record the conflict and prefer the newer dedicated source or
+announcement for the changed feature.
+
+A fresh source belongs in research by default. Before drafting public prose,
+classify it as `incorporate`, `research-only`, or `ignore`. Incorporate it only
+when all six checks pass:
+
+1. **Thesis fit:** it directly strengthens or changes the article's thesis or an
+   existing work contract.
+2. **Evidence strength:** it documents product behavior, measured outcomes, or an
+   operative contract—not merely a launch, partnership, aspiration, or customer
+   name.
+3. **Durability:** the useful lesson survives model, pricing, UI, and
+   implementation churn.
+4. **Novelty:** no stronger existing source already supports the point.
+5. **Claim-to-caveat ratio:** the useful claim remains substantial after necessary
+   caveats; if the caveat is the main story, keep the item in research.
+6. **Load-bearing value:** removing the item would make the article materially
+   weaker or less current.
+
+"Latest" is a research-selection criterion, not a publication criterion. For a
+transcript-backed post, also compare the proposed article with the matching
+resource summary. Publish the post only when it adds a distinct thesis,
+cross-source synthesis, practical framework, workflow, or decision guide rather
+than repeating the summary.
+
 ## Internal-Link Hygiene
 
 - Link only to routes that exist in this repo. Confirm with:
@@ -77,6 +115,22 @@ presentation slide.
   presentation slides; keep source detail available for article, notes, and print
   modes. Avoid variants like `## Sources consulted` unless you intentionally want
   a normal slide.
+
+### Presentation strategy
+
+- Prefer one idea per slide and sparse visible text; keep nuance in notes.
+- Dry-run the real presentation before adding machinery. When a complex idea needs
+  staged reveal, prefer adjacent Markdown sections or static diagram stages that
+  still read naturally in article and print modes.
+- Add route-level fragments only after adjacent buildup causes recurring
+  maintenance pain and a narrow Markdown-visible, accessible, print-safe syntax
+  is clear. Consider MDX only when multiple posts need the same reusable visual or
+  interactive component. Consider a deck framework only when presentation mode
+  becomes a first-class product that needs fragments, overlays, speaker tooling,
+  export, or richer animation beyond the article projection.
+- Prefer Markdown-native visuals. If a committed static asset is justified, store
+  it at `public/visuals/posts/<slug>/<descriptive-kebab-name>.<svg|webp|png>` and
+  reference `/visuals/posts/<slug>/...` with accessible alt or caption text.
 
 ## Workflow
 
@@ -164,6 +218,12 @@ When deletion is explicitly approved:
 - [ ] Synthesis is labeled as synthesis.
 - [ ] No duplicated source recaps across posts.
 - [ ] No unsupported new product claims.
+- [ ] Amp claims were checked against Manual, Orbs, Models, Plugin API, Chronicle,
+      and Pricing on the publication date.
+- [ ] New source items were classified as `incorporate`, `research-only`, or
+      `ignore` using all six incorporation checks.
+- [ ] A transcript-backed post adds a distinct thesis beyond its matching resource
+      summary.
 
 ### Links
 
