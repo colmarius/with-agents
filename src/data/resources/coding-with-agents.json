@@ -1,5 +1,20 @@
 [
   {
+    "id": 26,
+    "title": "Coding Agents @ AI Engineer — guided playlist",
+    "url": "https://www.youtube.com/playlist?list=PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt",
+    "description": "A guided route through selected Coding Agents talks on team alignment, repository comprehension, deterministic feedback, harness design, end-to-end delivery, organization-scale operations, adoption, and measurement. AI Engineer curates and publishes the playlist; the speakers remain the sources for their individual claims.",
+    "type": "playlist",
+    "source": "AI Engineer",
+    "date": "2026-07-31",
+    "topics": [
+      "collaboration-teams",
+      "review-verification",
+      "tools-harnesses",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 25,
     "title": "Agentic Engineering, explained by a 10x developer",
     "subtitle": "Thorsten Ball on cheap code, asynchronous agents, and the product judgment that still matters",
