@@ -112,6 +112,18 @@ limits visible rather than laundering them into consensus.
   should remain source-faithful and should happen only when a claim depends on
   the affected text.
 
+## Antirez Sample Decision
+
+The deterministic ten-summary unreferenced sample found three material
+source-precision defects and two minor anchor-range imprecisions, with no
+translation or attribution failures. All were conservatively correctable, and
+none affected public content. A full review of the remaining 54 unreferenced
+draft summaries is not justified now: the Task 3 public-source guard will keep
+them outside the public evidence boundary until each receives a dedicated
+review. The repeated endpoint-precision lesson belongs in the Task 7 editorial
+checklist; a structural audit may prove that an anchor resolves, but cannot
+decide whether it supports the complete adjacent claim.
+
 ## Workflow Improvements
 
 1. Add a public-citation gate: a public artifact may cite a tracked source ID
@@ -158,7 +170,6 @@ superseded, preserving their complete history in Git.
 
 - [ ] Does the team-level measurement draft remain distinct after a section-level
       overlap audit against all current public posts?
-- [ ] Does the Antirez risk sample expose a repeated material error pattern?
 - [ ] Is a reliability-stack article worth its vendor-heavy evidence burden?
 - [ ] Which completed work items still have unique live context not represented
       by current code, skills, guidance, or this work item?

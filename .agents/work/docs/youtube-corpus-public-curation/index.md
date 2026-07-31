@@ -17,8 +17,11 @@ summary sets. All 63 unique AI Engineer summaries and their three playlist
 overviews are reviewed. Task 1 closed the public-source review gap: the 14
 publicly referenced Antirez summaries, both Antirez overviews, and the author
 synthesis are now reviewed, and the identified public citation/claim/date
-defects are corrected. The remaining 64 unreferenced Antirez summaries stay
-draft pending the Task 2 sample decision.
+defects are corrected. Task 2 reviewed a deterministic ten-summary unreferenced
+Antirez sample, fixed three material and two minor source-precision defects, and
+promoted only those ten passing artifacts. A full review is not justified now;
+the remaining 54 unreferenced Antirez summaries stay draft behind the planned
+public-source guard.
 
 ## Artifacts
 
@@ -30,8 +33,9 @@ draft pending the Task 2 sample decision.
 
 ## Next Action
 
-- Run Task 2: review the deterministic manifest-stratified ten-summary
-  unreferenced Antirez sample and record the full-review decision.
+- Run Task 3: add the publishable public-source status guard, playlist-level
+  overview guard, and resource-manifest validator with focused success and
+  failure tests.
 
 ## Open Questions
 
@@ -40,9 +44,6 @@ draft pending the Task 2 sample decision.
       Recommended default: publish it only if the Task 5 overlap gate proves a
       separate team/adoption-measurement reader job; otherwise extend an
       existing post minimally.
-- [ ] Does the Antirez risk sample justify reviewing all 78 summaries?
-      Recommended default: decide from the Task 2 ten-summary sample; never
-      bulk-promote drafts.
 - [ ] Does Agent Reliability justify a second article?
       Recommended default: decide after the first public slice and defer unless
       the reliability-stack thesis remains distinct and can keep vendor caveats

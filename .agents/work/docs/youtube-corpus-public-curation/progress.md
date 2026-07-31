@@ -128,3 +128,60 @@
 - Verified: lint clean, `astro check` clean, build 20 pages, `git diff --check`
   clean.
 - Next action: Task 2 deterministic ten-summary unreferenced Antirez sample.
+
+## 2026-07-31 — Task 2 complete: deterministic Antirez risk sample
+
+- Reproducible selection rule: unique draft, publicly-unreferenced IDs per
+  playlist in manifest order (first occurrence wins), sorted by `publishedAt`
+  ascending with `videoId` tiebreak; allocation 10 slots proportional to stratum
+  size with a floor of 3 for the smaller playlist → 7 from
+  `antirez-ai-concepts` (N=52), 3 from `antirez-coding-with-ai` (N=17); picks at
+  index `floor(i*N/n + N/(2*n))` for i=0..n-1, skipping already-chosen IDs.
+- `antirez-ai-concepts` sample indices and decisions:
+  - index 3, `8gg-oJr4dTY` (DeepSeek R1/R1-Zero) — material defect fixed. The
+    summary had attached human/model feedback to filtering the generated
+    dataset; `[00:07:59]`–`[00:09:07]` instead describes further model
+    reinforcement learning from human preferences and V3 comparisons, then
+    supervised fine-tuning/distillation of smaller models from roughly 800,000
+    generated reasoning examples.
+  - index 11, `qmgavo2_Svo` (Vetere and knowledge) — pass, no findings.
+  - index 18, `R2TABSq1VNg` (three types of AGI) — minor anchor defect fixed.
+    The ambiguity claim remains at `[00:00:00]`; the move to pragmatic,
+    functional categories now separately cites `[00:05:42]`–`[00:07:00]`.
+  - index 26, `WDlQOnj8G_U` (LLMs as reasoning surrogates) — pass, no findings.
+  - index 33, `k2bvZnXGzJc` (biology and cosmology) — pass, no findings.
+  - index 40, `uxAhuNPSBuE` (DeepSeek v4 disk KV cache) — material anchor defect
+    fixed. The one-day demo-to-usable assertion is in `[00:15:13]`, so the
+    range now begins there rather than at `[00:16:04]`.
+  - index 48, `x6Vq0IWoLUs` (SSD-streamed inference) — material provenance defect
+    fixed. The recording supplies partial machine and RAM details, so the note
+    now says it lacks a *complete* hardware/storage specification and names the
+    missing exact SSD and benchmark setup rather than claiming no specification.
+- `antirez-coding-with-ai` sample indices and decisions:
+  - index 2, `NDBQq_NzxiE` (Qwen 3.5) — minor range defect fixed. The personnel
+    departures and reported organizational friction end at `[00:06:43]`; the
+    unrelated local-agent topic starts at `[00:07:41]`.
+  - index 9, `Yajmt1CeiHg` (DeepSeek v4 vlog) — pass, no findings.
+  - index 14, `1HTtYNaCtcM` (programming remains interesting) — pass, no
+    findings.
+- Tally: 3 material defects (one in each of three summaries), 2 minor
+  anchor-range defects, and 5 clean summaries. After corrections, all ten
+  individually reviewed summaries passed and were promoted to `reviewed` in
+  commit `9434f80`; the other 54 unreferenced Antirez summaries remain draft.
+- Full-78-review decision: do **not** review all remaining drafts now. The sample
+  exposed one pipeline-precision error, one overbroad provenance statement, and
+  repeated anchor-endpoint imprecision, but no repeated translation or
+  attribution failure. Every defect was conservatively fixable, and all ten
+  artifacts are publicly unreferenced. Task 3's guarded public boundary makes a
+  dedicated review mandatory before any remaining draft can support public
+  content, which controls the publication risk without mechanically promoting
+  54 currently unused artifacts.
+- Plan adjustment for the repeated timestamp pattern: Task 7's dedicated
+  editorial checklist must verify each anchor's start and end against the full
+  adjacent claim. The bounded structural audit remains intentionally weaker: it
+  can verify anchor resolution but cannot score claim support or prose quality.
+- Verified before the source commit: library status clean with no pending
+  captures; 47/47 library/transcript tests pass; lint made no changes; Astro
+  check has zero diagnostics; production build completed with 20 pages; diff
+  checks clean.
+- Next action: Task 3 public-source and resource-manifest guards.

@@ -81,7 +81,7 @@ surface and promote only the workflow rules that proved generally reusable.
   - Notes: English Antirez wording is translation/paraphrase of Italian
     auto-captions and must never be presented as a verbatim quotation.
 
-- [ ] **Task 2: Sample the remaining unreferenced Antirez corpus**
+- [x] **Task 2: Sample the remaining unreferenced Antirez corpus**
   - Scope: ten manifest-stratified unreferenced summaries and sibling
     transcripts, work-item research/progress
   - Depends on: Task 1
@@ -191,7 +191,9 @@ surface and promote only the workflow rules that proved generally reusable.
       based on distinctness and the claim-to-caveat burden; implement it only in
       a separately planned follow-up if warranted.
     - Add a reusable dedicated editorial-review checklist to the maintenance
-      skill.
+      skill. The checklist must require checking each anchor's start and end
+      against the complete adjacent claim; timestamp existence alone is not a
+      claim-support review.
     - Replace repeated one-off structural checkers with the smallest reusable
       read-only audit bounded to the historically repeated checks: anchor
       resolution against sibling transcripts, `coveredVideoIds` coverage
