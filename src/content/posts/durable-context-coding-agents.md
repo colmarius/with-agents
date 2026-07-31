@@ -13,9 +13,7 @@ Maintenance note for agents:
 durable-context-coding-agents.md is the canonical public article/deck for this topic.
 durable-context-coding-agents-extended-deck.md is the richer slide-first alternate derived from the same material.
 
-When changing this canonical file, also review durable-context-coding-agents-extended-deck.md in the same diff and either:
-- mirror factual, source, terminology, and section-order changes where applicable, or
-- leave the extended deck intentionally different because it is the richer slide-first alternate.
+The canonical post is reader-first and may merge adjacent framing sections for scanning. The extended deck may retain separate source, diagram, and pacing slides. When either changes, review the other in the same diff and keep factual claims, source roles, links, terminology, caveats, and broad argument order synchronized; section count, heading granularity, visuals, and slide pacing may intentionally diverge.
 
 durable-context-coding-agents-image-deck.md is an image-only experiment and is not part of the canonical/extended-deck sync contract.
 Do not publish, rename, delete, or replace draft variants without explicit human approval.
@@ -33,14 +31,19 @@ Coding agents can now produce substantial code faster than many teams can align 
 
 This post is the practical version: what to keep in the repo, what to leave in chat, and how to make the next agent run start smarter than the last one. If you prefer the visual deck, start with the [image-slide version](/posts/durable-context-coding-agents-image-deck/slides/#1).
 
-## Coding agents made implementation cheap
-<!-- slide:
-layout: cover
--->
+## Fast implementation creates alignment and comprehension debt
 
-> They did not make alignment free.
+> Agents make implementation cheap, but they move intent, alignment, and understanding onto the critical path.
 
-The useful surprise is speed. A coding agent can inspect files, draft a plan, edit code, run commands, and summarize the result in minutes. The dangerous surprise is that alignment does not speed up automatically. Someone still needs to name the goal, constraints, tradeoffs, and proof target. If that context only lives in chat, it disappears before the next engineer or agent can use it.
+A coding agent can inspect files, draft a plan, edit code, run commands, and summarize the result in minutes. Alignment does not accelerate automatically. Someone still needs to name the goal, constraints, tradeoffs, and proof target before the output becomes expensive to redirect.
+
+Noperator's essay [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) describes one failure mode: "generative AI can produce substantial form with minimally applied intent," and "substantial form without discernible intent." Agents can create convincing code, tests, docs, migrations, screenshots, and PRs from vague instructions; reviewers then have to recover intent from the artifact.
+
+Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) describes the coordination cost. When writing code becomes fast and cheap, the hard question moves from "how do we build it?" to "should we build it?" The pull request becomes the first shared checkpoint and must recover the goal, plan, assumptions, proof, and reviewers that were missing while the agent worked.
+
+Addy Osmani names the ownership cost in [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/): the gap between how much code exists and how much any human genuinely understands. The risk is not that every generated line is wrong. Tests can be green while nobody can explain the implicit decisions or safely change the result.
+
+Durable context moves intent, constraints, accepted tradeoffs, proof targets, stop conditions, and human decisions before the diff becomes the only artifact.
 
 ## Start with the checkpoint you already trust
 
@@ -55,95 +58,25 @@ Where is the first real checkpoint?
 plan → trace → diff → PR review → incident review
 ```
 
-Before prescribing a workflow, locate the real checkpoint. A team using agents as autocomplete has a different problem from a team running several terminal agents against the same repo. A senior engineer who reviews every plan has a different risk profile from one who sees only the final pull request.
+Before prescribing a workflow, locate the real checkpoint. Autocomplete has a different risk profile from several terminal agents working against the same repo.
 
 Ask three questions:
 
 - How much work do you let agents do?
 - Where is your first checkpoint: prompt, plan, trace, diff, PR, or incident?
-- What do you actually review: the plan, the commands, the code, the tests, the final summary?
+- What do you actually review: the plan, commands, code, tests, or final summary?
 
-Durable context is not a documentation hobby. It is the way to put the checkpoint where it can still change the work.
-
-## Fast form without shared intent
-
-> Generative AI makes form cheap; intent no longer arrives automatically.
-
-```text
-unclear intent + capable generator = convincing artifact
-                                     with unclear ownership
-```
-
-The failure mode is not only hallucinated code. It is code-shaped output that looks substantial before anyone has made the intent explicit.
-
-Noperator's essay [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) names the pathology: "generative AI can produce substantial form with minimally applied intent," and "substantial form without discernible intent." Agents compress the friction that used to force intent into the artifact. They can create files, tests, docs, migrations, screenshots, and PRs from a vague instruction; reviewers then have to recover intent from the output unless the team put it somewhere durable first.
-
-## The PR inherits too many jobs
-
-> When implementation collapses to minutes, alignment moves onto the critical path.
-
-```text
-old path:    plan ── discuss ── build ── review
-agent path:  prompt ───────────────▶ PR
-                         ▲
-            all missing alignment lands here
-```
-
-Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) makes the economic shift clear: writing code is getting fast and cheap, so the hard question becomes not "how do we build it?" but "should we build it?" Agents collapse the old implementation window, taking many informal alignment moments with it: conversations, draft PRs, issue comments, and course corrections while the work is still cheap to redirect.
-
-The pull request then inherits too many jobs. It must explain the goal, recover the plan, expose hidden assumptions, prove the implementation, and coordinate reviewers who were not present while the agent worked. That is too late for many decisions.
-
-Durable context moves some alignment back before generation. The plan, constraints, accepted tradeoffs, proof target, and stop conditions live where another engineer or agent can inspect them before the diff becomes the only artifact.
-
-## Speed becomes comprehension debt
-
-> If nobody can explain the generated code, the team owns comprehension debt.
-
-```text
-fast generation
-  ↓
-large diff
-  ↓
-shallow review
-  ↓
-code the team owns but cannot explain
-```
-
-Addy Osmani's public post on [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) defines the posture as inheriting AI output without doing the underlying reasoning. His [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) article frames the bill: the gap between how much code exists and how much of it any human genuinely understands.
-
-Tests can be green while understanding is not. The risk is not that every generated line is wrong; it is that nobody knows which implicit decisions were made, why they were acceptable, or where the next change will break. Durable context keeps that understanding attached to the work: what we asked for, why it matters, what changed, what proof exists, what is uncertain, and where a human made the call.
+Durable context puts the checkpoint where it can still change the work.
 
 ## The model is not your project memory
 
-> The model knows public patterns; it does not know which pattern is true here.
-
-```text
-LLM memory:  broad, compressed, lossy public knowledge
-repo truth:  exact commands, boundaries, decisions, constraints
-agent work:  useful only when the second shapes the first
-```
+> Models carry broad, lossy public knowledge; the repo carries exact, local, reviewable truth.
 
 Simon Willison describes LLMs as [a lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/): they compress a huge amount of public knowledge, but the compression loses details. Serious coding tasks are full of details the model cannot infer: the fast test command, the one UI primitive this repo uses, the migration rule, the security constraint, the product decision from last week, or the module boundary that is obvious to the team.
 
 For exact technical work, a correct repo-local example beats expecting the model to infer the rule.
 
-If that truth lives only in a chat thread, it dies with the thread. If it lives in files, checks, and work items inside the repo, the next run can use it.
-
-## The repo is disk; chat is RAM
-
-> Chats are working memory; repo-local files are durable memory.
-
-```text
-chat thread ── explore / decide / implement ──▶ repo-local context
-     ▲                                                │
-     ╰──────────── next person or agent starts here ◀─╯
-```
-
-This is the core idea behind `dot-agents`: put operating context for agentic work in versioned, repo-local files. Chat can stay messy. The repo should preserve the parts that change future behavior.
-
-Think of chat as RAM: fast, useful, temporary, and noisy. Think of files as disk: slower to write, easier to share, easier to review, and available to the next engineer, agent, machine, and session.
-
-The judgment is deciding what to flush to disk.
+Chat is RAM: fast, useful, temporary, and noisy. The repo is disk: versioned, reviewable, and available to the next engineer, agent, machine, and session. This is the core idea behind `dot-agents`: chat can stay messy while files, checks, and work items preserve the parts that change future behavior. The judgment is deciding what to flush to disk.
 
 ## What should survive?
 
@@ -296,24 +229,9 @@ The point is not to collect more context. The point is to run a promotion loop. 
 
 ## Durable context travels
 
-> Repo-local context survives the agent, the laptop, the teammate, and the thread.
+> Repo-local context makes agent work portable, reviewable, and less magical.
 
-```text
-human laptop ─┐
-cloud VM      ├──▶ repo-local context ──▶ same commands, rules, state, proof
-CI runner     │
-next teammate ┘
-```
-
-This is the benefit that makes the work worth doing. A chat transcript helps the person in that chat. Repo-local context helps the next person, the next agent, and the next environment.
-
-Cross-session durability lets a fresh thread start from the current plan. Cross-engineer durability lets a teammate inspect the same intent, constraints, and proof. Cross-environment durability keeps the cloud agent, local terminal, CI runner, and review process pointed at the same commands and conventions.
-
-That portability matters because agent stacks will keep changing. The durable artifact should not be a vendor-specific memory blob if a simple file, script, test, or work item can carry the truth.
-
-## The before and after is mundane
-
-> Durable context makes agent work less magical and more reviewable.
+A chat transcript helps the person in that chat. Repo-local context lets a fresh thread continue the plan, a teammate inspect the same intent and proof, and local, cloud, and CI environments use the same commands and conventions. Prefer a simple file, script, test, or work item over a vendor-specific memory blob when it can carry the truth.
 
 | Before durable context | After durable context |
 | --- | --- |
