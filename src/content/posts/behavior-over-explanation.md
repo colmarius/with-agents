@@ -52,7 +52,7 @@ Sanfilippo's coding position changes emphasis over time, and the tension matters
 
 On January 31, 2026, while discussing a study of AI assistance and skill acquisition, he accepted that moving from implementation toward supervision would weaken some manual practice. His consequential question was whether that loss would eventually make a developer worse at directing and checking automated work ([00:05:54–00:07:00](https://www.youtube.com/watch?v=yFa1BHzkzn8&t=354s)). The study and his own project anecdote did not resolve that long-term question.
 
-By July 13, 2026, he argued that trying to read every generated line had become the wrong allocation of expert time. He wanted developers to spend that time on product ideas, architectural constraints, targeted design questions, and manual or model-assisted QA ([00:01:57–00:03:55](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=117s)). In this view, the implementation explanation is a steering surface; behavior remains the acceptance surface.
+By July 13, 2026, he argued that trying to read every generated line had become the wrong allocation of expert time. He wanted developers to spend that time on product ideas, architectural constraints, targeted design questions, and manual or model-assisted QA ([00:00:53–00:03:55](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=53s)). In this view, the implementation explanation is a steering surface; behavior remains the acceptance surface.
 
 These positions are not a clean reversal, and the sources do not define one universal review boundary. The synthesis here is risk-scaled: routine, observable work can move toward architecture and behavioral checks; unfamiliar, weakly tested, security-sensitive, or high-consequence work still earns deeper implementation review. The goal is not to preserve line reading as ritual. It is to preserve enough understanding to choose the right proof and recognize when the proof is weak.
 
@@ -93,4 +93,4 @@ The through-line here is enough: labels suggest, explanations guide, and behavio
 - [Automatic programming fatigue](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s), published February 17, 2026; especially [00:04:03–00:09:48].
 - [Testing recent alternative models](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=729s), published April 25, 2026; especially [00:12:09–00:15:13].
 - [Further observations on Claude Fable](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s), published June 10, 2026; especially [00:05:44–00:09:03].
-- [Check the ideas rather than every generated line](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=117s), published July 13, 2026; especially [00:01:57–00:03:55].
+- [Check the ideas rather than every generated line](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=53s), published July 13, 2026; especially [00:00:53–00:03:55].

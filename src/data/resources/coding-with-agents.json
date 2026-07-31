@@ -270,7 +270,7 @@
     "description": "Beyang Liu explores the evolution of AI coding agents from co-pilots to autonomous tools, covering controversial design decisions (autonomous edits, minimal UI, model coupling), Amp's implementation, and power user insights. Discusses best practices like detailed prompts, feedback loops, and sub-agents for complex tasks, while highlighting anti-patterns including micromanaging and underprompting.",
     "type": "video",
     "source": "AI Engineer",
-    "date": "2025-07-01",
+    "date": "2025-06-30",
     "topics": [
       "prompting-orchestration",
       "tools-harnesses",

@@ -1,7 +1,7 @@
 ---
 title: "The Emerging Skillset of Wielding Coding Agents"
 resourceId: 5
-date: "2025-07-01"
+date: "2025-06-30"
 ---
 
 This video, featuring Beyang Liu, CTO and co-founder of Sourcegraph, delves into the evolving landscape of AI coding agents and the essential skills developers need to effectively utilize them.
