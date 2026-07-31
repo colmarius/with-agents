@@ -1,5 +1,21 @@
 [
   {
+    "id": 25,
+    "title": "Agentic Engineering, explained by a 10x developer",
+    "subtitle": "Thorsten Ball on cheap code, asynchronous agents, and the product judgment that still matters",
+    "url": "https://www.youtube.com/watch?v=FU5_kpTAVDo",
+    "description": "Thorsten Ball explains why capable coding agents are shifting engineering away from hand-written implementation and toward product judgment, first-principles problem solving, richer context, asynchronous delegation, and verification. He demonstrates Amp's remote Orbs workflow and discusses how cheap, remixable code may reshape internal tools and product interfaces.",
+    "type": "video",
+    "source": "David Ondrej",
+    "date": "2026-07-27",
+    "duration": "43m",
+    "topics": [
+      "tools-harnesses",
+      "prompting-orchestration",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 24,
     "title": "Architecture, AI agents, and product empathy with Robert C. Martin",
     "subtitle": "Robert C. Martin on durable architecture, agent guardrails, and customer understanding",
