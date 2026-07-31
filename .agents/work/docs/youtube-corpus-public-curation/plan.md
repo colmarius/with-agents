@@ -204,7 +204,7 @@ surface and promote only the workflow rules that proved generally reusable.
     context rather than global skill rules. The metadata formatting churn is
     resolved by Task 0.
 
-- [ ] **Task 8: Run final editorial review and clean completed work items**
+- [x] **Task 8: Run final editorial review and clean completed work items**
   - Scope: all changes from this plan, `.agents/work/**`, final work-item state
   - Depends on: Tasks 1–7
   - Acceptance:

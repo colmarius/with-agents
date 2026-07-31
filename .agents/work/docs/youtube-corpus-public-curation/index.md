@@ -1,6 +1,6 @@
 # YouTube corpus public curation
 
-Status: in-progress
+Status: completed
 Category: docs
 Updated: 2026-07-31
 
@@ -32,6 +32,9 @@ bounded, source-backed measurement guide without changing another post or
 expanding the resource manifest. Task 7 deferred a separate reliability article
 after a section-level overlap and evidence-burden review, then added a reusable
 read-only structural audit plus an explicit human editorial-review checklist.
+Task 8 accepted and fixed Oracle's one source-anchor precision finding, promoted
+the remaining durable workflow rules, removed five completed superseded work
+items with recovery guidance, and passed the full final verification gate.
 
 ## Artifacts
 
@@ -43,8 +46,9 @@ read-only structural audit plus an explicit human editorial-review checklist.
 
 ## Next Action
 
-- Continue Task 8: run the complete final verification gate, record the cleanup
-  commit hash and results, check Task 8, and mark this active work item completed.
+- No immediate action. Keep this completed work item until a later explicit
+  cleanup audit; future Coding Agents maintenance follows the bounded skill
+  contract and future public citations remain behind the reviewed-source guard.
 
 ## Open Questions
 

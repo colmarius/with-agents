@@ -534,3 +534,45 @@ separate cleanup commit.
   the resulting cleanup commit hash is recorded in the final completion entry.
 - Next action: run the complete final verification gate, record the cleanup commit
   hash and results, check Task 8, and mark this active work item completed.
+
+## 2026-07-31 — Task 8 complete: final gate passed
+
+- Cleanup commit `f6263838e12bc1850e95c032af758fea6555d653` has parent
+  `f62a2803e4cfd690d39a8df4247d6b511c177243` and removes exactly the five
+  approved work-item directories recorded above. The recovery command in the
+  cleanup entry restores any selected path from that parent without reverting
+  later work.
+- Full verification passed:
+  - `npm run lint:fix` checked 211 files and applied no fixes.
+  - `npm run youtube:library -- status` reported all five overviews current, all
+    available videos captured or durably unavailable, and zero pending captures.
+    The 54 publicly unreferenced Antirez summaries intentionally remain draft.
+  - `npm run youtube:library -- audit` passed 152 unique tracked videos, 161
+    manifest occurrences, 141 transcripts, 141 summaries, 5 playlists, and 1
+    author. It reported `8gg-oJr4dTY` at positions 0 and 3 without deduping.
+  - The combined public-guard, structural-audit, library, and transcript command
+    passed all 58 tests.
+  - `npm run content:guard` passed 152 tracked videos, 5 playlists, 47 tracked
+    public references, 26 resources, and 51 public summaries, including resource
+    alignment and reviewed citation/playlist status.
+  - `npm run check` passed 39 files with 0 errors, warnings, or hints.
+  - `npm run build` produced 22 pages, including the measurement article and
+    slide routes, the guided-summary JSON, and the Coding Agents resource route.
+  - The application-source `src/content/youtube` search and built
+    `publication: source-only` marker search both returned the expected no-match
+    exit `1`.
+  - A read-only built-target audit resolved 73 internal links/assets across all 9
+    publishable posts and confirmed the corrected Intercom `t=237s` anchor in the
+    rendered measurement article. Its first invocation incorrectly treated
+    existing image-deck PNG links as page directories; the corrected checker
+    distinguished static files from routes and passed without any repository
+    change.
+  - All five cleanup candidates are absent, the active curation work item remains,
+    and `git diff --check` passed from clean cleanup HEAD.
+- Oracle's accepted finding and remediation are recorded in the preceding entry;
+  the one rejected hypothetical guard expansion remains intentionally out of
+  scope. No other Oracle finding required action.
+- Task 8 and Tasks 0–7 pass. This work item is `completed`; its plan, progress,
+  status, and Next Action are aligned. No remote playlist check, sync, capture,
+  retry, force, credential access, schedule, additional article/resource, full
+  unreferenced-draft review, or other out-of-scope work occurred.
