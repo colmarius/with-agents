@@ -16,7 +16,7 @@ order: 5
 Amp detail → reusable contract → workflow habit
 ```
 
-Amp is the concrete case study here; the reusable lessons are task sizing, uncertainty, delegation, execution boundaries, identity, lifecycle controls, cost governance, context hygiene, proof, and review. The product details below were swept against Amp's current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing page](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle) on 2026-07-28.
+Amp is the concrete case study here; the reusable lessons are task sizing, uncertainty, delegation, execution boundaries, identity, lifecycle controls, cost governance, context hygiene, proof, and review. The product details below were swept against Amp's current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing page](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle) on 2026-07-31.
 
 For the broader map, read [Agentic Coding in 2026](/posts/agentic-coding-2026). For durable repo-local memory, read [Your Repo Is the Memory](/posts/durable-context-coding-agents). For proof mechanics, read [Make the Agent Prove It](/posts/make-the-agent-prove-it). For small-thread operating practice, read [Small Threads, Durable State](/posts/small-threads-durable-state).
 
@@ -26,7 +26,7 @@ This article deliberately avoids setup walkthroughs, exact subscription and orb 
 
 > Choose worker capability by how much the agent has to figure out.
 
-[The Dial](https://ampcode.com/news/the-dial) replaced Amp's old `smart`, `deep`, `rush`, and `large` names with four built-in tiers: `low`, `medium`, `high`, and `ultra` (reverified 2026-07-28). Treat the dial as a work contract, not a prestige setting.
+[The Dial](https://ampcode.com/news/the-dial) replaced Amp's old `smart`, `deep`, `rush`, and `large` names with four built-in tiers: `low`, `medium`, `high`, and `ultra` (reverified 2026-07-31). Treat the dial as a work contract, not a prestige setting.
 
 | Work shape | Amp surface | Useful contract |
 | --- | --- | --- |
@@ -36,9 +36,11 @@ This article deliberately avoids setup walkthroughs, exact subscription and orb 
 | Clear outcome, unknown path | `ultra` | "Research more, span many files/systems, surface decisions, and return with evidence." |
 | Second opinion, critique, or adversarial review | Oracle | "Inspect the plan, bug, diff, or design and tell me what I am missing." |
 
+[Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model) reports that Amp changed the default model behind the Dial with no complaints, and almost no one installed the classic-mode plugins that restored the old defaults. That is product telemetry, not a controlled quality study. The narrower lesson is useful: let users specify task difficulty while the product owns volatile model routing; the team still owns context and review.
+
 **Oracle is still a critique contract, not the implementation worker.** The Dial says every built-in tier has an oracle backing second opinions, and the manual describes Oracle as a "second opinion" model for complex reasoning or analysis. Use that before or after implementation; do not confuse reviewer capacity with ownership of the edit.
 
-**Cost belongs in the same contract.** Amp offers [optional monthly subscriptions](https://ampcode.com/news/subscriptions) with included agent and orb usage, while [pay-as-you-go remains available](https://ampcode.com/pricing) at [provider API prices with zero markup](https://ampcode.com/manual#pricing) for individuals and non-enterprise workspaces (reverified 2026-07-28). Either way, dial tier, fan-out, recurring schedules, and event-triggered wake-ups are budget choices. Set the worker count, capability, stop condition, and evidence before the work starts.
+**Cost belongs in the same contract.** Amp offers [optional monthly subscriptions](https://ampcode.com/news/subscriptions) with included agent and orb usage, while [pay-as-you-go remains available](https://ampcode.com/pricing) at [provider API prices with zero markup](https://ampcode.com/manual#pricing) for individuals and non-enterprise workspaces (reverified 2026-07-31). Either way, dial tier, fan-out, recurring schedules, and event-triggered wake-ups are budget choices. Set the worker count, capability, stop condition, and evidence before the work starts.
 
 ```text
 If "done" and "how" are clear, turn the dial down.
@@ -166,6 +168,8 @@ The transcript-backed sources explain why this matters. Raising an Agent episode
 uncertainty → delegation contract → proof loop → human judgment
 ```
 
+[Banking on the Frontier](https://ampcode.com/news/amp-labs-westpac) says Amp Labs is building an on-site team to work alongside Westpac engineers on enterprise technology, including data-system migration and modernization. The announcement gives no delivery outcomes, architecture, security, or governance evidence, so it is not a completed success case. It supports a narrower boundary: even the vendor treats high-consequence agent work as something to embed in human teams and real operating environments.
+
 Tool details change; the work contracts do not. When Amp changes again, keep these:
 
 1. Size the task to the uncertainty.
@@ -180,8 +184,8 @@ That is the pattern worth copying even when the product underneath it moves.
 
 ## Sources used
 
-- Official Amp product sweep: [Amp Manual](https://ampcode.com/manual), [Amp Pricing](https://ampcode.com/pricing), [Amp Orbs manual](https://ampcode.com/manual/orbs), [Amp Plugin API](https://ampcode.com/manual/plugin-api), [Amp Models](https://ampcode.com/models), and [Amp Chronicle](https://ampcode.com/chronicle), verified 2026-07-28.
-- Product announcements central to the surviving claims: [Event Driven Orbs](https://ampcode.com/news/event-driven-orbs), [Multiplayer](https://ampcode.com/news/multiplayer), [Right on Schedule](https://ampcode.com/news/schedule), [Meet Puck](https://ampcode.com/news/meet-puck), [Amp in Slack](https://ampcode.com/news/slack-integration), [Secrets of the Orb](https://ampcode.com/news/secrets-of-the-orb), [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent), [Subscriptions, At Last](https://ampcode.com/news/subscriptions), [Agents, Anywhere](https://ampcode.com/news/agents-anywhere), [The Dial](https://ampcode.com/news/the-dial), [Agents in Orbs](https://ampcode.com/news/agents-in-orbs), [Amp Rebuilt](https://ampcode.com/news/neo), and [Diffs](https://ampcode.com/news/diffs).
+- Official Amp product sweep: [Amp Manual](https://ampcode.com/manual), [Amp Pricing](https://ampcode.com/pricing), [Amp Orbs manual](https://ampcode.com/manual/orbs), [Amp Plugin API](https://ampcode.com/manual/plugin-api), [Amp Models](https://ampcode.com/models), and [Amp Chronicle](https://ampcode.com/chronicle), verified 2026-07-31.
+- Product announcements central to the surviving claims: [Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model), [Banking on the Frontier](https://ampcode.com/news/amp-labs-westpac), [Event Driven Orbs](https://ampcode.com/news/event-driven-orbs), [Multiplayer](https://ampcode.com/news/multiplayer), [Right on Schedule](https://ampcode.com/news/schedule), [Meet Puck](https://ampcode.com/news/meet-puck), [Amp in Slack](https://ampcode.com/news/slack-integration), [Secrets of the Orb](https://ampcode.com/news/secrets-of-the-orb), [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent), [Subscriptions, At Last](https://ampcode.com/news/subscriptions), [Agents, Anywhere](https://ampcode.com/news/agents-anywhere), [The Dial](https://ampcode.com/news/the-dial), [Agents in Orbs](https://ampcode.com/news/agents-in-orbs), [Amp Rebuilt](https://ampcode.com/news/neo), and [Diffs](https://ampcode.com/news/diffs).
 - Amp workflow notes checked for feedback-loop and factory examples: [Putting an Agent in an Orb](https://ampcode.com/notes/putting-an-agent-in-an-orb), [Feedback Loopable](https://ampcode.com/notes/feedback-loopable), [Mainframe Magic](https://ampcode.com/notes/mainframe-magic), and [How to Pair With an Agent](https://ampcode.com/notes/how-to-pair-with-an-agent).
 - Transcript-backed source anchors: [Amp founder interview](https://www.youtube.com/watch?v=_L8xxUXOTk0) [00:25:47]-[00:33:15]; [Raising an Agent episode 9](https://www.youtube.com/watch?v=2wjnV6F2arc) [00:10:18]-[00:17:24], [00:25:29]-[00:40:38]; [Raising an Agent episode 10](https://www.youtube.com/watch?v=4rx36wc9ugw) [00:10:17]-[00:27:57]; [Thorsten Ball, "LLMs are killing Agent Harness"](https://www.youtube.com/watch?v=thMFsqe8kbQ) [00:36:43]-[00:49:24].
 - Internal non-overlap anchors: [Agentic Coding in 2026](/posts/agentic-coding-2026), [Your Repo Is the Memory](/posts/durable-context-coding-agents), [Make the Agent Prove It](/posts/make-the-agent-prove-it), and [Small Threads, Durable State](/posts/small-threads-durable-state).

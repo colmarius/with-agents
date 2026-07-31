@@ -519,3 +519,29 @@
 ## Updated Next Action
 
 - Refresh `src/content/posts/amp-factory-era-case-study.md` from the new research, then complete source, link, site, and Oracle review.
+
+## 2026-07-31 Amp Case-Study Refresh and Oracle Review
+
+- Updated `src/content/posts/amp-factory-era-case-study.md`:
+  - Reverified the Manual, Orbs manual, Plugin API, Models page, Pricing page, and Chronicle, then moved the source-sweep date to 2026-07-31.
+  - Added the bounded lesson from [Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model): Amp can own volatile model routing behind task-level capability tiers, while teams still own task sizing, context, and review. The article explicitly labels the evidence as product telemetry rather than a controlled quality study.
+  - Added the bounded lesson from [Banking on the Frontier](https://ampcode.com/news/amp-labs-westpac): Amp Labs is embedding an on-site team alongside Westpac engineers for enterprise modernization work. The article explicitly says the announcement provides no delivery, architecture, security, or governance evidence and is not a completed success case.
+  - Added both first-party announcements to the source appendix and kept model assignments, usage percentages, team rosters, and marketing language out of durable prose.
+- Oracle review:
+  - Recommendation: approve; no material findings.
+  - Applied its one low-severity fix by attributing the embedded-enterprise boundary to the vendor's delivery choice rather than generalizing it to the whole field.
+  - Applied its optional clarity edit by replacing interpretive “meaningful adoption” language with the announcement's concrete report that almost no one installed the classic-mode plugins.
+- Word count:
+  - Before: 2,286 words.
+  - After: 2,426 words, an increase of 140 words (6.1%). This focused refresh adds two materially new, evidence-bounded announcements to an already-trimmed case study; the added caveats are necessary to keep product telemetry and partnership marketing from reading as stronger proof.
+- Verification:
+  - `npm run check` passed with 0 errors, warnings, or hints.
+  - `npm run build` passed and generated 20 pages, including the article and slides route.
+  - Both new first-party links and every canonical source in the refreshed source bundle returned HTTP 200.
+  - All four internal post links resolve to existing source files/routes.
+  - `git diff --check` passed.
+  - `npm run lint:fix` was not run because the touched public and work-item files are Markdown and Biome does not format them.
+
+## Updated Next Action
+
+- No immediate action. Re-run the first-party source sweep before the next Amp product-claim change.
