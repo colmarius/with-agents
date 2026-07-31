@@ -32,7 +32,8 @@
     deletions of uncited synthesis already represented by the final contracts;
     no surviving Amp product claim changed.
 - Simplified the reader-first canonical durable-context article in commit
-  `24898b7`: 2,896 → 2,385 body words (-511, -17.6%) and 20 → 15 headings.
+  `24898b7`: 2,792 → 2,266 rendered-source words (-526, -18.8%, excluding
+  frontmatter and non-rendered maintenance comments) and 20 → 15 headings.
   Adjacent intent/alignment/comprehension, model-memory, and portability framing
   now shares fewer sections. Noperator, Maggie Appleton, Addy Osmani, and Simon
   Willison retain separate attributed roles. The keep/expire filter, repo-memory
