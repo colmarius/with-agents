@@ -20,6 +20,8 @@ skill adds the repeatable workflow and the checklists.
   salesy, not manifesto-like, not slangy.
 - **Structure:** important point first. Active sentences. Short paragraphs. Concrete
   examples and prompts over abstraction. No throat-clearing or meta-history.
+- **Skim test:** the title, description, headings, slide messages, and one practical
+  artifact should expose the reader job, argument, and next action in 30 seconds.
 - **Shape:** 4–6 substantive sections plus a `Sources` section when practical. Lead
   each section with its takeaway, not setup.
 - **Length:** prefer the shortest version that keeps the argument. When refreshing,
