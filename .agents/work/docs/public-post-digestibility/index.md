@@ -1,6 +1,6 @@
 # Public post digestibility
 
-Status: in-progress
+Status: completed
 Category: docs
 Updated: 2026-07-31
 
@@ -11,6 +11,8 @@ boundaries or editing posts that have no concrete defect. The work adds the
 missing measurement entry point, repairs stale fragments, trims repeated recaps
 from the series map and Amp case study, and makes the canonical durable-context
 article reader-first while leaving its richer alternate decks intact.
+The finding-gated refresh, workflow promotion, adversarial review, and full route
+and build verification are complete.
 
 ## Artifacts
 
@@ -22,7 +24,8 @@ article reader-first while leaving its richer alternate decks intact.
 
 ## Next Action
 
-- Implement Task 2: the minimum homepage addition and two broken fragment fixes.
+- None. Future post refreshes should use the promoted skim test and remain gated
+  by a concrete reader or correctness finding.
 
 ## Open Questions
 

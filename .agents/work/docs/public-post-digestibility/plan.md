@@ -13,7 +13,7 @@ source fidelity and the article/slide hybrid intact.
     - Must-survive evidence and action artifacts are recorded before editing.
     - Oracle reviews scope and acceptance gates before mutation.
 
-- [ ] **Task 2: Add the missing entry point and fix stale fragments**
+- [x] **Task 2: Add the missing entry point and fix stale fragments**
   - Scope: `src/pages/index.astro`, `src/content/posts/make-the-agent-prove-it.md`
   - Depends on: Task 1
   - Acceptance:
@@ -22,7 +22,7 @@ source fidelity and the article/slide hybrid intact.
     - Measurement post retains `pubDate: 2026-07-31` and unchanged frontmatter.
     - Both stale durable-context fragments point to the built evidence heading.
 
-- [ ] **Task 3: Remove repeated recaps from the series map and Amp case study**
+- [x] **Task 3: Remove repeated recaps from the series map and Amp case study**
   - Scope: `src/content/posts/agentic-coding-2026.md`,
     `src/content/posts/amp-factory-era-case-study.md`
   - Depends on: Task 1
@@ -32,7 +32,7 @@ source fidelity and the article/slide hybrid intact.
     - Amp edit is deletions only; no surviving product claim is rephrased.
     - Every rendered section still opens with a coherent blockquote.
 
-- [ ] **Task 4: Make the canonical durable-context article reader-first**
+- [x] **Task 4: Make the canonical durable-context article reader-first**
   - Scope: canonical durable-context post and its extended-deck maintenance note
   - Depends on: Task 2
   - Acceptance:
@@ -44,7 +44,7 @@ source fidelity and the article/slide hybrid intact.
     - Extended deck records intentional reader-versus-talk granularity; its content
       and the image deck remain unchanged.
 
-- [ ] **Task 5: Promote one proven skim rule and run the final review**
+- [x] **Task 5: Promote one proven skim rule and run the final review**
   - Scope: article-writing skill, all task diffs, routes and generated slides
   - Depends on: Tasks 2–4
   - Acceptance:
