@@ -14,9 +14,11 @@ has a distinct reader job.
 
 The source library contains 152 unique tracked video IDs and 141 transcript and
 summary sets. All 63 unique AI Engineer summaries and their three playlist
-overviews are reviewed. The 78 captured Antirez summaries, two overviews, and
-author synthesis remain draft, even though 14 Antirez source IDs already support
-public content. That public-source review gap is the first implementation task.
+overviews are reviewed. Task 1 closed the public-source review gap: the 14
+publicly referenced Antirez summaries, both Antirez overviews, and the author
+synthesis are now reviewed, and the identified public citation/claim/date
+defects are corrected. The remaining 64 unreferenced Antirez summaries stay
+draft pending the Task 2 sample decision.
 
 ## Artifacts
 
@@ -28,9 +30,8 @@ public content. That public-source review gap is the first implementation task.
 
 ## Next Action
 
-- Implement Task 0 (writer-owned JSON canonical formatting), then Task 1's
-  public-source reconciliation including the Antirez overviews and author
-  synthesis.
+- Run Task 2: review the deterministic manifest-stratified ten-summary
+  unreferenced Antirez sample and record the full-review decision.
 
 ## Open Questions
 

@@ -40,7 +40,7 @@ surface and promote only the workflow rules that proved generally reusable.
     checks; it swaps Biome's style formatting for a stricter writer-format
     check on exactly the files the writer owns.
 
-- [ ] **Task 1: Reconcile publicly referenced source artifacts**
+- [x] **Task 1: Reconcile publicly referenced source artifacts**
   - Scope: the publicly referenced Antirez `src/content/youtube/videos/*/summary.md`
     files (expected 14; recompute), their transcripts and metadata, the two
     Antirez playlist overviews and `authors/antirez.md`, the three publicly

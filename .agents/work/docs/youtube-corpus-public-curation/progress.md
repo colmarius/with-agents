@@ -77,3 +77,54 @@
   case confirmed (a deliberately collapsed metadata file fails the new test
   and was restored byte-for-byte).
 - Next action: Task 1 public-source reconciliation.
+
+## 2026-07-31 — Task 1 complete: public-source reconciliation
+
+- Recomputed the exact public tracked-ID boundary across
+  `src/content/posts`, `src/content/summaries`, and `src/data/resources`,
+  covering `watch?v=`, `youtu.be/`, `embed/`, thumbnail hosts, timestamped
+  params, and bare IDs: exactly 17 tracked IDs are publicly referenced —
+  14 draft Antirez IDs (`T5b69_8f5MI`, `TlGrAretPQw`, `497EK7ZQ2FY`,
+  `PHsxD4X2V2A`, `n3rdoQnN7Co`, `ibcqRGQ7BKY`, `0buzDrn0aIY`, `XZZ_ddBvELc`,
+  `WoaulxVqUUA`, `IoE3Hi2zpwk`, `SiOadQFUx2k`, `N-iwRfCFbHE`, `id9QG-mQSOo`,
+  `yFa1BHzkzn8`) and 3 already-reviewed AI Engineer IDs (`ClWD8OEYgp8`
+  Appleton, `RjfbvDXpFls` Zechner, `F_RyElT_gJk` Liu), matching the plan's
+  expectation.
+- Reviewed all 14 publicly referenced Antirez summaries directly against the
+  committed Italian transcript chunks, metadata, and manifests using the
+  translation-fidelity procedure: every anchor resolved to its supporting
+  Italian chunk, paraphrase checked against Italian, disclosure present, no
+  translated wording presented as quotation. All 14 passed and were promoted
+  to `reviewed` (commit `311e1d2`).
+- Reviewed and promoted both Antirez playlist overviews and
+  `authors/antirez.md`. One source contract defect fixed in the author
+  synthesis: its `Source Identities` section duplicated catalog-owned playlist
+  relationships; the duplicate statement was removed, retaining only the
+  no-external-identity note (same commit `311e1d2`).
+- Post-promotion `npm run youtube:library -- status` confirms 7 reviewed
+  occurrences in `antirez-ai-concepts` and 8 in `antirez-coding-with-ai` —
+  14 unique IDs because `0buzDrn0aIY` belongs to both playlists.
+- The three AI Engineer artifacts stayed compare-only. Decisions: Appleton —
+  keep, no discrepancy; Zechner — source summary keep, but the public guided
+  summary overclaimed community "validation" and a general Terminal-Bench
+  ranking, so the public claim was qualified; Liu — source summary keep, but
+  the resource entry and public summary dated the video `2025-07-01` while the
+  manifest records `2025-06-30T22:54:36Z`, so both dates were corrected.
+- Public citation corrections established against the Italian chunks and
+  committed separately (`2d93e62`):
+  - `behavior-over-explanation.md`: the architectural-constraints claim starts
+    in chunk `[00:00:53]`, not `[00:01:57]`; body anchor and Sources entry now
+    read `00:00:53–00:03:55` with `t=53s`.
+  - `salvatore-sanfilippo-ai-concepts.md`: split the `T5b69_8f5MI` anchor so
+    similarity search/quantization/dimensionality reduction cite their actual
+    range `00:11:59–00:32:12` (`t=719s`) instead of riding on
+    `00:00:57–00:10:48`; extended the `n3rdoQnN7Co` endpoint to `00:15:43`,
+    where the operational-independence discussion concludes.
+- No bulk promotion occurred; every promoted artifact passed its own review.
+  Duplicate manifest membership (`8gg-oJr4dTY` twice in `antirez-ai-concepts`)
+  was preserved untouched.
+- Retained ambiguity: none blocking; garbled auto-caption passages remain
+  paraphrased conservatively in source summaries and were not tightened.
+- Verified: lint clean, `astro check` clean, build 20 pages, `git diff --check`
+  clean.
+- Next action: Task 2 deterministic ten-summary unreferenced Antirez sample.
