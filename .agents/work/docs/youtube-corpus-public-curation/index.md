@@ -25,7 +25,9 @@ public-source guard. Task 3 added that guard plus playlist-level status checks,
 duplicate-aware resource validation, and explicit read-only duplicate-manifest
 reporting. Task 4 added the only planned Coding Agents playlist resource: an
 eight-stop, question-led route that keeps AI Engineer in the curator role and
-grounds each recommendation in reviewed speaker evidence.
+grounds each recommendation in reviewed speaker evidence. Task 5 found a
+distinct team/adoption measurement reader job and selected one new article,
+**Measure Outcomes, Not Agent Activity**.
 
 ## Artifacts
 
@@ -37,17 +39,15 @@ grounds each recommendation in reviewed speaker evidence.
 
 ## Next Action
 
-- Run Task 5: compare the proposed team/adoption measurement article section by
-  section against every public post, consult Oracle, and record the selected
-  article outcome.
+- Run Task 6: implement only the selected measurement article, with the recorded
+  source separation, overlap boundary, caveats, links, and target length.
 
 ## Open Questions
 
-- [ ] Does the proposed team-level measurement article remain distinct from the
+- [x] Does the proposed team-level measurement article remain distinct from the
       public field guide, proof-stack article, and Antirez behavior article?
-      Recommended default: publish it only if the Task 5 overlap gate proves a
-      separate team/adoption-measurement reader job; otherwise extend an
-      existing post minimally.
+      Yes. Task 5 selected a new, tightly bounded team/adoption measurement
+      article after comparing all eight public post files and consulting Oracle.
 - [ ] Does Agent Reliability justify a second article?
       Recommended default: decide after the first public slice and defer unless
       the reliability-stack thesis remains distinct and can keep vendor caveats

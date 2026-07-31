@@ -267,3 +267,84 @@
   captures; Astro check has zero diagnostics; production build completes with
   the aligned summary JSON and resource route; diff checks clean.
 - Next action: Task 5 section-level overlap gate and article decision.
+
+## 2026-07-31 — Task 5 complete: publish a distinct measurement article
+
+- Decision: create one new public post titled **Measure Outcomes, Not Agent
+  Activity**. Do not extend an existing post and do not drop the article.
+- Reader job: help an engineering leader decide whether a team-level
+  coding-agent rollout produces net value and design a bounded pilot that can
+  answer that question.
+- Thesis: coding-agent adoption should be judged by delivered functionality net
+  of rework, defects, verification and review cost, and customer outcomes,
+  segmented by task and codebase conditions. Generated-code volume, pull-request
+  count, seats, subscriptions, and attention are diagnostic activity signals,
+  not sufficient outcomes.
+- Section-level overlap gate across all eight current public post files:
+  - `agentic-coding-2026.md` names alignment and review-capacity constraints but
+    supplies no team measurement system.
+  - `make-the-agent-prove-it.md` owns proof for one change; the new article owns
+    aggregate rollout outcomes and costs.
+  - `durable-context-coding-agents.md` names comprehension debt and earlier
+    review but does not evaluate adoption.
+  - `durable-context-coding-agents-extended-deck.md` intentionally expands the
+    canonical durable-context story and adds no separate measurement job.
+  - `durable-context-coding-agents-image-deck.md` is the image-only alternate of
+    that story and adds no measurement framework.
+  - `small-threads-durable-state.md` owns per-task state and recorded proof, not
+    team results.
+  - `amp-factory-era-case-study.md` warns that one Amp signal is product
+    telemetry rather than a controlled study, but is deliberately a
+    single-product case study rather than a cross-source measurement guide.
+  - `behavior-over-explanation.md` supplies the evidence method—representative
+    behavior over a good story—but not an organizational scorecard.
+- Planned article structure:
+  1. Activity is the easiest thing to inflate: distinguish generated code,
+     pull requests, seats, survey interest, and suggestion exposure from a
+     defined sustained-use event and delivered functionality.
+  2. Net out rework and review cost: separate gross output from corrected work,
+     defect handling, verification effort, and the active review bottleneck.
+  3. Segment before forecasting: retain task complexity, greenfield/brownfield,
+     language, codebase size, and context limits instead of applying one uplift.
+  4. Treat presenter and vendor telemetry as bounded evidence: preserve source
+     interests, confounds, sampling gaps, and missing downstream outcomes.
+  5. End with a clearly labeled editorial pilot scorecard covering adoption,
+     delivery, quality, cost, and customer outcome.
+- Source map:
+  - Non-vendor, load-bearing quantitative source: Yegor Denisov-Blanch / Stanford
+    (`tbDDYKRFjhk`) on failures of commit/PR/survey proxies, delivered
+    functionality, rework, and segmented results. His reported 15–20% net gain
+    is an observed study result with unresolved causes and transfer limits, not
+    a baseline forecast.
+  - Commercial/presenter evidence: Tomas Reimers / Graphite (`TswQeKftnaw`) on
+    validity and actionability of review comments, with sampling and
+    false-negative gaps; Brian Scanlan / Intercom (`4_VQBbs2iQA`) on adoption
+    operations and doubled PR throughput, confounded by stronger models and
+    activity-heavy measures; Quinn Slack / Sourcegraph (`Up6WVA07QdE`) on
+    active-use definitions and verification cost, with mixed-denominator market
+    estimates and an explicit commercial stake.
+  - Editorial synthesis: the activity-versus-outcome classification and pilot
+    scorecard. Both must be labeled as synthesis, not attributed to one speaker
+    or presented as cross-speaker consensus.
+- Target: 1,400–1,700 words, five normal `##` sections plus `## Sources used`,
+  with a concise blockquote slide message at the start of every normal section.
+  The post should link outward to the field guide for workflow, proof stack for
+  one-change evidence, durable-context article for comprehension debt, behavior
+  article for evidence method, and guided Coding Agents resource for the source
+  route. It will not modify those posts or add per-video resources.
+- Highest-risk claims to avoid: Intercom's doubled pull-request throughput is
+  not a validated outcome, and Stanford's observed net-gain range is not a
+  transferable baseline. One would repeat the activity-proxy failure; the other
+  would erase the segmentation and replication caveats.
+- Oracle recommendation: new article, high confidence. Accepted: distinct
+  reader job, five-section outline, source separation, title, target length, and
+  the warnings above. Rejected as out of scope: adding an inbound field-guide
+  row would touch a second post despite Task 6's one-post boundary; adding
+  targeted per-video resources is unnecessary because the reviewed videos can
+  be cited directly and Task 4 intentionally avoided one-entry-per-video
+  expansion.
+- Rejected alternatives: no existing article can absorb this cross-source,
+  team-level framework as a minimal extension; publishing nothing would leave a
+  source-supported reader question raised by the guided playlist without a
+  practical answer.
+- Next action: Task 6 implement only this article decision.

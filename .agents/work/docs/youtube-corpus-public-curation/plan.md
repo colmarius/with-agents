@@ -148,7 +148,7 @@ surface and promote only the workflow rules that proved generally reusable.
       article/resource house style and source-anchor checks.
   - Notes: Do not add separate bounded-track playlist resources in this task.
 
-- [ ] **Task 5: Decide whether to extend an article or create a new one**
+- [x] **Task 5: Decide whether to extend an article or create a new one**
   - Scope: all current public posts, reviewed AI Engineer overviews/summaries,
     work-item research/progress
   - Depends on: Tasks 1 and 4

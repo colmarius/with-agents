@@ -76,6 +76,16 @@ Brian Scanlan / Intercom, Quinn Slack / Sourcegraph, and the reliability corpus.
 The article is justified only if it remains a team/adoption measurement guide,
 not another proof-stack or behavior-over-explanation recap.
 
+Task 5 selected a new article, **Measure Outcomes, Not Agent Activity**. Its
+reader job is to help an engineering leader design and interpret a coding-agent
+adoption pilot at team level. That job is distinct from the current workflow
+map, repo-memory guidance, one-change proof stack, work-item procedure,
+Amp-specific case study, and evidence-method article. The piece will classify
+activity and outcome signals, account for rework and review cost, segment results
+by task and codebase conditions, bound commercial telemetry, and end with a
+small editorial pilot scorecard. It will cite reviewed videos directly and will
+not add per-video resources or edit another post for inbound linking.
+
 A reliability-stack article is plausible but optional. The bounded Agent
 Reliability corpus is coherent, but most speakers have a commercial interest in
 the layer they describe. A public draft must keep those affiliations and evidence
@@ -168,8 +178,9 @@ superseded, preserving their complete history in Git.
 
 ## Open Questions
 
-- [ ] Does the team-level measurement draft remain distinct after a section-level
-      overlap audit against all current public posts?
+- [x] Does the team-level measurement draft remain distinct after a section-level
+      overlap audit against all current public posts? Yes; Task 5 selected the
+      new, narrowly scoped article described above.
 - [ ] Is a reliability-stack article worth its vendor-heavy evidence burden?
 - [ ] Which completed work items still have unique live context not represented
       by current code, skills, guidance, or this work item?
