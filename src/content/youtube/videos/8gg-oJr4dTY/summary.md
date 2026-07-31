@@ -6,7 +6,7 @@ publishedAt: "2025-01-21T08:52:12Z"
 sourceLanguage: it
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 *All English wording below is an editorial translation/paraphrase of the Italian captions; nothing is a verbatim quotation.*
@@ -18,7 +18,7 @@ Salvatore Sanfilippo outlines the training pipelines presented for DeepSeek R1-Z
 - R1-Zero starts from a base model and uses reinforcement learning rather than an initial supervised fine-tuning stage. The model is prompted to expose a reasoning section before its final answer. [00:03:12]-[00:04:31]
 - The reward process evaluates both answer correctness and compliance with the requested output structure. Mathematical answers can be checked and generated code can be compiled, while format adherence receives a separate incentive. [00:05:30]-[00:06:39]
 - Because R1-Zero can repeat itself and mix language or formatting, the R1 pipeline first fine-tunes the base model on higher-quality reasoning examples and then applies reinforcement learning. [00:06:39]-[00:07:59]
-- The resulting model generates a much larger reasoning dataset, which is further filtered with human and model feedback and then used to fine-tune smaller Llama- and Qwen-based models through distillation. [00:07:59]-[00:09:07]
+- After further reinforcement learning uses human preferences and V3 to compare candidate solutions, roughly 800,000 model-generated reasoning examples are used to fine-tune smaller Llama- and Qwen-based models through distillation. [00:07:59]-[00:09:07]
 
 ## Practical Implications
 

@@ -6,14 +6,14 @@ publishedAt: "2026-06-05T17:00:07Z"
 sourceLanguage: it
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 *All English wording below is an editorial translation/paraphrase of the Italian auto-generated captions; nothing is a verbatim quotation.*
 
 Salvatore Sanfilippo reports adding SSD-streamed model weights to DwarfStar so machines with less RAM can attempt locally useful inference with large mixture-of-experts models. He describes separate overlap strategies for prefill and autoregressive decoding, then gives first-person performance observations for an implementation still being optimized.
 
-The architecture, model comparisons, cache behavior, and measurements are Sanfilippo's account. The recording supplies no code revision, model files, benchmark artifacts, hardware and storage specification, repeated runs, power measurements, or independent reproduction, so its figures do not establish general speed, quality, efficiency, or hardware support.
+The architecture, model comparisons, cache behavior, and measurements are Sanfilippo's account. The recording supplies no code revision, model files, benchmark artifacts, complete hardware and storage specification (including the exact SSD model and benchmark setup), repeated runs, power measurements, or independent reproduction, so its figures do not establish general speed, quality, efficiency, or hardware support.
 
 ## Key Ideas
 

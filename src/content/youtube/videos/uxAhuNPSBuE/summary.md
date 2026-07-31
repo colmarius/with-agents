@@ -6,7 +6,7 @@ publishedAt: "2026-05-03T21:00:39Z"
 sourceLanguage: it
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 *All English wording below is an editorial translation/paraphrase of the Italian auto-generated captions; nothing is a verbatim quotation.*
@@ -22,7 +22,7 @@ Salvatore Sanfilippo demonstrates a rapidly evolving local DeepSeek v4 Flash inf
 - Prefix digests locate reusable cache entries. In one demonstrated hit, an approximately 11,000-token prefix loaded in 35 milliseconds, leaving only the suffix to prefill; Sanfilippo compares this with about 50 seconds for processing the full prompt in that setup. [00:08:44]-[00:10:29]
 - The implementation keeps one active in-memory cache and writes it to disk on eviction. It also stores sufficiently large common prefixes from the beginning of a prompt and ranks disk entries using context size, hit count, and recency under a bounded space policy. [00:10:29]-[00:12:09]
 - He reports relatively flat throughput as context grows, starts the server with a 250,000-token limit, and considers periodic disk checkpoints so long sessions could recover after a failure. These are demonstrations and design intentions rather than a published benchmark. [00:12:09]-[00:15:13]
-- Sanfilippo attributes the one-day jump from demo to usable implementation to GPT-assisted coding combined with his own architecture, cache policy, steering, and cross-domain experiments; he notes that several kernel attempts had similar or inadequate performance before the current result. [00:16:04]-[00:17:08]
+- Sanfilippo attributes the one-day jump from demo to usable implementation to GPT-assisted coding combined with his own architecture, cache policy, steering, and cross-domain experiments; he notes that several kernel attempts had similar or inadequate performance before the current result. [00:15:13]-[00:17:08]
 
 ## Practical Implications
 

@@ -6,7 +6,7 @@ publishedAt: "2025-10-27T17:19:32Z"
 sourceLanguage: it
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 *All English wording below is an editorial translation/paraphrase of the Italian captions; nothing is a verbatim quotation.*
@@ -15,7 +15,7 @@ Salvatore Sanfilippo argues that AGI is too imprecise to support a single useful
 
 ## Key Ideas
 
-- AGI has no strict scientific definition, so the term can be stretched either to minimize AI progress or to portray full general intelligence as imminent. Sanfilippo treats that ambiguity as a reason to use more functional categories. [00:00:00]
+- AGI has no strict scientific definition, so the term can be stretched either to minimize AI progress or to portray full general intelligence as imminent. [00:00:00] Sanfilippo treats that ambiguity as a reason to use more functional categories. [00:05:42]-[00:07:00]
 - In the conventional ladder, narrow intelligence performs a specific task, AGI can perform any intellectual task available to a person, and artificial superintelligence exceeds human intellectual frontiers. Under a broad reading, AGI would therefore include scientific invention. [00:00:58]-[00:03:01]
 - Superintelligence could arise by running many human-equivalent synthetic researchers much faster or in parallel, by scaling one system to greater individual abstraction and reasoning, or by combining both routes. [00:04:00]-[00:05:42]
 - Industrial AGI would be general across knowledge-work domains and able to replace most human participation in those workflows. Sanfilippo sees coding and other agents as partial precursors because they already cross task boundaries but still require supervision. [00:07:00]-[00:08:10]
