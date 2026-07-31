@@ -43,10 +43,8 @@ read-only structural audit plus an explicit human editorial-review checklist.
 
 ## Next Action
 
-- Continue Task 8: re-run the live-reference audit, delete only the five
-  Oracle-approved completed candidates in the separate cleanup commit, record
-  recovery details, and run the complete final verification gate before marking
-  this active work item completed.
+- Continue Task 8: run the complete final verification gate, record the cleanup
+  commit hash and results, check Task 8, and mark this active work item completed.
 
 ## Open Questions
 

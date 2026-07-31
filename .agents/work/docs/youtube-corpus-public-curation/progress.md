@@ -497,3 +497,40 @@ separate cleanup commit.
 - Next action: re-run the live-reference search from clean Git state, delete only
   the five approved candidates in a separate cleanup commit, record recovery
   details, then run the complete final verification gate.
+
+## 2026-07-31 — Task 8 completed-work-item cleanup
+
+- The final clean-state reference sweep found no live dependency on any cleanup
+  candidate. Matches were limited to the promotion table retained here and two
+  historical candidate-to-candidate statements inside the deletion set. All five
+  candidate `index.md` files still reported `Status: completed` immediately before
+  deletion.
+- Removed exactly these completed, superseded work-item directories:
+  - `.agents/work/docs/agentic-coding-article-refresh/`
+  - `.agents/work/docs/post-slide-format-refresh/`
+  - `.agents/work/research/ai-engineer-youtube-playlists/`
+  - `.agents/work/tooling/youtube-knowledge-library/`
+  - `.agents/work/tooling/youtube-library-maintenance/`
+- Deletion remained safe for the reasons in the pre-cleanup table: reusable article
+  freshness/incorporation and slide-strategy rules survive in
+  `.agents/skills/article-writing/SKILL.md`; the exact Coding Agents bounded session
+  contract survives in `.agents/skills/maintaining-youtube-library/SKILL.md`; and
+  current source-library guidance, scripts, tests, and committed artifacts
+  supersede the two tooling histories.
+- Cleanup parent: `f62a2803e4cfd690d39a8df4247d6b511c177243`. To recover any removed
+  work item without reverting later work, run:
+
+  ```sh
+  git restore --source=f62a2803e4cfd690d39a8df4247d6b511c177243 -- \
+    .agents/work/docs/agentic-coding-article-refresh \
+    .agents/work/docs/post-slide-format-refresh \
+    .agents/work/research/ai-engineer-youtube-playlists \
+    .agents/work/tooling/youtube-knowledge-library \
+    .agents/work/tooling/youtube-library-maintenance
+  ```
+
+- The active `.agents/work/docs/youtube-corpus-public-curation/` directory remains
+  in place as required. This section is committed atomically with the deletions;
+  the resulting cleanup commit hash is recorded in the final completion entry.
+- Next action: run the complete final verification gate, record the cleanup commit
+  hash and results, check Task 8, and mark this active work item completed.
