@@ -63,3 +63,37 @@
   is completed, durable rules were promoted, and no live inbound references exist
   outside the directing Task 4 plan. Next action: commit this record, then delete
   only that completed directory in a separate recoverable commit.
+
+## 2026-07-31 — Task 4 complete and final gate passed
+
+- Committed the Tasks 1–3 implementation and verification record in `05fc970`.
+- Re-ran the completed-item reference audit with hidden `.agents` paths included.
+  The only references outside the deletion candidate were the current work item's
+  explicit Task 4 cleanup instructions; no live code, content, skill, or other
+  work item depended on the predecessor.
+- Deleted only `.agents/work/docs/youtube-corpus-public-curation/` in isolated
+  cleanup commit `0aa0f0b97bac1fddbc3f4a21a5365f0877283019`. Its durable
+  article, source-library, citation-guard, audit, and maintenance rules continue
+  to live in current skills, guidance, scripts, tests, and public/source
+  artifacts.
+- Recovery source is the cleanup parent
+  `05fc97034d8b21309582c7c46c9004f16e58a181`. Restore the removed item without
+  reverting later work with:
+
+  ```sh
+  git restore --source=05fc97034d8b21309582c7c46c9004f16e58a181 -- \
+    .agents/work/docs/youtube-corpus-public-curation
+  ```
+
+- Final verification after cleanup passed:
+  - `npm run lint:fix`: 211 files checked, no fixes.
+  - `npm run content:guard`: 152 videos, 5 playlists, 46 tracked public
+    references, 26 resources, and 51 public summaries; the known duplicate
+    manifest occurrence was reported without mutation.
+  - `npm run check`: 39 files, 0 errors, warnings, or hints.
+  - `npm run build`: 22 pages, including the refreshed article and slide route.
+  - `git diff --check`: clean.
+  - The work-item listing contained only this refresh item before completion.
+- No companion article, resource entry, YouTube source mutation, schedule, or
+  additional work-item deletion occurred. All four tasks are complete and there
+  is no immediate next action.

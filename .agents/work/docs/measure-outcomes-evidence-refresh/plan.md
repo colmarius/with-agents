@@ -58,7 +58,7 @@ claim review contract and remove the completed predecessor work item.
   - Notes: Record word counts, reviewer disposition, and verification in
     `progress.md`.
 
-- [ ] **Task 4: Complete and clean up work-item state**
+- [x] **Task 4: Complete and clean up work-item state**
   - Scope: `.agents/work/docs/measure-outcomes-evidence-refresh/` and
     `.agents/work/docs/youtube-corpus-public-curation/`
   - Depends on: Task 3

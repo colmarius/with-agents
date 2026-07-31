@@ -1,6 +1,6 @@
 # Measure outcomes evidence refresh
 
-Status: in-progress
+Status: completed
 Category: docs
 Updated: 2026-07-31
 
@@ -10,6 +10,8 @@ Refresh `Measure Outcomes, Not Agent Activity` against stronger 2025–2026
 controlled, longitudinal, qualitative, and skill-formation evidence. Preserve the
 article's durable measurement reader job while correcting its evidence hierarchy,
 making review displacement explicit, and tightening the pilot decision contract.
+The focused refresh, durable evidence-review contract, adversarial review, full
+verification, and approved predecessor cleanup are complete.
 
 ## Artifacts
 
@@ -21,8 +23,8 @@ making review displacement explicit, and tightening the pilot decision contract.
 
 ## Next Action
 
-- Delete only the completed `youtube-corpus-public-curation` work item in a
-  separate recoverable commit, then record cleanup and complete this work item.
+- None. Revisit the article only when material new evidence challenges its
+  outcome layers, review-displacement model, or pilot contract.
 
 ## Open Questions
 
