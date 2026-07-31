@@ -9,7 +9,14 @@ export const catalogPath = resolveContainedPath(libraryRoot, 'catalog.json');
 const playlistItemsEndpoint =
   'https://www.googleapis.com/youtube/v3/playlistItems';
 
-const commandNames = new Set(['capture', 'check', 'help', 'status', 'sync']);
+const commandNames = new Set([
+  'audit',
+  'capture',
+  'check',
+  'help',
+  'status',
+  'sync',
+]);
 const forbiddenCredentialKey =
   /^(?:api[-_]?key|credentials?|secrets?|youtube[-_]?api[-_]?key)$/i;
 
@@ -215,13 +222,13 @@ export const parseLibraryArgs = (argv) => {
     throw new Error(`Unknown command: ${command}`);
   }
 
-  if (command === 'status' && argv.length > 1) {
+  if ((command === 'audit' || command === 'status') && argv.length > 1) {
     const extra = argv[1];
     const kind = extra.startsWith('-') ? 'options' : 'arguments';
     throw new Error(`Command ${command} does not accept ${kind}.`);
   }
 
-  if (command === 'help' || command === 'status') {
+  if (command === 'audit' || command === 'help' || command === 'status') {
     return { command };
   }
 

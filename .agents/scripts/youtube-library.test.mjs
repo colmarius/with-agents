@@ -338,8 +338,9 @@ test('library paths cannot escape the fixed root', () => {
   assert.throws(() => libraryPath('/tmp/transcript.md'));
 });
 
-test('library CLI parsing supports check, sync, bounded capture modes, and strict status', () => {
+test('library CLI parsing supports audit, check, sync, bounded capture modes, and strict status', () => {
   assert.deepEqual(parseLibraryArgs([]), { command: 'help' });
+  assert.deepEqual(parseLibraryArgs(['audit']), { command: 'audit' });
   assert.deepEqual(parseLibraryArgs(['check']), {
     command: 'check',
     playlistSlugs: [],
@@ -448,6 +449,10 @@ test('library CLI parsing supports check, sync, bounded capture modes, and stric
     (error) =>
       error.message.includes('Unknown capture option: --output') &&
       !error.message.includes('/tmp/secret'),
+  );
+  assert.throws(
+    () => parseLibraryArgs(['audit', '--json']),
+    /does not accept options/,
   );
   assert.throws(
     () => parseLibraryArgs(['status', '--credentials=secret']),

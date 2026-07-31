@@ -129,6 +129,21 @@ failures. Do not retry them during every routine check or sync.
    at `draft` under the authoritative contract.
 3. Finish with the mutating-workflow checks below.
 
+## Structural Audit and Editorial Review
+
+Run `npm run youtube:library -- audit` after source-library editorial changes.
+The read-only audit checks machine-verifiable structure: frontmatter and ID
+relationships, ordered transcript chunks, timestamp-anchor endpoints, relative
+links, synthesis coverage, and duplicate manifest occurrences. It reports
+duplicates without deduping or mutating them.
+
+A passing audit is not an editorial review. Before setting an artifact to
+`reviewed`, a human or dedicated reviewer must compare each claim with the full
+adjacent transcript context and verify that both the start and end of every
+anchor range cover the complete claim. The reviewer must still judge
+translation fidelity, attribution, qualification, and unsupported certainty;
+the structural audit does not score prose or infer whether a claim is accurate.
+
 ## Mandatory Public-Impact Review
 
 Apply this review to every authoritative sync diff or manual playlist identity
@@ -160,7 +175,11 @@ change before completing a mutating workflow.
 
    ```sh
    npm run youtube:library -- status
-   node --test .agents/scripts/youtube-library.test.mjs .agents/scripts/youtube-transcript-core.test.mjs
+   npm run youtube:library -- audit
+   node --test \
+     .agents/scripts/youtube-library.test.mjs \
+     .agents/scripts/youtube-transcript-core.test.mjs \
+     .agents/scripts/youtube-library-structural-audit.test.mjs
    ```
 
 2. When code or public content changed, also run:

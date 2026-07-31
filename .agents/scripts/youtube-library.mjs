@@ -13,6 +13,10 @@ import {
   parseLibraryArgs,
   synchronizeCatalogPlaylists,
 } from './lib/youtube-library-core.mjs';
+import {
+  auditYoutubeLibraryStructure,
+  formatYoutubeLibraryStructuralAudit,
+} from './lib/youtube-library-structural-audit.mjs';
 
 const okExit = 0;
 
@@ -20,6 +24,9 @@ const usage = `Usage:
   npm run youtube:library -- <command>
 
 Commands:
+  audit    Validate source-library structure, transcript timestamp ordering,
+           anchor endpoints, provenance relationships, and relative links.
+           This read-only check does not assess editorial claim quality.
   check [--playlist <slug>]... [--json]
            Compare remote playlists with committed manifests and combine the
            result with local library status. This command never writes files.
@@ -46,6 +53,12 @@ const main = async () => {
   if (command === 'help') {
     console.log(usage);
     return okExit;
+  }
+
+  if (command === 'audit') {
+    const audit = await auditYoutubeLibraryStructure();
+    console.log(formatYoutubeLibraryStructuralAudit(audit));
+    return audit.errors.length === 0 ? okExit : 1;
   }
 
   const catalog = await loadCatalog();
