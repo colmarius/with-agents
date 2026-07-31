@@ -166,7 +166,7 @@ surface and promote only the workflow rules that proved generally reusable.
   - Notes: Recommended candidate is “Measure outcomes, not activity”; the title
     may change during the editorial pass.
 
-- [ ] **Task 6: Implement the selected article outcome**
+- [x] **Task 6: Implement the selected article outcome**
   - Scope: at most one new or existing public post, deliberate resource/internal
     links, work-item progress
   - Depends on: Task 5

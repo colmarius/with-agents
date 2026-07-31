@@ -27,7 +27,9 @@ reporting. Task 4 added the only planned Coding Agents playlist resource: an
 eight-stop, question-led route that keeps AI Engineer in the curator role and
 grounds each recommendation in reviewed speaker evidence. Task 5 found a
 distinct team/adoption measurement reader job and selected one new article,
-**Measure Outcomes, Not Agent Activity**.
+**Measure Outcomes, Not Agent Activity**. Task 6 published that article as a
+bounded, source-backed measurement guide without changing another post or
+expanding the resource manifest.
 
 ## Artifacts
 
@@ -39,8 +41,9 @@ distinct team/adoption measurement reader job and selected one new article,
 
 ## Next Action
 
-- Run Task 6: implement only the selected measurement article, with the recorded
-  source separation, overlap boundary, caveats, links, and target length.
+- Run Task 7: decide whether the Agent Reliability corpus warrants a separately
+  planned article, then add only the reusable editorial checklist and bounded
+  structural audit required by the plan.
 
 ## Open Questions
 

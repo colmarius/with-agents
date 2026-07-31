@@ -348,3 +348,40 @@
   source-supported reader question raised by the guided playlist without a
   practical answer.
 - Next action: Task 6 implement only this article decision.
+
+## 2026-07-31 — Task 6 complete: outcome measurement article published
+
+- Added the one selected public post,
+  `src/content/posts/measure-outcomes-not-agent-activity.md`, in commit
+  `aa19466`. No other post, resource, summary, or source-library artifact changed.
+- The 1,651-word article stays inside the 1,400–1,700 target and has five normal
+  `##` sections, each beginning with a concise blockquote slide message, followed
+  by the exact `## Sources used` appendix.
+- Public outcome:
+  - classifies access, activity, adoption, and delivery-system signals without
+    treating any one proxy as sufficient proof;
+  - carries the Stanford gross-versus-net result only as a bounded study
+    observation and retains the study's segmentation and transfer caveats;
+  - treats Intercom's doubled pull-request throughput as confounded presenter
+    telemetry rather than validated customer value;
+  - treats Graphite actionability as a useful intermediate review signal, not
+    correctness or downstream value;
+  - uses Sourcegraph's adoption definitions and verification-cost heuristic
+    while preserving mixed-denominator and commercial-interest warnings;
+  - labels both the signal table and pilot scorecard as editorial synthesis and
+    explicitly denies cross-speaker consensus.
+- Internal links stay outbound and in scope: field guide for workflow, proof
+  stack for one-change evidence, durable context for comprehension debt,
+  behavior-over-explanation for evidence method, Amp case study for the same
+  telemetry boundary, and the resource hub for the reviewed source route. No
+  inbound edit to a second post and no per-video resource expansion was made.
+- Verified each cited range against the reviewed source summary and the matching
+  transcript chunks; all four tracked source summaries are `reviewed`.
+- Verification: lint clean; public guard passes with 152 tracked videos, 5
+  playlists, 47 tracked public references, 26 resources, and 51 public
+  summaries; all 54 public-guard/library/transcript tests pass; library status
+  has no pending captures; Astro check has zero diagnostics; production build
+  completes 22 pages including the article and slide routes; every internal
+  target route exists; diff checks clean.
+- Next action: Task 7 reliability article decision and bounded review-tooling
+  hardening.
