@@ -385,3 +385,59 @@
   target route exists; diff checks clean.
 - Next action: Task 7 reliability article decision and bounded review-tooling
   hardening.
+
+## 2026-07-31 — Task 7 complete: reliability deferred and structural review hardened
+
+- Reliability article decision: defer; do not publish or plan a follow-up from
+  this work item.
+- Section-level overlap and reader-job result:
+  - `agentic-coding-2026.md` already owns deterministic controls, explicit human
+    decision boundaries, and the warning that parallel agent workflows amplify
+    weak infrastructure and review debt.
+  - `make-the-agent-prove-it.md` already owns the risk-scaled proof stack:
+    executable checks, real-system behavior, conformance, inspectable evidence,
+    safety boundaries, and human comprehension.
+  - `small-threads-durable-state.md` and `durable-context-coding-agents.md` own
+    bounded work, durable state, restartability, reviewable commits, and proof
+    that survives the agent session.
+  - `behavior-over-explanation.md` owns the methodological claim that behavioral
+    evidence should outrank fluent explanation.
+  - `measure-outcomes-not-agent-activity.md` owns expected value at team level,
+    including rework, defect and verification cost, review capacity, and human
+    outcomes.
+- The one potentially narrower thesis—durable orchestration plus production
+  simulation—does not yet meet the claim-to-caveat burden. The supporting talks
+  are predominantly from organizations selling agent frameworks, orchestration,
+  cloud infrastructure, review, or evaluation products, and the corpus does not
+  provide enough independent comparisons, failure data, or replication. A new
+  article would mostly recombine existing guidance or overstate commercial
+  architecture claims as consensus.
+- Added `npm run youtube:library -- audit` in commit `7cdcfba`. The command is
+  read-only and explicitly bounded to machine-verifiable source-library
+  structure: catalog attribution mode; manifest relationships and duplicate
+  occurrences; summary, overview, and author frontmatter/status/ID contracts;
+  transcript chunk ordering; timestamp-anchor resolution against sibling
+  transcript chunks; synthesis coverage; expected headings; and relative-link
+  resolution.
+- Completed the synthesis classification gate in follow-up commit `7d06202`:
+  outside coverage and source-identity sections, each overview or author bullet
+  must either start with `Editorial:` or link a video summary. Focused failure
+  tests also prove that a playlist cannot have both an author relationship and
+  `multiSpeaker: true`.
+- The audit reports the genuine `8gg-oJr4dTY` occurrences at positions 0 and 3
+  without deduping or writing any file. It does not score prose, infer claim
+  quality, validate translation, or decide whether timestamps support the full
+  meaning of a claim.
+- Hardened `.agents/skills/maintaining-youtube-library/SKILL.md` with the human
+  editorial-review boundary: before promotion to `reviewed`, compare each claim
+  against the full adjacent transcript context and verify both the start and end
+  of every anchor range. Reviewers must still judge translation fidelity,
+  attribution, qualification, and unsupported certainty.
+- Verification: Biome clean on all changed scripts; all 58 focused and existing
+  public-guard, structural-audit, library, and transcript tests pass; the real
+  audit passes 152 unique tracked videos, 161 manifest occurrences, 141
+  transcripts, 141 summaries, 5 playlists, and 1 author; the public guard passes
+  47 tracked references, 26 resources, and 51 public summaries; diff checks
+  clean.
+- Next action: Task 8 final Oracle review, durable-rule promotion audit, full
+  verification, and safe completed-work-item cleanup.

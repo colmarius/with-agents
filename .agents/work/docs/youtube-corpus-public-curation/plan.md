@@ -182,7 +182,7 @@ surface and promote only the workflow rules that proved generally reusable.
   - Notes: Article prose remains human-curated editorial work from reviewed
     sources; do not generate it mechanically from overviews.
 
-- [ ] **Task 7: Decide the reliability article and harden library review tooling**
+- [x] **Task 7: Decide the reliability article and harden library review tooling**
   - Scope: Agent Reliability source artifacts, maintenance skill, reusable
     read-only corpus audit, metadata formatting path, work-item progress
   - Depends on: Tasks 2 and 6

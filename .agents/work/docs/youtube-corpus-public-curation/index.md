@@ -29,7 +29,9 @@ grounds each recommendation in reviewed speaker evidence. Task 5 found a
 distinct team/adoption measurement reader job and selected one new article,
 **Measure Outcomes, Not Agent Activity**. Task 6 published that article as a
 bounded, source-backed measurement guide without changing another post or
-expanding the resource manifest.
+expanding the resource manifest. Task 7 deferred a separate reliability article
+after a section-level overlap and evidence-burden review, then added a reusable
+read-only structural audit plus an explicit human editorial-review checklist.
 
 ## Artifacts
 
@@ -41,9 +43,10 @@ expanding the resource manifest.
 
 ## Next Action
 
-- Run Task 7: decide whether the Agent Reliability corpus warrants a separately
-  planned article, then add only the reusable editorial checklist and bounded
-  structural audit required by the plan.
+- Run Task 8: obtain the final Oracle review, remediate only high-confidence
+  in-scope findings, promote unique durable rules, run the full verification
+  gate, and clean only completed superseded work items that pass the deletion
+  audit.
 
 ## Open Questions
 
@@ -51,10 +54,11 @@ expanding the resource manifest.
       public field guide, proof-stack article, and Antirez behavior article?
       Yes. Task 5 selected a new, tightly bounded team/adoption measurement
       article after comparing all eight public post files and consulting Oracle.
-- [ ] Does Agent Reliability justify a second article?
-      Recommended default: decide after the first public slice and defer unless
-      the reliability-stack thesis remains distinct and can keep vendor caveats
-      visible.
+- [x] Does Agent Reliability justify a second article?
+      No for this work item. The practical reader jobs overlap existing public
+      proof, review, workflow, state, and measurement sections; the narrower
+      orchestration/simulation angle remains vendor-heavy and does not yet carry
+      the evidence burden for another article.
 
 Resolved by the 2026-07-31 stress review (see `progress.md`): the Antirez
 overviews and author synthesis review moved into Task 1; Task 8 uses

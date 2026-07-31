@@ -91,6 +91,29 @@ Reliability corpus is coherent, but most speakers have a commercial interest in
 the layer they describe. A public draft must keep those affiliations and evidence
 limits visible rather than laundering them into consensus.
 
+## Reliability Article Decision
+
+Task 7 defers the reliability-stack article. Its broad practical reader jobs are
+already owned section by section: `agentic-coding-2026` covers deterministic
+checks, human decision boundaries, and the risks of scaling agent workflows;
+`make-the-agent-prove-it` owns risk-scaled tests, real-system evidence,
+conformance, boundaries, and human comprehension; `small-threads-durable-state`
+owns bounded work, backpressure through reviewable commits, and recorded proof;
+`durable-context-coding-agents` owns repo-visible task state, evidence, and
+restartability; `behavior-over-explanation` owns behavioral validation over
+plausible stories; and `measure-outcomes-not-agent-activity` owns expected value,
+rework, review capacity, and downstream outcomes at team level.
+
+A narrower article about durable orchestration and production simulation would
+still depend mainly on presenters whose organizations sell the relevant agent,
+workflow, cloud, review, or evaluation layers. The playlist supports a useful
+source overview, but it does not yet provide enough independent comparison,
+failure data, or replicated production evidence to justify a separate public
+claim stack. Publishing now would mostly recombine existing advice or turn
+commercial architecture claims into apparent consensus. No reliability article
+is planned or implemented in this work item; a future article needs both a
+distinct reader job and stronger independent evidence.
+
 ## Resource Strategy
 
 - Do not create one resource per captured video.
@@ -181,6 +204,8 @@ superseded, preserving their complete history in Git.
 - [x] Does the team-level measurement draft remain distinct after a section-level
       overlap audit against all current public posts? Yes; Task 5 selected the
       new, narrowly scoped article described above.
-- [ ] Is a reliability-stack article worth its vendor-heavy evidence burden?
+- [x] Is a reliability-stack article worth its vendor-heavy evidence burden?
+      No for this work item; defer until a distinct thesis has stronger
+      independent evidence and less section-level overlap.
 - [ ] Which completed work items still have unique live context not represented
       by current code, skills, guidance, or this work item?
