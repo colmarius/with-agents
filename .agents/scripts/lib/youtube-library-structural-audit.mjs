@@ -119,6 +119,33 @@ const expectHeadings = (contents, expected, file, errors) => {
   }
 };
 
+const validateSynthesisLabels = ({
+  contents,
+  ignoredHeadings,
+  file,
+  errors,
+}) => {
+  let heading;
+  for (const line of contents.split(/\r?\n/)) {
+    if (line.startsWith('## ')) {
+      heading = line;
+      continue;
+    }
+    if (
+      !line.startsWith('- ') ||
+      ignoredHeadings.has(heading) ||
+      line.startsWith('- Editorial:')
+    ) {
+      continue;
+    }
+    if (!/\]\([^)]*videos\/[^/)]+\/summary\.md\)/.test(line)) {
+      errors.push(
+        `${file} synthesis bullet must start with Editorial: or link a video summary`,
+      );
+    }
+  }
+};
+
 const timestampSeconds = (timestamp) => {
   const [hours, minutes, seconds] = timestamp.split(':').map(Number);
   if (minutes > 59 || seconds > 59) {
@@ -536,6 +563,12 @@ export const auditYoutubeLibraryStructure = async ({
       errors,
     });
     expectHeadings(overviewSource, overviewHeadings, overviewName, errors);
+    validateSynthesisLabels({
+      contents: overviewSource,
+      ignoredHeadings: new Set(['## Coverage']),
+      file: overviewName,
+      errors,
+    });
     await validateRelativeLinks(
       overviewSource,
       overviewFile,
@@ -592,6 +625,12 @@ export const auditYoutubeLibraryStructure = async ({
       errors,
     });
     expectHeadings(authorSource, authorHeadings, authorName, errors);
+    validateSynthesisLabels({
+      contents: authorSource,
+      ignoredHeadings: new Set(['## Source Identities']),
+      file: authorName,
+      errors,
+    });
     await validateRelativeLinks(authorSource, authorFile, libraryRoot, errors);
   }
 

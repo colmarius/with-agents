@@ -113,7 +113,7 @@ coveredVideoIds:
 
 ## Cross-Playlist Synthesis
 
-- [Playlist](../playlists/playlist/overview.md)
+- Editorial: [Playlist](../playlists/playlist/overview.md)
 
 ## Changes Over Time
 
@@ -244,7 +244,12 @@ test('structural audit rejects invalid provenance, status, coverage, and relativ
     await writeFixture(
       root,
       'playlists/playlist/overview.md',
-      overview.replace('  - video-id', '  - other-id'),
+      overview
+        .replace('  - video-id', '  - other-id')
+        .replace(
+          '- Editorial: Example.',
+          '- Unlabeled synthesis without a source.',
+        ),
     );
     const result = await auditYoutubeLibraryStructure({ libraryRoot: root });
     assert.ok(
@@ -267,9 +272,34 @@ test('structural audit rejects invalid provenance, status, coverage, and relativ
     );
     assert.ok(
       result.errors.some((error) =>
+        error.includes(
+          'synthesis bullet must start with Editorial: or link a video summary',
+        ),
+      ),
+    );
+    assert.ok(
+      result.errors.some((error) =>
         error.includes('link ./missing.md does not resolve'),
       ),
     );
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('structural audit enforces exactly one playlist attribution mode', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-audit-'));
+  try {
+    await writeValidLibrary(root);
+    const catalogPath = path.join(root, 'catalog.json');
+    const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+    catalog.playlists[0].multiSpeaker = true;
+    await writeFixture(root, 'catalog.json', catalog);
+
+    const result = await auditYoutubeLibraryStructure({ libraryRoot: root });
+    assert.deepEqual(result.errors, [
+      'catalog.json is invalid: Playlist playlist-id cannot have both an author relationship and multiSpeaker: true.',
+    ]);
   } finally {
     await rm(root, { recursive: true, force: true });
   }
