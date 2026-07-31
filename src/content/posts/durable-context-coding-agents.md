@@ -13,7 +13,7 @@ Maintenance note for agents:
 durable-context-coding-agents.md is the canonical public article/deck for this topic.
 durable-context-coding-agents-extended-deck.md is the richer slide-first alternate derived from the same material.
 
-The canonical post is reader-first and may merge adjacent framing sections for scanning. The extended deck may retain separate source, diagram, and pacing slides. When either changes, review the other in the same diff and keep factual claims, source roles, links, terminology, caveats, and broad argument order synchronized; section count, heading granularity, visuals, and slide pacing may intentionally diverge.
+The canonical post is reader-first and may merge adjacent framing sections for scanning. Its opening may absorb source framing that the extended deck presents after the checkpoint slide. The extended deck may retain separate source, diagram, and pacing slides. When either changes, review the other in the same diff and keep factual claims, source roles, links, terminology, caveats, and broad argument order synchronized; section count, heading granularity, visuals, and slide pacing may intentionally diverge.
 
 durable-context-coding-agents-image-deck.md is an image-only experiment and is not part of the canonical/extended-deck sync contract.
 Do not publish, rename, delete, or replace draft variants without explicit human approval.
