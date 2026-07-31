@@ -545,3 +545,13 @@
 ## Updated Next Action
 
 - No immediate action. Re-run the first-party source sweep before the next Amp product-claim change.
+
+## 2026-07-31 Public-Article Filtering Correction
+
+- Removed Banking on the Frontier from the public case study and its load-bearing source list. The partnership remains useful Chronicle research, but it does not materially strengthen the article: it provides no implementation or outcome evidence, and stronger existing sources already support the human-judgment boundary.
+- Added a six-part public-article incorporation gate to `research/amp-official-sources-2026.md`: thesis fit, evidence strength, durability, novelty, claim-to-caveat ratio, and load-bearing value.
+- Future Chronicle sweeps should classify each item as `incorporate`, `research-only`, or `ignore` before drafting public prose. “Latest” is a research-selection criterion, not a publication criterion.
+
+## Updated Next Action
+
+- No immediate action. Apply the incorporation gate before the next public Amp article refresh.

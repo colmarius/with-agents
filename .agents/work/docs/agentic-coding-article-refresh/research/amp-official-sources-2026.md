@@ -25,7 +25,20 @@ Freshly checked sources:
 - [Banking on the Frontier](https://ampcode.com/news/amp-labs-westpac): Amp Labs has partnered with Westpac and is building a Sydney-based team to work alongside Westpac engineers. The announcement names migration and modernization of data systems used by millions as an example of the intended enterprise work.
 - The Westpac post gives no project scope, architecture, security or governance controls, benchmarks, shipped outcomes, or customer testimonial. It supports a narrow direction claim—Amp is pairing agents with an embedded engineering team in a high-consequence enterprise setting—not a claim that the approach has already transformed delivery or proven safe at scale.
 
-Article-maintenance recommendation: refresh the case study's verification date and use the model-switch telemetry, with the caveat above, to strengthen its existing distinction between durable task contracts and volatile model wiring. Mention the Westpac partnership only if it supports the article's human-judgment boundary; describe it as current embedded work, not a completed case-study result. Do not add the model names, telemetry percentages, team roster, or marketing language to durable public prose.
+Article-maintenance recommendation: refresh the case study's verification date and use the model-switch telemetry, with the caveat above, to strengthen its existing distinction between durable task contracts and volatile model wiring. Keep the Westpac partnership in research: it does not add implementation or outcome evidence, and stronger sources already support the article's human-judgment boundary. Do not add the model names, telemetry percentages, team roster, or marketing language to durable public prose.
+
+## Public-Article Incorporation Gate
+
+A fresh Chronicle item belongs in research by default, not automatically in the public article. Incorporate it only when all of these checks pass:
+
+1. **Thesis fit:** it directly strengthens or changes one of the article's existing work contracts.
+2. **Evidence strength:** it documents product behavior, measured outcomes, or an operative contract—not only a partnership, launch, aspiration, or customer name.
+3. **Durability:** the useful lesson survives model, pricing, UI, and implementation churn.
+4. **Novelty:** a stronger existing source does not already support the same point.
+5. **Claim-to-caveat ratio:** the useful claim remains substantial after necessary caveats; if the caveat is the main story, keep the item in research.
+6. **Load-bearing value:** removing the item would make the article's argument materially weaker or less current.
+
+Classify each item as **incorporate**, **research-only**, or **ignore** before drafting article prose. For this sweep, the model-routing announcement is incorporated because it directly tests the Dial abstraction. The Westpac announcement is research-only because it reports intent and team structure without implementation or outcome evidence, while stronger existing sources already support the human-judgment boundary.
 
 ## Refresh Sweep — 2026-07-28
 
