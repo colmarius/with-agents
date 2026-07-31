@@ -14,9 +14,9 @@ order: 7
 
 A coding agent can increase generated lines, commits, pull requests, tokens, and concurrent tasks almost by definition. Those numbers help operate the system. They do not establish that the system delivers more useful software.
 
-Yegor Denisov-Blanch of Stanford makes the measurement problem concrete. In a study presented as large-scale and longitudinal, he argues that commit and pull-request counts ignore task size, greenfield experiments miss much of the cost of existing-codebase work, and self-reported productivity does not reliably measure output ([00:04:51–00:06:49](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=291s)). The study instead estimates delivered functionality from source-code changes and then accounts for later rework.
+Yegor Denisov-Blanch of Stanford argues that commit and pull-request counts ignore task size, greenfield experiments miss existing-codebase costs, and self-reported productivity does not reliably measure output ([00:04:51–00:06:49](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=291s)). His presented analysis instead estimates delivered functionality and later rework.
 
-Quinn Slack, a Sourcegraph co-founder, shows the same category error on the adoption side. Survey interest, paid subscriptions, suggestion exposure, and sustained active use have different denominators and answer different questions ([00:01:03–00:04:12](https://www.youtube.com/watch?v=Up6WVA07QdE&t=63s)). A seat says someone can use the tool. A suggestion impression says the tool appeared. Neither says the developer accepted useful work or that a customer received value.
+Quinn Slack, a Sourcegraph co-founder, shows the same category error on the adoption side: survey interest, subscriptions, suggestion exposure, and sustained active use have different denominators ([00:01:03–00:04:12](https://www.youtube.com/watch?v=Up6WVA07QdE&t=63s)). Access and impressions establish neither accepted work nor customer value.
 
 Start by labeling a signal before interpreting it:
 
@@ -34,77 +34,89 @@ This table is editorial synthesis, not a metric endorsed by one speaker. Its pur
 
 > Gross output is not net delivery.
 
-Denisov-Blanch reports a roughly 30–40% gross productivity increase from AI-assisted coding in the studied data, reduced to an average net gain of roughly 15–20% after accounting for rework ([00:09:49–00:10:36](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=589s)). Those figures are observations from that study, not a forecast for another team. Their durable lesson is the gap: measuring only the first completed change can count work that the same delivery system later has to correct.
+In a conference-presented observational analysis, Denisov-Blanch reports a roughly 30–40% gross increase reduced to 15–20% after later rework ([00:09:49–00:10:36](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=589s)). The talk does not make those estimates reproducible, and they are not a benchmark. The useful lesson is that first-pass output can count work the system later corrects.
 
-Review can create a similar gap. Brian Scanlan, a senior principal engineer in Intercom's platform group, reports doubled pull-request throughput after the company standardized on Claude Code and identifies code review as the next bottleneck ([00:15:18–00:16:06](https://www.youtube.com/watch?v=4_VQBbs2iQA&t=918s)), while also acknowledging a concurrent increase in model capability ([00:03:57–00:05:01](https://www.youtube.com/watch?v=4_VQBbs2iQA&t=237s)). The report is useful as an internal operating observation. It does not isolate the cause of the increase or show that twice the pull-request activity produced twice the customer value.
+Controlled studies do not produce one replacement number. Three randomized workplace experiments with 4,867 developers found about 26% more completed tasks from access to 2022–2023 GitHub Copilot, but no customer or downstream-cost outcome ([Cui et al., 2026](https://doi.org/10.1287/mnsc.2025.00535)). A METR trial instead found that 16 experienced open-source developers took 19% longer on 246 familiar-repository tasks using early-2025 tools ([Becker et al., 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)). METR's later experiment could not provide a reliable current estimate because participation, submitted tasks, and concurrent-agent work became selective ([2026 design update](https://metr.org/blog/2026-02-24-uplift-update/)). Different treatments and outcome layers do not yield a universal forecast.
 
-The practical unit is therefore not “agent output.” It is a reviewed outcome moving through the whole system. For a pilot, track at least:
+Review can create a second gap. In a favorable single-company rollout, pull-request volume grew 3.1× while the reviewer pool grew 1.5×. Human-review coverage fell from 89% to 68%, automated review rose from roughly 19% to 84%, and substantive human review fell from roughly 39% to 21% ([He et al., 2026](https://arxiv.org/html/2607.01904)). The July 2026 preprint is observational, the company targeted pull-request throughput, and merge and revert rates are weak short-horizon quality proxies. It supports review displacement, not a universal doubling.
+
+DORA's qualitative analysis of 1,110 Google engineer responses and Brian Scanlan's Intercom account report similar verification and review pressure ([DORA](https://dora.dev/insights/balancing-ai-tensions/); [00:15:18–00:16:06](https://www.youtube.com/watch?v=4_VQBbs2iQA&t=918s)). Scanlan also notes stronger models as a concurrent change ([00:03:57–00:05:01](https://www.youtube.com/watch?v=4_VQBbs2iQA&t=237s)). These reports identify costs to instrument, not causal taxes.
+
+The practical unit is therefore not “agent output.” Choose a primary delivery outcome, then select guardrails from:
 
 - intended functionality accepted and shipped
-- rework after the first implementation, including reversions and follow-up fixes
+- rework after the first implementation at a fixed follow-up horizon
 - escaped defects, separated by severity rather than flattened into one count
-- human review and verification time
+- human-review coverage, substantive-review rate, and verification time
 - queue time when generated work waits for review or integration
 - operating cost, including inference, infrastructure, and failed runs
 
-Per-change evidence still matters. [Make the Agent Prove It](/posts/make-the-agent-prove-it) owns the tactical proof stack; team measurement asks what that proof costs, where it fails, and whether review capacity keeps up across many changes. [Your Repo Is the Memory](/posts/durable-context-coding-agents) covers the related comprehension debt that appears when output grows faster than shared understanding.
-
-Tomas Reimers, a Graphite co-founder discussing its Diamond review product, offers one narrower review signal: whether a comment causes a corresponding code change. He reports about 50% for human comments and 52% for Diamond in Graphite's data ([00:08:15–00:09:17](https://www.youtube.com/watch?v=TswQeKftnaw&t=495s)). Actionability is more informative than comment volume, but it still does not prove that the comment was correct, important, or valuable downstream. A useful intermediate signal must remain intermediate.
+Per-change evidence still matters. [Make the Agent Prove It](/posts/make-the-agent-prove-it) owns the tactical proof stack; team measurement asks what that proof costs and whether review capacity keeps up across many changes.
 
 ## Segment before you forecast
 
 > One average hides the work where agents help, stall, or add cost.
 
-The Stanford presentation does not report one universal uplift. Denisov-Blanch describes larger gains for simpler greenfield tasks and smaller, sometimes negative, gains for complex work in mature projects; he says that comparison covers 136 teams at 27 companies ([00:11:38–00:14:14](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=698s)). He also says less-popular languages, larger codebases, and longer contexts can reduce usefulness, while explicitly treating the codebase-size relationship as illustrative rather than established ([00:14:14–00:17:09](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=854s)).
+Denisov-Blanch describes larger gains for simpler greenfield tasks and smaller, sometimes negative, gains for complex mature-project work across 136 teams at 27 companies ([00:11:38–00:14:14](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=698s)). He also treats language, codebase-size, and context relationships as illustrative rather than established ([00:14:14–00:17:09](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=854s)).
 
 Do not average away those conditions. Before a pilot starts, tag work by the dimensions likely to change the result:
 
-- greenfield or existing system
-- routine, bounded change or high-complexity change
-- language and framework familiarity
-- codebase size and available project context
+- greenfield, newer repository, or mature system
+- routine bounded change or high-complexity work
+- system, language, and framework familiarity
+- codebase size, context quality, and tool or model generation
 - proof strength and consequence of failure
-- developer experience with both the system and the agent workflow
+- developer experience and whether the work requires learning
+- voluntary or assigned adoption, submitted task mix, and concurrent-agent use
 
-Then compare like with like. A tool may be valuable for repository research, repetitive changes, or test scaffolding while adding little to architecture-heavy work. That is a better result than a company-wide uplift number because it tells the team where to use the tool.
+Then compare like with like. A tool may be valuable for repository research, repetitive changes, or test scaffolding while adding little to architecture-heavy work. That is more useful than a company-wide uplift number because it tells the team where to use the tool.
 
-This is the [Behavior Over Explanation](/posts/behavior-over-explanation) evidence method applied one level up: test the adoption story against representative work and preserve the conditions under which the behavior changes. Do not turn the observed 15–20% net range into a target. The source does not explain every decrease, control every organizational difference, or establish what another company should expect.
+Selection must be recorded before averaging too. METR found that some developers withheld tasks they strongly preferred to do with AI and some would not participate in a no-AI condition. Segmenting only the submitted work cannot recover the missing tasks or people. Record refusals, crossover, abandonment, and task withholding alongside the result.
 
-## Treat vendor telemetry as bounded evidence
+## Treat every evidence type as bounded
 
-> Evidence can be useful without being independent or universal.
+> Match each claim to the decision its study design can support.
 
-Commercial and internal reports should not be discarded. They often expose the only available operational detail. They should be labeled precisely enough that a reader can judge what the number carries.
-
-- **Intercom:** Scanlan describes a real adoption program with executive expectations, dedicated enablement, organization-specific guidance, reusable skills, telemetry, and review controls ([00:05:51–00:13:28](https://www.youtube.com/watch?v=4_VQBbs2iQA&t=351s)). Its doubled pull-request throughput remains a presenter-reported activity measure, coincides with stronger models ([00:03:57–00:05:01](https://www.youtube.com/watch?v=4_VQBbs2iQA&t=237s)), and lacks the definitions, comparison group, and customer outcomes needed for a causal productivity claim ([00:15:18–00:18:58](https://www.youtube.com/watch?v=4_VQBbs2iQA&t=918s)).
-- **Graphite:** Reimers reports classifying 10,000 human review comments, a downvote rate below 4%, and the actionability result above ([00:03:11–00:09:17](https://www.youtube.com/watch?v=TswQeKftnaw&t=191s)). Graphite built the product and measured repositories available to it; the talk does not provide sampling, category agreement, repository mix, or false-negative measurement.
-- **Sourcegraph:** Slack's distinction among adoption signals and his frequency-versus-verification-cost framework are useful product heuristics ([00:13:43–00:16:54](https://www.youtube.com/watch?v=Up6WVA07QdE&t=823s)). His market and adoption estimates mix public figures, private information, conference material, and stated intuition, while Sourcegraph has a commercial stake in code-AI adoption ([00:08:28–00:12:40](https://www.youtube.com/watch?v=Up6WVA07QdE&t=508s)).
-
-The rule is not “vendor evidence is bad.” It is: name who measured what, on whose systems, with which missing controls, and for which decision. The [Amp factory-era case study](/posts/amp-factory-era-case-study) uses the same boundary for product telemetry. A team can use a presenter report to form a pilot hypothesis without treating it as independent proof.
+Commercial and internal reports can reveal operating detail; randomized evidence can estimate a bounded treatment effect. Neither transfers automatically. Name the design, outcome layer, population, period, affiliation, missing controls, and decision. Use presenter and qualitative evidence to identify mechanisms worth instrumenting, observational telemetry to find bottlenecks, and controlled studies for claims their actual treatment and outcome support.
 
 ## Run a pilot that can disconfirm the rollout
 
 > Decide what would make you stop before the activity dashboard turns green.
 
-The scorecard below is editorial synthesis from the reviewed evidence, not a consensus framework from the four speakers.
+The scorecard below is editorial synthesis from the reviewed evidence, not a consensus framework.
+
+Capability matters when the work requires learning. In one small, short vendor-affiliated experiment, AI users scored lower on an immediate comprehension quiz without a significant average task-time improvement ([Shen and Tamkin, 2026](https://www.anthropic.com/research/AI-assistance-coding-skills)). It does not establish long-term deskilling, but it justifies checking whether developers can explain and debug unfamiliar systems they must own.
 
 | Layer | Predeclare | Review together |
 | --- | --- | --- |
-| Adoption | One meaningful active-use event and a time window | Eligible users, sustained users, task mix, abandonment |
-| Delivery | A task-sized unit of accepted functionality | Completed units, elapsed delivery time, blocked and failed work |
-| Quality | Rework and defect definitions | Revisions, reversions, escaped defects by severity, recovery time |
-| Review and cost | Which human and machine effort counts | Review time, queue age, verification work, inference and infrastructure cost |
+| Adoption | One meaningful active-use event and the eligible population | Sustained users, refusals, crossover, task withholding, abandonment |
+| Delivery | Unit, denominator, comparison, and outcome window | Completed units, elapsed delivery time, blocked and failed work |
+| Quality | Rework, defect, and follow-up definitions | Revisions, incidents, escaped defects by severity, recovery time |
+| Review and cost | Which human and machine effort counts | Coverage, substantive review, queue age, verification, inference and infrastructure cost |
+| Capability | Whether unfamiliar work requires retained understanding | Ability to explain, diagnose, and safely modify the resulting system |
 | Customer outcome | The product or service result the work should improve | The selected outcome plus contrary indicators and unintended effects |
 
-Run the pilot on real, bounded work. Record a comparable baseline or control where practical. Segment the results before averaging them. Keep stronger review on complex brownfield changes. Define expansion and stop conditions before leaders see faster pull-request graphs.
+Run the pilot on real, bounded work. Prefer randomized assignment where feasible; otherwise keep a stable comparison and state what it cannot control. Log concurrent model, tool, staffing, and process changes. Review quality again after a predeclared horizon suited to the system's release and incident cycle. Segment before averaging, and do not turn a diagnostic indicator into a performance target.
 
-The scorecard should be small enough to operate. If a team cannot collect every layer, it should state the missing evidence rather than substitute activity. A defensible conclusion might be narrow: “This workflow reduced rework on routine dependency updates without increasing review time.” That is more useful than “AI made engineering 30% faster” because another team can inspect the task, cost, and boundary.
+Predeclare the decision as well as the dashboard:
 
-[Agentic Coding in 2026](/posts/agentic-coding-2026) maps the workflow choices behind the pilot. The [Coding with Agents resource hub](/resources/coding-with-agents) provides the reviewed talks and guided playlist route. This article owns only the measurement decision: define value, count the whole system, segment the work, preserve source limits, and make the rollout earn expansion.
+- **Expand** when representative delivery improves without unacceptable guardrail regressions.
+- **Constrain** when the gain belongs only to defined task or team segments.
+- **Redesign** when implementation speeds up but review, rework, or queues absorb it.
+- **Stop** when quality, security, cost, ownership, or recovery crosses the agreed boundary.
+- **Call it inconclusive** when selection, crossover, task mix, or concurrent changes prevent a credible comparison.
+
+Keep one primary delivery outcome and a few guardrails. State missing evidence rather than substitute activity. A defensible conclusion might be: “This workflow reduced elapsed delivery time on routine dependency updates without increasing reviewer minutes or follow-up fixes in the predeclared window.” That is more useful than “AI made engineering 30% faster” because another team can inspect the boundary.
+
+[Agentic Coding in 2026](/posts/agentic-coding-2026) maps the workflow choices behind the pilot. This article owns the measurement decision: define value, count the whole system, segment the work, preserve source limits, and make the rollout earn expansion.
 
 ## Sources used
 
-- [Yegor Denisov-Blanch, “Does AI Actually Boost Developer Productivity?”](https://www.youtube.com/watch?v=tbDDYKRFjhk), especially [00:04:51–00:17:09] on activity proxies, delivered functionality, rework, and segmented results. Stanford is the load-bearing non-vendor source; the reported ranges are study observations, not transferable forecasts.
-- [Tomas Reimers, “AI powered entomology: Lessons from millions of AI code reviews”](https://www.youtube.com/watch?v=TswQeKftnaw), especially [00:03:11–00:09:17] on review categories, feedback, and actionability. Reimers is a Graphite co-founder presenting Graphite's product data.
-- [Brian Scanlan, “How Building with AI Can Double the Throughput of Your Engineering Team”](https://www.youtube.com/watch?v=4_VQBbs2iQA), especially [00:03:57–00:18:58] on the adoption program, activity metrics, reported throughput, review pressure, and confounds. The figures are Intercom presenter reports rather than controlled attribution.
-- [Quinn Slack, “The AI emperor has no DAUs”](https://www.youtube.com/watch?v=Up6WVA07QdE), especially [00:01:03–00:16:54] on adoption definitions, market estimates, workflow frequency, and verification cost. Slack and Sourcegraph have a commercial stake in the product claims.
+- [Cui et al., “The Effects of Generative AI on High-Skilled Work”](https://doi.org/10.1287/mnsc.2025.00535) — randomized 2022–2023 workplace evidence with Microsoft authors and vendor participation; completed tasks, not customer outcomes.
+- [METR's early-2025 study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) and [2026 update](https://metr.org/blog/2026-02-24-uplift-update/) — a bounded slowdown and later selection and concurrency failures.
+- [He et al., “AI Writes Faster Than Humans Can Review”](https://arxiv.org/html/2607.01904) — single-company observational preprint on throughput and review displacement.
+- [DORA, “Balancing AI tensions”](https://dora.dev/insights/balancing-ai-tensions/) — a Google program's qualitative analysis of potentially prompted responses from Google engineers; no causal effect size.
+- [Anthropic's coding-skills study](https://www.anthropic.com/research/AI-assistance-coding-skills) — small, short, vendor-affiliated randomized evidence; not a durable deskilling claim.
+- [Yegor Denisov-Blanch, “Does AI Actually Boost Developer Productivity?”](https://www.youtube.com/watch?v=tbDDYKRFjhk) — presenter-reported activity, rework, and segmentation observations ([00:04:51–00:17:09]).
+- [Brian Scanlan, “How Building with AI Can Double the Throughput of Your Engineering Team”](https://www.youtube.com/watch?v=4_VQBbs2iQA) — Intercom presenter report on throughput, review pressure, and confounds ([00:03:57–00:18:58]).
+- [Quinn Slack, “The AI emperor has no DAUs”](https://www.youtube.com/watch?v=Up6WVA07QdE) — Sourcegraph-affiliated adoption and verification-cost heuristics ([00:01:03–00:16:54]).
