@@ -1,6 +1,6 @@
 # Measure outcomes evidence refresh
 
-Status: planned
+Status: in-progress
 Category: docs
 Updated: 2026-07-31
 
@@ -16,13 +16,13 @@ making review displacement explicit, and tightening the pilot decision contract.
 - Research: [research.md](./research.md)
 - PRD: none
 - Plan: [plan.md](./plan.md)
-- Progress: none
+- Progress: [progress.md](./progress.md)
 - Decisions: none
 
 ## Next Action
 
-- Implement Task 1: refresh the article while keeping its reader job and length
-  bounded.
+- Delete only the completed `youtube-corpus-public-curation` work item in a
+  separate recoverable commit, then record cleanup and complete this work item.
 
 ## Open Questions
 

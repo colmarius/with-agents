@@ -16,7 +16,7 @@ claim review contract and remove the completed predecessor work item.
 
 ## Tasks
 
-- [ ] **Task 1: Refresh the public article**
+- [x] **Task 1: Refresh the public article**
   - Scope: `src/content/posts/measure-outcomes-not-agent-activity.md`
   - Depends on: none
   - Acceptance:
@@ -33,7 +33,7 @@ claim review contract and remove the completed predecessor work item.
   - Notes: Keep five substantive sections plus `## Sources used`; offset additions
     by compressing repeated presenter detail and cross-links.
 
-- [ ] **Task 2: Preserve the empirical evidence-review contract**
+- [x] **Task 2: Preserve the empirical evidence-review contract**
   - Scope: `.agents/skills/article-writing/SKILL.md`
   - Depends on: Task 1
   - Acceptance:
@@ -46,7 +46,7 @@ claim review contract and remove the completed predecessor work item.
   - Notes: Extend the existing freshness/incorporation guidance; do not add a new
     ledger, script, schedule, schema field, or paper database.
 
-- [ ] **Task 3: Adversarially review and verify the refresh**
+- [x] **Task 3: Adversarially review and verify the refresh**
   - Scope: article, skill, and this work item
   - Depends on: Tasks 1–2
   - Acceptance:
