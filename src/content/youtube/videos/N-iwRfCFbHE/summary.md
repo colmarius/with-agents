@@ -6,7 +6,7 @@ publishedAt: "2026-04-25T05:00:19Z"
 sourceLanguage: it
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 *All English wording below is an editorial translation/paraphrase of the Italian captions; nothing is a verbatim quotation.*

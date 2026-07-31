@@ -1,6 +1,6 @@
 ---
 authorId: antirez
-status: draft
+status: reviewed
 coveredVideoIds:
   - 8gg-oJr4dTY
   - 2VnxJafIfEI
@@ -85,7 +85,7 @@ coveredVideoIds:
 ## Source Identities
 
 - The catalog maps author ID and slug `antirez` to the display name Salvatore Sanfilippo.
-- The catalog relates this author to [AI concepts](../playlists/antirez-ai-concepts/overview.md) and [Coding with AI](../playlists/antirez-coding-with-ai/overview.md). No external identity URL is configured.
+- No external identity URL is configured.
 
 ## Cross-Playlist Synthesis
 

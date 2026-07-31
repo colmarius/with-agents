@@ -6,7 +6,7 @@ publishedAt: "2026-07-13T06:00:31Z"
 sourceLanguage: it
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 *All English wording below is an editorial translation/paraphrase of the Italian auto-generated captions; nothing is a verbatim quotation.*

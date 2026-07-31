@@ -1,6 +1,6 @@
 ---
 title: "Coding with AI"
-status: draft
+status: reviewed
 coveredVideoIds:
   - XZZ_ddBvELc
   - WoaulxVqUUA

@@ -1,6 +1,6 @@
 ---
 title: "AI concepts"
-status: draft
+status: reviewed
 coveredVideoIds:
   - 8gg-oJr4dTY
   - 2VnxJafIfEI
