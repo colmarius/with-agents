@@ -75,6 +75,28 @@ resource summary. Publish the post only when it adds a distinct thesis,
 cross-source synthesis, practical framework, workflow, or decision guide rather
 than repeating the summary.
 
+### Empirical claims and evidence refreshes
+
+For a public empirical claim, name enough of the evidence boundary for a reader to
+judge it: study design, measured outcome layer, population or setting, relevant
+tool period, and material affiliation or commercial conflict. Distinguish activity,
+task completion, reviewed delivery, operational quality, customer value, and
+retained capability instead of silently promoting a result from one layer to the
+next.
+
+Presenter, vendor, and observational figures may illustrate a mechanism or form a
+pilot hypothesis, but they are not transferable benchmarks. Stronger evidence may
+support broader claims only within its stated treatment, population, tool
+generation, period, and outcome boundaries. Prefer direction, mechanism, and
+boundary over a point estimate when the exact number is not load-bearing.
+
+Refresh empirical claims when a materially stronger or more current primary study
+changes their role, not merely because another source exists. Use work-local
+research to classify candidate evidence, run an adversarial claim-to-source review,
+and keep papers as direct article citations unless they independently earn a
+durable resource-navigation job. Do not turn the curated resource manifest into a
+paper database or create a recurring refresh schedule by default.
+
 ## Internal-Link Hygiene
 
 - Link only to routes that exist in this repo. Confirm with:
@@ -218,6 +240,10 @@ When deletion is explicitly approved:
 - [ ] Synthesis is labeled as synthesis.
 - [ ] No duplicated source recaps across posts.
 - [ ] No unsupported new product claims.
+- [ ] Load-bearing empirical claims name their design, outcome layer,
+      setting/time boundary, and material affiliation or conflict.
+- [ ] Presenter or vendor figures illustrate bounded mechanisms rather than
+      silently becoming transferable benchmarks.
 - [ ] Amp claims were checked against Manual, Orbs, Models, Plugin API, Chronicle,
       and Pricing on the publication date.
 - [ ] New source items were classified as `incorporate`, `research-only`, or
