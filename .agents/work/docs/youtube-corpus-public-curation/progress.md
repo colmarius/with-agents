@@ -466,3 +466,34 @@ candidate and remains in place. Next action: review these promotions and the ful
 Task 1–7 outcome with Oracle, remediate high-confidence in-scope findings, then
 perform the final verification and delete only the five audited candidates in a
 separate cleanup commit.
+
+## 2026-07-31 — Task 8 final Oracle review and remediation
+
+- Oracle's final recommendation was **approve**. It independently ran the public
+  guard and structural audit, confirmed both pass while reporting the genuine
+  `8gg-oJr4dTY` occurrences at positions 0 and 3 without mutation, found the five
+  promoted/deletion candidates safe, and found no material Task 1–7 or durable-rule
+  preservation defect.
+- Accepted finding: one low-severity but high-confidence source-anchor defect in
+  `measure-outcomes-not-agent-activity.md`. The Intercom passages correctly stated
+  that stronger models confounded the reported throughput result, but their late
+  `[00:15:18–00:16:06]` / `[00:15:18–00:18:58]` anchors covered throughput and
+  review pressure rather than Scanlan's model-capability acknowledgment. Direct
+  transcript verification located that acknowledgment at
+  `[00:03:57–00:05:01]`, matching the reviewed source summary. Commit `2ddb907`
+  adds that adjacent early anchor in both passages while retaining the late
+  anchors for throughput and review. Content guard, Astro check, and production
+  build pass after the correction.
+- Rejected as non-blocking: generalizing the public guard from the sole current
+  `coding-with-agents.json` resource manifest to hypothetical future manifests.
+  There is only one resource manifest now, and adding another is an explicit
+  editorial/tooling change that should extend the guard deliberately rather than
+  broaden this completed work on speculation.
+- No remediation was needed for Oracle's stated unverified assumptions. The
+  earlier dedicated Task 1 and Task 2 reviews—not the final Oracle pass—own the
+  complete Italian translation checks and exact public/sample boundaries. The
+  repository cleanup audit covers the tracked worktree; external systems are not
+  represented as repository dependencies.
+- Next action: re-run the live-reference search from clean Git state, delete only
+  the five approved candidates in a separate cleanup commit, record recovery
+  details, then run the complete final verification gate.
