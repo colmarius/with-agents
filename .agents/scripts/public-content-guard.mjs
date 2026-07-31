@@ -1,0 +1,520 @@
+#!/usr/bin/env node
+import { readdir, readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+
+const resourceTypes = new Set(['article', 'playlist', 'podcast', 'video']);
+const resourceTopics = new Set([
+  'architecture-maintainability',
+  'business-adoption',
+  'collaboration-teams',
+  'context-memory',
+  'models-evaluation',
+  'open-source-ecosystem',
+  'prompting-orchestration',
+  'review-verification',
+  'safety-permissions',
+  'tools-harnesses',
+]);
+
+// Exceptions must stay path- and source-specific and include a reviewable reason.
+// There are intentionally no committed exceptions at present.
+export const publicSourceExceptions = [];
+
+const defaultRepoRoot = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  '../..',
+);
+
+const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const listFiles = async (directory, extension) => {
+  const files = [];
+  const visit = async (currentDirectory) => {
+    const entries = await readdir(currentDirectory, { withFileTypes: true });
+    entries.sort((left, right) => left.name.localeCompare(right.name));
+    for (const entry of entries) {
+      const entryPath = path.join(currentDirectory, entry.name);
+      if (entry.isDirectory()) {
+        await visit(entryPath);
+      } else if (entry.isFile() && entry.name.endsWith(extension)) {
+        files.push(entryPath);
+      }
+    }
+  };
+  await visit(directory);
+  return files;
+};
+
+export const readFrontmatter = (contents) => {
+  const match = contents.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+  if (!match) {
+    return {};
+  }
+
+  const frontmatter = {};
+  for (const line of match[1].split(/\r?\n/)) {
+    const field = line.match(/^([A-Za-z][A-Za-z0-9_-]*):\s*(.*?)\s*$/);
+    if (!field) {
+      continue;
+    }
+    const [, key, rawValue] = field;
+    if (rawValue === 'true' || rawValue === 'false') {
+      frontmatter[key] = rawValue === 'true';
+    } else if (/^-?\d+$/.test(rawValue)) {
+      frontmatter[key] = Number(rawValue);
+    } else {
+      frontmatter[key] = rawValue.replace(/^(['"])(.*)\1$/, '$2');
+    }
+  }
+  return frontmatter;
+};
+
+export const parseJsonWithDuplicateKeys = (source) => {
+  let index = 0;
+  const duplicateKeys = [];
+  const fail = (message) => {
+    throw new SyntaxError(`${message} at character ${index}`);
+  };
+  const skipWhitespace = () => {
+    while (/\s/.test(source[index] ?? '')) {
+      index += 1;
+    }
+  };
+  const parseString = () => {
+    if (source[index] !== '"') {
+      fail('Expected a JSON string');
+    }
+    const start = index;
+    index += 1;
+    while (index < source.length) {
+      if (source[index] === '\\') {
+        index += 2;
+        continue;
+      }
+      if (source[index] === '"') {
+        index += 1;
+        return JSON.parse(source.slice(start, index));
+      }
+      index += 1;
+    }
+    fail('Unterminated JSON string');
+  };
+  const parseValue = (jsonPath) => {
+    skipWhitespace();
+    if (source[index] === '{') {
+      return parseObject(jsonPath);
+    }
+    if (source[index] === '[') {
+      return parseArray(jsonPath);
+    }
+    if (source[index] === '"') {
+      return parseString();
+    }
+    for (const [literal, value] of [
+      ['true', true],
+      ['false', false],
+      ['null', null],
+    ]) {
+      if (source.startsWith(literal, index)) {
+        index += literal.length;
+        return value;
+      }
+    }
+    const number = source
+      .slice(index)
+      .match(/^-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?/);
+    if (!number) {
+      fail('Expected a JSON value');
+    }
+    index += number[0].length;
+    return Number(number[0]);
+  };
+  const parseObject = (jsonPath) => {
+    const value = {};
+    const keys = new Set();
+    index += 1;
+    skipWhitespace();
+    if (source[index] === '}') {
+      index += 1;
+      return value;
+    }
+    while (index < source.length) {
+      skipWhitespace();
+      const key = parseString();
+      const keyPath = `${jsonPath}.${key}`;
+      if (keys.has(key)) {
+        duplicateKeys.push(keyPath);
+      }
+      keys.add(key);
+      skipWhitespace();
+      if (source[index] !== ':') {
+        fail('Expected a colon after a JSON object key');
+      }
+      index += 1;
+      value[key] = parseValue(keyPath);
+      skipWhitespace();
+      if (source[index] === '}') {
+        index += 1;
+        return value;
+      }
+      if (source[index] !== ',') {
+        fail('Expected a comma or closing brace');
+      }
+      index += 1;
+    }
+    fail('Unterminated JSON object');
+  };
+  const parseArray = (jsonPath) => {
+    const value = [];
+    index += 1;
+    skipWhitespace();
+    if (source[index] === ']') {
+      index += 1;
+      return value;
+    }
+    while (index < source.length) {
+      value.push(parseValue(`${jsonPath}[${value.length}]`));
+      skipWhitespace();
+      if (source[index] === ']') {
+        index += 1;
+        return value;
+      }
+      if (source[index] !== ',') {
+        fail('Expected a comma or closing bracket');
+      }
+      index += 1;
+    }
+    fail('Unterminated JSON array');
+  };
+
+  const value = parseValue('$');
+  skipWhitespace();
+  if (index !== source.length) {
+    fail('Unexpected content after the JSON value');
+  }
+  return { value, duplicateKeys };
+};
+
+const extractKnownReferences = (contents, ids) => {
+  if (ids.size === 0) {
+    return [];
+  }
+  const pattern = [...ids]
+    .sort(
+      (left, right) => right.length - left.length || left.localeCompare(right),
+    )
+    .map(escapeRegExp)
+    .join('|');
+  const matches = new Map();
+  const expression = new RegExp(
+    `(?<![A-Za-z0-9_-])(${pattern})(?![A-Za-z0-9_-])`,
+    'g',
+  );
+  for (const match of contents.matchAll(expression)) {
+    if (!matches.has(match[1])) {
+      matches.set(match[1], contents.slice(0, match.index).split('\n').length);
+    }
+  }
+  return [...matches].map(([id, line]) => ({ id, line }));
+};
+
+export const extractTrackedReferences = (
+  contents,
+  { videoIds, playlistIds },
+) => ({
+  videos: extractKnownReferences(contents, videoIds),
+  playlists: extractKnownReferences(contents, playlistIds),
+});
+
+const isValidDate = (value) => {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return false;
+  }
+  const date = new Date(`${value}T00:00:00Z`);
+  return (
+    !Number.isNaN(date.valueOf()) && date.toISOString().slice(0, 10) === value
+  );
+};
+
+const validateExceptions = (exceptions, tracked) => {
+  const errors = [];
+  for (const [index, exception] of exceptions.entries()) {
+    const prefix = `publicSourceExceptions[${index}]`;
+    if (!['playlist', 'video'].includes(exception.kind)) {
+      errors.push(`${prefix} has an invalid kind`);
+    } else if (!tracked[`${exception.kind}Ids`].has(exception.id)) {
+      errors.push(
+        `${prefix} names untracked ${exception.kind} ${exception.id}`,
+      );
+    }
+    if (typeof exception.path !== 'string' || exception.path.length === 0) {
+      errors.push(`${prefix} requires a repository-relative path`);
+    }
+    if (
+      typeof exception.reason !== 'string' ||
+      exception.reason.trim().length === 0
+    ) {
+      errors.push(`${prefix} requires a non-empty reason`);
+    }
+  }
+  return errors;
+};
+
+const exceptionFor = (exceptions, kind, id, relativePath) =>
+  exceptions.find(
+    (exception) =>
+      exception.kind === kind &&
+      exception.id === id &&
+      exception.path === relativePath,
+  );
+
+const readTrackedLibrary = async (repoRoot, notices) => {
+  const youtubeRoot = path.join(repoRoot, 'src/content/youtube');
+  const catalog = JSON.parse(
+    await readFile(path.join(youtubeRoot, 'catalog.json'), 'utf8'),
+  );
+  const videoIds = new Set();
+  const videoStatuses = new Map();
+  const playlistIds = new Set();
+  const playlistStatuses = new Map();
+
+  for (const playlist of catalog.playlists) {
+    playlistIds.add(playlist.id);
+    const manifest = JSON.parse(
+      await readFile(
+        path.join(youtubeRoot, 'playlists', playlist.slug, 'manifest.json'),
+        'utf8',
+      ),
+    );
+    const occurrences = new Map();
+    manifest.entries.forEach((entry, manifestIndex) => {
+      videoIds.add(entry.videoId);
+      const positions = occurrences.get(entry.videoId) ?? [];
+      positions.push(entry.position ?? manifestIndex);
+      occurrences.set(entry.videoId, positions);
+    });
+    for (const [videoId, positions] of occurrences) {
+      if (positions.length > 1) {
+        notices.push(
+          `duplicate manifest occurrence: ${playlist.slug} contains ${videoId} at positions ${positions.join(', ')} (reported, not deduped)`,
+        );
+      }
+    }
+    const overview = await readFile(
+      path.join(youtubeRoot, 'playlists', playlist.slug, 'overview.md'),
+      'utf8',
+    );
+    playlistStatuses.set(
+      playlist.id,
+      readFrontmatter(overview).status ?? 'draft',
+    );
+  }
+
+  for (const videoId of videoIds) {
+    try {
+      const summary = await readFile(
+        path.join(youtubeRoot, 'videos', videoId, 'summary.md'),
+        'utf8',
+      );
+      videoStatuses.set(videoId, readFrontmatter(summary).status ?? 'draft');
+    } catch (error) {
+      if (error.code !== 'ENOENT') {
+        throw error;
+      }
+      videoStatuses.set(videoId, 'missing');
+    }
+  }
+
+  return { videoIds, videoStatuses, playlistIds, playlistStatuses };
+};
+
+const validateResources = async (repoRoot, errors) => {
+  const resourcePath = path.join(
+    repoRoot,
+    'src/data/resources/coding-with-agents.json',
+  );
+  const resourceSource = await readFile(resourcePath, 'utf8');
+  let resources = [];
+  try {
+    const parsed = parseJsonWithDuplicateKeys(resourceSource);
+    resources = parsed.value;
+    for (const duplicateKey of parsed.duplicateKeys) {
+      errors.push(
+        `src/data/resources/coding-with-agents.json has duplicate key ${duplicateKey}`,
+      );
+    }
+  } catch (error) {
+    errors.push(
+      `src/data/resources/coding-with-agents.json is invalid: ${error.message}`,
+    );
+    return { resourceSource, resourceCount: 0, summaryCount: 0 };
+  }
+
+  if (!Array.isArray(resources)) {
+    errors.push(
+      'src/data/resources/coding-with-agents.json must contain an array',
+    );
+    return { resourceSource, resourceCount: 0, summaryCount: 0 };
+  }
+
+  const resourceIds = new Set();
+  for (const [index, resource] of resources.entries()) {
+    const prefix = `resource $[${index}]`;
+    if (!Number.isInteger(resource.id) || resource.id <= 0) {
+      errors.push(`${prefix} has invalid id ${String(resource.id)}`);
+    } else if (resourceIds.has(resource.id)) {
+      errors.push(`${prefix} duplicates resource id ${resource.id}`);
+    } else {
+      resourceIds.add(resource.id);
+    }
+    if (resource.date !== undefined && !isValidDate(resource.date)) {
+      errors.push(`${prefix} has invalid date ${String(resource.date)}`);
+    }
+    if (!resourceTypes.has(resource.type)) {
+      errors.push(`${prefix} has invalid type ${String(resource.type)}`);
+    }
+    if (!Array.isArray(resource.topics)) {
+      errors.push(`${prefix} must have a topics array`);
+    } else {
+      for (const topic of resource.topics) {
+        if (!resourceTopics.has(topic)) {
+          errors.push(`${prefix} has invalid topic ${String(topic)}`);
+        }
+      }
+    }
+  }
+
+  const summaryFiles = await listFiles(
+    path.join(repoRoot, 'src/content/summaries'),
+    '.md',
+  );
+  const summarizedResourceIds = new Set();
+  for (const summaryFile of summaryFiles) {
+    const relativePath = path.relative(repoRoot, summaryFile);
+    const summary = await readFile(summaryFile, 'utf8');
+    const resourceId = readFrontmatter(summary).resourceId;
+    if (!Number.isInteger(resourceId)) {
+      errors.push(`${relativePath} has no valid integer resourceId`);
+    } else if (!resourceIds.has(resourceId)) {
+      errors.push(
+        `${relativePath} references missing resourceId ${resourceId}`,
+      );
+    } else {
+      summarizedResourceIds.add(resourceId);
+    }
+  }
+  for (const resourceId of resourceIds) {
+    if (!summarizedResourceIds.has(resourceId)) {
+      errors.push(`resource id ${resourceId} has no public summary`);
+    }
+  }
+
+  return {
+    resourceSource,
+    resourceCount: resources.length,
+    summaryCount: summaryFiles.length,
+  };
+};
+
+export const runPublicContentGuard = async ({
+  repoRoot = defaultRepoRoot,
+  exceptions = publicSourceExceptions,
+} = {}) => {
+  const errors = [];
+  const warnings = [];
+  const notices = [];
+  const tracked = await readTrackedLibrary(repoRoot, notices);
+  errors.push(...validateExceptions(exceptions, tracked));
+  const resourceValidation = await validateResources(repoRoot, errors);
+
+  const publicFiles = [
+    ...(await listFiles(path.join(repoRoot, 'src/content/posts'), '.md')).map(
+      (filePath) => ({
+        filePath,
+        draftPost: null,
+      }),
+    ),
+    ...(
+      await listFiles(path.join(repoRoot, 'src/content/summaries'), '.md')
+    ).map((filePath) => ({ filePath, draftPost: false })),
+    {
+      filePath: path.join(
+        repoRoot,
+        'src/data/resources/coding-with-agents.json',
+      ),
+      contents: resourceValidation.resourceSource,
+      draftPost: false,
+    },
+  ];
+
+  let referenceCount = 0;
+  for (const publicFile of publicFiles) {
+    const contents =
+      publicFile.contents ?? (await readFile(publicFile.filePath, 'utf8'));
+    const relativePath = path.relative(repoRoot, publicFile.filePath);
+    const isDraftPost =
+      publicFile.draftPost ?? readFrontmatter(contents).draft === true;
+    const references = extractTrackedReferences(contents, tracked);
+    for (const [kind, matches, statuses] of [
+      ['video', references.videos, tracked.videoStatuses],
+      ['playlist', references.playlists, tracked.playlistStatuses],
+    ]) {
+      for (const { id, line } of matches) {
+        referenceCount += 1;
+        const status = statuses.get(id);
+        if (status === 'reviewed') {
+          continue;
+        }
+        const exception = exceptionFor(exceptions, kind, id, relativePath);
+        const message = `${relativePath}:${line} cites tracked ${kind} ${id} with source status ${status}`;
+        if (exception) {
+          notices.push(`${message}; explicit exception: ${exception.reason}`);
+        } else if (isDraftPost) {
+          warnings.push(`${message}; draft post is not publishable`);
+        } else {
+          errors.push(message);
+        }
+      }
+    }
+  }
+
+  return {
+    errors,
+    warnings,
+    notices,
+    stats: {
+      playlistCount: tracked.playlistIds.size,
+      referenceCount,
+      resourceCount: resourceValidation.resourceCount,
+      summaryCount: resourceValidation.summaryCount,
+      videoCount: tracked.videoIds.size,
+    },
+  };
+};
+
+export const formatPublicContentGuard = (result) => {
+  const lines = [
+    result.errors.length === 0
+      ? `Public content guard passed: ${result.stats.videoCount} tracked videos, ${result.stats.playlistCount} tracked playlists, ${result.stats.referenceCount} tracked public references, ${result.stats.resourceCount} resources, ${result.stats.summaryCount} public summaries.`
+      : `Public content guard failed with ${result.errors.length} error(s).`,
+  ];
+  lines.push(...result.errors.map((error) => `ERROR: ${error}`));
+  lines.push(...result.warnings.map((warning) => `WARNING: ${warning}`));
+  lines.push(...result.notices.map((notice) => `NOTICE: ${notice}`));
+  return lines.join('\n');
+};
+
+const isMain =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+if (isMain) {
+  runPublicContentGuard()
+    .then((result) => {
+      console.log(formatPublicContentGuard(result));
+      process.exitCode = result.errors.length === 0 ? 0 : 1;
+    })
+    .catch((error) => {
+      console.error(error.stack ?? error.message ?? String(error));
+      process.exitCode = 1;
+    });
+}

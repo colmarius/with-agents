@@ -58,6 +58,7 @@ Important routes:
 - Draft posts must use `draft: true`; production builds should not publish drafts.
 - When adding resources, keep `src/data/resources/coding-with-agents.json` and `src/content/summaries/**` aligned by `resourceId`.
 - Internal links should point only to routes that exist in this repository, unless intentionally linking to an external site.
+- Publishable posts, public summaries, and resources may cite a video or playlist tracked in `src/content/youtube/` only when its source summary or playlist overview is `reviewed`, unless `.agents/scripts/public-content-guard.mjs` records a path-specific exception with a reason. Draft posts may cite draft sources for work in progress, but the guard reports them as warnings.
 
 ### Article writing
 
