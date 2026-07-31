@@ -1,6 +1,6 @@
 # YouTube corpus public curation
 
-Status: planned
+Status: in-progress
 Category: docs
 Updated: 2026-07-31
 
@@ -28,9 +28,9 @@ public content. That public-source review gap is the first implementation task.
 
 ## Next Action
 
-- Stress-test the research and plan, incorporate high-confidence corrections,
-  then implement Task 1's public-source reconciliation without beginning bulk
-  publication.
+- Implement Task 0 (writer-owned JSON canonical formatting), then Task 1's
+  public-source reconciliation including the Antirez overviews and author
+  synthesis.
 
 ## Open Questions
 
@@ -40,14 +40,15 @@ public content. That public-source review gap is the first implementation task.
       separate team/adoption-measurement reader job; otherwise extend an
       existing post minimally.
 - [ ] Does the Antirez risk sample justify reviewing all 78 summaries?
-      Recommended default: review the 14 publicly referenced summaries first,
-      then decide from a ten-summary sample and synthesis review rather than
-      bulk-promoting drafts.
+      Recommended default: decide from the Task 2 ten-summary sample; never
+      bulk-promote drafts.
 - [ ] Does Agent Reliability justify a second article?
       Recommended default: decide after the first public slice and defer unless
       the reliability-stack thesis remains distinct and can keep vendor caveats
       visible.
-- [ ] Which completed work-item directories are safe to remove after their
-      durable rules and needed evidence are represented elsewhere?
-      Recommended default: remove only completed, unreferenced work items in a
-      final cleanup commit; keep this work item while it is active.
+
+Resolved by the 2026-07-31 stress review (see `progress.md`): the Antirez
+overviews and author synthesis review moved into Task 1; Task 8 uses
+promote-then-delete with a durable-rule promotion table; the public-citation
+guard binds publishable content only and includes a playlist-level rule; the
+metadata formatter churn became Task 0.

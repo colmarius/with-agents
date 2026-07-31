@@ -17,42 +17,79 @@ surface and promote only the workflow rules that proved generally reusable.
 
 ## Tasks
 
-- [ ] **Task 1: Reconcile publicly referenced source summaries**
-  - Scope: the 14 publicly referenced Antirez `src/content/youtube/videos/*/summary.md`
-    files, their transcripts and metadata, the three publicly represented
-    reviewed AI Engineer source summaries, matching files under
-    `src/content/posts`, `src/content/summaries`, `src/data/resources`, and
-    work-item progress
+- [ ] **Task 0: Canonicalize writer-owned generated JSON formatting**
+  - Scope: `biome.json`, `.agents/scripts/youtube-library.test.mjs`
   - Depends on: none
   - Acceptance:
+    - Root cause recorded: the library writer serializes generated JSON with
+      deterministic `JSON.stringify(value, null, 2)`, while Biome's formatter
+      collapses short primitive arrays inline; only the eight
+      unavailable-caption Antirez `metadata.json` files contain such arrays, so
+      routine `lint:fix` churns exactly those eight files.
+    - Add the narrowest `biome.json` override that disables the formatter for
+      writer-owned generated JSON only: `src/content/youtube/videos/*/metadata.json`
+      and `src/content/youtube/playlists/*/manifest.json`. Human-edited
+      `catalog.json` and all other JSON stay Biome-formatted.
+    - Add a focused test that asserts every committed writer-owned JSON file is
+      byte-identical to `JSON.stringify(JSON.parse(contents), null, 2)` plus a
+      trailing newline, pinning the canonical committed format more strictly
+      than Biome did.
+    - `npx biome check src/content/youtube` and `npm run lint:fix` produce no
+      changes or errors in the source tree; the library test suite passes.
+  - Notes: This deliberately does not exclude all YouTube JSON from quality
+    checks; it swaps Biome's style formatting for a stricter writer-format
+    check on exactly the files the writer owns.
+
+- [ ] **Task 1: Reconcile publicly referenced source artifacts**
+  - Scope: the publicly referenced Antirez `src/content/youtube/videos/*/summary.md`
+    files (expected 14; recompute), their transcripts and metadata, the two
+    Antirez playlist overviews and `authors/antirez.md`, the three publicly
+    represented reviewed AI Engineer source summaries, matching files under
+    `src/content/posts`, `src/content/summaries`, `src/data/resources`, and
+    work-item progress
+  - Depends on: Task 0
+  - Acceptance:
     - Recompute the exact public-reference set from tracked manifest IDs rather
-      than relying on the recorded count.
+      than relying on the recorded count (expected 17 = 14 draft Antirez + 3
+      reviewed AI Engineer), covering all common YouTube URL forms, bare IDs,
+      and thumbnail hosts across the three public roots.
     - Deliberately review every publicly referenced Antirez summary against its
       committed transcript, metadata, manifest provenance, and adjacent public
       claims; make source-faithful corrections where necessary and set an
       artifact to `reviewed` only after it passes.
+    - Apply this translation-fidelity procedure to every reviewed Antirez
+      artifact: (a) every cited `[HH:MM:SS]` anchor resolves to the Italian
+      transcript chunk that actually supports the adjacent claim; (b) English
+      paraphrase is checked against the Italian text, not merely against other
+      English artifacts; (c) the italic non-verbatim disclosure is present;
+      (d) no translated wording is presented as a quotation.
+    - Review both Antirez playlist overviews and `authors/antirez.md` in the
+      same pass because they are load-bearing for public corpus-level claims
+      in `behavior-over-explanation.md` (78-video corpus framing, two-playlist
+      research-notebook framing, change-over-time narrative); promote each only
+      after its own review.
     - Compare the Appleton, Zechner, and Liu public summaries/resources/posts
       against their reviewed source summaries and record explicit keep/fix/block
-      decisions.
+      decisions; these three AI Engineer source summaries are compare-only and
+      change only on a material discrepancy.
     - Correct public prose only when a material discrepancy is established; do
       not broaden the task into a general article refresh.
+    - Keep source corrections/status promotions, any public corrections, and
+      work-item updates in separate commits.
     - Record every changed artifact, retained ambiguity, and public-impact
       decision in `progress.md`.
   - Notes: English Antirez wording is translation/paraphrase of Italian
     auto-captions and must never be presented as a verbatim quotation.
 
-- [ ] **Task 2: Review Antirez syntheses and sample the remaining corpus**
-  - Scope: two Antirez playlist overviews, `authors/antirez.md`, ten
-    manifest-stratified unreferenced summaries and sibling transcripts,
-    work-item research/progress
+- [ ] **Task 2: Sample the remaining unreferenced Antirez corpus**
+  - Scope: ten manifest-stratified unreferenced summaries and sibling
+    transcripts, work-item research/progress
   - Depends on: Task 1
   - Acceptance:
-    - Review every claim, source anchor, `coveredVideoIds` entry, translation
-      disclosure, and chronology statement in both overviews and the author
-      synthesis.
-    - Review a deterministic ten-summary sample spanning both playlists,
-      publication dates, conceptual material, coding workflows, and systems
-      experiments.
+    - Review a deterministic, manifest-stratified ten-summary sample spanning
+      both playlists, publication dates, conceptual material, coding workflows,
+      and systems experiments; record the selection rule so it is reproducible.
+    - Apply the Task 1 translation-fidelity procedure to each sampled summary.
     - Record material/minor defect counts and decide explicitly whether a full
       78-summary review is justified.
     - Promote only artifacts that pass their own dedicated review; never
@@ -65,13 +102,27 @@ surface and promote only the workflow rules that proved generally reusable.
     `package.json` only if a command is warranted
   - Depends on: Task 1
   - Acceptance:
-    - Document that public content may cite a tracked source summary only when it
-      is `reviewed` or an explicit exception is recorded.
-    - Add a read-only check that extracts tracked YouTube IDs from public posts,
-      summaries, and resources and enforces that rule without rejecting public
-      sources outside the tracked library.
+    - Document that publishable public content may cite a tracked source summary
+      only when it is `reviewed` or an explicit exception is recorded.
+    - Add a read-only check that extracts tracked YouTube IDs from
+      `src/content/posts`, `src/content/summaries`, and `src/data/resources`
+      only; handles all common URL forms (`watch?v=`, `youtu.be/`, `embed/`,
+      thumbnail hosts, `&t=` and other params) plus bare IDs including
+      leading-dash IDs; enforces the rule on publishable content
+      (`draft: false` posts, public summaries, resources); reports draft posts
+      as warnings, not failures; and never rejects public sources outside the
+      tracked library.
+    - Enforce the same reviewed-status rule at playlist level: when publishable
+      public content cites a tracked playlist ID, the matching playlist
+      overview must be `reviewed` (load-bearing per the Antirez overviews).
     - Add resource-manifest validation for duplicate raw JSON keys, unique IDs,
       valid dates and enums, and public-summary `resourceId` alignment.
+    - Pin duplicate-manifest-entry behavior: `8gg-oJr4dTY` appears twice in
+      `antirez-ai-concepts/manifest.json` because the deterministic sync
+      mirrored genuine remote playlist membership (both occurrences landed in
+      sync commit `192da2f`). Structural checks must report duplicate
+      occurrences explicitly and must never silently dedupe or mutate source
+      membership.
     - Focused tests prove both failure and success cases.
   - Notes: Keep exceptions explicit and small; do not silently promote source
     summaries to make a check pass.
@@ -80,14 +131,17 @@ surface and promote only the workflow rules that proved generally reusable.
   - Scope: `src/data/resources/coding-with-agents.json`, one matching file under
     `src/content/summaries/coding-with-agents/`, reviewed Coding Agents source
     summaries and overview
-  - Depends on: Task 3
+  - Depends on: Tasks 2 and 3
   - Acceptance:
     - Add exactly one playlist-level resource entry and one aligned guided public
       summary.
     - Present AI Engineer as curator/source channel, not author.
-    - Offer a human-curated route through approximately 8–12 talks organized by
-      reader questions; reuse links to existing Appleton, Zechner, and Liu public
+    - Offer a human-curated route through 6–10 talks organized by reader
+      questions; reuse links to existing Appleton, Zechner, and Liu public
       artifacts where useful.
+    - Name every recommended talk's speaker and a source-supported affiliation
+      (per the multi-speaker overview contract); never infer chronology from
+      playlist position.
     - Avoid hard-coded active-playlist counts and avoid one-entry-per-video
       expansion.
     - Every public claim resolves to reviewed source evidence and passes the
@@ -139,13 +193,14 @@ surface and promote only the workflow rules that proved generally reusable.
     - Add a reusable dedicated editorial-review checklist to the maintenance
       skill.
     - Replace repeated one-off structural checkers with the smallest reusable
-      read-only audit that proves derived state, provenance, anchors, coverage,
-      overlap, and attribution mode without evaluating prose quality.
-    - Resolve or explicitly decide the canonical formatting of the eight
-      recurring Antirez unavailable-caption metadata files so routine lint no
-      longer creates unexplained churn.
+      read-only audit bounded to the historically repeated checks: anchor
+      resolution against sibling transcripts, `coveredVideoIds` coverage
+      counts, `Editorial:` labeling, attribution mode, and duplicate manifest
+      occurrences (reported, never deduped). No prose-quality scoring; name
+      this bound in the audit so it cannot grow.
   - Notes: Keep playlist-specific batch sizes and speaker caveats in work-item
-    context rather than global skill rules.
+    context rather than global skill rules. The metadata formatting churn is
+    resolved by Task 0.
 
 - [ ] **Task 8: Run final editorial review and clean completed work items**
   - Scope: all changes from this plan, `.agents/work/**`, final work-item state
@@ -155,12 +210,20 @@ surface and promote only the workflow rules that proved generally reusable.
       address high-confidence issues within scope.
     - Verify the complete public/source boundary, resource alignment, source
       statuses, links, routes, tests, check, build, and clean Git state.
-    - Inventory every completed work item, search live references, and identify
-      whether its unique durable context exists in current guidance, skills,
-      code, tests, public artifacts, or this work item.
+    - Inventory every completed work item, search live references, and record a
+      per-directory durable-rule promotion table in `progress.md` mapping each
+      unique durable rule to its surviving home before any deletion.
+    - Promote unique durable rules first, then delete: in particular, preserve
+      the Coding Agents bounded maintenance/session contract (baseline
+      recording, commit separation for sync/capture/editorial/work-item state)
+      in `maintaining-youtube-library`, and preserve the Amp
+      Manual/Orbs/Models/Plugin API/Chronicle/pricing recheck rule plus the
+      six-part incorporation gate (thesis fit, evidence strength, durability,
+      novelty, claim-to-caveat ratio, load-bearing value) in current
+      article-writing guidance or research before deleting their work items.
     - Remove only completed, unreferenced, superseded work-item directories in a
-      separate cleanup commit. Preserve active/blocked work and record removed
-      paths plus Git recovery guidance.
+      separate cleanup commit after their promotion rows are satisfied. Preserve
+      active/blocked work and record removed paths plus Git recovery guidance.
     - Mark this work item completed only after the final gate passes; keep its
       directory until a later cleanup decision.
   - Notes: Git history is the archive. Deletion is not permission to remove
