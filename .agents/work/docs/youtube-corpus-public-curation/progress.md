@@ -185,3 +185,42 @@
   check has zero diagnostics; production build completed with 20 pages; diff
   checks clean.
 - Next action: Task 3 public-source and resource-manifest guards.
+
+## 2026-07-31 — Task 3 complete: public-source and resource guards
+
+- Added `npm run content:guard`, implemented by the read-only
+  `.agents/scripts/public-content-guard.mjs`, and documented the publication
+  rule in root `AGENTS.md`.
+- The guard derives the tracked boundary only from configured catalog playlists
+  and committed manifests. It scans only `src/content/posts`,
+  `src/content/summaries`, and `src/data/resources/coding-with-agents.json`;
+  source IDs outside the tracked manifests are ignored.
+- Publishable posts (explicit `draft: false` or the schema's non-draft default),
+  all public summaries, and resources fail when they cite a tracked video whose
+  summary is not `reviewed` or a tracked playlist whose overview is not
+  `reviewed`. Draft posts produce warnings instead. The committed exception list
+  is empty; any future exception must be source-kind-, ID-, and path-specific
+  with a non-empty reason.
+- Reference extraction matches exact known IDs, so `watch?v=`, `youtu.be`,
+  `embed`, thumbnail-host, parameterized, playlist, bare-ID, and leading-dash-ID
+  forms are covered without treating external YouTube sources as library
+  violations.
+- Resource validation now detects duplicate raw JSON keys before ordinary parse
+  semantics can hide them, duplicate resource IDs, invalid dates, invalid
+  resource types/topics, summary references to absent resources, and resources
+  without a matching public summary.
+- Manifest duplicate behavior is explicit and read-only. The real guard reports
+  `8gg-oJr4dTY` at positions 0 and 3 of `antirez-ai-concepts` as a notice marked
+  “reported, not deduped”; it does not rewrite source membership.
+- Focused tests prove successful reviewed references, every requested reference
+  form, ignored untracked sources, genuine duplicate reporting, publishable
+  video failure, draft-post warning behavior, playlist-level failure, scoped
+  exception success, duplicate raw keys, IDs, dates, enums, and resource-summary
+  misalignment.
+- Commit: `628c390` (`add public source and resource guards`).
+- Verified: focused and existing tests pass 54/54; the repository guard passes
+  with 152 tracked videos, 5 tracked playlists, 32 tracked public references, 25
+  resources, and 50 public summaries; library status has no pending captures;
+  lint is clean; Astro check has zero diagnostics; production build completes
+  with 20 pages; diff checks clean.
+- Next action: Task 4 curated Coding Agents playlist orientation.

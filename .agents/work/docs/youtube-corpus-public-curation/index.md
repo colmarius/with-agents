@@ -21,7 +21,9 @@ defects are corrected. Task 2 reviewed a deterministic ten-summary unreferenced
 Antirez sample, fixed three material and two minor source-precision defects, and
 promoted only those ten passing artifacts. A full review is not justified now;
 the remaining 54 unreferenced Antirez summaries stay draft behind the planned
-public-source guard.
+public-source guard. Task 3 added that guard plus playlist-level status checks,
+duplicate-aware resource validation, and explicit read-only duplicate-manifest
+reporting.
 
 ## Artifacts
 
@@ -33,9 +35,8 @@ public-source guard.
 
 ## Next Action
 
-- Run Task 3: add the publishable public-source status guard, playlist-level
-  overview guard, and resource-manifest validator with focused success and
-  failure tests.
+- Run Task 4: add one Coding Agents playlist resource and its human-curated
+  guided summary with 6–10 source-supported stops.
 
 ## Open Questions
 

@@ -97,7 +97,7 @@ surface and promote only the workflow rules that proved generally reusable.
   - Notes: Any repeated translation, attribution, timestamp, or unsupported
     certainty pattern triggers a plan update before broader public work.
 
-- [ ] **Task 3: Add public-source and resource-manifest guards**
+- [x] **Task 3: Add public-source and resource-manifest guards**
   - Scope: root/content guidance, focused tests or scripts under `.agents`,
     `package.json` only if a command is warranted
   - Depends on: Task 1
