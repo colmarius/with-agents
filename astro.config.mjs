@@ -14,6 +14,10 @@ export default defineConfig({
   output: 'static',
 
   vite: {
+    server: {
+      allowedHosts: ['.e2b.app', '.onamp.dev'],
+    },
+
     resolve: {
       alias: {
         '@components': '/src/components',

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+node_version="$(tr -d '[:space:]' < .nvmrc)"
+node_archive="node-v${node_version}-linux-x64.tar.xz"
+node_root="$HOME/.local/share/nodejs"
+node_dir="$node_root/node-v${node_version}-linux-x64"
+
+if [[ ! -x "$node_dir/bin/node" ]]; then
+  echo "Installing Node.js ${node_version}..."
+  temp_dir="$(mktemp -d)"
+  trap 'rm -rf "$temp_dir"' EXIT
+
+  curl --fail --silent --show-error --location \
+    "https://nodejs.org/dist/v${node_version}/${node_archive}" \
+    --output "$temp_dir/$node_archive"
+  curl --fail --silent --show-error --location \
+    "https://nodejs.org/dist/v${node_version}/SHASUMS256.txt" \
+    --output "$temp_dir/SHASUMS256.txt"
+  (
+    cd "$temp_dir"
+    grep -F "  $node_archive" SHASUMS256.txt | sha256sum --check --strict -
+  )
+
+  mkdir -p "$node_root"
+  tar -xJf "$temp_dir/$node_archive" -C "$node_root"
+fi
+
+echo "Activating Node.js ${node_version}..."
+for executable in node npm npx corepack; do
+  if [[ -x "$node_dir/bin/$executable" ]]; then
+    sudo ln -sfn "$node_dir/bin/$executable" "/usr/local/bin/$executable"
+  fi
+done
+hash -r
+node --version
+npm --version
+
+echo 'Installing npm dependencies...'
+npm ci --no-audit --no-fund
+
+echo 'Ensuring orb services are running...'
+amp orb services ensure

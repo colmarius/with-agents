@@ -17,6 +17,9 @@ dist-ssr
 # Astro
 .astro/
 
+# Amp orb runtime files
+.amp/portals/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

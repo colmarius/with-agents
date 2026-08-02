@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo 'Ensuring orb services are running...'
+amp orb services ensure
