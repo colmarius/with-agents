@@ -23,6 +23,9 @@ export default defineConfig({
   vite: {
     server: {
       allowedHosts: ['.e2b.app', '.onamp.dev'],
+      cors: {
+        origin: /^https:\/\/(?:[^.]+\.)*ampcode\.com$/,
+      },
     },
 
     resolve: {
