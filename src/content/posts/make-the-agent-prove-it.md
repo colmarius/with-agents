@@ -32,6 +32,8 @@ The most useful question in agentic coding is not "do I trust the model?" It is 
 
 Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The reviewer still signs the merge, so the agent should bring evidence.
 
+Willison, in a separate Lenny's Podcast interview, explains why polish cannot stand in for evidence: agents can now produce repositories with high-quality tests and documentation in an hour, so those old signals no longer demonstrate sustained engineering effort. Proof of real use matters more than a professional-looking surface [00:37:34]-[00:39:12].
+
 This article uses Simon Willison's Pragmatic Summit workflow as its primary source and adds an author-synthesis framework: a risk-scaled proof stack for one agent-produced change. The [durable-context Evidence section](/posts/durable-context-coding-agents#evidence-keeps-judgment-attached-to-the-diff) explains why evidence belongs in the repo-local operating loop; this is the tactical ladder to apply before you merge. [Behavior Over Explanation](/posts/behavior-over-explanation) makes the methodological case behind that ladder: observed behavior should outrank a plausible explanation.
 
 You rarely need every layer. You do need to choose layers deliberately.
@@ -182,6 +184,7 @@ Make the agent prove it. Then make a human decide whether the proof is enough.
 ## Sources used
 
 - [Simon Willison: Engineering practices that make coding agents work](https://www.youtube.com/watch?v=owmJyKVu5f8), especially [00:04:41]-[00:18:35].
+- [Simon Willison on Lenny's Podcast, "An AI state of the union"](https://www.youtube.com/watch?v=wc8FBhQtdsA), especially [00:37:34]-[00:39:12] on cheap polish and proof of real use.
 - [Pi Building Pi, OpenClaw's Minimalist Coding Agent](https://www.youtube.com/watch?v=DPgJjRdQWrg), especially [00:29:43]-[00:42:55].
 - [The Friction is Your Judgment](https://www.youtube.com/watch?v=_Zcw_sVF6hU), especially [00:14:01]-[00:17:55].
 - Internal non-overlap check: [Evidence: make the agent prove the work](/posts/durable-context-coding-agents#evidence-keeps-judgment-attached-to-the-diff).
