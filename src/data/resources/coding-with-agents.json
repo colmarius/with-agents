@@ -1,5 +1,17 @@
 [
   {
+    "id": 28,
+    "title": "Field Guide to Fable — Thariq Shihipar, Anthropic",
+    "subtitle": "Thariq Shihipar on capability overhang, unknowns, and ambitious agent workflows",
+    "url": "https://www.youtube.com/watch?v=9fubhllmsBU",
+    "description": "Thariq Shihipar presents a field guide to working with Fable: expose a model's uneven capabilities through the right tools, identify unknowns before long agent runs, use blind-spot passes, prototypes, interviews, references, and implementation notes, and judge the work by the value it creates rather than the code it generates.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-07-06",
+    "duration": "19m",
+    "topics": ["prompting-orchestration", "tools-harnesses", "context-memory"]
+  },
+  {
     "id": 27,
     "title": "An AI state of the union: We’ve passed the inflection point & dark factories are coming",
     "subtitle": "Simon Willison on dark factories, agentic engineering, and proving AI-written code",
