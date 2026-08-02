@@ -1,5 +1,17 @@
 [
   {
+    "id": 27,
+    "title": "An AI state of the union: We’ve passed the inflection point & dark factories are coming",
+    "subtitle": "Simon Willison on dark factories, agentic engineering, and proving AI-written code",
+    "url": "https://www.youtube.com/watch?v=wc8FBhQtdsA",
+    "description": "Simon Willison argues that coding agents have crossed a practical inflection point, then examines what follows: professional agentic engineering, experimental dark factories, cheap code, proof through tests and real use, reusable project context, and structural defenses against prompt injection.",
+    "type": "video",
+    "source": "Lenny's Podcast",
+    "date": "2026-04-02",
+    "duration": "1h 40m",
+    "topics": ["review-verification", "tools-harnesses", "safety-permissions"]
+  },
+  {
     "id": 26,
     "title": "Coding Agents @ AI Engineer — guided playlist",
     "url": "https://www.youtube.com/playlist?list=PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt",
