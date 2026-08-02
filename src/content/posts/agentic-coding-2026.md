@@ -95,6 +95,8 @@ wide research → critique → human decision → narrow implementation → evid
 
 Build Crew episode 7 shows two useful modes. A tiny directed thread works when the human knows exactly what should happen and can name the files, constraints, and expected output [00:13:06]-[00:15:58]. A research flow works when uncertainty is high: analyze broadly, write reports, critique the design, narrow into a plan, then hand off to an implementation thread [00:18:54]-[00:24:12]. That gives the durable pattern shown above.
 
+Thariq Shihipar offers a concrete way to start that research: ask the agent for a blind-spot pass over the relevant code and project context, use prototypes to expose preferences that are hard to describe, and let the agent interview you about questions that could change the architecture [00:10:09]-[00:12:58]. During implementation, ask it to log unknowns and deviations, then quiz you on the result so you can still explain the work you are about to merge [00:12:58]-[00:14:57].
+
 Do not carry every exploratory transcript into the implementation loop. Carry the decision, the relevant files, the constraints, and the proof target. [Small Threads, Durable State](/posts/small-threads-durable-state) owns the operating procedure for `.agents/work/` work items, handoffs, progress logs, and verification records.
 
 Start with one small verified task:
@@ -166,4 +168,5 @@ So the factory-era checklist is not "launch more agents." It is:
 - [Raising an Agent episode 10, "Killing the Sidebar"](https://www.youtube.com/watch?v=4rx36wc9ugw), especially [00:00:55]-[00:10:17] on longer-running, well-scoped agent work.
 - [Thorsten Ball, "LLMs are killing Agent Harness"](https://www.youtube.com/watch?v=thMFsqe8kbQ), especially [00:22:27]-[00:49:24] on thinner harnesses, the agent loop, and coordinating many cheap agents.
 - [Simon Willison on Lenny's Podcast, "An AI state of the union"](https://www.youtube.com/watch?v=wc8FBhQtdsA), especially [00:12:38]-[00:19:27] on the dark-factory pattern, external behavioral evidence, and why simulated QA does not establish security.
+- [Thariq Shihipar, "Field Guide to Fable"](https://www.youtube.com/watch?v=9fubhllmsBU), especially [00:10:09]-[00:14:57] on blind-spot passes, interviews, references, implementation notes, and staying able to explain agent work.
 - [Amp, "From Agent to Agent"](https://ampcode.com/news/from-agent-to-agent), verified 2026-07-17, for agent-created threads and message/file exchange across local, orb, runner, and cross-project work.
