@@ -10,6 +10,13 @@ export default defineConfig({
   compressHTML: true,
   integrations: [react()],
 
+  security: {
+    allowedDomains: [
+      { hostname: 'ampcode.com', protocol: 'https' },
+      { hostname: '**.ampcode.com', protocol: 'https' },
+    ],
+  },
+
   // Configure for GitHub Pages deployment
   output: 'static',
 
