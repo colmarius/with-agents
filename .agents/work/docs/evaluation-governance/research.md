@@ -2,12 +2,13 @@
 
 ## Recommendation
 
-Reframe before planning. The reader job is distinct, but an adversarial review
-found an unresolved actor mismatch and an attribution flaw in the proposed
-artifact. Do not create `plan.md` until the intended reader is chosen and the
-additional research requirements below are satisfied.
+Go to planning and drafting. The user chose a team's shared coding-agent stack
+as the governed object. The actor mismatch remains an evidence limitation, not
+a blocker: the article must say in its lead that it transfers practices from a
+model builder, benchmark vendors, an agent-product team, and an evaluation
+researcher rather than reporting a direct study of ordinary coding-agent teams.
 
-The proposed reader job is:
+The selected reader job is:
 
 > Models, prompts, harnesses, tools, tasks, environments, and evaluators all
 > change. How does a team decide what still counts as valid evidence, and how do
@@ -23,7 +24,10 @@ Working thesis:
 
 The change-control framework is cross-source editorial synthesis. Rustem
 Feyzkhanov's benchmark CI and release-gate workflow provides a close operational
-precedent, but no speaker presents the complete artifact below.
+precedent, but no speaker presents the complete artifact below. The article's
+claim is limited to comparative validity: changing the measured system and its
+evaluator together makes a score difference uninterpretable. It does not claim
+that this process improves productivity, reliability, or return on investment.
 
 ## Corpus and freshness boundary
 
@@ -64,9 +68,9 @@ The article therefore needs one explicit governed object:
    better supported by Jones, Feyzkhanov, and Koc, but it is more MLOps-adjacent
    and less directly about coding-agent practice.
 
-Recommended default: choose the shared coding-agent stack and state the transfer
-honestly. Do not silently use Jones as evidence that a team governed its own
-coding-agent harness. If the narrower evidence proves insufficient, hold the
+The user selected the shared coding-agent stack. State the transfer honestly.
+Do not silently use Jones as evidence that a team governed its own coding-agent
+harness. If the narrower evidence proves insufficient during drafting, hold the
 article rather than switching audiences implicitly.
 
 The article may make a **validity claim**: changing the ruler and the measured
@@ -75,6 +79,33 @@ the proposed governance improves productivity, reliability, or return on
 investment. For a small suite, a versioned decision table may be enough; the
 article must acknowledge that a registry or per-change record can become
 unnecessary bureaucracy.
+
+## Additional written-source and counterexample checks
+
+[Dwork et al., “Generalization in Adaptive Data Analysis and Holdout
+Reuse”](https://arxiv.org/abs/1506.02629) establishes that repeatedly reusing a
+holdout for adaptively chosen hypotheses can overfit the holdout itself. This
+supports one narrow inference for the article: a private or hidden suite is not
+necessarily unexposed after its results have repeatedly shaped changes. Record
+consultations and result disclosure. Do not import the paper's Thresholdout
+mechanism, differential-privacy framing, or any numeric consultation budget into
+coding-agent practice.
+
+A targeted search found no documented account showing that evaluation
+governance failed specifically because it became ceremony. That absence is not
+evidence that the cost is negligible. Bound the article instead:
+
+- Use ordinary deterministic tests when the required behavior is cheap and
+  exact to specify.
+- Use the change-control record only when stochastic stack behavior, judge
+  drift, held-out exposure, or evaluator changes make comparison unstable.
+- Keep the record proportional to the suite. A small versioned table may be the
+  entire process.
+
+Feyzkhanov's distinction among deterministic checks, model-based evaluation,
+and selective expert review reinforces the narrower rule: do not replace an
+exact assertion with a probabilistic evaluator. The article may recommend this
+boundary as editorial synthesis, but it may not claim measured process savings.
 
 ## Verified source anchors
 
@@ -240,14 +271,23 @@ overlap with `agent-ready-interfaces.md`, and the absent data boundary on
 trace-derived cases. It recommended a decision table as the primary artifact and
 demoting or removing the full YAML registry.
 
-Before planning, the stress review also requires:
+The stress review also required:
 
-- one authoritative written source on held-out-set decay or repeated benchmark
-  consultation
-- a targeted search for counterexamples where eval governance became unused
-  ceremony or a plain test suite was sufficient
-- confirmation that the selected audience is stated as a deliberate transfer
-  from the actual source actors rather than implied by them
+- [x] One authoritative written source on held-out-set decay or repeated
+  benchmark consultation: Dwork et al. (2015), used only for adaptive holdout
+  reuse.
+- [x] A targeted search for counterexamples where eval governance became unused
+  ceremony or a plain test suite was sufficient: no direct account found; the
+  article is bounded to cases that ordinary deterministic tests cannot settle.
+- [x] Confirmation that the selected audience is stated as a deliberate
+  transfer from the actual source actors rather than implied by them: the user
+  selected a team's shared coding-agent stack.
+
+After those requirements were resolved, Oracle returned a high-confidence Go
+verdict. It found no substantive planning blocker and required the article to
+preserve four exact boundaries: validity rather than ROI, adjacent-practice
+transfer in the lead, ordinary tests before eval governance, and Dwork only for
+the fact that adaptive reuse can invalidate a holdout.
 
 ## Stop conditions
 
@@ -269,8 +309,7 @@ Do not draft the article if any of these remains true after refinement:
 
 ## Next planning action
 
-Resolve the governed object and reader first. Recommended default: a team's
-shared coding-agent stack, because it matches the site's audience, with the
-adjacent-practice transfer made explicit. Then complete the written-source and
-counterevidence checks before using `feature-planning` to create `plan.md` and a
-paste-ready handoff.
+Use `feature-planning` to create `plan.md` and a paste-ready handoff for a draft
+titled “Your Coding-Agent Evals Need Change Control.” The draft should lead with
+the bounded-use rule, use the frozen-axis table as its main artifact, and return
+to Oracle with the complete draft and proposed inbound links before publication.
