@@ -1,5 +1,21 @@
 [
   {
+    "id": 29,
+    "title": "Boris Cherny: We Cut 80% of Claude Code’s Prompt",
+    "subtitle": "Boris Cherny on prompt ablation, model elicitation, and long-running agent workflows",
+    "url": "https://www.youtube.com/watch?v=qyPCVqFUyDo",
+    "description": "Boris Cherny explains why Anthropic removed 80% of Claude Code's system prompt for Opus 5, how to rebuild instructions through empirical ablation, why hard tasks need strong verification, and how dynamic workflows and recurring routines orchestrate agents for long-running work.",
+    "type": "video",
+    "source": "Y Combinator",
+    "date": "2026-07-27",
+    "duration": "36m",
+    "topics": [
+      "tools-harnesses",
+      "models-evaluation",
+      "prompting-orchestration"
+    ]
+  },
+  {
     "id": 28,
     "title": "Field Guide to Fable — Thariq Shihipar, Anthropic",
     "subtitle": "Thariq Shihipar on capability overhang, unknowns, and ambitious agent workflows",
