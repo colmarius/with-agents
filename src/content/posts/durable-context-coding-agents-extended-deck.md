@@ -334,6 +334,10 @@ Good entries are concrete: the fast check command, a frontmatter rule, a transcr
 
 Do not turn the map into a junk drawer. If a rule applies only under `src/content/posts/`, put it near that work or in a skill. If a mistake can be caught deterministically, add a check. If a workflow has steps and evidence, package it as a procedure.
 
+If a check becomes part of a changing shared evaluation gate, [Your Coding-Agent
+Evals Need Change Control](/posts/your-coding-agent-evals-need-change-control)
+owns its admission, versioning, exposure, re-baseline, and retirement path.
+
 ## Agent Skills are procedures
 <!-- slide:
 layout: text

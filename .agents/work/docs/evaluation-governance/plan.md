@@ -14,7 +14,7 @@ for the evaluation suite behind a shared coding-agent stack.
 
 ## Tasks
 
-- [ ] **Task 1: Draft the bounded evaluation-governance article**
+- [x] **Task 1: Draft the bounded evaluation-governance article**
   - Scope: `src/content/posts/your-coding-agent-evals-need-change-control.md`
   - Depends on: none
   - Acceptance:
@@ -28,7 +28,7 @@ for the evaluation suite behind a shared coding-agent stack.
       generated slide view.
   - Notes: Aim for roughly 1,600–2,100 words. Do not expand into generic MLOps.
 
-- [ ] **Task 2: Make the frozen-axis artifact actionable**
+- [x] **Task 2: Make the frozen-axis artifact actionable**
   - Scope: `src/content/posts/your-coding-agent-evals-need-change-control.md`
   - Depends on: Task 1
   - Acceptance:
@@ -42,21 +42,24 @@ for the evaluation suite behind a shared coding-agent stack.
       research without inventing universal thresholds or operating results.
   - Notes: Retirement means leaving the active gate, not deleting history.
 
-- [ ] **Task 3: Add only earned inbound navigation**
+- [x] **Task 3: Add only earned inbound navigation**
   - Scope: `src/content/posts/agent-ready-interfaces.md`,
     `src/content/posts/make-the-agent-prove-it.md`,
-    `src/content/posts/durable-context-coding-agents.md`
+    `src/content/posts/durable-context-coding-agents.md`, and
+    `src/content/posts/durable-context-coding-agents-extended-deck.md`
   - Depends on: Task 2
   - Acceptance:
     - Each edited post gains at most one contextual link at the exact ownership
       seam identified in the research.
     - Links distinguish interface mechanics, per-change proof, and durable
       deterministic checks from evaluation-suite governance.
+    - The canonical durable-context post and extended deck keep their shared
+      link set synchronized.
     - No backlink is added where it does not improve a reader's next step.
   - Notes: Do not add a link from `measure-outcomes-not-agent-activity.md` unless
     final review finds a real navigation gap.
 
-- [ ] **Task 4: Run adversarial editorial review and publish**
+- [x] **Task 4: Run adversarial editorial review and publish**
   - Scope: the new post and proposed inbound-link diff
   - Depends on: Tasks 1–3
   - Acceptance:
@@ -69,7 +72,7 @@ for the evaluation suite behind a shared coding-agent stack.
   - Notes: Hold publication if the bounded-use rule leaves no distinct reader
     problem or the draft needs invented numeric thresholds.
 
-- [ ] **Task 5: Validate and complete the work item**
+- [x] **Task 5: Validate and complete the work item**
   - Scope: generated site plus `.agents/work/docs/evaluation-governance/`
   - Depends on: Task 4
   - Acceptance:

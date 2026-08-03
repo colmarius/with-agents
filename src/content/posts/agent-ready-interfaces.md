@@ -70,6 +70,11 @@ deeper investigations, the team exports nested UI and trace data as a searchable
 self-documenting filesystem beside the code
 ([00:10:37–00:12:28](https://www.youtube.com/watch?v=L2r6vLlLgs8&t=637s)).
 
+That interface makes cases operable. [Your Coding-Agent Evals Need Change
+Control](/posts/your-coding-agent-evals-need-change-control) covers the separate
+decision: whether a case is valid evidence, which suite version it enters, and
+what remains comparable after the evaluator changes.
+
 The pattern is not “everything should be a CLI.” It is:
 
 - give operations explicit inputs, outputs, and errors;

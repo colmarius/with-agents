@@ -1,6 +1,6 @@
 # Evaluation Governance Article
 
-Status: planned
+Status: completed
 Category: docs
 Updated: 2026-08-03
 
@@ -18,14 +18,15 @@ claim comparative validity rather than productivity or return on investment.
 - PRD: none
 - Plan: [plan.md](./plan.md)
 - Handoff: [handoff-article.md](./handoff-article.md)
-- Progress: none
+- Progress: [progress.md](./progress.md)
+- Published post:
+  [Your Coding-Agent Evals Need Change Control](/posts/your-coding-agent-evals-need-change-control)
 - Decisions: none
 
 ## Next Action
 
-- Execute [plan.md](./plan.md), beginning with the article draft and bounded-use
-  rule, then ask Oracle to review the complete draft and proposed inbound links
-  before publication.
+- None. The article is published, related links are synchronized, and all planned
+  validation passed.
 
 ## Open Questions
 
