@@ -126,3 +126,36 @@ Include it only if it adds a distinct claim rather than another vendor example.
 - `/posts/behavior-over-explanation`: optional one-line pointer for personal
   attention limits.
 - `/resources/coding-with-agents`: source navigation.
+
+## Source verification (2026-08-03)
+
+Every candidate summary remains `status: reviewed`. The load-bearing Banks and
+Mistele claims survive full-context transcript review, so the planned thesis does
+not need to change.
+
+| Source | Usable transcript span | Verified claim | Attribution and limitation |
+| --- | --- | --- | --- |
+| Rustin Banks, Google Jules | [00:01:59–00:04:44], especially [00:03:51–00:04:44] | Parallel work has two different task classes: separate backlog items and competing variations of one task. Review and merge work bound the useful parallelism. | Banks's product talk and reported Jules usage. Treat examples as vendor observations, not comparative throughput evidence. |
+| Kyle Mistele, HumanLayer | [00:13:17–00:16:13], especially [00:15:10–00:16:13] | A loop can enforce backpressure by refusing to run while its previous labeled pull request is open; Mistele says this keeps at most one PR per loop open. | Mistele's recommendation plus HumanLayer's reported workflow experience. Do not generalize the exact one-PR rule into a universal cap. |
+| Luke Alvoeiro, Factory | [00:09:23–00:10:15] | Factory serializes mutating feature work after parallel workers produced conflicts, duplicate work, and inconsistent architecture; it parallelizes read-only search, research, and review. | Alvoeiro's account of Factory Missions. Use as one conservative operating policy, not proof that all concurrent mutation fails. |
+| Chris Parsons, Cherrypick | [00:21:38–00:27:29]; [01:31:59–01:40:20] | His up-front dependency graph with six or seven agents failed through contention and duplication; his conservative default is one serial loop. For teams, he recommends claiming tickets first and improving review or release when those are the system constraint. | Parsons's workshop account and advice. The team question at [01:31:59] is from an anonymous attendee; the operational recommendations that follow are Parsons's response. |
+| Maggie Appleton, GitHub | [00:02:42–00:05:12] | Faster implementation removes early alignment points and pushes unresolved decisions, merge conflicts, duplicate work, and context-poor queues onto pull requests. | Appleton's diagnosis in a GitHub Next talk. ACE is an experimental prototype; the article should use the diagnosis, not present the prototype as validated infrastructure. |
+| Beyang Liu, Sourcegraph / Amp | [00:29:30–00:33:38] | Subagents can isolate subtask context, and advanced users run several agents in parallel; this is presented as an intentional, practiced skill with human responsibility for shipped code. | Product talk and power-user observations. It supports selective parallelism, not a quantified concurrency recommendation. |
+| Boris Cherny, Anthropic | [00:16:51–00:17:54] | Cherny reports power users running multiple Claude Code sessions via terminal tabs, worktrees, or GitHub Actions, with Markdown files as a loose coordination mechanism. | The parallel-work question is submitted through Slack; Cherny gives the answer. Treat this as observed product practice, not a complete admission policy. |
+| Hugo Santos and Madison Faulkner | [00:12:07–00:14:51] | Santos proposes a pre-merge queue to reconcile many overlapping candidates into serial repository history, with human approval based on intent and outcome evidence. | This span is Santos speaking. It is a proposed near-term architecture in a vendor/investor talk, not evidence that the design is already generally proven. |
+| Eric Zakariasson, Cursor | [00:19:36–00:21:37], [00:30:43–00:32:41] | Zakariasson recommends isolated environments for concurrent changes and keeping important decisions with people. | The environment question at [00:20:33] is from an anonymous attendee; Zakariasson supplies the answer. Optional corroboration only because it overlaps the factory article. |
+
+### Editorial boundaries after verification
+
+- The admission record and its operational rules are cross-source editorial
+  synthesis, not a framework named by any speaker.
+- "Parallel discovery, serial mutation" is a safe starting policy supported by
+  Alvoeiro and Parsons, not a universal law.
+- The concurrency cap should be expressed in terms of downstream integration and
+  review capacity; Mistele's one-open-PR rule is the clearest concrete example,
+  not the required number for every team.
+- Competing variations need selection and cancellation rules, while independent
+  backlog work needs dependency and integration checks. Banks supports the
+  distinction; the article supplies the policy.
+- The Santos pre-merge design is useful as a future-facing integration model, but
+  it must remain explicitly framed as a proposal.

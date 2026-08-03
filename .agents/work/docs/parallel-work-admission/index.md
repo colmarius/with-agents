@@ -1,6 +1,6 @@
 # Parallel-Work Admission Article
 
-Status: planned
+Status: completed
 Category: docs
 Updated: 2026-08-03
 
@@ -17,17 +17,15 @@ per-lane workflow, proof stack, measurement framework, and Amp case study.
 - Research: [research.md](./research.md)
 - PRD: none
 - Plan: [plan.md](./plan.md)
-- Progress: none
+- Progress: [progress.md](./progress.md)
 - Decisions: none
 - Handoff: [handoff-article.md](./handoff-article.md)
 
 ## Next Action
 
-- Use [handoff-article.md](./handoff-article.md) in a fresh implementation thread
-  to verify the source anchors and execute the article plan.
+- None. The article is published in the content collection and all planned
+  validation passed.
 
 ## Open Questions
 
-- None that block drafting. `Parallel Agents Need an Admission Policy` is the
-  working title and may change only if the final draft exposes a clearer reader
-  job without broadening scope.
+- None.

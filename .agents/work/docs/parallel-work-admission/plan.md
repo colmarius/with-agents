@@ -15,7 +15,7 @@ then publish only if it remains distinct from the existing series.
 
 ## Tasks
 
-- [ ] **Task 1: Verify the source plan**
+- [x] **Task 1: Verify the source plan**
   - Scope: `src/content/youtube/videos/{X4BwOu0GWb8,xIt_mTQp6mY,ow1we5PzK-o,2TLXsxkz0zI,ClWD8OEYgp8,F_RyElT_gJk,Lue8K2jqfKk,VktrqzQgytY}/`, `.agents/work/docs/parallel-work-admission/research.md`
   - Depends on: none
   - Acceptance:
@@ -24,7 +24,7 @@ then publish only if it remains distinct from the existing series.
     - The two load-bearing anchors—Banks's task-class distinction and Mistele's review-backpressure rule—remain supported; otherwise the work item is marked blocked and the article is not drafted.
   - Notes: Do not sync or modify the source-only YouTube library. Optionally evaluate `rnDm57Py54A` only if a source gap remains.
 
-- [ ] **Task 2: Draft the article and admission record**
+- [x] **Task 2: Draft the article and admission record**
   - Scope: `src/content/posts/parallel-agents-need-an-admission-policy.md`
   - Depends on: Task 1
   - Acceptance:
@@ -35,7 +35,7 @@ then publish only if it remains distinct from the existing series.
     - The draft does not restate the proof stack, work-item mechanics, measurement evidence, factory overview, or Amp product details.
   - Notes: Target roughly 1,500–1,900 words. Suggested five-section outline: admission decision; serial mutation/parallel discovery; isolation and declared collisions; backpressure and cancellation; named integration ownership plus artifact.
 
-- [ ] **Task 3: Run an adversarial editorial review**
+- [x] **Task 3: Run an adversarial editorial review**
   - Scope: new post, all cited transcripts, `src/content/posts/{agentic-coding-2026,small-threads-durable-state,make-the-agent-prove-it,amp-factory-era-case-study,measure-outcomes-not-agent-activity,behavior-over-explanation}.md`
   - Depends on: Task 2
   - Acceptance:
@@ -45,7 +45,7 @@ then publish only if it remains distinct from the existing series.
     - High-value review findings are applied before publication; unresolved blockers leave the post at `draft: true` and the work item blocked.
   - Notes: Consult Oracle for the finished-draft review because the source boundaries and overlap risks are subtle.
 
-- [ ] **Task 4: Publish, cross-link, and verify**
+- [x] **Task 4: Publish, cross-link, and verify**
   - Scope: new post and at most two existing posts that gain a clear inbound-reader route; work-item files
   - Depends on: Task 3
   - Acceptance:

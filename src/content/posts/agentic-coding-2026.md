@@ -159,6 +159,7 @@ So the factory-era checklist is not "launch more agents." It is:
 | Review needs stronger evidence | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
 | A model explanation is plausible, but behavior disagrees | [Behavior Over Explanation](/posts/behavior-over-explanation) |
 | Threads are too large to restart | [Small Threads, Durable State](/posts/small-threads-durable-state) |
+| Parallel work is creating merge or review debt | [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) |
 | You want a concrete tool case study | [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) |
 | You want the talks behind the series | [The coding-with-agents resource hub](/resources/coding-with-agents) |
 
