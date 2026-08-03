@@ -85,6 +85,10 @@ The codebase is part of that control surface, because it is part of the prompt. 
 
 That last point matters more as loops get longer. Raising an Agent episode 9 frames an "agent-native" codebase as one where the agent knows how to run, verify, authenticate, click around, inspect output, and recover when feedback is missing [00:10:18]-[00:17:24]. Zechner shows the same from the low-level side: `AGENTS.md`-style instructions help, but linters, typecheckers, smoke tests, and terminal/browser capture make failure deterministic [00:37:03]-[00:42:55]. The synthesis is not "write more docs"; it is "make the correct path easier for the next loop to discover and verify."
 
+[Agent-Ready Interfaces](/posts/agent-ready-interfaces) is the design deep dive:
+how to expose composable operations, inspectable state, faithful feedback,
+recovery, mutation gates, and a human return path.
+
 ## Keep context wide, implementation narrow, and start small
 
 > Research wide, implement narrow, and preserve the state between them.
@@ -151,6 +155,7 @@ So the factory-era checklist is not "launch more agents." It is:
 | If the pain is... | Read... |
 | --- | --- |
 | Shared context keeps disappearing | [Your Repo Is the Memory](/posts/durable-context-coding-agents) |
+| The agent cannot operate or verify your system cleanly | [Agent-Ready Interfaces](/posts/agent-ready-interfaces) |
 | Review needs stronger evidence | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
 | A model explanation is plausible, but behavior disagrees | [Behavior Over Explanation](/posts/behavior-over-explanation) |
 | Threads are too large to restart | [Small Threads, Durable State](/posts/small-threads-durable-state) |
