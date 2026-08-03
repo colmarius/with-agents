@@ -1,16 +1,16 @@
 # Evaluation Governance Article
 
-Status: researching
+Status: blocked
 Category: docs
 Updated: 2026-08-03
 
 ## Summary
 
-Research a source-backed article about governing the evaluation system around
-coding agents as models, prompts, harnesses, tools, tasks, environments, and
-verifiers change. The candidate fills the gap between proof for one change and
-measurement of organization-level outcomes by making evaluation entry,
-validation, held-out protection, promotion, drift, and retirement explicit.
+Research a source-backed article about governing a changing evaluation system.
+An adversarial review confirmed that the reader job is unowned but exposed an
+actor mismatch: the sources better support agent-product, model, and benchmark
+teams than ordinary coding-agent practitioners. Planning is blocked until the
+intended reader and governed object are chosen explicitly.
 
 ## Artifacts
 
@@ -22,13 +22,15 @@ validation, held-out protection, promotion, drift, and retirement explicit.
 
 ## Next Action
 
-- Use the `feature-planning` skill to turn [research.md](./research.md) into an
-  implementation-ready article plan and handoff. Preserve the documented stop
-  conditions and keep the article in the coding-agent domain.
+- Decide whether the governed object is a team's shared coding-agent stack or an
+  agent-backed product it ships. Recommended default: the shared coding-agent
+  stack, because it matches the site's audience, with the source transfer and
+  evidence limits stated explicitly.
+- After that decision, add one authoritative source on held-out-set decay and a
+  targeted counterexample search before creating `plan.md`.
 
 ## Open Questions
 
-- [ ] Can the practical artifact stay concise enough to be useful without
-  becoming a generic MLOps benchmark registry?
-- [ ] Is `Your Evals Need Change Control` the clearest title, or should the title
-  name coding agents explicitly?
+- [ ] Is the article for teams governing their shared coding-agent stack—models,
+  prompts, harness, tools, skills, and verifiers—or teams shipping an
+  agent-backed product? This changes the title, lead sources, and examples.

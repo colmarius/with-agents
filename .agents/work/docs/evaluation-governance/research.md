@@ -2,8 +2,10 @@
 
 ## Recommendation
 
-Proceed to planning. The source-verification pass clears the kill criteria for a
-distinct coding-agent article about the evaluation system itself.
+Reframe before planning. The reader job is distinct, but an adversarial review
+found an unresolved actor mismatch and an attribution flaw in the proposed
+artifact. Do not create `plan.md` until the intended reader is chosen and the
+additional research requirements below are satisfied.
 
 The proposed reader job is:
 
@@ -19,7 +21,7 @@ Working thesis:
 > reviewable path, and retire checks that are leaked, unstable, or no longer
 > discriminating.
 
-The evaluation-promotion record is cross-source editorial synthesis. Rustem
+The change-control framework is cross-source editorial synthesis. Rustem
 Feyzkhanov's benchmark CI and release-gate workflow provides a close operational
 precedent, but no speaker presents the complete artifact below.
 
@@ -38,6 +40,41 @@ All five summaries remain `status: reviewed`. No playlist sync, transcript
 capture, or source-library mutation belongs in this work item. The article may
 use the committed reviewed sources without claiming current playlist
 completeness.
+
+## Actor and audience stress test
+
+The original research described a coding-agent reader more directly than the
+sources permit. The actual actors are:
+
+| Source | Actor actually described |
+| --- | --- |
+| Feyzkhanov | A benchmark vendor proposing private production-like agent simulations. |
+| Robinson | A model-building company evaluating and training its own coding models. |
+| Shi | A benchmark and training-data company designing a coding benchmark. |
+| Jones | An AI-product team using coding agents to maintain evals for its AI SRE product; the coding agent is the maintenance tool, not the evaluated system. |
+| Koc | An evaluation researcher proposing adaptive evals; the intended demonstration was unfinished. |
+
+The article therefore needs one explicit governed object:
+
+1. **Shared coding-agent stack:** the models, prompts, harness, tools, skills,
+   policies, environments, and verifiers a team maintains for its development
+   workflow. This best matches the site's audience, but several sources become
+   adjacent-practice transfers rather than direct operating accounts.
+2. **Agent-backed product:** an agent system a team ships to users. This is
+   better supported by Jones, Feyzkhanov, and Koc, but it is more MLOps-adjacent
+   and less directly about coding-agent practice.
+
+Recommended default: choose the shared coding-agent stack and state the transfer
+honestly. Do not silently use Jones as evidence that a team governed its own
+coding-agent harness. If the narrower evidence proves insufficient, hold the
+article rather than switching audiences implicitly.
+
+The article may make a **validity claim**: changing the ruler and the measured
+system at the same time destroys attribution. It may not make a value claim that
+the proposed governance improves productivity, reliability, or return on
+investment. For a small suite, a versioned decision table may be enough; the
+article must acknowledge that a registry or per-change record can become
+unnecessary bureaucracy.
 
 ## Verified source anchors
 
@@ -70,40 +107,44 @@ completeness.
 - Treat Feyzkhanov's and Koc's 80/20 splits as illustrative, not measured or
   universal.
 
-## Proposed evaluation-promotion record
+## Reframed artifact: evaluation change-control table
 
-The article's standalone artifact should stay small enough to use during one
-evaluation change:
+The original YAML record allowed the agent system and evaluator to change in one
+record, making any score difference uninterpretable. The primary artifact should
+instead classify the change and force only one axis to move:
 
-```yaml
-candidate:
-  system: model | prompt | harness | tool | skill | policy
-  version: <immutable reference>
-acceptance_contract:
-  stable_outcomes: <observable behavior that must not move in this comparison>
-evaluation_population:
-  development: <cases visible during iteration>
-  held_out: <cases protected from routine tuning>
-  regressions: <reviewed production-derived failures>
-environment:
-  version: <repository, dependencies, fixtures, tools, and access>
-verifier_boundary:
-  worker_visible: <what the candidate may inspect>
-  independent_checks: <what runs outside the candidate runtime>
-baseline: <currently promoted system and segmented results>
-evaluator_change:
-  cases_or_rubrics_changed: <what changed and why>
-  provenance: <incident, trace, decision, or coverage gap>
-promotion:
-  required_results: <segmented pass and operational criteria>
-  approver: <accountable person or team>
-  rollback_trigger: <regression or production signal>
-retirement:
-  trigger: leaked | saturated | unstable | obsolete | invalid
-  replacement_or_archive: <new case, preserved record, or removal>
+| Change type | Freeze | Required comparison | Version effect |
+| --- | --- | --- | --- |
+| Model, prompt, harness, tool, skill, or policy | Named evaluation suite, environment, judge, thresholds, and run policy | Current promoted system versus candidate on the same `suite_version` | No suite bump. Promote or reject only the system candidate. |
+| Case, fixture, rubric, judge, threshold, or verifier | Current promoted system | Run the promoted system on both old and proposed evaluators; explain changed results before admission | Bump `suite_version` and establish a new baseline. |
+| Environment, repository snapshot, tool access, or dependency | Current promoted system and acceptance contract | Re-baseline the promoted system in old and new environments | Bump `suite_version`; environment is part of the evaluator. |
+| Deactivate a leaked, saturated, unstable, invalid, or obsolete case | Current promoted system | Show the result with and without the case and name any replacement coverage | Bump `suite_version`; deactivate from the gate but retain an archival version for historical reruns. |
+| System and evaluator must change together | Nothing is comparable | Split the changes. If that is impossible, report a new baseline without claiming improvement over the old result. | New suite and system baseline; no causal comparison. |
+
+The evaluator-change path is a two-axis comparison:
+
+```text
+                      old evaluator    proposed evaluator
+promoted system       old baseline     mandatory re-baseline
+candidate system      separate later system-promotion change
 ```
 
-The artifact must separate three things:
+Do not place a candidate-system change in the same approval record as an
+evaluator change. A judge-model upgrade, threshold adjustment, case retirement,
+fixture update, or environment change is an evaluator change.
+
+Every row needs a compact record of:
+
+- immutable system, `suite_version`, environment, judge, and run-policy versions
+- stable acceptance contract
+- case provenance mix: designed coverage versus trace-derived regression
+- held-out exposure: who saw results and how many consultations occurred
+- repeated-run policy and disclosed variance, without a universal run count
+- data review for secrets, customer information, retention, and untrusted trace
+  content before a production failure enters an agent-maintained suite
+- accountable approval and rollback or deactivation trigger
+
+The artifact must continue to separate three things:
 
 1. **System under evaluation:** model, prompt, harness, tools, skills, or policy.
 2. **Acceptance contract:** observable behavior the comparison is meant to
@@ -140,12 +181,22 @@ Owns the methodological principle that observed behavior outranks a plausible
 story. This article operationalizes that principle for changing evaluation
 systems without repeating the conceptual argument.
 
+### `agent-ready-interfaces.md`
+
+Owns Jones's narrow eval CLI, case editing, and red-green coding-agent runbook.
+This article may cite that workflow as adjacent context but must not claim those
+mechanics as a new contribution. Its distinct concern is whether a case is valid
+evidence, which suite version it enters, and what remains comparable after an
+evaluator change. Jones does not supply approval roles, grader validation,
+threshold policy, or evaluation retirement.
+
 ### Coding-agent boundary
 
-Lead with Jones's coding-agent-managed eval workflow, Robinson's internal coding
-benchmark, and Shi's coding verifier design. Use Feyzkhanov to generalize the
-lifecycle and Koc to expose the adaptive-eval tension. Do not turn the post into
-a generic agent-product MLOps or benchmark-construction guide.
+If the shared coding-agent stack is selected, lead with Robinson's internal
+coding benchmark and Shi's verifier design. Use Feyzkhanov to generalize the
+lifecycle, Jones as an adjacent example of coding-agent-maintained evals, and Koc
+only to expose the adaptive-eval tension. Do not turn the post into a generic
+agent-product MLOps or benchmark-construction guide.
 
 ## Claims the sources do not support
 
@@ -159,8 +210,18 @@ a generic agent-product MLOps or benchmark-construction guide.
 - No claim that the proposed governance process improves production outcomes.
 - No claim that static evaluations should disappear; the stronger synthesis is
   a stable comparison core plus a deliberately changed edge.
+- No claim that a held-out set remains independent after repeated consultation;
+  private does not mean unexposed or contamination-free.
+- No claim that production traces represent missing or unobservable failures;
+  trace-derived regressions need deliberately designed coverage beside them.
+- No claim that a model judge or one stochastic run is a stable measurement;
+  judge versions, run policy, and variance belong to the evaluator definition.
+- No claim that retirement means deletion. A case can leave the active gate while
+  its historical suite version remains available for audit and comparison.
+- No claim that a production trace is safe to commit or give to an eval-editing
+  agent without data and instruction review.
 
-## Oracle review
+## Oracle reviews
 
 Oracle ranked this as the strongest remaining AI Engineer article candidate with
 high confidence. It found the reader job unowned and noted that Feyzkhanov's
@@ -173,28 +234,43 @@ Oracle also reinforced two safeguards:
 - The article should not be drafted if its boundaries against per-change proof
   and outcome measurement cannot each be stated in one sentence.
 
+An adversarial Oracle pass changed the recommendation from Go to Reframe. It
+identified the actor mismatch, the mixed-change attribution flaw, the missed
+overlap with `agent-ready-interfaces.md`, and the absent data boundary on
+trace-derived cases. It recommended a decision table as the primary artifact and
+demoting or removing the full YAML registry.
+
+Before planning, the stress review also requires:
+
+- one authoritative written source on held-out-set decay or repeated benchmark
+  consultation
+- a targeted search for counterexamples where eval governance became unused
+  ceremony or a plain test suite was sufficient
+- confirmation that the selected audience is stated as a deliberate transfer
+  from the actual source actors rather than implied by them
+
 ## Stop conditions
 
-Do not draft the article if any of these becomes true during planning or source
-verification:
+Do not draft the article if any of these remains true after refinement:
 
-1. Evaluation CI, promotion, held-out protection, and retirement can be
-   supported only by benchmark vendors plus Koc's unfinished proposal.
-2. Jones's production red-green loop and Robinson's held-out and retirement
-   practice prove peripheral rather than load-bearing in full context.
-3. The article cannot state its boundary against `make-the-agent-prove-it.md` and
-   `measure-outcomes-not-agent-activity.md` in one sentence each.
-4. The practical artifact grows into a general MLOps registry rather than a
-   compact evaluation-change record for coding-agent teams.
-5. The draft would need to claim numeric thresholds or validated production
-   improvement unsupported by the sources.
-
-The first three source conditions passed this research round. The scope and
-artifact-size conditions must remain explicit during planning and drafting.
+1. After honest actor labeling, no source is within one transfer step of the
+   selected reader; only vendors and an unfinished proposal carry the method.
+2. System changes and evaluator changes cannot be separated in one concise table
+   with a clear re-baseline rule.
+3. The article cannot state its boundary against `make-the-agent-prove-it.md`,
+   `measure-outcomes-not-agent-activity.md`, and `agent-ready-interfaces.md` in
+   one sentence each.
+4. The article would need numeric thresholds, causal improvement, or claims that
+   governance is worth its cost rather than the narrower comparability claim.
+5. Trace promotion cannot include a bounded data and instruction review without
+   inventing an unsupported procedure; if so, cut trace promotion.
+6. The artifact grows into a generic MLOps registry rather than a compact
+   change-control table for the selected reader.
 
 ## Next planning action
 
-Use the `feature-planning` skill to create an implementation-ready article plan
-and paste-ready handoff. The plan should begin with another targeted check that
-Jones, Robinson, Feyzkhanov, and Shi can each support a distinct section of the
-article without Koc carrying any operational claim.
+Resolve the governed object and reader first. Recommended default: a team's
+shared coding-agent stack, because it matches the site's audience, with the
+adjacent-practice transfer made explicit. Then complete the written-source and
+counterevidence checks before using `feature-planning` to create `plan.md` and a
+paste-ready handoff.
