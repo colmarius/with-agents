@@ -75,12 +75,6 @@ Willison's default agent instruction is short: tell the agent how to run the tes
 
 If the agent cannot explain what test would fail, that is information: you may be asking for an unclear behavior change, not a coding task.
 
-When a reusable check enters an evolving shared evaluation gate, [Your
-Coding-Agent Evals Need Change
-Control](/posts/your-coding-agent-evals-need-change-control) explains how to
-version, track exposure, re-baseline, and retire it without invalidating
-comparisons.
-
 ## Layer 2: run the thing, not just the tests
 
 > Passing tests are not enough when the route, API, or UI has to work.
