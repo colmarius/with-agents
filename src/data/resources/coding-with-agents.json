@@ -1,5 +1,21 @@
 [
   {
+    "id": 30,
+    "title": "Formal methods with Hillel Wayne",
+    "subtitle": "Hillel Wayne on TLA+, property-based testing, and AI-assisted specification",
+    "url": "https://www.youtube.com/watch?v=KSkcgIYQy0U",
+    "description": "Hillel Wayne explains how specifications and formal verification differ from conventional testing, where tools such as TLA+ and Alloy fit, why property-based testing is the practical stopping point for many teams, and how AI can assist formal-methods experts without reliably inventing the properties that make a specification meaningful.",
+    "type": "video",
+    "source": "The Pragmatic Engineer",
+    "date": "2026-07-29",
+    "duration": "1h 25m",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "models-evaluation"
+    ]
+  },
+  {
     "id": 29,
     "title": "Boris Cherny: We Cut 80% of Claude Code’s Prompt",
     "subtitle": "Boris Cherny on prompt ablation, model elicitation, and long-running agent workflows",
