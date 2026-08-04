@@ -73,6 +73,10 @@ Run the targeted test, then the normal project check command.
 
 Willison's default agent instruction is short: tell the agent how to run the tests, then use red-green test-driven development [00:04:41]-[00:05:43]. The value is not ceremony. It forces the agent to state what would prove the task, watch that proof fail, then implement the smallest change that makes it pass [00:05:43]-[00:06:44]. He also argues the old "tests are too much extra work" excuse is weaker when an agent absorbs the typing cost [00:06:44]. Tests are not free to own, but they are much cheaper to ask for. If the code will live, require a reusable check.
 
+Here, "proof" means risk-scaled acceptance evidence, not mathematical proof. Hillel Wayne distinguishes the specification—the properties a system should have—from verification—evidence that the implementation satisfies them. Example tests cover selected inputs, property-based tests search many generated inputs, and formal methods try to cover every possible input or modeled state [00:18:53]-[00:21:37], [01:01:43]-[01:05:24].
+
+Property selection remains a human judgment boundary. In experiments Wayne described as current in March 2026, models helped with syntax repair, boilerplate, translating precise properties, and explaining error traces, but they did not reliably invent meaningful properties [01:06:16]-[01:12:37]. A green agent-written test is weak evidence if the agent also chose a trivial success condition.
+
 If the agent cannot explain what test would fail, that is information: you may be asking for an unclear behavior change, not a coding task.
 
 ## Layer 2: run the thing, not just the tests
@@ -192,4 +196,5 @@ Make the agent prove it. Then make a human decide whether the proof is enough.
 - [Simon Willison on Lenny's Podcast, "An AI state of the union"](https://www.youtube.com/watch?v=wc8FBhQtdsA), especially [00:37:34]-[00:39:12] on cheap polish and proof of real use.
 - [Pi Building Pi, OpenClaw's Minimalist Coding Agent](https://www.youtube.com/watch?v=DPgJjRdQWrg), especially [00:29:43]-[00:42:55].
 - [The Friction is Your Judgment](https://www.youtube.com/watch?v=_Zcw_sVF6hU), especially [00:14:01]-[00:17:55].
+- [Formal methods with Hillel Wayne](https://www.youtube.com/watch?v=KSkcgIYQy0U), especially [00:18:53]-[00:21:37] and [01:01:43]-[01:12:37].
 - Internal non-overlap check: [Evidence: make the agent prove the work](/posts/durable-context-coding-agents#evidence-keeps-judgment-attached-to-the-diff).
