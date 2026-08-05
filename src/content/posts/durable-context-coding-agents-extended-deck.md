@@ -74,9 +74,9 @@ layout: text
 
 > Ask where the human first becomes accountable, then move that checkpoint earlier.
 
-<figure class="talk-figure" aria-label="Audience checkpoint ladder">
+<figure class="talk-figure" aria-label="Autonomy, durable context, and human checkpoint ladder">
   <div class="talk-path">
-    <span class="talk-node">prompt</span>
+    <span class="talk-node">intent</span>
     <span class="talk-arrow">→</span>
     <span class="talk-node talk-node--accent">plan</span>
     <span class="talk-arrow">→</span>
@@ -86,31 +86,31 @@ layout: text
     <span class="talk-arrow">→</span>
     <span class="talk-node">PR</span>
     <span class="talk-arrow">→</span>
-    <span class="talk-node">incident</span>
+    <span class="talk-node">release</span>
   </div>
   <div class="talk-grid talk-grid--3">
     <div class="talk-card">
-      <span>delegate</span>
-      <strong>How much work?</strong>
+      <span>autonomy</span>
+      <strong>How far without review?</strong>
     </div>
     <div class="talk-card talk-card--accent">
-      <span>checkpoint</span>
-      <strong>Where can you still change it?</strong>
+      <span>context</span>
+      <strong>What survives the thread?</strong>
     </div>
     <div class="talk-card">
-      <span>review</span>
-      <strong>Plan, trace, diff, or proof?</strong>
+      <span>checkpoint</span>
+      <strong>Where can you redirect?</strong>
     </div>
   </div>
 </figure>
 
 <!-- notes -->
 
-Before prescribing a workflow, locate the real checkpoint. A team using agents as autocomplete has a different problem from a team running several terminal agents against the same repo. A senior engineer who reviews every plan has a different risk profile from one who sees only the final pull request.
+Before prescribing a workflow, locate the operating boundary. A team using agents as autocomplete has a different problem from a team running several terminal agents against the same repo. The useful distinction is not whether they use agents, but how far the agents run, what context travels with the work, and when a human can still redirect it.
 
-Ask three questions: how much work do you let agents do, where is your first checkpoint, and what do you actually review?
+Ask three questions: how far can the agent run without review, which shared context survives outside chat, and where can a human still change direction before rework becomes expensive?
 
-Durable context is not a documentation hobby. It is the way to put the checkpoint where it can still change the work.
+Durable context is not a documentation hobby. It carries shared intent to a checkpoint where it can still change the work.
 
 ## Fast form without shared intent
 <!-- slide:

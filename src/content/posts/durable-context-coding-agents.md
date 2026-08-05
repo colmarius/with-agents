@@ -50,23 +50,23 @@ Durable context moves intent, constraints, accepted tradeoffs, proof targets, st
 > Ask where the human first becomes accountable, then move that checkpoint earlier.
 
 ```text
-Who uses coding agents?
+How far can the agent run without review?
   ↓
-How much do they delegate?
+What shared context survives the thread?
   ↓
-Where is the first real checkpoint?
-plan → trace → diff → PR review → incident review
+Where can a human still redirect the work?
+intent → plan → trace → diff → PR → release → incident
 ```
 
-Before prescribing a workflow, locate the real checkpoint. Autocomplete has a different risk profile from several terminal agents working against the same repo.
+Before prescribing a workflow, locate the operating boundary. Autocomplete has a different risk profile from several terminal agents working against the same repo.
 
 Ask three questions:
 
-- How much work do you let agents do?
-- Where is your first checkpoint: prompt, plan, trace, diff, PR, or incident?
-- What do you actually review: the plan, commands, code, tests, or final summary?
+- What may the agent do before it must stop for review?
+- Which intent, constraints, decisions, and proof targets survive outside chat?
+- Where can a human still change direction before rework becomes expensive?
 
-Durable context puts the checkpoint where it can still change the work.
+Durable context carries shared intent to a checkpoint where it can still change the work.
 
 ## The model is not your project memory
 

@@ -47,7 +47,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing a checkpoint timeline from prompt to incident, with the trusted checkpoint moving earlier.](/slides/durable-context-coding-agents-image-deck/Slide-3.png)
+![Generated slide showing a timeline from intent to incident and asking how far the agent runs, what context survives, and where a human can redirect the work.](/slides/durable-context-coding-agents-image-deck/Slide-3.png)
 
 ## Fast form without shared intent
 <!-- slide:
