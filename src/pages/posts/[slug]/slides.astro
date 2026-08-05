@@ -522,6 +522,24 @@ const slidesDescription = `${post.data.description} Slide view.`;
         :global(body.image-only-slide-active:not(.notes-visible) .slide-controls) {
           opacity: 1;
         }
+
+        :global(body.image-only-slide-active:not(.notes-visible) .slide-topbar) {
+          top: 1rem;
+          right: auto;
+          bottom: auto;
+          left: 1rem;
+          display: flex;
+          width: auto;
+          height: auto;
+          border: 0;
+          background: transparent;
+          padding: 0;
+        }
+
+        :global(body.image-only-slide-active:not(.notes-visible) .slide-topbar > :not(:last-child)),
+        :global(body.image-only-slide-active:not(.notes-visible) .slide-topbar > :last-child > :last-child) {
+          display: none;
+        }
       }
 
       :global(body.image-only-slide-active:not(.notes-visible) .slide.active[data-layout='image'].slide-image-only) {
