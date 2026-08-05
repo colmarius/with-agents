@@ -14,7 +14,7 @@ durable-context-coding-agents-extended-deck.md is the richer slide-first alterna
 
 The canonical post is reader-first and may merge adjacent framing sections for scanning. Its opening may absorb source framing that this extended deck presents after the checkpoint slide. This deck may retain separate source, diagram, and pacing slides. When either changes, review the other in the same diff and keep factual claims, source roles, links, terminology, caveats, and broad argument order synchronized; section count, heading granularity, visuals, and slide pacing may intentionally diverge.
 
-durable-context-coding-agents-image-deck.md is an image-only experiment and is not part of the canonical/extended-deck sync contract.
+durable-context-coding-agents-image-deck.md is the linked visual alternate. When the canonical argument changes, review the image deck in the same diff and keep its claims, broad order, practical ending, notes, and source roles synchronized; its slide count and imagery may intentionally diverge.
 Do not publish, rename, delete, or replace the canonical public post without explicit human approval.
 -->
 
