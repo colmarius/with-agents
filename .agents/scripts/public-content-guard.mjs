@@ -26,6 +26,18 @@ const defaultRepoRoot = path.resolve(
   '../..',
 );
 
+const durableContextDeck = {
+  assetDirectory: 'public/slides/durable-context-coding-agents-image-deck',
+  canonicalPost: 'src/content/posts/durable-context-coding-agents.md',
+  expectedImageCount: 16,
+  imageDeckPost:
+    'src/content/posts/durable-context-coding-agents-image-deck.md',
+  imageHeight: 941,
+  imageWidth: 1672,
+  publicImagePrefix: '/slides/durable-context-coding-agents-image-deck/',
+  slideRoute: '/posts/durable-context-coding-agents-image-deck/slides/',
+};
+
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const listFiles = async (directory, extension) => {
@@ -227,6 +239,204 @@ export const extractTrackedReferences = (
   playlists: extractKnownReferences(contents, playlistIds),
 });
 
+export const readWebpDimensions = (contents) => {
+  if (
+    contents.length < 20 ||
+    contents.toString('ascii', 0, 4) !== 'RIFF' ||
+    contents.toString('ascii', 8, 12) !== 'WEBP'
+  ) {
+    throw new Error('not a valid WebP RIFF container');
+  }
+
+  let offset = 12;
+  while (offset + 8 <= contents.length) {
+    const chunkType = contents.toString('ascii', offset, offset + 4);
+    const chunkSize = contents.readUInt32LE(offset + 4);
+    const payloadOffset = offset + 8;
+    const payloadEnd = payloadOffset + chunkSize;
+    if (payloadEnd > contents.length) {
+      throw new Error(`truncated ${chunkType} chunk`);
+    }
+
+    if (chunkType === 'VP8X' && chunkSize >= 10) {
+      return {
+        height: contents.readUIntLE(payloadOffset + 7, 3) + 1,
+        width: contents.readUIntLE(payloadOffset + 4, 3) + 1,
+      };
+    }
+    if (
+      chunkType === 'VP8 ' &&
+      chunkSize >= 10 &&
+      contents[payloadOffset + 3] === 0x9d &&
+      contents[payloadOffset + 4] === 0x01 &&
+      contents[payloadOffset + 5] === 0x2a
+    ) {
+      return {
+        height: contents.readUInt16LE(payloadOffset + 8) & 0x3fff,
+        width: contents.readUInt16LE(payloadOffset + 6) & 0x3fff,
+      };
+    }
+    if (
+      chunkType === 'VP8L' &&
+      chunkSize >= 5 &&
+      contents[payloadOffset] === 0x2f
+    ) {
+      const dimensions = contents.readUInt32LE(payloadOffset + 1);
+      return {
+        height: ((dimensions >> 14) & 0x3fff) + 1,
+        width: (dimensions & 0x3fff) + 1,
+      };
+    }
+
+    offset = payloadEnd + (chunkSize % 2);
+  }
+
+  throw new Error('WebP dimensions were not found');
+};
+
+export const validateDurableContextImageDeck = async (repoRoot, errors) => {
+  let imageDeckPost;
+  try {
+    imageDeckPost = await readFile(
+      path.join(repoRoot, durableContextDeck.imageDeckPost),
+      'utf8',
+    );
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      try {
+        await readFile(
+          path.join(repoRoot, durableContextDeck.canonicalPost),
+          'utf8',
+        );
+      } catch (canonicalError) {
+        if (canonicalError.code === 'ENOENT') {
+          return;
+        }
+        throw canonicalError;
+      }
+      errors.push(`${durableContextDeck.imageDeckPost} is missing`);
+      return;
+    }
+    throw error;
+  }
+
+  let canonicalPost;
+  try {
+    canonicalPost = await readFile(
+      path.join(repoRoot, durableContextDeck.canonicalPost),
+      'utf8',
+    );
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      errors.push(
+        `${durableContextDeck.canonicalPost} is missing while the image deck is published`,
+      );
+    } else {
+      throw error;
+    }
+  }
+
+  if (canonicalPost && !canonicalPost.includes(durableContextDeck.slideRoute)) {
+    errors.push(
+      `${durableContextDeck.canonicalPost} must link to ${durableContextDeck.slideRoute}`,
+    );
+  }
+
+  const headings = [...imageDeckPost.matchAll(/^##\s+(.+?)\s*$/gm)].map(
+    (match) => match[1],
+  );
+  const presentationHeadings = headings.filter(
+    (heading) => !['sources', 'sources used'].includes(heading.toLowerCase()),
+  );
+  if (presentationHeadings.length !== durableContextDeck.expectedImageCount) {
+    errors.push(
+      `${durableContextDeck.imageDeckPost} must contain ${durableContextDeck.expectedImageCount} presentation sections; found ${presentationHeadings.length}`,
+    );
+  }
+  if (!headings.some((heading) => heading.toLowerCase() === 'sources used')) {
+    errors.push(
+      `${durableContextDeck.imageDeckPost} must contain a Sources used appendix`,
+    );
+  }
+
+  const imageExpression = new RegExp(
+    `!\\[[^\\]]*\\]\\(${escapeRegExp(durableContextDeck.publicImagePrefix)}([^\\s)]+)\\)`,
+    'g',
+  );
+  const imageReferences = [...imageDeckPost.matchAll(imageExpression)].map(
+    (match) => match[1],
+  );
+  const uniqueImageReferences = new Set(imageReferences);
+  if (
+    imageReferences.length !== durableContextDeck.expectedImageCount ||
+    uniqueImageReferences.size !== durableContextDeck.expectedImageCount
+  ) {
+    errors.push(
+      `${durableContextDeck.imageDeckPost} must reference ${durableContextDeck.expectedImageCount} unique slide images; found ${imageReferences.length} references to ${uniqueImageReferences.size} files`,
+    );
+  }
+
+  for (const filename of uniqueImageReferences) {
+    if (!filename.endsWith('.webp')) {
+      errors.push(
+        `${durableContextDeck.imageDeckPost} references non-WebP slide image ${filename}`,
+      );
+      continue;
+    }
+
+    const relativePath = path.join(durableContextDeck.assetDirectory, filename);
+    let image;
+    try {
+      image = await readFile(path.join(repoRoot, relativePath));
+    } catch (error) {
+      if (error.code === 'ENOENT') {
+        errors.push(`${relativePath} is missing`);
+        continue;
+      }
+      throw error;
+    }
+
+    try {
+      const dimensions = readWebpDimensions(image);
+      if (
+        dimensions.width !== durableContextDeck.imageWidth ||
+        dimensions.height !== durableContextDeck.imageHeight
+      ) {
+        errors.push(
+          `${relativePath} must be ${durableContextDeck.imageWidth}x${durableContextDeck.imageHeight}; found ${dimensions.width}x${dimensions.height}`,
+        );
+      }
+    } catch (error) {
+      errors.push(`${relativePath} is not a readable WebP: ${error.message}`);
+    }
+  }
+
+  let assetEntries;
+  try {
+    assetEntries = await readdir(
+      path.join(repoRoot, durableContextDeck.assetDirectory),
+      { withFileTypes: true },
+    );
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      errors.push(`${durableContextDeck.assetDirectory} is missing`);
+      return;
+    }
+    throw error;
+  }
+  const imageAssets = assetEntries
+    .filter((entry) => entry.isFile() && /\.(?:png|webp)$/i.test(entry.name))
+    .map((entry) => entry.name)
+    .sort();
+  for (const filename of imageAssets) {
+    if (!uniqueImageReferences.has(filename)) {
+      errors.push(
+        `${durableContextDeck.assetDirectory}/${filename} is an unreferenced deck image asset`,
+      );
+    }
+  }
+};
+
 const isValidDate = (value) => {
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
     return false;
@@ -427,6 +637,7 @@ export const runPublicContentGuard = async ({
   const tracked = await readTrackedLibrary(repoRoot, notices);
   errors.push(...validateExceptions(exceptions, tracked));
   const resourceValidation = await validateResources(repoRoot, errors);
+  await validateDurableContextImageDeck(repoRoot, errors);
 
   const publicFiles = [
     ...(await listFiles(path.join(repoRoot, 'src/content/posts'), '.md')).map(

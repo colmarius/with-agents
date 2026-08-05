@@ -7,12 +7,18 @@ import {
   extractTrackedReferences,
   parseJsonWithDuplicateKeys,
   readFrontmatter,
+  readWebpDimensions,
   runPublicContentGuard,
+  validateDurableContextImageDeck,
 } from './public-content-guard.mjs';
 
 const writeFixture = async (root, relativePath, contents) => {
   const filePath = path.join(root, relativePath);
   await mkdir(path.dirname(filePath), { recursive: true });
+  if (Buffer.isBuffer(contents)) {
+    await writeFile(filePath, contents);
+    return;
+  }
   await writeFile(
     filePath,
     typeof contents === 'string'
@@ -58,6 +64,58 @@ const resources = (overrides = {}) => [
     ...overrides,
   },
 ];
+
+const webpFixture = (width = 1672, height = 941) => {
+  const contents = Buffer.alloc(30);
+  contents.write('RIFF', 0, 'ascii');
+  contents.writeUInt32LE(contents.length - 8, 4);
+  contents.write('WEBP', 8, 'ascii');
+  contents.write('VP8 ', 12, 'ascii');
+  contents.writeUInt32LE(10, 16);
+  contents[23] = 0x9d;
+  contents[24] = 0x01;
+  contents[25] = 0x2a;
+  contents.writeUInt16LE(width, 26);
+  contents.writeUInt16LE(height, 28);
+  return contents;
+};
+
+const extendedWebpFixture = (width = 1672, height = 941) => {
+  const contents = Buffer.alloc(30);
+  contents.write('RIFF', 0, 'ascii');
+  contents.writeUInt32LE(contents.length - 8, 4);
+  contents.write('WEBP', 8, 'ascii');
+  contents.write('VP8X', 12, 'ascii');
+  contents.writeUInt32LE(10, 16);
+  contents.writeUIntLE(width - 1, 24, 3);
+  contents.writeUIntLE(height - 1, 27, 3);
+  return contents;
+};
+
+const writeDurableContextDeckFixture = async (root) => {
+  const imageSections = [];
+  for (let index = 1; index <= 16; index += 1) {
+    const filename = `Slide-${index}.webp`;
+    imageSections.push(`## Slide ${index}
+
+![Slide ${index}](/slides/durable-context-coding-agents-image-deck/${filename})`);
+    await writeFixture(
+      root,
+      `public/slides/durable-context-coding-agents-image-deck/${filename}`,
+      webpFixture(),
+    );
+  }
+  await writeFixture(
+    root,
+    'src/content/posts/durable-context-coding-agents.md',
+    '[Image deck](/posts/durable-context-coding-agents-image-deck/slides/#1)',
+  );
+  await writeFixture(
+    root,
+    'src/content/posts/durable-context-coding-agents-image-deck.md',
+    `${imageSections.join('\n\n')}\n\n## Sources used\n`,
+  );
+};
 
 const createFixture = async ({
   videoStatus = 'reviewed',
@@ -166,6 +224,75 @@ test('tracked extraction covers URL forms, thumbnails, parameters, and bare lead
     references.playlists.map(({ id }) => id),
     ['PLfixture1234567890'],
   );
+});
+
+test('WebP dimension reader supports the slide image bitstream', () => {
+  assert.deepEqual(readWebpDimensions(webpFixture()), {
+    height: 941,
+    width: 1672,
+  });
+  assert.deepEqual(readWebpDimensions(extendedWebpFixture()), {
+    height: 941,
+    width: 1672,
+  });
+});
+
+test('durable context image deck guard checks its complete publishing contract', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'durable-context-deck-'));
+  try {
+    await writeDurableContextDeckFixture(root);
+    const validErrors = [];
+    await validateDurableContextImageDeck(root, validErrors);
+    assert.deepEqual(validErrors, []);
+
+    await rm(
+      path.join(root, 'src/content/posts/durable-context-coding-agents.md'),
+    );
+    const missingCanonicalErrors = [];
+    await validateDurableContextImageDeck(root, missingCanonicalErrors);
+    assert.match(
+      missingCanonicalErrors.join('\n'),
+      /durable-context-coding-agents\.md is missing while the image deck is published/,
+    );
+
+    await writeFixture(
+      root,
+      'src/content/posts/durable-context-coding-agents.md',
+      'Canonical article without a deck link.',
+    );
+    await writeFixture(
+      root,
+      'src/content/posts/durable-context-coding-agents-image-deck.md',
+      `${Array.from(
+        { length: 16 },
+        (_, index) => `## Slide ${index + 1}
+
+![Slide](/slides/durable-context-coding-agents-image-deck/Slide-${Math.min(index + 1, 15)}.webp)`,
+      ).join('\n\n')}\n`,
+    );
+    await writeFixture(
+      root,
+      'public/slides/durable-context-coding-agents-image-deck/Slide-1.webp',
+      webpFixture(100, 100),
+    );
+    await writeFixture(
+      root,
+      'public/slides/durable-context-coding-agents-image-deck/cover.webp',
+      webpFixture(),
+    );
+
+    const invalidErrors = [];
+    await validateDurableContextImageDeck(root, invalidErrors);
+    const message = invalidErrors.join('\n');
+    assert.match(message, /must link to .*image-deck\/slides/);
+    assert.match(message, /must contain a Sources used appendix/);
+    assert.match(message, /16 unique slide images/);
+    assert.match(message, /Slide-1\.webp must be 1672x941; found 100x100/);
+    assert.match(message, /Slide-16\.webp is an unreferenced deck image asset/);
+    assert.match(message, /cover\.webp is an unreferenced deck image asset/);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
 });
 
 test('duplicate-aware JSON parsing reports repeated keys without merging objects', () => {

@@ -23,7 +23,7 @@ layout: image
 class: image-only
 -->
 
-![Generated cover slide for Your Repo Is the Memory, with the subtitle Chat is RAM and the repo is disk.](/slides/durable-context-coding-agents-image-deck/Slide-1.png)
+![Generated cover slide for Your Repo Is the Memory, with the subtitle Chat is RAM and the repo is disk.](/slides/durable-context-coding-agents-image-deck/Slide-1.webp)
 
 <!-- notes -->
 
@@ -37,7 +37,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide saying coding agents made implementation cheap and asking where the memory should live.](/slides/durable-context-coding-agents-image-deck/Slide-2.png)
+![Generated slide saying coding agents made implementation cheap and asking where the memory should live.](/slides/durable-context-coding-agents-image-deck/Slide-2.webp)
 
 <!-- notes -->
 
@@ -51,7 +51,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide comparing the old plan-discuss-build-review path with the agent path where alignment moves onto the critical path.](/slides/durable-context-coding-agents-image-deck/Slide-5.png)
+![Generated slide comparing the old plan-discuss-build-review path with the agent path where alignment moves onto the critical path.](/slides/durable-context-coding-agents-image-deck/Slide-5.webp)
 
 <!-- notes -->
 
@@ -65,7 +65,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing fast generation, large diffs, shallow review, and green tests turning speed into comprehension debt.](/slides/durable-context-coding-agents-image-deck/Slide-6.png)
+![Generated slide showing fast generation, large diffs, shallow review, and green tests turning speed into comprehension debt.](/slides/durable-context-coding-agents-image-deck/Slide-6.webp)
 
 <!-- notes -->
 
@@ -79,7 +79,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing an intent-to-incident timeline and three questions: how far the agent runs, what context survives, and where a human can redirect the work.](/slides/durable-context-coding-agents-image-deck/Slide-3.png)
+![Generated slide showing an intent-to-incident timeline and three questions: how far the agent runs, what context survives, and where a human can redirect the work.](/slides/durable-context-coding-agents-image-deck/Slide-3.webp)
 
 <!-- notes -->
 
@@ -93,7 +93,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide contrasting broad lossy model memory with exact local repo truth.](/slides/durable-context-coding-agents-image-deck/Slide-7.png)
+![Generated slide contrasting broad lossy model memory with exact local repo truth.](/slides/durable-context-coding-agents-image-deck/Slide-7.webp)
 
 <!-- notes -->
 
@@ -107,7 +107,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide filtering temporary chat into six durable items: intent, constraints, tradeoffs, decisions, proof, and next action.](/slides/durable-context-coding-agents-image-deck/Slide-9.png)
+![Generated slide filtering temporary chat into six durable items: intent, constraints, tradeoffs, decisions, proof, and next action.](/slides/durable-context-coding-agents-image-deck/Slide-9.webp)
 
 <!-- notes -->
 
@@ -121,7 +121,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide mapping durable repo memory into AGENTS.md, skills, work items, decisions, and evidence.](/slides/durable-context-coding-agents-image-deck/Slide-10.png)
+![Generated slide mapping durable repo memory into AGENTS.md, skills, work items, decisions, and evidence.](/slides/durable-context-coding-agents-image-deck/Slide-10.webp)
 
 <!-- notes -->
 
@@ -135,7 +135,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide explaining AGENTS.md as the map for stack, directories, ownership boundaries, checks, and rules.](/slides/durable-context-coding-agents-image-deck/Slide-11.png)
+![Generated slide explaining AGENTS.md as the map for stack, directories, ownership boundaries, checks, and rules.](/slides/durable-context-coding-agents-image-deck/Slide-11.webp)
 
 <!-- notes -->
 
@@ -149,7 +149,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide defining a skill as trigger, steps, scripts or assets, and proof target.](/slides/durable-context-coding-agents-image-deck/Slide-12.png)
+![Generated slide defining a skill as trigger, steps, scripts or assets, and proof target.](/slides/durable-context-coding-agents-image-deck/Slide-12.webp)
 
 <!-- notes -->
 
@@ -163,7 +163,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing a readable dot-agents work item with index, research, plan, progress, and decisions files.](/slides/durable-context-coding-agents-image-deck/Slide-13a.png)
+![Generated slide showing a readable dot-agents work item with index, research, plan, progress, and decisions files.](/slides/durable-context-coding-agents-image-deck/Slide-13a.webp)
 
 <!-- notes -->
 
@@ -177,7 +177,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing review moving earlier through plan, trace, diff, and evidence before the merge request checkpoint.](/slides/durable-context-coding-agents-image-deck/Slide-14.png)
+![Generated slide showing review moving earlier through plan, trace, diff, and evidence before the merge request checkpoint.](/slides/durable-context-coding-agents-image-deck/Slide-14.webp)
 
 <!-- notes -->
 
@@ -191,7 +191,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing three readable proof tiers, from low-risk focused checks through high-risk dry runs, rollback, and human signoff.](/slides/durable-context-coding-agents-image-deck/Slide-15.png)
+![Generated slide showing three readable proof tiers, from low-risk focused checks through high-risk dry runs, rollback, and human signoff.](/slides/durable-context-coding-agents-image-deck/Slide-15.webp)
 
 <!-- notes -->
 
@@ -205,7 +205,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing task-local learning distilled from work items and evidence into reusable repo guidance, so the next task starts smarter.](/slides/durable-context-coding-agents-image-deck/Slide-19.png)
+![Generated slide showing task-local learning distilled from work items and evidence into reusable repo guidance, so the next task starts smarter.](/slides/durable-context-coding-agents-image-deck/Slide-19.webp)
 
 <!-- notes -->
 
@@ -219,7 +219,7 @@ layout: image
 class: image-only
 -->
 
-![Generated slide comparing rediscovery, surprise diffs, and buried decisions with known commands, explicit proof targets, and linked task state.](/slides/durable-context-coding-agents-image-deck/Slide-18.png)
+![Generated slide comparing rediscovery, surprise diffs, and buried decisions with known commands, explicit proof targets, and linked task state.](/slides/durable-context-coding-agents-image-deck/Slide-18.webp)
 
 <!-- notes -->
 
@@ -233,7 +233,7 @@ layout: image
 class: image-only
 -->
 
-![Closing slide mapping repeated pain to the smallest durable artifact and saying to start with one real task, record what helped, and repeat.](/slides/durable-context-coding-agents-image-deck/Slide-20.png)
+![Closing slide mapping repeated pain to the smallest durable artifact and saying to start with one real task, record what helped, and repeat.](/slides/durable-context-coding-agents-image-deck/Slide-20.webp)
 
 <!-- notes -->
 
