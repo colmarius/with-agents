@@ -259,6 +259,8 @@ This is the core idea behind `dot-agents`: put operating context for agentic wor
 
 Think of chat as RAM: fast, useful, temporary, and noisy. Think of files as disk: slower to write, easier to share, easier to review, and available to the next engineer, agent, machine, and session.
 
+In a private review of my own agent threads—an N=1 observation, not population evidence—the useful prompts became shorter as the repository context improved. They pointed to `AGENTS.md`, a skill, a work item, a commit, or a known baseline instead of reconstructing project context; short follow-ups steered the run and then expired. When the pointer target is durable, the prompt can be transient.
+
 The judgment is deciding what to flush to disk.
 
 ## What should survive?
@@ -282,6 +284,10 @@ layout: text
 <!-- notes -->
 
 Durable context is useful because it filters, not because it hoards. Keep accepted constraints, proof commands, decisions, task state, examples the agent should copy, and mistakes that should become checks. Leave behind transient prompts, abandoned hypotheses, duplicate logs, and explanations that only made sense in the moment.
+
+Durable does not mean fresh or authoritative. Branches move and saved instructions go stale. For substantial work, name one current source of truth—usually the work item or active plan, optionally anchored to a commit or known baseline—and state which source wins when instructions disagree.
+
+Some context should never be flushed to disk: secrets or credentials, personal data, machine-specific absolute paths, and ephemeral environment URLs or resource IDs. Durable context should be safe to share.
 
 ## The repo-memory stack
 <!-- slide:
@@ -404,6 +410,8 @@ The PR diff is still necessary. It is no longer enough. Planning review catches 
 
 The checkpoint does not have to be heavy. For small tasks it might be one paragraph and one test command. For risky tasks it might be a plan, reviewer signoff, browser trace, migration dry run, and rollback note. The important shift is that the human sees intent before the agent has produced a large artifact that is socially hard to throw away.
 
+Authority should be explicit too: permission to investigate does not imply permission to implement, and permission to implement does not imply permission to commit, push, merge, or release.
+
 ## Evidence keeps judgment attached to the diff
 <!-- slide:
 layout: text
@@ -422,6 +430,8 @@ layout: text
 <!-- notes -->
 
 Evidence is part of durable context because "done" is otherwise too easy to say. An agent can produce a confident final answer after a failed test, a skipped check, or an unreviewed assumption. The reviewer needs proof that matches the risk.
+
+Repo state is not automatically trusted state: committed does not mean verified. Record which checks were rerun for this change and which results were inherited; where the baseline is already noisy, preserve enough evidence to distinguish old failures from new ones.
 
 For a content change in this repo, the normal proof is `npm run check` and `npm run build`. For UI work, evidence may include a screenshot or browser trace. For API work, it may include `curl` output or an integration test. For migrations, it may include a dry run and rollback note. The full ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it).
 
@@ -442,17 +452,11 @@ layout: visual
     <div class="talk-loop__item">Evidence</div>
   </div>
   <p class="talk-note">Promote what helped the next run.</p>
-  <div class="talk-stack">
-    <div class="talk-stack__item"><strong>missed command</strong><span>update AGENTS.md</span></div>
-    <div class="talk-stack__item"><strong>repeated workflow</strong><span>make a skill, script, or checklist</span></div>
-    <div class="talk-stack__item"><strong>lost state</strong><span>create a work item</span></div>
-    <div class="talk-stack__item"><strong>repeated bug</strong><span>add a check</span></div>
-  </div>
 </figure>
 
 <!-- notes -->
 
-The point is not to collect more context. The point is to run a promotion loop. When an agent misses the same command twice, update the map. When a sequence repeats, make a skill or script. When task context spans sessions, create a work item. When a mistake is mechanically detectable, add a check. When ambiguity keeps returning, write the architecture note or example the agent should copy.
+Promotion should leave the next run better, not merely larger: preserve what changes behavior and prune what no longer earns its place.
 
 ## Durable context travels
 <!-- slide:
@@ -530,3 +534,4 @@ Do not design the perfect agent operating model. Start with one repeated pain. S
 - [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
 - [`dot-agents`](https://dot-agents.dev/) and [Small Threads, Durable State](/posts/small-threads-durable-state) — source material for file-backed task state and handoffs.
 - [Make the Agent Prove It](/posts/make-the-agent-prove-it) — internal companion piece for the evidence ladder.
+- Author synthesis from a private review of the author's own agent threads (one user's corpus); no thread content, prompts, or identifiers are reproduced.

@@ -37,11 +37,11 @@ This post is the practical version: what to keep in the repo, what to leave in c
 
 A coding agent can inspect files, draft a plan, edit code, run commands, and summarize the result in minutes. Alignment does not accelerate automatically. Someone still needs to name the goal, constraints, tradeoffs, and proof target before the output becomes expensive to redirect.
 
-Noperator's essay [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) describes one failure mode: "generative AI can produce substantial form with minimally applied intent," and "substantial form without discernible intent." Agents can create convincing code, tests, docs, migrations, screenshots, and PRs from vague instructions; reviewers then have to recover intent from the artifact.
+Noperator's essay [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) calls this "substantial form without discernible intent": agents can produce convincing code, tests, docs, migrations, screenshots, and PRs from vague instructions, leaving reviewers to reconstruct the goal.
 
-Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) describes the coordination cost. When writing code becomes fast and cheap, the hard question moves from "how do we build it?" to "should we build it?" The pull request becomes the first shared checkpoint and must recover the goal, plan, assumptions, proof, and reviewers that were missing while the agent worked.
+Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) describes the coordination cost: when implementation becomes cheap, "should we build it?" becomes harder than "how?" If the pull request is the first shared checkpoint, it must recover the missing goal, plan, assumptions, and proof.
 
-Addy Osmani names the ownership cost in [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/): the gap between how much code exists and how much any human genuinely understands. The risk is not that every generated line is wrong. Tests can be green while nobody can explain the implicit decisions or safely change the result.
+Addy Osmani calls the ownership cost [cognitive surrender](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [comprehension debt](https://addyosmani.com/blog/comprehension-debt/): tests can be green while nobody can explain the implicit decisions or safely change the result.
 
 Durable context moves intent, constraints, accepted tradeoffs, proof targets, stop conditions, and human decisions before the diff becomes the only artifact.
 
@@ -78,6 +78,8 @@ For exact technical work, a correct repo-local example beats expecting the model
 
 Chat is RAM: fast, useful, temporary, and noisy. The repo is disk: versioned, reviewable, and available to the next engineer, agent, machine, and session. This is the core idea behind `dot-agents`: chat can stay messy while files, checks, and work items preserve the parts that change future behavior. The judgment is deciding what to flush to disk.
 
+In a private review of my own agent threads—an N=1 observation, not population evidence—the useful prompts became shorter as the repository context improved. They pointed to `AGENTS.md`, a skill, a work item, a commit, or a known baseline instead of reconstructing project context; short follow-ups steered the run and then expired. When the pointer target is durable, the prompt can be transient.
+
 ## What should survive?
 
 > Preserve the parts that change the next run; let the rest expire.
@@ -92,6 +94,10 @@ chat exploration
 ```
 
 Durable context is useful because it filters, not because it hoards. Keep accepted constraints, proof commands, decisions, task state, examples the agent should copy, and mistakes that should become checks. Leave behind transient prompts, abandoned hypotheses, duplicate logs, and explanations that only made sense in the moment.
+
+Durable does not mean fresh or authoritative. Branches move and saved instructions go stale. For substantial work, name one current source of truth—usually the work item or active plan, optionally anchored to a commit or known baseline—and state which source wins when instructions disagree.
+
+Some context should never be flushed to disk: secrets or credentials, personal data, machine-specific absolute paths, and ephemeral environment URLs or resource IDs. Durable context should be safe to share.
 
 ## The repo-memory stack
 
@@ -192,6 +198,8 @@ Planning review catches wrong work before it is generated. Trace review catches 
 
 The checkpoint does not have to be heavy. For small tasks it might be one paragraph and one test command. For risky tasks it might be a plan, reviewer signoff, browser trace, migration dry run, and rollback note. The important shift is that the human sees intent before the agent has produced a large artifact that is socially hard to throw away.
 
+Authority should be explicit too: permission to investigate does not imply permission to implement, and permission to implement does not imply permission to commit, push, merge, or release.
+
 ## Evidence keeps judgment attached to the diff
 
 > Proof belongs where the next reviewer can see it.
@@ -203,6 +211,8 @@ high        trace, migration dry run, rollback, human signoff
 ```
 
 Evidence is part of durable context because "done" is otherwise too easy to say. An agent can produce a confident final answer after a failed test, a skipped check, or an unreviewed assumption. The reviewer needs proof that matches the risk.
+
+Repo state is not automatically trusted state: committed does not mean verified. Record which checks were rerun for this change and which results were inherited; where the baseline is already noisy, preserve enough evidence to distinguish old failures from new ones.
 
 For a content change in this repo, the normal proof is:
 
@@ -227,7 +237,7 @@ Evidence does not replace judgment. It gives judgment something concrete to insp
       ╰──────────── promote what helped the next run ◀─────╯
 ```
 
-The point is not to collect more context. The point is to run a promotion loop. When an agent misses the same command twice, update the map. When a sequence repeats, make a skill or script. When task context spans sessions, create a work item. When a mistake is mechanically detectable, add a check. When ambiguity keeps returning, write the architecture note or example the agent should copy.
+Promotion should leave the next run better, not merely larger: preserve what changes behavior and prune what no longer earns its place.
 
 ## Durable context travels
 
@@ -272,3 +282,4 @@ Do not design the perfect agent operating model. Start with one repeated pain. S
 - [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
 - [`dot-agents`](https://dot-agents.dev/) and [Small Threads, Durable State](/posts/small-threads-durable-state) — source material for file-backed task state and handoffs.
 - [Make the Agent Prove It](/posts/make-the-agent-prove-it) — internal companion piece for the evidence ladder.
+- Author synthesis from a private review of the author's own agent threads (one user's corpus); no thread content, prompts, or identifiers are reproduced.
