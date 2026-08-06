@@ -6,7 +6,7 @@ publishedAt: "2026-07-31T21:00:03Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Joseph Wang and his Emulated co-founder Sid argue that training and evaluating

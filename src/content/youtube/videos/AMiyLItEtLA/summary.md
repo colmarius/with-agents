@@ -6,7 +6,7 @@ publishedAt: "2026-07-31T01:11:30Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Vaibhav Gupta of Boundary presents his team's work on BAML as an argument that

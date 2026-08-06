@@ -1,6 +1,6 @@
 ---
 title: "Coding Agents @ AI Engineer"
-status: draft
+status: reviewed
 coveredVideoIds:
   - zkX03APVj0M
   - AMiyLItEtLA
