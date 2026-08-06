@@ -1,6 +1,6 @@
 ---
 title: "AI concepts"
-status: reviewed
+status: draft
 coveredVideoIds:
   - 8gg-oJr4dTY
   - 2VnxJafIfEI
@@ -65,11 +65,11 @@ coveredVideoIds:
 
 ## Coverage
 
-- Manifest: 63 entries representing 62 unique video IDs.
+- Manifest: 65 entries representing 64 unique video IDs.
 - Captured: 60 manifest occurrences representing 59 unique source-language transcript and summary pairs.
-- Summaries: 59 unique draft summaries, represented by 60 manifest occurrences because `8gg-oJr4dTY` occurs twice; the duplicate occurrence is not a second summary.
+- Summaries: 59 unique summaries, represented by 60 manifest occurrences because `8gg-oJr4dTY` occurs twice; the duplicate occurrence is not a second summary.
 - Incorporated: all 59 unique summaries and all 60 summarized manifest occurrences.
-- Unavailable-recorded video IDs without summaries: `9mHKjgFMsQA`, `LG3q-sqMG0g`, and `aAWdlLfJmqw`.
+- Unavailable-recorded video IDs without summaries: `9mHKjgFMsQA`, `LG3q-sqMG0g`, `aAWdlLfJmqw`, `RDGe3_87cSY`, and `HUh7zFiTi-I`.
 - Pending video IDs: none.
 
 ## Current Thesis

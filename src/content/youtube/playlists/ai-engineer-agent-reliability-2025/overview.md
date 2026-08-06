@@ -1,6 +1,6 @@
 ---
 title: "Agent Reliability: AI Engineer World's Fair 2025"
-status: reviewed
+status: draft
 coveredVideoIds:
   - 8kMaTybvDUw
   - kTnfJszFxCg
@@ -10,13 +10,11 @@ coveredVideoIds:
   - Dj0b_cEBHBI
   - sl3icG-IjHo
   - WJjInLeaJjo
-  - Ib5t2RLtxvM
-  - xIt_mTQp6mY
 ---
 
 ## Coverage
 
-The manifest contains 11 entries: 10 available and 1 unavailable private entry (`WnTq5Mc5bIU`). All 10 available entries are captured, summarized, and incorporated here; no available IDs remain pending, and 0 caption-unavailable outcomes have been recorded.
+The manifest contains 9 entries: 8 available and 1 unavailable private entry (`WnTq5Mc5bIU`). All 8 available entries are captured, summarized, and incorporated here; no available IDs remain pending, and 0 caption-unavailable outcomes have been recorded.
 
 AI Engineer is the curator and source channel for this multi-speaker playlist, not its author. Speakers and affiliations vary by video and must be established from each video's source title, description, or transcript.
 
@@ -30,9 +28,7 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Danielle Perszyk (Amazon AGI) frames reliability as both controllable atomic action and alignment with human goals, agency, creativity, productivity, strategic thinking, and flow. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
 - Yogendra Miraje (FactSet) presents a blueprint-based planning architecture that constrains tools, reduces planner load, exposes a reviewable high-level plan, and evaluates components as well as end-to-end behavior. ([summary](../../videos/sl3icG-IjHo/summary.md))
 - Antje Barth (AWS) presents a model-driven approach in which capable models select actions while developers define agent purpose, tools, model providers, and cloud deployment. ([summary](../../videos/WJjInLeaJjo/summary.md))
-- Rustem Feyzkhanov (Snorkel AI) argues that production traces should feed private, repeatable simulation benchmarks covering an agent's environment, tools, policies, workflows, and operational metrics. ([summary](../../videos/Ib5t2RLtxvM/summary.md))
-- Kyle Mistele (HumanLayer) presents coding-agent loops as incremental control systems with measurable targets, deterministic selection where possible, reviewable pull requests, persistent human feedback, and backpressure. ([summary](../../videos/xIt_mTQp6mY/summary.md))
-- Editorial: Across the 10 incorporated talks, reliability spans software control, expected value, selective determinism, durable execution, explicit planning, scalable tool and deployment infrastructure, simulation-based release gates, lifecycle verification, incremental feedback loops, and human outcomes.
+- Editorial: Across the 8 incorporated talks, reliability spans software control, expected value, selective determinism, durable execution, explicit planning, scalable tool and deployment infrastructure, lifecycle verification, and human outcomes.
 
 ## Stable Ideas
 
@@ -44,9 +40,7 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Danielle Perszyk (Amazon AGI) recommends composing complex workflows from reliable atomic interactions with granular developer control and shared environmental state. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
 - Yogendra Miraje (FactSet) recommends high-level natural-language blueprints, capability-oriented tool contracts, validation brakes, recursion limits, and aspect-specific evaluation. ([summary](../../videos/sl3icG-IjHo/summary.md))
 - Antje Barth (AWS) recommends retrieving relevant tools from large catalogs instead of placing every tool in model context and treats remote MCP deployment as ordinary authorized cloud infrastructure. ([summary](../../videos/WJjInLeaJjo/summary.md))
-- Rustem Feyzkhanov (Snorkel AI) recommends repeatable production-like environments, hidden oracle solutions, multiple verifier types, benchmark CI, and release gates built from observed traces and failures. ([summary](../../videos/Ib5t2RLtxvM/summary.md))
-- Kyle Mistele (HumanLayer) recommends measurable desired states, deterministic sensors and controllers where appropriate, hand-written golden patterns, and at most one open pull request per loop until reviewers accept its output. ([summary](../../videos/xIt_mTQp6mY/summary.md))
-- Editorial: All 10 incorporated talks support building broader agent behavior from observable, constrained components rather than treating model autonomy as sufficient evidence of reliability.
+- Editorial: All 8 incorporated talks support building broader agent behavior from observable, constrained components rather than treating model autonomy as sufficient evidence of reliability.
 - Dex Horthy (HumanLayer) makes human contact an explicit agent action and demonstrates human correction inside a deployment workflow. ([summary](../../videos/8kMaTybvDUw/summary.md))
 - Harrison Chase (LangChain/LangGraph) treats approval, correction, clarification, and rollback as interaction patterns that let background agents remain supervised without requiring step-by-step prompting. ([summary](../../videos/kTnfJszFxCg/summary.md))
 - Danielle Perszyk (Amazon AGI) argues that automation should increase human leverage and agency rather than merely transfer more decisions to an autonomous system. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
@@ -62,8 +56,6 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Danielle Perszyk (Amazon AGI) proposes evaluating human-agent interactions through human outcomes and treating useful products and diverse communities as inputs to agent development. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
 - Yogendra Miraje (FactSet) proposes a blueprint generator, planner, executor, and joiner as separate control points that can replan within limits while remaining interpretable to technical and nontechnical collaborators. ([summary](../../videos/sl3icG-IjHo/summary.md))
 - Antje Barth (AWS) describes a Strands Agents client connecting through API Gateway to an MCP server hosted in Lambda with authorization and DynamoDB-backed session state. ([summary](../../videos/WJjInLeaJjo/summary.md))
-- Rustem Feyzkhanov (Snorkel AI) treats simulation environments as miniature production systems built from snapshots, sidecars, mocked services, databases, MCP tools, simulated users, and multi-step tasks. ([summary](../../videos/Ib5t2RLtxvM/summary.md))
-- Kyle Mistele (HumanLayer) proposes version-controlled reviewer feedback and comment-triggered reruns that re-steer both an open change and later iterations of the same loop. ([summary](../../videos/xIt_mTQp6mY/summary.md))
 - Editorial: The incorporated talks expose several scaling axes—larger model-controlled regions, background concurrency, composable specialist stages, selective workflow structure, and richer human-interaction feedback—but do not yet establish which produces the most reliable systems.
 
 ## Revisions and Tensions
@@ -77,8 +69,6 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Danielle Perszyk (Amazon AGI) warns that increased automation can reduce human agency even when the underlying system becomes more capable. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
 - Yogendra Miraje (FactSet) advises against agentic workflows for fixed repetitive work, strict deterministic or safety-critical settings, and low-latency or cost-constrained environments. ([summary](../../videos/sl3icG-IjHo/summary.md))
 - Antje Barth (AWS) reports a three-week agent delivery and a 6,000-tool retrieval design but does not provide reliability metrics or tool-retrieval evaluation results in the talk. ([summary](../../videos/WJjInLeaJjo/summary.md))
-- Rustem Feyzkhanov (Snorkel AI) argues for production-like simulations while acknowledging that benchmark tasks can be hacked, under-specified, unstable, or invalid because of faulty verifiers. ([summary](../../videos/Ib5t2RLtxvM/summary.md))
-- Kyle Mistele (HumanLayer) argues that large agent-generated pull requests do not fit teams, critical systems, or regulatory obligations, while acknowledging that teams must choose between smallest-first migration and telemetry-based prioritization. ([summary](../../videos/xIt_mTQp6mY/summary.md))
 - Editorial: These cautions limit a simple “more autonomy is more reliable” thesis: teams still need to justify where an agent is appropriate, whether coordination complexity is warranted, and whether the result advances the user's larger goal.
 - Editorial: Playlist position is not evidence of chronology; no claim about change over time is made from the current manifest order.
 
@@ -91,8 +81,6 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Editorial: Separate business logic from durable execution state and failure policy, but assess the operational and migration consequences of the orchestration platform that owns that state.
 - Editorial: Make high-level plans reviewable, restrict the tools available to each planning context, and evaluate plan quality, tool selection, execution, and presentation separately.
 - Editorial: Treat remote tool protocols as production services with explicit identity, authorization, session, tenancy, observability, and deployment boundaries.
-- Editorial: Convert production failures into versioned simulation tasks, test the benchmark itself, and compare agent changes against stable environments and evaluators before release.
-- Editorial: Build migration loops around a measurable target, make one bounded change at a time, persist review feedback, and stop producing work when review has not caught up.
 - Editorial: Compose broader workflows from bounded actions and specialist stages, then test the behavior of the composition rather than assuming component reliability transfers automatically.
 - Editorial: Evaluate whether an agent increases human control, leverage, and decision quality in addition to measuring task completion and model capability.
 - Editorial: Treat this overview as a draft synthesis of all currently available videos; the private manifest entry remains unavailable.

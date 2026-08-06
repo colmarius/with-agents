@@ -1,6 +1,6 @@
 ---
 title: "Coding with AI"
-status: reviewed
+status: draft
 coveredVideoIds:
   - XZZ_ddBvELc
   - WoaulxVqUUA
@@ -31,11 +31,11 @@ coveredVideoIds:
 
 ## Coverage
 
-- Manifest: 30 entries representing 30 unique video IDs.
+- Manifest: 31 entries representing 31 unique video IDs.
 - Captured: 25 manifest entries representing 25 unique source-language transcript and summary pairs.
-- Summaries: 25 unique draft summaries.
+- Summaries: 25 unique summaries.
 - Incorporated: all 25 summaries and all 25 summarized manifest entries.
-- Unavailable-recorded video IDs without summaries: `H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`, `qipoQGqMCp0`, and `_pLlet9Jrzc`.
+- Unavailable-recorded video IDs without summaries: `H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`, `qipoQGqMCp0`, `_pLlet9Jrzc`, and `b7E-4jBPUec`.
 - Pending video IDs: none.
 
 ## Current Thesis
