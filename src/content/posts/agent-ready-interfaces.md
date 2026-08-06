@@ -101,6 +101,18 @@ returns an error or wrong value, and the agent “fixes” the wrong thing
 feedback loop backed by a low-fidelity simulator can be more dangerous than a
 visible gap because it manufactures confidence.
 
+Joseph Wang and his Emulated co-founder Sid extend the same warning to
+distributed infrastructure. They argue that a single-node sandbox can omit
+resource provisioning, gradual deployment, rollback, network partitions,
+monitoring, and live-traffic blast radius
+([00:06:40–00:10:58](https://www.youtube.com/watch?v=zkX03APVj0M&t=400s)). Their
+proposed multi-node environments use real cloud resources, but they also identify
+startup time, cost, and the remaining simulation-to-reality gap as unresolved
+constraints
+([00:10:58–00:12:45](https://www.youtube.com/watch?v=zkX03APVj0M&t=658s)). This
+is an Emulated product and research-direction account, not comparative evidence
+that the approach improves agent reliability.
+
 Existing deterministic systems also belong inside the loop. Daniel Szoke of
 Sentry demonstrates Rust rejecting a concurrency error and returning the exact
 non-`Send` value to repair. His broader argument is bounded: compiler constraints
@@ -191,7 +203,7 @@ real workflow before adding tools, agents, or autonomy.
 | Can operations compose? | One script or call combines related steps. | The agent shuttles data through many sequential tool calls. |
 | Is state inspectable? | Current state has a query, file, session, or typed object. | Important state exists only in UI pixels or private service memory. |
 | Is state scoped? | Sessions and credentials belong to one task, case, or customer. | Context or authority leaks across unrelated work. |
-| Does feedback match production? | The same engine, semantics, or validated simulator checks the result. | A partial mock rejects behavior production accepts. |
+| Does feedback match production? | The same engine, semantics, deployment path, or validated simulator checks the result. | A partial mock rejects behavior production accepts. |
 | Are errors actionable? | Failures identify the operation, location, class, and next safe action. | The agent sees generic failure text and retries blindly. |
 | Is there a known-good checkpoint? | The system can reset, fork, or discard an attempt cheaply. | Every retry inherits the same polluted state. |
 | Is mutation explicit? | Write, send, deploy, and delete are separate gated actions. | Discovery tools carry ambient write authority. |
@@ -211,6 +223,7 @@ is a system that makes action, state, evidence, recovery, and ownership visible.
 
 - [James Russo, “HTML Is All Agents Need”](https://www.youtube.com/watch?v=Cz4v1WHVyZc), a HeyGen product talk; especially [00:04:36–00:08:18] on thin representations and deterministic rendering.
 - [Nuno Campos, “Teaching Coding Agents to Do Spreadsheets”](https://www.youtube.com/watch?v=HEFSExa0xl0), a Witan Labs presenter report with an internal benchmark; especially [00:04:21–00:11:50] and [00:15:49–00:17:41] on composable REPL state, feedback fidelity, and interface churn.
+- [Joseph Wang and Sid, “Emulated: The Data for Fully Autonomous Software Engineers and Companies”](https://www.youtube.com/watch?v=zkX03APVj0M), an Emulated product and research-direction account; especially [00:06:40–00:12:45] on single-node limits, multi-node infrastructure environments, and unresolved fidelity and cost constraints.
 - [Lawrence Jones, “Fighting AI with AI”](https://www.youtube.com/watch?v=L2r6vLlLgs8), an incident.io internal-tools account; especially [00:05:46–00:12:28] on narrow evaluation commands and filesystem-shaped debugging data.
 - [Daniel Szoke, “Why Rust Is the Ideal Language for Vibe-Coding”](https://www.youtube.com/watch?v=ugUeZ8-b-u0), a sponsored Sentry talk; especially [00:09:26–00:15:13] on deterministic compiler constraints and their limits.
 - [Morgante Pell, “Code Generation and Maintenance at Scale”](https://www.youtube.com/watch?v=Ve-akpov78Q), a Grit product talk with self-reported operational observations; especially [00:10:29–00:15:43] on incremental feedback, compounding repair failure, and checkpoints.

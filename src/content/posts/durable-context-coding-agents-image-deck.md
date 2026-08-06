@@ -183,6 +183,15 @@ class: image-only
 
 The diff is necessary, but it is no longer enough. Plan review catches wrong work before it is generated. Trace review catches skipped files, broad edits, repeated failures, and ignored checks. Diff review checks the implementation. Evidence review asks whether the proof matches the risk.
 
+Vaibhav Gupta of Boundary describes a team that does not use traditional code
+review, but surrounds its BAML work with a small durable `architecture.md`,
+human-read design documents, dependency checks, and agent execution traces that
+feed human-triaged issues
+([00:00:01–00:06:00](https://www.youtube.com/watch?v=AMiyLItEtLA&t=1s)). The talk
+does not compare defects or maintenance outcomes with conventional review. The
+durable-context lesson is narrower: if line review shrinks, plans, traces,
+executable invariants, and evidence must become first-class review artifacts.
+
 Authority should be explicit: permission to investigate does not imply permission to implement, and permission to implement does not imply permission to commit, push, merge, or release.
 
 ## Evidence keeps judgment attached to the diff
@@ -250,5 +259,6 @@ Start with one real task. Write down what made the agent better. Repeat. `dot-ag
 - Addy Osmani, [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) — source for the surrender/debt framing and the gap between generated code and human understanding.
 - Simon Willison, [Lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/) — source for the lossy-compression mental model and the advice to provide correct examples for exact technical work.
 - Boris Cherny, [We Cut 80% of Claude Code’s Prompt](https://www.youtube.com/watch?v=qyPCVqFUyDo) ([00:03:21–00:08:54](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=201s)) — source for prompt ablation and restoring guidance only after repeated observed failures.
+- Vaibhav Gupta, [fighting slop with slop](https://www.youtube.com/watch?v=AMiyLItEtLA) ([00:00:01–00:06:00](https://www.youtube.com/watch?v=AMiyLItEtLA&t=1s)) — a Boundary product and engineering-practice account supporting durable architecture guidance, reviewed design writing, executable boundaries, and trace-based issue discovery when traditional line review is reduced.
 - [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
 - [`dot-agents`](https://dot-agents.dev/), [Small Threads, Durable State](/posts/small-threads-durable-state), and [Make the Agent Prove It](/posts/make-the-agent-prove-it) — source material for file-backed task state, handoffs, and the evidence ladder.
