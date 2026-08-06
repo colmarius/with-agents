@@ -1,0 +1,10 @@
+{
+  "videoId": "b7E-4jBPUec",
+  "attemptedAt": "2026-08-06T20:17:16.179Z",
+  "requestedLanguage": "it",
+  "availableLanguages": [],
+  "unavailable": {
+    "errorName": "YoutubeTranscriptNotAvailableError",
+    "detail": "Could not list available transcript languages: YoutubeTranscriptNotAvailableError: No transcripts are available for the video with ID \"b7E-4jBPUec\". This may be because the video does not have captions or the captions are not accessible."
+  }
+}

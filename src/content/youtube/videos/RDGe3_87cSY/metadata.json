@@ -1,0 +1,10 @@
+{
+  "videoId": "RDGe3_87cSY",
+  "attemptedAt": "2026-08-06T20:17:10.991Z",
+  "requestedLanguage": "it",
+  "availableLanguages": [],
+  "unavailable": {
+    "errorName": "YoutubeTranscriptNotAvailableError",
+    "detail": "Could not list available transcript languages: YoutubeTranscriptNotAvailableError: No transcripts are available for the video with ID \"RDGe3_87cSY\". This may be because the video does not have captions or the captions are not accessible."
+  }
+}
