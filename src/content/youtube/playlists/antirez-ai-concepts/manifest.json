@@ -504,6 +504,22 @@
       "publishedAt": "2026-07-10T09:05:11Z",
       "privacyStatus": "public",
       "available": true
+    },
+    {
+      "videoId": "RDGe3_87cSY",
+      "position": 63,
+      "title": "Cosa penso sulla coscienza e sulla sofferenza delle AI",
+      "publishedAt": "2026-08-04T18:01:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HUh7zFiTi-I",
+      "position": 64,
+      "title": "Se anche voi siete stanchi di chi vi dice che gli LLM sono pappagalli stocastici e algoritmi",
+      "publishedAt": "2026-08-06T16:48:36Z",
+      "privacyStatus": "public",
+      "available": true
     }
   ]
 }

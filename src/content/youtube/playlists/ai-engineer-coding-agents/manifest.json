@@ -2,16 +2,48 @@
   "playlistId": "PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt",
   "entries": [
     {
-      "videoId": "Yk87oUPVaxU",
+      "videoId": "zkX03APVj0M",
       "position": 0,
+      "title": "Emulated: The Data for Fully Autonomous Software Engineers and Companies — Joseph Wang",
+      "publishedAt": "2026-07-31T21:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AMiyLItEtLA",
+      "position": 1,
+      "title": "fighting slop with slop — Vaibhav Gupta, Boundary",
+      "publishedAt": "2026-07-31T01:11:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CgsWxRUY5Eo",
+      "position": 2,
+      "title": "AI Agents for Performance: Ship Faster, Pay Less — Rajat Shah, Netflix",
+      "publishedAt": "2026-07-28T00:59:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Yk87oUPVaxU",
+      "position": 3,
       "title": "DeepSWE: A Contamination-Resistant Coding Benchmark — James Shi, Datacurve",
       "publishedAt": "2026-07-26T18:10:56Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "xIt_mTQp6mY",
+      "position": 4,
+      "title": "Loop Engineering from First Principles — Kyle Mistele, HumanLayer",
+      "publishedAt": "2026-07-25T20:41:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "il1c1a2FufU",
-      "position": 1,
+      "position": 5,
       "title": "Full Workshop: Setting Yourself Up for Success —Jason Liu, OpenAI Codex",
       "publishedAt": "2026-07-24T15:00:06Z",
       "privacyStatus": "public",
@@ -19,7 +51,7 @@
     },
     {
       "videoId": "Cz4v1WHVyZc",
-      "position": 2,
+      "position": 6,
       "title": "HTML Is All Agents Need — James Russo, HeyGen",
       "publishedAt": "2026-07-21T18:54:01Z",
       "privacyStatus": "public",
@@ -27,7 +59,7 @@
     },
     {
       "videoId": "1P1hJ36rxM0",
-      "position": 3,
+      "position": 7,
       "title": "\"Software engineering is not about writing code\" — Benoit Schillings, Google DeepMind VP of Research",
       "publishedAt": "2026-07-17T15:24:44Z",
       "privacyStatus": "public",
@@ -35,7 +67,7 @@
     },
     {
       "videoId": "q4Tr-DknG2M",
-      "position": 4,
+      "position": 8,
       "title": "Recursive Model Improvement — Lee Robinson, Cursor, SpaceXAI",
       "publishedAt": "2026-07-15T20:13:51Z",
       "privacyStatus": "public",
@@ -43,7 +75,7 @@
     },
     {
       "videoId": "xUnRQ9vLXxo",
-      "position": 5,
+      "position": 9,
       "title": "Everything we knew about software has changed — Theo Browne, @t3dotgg ​",
       "publishedAt": "2026-07-08T19:59:33Z",
       "privacyStatus": "public",
@@ -51,7 +83,7 @@
     },
     {
       "videoId": "HsxQICTLF84",
-      "position": 6,
+      "position": 10,
       "title": "Building an ACP-Compatible Agent Live — Bennet Fenner, Zed",
       "publishedAt": "2026-07-08T12:00:07Z",
       "privacyStatus": "public",
@@ -59,7 +91,7 @@
     },
     {
       "videoId": "HEFSExa0xl0",
-      "position": 7,
+      "position": 11,
       "title": "Teaching Coding Agents to do Spreadsheets - Nuno Campos, Witan Labs",
       "publishedAt": "2026-07-08T09:03:25Z",
       "privacyStatus": "public",
@@ -67,7 +99,7 @@
     },
     {
       "videoId": "EcqMYoIV57A",
-      "position": 8,
+      "position": 12,
       "title": "Why More Context Makes Your Agent Dumber and What to Do About It — Nupur Sharma, Qodo",
       "publishedAt": "2026-06-08T15:00:17Z",
       "privacyStatus": "public",
@@ -75,7 +107,7 @@
     },
     {
       "videoId": "li0SaBt9RDM",
-      "position": 9,
+      "position": 13,
       "title": "The AI Skill I Rely On Daily — Priscila Andre de Oliveira, Sentry",
       "publishedAt": "2026-05-27T17:00:06Z",
       "privacyStatus": "public",
@@ -83,7 +115,7 @@
     },
     {
       "videoId": "ugUeZ8-b-u0",
-      "position": 10,
+      "position": 14,
       "title": "Why Rust is the Ideal Language for Vibe-Coding — Daniel Szoke, Sentry",
       "publishedAt": "2026-05-27T15:00:06Z",
       "privacyStatus": "public",
@@ -91,7 +123,7 @@
     },
     {
       "videoId": "7gujZrJ9L5I",
-      "position": 11,
+      "position": 15,
       "title": "How Google DeepMind Runs Agents at Scale — KP Sawhney & Ian Ballantyne, Google DeepMind",
       "publishedAt": "2026-05-24T18:00:06Z",
       "privacyStatus": "public",
@@ -99,7 +131,7 @@
     },
     {
       "videoId": "W-SX_srBa3Y",
-      "position": 12,
+      "position": 16,
       "title": "Let's Talk About FOMAT: Fear of Missing Agent Time — Michael Richman, Cmd+Ctrl",
       "publishedAt": "2026-05-24T16:00:06Z",
       "privacyStatus": "public",
@@ -107,7 +139,7 @@
     },
     {
       "videoId": "5Sui_OnSRlY",
-      "position": 13,
+      "position": 17,
       "title": "The Missing Primitive for Agent Swarms — Lou Bichard, Ona",
       "publishedAt": "2026-05-23T16:00:06Z",
       "privacyStatus": "public",
@@ -115,7 +147,7 @@
     },
     {
       "videoId": "TeGsFFNqRLA",
-      "position": 14,
+      "position": 18,
       "title": "Fast Models Need Slow Developers — Sarah Chieng, Cerebras",
       "publishedAt": "2026-05-22T18:00:06Z",
       "privacyStatus": "public",
@@ -123,7 +155,7 @@
     },
     {
       "videoId": "dyHpnnlkTc8",
-      "position": 15,
+      "position": 19,
       "title": "Cooking with Agents in VS Code — Liam Hampton, Microsoft",
       "publishedAt": "2026-05-21T17:00:06Z",
       "privacyStatus": "public",
@@ -131,7 +163,7 @@
     },
     {
       "videoId": "VaS2h-dY1-4",
-      "position": 16,
+      "position": 20,
       "title": "Scaling Agents on Kubernetes with acpx and ACP — Onur Solmaz, OpenClaw",
       "publishedAt": "2026-05-21T15:00:06Z",
       "privacyStatus": "public",
@@ -139,7 +171,7 @@
     },
     {
       "videoId": "yUmS-F9IX90",
-      "position": 17,
+      "position": 21,
       "title": "Don't Build Slop (4 Levels of AI Agent Maturity) - Ara Khan, Cline",
       "publishedAt": "2026-05-19T15:00:06Z",
       "privacyStatus": "public",
@@ -147,7 +179,7 @@
     },
     {
       "videoId": "L2r6vLlLgs8",
-      "position": 18,
+      "position": 22,
       "title": "Fighting AI with AI — Lawrence Jones, Incident",
       "publishedAt": "2026-05-17T16:30:07Z",
       "privacyStatus": "public",
@@ -155,7 +187,7 @@
     },
     {
       "videoId": "4_VQBbs2iQA",
-      "position": 19,
+      "position": 23,
       "title": "How Building with AI Can Double the Throughput of Your Engineering Team — Brian Scanlan, Intercom",
       "publishedAt": "2026-05-15T13:00:06Z",
       "privacyStatus": "public",
@@ -163,7 +195,7 @@
     },
     {
       "videoId": "VktrqzQgytY",
-      "position": 20,
+      "position": 24,
       "title": "CI/CD Is Dead, Agents Need Continuous Compute and Computers — Hugo Santos and Madison Faulkner",
       "publishedAt": "2026-05-13T13:00:06Z",
       "privacyStatus": "public",
@@ -171,7 +203,7 @@
     },
     {
       "videoId": "4VhbYlfC7Gs",
-      "position": 21,
+      "position": 25,
       "title": "Malleable Evals: Why Are We Evaluating Adaptive Systems with Static Tests? — Vincent Koc, OpenClaw",
       "publishedAt": "2026-05-12T16:00:06Z",
       "privacyStatus": "public",
@@ -179,7 +211,7 @@
     },
     {
       "videoId": "vAIDdLKB6-w",
-      "position": 22,
+      "position": 26,
       "title": "A Piece of Pi: Embedding The OpenClaw Coding Agent In Your Product — Matthias Luebken, Tavon",
       "publishedAt": "2026-05-11T17:00:06Z",
       "privacyStatus": "public",
@@ -187,7 +219,7 @@
     },
     {
       "videoId": "ow1we5PzK-o",
-      "position": 23,
+      "position": 27,
       "title": "The Multi-Agent Architecture That Actually Ships — Luke Alvoeiro, Factory",
       "publishedAt": "2026-05-06T15:00:06Z",
       "privacyStatus": "public",
@@ -195,7 +227,7 @@
     },
     {
       "videoId": "2TLXsxkz0zI",
-      "position": 24,
+      "position": 28,
       "title": "Ralph Loops: Build Dumb AI Loops That Ship — Chris Parsons, Cherrypick",
       "publishedAt": "2026-05-04T14:00:17Z",
       "privacyStatus": "public",
@@ -203,7 +235,7 @@
     },
     {
       "videoId": "W76woOYHlvY",
-      "position": 25,
+      "position": 29,
       "title": "Software Engineering Is Becoming Plan and Review — Louis Knight-Webb, Vibe Kanban",
       "publishedAt": "2026-05-02T21:00:06Z",
       "privacyStatus": "public",
@@ -211,7 +243,7 @@
     },
     {
       "videoId": "MhHEGMFCEB0",
-      "position": 26,
+      "position": 30,
       "title": "OpenAI Codex Masterclass  — Vaibhav Srivastav & Katia Gil Guzman",
       "publishedAt": "2026-04-29T16:00:06Z",
       "privacyStatus": "public",
@@ -219,7 +251,7 @@
     },
     {
       "videoId": "rnDm57Py54A",
-      "position": 27,
+      "position": 31,
       "title": "Building your own software factory — Eric Zakariasson, Cursor",
       "publishedAt": "2026-04-28T18:00:06Z",
       "privacyStatus": "public",
@@ -227,7 +259,7 @@
     },
     {
       "videoId": "ClWD8OEYgp8",
-      "position": 28,
+      "position": 32,
       "title": "Collaborative AI Engineering: One Dev, Two Dozen Agents, Zero Alignment — Maggie Appleton, GitHub",
       "publishedAt": "2026-04-26T15:00:06Z",
       "privacyStatus": "public",
@@ -235,7 +267,7 @@
     },
     {
       "videoId": "kR64LOqBBCU",
-      "position": 29,
+      "position": 33,
       "title": "AgentCraft: Putting the Orc in Orchestration — Ido Salomon",
       "publishedAt": "2026-04-25T16:00:06Z",
       "privacyStatus": "public",
@@ -243,7 +275,7 @@
     },
     {
       "videoId": "-QFHIoCo-Ko",
-      "position": 30,
+      "position": 34,
       "title": "Full Walkthrough: Workflow for AI Coding — Matt Pocock",
       "publishedAt": "2026-04-24T15:15:38Z",
       "privacyStatus": "public",
@@ -251,7 +283,7 @@
     },
     {
       "videoId": "RjfbvDXpFls",
-      "position": 31,
+      "position": 35,
       "title": "Building pi in a World of Slop — Mario Zechner",
       "publishedAt": "2026-04-16T22:58:06Z",
       "privacyStatus": "public",
@@ -259,7 +291,7 @@
     },
     {
       "videoId": "1oySeF37SZc",
-      "position": 32,
+      "position": 36,
       "title": "GitHub Next Explorations: Rahul Pandita",
       "publishedAt": "2025-02-08T21:31:24Z",
       "privacyStatus": "public",
@@ -267,7 +299,7 @@
     },
     {
       "videoId": "prttz9_1XDc",
-      "position": 33,
+      "position": 37,
       "title": "Enhancing Quality and Security in CI: Gunjan Patel",
       "publishedAt": "2024-11-27T19:56:40Z",
       "privacyStatus": "public",
@@ -275,7 +307,7 @@
     },
     {
       "videoId": "Up6WVA07QdE",
-      "position": 34,
+      "position": 38,
       "title": "The AI emperor has no DAUs  why most devs still don't use code AI: Quinn Slack",
       "publishedAt": "2024-11-20T20:28:33Z",
       "privacyStatus": "public",
@@ -283,7 +315,7 @@
     },
     {
       "videoId": "Ve-akpov78Q",
-      "position": 35,
+      "position": 39,
       "title": "Code Generation and Maintenance at Scale: Morgante Pell",
       "publishedAt": "2024-10-17T18:52:20Z",
       "privacyStatus": "public",
@@ -291,7 +323,7 @@
     },
     {
       "videoId": "DuZXbinJ4Uc",
-      "position": 36,
+      "position": 40,
       "title": "How Codeium Breaks Through the Ceiling for Retrieval: Kevin Hou",
       "publishedAt": "2024-07-31T20:04:07Z",
       "privacyStatus": "public",
@@ -299,7 +331,7 @@
     },
     {
       "videoId": "pAbRL0h_SNs",
-      "position": 37,
+      "position": 41,
       "title": "Private video",
       "privacyStatus": "private",
       "available": false,
