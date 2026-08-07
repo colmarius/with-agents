@@ -1,6 +1,6 @@
 ---
 title: "The West Coast Builders"
-status: draft
+status: reviewed
 coveredVideoIds:
   - fu7th5HiADo
   - PZ-sko1NWa0
@@ -20,7 +20,7 @@ coveredVideoIds:
 - Manifest: 11 entries representing 11 unique video IDs.
 - Available: 11 video IDs.
 - Captured: 11 source-language transcripts.
-- Summaries: 11 draft summaries.
+- Summaries: 11 total: 7 reviewed and 4 draft.
 - Incorporated: 11 summaries.
 - Pending video IDs: none.
 - Unavailable video IDs: none.
@@ -28,15 +28,15 @@ coveredVideoIds:
 
 ## Current Thesis
 
-- Editorial: The complete set of eleven draft summaries connects agent leverage with deliberate control over review, execution, durable context, product adaptation, distribution, and narrowly defined problems. Vinegar and Feig reinforce the collection's emphasis on system boundaries and product judgment while disagreeing with stronger versions of the claim that harnesses or coding are finished. The fashion and company-history interviews broaden the collection beyond coding-agent practice ([Peter Steinberger summary](../../videos/fu7th5HiADo/summary.md), [Mario Zechner summary](../../videos/PZ-sko1NWa0/summary.md), [Quinn Slack summary](../../videos/_L8xxUXOTk0/summary.md), [Vasilije Markovic summary](../../videos/4ksc_PU7NqA/summary.md), [Li Yin summary](../../videos/5H862RhMgOU/summary.md), [Thorsten Ball summary](../../videos/thMFsqe8kbQ/summary.md), [Ryan Carson summary](../../videos/EOf8TbwVvH0/summary.md), [Yana summary](../../videos/r6DKV03IULg/summary.md), [Akshay Kothari summary](../../videos/d7jA462XLBM/summary.md), [Ben Vinegar summary](../../videos/wbsDZpVB4Lg/summary.md), [Gil Feig summary](../../videos/C6u5CBIXRf0/summary.md)).
+- Editorial: The complete set of eleven source summaries connects agent leverage with deliberate control over review, execution, durable context, product adaptation, distribution, and narrowly defined problems. Vinegar and Feig reinforce the collection's emphasis on system boundaries and product judgment while disagreeing with stronger versions of the claim that harnesses or coding are finished. The fashion and company-history interviews broaden the collection beyond coding-agent practice ([Peter Steinberger summary](../../videos/fu7th5HiADo/summary.md), [Mario Zechner summary](../../videos/PZ-sko1NWa0/summary.md), [Quinn Slack summary](../../videos/_L8xxUXOTk0/summary.md), [Vasilije Markovic summary](../../videos/4ksc_PU7NqA/summary.md), [Li Yin summary](../../videos/5H862RhMgOU/summary.md), [Thorsten Ball summary](../../videos/thMFsqe8kbQ/summary.md), [Ryan Carson summary](../../videos/EOf8TbwVvH0/summary.md), [Yana summary](../../videos/r6DKV03IULg/summary.md), [Akshay Kothari summary](../../videos/d7jA462XLBM/summary.md), [Ben Vinegar summary](../../videos/wbsDZpVB4Lg/summary.md), [Gil Feig summary](../../videos/C6u5CBIXRf0/summary.md)).
 
 ## Stable Ideas
 
-- Peter Steinberger, a developer and former PSPDFKit founder, Mario Zechner, a developer and creator of Pi, and Quinn Slack, Sourcegraph co-founder and Amp founder, each retain human judgment around agent work: Steinberger reviews diffs and tests results, Zechner keeps architecture and learning friction, and Slack varies review depth with risk ([Steinberger summary](../../videos/fu7th5HiADo/summary.md), [Zechner summary](../../videos/PZ-sko1NWa0/summary.md), [Slack summary](../../videos/_L8xxUXOTk0/summary.md)).
+- Editorial: Peter Steinberger, a developer and former PSPDFKit founder, Mario Zechner, a developer and creator of Pi, and Quinn Slack, Sourcegraph co-founder and Amp founder, each retain human judgment around agent work: Steinberger reviews diffs and tests results, Zechner keeps architecture and learning friction, and Slack varies review depth with risk ([Steinberger summary](../../videos/fu7th5HiADo/summary.md), [Zechner summary](../../videos/PZ-sko1NWa0/summary.md), [Slack summary](../../videos/_L8xxUXOTk0/summary.md)).
 - Editorial: Across these three accounts, agent delegation changes where attention is spent but does not supply one universal review policy.
-- Vasilije Markovic, Cognee co-founder, and Li Yin, AdaL founder and former Meta AI engineer, both argue that durable context should be architected separately from a code-writing agent's immediate context, although they describe different product layers and do not provide a comparative evaluation ([Markovic summary](../../videos/4ksc_PU7NqA/summary.md), [Yin summary](../../videos/5H862RhMgOU/summary.md)).
-- Thorsten Ball, an Amp co-creator, and Ryan Carson, Untangle and Treehouse founder, both describe shifting attention above code generation toward operational systems: Ball emphasizes coordinating and preserving agent work, while Carson emphasizes recurring business automations, backups, reports, and a unified SDLC ([Ball summary](../../videos/thMFsqe8kbQ/summary.md), [Carson summary](../../videos/EOf8TbwVvH0/summary.md)).
-- Ben Vinegar, Modum co-founder and former Sentry VP of Engineering, and Gil Feig, Merge co-founder and CTO, both retain specialized infrastructure and human accountability around generated work: Vinegar emphasizes task-specific context and evaluations, while Feig describes bounded autonomy, deterministic checks, and final human review ([Vinegar summary](../../videos/wbsDZpVB4Lg/summary.md), [Feig summary](../../videos/C6u5CBIXRf0/summary.md)).
+- Editorial: Vasilije Markovic, Cognee co-founder, and Li Yin, SylphAI founder, AdaL creator, and former Meta AI engineer, both argue that durable context should be architected separately from a code-writing agent's immediate context, although they describe different product layers and do not provide a comparative evaluation ([Markovic summary](../../videos/4ksc_PU7NqA/summary.md), [Yin summary](../../videos/5H862RhMgOU/summary.md)).
+- Editorial: Thorsten Ball, an Amp co-creator, and Ryan Carson, Untangle and Treehouse founder, both describe shifting attention above code generation toward operational systems: Ball emphasizes coordinating and preserving agent work, while Carson emphasizes recurring business automations, backups, reports, and a unified SDLC ([Ball summary](../../videos/thMFsqe8kbQ/summary.md), [Carson summary](../../videos/EOf8TbwVvH0/summary.md)).
+- Editorial: Ben Vinegar, Modem co-founder and former Sentry VP of Engineering, and Gil Feig, Merge co-founder and CTO, both retain specialized infrastructure and human accountability around generated work: Vinegar emphasizes task-specific context and evaluations, while Feig describes bounded autonomy, deterministic checks, and final human review ([Vinegar summary](../../videos/wbsDZpVB4Lg/summary.md), [Feig summary](../../videos/C6u5CBIXRf0/summary.md)).
 
 ## Emerging Ideas
 
@@ -45,12 +45,12 @@ coveredVideoIds:
 - Mario Zechner, a developer and creator of Pi, presents a minimal, extensible harness as a way for experienced developers to control the workflow layer around models, while warning that locally executed third-party extensions require code review ([summary](../../videos/PZ-sko1NWa0/summary.md)).
 - Quinn Slack, Sourcegraph co-founder and Amp founder, argues that isolated cloud environments can expand agent parallelism and feedback loops, but also make the product an execution-infrastructure and distributed-systems problem rather than a simple CLI loop ([summary](../../videos/_L8xxUXOTk0/summary.md)).
 - Vasilije Markovic, Cognee co-founder, describes agent memory as a data-lifecycle layer spanning sessions, durable graph/vector storage, ingestion, retrieval, policy, and reconciliation rather than search alone ([summary](../../videos/4ksc_PU7NqA/summary.md)).
-- Li Yin, AdaL founder and former Meta AI engineer, argues that generated-code volume creates a human comprehension bottleneck and proposes architecture-first, visually organized review plus memory-bearing agents that guide a separate code-writing agent ([summary](../../videos/5H862RhMgOU/summary.md)).
+- Li Yin, SylphAI founder, AdaL creator, and former Meta AI engineer, argues that generated-code volume creates a human comprehension bottleneck and proposes architecture-first, visually organized review plus memory-bearing agents that guide a separate code-writing agent ([summary](../../videos/5H862RhMgOU/summary.md)).
 - Thorsten Ball, an Amp co-creator, argues that harness scaffolding should recede as models improve and that the harder product problem is becoming agent execution, coordination, work preservation, and validation ([summary](../../videos/thMFsqe8kbQ/summary.md)).
 - Ryan Carson, Untangle and Treehouse founder, argues for vertical AI products built around a narrow painful workflow, combining probabilistic assistance with deterministic logic and investing in distribution and trust ([summary](../../videos/EOf8TbwVvH0/summary.md)).
-- Yana, Craftful founder and its former head of AI after acquisition by Amplitude, argues that AI-era defensibility depends on execution and distribution, and describes an early fashion venture spanning AI-assisted design and physical garments ([summary](../../videos/r6DKV03IULg/summary.md)).
+- Yana, Kraftful founder and former Head of AI at Amplitude, argues that AI-era defensibility depends on execution and distribution, and describes an early fashion venture spanning AI-assisted design and physical garments ([summary](../../videos/r6DKV03IULg/summary.md)).
 - Akshay Kothari, Notion COO and former Pulse co-founder, describes Notion's early survival and market wedge, and presents a future of knowledge work organized around multi-model agents rather than a conventional application suite ([summary](../../videos/d7jA462XLBM/summary.md)).
-- Ben Vinegar, Modum co-founder and former Sentry VP of Engineering, argues that finite context, specialized memory and skills, and continuing interface experimentation leave room for vertical agents and new harness paradigms ([summary](../../videos/wbsDZpVB4Lg/summary.md)).
+- Ben Vinegar, Modem co-founder and former Sentry VP of Engineering, argues that finite context, specialized memory and skills, and continuing interface experimentation leave room for vertical agents and new harness paradigms ([summary](../../videos/wbsDZpVB4Lg/summary.md)).
 - Gil Feig, Merge co-founder and CTO, says his team bounds agent autonomy according to product maturity and customer risk, and frames natural language as a higher-level way to build software rather than proof that architecture and product judgment are obsolete ([summary](../../videos/C6u5CBIXRf0/summary.md)).
 
 ## Revisions and Tensions

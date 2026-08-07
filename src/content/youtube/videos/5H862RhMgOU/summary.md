@@ -6,10 +6,10 @@ publishedAt: "2026-05-04T19:00:21Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
-Mayank Gupta, host and owner of the source channel, interviews Li Yin, founder of AdaL and a former Meta AI engineer, about coding-agent output, production quality, review, context, and interface design. Yin presents AdaL's “self-evolving” direction as a quality-focused alternative to optimizing only for generated-code volume.
+Mayank Gupta, host and owner of the source channel, interviews Li Yin, founder of SylphAI, creator of AdaL, and a former Meta AI engineer, about coding-agent output, production quality, review, context, and interface design. Yin presents AdaL's “self-evolving” direction as a quality-focused alternative to optimizing only for generated-code volume.
 
 The interview is a founder account and product thesis, not a comparative evaluation. Claims about competing tools, code quality, developer behavior, and AdaL's approach are not independently benchmarked in the recording.
 

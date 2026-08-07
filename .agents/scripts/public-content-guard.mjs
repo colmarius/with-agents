@@ -17,66 +17,7 @@ const resourceTopics = new Set([
   'tools-harnesses',
 ]);
 
-// Exceptions must stay path- and source-specific and include a reviewable reason.
-const westCoastBuildersOnboardingReason =
-  'Pre-existing transcript-backed public citation predates source-library onboarding; source summary is being captured and independently reviewed during the bounded migration.';
-
-export const publicSourceExceptions = [
-  {
-    kind: 'video',
-    id: 'PZ-sko1NWa0',
-    path: 'src/data/resources/coding-with-agents.json',
-    reason: westCoastBuildersOnboardingReason,
-  },
-  {
-    kind: 'video',
-    id: '_L8xxUXOTk0',
-    path: 'src/data/resources/coding-with-agents.json',
-    reason: westCoastBuildersOnboardingReason,
-  },
-  {
-    kind: 'video',
-    id: 'thMFsqe8kbQ',
-    path: 'src/data/resources/coding-with-agents.json',
-    reason: westCoastBuildersOnboardingReason,
-  },
-  {
-    kind: 'video',
-    id: 'PZ-sko1NWa0',
-    path: 'src/content/summaries/coding-with-agents/pi-agent-creator-on-future-of-agentic-coding.md',
-    reason: westCoastBuildersOnboardingReason,
-  },
-  {
-    kind: 'video',
-    id: '_L8xxUXOTk0',
-    path: 'src/content/summaries/coding-with-agents/amp-code-founder-on-future-of-coding-agents.md',
-    reason: westCoastBuildersOnboardingReason,
-  },
-  {
-    kind: 'video',
-    id: 'thMFsqe8kbQ',
-    path: 'src/content/summaries/coding-with-agents/llms-are-killing-agent-harness.md',
-    reason: westCoastBuildersOnboardingReason,
-  },
-  {
-    kind: 'video',
-    id: '_L8xxUXOTk0',
-    path: 'src/content/posts/amp-factory-era-case-study.md',
-    reason: westCoastBuildersOnboardingReason,
-  },
-  {
-    kind: 'video',
-    id: 'thMFsqe8kbQ',
-    path: 'src/content/posts/amp-factory-era-case-study.md',
-    reason: westCoastBuildersOnboardingReason,
-  },
-  {
-    kind: 'video',
-    id: 'thMFsqe8kbQ',
-    path: 'src/content/posts/agentic-coding-2026.md',
-    reason: westCoastBuildersOnboardingReason,
-  },
-];
+export const publicSourceExceptions = [];
 
 const defaultRepoRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),

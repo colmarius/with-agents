@@ -100,7 +100,7 @@ with one semantically accurate playlist summary collection.
     the source-library copies and compare meaningful caption/timestamp
     differences during review.
 
-- [ ] **Task 5: Review pre-existing public source identities and retire their exceptions**
+- [x] **Task 5: Review pre-existing public source identities and retire their exceptions**
   - Scope: source-library artifacts for `PZ-sko1NWa0`, `_L8xxUXOTk0`, and
     `thMFsqe8kbQ`; matching public summaries/transcripts/posts;
     `.agents/scripts/public-content-guard.mjs`
@@ -118,7 +118,7 @@ with one semantically accurate playlist summary collection.
   - Notes: These three reviews may occur as soon as their manifest-ordered
     captures complete; they need not wait for unrelated public candidates.
 
-- [ ] **Task 6: Complete and review the playlist source synthesis**
+- [x] **Task 6: Complete and review the playlist source synthesis**
   - Scope:
     `src/content/youtube/playlists/mayank-gupta-west-coast-builders/overview.md`,
     selected source video summaries, work-item progress
@@ -126,17 +126,21 @@ with one semantically accurate playlist summary collection.
   - Acceptance:
     - The overview reports exact manifest, available, captured, summarized,
       incorporated, pending, and unavailable counts and is current for every
-      source summary.
+      source summary, including the status-sensitive final state of 7 reviewed
+      and 4 draft summaries.
     - Mayank is identified as host, curator, playlist owner, and source channel,
       never as author; each non-editorial claim names the actual guest and
       source-supported affiliation.
     - A dedicated reviewer validates every overview claim and anchor before the
       overview is promoted to `reviewed`.
+    - Promotion requires correcting Ben Vinegar's company to Modem at
+      `modem.dev`, Li Yin's affiliation to SylphAI founder and AdaL creator, and
+      Yana's roles to Kraftful founder and former Head of AI at Amplitude.
     - Source summaries for public candidates `fu7th5HiADo`, `5H862RhMgOU`,
       `wbsDZpVB4Lg`, and `C6u5CBIXRf0` are individually reviewed before any
       matching public summary is written.
-  - Notes: Do not add the public playlist URL while its tracked overview is
-    draft or stale.
+  - Notes: Keep overview review-state prose status-sensitive and neutral. Do not
+    add the public playlist URL while its tracked overview is draft or stale.
 
 - [ ] **Task 7: Add non-episodic public summary collections**
   - Scope: `src/content.config.ts`,

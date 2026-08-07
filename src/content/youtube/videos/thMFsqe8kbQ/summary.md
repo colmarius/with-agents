@@ -6,7 +6,7 @@ publishedAt: "2026-05-20T12:06:58Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Mayank Gupta, host and owner of the source channel, interviews Thorsten Ball, an Amp co-creator, about coding-agent harnesses, changing software-engineering workflows, and Amp's preference for adapting to frontier models. Ball grounds the argument in his work on Cody at Sourcegraph, Zed's tab completion, and Amp.

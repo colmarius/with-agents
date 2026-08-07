@@ -22,9 +22,8 @@ Mayank's host, curator, channel, and playlist-owner provenance.
 
 ## Next Action
 
-- Complete Tasks 5-6 in [plan.md](./plan.md): independently review the source
-  summaries and playlist synthesis, promote passing artifacts, and retire the
-  nine temporary public-source exceptions.
+- Complete Task 7 in [plan.md](./plan.md): add non-episodic public summary
+  collections while preserving existing standalone and episodic behavior.
 
 ## Open Questions
 

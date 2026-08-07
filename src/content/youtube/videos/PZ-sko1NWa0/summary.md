@@ -6,7 +6,7 @@ publishedAt: "2026-03-28T19:22:37Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Mayank Gupta, host and owner of the source channel, interviews Mario Zechner, a developer and creator of Pi, about agent-assisted programming and Pi's deliberately minimal, extensible design. Zechner distinguishes tasks where agents save him substantial time from architecture, API design, and learning work where he still wants human judgment and friction.

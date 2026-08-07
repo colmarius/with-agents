@@ -6,7 +6,7 @@ publishedAt: "2026-08-06T14:00:24Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 Mayank Gupta, host and owner of the source channel, interviews Gil Feig, Merge co-founder and CTO, about Merge's AI products, engineering workflows, model infrastructure, open source, and early company-building. Feig speaks as a company founder and vendor whose products include unified integrations, context infrastructure, and an LLM gateway.
@@ -17,7 +17,7 @@ The recording presents Feig's operating practices, product claims, and forecasts
 
 - Feig says Merge hires for creativity, experimentation, and the ability to manage multiple agents, but applies more bounded AI use to its mature enterprise product than to newer products with fewer customers and edge cases ([00:06:58]-[00:09:27]).
 - Feig describes a workflow that supplies approved company context, runs local skills, tests, linting, and AI review, then retains final human review. He argues contractual and accountability constraints make unattended auto-merging unrealistic for enterprise software today ([00:10:21]-[00:12:56]).
-- Feig says OpenClaw helped make local agent work tangible but remained expensive and inaccurate in his experience. He expects better models, with some orchestration, to resolve more of those limitations; no comparative measurements are supplied ([00:14:40]-[00:16:21]).
+- Feig says OpenClaw helped make local agent work tangible but remained expensive and inaccurate. He expects better models, with some orchestration, to resolve more of those limitations; no comparative measurements are supplied ([00:14:40]-[00:16:21]).
 - Feig argues that enterprise retrieval still combines synchronized data and RAG with live API access. He presents Merge's portable context layer as a centralized route to governance, observability, and model routing, while acknowledging that this view aligns with Merge's product ([00:17:20]-[00:20:41]).
 - Feig reports that Merge Fusion runs prompts across multiple models and uses a judge to select or combine responses. He claims 20–60% savings and equal-or-better evaluation performance for selected model combinations, but the recording provides neither evaluation sets nor latency data ([00:22:39]-[00:24:21]).
 - Feig says generated code makes open-source commercialization both more acceptable and harder to defend. He argues that a strong product still needs distribution, problem selection, experience, and interface quality, while acknowledging that competitors can reproduce features quickly ([00:32:33]-[00:38:33]).

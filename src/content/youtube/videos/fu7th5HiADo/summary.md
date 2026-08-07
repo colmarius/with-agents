@@ -6,7 +6,7 @@ publishedAt: "2025-07-02T04:34:04Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Mayank Gupta hosts Peter Steinberger, a developer and former PSPDFKit founder, for a discussion of Steinberger's coding-agent workflow and a demonstration of VibeTunnel. Steinberger presents a highly personal, intensive way of working rather than a controlled productivity comparison: detailed voice prompts, several concurrent local agents, frequent review and commits, and willingness to revert failed work.

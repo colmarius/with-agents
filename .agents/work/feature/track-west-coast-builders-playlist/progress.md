@@ -130,3 +130,23 @@
   passed. Task 4 is complete.
 - Next action: Tasks 5-6, dedicated review and promotion of the source summaries
   and overview, including removal of the nine temporary migration exceptions.
+
+### Tasks 5-6 source review and promotion
+
+- Applied the completed dedicated review corrections: Ben Vinegar's company is
+  Modem at `modem.dev`; Li Yin is the SylphAI founder and AdaL creator; and Yana
+  is the Kraftful founder and former Head of AI at Amplitude. Quinn Slack's
+  small-team claim no longer asserts model independence, and Gil Feig's
+  OpenClaw assessment is explicitly attributed as something he says.
+- Promoted exactly seven source summaries (`PZ-sko1NWa0`, `_L8xxUXOTk0`,
+  `thMFsqe8kbQ`, `fu7th5HiADo`, `5H862RhMgOU`, `wbsDZpVB4Lg`, and
+  `C6u5CBIXRf0`) and the current playlist overview to `reviewed`. The remaining
+  four summaries stay `draft`.
+- Updated the overview to report 11 summaries: 7 reviewed and 4 draft, use
+  status-neutral thesis prose, and label all four composite Stable Ideas as
+  editorial synthesis.
+- Removed all nine West Coast Builders migration exceptions and their unused
+  reason constant. Status, audit, all 60 focused structural/guard tests,
+  `npm run content:guard`, and `git diff --check` passed.
+- Tasks 5 and 6 are complete. Next action: Task 7, add non-episodic public
+  summary collections.

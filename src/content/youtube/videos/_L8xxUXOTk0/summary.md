@@ -6,7 +6,7 @@ publishedAt: "2026-04-02T19:00:41Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Mayank Gupta, host and owner of the source channel, interviews Quinn Slack, co-founder of Sourcegraph and founder of Amp, about Amp's frontier-focused product strategy, coding-agent economics, human review, cloud execution, and pressure on conventional software businesses.
@@ -17,7 +17,7 @@ Slack repeatedly frames several conclusions as directional or provocative. The r
 
 - Slack says Sourcegraph's experience with Cody taught the team that satisfying established enterprise expectations could slow a fast-changing AI product while customers still selected less constrained frontier tools. Amp therefore focuses on users willing to accept higher cost and faster change ([00:09:50]-[00:14:40]).
 - Slack uses “coding agents are dead” for several narrower shifts: agents moving beyond a coding-only category, sidebar assistants losing importance, and third-party agent businesses struggling to compete with model-lab subscriptions while paying API prices ([00:15:29]-[00:18:05]).
-- Slack says Amp's small team and model independence let it change quickly, but he does not claim one universally correct company structure or agent choice ([00:20:00]-[00:22:48]).
+- Slack says Amp's small team lets it change quickly, but he does not claim one universally correct company structure or agent choice ([00:20:00]-[00:22:48]).
 - Slack argues that review depth should follow risk: core APIs and data storage merit close scrutiny, while a non-user-facing debug panel built on a sound foundation may justify accepting functional but non-idiomatic code ([00:25:47]-[00:30:37]).
 - Slack identifies isolated cloud environments and agent-run feedback loops as a harder next step than local CLI agents because they introduce execution, VM, distributed-system, and review-artifact concerns ([00:32:17]-[00:33:15]).
 - Slack presents “software is dead” as a directional challenge to SaaS economics: customers may recreate only the features they use while vendors face shorter product lifetimes, token costs, and talent competition. He explicitly says this is not a scientific result or a claim about every company ([00:33:15]-[00:38:58]).
