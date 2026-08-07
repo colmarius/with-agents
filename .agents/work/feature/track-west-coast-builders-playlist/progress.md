@@ -95,3 +95,20 @@
 - Source status, structural audit, public-content guard, and `git diff --check`
   passed.
 - Next action: continue Task 4 with two bounded batches of at most two.
+
+### Source backfill batch 4
+
+- Ran one selected `capture --limit 2` command exactly once and without refill,
+  retry, or force. It captured `r6DKV03IULg` and `d7jA462XLBM` successfully.
+- Reviewed both transcripts, added draft multi-speaker summaries for Yana and
+  Akshay Kothari, and deliberately refreshed the draft playlist overview. No
+  uncertain full-name spelling was inferred for Yana from outside the source.
+- Kept both broader interviews source-only by default. Playlist membership does
+  not make their fashion, founder, or company-history claims public
+  coding-agent candidates.
+- Current state: 11 manifest / 11 available / 9 captured and summarized / 2
+  pending / 0 caption-unavailable / overview current at draft.
+- Remaining pending IDs, in manifest order: `wbsDZpVB4Lg` and `C6u5CBIXRf0`.
+- Source status, structural audit, public-content guard, and `git diff --check`
+  passed.
+- Next action: finish Task 4 with one bounded batch of two.
