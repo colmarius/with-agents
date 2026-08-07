@@ -75,7 +75,7 @@ No immediate edit. Preserve “Attach Anything” as a candidate for a future ev
 
 - [Amp Chronicle](https://ampcode.com/chronicle) — Established the post-sweep publication set and dates; freshly fetched 2026-08-07.
 - [Portals into Orbs](https://ampcode.com/news/portals) — Announced live-reloading HTTP access, page feedback, thread-scoped access, orb lifecycle, multiplayer use, and `.amp/services.yaml` setup.
-- [Attach Anything](https://ampcode.com/news/attach-anything) — Announced arbitrary file uploads to orbs and examples involving video, logs, PDFs, spreadsheets, datasets, audio, and CAD/media workflows.
+- [Attach Anything](https://ampcode.com/news/attach-anything) — Announced uploads to orb threads, with examples involving video, logs, PDFs, spreadsheets, datasets, audio, and CAD/media workflows.
 - [What I Want to Tell You About Orbs](https://ampcode.com/notes/what-i-want-to-tell-you-about-orbs) — Supplied the first-party remote-work and extended-proof-loop example.
 - [Amp Manual](https://ampcode.com/manual) — Confirmed current modes, Oracle, subagents, threads, skills/plugins, review/checks, schedules, sharing, multiplayer, runners, and pricing terminology.
 - [Amp Orbs manual](https://ampcode.com/manual/orbs) — Confirmed setup/resume hooks, supervised services, portals, access and lifecycle, OIDC, webhooks, terminals, file review, and sync behavior.

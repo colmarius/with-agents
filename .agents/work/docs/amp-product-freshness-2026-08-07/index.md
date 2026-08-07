@@ -1,6 +1,6 @@
 # Amp product freshness audit — 2026-08-07
 
-Status: in-progress
+Status: completed
 Category: docs
 Updated: 2026-08-07
 
@@ -18,8 +18,8 @@ Audit Amp's official Chronicle, Manual, Orbs manual, Models page, Plugin API, an
 
 ## Next Action
 
-- Commit the verified research and article refresh, then ask Oracle to review the commit and article-impact assessment.
+- No immediate article edit. Revisit rich attachment inputs only when canonical documentation exposes durable format, fidelity, error, privacy, and retention contracts or stronger outcome evidence.
 
 ## Open Questions
 
-- [ ] Does Oracle find a material evidence or freshness gap that warrants a follow-up article commit?
+- [x] Oracle found one remaining stale webhook-status sentence and two evidence/freshness wording issues; all three were corrected in the follow-up.

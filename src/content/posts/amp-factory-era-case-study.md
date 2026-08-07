@@ -26,7 +26,7 @@ This article deliberately avoids setup walkthroughs, exact subscription and orb 
 
 > Choose worker capability by how much the agent has to figure out.
 
-[The Dial](https://ampcode.com/news/the-dial) replaced Amp's old `smart`, `deep`, `rush`, and `large` names with four built-in tiers: `low`, `medium`, `high`, and `ultra` (reverified 2026-07-31). Treat the dial as a work contract, not a prestige setting.
+[The Dial](https://ampcode.com/news/the-dial) replaced Amp's old `smart`, `deep`, `rush`, and `large` names with four built-in tiers: `low`, `medium`, `high`, and `ultra`. Treat the dial as a work contract, not a prestige setting.
 
 | Work shape | Amp surface | Useful contract |
 | --- | --- | --- |
@@ -40,7 +40,7 @@ This article deliberately avoids setup walkthroughs, exact subscription and orb 
 
 **Oracle is still a critique contract, not the implementation worker.** The Dial says every built-in tier has an oracle backing second opinions, and the manual describes Oracle as a "second opinion" model for complex reasoning or analysis. Use that before or after implementation; do not confuse reviewer capacity with ownership of the edit.
 
-**Cost belongs in the same contract.** Amp offers [optional monthly subscriptions](https://ampcode.com/news/subscriptions) with included agent and orb usage, while [pay-as-you-go remains available](https://ampcode.com/pricing) at [provider API prices with zero markup](https://ampcode.com/manual#pricing) for individuals and non-enterprise workspaces (reverified 2026-07-31). Either way, dial tier, fan-out, recurring schedules, and event-triggered wake-ups are budget choices. Set the worker count, capability, stop condition, and evidence before the work starts.
+**Cost belongs in the same contract.** Amp offers [optional monthly subscriptions](https://ampcode.com/news/subscriptions) with included agent and orb usage, while [pay-as-you-go remains available](https://ampcode.com/pricing) at [provider API prices with zero markup](https://ampcode.com/manual#pricing) for individuals and non-enterprise workspaces. Either way, dial tier, fan-out, recurring schedules, and event-triggered wake-ups are budget choices. Set the worker count, capability, stop condition, and evidence before the work starts.
 
 ```text
 If "done" and "how" are clear, turn the dial down.
@@ -144,7 +144,7 @@ Amp's direction is no longer "one assistant in one sidebar." [Agents, Everywhere
 
 [Right on Schedule](https://ampcode.com/news/schedule) and [Event Driven Orbs](https://ampcode.com/news/event-driven-orbs) remove the need for a person to launch every turn. A thread can wake from a saved schedule or an external HTTP event, keep its context, continue the owning thread, or start another worker. These features compose with Puck, Slack, skills, and spawned threads, so a recurring task can also become recurring fan-out.
 
-That composition changes the safety contract. Amp's event-driven GitHub example verifies the provider signature, deduplicates delivery, passes trusted metadata separately, and treats issue text as untrusted content rather than agent instructions. The current Plugin API marks durable webhooks experimental and documents at-least-once delivery, so effects must be idempotent. A schedule likewise needs a completion condition and cleanup path; "run every hour" is not a stop condition.
+That composition changes the safety contract. Amp's event-driven GitHub example verifies the provider signature, deduplicates delivery, passes trusted metadata separately, and treats issue text as untrusted content rather than agent instructions. The current Plugin API documents at-least-once webhook delivery, so effects must be idempotent. A schedule likewise needs a completion condition and cleanup path; "run every hour" is not a stop condition.
 
 [Secrets of the Orb](https://ampcode.com/news/secrets-of-the-orb) adds short-lived OIDC workload identity, but the audience alone is not authorization: the receiving service still has to verify the token and constrain workspace, project, user, or thread claims. [Multiplayer](https://ampcode.com/news/multiplayer) temporarily lets workspace members steer the agent and access an orb's files, changes, portals, secrets, and terminal, with costs assigned to the thread owner. Identity, access, expiry, and billing ownership are therefore part of the environment contract.
 
@@ -156,7 +156,7 @@ Name the owner, budget, output, escalation path, and proof target.
 Expire shared access; stop schedules and webhooks when their job is done.
 ```
 
-Amp's custom-agent, mode, and durable-webhook APIs are now first-class plugin surfaces (reverified 2026-08-07). Exact signatures, limits, model assignments, and UI details will change. The durable lesson is to treat scheduled and event-driven agents like services with operational contracts, not prompts that happen to run later.
+Amp's custom-agent, mode, and durable-webhook APIs are now first-class plugin surfaces. Exact signatures, limits, model assignments, and UI details will change. The durable lesson is to treat scheduled and event-driven agents like services with operational contracts, not prompts that happen to run later.
 
 The transcript-backed sources explain why this matters. Raising an Agent episode 9 frames the shift as "the assistant is dead, long live the factory": feed agents tasks they are likely to succeed on, then improve the codebase so more tasks become safe to delegate [00:25:29]-[00:27:56]. Thorsten Ball's harness talk says the hard problem is increasingly where agents run, how their work is tracked, how results are preserved, and how humans coordinate many cheap workers [00:43:42]-[00:49:24].
 
