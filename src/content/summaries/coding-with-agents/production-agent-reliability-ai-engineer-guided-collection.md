@@ -1,6 +1,6 @@
 ---
 title: "Production agent reliability: an AI Engineer guided collection"
-resourceId: 33
+resourceId: 34
 date: "2025-08-06"
 ---
 
