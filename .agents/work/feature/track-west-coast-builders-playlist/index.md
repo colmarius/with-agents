@@ -22,8 +22,9 @@ Mayank's host, curator, channel, and playlist-owner provenance.
 
 ## Next Action
 
-- Continue Task 4 in [plan.md](./plan.md): capture, review, summarize, and
-  incorporate the remaining two videos in one bounded batch.
+- Complete Tasks 5-6 in [plan.md](./plan.md): independently review the source
+  summaries and playlist synthesis, promote passing artifacts, and retire the
+  nine temporary public-source exceptions.
 
 ## Open Questions
 

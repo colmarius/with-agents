@@ -80,7 +80,7 @@ with one semantically accurate playlist summary collection.
       `git diff --check` pass for the thin slice.
   - Notes: Do not use `--force` or `--retry`.
 
-- [ ] **Task 4: Backfill the remaining source library in bounded batches**
+- [x] **Task 4: Backfill the remaining source library in bounded batches**
   - Scope: `src/content/youtube/videos/`, playlist overview, work-item progress
   - Depends on: Task 3
   - Acceptance:

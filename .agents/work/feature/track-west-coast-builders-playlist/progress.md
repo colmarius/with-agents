@@ -112,3 +112,21 @@
 - Source status, structural audit, public-content guard, and `git diff --check`
   passed.
 - Next action: finish Task 4 with one bounded batch of two.
+
+### Source backfill batch 5 and Task 4 completion
+
+- Ran the final selected `capture --limit 2` command exactly once and without
+  refill, retry, or force. It captured `wbsDZpVB4Lg` and `C6u5CBIXRf0`
+  successfully.
+- Reviewed both complete transcripts and metadata, added draft multi-speaker
+  summaries for Ben Vinegar and Gil Feig, and deliberately refreshed the draft
+  playlist overview with final anchored synthesis. The manually supplied
+  `C6u5CBIXRf0` captions remain recorded as `caption`; the other ten captures
+  use auto-generated English captions.
+- Final Task 4 state: 11 manifest / 11 available / 11 captured and summarized /
+  0 pending / 0 caption-unavailable / 11 incorporated / overview current at
+  draft.
+- Source status, structural audit, public-content guard, and `git diff --check`
+  passed. Task 4 is complete.
+- Next action: Tasks 5-6, dedicated review and promotion of the source summaries
+  and overview, including removal of the nine temporary migration exceptions.
