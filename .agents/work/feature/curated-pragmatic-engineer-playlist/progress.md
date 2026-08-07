@@ -159,3 +159,18 @@
 
 - Obtain explicit human approval of the Oracle-corrected draft overview. Do not
   restore reviewed status or finalize the public collection before approval.
+
+## 2026-08-07 — Oracle attribution correction approved
+
+- Human explicitly approved the attribution-only overview correction.
+- Restored the corrected overview to `status: reviewed` and completed the
+  separate overview review task. No claim, citation, source coverage, selected
+  order, public summary, or resource fold changed at this gate.
+- A fresh fetch found eight new `origin/main` commits since the prior rebase;
+  finalization will rebase and reconcile overlaps rather than reset or discard
+  either side.
+
+## Next action
+
+- Rebase safely on current `origin/main`, resolve any resource ID or content
+  overlaps, rerun the full verification matrix, and record completion.

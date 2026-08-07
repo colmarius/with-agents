@@ -21,9 +21,8 @@ consolidate approved selected summaries under one ordered playlist resource.
 
 ## Next Action
 
-- Obtain human approval of the Oracle-corrected draft overview. Only then restore
-  reviewed status, rerun final checks, rebase on current `origin/main`, and
-  record completion.
+- Rebase on current `origin/main`, reconcile resource IDs and any content
+  overlaps safely, rerun final checks, and record completion.
 
 ## Open Questions
 
@@ -38,4 +37,4 @@ consolidate approved selected summaries under one ordered playlist resource.
 - [x] Human reviewed and approved the four newly captured source summaries.
 - [x] Human approved the six-source playlist overview in a separate overview
       gate.
-- [ ] Human approval of the Oracle-corrected overview attribution labels.
+- [x] Human approved the Oracle-corrected overview attribution labels.

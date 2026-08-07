@@ -1,6 +1,6 @@
 ---
 title: "The Pragmatic Engineer Podcast"
-status: draft
+status: reviewed
 coveredVideoIds:
   - CQmI4XKTa0U
   - Usufn8IQJgw
