@@ -45,6 +45,14 @@
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
       "multiSpeaker": true
+    },
+    {
+      "id": "PLV_xLvHFOwiuvtEhsFIW55AdFFP7Rpnvg",
+      "slug": "mayank-gupta-west-coast-builders",
+      "title": "The West Coast Builders",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
     }
   ],
   "relationships": [

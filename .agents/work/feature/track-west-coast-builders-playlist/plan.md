@@ -17,7 +17,7 @@ with one semantically accurate playlist summary collection.
 
 ## Tasks
 
-- [ ] **Task 1: Onboard and synchronize the playlist source**
+- [x] **Task 1: Onboard and synchronize the playlist source**
   - Scope: `src/content/youtube/catalog.json`,
     `src/content/youtube/playlists/mayank-gupta-west-coast-builders/`,
     `.agents/scripts/public-content-guard.mjs`
@@ -44,7 +44,7 @@ with one semantically accurate playlist summary collection.
     coherent onboarding state. A catalog-only state makes the guard try to read
     a missing manifest; a synced state without an overview is also invalid.
 
-- [ ] **Task 2: Record authoritative public impact and baseline**
+- [x] **Task 2: Record authoritative public impact and baseline**
   - Scope: `src/content/posts`, `src/content/summaries`,
     `src/data/resources/coding-with-agents.json`, `src/content/youtube`, work-item
     progress

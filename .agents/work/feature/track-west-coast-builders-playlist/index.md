@@ -1,6 +1,6 @@
 # Track The West Coast Builders playlist
 
-Status: planned
+Status: in-progress
 Category: feature
 Updated: 2026-08-07
 
@@ -17,14 +17,13 @@ Mayank's host, curator, channel, and playlist-owner provenance.
 - Research: [research.md](./research.md)
 - PRD: none
 - Plan: [plan.md](./plan.md)
-- Progress: none
+- Progress: [progress.md](./progress.md)
 - Decisions: none
 
 ## Next Action
 
-- Implement Task 1 in [plan.md](./plan.md): add the catalog entry, run the
-  selected first-sync workflow, create the initial draft overview, and install
-  the temporary public-source exceptions as one coherent onboarding change.
+- Complete Task 3 in [plan.md](./plan.md): capture, review, summarize, and
+  incorporate the one-video `fu7th5HiADo` thin slice before broader backfill.
 
 ## Open Questions
 
