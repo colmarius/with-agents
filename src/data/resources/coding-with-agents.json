@@ -18,6 +18,18 @@
     ]
   },
   {
+    "id": 33,
+    "title": "Ending AI Slop — Thais Castello Branco, Taste Labs",
+    "subtitle": "Thais Castello Branco on decomposing subjective evaluation, plural preferences, and data quality",
+    "url": "https://www.youtube.com/watch?v=lCBf9slCanI",
+    "description": "At AI Engineer World's Fair 2026, Thais Castello Branco argues that subjective work resists one-score evaluation: decompose design into programmatically observable and human-judged components, retain rater context and preference disagreement, and prioritize specific expert feedback over annotation volume.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-07-31",
+    "duration": "17m",
+    "topics": ["models-evaluation", "review-verification"]
+  },
+  {
     "id": 31,
     "title": "The West Coast Builders — coding-agent collection",
     "url": "https://www.youtube.com/playlist?list=PLV_xLvHFOwiuvtEhsFIW55AdFFP7Rpnvg",

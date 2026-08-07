@@ -118,6 +118,8 @@ Document any unsupported cases.
 
 Some work has a better oracle than your prompt. A **conformance suite** checks a published specification, a **golden fixture** checks approved expected output, and a **differential suite** compares behavior with named implementations. Willison uses WebAssembly's specification suite as the conformance example and multipart uploads tested against several frameworks as differential compatibility evidence ([00:07:33–00:09:36](https://www.youtube.com/watch?v=owmJyKVu5f8&t=453s)). These targets strengthen review; they do not replace it.
 
+**Author synthesis:** Subjective work needs a mixed proof contract, not an invented universal oracle. Castello Branco's brand-adherence example separates programmatically observable properties from creativity, style, and contextual preference ([00:04:27–00:07:24](https://www.youtube.com/watch?v=lCBf9slCanI&t=267s)). Verify the former; preserve rater context and disagreement for the latter. In her design-evaluation example, disagreement about a comparatively verifiable attribute such as alignment may flag defective data, while disagreement about aesthetics can be valid preference signal ([00:10:29–00:15:28](https://www.youtube.com/watch?v=lCBf9slCanI&t=629s)).
+
 ## Return a review packet a human can own
 
 > Evidence should survive the private agent transcript and expose what remains uncertain.
@@ -183,3 +185,4 @@ The agent proposes and produces the evidence; the reviewer decides whether it co
 - [Formal methods with Hillel Wayne](https://www.youtube.com/watch?v=KSkcgIYQy0U), especially [01:06:16]-[01:12:37].
 - [Salvatore Sanfilippo, “Testing recent alternative models”](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s), especially [00:07:47]-[00:14:11].
 - [Salvatore Sanfilippo, “Further observations on Claude Fable”](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s), especially [00:05:44]-[00:09:03].
+- [Thais Castello Branco, “Ending AI Slop”](https://www.youtube.com/watch?v=lCBf9slCanI), especially [00:04:27]-[00:15:28] on decomposing subjective evaluation, routing verifiable components, and preserving preference disagreement.
