@@ -41,3 +41,13 @@
   consolidated behavioral proof into the proof article; the merged audit and evidence
   provenance rendered correctly; and both unlisted article and slide routes loaded
   without horizontal overflow.
+
+## 2026-08-07 — Homepage visual-count correction
+
+- Follow-up browser inspection counted all visually identical homepage cards, not
+  only `/posts/` links, and found seven article cards plus a resource-library card.
+- Removed the duplicate resource-library card from the article grid; the hero's
+  `Browse resources` action remains available.
+- Re-ran lint, Astro check, build, and diff checks successfully.
+- Agent-browser now reports exactly seven visible cards, one for each retained
+  article, with no horizontal overflow.
