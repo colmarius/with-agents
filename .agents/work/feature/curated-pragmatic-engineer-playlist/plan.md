@@ -56,7 +56,7 @@ overview review gates independent.
       resource 14 remains unchanged.
     - Public order exactly matches the reviewed six-ID curation.
 
-- [ ] **Task 5: Review, verify, and finish**
+- [x] **Task 5: Review, verify, and finish**
   - Scope: all changed files and `/resources/coding-with-agents`
   - Depends on: Tasks 1–4
   - Acceptance:

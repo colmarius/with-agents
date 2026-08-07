@@ -1,6 +1,6 @@
 # The Pragmatic Engineer — selected conversations
 
-Status: in-progress
+Status: completed
 Category: feature
 Updated: 2026-08-07
 
@@ -21,8 +21,8 @@ consolidate approved selected summaries under one ordered playlist resource.
 
 ## Next Action
 
-- Rebase on current `origin/main`, reconcile resource IDs and any content
-  overlaps safely, rerun final checks, and record completion.
+- None. Recheck remote playlist drift only as part of normal YouTube library
+  maintenance.
 
 ## Open Questions
 

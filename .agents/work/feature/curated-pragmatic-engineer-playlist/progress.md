@@ -174,3 +174,39 @@
 
 - Rebase safely on current `origin/main`, resolve any resource ID or content
   overlaps, rerun the full verification matrix, and record completion.
+
+## 2026-08-07 — Rebase, verification, and implementation complete
+
+- Rebased all eight local commits onto current `origin/main` at `a58d3c0`.
+  The only overlap was the public resource manifest: upstream had assigned IDs
+  33 and 34, so the Pragmatic Engineer collection moved atomically to resource
+  35 while preserving both upstream resources and all six collection links.
+- Final public order remains:
+  1. `CQmI4XKTa0U` — Martin Fowler.
+  2. `Usufn8IQJgw` — Dex Horthy.
+  3. `julbw1JuAz0` — Boris Cherny.
+  4. `n5f51gtuGHE` — Mario Zechner and Armin Ronacher.
+  5. `xHHlhoRC8W4` — Laura Tacho.
+  6. `KSkcgIYQy0U` — Hillel Wayne.
+- Oracle's two findings are resolved: every cross-source overview synthesis now
+  has an `Editorial:` label approved by the human, and the work item accurately
+  records a separate human gate rather than an independent review process.
+- Final verification passed on the rebased tree:
+  - 69 targeted Node tests.
+  - YouTube library status and structural audit: 294 videos, 303 manifest
+    occurrences, 160 transcripts, 160 summaries, and 8 playlists.
+  - Public content guard: 90 references, 29 resources, and 69 summaries.
+  - Astro check with zero diagnostics and a successful production build.
+  - Source-only import/build boundaries, four public/source transcript-body
+    equality checks, exact collection order/ID checks, Biome, and
+    `git diff --check`.
+  - Production-preview browser check: one collection card; six selected videos
+    in exact order without episode prefixes; first and sixth summary navigation;
+    no duplicate Pi or Hillel cards; Simon Willison remains standalone; no
+    browser errors.
+- The pre-existing `antirez-ai-concepts` duplicate-manifest notice for
+  `8gg-oJr4dTY` remains informational and was not changed.
+
+## Next action
+
+- None. The curated resource is complete.
