@@ -75,3 +75,39 @@
 
 - Obtain explicit human review of all four source summaries. Do not mark them
   reviewed or create the playlist overview until that gate is approved.
+
+## 2026-08-07 — Source-evidence review approved
+
+- Human explicitly approved proceeding from the pending source-evidence gate
+  after receiving direct links to all four draft summaries and a statement that
+  overview and public work remained blocked.
+- Promoted exactly those four transcript-backed source summaries from `draft`
+  to `reviewed`; no summary body, transcript, or metadata changed.
+- The selected source set now consists of four reviewed local library summaries
+  and the two previously validated reviewed standalone reuse chains.
+
+## Next action
+
+- Draft an overview covering exactly those six sources, then stop for separate
+  human overview review before any public collection or standalone fold change.
+
+## 2026-08-07 — Playlist overview ready for human review
+
+- Drafted `playlists/pragmatic-engineer-podcast/overview.md` from exactly the
+  six reviewed selected sources in approved order.
+- The overview records all 71 manifest entries as drift authority, scopes
+  editorial coverage to six selected videos, and leaves 65 unselected entries
+  without capture or summary obligations.
+- Each source thesis preserves guest attribution. Cross-source conclusions and
+  practical recommendations that go beyond one speaker are labeled
+  `Editorial:`.
+- Structural audit passes with 160 transcripts, 160 summaries, 8 playlists,
+  exact current overview coverage, and only the pre-existing duplicate-manifest
+  notice for `8gg-oJr4dTY`.
+- The overview remains `status: draft`; public resources and the approved folds
+  remain unchanged.
+
+## Next action
+
+- Obtain explicit human approval or revision instructions for the draft
+  overview. Do not publish or fold standalone cards before approval.

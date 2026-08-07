@@ -22,7 +22,7 @@ overview review gates independent.
     - Two standalone chains are reused without exceptions or duplicate files.
     - Source summaries and overview remain separate, incomplete gates.
 
-- [ ] **Task 2: Capture and review four new source-evidence items**
+- [x] **Task 2: Capture and review four new source-evidence items**
   - Scope: `src/content/youtube/videos/{CQmI4XKTa0U,Usufn8IQJgw,julbw1JuAz0,xHHlhoRC8W4}/`
   - Depends on: Task 1
   - Acceptance:

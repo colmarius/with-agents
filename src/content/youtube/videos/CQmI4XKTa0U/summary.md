@@ -6,7 +6,7 @@ publishedAt: "2025-11-19T16:21:07Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Gergely Orosz, host of The Pragmatic Engineer podcast, interviews Martin Fowler, Thoughtworks chief scientist, author, and Agile Manifesto co-author. Fowler's central argument is that LLMs introduce a shift from deterministic to non-deterministic software construction, so teams should use their speed to tighten learning loops rather than abandon review, testing, and incremental delivery ([00:00:00]-[00:01:52], [00:16:45]-[00:24:55], [01:25:36]-[01:28:34]).

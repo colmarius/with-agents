@@ -6,7 +6,7 @@ publishedAt: "2026-03-04T17:57:56Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Gergely Orosz interviews Boris Cherny, introduced as Claude Code's creator and engineering lead at Anthropic. Cherny describes Claude Code as an experiment that grew into a widely used development tool, and argues that stronger models are shifting software work from writing code toward planning, verification, rapid prototyping, and coordination across disciplines ([00:00:58]-[00:01:48], [00:23:40]-[00:30:08], [00:37:11]-[00:45:59]).

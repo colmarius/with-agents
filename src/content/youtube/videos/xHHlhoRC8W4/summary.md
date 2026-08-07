@@ -6,7 +6,7 @@ publishedAt: "2025-07-23T16:44:54Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Gergely Orosz, host of The Pragmatic Engineer podcast, interviews Laura Tacho, CTO at developer-productivity company DX, about measuring AI-assisted software engineering without reducing impact to generated code or accepted suggestions ([00:00:00]-[00:00:50], [00:08:54]-[00:16:56]). Tacho's central argument is that organizations should establish a baseline, evaluate AI across utilization, impact, and cost, and run controlled experiments that include developer experience and delivery outcomes—not assume that faster code generation creates proportional business value ([00:11:03]-[00:14:10], [01:07:20]-[01:08:18]).

@@ -6,7 +6,7 @@ publishedAt: "2026-07-15T15:59:47Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Gergely Orosz, host of The Pragmatic Engineer, interviews Dex Horthy, founder of HumanLayer, about context engineering, coding-agent loops, and software factories ([00:01:00]-[00:02:03], [00:20:01]-[00:21:04], [01:20:59]-[01:22:02]). Horthy's central argument is that teams gain more durable leverage by controlling model inputs, using verifiable bounded loops, and placing human judgment before consequential implementation than by maximizing autonomous code output ([00:21:04]-[00:23:00], [00:34:35]-[00:37:43], [00:58:23]-[01:00:30]).
