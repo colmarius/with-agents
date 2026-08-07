@@ -75,3 +75,23 @@
 - Remaining pending IDs, in manifest order: `thMFsqe8kbQ`, `EOf8TbwVvH0`,
   `r6DKV03IULg`, `d7jA462XLBM`, `wbsDZpVB4Lg`, and `C6u5CBIXRf0`.
 - Next action: continue Task 4 with three bounded batches of at most two.
+
+### Source backfill batch 3
+
+- Ran one selected `capture --limit 2` command exactly once and without refill,
+  retry, or force. It captured `thMFsqe8kbQ` and `EOf8TbwVvH0` successfully.
+- Reviewed both transcripts, made source-faithful auto-caption corrections,
+  added draft multi-speaker summaries for Thorsten Ball and Ryan Carson, and
+  deliberately refreshed the draft playlist overview.
+- Compared the new `thMFsqe8kbQ` source-library transcript and summary with its
+  existing public transcript sidecar and summary. The transcript bodies and
+  timestamps agree apart from source-faithful caption corrections; the public
+  summary's central claims remain source-supported. Public files remain
+  unchanged pending the dedicated Task 5 review.
+- Current state: 11 manifest / 11 available / 7 captured and summarized / 4
+  pending / 0 caption-unavailable / overview current at draft.
+- Remaining pending IDs, in manifest order: `r6DKV03IULg`, `d7jA462XLBM`,
+  `wbsDZpVB4Lg`, and `C6u5CBIXRf0`.
+- Source status, structural audit, public-content guard, and `git diff --check`
+  passed.
+- Next action: continue Task 4 with two bounded batches of at most two.
