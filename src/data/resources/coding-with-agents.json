@@ -1,5 +1,22 @@
 [
   {
+    "id": 36,
+    "title": "Setting Yourself Up for Success — Jason Liu’s Codex Workshop",
+    "subtitle": "Jason Liu on persistent project threads, recurring wake-ups, goal verification, and coordinated workstreams",
+    "url": "https://www.youtube.com/watch?v=il1c1a2FufU",
+    "description": "Jason Liu presents a personal operating model for long-running agent work: named project threads, reviewable context, reusable skills, scheduled wake-ups, observable goal checks, and monitor threads that coordinate downstream work. He also discusses the limits of broad computer access, live-connector evaluation, token-intensive workflows, and cross-project memory.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-07-24",
+    "duration": "1h 15m",
+    "topics": [
+      "context-memory",
+      "prompting-orchestration",
+      "review-verification",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 35,
     "title": "The Pragmatic Engineer — selected conversations",
     "subtitle": "Six curated conversations on agent workflows, verification, context, and software quality",
