@@ -23,7 +23,7 @@ Mayank's host, curator, channel, and playlist-owner provenance.
 ## Next Action
 
 - Continue Task 4 in [plan.md](./plan.md): capture, review, summarize, and
-  incorporate the remaining ten videos in batches of at most two.
+  incorporate the remaining six videos in batches of at most two.
 
 ## Open Questions
 

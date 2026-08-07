@@ -57,4 +57,21 @@
 - Structural audit passed with 143 source transcripts and summaries. The full
   51-test YouTube library suite passed, source-only boundary searches were
   clean, and `git diff --check` passed.
-- Next action: Task 4, bounded backfill in batches of at most two.
+
+### Source backfill batches 1-2
+
+- Ran two selected `capture --limit 2` commands, each exactly once and without
+  refill, retry, or force. The first captured `PZ-sko1NWa0` and `_L8xxUXOTk0`;
+  the second captured `4ksc_PU7NqA` and `5H862RhMgOU`.
+- Reviewed all four transcripts, made only source-faithful auto-caption
+  corrections, added draft multi-speaker summaries, and deliberately refreshed
+  the draft playlist overview after each batch.
+- Compared the new `PZ-sko1NWa0` and `_L8xxUXOTk0` source-library transcripts
+  with their existing public transcript sidecars. Their bodies and timestamps
+  agree aside from expected frontmatter and storage-contract differences; the
+  public files remain unchanged.
+- Current state: 11 manifest / 11 available / 5 captured and summarized / 6
+  pending / 0 caption-unavailable / overview current at draft.
+- Remaining pending IDs, in manifest order: `thMFsqe8kbQ`, `EOf8TbwVvH0`,
+  `r6DKV03IULg`, `d7jA462XLBM`, `wbsDZpVB4Lg`, and `C6u5CBIXRf0`.
+- Next action: continue Task 4 with three bounded batches of at most two.
