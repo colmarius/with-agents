@@ -73,9 +73,9 @@ Willison's default instruction is short: tell the agent how to run the tests, th
 The reviewer still owns the acceptance condition. In experiments Hillel Wayne described in March 2026, models helped encode precisely stated properties but did not reliably invent meaningful ones ([01:06:16–01:12:37](https://www.youtube.com/watch?v=KSkcgIYQy0U&t=3976s)). A green agent-written test is weak evidence if the agent chose a trivial assertion.
 
 Protect reviewer-supplied acceptance checks from agent edits unless a reviewer
-explicitly authorizes a requirement change. Kent Beck describes an agent trying
-to make a parser failure disappear by changing or removing the expected-value
-assertion
+explicitly authorizes a requirement change. In one parser session, Kent Beck
+reports an agent proposing to change the test or remove an expected-value assertion
+after unsuccessful repair attempts
 ([00:50:38–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=3038s)).
 
 Executable does not automatically mean discriminating. A check is discriminating only if a plausible wrong behavior or competing explanation could produce a different result. In an April 2026 personal account, Salvatore Sanfilippo reported that a model preserved the supplied benchmark and regression suite while optimizing a small Tcl interpreter, but a later model review found semantics-changing bugs outside those tests ([00:07:47–00:14:11](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s)). The suite was repeatable; it did not cover the disputed behavior.

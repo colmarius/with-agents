@@ -72,9 +72,6 @@ That ownership map is synthesis. Amp's delegation surfaces have different docume
 
 **Synthesis:** use a subagent when a final return is enough; use an addressable
 thread when the integration owner must inspect or redirect work before completion.
-Steve Yegge's explicitly experimental Gas Town account illustrates the same narrow
-observability boundary
-([00:35:04–00:35:55](https://www.youtube.com/watch?v=aFsAOu2bgFk&t=2104s)).
 
 ```text
 Name the target project and execution environment.
@@ -183,4 +180,3 @@ Tool details change; the work contracts do not. When Amp changes again, keep the
 ## Sources used
 
 - Canonical Amp product authority verified 2026-08-07: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle). Dated announcements, including [“Size the Orbs of Production!”](https://ampcode.com/news/size-the-orbs-of-production), are linked inline at the claims they support.
-- [Steve Yegge, “From IDEs to AI Agents”](https://www.youtube.com/watch?v=aFsAOu2bgFk), an interview about the experimental Gas Town project; especially [00:35:04–00:35:55] on observable workers versus opaque final-return subagents.

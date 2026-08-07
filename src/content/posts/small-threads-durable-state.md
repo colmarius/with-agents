@@ -88,8 +88,7 @@ Return:
 A handoff prompt is not "continue from the previous thread." It is a compact operating brief for one implementation, review, verification, or repair slice. Include the work item path, exact task, files to read first, decisions already made, scope limits, acceptance, verification, stop conditions, required work-item updates, and expected return.
 
 When tests carry the acceptance contract, say explicitly whether the implementation
-thread may change them
-([00:50:38–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=3038s)).
+thread may change them.
 
 The handoff should be small enough to paste and specific enough that the new thread does not need lore. Keep an ephemeral handoff in the prompt; store a reusable one as a separate `handoff-*.md` file linked from `index.md` or the active plan.
 
@@ -140,4 +139,3 @@ The goal is not shorter chat for its own sake. It is to make the next thread sta
 
 - [dot-agents](https://github.com/colmarius/dot-agents) supplies the work-item pattern; this repository's root `AGENTS.md`, `.agents/work/AGENTS.md`, and `agent-work` skill define the concrete profile described here.
 - [Build Crew episode 7](https://www.youtube.com/watch?v=fVx5M2GVjEQ), especially [00:13:06]-[00:24:12] on small directed threads and the research-to-implementation funnel.
-- [Kent Beck on TDD and coding agents](https://www.youtube.com/watch?v=aSXaxOdVtAQ), especially [00:50:38]-[00:51:42] on protecting fixed behavioral expectations from agent edits.
