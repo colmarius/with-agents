@@ -137,3 +137,25 @@
 
 - Complete browser and Oracle review, resolve findings, rerun affected checks,
   rebase safely on current `origin/main`, and record final completion.
+
+## 2026-08-07 — Oracle attribution correction awaiting approval
+
+- Browser review passed on a production preview: exactly one Pragmatic Engineer
+  card, six `Selected videos` in approved order without episode prefixes,
+  working navigation through later summaries, no duplicate Pi or Hillel cards,
+  and the Simon Willison standalone card retained.
+- Oracle confirmed the manifest, selection, capture/reuse decisions, fold,
+  resource metadata, public transcript provenance, and source/public claims.
+- Oracle required all cross-source comparisons, inferences, and recommendations
+  in the overview to carry explicit `Editorial:` labels. Added only those labels;
+  no claim, citation, source coverage, order, or public summary changed.
+- Corrected the work-item index to describe the actual separate human overview
+  gate rather than claiming an independent review process.
+- Returned the overview to `status: draft` for conservative human confirmation
+  of the attribution-only revision. The local publication commit remains
+  unpushed and finalization is paused.
+
+## Next action
+
+- Obtain explicit human approval of the Oracle-corrected draft overview. Do not
+  restore reviewed status or finalize the public collection before approval.

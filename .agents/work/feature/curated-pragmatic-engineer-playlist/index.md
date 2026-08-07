@@ -21,8 +21,9 @@ consolidate approved selected summaries under one ordered playlist resource.
 
 ## Next Action
 
-- Complete Oracle and browser review, resolve any findings, run the final
-  verification matrix, rebase on current `origin/main`, and record completion.
+- Obtain human approval of the Oracle-corrected draft overview. Only then restore
+  reviewed status, rerun final checks, rebase on current `origin/main`, and
+  record completion.
 
 ## Open Questions
 
@@ -35,4 +36,6 @@ consolidate approved selected summaries under one ordered playlist resource.
       resource 14 as a standalone card because its video is not a playlist
       member.
 - [x] Human reviewed and approved the four newly captured source summaries.
-- [x] Independent human review of the six-source playlist overview.
+- [x] Human approved the six-source playlist overview in a separate overview
+      gate.
+- [ ] Human approval of the Oracle-corrected overview attribution labels.
