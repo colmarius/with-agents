@@ -312,7 +312,7 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
       setSummaryContent(content);
     } catch (err) {
       setError(
-        `Failed to load episode: ${err instanceof Error ? err.message : 'Unknown error'}`,
+        `Failed to load summary: ${err instanceof Error ? err.message : 'Unknown error'}`,
       );
     } finally {
       setIsEpisodeLoading(false);
@@ -547,7 +547,9 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
               <div className="md:hidden mb-3">
                 <CollapsibleButton
                   label={
-                    summaryRef.kind === 'series' ? 'Episodes' : 'Summaries'
+                    summaryRef.kind === 'collection'
+                      ? 'Selected videos'
+                      : 'Episodes'
                   }
                   isOpen={isEpisodeListExpanded}
                   onClick={() =>

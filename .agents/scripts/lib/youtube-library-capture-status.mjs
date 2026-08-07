@@ -6,12 +6,15 @@ import {
   selectCatalogPlaylists,
   writeJsonAtomic,
 } from './youtube-library-core.mjs';
+import { resolvePlaylistEditorialScope } from './youtube-library-curation.mjs';
+import { loadStandaloneYoutubeEvidence } from './youtube-standalone-evidence.mjs';
 import {
   canonicalYoutubeUrl,
   cleanText,
   fetchVideo,
   renderTranscriptMarkdown,
   repoRelative,
+  rootDir,
   writeFileExclusive,
 } from './youtube-transcript-core.mjs';
 
@@ -181,8 +184,11 @@ const captureCandidates = async ({
   limit,
   manifestPathForPlaylist,
   videoPathForFile,
+  repoRoot,
+  standaloneEvidenceByVideoId,
 }) => {
   const playlists = selectCatalogPlaylists(catalog, playlistSlugs);
+  const explicitlySelected = new Set(playlistSlugs);
   const manifests = [];
 
   for (const playlist of playlists) {
@@ -191,15 +197,85 @@ const captureCandidates = async ({
       manifestPathForPlaylist,
       required: true,
     });
-    manifests.push({ playlist, manifest });
+    const scope = resolvePlaylistEditorialScope(playlist, manifest);
+    if (scope.errors.length > 0) {
+      throw new Error(scope.errors.join(' '));
+    }
+    if (
+      scope.mode === 'curated' &&
+      scope.status === 'draft' &&
+      explicitlySelected.has(playlist.slug)
+    ) {
+      throw new Error(
+        `Playlist ${playlist.slug} has draft curation; review its selected video IDs before capture.`,
+      );
+    }
+    manifests.push({
+      playlist,
+      entries: scope.activeEntries,
+      allowsStandaloneEvidence:
+        scope.mode === 'curated' && scope.status === 'reviewed',
+    });
   }
 
+  const standaloneEligibleVideoIds = new Set(
+    manifests.flatMap(({ entries, allowsStandaloneEvidence }) =>
+      allowsStandaloneEvidence ? entries.map((entry) => entry.videoId) : [],
+    ),
+  );
+  const standaloneEvidence = standaloneEvidenceByVideoId
+    ? { byVideoId: standaloneEvidenceByVideoId, errors: [] }
+    : await loadStandaloneYoutubeEvidence({
+        repoRoot,
+        videoIds: standaloneEligibleVideoIds,
+      });
+  if (standaloneEvidence.errors.length > 0) {
+    throw new Error(standaloneEvidence.errors.join(' '));
+  }
+
+  const selectedPlaylistIds = new Set(playlists.map((playlist) => playlist.id));
+  const obligationManifests = [...manifests];
+  for (const playlist of catalog.playlists) {
+    if (selectedPlaylistIds.has(playlist.id)) {
+      continue;
+    }
+    const manifest = await readPlaylistManifest({
+      playlist,
+      manifestPathForPlaylist,
+      required: false,
+    });
+    if (!manifest) {
+      continue;
+    }
+    const scope = resolvePlaylistEditorialScope(playlist, manifest);
+    obligationManifests.push({
+      entries: scope.activeEntries,
+      allowsStandaloneEvidence:
+        scope.mode === 'curated' && scope.status === 'reviewed',
+    });
+  }
+  const requiresLibraryEvidence = new Set(
+    obligationManifests.flatMap(({ entries, allowsStandaloneEvidence }) =>
+      allowsStandaloneEvidence ? [] : entries.map((entry) => entry.videoId),
+    ),
+  );
   const byVideoId = new Map();
   const queue = [];
-  for (const { playlist, manifest } of manifests) {
-    for (const entry of manifest.entries) {
+  for (const { playlist, entries } of manifests) {
+    for (const entry of entries) {
       if (!entry.available) {
         continue;
+      }
+      if (
+        standaloneEvidence.byVideoId.has(entry.videoId) &&
+        !requiresLibraryEvidence.has(entry.videoId)
+      ) {
+        const localTranscript = await pathExists(
+          videoPathForFile(entry.videoId, 'transcript.md'),
+        );
+        if (!localTranscript) {
+          continue;
+        }
       }
       let candidate = byVideoId.get(entry.videoId);
       if (!candidate) {
@@ -411,6 +487,8 @@ export const captureCatalogVideos = async ({
   now = () => new Date(),
   manifestPathForPlaylist = defaultManifestPathForPlaylist,
   videoPathForFile = defaultVideoPathForFile,
+  repoRoot = rootDir,
+  standaloneEvidenceByVideoId,
   onWarning = () => {},
   onResult = () => {},
 }) => {
@@ -431,6 +509,8 @@ export const captureCatalogVideos = async ({
     limit,
     manifestPathForPlaylist,
     videoPathForFile,
+    repoRoot,
+    standaloneEvidenceByVideoId,
   });
 
   if (force) {
@@ -578,7 +658,40 @@ export const buildLibraryStatus = async ({
   videoPathForFile = defaultVideoPathForFile,
   overviewPathForPlaylist = defaultOverviewPathForPlaylist,
   authorPathForAuthor = defaultAuthorPathForAuthor,
+  repoRoot = rootDir,
+  standaloneEvidenceByVideoId,
 }) => {
+  const manifestsByPlaylistId = new Map();
+  const scopesByPlaylistId = new Map();
+  const standaloneEligibleVideoIds = new Set();
+  for (const playlist of catalog.playlists) {
+    const manifest = await readPlaylistManifest({
+      playlist,
+      manifestPathForPlaylist,
+      required: false,
+    });
+    if (!manifest) {
+      continue;
+    }
+    manifestsByPlaylistId.set(playlist.id, manifest);
+    const scope = resolvePlaylistEditorialScope(playlist, manifest);
+    scopesByPlaylistId.set(playlist.id, scope);
+    if (scope.mode === 'curated' && scope.status === 'reviewed') {
+      for (const videoId of scope.selectedVideoIds) {
+        standaloneEligibleVideoIds.add(videoId);
+      }
+    }
+  }
+  const standaloneEvidence = standaloneEvidenceByVideoId
+    ? { byVideoId: standaloneEvidenceByVideoId, errors: [] }
+    : await loadStandaloneYoutubeEvidence({
+        repoRoot,
+        videoIds: standaloneEligibleVideoIds,
+      });
+  if (standaloneEvidence.errors.length > 0) {
+    throw new Error(standaloneEvidence.errors.join(' '));
+  }
+
   const videoCache = new Map();
   const getVideo = async (videoId) => {
     if (!videoCache.has(videoId)) {
@@ -606,6 +719,7 @@ export const buildLibraryStatus = async ({
               summaryContents === undefined
                 ? undefined
                 : readStatusFrontmatter(summaryContents).status,
+            source: 'library',
           };
         })(),
       );
@@ -614,31 +728,46 @@ export const buildLibraryStatus = async ({
   };
 
   const playlistStatuses = [];
-  const manifestsByPlaylistId = new Map();
   for (const playlist of catalog.playlists) {
-    const manifest = await readPlaylistManifest({
-      playlist,
-      manifestPathForPlaylist,
-      required: false,
-    });
+    const manifest = manifestsByPlaylistId.get(playlist.id);
     if (!manifest) {
       playlistStatuses.push({ playlist, synced: false });
       continue;
     }
-    manifestsByPlaylistId.set(playlist.id, manifest);
     const availableEntries = manifest.entries.filter(
       (entry) => entry.available,
     );
+    const scope = scopesByPlaylistId.get(playlist.id);
+    const editorialEntries = scope.activeEntries;
     const manifestUnavailable =
       manifest.entries.length - availableEntries.length;
     const states = { captured: 0, pending: 0, unavailable: 0 };
     const unavailableVideoIds = [];
     const summaries = { missing: 0, draft: 0, reviewed: 0 };
     const summarizedVideoIds = [];
+    let standaloneReused = 0;
 
-    for (const entry of availableEntries) {
-      const video = await getVideo(entry.videoId);
+    for (const entry of editorialEntries) {
+      let video = await getVideo(entry.videoId);
+      if (
+        scope.mode === 'curated' &&
+        scope.status === 'reviewed' &&
+        !video.transcript &&
+        standaloneEvidence.byVideoId.has(entry.videoId)
+      ) {
+        video = {
+          transcript: false,
+          unavailable: false,
+          state: 'captured',
+          summary: true,
+          summaryStatus: 'reviewed',
+          source: 'standalone',
+        };
+      }
       states[video.state] += 1;
+      if (video.source === 'standalone') {
+        standaloneReused += 1;
+      }
       if (video.state === 'unavailable') {
         unavailableVideoIds.push(entry.videoId);
       }
@@ -664,13 +793,27 @@ export const buildLibraryStatus = async ({
         available: availableEntries.length,
         manifestUnavailable,
       },
+      curation:
+        scope.mode === 'curated'
+          ? {
+              status: scope.status,
+              candidates: scope.candidateVideoIds.length,
+              selected: scope.selectedVideoIds.length,
+              unselected: scope.unselectedVideoIds.length,
+              errors: scope.errors,
+            }
+          : undefined,
       states,
+      standaloneReused,
       unavailableVideoIds: [...new Set(unavailableVideoIds)],
       summaries,
-      synthesis: await synthesisState(
-        overviewPathForPlaylist(playlist),
-        summarizedVideoIds,
-      ),
+      synthesis:
+        scope.mode === 'curated' && scope.status === 'draft'
+          ? { state: 'inactive', missingVideoIds: [] }
+          : await synthesisState(
+              overviewPathForPlaylist(playlist),
+              summarizedVideoIds,
+            ),
     });
   }
 
@@ -735,7 +878,7 @@ const projectPlaylistLocalStatus = (playlistStatus) => {
     return { synced: false };
   }
 
-  return {
+  const local = {
     synced: true,
     totals: { ...playlistStatus.totals },
     transcripts: { ...playlistStatus.states },
@@ -743,6 +886,16 @@ const projectPlaylistLocalStatus = (playlistStatus) => {
     summaries: { ...playlistStatus.summaries },
     overview: projectSynthesis(playlistStatus.synthesis),
   };
+  if (playlistStatus.curation) {
+    local.curation = {
+      ...playlistStatus.curation,
+      errors: [...playlistStatus.curation.errors],
+    };
+  }
+  if (playlistStatus.standaloneReused > 0) {
+    local.standaloneReused = playlistStatus.standaloneReused;
+  }
+  return local;
 };
 
 export const buildLibraryCheckReport = ({
@@ -938,11 +1091,26 @@ export const formatLibraryCheckReport = (report) => {
     const { local } = playlist;
     lines.push(
       `  local manifest: ${local.totals.entries} entries; ${local.totals.available} available; ${local.totals.manifestUnavailable} unavailable/private/deleted`,
+    );
+    if (local.curation) {
+      lines.push(
+        `  local curation: ${local.curation.status}; ${local.curation.candidates} candidates; ${local.curation.selected} selected; ${local.curation.unselected} unselected`,
+        `  local curation errors: ${local.curation.errors.join(' ') || 'none'}`,
+      );
+    }
+    lines.push(
       `  local transcripts: ${local.transcripts.captured} captured; ${local.transcripts.pending} pending; ${local.transcripts.unavailable} unavailable-recorded`,
       `  local unavailable video IDs: ${local.unavailableVideoIds.join(', ') || 'none'}`,
       `  local summaries: ${local.summaries.missing} missing; ${local.summaries.draft} draft/not-reviewed; ${local.summaries.reviewed} reviewed`,
       synthesisLine('local overview', local.overview),
     );
+    if (local.standaloneReused) {
+      lines.splice(
+        lines.length - 3,
+        0,
+        `  local standalone sources reused: ${local.standaloneReused}`,
+      );
+    }
   }
 
   for (const author of report.authors) {
@@ -987,11 +1155,26 @@ export const formatLibraryStatus = (status) => {
     const { totals, states, summaries } = playlistStatus;
     lines.push(
       `  manifest: ${totals.entries} entries; ${totals.available} available; ${totals.manifestUnavailable} unavailable/private/deleted`,
+    );
+    if (playlistStatus.curation) {
+      lines.push(
+        `  curation: ${playlistStatus.curation.status}; ${playlistStatus.curation.candidates} candidates; ${playlistStatus.curation.selected} selected; ${playlistStatus.curation.unselected} unselected`,
+        `  curation errors: ${playlistStatus.curation.errors.join(' ') || 'none'}`,
+      );
+    }
+    lines.push(
       `  transcripts: ${states.captured} captured; ${states.pending} pending; ${states.unavailable} unavailable-recorded`,
       `  unavailable video IDs: ${playlistStatus.unavailableVideoIds.join(', ') || 'none'}`,
       `  summaries among captured: ${summaries.missing} missing; ${summaries.draft} draft/not-reviewed; ${summaries.reviewed} reviewed`,
       synthesisLine('overview.md', playlistStatus.synthesis),
     );
+    if (playlistStatus.standaloneReused > 0) {
+      lines.splice(
+        lines.length - 3,
+        0,
+        `  standalone sources reused: ${playlistStatus.standaloneReused}`,
+      );
+    }
     sections.push(lines.join('\n'));
   }
 

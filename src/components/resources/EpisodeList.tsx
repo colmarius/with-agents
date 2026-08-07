@@ -31,6 +31,8 @@ export const EpisodeList = ({
 }: EpisodeListProps) => {
   const listRef = useRef<HTMLDivElement>(null);
   const [focusedSlug, setFocusedSlug] = useState<string | null>(selectedSlug);
+  const label = mode === 'collection' ? 'Selected videos' : 'Episodes';
+  const showEpisodePrefix = mode === 'series';
 
   useEffect(() => {
     setFocusedSlug(selectedSlug);
@@ -96,7 +98,9 @@ export const EpisodeList = ({
   if (isLoading) {
     return (
       <div className="flex items-center justify-center p-8">
-        <div className="animate-pulse text-gray-500">Loading episodes...</div>
+        <div className="animate-pulse text-gray-500">
+          Loading {label.toLowerCase()}...
+        </div>
       </div>
     );
   }
@@ -104,7 +108,7 @@ export const EpisodeList = ({
   if (episodes.length === 0) {
     return (
       <div className="flex items-center justify-center p-8 text-gray-500">
-        No episodes found
+        No {label.toLowerCase()} found
       </div>
     );
   }
@@ -121,7 +125,7 @@ export const EpisodeList = ({
     <div
       ref={listRef}
       role="listbox"
-      aria-label={mode === 'series' ? 'Episode list' : 'Summary list'}
+      aria-label={`${label} list`}
       aria-activedescendant={
         focusedSlug !== null ? `summary-${focusedSlug}` : undefined
       }
@@ -129,8 +133,8 @@ export const EpisodeList = ({
       onKeyDown={handleKeyDown}
       className="flex flex-col gap-1 p-0 focus:outline-none text-sm text-gray-600 dark:text-zinc-300"
     >
-      <h3 className="sr-only">
-        {mode === 'series' ? 'Episodes' : 'Summaries'}
+      <h3 className="mb-2 hidden px-2.5 text-xs font-medium uppercase tracking-wide text-gray-500 md:block dark:text-zinc-400">
+        {label}
       </h3>
       {displayedEpisodes.map((episode) => {
         const isSelected = episode.path === selectedSlug;
@@ -163,7 +167,7 @@ export const EpisodeList = ({
 						`}
           >
             <div className="flex items-center gap-2">
-              {mode === 'series' && (
+              {showEpisodePrefix && (
                 <span
                   className={`shrink-0 tabular-nums text-[11px] tracking-wide ${
                     isSelected
@@ -175,7 +179,9 @@ export const EpisodeList = ({
                 </span>
               )}
               <span
-                className={`flex-1 truncate text-[13px] font-normal ${
+                className={`flex-1 text-[13px] font-normal ${
+                  showEpisodePrefix ? 'truncate' : 'leading-snug'
+                } ${
                   isSelected
                     ? 'text-gray-900 dark:text-zinc-100'
                     : 'text-gray-600 dark:text-zinc-400 group-hover:text-gray-800 dark:group-hover:text-zinc-200'

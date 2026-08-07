@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { mkdir, readFile, rename, unlink, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { validatePlaylistCuration } from './youtube-library-curation.mjs';
 import { resolveContainedPath, rootDir } from './youtube-transcript-core.mjs';
 
 export const libraryRoot = path.join(rootDir, 'src/content/youtube');
@@ -103,6 +104,7 @@ export const validateCatalog = (catalog) => {
         `catalog.playlists[${index}].multiSpeaker must be true when present.`,
       );
     }
+    validatePlaylistCuration(playlist, `catalog.playlists[${index}]`);
   });
 
   assertUnique(

@@ -53,6 +53,24 @@
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
       "multiSpeaker": true
+    },
+    {
+      "id": "PL2xnrU4RbY0AamUB7lEm8-ZJsq0yzELRz",
+      "slug": "david-ondrej-coding-agents",
+      "title": "David Ondrej Podcast",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "xgkjtF89-44",
+          "FU5_kpTAVDo",
+          "nQwJVHCtDDY",
+          "8ZgpAXe5V5w",
+          "k8o_UgtrGyA"
+        ]
+      }
     }
   ],
   "relationships": [

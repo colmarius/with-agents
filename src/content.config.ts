@@ -24,9 +24,27 @@ const summaries = defineCollection({
       series: z.string().optional(),
       episode: z.number().int().optional(),
       collection: z.string().trim().min(1).optional(),
+      order: z.number().int().positive().optional(),
+      videoId: z.string().trim().min(1).optional(),
       date: z.coerce.date().optional(),
     })
     .superRefine((summary, context) => {
+      const hasCuratedCollectionMetadata =
+        summary.order !== undefined || summary.videoId !== undefined;
+
+      if (
+        hasCuratedCollectionMetadata &&
+        (summary.collection === undefined ||
+          summary.order === undefined ||
+          summary.videoId === undefined)
+      ) {
+        context.addIssue({
+          code: 'custom',
+          message:
+            'collection, order, and videoId must be provided together for a curated collection',
+        });
+      }
+
       if (!summary.collection) return;
 
       if (!summary.date) {

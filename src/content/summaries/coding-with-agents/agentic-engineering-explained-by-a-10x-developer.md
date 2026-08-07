@@ -1,7 +1,10 @@
 ---
 title: "Agentic Engineering, explained by a 10x developer"
-resourceId: 25
+resourceId: 32
 date: "2026-07-27"
+collection: "david-ondrej-agentic-engineering"
+order: 2
+videoId: "FU5_kpTAVDo"
 ---
 
 David Ondrej interviews Thorsten Ball, a founding engineer at Amp, about what changes when coding agents make implementation cheap: engineering shifts toward deciding what to build, supplying the right context, delegating asynchronously, and reviewing evidence instead of driving every edit.

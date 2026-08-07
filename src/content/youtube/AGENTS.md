@@ -41,6 +41,41 @@ src/content/youtube/
   is its highest-level synthesis; do not create an author synthesis or treat its
   uploader or source channel as its author.
 
+### Curated playlists
+
+A playlist may add an editorial selection to its catalog record:
+
+```json
+"curation": {
+  "status": "draft",
+  "videoIds": ["youtube-id-in-approved-display-order"]
+}
+```
+
+- `curation` must contain exactly `status` and `videoIds`; IDs must be unique
+  YouTube video IDs.
+- `draft` records candidates for human review. It creates no capture, summary,
+  overview, or public-content obligation, and explicit capture of that playlist
+  fails until the selection is reviewed.
+- `reviewed` records the human-approved ordered selection. Every selected ID
+  must be available and present in the committed manifest. The editorial order
+  does not need to match remote playlist position.
+- Manifests always retain the complete remote playlist, and check/sync drift
+  always compares full remote membership. Unselected videos stay tracked for
+  deterministic drift without creating transcript or summary obligations.
+- Capture, status, overview coverage, structural audit, and consolidated public
+  collections use only the reviewed selection. Status reports candidate,
+  selected, and unselected counts.
+- Selection review, individual source-summary review, and playlist-overview
+  review are separate gates. Do not publish a collection while any gate is
+  draft.
+
+An approved selected video may reuse a standalone public transcript and summary
+instead of being duplicated under `videos/`. Reuse is valid only when tooling
+can strictly connect the canonical video ID, transcript `summarySlug`, public
+summary, and either its canonical video resource or curated collection item.
+Ambiguous, duplicate, or broken associations fail checks.
+
 ## Editorial workflow
 
 Video summaries, playlist overviews, and author syntheses are explicit
@@ -48,6 +83,12 @@ agent/human editorial work from committed transcripts and summaries. Sync,
 capture, and status tooling must not silently generate or replace them, and no
 LLM API belongs in this workflow. New editorial artifacts begin as `draft`.
 Set `reviewed` only after an explicit human or dedicated review pass.
+
+For a consolidated public playlist collection, every public summary must have
+the same `collection`, a unique positive `order`, and its canonical `videoId`.
+The resulting IDs and order must exactly match the catalog's reviewed curation.
+Public posts and resources may cite selected source evidence only after the
+individual source summary and playlist overview are reviewed.
 
 The status tooling currently reads only `status` and `coveredVideoIds`, and it
 does so tolerantly. All other frontmatter is durable editorial provenance.
@@ -222,3 +263,9 @@ Tooling must use the fixed `src/content/youtube/` root, reject paths outside it,
 write non-destructively by default, and use atomic replacement for generated
 JSON. Credentials are environment-only and must never be accepted through the
 catalog or command-line flags.
+
+`capture` processes only approved IDs for reviewed curated playlists and skips
+selected IDs fulfilled by validated standalone evidence. Draft curated
+playlists do not contribute to the default capture queue. `status` and `audit`
+scope editorial backlog and coverage to approved IDs, while `check` and `sync`
+continue to inspect and preserve the complete manifest.

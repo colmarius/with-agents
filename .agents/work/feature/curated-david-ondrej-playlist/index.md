@@ -1,6 +1,6 @@
 # Curated David Ondrej playlist resource
 
-Status: blocked
+Status: completed
 Category: feature
 Updated: 2026-08-07
 
@@ -16,23 +16,21 @@ creating duplicate editorial artifacts.
 
 - Research: [research.md](./research.md)
 - PRD: [prd.md](./prd.md)
-- Plan: none
-- Progress: none
+- Plan: [plan.md](./plan.md)
+- Progress: [progress.md](./progress.md)
 - Decisions: none
 
 ## Next Action
 
-- Obtain human approval for the proposed five-video selection, confirm whether
-  the two standalone cards should be folded into the playlist card, and confirm
-  `en`/`en` plus `multiSpeaker: true` as the playlist configuration. Then write
-  an implementation-ready plan before changing catalog or public content.
+- None. The reviewed five-video collection is implemented, verified, and ready
+  for normal playlist drift checks.
 
 ## Open Questions
 
-- [ ] Approve or revise the proposed ordered five-video selection.
-- [ ] Confirm that resources 25 and 31 should be removed as standalone cards
+- [x] Approve or revise the proposed ordered five-video selection.
+- [x] Confirm that resources 25 and 31 should be removed as standalone cards
       after their existing summaries are reassigned to the consolidated
       playlist resource.
-- [ ] Confirm `transcriptLanguage: en`, `summaryLanguage: en`, and
+- [x] Confirm `transcriptLanguage: en`, `summaryLanguage: en`, and
       `multiSpeaker: true`; these values must be explicit under the YouTube
       library contract.

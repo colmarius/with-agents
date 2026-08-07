@@ -304,3 +304,172 @@ test('structural audit enforces exactly one playlist attribution mode', async ()
     await rm(root, { recursive: true, force: true });
   }
 });
+
+test('curated structural audit scopes overview obligations and accepts standalone source evidence', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-audit-curated-'));
+  try {
+    await writeValidLibrary(root);
+    const catalogPath = path.join(root, 'catalog.json');
+    const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+    catalog.authors = [];
+    catalog.relationships = [];
+    catalog.playlists[0].multiSpeaker = true;
+    catalog.playlists[0].curation = {
+      status: 'reviewed',
+      videoIds: ['AbCdEfGhI12'],
+    };
+    await writeFixture(root, 'catalog.json', catalog);
+
+    const manifestPath = path.join(root, 'playlists/playlist/manifest.json');
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    manifest.entries.unshift({
+      videoId: 'AbCdEfGhI12',
+      position: 0,
+      title: 'Selected standalone video',
+      publishedAt: '2026-07-30T00:00:00Z',
+      available: true,
+    });
+    await writeFixture(root, 'playlists/playlist/manifest.json', manifest);
+    await writeFixture(
+      root,
+      'playlists/playlist/overview.md',
+      `---
+title: "Example Playlist"
+status: reviewed
+coveredVideoIds:
+  - AbCdEfGhI12
+---
+
+## Coverage
+
+One selected summary.
+
+## Current Thesis
+
+- Example ([summary](../../src/content/summaries/selected.md)).
+
+## Stable Ideas
+
+- Editorial: Example.
+
+## Emerging Ideas
+
+- Editorial: Example.
+
+## Revisions and Tensions
+
+- Editorial: Example.
+
+## Practical Implications
+
+- Editorial: Example.
+`,
+    );
+    await writeFixture(root, 'src/data/resources/coding-with-agents.json', [
+      {
+        id: 1,
+        type: 'playlist',
+        url: 'https://www.youtube.com/playlist?list=playlist-id',
+      },
+    ]);
+    await writeFixture(
+      root,
+      'src/content/transcripts/selected.md',
+      `---
+title: "Selected"
+summarySlug: "selected"
+sourceUrl: "https://www.youtube.com/watch?v=AbCdEfGhI12"
+videoId: "AbCdEfGhI12"
+capturedAt: "2026-07-31T00:00:00.000Z"
+---
+`,
+    );
+    await writeFixture(
+      root,
+      'src/content/summaries/selected.md',
+      `---
+title: "Selected"
+resourceId: 1
+collection: "selected"
+order: 1
+videoId: "AbCdEfGhI12"
+---
+`,
+    );
+
+    const result = await auditYoutubeLibraryStructure({
+      libraryRoot: root,
+      repoRoot: root,
+    });
+    assert.deepEqual(result.errors, []);
+
+    delete catalog.playlists[0].curation;
+    await writeFixture(root, 'catalog.json', catalog);
+    const uncuratedStandalone = await auditYoutubeLibraryStructure({
+      libraryRoot: root,
+      repoRoot: root,
+    });
+    assert.match(
+      uncuratedStandalone.errors.join('\n'),
+      /covers AbCdEfGhI12, which has no summary/,
+    );
+    assert.match(
+      uncuratedStandalone.errors.join('\n'),
+      /does not cover summarized video video-id/,
+    );
+
+    catalog.playlists[0].curation = {
+      status: 'reviewed',
+      videoIds: ['AbCdEfGhI12'],
+    };
+    await writeFixture(root, 'catalog.json', catalog);
+
+    await writeFixture(root, 'videos/AbCdEfGhI12/metadata.json', {
+      videoId: 'AbCdEfGhI12',
+      language: 'en',
+      kind: 'caption',
+    });
+    await writeFixture(
+      root,
+      'videos/AbCdEfGhI12/transcript.md',
+      transcript.replaceAll('video-id', 'AbCdEfGhI12'),
+    );
+    await writeFixture(
+      root,
+      'videos/AbCdEfGhI12/summary.md',
+      summary
+        .replaceAll('video-id', 'AbCdEfGhI12')
+        .replace('status: reviewed', 'status: draft'),
+    );
+    const draftLocal = await auditYoutubeLibraryStructure({
+      libraryRoot: root,
+      repoRoot: root,
+    });
+    assert.match(
+      draftLocal.errors.join('\n'),
+      /selected video AbCdEfGhI12 has no reviewed source evidence/,
+    );
+
+    await writeFixture(
+      root,
+      'videos/AbCdEfGhI12/summary.md',
+      summary.replaceAll('video-id', 'AbCdEfGhI12'),
+    );
+    const reviewedLocal = await auditYoutubeLibraryStructure({
+      libraryRoot: root,
+      repoRoot: root,
+    });
+    assert.deepEqual(reviewedLocal.errors, []);
+
+    catalog.playlists[0].curation.status = 'draft';
+    await writeFixture(root, 'catalog.json', catalog);
+    await rm(path.join(root, 'playlists/playlist/overview.md'));
+    const draftWithoutOverview = await auditYoutubeLibraryStructure({
+      libraryRoot: root,
+      repoRoot: root,
+    });
+    assert.deepEqual(draftWithoutOverview.errors, []);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});

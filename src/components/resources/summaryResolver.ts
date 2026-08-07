@@ -6,6 +6,8 @@ export type ManifestEntry = {
   series: string | null;
   episode: number | null;
   collection: string | null;
+  order: number | null;
+  videoId: string | null;
 };
 
 export type SummaryRef =
@@ -98,13 +100,40 @@ export const resolveSummaryEntries = (
     ) {
       return invalid('Every collection summary must have a date.');
     }
+    const hasCuratedMetadata = entries.some(
+      (entry) => entry.order !== null || entry.videoId !== null,
+    );
+    if (
+      hasCuratedMetadata &&
+      entries.some((entry) => entry.order === null || entry.videoId === null)
+    ) {
+      return invalid(
+        'Every curated collection summary must have an order and video ID.',
+      );
+    }
+    if (hasCuratedMetadata) {
+      const orders = entries.map((entry) => entry.order as number);
+      const videoIds = entries.map((entry) => entry.videoId as string);
+      if (new Set(orders).size !== orders.length) {
+        return invalid(
+          'Duplicate summary orders are configured for this collection.',
+        );
+      }
+      if (new Set(videoIds).size !== videoIds.length) {
+        return invalid(
+          'Duplicate video IDs are configured for this collection.',
+        );
+      }
+    }
     return {
       kind: 'collection',
       collection: [...collectionKeys][0],
       entries: [...entries].sort(
         (a, b) =>
-          new Date(a.date as Date | string).getTime() -
-            new Date(b.date as Date | string).getTime() ||
+          (hasCuratedMetadata
+            ? (a.order as number) - (b.order as number)
+            : new Date(a.date as Date | string).getTime() -
+              new Date(b.date as Date | string).getTime()) ||
           a.slug.localeCompare(b.slug),
       ),
     };

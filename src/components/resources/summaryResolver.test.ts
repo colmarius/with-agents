@@ -13,6 +13,8 @@ const entry = (overrides: Partial<ManifestEntry> = {}): ManifestEntry => ({
   series: null,
   episode: null,
   collection: null,
+  order: null,
+  videoId: null,
   ...overrides,
 });
 
@@ -42,6 +44,29 @@ test('resolves standalone, numbered series, and collection summaries', () => {
       : [],
     ['c', 'a', 'b'],
   );
+  const curatedCollection = resolveSummaryEntries([
+    entry({
+      slug: 'second',
+      collection: 'selected',
+      date: '2026-01-01',
+      order: 2,
+      videoId: 'video-two',
+    }),
+    entry({
+      slug: 'first',
+      collection: 'selected',
+      date: '2026-02-01',
+      order: 1,
+      videoId: 'video-one',
+    }),
+  ]);
+  assert.equal(curatedCollection?.kind, 'collection');
+  assert.deepEqual(
+    curatedCollection?.kind === 'collection'
+      ? curatedCollection.entries.map(({ slug }) => slug)
+      : [],
+    ['first', 'second'],
+  );
 });
 
 test('rejects ambiguous and malformed grouped summaries', () => {
@@ -64,6 +89,34 @@ test('rejects ambiguous and malformed grouped summaries', () => {
     [
       entry({ collection: 'talks', date: '2026-01-01' }),
       entry({ slug: 'episode', series: 'show', episode: 1 }),
+    ],
+    [
+      entry({
+        collection: 'selected',
+        date: '2026-01-01',
+        order: 1,
+        videoId: 'video-one',
+      }),
+      entry({
+        slug: 'missing-order',
+        collection: 'selected',
+        date: '2026-02-01',
+      }),
+    ],
+    [
+      entry({
+        collection: 'selected',
+        date: '2026-01-01',
+        order: 1,
+        videoId: 'video-one',
+      }),
+      entry({
+        slug: 'duplicate-order',
+        collection: 'selected',
+        date: '2026-02-01',
+        order: 1,
+        videoId: 'video-two',
+      }),
     ],
   ];
 

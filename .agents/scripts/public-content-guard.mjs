@@ -2,6 +2,8 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { resolvePlaylistEditorialScope } from './lib/youtube-library-curation.mjs';
+import { loadStandaloneYoutubeEvidence } from './lib/youtube-standalone-evidence.mjs';
 
 const resourceTypes = new Set(['article', 'playlist', 'podcast', 'video']);
 const resourceTopics = new Set([
@@ -486,6 +488,8 @@ const readTrackedLibrary = async (repoRoot, notices) => {
   const videoStatuses = new Map();
   const playlistIds = new Set();
   const playlistStatuses = new Map();
+  const playlistScopes = new Map();
+  const standaloneEligibleVideoIds = new Set();
 
   for (const playlist of catalog.playlists) {
     playlistIds.add(playlist.id);
@@ -509,15 +513,34 @@ const readTrackedLibrary = async (repoRoot, notices) => {
         );
       }
     }
-    const overview = await readFile(
-      path.join(youtubeRoot, 'playlists', playlist.slug, 'overview.md'),
-      'utf8',
-    );
-    playlistStatuses.set(
-      playlist.id,
-      readFrontmatter(overview).status ?? 'draft',
-    );
+    const scope = resolvePlaylistEditorialScope(playlist, manifest);
+    playlistScopes.set(playlist.id, scope);
+    if (scope.mode === 'curated' && scope.status === 'reviewed') {
+      for (const videoId of scope.selectedVideoIds) {
+        standaloneEligibleVideoIds.add(videoId);
+      }
+    }
+    try {
+      const overview = await readFile(
+        path.join(youtubeRoot, 'playlists', playlist.slug, 'overview.md'),
+        'utf8',
+      );
+      playlistStatuses.set(
+        playlist.id,
+        readFrontmatter(overview).status ?? 'draft',
+      );
+    } catch (error) {
+      if (error.code !== 'ENOENT') {
+        throw error;
+      }
+      playlistStatuses.set(playlist.id, 'missing');
+    }
   }
+
+  const standaloneEvidence = await loadStandaloneYoutubeEvidence({
+    repoRoot,
+    videoIds: standaloneEligibleVideoIds,
+  });
 
   for (const videoId of videoIds) {
     try {
@@ -530,14 +553,36 @@ const readTrackedLibrary = async (repoRoot, notices) => {
       if (error.code !== 'ENOENT') {
         throw error;
       }
-      videoStatuses.set(videoId, 'missing');
+      videoStatuses.set(
+        videoId,
+        standaloneEvidence.byVideoId.has(videoId) ? 'reviewed' : 'missing',
+      );
     }
   }
 
-  return { videoIds, videoStatuses, playlistIds, playlistStatuses };
+  return {
+    catalog,
+    playlistIds,
+    playlistScopes,
+    playlistStatuses,
+    standaloneErrors: standaloneEvidence.errors,
+    videoIds,
+    videoStatuses,
+  };
 };
 
-const validateResources = async (repoRoot, errors) => {
+const playlistIdFromUrl = (value) => {
+  try {
+    const url = new URL(value);
+    return url.hostname.endsWith('youtube.com')
+      ? url.searchParams.get('list')
+      : undefined;
+  } catch {
+    return undefined;
+  }
+};
+
+const validateResources = async (repoRoot, errors, tracked) => {
   const resourcePath = path.join(
     repoRoot,
     'src/data/resources/coding-with-agents.json',
@@ -598,10 +643,12 @@ const validateResources = async (repoRoot, errors) => {
     '.md',
   );
   const summarizedResourceIds = new Set();
+  const collectionItemsByResourceId = new Map();
   for (const summaryFile of summaryFiles) {
     const relativePath = path.relative(repoRoot, summaryFile);
     const summary = await readFile(summaryFile, 'utf8');
-    const resourceId = readFrontmatter(summary).resourceId;
+    const fields = readFrontmatter(summary);
+    const resourceId = fields.resourceId;
     if (!Number.isInteger(resourceId)) {
       errors.push(`${relativePath} has no valid integer resourceId`);
     } else if (!resourceIds.has(resourceId)) {
@@ -611,10 +658,97 @@ const validateResources = async (repoRoot, errors) => {
     } else {
       summarizedResourceIds.add(resourceId);
     }
+
+    const curatedCollectionFields = ['order', 'videoId'].filter(
+      (key) => fields[key] !== undefined,
+    );
+    if (curatedCollectionFields.length === 0) {
+      continue;
+    }
+    if (
+      typeof fields.collection !== 'string' ||
+      fields.collection.length === 0 ||
+      !Number.isInteger(fields.order) ||
+      fields.order <= 0 ||
+      typeof fields.videoId !== 'string' ||
+      fields.videoId.length === 0
+    ) {
+      errors.push(
+        `${relativePath} collection metadata requires a non-empty collection and videoId plus a positive integer order`,
+      );
+      continue;
+    }
+    const items = collectionItemsByResourceId.get(resourceId) ?? [];
+    items.push({
+      collection: fields.collection,
+      order: fields.order,
+      path: relativePath,
+      videoId: fields.videoId,
+    });
+    collectionItemsByResourceId.set(resourceId, items);
   }
   for (const resourceId of resourceIds) {
     if (!summarizedResourceIds.has(resourceId)) {
       errors.push(`resource id ${resourceId} has no public summary`);
+    }
+  }
+
+  const resourcesById = new Map(
+    resources.map((resource) => [resource.id, resource]),
+  );
+  const playlistsById = new Map(
+    tracked.catalog.playlists.map((playlist) => [playlist.id, playlist]),
+  );
+  for (const [resourceId, items] of collectionItemsByResourceId) {
+    const resource = resourcesById.get(resourceId);
+    if (resource?.type !== 'playlist') {
+      errors.push(`collection resource id ${resourceId} must be a playlist`);
+      continue;
+    }
+    if (new Set(items.map((item) => item.collection)).size !== 1) {
+      errors.push(
+        `collection resource id ${resourceId} uses multiple collection names`,
+      );
+    }
+    if (new Set(items.map((item) => item.order)).size !== items.length) {
+      errors.push(
+        `collection resource id ${resourceId} has duplicate order values`,
+      );
+    }
+    if (new Set(items.map((item) => item.videoId)).size !== items.length) {
+      errors.push(
+        `collection resource id ${resourceId} has duplicate video IDs`,
+      );
+    }
+
+    const playlistId = playlistIdFromUrl(resource.url);
+    const playlist = playlistsById.get(playlistId);
+    const scope = tracked.playlistScopes.get(playlistId);
+    if (!playlist || scope?.mode !== 'curated' || scope.status !== 'reviewed') {
+      errors.push(
+        `collection resource id ${resourceId} must resolve to a reviewed curated playlist`,
+      );
+      continue;
+    }
+    const actualVideoIds = items
+      .toSorted((left, right) => left.order - right.order)
+      .map((item) => item.videoId);
+    if (
+      actualVideoIds.length !== scope.selectedVideoIds.length ||
+      actualVideoIds.some(
+        (videoId, index) => videoId !== scope.selectedVideoIds[index],
+      )
+    ) {
+      errors.push(
+        `collection resource id ${resourceId} video IDs and order must exactly match ${playlist.slug} reviewed curation`,
+      );
+    }
+    for (const item of items) {
+      if (tracked.videoStatuses.get(item.videoId) !== 'reviewed') {
+        errors.push(
+          `${item.path} selected video ${item.videoId} has no reviewed source evidence`,
+        );
+      }
     }
   }
 
@@ -635,8 +769,21 @@ export const runPublicContentGuard = async ({
   const activeExceptions =
     exceptions ?? (repoRoot === defaultRepoRoot ? publicSourceExceptions : []);
   const tracked = await readTrackedLibrary(repoRoot, notices);
+  errors.push(...tracked.standaloneErrors);
+  for (const [playlistId, scope] of tracked.playlistScopes) {
+    errors.push(...scope.errors);
+    if (
+      scope.mode === 'curated' &&
+      scope.status !== 'reviewed' &&
+      tracked.playlistStatuses.get(playlistId) === 'reviewed'
+    ) {
+      errors.push(
+        `tracked playlist ${playlistId} has a reviewed overview before its curation is reviewed`,
+      );
+    }
+  }
   errors.push(...validateExceptions(activeExceptions, tracked));
-  const resourceValidation = await validateResources(repoRoot, errors);
+  const resourceValidation = await validateResources(repoRoot, errors, tracked);
   await validateDurableContextImageDeck(repoRoot, errors);
 
   const publicFiles = [

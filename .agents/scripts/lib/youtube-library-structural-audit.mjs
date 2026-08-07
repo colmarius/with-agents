@@ -4,6 +4,9 @@ import {
   libraryRoot as defaultLibraryRoot,
   validateCatalog,
 } from './youtube-library-core.mjs';
+import { resolvePlaylistEditorialScope } from './youtube-library-curation.mjs';
+import { loadStandaloneYoutubeEvidence } from './youtube-standalone-evidence.mjs';
+import { rootDir as defaultRepoRoot } from './youtube-transcript-core.mjs';
 
 const allowedStatuses = new Set(['draft', 'reviewed']);
 const summaryHeadings = [
@@ -138,7 +141,9 @@ const validateSynthesisLabels = ({
     ) {
       continue;
     }
-    if (!/\]\([^)]*videos\/[^/)]+\/summary\.md\)/.test(line)) {
+    if (
+      !/\]\([^)]*(?:videos\/[^/)]+\/summary|summaries\/[^)]+)\.md\)/.test(line)
+    ) {
       errors.push(
         `${file} synthesis bullet must start with Editorial: or link a video summary`,
       );
@@ -202,12 +207,21 @@ const validateAnchors = (contents, transcriptAnchors, file, errors) => {
   }
 };
 
-const validateRelativeLinks = async (contents, filePath, root, errors) => {
+const validateRelativeLinks = async (
+  contents,
+  filePath,
+  root,
+  errors,
+  allowedExternalTargets = new Set(),
+) => {
   const expression = /\]\((?!https?:\/\/|mailto:|#)([^)\s#]+)(?:#[^)]+)?\)/g;
   for (const match of contents.matchAll(expression)) {
     const target = path.resolve(path.dirname(filePath), match[1]);
     const targetRelative = path.relative(root, target);
-    if (targetRelative.startsWith('..') || path.isAbsolute(targetRelative)) {
+    if (
+      (targetRelative.startsWith('..') || path.isAbsolute(targetRelative)) &&
+      !allowedExternalTargets.has(target)
+    ) {
       errors.push(
         `${relativePath(root, filePath)} link ${match[1]} escapes the library root`,
       );
@@ -271,6 +285,7 @@ const validateCoveredIds = ({
 
 export const auditYoutubeLibraryStructure = async ({
   libraryRoot = defaultLibraryRoot,
+  repoRoot = defaultRepoRoot,
 } = {}) => {
   const errors = [];
   const notices = [];
@@ -315,6 +330,7 @@ export const auditYoutubeLibraryStructure = async ({
 
   const trackedVideoIds = new Set();
   const membershipsByVideoId = new Map();
+  const scopesByPlaylistId = new Map();
   const playlistVideoIds = new Map();
   const playlistSummaries = new Map();
   for (const playlist of catalog.playlists) {
@@ -379,11 +395,28 @@ export const auditYoutubeLibraryStructure = async ({
         );
       }
     }
+    const scope = resolvePlaylistEditorialScope(playlist, manifest);
+    errors.push(...scope.errors);
+    scopesByPlaylistId.set(playlist.id, scope);
     playlistVideoIds.set(playlist.id, ids);
   }
   stats.uniqueVideos = trackedVideoIds.size;
 
+  const standaloneEligibleVideoIds = new Set(
+    [...scopesByPlaylistId.values()].flatMap((scope) =>
+      scope.mode === 'curated' && scope.status === 'reviewed'
+        ? scope.selectedVideoIds
+        : [],
+    ),
+  );
+  const standaloneEvidence = await loadStandaloneYoutubeEvidence({
+    repoRoot,
+    videoIds: standaloneEligibleVideoIds,
+  });
+  errors.push(...standaloneEvidence.errors);
+
   const summarizedVideoIds = new Set();
+  const summaryStatuses = new Map();
   for (const videoId of trackedVideoIds) {
     const videoDirectory = path.join(libraryRoot, 'videos', videoId);
     const metadataFile = path.join(videoDirectory, 'metadata.json');
@@ -455,6 +488,7 @@ export const auditYoutubeLibraryStructure = async ({
       summaryName,
       errors,
     );
+    summaryStatuses.set(videoId, summaryFrontmatter.fields.get('status'));
     const expectedSummaryKeys = [
       'title',
       'videoId',
@@ -527,10 +561,37 @@ export const auditYoutubeLibraryStructure = async ({
   }
 
   for (const playlist of catalog.playlists) {
-    const ids = playlistVideoIds.get(playlist.id) ?? new Set();
+    const allIds = playlistVideoIds.get(playlist.id) ?? new Set();
+    const scope = scopesByPlaylistId.get(playlist.id) ?? {
+      mode: 'full',
+      status: 'reviewed',
+      selectedVideoIds: [...allIds],
+      errors: [],
+    };
+    const ids =
+      scope.mode === 'curated' ? new Set(scope.selectedVideoIds) : allIds;
+    const allowsStandaloneEvidence =
+      scope.mode === 'curated' && scope.status === 'reviewed';
     const summaries = new Set(
-      [...ids].filter((videoId) => summarizedVideoIds.has(videoId)),
+      [...ids].filter(
+        (videoId) =>
+          summarizedVideoIds.has(videoId) ||
+          (allowsStandaloneEvidence &&
+            standaloneEvidence.byVideoId.has(videoId)),
+      ),
     );
+    if (allowsStandaloneEvidence) {
+      for (const videoId of ids) {
+        const hasReviewedEvidence = summarizedVideoIds.has(videoId)
+          ? summaryStatuses.get(videoId) === 'reviewed'
+          : standaloneEvidence.byVideoId.has(videoId);
+        if (!hasReviewedEvidence) {
+          errors.push(
+            `Playlist ${playlist.slug} selected video ${videoId} has no reviewed source evidence.`,
+          );
+        }
+      }
+    }
     playlistSummaries.set(playlist.id, summaries);
     const overviewFile = path.join(
       libraryRoot,
@@ -541,7 +602,9 @@ export const auditYoutubeLibraryStructure = async ({
     const overviewSource = await readOptional(overviewFile);
     const overviewName = relativePath(libraryRoot, overviewFile);
     if (overviewSource === undefined) {
-      errors.push(`${overviewName} is missing`);
+      if (scope.mode !== 'curated' || scope.status === 'reviewed') {
+        errors.push(`${overviewName} is missing`);
+      }
       continue;
     }
     const frontmatter = parseFrontmatter(overviewSource, overviewName, errors);
@@ -574,6 +637,16 @@ export const auditYoutubeLibraryStructure = async ({
       overviewFile,
       libraryRoot,
       errors,
+      new Set(
+        allowsStandaloneEvidence
+          ? [...ids]
+              .map(
+                (videoId) =>
+                  standaloneEvidence.byVideoId.get(videoId)?.summaryPath,
+              )
+              .filter(Boolean)
+          : [],
+      ),
     );
   }
 

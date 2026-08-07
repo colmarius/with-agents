@@ -97,10 +97,10 @@ bounded to the approved subset and reuses valid standalone evidence.
 
 ## Open Questions
 
-- [ ] Does “one consolidated playlist resource” mean removing standalone
+- [x] Does “one consolidated playlist resource” mean removing standalone
       resource cards 25 and 31 and showing their summaries inside the playlist
-      modal? Recommended: yes.
-- [ ] Is the proposed five-video ordered list approved as written?
-- [ ] Confirm the required explicit playlist settings:
+      modal? Approved: yes.
+- [x] Is the proposed five-video ordered list approved as written?
+- [x] Confirm the required explicit playlist settings:
       `transcriptLanguage: en`, `summaryLanguage: en`, and
       `multiSpeaker: true`.

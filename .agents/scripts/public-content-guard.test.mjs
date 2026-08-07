@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
@@ -416,6 +416,169 @@ draft: false
     assert.match(errors, /invalid topic invalid-topic/);
     assert.match(errors, /references missing resourceId 99/);
     assert.match(errors, /resource id 1 has no public summary/);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('guard requires public collection metadata to exactly match reviewed playlist curation', async () => {
+  const root = await createFixture({
+    post: `---
+title: 'Post'
+draft: false
+---
+`,
+  });
+  try {
+    const catalogPath = path.join(root, 'src/content/youtube/catalog.json');
+    const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+    catalog.playlists[0].curation = {
+      status: 'reviewed',
+      videoIds: ['-LeadingId1', 'AbCdEfGhI12'],
+    };
+    await writeFixture(root, 'src/content/youtube/catalog.json', catalog);
+    const manifestPath = path.join(
+      root,
+      'src/content/youtube/playlists/fixture/manifest.json',
+    );
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    manifest.entries = manifest.entries.map((entry) => ({
+      ...entry,
+      available: true,
+    }));
+    await writeFixture(
+      root,
+      'src/content/youtube/playlists/fixture/manifest.json',
+      manifest,
+    );
+    await writeFixture(
+      root,
+      'src/content/summaries/summary.md',
+      `---
+title: "First selected video"
+resourceId: 1
+collection: "fixture-selection"
+order: 1
+videoId: "-LeadingId1"
+---
+`,
+    );
+    await writeFixture(
+      root,
+      'src/content/summaries/second.md',
+      `---
+title: "Second selected video"
+resourceId: 1
+collection: "fixture-selection"
+order: 2
+videoId: "AbCdEfGhI12"
+---
+`,
+    );
+
+    const passing = await runPublicContentGuard({ repoRoot: root });
+    assert.deepEqual(passing.errors, []);
+
+    await writeFixture(
+      root,
+      'src/content/summaries/second.md',
+      `---
+title: "Second selected video"
+resourceId: 1
+collection: "fixture-selection"
+order: 1
+videoId: "AbCdEfGhI12"
+---
+`,
+    );
+    const failing = await runPublicContentGuard({ repoRoot: root });
+    const message = failing.errors.join('\n');
+    assert.match(message, /duplicate order values/);
+    assert.match(message, /video IDs and order must exactly match/);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('guard does not let standalone evidence satisfy an uncurated playlist video', async () => {
+  const root = await createFixture({
+    post: `---
+title: 'Post'
+draft: false
+---
+`,
+    resourceValue: resources({
+      type: 'video',
+      url: 'https://www.youtube.com/watch?v=AbCdEfGhI12',
+    }),
+  });
+  try {
+    await rm(
+      path.join(root, 'src/content/youtube/videos/AbCdEfGhI12/summary.md'),
+    );
+    await writeFixture(
+      root,
+      'src/content/transcripts/summary.md',
+      `---
+title: "Standalone"
+summarySlug: "summary"
+sourceUrl: "https://www.youtube.com/watch?v=AbCdEfGhI12"
+videoId: "AbCdEfGhI12"
+capturedAt: "2026-07-31T00:00:00.000Z"
+---
+`,
+    );
+
+    const result = await runPublicContentGuard({ repoRoot: root });
+    assert.match(
+      result.errors.join('\n'),
+      /cites tracked video AbCdEfGhI12 with source status missing/,
+    );
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('guard permits draft curation without a playlist overview', async () => {
+  const root = await createFixture({
+    post: `---
+title: 'Post'
+draft: false
+---
+`,
+    resourceValue: resources({
+      type: 'article',
+      url: 'https://example.com/article',
+    }),
+  });
+  try {
+    const catalogPath = path.join(root, 'src/content/youtube/catalog.json');
+    const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+    catalog.playlists[0].curation = {
+      status: 'draft',
+      videoIds: ['AbCdEfGhI12'],
+    };
+    await writeFixture(root, 'src/content/youtube/catalog.json', catalog);
+    const manifestPath = path.join(
+      root,
+      'src/content/youtube/playlists/fixture/manifest.json',
+    );
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    manifest.entries = manifest.entries.map((entry) => ({
+      ...entry,
+      available: true,
+    }));
+    await writeFixture(
+      root,
+      'src/content/youtube/playlists/fixture/manifest.json',
+      manifest,
+    );
+    await rm(
+      path.join(root, 'src/content/youtube/playlists/fixture/overview.md'),
+    );
+
+    const result = await runPublicContentGuard({ repoRoot: root });
+    assert.deepEqual(result.errors, []);
   } finally {
     await rm(root, { recursive: true, force: true });
   }

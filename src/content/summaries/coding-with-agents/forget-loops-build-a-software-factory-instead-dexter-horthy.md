@@ -1,7 +1,10 @@
 ---
 title: "“Forget Loops, build a Software Factory instead” – Dexter Horthy"
-resourceId: 31
+resourceId: 32
 date: "2026-08-07"
+collection: "david-ondrej-agentic-engineering"
+order: 1
+videoId: "xgkjtF89-44"
 ---
 
 Dex Horthy explains why an effective software factory is not a contest to run more agents or spend more tokens. The useful goal is faster delivery of maintainable value, with humans applying product and engineering judgment before generated code makes the expensive decisions.

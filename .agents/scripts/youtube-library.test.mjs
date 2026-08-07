@@ -39,6 +39,7 @@ import {
   validateCatalog,
   writeManifestAtomic,
 } from './lib/youtube-library-core.mjs';
+import { resolvePlaylistEditorialScope } from './lib/youtube-library-curation.mjs';
 
 const validCatalog = () => ({
   publication: 'source-only',
@@ -237,6 +238,7 @@ test('loads and validates the committed source-only catalog', async () => {
       'ai-engineer-agent-reliability-2025',
       'ai-engineer-coding-agents',
       'mayank-gupta-west-coast-builders',
+      'david-ondrej-coding-agents',
     ],
   );
 });
@@ -328,6 +330,101 @@ test('catalog validation requires exactly one playlist attribution mode', () => 
     () => validateCatalog(conflicting),
     /cannot have both an author relationship and multiSpeaker: true/,
   );
+});
+
+test('catalog validation strictly validates optional playlist curation', () => {
+  const catalogWith = (curation) => {
+    const catalog = validCatalog();
+    catalog.playlists[0].curation = curation;
+    return catalog;
+  };
+
+  for (const curation of [null, [], 'reviewed']) {
+    assert.throws(
+      () => validateCatalog(catalogWith(curation)),
+      /curation must be an object/,
+    );
+  }
+  assert.throws(
+    () =>
+      validateCatalog(
+        catalogWith({ status: 'reviewed', videoIds: [], extra: true }),
+      ),
+    /exactly status and videoIds/,
+  );
+  assert.throws(
+    () => validateCatalog(catalogWith({ status: 'published', videoIds: [] })),
+    /status must be draft or reviewed/,
+  );
+  assert.throws(
+    () => validateCatalog(catalogWith({ status: 'reviewed', videoIds: [] })),
+    /must not be empty/,
+  );
+  assert.throws(
+    () =>
+      validateCatalog(
+        catalogWith({ status: 'draft', videoIds: ['not-a-video-id'] }),
+      ),
+    /must be a YouTube video ID/,
+  );
+  assert.throws(
+    () =>
+      validateCatalog(
+        catalogWith({
+          status: 'draft',
+          videoIds: ['AbCdEfGhI12', 'AbCdEfGhI12'],
+        }),
+      ),
+    /values must be unique/,
+  );
+  assert.equal(
+    validateCatalog(catalogWith({ status: 'draft', videoIds: ['AbCdEfGhI12'] }))
+      .playlists[0].curation.status,
+    'draft',
+  );
+});
+
+test('reviewed playlist curation preserves approved order and validates manifest membership', () => {
+  const playlist = {
+    ...validCatalog().playlists[0],
+    curation: {
+      status: 'reviewed',
+      videoIds: ['SeLeCtEd002', 'SeLeCtEd001', 'MiSsInG0003'],
+    },
+  };
+  const manifest = {
+    playlistId: playlist.id,
+    entries: [
+      availableEntry('SeLeCtEd001', 0),
+      availableEntry('UnSeLeCt003', 1),
+      availableEntry('SeLeCtEd002', 2),
+      {
+        ...availableEntry('MiSsInG0003', 3),
+        available: false,
+        unavailableReason: 'private',
+      },
+    ],
+  };
+
+  const scope = resolvePlaylistEditorialScope(playlist, manifest);
+  assert.deepEqual(scope.selectedVideoIds, [
+    'SeLeCtEd002',
+    'SeLeCtEd001',
+    'MiSsInG0003',
+  ]);
+  assert.deepEqual(
+    scope.activeEntries.map((entry) => entry.videoId),
+    ['SeLeCtEd002', 'SeLeCtEd001'],
+  );
+  assert.deepEqual(scope.unselectedVideoIds, ['UnSeLeCt003']);
+  assert.deepEqual(scope.errors, [
+    'Playlist playlist curation references unavailable video MiSsInG0003.',
+  ]);
+
+  playlist.curation.videoIds = ['NoTInList01'];
+  assert.deepEqual(resolvePlaylistEditorialScope(playlist, manifest).errors, [
+    'Playlist playlist curation references missing video NoTInList01.',
+  ]);
 });
 
 test('library paths cannot escape the fixed root', () => {
@@ -1463,6 +1560,175 @@ test('capture remains playlist-based for multi-speaker playlists and dash-leadin
     readFile(paths.videoPathForFile('first-video', 'transcript.md'), 'utf8'),
     { code: 'ENOENT' },
   );
+});
+
+test('curated capture is inactive while draft and processes only reviewed selected videos', async (t) => {
+  const root = await mkdtemp(
+    path.join(os.tmpdir(), 'youtube-capture-curated-'),
+  );
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  catalog.playlists[0].curation = {
+    status: 'draft',
+    videoIds: ['SeLeCtEd001'],
+  };
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('UnSeLeCt002', 0),
+    availableEntry('SeLeCtEd001', 1),
+  ]);
+  let fetches = 0;
+  const fetchVideoImpl = async (input) => {
+    fetches += 1;
+    return successfulTranscript(new URL(input).searchParams.get('v'));
+  };
+
+  const draft = await captureCatalogVideos({
+    catalog,
+    ...paths,
+    fetchVideoImpl,
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(draft.queued, 0);
+  assert.equal(fetches, 0);
+  await assert.rejects(
+    captureCatalogVideos({
+      catalog,
+      playlistSlugs: ['playlist'],
+      ...paths,
+      fetchVideoImpl,
+    }),
+    /draft curation.*review.*before capture/i,
+  );
+
+  catalog.playlists[0].curation.status = 'reviewed';
+  const reviewed = await captureCatalogVideos({
+    catalog,
+    ...paths,
+    fetchVideoImpl,
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(reviewed.queued, 1);
+  assert.equal(fetches, 1);
+  assert.equal(reviewed.results[0].videoId, 'SeLeCtEd001');
+  await assert.rejects(
+    readFile(paths.videoPathForFile('UnSeLeCt002', 'transcript.md'), 'utf8'),
+    { code: 'ENOENT' },
+  );
+
+  const status = await buildLibraryStatus({ catalog, ...paths });
+  assert.deepEqual(status.playlists[0].curation, {
+    status: 'reviewed',
+    candidates: 1,
+    selected: 1,
+    unselected: 1,
+    errors: [],
+  });
+  assert.deepEqual(status.playlists[0].states, {
+    captured: 1,
+    pending: 0,
+    unavailable: 0,
+  });
+});
+
+test('force capture still reuses standalone-only evidence without creating local duplicates', async (t) => {
+  const root = await mkdtemp(
+    path.join(os.tmpdir(), 'youtube-capture-standalone-'),
+  );
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  catalog.playlists[0].curation = {
+    status: 'reviewed',
+    videoIds: ['StAnDaLoNe1'],
+  };
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('StAnDaLoNe1', 0),
+  ]);
+  let fetches = 0;
+
+  const result = await captureCatalogVideos({
+    catalog,
+    force: true,
+    playlistSlugs: ['playlist'],
+    standaloneEvidenceByVideoId: new Map([
+      ['StAnDaLoNe1', { videoId: 'StAnDaLoNe1' }],
+    ]),
+    ...paths,
+    fetchVideoImpl: async () => {
+      fetches += 1;
+      return successfulTranscript('StAnDaLoNe1');
+    },
+  });
+
+  assert.equal(result.queued, 0);
+  assert.equal(fetches, 0);
+  await assert.rejects(
+    readFile(paths.videoPathForFile('StAnDaLoNe1', 'transcript.md'), 'utf8'),
+    { code: 'ENOENT' },
+  );
+});
+
+test('an uncurated membership requires library capture when only its curated sibling is selected', async (t) => {
+  const root = await mkdtemp(
+    path.join(os.tmpdir(), 'youtube-capture-uncurated-'),
+  );
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = multiPlaylistCatalog();
+  catalog.playlists[0].curation = {
+    status: 'reviewed',
+    videoIds: ['StAnDaLoNe1'],
+  };
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('StAnDaLoNe1', 0),
+  ]);
+  await writeManifestFixture(paths, catalog.playlists[1], [
+    availableEntry('StAnDaLoNe1', 0),
+  ]);
+  const standaloneEvidenceByVideoId = new Map([
+    ['StAnDaLoNe1', { videoId: 'StAnDaLoNe1' }],
+  ]);
+
+  const beforeCapture = await buildLibraryStatus({
+    catalog,
+    standaloneEvidenceByVideoId,
+    ...paths,
+  });
+  assert.deepEqual(beforeCapture.playlists[0].states, {
+    captured: 1,
+    pending: 0,
+    unavailable: 0,
+  });
+  assert.equal(beforeCapture.playlists[0].standaloneReused, 1);
+  assert.deepEqual(beforeCapture.playlists[1].states, {
+    captured: 0,
+    pending: 1,
+    unavailable: 0,
+  });
+  assert.deepEqual(beforeCapture.playlists[1].summaries, {
+    missing: 0,
+    draft: 0,
+    reviewed: 0,
+  });
+
+  let fetches = 0;
+  const result = await captureCatalogVideos({
+    catalog,
+    playlistSlugs: ['playlist'],
+    standaloneEvidenceByVideoId,
+    ...paths,
+    fetchVideoImpl: async () => {
+      fetches += 1;
+      return successfulTranscript('StAnDaLoNe1');
+    },
+    sleep: async () => {},
+    now: fixedNow,
+  });
+  assert.equal(result.queued, 1);
+  assert.equal(fetches, 1);
 });
 
 test('capture fails before fetching for missing manifests and conflicting languages', async (t) => {
