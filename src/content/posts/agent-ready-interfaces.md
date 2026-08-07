@@ -86,6 +86,11 @@ change requires. This article's narrower obligation is to expose the real compil
 renderer, calculation engine, runtime, or fixture suite in a form the agent can run
 and interpret.
 
+Faithful feedback also requires protecting the expectations that define success.
+Kent Beck reports an agent trying to erase a mismatch by changing the expected test
+value, and says some expectations need an explicit immutable marker
+([00:49:33–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=2973s)).
+
 ## Reset and retry are interface features
 
 > Recovery should return to a known state, not ask a polluted loop to become wiser indefinitely.
@@ -161,5 +166,6 @@ gate the consequence. Then test the interface with representative work.
 - [Nuno Campos, “Teaching Coding Agents to Do Spreadsheets”](https://www.youtube.com/watch?v=HEFSExa0xl0), a Witan Labs presenter report; especially [00:04:21–00:11:50] on composable REPL state and feedback fidelity.
 - [Lawrence Jones, “Fighting AI with AI”](https://www.youtube.com/watch?v=L2r6vLlLgs8), an incident.io internal-tools account; especially [00:05:46–00:12:28] on narrow evaluation commands and filesystem-shaped debugging data.
 - [Morgante Pell, “Code Generation and Maintenance at Scale”](https://www.youtube.com/watch?v=Ve-akpov78Q), a Grit product talk; especially [00:13:36–00:15:43] on restoring known-good checkpoints.
+- [Kent Beck, “TDD, AI agents and coding with Kent Beck”](https://www.youtube.com/watch?v=aSXaxOdVtAQ), a practitioner interview; especially [00:49:33–00:51:42] on protecting supplied expectations from agent modification.
 - [Matthias Luebken, “A Piece of Pi”](https://www.youtube.com/watch?v=vAIDdLKB6-w), an evolving embedded-agent demonstration; especially [00:07:27–00:08:28] and [00:15:17–00:19:12] on pre-tool hooks, CLIs, sandboxes, sessions, and editable drafts.
 - [Chris Parsons, “Ralph Loops: Build Dumb AI Loops That Ship”](https://www.youtube.com/watch?v=2TLXsxkz0zI), a workshop rather than a controlled evaluation; especially [00:52:14–00:54:11] on separate credentials and draft-only email access.
