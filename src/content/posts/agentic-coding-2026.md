@@ -60,7 +60,8 @@ targeted tests
 
 Simon Willison's Pragmatic Summit workflow starts with red-green test-driven development: tell the agent how to run the tests, make it write or identify the failing proof, then implement only enough to pass [00:04:41]-[00:06:44]. He then makes agents exercise the real system, because passing tests do not prove a server boots or an API behaves [00:06:44]-[00:07:33]. For standards work he uses conformance suites; for risky execution he stresses sandboxing and mock data instead of production data [00:07:33]-[00:18:35].
 
-The series rule is simple: no proof, no merge. Different tasks need different proof. A copy edit needs rendered output and a link check. A helper bug needs a failing test that turns green. A UI change may need a screenshot or trace. A parser or upload path may need fixtures or conformance checks. A security, migration, billing, or data change needs boundaries plus a human decision. The tactical ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it); the field-guide headline is to ask for evidence before the agent optimizes for being done.
+The series rule is simple: no proof, no merge, and no treating an agent-edited
+expectation as independent proof. Different tasks need different proof. A copy edit needs rendered output and a link check. A helper bug needs a failing test that turns green. A UI change may need a screenshot or trace. A parser or upload path may need fixtures or conformance checks. A security, migration, billing, or data change needs boundaries plus a human decision. The tactical ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it); the field-guide headline is to ask for evidence before the agent optimizes for being done.
 
 ## Keep good friction and shape the codebase as infrastructure
 
