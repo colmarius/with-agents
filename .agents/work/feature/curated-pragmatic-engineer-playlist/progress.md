@@ -52,3 +52,26 @@
 
 - Capture only `CQmI4XKTa0U`, `Usufn8IQJgw`, `julbw1JuAz0`, and
   `xHHlhoRC8W4`, then perform the dedicated source-evidence review gate.
+
+## 2026-08-07 — Source-evidence drafts ready for human review
+
+- The bounded curated capture processed exactly the four approved missing
+  videos: `CQmI4XKTa0U`, `Usufn8IQJgw`, `julbw1JuAz0`, and `xHHlhoRC8W4`.
+- All four captures use the approved English transcript language and report
+  English auto-generated captions. The command did not recapture the two
+  validated standalone reuse sources or any of the 65 unselected videos.
+- Drafted transcript-checked, timestamp-anchored English source summaries for
+  Martin Fowler, Dex Horthy, Boris Cherny, and Laura Tacho. Claims preserve
+  speaker attribution and distinguish practitioner reports, vendor/customer
+  findings, forecasts, and editorial limitations from established facts.
+- The source summaries remain `status: draft`. No playlist overview, public
+  summary, public resource, collection metadata, or standalone fold changed.
+- Public content guard passes. Structural audit resolves every new transcript
+  anchor after correcting one non-existent Martin Fowler endpoint; its only
+  expected remaining failures are the four unreviewed selected sources and the
+  intentionally missing overview.
+
+## Next action
+
+- Obtain explicit human review of all four source summaries. Do not mark them
+  reviewed or create the playlist overview until that gate is approved.

@@ -21,9 +21,9 @@ consolidate approved selected summaries under one ordered playlist resource.
 
 ## Next Action
 
-- Capture only the four approved selected videos without validated standalone
-  reuse, then complete and record the dedicated source-evidence review before
-  creating the playlist overview or changing public resources.
+- Obtain human review of the four draft transcript-backed source summaries.
+  Only after explicit source-evidence approval, promote those summaries to
+  reviewed and begin the independently gated playlist overview.
 
 ## Open Questions
 
@@ -35,3 +35,4 @@ consolidate approved selected summaries under one ordered playlist resource.
 - [x] Approved folding resources 11 and 30 into the collection while retaining
       resource 14 as a standalone card because its video is not a playlist
       member.
+- [ ] Human review of the four newly captured source summaries.
