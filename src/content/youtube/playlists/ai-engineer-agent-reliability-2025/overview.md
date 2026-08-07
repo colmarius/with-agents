@@ -1,6 +1,6 @@
 ---
 title: "Agent Reliability: AI Engineer World's Fair 2025"
-status: draft
+status: reviewed
 coveredVideoIds:
   - 8kMaTybvDUw
   - kTnfJszFxCg
@@ -26,7 +26,7 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Preeti Somal (Temporal) presents agentic applications as distributed systems whose long-running state, parallel work, tool calls, human interaction, and unreliable dependencies require durable orchestration. ([summary](../../videos/1izYWsokr9s/summary.md))
 - Itamar Friedman (Qodo) argues that production confidence comes from composable end-to-end workflows connecting context, generation, testing, review, organizational practices, and explicit success criteria. ([summary](../../videos/n991Yxo1aOI/summary.md))
 - Danielle Perszyk (Amazon AGI) frames reliability as both controllable atomic action and alignment with human goals, agency, creativity, productivity, strategic thinking, and flow. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
-- Yogendra Miraje (FactSet) presents a blueprint-based planning architecture that constrains tools, reduces planner load, exposes a reviewable high-level plan, and evaluates components as well as end-to-end behavior. ([summary](../../videos/sl3icG-IjHo/summary.md))
+- Yogendra Miraje (FactSet) presents a blueprint-based planning architecture that constrains tools, reduces planner load, exposes an interpretable high-level plan, and evaluates components as well as end-to-end behavior. ([summary](../../videos/sl3icG-IjHo/summary.md))
 - Antje Barth (AWS) presents a model-driven approach in which capable models select actions while developers define agent purpose, tools, model providers, and cloud deployment. ([summary](../../videos/WJjInLeaJjo/summary.md))
 - Editorial: Across the 8 incorporated talks, reliability spans software control, expected value, selective determinism, durable execution, explicit planning, scalable tool and deployment infrastructure, lifecycle verification, and human outcomes.
 
@@ -37,10 +37,10 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Sam Bhagwat (Mastra.ai) recommends adding narrower calls, deterministic sequencing, or workflow boundaries where an agent's nondeterministic behavior is unreliable. ([summary](../../videos/8SUJEqQNClw/summary.md))
 - Preeti Somal (Temporal) recommends code-defined workflows whose platform-managed state, retries, signals, queries, and history keep reliability plumbing separate from application business logic. ([summary](../../videos/1izYWsokr9s/summary.md))
 - Itamar Friedman (Qodo) recommends relevant codebase context, connected specialist workflows, testing, review, organizational practices, and explicit success and failure criteria. ([summary](../../videos/n991Yxo1aOI/summary.md))
-- Danielle Perszyk (Amazon AGI) recommends composing complex workflows from reliable atomic interactions with granular developer control and shared environmental state. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
+- Danielle Perszyk (Amazon AGI) recommends composing complex workflows from reliable atomic interactions with granular developer control and grounding in a shared environment. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
 - Yogendra Miraje (FactSet) recommends high-level natural-language blueprints, capability-oriented tool contracts, validation brakes, recursion limits, and aspect-specific evaluation. ([summary](../../videos/sl3icG-IjHo/summary.md))
 - Antje Barth (AWS) recommends retrieving relevant tools from large catalogs instead of placing every tool in model context and treats remote MCP deployment as ordinary authorized cloud infrastructure. ([summary](../../videos/WJjInLeaJjo/summary.md))
-- Editorial: All 8 incorporated talks support building broader agent behavior from observable, constrained components rather than treating model autonomy as sufficient evidence of reliability.
+- Editorial: Across the incorporated talks, a recurring pattern is to build broader behavior from inspectable or bounded components rather than treating model capability alone as evidence of reliability.
 - Dex Horthy (HumanLayer) makes human contact an explicit agent action and demonstrates human correction inside a deployment workflow. ([summary](../../videos/8kMaTybvDUw/summary.md))
 - Harrison Chase (LangChain/LangGraph) treats approval, correction, clarification, and rollback as interaction patterns that let background agents remain supervised without requiring step-by-step prompting. ([summary](../../videos/kTnfJszFxCg/summary.md))
 - Danielle Perszyk (Amazon AGI) argues that automation should increase human leverage and agency rather than merely transfer more decisions to an autonomous system. ([summary](../../videos/Dj0b_cEBHBI/summary.md))
@@ -83,4 +83,4 @@ AI Engineer is the curator and source channel for this multi-speaker playlist, n
 - Editorial: Treat remote tool protocols as production services with explicit identity, authorization, session, tenancy, observability, and deployment boundaries.
 - Editorial: Compose broader workflows from bounded actions and specialist stages, then test the behavior of the composition rather than assuming component reliability transfers automatically.
 - Editorial: Evaluate whether an agent increases human control, leverage, and decision quality in addition to measuring task completion and model capability.
-- Editorial: Treat this overview as a draft synthesis of all currently available videos; the private manifest entry remains unavailable.
+- Editorial: Treat this overview as a synthesis of all currently available videos; the private manifest entry remains unavailable.
