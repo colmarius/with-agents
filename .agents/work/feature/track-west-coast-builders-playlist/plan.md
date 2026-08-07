@@ -186,7 +186,7 @@ with one semantically accurate playlist summary collection.
     - `npm run content:guard`, `npm run check`, and `npm run build` pass without
       an exception for the playlist ID.
 
-- [ ] **Task 9: Add selected new public summaries**
+- [x] **Task 9: Add selected new public summaries**
   - Scope: `src/content/transcripts/coding-with-agents/`,
     `src/content/summaries/coding-with-agents/`
   - Depends on: Tasks 6 and 8
@@ -205,7 +205,7 @@ with one semantically accurate playlist summary collection.
       any later inclusion requires a transcript-based scope decision.
   - Notes: New public content never uses temporary guard exceptions.
 
-- [ ] **Task 10: Verify and close the work item**
+- [x] **Task 10: Verify and close the work item**
   - Scope: source library, public resources, work-item artifacts
   - Depends on: Tasks 1–9
   - Acceptance:

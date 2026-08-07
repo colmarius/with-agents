@@ -174,3 +174,49 @@
   numbered, and the browser console and page-error log are clean.
 - Tasks 7 and 8 are complete. Next action: Task 9, add the four reviewed new
   public summaries and transcript sidecars in bounded editorial changes.
+
+### Public editorial batches and Oracle review
+
+- Added public transcript/summary pairs for Peter Steinberger (`fu7th5HiADo`),
+  Li Yin (`5H862RhMgOU`), Ben Vinegar (`wbsDZpVB4Lg`), and Gil Feig
+  (`C6u5CBIXRf0`) in two bounded two-video commits. All four summaries use
+  resource 31, collection key `the-west-coast-builders`, and their actual
+  publication dates.
+- Compared each complete public transcript body byte-for-byte with its reviewed
+  source-library transcript. All four match; public copies differ only in the
+  required `summarySlug` frontmatter.
+- Kept product, evaluation, throughput, savings, and scale claims attributed as
+  personal reports or founder/company claims. Peter's summary explicitly notes
+  that the retitled video demonstrates VibeTunnel rather than OpenClaw.
+- Oracle's final review found two localized Gil Feig overstatements: the
+  100-worker claim was aspirational rather than team-level, and the interview
+  described local rather than proven-deterministic skills. Both were corrected
+  before the second batch was committed; Oracle found no other blockers.
+- Task 9 is complete. The four broader draft interviews remain source-only and
+  have no public resource, summary, transcript, or guard exception.
+
+### Final verification and completion
+
+- Final West Coast Builders source state: 11 manifest entries / 11 available /
+  11 captured / 0 pending / 0 caption-unavailable / 11 summaries / 7 reviewed /
+  4 draft / 11 incorporated / reviewed overview current.
+- Final public collection: seven summaries for Peter Steinberger, Mario
+  Zechner, Quinn Slack, Li Yin, Thorsten Ball, Ben Vinegar, and Gil Feig. The
+  deferred source-only IDs remain `4ksc_PU7NqA`, `EOf8TbwVvH0`, `r6DKV03IULg`,
+  and `d7jA462XLBM`.
+- `youtube:library status` and structural audit passed. Global audit state is
+  168 tracked videos, 177 manifest occurrences, 153 transcripts, 153 summaries,
+  6 playlists, and 1 author; the existing Antirez duplicate occurrence remains
+  the only notice.
+- All 60 YouTube-library, transcript, structural-audit, and public-guard tests
+  passed, as did both collection resolver tests. The public-content guard passed
+  with 76 tracked public references, 28 resources, and 59 public summaries.
+- `npm run lint:fix`, `npm run check`, `npm run build`, and `git diff --check`
+  passed. Both source-only boundary searches were clean, and all four new public
+  transcript bodies remained byte-identical to their reviewed source copies.
+- Fresh browser checks passed at desktop and 390-by-844 mobile widths. The
+  collection exposes seven date-sorted title-only summaries without `Ep N`,
+  selecting the first and last entries loads the matching source URL, the card
+  reports `Latest summary: Aug 6, 2026`, mobile has no horizontal overflow, and
+  console and page-error logs are clean.
+- Tasks 9 and 10 are complete. The work item is closed.
