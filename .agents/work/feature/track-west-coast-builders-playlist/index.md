@@ -22,8 +22,9 @@ Mayank's host, curator, channel, and playlist-owner provenance.
 
 ## Next Action
 
-- Complete Task 7 in [plan.md](./plan.md): add non-episodic public summary
-  collections while preserving existing standalone and episodic behavior.
+- Complete Task 9 in [plan.md](./plan.md): add the four reviewed coding-agent
+  interviews to the public West Coast Builders collection in bounded editorial
+  changes.
 
 ## Open Questions
 

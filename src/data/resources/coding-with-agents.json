@@ -1,5 +1,20 @@
 [
   {
+    "id": 31,
+    "title": "The West Coast Builders — coding-agent collection",
+    "url": "https://www.youtube.com/playlist?list=PLV_xLvHFOwiuvtEhsFIW55AdFFP7Rpnvg",
+    "description": "A selected coding-agent route through Mayank Gupta's broader interview playlist, covering agent harnesses, review, architecture, model economics, context, and the changing work of software developers. The guests remain the sources for their individual claims.",
+    "type": "playlist",
+    "source": "Mayank Gupta",
+    "date": "2026-04-25",
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "models-evaluation",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 30,
     "title": "Formal methods with Hillel Wayne",
     "subtitle": "Hillel Wayne on TLA+, property-based testing, and AI-assisted specification",
@@ -153,22 +168,6 @@
     "topics": ["tools-harnesses", "collaboration-teams", "review-verification"]
   },
   {
-    "id": 19,
-    "title": "LLMs are killing Agent Harness",
-    "subtitle": "Thorsten Ball on Amp, shrinking harnesses, and coordinating many agents",
-    "url": "https://www.youtube.com/watch?v=thMFsqe8kbQ",
-    "description": "Thorsten Ball argues that as frontier models improve, coding-agent products should remove clever harness scaffolding, expose models to simple tools and context, and focus on how humans organize many cheap, capable agents across new workflows.",
-    "type": "video",
-    "source": "Mayank Gupta",
-    "date": "2026-05-20",
-    "duration": "1h 20m",
-    "topics": [
-      "tools-harnesses",
-      "models-evaluation",
-      "prompting-orchestration"
-    ]
-  },
-  {
     "id": 18,
     "title": "Collaborative AI Engineering: One Dev, Two Dozen Agents, Zero Alignment — Maggie Appleton, GitHub",
     "subtitle": "Maggie Appleton on team alignment and multiplayer agent environments",
@@ -194,34 +193,6 @@
       "review-verification",
       "architecture-maintainability",
       "safety-permissions"
-    ]
-  },
-  {
-    "id": 16,
-    "title": "Amp Code Founder on future of Coding Agents",
-    "subtitle": "Quinn Slack on Amp, Sourcegraph, and the business of frontier coding agents",
-    "url": "https://www.youtube.com/watch?v=_L8xxUXOTk0",
-    "description": "Quinn Slack explains why Amp split from Sourcegraph's enterprise motion, why it targets frontier users instead of every developer seat, how model-lab subscriptions reshape coding-agent economics, and why AI pressure may disrupt traditional SaaS assumptions.",
-    "type": "video",
-    "source": "Mayank Gupta",
-    "date": "2026-04-02",
-    "duration": "1h 9m",
-    "topics": ["business-adoption", "models-evaluation"]
-  },
-  {
-    "id": 15,
-    "title": "Pi Agent Creator on future of Agentic Coding",
-    "subtitle": "Mario Zechner on Pi, open agent harnesses, and developer control",
-    "url": "https://www.youtube.com/watch?v=PZ-sko1NWa0",
-    "description": "Mario Zechner explains why Pi stays minimal, open, and extensible; how its TUI and extension model let users shape their own agent workflows; and why human architecture, review, and open ecosystems still matter when coding agents can generate code quickly.",
-    "type": "video",
-    "source": "Mayank Gupta",
-    "date": "2026-03-28",
-    "duration": "1h 31m",
-    "topics": [
-      "tools-harnesses",
-      "architecture-maintainability",
-      "open-source-ecosystem"
     ]
   },
   {

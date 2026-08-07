@@ -150,3 +150,27 @@
   `npm run content:guard`, and `git diff --check` passed.
 - Tasks 5 and 6 are complete. Next action: Task 7, add non-episodic public
   summary collections.
+
+### Collection infrastructure and public consolidation
+
+- Added a non-episodic `collection` summary mode with schema validation, a pure
+  resolver, malformed-group tests, date-and-slug ordering, title-only selection,
+  and latest-summary date support. Existing standalone and numbered-series
+  behavior remains unchanged.
+- Added resource 31 for The West Coast Builders and atomically removed the
+  standalone Mario Zechner, Quinn Slack, and Thorsten Ball cards (resource IDs
+  15, 16, and 19). Their existing public summary and transcript slugs, dates,
+  bodies, and direct video links remain unchanged; the summaries now share
+  resource 31 and collection key `the-west-coast-builders`.
+- The public card uses the official playlist URL and 2026-04-25 publication
+  date, identifies Mayank Gupta as source, and describes a selected coding-agent
+  route through the broader hosted collection.
+- `npm run content:guard`, the collection resolver tests, `npm run check`,
+  `npm run build`, and `git diff --check` passed.
+- Browser checks passed at desktop and 390-by-844 mobile widths after restarting
+  a stale Vite dependency cache. Search returns the single collection card, its
+  latest summary is May 20, 2026, all three summaries load by title without
+  fabricated `Ep N` labels, the existing State of Agentic Coding series remains
+  numbered, and the browser console and page-error log are clean.
+- Tasks 7 and 8 are complete. Next action: Task 9, add the four reviewed new
+  public summaries and transcript sidecars in bounded editorial changes.

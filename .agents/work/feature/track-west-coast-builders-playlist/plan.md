@@ -142,7 +142,7 @@ with one semantically accurate playlist summary collection.
   - Notes: Keep overview review-state prose status-sensitive and neutral. Do not
     add the public playlist URL while its tracked overview is draft or stale.
 
-- [ ] **Task 7: Add non-episodic public summary collections**
+- [x] **Task 7: Add non-episodic public summary collections**
   - Scope: `src/content.config.ts`,
     `src/pages/resources/coding-with-agents.astro`,
     `src/pages/api/summaries/[slug].json.ts`,
@@ -166,7 +166,7 @@ with one semantically accurate playlist summary collection.
     selection rather than introducing a general content taxonomy. This task may
     run in parallel with source capture but must merge before Task 8.
 
-- [ ] **Task 8: Atomically consolidate the three existing public resources**
+- [x] **Task 8: Atomically consolidate the three existing public resources**
   - Scope: `src/data/resources/coding-with-agents.json`, the three existing
     Mayank summary files
   - Depends on: Tasks 5, 6, and 7
