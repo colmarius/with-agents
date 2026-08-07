@@ -22,5 +22,3 @@ AI Engineer's official schedule lists the session as **Ending AI Slop**, present
 - **Quality matters more than annotation volume**: Castello Branco closes by advocating for high-quality data created by people with deep domain understanding rather than larger collections of noisy judgments [00:15:28]-[00:16:10].
 
 Full video: <https://www.youtube.com/watch?v=lCBf9slCanI>
-
-Event schedule: <https://www.ai.engineer/worldsfair/sessions.json>
