@@ -4,7 +4,7 @@ description: 'An editorial synthesis of Salvatore Sanfilippo’s Italian videos:
 pubDate: 2026-07-27
 tags: ['AI Agents', 'Model Evaluation', 'Review']
 draft: false
-unlisted: false
+unlisted: true
 order: 6
 ---
 
@@ -38,23 +38,13 @@ This does not settle a philosophical definition of reasoning, and the videos do 
 
 Sanfilippo's clearest paper-level example concerns a hierarchical reasoning model. After an ARC-AGI reimplementation removed components one at a time, he reports that iterative refinement and data augmentation explained more of the performance than the headline hierarchy suggested ([00:03:53–00:07:58](https://www.youtube.com/watch?v=PHsxD4X2V2A&t=233s)). He recalled the exact score changes from memory, so the durable point is methodological: attribute a result to components whose removal materially changes it, not to the component with the best name.
 
-He applies the same standard to coding agents. In an April 25, 2026 personal test, an alternative model optimized a small Tcl interpreter while preserving the supplied benchmark and regression suite. The suite stayed green, but Sanfilippo reported only a modest speed gain, ineffective complexity, and semantics-changing bugs that a later Opus review identified outside the supplied tests ([00:12:09–00:15:13](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=729s)).
+He applies the same standard to coding agents. In an April 25, 2026 personal test, an alternative model optimized a small Tcl interpreter while preserving the supplied benchmark and regression suite. The suite stayed green, but Sanfilippo reported only a modest speed gain, ineffective complexity, and semantics-changing bugs that a later Opus review identified outside the supplied tests ([00:07:47–00:14:11](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s)).
 
 In a June 10 project account, Sanfilippo reports that a strong model produced a persuasive explanation for a generation loop and defended it until he contrasted how the working and optimized paths reached the repeated-token state. The model then reconsidered ([00:05:44–00:09:03](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s)).
 
 Ablation and behavioral QA are not equivalent forms of evidence, but they share a discipline: state what the proposed cause predicts, change or exercise the relevant condition, and see whether the predicted difference appears.
 
-Before accepting an explanation, write the smallest audit that could prove it wrong. This is author synthesis:
-
-```text
-claimed cause:
-predicted difference if the claim is true:
-observation that would count against it:
-intervention or representative run:
-evidence still produced by the same model:
-```
-
-This audit decides whether the explanation has earned confidence. [Make the Agent Prove It](/posts/make-the-agent-prove-it) owns the full risk-scaled acceptance contract for the change.
+[Make the Agent Prove It](/posts/make-the-agent-prove-it) owns the reusable audit and full risk-scaled acceptance contract.
 
 ## Review moves, but judgment remains
 
@@ -81,6 +71,6 @@ Labels suggest and explanations guide, but only a representative observation can
 - [Ablating a hierarchical reasoning model](https://www.youtube.com/watch?v=PHsxD4X2V2A&t=233s), published August 18, 2025; especially [00:03:53–00:07:58].
 - [AI assistance, skill acquisition, and flux2.c](https://www.youtube.com/watch?v=yFa1BHzkzn8&t=354s), published January 31, 2026; especially [00:05:54–00:07:00].
 - [Automatic programming fatigue](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s), published February 17, 2026; especially [00:04:03–00:09:48].
-- [Testing recent alternative models](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=729s), published April 25, 2026; especially [00:12:09–00:15:13].
+- [Testing recent alternative models](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s), published April 25, 2026; especially [00:07:47–00:14:11].
 - [Further observations on Claude Fable](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s), published June 10, 2026; especially [00:05:44–00:09:03].
 - [Check the ideas rather than every generated line](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=53s), published July 13, 2026; especially [00:00:53–00:03:55].

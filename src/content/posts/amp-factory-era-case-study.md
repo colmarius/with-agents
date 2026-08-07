@@ -4,7 +4,7 @@ description: 'A source-backed Amp case study for task sizing, delegation, remote
 pubDate: 2026-06-28
 tags: ['AI Agents', 'Amp', 'Workflows', 'Agentic Coding']
 draft: false
-unlisted: false
+unlisted: true
 order: 5
 ---
 

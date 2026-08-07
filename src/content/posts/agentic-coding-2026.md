@@ -115,7 +115,7 @@ task briefs → agent lanes → proof gate → human review
 
 Longer-running work increasingly resembles a well-scoped brief reviewed later, not a continuous chat [00:00:55]-[00:10:17]. When workers can fetch context, verify work, and run in parallel, teams can investigate sooner and try more variants [00:25:29]-[00:31:43]. Ball identifies the next coordination problem: where agents run, how work is tracked and preserved, and how humans coordinate many cheap workers [00:43:42]-[00:49:24].
 
-The [Amp case study](/posts/amp-factory-era-case-study) uses spawned workers and remote review as one concrete example. The synthesis is product-agnostic: bound the environment, inputs, budget, return path, proof, integration owner, and cleanup.
+Concrete factory workflows may use spawned workers and remote review, but the contract is product-agnostic: bound the environment, inputs, budget, return path, proof, integration owner, and cleanup.
 
 So the factory-era checklist is not "launch more agents." It is:
 
@@ -134,12 +134,10 @@ So the factory-era checklist is not "launch more agents." It is:
 | --- | --- |
 | Shared context keeps disappearing | [Your Repo Is the Memory](/posts/durable-context-coding-agents) |
 | The agent cannot operate or verify your system cleanly | [Agent-Ready Interfaces](/posts/agent-ready-interfaces) |
-| Review needs stronger evidence | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
-| A model explanation is plausible, but behavior disagrees | [Behavior Over Explanation](/posts/behavior-over-explanation) |
+| Review needs stronger evidence, or an explanation disagrees with behavior | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
 | Threads are too large to restart | [Small Threads, Durable State](/posts/small-threads-durable-state) |
 | Parallel work is creating merge or review debt | [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) |
 | Agent activity is rising, but delivery value is unclear | [Measure Outcomes, Not Agent Activity](/posts/measure-outcomes-not-agent-activity) |
-| You want a concrete tool case study | [Amp as a Factory-Era Case Study](/posts/amp-factory-era-case-study) |
 | You want the talks behind the series | [The coding-with-agents resource hub](/resources/coding-with-agents) |
 
 ## Sources used
