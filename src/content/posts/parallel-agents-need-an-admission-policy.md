@@ -146,10 +146,16 @@ decision context no longer matches the task: the base branch changed under its
 assumptions, another lane changed the shared contract, the requirement moved, a
 competing result was selected, or the downstream integration slot disappeared.
 
-Write those conditions before launch. Then make cancellation the normal outcome,
-not an agent failure. The lane should stop mutating, return any still-useful
-finding, and release its environment. Do not keep it alive merely because work
-has already been spent.
+Write those conditions before launch. If staleness can arise mid-run, the owner
+also needs a way to inspect and stop the lane before completion. Steve Yegge's
+explicitly experimental Gas Town account illustrates the observability half by
+contrasting first-class, contactable workers with opaque subagents that report only
+when finished
+([00:35:04–00:35:55](https://www.youtube.com/watch?v=aFsAOu2bgFk&t=2104s)).
+
+Then make cancellation the normal outcome, not an agent failure. The lane should
+stop mutating, return any still-useful finding, and release its environment. Do not
+keep it alive merely because work has already been spent.
 
 One named selector and integration owner must make the accepted state authoritative.
 The owner:
@@ -195,3 +201,4 @@ to classify, constrain, cap, cancel, and serialize integration through one owner
 - [Kyle Mistele, “Loop Engineering from First Principles”](https://www.youtube.com/watch?v=xIt_mTQp6mY) — HumanLayer workflow account with one-open-PR backpressure.
 - [Luke Alvoeiro, “The Multi-Agent Architecture That Actually Ships”](https://www.youtube.com/watch?v=ow1we5PzK-o) — Factory product and architecture account, not a controlled comparison.
 - [Maggie Appleton, “Collaborative AI Engineering”](https://www.youtube.com/watch?v=ClWD8OEYgp8) — GitHub Next research talk on late alignment and coordination debt.
+- [Steve Yegge, “From IDEs to AI Agents”](https://www.youtube.com/watch?v=aFsAOu2bgFk) — experimental Gas Town account on inspectable, contactable workers versus opaque subagents.
