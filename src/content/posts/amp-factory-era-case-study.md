@@ -10,23 +10,19 @@ order: 5
 
 ## Amp is the example, not the whole lesson
 
-> Amp is useful here because its product details point to reusable work contracts.
+> Amp is useful here because its product details expose reusable work contracts.
 
 ```text
 Amp detail → reusable contract → workflow habit
 ```
 
-Amp is the concrete case study here; the reusable lessons are task sizing, uncertainty, delegation, execution boundaries, identity, lifecycle controls, cost governance, context hygiene, proof, and review. The product details below were swept against Amp's current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing page](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle) on 2026-08-07.
+Amp is the concrete case study. The reusable subject is how a coding-agent system sizes work, delegates it, reconstructs context, runs elsewhere, proves output, and controls recurring execution. The exact Amp assertions below were checked on 2026-08-07 against the current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing page](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle).
 
-For the broader map, read [Agentic Coding in 2026](/posts/agentic-coding-2026). For durable repo-local memory, read [Your Repo Is the Memory](/posts/durable-context-coding-agents). For proof mechanics, read [Make the Agent Prove It](/posts/make-the-agent-prove-it). For small-thread operating practice, read [Small Threads, Durable State](/posts/small-threads-durable-state). For deciding whether work should fan out at all, read [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy).
-
-This article deliberately avoids setup walkthroughs, exact subscription and orb quotas, model wiring, webhook limits, multiplayer durations, UI shortcuts, token thresholds, and installation commands. Those details churn too quickly. It keeps only product facts that expose a durable work contract.
+[Agentic Coding in 2026](/posts/agentic-coding-2026) owns the product-agnostic map. Use [Your Repo Is the Memory](/posts/durable-context-coding-agents) and [Small Threads, Durable State](/posts/small-threads-durable-state) for repo-local context, [Make the Agent Prove It](/posts/make-the-agent-prove-it) for the proof ladder, and [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) for deciding whether work should fan out at all.
 
 ## Set the dial by uncertainty, not urgency
 
 > Choose worker capability by how much the agent has to figure out.
-
-[The Dial](https://ampcode.com/news/the-dial) replaced Amp's old `smart`, `deep`, `rush`, and `large` names with four built-in tiers: `low`, `medium`, `high`, and `ultra`. Treat the dial as a work contract, not a prestige setting.
 
 | Work shape | Amp surface | Useful contract |
 | --- | --- | --- |
@@ -36,11 +32,9 @@ This article deliberately avoids setup walkthroughs, exact subscription and orb 
 | Clear outcome, unknown path | `ultra` | "Research more, span many files/systems, surface decisions, and return with evidence." |
 | Second opinion, critique, or adversarial review | Oracle | "Inspect the plan, bug, diff, or design and tell me what I am missing." |
 
-[Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model) reports that Amp changed the default model behind the Dial with no complaints, and almost no one installed the classic-mode plugins that restored the old defaults. That is product telemetry, not a controlled quality study. The narrower lesson is useful: let users specify task difficulty while the product owns volatile model routing; the team still owns context and review.
+The mode descriptions and Oracle role come from Amp's current [Manual](https://ampcode.com/manual#agent-modes) and [Models page](https://ampcode.com/models); the task contracts in the table are author synthesis.
 
-**Oracle is still a critique contract, not the implementation worker.** The Dial says every built-in tier has an oracle backing second opinions, and the manual describes Oracle as a "second opinion" model for complex reasoning or analysis. Use that before or after implementation; do not confuse reviewer capacity with ownership of the edit.
-
-**Cost belongs in the same contract.** Amp offers [optional monthly subscriptions](https://ampcode.com/news/subscriptions) with included agent and orb usage, while [pay-as-you-go remains available](https://ampcode.com/pricing) at [provider API prices with zero markup](https://ampcode.com/manual#pricing) for individuals and non-enterprise workspaces. Either way, dial tier, fan-out, recurring schedules, and event-triggered wake-ups are budget choices. Set the worker count, capability, stop condition, and evidence before the work starts.
+Amp currently routes different agent and Oracle models behind those tiers, while its [pricing documentation](https://ampcode.com/manual#pricing) ties cost to actual model and tool usage. **Synthesis:** do not pin task policy to model names. Put tier, worker count, recurrence, stop condition, and required evidence in one budget contract, then recheck volatile routing and rates when the work runs.
 
 ```text
 If "done" and "how" are clear, turn the dial down.
@@ -59,11 +53,10 @@ review/checks own repeatable invariants
 human owns irreversible judgment
 ```
 
-Amp's manual supports subagents, Oracle, Librarian, review, and Checks, but each has a different boundary.
+That ownership map is synthesis. Amp's delegation surfaces have different documented boundaries:
 
-**Subagents are for independent work.** They have their own context and can do multi-step work, but they are isolated: they cannot communicate, you cannot guide them mid-task, and the main agent receives only their final summary. Give each subagent its files, scope, proof target, and expected summary; integrate the result in the main thread.
-
-[From Agent to Agent](https://ampcode.com/news/from-agent-to-agent) adds a different primitive: an agent can spawn addressable Amp threads in an orb, locally, or on another runner, then exchange messages and files. The stronger primitive needs a stronger contract:
+- **Subagents own independent, bounded work.** Each starts with its own context and tools, cannot communicate with other subagents or receive mid-task guidance, and returns only a final summary to the main agent. Give it the relevant files, scope, proof target, and expected return shape; keep integration in the main thread ([Manual](https://ampcode.com/manual#subagents)).
+- **Addressable threads own work that may need continued coordination.** Amp's dated [From Agent to Agent announcement](https://ampcode.com/news/from-agent-to-agent) documents agents creating threads locally, in orbs, or on other machines and exchanging messages and files. The current [Plugin API](https://ampcode.com/manual/plugin-api) also exposes thread handles for follow-up messages and responses. Name the project and environment, send only necessary context, set a budget and stop condition, and keep one integration owner.
 
 ```text
 Name the target project and execution environment.
@@ -72,93 +65,84 @@ Set a budget, stop condition, proof target, and return message.
 Keep integration ownership in one place.
 ```
 
-**Oracle is for critique and hard judgment.** Ask it to stress-test a plan, migration, bug, or diff when the main agent might make the locally obvious but globally wrong edit.
+- **Oracle owns critique, not the edit.** Amp describes Oracle as a second opinion for complex reasoning and analysis and as less suited to routine code editing than the main agent. Use it to challenge a plan, migration, diagnosis, or diff before the implementation owner acts ([Manual](https://ampcode.com/manual#oracle)).
+- **Librarian owns external code research.** It searches public GitHub and connected private GitHub repositories, but only their default branches. Use it to inspect dependency or framework internals, then verify conclusions against the local checkout ([Manual](https://ampcode.com/manual#librarian)).
+- **Review and Checks own repeatable critique.** Amp supports review through `amp review` or the main agent; Checks store scoped criteria under `.agents/checks/` and run a separate review agent for each applicable check ([Manual](https://ampcode.com/manual#code-review)).
 
-**Librarian is for external code research.** The manual says Librarian can search public GitHub and connected private GitHub repositories, and that it searches only the default branch. That makes it a research tool, not a source of truth for your working tree: use it for "how does this framework really implement X?", then verify locally.
-
-**Review and Checks turn critique into a repeatable gate.** Amp can review through `amp review` or the main agent; Checks encode scoped criteria in `.agents/checks/` and run separate review agents per check.
-
-The reusable pattern is ownership, not agent count. Quinn Slack draws the same risk boundary between core API/data work that needs human scrutiny and low-risk internal tools that can tolerate more delegation [00:25:47]-[00:30:37].
+**Synthesis:** delegates produce work or findings. The integration owner still decides what enters the working tree, what evidence is sufficient, and which consequences require human judgment.
 
 ## Context is product state plus repo state
 
-> Product context helps, but remote agents still need repo-local setup and decisions.
+> Remote execution works only when the repository can reconstruct the task environment.
 
 ```text
-Amp threads / skills / plugins / orbs  +  AGENTS.md / setup hooks / work items / checks
-                  │                                           │
-                  ╰──────────── current work contract ─────────╯
+thread reference + repo guidance + lifecycle setup
+                         ↓
+               reconstructable work
 ```
 
-[Amp Rebuilt](https://ampcode.com/news/neo) describes a remote-controllable, compaction-first, plugin-powered CLI: Amp auto-compacts, Handoff is gone, and thread references remain.
+Amp threads can carry conversation state, but the durable operating context belongs beside the code:
 
-The current remote-execution sources make the same point. [Agents in Orbs](https://ampcode.com/news/agents-in-orbs) describes fresh remote machines containing code, plugins, and tools; [Agents, Anywhere](https://ampcode.com/news/agents-anywhere) lets ampcode.com start agents on an opted-in machine or headless runner. That makes environment state part of the work contract, not a local afterthought.
+- `AGENTS.md` supplies project structure, commands, conventions, and review guidance; Amp loads applicable files as it enters their directory scope ([Manual](https://ampcode.com/manual#AGENTS.md)).
+- Project skills under `.agents/skills/` package task-specific instructions and resources. Their descriptions remain visible for discovery, while the full skill body loads when invoked ([Manual](https://ampcode.com/manual#agent-skills)).
+- Thread references let a prompt point to another Amp thread and ask Amp to extract information relevant to the current task ([Manual](https://ampcode.com/manual#referencing-threads)).
+- An orb starts from a fresh repository clone. Committed `.agents/setup` and `.agents/resume` hooks prepare new and resumed environments, while `.amp/services.yaml` declares supervised development services and their portal configuration ([Orbs manual](https://ampcode.com/manual/orbs#setup-files)).
 
-That does not mean "ignore context." It means the durable part should move out of chat when it has a job:
-
-- `AGENTS.md` maps project conventions, commands, and constraints.
-- Skills package task-specific guidance and can lazy-load MCP tools instead of bloating the always-visible tool surface.
-- Thread references can pull relevant context from another Amp thread; [Read Bigger Threads](https://ampcode.com/news/read-bigger-threads) says the extraction path now searches long, compacted threads instead of trusting one giant prompt.
-- Orbs run fresh clones and committed lifecycle hooks such as `.agents/setup` and `.agents/resume`; the [Orbs manual](https://ampcode.com/manual/orbs) frames those files as the repo's way to prepare a remote machine. A committed `.amp/services.yaml` can also declare supervised development services and their portal settings, so the path to a running app travels with the code.
-- Remote identity and collaboration are separate boundaries. OIDC can grant an orb short-lived access, while multiplayer can temporarily grant workspace members access to its live environment; neither replaces least privilege.
-- Amp thread sharing supports private, workspace, group, and unlisted visibility. That is distinct from multiplayer access to an orb's files, portals, secrets, and terminal.
-- Local work items such as `.agents/work/` in this repo are **not** an Amp product feature; they are durable repo-local state for multi-session work.
-
-Amp can retrieve thread context and run work elsewhere. Your repo still needs decisions, acceptance criteria, verification results, bootstrap paths, and the next action. That is why this site separates [durable repo memory](/posts/durable-context-coding-agents) from [small-thread work-item practice](/posts/small-threads-durable-state). Raising an Agent episodes 9 and 10 make the same move through run/verify/authenticate affordances, skills, and agent-optimized dev tooling [00:10:18]-[00:17:24], [00:10:17]-[00:21:19].
+**Synthesis:** product context can retrieve prior conversation and choose an execution environment; it cannot replace repo-local decisions, acceptance criteria, bootstrap instructions, verification results, cleanup steps, or the next action. This repository's `.agents/work/` convention is local durable state, not an Amp product feature. [Your Repo Is the Memory](/posts/durable-context-coding-agents) covers the memory model; [Small Threads, Durable State](/posts/small-threads-durable-state) covers the work-item procedure.
 
 ## Make the factory prove its work
 
 > Longer-running workers need faster reality checks.
 
 ```text
-Do not ask the agent to be trustworthy.
-Give it a loop where reality can say "no."
+running system → observable behavior → diff and checks → human judgment
 ```
 
-Factory-era agent work fails when the only sensor is a human reading a giant diff after the fact. Amp's current surfaces push proof closer to the work:
+Amp exposes several points where remote work can meet reality:
 
-- [Portals into Orbs](https://ampcode.com/news/portals) and the [Orbs manual](https://ampcode.com/manual/orbs) turn an HTTP service in an orb into an authenticated, live-reloading review surface. Access follows the thread, the portal follows the orb's lifecycle, and reviewers can comment on the running page instead of waiting for a preview deployment.
-- [Diffs](https://ampcode.com/news/diffs), `amp review`, and Checks bring human review and repeatable criteria closer to the thread.
-- [Agents in Orbs](https://ampcode.com/news/agents-in-orbs) and the [Orbs manual](https://ampcode.com/manual/orbs) make remote work inspectable: users can browse files, review changes, open a terminal in the orb, and sync changes locally while the agent keeps working remotely.
-- [Feedback Loopable](https://ampcode.com/notes/feedback-loopable) and [Putting an Agent in an Orb](https://ampcode.com/notes/putting-an-agent-in-an-orb) use playgrounds, logs, CLI checks, setup hooks, preflight data, and screenshots to give local and remote agents feedback they can understand.
-- [What I Want to Tell You About Orbs](https://ampcode.com/notes/what-i-want-to-tell-you-about-orbs) is a first-party field report, not comparative evidence. Its useful example is narrower: isolated compute lets an agent run a longer end-to-end test matrix and return screenshots or demo video without occupying the developer's machine.
-- [Mainframe Magic](https://ampcode.com/notes/mainframe-magic) shows the factory version: source maps, manifests, task queues, compiler gates, and smoke tests before a migrated program is marked complete.
-- [How to Pair With an Agent](https://ampcode.com/notes/how-to-pair-with-an-agent) reduces the prompt contract to direction, reference, definition of done, and a feedback loop: "Trust isn't a feeling, it's a passing test suite."
+- Portals expose an orb's HTTP service through an authenticated URL. Amp's dated [Portals announcement](https://ampcode.com/news/portals) documents live reload and page feedback; the current [Orbs manual](https://ampcode.com/manual/orbs#portals) documents thread-scoped access, orb wake-up behavior, and supervised service declarations in `.amp/services.yaml`.
+- The [Orbs manual](https://ampcode.com/manual/orbs#features) lets reviewers browse files and changes, open a terminal in the agent's working copy, and sync changes locally while work continues remotely.
+- Amp's dated [Diffs announcement](https://ampcode.com/news/diffs) adds a web review surface, while `amp review` and repository Checks apply human or encoded criteria to the change ([Manual](https://ampcode.com/manual#code-review)).
 
-[Make the Agent Prove It](/posts/make-the-agent-prove-it) owns the full proof stack. The Amp version is shorter: if you want longer-running workers, invest in the checks, logs, fixtures, screenshots, CLIs, review surfaces, and human-comprehension gates that let those workers show their work.
+These surfaces transport evidence; they do not prove correctness by themselves. **Synthesis:** a portal can show the wrong behavior clearly, a clean diff can preserve a bug, and a passing check proves only the invariant it exercises. Define the proof target before execution, then use the portal, logs, screenshots, tests, diff, and review findings to make that target inspectable.
 
-## Orchestration is becoming a service boundary
+[Make the Agent Prove It](/posts/make-the-agent-prove-it) owns the full evidence ladder. The Amp-specific contract is narrower: remote workers need a running-system feedback path, inspectable state, repeatable checks, and a human-comprehension gate.
 
-> Once agents wake on time or events, operational safety matters as much as prompt quality.
+## Orchestration is a service boundary
+
+> Once agents wake on schedules or events, operational safety matters as much as prompt quality.
 
 ```text
-Puck / Slack         → triage and launch
-schedules / events   → controlled wake-ups
-orbs / runners       → identity and environment boundaries
-spawned threads      → delegated work across projects and machines
-multiplayer          → temporary shared control
-checks / diffs       → proof and human understanding
+schedule or event
+       ↓
+authenticate and validate
+       ↓
+bounded thread or orb
+       ↓
+idempotent effect → proof → cleanup
 ```
 
-Amp's direction is no longer "one assistant in one sidebar." [Agents, Everywhere](https://ampcode.com/news/agents-everywhere) and [Agents, Anywhere](https://ampcode.com/news/agents-anywhere) let users watch, drive, and start agents across web, CLI, mobile, or an opted-in runner. [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent) lets those agents spawn addressable threads across projects and environments. [Meet Puck](https://ampcode.com/news/meet-puck) and [Amp in Slack](https://ampcode.com/news/slack-integration) add an experimental coordinator and another place to request or route work.
+Amp schedules can wake an agent with a saved prompt and continue the thread with its context and history ([Manual](https://ampcode.com/manual#schedules)). Orb webhooks accept external HTTP events, store them before waking a paused orb, and deliver them to the owning plugin and thread ([Orbs manual](https://ampcode.com/manual/orbs#webhooks)). That turns recurrence and event handling into operational interfaces rather than delayed prompts.
 
-[Right on Schedule](https://ampcode.com/news/schedule) and [Event Driven Orbs](https://ampcode.com/news/event-driven-orbs) remove the need for a person to launch every turn. A thread can wake from a saved schedule or an external HTTP event, keep its context, continue the owning thread, or start another worker. These features compose with Puck, Slack, skills, and spawned threads, so a recurring task can also become recurring fan-out.
+The webhook boundary is explicitly hostile. Amp documents the generated URL as a credential, leaves provider signature or authorization verification to the plugin, and requires request bodies and preserved headers to be treated as untrusted input. Delivery is at least once, so handlers must use the stable event ID to make effects idempotent ([Orbs manual](https://ampcode.com/manual/orbs#webhooks); [Plugin API](https://ampcode.com/manual/plugin-api)).
 
-That composition changes the safety contract. Amp's event-driven GitHub example verifies the provider signature, deduplicates delivery, passes trusted metadata separately, and treats issue text as untrusted content rather than agent instructions. The current Plugin API documents at-least-once webhook delivery, so effects must be idempotent. A schedule likewise needs a completion condition and cleanup path; "run every hour" is not a stop condition.
+Identity is separate from authorization. An orb can mint a short-lived OIDC token identifying its workspace, project, user, and thread for a named audience ([Orbs manual](https://ampcode.com/manual/orbs#oidc-workload-identity)). **Synthesis:** the receiving service must still verify that token and constrain which claims may perform which action.
 
-[Secrets of the Orb](https://ampcode.com/news/secrets-of-the-orb) adds short-lived OIDC workload identity, but the audience alone is not authorization: the receiving service still has to verify the token and constrain workspace, project, user, or thread claims. [Multiplayer](https://ampcode.com/news/multiplayer) temporarily lets workspace members steer the agent and access an orb's files, changes, portals, secrets, and terminal, with costs assigned to the thread owner. Identity, access, expiry, and billing ownership are therefore part of the environment contract.
+Temporary collaboration has the same boundary. While Multiplayer is active, workspace members can send messages and access the orb's files, changes, portals, secrets, and terminal; Amp assigns thread and orb costs to the thread owner and ends Multiplayer automatically when its duration expires ([Manual](https://ampcode.com/manual#multiplayer)). That makes identity, permission scope, expiry, and cost ownership part of the execution contract.
+
+The following checklist is author synthesis from those interfaces:
 
 ```text
 Authenticate the trigger and separate trusted metadata from untrusted content.
 Grant the narrowest identity and execution permissions that work.
 Make retries and duplicate delivery safe.
 Name the owner, budget, output, escalation path, and proof target.
-Expire shared access; stop schedules and webhooks when their job is done.
+Expire shared access; stop recurring work and revoke webhooks when the job ends.
 ```
 
-Amp's custom-agent, mode, and durable-webhook APIs are now first-class plugin surfaces. Exact signatures, limits, model assignments, and UI details will change. The durable lesson is to treat scheduled and event-driven agents like services with operational contracts, not prompts that happen to run later.
+Amp documents controls to pause or delete a webhook and revoke its queued work ([Orbs manual](https://ampcode.com/manual/orbs#webhooks)). Schedules and other recurrence need the same explicit lifecycle even when the product can preserve thread context automatically.
 
-The transcript-backed sources explain why this matters. Raising an Agent episode 9 frames the shift as "the assistant is dead, long live the factory": feed agents tasks they are likely to succeed on, then improve the codebase so more tasks become safe to delegate [00:25:29]-[00:27:56]. Thorsten Ball's harness talk says the hard problem is increasingly where agents run, how their work is tracked, how results are preserved, and how humans coordinate many cheap workers [00:43:42]-[00:49:24].
+**Synthesis:** treat scheduled and event-driven agents as services. Define authentication, validation, authorization, idempotency, ownership, budget, evidence, expiry, and cleanup before allowing the workflow to wake itself.
 
 ## The contracts that survive
 
@@ -180,8 +164,4 @@ Tool details change; the work contracts do not. When Amp changes again, keep the
 
 ## Sources used
 
-- Official Amp product sweep: [Amp Manual](https://ampcode.com/manual), [Amp Pricing](https://ampcode.com/pricing), [Amp Orbs manual](https://ampcode.com/manual/orbs), [Amp Plugin API](https://ampcode.com/manual/plugin-api), [Amp Models](https://ampcode.com/models), and [Amp Chronicle](https://ampcode.com/chronicle), verified 2026-08-07.
-- Product announcements central to the surviving claims: [Portals into Orbs](https://ampcode.com/news/portals), [Who Cares About the Model?](https://ampcode.com/news/who-cares-about-the-model), [Event Driven Orbs](https://ampcode.com/news/event-driven-orbs), [Multiplayer](https://ampcode.com/news/multiplayer), [Right on Schedule](https://ampcode.com/news/schedule), [Meet Puck](https://ampcode.com/news/meet-puck), [Amp in Slack](https://ampcode.com/news/slack-integration), [Secrets of the Orb](https://ampcode.com/news/secrets-of-the-orb), [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent), [Subscriptions, At Last](https://ampcode.com/news/subscriptions), [Agents, Anywhere](https://ampcode.com/news/agents-anywhere), [The Dial](https://ampcode.com/news/the-dial), [Agents in Orbs](https://ampcode.com/news/agents-in-orbs), [Amp Rebuilt](https://ampcode.com/news/neo), and [Diffs](https://ampcode.com/news/diffs).
-- Amp workflow notes checked for feedback-loop and factory examples: [What I Want to Tell You About Orbs](https://ampcode.com/notes/what-i-want-to-tell-you-about-orbs), [Putting an Agent in an Orb](https://ampcode.com/notes/putting-an-agent-in-an-orb), [Feedback Loopable](https://ampcode.com/notes/feedback-loopable), [Mainframe Magic](https://ampcode.com/notes/mainframe-magic), and [How to Pair With an Agent](https://ampcode.com/notes/how-to-pair-with-an-agent).
-- Transcript-backed source anchors: [Amp founder interview](https://www.youtube.com/watch?v=_L8xxUXOTk0) [00:25:47]-[00:33:15]; [Raising an Agent episode 9](https://www.youtube.com/watch?v=2wjnV6F2arc) [00:10:18]-[00:17:24], [00:25:29]-[00:40:38]; [Raising an Agent episode 10](https://www.youtube.com/watch?v=4rx36wc9ugw) [00:10:17]-[00:27:57]; [Thorsten Ball, "LLMs are killing Agent Harness"](https://www.youtube.com/watch?v=thMFsqe8kbQ) [00:36:43]-[00:49:24].
-- Internal non-overlap anchors: [Agentic Coding in 2026](/posts/agentic-coding-2026), [Your Repo Is the Memory](/posts/durable-context-coding-agents), [Make the Agent Prove It](/posts/make-the-agent-prove-it), and [Small Threads, Durable State](/posts/small-threads-durable-state).
+- Canonical Amp product authority verified 2026-08-07: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle). Dated announcements are linked inline at the claims they support.

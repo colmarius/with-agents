@@ -1,6 +1,6 @@
 ---
 title: 'Agentic Coding in 2026: A Practical Field Guide'
-description: 'A source-backed map of the current agentic-coding workflow: alignment, proof, friction, codebase infrastructure, context hygiene, small tasks, and factory-era orchestration.'
+description: 'A source-backed map of agentic-coding workflows: alignment, proof, judgment boundaries, codebase infrastructure, context hygiene, and parallel execution.'
 pubDate: 2026-06-28
 tags: ['AI Agents', 'Workflows', 'Agentic Coding']
 draft: false
@@ -83,13 +83,13 @@ The codebase is part of that control surface, because it is part of the prompt. 
 - deterministic formatting, linting, typechecking, and pre-commit checks
 - feedback hooks that let the agent verify behavior without waiting for a human
 
-That last point matters more as loops get longer. Raising an Agent episode 9 frames an "agent-native" codebase as one where the agent knows how to run, verify, authenticate, click around, inspect output, and recover when feedback is missing [00:10:18]-[00:17:24]. Zechner shows the same from the low-level side: `AGENTS.md`-style instructions help, but linters, typecheckers, smoke tests, and terminal/browser capture make failure deterministic [00:37:03]-[00:42:55]. The synthesis is not "write more docs"; it is "make the correct path easier for the next loop to discover and verify."
+That last point matters more as loops get longer. Raising an Agent episode 9 frames an "agent-native" codebase as one where the agent knows how to run, verify, authenticate, click around, and inspect output [00:10:18]-[00:17:24]. Zechner shows the same from the low-level side: `AGENTS.md`-style instructions help, but linters, typecheckers, smoke tests, and terminal/browser capture make failure deterministic [00:37:03]-[00:42:55]. The synthesis is not "write more docs"; it is "make the correct path easier for the next loop to discover and verify."
 
 [Agent-Ready Interfaces](/posts/agent-ready-interfaces) is the design deep dive:
 how to expose composable operations, inspectable state, faithful feedback,
 recovery, mutation gates, and a human return path.
 
-## Keep context wide, implementation narrow, and start small
+## Keep context wide and implementation narrow
 
 > Research wide, implement narrow, and preserve the state between them.
 
@@ -101,27 +101,9 @@ Build Crew episode 7 shows two useful modes. A tiny directed thread works when t
 
 Thariq Shihipar offers a concrete way to start that research: ask the agent for a blind-spot pass over the relevant code and project context, use prototypes to expose preferences that are hard to describe, and let the agent interview you about questions that could change the architecture [00:10:09]-[00:12:58]. During implementation, ask it to log unknowns and deviations, then quiz you on the result so you can still explain the work you are about to merge [00:12:58]-[00:14:57].
 
-Do not carry every exploratory transcript into the implementation loop. Carry the decision, the relevant files, the constraints, and the proof target. [Small Threads, Durable State](/posts/small-threads-durable-state) owns the operating procedure for `.agents/work/` work items, handoffs, progress logs, and verification records.
+Do not carry every exploratory transcript into implementation. Carry forward only the decision, relevant files, constraints, and proof target. [Small Threads, Durable State](/posts/small-threads-durable-state) owns the operating procedure for `.agents/work/` work items, handoffs, progress logs, and verification records.
 
-Start with one small verified task:
-
-1. Pick one real task with a clear "done" signal.
-2. Define the proof before editing.
-3. Let the agent loop on that proof.
-4. Review the diff.
-5. Stop when the evidence is enough.
-
-Good starter tasks verify quickly: fix one failing test and rerun it, remove debug statements and run the project check, add one missing UI state and inspect the render, document one command the agent keeps missing, or reproduce one bug and capture the evidence before the fix. Use a prompt like this:
-
-```text
-Pick the smallest check that would prove this task.
-Show the failing behavior or current output first.
-Make the smallest change.
-Run the targeted check again, then the project-level check if relevant.
-End with files changed, commands run, results, and any known gaps.
-```
-
-## Factory workflows are emerging, but they raise the bar
+## Factory workflows raise the bar
 
 > Parallel agents amplify the workflow you already have.
 
@@ -131,15 +113,9 @@ task briefs → agent lanes → proof gate → human review
                     ╰─ durable work state keeps outputs recoverable
 ```
 
-The frontier is moving from "one assistant beside one developer" toward longer-running, parallel, factory-like workflows. Treat that as an emerging direction, not a shortcut around alignment and review.
+Longer-running work increasingly resembles a well-scoped brief reviewed later, not a continuous chat [00:00:55]-[00:10:17]. When workers can fetch context, verify work, and run in parallel, teams can investigate sooner and try more variants [00:25:29]-[00:31:43]. Ball identifies the next coordination problem: where agents run, how work is tracked and preserved, and how humans coordinate many cheap workers [00:43:42]-[00:49:24].
 
-Simon Willison describes the emerging "dark factory" pattern as a third category: nobody writes or reads the code, but it is neither professional code review nor vibe coding. Professional quality expectations remain, so the evidence has to come from outside the diff, such as StrongDM's reported swarm of simulated users exercising replica services around the clock [00:12:38]-[00:18:24]. His caveat is the hard line for this checklist: even a QA simulation that keeps passing does not establish that the software is secure [00:18:24]-[00:19:27].
-
-Raising an Agent episode 9 frames the shift as "the assistant is dead, long live the factory": if agents can take a longer leash, fetch context, verify work, and run in parallel, teams can investigate more immediately and try more variants [00:25:29]-[00:31:43]. Episode 10 makes it concrete: some agent work is becoming less like a rapid chat and more like writing a well-scoped brief, sending the agent away, and checking the result later [00:00:55]-[00:10:17]. Ball's harness argument points to the same next problem: as model capability absorbs old harness tricks, the hard question shifts to where agents run, how work is tracked and preserved, and how humans coordinate many cheap workers [00:36:43]-[00:49:24].
-
-Amp's July 17 [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent) announcement is a current product example of that direction: an agent can spawn full threads on local machines, in remote orbs, or on other runners, then exchange messages and files across those threads. That makes execution environments, transfer boundaries, budgets, return paths, and integration ownership part of the task brief. The [Amp case study](/posts/amp-factory-era-case-study) covers those contracts in detail.
-
-Amp's August 6 [Portals into Orbs](https://ampcode.com/news/portals) announcement makes the remote proof boundary concrete: an orb can expose a live-reloading HTTP app for review and page feedback without a preview deployment. Access follows the thread and the portal follows the orb's lifecycle, so review convenience does not remove access, environment, or cleanup ownership.
+The [Amp case study](/posts/amp-factory-era-case-study) uses spawned workers and remote review as one concrete example. The synthesis is product-agnostic: bound the environment, inputs, budget, return path, proof, integration owner, and cleanup.
 
 So the factory-era checklist is not "launch more agents." It is:
 
@@ -167,14 +143,12 @@ So the factory-era checklist is not "launch more agents." It is:
 
 ## Sources used
 
-- [Maggie Appleton, "Collaborative AI Engineering"](https://www.youtube.com/watch?v=ClWD8OEYgp8), especially [00:01:53]-[00:06:49] on cheap implementation, late alignment, and coordination debt.
+- [Maggie Appleton, "Collaborative AI Engineering"](https://www.youtube.com/watch?v=ClWD8OEYgp8), especially [00:01:53]-[00:05:12] on cheap implementation, late alignment, and coordination debt.
 - [Simon Willison, "Engineering Practices That Make Coding Agents Work"](https://www.youtube.com/watch?v=owmJyKVu5f8), especially [00:04:41]-[00:18:35] on red-green tests, real-system checks, conformance, sandboxing, and mock data.
 - [Armin Ronacher and Cristina Poncela Cubeiro, "The Friction is Your Judgment"](https://www.youtube.com/watch?v=_Zcw_sVF6hU), especially [00:02:55]-[00:17:55] on review pressure, agent-generated entropy, codebase infrastructure, and human decision routing.
-- [Mario Zechner, "Pi Building Pi, OpenClaw's Minimalist Coding Agent"](https://www.youtube.com/watch?v=DPgJjRdQWrg), especially [00:06:45]-[00:11:14] and [00:29:08]-[00:42:55] on risk-based delegation, simple diffs, and deterministic checks.
+- [Mario Zechner, "Pi Building Pi, OpenClaw's Minimalist Coding Agent"](https://www.youtube.com/watch?v=DPgJjRdQWrg), especially [00:06:45]-[00:11:14] and [00:37:03]-[00:42:55] on risk-based delegation and deterministic checks.
 - [Build Crew episode 7](https://www.youtube.com/watch?v=fVx5M2GVjEQ), especially [00:13:06]-[00:24:12] on small directed threads, research reports, critique, and handoff into implementation.
-- [Raising an Agent episode 9, "The Assistant Is Dead, Long Live the Factory"](https://www.youtube.com/watch?v=2wjnV6F2arc), especially [00:10:18]-[00:17:24] and [00:25:29]-[00:40:38] on agent-native codebases, feedback loops, and factory-era workflows.
+- [Raising an Agent episode 9, "The Assistant Is Dead, Long Live the Factory"](https://www.youtube.com/watch?v=2wjnV6F2arc), especially [00:10:18]-[00:17:24] and [00:25:29]-[00:31:43] on agent-native codebases, feedback loops, and factory-era workflows.
 - [Raising an Agent episode 10, "Killing the Sidebar"](https://www.youtube.com/watch?v=4rx36wc9ugw), especially [00:00:55]-[00:10:17] on longer-running, well-scoped agent work.
-- [Thorsten Ball, "LLMs are killing Agent Harness"](https://www.youtube.com/watch?v=thMFsqe8kbQ), especially [00:22:27]-[00:49:24] on thinner harnesses, the agent loop, and coordinating many cheap agents.
-- [Simon Willison on Lenny's Podcast, "An AI state of the union"](https://www.youtube.com/watch?v=wc8FBhQtdsA), especially [00:12:38]-[00:19:27] on the dark-factory pattern, external behavioral evidence, and why simulated QA does not establish security.
-- [Thariq Shihipar, "Field Guide to Fable"](https://www.youtube.com/watch?v=9fubhllmsBU), especially [00:10:09]-[00:14:57] on blind-spot passes, interviews, references, implementation notes, and staying able to explain agent work.
-- [Amp, "From Agent to Agent"](https://ampcode.com/news/from-agent-to-agent), verified 2026-07-17, for agent-created threads and message/file exchange across local, orb, runner, and cross-project work.
+- [Thorsten Ball, "LLMs are killing Agent Harness"](https://www.youtube.com/watch?v=thMFsqe8kbQ), especially [00:41:36]-[00:49:24] on the agent loop and coordinating many cheap agents.
+- [Thariq Shihipar, "Field Guide to Fable"](https://www.youtube.com/watch?v=9fubhllmsBU), especially [00:10:09]-[00:14:57] on blind-spot passes, prototypes, interviews, implementation notes, and staying able to explain agent work.
