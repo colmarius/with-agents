@@ -22,8 +22,8 @@ Mayank's host, curator, channel, and playlist-owner provenance.
 
 ## Next Action
 
-- Complete Task 3 in [plan.md](./plan.md): capture, review, summarize, and
-  incorporate the one-video `fu7th5HiADo` thin slice before broader backfill.
+- Continue Task 4 in [plan.md](./plan.md): capture, review, summarize, and
+  incorporate the remaining ten videos in batches of at most two.
 
 ## Open Questions
 

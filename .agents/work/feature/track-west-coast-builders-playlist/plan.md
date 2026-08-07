@@ -62,7 +62,7 @@ with one semantically accurate playlist summary collection.
   - Notes: Add `progress.md` when implementation starts and keep public-impact
     decisions there.
 
-- [ ] **Task 3: Prove one complete source-library thin slice**
+- [x] **Task 3: Prove one complete source-library thin slice**
   - Scope: `src/content/youtube/videos/fu7th5HiADo/`, playlist overview,
     work-item progress
   - Depends on: Task 2
