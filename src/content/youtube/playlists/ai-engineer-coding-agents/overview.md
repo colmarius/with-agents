@@ -46,9 +46,9 @@ coveredVideoIds:
 
 ## Coverage
 
-This overview covers 42 manifest entries: 41 available, 40 captured, 40 summarized, 40 incorporated, 1 available pending, 1 manifest-private, and 0 caption-unavailable. AI Engineer is the curator and source channel, not the author; speakers and affiliations vary by video.
+This overview covers 42 manifest entries: 41 available, 40 captured, 40 summarized, 40 incorporated, 0 available pending, 1 manifest-private, and 1 capture-unavailable. AI Engineer is the curator and source channel, not the author; speakers and affiliations vary by video.
 
-The incorporated video IDs are `zkX03APVj0M`, `AMiyLItEtLA`, `Yk87oUPVaxU`, `xIt_mTQp6mY`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`, `q4Tr-DknG2M`, `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`, `EcqMYoIV57A`, `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`, `W-SX_srBa3Y`, `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`. The available pending ID is `CgsWxRUY5Eo`; the manifest-private ID is `pAbRL0h_SNs`; no caption-unavailable IDs are recorded.
+The incorporated video IDs are `zkX03APVj0M`, `AMiyLItEtLA`, `Yk87oUPVaxU`, `xIt_mTQp6mY`, `il1c1a2FufU`, `Cz4v1WHVyZc`, `1P1hJ36rxM0`, `q4Tr-DknG2M`, `xUnRQ9vLXxo`, `HsxQICTLF84`, `HEFSExa0xl0`, `EcqMYoIV57A`, `li0SaBt9RDM`, `ugUeZ8-b-u0`, `7gujZrJ9L5I`, `W-SX_srBa3Y`, `5Sui_OnSRlY`, `TeGsFFNqRLA`, `dyHpnnlkTc8`, `VaS2h-dY1-4`, `yUmS-F9IX90`, `L2r6vLlLgs8`, `4_VQBbs2iQA`, `VktrqzQgytY`, `4VhbYlfC7Gs`, `vAIDdLKB6-w`, `ow1we5PzK-o`, `2TLXsxkz0zI`, `W76woOYHlvY`, `MhHEGMFCEB0`, `rnDm57Py54A`, `ClWD8OEYgp8`, `kR64LOqBBCU`, `-QFHIoCo-Ko`, `RjfbvDXpFls`, `1oySeF37SZc`, `prttz9_1XDc`, `Up6WVA07QdE`, `Ve-akpov78Q`, and `DuZXbinJ4Uc`. There are no available pending IDs. The manifest-private ID is `pAbRL0h_SNs`; the capture-unavailable ID is `CgsWxRUY5Eo`.
 
 ## Current Thesis
 
