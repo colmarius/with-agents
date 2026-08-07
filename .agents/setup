@@ -38,7 +38,3 @@ npm --version
 
 echo 'Installing npm dependencies...'
 npm ci --no-audit --no-fund
-
-echo 'Ensuring orb services are running...'
-amp orb services ensure
-amp orb service restart web

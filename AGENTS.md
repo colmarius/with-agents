@@ -18,6 +18,13 @@
 
 Run `npm run check` and `npm run build` after code or content changes. Run `npm run lint:fix` before committing when files may need formatting.
 
+## Orb Proof Loop
+
+- Before browser verification in an Amp orb, run `amp orb services ensure` and use the portal URL it returns. Do not hardcode portal hostnames.
+- For changes to rendered routes, layout, styling, or client interactivity, verify the affected route in a real browser with the `agent-browser` skill after `npm run check` and `npm run build`.
+- Report the route and observed behavior. Capture a screenshot when visual evidence helps review; an HTTP 200 alone does not prove correct rendering.
+- Do not edit or commit `.amp/portals/**`. Restart `web` only after changing its service declaration, command, or dependencies.
+
 ## Project Structure
 
 ```text
