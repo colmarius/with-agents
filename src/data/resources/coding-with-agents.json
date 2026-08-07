@@ -1,5 +1,20 @@
 [
   {
+    "id": 33,
+    "title": "Production agent reliability — AI Engineer guided collection",
+    "url": "https://www.youtube.com/playlist?list=PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai",
+    "description": "A six-talk editorial route through production-agent operating decisions: expected value, control boundaries, durable execution, bounded planning, lifecycle evaluation, and human agency. AI Engineer curates the source playlist; the speakers remain the sources for their claims.",
+    "type": "playlist",
+    "source": "AI Engineer",
+    "date": "2025-08-06",
+    "topics": [
+      "tools-harnesses",
+      "review-verification",
+      "architecture-maintainability",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 32,
     "title": "David Ondrej Podcast — selected agentic engineering conversations",
     "subtitle": "Five curated interviews on software factories, agent orchestration, review, and harness design",
