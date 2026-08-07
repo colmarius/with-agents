@@ -19,9 +19,9 @@
   {
     "id": 35,
     "title": "The Pragmatic Engineer — selected conversations",
-    "subtitle": "Six curated conversations on agent workflows, verification, context, and software quality",
+    "subtitle": "Seven curated conversations on agent workflows, verification, context, and software quality",
     "url": "https://www.youtube.com/playlist?list=PLzwJJv8h-iciW53inSOkQA4mkG8TuQAUh",
-    "description": "A manually reviewed selection of conversations with Martin Fowler, Dex Horthy, Boris Cherny, Mario Zechner and Armin Ronacher, Laura Tacho, and Hillel Wayne. The guests discuss non-deterministic development, context and harness design, Claude Code workflows, measurement, verification, and formal methods.",
+    "description": "A manually reviewed selection of conversations with Martin Fowler, Dex Horthy, Boris Cherny, Mario Zechner and Armin Ronacher, Laura Tacho, Hillel Wayne, and Mitchell Hashimoto. The guests discuss non-deterministic development, context and harness design, Claude Code workflows, measurement, verification, formal methods, and open-source governance under agent-generated change.",
     "type": "playlist",
     "source": "The Pragmatic Engineer",
     "date": "2026-07-29",
@@ -31,7 +31,8 @@
       "architecture-maintainability",
       "review-verification",
       "models-evaluation",
-      "business-adoption"
+      "business-adoption",
+      "open-source-ecosystem"
     ]
   },
   {
