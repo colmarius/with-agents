@@ -1,5 +1,21 @@
 [
   {
+    "id": 32,
+    "title": "“Forget Loops, build a Software Factory instead” – Dexter Horthy",
+    "subtitle": "Dex Horthy on program design, maintainability, and software-factory bottlenecks",
+    "url": "https://www.youtube.com/watch?v=xgkjtF89-44",
+    "description": "Dex Horthy explains why faster agent code generation does not remove the need for human product, architecture, and program-design judgment. He describes HumanLayer's failed lights-off experiment, proposes vertical slices and measurable outcomes, critiques coding benchmarks that ignore maintainability, and argues that software factories should optimize the real delivery bottleneck rather than token use or agent count.",
+    "type": "video",
+    "source": "David Ondrej",
+    "date": "2026-08-07",
+    "duration": "59m",
+    "topics": [
+      "architecture-maintainability",
+      "review-verification",
+      "context-memory"
+    ]
+  },
+  {
     "id": 31,
     "title": "The West Coast Builders — coding-agent collection",
     "url": "https://www.youtube.com/playlist?list=PLV_xLvHFOwiuvtEhsFIW55AdFFP7Rpnvg",
