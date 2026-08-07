@@ -36,3 +36,19 @@
 - Stop for explicit approval or revision of the exact six candidate IDs/order
   and the proposed resource 11/resource 30 folds. Do not capture or publish
   before that decision.
+
+## 2026-08-07 — Selection and fold approval
+
+- Human explicitly approved all six video IDs in the proposed editorial order.
+- Human explicitly approved folding resources 11 and 30 into the collection
+  while retaining resource 14 as a standalone card.
+- Promoted only the catalog curation gate from `draft` to `reviewed`; source
+  summaries and the playlist overview remain independently unreviewed.
+- Removed the five draft-transition public-content exceptions. Reviewed
+  curation now activates strict standalone reuse for the two approved existing
+  evidence chains.
+
+## Next action
+
+- Capture only `CQmI4XKTa0U`, `Usufn8IQJgw`, `julbw1JuAz0`, and
+  `xHHlhoRC8W4`, then perform the dedicated source-evidence review gate.

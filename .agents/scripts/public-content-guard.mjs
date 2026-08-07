@@ -19,43 +19,7 @@ const resourceTopics = new Set([
   'tools-harnesses',
 ]);
 
-export const publicSourceExceptions = [
-  {
-    kind: 'video',
-    id: 'KSkcgIYQy0U',
-    path: 'src/content/posts/make-the-agent-prove-it.md',
-    reason:
-      'Pre-existing transcript-backed standalone publication; playlist curation remains draft pending selection approval.',
-  },
-  {
-    kind: 'video',
-    id: 'KSkcgIYQy0U',
-    path: 'src/content/summaries/coding-with-agents/formal-methods-with-hillel-wayne.md',
-    reason:
-      'Pre-existing transcript-backed standalone publication; playlist curation remains draft pending selection approval.',
-  },
-  {
-    kind: 'video',
-    id: 'KSkcgIYQy0U',
-    path: 'src/data/resources/coding-with-agents.json',
-    reason:
-      'Pre-existing transcript-backed standalone publication; playlist curation remains draft pending selection approval.',
-  },
-  {
-    kind: 'video',
-    id: 'n5f51gtuGHE',
-    path: 'src/content/summaries/coding-with-agents/building-pi-and-what-makes-self-modifying-software-so-fascinating.md',
-    reason:
-      'Pre-existing transcript-backed standalone publication; playlist curation remains draft pending selection approval.',
-  },
-  {
-    kind: 'video',
-    id: 'n5f51gtuGHE',
-    path: 'src/data/resources/coding-with-agents.json',
-    reason:
-      'Pre-existing transcript-backed standalone publication; playlist curation remains draft pending selection approval.',
-  },
-];
+export const publicSourceExceptions = [];
 
 const defaultRepoRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),

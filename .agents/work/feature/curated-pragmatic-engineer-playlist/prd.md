@@ -49,7 +49,7 @@ small explicitly approved subset and reuse exact existing evidence.
 - [x] Check and sync continue to compare complete remote membership.
 - [x] Draft curation creates no capture, source-summary, overview, or public
       collection obligation.
-- [ ] Selection approval, source-evidence review, and overview review remain
+- [x] Selection approval, source-evidence review, and overview review remain
       separate gates.
 - [ ] Approved capture is limited to selected IDs without validated reuse.
 - [ ] Standalone reuse must pass the strict transcript → summary → canonical
@@ -91,6 +91,6 @@ small explicitly approved subset and reuse exact existing evidence.
 - [x] Confirmed `transcriptLanguage: en`.
 - [x] Confirmed `summaryLanguage: en`.
 - [x] Confirmed `multiSpeaker: true`.
-- [ ] Approve or revise the exact six selected IDs and their order after draft
+- [x] Approved the exact six selected IDs and their order after draft
       catalog onboarding and full manifest sync.
-- [ ] Approve folding standalone resources 11 and 30 into the collection.
+- [x] Approved folding standalone resources 11 and 30 into the collection.
