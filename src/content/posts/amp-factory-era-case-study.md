@@ -20,21 +20,33 @@ Amp is the concrete case study. The reusable subject is how a coding-agent syste
 
 [Agentic Coding in 2026](/posts/agentic-coding-2026) owns the product-agnostic map. Use [Your Repo Is the Memory](/posts/durable-context-coding-agents) and [Small Threads, Durable State](/posts/small-threads-durable-state) for repo-local context, [Make the Agent Prove It](/posts/make-the-agent-prove-it) for the proof ladder, and [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) for deciding whether work should fan out at all.
 
-## Set the dial by uncertainty, not urgency
+## Set reasoning and compute independently
 
-> Choose worker capability by how much the agent has to figure out.
+> Agent capability follows uncertainty; orb capacity follows runtime load.
 
-| Work shape | Amp surface | Useful contract |
-| --- | --- | --- |
-| Exact, bounded, known-done task | `low` | "Find the relevant files, make the smallest correct change, run the focused check, and stop." |
-| Messy default implementation work | `medium` | "Use the repo context, handle the parts I did not spell out, verify, and summarize tradeoffs." |
-| Hard change in a known area | `high` | "Be more careful on cross-cutting or subtle work; expect review feedback before merge." |
-| Clear outcome, unknown path | `ultra` | "Research more, span many files/systems, surface decisions, and return with evidence." |
-| Second opinion, critique, or adversarial review | Oracle | "Inspect the plan, bug, diff, or design and tell me what I am missing." |
+```text
+reasoning uncertainty → agent mode
+setup, build, test, and service load → orb size
+independent work bounded by integration capacity → worker count
+```
 
-The mode descriptions and Oracle role come from Amp's current [Manual](https://ampcode.com/manual#agent-modes) and [Models page](https://ampcode.com/models); the task contracts in the table are author synthesis.
+That mapping is synthesis. The mode descriptions and Oracle role come from Amp's current [Manual](https://ampcode.com/manual#agent-modes) and [Models page](https://ampcode.com/models):
 
-Amp currently routes different agent and Oracle models behind those tiers, while its [pricing documentation](https://ampcode.com/manual#pricing) ties cost to actual model and tool usage. **Synthesis:** do not pin task policy to model names. Put tier, worker count, recurrence, stop condition, and required evidence in one budget contract, then recheck volatile routing and rates when the work runs.
+| Work shape | Amp surface |
+| --- | --- |
+| Exact, bounded, known-done task | `low` |
+| Default implementation work | `medium` |
+| Hard, cross-cutting change | `high` |
+| Clear outcome, unknown path | `ultra` |
+| Second opinion or adversarial review | Oracle |
+
+Every task contract should still name done, scope, proof, and stop conditions. Give `low` the exact path and check, give `medium` enough repo context to handle unspecified details, tell `high` which subtle risks deserve care, let `ultra` discover the path to a clear outcome, and give Oracle a specific plan, bug, diff, or design to challenge.
+
+Remote execution adds a separate capacity dial. Amp's 2026-08-07 [orb-sizing announcement](https://ampcode.com/news/size-the-orbs-of-production) introduced five `a1` sizes and per-thread selection, including `amp -ox "..." --orb-size <size>` and agent-created threads in smaller or larger orbs. The current [Orbs manual](https://ampcode.com/manual/orbs#pricing) documents a range from 1 CPU and 2 GB of memory to 16 CPUs and 32 GB, project-level defaults, by-the-minute billing, no charge while paused, and automatic pause after five inactive minutes.
+
+Use the smallest project default that handles ordinary work reliably, then override genuinely lighter or heavier threads. A larger orb buys CPU and memory, not better reasoning; a higher mode buys agent capability, not more machine capacity. Smaller fan-out workers can reduce compute cost, but they do not make overlapping changes safe or create review capacity.
+
+Amp currently routes different agent and Oracle models behind its mode tiers, while its [pricing documentation](https://ampcode.com/manual#pricing) ties cost to actual model and tool usage. **Synthesis:** do not pin task policy to model names. Put mode, orb size, worker count, recurrence, stop condition, and required evidence in one budget contract, then recheck volatile routing and rates when the work runs.
 
 ```text
 If "done" and "how" are clear, turn the dial down.
@@ -154,7 +166,7 @@ uncertainty → delegation contract → proof loop → human judgment
 
 Tool details change; the work contracts do not. When Amp changes again, keep these:
 
-1. Size the task to the uncertainty.
+1. Size model capability to uncertainty and machine capacity to runtime demands.
 2. Give every delegate or trigger a scope, owner, budget, return path, and proof target.
 3. Separate trusted metadata from untrusted content, and make retries idempotent.
 4. Grant the narrowest identity and access; make temporary access expire.
@@ -164,4 +176,4 @@ Tool details change; the work contracts do not. When Amp changes again, keep the
 
 ## Sources used
 
-- Canonical Amp product authority verified 2026-08-07: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle). Dated announcements are linked inline at the claims they support.
+- Canonical Amp product authority verified 2026-08-07: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle). Dated announcements, including [“Size the Orbs of Production!”](https://ampcode.com/news/size-the-orbs-of-production), are linked inline at the claims they support.
