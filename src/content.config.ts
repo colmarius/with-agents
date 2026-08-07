@@ -17,13 +17,33 @@ const posts = defineCollection({
 
 const summaries = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/summaries' }),
-  schema: z.object({
-    title: z.string(),
-    resourceId: z.coerce.number(),
-    series: z.string().optional(),
-    episode: z.number().int().optional(),
-    date: z.coerce.date().optional(),
-  }),
+  schema: z
+    .object({
+      title: z.string(),
+      resourceId: z.coerce.number(),
+      series: z.string().optional(),
+      episode: z.number().int().optional(),
+      collection: z.string().trim().min(1).optional(),
+      date: z.coerce.date().optional(),
+    })
+    .superRefine((summary, context) => {
+      if (!summary.collection) return;
+
+      if (!summary.date) {
+        context.addIssue({
+          code: 'custom',
+          path: ['date'],
+          message: 'Collection summaries require a date',
+        });
+      }
+      if (summary.series !== undefined || summary.episode !== undefined) {
+        context.addIssue({
+          code: 'custom',
+          path: ['collection'],
+          message: 'Collection summaries cannot have a series or episode',
+        });
+      }
+    }),
 });
 
 export const collections = { posts, summaries };

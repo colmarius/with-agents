@@ -13,6 +13,11 @@ import { EpisodeList } from './EpisodeList';
 import MarkdownRenderer from './MarkdownRenderer';
 import ResourceListItem from './ResourceListItem';
 import { SummaryModal } from './SummaryModal';
+import {
+  type ManifestEntry,
+  resolveSummaryEntries,
+  type SummaryRef,
+} from './summaryResolver';
 
 const TOPIC_OPTIONS = [
   { slug: 'prompting-orchestration', label: 'Prompting & orchestration' },
@@ -51,27 +56,15 @@ type Resource = {
 
 const resources = codingResources as Resource[];
 
-type ManifestEntry = {
-  slug: string;
-  resourceId: number;
-  title: string;
-  date: Date | null;
-  series: string | null;
-  episode: number | null;
-};
-
 type SummaryData = {
   slug: string;
   title: string;
   date: string | null;
   series: string | null;
   episode: number | null;
+  collection: string | null;
   body: string;
 };
-
-type SummaryRef =
-  | { kind: 'single'; slug: string }
-  | { kind: 'series'; series: string; episodes: ManifestEntry[] };
 
 type CodingWithAgentsProps = {
   manifest: ManifestEntry[];
@@ -90,7 +83,9 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [summaryRef, setSummaryRef] = useState<SummaryRef | null>(null);
   const [episodes, setEpisodes] = useState<ManifestEntry[]>([]);
-  const [selectedEpisode, setSelectedEpisode] = useState<number | null>(null);
+  const [selectedSummarySlug, setSelectedSummarySlug] = useState<string | null>(
+    null,
+  );
   const [error, setError] = useState<string | null>(null);
   const [isEpisodeListExpanded, setIsEpisodeListExpanded] = useState(false);
   const [isEpisodeLoading, setIsEpisodeLoading] = useState(false);
@@ -115,32 +110,25 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
 
   const resolveSummaryRef = useCallback(
     (resourceId: number): SummaryRef | null => {
-      const entries = summaryEntriesByResourceId.get(resourceId) ?? [];
-      if (entries.length === 0) return null;
-
-      const hasSeries = entries.some((e) => e.series !== null);
-      if (hasSeries) {
-        const seriesName = entries.find((e) => e.series)?.series;
-        if (!seriesName) return null;
-        const episodeEntries = entries
-          .filter((e) => e.series === seriesName && e.episode !== null)
-          .sort((a, b) => (a.episode ?? 0) - (b.episode ?? 0));
-        return { kind: 'series', series: seriesName, episodes: episodeEntries };
-      }
-
-      return { kind: 'single', slug: entries[0].slug };
+      return resolveSummaryEntries(
+        summaryEntriesByResourceId.get(resourceId) ?? [],
+      );
     },
     [summaryEntriesByResourceId],
   );
 
-  const latestEpisodeDates = useMemo(() => {
+  const latestSummaryDates = useMemo(() => {
     const dates: Record<number, Date> = {};
     resources.forEach((r) => {
       const ref = resolveSummaryRef(r.id);
-      if (ref?.kind === 'series' && ref.episodes.length > 0) {
-        const latestDate = ref.episodes
+      if (
+        (ref?.kind === 'series' || ref?.kind === 'collection') &&
+        ref.entries.length > 0
+      ) {
+        const latestDate = ref.entries
           .map((e) => e.date)
-          .filter((d): d is Date => d !== null)
+          .filter((date): date is Date | string => date !== null)
+          .map((date) => new Date(date))
           .sort((a, b) => b.getTime() - a.getTime())[0];
         if (latestDate) {
           dates[r.id] = latestDate;
@@ -152,21 +140,21 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
 
   const getDisplayDate = useCallback(
     (resource: Resource): Date => {
-      return latestEpisodeDates[resource.id] ?? new Date(resource.date);
+      return latestSummaryDates[resource.id] ?? new Date(resource.date);
     },
-    [latestEpisodeDates],
+    [latestSummaryDates],
   );
 
   const getDisplayDateLabel = useCallback(
     (resource: Resource): string => {
       const dateLabel = formatDate(getDisplayDate(resource));
-      if (resource.type === 'playlist' && latestEpisodeDates[resource.id]) {
+      if (resource.type === 'playlist' && latestSummaryDates[resource.id]) {
         return `Latest summary: ${dateLabel}`;
       }
 
       return dateLabel;
     },
-    [getDisplayDate, latestEpisodeDates],
+    [getDisplayDate, latestSummaryDates],
   );
 
   const sortedResources = useMemo(
@@ -265,6 +253,11 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
     setModalOpen(true);
     setIsLoading(true);
     setError(null);
+    setSummaryContent('');
+    setEpisodes([]);
+    setSelectedSummarySlug(null);
+    setCurrentEpisodeTitle(null);
+    setIsEpisodeListExpanded(false);
 
     try {
       const ref = resolveSummaryRef(resource.id);
@@ -276,15 +269,20 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
         return;
       }
 
+      if (ref.kind === 'error') {
+        setError(ref.message);
+        return;
+      }
+
       if (ref.kind === 'single') {
         const content = await fetchSummary(ref.slug);
         setSummaryContent(content);
-      } else if (ref.kind === 'series') {
-        setEpisodes(ref.episodes);
+      } else {
+        setEpisodes(ref.entries);
 
-        if (ref.episodes.length > 0) {
-          const firstEpisode = ref.episodes[0];
-          setSelectedEpisode(firstEpisode.episode);
+        if (ref.entries.length > 0) {
+          const firstEpisode = ref.entries[0];
+          setSelectedSummarySlug(firstEpisode.slug);
           setCurrentEpisodeTitle(firstEpisode.title);
           const content = await fetchSummary(firstEpisode.slug);
           setSummaryContent(content);
@@ -299,11 +297,12 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
     }
   };
 
-  const handleSelectEpisode = async (episodeNumber: number, slug: string) => {
-    setSelectedEpisode(episodeNumber);
+  const handleSelectEpisode = async (slug: string) => {
+    setSelectedSummarySlug(slug);
     setIsEpisodeLoading(true);
+    setError(null);
 
-    const episode = episodes.find((e) => e.episode === episodeNumber);
+    const episode = episodes.find((e) => e.slug === slug);
     if (episode) {
       setCurrentEpisodeTitle(episode.title);
     }
@@ -325,7 +324,7 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
     setSelectedResource(null);
     setSummaryContent('');
     setEpisodes([]);
-    setSelectedEpisode(null);
+    setSelectedSummarySlug(null);
     setSummaryRef(null);
     setError(null);
     setIsEpisodeListExpanded(false);
@@ -540,12 +539,16 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
           <div className="p-6">
             <div className="text-red-600 p-4 bg-red-50 rounded-lg">{error}</div>
           </div>
-        ) : summaryRef?.kind === 'series' && episodes.length > 0 ? (
+        ) : (summaryRef?.kind === 'series' ||
+            summaryRef?.kind === 'collection') &&
+          episodes.length > 0 ? (
           <div className="flex flex-col md:flex-row gap-6 min-h-0 flex-1 md:overflow-hidden">
             <aside className="md:w-64 md:flex-shrink-0 md:overflow-y-auto md:max-h-full p-6 pb-0 md:pr-0 md:pb-6">
               <div className="md:hidden mb-3">
                 <CollapsibleButton
-                  label="Episodes"
+                  label={
+                    summaryRef.kind === 'series' ? 'Episodes' : 'Summaries'
+                  }
                   isOpen={isEpisodeListExpanded}
                   onClick={() =>
                     setIsEpisodeListExpanded(!isEpisodeListExpanded)
@@ -555,11 +558,12 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
               <EpisodeList
                 episodes={episodes.map((e) => ({
                   path: e.slug,
-                  episode: e.episode ?? 0,
+                  episode: e.episode,
                   title: e.title,
                 }))}
-                selectedEpisode={selectedEpisode}
+                selectedSlug={selectedSummarySlug}
                 onSelectEpisode={handleSelectEpisode}
+                mode={summaryRef.kind}
                 isCollapsed={!isMdUp && !isEpisodeListExpanded}
               />
             </aside>

@@ -27,6 +27,7 @@ export const GET: APIRoute = async ({ params }) => {
       date: data.date ?? null,
       series: data.series ?? null,
       episode: data.episode ?? null,
+      collection: data.collection ?? null,
       body,
     }),
     {

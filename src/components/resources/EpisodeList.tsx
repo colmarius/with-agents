@@ -8,33 +8,33 @@ import {
 
 type Episode = {
   path: string;
-  episode: number;
+  episode: number | null;
   title: string;
 };
 
 type EpisodeListProps = {
   episodes: Array<Episode>;
-  selectedEpisode: number | null;
-  onSelectEpisode: (episode: number, path: string) => void;
+  selectedSlug: string | null;
+  onSelectEpisode: (path: string) => void;
+  mode: 'series' | 'collection';
   isLoading?: boolean;
   isCollapsed?: boolean;
 };
 
 export const EpisodeList = ({
   episodes,
-  selectedEpisode,
+  selectedSlug,
   onSelectEpisode,
+  mode,
   isLoading = false,
   isCollapsed = false,
 }: EpisodeListProps) => {
   const listRef = useRef<HTMLDivElement>(null);
-  const [focusedEpisode, setFocusedEpisode] = useState<number | null>(
-    selectedEpisode,
-  );
+  const [focusedSlug, setFocusedSlug] = useState<string | null>(selectedSlug);
 
   useEffect(() => {
-    setFocusedEpisode(selectedEpisode);
-  }, [selectedEpisode]);
+    setFocusedSlug(selectedSlug);
+  }, [selectedSlug]);
 
   const setSelectedRef = useCallback((el: HTMLButtonElement | null) => {
     if (el) {
@@ -48,9 +48,7 @@ export const EpisodeList = ({
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (episodes.length === 0) return;
 
-    const currentIndex = episodes.findIndex(
-      (ep) => ep.episode === focusedEpisode,
-    );
+    const currentIndex = episodes.findIndex((ep) => ep.path === focusedSlug);
 
     let nextIndex = currentIndex;
 
@@ -78,10 +76,10 @@ export const EpisodeList = ({
       case ' ':
       case 'Spacebar':
         event.preventDefault();
-        if (focusedEpisode !== null) {
-          const episode = episodes.find((ep) => ep.episode === focusedEpisode);
+        if (focusedSlug !== null) {
+          const episode = episodes.find((ep) => ep.path === focusedSlug);
           if (episode) {
-            onSelectEpisode(episode.episode, episode.path);
+            onSelectEpisode(episode.path);
           }
         }
         return;
@@ -91,7 +89,7 @@ export const EpisodeList = ({
 
     if (nextIndex !== currentIndex && nextIndex >= 0) {
       const episode = episodes[nextIndex];
-      setFocusedEpisode(episode.episode);
+      setFocusedSlug(episode.path);
     }
   };
 
@@ -111,30 +109,32 @@ export const EpisodeList = ({
     );
   }
 
-  if (isCollapsed && selectedEpisode === null) {
-    return <div className="p-4 text-gray-500 text-sm">Select an episode</div>;
+  if (isCollapsed && selectedSlug === null) {
+    return <div className="p-4 text-gray-500 text-sm">Select a summary</div>;
   }
 
   const displayedEpisodes = isCollapsed
-    ? episodes.filter((ep) => ep.episode === selectedEpisode)
+    ? episodes.filter((ep) => ep.path === selectedSlug)
     : episodes;
 
   return (
     <div
       ref={listRef}
       role="listbox"
-      aria-label="Episode list"
+      aria-label={mode === 'series' ? 'Episode list' : 'Summary list'}
       aria-activedescendant={
-        focusedEpisode !== null ? `episode-${focusedEpisode}` : undefined
+        focusedSlug !== null ? `summary-${focusedSlug}` : undefined
       }
       tabIndex={0}
       onKeyDown={handleKeyDown}
       className="flex flex-col gap-1 p-0 focus:outline-none text-sm text-gray-600 dark:text-zinc-300"
     >
-      <h3 className="sr-only">Episodes</h3>
+      <h3 className="sr-only">
+        {mode === 'series' ? 'Episodes' : 'Summaries'}
+      </h3>
       {displayedEpisodes.map((episode) => {
-        const isSelected = episode.episode === selectedEpisode;
-        const isFocused = episode.episode === focusedEpisode;
+        const isSelected = episode.path === selectedSlug;
+        const isFocused = episode.path === focusedSlug;
         const trimmedTitle = episode.title.replace(
           /\s*-\s*Episode\s+\d+$/i,
           '',
@@ -142,13 +142,13 @@ export const EpisodeList = ({
         return (
           <button
             type="button"
-            key={episode.episode}
-            id={`episode-${episode.episode}`}
+            key={episode.path}
+            id={`summary-${episode.path}`}
             ref={isSelected ? setSelectedRef : null}
             role="option"
             aria-selected={isSelected}
-            onClick={() => onSelectEpisode(episode.episode, episode.path)}
-            onFocus={() => setFocusedEpisode(episode.episode)}
+            onClick={() => onSelectEpisode(episode.path)}
+            onFocus={() => setFocusedSlug(episode.path)}
             className={`
 							group w-full rounded-sm px-2.5 py-1.5 text-left transition-colors cursor-pointer
 							bg-transparent border border-transparent
@@ -163,15 +163,17 @@ export const EpisodeList = ({
 						`}
           >
             <div className="flex items-center gap-2">
-              <span
-                className={`shrink-0 tabular-nums text-[11px] tracking-wide ${
-                  isSelected
-                    ? 'text-gray-500 dark:text-zinc-300'
-                    : 'text-gray-400 dark:text-zinc-500'
-                }`}
-              >
-                Ep {episode.episode}
-              </span>
+              {mode === 'series' && (
+                <span
+                  className={`shrink-0 tabular-nums text-[11px] tracking-wide ${
+                    isSelected
+                      ? 'text-gray-500 dark:text-zinc-300'
+                      : 'text-gray-400 dark:text-zinc-500'
+                  }`}
+                >
+                  Ep {episode.episode}
+                </span>
+              )}
               <span
                 className={`flex-1 truncate text-[13px] font-normal ${
                   isSelected
