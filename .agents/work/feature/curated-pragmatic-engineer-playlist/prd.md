@@ -42,12 +42,12 @@ small explicitly approved subset and reuse exact existing evidence.
 
 ### Must Have
 
-- [ ] Human explicitly confirms transcript language, summary language, and one
+- [x] Human explicitly confirms transcript language, summary language, and one
       attribution mode before catalog mutation.
-- [ ] Catalog curation begins as `draft` with the proposed exact ordered IDs.
-- [ ] The generated manifest retains every remote playlist member.
-- [ ] Check and sync continue to compare complete remote membership.
-- [ ] Draft curation creates no capture, source-summary, overview, or public
+- [x] Catalog curation begins as `draft` with the proposed exact ordered IDs.
+- [x] The generated manifest retains every remote playlist member.
+- [x] Check and sync continue to compare complete remote membership.
+- [x] Draft curation creates no capture, source-summary, overview, or public
       collection obligation.
 - [ ] Selection approval, source-evidence review, and overview review remain
       separate gates.
@@ -68,7 +68,8 @@ small explicitly approved subset and reuse exact existing evidence.
 - The proposal is six items in editorial order; it is not approved curation.
 - Resource 11 and resource 30 are exact reusable members proposed for folding.
 - Resource 14 is not a playlist member and remains standalone.
-- No language or attribution value is approved yet.
+- Approved configuration: `transcriptLanguage: en`, `summaryLanguage: en`, and
+  `multiSpeaker: true`.
 
 ## Acceptance Criteria
 
@@ -87,9 +88,9 @@ small explicitly approved subset and reuse exact existing evidence.
 
 ## Open Questions
 
-- [ ] Confirm the exact transcript language.
-- [ ] Confirm the exact summary language.
-- [ ] Confirm either explicit author relationship(s) or `multiSpeaker: true`.
+- [x] Confirmed `transcriptLanguage: en`.
+- [x] Confirmed `summaryLanguage: en`.
+- [x] Confirmed `multiSpeaker: true`.
 - [ ] Approve or revise the exact six selected IDs and their order after draft
       catalog onboarding and full manifest sync.
 - [ ] Approve folding standalone resources 11 and 30 into the collection.

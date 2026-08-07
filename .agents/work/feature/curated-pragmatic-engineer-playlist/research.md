@@ -7,14 +7,15 @@
 - Snapshot date: 2026-08-07
 - Current membership: 71 available videos
 - Current generated positions: 0 through 70
-- Catalog state: not configured
-- Manifest state: not created; catalog configuration requires explicit language
-  and attribution approval first
+- Catalog state: configured with approved English/English/multi-speaker settings
+  and six draft candidates
+- Manifest state: synchronized at
+  `src/content/youtube/playlists/pragmatic-engineer-podcast/manifest.json`
 
-The complete remote membership was fetched read-only through the existing
-YouTube Data API client. Once configuration is approved, the generated manifest
-must retain all 71 items and their remote order as sync and drift authority,
-even though only the approved selection enters editorial scope.
+The authoritative selected-playlist sync retained all 71 items and their remote
+order as sync and drift authority. Draft curation reports six candidates, zero
+selected items, and 65 unselected items, so it creates no capture, summary, or
+overview backlog before selection approval.
 
 ## Existing Public Resources and Reusable Evidence
 
@@ -96,11 +97,26 @@ than a distinct gap in this Coding with Agents route.
 
 ## Required Gates
 
-1. Explicit catalog configuration approval: transcript language, summary
-   language, and exactly one attribution mode.
-2. Draft catalog curation plus complete manifest synchronization and inventory
-   validation.
+1. Completed: explicit catalog configuration approval for `en` transcripts,
+   `en` summaries, and `multiSpeaker: true`.
+2. Completed: draft catalog curation plus complete 71-item manifest
+   synchronization and inventory validation.
 3. Explicit human approval of exact selected IDs/order and standalone folds.
 4. Individual source-evidence review for every selected item.
 5. Separate playlist-overview review.
 6. Public collection promotion only after all preceding gates pass.
+
+## Phase 1 Public-Impact Review
+
+- The playlist ID has no existing public references.
+- `n5f51gtuGHE` appears only in its canonical resource and transcript-backed
+  public summary; both are proposed `fold` after selection approval.
+- `KSkcgIYQy0U` appears in its canonical resource and summary plus
+  `make-the-agent-prove-it.md`; all remain `keep`, with the resource and summary
+  proposed `fold` while the post keeps its exact source citation.
+- The four proposed new IDs have no existing public references.
+- Resource and summary counts remain unchanged at 28 and 63 during draft
+  onboarding.
+- Five temporary path-specific content-guard exceptions document the two
+  pre-existing standalone evidence chains while curation is draft. Remove them
+  when reviewed curation activates strict standalone reuse.

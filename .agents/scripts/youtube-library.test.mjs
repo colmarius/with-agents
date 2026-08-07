@@ -239,6 +239,7 @@ test('loads and validates the committed source-only catalog', async () => {
       'ai-engineer-coding-agents',
       'mayank-gupta-west-coast-builders',
       'david-ondrej-coding-agents',
+      'pragmatic-engineer-podcast',
     ],
   );
 });

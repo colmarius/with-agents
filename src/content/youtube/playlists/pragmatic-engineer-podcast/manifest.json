@@ -1,0 +1,573 @@
+{
+  "playlistId": "PLzwJJv8h-iciW53inSOkQA4mkG8TuQAUh",
+  "entries": [
+    {
+      "videoId": "KSkcgIYQy0U",
+      "position": 0,
+      "title": "Formal methods with Hillel Wayne",
+      "publishedAt": "2026-07-29T16:19:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Usufn8IQJgw",
+      "position": 1,
+      "title": "Context engineering with Dex Horthy",
+      "publishedAt": "2026-07-15T15:59:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "cSIMVYjVF28",
+      "position": 2,
+      "title": "The Pragmatic Engineer AMA",
+      "publishedAt": "2026-07-08T16:18:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ddHQQtjIOpw",
+      "position": 3,
+      "title": "How Kent Beck shapes the software engineering industry",
+      "publishedAt": "2026-07-01T16:41:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xafwfGVBxos",
+      "position": 4,
+      "title": "Tech interviews with NeetCode",
+      "publishedAt": "2026-06-24T17:13:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2x0eq5oDOJY",
+      "position": 5,
+      "title": "CI/CD with Robert Erez",
+      "publishedAt": "2026-06-17T16:40:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "UlXpOGIpITM",
+      "position": 6,
+      "title": "Kubernetes and retiring at the top with Kelsey Hightower",
+      "publishedAt": "2026-06-03T17:42:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "1VqKUrxR2C8",
+      "position": 7,
+      "title": "Building OpenCode with Dax Raad",
+      "publishedAt": "2026-05-27T16:06:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "FUbAgAE6Fh0",
+      "position": 8,
+      "title": "Alice Ryhl: You cannot mess up switch statements in Rust",
+      "publishedAt": "2026-05-26T14:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "q9xD36NCtZ8",
+      "position": 9,
+      "title": "Why Rust is different, with Alice Ryhl",
+      "publishedAt": "2026-05-20T15:49:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "K-Xv8D8NjTk",
+      "position": 10,
+      "title": "TypeScript, C# and Turbo Pascal with Anders Hejlsberg",
+      "publishedAt": "2026-05-13T16:49:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "n5f51gtuGHE",
+      "position": 11,
+      "title": "Building Pi, and what makes self-modifying software so fascinating",
+      "publishedAt": "2026-04-29T14:35:18Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "SVOrURyOu_U",
+      "position": 12,
+      "title": "Designing Data-intensive Applications with Martin Kleppmann",
+      "publishedAt": "2026-04-22T16:16:18Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JiWgKRgdgpI",
+      "position": 13,
+      "title": "DHH’s new way of writing code",
+      "publishedAt": "2026-04-08T17:14:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3jjRNVfm3V4",
+      "position": 14,
+      "title": "Scaling Uber with Thuan Pham (Uber’s first CTO)",
+      "publishedAt": "2026-04-01T16:45:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5Kn32cIWPSY",
+      "position": 15,
+      "title": "Building WhatsApp with Jean Lee",
+      "publishedAt": "2026-03-18T17:17:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aFsAOu2bgFk",
+      "position": 16,
+      "title": "From IDEs to AI Agents with Steve Yegge",
+      "publishedAt": "2026-03-11T16:57:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "julbw1JuAz0",
+      "position": 17,
+      "title": "Building Claude Code with Boris Cherny",
+      "publishedAt": "2026-03-04T17:57:56Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WjckELpzLOU",
+      "position": 18,
+      "title": "Mitchell Hashimoto’s new way of writing code",
+      "publishedAt": "2026-02-25T16:37:56Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZggUn2mNqMU",
+      "position": 19,
+      "title": "The programming language after Kotlin – with the creator of Kotlin",
+      "publishedAt": "2026-02-12T20:40:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "OfMAtaocvJw",
+      "position": 20,
+      "title": "The third golden age of software engineering – thanks to AI, with Grady Booch",
+      "publishedAt": "2026-02-04T18:41:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8lF7HmQ_RgY",
+      "position": 21,
+      "title": "The creator of OpenClaw: \"I ship code I don't read\"",
+      "publishedAt": "2026-01-28T17:33:46Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5vL6aCvgQXU",
+      "position": 22,
+      "title": "How AWS S3 is built",
+      "publishedAt": "2026-01-21T17:53:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bM0Wq7aLd5w",
+      "position": 23,
+      "title": "High growth startups: Uber and CloudKitchens with Charles-Axel Dein",
+      "publishedAt": "2025-09-24T16:14:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Kn_P9nG0zsA",
+      "position": 24,
+      "title": "The history of servers, the cloud, and what’s next – with Oxide",
+      "publishedAt": "2025-12-17T17:01:43Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pYN7ZULM84U",
+      "position": 25,
+      "title": "Being a founding engineer at an AI startup",
+      "publishedAt": "2025-12-03T16:17:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "urVf2oNqtXU",
+      "position": 26,
+      "title": "Code security for software engineers",
+      "publishedAt": "2025-11-26T16:03:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CQmI4XKTa0U",
+      "position": 27,
+      "title": "How AI will change software engineering – with Martin Fowler",
+      "publishedAt": "2025-11-19T16:21:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sAp9RjO79cU",
+      "position": 28,
+      "title": "Netflix’s Engineering Culture",
+      "publishedAt": "2025-11-12T16:53:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Fxp3131i1yE",
+      "position": 29,
+      "title": "From Swift to Mojo and high-performance AI Engineering with Chris Lattner",
+      "publishedAt": "2025-11-05T15:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dHIppEqwi0g",
+      "position": 30,
+      "title": "Beyond Vibe Coding with Addy Osmani",
+      "publishedAt": "2025-10-29T16:21:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sj9Q2VcfUeA",
+      "position": 31,
+      "title": "Google’s engineering culture",
+      "publishedAt": "2025-10-15T17:39:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "45kVol96IlM",
+      "position": 32,
+      "title": "Python, Go, Rust, TypeScript and AI with Armin Ronacher",
+      "publishedAt": "2025-10-08T15:12:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "iPKmcLxuS_A",
+      "position": 33,
+      "title": "Code Complete with Steve McConnell",
+      "publishedAt": "2025-09-10T15:27:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bBQhzsoJ0uM",
+      "position": 34,
+      "title": "The state of VC within software and AI startups –  with Peter Walker",
+      "publishedAt": "2025-08-06T16:23:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xHHlhoRC8W4",
+      "position": 35,
+      "title": "Measuring the impact of AI on software engineering  – with Laura Tacho",
+      "publishedAt": "2025-07-23T16:44:54Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "TZE33qMYwsc",
+      "position": 36,
+      "title": "Amazon, Google and Vibe Coding with Steve Yegge",
+      "publishedAt": "2025-07-16T16:06:59Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vZGycBUc1vM",
+      "position": 37,
+      "title": "What is a Principal Engineer at Amazon? With Steve Huynh",
+      "publishedAt": "2025-07-09T17:18:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7agB1vOl-wg",
+      "position": 38,
+      "title": "How Linux is built with Greg Kroah-Hartman",
+      "publishedAt": "2025-07-06T13:45:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "u-3IILWQPRM",
+      "position": 39,
+      "title": "How AI is changing software engineering at Shopify with Farhan Thawar",
+      "publishedAt": "2025-07-02T13:57:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2oq__5tDFZI",
+      "position": 40,
+      "title": "Things you didn't know about GitHub - with CEO Thomas Dohmke",
+      "publishedAt": "2025-06-18T15:25:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aSXaxOdVtAQ",
+      "position": 41,
+      "title": "TDD, AI agents and coding with Kent Beck",
+      "publishedAt": "2025-06-11T15:30:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "lDfjPEA4BUM",
+      "position": 42,
+      "title": "50 Years of Microsoft and Developer Tools with Scott Guthrie",
+      "publishedAt": "2025-06-04T16:17:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3E_jDJST69s",
+      "position": 43,
+      "title": "From Software Engineer to AI Engineer – with Janvi Kalra",
+      "publishedAt": "2025-05-28T14:53:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vBjonut1JMk",
+      "position": 44,
+      "title": "How Kubernetes is Built with Kat Cosgrove",
+      "publishedAt": "2025-05-14T15:14:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "G9WOC8sUts8",
+      "position": 45,
+      "title": "Building Windsurf with Varun Mohan",
+      "publishedAt": "2025-05-07T15:29:43Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "f4AGAeVe2Jw",
+      "position": 46,
+      "title": "How to work better with Product, as an Engineer with Ebi Atawodi",
+      "publishedAt": "2025-04-30T17:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qDTW3EGnrkw",
+      "position": 47,
+      "title": "Building Reddit’s iOS and Android app",
+      "publishedAt": "2025-04-23T11:53:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "o1-BUCdog1c",
+      "position": 48,
+      "title": "Working at Amazon as a software engineer – with Dave Anderson",
+      "publishedAt": "2025-04-16T15:24:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "lz451zUlF-k",
+      "position": 49,
+      "title": "The Philosophy of Software Design – with John Ousterhout",
+      "publishedAt": "2025-04-09T15:48:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qBRJxIw7gBg",
+      "position": 50,
+      "title": "Stacked diffs and tooling at Meta with Tomas Reimers",
+      "publishedAt": "2025-04-02T15:36:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "XXXa31L9Uos",
+      "position": 51,
+      "title": "Building Figma Slides with Noah Finer and Jonathan Kaufman",
+      "publishedAt": "2025-03-26T16:21:59Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BSrx9y7npyg",
+      "position": 52,
+      "title": "Developer Experience at Uber with Gautam Korlam",
+      "publishedAt": "2025-03-12T15:32:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "rVQoh0CIVFs",
+      "position": 53,
+      "title": "Design-first software engineering: Craft – with Balint Orosz",
+      "publishedAt": "2025-03-05T18:00:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sXoJ0qOavhs",
+      "position": 54,
+      "title": "The man behind the Big Tech comics – with Manu Cornet",
+      "publishedAt": "2025-02-26T16:51:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WufjP_WRnPM",
+      "position": 55,
+      "title": "Developer productivity with Nicole Forsgren (the creator of DORA)",
+      "publishedAt": "2025-02-19T15:40:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qXJ3S3T3xJY",
+      "position": 56,
+      "title": "Live streaming at world-record scale with Ashutosh Agrawal (ex-Jio / Disney+ Hotstar)",
+      "publishedAt": "2025-02-12T18:44:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "98o_L3jlixw",
+      "position": 57,
+      "title": "AI Engineering with Chip Huyen",
+      "publishedAt": "2025-02-05T15:23:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Oiz6Q7txUqk",
+      "position": 58,
+      "title": "Two developers built a game that sold 1M copies. How?",
+      "publishedAt": "2025-01-29T16:26:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "SvEjS4-2WJQ",
+      "position": 59,
+      "title": "Observability: the present and future, with Charity Majors",
+      "publishedAt": "2025-01-22T17:34:57Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "DQFNYCO1MqM",
+      "position": 60,
+      "title": "“The Coding Machine” at Meta – with Michael Novati",
+      "publishedAt": "2025-01-15T20:04:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "d7GsnaQYZ68",
+      "position": 61,
+      "title": "Confessions of a Big Tech recruiter – with Blake Stockman",
+      "publishedAt": "2025-01-08T16:23:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IekJKQ-AvkM",
+      "position": 62,
+      "title": "Shipping projects at Big Tech with Sean Goedecke",
+      "publishedAt": "2024-12-18T16:56:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Ga7xKYQ41XU",
+      "position": 63,
+      "title": "How Notion Builds Their iOS and Android Apps",
+      "publishedAt": "2024-12-11T20:22:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "u7WaC429YcU",
+      "position": 64,
+      "title": "Evolution of software architecture with the co-creator of UML (Grady Booch)",
+      "publishedAt": "2024-12-04T16:48:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AI_UMnTM4o8",
+      "position": 65,
+      "title": "Linear: move fast with little process (with first Engineering Manager Sabin Roman)",
+      "publishedAt": "2024-11-20T11:32:55Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bf3erhnXNTE",
+      "position": 66,
+      "title": "Promotions and tooling at Google (with Irina Stanescu, Ex-Google)",
+      "publishedAt": "2024-11-06T17:29:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6WM_q193Kls",
+      "position": 67,
+      "title": "Twisting the rules of building software: Bending Spoons (the team behind Evernote)",
+      "publishedAt": "2024-10-23T15:23:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pMD_jKMePDM",
+      "position": 68,
+      "title": "Efficient scaleups in 2024 vs 2021: Sourcegraph (with CEO & Co-founder Quinn Slack)",
+      "publishedAt": "2024-10-09T15:27:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "uRuLgar5XZw",
+      "position": 69,
+      "title": "AI tools for software engineers, but without the hype – with Simon Willison (Co-Creator of Django)",
+      "publishedAt": "2024-09-25T13:55:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vCHJm2itKsI",
+      "position": 70,
+      "title": "The Pragmatic Engineer Podcast: Trailer",
+      "publishedAt": "2024-09-17T18:31:28Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    }
+  ]
+}

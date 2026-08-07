@@ -16,22 +16,21 @@ consolidate approved selected summaries under one ordered playlist resource.
 - Research: [research.md](./research.md)
 - PRD: [prd.md](./prd.md)
 - Plan: none
-- Progress: none
+- Progress: [progress.md](./progress.md)
 - Decisions: none
 
 ## Next Action
 
-- Obtain explicit human confirmation of transcript language, summary language,
-  and attribution mode. Only then add the playlist to the catalog with draft
-  curation, sync its complete manifest, validate the inventory, and present the
-  exact selection and fold proposal for approval.
+- Obtain explicit human approval or revision of the six draft candidate IDs in
+  their exact editorial order and the proposed resource 11/resource 30 folds.
+  Stop before capture, review promotion, overview creation, or public-resource
+  changes until that approval is recorded.
 
 ## Open Questions
 
-- [ ] What exact `transcriptLanguage` should this playlist require?
-- [ ] What exact `summaryLanguage` should this playlist use?
-- [ ] Should attribution use one or more explicit author relationships, or
-      `multiSpeaker: true`?
+- [x] Approved `transcriptLanguage: en`.
+- [x] Approved `summaryLanguage: en`.
+- [x] Approved `multiSpeaker: true` attribution mode.
 - [ ] Approve or revise the proposed ordered six-video selection after the
       configured playlist is synchronized with draft curation.
 - [ ] Approve folding resources 11 and 30 into the collection while retaining
