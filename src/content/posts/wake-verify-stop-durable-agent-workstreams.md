@@ -64,6 +64,9 @@ Liu describes a goal as a verification step that lets the agent continue while t
 
 The verifier still needs engineering judgment. “CI is green,” “the issue is closed,” and “the customer received a response” establish different properties. None proves the others. A weak verifier can make an active loop consistently wrong.
 
+Permission to run the loop is not permission to redefine its success predicate.
+Changing a known-correct expectation should require separate approval.
+
 [Make the Agent Prove It](/posts/make-the-agent-prove-it) covers how to choose evidence by risk. For recurring work, add one rule: the verifier must be cheap and reliable enough to run at the chosen cadence.
 
 ## A stopping policy bounds success and failure
