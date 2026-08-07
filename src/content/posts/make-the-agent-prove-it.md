@@ -1,6 +1,6 @@
 ---
 title: 'Make the Agent Prove It'
-description: 'A risk-scaled acceptance contract for agent-produced code: execution boundaries, executable checks, real-system evidence, external oracles, and human judgment.'
+description: 'A risk-scaled acceptance contract for agent-produced code: execution boundaries, discriminating checks, real-system evidence, external oracles, and human judgment.'
 pubDate: 2026-06-28
 tags: ['AI Agents', 'Workflow', 'Testing', 'Review']
 draft: false
@@ -15,7 +15,7 @@ order: 3
 ```text
 risk → boundary → proof contract
                     ↓
- executable check → real system → external oracle when available
+discriminating check → real system → external oracle when available
                     ↓
             evidence packet → human decision
 ```
@@ -72,6 +72,24 @@ Willison's default instruction is short: tell the agent how to run the tests, th
 
 The reviewer still owns the acceptance condition. In experiments Hillel Wayne described in March 2026, models helped encode precisely stated properties but did not reliably invent meaningful ones ([01:06:16–01:12:37](https://www.youtube.com/watch?v=KSkcgIYQy0U&t=3976s)). A green agent-written test is weak evidence if the agent chose a trivial assertion.
 
+Executable does not automatically mean discriminating. A check is discriminating only if a plausible wrong behavior or competing explanation could produce a different result. In an April 2026 personal account, Salvatore Sanfilippo reported that a model preserved the supplied benchmark and regression suite while optimizing a small Tcl interpreter, but a later model review found semantics-changing bugs outside those tests ([00:07:47–00:14:11](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s)). The suite was repeatable; it did not cover the disputed behavior.
+
+**Author synthesis:** Generated explanations can steer investigation, but they do not establish acceptance. In a June 2026 project account, Sanfilippo reported that a model defended a plausible diagnosis until he contrasted how the working and optimized paths reached the repeated-token state; the model then reconsidered ([00:05:44–00:09:03](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s)). The English source-list titles are translations, and the descriptions above are editorial paraphrases of Italian captions; none are quotations.
+
+Before accepting an explanation or green check, use the following audit; the template and provenance rule are author synthesis:
+
+```text
+claim:
+predicted behavioral difference:
+counter-evidence that would change the decision:
+discriminating test or intervention:
+observed result:
+evidence produced by the same model:
+decision:
+```
+
+If the same model wrote the code, explanation, and test, name that correlation in the review packet. Add a representative run, an independent check, or an external oracle when the risk warrants it.
+
 If the agent cannot explain what test would fail, that is information: you may be asking for an unclear behavior change, not a coding task.
 
 ## Exercise the real system
@@ -108,6 +126,7 @@ Some work has a better oracle than your prompt. A **conformance suite** checks a
 behavior changed:
 commands and results:
 real-system or external-oracle evidence:
+evidence provenance or correlation:
 known gaps:
 design or risk decision:
 ```
@@ -118,8 +137,9 @@ The reviewer must still understand the result. Maintained code needs design revi
 
 1. What behavior changed?
 2. What proof covers that behavior?
-3. What risk is not covered by the proof?
-4. Why is the resulting design small enough to maintain?
+3. Could that proof distinguish the intended behavior from a plausible wrong result?
+4. What risk is not covered by the proof?
+5. Why is the resulting design small enough to maintain?
 
 If nobody can answer those, the agent is not done.
 
@@ -135,9 +155,11 @@ Before editing:
    oracle needed.
 4. Stop for confirmation if the task touches data, permissions, dependencies,
    migrations, security, billing, secrets, or external side effects.
+5. State what result would count against the proposed explanation or behavior.
 
 When the behavior can be expressed as an executable check:
 - show the failing check or current failing behavior;
+- confirm the check could fail for a plausible wrong result;
 - make the smallest change;
 - run the focused check, then the normal project checks.
 
@@ -159,3 +181,5 @@ The agent proposes and produces the evidence; the reviewer decides whether it co
 - [Simon Willison: Engineering practices that make coding agents work](https://www.youtube.com/watch?v=owmJyKVu5f8), especially [00:04:41]-[00:18:35].
 - [Pi Building Pi, OpenClaw's Minimalist Coding Agent](https://www.youtube.com/watch?v=DPgJjRdQWrg), especially [00:37:11]-[00:42:55].
 - [Formal methods with Hillel Wayne](https://www.youtube.com/watch?v=KSkcgIYQy0U), especially [01:06:16]-[01:12:37].
+- [Salvatore Sanfilippo, “Testing recent alternative models”](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s), especially [00:07:47]-[00:14:11].
+- [Salvatore Sanfilippo, “Further observations on Claude Fable”](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s), especially [00:05:44]-[00:09:03].
