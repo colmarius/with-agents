@@ -1,10 +1,12 @@
 ---
-title: "Coding Agents @ AI Engineer: a guided starting point"
+title: "Coding-agent talks from AI Engineer: a guided collection"
 resourceId: 26
 date: "2026-07-31"
 ---
 
-AI Engineer curates and publishes this multi-speaker playlist; it is the source channel, not the author. The talks mix product demonstrations, practitioner reports, research prototypes, and commercial claims, so the useful question is not whether they agree. It is which talk helps with the engineering decision in front of you.
+This guide selects eight question-driven stops from the rolling Coding Agents playlist curated and published by the AI Engineer channel. It is an editorial route, not complete coverage of an event or AI Engineer's broader catalog. AI Engineer is the source channel, not the author; each speaker remains the source for that talk's claims.
+
+The talks mix product demonstrations, practitioner reports, research prototypes, and commercial claims, so the useful question is not whether they agree. It is which talk helps with the engineering decision in front of you.
 
 This route is organized by reader question, not playlist position or implied chronology. Each stop names the speaker and the affiliation established by the source, then keeps the talk's limits visible.
 
