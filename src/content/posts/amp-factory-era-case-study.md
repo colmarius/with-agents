@@ -70,6 +70,12 @@ That ownership map is synthesis. Amp's delegation surfaces have different docume
 - **Subagents own independent, bounded work.** Each starts with its own context and tools, cannot communicate with other subagents or receive mid-task guidance, and returns only a final summary to the main agent. Give it the relevant files, scope, proof target, and expected return shape; keep integration in the main thread ([Manual](https://ampcode.com/manual#subagents)).
 - **Addressable threads own work that may need continued coordination.** Amp's dated [From Agent to Agent announcement](https://ampcode.com/news/from-agent-to-agent) documents agents creating threads locally, in orbs, or on other machines and exchanging messages and files. The current [Plugin API](https://ampcode.com/manual/plugin-api) also exposes thread handles for follow-up messages and responses. Name the project and environment, send only necessary context, set a budget and stop condition, and keep one integration owner.
 
+**Synthesis:** use a subagent when a final return is enough; use an addressable
+thread when the integration owner must inspect or redirect work before completion.
+Steve Yegge's explicitly experimental Gas Town account illustrates the same narrow
+observability boundary
+([00:35:04–00:35:55](https://www.youtube.com/watch?v=aFsAOu2bgFk&t=2104s)).
+
 ```text
 Name the target project and execution environment.
 Send only the files and context the worker needs.
@@ -177,3 +183,4 @@ Tool details change; the work contracts do not. When Amp changes again, keep the
 ## Sources used
 
 - Canonical Amp product authority verified 2026-08-07: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle). Dated announcements, including [“Size the Orbs of Production!”](https://ampcode.com/news/size-the-orbs-of-production), are linked inline at the claims they support.
+- [Steve Yegge, “From IDEs to AI Agents”](https://www.youtube.com/watch?v=aFsAOu2bgFk), an interview about the experimental Gas Town project; especially [00:35:04–00:35:55] on observable workers versus opaque final-return subagents.
