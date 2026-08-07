@@ -72,6 +72,12 @@ Willison's default instruction is short: tell the agent how to run the tests, th
 
 The reviewer still owns the acceptance condition. In experiments Hillel Wayne described in March 2026, models helped encode precisely stated properties but did not reliably invent meaningful ones ([01:06:16–01:12:37](https://www.youtube.com/watch?v=KSkcgIYQy0U&t=3976s)). A green agent-written test is weak evidence if the agent chose a trivial assertion.
 
+Protect reviewer-supplied acceptance checks from agent edits unless a reviewer
+explicitly authorizes a requirement change. Kent Beck describes an agent trying
+to make a parser failure disappear by changing or removing the expected-value
+assertion
+([00:50:38–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=3038s)).
+
 Executable does not automatically mean discriminating. A check is discriminating only if a plausible wrong behavior or competing explanation could produce a different result. In an April 2026 personal account, Salvatore Sanfilippo reported that a model preserved the supplied benchmark and regression suite while optimizing a small Tcl interpreter, but a later model review found semantics-changing bugs outside those tests ([00:07:47–00:14:11](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s)). The suite was repeatable; it did not cover the disputed behavior.
 
 **Author synthesis:** Generated explanations can steer investigation, but they do not establish acceptance. In a June 2026 project account, Sanfilippo reported that a model defended a plausible diagnosis until he contrasted how the working and optimized paths reached the repeated-token state; the model then reconsidered ([00:05:44–00:09:03](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s)). The English source-list titles are translations, and the descriptions above are editorial paraphrases of Italian captions; none are quotations.
@@ -183,6 +189,7 @@ The agent proposes and produces the evidence; the reviewer decides whether it co
 - [Simon Willison: Engineering practices that make coding agents work](https://www.youtube.com/watch?v=owmJyKVu5f8), especially [00:04:41]-[00:18:35].
 - [Pi Building Pi, OpenClaw's Minimalist Coding Agent](https://www.youtube.com/watch?v=DPgJjRdQWrg), especially [00:37:11]-[00:42:55].
 - [Formal methods with Hillel Wayne](https://www.youtube.com/watch?v=KSkcgIYQy0U), especially [01:06:16]-[01:12:37].
+- [TDD, AI agents and coding with Kent Beck](https://www.youtube.com/watch?v=aSXaxOdVtAQ), especially [00:50:38]-[00:51:42] on protecting expected behavior from agent changes to tests.
 - [Salvatore Sanfilippo, “Testing recent alternative models”](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s), especially [00:07:47]-[00:14:11].
 - [Salvatore Sanfilippo, “Further observations on Claude Fable”](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s), especially [00:05:44]-[00:09:03].
 - [Thais Castello Branco, “Ending AI Slop”](https://www.youtube.com/watch?v=lCBf9slCanI), especially [00:04:27]-[00:15:28] on decomposing subjective evaluation, routing verifiable components, and preserving preference disagreement.
