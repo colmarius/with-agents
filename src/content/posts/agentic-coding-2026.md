@@ -139,6 +139,8 @@ Raising an Agent episode 9 frames the shift as "the assistant is dead, long live
 
 Amp's July 17 [From Agent to Agent](https://ampcode.com/news/from-agent-to-agent) announcement is a current product example of that direction: an agent can spawn full threads on local machines, in remote orbs, or on other runners, then exchange messages and files across those threads. That makes execution environments, transfer boundaries, budgets, return paths, and integration ownership part of the task brief. The [Amp case study](/posts/amp-factory-era-case-study) covers those contracts in detail.
 
+Amp's August 6 [Portals into Orbs](https://ampcode.com/news/portals) announcement makes the remote proof boundary concrete: an orb can expose a live-reloading HTTP app for review and page feedback without a preview deployment. Access follows the thread and the portal follows the orb's lifecycle, so review convenience does not remove access, environment, or cleanup ownership.
+
 So the factory-era checklist is not "launch more agents." It is:
 
 - feed agents tasks that are likely to succeed
