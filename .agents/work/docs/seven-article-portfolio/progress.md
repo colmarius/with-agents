@@ -51,3 +51,15 @@
 - Re-ran lint, Astro check, build, and diff checks successfully.
 - Agent-browser now reports exactly seven visible cards, one for each retained
   article, with no horizontal overflow.
+
+## 2026-08-07 — Homepage and posts-list split
+
+- Restored the Amp factory-era case study to the full posts index.
+- Removed the parallel-admission and outcome-measurement cards from the homepage while
+  keeping both articles listed under `/posts` and linked from the field guide.
+- Updated homepage and posts-index copy to explain the narrower primary entry points
+  and broader specialist coverage.
+- Lint, Astro check, production build, content guard, and diff checks passed.
+- Agent-browser confirmed five homepage cards with no Amp, parallel-admission, or
+  measurement card; `/posts` contains eight articles including all three, while the
+  Behavior synthesis remains unlisted. Neither page has horizontal overflow.
