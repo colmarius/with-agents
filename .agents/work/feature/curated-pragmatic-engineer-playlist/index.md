@@ -21,9 +21,8 @@ consolidate approved selected summaries under one ordered playlist resource.
 
 ## Next Action
 
-- Obtain independent human review of the draft six-source playlist overview.
-  Do not mark it reviewed, fold standalone resources, or publish the collection
-  before explicit overview approval.
+- Complete Oracle and browser review, resolve any findings, run the final
+  verification matrix, rebase on current `origin/main`, and record completion.
 
 ## Open Questions
 
@@ -36,4 +35,4 @@ consolidate approved selected summaries under one ordered playlist resource.
       resource 14 as a standalone card because its video is not a playlist
       member.
 - [x] Human reviewed and approved the four newly captured source summaries.
-- [ ] Independent human review of the six-source playlist overview.
+- [x] Independent human review of the six-source playlist overview.

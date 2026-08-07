@@ -1,7 +1,10 @@
 ---
 title: "Formal methods with Hillel Wayne"
-resourceId: 30
+resourceId: 35
 date: "2026-07-29"
+collection: "pragmatic-engineer-selected-conversations"
+order: 6
+videoId: "KSkcgIYQy0U"
 ---
 
 Hillel Wayne explains what formal methods can and cannot prove, how tools such as TLA+ and Alloy expose design errors, why property-based testing is often the more practical choice, and where AI helps or fails when producing formal specifications.

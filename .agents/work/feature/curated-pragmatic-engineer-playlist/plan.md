@@ -33,7 +33,7 @@ overview review gates independent.
     - Speaker and affiliation claims are source-supported; The Pragmatic
       Engineer remains curator/source channel, not author of guest claims.
 
-- [ ] **Task 3: Create and independently review the playlist overview**
+- [x] **Task 3: Create and independently review the playlist overview**
   - Scope: `src/content/youtube/playlists/pragmatic-engineer-podcast/overview.md`
   - Depends on: Task 2
   - Acceptance:
@@ -44,7 +44,7 @@ overview review gates independent.
     - A dedicated overview review checks attribution, synthesis, tensions, and
       coverage before setting `status: reviewed`.
 
-- [ ] **Task 4: Publish the ordered public collection and folds**
+- [x] **Task 4: Publish the ordered public collection and folds**
   - Scope: public transcripts/summaries, resource manifest, and collection
     frontmatter
   - Depends on: Tasks 2 and 3

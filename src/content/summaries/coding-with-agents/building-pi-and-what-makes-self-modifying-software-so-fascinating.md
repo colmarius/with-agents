@@ -1,7 +1,10 @@
 ---
 title: "Building Pi, and what makes self-modifying software so fascinating"
-resourceId: 11
+resourceId: 35
 date: "2026-04-29"
+collection: "pragmatic-engineer-selected-conversations"
+order: 4
+videoId: "n5f51gtuGHE"
 ---
 
 This Pragmatic Engineer episode brings together Mario Zechner and Armin Ronacher to unpack Pi, self-modifying coding-agent harnesses, and the engineering practices needed when agents make code cheap but judgment, review, and responsibility still do not scale.

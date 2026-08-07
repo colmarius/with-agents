@@ -111,3 +111,29 @@
 
 - Obtain explicit human approval or revision instructions for the draft
   overview. Do not publish or fold standalone cards before approval.
+
+## 2026-08-07 — Overview approved and public collection published
+
+- Human explicitly approved proceeding from the pending overview gate after
+  receiving a direct link to the six-source draft and a statement that public
+  work remained blocked.
+- Promoted only that overview from `draft` to `reviewed`; its body and exact six
+  covered video IDs did not change.
+- Added resource 35, `The Pragmatic Engineer — selected conversations`, with
+  one ordered `Selected videos` collection using the approved six IDs and
+  `pragmatic-engineer-selected-conversations` collection key.
+- Added four public transcript/summary pairs for Martin Fowler, Dex Horthy,
+  Boris Cherny, and Laura Tacho. Each public transcript body is byte-identical
+  to its reviewed source-library transcript body.
+- Reassigned the existing Pi and Hillel Wayne summaries to resource 35 at
+  orders 4 and 6 without changing their bodies or public transcript files.
+  Removed standalone resource cards 11 and 30. Resource 14 remains unchanged.
+- Publication verification currently passes: exact unique orders 1–6, public
+  content guard, 69 targeted Node tests, library status/audit, Astro check,
+  production build, source-only import/build boundaries, transcript equality,
+  Biome, and `git diff --check`.
+
+## Next action
+
+- Complete browser and Oracle review, resolve findings, rerun affected checks,
+  rebase safely on current `origin/main`, and record final completion.

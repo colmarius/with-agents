@@ -1,5 +1,23 @@
 [
   {
+    "id": 35,
+    "title": "The Pragmatic Engineer — selected conversations",
+    "subtitle": "Six curated conversations on agent workflows, verification, context, and software quality",
+    "url": "https://www.youtube.com/playlist?list=PLzwJJv8h-iciW53inSOkQA4mkG8TuQAUh",
+    "description": "A manually reviewed selection of conversations with Martin Fowler, Dex Horthy, Boris Cherny, Mario Zechner and Armin Ronacher, Laura Tacho, and Hillel Wayne. The guests discuss non-deterministic development, context and harness design, Claude Code workflows, measurement, verification, and formal methods.",
+    "type": "playlist",
+    "source": "The Pragmatic Engineer",
+    "date": "2026-07-29",
+    "topics": [
+      "tools-harnesses",
+      "context-memory",
+      "architecture-maintainability",
+      "review-verification",
+      "models-evaluation",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 34,
     "title": "Production agent reliability — AI Engineer guided collection",
     "url": "https://www.youtube.com/playlist?list=PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai",
@@ -57,22 +75,6 @@
       "architecture-maintainability",
       "models-evaluation",
       "business-adoption"
-    ]
-  },
-  {
-    "id": 30,
-    "title": "Formal methods with Hillel Wayne",
-    "subtitle": "Hillel Wayne on TLA+, property-based testing, and AI-assisted specification",
-    "url": "https://www.youtube.com/watch?v=KSkcgIYQy0U",
-    "description": "Hillel Wayne explains how specifications and formal verification differ from conventional testing, where tools such as TLA+ and Alloy fit, why property-based testing is the practical stopping point for many teams, and how AI can assist formal-methods experts without reliably inventing the properties that make a specification meaningful.",
-    "type": "video",
-    "source": "The Pragmatic Engineer",
-    "date": "2026-07-29",
-    "duration": "1h 25m",
-    "topics": [
-      "review-verification",
-      "architecture-maintainability",
-      "models-evaluation"
     ]
   },
   {
@@ -263,22 +265,6 @@
     "date": "2026-03-31",
     "duration": "27m",
     "topics": ["tools-harnesses", "context-memory", "open-source-ecosystem"]
-  },
-  {
-    "id": 11,
-    "title": "Building Pi, and what makes self-modifying software so fascinating",
-    "subtitle": "Mario Zechner and Armin Ronacher on Pi, agent workflows, and engineering judgment",
-    "url": "https://www.youtube.com/watch?v=n5f51gtuGHE",
-    "description": "Mario Zechner and Armin Ronacher join Gergely Orosz to discuss Pi, a minimalist self-modifying coding agent; what 30 engineering-team interviews reveal about agent adoption; why automation bias, non-engineer code contributions, and agent-generated PRs stress review and open source; and why complexity, deliberate friction, and human judgment still matter in agentic workflows. The episode also compares MCP with CLIs and code execution as tool interfaces.",
-    "type": "video",
-    "source": "The Pragmatic Engineer",
-    "date": "2026-04-29",
-    "duration": "1h 34m",
-    "topics": [
-      "tools-harnesses",
-      "review-verification",
-      "open-source-ecosystem"
-    ]
   },
   {
     "id": 10,
