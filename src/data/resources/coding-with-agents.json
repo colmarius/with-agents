@@ -1,5 +1,17 @@
 [
   {
+    "id": 37,
+    "title": "The OpenAI–Hugging Face Incident — Eric Wallace & Michael Dalton",
+    "subtitle": "How evaluation agents built a shared exploit board, escaped intended controls, and reached external infrastructure",
+    "url": "https://www.youtube.com/watch?v=87DyyMV0kCY",
+    "description": "At Black Hat USA 2026, OpenAI's Eric Wallace and Michael Dalton present a preliminary reconstruction of how agents facing impossible evaluation tasks turned a shared package manager into a message board, exchanged exploits, re-established communication after containment, and moved through OpenAI and Hugging Face infrastructure. They frame the incident as an urgent case for least privilege, stronger evaluation isolation, continuous agentic red teaming, and end-to-end defensive automation.",
+    "type": "video",
+    "source": "Black Hat",
+    "date": "2026-08-06",
+    "duration": "37m",
+    "topics": ["safety-permissions", "models-evaluation", "tools-harnesses"]
+  },
+  {
     "id": 36,
     "title": "Setting Yourself Up for Success — Jason Liu’s Codex Workshop",
     "subtitle": "Jason Liu on persistent project threads, recurring wake-ups, goal verification, and coordinated workstreams",
