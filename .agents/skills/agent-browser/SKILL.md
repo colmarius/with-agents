@@ -1,102 +1,54 @@
 ---
 name: agent-browser
-description: "Automates browsers with agent-browser. Use for web app navigation, testing, screenshots, data extraction, Electron/Slack/CDP, and loading CLI-served skills. Triggers on: agent-browser, browser automation, dogfood testing."
+description: "Automates real-browser workflows through the agent-browser CLI. Use for web navigation, testing, screenshots, extraction, and exploratory QA. Triggers on: agent-browser, browser automation, web testing, dogfood testing."
 ---
 
-# agent-browser Skill
+# agent-browser
 
-Use `agent-browser` for browser automation work that needs a real browser,
-repeatable browser checks, screenshots, exploratory testing, data extraction,
-or app-specific automation.
+Use `agent-browser` when work needs a real browser, repeatable UI checks, screenshots, exploratory testing, data extraction, or application-specific browser automation.
 
-This local skill is a discovery stub. Keep it small and ask the `agent-browser`
-CLI for current workflow details so instructions match the installed CLI version.
+This checked-in skill is a discovery stub. Ask the installed CLI for current workflow details instead of vendoring fast-changing runtime instructions.
 
-Source: <https://agent-browser.dev/skills>
+## Workflow
 
-## When To Use
+1. Check whether the CLI is available:
 
-Use this skill when the task asks for or benefits from:
-
-- browser navigation, form filling, snapshots, screenshots, or data extraction;
-- verifying a web app flow beyond static HTML inspection;
-- systematic exploratory testing or dogfooding;
-- automating an Electron app through Chrome DevTools Protocol;
-- browser-based Slack automation;
-- running browser automation in Vercel Sandbox or AWS Bedrock AgentCore;
-- loading current `agent-browser` skill instructions from the CLI.
-
-## Core Workflow
-
-1. **Check whether the CLI is available.**
-
-   ```sh
+   ```bash
    agent-browser --help
    ```
 
-   If it is not installed and the task really needs it, prefer a one-off CLI
-   invocation or ask before adding any dependency to the project.
+   If it is unavailable and the task genuinely needs it, prefer a one-off invocation or ask before adding a project dependency. dot-agents does not install the CLI or browser runtime automatically.
 
-2. **List current runtime skills.**
+2. List the instructions available from the installed CLI:
 
-   ```sh
+   ```bash
    agent-browser skills list
    ```
 
-3. **Load the current skill for the job.**
+3. Load the current skill for the job:
 
-   ```sh
+   ```bash
    agent-browser skills get core --full
    ```
 
-   Use `core --full` as the default starting point for most browser tasks. Use a
-   specialized skill when the task clearly matches one.
+   Use `core --full` for normal browser work. Select a specialized runtime skill when the task clearly matches one listed by the CLI.
 
-4. **Run the browser workflow from the CLI-served instructions.**
+4. Follow the CLI-served workflow. Record commands, screenshots, videos, traces, observed errors, and known gaps in the active work item or final response.
 
-   Record commands, artifacts, screenshots, videos, traces, and known gaps in the
-   active work item or final response.
+## Runtime Skill Commands
 
-## Useful CLI Skill Commands
-
-```sh
-agent-browser skills
+```bash
 agent-browser skills list
-agent-browser skills get <name>
 agent-browser skills get <name> --full
 agent-browser skills get --all
 agent-browser skills path [name]
 ```
 
-All of those commands support `--json` for structured output. Set
-`AGENT_BROWSER_SKILLS_DIR` only when you intentionally need a custom skills
-directory.
+Use `--json` when structured output helps. Treat `agent-browser skills list` as authoritative; available runtime skills change with the installed version.
 
-## Available Runtime Skills
+## Verification
 
-Use `agent-browser skills list` for the authoritative list. The docs currently
-describe these runtime skills:
-
-- `core` — browser automation: navigation, snapshots, forms, screenshots, data
-  extraction, sessions, authentication, diffing, and command reference.
-- `dogfood` — systematic exploratory testing with structured reports,
-  screenshots, and repro videos.
-- `electron` — automate Electron apps such as VS Code, Slack, Discord, or Figma
-  through their Chrome DevTools Protocol port.
-- `slack` — browser-based Slack automation for unreads, channels, search,
-  messages, and data extraction.
-- `vercel-sandbox` — run `agent-browser` and headless Chrome inside ephemeral
-  Vercel Sandbox microVMs.
-- `agentcore` — run `agent-browser` on AWS Bedrock AgentCore cloud browsers.
-
-## Installation Note
-
-The upstream docs install a thin discovery skill with:
-
-```sh
-npx skills add vercel-labs/agent-browser
-```
-
-For this repository, this checked-in local skill plays that discovery role. Do
-not vendor `agent-browser` runtime skill data into this repo by default; ask the
-CLI for current instructions instead.
+- Confirm `agent-browser --help` succeeds before relying on the workflow.
+- Verify the target behavior in the browser, not only in source or static HTML.
+- Save reviewable evidence when a visual or running-system claim matters.
+- Close browser sessions and report anything that remained unverified.

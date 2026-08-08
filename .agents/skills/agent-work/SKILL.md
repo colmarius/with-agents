@@ -1,75 +1,80 @@
 ---
 name: agent-work
-description: "Creates and curates .agents/work/ work items. Use for durable indexes, artifacts, progress, migration, and new-thread handoffs. Triggers on: work item, agent work, new work item, list active work, handoff prompt."
+description: "Manages durable work items, plans, execution, and handoffs. Use when repository context must survive or coordinate work. Triggers on: create work item, implement work item, requirements brief, refine plan, handoff prompt, stress-test plan."
 ---
 
 # Agent Work
 
-Create and maintain work items under `.agents/work/<category>/<work-slug>/` so context, plans, progress, decisions, and handoff prompts stay together for one piece of multi-session work.
+Manage durable work under `.agents/work/<category>/<work-slug>/`, from requirements and planning through execution, evidence, handoffs, and completion.
 
-A "work item" is a folder; entries inside `plan.md` or focused files under `plans/` are the executable tasks.
+Create a work item when resumption, coordination, handoff, auditability, durable decisions, or an explicit user request justifies repository context. Keep small, self-contained planning and execution in the current conversation. A work item is a folder; entries inside its plan are the executable tasks.
 
 ## Workflow
 
-1. **Check existing context**
+1. **Choose conversational or durable work**
+   - For a self-contained request, plan, implement, verify, and report in the current conversation without creating repository artifacts.
+   - For durable work, check existing context before creating anything.
+2. **Locate or create the work item**
    - Run `.agents/skills/agent-work/scripts/list-work.sh --all` or search `.agents/work/` before creating a new work item.
    - Read a work item's `index.md` first when continuing existing work.
-2. **Create the work item**
+   - When `research/` or `plans/` contains multiple durable files, read its `index.md` before leaf files.
    - Run `.agents/skills/agent-work/scripts/new-work.sh --category <category> --slug <work-slug> --title "<Work Item Title>"` from the repo root.
    - Create only `index.md` at first; do not add empty support folders.
-3. **Place artifacts deliberately**
-   - Use `research.md` for findings specific to this work item.
-   - Use `research/` for multiple focused research notes specific to this work item.
-   - Use `.agents/research/` for reusable cross-work findings.
-   - Use `prd.md` as a short requirements brief only when alignment is needed.
-   - Use `plan.md` for the primary implementation-ready task plan; copy `.agents/skills/agent-work/assets/plan-template.md` as a starting point.
-   - Use `plans/` for multiple focused implementation plans when one plan file would be too large or when separate phases need independent handoffs.
-   - Use `progress.md` for implementation notes, verification results, blockers, and next action.
-   - Add `decisions/` only when durable decision records are worth linking.
-4. **Keep `index.md` current**
-   - Update `Status:`, `Updated:`, `Artifacts`, `Next Action`, and material `Open Questions` as the work item evolves.
+3. **Build only the context the work needs**
+   - Follow the [work-item contract](../../work/AGENTS.md) for artifact ownership, status, and lifecycle rules.
+   - Use `research` for technical facts. Create a requirements brief only when behavior or alignment is unclear.
+   - Follow [plan refinement and execution](references/plan-execution.md) to create, refine, stress-test, execute, or resume a plan.
+4. **Keep durable state current**
+   - Keep `Why` stable as the original intent. Update `Summary`, `Status:`, `Updated:`, `Artifacts`, `Next Action`, and material `Open Questions` as the work evolves.
    - When `plans/` exists, point `index.md` and handoff prompts to the active plan file.
-   - Keep status in `index.md`; do not move work folders between status directories.
-5. **Prepare handoffs when needed**
-   - Use `feature-planning` to refine a stale or ambiguous plan.
-   - Ask for a paste-ready handoff prompt before starting a new implementation thread.
-   - A good handoff prompt names the work item path, active plan slice, scope limits, expected artifact updates, verification, stop conditions, and expected final response.
+5. **Execute or hand off**
+   - Execute the active plan in the current thread by default and load project-specific implementation or verification skills as needed.
+   - Delegate only when isolation, parallelism, durable follow-up, or a different execution environment genuinely helps. Follow **Coordinating Workers And Reviewers** below.
+   - Follow [handoff context](references/handoff-context.md) when a fresh thread or worker is useful.
+6. **Finish the work**
+   - Reconcile plan checkboxes and observed evidence, promote reusable outcomes, and follow **Completing And Removing Work Items**.
 
-## Paths And Statuses
+## Coordinating Workers And Reviewers
 
-- Canonical path: `.agents/work/<category>/<work-slug>/`
-- Category values: `feature`, `bugfix`, `tech-debt`, `docs`, `tooling`, `research`, `other`
-- Categories are intentionally closed; use `other` when none fit.
-- Required file: `index.md`
-- Status values: `researching`, `planned`, `in-progress`, `blocked`, `completed`
-- Optional files: `research.md`, `prd.md`, `plan.md`, `progress.md`
-- Optional folders: `research/`, `plans/`, `decisions/`
+- The coordinating thread owns scope, durable work-item state, integration, and final acceptance.
+- Brief every fresh worker as if it has none of the current thread's context.
+- Parallelize only clearly independent work with one writer per worktree and disjoint targets across concurrent environments.
+- Never accept a delegated report alone: inspect the resulting changes and evidence, then run combined verification.
+- Before assigning multiple workers, a resumable worker, or a worker/reviewer loop, read [references/coordinated-execution.md](references/coordinated-execution.md).
 
-Status meanings:
+## Work-Item Contract
 
-- `researching`: context exists, but no implementation-ready plan exists yet.
-- `planned`: `plan.md` or `plans/<name>.md` exists and is ready for a handoff prompt or implementation.
-- `in-progress`: implementation has started.
-- `blocked`: progress needs input, access, or plan changes before continuing.
-- `completed`: implementation and verification are done.
+Follow [`.agents/work/AGENTS.md`](../../work/AGENTS.md) for canonical paths, statuses, artifact ownership, lifecycle invariants, and completion semantics. Keep this skill focused on actions and routing rather than copying that contract.
 
-See `.agents/work/AGENTS.md` for conventions automatically applied inside work items.
+## Closing Completed Work
+
+Close a work item only after implementation and verification are finished. First promote anything worth retaining, discard obsolete handoffs, and make the index final: it must say `Status: completed`, and `## Next Action` must contain only `- None.`. Commit that snapshot with the implementation before removing the folder.
+
+Use `close-work.sh --check` as the closeout preflight. If it succeeds, rerun the command without `--check`; it stages the folder removal but does not create a commit. Record that staged removal in its own commit so the preceding snapshot remains reachable in history.
+
+Closeout requires authority to commit the removal. The command rejects dirty repositories and leaves ignored or untracked material untouched. When planned history rewriting would erase the final snapshot, either preserve it on a retained ref or keep the completed folder in the tree.
 
 ## Scripts
 
 Run commands from the repository root.
 
 ```bash
+# Create a work item
 .agents/skills/agent-work/scripts/new-work.sh \
-  --category feature \
+  --category platform \
   --slug user-authentication \
   --title "User authentication"
-```
 
-```bash
+# Inspect current work
 .agents/skills/agent-work/scripts/list-work.sh
 .agents/skills/agent-work/scripts/list-work.sh --all
 .agents/skills/agent-work/scripts/list-work.sh --status blocked
+
+# Validate a completed item before removal
+.agents/skills/agent-work/scripts/close-work.sh \
+  --category platform \
+  --slug user-authentication \
+  --check
 ```
 
 ## Legacy Plans
@@ -93,8 +98,13 @@ Full upstream guide: [migration-v0.3](https://github.com/colmarius/dot-agents/bl
 - `assets/plan-template.md`: implementation-ready `plan.md` contract
 - `assets/prd-template.md`: optional requirements brief (`prd.md`) structure
 - `assets/work-decision-template.md`: optional decision record template
+- `references/plan-execution.md`: requirements, planning, refinement, stress testing, and execution
+- `references/handoff-context.md`: proportional fresh-thread and worker handoffs
+- `references/coordinated-execution.md`: runner-neutral worker and reviewer coordination
 
 ## Verification
 
 - Confirm new work items contain `index.md` and no empty support folders.
-- Run `.agents/skills/agent-work/scripts/list-work.sh --all` and confirm the work item appears with the expected status.
+- Run `.agents/skills/agent-work/scripts/list-work.sh` and confirm the work item appears with the expected status.
+- Confirm verification records observed results and explicitly identifies anything that remains unverified.
+- For closeout, run `close-work.sh --check` before staging the deletion.

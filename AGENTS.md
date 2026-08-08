@@ -117,24 +117,14 @@ Do not create long-lived draft, review, or apply artifacts for summaries. Keep t
 - GitHub Pages is configured through GitHub Actions and `public/CNAME` for `with-agents.dev`.
 - The source repository is public by explicit project decision; do not add private or sensitive material.
 
-## dot-agents Work Items
+## dot-agents Workflow
 
-Use dot-agents v0.3 for durable multi-session work:
-
-```text
-Work Item → Context as needed → Plan → Handoff Prompt → Implement → Record Progress
-```
-
-Work items live under `.agents/work/<category>/<slug>/` and keep related context together:
-
-- `index.md` - required entrypoint with status, artifacts, next action, and open questions
-- `research.md` or `research/` - optional work-local technical findings
-- `prd.md` - optional requirements brief when behavior needs alignment
-- `plan.md` or `plans/` - implementation-ready task plans
-- `progress.md` - implementation log, verification notes, blockers, and next action
-- `decisions/` - optional durable decision records
-
-Keep `.agents/research/` for reusable findings that apply across unrelated work. External reference checkouts belong in `.agents/references/` and should not be committed.
+- Keep self-contained planning and execution in the current conversation.
+- Create a work item under `.agents/work/<category>/<slug>/` when resumption, coordination, handoff, auditability, durable decisions, or an explicit request makes repository context useful.
+- Use the `agent-work` skill for durable requirements, planning, refinement, execution, coordination, and handoffs. Read the work item's `index.md` first and follow `.agents/work/AGENTS.md` for the canonical artifact and lifecycle contract.
+- Implement in the current thread by default. Handoffs are optional and should be created only when another worker, thread, or environment is useful.
+- After verification, promote reusable outcomes, commit the final completed work-item snapshot, then use `close-work.sh` to stage removal in a separate commit when authorized.
+- Keep `.agents/research/` for reusable findings that apply across unrelated work. External reference checkouts belong in `.agents/references/` and should not be committed.
 
 ## Git Workflow
 

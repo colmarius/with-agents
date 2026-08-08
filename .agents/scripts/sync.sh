@@ -24,13 +24,13 @@ do_version() {
     echo "dot-agents"
     echo "  Upstream: ${UPSTREAM_URL}"
     echo "  Default ref: ${DEFAULT_REF}"
-
+    
     if [[ -f "$METADATA_FILE" ]]; then
         local ref installed_at last_synced_at
         ref=$(sed -n 's/.*"ref"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "$METADATA_FILE")
         installed_at=$(sed -n 's/.*"installedAt"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "$METADATA_FILE")
         last_synced_at=$(sed -n 's/.*"lastSyncedAt"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "$METADATA_FILE")
-
+        
         echo ""
         echo "Installation:"
         echo "  Ref: ${ref:-unknown}"
