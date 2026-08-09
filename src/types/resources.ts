@@ -1,16 +1,26 @@
 import type { ResourceSectionKey } from '../data/resources/sections.ts';
 
-export type ResourceTopic =
-  | 'architecture-maintainability'
-  | 'business-adoption'
-  | 'collaboration-teams'
-  | 'context-memory'
-  | 'models-evaluation'
-  | 'open-source-ecosystem'
-  | 'prompting-orchestration'
-  | 'review-verification'
-  | 'safety-permissions'
-  | 'tools-harnesses';
+export const resourceTypes = [
+  'article',
+  'playlist',
+  'podcast',
+  'video',
+] as const;
+export const resourceTopics = [
+  'architecture-maintainability',
+  'business-adoption',
+  'collaboration-teams',
+  'context-memory',
+  'models-evaluation',
+  'open-source-ecosystem',
+  'prompting-orchestration',
+  'review-verification',
+  'safety-permissions',
+  'tools-harnesses',
+] as const;
+
+export type ResourceType = (typeof resourceTypes)[number];
+export type ResourceTopic = (typeof resourceTopics)[number];
 
 export type CodingResource = {
   id: number;
@@ -18,7 +28,7 @@ export type CodingResource = {
   subtitle?: string;
   url: string;
   description: string;
-  type: 'podcast' | 'video' | 'article' | 'playlist';
+  type: ResourceType;
   source: string;
   date: string;
   duration?: string;

@@ -627,7 +627,7 @@ const validateResources = async (repoRoot, errors, tracked) => {
     } else {
       resourceIds.add(resource.id);
     }
-    if (resource.date !== undefined && !isValidDate(resource.date)) {
+    if (!isValidDate(resource.date)) {
       errors.push(`${prefix} has invalid date ${String(resource.date)}`);
     }
     if (!resourceTypes.has(resource.type)) {

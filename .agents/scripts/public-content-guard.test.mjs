@@ -425,7 +425,7 @@ draft: false
 test('resource validation rejects missing and unknown primary sections', async () => {
   const root = await createFixture({
     resourceValue: [
-      ...resources({ primarySection: undefined }),
+      ...resources({ date: undefined, primarySection: undefined }),
       {
         ...resources()[0],
         id: 2,
@@ -436,6 +436,7 @@ test('resource validation rejects missing and unknown primary sections', async (
   try {
     const result = await runPublicContentGuard({ repoRoot: root });
     const errors = result.errors.join('\n');
+    assert.match(errors, /resource \$\[0\] has invalid date undefined/);
     assert.match(
       errors,
       /resource \$\[0\] has invalid primarySection undefined/,
