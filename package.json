@@ -36,6 +36,7 @@
     "@biomejs/biome": "2.5.7",
     "@types/node": "24.13.3",
     "typescript": "6.0.3",
+    "workbox-build": "7.4.1",
     "youtube-transcript-plus": "2.0.1"
   },
   "allowScripts": {

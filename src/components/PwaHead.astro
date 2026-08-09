@@ -1,0 +1,32 @@
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#4f46e5" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="With Agents" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+<script>
+  if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+    const wasControlled = navigator.serviceWorker.controller !== null;
+    let reloading = false;
+
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!wasControlled || reloading) {
+        return;
+      }
+
+      reloading = true;
+      window.location.reload();
+    });
+
+    window.addEventListener(
+      'load',
+      () => {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch((error) => {
+          console.error('Service worker registration failed.', error);
+        });
+      },
+      { once: true },
+    );
+  }
+</script>

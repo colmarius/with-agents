@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BackNav from '@components/BackNav.astro';
+import PwaHead from '@components/PwaHead.astro';
 import '../../../styles/global.css';
 
 export async function getStaticPaths() {
@@ -42,6 +43,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary" />
     <title>{slidesTitle}</title>
+    <PwaHead />
     <style>
       :global(.slide) {
         display: none;

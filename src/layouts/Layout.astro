@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Footer from '@components/Footer.astro';
 import Navigation from '@components/Navigation.astro';
+import PwaHead from '@components/PwaHead.astro';
 
 type Props = {
   title: string;
@@ -41,6 +42,7 @@ const canonicalUrl = new URL(
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary" />
     <title>{title}</title>
+    <PwaHead />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
