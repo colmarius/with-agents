@@ -158,7 +158,8 @@ Broad anthologies and playlists remain single top-level resources. Their child s
 5. Keep all summary files, frontmatter, series membership, curated collection membership, and source-evidence relationships in place.
 6. Reuse one list, filter, card, and modal implementation across all routes.
 7. Validate section assignments in the existing public-content guard and its fixture tests.
-8. Keep primary placement revisable for rolling resources without requiring redirects or content moves.
+8. Validate and narrow the JSON catalog at the shared application boundary so an invalid section fails `npm run build`; the current deployment workflow runs the Astro build but not the content guard or focused tests.
+9. Keep primary placement revisable for rolling resources without requiring redirects or content moves.
 
 ## Independent Review Evidence
 
@@ -166,6 +167,7 @@ Broad anthologies and playlists remain single top-level resources. Their child s
 - [High analysis](https://ampcode.com/threads/T-019fe7c8-8a2a-712c-9c2a-604117ddbbf2) independently recommended a similar four-way intent model.
 - [Ultra analysis](https://ampcode.com/threads/T-019fe7c8-90e5-72aa-8bf9-300e50d0e535) recommended the strongest alternative: series, guided playlists, and standalone talks/interviews.
 - An Oracle consultation stress-tested the disagreement and favored reader intent, provided the all-resources route and global search remain available.
+- A final [ultra implementation-plan review](https://ampcode.com/threads/T-019fe7e1-ffa7-73ef-aac7-4f7685395de3) rated the plan “ready with changes,” reconciled the 8/8/9/6 resources and 20/23/21/14 summaries to 31/78, and identified no blockers. Its corrections require build-time taxonomy enforcement, copy cleanup on both resource routes, verify-only treatment of unchanged inbound links, and concrete navigation checks.
 
 The independent analyses initially disagreed on summary coverage because some counted only the nested directory. A repository-wide check established the corrected baseline: 78 summaries and coverage for all 31 resource IDs.
 
