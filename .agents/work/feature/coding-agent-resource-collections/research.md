@@ -1,7 +1,7 @@
 # Research: Coding-agent resource collections
 
-**Date:** 2026-08-09  
-**Status:** complete  
+**Date:** 2026-08-09
+**Status:** complete
 **Question:** How should the existing Coding with Agents hub be split into coherent resource collections, and what repository constraints must the implementation preserve?
 
 ## Recommendation
@@ -69,8 +69,8 @@ Topic-derived collections duplicate too much content. An Amp-specific collection
 
 ### Working with Coding Agents
 
-**Promise:** Practical ways to scope, prompt, delegate, coordinate, inspect, and complete software work with coding agents.  
-**Rule:** The primary reader question is “How should I work with an agent on a task or workstream?”  
+**Promise:** Practical ways to scope, prompt, delegate, coordinate, inspect, and complete software work with coding agents.
+**Rule:** The primary reader question is “How should I work with an agent on a task or workstream?”
 **Size:** 8 resources, 20 summaries.
 
 | ID | Resource |
@@ -86,8 +86,8 @@ Topic-derived collections duplicate too much content. An Amp-specific collection
 
 ### Building Coding Agent Systems
 
-**Promise:** How models, prompts, tools, harnesses, context systems, evaluation, orchestration, and execution infrastructure shape coding-agent products.  
-**Rule:** The agent, harness, model integration, or execution environment is the system being designed or evaluated. Model/harness evaluation belongs here; evaluation of delivered work belongs under Reliable Agentic Engineering.  
+**Promise:** How models, prompts, tools, harnesses, context systems, evaluation, orchestration, and execution infrastructure shape coding-agent products.
+**Rule:** The agent, harness, model integration, or execution environment is the system being designed or evaluated. Model/harness evaluation belongs here; evaluation of delivered work belongs under Reliable Agentic Engineering.
 **Size:** 8 resources, 23 summaries.
 
 | ID | Resource |
@@ -103,8 +103,8 @@ Topic-derived collections duplicate too much content. An Amp-specific collection
 
 ### Reliable Agentic Engineering
 
-**Promise:** Practices for making agent-generated and agent-operated systems reviewable, correct, secure, maintainable, and safe to run.  
-**Rule:** The central question is what evidence or controls make the work trustworthy.  
+**Promise:** Practices for making agent-generated and agent-operated systems reviewable, correct, secure, maintainable, and safe to run.
+**Rule:** The central question is what evidence or controls make the work trustworthy.
 **Size:** 9 resources, 21 summaries.
 
 | ID | Resource |
@@ -121,8 +121,8 @@ Topic-derived collections duplicate too much content. An Amp-specific collection
 
 ### Teams & the Software Ecosystem
 
-**Promise:** How coding agents change collaboration, developer roles, product organizations, adoption, economics, and open-source communities.  
-**Rule:** The principal unit of analysis is larger than one practitioner or one technical system.  
+**Promise:** How coding agents change collaboration, developer roles, product organizations, adoption, economics, and open-source communities.
+**Rule:** The principal unit of analysis is larger than one practitioner or one technical system.
 **Size:** 6 resources, 14 summaries.
 
 | ID | Resource |
