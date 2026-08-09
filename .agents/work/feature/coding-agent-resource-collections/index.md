@@ -1,6 +1,6 @@
 # Coding-agent resource collections
 
-Status: in-progress
+Status: blocked
 Category: feature
 Updated: 2026-08-09
 
@@ -10,7 +10,7 @@ The Coding with Agents resource hub has grown into one flat list that mixes prac
 
 ## Summary
 
-Implementation and initial verification are complete for four primary sections over the existing canonical resource catalog: Working with Coding Agents, Building Coding Agent Systems, Reliable Agentic Engineering, and Teams & the Software Ecosystem. The catalog boundary and public guard validate every assignment; `/resources/coding-with-agents` remains the browse-all hub, nested section views and the collection overview are live in the static build, and resource IDs and summary content paths are unchanged. Required independent implementation review is next.
+Implementation, independent high-mode review, remediation, and final automated and browser verification are complete for four primary sections over the existing canonical resource catalog: Working with Coding Agents, Building Coding Agent Systems, Reliable Agentic Engineering, and Teams & the Software Ecosystem. The production catalog boundary and independent public guard validate the complete required resource shape and every section assignment; `/resources/coding-with-agents` remains the browse-all hub, nested section views and the collection overview are present in the static build, and resource IDs and summary content paths are unchanged. The local branch is release-ready but blocked pending authorization to push and open a pull request.
 
 ## Artifacts
 
@@ -24,7 +24,7 @@ Implementation and initial verification are complete for four primary sections o
 
 ## Next Action
 
-- Commit the browser-found accessibility remediation, generate `implementation-review.patch` from the remote baseline, and run the required high-mode independent review before final release verification.
+Decide whether to authorize pushing `work/coding-agent-resource-collections` and opening a pull request for the local release-ready commits.
 
 ## Open Questions
 
