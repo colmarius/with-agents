@@ -24,7 +24,7 @@ Implementation is underway for four primary sections over the existing canonical
 
 ## Next Action
 
-- Implement [Task 3: Add nested section routes and collection navigation](plan.md#task-3-add-nested-section-routes-and-collection-navigation); retain Task 2 as unchecked until its browser acceptance criteria are observed.
+- Implement [Task 4: Turn the resource index into a useful collection overview](plan.md#task-4-turn-the-resource-index-into-a-useful-collection-overview); retain Tasks 2–3 as unchecked until their browser acceptance criteria are observed.
 
 ## Open Questions
 

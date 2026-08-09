@@ -4,7 +4,7 @@ Updated: 2026-08-09
 
 ## Current State
 
-Task 1 is implemented and verified. Task 2 implementation is complete: the React list now receives typed route data, retains the global summary manifest, and no longer duplicates the resource type; browser acceptance remains pending. Task 3 is next.
+Task 1 is implemented and verified. Tasks 2–3 implementation is complete: the React list receives typed route data, the global summary manifest remains available on every route, and the registry generates only the four approved section pages plus accessible collection navigation. Browser acceptance remains pending. Task 4 is next.
 
 ## Verification Evidence
 
@@ -14,6 +14,9 @@ Task 1 is implemented and verified. Task 2 implementation is complete: the React
 - `npm run lint:fix` — checked 252 files and formatted the Task 1 changes.
 - `npm run check` — 44 files checked with 0 errors, warnings, or hints after the Task 2 data-flow change.
 - `npm run lint:fix` — checked 253 files and formatted the Task 2 changes.
+- `npm run check` — 45 files checked with 0 errors, warnings, or hints after adding the section route.
+- `npm run build` — built all four nested section routes, the All route, and all 78 summary API routes; generated section counts are 8/8/9/6 with section-specific canonical URLs, one `aria-current="page"` link per route, and no unregistered route output.
+- `npm run lint:fix` — checked 254 files and formatted the Task 3 changes.
 
 ## Review
 
@@ -22,8 +25,9 @@ Task 1 is implemented and verified. Task 2 implementation is complete: the React
 ## Commits
 
 - `6b30962` — Add validated resource section taxonomy.
-- Task 2 implementation: pending commit.
+- `d8b1b79` — Make resource list accept route data.
+- Task 3 implementation: pending commit.
 
 ## Unverified
 
-- Task 2 browser acceptance, Tasks 3–5, complete project checks, production build, and browser proof remain pending.
+- Tasks 2–3 browser acceptance, Tasks 4–5, final project checks, independent review, and browser proof remain pending.
