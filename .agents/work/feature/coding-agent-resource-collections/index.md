@@ -10,7 +10,7 @@ The Coding with Agents resource hub has grown into one flat list that mixes prac
 
 ## Summary
 
-Implementation is underway for four primary sections over the existing canonical resource catalog: Working with Coding Agents, Building Coding Agent Systems, Reliable Agentic Engineering, and Teams & the Software Ecosystem. The work will add one validated primary assignment per resource, preserve `/resources/coding-with-agents` as the browse-all hub, add nested section views, and leave resource IDs and summary content paths unchanged. Ultra review corrections are incorporated, including production-build enforcement of section validity.
+Implementation and initial verification are complete for four primary sections over the existing canonical resource catalog: Working with Coding Agents, Building Coding Agent Systems, Reliable Agentic Engineering, and Teams & the Software Ecosystem. The catalog boundary and public guard validate every assignment; `/resources/coding-with-agents` remains the browse-all hub, nested section views and the collection overview are live in the static build, and resource IDs and summary content paths are unchanged. Required independent implementation review is next.
 
 ## Artifacts
 
@@ -24,7 +24,7 @@ Implementation is underway for four primary sections over the existing canonical
 
 ## Next Action
 
-- Run initial complete verification for [Task 5](plan.md#task-5-verify-the-complete-static-and-browser-experience), including browser acceptance for Tasks 2–4, then prepare the required independent review.
+- Commit the browser-found accessibility remediation, generate `implementation-review.patch` from the remote baseline, and run the required high-mode independent review before final release verification.
 
 ## Open Questions
 

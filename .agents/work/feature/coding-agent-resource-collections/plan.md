@@ -36,7 +36,7 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
 
 ### Task 2: Make the existing resource list data-driven
 
-- [ ] **Task 2: Make the existing resource list data-driven**
+- [x] **Task 2: Make the existing resource list data-driven**
   - Scope: `src/components/resources/CodingWithAgents.tsx`, `src/pages/resources/coding-with-agents.astro`, shared resource types/data module from Task 1
   - Depends on: Task 1
   - Acceptance:
@@ -49,7 +49,7 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
 
 ### Task 3: Add nested section routes and collection navigation
 
-- [ ] **Task 3: Add nested section routes and collection navigation**
+- [x] **Task 3: Add nested section routes and collection navigation**
   - Scope: `src/pages/resources/coding-with-agents/`, `src/components/resources/ResourcesNav.astro`, section registry from Task 1
   - Depends on: Task 2
   - Acceptance:
@@ -63,7 +63,7 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
 
 ### Task 4: Turn the resource index into a useful collection overview
 
-- [ ] **Task 4: Turn the resource index into a useful collection overview**
+- [x] **Task 4: Turn the resource index into a useful collection overview**
   - Scope: `src/pages/resources/index.astro`, section registry/data helpers; verify only (do not edit unless broken): existing links in `src/pages/index.astro`, `src/layouts/PostLayout.astro`, and `src/content/posts/agentic-coding-2026.md`
   - Depends on: Task 3
   - Acceptance:
@@ -75,7 +75,7 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
 
 ### Task 5: Verify the complete static and browser experience
 
-- [ ] **Task 5: Verify the complete static and browser experience**
+- [x] **Task 5: Verify the complete static and browser experience**
   - Scope: all files changed by Tasks 1–4; rendered `/resources` routes
   - Depends on: Tasks 1–4
   - Acceptance:

@@ -412,6 +412,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
         </div>
       </div>
 
+      <h2 className="sr-only">Resources</h2>
       <div className="space-y-8">
         {filteredResources.length > 0 ? (
           filteredResources.map((resource) => (
@@ -466,7 +467,6 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
                         variant="secondary"
                         onClick={() => handleOpenSummary(resource)}
                         aria-haspopup="dialog"
-                        aria-controls={`summary-modal-${resource.id}`}
                       >
                         <DocumentIcon />
                         Read{' '}
