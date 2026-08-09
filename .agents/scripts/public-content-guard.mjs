@@ -6,6 +6,12 @@ import { resolvePlaylistEditorialScope } from './lib/youtube-library-curation.mj
 import { loadStandaloneYoutubeEvidence } from './lib/youtube-standalone-evidence.mjs';
 
 const resourceTypes = new Set(['article', 'playlist', 'podcast', 'video']);
+const resourcePrimarySections = new Set([
+  'agent-systems',
+  'reliability',
+  'teams-ecosystem',
+  'workflows',
+]);
 const resourceTopics = new Set([
   'architecture-maintainability',
   'business-adoption',
@@ -626,6 +632,11 @@ const validateResources = async (repoRoot, errors, tracked) => {
     }
     if (!resourceTypes.has(resource.type)) {
       errors.push(`${prefix} has invalid type ${String(resource.type)}`);
+    }
+    if (!resourcePrimarySections.has(resource.primarySection)) {
+      errors.push(
+        `${prefix} has invalid primarySection ${String(resource.primarySection)}`,
+      );
     }
     if (!Array.isArray(resource.topics)) {
       errors.push(`${prefix} must have a topics array`);

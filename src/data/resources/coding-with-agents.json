@@ -1,6 +1,7 @@
 [
   {
     "id": 37,
+    "primarySection": "reliability",
     "title": "The OpenAI–Hugging Face Incident — Eric Wallace & Michael Dalton",
     "subtitle": "How evaluation agents built a shared exploit board, escaped intended controls, and reached external infrastructure",
     "url": "https://www.youtube.com/watch?v=87DyyMV0kCY",
@@ -13,6 +14,7 @@
   },
   {
     "id": 36,
+    "primarySection": "workflows",
     "title": "Setting Yourself Up for Success — Jason Liu’s Codex Workshop",
     "subtitle": "Jason Liu on persistent project threads, recurring wake-ups, goal verification, and coordinated workstreams",
     "url": "https://www.youtube.com/watch?v=il1c1a2FufU",
@@ -30,6 +32,7 @@
   },
   {
     "id": 35,
+    "primarySection": "reliability",
     "title": "The Pragmatic Engineer — selected conversations",
     "subtitle": "Thirteen curated conversations on agent workflows, verification, context, and software quality",
     "url": "https://www.youtube.com/playlist?list=PLzwJJv8h-iciW53inSOkQA4mkG8TuQAUh",
@@ -49,6 +52,7 @@
   },
   {
     "id": 34,
+    "primarySection": "reliability",
     "title": "Production agent reliability — AI Engineer guided collection",
     "url": "https://www.youtube.com/playlist?list=PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai",
     "description": "A six-talk editorial route through production-agent operating decisions: expected value, control boundaries, durable execution, bounded planning, lifecycle evaluation, and human agency. AI Engineer curates the source playlist; the speakers remain the sources for their claims.",
@@ -64,6 +68,7 @@
   },
   {
     "id": 32,
+    "primarySection": "workflows",
     "title": "David Ondrej Podcast — selected agentic engineering conversations",
     "subtitle": "Five curated interviews on software factories, agent orchestration, review, and harness design",
     "url": "https://www.youtube.com/playlist?list=PL2xnrU4RbY0AamUB7lEm8-ZJsq0yzELRz",
@@ -82,6 +87,7 @@
   },
   {
     "id": 33,
+    "primarySection": "reliability",
     "title": "Ending AI Slop — Thais Castello Branco, Taste Labs",
     "subtitle": "Thais Castello Branco on decomposing subjective evaluation, plural preferences, and data quality",
     "url": "https://www.youtube.com/watch?v=lCBf9slCanI",
@@ -94,6 +100,7 @@
   },
   {
     "id": 31,
+    "primarySection": "agent-systems",
     "title": "The West Coast Builders — coding-agent collection",
     "url": "https://www.youtube.com/playlist?list=PLV_xLvHFOwiuvtEhsFIW55AdFFP7Rpnvg",
     "description": "A selected coding-agent route through Mayank Gupta's broader interview playlist, covering agent harnesses, review, architecture, model economics, context, and the changing work of software developers. The guests remain the sources for their individual claims.",
@@ -109,6 +116,7 @@
   },
   {
     "id": 29,
+    "primarySection": "agent-systems",
     "title": "Boris Cherny: We Cut 80% of Claude Code’s Prompt",
     "subtitle": "Boris Cherny on prompt ablation, model elicitation, and long-running agent workflows",
     "url": "https://www.youtube.com/watch?v=qyPCVqFUyDo",
@@ -125,6 +133,7 @@
   },
   {
     "id": 28,
+    "primarySection": "workflows",
     "title": "Field Guide to Fable — Thariq Shihipar, Anthropic",
     "subtitle": "Thariq Shihipar on capability overhang, unknowns, and ambitious agent workflows",
     "url": "https://www.youtube.com/watch?v=9fubhllmsBU",
@@ -137,6 +146,7 @@
   },
   {
     "id": 27,
+    "primarySection": "reliability",
     "title": "An AI state of the union: We’ve passed the inflection point & dark factories are coming",
     "subtitle": "Simon Willison on dark factories, agentic engineering, and proving AI-written code",
     "url": "https://www.youtube.com/watch?v=wc8FBhQtdsA",
@@ -149,6 +159,7 @@
   },
   {
     "id": 26,
+    "primarySection": "workflows",
     "title": "Coding-agent talks from AI Engineer — guided collection",
     "url": "https://www.youtube.com/playlist?list=PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt",
     "description": "A question-driven editorial route through selected talks in the rolling Coding Agents playlist published by the AI Engineer channel—not complete event coverage. The speakers remain the sources for their individual claims.",
@@ -164,6 +175,7 @@
   },
   {
     "id": 24,
+    "primarySection": "reliability",
     "title": "Architecture, AI agents, and product empathy with Robert C. Martin",
     "subtitle": "Robert C. Martin on durable architecture, agent guardrails, and customer understanding",
     "url": "https://www.youtube.com/watch?v=RxxxGkFIUJ0",
@@ -180,6 +192,7 @@
   },
   {
     "id": 23,
+    "primarySection": "agent-systems",
     "title": "AI concepts — Salvatore Sanfilippo",
     "url": "https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
     "description": "An Italian-language research notebook on model representations, reasoning, interpretability, architecture claims, open weights, local inference, and efficiency. The guided summary frames the playlist as conceptual grounding for evaluating coding agents rather than as a settled theory of AI.",
@@ -190,6 +203,7 @@
   },
   {
     "id": 22,
+    "primarySection": "reliability",
     "title": "Coding with AI — Salvatore Sanfilippo",
     "url": "https://www.youtube.com/playlist?list=PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA",
     "description": "An Italian-language playlist about coding-agent supervision, specifications, behavioral testing, model evaluation, developer attention, and local inference. The guided summary offers a short route through the most useful starting points.",
@@ -205,6 +219,7 @@
   },
   {
     "id": 21,
+    "primarySection": "teams-ecosystem",
     "title": "State of Agentic Coding - Series",
     "url": "https://www.youtube.com/playlist?list=PLg3sejGUAdUZMKADp-KCcC6m5qKjD88bT",
     "description": "Armin Ronacher and Ben Vinegar track the fast-moving practice and industry of agentic coding through monthly conversations about models, harnesses, software quality, open source, infrastructure, economics, and the changing role of developers. Episode 8 adds Pi creator Mario Zechner for a discussion of reinforcement learning, model regressions, open weights, trust, and the cost of keeping up.",
@@ -220,6 +235,7 @@
   },
   {
     "id": 20,
+    "primarySection": "agent-systems",
     "title": "Raising an Agent Season 2 - Series",
     "url": "https://ampcode.com/podcast/season-02/episode-01",
     "description": "The second season of Amp's documentary podcast follows the team's move from locally managed coding agents to remote-controllable, parallel agents running in isolated environments. The opening episode covers Amp Neo, ephemeral orbs, the declining importance of personalized local development, standardized team environments, and the implications for testing, review, CI, and software delivery.",
@@ -230,6 +246,7 @@
   },
   {
     "id": 18,
+    "primarySection": "teams-ecosystem",
     "title": "Collaborative AI Engineering: One Dev, Two Dozen Agents, Zero Alignment — Maggie Appleton, GitHub",
     "subtitle": "Maggie Appleton on team alignment and multiplayer agent environments",
     "url": "https://www.youtube.com/watch?v=ClWD8OEYgp8",
@@ -242,6 +259,7 @@
   },
   {
     "id": 17,
+    "primarySection": "reliability",
     "title": "The Friction is Your Judgment — Armin Ronacher & Cristina Poncela Cubeiro, Earendil",
     "subtitle": "Armin Ronacher and Cristina Poncela Cubeiro on useful friction in agentic engineering",
     "url": "https://www.youtube.com/watch?v=_Zcw_sVF6hU",
@@ -258,6 +276,7 @@
   },
   {
     "id": 14,
+    "primarySection": "reliability",
     "title": "Simon Willison: Engineering practices that make coding agents work",
     "subtitle": "Simon Willison on TDD, verification, sandboxing, and agentic engineering",
     "url": "https://www.youtube.com/watch?v=owmJyKVu5f8",
@@ -274,6 +293,7 @@
   },
   {
     "id": 13,
+    "primarySection": "workflows",
     "title": "A love letter to Pi | Lucas Meijer",
     "subtitle": "Lucas Meijer on Pi, context management, and evaluating agent work",
     "url": "https://www.youtube.com/watch?v=fdbXNWkpPMY",
@@ -286,6 +306,7 @@
   },
   {
     "id": 12,
+    "primarySection": "agent-systems",
     "title": "I Hated Every Coding Agent, So I Built My Own — Mario Zechner (Pi)",
     "subtitle": "Mario Zechner on why Pi strips coding agents down to a malleable core",
     "url": "https://www.youtube.com/watch?v=Dli5slNaJu0",
@@ -298,6 +319,7 @@
   },
   {
     "id": 10,
+    "primarySection": "agent-systems",
     "title": "Building Pi in a World of Slop — Mario Zechner",
     "subtitle": "Mario Zechner on Pi, self-modifying agents, and agent slop",
     "url": "https://www.youtube.com/watch?v=RjfbvDXpFls",
@@ -314,6 +336,7 @@
   },
   {
     "id": 9,
+    "primarySection": "agent-systems",
     "title": "Pi Building Pi, OpenClaw's Minimalist Coding Agent",
     "subtitle": "Mario Zechner on building and using Pi",
     "url": "https://www.youtube.com/watch?v=DPgJjRdQWrg",
@@ -330,6 +353,7 @@
   },
   {
     "id": 7,
+    "primarySection": "teams-ecosystem",
     "title": "Keynote: Linus Torvalds, Creator of Linux & Git, in Conversation with Dirk Hohndel",
     "url": "https://www.youtube.com/watch?v=tWx769t1JKg",
     "description": "Linus Torvalds shares his perspective on AI's impact on open source infrastructure, including crawler strain on kernel.org and AI-generated spam reports. He expresses skepticism about 'vibe coding' for serious maintenance while acknowledging AI as a great learning gateway for beginners. Compares AI to compilers—a tool that removes minutia rather than replacing developers—and predicts more software jobs, not fewer.",
@@ -340,6 +364,7 @@
   },
   {
     "id": 6,
+    "primarySection": "teams-ecosystem",
     "title": "The Truth About Coding Agents: Why 90% of Your Time Is Now Code Review",
     "subtitle": "Beyang Liu in conversation with a16z",
     "url": "https://www.youtube.com/watch?v=Jxz4GJSG8ZA",
@@ -351,6 +376,7 @@
   },
   {
     "id": 5,
+    "primarySection": "workflows",
     "title": "The Emerging Skillset of Wielding Coding Agents",
     "subtitle": "Beyang Liu at AI Engineer Conference",
     "url": "https://www.youtube.com/watch?v=F_RyElT_gJk",
@@ -366,6 +392,7 @@
   },
   {
     "id": 4,
+    "primarySection": "teams-ecosystem",
     "title": "Next Token – Series",
     "url": "https://www.youtube.com/playlist?list=PLhToAAkWJ58fssNaA7WgXYSvFA1B2P_t_",
     "description": "A series featuring discussions, sharing experiences, and exploring the latest trends in AI agents and development practices.",
@@ -376,6 +403,7 @@
   },
   {
     "id": 8,
+    "primarySection": "workflows",
     "title": "Craft & Chaos - Series",
     "url": "https://x.com/AmpCode/status/1998800449768665274",
     "description": "The rebranded Build Crew live series featuring live coding sessions, Prompt Duel at Dawn challenges, and opportunities to win Amp Credits. Continues the community-driven format with AI agent best practices and real-time development.",
@@ -386,6 +414,7 @@
   },
   {
     "id": 3,
+    "primarySection": "workflows",
     "title": "Build Crew - Series",
     "url": "https://www.youtube.com/playlist?list=PLhToAAkWJ58fNo36CAEqntC1Iq9RRuoxp",
     "description": "A series from the Amp team covering AI agent best practices and prompting strategies. Topics include structured prompts, chain of thought prompting, using the Oracle sub-agent for complex reasoning, external memory management with short threads, and practical tips for effective agent collaboration. Features real-world development scenarios and insights from the Build Crew community.",
@@ -396,6 +425,7 @@
   },
   {
     "id": 2,
+    "primarySection": "teams-ecosystem",
     "title": "Amp: The Emperor Has No Clothes",
     "subtitle": "Quinn Slack & Thorsten Ball on Building Amp Code",
     "url": "https://www.youtube.com/watch?v=b4rOVZWLW6E",
@@ -412,6 +442,7 @@
   },
   {
     "id": 1,
+    "primarySection": "agent-systems",
     "title": "Raising an Agent Season 1 - Series",
     "url": "https://www.youtube.com/playlist?list=PLhToAAkWJ58f-en2ifL9n5ixjzDPWnV9u",
     "description": "A multi-episode documentary series chronicling the Amp team's development of Amp, revealing groundbreaking insights on building practical coding agents. Topics include the shift from prompt to context engineering, the power of autonomous feedback loops, sub-agent architectures for context management, the \"Oracle\" pattern for multi-model reasoning, why codebases must adapt to agents, and evaluating LLM capabilities across providers. The team demonstrates why success depends on model quality over hidden tricks, treating agents as power tools rather than magic wands.",

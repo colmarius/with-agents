@@ -1,6 +1,6 @@
 # Coding-agent resource collections
 
-Status: planned
+Status: in-progress
 Category: feature
 Updated: 2026-08-09
 
@@ -10,7 +10,7 @@ The Coding with Agents resource hub has grown into one flat list that mixes prac
 
 ## Summary
 
-Research and an independently reviewed implementation plan define four primary sections over the existing canonical resource catalog: Working with Coding Agents, Building Coding Agent Systems, Reliable Agentic Engineering, and Teams & the Software Ecosystem. Implementation will add one validated primary assignment per resource, preserve `/resources/coding-with-agents` as the browse-all hub, add nested section views, and leave resource IDs and summary content paths unchanged. Ultra review corrections are incorporated, including production-build enforcement of section validity.
+Implementation is underway for four primary sections over the existing canonical resource catalog: Working with Coding Agents, Building Coding Agent Systems, Reliable Agentic Engineering, and Teams & the Software Ecosystem. The work will add one validated primary assignment per resource, preserve `/resources/coding-with-agents` as the browse-all hub, add nested section views, and leave resource IDs and summary content paths unchanged. Ultra review corrections are incorporated, including production-build enforcement of section validity.
 
 ## Artifacts
 
@@ -18,13 +18,13 @@ Research and an independently reviewed implementation plan define four primary s
 - PRD: none
 - Plan: [plan.md](plan.md)
 - Review: [Ultra plan review](https://ampcode.com/threads/T-019fe7e1-ffa7-73ef-aac7-4f7685395de3)
-- Progress: none
+- Progress: [progress.md](progress.md)
 - Decisions: none
 - Handoffs: none
 
 ## Next Action
 
-- Implement [Task 1: Add and validate the canonical section taxonomy](plan.md#task-1-add-and-validate-the-canonical-section-taxonomy).
+- Implement and verify [Task 2: Make the existing resource list data-driven](plan.md#task-2-make-the-existing-resource-list-data-driven).
 
 ## Open Questions
 

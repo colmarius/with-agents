@@ -61,6 +61,7 @@ const resources = (overrides = {}) => [
     source: 'Source',
     date: '2026-07-31',
     topics: ['tools-harnesses'],
+    primarySection: 'workflows',
     ...overrides,
   },
 ];
@@ -416,6 +417,30 @@ draft: false
     assert.match(errors, /invalid topic invalid-topic/);
     assert.match(errors, /references missing resourceId 99/);
     assert.match(errors, /resource id 1 has no public summary/);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('resource validation rejects missing and unknown primary sections', async () => {
+  const root = await createFixture({
+    resourceValue: [
+      ...resources({ primarySection: undefined }),
+      {
+        ...resources()[0],
+        id: 2,
+        primarySection: 'unknown',
+      },
+    ],
+  });
+  try {
+    const result = await runPublicContentGuard({ repoRoot: root });
+    const errors = result.errors.join('\n');
+    assert.match(
+      errors,
+      /resource \$\[0\] has invalid primarySection undefined/,
+    );
+    assert.match(errors, /resource \$\[1\] has invalid primarySection unknown/);
   } finally {
     await rm(root, { recursive: true, force: true });
   }

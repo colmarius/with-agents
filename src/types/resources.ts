@@ -1,3 +1,5 @@
+import type { ResourceSectionKey } from '../data/resources/sections.ts';
+
 export type CodingResource = {
   id: number;
   title: string;
@@ -6,7 +8,8 @@ export type CodingResource = {
   description: string;
   type: 'podcast' | 'video' | 'article' | 'playlist';
   source: string;
-  date?: string;
+  date: string;
   duration?: string;
-  tags?: string[];
+  topics: string[];
+  primarySection: ResourceSectionKey;
 };

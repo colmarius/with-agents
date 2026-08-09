@@ -22,7 +22,7 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
 
 ### Task 1: Add and validate the canonical section taxonomy
 
-- [ ] **Task 1: Add and validate the canonical section taxonomy**
+- [x] **Task 1: Add and validate the canonical section taxonomy**
   - Scope: `src/data/resources/coding-with-agents.json`, `src/data/resources/`, `src/types/resources.ts`, `.agents/scripts/public-content-guard.mjs`, `.agents/scripts/public-content-guard.test.mjs`
   - Depends on: none
   - Acceptance:
