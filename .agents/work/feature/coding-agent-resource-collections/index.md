@@ -24,7 +24,7 @@ Implementation is underway for four primary sections over the existing canonical
 
 ## Next Action
 
-- Implement [Task 4: Turn the resource index into a useful collection overview](plan.md#task-4-turn-the-resource-index-into-a-useful-collection-overview); retain Tasks 2–3 as unchecked until their browser acceptance criteria are observed.
+- Run initial complete verification for [Task 5](plan.md#task-5-verify-the-complete-static-and-browser-experience), including browser acceptance for Tasks 2–4, then prepare the required independent review.
 
 ## Open Questions
 

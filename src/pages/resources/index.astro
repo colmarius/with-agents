@@ -1,6 +1,14 @@
 ---
-import codingResources from '../../data/resources/coding-with-agents.json';
+import { codingResources } from '../../data/resources/coding-with-agents';
+import { resourceSections } from '../../data/resources/sections';
 import Layout from '../../layouts/Layout.astro';
+
+const sections = resourceSections.map((section) => ({
+  ...section,
+  resourceCount: codingResources.filter(
+    (resource) => resource.primarySection === section.key,
+  ).length,
+}));
 ---
 
 <Layout
@@ -13,24 +21,64 @@ import Layout from '../../layouts/Layout.astro';
       Resources
     </h1>
     <p class="text-xl text-gray-600 mb-12 font-light leading-relaxed">
-      Curated media and summaries for learning how experienced teams use coding agents.
+      Browse the complete coding-agent catalog or choose a collection based on
+      what you want to change.
     </p>
 
-    <a href="/resources/coding-with-agents" class="block rounded-xl border border-gray-200 p-8 hover:shadow-lg transition-all duration-200 bg-white hover:border-gray-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <a
+      href="/resources/coding-with-agents"
+      class="group block rounded-xl border border-gray-900 bg-gray-900 p-8 text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+    >
+      <div
+        class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+      >
         <div>
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">
-            Resource hub
+          <p
+            class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-200"
+          >
+            Browse all
           </p>
-          <h2 class="text-3xl font-light text-gray-900 mb-3">Coding with Agents</h2>
-          <p class="text-gray-600 leading-relaxed max-w-2xl">
-            Podcasts, videos, and articles on AI-powered development workflows, with summaries for quick triage.
+          <h2 class="mb-3 text-3xl font-light">
+            All Coding with Agents resources
+          </h2>
+          <p class="max-w-2xl leading-relaxed text-gray-200">
+            Search every podcast, video, and playlist, filter by topic, and open
+            transcript-backed summaries for quick triage.
           </p>
         </div>
-        <div class="text-sm text-gray-500 font-medium md:text-right">
+        <div class="text-sm font-medium text-gray-200 md:text-right">
           {codingResources.length} resources →
         </div>
       </div>
     </a>
+
+    <section class="mt-12" aria-labelledby="collections-heading">
+      <h2
+        id="collections-heading"
+        class="mb-6 text-2xl font-light text-gray-900"
+      >
+        Browse by collection
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {
+          sections.map((section) => (
+            <a
+              href={`/resources/coding-with-agents/${section.routeSlug}`}
+              class="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+            >
+              <h3 class="mb-3 text-2xl font-light text-gray-900">
+                {section.label}
+              </h3>
+              <p class="mb-6 flex-1 leading-relaxed text-gray-600">
+                {section.description}
+              </p>
+              <p class="text-sm font-medium text-indigo-700">
+                {section.resourceCount} resources →
+              </p>
+            </a>
+          ))
+        }
+      </div>
+    </section>
   </div>
 </Layout>
