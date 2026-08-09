@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
-import codingResources from '../../data/resources/coding-with-agents.json';
 import { useIsMdUp } from '../../hooks';
+import type { CodingResource, ResourceTopic } from '../../types/resources';
 import { formatDate, titleCase } from '../../utils';
 import {
   Button,
@@ -33,28 +33,13 @@ const TOPIC_OPTIONS = [
   { slug: 'open-source-ecosystem', label: 'Open source ecosystem' },
   { slug: 'models-evaluation', label: 'Models & evaluation' },
   { slug: 'business-adoption', label: 'Business & adoption' },
-] as const;
+] as const satisfies ReadonlyArray<{ slug: ResourceTopic; label: string }>;
 
-type Topic = (typeof TOPIC_OPTIONS)[number]['slug'];
+type Topic = ResourceTopic;
 
 const TOPIC_LABELS = Object.fromEntries(
   TOPIC_OPTIONS.map(({ slug, label }) => [slug, label]),
 ) as Record<Topic, string>;
-
-type Resource = {
-  id: number;
-  title: string;
-  subtitle?: string;
-  url: string;
-  description: string;
-  type: string;
-  source: string;
-  date: string;
-  duration?: string;
-  topics: Topic[];
-};
-
-const resources = codingResources as Resource[];
 
 type SummaryData = {
   slug: string;
@@ -68,14 +53,14 @@ type SummaryData = {
 
 type CodingWithAgentsProps = {
   manifest: ManifestEntry[];
+  resources: CodingResource[];
 };
 
-const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
+const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
   const isMdUp = useIsMdUp();
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedResource, setSelectedResource] = useState<Resource | null>(
-    null,
-  );
+  const [selectedResource, setSelectedResource] =
+    useState<CodingResource | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
   const [isTopicFiltersOpen, setIsTopicFiltersOpen] = useState(false);
@@ -136,17 +121,17 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
       }
     });
     return dates;
-  }, [resolveSummaryRef]);
+  }, [resolveSummaryRef, resources]);
 
   const getDisplayDate = useCallback(
-    (resource: Resource): Date => {
+    (resource: CodingResource): Date => {
       return latestSummaryDates[resource.id] ?? new Date(resource.date);
     },
     [latestSummaryDates],
   );
 
   const getDisplayDateLabel = useCallback(
-    (resource: Resource): string => {
+    (resource: CodingResource): string => {
       const dateLabel = formatDate(getDisplayDate(resource));
       if (resource.type === 'playlist' && latestSummaryDates[resource.id]) {
         return `Latest summary: ${dateLabel}`;
@@ -162,7 +147,7 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
       [...resources].sort(
         (a, b) => getDisplayDate(b).getTime() - getDisplayDate(a).getTime(),
       ),
-    [getDisplayDate],
+    [getDisplayDate, resources],
   );
 
   const normalizedSearchQuery = searchQuery.trim().toLowerCase();
@@ -191,7 +176,7 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
     });
 
     return searchText;
-  }, [summaryEntriesByResourceId]);
+  }, [resources, summaryEntriesByResourceId]);
 
   const filteredResources = useMemo(
     () =>
@@ -224,7 +209,7 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
     setIsTopicFiltersOpen(false);
   };
 
-  const getLinkText = (type: string) => {
+  const getLinkText = (type: CodingResource['type']) => {
     switch (type) {
       case 'video':
         return 'Watch Video';
@@ -248,7 +233,7 @@ const CodingWithAgents = ({ manifest }: CodingWithAgentsProps) => {
     return data.body;
   };
 
-  const handleOpenSummary = async (resource: Resource) => {
+  const handleOpenSummary = async (resource: CodingResource) => {
     setSelectedResource(resource);
     setModalOpen(true);
     setIsLoading(true);

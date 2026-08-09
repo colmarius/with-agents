@@ -4,7 +4,7 @@ Updated: 2026-08-09
 
 ## Current State
 
-Task 1 is implemented and verified. The canonical catalog now has one validated primary section per resource, the shared type reflects the real catalog, and the public content guard independently enforces section membership. Task 2 is next.
+Task 1 is implemented and verified. Task 2 implementation is complete: the React list now receives typed route data, retains the global summary manifest, and no longer duplicates the resource type; browser acceptance remains pending. Task 3 is next.
 
 ## Verification Evidence
 
@@ -12,6 +12,8 @@ Task 1 is implemented and verified. The canonical catalog now has one validated 
 - `node --test .agents/scripts/public-content-guard.test.mjs` — 13 tests passed, including independent missing and unknown `primarySection` rejection.
 - `npm run content:guard` — passed with 31 resources and 78 public summaries.
 - `npm run lint:fix` — checked 252 files and formatted the Task 1 changes.
+- `npm run check` — 44 files checked with 0 errors, warnings, or hints after the Task 2 data-flow change.
+- `npm run lint:fix` — checked 253 files and formatted the Task 2 changes.
 
 ## Review
 
@@ -19,8 +21,9 @@ Task 1 is implemented and verified. The canonical catalog now has one validated 
 
 ## Commits
 
-- Task 1 implementation: pending commit.
+- `6b30962` — Add validated resource section taxonomy.
+- Task 2 implementation: pending commit.
 
 ## Unverified
 
-- Tasks 2–5, complete project checks, production build, and browser proof remain pending.
+- Task 2 browser acceptance, Tasks 3–5, complete project checks, production build, and browser proof remain pending.

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import CodingWithAgentsList from '../../components/resources/CodingWithAgents';
 import ResourcesNav from '../../components/resources/ResourcesNav.astro';
+import { codingResources } from '../../data/resources/coding-with-agents';
 import Layout from '../../layouts/Layout.astro';
 
 const entries = await getCollection('summaries');
@@ -20,7 +21,7 @@ const manifest = entries.map((e) => ({
 
 <Layout
   title="With Agents – Coding with Agents Resources"
-  description="Podcasts, videos, articles, transcript-backed summaries, and practical references for coding-agent workflows."
+  description="Podcasts, videos, playlists, transcript-backed summaries, and practical references for coding-agent workflows."
   canonicalPath="/resources/coding-with-agents"
 >
   <div class="max-w-4xl mx-auto">
@@ -30,9 +31,14 @@ const manifest = entries.map((e) => ({
       Coding with Agents
     </h1>
     <p class="text-lg text-gray-600 mb-12 font-light leading-relaxed">
-      Podcasts, videos, and articles exploring AI-powered coding workflows, agentic design patterns, and the future of software development.
+      Podcasts, videos, and playlists exploring AI-powered coding workflows,
+      agentic design patterns, and the future of software development.
     </p>
 
-    <CodingWithAgentsList client:load manifest={manifest} />
+    <CodingWithAgentsList
+      client:load
+      manifest={manifest}
+      resources={codingResources}
+    />
   </div>
 </Layout>

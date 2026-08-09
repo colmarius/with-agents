@@ -24,7 +24,7 @@ Implementation is underway for four primary sections over the existing canonical
 
 ## Next Action
 
-- Implement and verify [Task 2: Make the existing resource list data-driven](plan.md#task-2-make-the-existing-resource-list-data-driven).
+- Implement [Task 3: Add nested section routes and collection navigation](plan.md#task-3-add-nested-section-routes-and-collection-navigation); retain Task 2 as unchecked until its browser acceptance criteria are observed.
 
 ## Open Questions
 
