@@ -28,10 +28,11 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
   - Acceptance:
     - A single typed section registry defines the four stable keys, labels, descriptions, route slugs, and display order.
     - `CodingResource` matches the actual catalog shape, including required `date`, `topics`, and `primarySection`; the stale `tags` field and duplicate local resource shape are not propagated.
+    - One shared catalog boundary validates and narrows JSON `primarySection` values before exporting resources; missing or unknown values throw during the production Astro build rather than silently omitting a resource from section routes.
     - Every one of the 31 resources has exactly one approved `primarySection`, with resource counts of 8 workflows, 8 agent systems, 9 reliability, and 6 teams/ecosystem.
-    - The public content guard rejects missing or invalid section values, and fixture tests exercise both failures while preserving existing validation.
+    - Focused catalog tests exercise the application-boundary validator, and the public content guard independently rejects missing or invalid section values. Its shared resource fixture supplies a valid default section so existing guard tests continue exercising their intended contracts.
     - Resource IDs, topics, URLs, dates, descriptions, and summary files are otherwise unchanged.
-  - Notes: Keep the JSON catalog canonical. Do not create independent per-section manifests or use summary frontmatter `collection` for navigation.
+  - Notes: Keep the JSON catalog canonical. Do not create independent per-section manifests or use summary frontmatter `collection` for navigation. Build-time validation is required because `.github/workflows/deploy.yml` currently runs the Astro build but not `content:guard`, `astro check`, or the focused Node tests.
 
 ### Task 2: Make the existing resource list data-driven
 
@@ -43,6 +44,7 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
     - `/resources/coding-with-agents` still renders all 31 resources and retains current reverse-chronological/latest-summary sorting.
     - Search still indexes resource metadata, topic labels, and child-summary titles; topic filtering and clear-filter behavior remain unchanged.
     - Standalone, series, and curated-collection summary modals continue to resolve through the existing global `resourceId` manifest.
+    - The All route's metadata and introductory copy do not advertise articles unless the catalog contains an article resource at implementation time.
   - Notes: Preserve behavior before adding new routes. Do not introduce separate React components or search implementations per section.
 
 ### Task 3: Add nested section routes and collection navigation
@@ -54,6 +56,7 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
     - Static pages exist at `/resources/coding-with-agents/workflows`, `/resources/coding-with-agents/agent-systems`, `/resources/coding-with-agents/reliability`, and `/resources/coding-with-agents/teams-ecosystem`.
     - Each page has section-specific title, description, canonical URL, active navigation state, and exactly the resources assigned to that section.
     - Navigation exposes All plus the four sections and derives labels/routes from the shared registry rather than repeating metadata.
+    - The active navigation link exposes `aria-current="page"` in addition to visual styling.
     - Search and topic filters on a section route operate only on that section; the All route remains the obvious global-search destination.
     - Invalid section keys do not generate static routes.
   - Notes: Prefer one prerendered dynamic route driven by the registry over four near-identical page files. Keep the current summary-manifest mapping global so every selected resource resolves normally.
@@ -61,12 +64,12 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
 ### Task 4: Turn the resource index into a useful collection overview
 
 - [ ] **Task 4: Turn the resource index into a useful collection overview**
-  - Scope: `src/pages/resources/index.astro`, section registry/data helpers, existing links in `src/pages/index.astro`, `src/layouts/PostLayout.astro`, and `src/content/posts/agentic-coding-2026.md`
+  - Scope: `src/pages/resources/index.astro`, section registry/data helpers; verify only (do not edit unless broken): existing links in `src/pages/index.astro`, `src/layouts/PostLayout.astro`, and `src/content/posts/agentic-coding-2026.md`
   - Depends on: Task 3
   - Acceptance:
     - `/resources` presents one prominent Browse all entry plus four collection cards with their approved names, descriptions, and manifest-derived resource counts.
     - Existing homepage, post-layout, and article links to `/resources/coding-with-agents` remain valid and continue to reach the all-resources hub; no unnecessary link migration or redirect is introduced.
-    - User-facing copy does not promise unsupported resource formats; the current “articles” claim is removed unless an article resource exists at implementation time.
+    - User-facing copy on both `/resources` and the All route does not promise unsupported resource formats; the current “articles” claims are removed unless an article resource exists at implementation time.
     - Collection counts are derived from catalog data rather than hard-coded.
   - Notes: Summary-document counts are optional. If shown, label them explicitly as summaries rather than conflating them with top-level resources or represented playlist videos.
 
@@ -79,6 +82,7 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
     - Focused guard and resolver tests pass.
     - `npm run content:guard`, `npm run check`, and `npm run build` pass.
     - A real browser confirms the resource overview, All route, and all four section routes render with the expected counts and active navigation.
+    - All is the first collection-navigation item, its active link has `aria-current="page"`, and the Browse all entry precedes the four section cards on `/resources`.
     - Browser interaction verifies search and topic filtering, one standalone summary modal, one episode-series modal, and one curated-collection modal from appropriate routes.
     - Browser history and console inspection reveal no broken summary fetches, hydration errors, or dead internal links on the affected routes.
   - Notes: Follow the repository Orb Proof Loop: run `amp orb services ensure`, use its portal URL, and use the `agent-browser` skill. Capture one targeted screenshot only if it helps review the new overview or navigation.
@@ -106,17 +110,17 @@ Add four reader-intent views over the existing Coding with Agents catalog while 
 
 - Visitors can browse All or choose one of four clearly described reader-intent collections.
 - The All view still exposes all 31 resources and all 78 summaries through existing resolver behavior.
-- Section membership matches the approved 8/8/9/6 mapping and is validated automatically.
+- Section membership matches the approved 8/8/9/6 mapping and is validated by both the public content guard and the production build path.
 - Search, topics, date sorting, summary modals, series episode lists, and curated collection lists preserve current behavior.
 - Existing `/resources/coding-with-agents` inbound links remain valid.
 - Automated project checks and real-browser verification pass with no known regressions.
 
 ## Verification
 
-- `node --test .agents/scripts/public-content-guard.test.mjs src/components/resources/summaryResolver.test.ts` — focused catalog/summary contracts pass.
+- `node --test .agents/scripts/public-content-guard.test.mjs src/data/resources/*.test.ts src/components/resources/summaryResolver.test.ts` — focused catalog/summary contracts pass, including missing and unknown section values at the shared catalog boundary.
 - `npm run content:guard` — reports 31 resources and 78 public summaries with no errors.
 - `npm run check` — Astro and TypeScript checks pass.
-- `npm run build` — all five Coding with Agents routes and summary API output build successfully.
+- `npm run build` — the All route and four section routes build successfully through the catalog validation boundary, along with unchanged summary API output.
 - `amp orb services ensure` followed by the `agent-browser` workflow — verify `/resources`, `/resources/coding-with-agents`, and all four nested routes, including representative filtering and modal interactions.
 
 ## Deployment / Migration

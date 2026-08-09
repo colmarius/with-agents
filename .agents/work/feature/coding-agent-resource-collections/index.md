@@ -10,13 +10,14 @@ The Coding with Agents resource hub has grown into one flat list that mixes prac
 
 ## Summary
 
-Research and an implementation-ready plan define four primary sections over the existing canonical resource catalog: Working with Coding Agents, Building Coding Agent Systems, Reliable Agentic Engineering, and Teams & the Software Ecosystem. Implementation will add one validated primary assignment per resource, preserve `/resources/coding-with-agents` as the browse-all hub, add nested section views, and leave resource IDs and summary content paths unchanged.
+Research and an independently reviewed implementation plan define four primary sections over the existing canonical resource catalog: Working with Coding Agents, Building Coding Agent Systems, Reliable Agentic Engineering, and Teams & the Software Ecosystem. Implementation will add one validated primary assignment per resource, preserve `/resources/coding-with-agents` as the browse-all hub, add nested section views, and leave resource IDs and summary content paths unchanged. Ultra review corrections are incorporated, including production-build enforcement of section validity.
 
 ## Artifacts
 
 - Research: [research.md](research.md)
 - PRD: none
 - Plan: [plan.md](plan.md)
+- Review: [Ultra plan review](https://ampcode.com/threads/T-019fe7e1-ffa7-73ef-aac7-4f7685395de3)
 - Progress: none
 - Decisions: none
 - Handoffs: none
