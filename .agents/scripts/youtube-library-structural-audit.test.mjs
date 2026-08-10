@@ -7,6 +7,10 @@ import {
   auditYoutubeLibraryStructure,
   formatYoutubeLibraryStructuralAudit,
 } from './lib/youtube-library-structural-audit.mjs';
+import {
+  hasFullStandaloneEvidence,
+  loadStandaloneYoutubeEvidence,
+} from './lib/youtube-standalone-evidence.mjs';
 
 const writeFixture = async (root, relativePath, contents) => {
   const filePath = path.join(root, relativePath);
@@ -469,6 +473,74 @@ videoId: "AbCdEfGhI12"
       repoRoot: root,
     });
     assert.deepEqual(draftWithoutOverview.errors, []);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('standalone excerpt evidence validates its range and records excerpt coverage', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-excerpt-'));
+  try {
+    await writeFixture(root, 'src/data/resources/coding-with-agents.json', [
+      {
+        id: 1,
+        type: 'video',
+        url: 'https://www.youtube.com/watch?v=AbCdEfGhI12&t=100s',
+      },
+    ]);
+    await writeFixture(
+      root,
+      'src/content/transcripts/excerpt.md',
+      `---
+title: "Excerpt"
+summarySlug: "excerpt"
+sourceUrl: "https://www.youtube.com/watch?v=AbCdEfGhI12"
+videoId: "AbCdEfGhI12"
+capturedAt: "2026-08-10T00:00:00.000Z"
+durationSeconds: 300
+sourceStartSeconds: 100
+sourceEndSeconds: 200
+---
+
+## Transcript
+
+[00:01:39] Opening boundary cue.
+
+[00:03:19] Closing boundary cue.
+`,
+    );
+    await writeFixture(
+      root,
+      'src/content/summaries/excerpt.md',
+      `---
+title: "Excerpt"
+resourceId: 1
+---
+`,
+    );
+
+    const valid = await loadStandaloneYoutubeEvidence({ repoRoot: root });
+    assert.deepEqual(valid.errors, []);
+    assert.equal(valid.byVideoId.get('AbCdEfGhI12')?.coverage, 'excerpt');
+    assert.equal(
+      hasFullStandaloneEvidence(valid.byVideoId, 'AbCdEfGhI12'),
+      false,
+    );
+
+    const transcriptPath = path.join(
+      root,
+      'src/content/transcripts/excerpt.md',
+    );
+    const invalid = (await readFile(transcriptPath, 'utf8')).replace(
+      'sourceEndSeconds: 200',
+      'sourceEndSeconds: 199',
+    );
+    await writeFile(transcriptPath, invalid, 'utf8');
+    const result = await loadStandaloneYoutubeEvidence({ repoRoot: root });
+    assert.match(
+      result.errors.join('\n'),
+      /transcript anchor at or after sourceEndSeconds/,
+    );
   } finally {
     await rm(root, { recursive: true, force: true });
   }

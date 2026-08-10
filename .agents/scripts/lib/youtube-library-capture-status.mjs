@@ -7,7 +7,10 @@ import {
   writeJsonAtomic,
 } from './youtube-library-core.mjs';
 import { resolvePlaylistEditorialScope } from './youtube-library-curation.mjs';
-import { loadStandaloneYoutubeEvidence } from './youtube-standalone-evidence.mjs';
+import {
+  hasFullStandaloneEvidence,
+  loadStandaloneYoutubeEvidence,
+} from './youtube-standalone-evidence.mjs';
 import {
   canonicalYoutubeUrl,
   cleanText,
@@ -267,7 +270,10 @@ const captureCandidates = async ({
         continue;
       }
       if (
-        standaloneEvidence.byVideoId.has(entry.videoId) &&
+        hasFullStandaloneEvidence(
+          standaloneEvidence.byVideoId,
+          entry.videoId,
+        ) &&
         !requiresLibraryEvidence.has(entry.videoId)
       ) {
         const localTranscript = await pathExists(
@@ -753,7 +759,7 @@ export const buildLibraryStatus = async ({
         scope.mode === 'curated' &&
         scope.status === 'reviewed' &&
         !video.transcript &&
-        standaloneEvidence.byVideoId.has(entry.videoId)
+        hasFullStandaloneEvidence(standaloneEvidence.byVideoId, entry.videoId)
       ) {
         video = {
           transcript: false,

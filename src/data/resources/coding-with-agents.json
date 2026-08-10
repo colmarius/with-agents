@@ -1,5 +1,22 @@
 [
   {
+    "id": 38,
+    "primarySection": "workflows",
+    "title": "Think Harder: How I Prompt — Thorsten Ball",
+    "subtitle": "Thorsten Ball on prompts as information routing, screenshots, diagnostics, and agent-friendly codebases",
+    "url": "https://www.youtube.com/watch?v=vii6P0vJhTw&t=15626s",
+    "description": "In this Laracon US 2026 talk, Thorsten Ball explains prompting as an information-design problem: show coding agents where authoritative context lives, externalize hidden constraints, use screenshots and diagnostic reports as compact evidence, and move recurring instructions into the codebase so shorter prompts can still work.",
+    "type": "video",
+    "source": "Laracon US",
+    "date": "2026-07-30",
+    "duration": "24m",
+    "topics": [
+      "prompting-orchestration",
+      "context-memory",
+      "review-verification"
+    ]
+  },
+  {
     "id": 37,
     "primarySection": "reliability",
     "title": "The OpenAI–Hugging Face Incident — Eric Wallace & Michael Dalton",

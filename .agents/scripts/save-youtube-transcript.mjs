@@ -4,7 +4,9 @@ import {
   chunkSeconds,
   cleanText,
   fetchVideo,
+  filterTranscriptSegmentsByRange,
   normalizeSummarySlug,
+  normalizeTranscriptRange,
   renderTranscriptMarkdown,
   repoRelative,
   rootDir,
@@ -36,6 +38,10 @@ Options:
   --series <series>      Optional transcript series value.
   --episode <number>     Optional transcript episode value.
   --lang <code>          Caption language to request. Default: en.
+  --start <seconds>      Inclusive excerpt start on the source video timeline.
+                         Must be provided with --end.
+  --end <seconds>        Exclusive excerpt end on the source video timeline.
+                         Must be provided with --start.
   --dry-run              Fetch and report paths without writing files.
   --force                Overwrite an existing transcript file, including any
                          manual transcript fixes.
@@ -60,10 +66,12 @@ const commandNames = new Set(['fetch', 'help', 'save']);
 const booleanOptions = new Set(['dry-run', 'force', 'help', 'json']);
 const valueOptions = new Set([
   'channel',
+  'end',
   'episode',
   'lang',
   'series',
   'source',
+  'start',
   'summary-slug',
   'title',
 ]);
@@ -139,6 +147,21 @@ const prepareContext = async (inputUrl, options) => {
   const channel = cleanText(
     options.channel ?? options.source ?? metadata.channel,
   );
+  const sourceRange = normalizeTranscriptRange({
+    sourceStartSeconds: options.start,
+    sourceEndSeconds: options.end,
+    durationSeconds: metadata.durationSeconds,
+  });
+  const selectedSegments = fetched.transcriptAvailable
+    ? filterTranscriptSegmentsByRange(fetched.segments, sourceRange)
+    : [];
+  const transcriptAvailable =
+    fetched.transcriptAvailable && selectedSegments.length > 0;
+  const transcriptUnavailable =
+    fetched.transcriptUnavailable ??
+    (fetched.transcriptAvailable && selectedSegments.length === 0
+      ? `Transcript has no caption segments in [${sourceRange.sourceStartSeconds}, ${sourceRange.sourceEndSeconds}).`
+      : undefined);
 
   return {
     fetched,
@@ -148,13 +171,17 @@ const prepareContext = async (inputUrl, options) => {
     series: options.series,
     channel: channel || undefined,
     capturedAt: new Date().toISOString(),
+    sourceRange,
+    selectedSegments,
+    transcriptAvailable,
+    transcriptUnavailable,
   };
 };
 
 const payloadForContext = ({ context, transcriptPath, write }) => {
   const { fetched, title, summarySlug, capturedAt } = context;
-  const blocks = fetched.transcriptAvailable
-    ? transcriptLines(fetched.segments).length
+  const blocks = context.transcriptAvailable
+    ? transcriptLines(context.selectedSegments).length
     : 0;
 
   return {
@@ -167,9 +194,11 @@ const payloadForContext = ({ context, transcriptPath, write }) => {
     durationSeconds: fetched.metadata.durationSeconds,
     language: fetched.language,
     kind: fetched.kind,
-    transcriptAvailable: fetched.transcriptAvailable,
-    transcriptUnavailable: fetched.transcriptUnavailable,
-    transcriptSegments: fetched.segments.length,
+    sourceStartSeconds: context.sourceRange?.sourceStartSeconds,
+    sourceEndSeconds: context.sourceRange?.sourceEndSeconds,
+    transcriptAvailable: context.transcriptAvailable,
+    transcriptUnavailable: context.transcriptUnavailable,
+    transcriptSegments: context.selectedSegments.length,
     transcriptBlocks: blocks,
     transcriptPath: transcriptPath ? repoRelative(transcriptPath) : undefined,
     transcriptWritten: write?.written,
@@ -189,6 +218,12 @@ const humanResult = (payload, action) => {
     `- Duration seconds: ${payload.durationSeconds ?? 'unknown'}`,
     `- Transcript: ${payload.transcriptAvailable ? `available (${payload.transcriptSegments} segments, ${payload.transcriptBlocks} chunks)` : 'unavailable'}`,
   ];
+
+  if (payload.sourceStartSeconds !== undefined) {
+    lines.push(
+      `- Source range: [${payload.sourceStartSeconds}, ${payload.sourceEndSeconds}) seconds`,
+    );
+  }
 
   if (payload.transcriptUnavailable) {
     lines.push(
@@ -214,16 +249,14 @@ const runFetch = async (inputUrl, options) => {
   const transcriptPath = safeContentPath(transcriptsDir, context.summarySlug);
   const payload = payloadForContext({ context, transcriptPath });
   print(options.json ? payload : humanResult(payload, 'fetch'), options);
-  return context.fetched.transcriptAvailable
-    ? okExit
-    : transcriptUnavailableExit;
+  return context.transcriptAvailable ? okExit : transcriptUnavailableExit;
 };
 
 const runSave = async (inputUrl, options) => {
   const context = await prepareContext(inputUrl, options);
   const transcriptPath = safeContentPath(transcriptsDir, context.summarySlug);
 
-  if (!context.fetched.transcriptAvailable) {
+  if (!context.transcriptAvailable) {
     const payload = payloadForContext({ context, transcriptPath });
     print(options.json ? payload : humanResult(payload, 'save'), options);
     return transcriptUnavailableExit;
@@ -242,7 +275,9 @@ const runSave = async (inputUrl, options) => {
     language: context.fetched.language,
     kind: context.fetched.kind,
     durationSeconds: metadata.durationSeconds,
-    segments: context.fetched.segments,
+    sourceStartSeconds: context.sourceRange?.sourceStartSeconds,
+    sourceEndSeconds: context.sourceRange?.sourceEndSeconds,
+    segments: context.selectedSegments,
   });
 
   const write = await writeFileExclusive(transcriptPath, markdown, {

@@ -74,6 +74,57 @@ const readFrontmatter = (contents) => {
 const relativePosix = (base, filePath) =>
   path.relative(base, filePath).split(path.sep).join('/');
 
+const timestampSeconds = (hours, minutes, seconds) =>
+  Number(hours) * 3600 + Number(minutes) * 60 + Number(seconds);
+
+const sourceRangeForTranscript = (fields, transcript, transcriptRelative) => {
+  const hasStart = fields.sourceStartSeconds !== undefined;
+  const hasEnd = fields.sourceEndSeconds !== undefined;
+  if (hasStart !== hasEnd) {
+    throw new Error(
+      `Standalone transcript ${transcriptRelative} must provide sourceStartSeconds and sourceEndSeconds together.`,
+    );
+  }
+  if (!hasStart) {
+    return undefined;
+  }
+
+  const start = fields.sourceStartSeconds;
+  const end = fields.sourceEndSeconds;
+  if (
+    !Number.isFinite(start) ||
+    !Number.isFinite(end) ||
+    start < 0 ||
+    start >= end ||
+    (Number.isFinite(fields.durationSeconds) && end > fields.durationSeconds)
+  ) {
+    throw new Error(
+      `Standalone transcript ${transcriptRelative} has an invalid source range.`,
+    );
+  }
+
+  const anchors = [
+    ...transcript.matchAll(/^\[(\d{2}):(\d{2}):(\d{2})\]/gm),
+  ].map((match) => timestampSeconds(match[1], match[2], match[3]));
+  if (anchors.length === 0) {
+    throw new Error(
+      `Standalone transcript ${transcriptRelative} excerpt has no transcript anchors.`,
+    );
+  }
+  if (anchors.some((anchor) => anchor >= end)) {
+    throw new Error(
+      `Standalone transcript ${transcriptRelative} has a transcript anchor at or after sourceEndSeconds.`,
+    );
+  }
+
+  return { sourceStartSeconds: start, sourceEndSeconds: end };
+};
+
+export const hasFullStandaloneEvidence = (byVideoId, videoId) => {
+  const evidence = byVideoId.get(videoId);
+  return evidence !== undefined && evidence.coverage !== 'excerpt';
+};
+
 export const loadStandaloneYoutubeEvidence = async ({
   repoRoot = defaultRepoRoot,
   videoIds,
@@ -136,6 +187,17 @@ export const loadStandaloneYoutubeEvidence = async ({
       );
       continue;
     }
+    let sourceRange;
+    try {
+      sourceRange = sourceRangeForTranscript(
+        fields,
+        transcript,
+        transcriptRelative,
+      );
+    } catch (error) {
+      errors.push(error.message);
+      continue;
+    }
 
     const summaryPath = path.join(summariesRoot, `${fields.summarySlug}.md`);
     const summary = await readOptional(summaryPath);
@@ -155,13 +217,21 @@ export const loadStandaloneYoutubeEvidence = async ({
     }
     const canonicalVideoResource =
       resource.url === canonicalYoutubeUrl(videoId);
+    const excerptVideoResource =
+      sourceRange !== undefined &&
+      resource.url ===
+        `${canonicalYoutubeUrl(videoId)}&t=${sourceRange.sourceStartSeconds}s`;
     const curatedCollectionResource =
       resource.type === 'playlist' &&
       summaryFields.videoId === videoId &&
       typeof summaryFields.collection === 'string' &&
       Number.isInteger(summaryFields.order) &&
       summaryFields.order > 0;
-    if (!canonicalVideoResource && !curatedCollectionResource) {
+    if (
+      !canonicalVideoResource &&
+      !excerptVideoResource &&
+      !curatedCollectionResource
+    ) {
       errors.push(
         `Standalone summary ${fields.summarySlug}.md must resolve to video ${videoId} through a canonical video resource or curated collection item.`,
       );
@@ -180,6 +250,8 @@ export const loadStandaloneYoutubeEvidence = async ({
       summarySlug: fields.summarySlug,
       resourceId: summaryFields.resourceId,
       status: 'reviewed',
+      coverage: sourceRange ? 'excerpt' : 'full',
+      sourceRange,
     });
   }
 

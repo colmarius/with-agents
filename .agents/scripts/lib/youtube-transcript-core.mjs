@@ -215,6 +215,68 @@ export const normalizeTranscriptSegments = (segments) =>
 export const transcriptText = (segments) =>
   cleanText(segments.map((segment) => segment.text).join(' '));
 
+export const normalizeTranscriptRange = ({
+  sourceStartSeconds,
+  sourceEndSeconds,
+  durationSeconds,
+}) => {
+  const hasStart = sourceStartSeconds !== undefined;
+  const hasEnd = sourceEndSeconds !== undefined;
+
+  if (hasStart !== hasEnd) {
+    throw new Error('--start and --end must be provided together.');
+  }
+  if (!hasStart) {
+    return undefined;
+  }
+
+  const start = Number(sourceStartSeconds);
+  const end = Number(sourceEndSeconds);
+  if (!Number.isFinite(start) || !Number.isFinite(end)) {
+    throw new Error('--start and --end must be finite numbers of seconds.');
+  }
+  if (start < 0 || end < 0 || start >= end) {
+    throw new Error('--start must be non-negative and less than --end.');
+  }
+  if (
+    durationSeconds !== undefined &&
+    Number.isFinite(Number(durationSeconds)) &&
+    end > Number(durationSeconds)
+  ) {
+    throw new Error(
+      `--end (${end}) exceeds the source duration (${durationSeconds}).`,
+    );
+  }
+
+  return { sourceStartSeconds: start, sourceEndSeconds: end };
+};
+
+export const filterTranscriptSegmentsByRange = (segments, range) => {
+  if (!range) {
+    return segments;
+  }
+
+  const { sourceStartSeconds: start, sourceEndSeconds: end } = range;
+  return segments.filter((segment) => {
+    const offset = Number(segment.offset);
+    const duration = Number(segment.duration);
+    if (
+      !Number.isFinite(offset) ||
+      !Number.isFinite(duration) ||
+      offset < 0 ||
+      duration < 0
+    ) {
+      throw new Error(
+        'Ranged transcript capture requires finite, non-negative caption offsets and durations.',
+      );
+    }
+
+    return duration === 0
+      ? start <= offset && offset < end
+      : offset < end && offset + duration > start;
+  });
+};
+
 const shouldCloseTranscriptChunk = (chunkStart, segment) => {
   const elapsed = segment.offset - chunkStart;
   const hasSoftBoundary = /[.!?]["')\]]?$/.test(segment.text);
@@ -521,6 +583,8 @@ export const renderTranscriptMarkdown = ({
   language,
   kind,
   durationSeconds,
+  sourceStartSeconds,
+  sourceEndSeconds,
   segments,
 }) => {
   if (segments.length === 0) {
@@ -539,6 +603,8 @@ export const renderTranscriptMarkdown = ({
     ['language', language],
     ['kind', kind],
     ['durationSeconds', durationSeconds],
+    ['sourceStartSeconds', sourceStartSeconds],
+    ['sourceEndSeconds', sourceEndSeconds],
   ]);
 
   return `---\n${frontmatter}\n---\n\n## Transcript\n\n${transcriptLines(segments).join('\n\n')}\n`;

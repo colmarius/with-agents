@@ -5,7 +5,10 @@ import {
   validateCatalog,
 } from './youtube-library-core.mjs';
 import { resolvePlaylistEditorialScope } from './youtube-library-curation.mjs';
-import { loadStandaloneYoutubeEvidence } from './youtube-standalone-evidence.mjs';
+import {
+  hasFullStandaloneEvidence,
+  loadStandaloneYoutubeEvidence,
+} from './youtube-standalone-evidence.mjs';
 import { rootDir as defaultRepoRoot } from './youtube-transcript-core.mjs';
 
 const allowedStatuses = new Set(['draft', 'reviewed']);
@@ -577,14 +580,14 @@ export const auditYoutubeLibraryStructure = async ({
         (videoId) =>
           summarizedVideoIds.has(videoId) ||
           (allowsStandaloneEvidence &&
-            standaloneEvidence.byVideoId.has(videoId)),
+            hasFullStandaloneEvidence(standaloneEvidence.byVideoId, videoId)),
       ),
     );
     if (allowsStandaloneEvidence) {
       for (const videoId of ids) {
         const hasReviewedEvidence = summarizedVideoIds.has(videoId)
           ? summaryStatuses.get(videoId) === 'reviewed'
-          : standaloneEvidence.byVideoId.has(videoId);
+          : hasFullStandaloneEvidence(standaloneEvidence.byVideoId, videoId);
         if (!hasReviewedEvidence) {
           errors.push(
             `Playlist ${playlist.slug} selected video ${videoId} has no reviewed source evidence.`,
@@ -640,9 +643,10 @@ export const auditYoutubeLibraryStructure = async ({
       new Set(
         allowsStandaloneEvidence
           ? [...ids]
-              .map(
-                (videoId) =>
-                  standaloneEvidence.byVideoId.get(videoId)?.summaryPath,
+              .map((videoId) =>
+                hasFullStandaloneEvidence(standaloneEvidence.byVideoId, videoId)
+                  ? standaloneEvidence.byVideoId.get(videoId)?.summaryPath
+                  : undefined,
               )
               .filter(Boolean)
           : [],

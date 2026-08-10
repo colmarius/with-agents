@@ -3,7 +3,10 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { resolvePlaylistEditorialScope } from './lib/youtube-library-curation.mjs';
-import { loadStandaloneYoutubeEvidence } from './lib/youtube-standalone-evidence.mjs';
+import {
+  hasFullStandaloneEvidence,
+  loadStandaloneYoutubeEvidence,
+} from './lib/youtube-standalone-evidence.mjs';
 
 const resourceTypes = new Set(['article', 'playlist', 'podcast', 'video']);
 const resourcePrimarySections = new Set([
@@ -561,7 +564,9 @@ const readTrackedLibrary = async (repoRoot, notices) => {
       }
       videoStatuses.set(
         videoId,
-        standaloneEvidence.byVideoId.has(videoId) ? 'reviewed' : 'missing',
+        hasFullStandaloneEvidence(standaloneEvidence.byVideoId, videoId)
+          ? 'reviewed'
+          : 'missing',
       );
     }
   }

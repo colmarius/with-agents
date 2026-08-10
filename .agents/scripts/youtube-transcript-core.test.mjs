@@ -5,7 +5,10 @@ import path from 'node:path';
 import test from 'node:test';
 import {
   fetchVideo,
+  filterTranscriptSegmentsByRange,
+  normalizeTranscriptRange,
   normalizeYoutubeUrl,
+  renderTranscriptMarkdown,
   resolveContainedPath,
   safeContentPath,
   selectTranscriptLanguage,
@@ -29,6 +32,64 @@ test('normalizes supported YouTube video URLs and IDs', () => {
     ),
     expected,
   );
+});
+
+test('selects caption cues that overlap a half-open source range', () => {
+  const range = normalizeTranscriptRange({
+    sourceStartSeconds: '10',
+    sourceEndSeconds: '20',
+    durationSeconds: 30,
+  });
+  const segments = [
+    { text: 'ends at start', offset: 5, duration: 5 },
+    { text: 'crosses start', offset: 9.5, duration: 1 },
+    { text: 'starts at start', offset: 10, duration: 1 },
+    { text: 'point inside', offset: 19.5, duration: 0 },
+    { text: 'crosses end', offset: 19.5, duration: 1 },
+    { text: 'starts at end', offset: 20, duration: 1 },
+    { text: 'point at end', offset: 20, duration: 0 },
+  ];
+
+  assert.deepEqual(
+    filterTranscriptSegmentsByRange(segments, range),
+    segments.slice(1, 5),
+  );
+  assert.throws(
+    () =>
+      normalizeTranscriptRange({
+        sourceStartSeconds: 10,
+        sourceEndSeconds: undefined,
+      }),
+    /must be provided together/,
+  );
+  assert.throws(
+    () =>
+      normalizeTranscriptRange({
+        sourceStartSeconds: 20,
+        sourceEndSeconds: 10,
+      }),
+    /less than --end/,
+  );
+});
+
+test('renders excerpt metadata while preserving absolute source timestamps', () => {
+  const markdown = renderTranscriptMarkdown({
+    title: 'Excerpt',
+    summarySlug: 'coding-with-agents/excerpt',
+    sourceUrl: 'https://www.youtube.com/watch?v=AbCdEfGhI12',
+    videoId: 'AbCdEfGhI12',
+    capturedAt: '2026-08-10T00:00:00.000Z',
+    durationSeconds: 20000,
+    sourceStartSeconds: 15626,
+    sourceEndSeconds: 17077,
+    segments: [{ text: 'Opening.', offset: 15625.8, duration: 2 }],
+  });
+
+  assert.match(markdown, /durationSeconds: 20000/);
+  assert.match(markdown, /sourceStartSeconds: 15626/);
+  assert.match(markdown, /sourceEndSeconds: 17077/);
+  assert.match(markdown, /\[04:20:25\] Opening\./);
+  assert.doesNotMatch(markdown, /\[00:00:00\]/);
 });
 
 test('keeps library and transcript paths inside their fixed roots', () => {
