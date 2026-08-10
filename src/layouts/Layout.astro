@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Footer from '@components/Footer.astro';
 import Navigation from '@components/Navigation.astro';
 import PwaHead from '@components/PwaHead.astro';
+import PwaUpdatePrompt from '@components/PwaUpdatePrompt.astro';
 
 type Props = {
   title: string;
@@ -65,6 +66,8 @@ const canonicalUrl = new URL(
         <Footer />
       </div>
     </div>
+
+    <PwaUpdatePrompt />
 
     <script>
       const initPage = () => {

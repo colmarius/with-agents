@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BackNav from '@components/BackNav.astro';
 import PwaHead from '@components/PwaHead.astro';
+import PwaUpdatePrompt from '@components/PwaUpdatePrompt.astro';
 import '../../../styles/global.css';
 
 export async function getStaticPaths() {
@@ -658,7 +659,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
       }
     </style>
   </head>
-  <body class="bg-white text-slate-900 overflow-hidden">
+  <body class="pwa-slides bg-white text-slate-900 overflow-hidden">
     <div
       class="slide-topbar fixed top-0 left-0 right-0 h-14 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-50"
     >
@@ -732,6 +733,8 @@ const slidesDescription = `${post.data.description} Slide view.`;
         →
       </button>
     </div>
+
+    <PwaUpdatePrompt />
 
     <script>
       import { mermaidConfig } from '@scripts/mermaid-config';

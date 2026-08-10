@@ -40,7 +40,7 @@ const pwa = {
         directoryIndex: 'index.html',
         navigateFallback: null,
         cleanupOutdatedCaches: true,
-        skipWaiting: true,
+        skipWaiting: false,
         clientsClaim: true,
         sourcemap: false,
       });
