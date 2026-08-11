@@ -18,7 +18,7 @@ claim → predicted difference → representative test → observed behavior →
 
 Across Salvatore Sanfilippo's Italian-language **AI concepts** and **Coding with AI** playlists, one methodological pattern recurs: do not let a compelling description outrank the behavior it is meant to explain. This article synthesizes that pattern; it does not attribute one settled doctrine to every video.
 
-All English wording is editorial translation or paraphrase of Italian captions, including auto-generated captions for the July 13 video; nothing is a verbatim quotation. The section-opening callouts are this site's slide messages, not quotations from Sanfilippo.
+All English wording is editorial translation or paraphrase of Italian captions, including auto-generated captions for the July 13 and August 10 videos; nothing is a verbatim quotation. The section-opening callouts are this site's slide messages, not quotations from Sanfilippo.
 
 A test is discriminating only if the explanation being false could make it fail. A green suite that cannot expose the disputed behavior is weak evidence too.
 
@@ -50,9 +50,11 @@ Ablation and behavioral QA are not equivalent forms of evidence, but they share 
 
 > Generated explanations are steering surfaces, not acceptance evidence.
 
-Two videos expose the review trade-off. In January 2026, Sanfilippo asked whether reduced implementation practice could eventually weaken a developer's ability to direct and check automated work ([00:05:54–00:07:00](https://www.youtube.com/watch?v=yFa1BHzkzn8&t=354s)). In July, he argued against exhaustive line reading and redirected expert time toward product intent, architecture, targeted questions, and behavioral QA ([00:00:53–00:03:55](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=53s)).
+Three videos expose the review trade-off. In January 2026, Sanfilippo asked whether reduced implementation practice could eventually weaken a developer's ability to direct and check automated work ([00:05:54–00:07:00](https://www.youtube.com/watch?v=yFa1BHzkzn8&t=354s)). In July, he argued against exhaustive line reading and redirected expert time toward product intent, architecture, targeted questions, and behavioral QA ([00:00:53–00:03:55](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=53s)).
 
-Neither source defines a universal boundary. Use behavior as the acceptance surface for routine, observable work; inspect implementation deeply when consequences are high, observability is weak, or understanding is itself part of the deliverable.
+An August follow-up sharpens the reason for that shift without calling implementation trivial. Sanfilippo argues that models can automate coding because they inherit a programming culture people built; as manual implementation recedes, product intent, design, architecture, and new capabilities carry more relative weight ([00:10:06–00:13:16](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=606s)).
+
+None of these sources defines a universal boundary. Use behavior as the acceptance surface for routine, observable work; inspect implementation deeply when consequences are high, observability is weak, or understanding is itself part of the deliverable.
 
 ## Attention limits the quality of the test
 
@@ -74,3 +76,4 @@ Labels suggest and explanations guide, but only a representative observation can
 - [Testing recent alternative models](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s), published April 25, 2026; especially [00:07:47–00:14:11].
 - [Further observations on Claude Fable](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s), published June 10, 2026; especially [00:05:44–00:09:03].
 - [Check the ideas rather than every generated line](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=53s), published July 13, 2026; especially [00:00:53–00:03:55].
+- [Is code only a detail in software history?](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=606s), published August 10, 2026; especially [00:10:06–00:13:16].
