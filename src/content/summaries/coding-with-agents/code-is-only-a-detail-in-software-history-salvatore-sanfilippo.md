@@ -1,5 +1,5 @@
 ---
-title: "Il codice è solo un dettaglio, nella grande storia del software?"
+title: "Is Code Only a Detail in Software History?"
 resourceId: 39
 date: "2026-08-10"
 ---
