@@ -2,6 +2,7 @@
 title: "Coding with AI"
 status: reviewed
 coveredVideoIds:
+  - Ye6UFH2LfXU
   - XZZ_ddBvELc
   - WoaulxVqUUA
   - ro9ZPPoajJg
@@ -31,23 +32,23 @@ coveredVideoIds:
 
 ## Coverage
 
-- Manifest: 31 entries representing 31 unique video IDs.
-- Captured: 25 manifest entries representing 25 unique source-language transcript and summary pairs.
-- Summaries: 25 unique summaries.
-- Incorporated: all 25 summaries and all 25 summarized manifest entries.
+- Manifest: 32 entries representing 32 unique video IDs.
+- Captured: 26 manifest entries representing 26 unique source-language transcript and summary pairs.
+- Summaries: 26 unique summaries.
+- Incorporated: all 26 summaries and all 26 summarized manifest entries.
 - Unavailable-recorded video IDs without summaries: `H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`, `qipoQGqMCp0`, `_pLlet9Jrzc`, and `b7E-4jBPUec`.
 - Pending video IDs: none.
 
 ## Current Thesis
 
-- Sanfilippo argues that coding agents move the experienced developer's center of effort from producing and exhaustively reading lines toward product intent, architecture, constraints, experiments, behavioral evidence, and targeted review; the shift delegates implementation but does not eliminate the need for implementation knowledge ([summary](../../videos/XZZ_ddBvELc/summary.md), [summary](../../videos/l6lxgYeVZqs/summary.md), [summary](../../videos/WiJ2SaI-BtY/summary.md)).
+- Sanfilippo argues that coding agents move the experienced developer's center of effort from producing and exhaustively reading lines toward product intent, architecture, constraints, experiments, behavioral evidence, and targeted review; the shift delegates implementation but does not eliminate the need for implementation knowledge ([summary](../../videos/Ye6UFH2LfXU/summary.md), [summary](../../videos/XZZ_ddBvELc/summary.md), [summary](../../videos/l6lxgYeVZqs/summary.md), [summary](../../videos/WiJ2SaI-BtY/summary.md)).
 - Sanfilippo treats agent choice as a portfolio decision rather than a permanent commitment: interaction speed, steerability, hard-problem reliability, cost, quotas, policy, model knowledge, and harness behavior vary independently and must be tested on the team's actual work ([summary](../../videos/c95W__muKyI/summary.md), [summary](../../videos/sMl3V0vjvjE/summary.md), [summary](../../videos/WoaulxVqUUA/summary.md), [summary](../../videos/ro9ZPPoajJg/summary.md)).
 - The local-inference reports treat coding-agent quality as an end-to-end property of model, quantization, runtime, context handling, caching, tools, server compatibility, observability, and sandboxing rather than a model benchmark or tokens-per-second figure ([summary](../../videos/IoE3Hi2zpwk/summary.md), [summary](../../videos/todMmp6AGCE/summary.md), [summary](../../videos/uxAhuNPSBuE/summary.md), [summary](../../videos/9AjeHE_VReY/summary.md), [summary](../../videos/Yajmt1CeiHg/summary.md)).
 - Editorial: The playlist supports an expert-supervision thesis, not autonomous correctness. Its strongest examples pair rapid generated implementation with human-supplied architecture, real-task diagnostics, tests, instrumentation, and willingness to reject plausible but unsupported output ([summary](../../videos/9AjeHE_VReY/summary.md), [summary](../../videos/N-iwRfCFbHE/summary.md), [summary](../../videos/sMl3V0vjvjE/summary.md)).
 
 ## Stable Ideas
 
-- Sanfilippo repeatedly prioritizes ideas, architecture, behavior, and constraints over code provenance or implementation speed. A rewrite completed quickly or a patch that compiles is not thereby maintainable, safe, or conceptually sound ([summary](../../videos/XZZ_ddBvELc/summary.md), [summary](../../videos/jaB2cor6zWI/summary.md), [summary](../../videos/SiOadQFUx2k/summary.md)).
+- Sanfilippo repeatedly prioritizes ideas, architecture, behavior, and constraints over code provenance or implementation speed. A rewrite completed quickly or a patch that compiles is not thereby maintainable, safe, or conceptually sound ([summary](../../videos/Ye6UFH2LfXU/summary.md), [summary](../../videos/XZZ_ddBvELc/summary.md), [summary](../../videos/jaB2cor6zWI/summary.md), [summary](../../videos/SiOadQFUx2k/summary.md)).
 - Sanfilippo argues that specifications help agents plan, reproduce, and transfer patterns, but mature source still contains edge cases and interactions that natural language cannot fully preserve; reference implementations and the code itself remain part of the contract ([summary](../../videos/0buzDrn0aIY/summary.md), [summary](../../videos/1HTtYNaCtcM/summary.md)).
 - Expert orchestration remains grounded in implementation experience. Sanfilippo's examples assign the human the architecture, task framing, constraints, experiment design, diagnosis, and product judgment even when agents write most of the code ([summary](../../videos/l6lxgYeVZqs/summary.md), [summary](../../videos/WiJ2SaI-BtY/summary.md), [summary](../../videos/9AjeHE_VReY/summary.md), [summary](../../videos/todMmp6AGCE/summary.md)).
 - Editorial: Real maintenance and systems tasks expose differences that headline benchmarks miss: agents can overlook bounds errors, fail to diagnose crashes, preserve green tests while damaging semantics, or misread exact program structure ([summary](../../videos/pJ11diFOjqo/summary.md), [summary](../../videos/sMl3V0vjvjE/summary.md), [summary](../../videos/N-iwRfCFbHE/summary.md), [summary](../../videos/oNhkt0kKWA8/summary.md)).
@@ -64,6 +65,7 @@ coveredVideoIds:
 
 ## Revisions and Tensions
 
+- Editorial: Sanfilippo's distinction between implementation effort and conceptual invention is useful for locating human responsibility, but the categories overlap: implementation can expose constraints, create new ideas, and determine whether an architecture is viable. The historical and first-person examples illustrate his thesis without measuring the contribution of either side ([summary](../../videos/Ye6UFH2LfXU/summary.md)).
 - Editorial: The move away from line-by-line review increases leverage but also removes one route to understanding and defect discovery. Behavioral QA, architecture review, and agent explanations must compensate, yet model-generated explanations and tests are not independent evidence ([summary](../../videos/XZZ_ddBvELc/summary.md), [summary](../../videos/SiOadQFUx2k/summary.md), [summary](../../videos/jaB2cor6zWI/summary.md)).
 - Editorial: Agent acceleration can make programming more exploratory and preserve manual work for invention, learning, or aesthetics, while also encouraging overproduction, fragmented attention, and chronic supervision fatigue ([summary](../../videos/1HTtYNaCtcM/summary.md), [summary](../../videos/WiJ2SaI-BtY/summary.md), [summary](../../videos/id9QG-mQSOo/summary.md)).
 - Editorial: Informal comparisons split interaction agility from hard-problem reliability: Claude Code is reported as faster and easier to direct, Codex as more persistent or dependable on difficult systems problems, and Fable as potentially stronger but costly and opaque during long turns ([summary](../../videos/sMl3V0vjvjE/summary.md), [summary](../../videos/WoaulxVqUUA/summary.md), [summary](../../videos/ro9ZPPoajJg/summary.md)).
