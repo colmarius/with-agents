@@ -18,7 +18,7 @@ claim → predicted difference → representative test → observed behavior →
 
 Across Salvatore Sanfilippo's Italian-language **AI concepts** and **Coding with AI** playlists, one methodological pattern recurs: do not let a compelling description outrank the behavior it is meant to explain. This article synthesizes that pattern; it does not attribute one settled doctrine to every video.
 
-All English wording is editorial translation or paraphrase of Italian captions, including auto-generated captions for the July 13 and August 10 videos; nothing is a verbatim quotation. The section-opening callouts are this site's slide messages, not quotations from Sanfilippo.
+All English wording is editorial translation or paraphrase of Italian captions, including auto-generated captions; nothing is a verbatim quotation. The section-opening callouts are this site's slide messages, not quotations from Sanfilippo.
 
 A test is discriminating only if the explanation being false could make it fail. A green suite that cannot expose the disputed behavior is weak evidence too.
 
