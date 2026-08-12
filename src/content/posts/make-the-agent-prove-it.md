@@ -20,7 +20,7 @@ discriminating check → real system → external oracle when available
             evidence packet → human decision
 ```
 
-The useful question is not "do I trust the model?" It is **"what proof would make this change safe to accept?"**
+The useful question is not "do I trust the model?" It is **"what proof would make this change safe to accept?"** Charity Majors describes the same logic as a trust account: when unread generated code debits trust during creation, tests, evals, conformance checks, and bounded deterministic pathways must rebuild it elsewhere ([00:26:55–00:30:00](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=1615s)).
 
 Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The agent should propose and produce evidence; the reviewer still owns the decision.
 
@@ -186,6 +186,7 @@ The agent proposes and produces the evidence; the reviewer decides whether it co
 
 ## Sources used
 
+- [Charity Majors, “Stop being skeptical about AI for development”](https://www.youtube.com/watch?v=HC8T1OlgYi0), especially [00:26:55]-[00:30:00] on rebuilding trust outside unread generated code.
 - [Simon Willison: Engineering practices that make coding agents work](https://www.youtube.com/watch?v=owmJyKVu5f8), especially [00:04:41]-[00:18:35].
 - [Pi Building Pi, OpenClaw's Minimalist Coding Agent](https://www.youtube.com/watch?v=DPgJjRdQWrg), especially [00:37:11]-[00:42:55].
 - [Formal methods with Hillel Wayne](https://www.youtube.com/watch?v=KSkcgIYQy0U), especially [01:06:16]-[01:12:37].
