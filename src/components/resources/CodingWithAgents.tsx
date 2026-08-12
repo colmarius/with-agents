@@ -284,6 +284,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
 
   const handleSelectEpisode = async (slug: string) => {
     setSelectedSummarySlug(slug);
+    setIsEpisodeListExpanded(false);
     setIsEpisodeLoading(true);
     setError(null);
 
@@ -530,10 +531,14 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
           <div className="flex flex-col md:flex-row gap-6 min-h-0 flex-1 md:overflow-hidden">
             <aside
               className={`flex min-h-0 flex-col md:block md:w-64 md:flex-none md:overflow-y-auto md:max-h-full p-6 pb-0 md:pr-0 md:pb-6 ${
-                isEpisodeListExpanded ? 'flex-1' : ''
+                isEpisodeListExpanded ? 'flex-1' : 'shrink-0'
               }`}
             >
-              <div className="md:hidden mb-3">
+              <div
+                className={`shrink-0 md:hidden ${
+                  isEpisodeListExpanded ? 'mb-3' : ''
+                }`}
+              >
                 <CollapsibleButton
                   label={
                     summaryRef.kind === 'collection'

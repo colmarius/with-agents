@@ -113,13 +113,7 @@ export const EpisodeList = ({
     );
   }
 
-  if (isCollapsed && selectedSlug === null) {
-    return <div className="p-4 text-gray-500 text-sm">Select a summary</div>;
-  }
-
-  const displayedEpisodes = isCollapsed
-    ? episodes.filter((ep) => ep.path === selectedSlug)
-    : episodes;
+  if (isCollapsed) return null;
 
   return (
     <div
@@ -136,7 +130,7 @@ export const EpisodeList = ({
       <h3 className="mb-2 hidden px-2.5 text-xs font-medium uppercase tracking-wide text-gray-500 md:block dark:text-zinc-400">
         {label}
       </h3>
-      {displayedEpisodes.map((episode) => {
+      {episodes.map((episode) => {
         const isSelected = episode.path === selectedSlug;
         const isFocused = episode.path === focusedSlug;
         const trimmedTitle = episode.title.replace(
