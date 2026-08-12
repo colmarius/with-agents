@@ -18,19 +18,6 @@
     ]
   },
   {
-    "id": 41,
-    "primarySection": "agent-systems",
-    "title": "Memory Harnesses for Long-Running Research Agents — Stefania Druga",
-    "subtitle": "Experiments on when agent memory helps, ranked decision-ledger recall, and why correct retrieval can still fail",
-    "url": "https://www.youtube.com/watch?v=R3-anFK1YM8",
-    "description": "Sakana AI research scientist Stefania Druga tests memory policies while holding the model fixed. Memory added cost without capability when a task fit in context, while a ranked decisions ledger improved recall on longer-horizon tasks; even an oracle supplying the right memory could not force the model to use it. The experiments involve research agents, so their coding-agent implications are design hypotheses rather than universal results.",
-    "type": "video",
-    "source": "AI Engineer",
-    "date": "2026-08-12",
-    "duration": "13m",
-    "topics": ["context-memory", "models-evaluation", "tools-harnesses"]
-  },
-  {
     "id": 40,
     "primarySection": "teams-ecosystem",
     "title": "Velocity Sickness — Matt Dailey, Ref",
