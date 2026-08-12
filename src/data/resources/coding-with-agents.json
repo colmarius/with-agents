@@ -1,5 +1,49 @@
 [
   {
+    "id": 42,
+    "primarySection": "agent-systems",
+    "title": "Evolution of Agentic Surfaces — Gagan Bhat & Isabella Kai He",
+    "subtitle": "Anthropic engineers on adaptable harnesses, durable sessions, isolated execution, and production agent infrastructure",
+    "url": "https://www.youtube.com/watch?v=K0X9QDRkIdg",
+    "description": "Anthropic Applied AI engineers Gagan Bhat and Isabella Kai He explain why agent harness assumptions expire as models change, how decoupling the model loop from tool execution improves recovery and isolation, and how durable session logs support context management and observability. The talk is an Anthropic product presentation, so its latency measurements and proposed memory and grading features remain vendor-reported.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-08-11",
+    "duration": "31m",
+    "topics": [
+      "tools-harnesses",
+      "safety-permissions",
+      "context-memory",
+      "models-evaluation"
+    ]
+  },
+  {
+    "id": 41,
+    "primarySection": "agent-systems",
+    "title": "Memory Harnesses for Long-Running Research Agents — Stefania Druga",
+    "subtitle": "Experiments on when agent memory helps, ranked decision-ledger recall, and why correct retrieval can still fail",
+    "url": "https://www.youtube.com/watch?v=R3-anFK1YM8",
+    "description": "Sakana AI research scientist Stefania Druga tests memory policies while holding the model fixed. Memory added cost without capability when a task fit in context, while a ranked decisions ledger improved recall on longer-horizon tasks; even an oracle supplying the right memory could not force the model to use it. The experiments involve research agents, so their coding-agent implications are design hypotheses rather than universal results.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-08-12",
+    "duration": "13m",
+    "topics": ["context-memory", "models-evaluation", "tools-harnesses"]
+  },
+  {
+    "id": 40,
+    "primarySection": "teams-ecosystem",
+    "title": "Velocity Sickness — Matt Dailey, Ref",
+    "subtitle": "Moving team alignment and consequential review ahead of agent implementation",
+    "url": "https://www.youtube.com/watch?v=Kz4QJmNrVXU",
+    "description": "Ref founder Matt Dailey describes how coding-agent output can overwhelm pull-request review, fragment parallel work, and hide consequential decisions. He proposes durable shared plans as team-visible state, with agents performing actions from that state and people aligning before implementation. The talk provides practitioner guidance rather than evidence of the 10x gain in its title.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-08-09",
+    "duration": "21m",
+    "topics": ["collaboration-teams", "review-verification", "context-memory"]
+  },
+  {
     "id": 39,
     "primarySection": "teams-ecosystem",
     "title": "Il codice è solo un dettaglio? — Salvatore Sanfilippo",
