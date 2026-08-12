@@ -1,8 +1,8 @@
 # Research: Amp Orb Sizing
 
-**Date:** 2026-08-07
+**Date:** 2026-08-12
 **Status:** complete
-**Question:** What does Amp's “Size the Orbs of Production!” announcement establish, and how should it change durable guidance about remote agent execution?
+**Question:** What do Amp's current orb controls and recent practitioner reports establish, and how should they change durable guidance about remote agent execution?
 
 ## Recommendation
 
@@ -15,6 +15,7 @@ Treat agent mode and orb size as independent controls. Choose model capability f
 - Current orbs are billed by the minute, cost nothing while paused, and auto-pause after five minutes without activity. The main pricing page separately packages orb-hour allowances with Amp subscriptions.
 - Amp says the new `a1.medium` is 50% cheaper and a better fit for most projects than the former `a0.medium`. That is a dated vendor recommendation, not a workload benchmark; projects still need to validate setup time, peak memory, test parallelism, and build behavior on their own codebase.
 - Amp also reports faster startup, especially when another team member recently created an orb in the same project. The announcement provides no benchmark boundary, so use this as dated product direction rather than a transferable performance estimate.
+- In “Orbs and Jellyware,” Amp's founders report that near-zero startup friction, isolation, Portals, OIDC, and improved reliability changed their own team's orb adoption. This is a dated vendor practitioner report, not a controlled study or a sizing benchmark. It strengthens the case for measuring setup friction and usable feedback paths, but does not determine which CPU or memory tier a repository needs.
 - Smaller fan-out workers can lower compute cost, but compute availability does not make overlapping mutation safe or create review capacity. Apply a parallel-work admission policy first, then size each admitted worker.
 
 ## Current Size And Billing Reference
@@ -47,9 +48,10 @@ A larger orb changes available CPU and memory, not the agent's reasoning capabil
 
 ## Content Incorporation
 
-- **Incorporate:** `src/content/posts/amp-factory-era-case-study.md`. Orb sizing directly strengthens its existing task-sizing and cost-governance thesis, is confirmed by current canonical documentation, and adds the missing distinction between reasoning and machine capacity.
+- **Incorporate:** `src/content/posts/amp-factory-era-case-study.md`. Orb sizing directly strengthens its task-sizing and cost-governance thesis. “Orbs and Jellyware” also adds concrete, dated examples of using remote runtime for exhaustive matrices, demo artifacts, frame-level UI inspection, staged monitoring, and rollback rather than merely producing more changes.
 - **Research only:** `src/content/posts/parallel-agents-need-an-admission-policy.md`. The announcement's smaller fan-out example is compatible with the article, but it does not change the article's load-bearing constraint: downstream integration capacity. Product-specific execution controls already belong in the Amp case study.
-- **Ignore for now:** the remaining public posts. None depends on Amp's orb lineup, rates, or per-thread size control.
+- **Research only:** `src/content/posts/agentic-coding-2026.md` and `src/content/posts/make-the-agent-prove-it.md`. The episode supports their feedback-loop and evidence arguments, but both already use stronger independent sources. Adding another Amp recap would duplicate support rather than change either thesis.
+- **Ignore for now:** the remaining public posts. None depends on Amp's orb lineup, rates, per-thread size control, or the episode's “jellyware” framing.
 
 ## Evidence
 
@@ -65,9 +67,16 @@ The canonical manual confirms the five sizes, current rates and defaults, by-the
 
 The pricing page confirms subscription-level orb allowances but does not list the per-size metered rate table. Use the Orbs manual for current machine rates and the pricing page for plan allowances.
 
+### Raising an Agent, Season 2 Episode 2
+
+Amp's August 11, 2026 episode is useful as a bounded practitioner report about workflow rather than product authority or transferable performance evidence. Quinn Slack and Thorsten Ball say adoption increased after isolation, Portals, OIDC, stability, and low startup friction came together [01:00]-[13:17]. They describe spending remote runtime on compatibility matrices, end-to-end reruns, demo videos, and frame-level UI inspection [13:17]-[18:54], [23:42]-[26:38].
+
+The episode's highest-risk example is also its most useful boundary: an attachment-authentication migration began with warning-only logs, used read-only production access, monitored failure categories, tightened enforcement incrementally, enabled multiplayer intervention, and retained rollback [18:54]-[22:40]. That supports a durable rule—long-lived remote execution should buy staged evidence and bounded authority—not a general license for unattended production mutation.
+
 ## Sources
 
 - [Size the Orbs of Production!](https://ampcode.com/news/size-the-orbs-of-production) — Dated announcement for the new lineup, per-thread controls, shorter auto-pause window, and startup claims.
 - [Amp Orbs manual](https://ampcode.com/manual/orbs) — Canonical current sizes, rates, defaults, billing behavior, and thread-creation controls.
 - [Amp pricing](https://ampcode.com/pricing) — Current subscription allowances and general billing model.
 - [Amp Owner's Manual](https://ampcode.com/manual) — Current agent-mode, project, and agent-thread contracts.
+- [“Orbs and Jellyware”](https://ampcode.com/podcast/season-02/episode-02) — Dated Amp practitioner report on orb adoption, exhaustive verification, staged production feedback, and fast-changing software.
