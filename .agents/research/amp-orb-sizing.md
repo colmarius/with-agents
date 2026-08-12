@@ -20,7 +20,7 @@ Treat agent mode and orb size as independent controls. Choose model capability f
 
 ## Current Size And Billing Reference
 
-Verified against the Orbs manual on 2026-08-07:
+Verified against the Orbs manual on 2026-08-12:
 
 | Size | CPU | Memory | Disk | Individual/team rate |
 | --- | ---: | ---: | ---: | ---: |
@@ -30,7 +30,7 @@ Verified against the Orbs manual on 2026-08-07:
 | `a1.large` | 8 | 16 GB | 40 GB | $0.66/hour |
 | `a1.xxlarge` | 16 | 32 GB | 40 GB | $1.32/hour |
 
-The Orbs manual currently names `a1.large` as the general project default and `a1.small` as the default for Megawatt personal projects. Enterprise workspace rates are 50% higher. These defaults and rates are volatile product details; recheck the manual before using them for a budget.
+The Orbs manual says each project can choose its default size and names `a1.small` as the default for Megawatt personal projects; it does not name one universal default for other projects. Enterprise workspace rates are 50% higher. These defaults and rates are volatile product details; recheck the manual before using them for a budget.
 
 The pricing page currently includes 750 hours of small orbs with Megawatt and 1,000 hours of xxlarge orbs with Gigawatt. Subscription allowances and metered rates answer different budgeting questions and should not be conflated.
 
