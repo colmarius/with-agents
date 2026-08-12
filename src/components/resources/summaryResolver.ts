@@ -77,7 +77,7 @@ export const resolveSummaryEntries = (
       series: [...seriesKeys][0],
       entries: [...entries].sort(
         (a, b) =>
-          (a.episode as number) - (b.episode as number) ||
+          (b.episode as number) - (a.episode as number) ||
           a.slug.localeCompare(b.slug),
       ),
     };

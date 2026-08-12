@@ -30,7 +30,7 @@ test('resolves standalone, numbered series, and collection summaries', () => {
   assert.equal(series?.kind, 'series');
   assert.deepEqual(
     series?.kind === 'series' ? series.entries.map(({ slug }) => slug) : [],
-    ['one', 'two'],
+    ['two', 'one'],
   );
   const collection = resolveSummaryEntries([
     entry({ slug: 'b', collection: 'talks', date: '2026-02-01' }),
