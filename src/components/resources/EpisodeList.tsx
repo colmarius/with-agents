@@ -131,7 +131,7 @@ export const EpisodeList = ({
       }
       tabIndex={0}
       onKeyDown={handleKeyDown}
-      className="flex flex-col gap-1 p-0 focus:outline-none text-sm text-gray-600 dark:text-zinc-300"
+      className="flex min-h-0 flex-col gap-1 overflow-y-auto overscroll-contain p-0 focus:outline-none text-sm text-gray-600 md:overflow-visible dark:text-zinc-300"
     >
       <h3 className="mb-2 hidden px-2.5 text-xs font-medium uppercase tracking-wide text-gray-500 md:block dark:text-zinc-400">
         {label}
