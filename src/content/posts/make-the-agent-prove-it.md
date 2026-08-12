@@ -20,7 +20,7 @@ discriminating check → real system → external oracle when available
             evidence packet → human decision
 ```
 
-The useful question is not "do I trust the model?" It is **"what proof would make this change safe to accept?"** Charity Majors describes the same logic as a trust account: when unread generated code debits trust during creation, tests, evals, conformance checks, and bounded deterministic pathways must rebuild it elsewhere ([00:26:55–00:30:00](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=1615s)).
+The useful question is not "do I trust the model?" It is **"what proof would make this change safe to accept?"** Charity Majors calls this a trust account: if nobody reads the generated code, the team loses one source of confidence and must replace it with tests, evals, conformance checks, and bounded deterministic pathways ([00:26:55–00:30:00](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=1615s)).
 
 Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The agent should propose and produce evidence; the reviewer still owns the decision.
 
