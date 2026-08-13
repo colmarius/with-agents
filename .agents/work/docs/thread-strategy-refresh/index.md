@@ -1,6 +1,6 @@
 # Refresh Thread Strategy Articles
 
-Status: in-progress
+Status: completed
 Category: docs
 Updated: 2026-08-13
 
@@ -16,9 +16,9 @@ stale small-thread assumptions.
 Research supports replacing “always start small” with responsibility-based thread
 boundaries: keep exploration and coordination in a coherent long-lived workstream,
 then use fresh contexts for bounded implementation and independent verification.
-The first round refreshed and verified `small-threads-durable-state.md`. A separate
-high-mode orb aligned six related public posts; coordinator integration and final
-acceptance remain.
+The primary article is refreshed and six related public posts are aligned. Both
+editorial rounds are committed on `editorial/thread-strategy-refresh`; combined
+checks and browser verification passed.
 
 ## Artifacts
 
@@ -31,11 +31,8 @@ acceptance remain.
 
 ## Next Action
 
-- Coordinator: apply the Task 2 patch after the Task 1 synchronization commit,
-  inspect the integration, rerun combined verification, and perform final
-  acceptance.
+- None.
 
 ## Open Questions
 
-- [x] Six related public articles required consistency updates; the scoped search
-      found no additional public-post matches.
+- None.

@@ -4,9 +4,9 @@ Updated: 2026-08-13
 
 ## Current Slice
 
-Task 2 is complete in the separate high-mode editorial orb from synchronization
-commit `74f829c9e9af0a8a88dd0324085eb76e1b683d9f`. The related-post round is ready
-for coordinator integration and final combined verification.
+Both tasks are complete. The coordinating thread integrated the separate high-mode
+orb's related-post round as `33924eb`, inspected the patch, reran combined checks,
+and verified the changed article and slide routes.
 
 ## Task 1 Outcome
 
@@ -43,6 +43,9 @@ for coordinator integration and final combined verification.
 - Whole-file `wc -w` counts before → after: `agentic-coding-2026.md` 1,725 → 1,730;
   durable-context canonical 2,847 → 2,867; extended deck 3,841 → 3,861; image deck
   2,061 → 2,081; Amp case study 2,039 → 2,039; admission policy 1,539 → 1,539.
+- The worker based its round on reconstructed sync commit
+  `74f829c9e9af0a8a88dd0324085eb76e1b683d9f`, logically corresponding to Task 1
+  commit `867bb20`, and returned a patch without pushing.
 
 ## Task 1 Verification Observed
 
@@ -78,8 +81,25 @@ for coordinator integration and final combined verification.
   reused session recorded one transient Vite dynamic-import fetch error; it did not
   recur in the complete fresh-session pass.
 
+## Combined Verification Observed
+
+- The coordinator inspected the integrated `867bb20..33924eb` diff and confirmed
+  the related-post edits stayed within the six public candidates and work-item
+  state.
+- Final `npm run lint:fix` checked 259 files; no tracked source changed.
+- Final `npm run check` passed: 47 files, 0 errors, 0 warnings, 0 hints.
+- Final `npm run build` passed: 30 pages built and 174 files precached.
+- `git diff --check origin/main...HEAD` passed, and a scoped guard found no old
+  title or exact stale universal framing in public posts.
+- The coordinator opened all seven affected article routes in fresh browser
+  sessions. Expected headings or claims rendered, six related posts linked the
+  unchanged route with the new title, no old title rendered, and no page errors
+  were reported.
+- The coordinator opened the primary slide plus seven affected related slides.
+  Expected visible slide content rendered; opening Notes for note-only changes
+  exposed the changed claim or link text, image assets loaded, and no page errors
+  were reported.
+
 ## Remaining Work
 
-- Coordinator: apply the Task 2 transfer patch after the Task 1 synchronization
-  commit, inspect the integrated diff, and rerun combined checks and browser
-  evidence before final acceptance.
+- None.
