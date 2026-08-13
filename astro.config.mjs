@@ -61,6 +61,12 @@ export default defineConfig({
   site: 'https://with-agents.dev',
   compressHTML: true,
   integrations: [react(), pwa],
+  redirects: {
+    '/posts/small-threads-durable-state':
+      '/posts/right-sized-threads-durable-state',
+    '/posts/small-threads-durable-state/slides':
+      '/posts/right-sized-threads-durable-state/slides',
+  },
 
   security: {
     allowedDomains: [

@@ -181,7 +181,7 @@ The workflow is simple:
 Context → Plan → Handoff Prompt → Implement → Record Progress → Promote
 ```
 
-Keep research or coordination in one coherent workstream while its accumulated context helps. Start a fresh context for bounded implementation after broad exploration or when verification needs independent judgment. The work item connects those contexts without dragging every stale search, false start, or abandoned option into the next run. [Right-Sized Threads, Durable State](/posts/small-threads-durable-state) is the tactical version of this loop. Keep task-local context close to the task; do not turn it into a permanent transcript dump.
+Keep research or coordination in one coherent workstream while its accumulated context helps. Start a fresh context for bounded implementation after broad exploration or when verification needs independent judgment. The work item connects those contexts without dragging every stale search, false start, or abandoned option into the next run. [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) is the tactical version of this loop. Keep task-local context close to the task; do not turn it into a permanent transcript dump.
 
 ## Move review earlier than the PR
 
@@ -294,6 +294,6 @@ Do not design the perfect agent operating model. Start with one repeated pain. S
 - Boris Cherny, [We Cut 80% of Claude Code’s Prompt](https://www.youtube.com/watch?v=qyPCVqFUyDo) ([00:03:21–00:08:54](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=201s)) — source for model-by-model prompt ablation and restoring guidance only after repeated observed failures.
 - Vaibhav Gupta, [fighting slop with slop](https://www.youtube.com/watch?v=AMiyLItEtLA) ([00:00:01–00:06:00](https://www.youtube.com/watch?v=AMiyLItEtLA&t=1s)) — a Boundary product and engineering-practice account supporting durable architecture guidance, reviewed design writing, executable boundaries, and trace-based issue discovery when traditional line review is reduced.
 - [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
-- [`dot-agents`](https://dot-agents.dev/) and [Right-Sized Threads, Durable State](/posts/small-threads-durable-state) — source material for file-backed task state and handoffs.
+- [`dot-agents`](https://dot-agents.dev/) and [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) — source material for file-backed task state and handoffs.
 - [Make the Agent Prove It](/posts/make-the-agent-prove-it) — internal companion piece for the evidence ladder.
 - Author synthesis from a private review of the author's own agent threads (one user's corpus); no thread content, prompts, or identifiers are reproduced.
