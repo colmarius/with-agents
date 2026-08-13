@@ -61,7 +61,7 @@ Keep one integration owner. Parallel discovery is easy to combine; overlapping m
 
 > Use the thread as working memory and the repository as the shared record.
 
-**Durable state** is the repository record that future workers can trust: accepted decisions, constraints, status, proof, and the next action. A person can inspect it, and another thread or orb can use it.
+**Durable state** is the repository's declared current state: accepted decisions, constraints, status, proof, and the next action. A person can inspect and use it, but must still check its freshness and evidence.
 
 This repository uses a dot-agents work item as one concrete implementation:
 
@@ -73,7 +73,7 @@ This repository uses a dot-agents work item as one concrete implementation:
 └── progress.md   # optional observed evidence, deviations, blockers
 ```
 
-Preserve the decision and its evidence, accepted constraints, current task, proof state, authority, unresolved questions, and next action. Do not preserve the whole exploratory transcript.
+Preserve the decision and its evidence, accepted constraints, current task, proof state, authority, unresolved questions, and next action. Label proof as inherited or rerun so the next worker knows what it can claim. Do not preserve the whole exploratory transcript.
 
 When work crosses threads or orbs, use a commit as the synchronization point. It identifies the accepted baseline and makes later patches reviewable. It records state, but does not prove correctness.
 
@@ -92,6 +92,7 @@ Decisions already made:
 Acceptance and verification:
 Authority and stop conditions:
 Return:
+Update durable state:
 ```
 
 Prompt length should follow missing information. Thorsten Ball's examples point agents to code, references, constraints, screenshots, and proof ([04:24:22–04:42:11](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15862s)). A short prompt works when a work item, commit, `AGENTS.md`, skill, and test command already make the contract discoverable. A broad or risky assignment should say more.
@@ -103,7 +104,8 @@ Use this operating procedure:
 3. commit the accepted baseline before another environment depends on it;
 4. assign bounded implementation with explicit authority and checks;
 5. use fresh verification when independence is worth its cost;
-6. let one owner integrate the result and promote reusable learning.
+6. record deviations, exact checks and results, whether evidence was inherited or rerun, current status, and the next action;
+7. let one owner integrate the result and promote reusable learning.
 
 ## Sources used
 
