@@ -17,7 +17,8 @@ Research supports replacing “always start small” with responsibility-based t
 boundaries: keep exploration and coordination in a coherent long-lived workstream,
 then use fresh contexts for bounded implementation and independent verification.
 The first round refreshed and verified `small-threads-durable-state.md`. A separate
-high-mode orb will review related articles after this round is committed.
+high-mode orb aligned six related public posts; coordinator integration and final
+acceptance remain.
 
 ## Artifacts
 
@@ -30,10 +31,11 @@ high-mode orb will review related articles after this round is committed.
 
 ## Next Action
 
-- Commit completed Task 1 as the synchronization point, then delegate Task 2 in
-  [plan.md](plan.md) to a separate high-mode orb.
+- Coordinator: apply the Task 2 patch after the Task 1 synchronization commit,
+  inspect the integration, rerun combined verification, and perform final
+  acceptance.
 
 ## Open Questions
 
-- [ ] Which related public articles need wording changes after the primary article
-      establishes the new thread-boundary model?
+- [x] Six related public articles required consistency updates; the scoped search
+      found no additional public-post matches.

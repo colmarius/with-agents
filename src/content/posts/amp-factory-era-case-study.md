@@ -18,7 +18,7 @@ Amp detail → reusable contract → workflow habit
 
 Amp is the concrete case study. The reusable subject is how a coding-agent system sizes work, delegates it, reconstructs context, runs elsewhere, proves output, and controls recurring execution. The exact Amp assertions below were checked on 2026-08-12 against the current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing page](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle).
 
-[Agentic Coding in 2026](/posts/agentic-coding-2026) owns the product-agnostic map. Use [Your Repo Is the Memory](/posts/durable-context-coding-agents) and [Small Threads, Durable State](/posts/small-threads-durable-state) for repo-local context, [Make the Agent Prove It](/posts/make-the-agent-prove-it) for the proof ladder, and [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) for deciding whether work should fan out at all.
+[Agentic Coding in 2026](/posts/agentic-coding-2026) owns the product-agnostic map. Use [Your Repo Is the Memory](/posts/durable-context-coding-agents) and [Right-Sized Threads, Durable State](/posts/small-threads-durable-state) for repo-local context, [Make the Agent Prove It](/posts/make-the-agent-prove-it) for the proof ladder, and [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) for deciding whether work should fan out at all.
 
 ## Set reasoning and compute independently
 
@@ -103,7 +103,7 @@ Amp threads can carry conversation state, but the durable operating context belo
 - Thread references let a prompt point to another Amp thread and ask Amp to extract information relevant to the current task ([Manual](https://ampcode.com/manual#referencing-threads)).
 - An orb starts from a fresh repository clone. Committed `.agents/setup` and `.agents/resume` hooks prepare new and resumed environments, while `.amp/services.yaml` declares supervised development services and their portal configuration ([Orbs manual](https://ampcode.com/manual/orbs#setup-files)).
 
-**Synthesis:** product context can retrieve prior conversation and choose an execution environment; it cannot replace repo-local decisions, acceptance criteria, bootstrap instructions, verification results, cleanup steps, or the next action. This repository's `.agents/work/` convention is local durable state, not an Amp product feature. [Your Repo Is the Memory](/posts/durable-context-coding-agents) covers the memory model; [Small Threads, Durable State](/posts/small-threads-durable-state) covers the work-item procedure.
+**Synthesis:** product context can retrieve prior conversation and choose an execution environment; it cannot replace repo-local decisions, acceptance criteria, bootstrap instructions, verification results, cleanup steps, or the next action. This repository's `.agents/work/` convention is local durable state, not an Amp product feature. [Your Repo Is the Memory](/posts/durable-context-coding-agents) covers the memory model; [Right-Sized Threads, Durable State](/posts/small-threads-durable-state) covers the work-item procedure.
 
 ## Make the factory prove its work
 

@@ -26,7 +26,7 @@ public posts.
     - The post retains a practical durable-state and prompting procedure.
   - Notes: Preserve the route; target roughly 900–1,050 body words.
 
-- [ ] **Task 2: Review related articles in a separate high-mode orb**
+- [x] **Task 2: Review related articles in a separate high-mode orb**
   - Scope: public posts that link to or repeat the old small-thread default
   - Depends on: Task 1 committed as a sync point
   - Acceptance:

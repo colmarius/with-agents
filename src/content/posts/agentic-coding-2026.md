@@ -90,19 +90,19 @@ That last point matters more as loops get longer. Raising an Agent episode 9 fra
 how to expose composable operations, inspectable state, faithful feedback,
 recovery, mutation gates, and a human return path.
 
-## Keep context wide and implementation narrow
+## Keep exploration coherent and implementation bounded
 
-> Research wide, implement narrow, and preserve the state between them.
+> Let exploration accumulate useful context; start bounded implementation from accepted decisions.
 
 ```text
-wide research → critique → human decision → narrow implementation → evidence
+coherent exploration → critique → human decision → bounded implementation → evidence
 ```
 
-Build Crew episode 7 shows two useful modes. A tiny directed thread works when the human knows exactly what should happen and can name the files, constraints, and expected output [00:13:06]-[00:15:58]. A research flow works when uncertainty is high: analyze broadly, write reports, critique the design, narrow into a plan, then hand off to an implementation thread [00:18:54]-[00:24:12]. That gives the durable pattern shown above.
+Build Crew episode 7 shows two useful modes. A tiny directed thread works when the human knows exactly what should happen and can name the files, constraints, and expected output [00:13:06]-[00:15:58]. A research flow works when uncertainty is high: analyze broadly, write reports, critique the design, narrow into a plan, then hand off to an implementation thread [00:18:54]-[00:24:12]. That illustrates a useful responsibility boundary, not a universal thread-size rule.
 
 Thariq Shihipar offers a concrete way to start that research: ask the agent for a blind-spot pass over the relevant code and project context, use prototypes to expose preferences that are hard to describe, and let the agent interview you about questions that could change the architecture [00:10:09]-[00:12:58]. During implementation, ask it to log unknowns and deviations, then quiz you on the result so you can still explain the work you are about to merge [00:12:58]-[00:14:57].
 
-Do not carry every exploratory transcript into implementation. Carry forward only the decision, relevant files, constraints, and proof target. [Small Threads, Durable State](/posts/small-threads-durable-state) owns the operating procedure for `.agents/work/` work items, handoffs, progress logs, and verification records.
+Do not carry every exploratory transcript into implementation. Carry forward only the decision, relevant files, constraints, and proof target. [Right-Sized Threads, Durable State](/posts/small-threads-durable-state) owns the operating procedure for `.agents/work/` work items, handoffs, progress logs, and verification records.
 
 ## Factory workflows raise the bar
 
@@ -136,7 +136,7 @@ So the factory-era checklist is not "launch more agents." It is:
 | Shared context keeps disappearing | [Your Repo Is the Memory](/posts/durable-context-coding-agents) |
 | The agent cannot operate or verify your system cleanly | [Agent-Ready Interfaces](/posts/agent-ready-interfaces) |
 | Review needs stronger evidence, or an explanation disagrees with behavior | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
-| Threads are too large to restart | [Small Threads, Durable State](/posts/small-threads-durable-state) |
+| Work needs a clearer responsibility boundary | [Right-Sized Threads, Durable State](/posts/small-threads-durable-state) |
 | Parallel work is creating merge or review debt | [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) |
 | Agent activity is rising, but delivery value is unclear | [Measure Outcomes, Not Agent Activity](/posts/measure-outcomes-not-agent-activity) |
 | You want the talks behind the series | [The coding-with-agents resource hub](/resources/coding-with-agents) |

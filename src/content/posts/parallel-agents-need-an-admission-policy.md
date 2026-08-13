@@ -26,7 +26,7 @@ This article calls the pre-launch decision a **parallel-work admission policy**:
 classify the fan-out, identify overlap, name the downstream constraint, cap admitted
 work, declare staleness, and assign one selection and integration owner. The policy
 is editorial synthesis, not a framework named by any presenter. It decides whether
-one task should become several lanes; [Small Threads, Durable State](/posts/small-threads-durable-state)
+one task should become several lanes; [Right-Sized Threads, Durable State](/posts/small-threads-durable-state)
 owns what each admitted lane must preserve.
 
 ## Classify the work before choosing concurrency

@@ -171,7 +171,7 @@ class: image-only
 
 `dot-agents` is a lightweight file convention for long-running agent work. It separates noisy exploration from the state that must survive: what we are doing, why, what we trust, what we decided, what remains, and how the next thread should continue.
 
-Research threads can go wide. Implementation threads should be narrow. The work item connects them without dragging every false start into the next run. Keep task-local context close to the task, then archive or remove it when the work is complete.
+Keep research or coordination in one coherent workstream while its accumulated context helps. Start a fresh context for bounded implementation after broad exploration or when verification needs independent judgment. The work item connects those contexts without dragging every false start into the next run. Keep task-local context close to the task, then archive or remove it when the work is complete.
 
 ## Move review earlier than the PR
 <!-- slide:
@@ -264,4 +264,4 @@ Start with one real task. Write down what made the agent better. Repeat. `dot-ag
 - Boris Cherny, [We Cut 80% of Claude Code’s Prompt](https://www.youtube.com/watch?v=qyPCVqFUyDo) ([00:03:21–00:08:54](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=201s)) — source for prompt ablation and restoring guidance only after repeated observed failures.
 - Vaibhav Gupta, [fighting slop with slop](https://www.youtube.com/watch?v=AMiyLItEtLA) ([00:00:01–00:06:00](https://www.youtube.com/watch?v=AMiyLItEtLA&t=1s)) — a Boundary product and engineering-practice account supporting durable architecture guidance, reviewed design writing, executable boundaries, and trace-based issue discovery when traditional line review is reduced.
 - [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
-- [`dot-agents`](https://dot-agents.dev/), [Small Threads, Durable State](/posts/small-threads-durable-state), and [Make the Agent Prove It](/posts/make-the-agent-prove-it) — source material for file-backed task state, handoffs, and the evidence ladder.
+- [`dot-agents`](https://dot-agents.dev/), [Right-Sized Threads, Durable State](/posts/small-threads-durable-state), and [Make the Agent Prove It](/posts/make-the-agent-prove-it) — source material for file-backed task state, handoffs, and the evidence ladder.
