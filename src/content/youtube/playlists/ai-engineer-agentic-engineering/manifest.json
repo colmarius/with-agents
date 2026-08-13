@@ -1,0 +1,93 @@
+{
+  "playlistId": "PLQorOn5nOmSA",
+  "entries": [
+    {
+      "videoId": "aeTb5BdmTTc",
+      "position": 0,
+      "title": "Agents, codebases, and teams — Aditya Khandelwal, Amazon AGI Lab",
+      "publishedAt": "2026-08-11T00:03:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "shRR1e2HXMk",
+      "position": 1,
+      "title": "Codex, Behind the Harness — Dominik Kundel, OpenAI",
+      "publishedAt": "2026-08-10T16:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "OL7kfezynJM",
+      "position": 2,
+      "title": "Multiplayer agentic engineering — Arjun Singh, Superconductor",
+      "publishedAt": "2026-08-09T20:30:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "03l29gJXpCE",
+      "position": 3,
+      "title": "Guide, Verify, Solve — Anirban Chatterjee, Sonar",
+      "publishedAt": "2026-08-09T17:45:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Kz4QJmNrVXU",
+      "position": 4,
+      "title": "Velocity Sickness: What Happens When Your Whole Team Gets 10x Faster — Matt Dailey, Ref.",
+      "publishedAt": "2026-08-09T16:30:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vSx5IULvBns",
+      "position": 5,
+      "title": "Always-on agents run production without the on-call tax — Justin Smith, Resolve AI",
+      "publishedAt": "2026-08-09T14:45:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "iQ5xldZ9StU",
+      "position": 6,
+      "title": "Realtime multiplayer, automation, and you! — Idan Gazit, GitHub",
+      "publishedAt": "2026-08-08T21:30:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7vn4WpqNpck",
+      "position": 7,
+      "title": "Benchmarking Coding Agents on New vs Legacy Codebases — Denys Linkov, Wisedocs",
+      "publishedAt": "2026-08-08T19:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Z-c11pV_uvU",
+      "position": 8,
+      "title": "Anthropic's CCA Exam as a Field-Guide for Agentic Engineering — Frank Coyle, UC Berkeley",
+      "publishedAt": "2026-08-08T16:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CoEIs6Xm8m8",
+      "position": 9,
+      "title": "Open Source Is Dead. Long Live Open Source. — Saoud Rizwan, Cline",
+      "publishedAt": "2026-08-07T23:26:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Yk87oUPVaxU",
+      "position": 10,
+      "title": "DeepSWE: A Contamination-Resistant Coding Benchmark — James Shi, Datacurve",
+      "publishedAt": "2026-07-26T18:10:56Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

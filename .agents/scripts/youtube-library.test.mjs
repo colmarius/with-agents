@@ -236,6 +236,7 @@ test('loads and validates the committed source-only catalog', async () => {
       'antirez-coding-with-ai',
       'ai-engineer-swe-agents-2025',
       'ai-engineer-agent-reliability-2025',
+      'ai-engineer-agentic-engineering',
       'ai-engineer-coding-agents',
       'mayank-gupta-west-coast-builders',
       'david-ondrej-coding-agents',
