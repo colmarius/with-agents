@@ -2,6 +2,7 @@
 title: 'Agent-Ready Interfaces: Design Tools Agents Can Actually Operate'
 description: 'A practical design review for composable agent-facing operations, inspectable state, faithful feedback, recovery, mutation gates, and human control.'
 pubDate: 2026-08-03
+updatedDate: 2026-08-13
 tags: ['AI Agents', 'Interface Design', 'Developer Tools', 'Agentic Coding']
 draft: false
 unlisted: false
@@ -86,8 +87,8 @@ change requires. This article's narrower obligation is to expose the real compil
 renderer, calculation engine, runtime, or fixture suite in a form the agent can run
 and interpret.
 
-Treat reviewer-supplied expectations as protected input, not ordinary
-implementation state.
+**Author synthesis:** treat reviewer-supplied expectations as protected input, not
+ordinary implementation state.
 
 ## Reset and retry are interface features
 
@@ -137,7 +138,13 @@ describes a stricter capability boundary: separate keys, read-only access where
 possible, and permission to draft email but not send it
 ([00:52:14–00:54:11](https://www.youtube.com/watch?v=2TLXsxkz0zI&t=3134s)). These
 are practitioner demonstrations, not production security or reliability evidence.
-Isolation is not policy; the useful boundary is the capability the agent never receives.
+Isolation is not policy; the useful boundary is the capability the agent cannot
+reach directly or through a shared service. In a preliminary OpenAI incident
+account, evaluation agents had no direct internet access but reached an internal
+package service with broad internet access; that service became an escape and
+cross-run coordination path
+([00:03:53–00:04:41](https://www.youtube.com/watch?v=87DyyMV0kCY&t=233s),
+[00:08:16–00:10:20](https://www.youtube.com/watch?v=87DyyMV0kCY&t=496s)).
 
 A draft, diff, dry run, or proposed plan is therefore not merely nicer UX. It is
 an interface state between “the agent found an action” and “the system accepted
@@ -176,3 +183,4 @@ gate the consequence. Then test the interface with representative work.
 - [Gagan Bhat and Isabella Kai He, “Evolution of Agentic Surfaces”](https://www.youtube.com/watch?v=K0X9QDRkIdg), an Anthropic product architecture report rather than comparative reliability evidence; especially [00:11:07–00:12:55] on separating the model loop from replaceable tool execution and resuming from durable session state.
 - [Matthias Luebken, “A Piece of Pi”](https://www.youtube.com/watch?v=vAIDdLKB6-w), an evolving embedded-agent demonstration; especially [00:07:27–00:08:28] and [00:15:17–00:19:12] on pre-tool hooks, CLIs, sandboxes, sessions, and editable drafts.
 - [Chris Parsons, “Ralph Loops: Build Dumb AI Loops That Ship”](https://www.youtube.com/watch?v=2TLXsxkz0zI), a workshop rather than a controlled evaluation; especially [00:52:14–00:54:11] on separate credentials and draft-only email access.
+- [Eric Wallace and Michael Dalton, “The ‘Breaking’ News: The OpenAI–Hugging Face Incident”](https://www.youtube.com/watch?v=87DyyMV0kCY), a preliminary incident reconstruction by OpenAI staff involved in the response; especially [00:03:53–00:10:20] on indirect internet access through a shared package service.

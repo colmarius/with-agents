@@ -2,6 +2,7 @@
 title: 'Behavior Over Explanation: Salvatore Sanfilippo on AI and Coding Agents'
 description: 'An editorial synthesis of Salvatore Sanfilippo’s Italian videos: treat explanations as hypotheses, use interventions and representative behavior to test them, and protect the attention needed to judge the result.'
 pubDate: 2026-07-27
+updatedDate: 2026-08-10
 tags: ['AI Agents', 'Model Evaluation', 'Review']
 draft: false
 unlisted: true

@@ -2,9 +2,12 @@
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'A richer slide-first alternate deck for durable context, repo memory, review checkpoints, and dot-agents workflows.'
 pubDate: 2026-07-02
+updatedDate: 2026-08-13
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: true
+canonicalPath: '/posts/durable-context-coding-agents'
+noindex: true
 order: 3
 ---
 
@@ -371,24 +374,24 @@ Do not package preferences as skills. A style preference belongs in `AGENTS.md`,
 layout: text
 -->
 
-> Long work needs restartable state, not a heroic chat transcript.
+> Durable work needs restartable state; self-contained work should stay conversational.
 
 ```text
 .agents/work/<category>/<task>/
-├─ index.md       current status and next action
-├─ research.md    trusted findings and source notes
-├─ plan.md        implementation-ready plan
-├─ progress.md    checks, blockers, decisions, handoffs
-╰─ decisions/     durable calls that should not be reopened
+├─ index.md       required: lifecycle and next action
+├─ research.md    optional: trusted findings and source notes
+├─ plan.md        optional: tasks and planned verification
+├─ progress.md    optional: observed evidence and blockers
+╰─ other files    only when another artifact earns its place
 ```
 
 <!-- notes -->
 
-`dot-agents` is a lightweight file convention for long-running agent work. It separates noisy exploration from the state that needs to survive: what we are doing, why, what we trust, what we decided, what remains, and how the next thread should continue.
+`dot-agents` is a lightweight file convention for agent work that needs continuity, coordination, durable decisions, or a handoff. `index.md` is the required entrypoint and owns lifecycle state and the exact next action. Research, requirements, plans, progress, decision records, and persisted handoffs are supporting artifacts, not a mandatory packet.
 
-The workflow is simple: Context → Plan → Handoff Prompt → Implement → Record Progress → Promote.
+Small work stays in the current conversation. Durable work uses a work item, a plan when needed, current-thread implementation by default, and recorded evidence. A handoff is an optional branch when another worker, environment, or independent judgment helps enough to justify the transfer.
 
-Keep research or coordination in one coherent workstream while its accumulated context helps. Start a fresh context for bounded implementation after broad exploration or when verification needs independent judgment. The work item connects those contexts without dragging every stale search, false start, or abandoned option into the next run. [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) is the tactical version of this loop. Keep task-local context close to the task; do not turn it into a permanent transcript dump.
+The work item connects contexts without dragging every stale search, false start, or abandoned option into the next run. [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) is the tactical version of this loop. When the work is complete, promote reusable lessons, commit the final snapshot, and remove the task-local item; git history remains the archive.
 
 ## Move review earlier than the PR
 <!-- slide:

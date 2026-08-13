@@ -26,7 +26,10 @@ const { Content } = await render(post);
 	title={post.data.title}
 	description={post.data.description}
 	pubDate={post.data.pubDate}
+	updatedDate={post.data.updatedDate}
 	tags={post.data.tags}
+	canonicalPath={post.data.canonicalPath}
+	noindex={post.data.noindex}
 >
 	<Content />
 </PostLayout>

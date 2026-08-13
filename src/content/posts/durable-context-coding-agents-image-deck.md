@@ -2,9 +2,12 @@
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents (Image Deck)'
 description: 'A visual presentation about keeping coding-agent intent, decisions, task state, and proof in the repository.'
 pubDate: 2026-07-02
+updatedDate: 2026-08-13
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: true
+canonicalPath: '/posts/durable-context-coding-agents'
+noindex: true
 order: 4
 ---
 
@@ -165,13 +168,13 @@ layout: image
 class: image-only
 -->
 
-![Generated slide showing a readable dot-agents work item with index, research, plan, progress, and decisions files.](/slides/durable-context-coding-agents-image-deck/Slide-13a.webp)
+![Generated slide showing the current dot-agents work-item contract: index is required, while research, plan, progress, and other files are optional.](/slides/durable-context-coding-agents-image-deck/Slide-13a.webp)
 
 <!-- notes -->
 
-`dot-agents` is a lightweight file convention for long-running agent work. It separates noisy exploration from the state that must survive: what we are doing, why, what we trust, what we decided, what remains, and how the next thread should continue.
+[`dot-agents`](https://dot-agents.dev/) is a lightweight file convention for agent work that needs continuity, coordination, durable decisions, or a handoff. `index.md` is required and owns lifecycle state and the exact next action. Research, plans, progress, decisions, and persisted handoffs are optional support.
 
-Keep research or coordination in one coherent workstream while its accumulated context helps. Start a fresh context for bounded implementation after broad exploration or when verification needs independent judgment. The work item connects those contexts without dragging every false start into the next run. Keep task-local context close to the task, then archive or remove it when the work is complete.
+Small work stays conversational. Implement durable work in the current thread by default, and hand off only when another worker, environment, or independent judgment helps. At closeout, record proof, promote reusable lessons, commit the final snapshot, and remove the task-local work item; git history remains the archive.
 
 ## Move review earlier than the PR
 <!-- slide:

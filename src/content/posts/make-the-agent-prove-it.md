@@ -2,6 +2,7 @@
 title: 'Make the Agent Prove It'
 description: 'A risk-scaled acceptance contract for agent-produced code: execution boundaries, discriminating checks, real-system evidence, external oracles, and human judgment.'
 pubDate: 2026-06-28
+updatedDate: 2026-07-31
 tags: ['AI Agents', 'Workflow', 'Testing', 'Review']
 draft: false
 unlisted: false

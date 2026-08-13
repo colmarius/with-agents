@@ -2,6 +2,7 @@
 title: 'Right-Sized Threads, Durable State'
 description: 'How to decide when an agent thread should continue or restart, and how files and commits carry decisions between research, implementation, and verification.'
 pubDate: 2026-06-28
+updatedDate: 2026-08-13
 tags: ['AI Agents', 'Workflows', 'Planning', 'dot-agents']
 draft: false
 unlisted: false
@@ -34,7 +35,7 @@ Research and planning are iterative. A new source can rule out an option. A prot
 
 A coordinator thread is the control room for a larger piece of work. It keeps the plan, delegates bounded tasks, and compares results. For example, use one thread to compare three designs and turn the choice into an accepted plan. Then give a fresh implementation thread that plan instead of the entire exploratory conversation.
 
-Current compaction and retrieval make continuity more practical. Amp reports a weeks-long thread compacted 68 times and documents a reader that checks original messages and later reversals rather than trusting summaries alone ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)). Jason Liu similarly reports using improved compaction for named, pinned workstreams that delegate narrower tasks ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show capability, not that every long thread stays accurate.
+Current compaction and retrieval make continuity more practical. Amp reports a weeks-long thread compacted over 68 times and documents a reader that checks original messages and later reversals rather than trusting summaries alone ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)). Jason Liu similarly reports using improved compaction for named, pinned workstreams that delegate narrower tasks ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show capability, not that every long thread stays accurate.
 
 A private review of 86 of my recent threads changed my default. Of 220 direct user messages, 177 continued an existing conversation. Broad work began with a full brief, then used short follow-ups pointing to files and commits. Small, well-defined tasks began with compact prompts. This is one person's usage, without outcome comparisons—not proof that long threads are better.
 
@@ -75,7 +76,7 @@ This repository uses a dot-agents work item as one concrete implementation:
 
 Preserve the decision and its evidence, accepted constraints, current task, proof state, authority, unresolved questions, and next action. Label proof as inherited or rerun so the next worker knows what it can claim. Do not preserve the whole exploratory transcript.
 
-When work crosses threads or orbs, use a commit as the synchronization point. It identifies the accepted baseline and makes later patches reviewable. It records state, but does not prove correctness.
+When work crosses threads or environments, use a commit as the synchronization point when the target can read it. A fresh orb clones the repository, so a local unpushed commit is an identifier, not transport: push a branch only when authorized, or transfer the required files explicitly ([Orbs manual](https://ampcode.com/manual/orbs#getting-started), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent)). A commit records state; it does not prove correctness.
 
 Compaction and durable state solve different problems. Compaction keeps one conversation usable. Durable state lets a fresh worker resume the assignment and lets an independent verifier distinguish inherited claims from checks it actually reran.
 
@@ -101,15 +102,16 @@ Use this operating procedure:
 
 1. keep research, planning, and coordination together while the workstream is coherent;
 2. distill decisions and proof targets into durable state;
-3. commit the accepted baseline before another environment depends on it;
+3. commit the accepted baseline and make it available through authorized shared Git or explicit file transfer before another environment depends on it;
 4. assign bounded implementation with explicit authority and checks;
 5. use fresh verification when independence is worth its cost;
 6. record deviations, exact checks and results, whether evidence was inherited or rerun, current status, and the next action;
-7. let one owner integrate the result and promote reusable learning.
+7. let one owner integrate the result and promote reusable learning;
+8. for a completed task-local work item, commit the final snapshot and then remove it; git history remains the archive.
 
 ## Sources used
 
-- Current Amp product guidance: [Manual](https://ampcode.com/manual), [“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads), and the archived [“200k Tokens Is Plenty”](https://ampcode.com/notes/200k-tokens-is-plenty).
+- Current Amp product guidance: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent), and the archived [“200k Tokens Is Plenty”](https://ampcode.com/notes/200k-tokens-is-plenty).
 - [Jason Liu, “Setting Yourself Up for Success”](https://www.youtube.com/watch?v=il1c1a2FufU) on named long-lived workstreams, compaction, and delegated threads.
 - [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15626s) on discoverable context and proof-oriented prompts.
 - [Matt Pocock, “Full Walkthrough: Workflow for AI Coding”](https://www.youtube.com/watch?v=-QFHIoCo-Ko) and [Kun's agentic-engineering setup](https://www.youtube.com/watch?v=8ZgpAXe5V5w) on separating implementation, review, and verification roles.

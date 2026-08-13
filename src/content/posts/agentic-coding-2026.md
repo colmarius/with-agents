@@ -2,6 +2,7 @@
 title: 'Agentic Coding in 2026: A Practical Field Guide'
 description: 'A source-backed map of agentic-coding workflows: alignment, proof, judgment boundaries, codebase infrastructure, context hygiene, and parallel execution.'
 pubDate: 2026-06-28
+updatedDate: 2026-07-06
 tags: ['AI Agents', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false

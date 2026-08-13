@@ -2,6 +2,7 @@
 title: 'Amp as a Factory-Era Coding-Agent Case Study'
 description: 'A source-backed Amp case study for task sizing, delegation, remote and event-driven execution, identity, lifecycle controls, cost governance, proof loops, and review.'
 pubDate: 2026-06-28
+updatedDate: 2026-08-13
 tags: ['AI Agents', 'Amp', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false
@@ -42,11 +43,11 @@ That mapping is synthesis. The mode descriptions and Oracle role come from Amp's
 
 Every task contract should still name done, scope, proof, and stop conditions. Give `low` the exact path and check, give `medium` enough repo context to handle unspecified details, tell `high` which subtle risks deserve care, let `ultra` discover the path to a clear outcome, and give Oracle a specific plan, bug, diff, or design to challenge.
 
-Remote execution adds a separate capacity dial. Amp's 2026-08-07 [orb-sizing announcement](https://ampcode.com/news/size-the-orbs-of-production) introduced five `a1` sizes and per-thread selection, including `amp -ox "..." --orb-size <size>` and agent-created threads in smaller or larger orbs. The current [Orbs manual](https://ampcode.com/manual/orbs#pricing) documents a range from 1 CPU and 2 GB of memory to 16 CPUs and 32 GB, project-level defaults, by-the-minute billing, no charge while paused, and automatic pause after five inactive minutes.
+Remote execution adds a separate capacity dial. Amp's 2026-08-07 [orb-sizing announcement](https://ampcode.com/news/size-the-orbs-of-production) added `a1.medium`, documented the current five-size set, and introduced per-thread selection, including `amp -ox "..." --orb-size <size>` and agent-created threads in smaller or larger orbs. The current [Orbs manual](https://ampcode.com/manual/orbs#pricing) documents a range from 1 CPU and 2 GB of memory to 16 CPUs and 32 GB, project-level defaults, by-the-minute billing, no charge while paused, and automatic pause after five inactive minutes.
 
 Use the smallest project default that handles ordinary work reliably, then override genuinely lighter or heavier threads. A larger orb buys CPU and memory, not better reasoning; a higher mode buys agent capability, not more machine capacity. Smaller fan-out workers can reduce compute cost, but they do not make overlapping changes safe or create review capacity.
 
-Amp currently routes different agent and Oracle models behind its mode tiers, while its [pricing documentation](https://ampcode.com/manual#pricing) ties cost to actual model and tool usage. **Synthesis:** do not pin task policy to model names. Put mode, orb size, worker count, recurrence, stop condition, and required evidence in one budget contract, then recheck volatile routing and rates when the work runs.
+Amp currently routes different agent and Oracle models behind its mode tiers. Its [pricing page](https://ampcode.com/pricing) documents included agent and orb usage for subscriptions, no per-token Amp fee for linked third-party subscriptions, and API pricing for model tokens and orbs under unconstrained usage. **Synthesis:** do not pin task policy to model names. Put mode, orb size, worker count, recurrence, stop condition, and required evidence in one budget contract, then recheck volatile routing and rates when the work runs.
 
 ```text
 If "done" and "how" are clear, turn the dial down.
