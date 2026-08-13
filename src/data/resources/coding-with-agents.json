@@ -1,5 +1,23 @@
 [
   {
+    "id": 43,
+    "primarySection": "workflows",
+    "title": "Writing & Using Skills — Nick Nisi and Zack Proser",
+    "subtitle": "A hands-on workshop on routing, progressive disclosure, deterministic scripts, and skill evaluation",
+    "url": "https://www.youtube.com/watch?v=pFsfax19yOM",
+    "description": "WorkOS developer experience engineers Nick Nisi and Zack Proser show how to turn repeated agent workflows into portable skills: write descriptions as routing rules, inject deterministic script output, disclose references only when needed, and compare results with and without the skill. Their team-governance answers and evaluation figures are practitioner guidance rather than settled or controlled evidence.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-05-06",
+    "duration": "1h 21m",
+    "topics": [
+      "prompting-orchestration",
+      "context-memory",
+      "models-evaluation",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 42,
     "primarySection": "agent-systems",
     "title": "Evolution of Agentic Surfaces — Gagan Bhat & Isabella Kai He",
