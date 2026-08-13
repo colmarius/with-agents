@@ -529,8 +529,18 @@ export const normalizePlaylistManifest = (playlistId, items) => ({
     ),
 });
 
-const byVideoId = (entries) =>
-  new Map(entries.map((entry) => [entry.videoId, entry]));
+const occurrencesByVideoId = (entries) => {
+  const occurrences = new Map();
+  for (const entry of entries) {
+    const matchingEntries = occurrences.get(entry.videoId) ?? [];
+    matchingEntries.push(entry);
+    occurrences.set(entry.videoId, matchingEntries);
+  }
+  for (const matchingEntries of occurrences.values()) {
+    matchingEntries.sort((left, right) => left.position - right.position);
+  }
+  return occurrences;
+};
 
 const sortedByVideoId = (entries) =>
   entries.sort((left, right) => left.videoId.localeCompare(right.videoId));
@@ -541,47 +551,85 @@ const availabilityState = (entry) => ({
   unavailableReason: entry.unavailableReason,
 });
 
+const pairOccurrences = (previous, current) => {
+  const previousByPosition = new Map(
+    previous.map((entry) => [entry.position, entry]),
+  );
+  const pairs = [];
+  const matchedPositions = new Set();
+  const unmatchedCurrent = [];
+
+  for (const entry of current) {
+    const oldEntry = previousByPosition.get(entry.position);
+    if (oldEntry) {
+      pairs.push([oldEntry, entry]);
+      matchedPositions.add(entry.position);
+    } else {
+      unmatchedCurrent.push(entry);
+    }
+  }
+
+  const unmatchedPrevious = previous.filter(
+    (entry) => !matchedPositions.has(entry.position),
+  );
+  const movedCount = Math.min(
+    unmatchedPrevious.length,
+    unmatchedCurrent.length,
+  );
+  for (let index = 0; index < movedCount; index += 1) {
+    pairs.push([unmatchedPrevious[index], unmatchedCurrent[index]]);
+  }
+
+  return {
+    pairs,
+    additions: unmatchedCurrent.slice(movedCount),
+    removals: unmatchedPrevious.slice(movedCount),
+  };
+};
+
 export const diffPlaylistManifests = (previous, current) => {
-  const previousEntries = byVideoId(previous.entries);
-  const currentEntries = byVideoId(current.entries);
+  const previousEntries = occurrencesByVideoId(previous.entries);
+  const currentEntries = occurrencesByVideoId(current.entries);
   const additions = [];
   const removals = [];
   const moves = [];
   const retitles = [];
   const privacyChanges = [];
 
-  for (const entry of current.entries) {
-    const oldEntry = previousEntries.get(entry.videoId);
-    if (!oldEntry) {
-      additions.push(entry);
-      continue;
-    }
-    if (oldEntry.position !== entry.position) {
-      moves.push({
-        videoId: entry.videoId,
-        from: oldEntry.position,
-        to: entry.position,
-      });
-    }
-    if (oldEntry.title !== entry.title) {
-      retitles.push({
-        videoId: entry.videoId,
-        from: oldEntry.title,
-        to: entry.title,
-      });
+  const videoIds = new Set([
+    ...previousEntries.keys(),
+    ...currentEntries.keys(),
+  ]);
+  for (const videoId of videoIds) {
+    const oldOccurrences = previousEntries.get(videoId) ?? [];
+    const newOccurrences = currentEntries.get(videoId) ?? [];
+    const paired = pairOccurrences(oldOccurrences, newOccurrences);
+
+    for (const [oldEntry, entry] of paired.pairs) {
+      if (oldEntry.position !== entry.position) {
+        moves.push({
+          videoId,
+          from: oldEntry.position,
+          to: entry.position,
+        });
+      }
+      if (oldEntry.title !== entry.title) {
+        retitles.push({
+          videoId,
+          from: oldEntry.title,
+          to: entry.title,
+        });
+      }
+
+      const from = availabilityState(oldEntry);
+      const to = availabilityState(entry);
+      if (JSON.stringify(from) !== JSON.stringify(to)) {
+        privacyChanges.push({ videoId, from, to });
+      }
     }
 
-    const from = availabilityState(oldEntry);
-    const to = availabilityState(entry);
-    if (JSON.stringify(from) !== JSON.stringify(to)) {
-      privacyChanges.push({ videoId: entry.videoId, from, to });
-    }
-  }
-
-  for (const entry of previous.entries) {
-    if (!currentEntries.has(entry.videoId)) {
-      removals.push(entry);
-    }
+    additions.push(...paired.additions);
+    removals.push(...paired.removals);
   }
 
   return {

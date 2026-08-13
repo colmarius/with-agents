@@ -852,6 +852,84 @@ test('diffs additions, removals, moves, retitles, and availability changes', () 
   });
 });
 
+test('diffs duplicate playlist occurrences without collapsing video IDs', () => {
+  const duplicate = '8gg-oJr4dTY';
+  const previous = {
+    playlistId: 'PL123',
+    entries: [availableEntry(duplicate, 0), availableEntry(duplicate, 3)],
+  };
+
+  const withUnrelatedAddition = {
+    playlistId: 'PL123',
+    entries: [
+      availableEntry(duplicate, 0),
+      availableEntry(duplicate, 3),
+      availableEntry('new-id', 4),
+    ],
+  };
+  const additionDiff = diffPlaylistManifests(previous, withUnrelatedAddition);
+  assert.deepEqual(
+    additionDiff.additions.map((entry) => entry.videoId),
+    ['new-id'],
+  );
+  assert.deepEqual(additionDiff.moves, []);
+  assert.deepEqual(additionDiff.removals, []);
+
+  const oneDuplicateRemoved = {
+    playlistId: 'PL123',
+    entries: [availableEntry(duplicate, 0)],
+  };
+  const removalDiff = diffPlaylistManifests(previous, oneDuplicateRemoved);
+  assert.deepEqual(
+    removalDiff.removals.map((entry) => ({
+      videoId: entry.videoId,
+      position: entry.position,
+    })),
+    [{ videoId: duplicate, position: 3 }],
+  );
+  assert.deepEqual(removalDiff.moves, []);
+
+  const firstDuplicateRemoved = {
+    playlistId: 'PL123',
+    entries: [availableEntry(duplicate, 3)],
+  };
+  const firstRemovalDiff = diffPlaylistManifests(
+    previous,
+    firstDuplicateRemoved,
+  );
+  assert.deepEqual(
+    firstRemovalDiff.removals.map((entry) => entry.position),
+    [0],
+  );
+  assert.deepEqual(firstRemovalDiff.moves, []);
+
+  const firstDuplicateAdded = {
+    playlistId: 'PL123',
+    entries: [availableEntry(duplicate, 0), availableEntry(duplicate, 3)],
+  };
+  const additionBeforeExistingDiff = diffPlaylistManifests(
+    {
+      playlistId: 'PL123',
+      entries: [availableEntry(duplicate, 3)],
+    },
+    firstDuplicateAdded,
+  );
+  assert.deepEqual(
+    additionBeforeExistingDiff.additions.map((entry) => entry.position),
+    [0],
+  );
+  assert.deepEqual(additionBeforeExistingDiff.moves, []);
+
+  const duplicatesMoved = {
+    playlistId: 'PL123',
+    entries: [availableEntry(duplicate, 1), availableEntry(duplicate, 4)],
+  };
+  assert.deepEqual(diffPlaylistManifests(previous, duplicatesMoved).moves, [
+    { videoId: duplicate, from: 0, to: 1 },
+    { videoId: duplicate, from: 3, to: 4 },
+  ]);
+});
+
 test('serializes manifests deterministically with one trailing newline', () => {
   const manifest = {
     playlistId: 'PL123',
