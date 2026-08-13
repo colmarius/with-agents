@@ -1,3 +1,11 @@
+---
+type Props = {
+  compact?: boolean;
+};
+
+const { compact = false } = Astro.props;
+---
+
 <section
   aria-labelledby="dot-agents-heading"
   class="overflow-hidden rounded-2xl border border-[#b8c9bf] bg-[#f6f5f0]"
@@ -6,9 +14,17 @@
     href="https://dot-agents.dev/"
     target="_blank"
     rel="noopener noreferrer"
-    class="dot-agents-card block p-6 transition-colors duration-200 hover:bg-[#efeee8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f674f] focus-visible:ring-inset md:p-8"
+    class:list={[
+      'dot-agents-card block transition-colors duration-200 hover:bg-[#efeee8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f674f] focus-visible:ring-inset',
+      compact ? 'p-5 md:p-6' : 'p-6 md:p-8',
+    ]}
   >
-    <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+    <div
+      class:list={[
+        'flex flex-wrap items-center justify-between gap-4',
+        compact ? 'mb-4' : 'mb-8',
+      ]}
+    >
       <div class="flex items-center gap-3 text-[#1e2b25]">
         <span
           class="grid h-9 w-9 place-items-center rounded-lg bg-[#2f674f] text-2xl font-semibold leading-none text-white"
@@ -25,11 +41,23 @@
       </span>
     </div>
 
-    <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_15rem] md:items-end">
+    <div
+      class:list={[
+        'grid',
+        compact
+          ? 'gap-0'
+          : 'gap-8 md:grid-cols-[minmax(0,1fr)_15rem] md:items-end',
+      ]}
+    >
       <div>
         <h2
           id="dot-agents-heading"
-          class="mb-3 max-w-2xl text-3xl font-semibold leading-tight text-[#1e2b25] md:text-4xl"
+          class:list={[
+            'mb-3 max-w-2xl leading-tight text-[#1e2b25]',
+            compact
+              ? 'text-2xl font-medium'
+              : 'text-3xl font-semibold md:text-4xl',
+          ]}
         >
           Make AI coding work survive the next thread.
         </h2>
@@ -54,18 +82,22 @@
         </p>
       </div>
 
-      <div
-        class="rounded-xl border border-[#ccd8d0] bg-white/70 p-4 font-mono text-sm leading-7 text-[#40564a]"
-        aria-hidden="true"
-      >
-        <p class="mb-1 text-xs uppercase tracking-wider text-[#718078]">
-          Plain repo state
-        </p>
-        <p>.agents/</p>
-        <p>├─ work/</p>
-        <p>├─ research/</p>
-        <p>└─ skills/</p>
-      </div>
+      {
+        !compact && (
+          <div
+            class="rounded-xl border border-[#ccd8d0] bg-white/70 p-4 font-mono text-sm leading-7 text-[#40564a]"
+            aria-hidden="true"
+          >
+            <p class="mb-1 text-xs uppercase tracking-wider text-[#718078]">
+              Plain repo state
+            </p>
+            <p>.agents/</p>
+            <p>├─ work/</p>
+            <p>├─ research/</p>
+            <p>└─ skills/</p>
+          </div>
+        )
+      }
     </div>
   </a>
 </section>
