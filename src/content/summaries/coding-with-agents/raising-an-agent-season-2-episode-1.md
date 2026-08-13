@@ -10,7 +10,7 @@ Season 2 opens with Quinn Slack and Thorsten Ball arguing that local development
 
 ### Key Points Covered
 
-- **Amp Neo moves the workflow up a layer**: The rewrite replaced manual context-window management and handoffs with compaction, remote control from the web, phone, or TUI, and a plugin API. The hosts frame this as a shift from managing one agent instance to managing work and verification [02:42]-[07:28].
+- **Amp Neo moves the workflow up a layer**: The rewrite replaced manual context-window management and context-reset handoffs with compaction, remote control from the web, phone, or TUI, and a plugin API. The hosts frame this as a shift from managing one agent instance to managing work and verification [02:42]-[07:28].
 - **An orb belongs to a thread, not a developer workstation**: Starting a thread can create a fresh isolated environment, clone and snapshot the repository, and expose the agent, files, and terminal through the web. Later in the episode, the hosts describe the thread URL as a shared bundle of the conversation, code, compute, and running preview [08:31]-[11:28], [34:20]-[36:24].
 - **Ephemeral environments change which tasks feel practical**: The hosts use orbs for overnight investigations, multi-hour manual checks, terminal permutations, and parallel UI fixes without coordinating worktrees, ports, certificates, or laptop resources [11:28]-[14:20].
 - **Better models turn issue reports into executable work**: A screenshot and short bug description can be enough for an agent to find the relevant Storybook state, make a small fix, or reproduce and verify a runner problem against a development server. Their claim is that keeping these agents confined to a few local checkouts now holds them back [14:20]-[18:05].
