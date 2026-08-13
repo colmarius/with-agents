@@ -1,4 +1,5 @@
 ---
+import DotAgentsHighlight from '../../components/DotAgentsHighlight.astro';
 import { codingResources } from '../../data/resources/coding-with-agents';
 import { resourceSections } from '../../data/resources/sections';
 import Layout from '../../layouts/Layout.astro';
@@ -51,6 +52,10 @@ const sections = resourceSections.map((section) => ({
         </div>
       </div>
     </a>
+
+    <div class="mt-6">
+      <DotAgentsHighlight />
+    </div>
 
     <section class="mt-12" aria-labelledby="collections-heading">
       <h2

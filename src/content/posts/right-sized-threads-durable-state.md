@@ -64,7 +64,7 @@ Keep one integration owner. Parallel discovery is easy to combine; overlapping m
 
 **Durable state** is the repository's declared current state: accepted decisions, constraints, status, proof, and the next action. A person can inspect and use it, but must still check its freshness and evidence.
 
-This repository uses a dot-agents work item as one concrete implementation:
+This repository uses a [dot-agents](https://dot-agents.dev/) work item as one concrete implementation:
 
 ```text
 .agents/work/<category>/<work>/

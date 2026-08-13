@@ -1,0 +1,77 @@
+<section
+  aria-labelledby="dot-agents-heading"
+  class="overflow-hidden rounded-2xl border border-[#b8c9bf] bg-[#f6f5f0]"
+>
+  <a
+    href="https://dot-agents.dev/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="dot-agents-card block p-6 transition-colors duration-200 hover:bg-[#efeee8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2f674f] focus-visible:ring-inset md:p-8"
+  >
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3 text-[#1e2b25]">
+        <span
+          class="grid h-9 w-9 place-items-center rounded-lg bg-[#2f674f] text-2xl font-semibold leading-none text-white"
+          aria-hidden="true"
+        >
+          .
+        </span>
+        <span class="text-xl font-semibold tracking-tight">dot-agents</span>
+      </div>
+      <span
+        class="rounded-full border border-[#b8c9bf] px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-[#2f674f]"
+      >
+        Companion workflow
+      </span>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_15rem] md:items-end">
+      <div>
+        <h2
+          id="dot-agents-heading"
+          class="mb-3 max-w-2xl text-3xl font-semibold leading-tight text-[#1e2b25] md:text-4xl"
+        >
+          Make AI coding work survive the next thread.
+        </h2>
+        <p class="max-w-2xl leading-relaxed text-[#596860]">
+          Keep simple work conversational. When continuity matters, dot-agents
+          stores work items, plans, and verification in plain repo-local files so
+          the next thread can continue.
+        </p>
+        <p class="mt-5 inline-flex items-center gap-2 font-medium text-[#2f674f]">
+          Explore dot-agents.dev
+          <svg
+            class="h-4 w-4"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M6 3h7v7M13 3 4 12" />
+          </svg>
+          <span class="sr-only">(opens in a new tab)</span>
+        </p>
+      </div>
+
+      <div
+        class="rounded-xl border border-[#ccd8d0] bg-white/70 p-4 font-mono text-sm leading-7 text-[#40564a]"
+        aria-hidden="true"
+      >
+        <p class="mb-1 text-xs uppercase tracking-wider text-[#718078]">
+          Plain repo state
+        </p>
+        <p>.agents/</p>
+        <p>├─ work/</p>
+        <p>├─ research/</p>
+        <p>└─ skills/</p>
+      </div>
+    </div>
+  </a>
+</section>
+
+<style>
+  .dot-agents-card {
+    font-family: system-ui, sans-serif;
+  }
+</style>
