@@ -59,8 +59,10 @@ search, API research, and review
 
 Factory's account is a presenter report, not a controlled comparison. Sanfilippo
 separately warns that, for an individual developer, additional multi-agent
-orchestration can fragment attention and create merge problems; his 90%, 92%, and
-50% figures are rhetorical estimates, not measurements
+orchestration can fragment attention and create merge problems. He describes a
+qualitative curve rather than a benchmark: a simple workflow captures most of the
+value, modest orchestration may add little, and excessive orchestration can reduce
+the result through context switching, divided attention, and merge problems
 ([00:04:14–00:06:24](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=254s)).
 Serialization is not universal. It is a safe default until the team has shown that
 mutation boundaries are real. Worktrees or VMs prevent filesystem and runtime
@@ -207,4 +209,4 @@ to classify, constrain, cap, cancel, and serialize integration through one owner
 - [Luke Alvoeiro, “The Multi-Agent Architecture That Actually Ships”](https://www.youtube.com/watch?v=ow1we5PzK-o) — Factory product and architecture account, not a controlled comparison.
 - [Maggie Appleton, “Collaborative AI Engineering”](https://www.youtube.com/watch?v=ClWD8OEYgp8) — GitHub Next research talk on late alignment and coordination debt.
 - [Steve Yegge, “From IDEs to AI Agents”](https://www.youtube.com/watch?v=aFsAOu2bgFk) — experimental Gas Town account on inspectable, contactable workers versus opaque subagents.
-- [Salvatore Sanfilippo, “On the Fear of Falling Behind with AI”](https://www.youtube.com/watch?v=j-Hh4i5R7aI) — a first-person argument for simple orchestration, with rhetorical rather than measured workflow figures.
+- [Salvatore Sanfilippo, “On the Fear of Falling Behind with AI”](https://www.youtube.com/watch?v=j-Hh4i5R7aI) — a first-person argument for simple orchestration, with an illustrative rather than measured account of its benefits.

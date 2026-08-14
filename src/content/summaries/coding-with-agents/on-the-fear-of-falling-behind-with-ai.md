@@ -10,7 +10,7 @@ YouTube also provides an English (US) dubbed audio track. This summary was check
 
 Salvatore Sanfilippo's answer to coding-agent FOMO is to separate fast-expiring tool knowledge from capabilities that compound: domain and software knowledge, practical intuition about model behavior, and clear communication. His preferred workflow follows from that distinction: keep orchestration simple, communicate intent quickly, and reuse working implementations as context.
 
-His learning-time estimates, illustrative workflow percentages (90%, 92%, and 50%), reported `H3.c` project outcome, and model preferences are first-person judgments, not measured comparisons.
+His learning-time estimates and orchestration curve are illustrative. The reported `H3.c` outcome and model preferences are first-person reports, not independent assessments.
 
 ### What Fades, What Compounds
 
@@ -20,7 +20,7 @@ His learning-time estimates, illustrative workflow percentages (90%, 92%, and 50
 
 ### Workflow Consequences
 
-- **Keep orchestration simple until complexity earns its cost**: Sanfilippo describes one capable agent as the default and warns that additional multi-agent machinery can fragment attention and create merge problems. His 90%, 92%, and 50% figures are rhetorical estimates, not workflow measurements [00:04:14]-[00:06:24].
+- **Keep orchestration proportional to the work**: Sanfilippo's illustrative curve is that a simple workflow captures most of the value, a little orchestration may add only a marginal gain, and excessive orchestration can make the result worse through context switching, divided attention, and merge overhead [00:04:14]-[00:06:24].
 - **Use working implementations as executable references**: For `H3.c`, he reports supplying a short brief plus named projects as references for the interface, internal design, kernels, and SSD streaming. He says the agent produced a working base that he later extended, and that those references embodied choices accumulated through months of steering. This is his project account, not an independent quality assessment [00:12:03]-[00:16:17].
 - **Use models to explore, not certify**: He recommends capable models as interactive tutors for unfamiliar technical concepts [00:17:20]-[00:18:23]. This supports exploration, not acceptance evidence; consequential claims still require independent verification.
 
