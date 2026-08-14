@@ -19,18 +19,47 @@ export function SummaryModal({
   const previousActiveElement = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      previousActiveElement.current = document.activeElement as HTMLElement;
-      closeButtonRef.current?.focus();
+    if (!isOpen) return;
 
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-      previousActiveElement.current?.focus();
-    }
+    previousActiveElement.current = document.activeElement as HTMLElement;
+    const scrollY = window.scrollY;
+    const rootStyle = document.documentElement.style;
+    const bodyStyle = document.body.style;
+    const previousStyles = {
+      rootOverflow: rootStyle.overflow,
+      rootOverscrollBehavior: rootStyle.overscrollBehavior,
+      bodyOverflow: bodyStyle.overflow,
+      bodyOverscrollBehavior: bodyStyle.overscrollBehavior,
+      bodyPosition: bodyStyle.position,
+      bodyTop: bodyStyle.top,
+      bodyLeft: bodyStyle.left,
+      bodyRight: bodyStyle.right,
+      bodyWidth: bodyStyle.width,
+    };
+
+    rootStyle.overflow = 'hidden';
+    rootStyle.overscrollBehavior = 'none';
+    bodyStyle.overflow = 'hidden';
+    bodyStyle.overscrollBehavior = 'none';
+    bodyStyle.position = 'fixed';
+    bodyStyle.top = `-${scrollY}px`;
+    bodyStyle.left = '0';
+    bodyStyle.right = '0';
+    bodyStyle.width = '100%';
+    closeButtonRef.current?.focus();
 
     return () => {
-      document.body.style.overflow = '';
+      rootStyle.overflow = previousStyles.rootOverflow;
+      rootStyle.overscrollBehavior = previousStyles.rootOverscrollBehavior;
+      bodyStyle.overflow = previousStyles.bodyOverflow;
+      bodyStyle.overscrollBehavior = previousStyles.bodyOverscrollBehavior;
+      bodyStyle.position = previousStyles.bodyPosition;
+      bodyStyle.top = previousStyles.bodyTop;
+      bodyStyle.left = previousStyles.bodyLeft;
+      bodyStyle.right = previousStyles.bodyRight;
+      bodyStyle.width = previousStyles.bodyWidth;
+      window.scrollTo(0, scrollY);
+      previousActiveElement.current?.focus();
     };
   }, [isOpen]);
 
@@ -82,14 +111,14 @@ export function SummaryModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 animate-fadeIn"
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden overscroll-none p-4 sm:p-6 animate-fadeIn"
       aria-labelledby={modalId}
       aria-modal="true"
       role="dialog"
     >
       <button
         type="button"
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        className="absolute inset-0 touch-none bg-black/60 backdrop-blur-sm"
         onClick={onClose}
         aria-label="Close modal"
       />

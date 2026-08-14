@@ -564,7 +564,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
               />
             </aside>
             <main
-              className={`relative flex-1 min-w-0 overflow-y-auto p-6 pt-0 md:block md:pt-6 md:pl-0 ${
+              className={`relative flex-1 min-w-0 overflow-y-auto overscroll-contain p-6 pt-0 md:block md:pt-6 md:pl-0 ${
                 isEpisodeListExpanded ? 'hidden' : ''
               }`}
               aria-busy={isEpisodeLoading}
@@ -583,7 +583,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
             </main>
           </div>
         ) : (
-          <div className="overflow-y-auto flex-1 p-6">
+          <div className="flex-1 overflow-y-auto overscroll-contain p-6">
             <MarkdownRenderer markdown={summaryContent} />
           </div>
         )}
