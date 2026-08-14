@@ -1,5 +1,18 @@
 [
   {
+    "id": 44,
+    "primarySection": "workflows",
+    "title": "On the Fear of Falling Behind with AI — Salvatore Sanfilippo",
+    "subtitle": "Domain knowledge, fast communication, reference implementations, and a deliberately simple agent workflow",
+    "url": "https://www.youtube.com/watch?v=j-Hh4i5R7aI&hl=en",
+    "description": "Salvatore Sanfilippo argues that coding-agent fluency is quick to acquire because the interface is natural language; the durable work is learning the problem domain, software concepts, model failure modes, and clear communication. He recommends resisting tool and model FOMO, starting with a simple agent workflow, reusing proven projects as implementation references, practicing fast written brain dumps, and using strong models to explore unfamiliar technical ideas. YouTube provides an English (US) dubbed audio track alongside the Italian original. His learning-time estimates, workflow percentages, and model preferences are first-person judgments rather than measured comparisons.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-08-12",
+    "duration": "19m",
+    "topics": ["prompting-orchestration", "context-memory", "business-adoption"]
+  },
+  {
     "id": 43,
     "primarySection": "workflows",
     "title": "Writing & Using Skills — Nick Nisi and Zack Proser",
