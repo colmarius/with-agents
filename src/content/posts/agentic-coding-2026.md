@@ -2,7 +2,7 @@
 title: 'Agentic Coding in 2026: A Practical Field Guide'
 description: 'A source-backed map of agentic-coding workflows: alignment, proof, judgment boundaries, codebase infrastructure, context hygiene, and parallel execution.'
 pubDate: 2026-06-28
-updatedDate: 2026-07-06
+updatedDate: 2026-08-14
 tags: ['AI Agents', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false
@@ -76,7 +76,9 @@ Armin Ronacher and Cristina Poncela Cubeiro describe the trap: agent output crea
 
 Good friction does not ask humans to approve every mechanical change. It routes the right decisions back to people: dependencies, permissions, migrations, reliability, security and data boundaries, and public API or architecture shape [00:14:01]-[00:17:55]. Mario Zechner's Pi/OpenClaw workflow draws the same line: low-risk or internal work can be delegated freely, while mission-critical, security-sensitive, and architectural work needs close oversight [00:06:45]-[00:11:14]. The test is simple: if the agent cannot own the consequence, a human must own the decision.
 
-The codebase is part of that control surface, because it is part of the prompt. Agents copy existing patterns: templates, tests, READMEs, CI setup, and high-quality examples shape later output [00:10:39]-[00:12:35]. Agents also do better when products expose modular boundaries, visible flow, simple cores, familiar patterns, and less hidden magic [00:10:30]-[00:12:17]. Agent-friendly infrastructure is boring engineering with a new payoff:
+The codebase is part of that control surface, because it is part of the prompt. Agents copy existing patterns: templates, tests, READMEs, CI setup, and high-quality examples shape later output [00:10:39]-[00:12:35]. Sanfilippo gives a concrete first-person example from his `H3.c` video-generation project. He says a short brief pointed the agent to existing projects for the interface, internal design, kernels, and SSD streaming, producing a working base he later extended. The outcome was not independently assessed ([00:12:03–00:16:17](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=723s)).
+
+Agents also do better when products expose modular boundaries, visible flow, simple cores, familiar patterns, and less hidden magic [00:10:30]-[00:12:17]. Agent-friendly infrastructure is boring engineering with a new payoff:
 
 - clear module and ownership boundaries
 - obvious entry points and data flow
@@ -153,3 +155,4 @@ So the factory-era checklist is not "launch more agents." It is:
 - [Raising an Agent episode 10, "Killing the Sidebar"](https://www.youtube.com/watch?v=4rx36wc9ugw), especially [00:00:55]-[00:10:17] on longer-running, well-scoped agent work.
 - [Thorsten Ball, "LLMs are killing Agent Harness"](https://www.youtube.com/watch?v=thMFsqe8kbQ), especially [00:41:36]-[00:49:24] on the agent loop and coordinating many cheap agents.
 - [Thariq Shihipar, "Field Guide to Fable"](https://www.youtube.com/watch?v=9fubhllmsBU), especially [00:10:09]-[00:14:57] on blind-spot passes, prototypes, interviews, implementation notes, and staying able to explain agent work.
+- [Salvatore Sanfilippo, "On the Fear of Falling Behind with AI"](https://www.youtube.com/watch?v=j-Hh4i5R7aI), especially [00:12:03]-[00:16:17] on using prior projects as implementation references; the `H3.c` outcome is his project report, not an independent quality assessment.
