@@ -2,6 +2,7 @@
 title: 'Brief the Agent Like a Capable Co-Worker'
 description: 'A coding agent is capable but lacks project context. Give it a clear brief, useful starting points, verification, and authority limits.'
 pubDate: 2026-08-14
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Workflows', 'Prompting', 'Review']
 draft: false
 unlisted: false
@@ -22,8 +23,9 @@ on the product: what the user needs, why a constraint exists, which trade-off
 the team rejected, where the best example lives, and what proof would make the
 change safe to accept.
 
-Thorsten Ball asks us to imagine a senior engineer dropped into an unfamiliar
-room with a repository, terminal, browser, and note. The engineer is capable;
+Thorsten Ball, a co-creator of the Amp coding agent, asks us to imagine a
+senior engineer dropped into an unfamiliar room with a repository, terminal,
+browser, and note. The engineer is capable;
 the missing information is local. A model may also fill in the gaps confidently
 where a person might challenge the request
 ([04:24:22–04:28:17](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15862s)).
@@ -37,9 +39,9 @@ code, reproduce the failure, try an edit, run a check, and revise. That is
 capability within tools and boundaries people supply. It says nothing about
 consciousness, employment, authority, or responsibility.
 
-Salvatore Sanfilippo similarly treats colleague, employee, collaborator, or
-mentor as whichever interaction frame helps, grounded in domain expertise and
-clear direction
+Salvatore Sanfilippo, the creator of Redis, similarly treats colleague,
+employee, collaborator, or mentor as whichever interaction frame helps,
+grounded in domain expertise and clear direction
 ([00:02:08–00:06:24](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=128s)).
 The metaphor is useful when it improves the assignment, not when it substitutes
 for evidence.
@@ -99,8 +101,9 @@ establish—navigation, expected behavior, or an implementation pattern—becaus
 existing code is not automatically authoritative. And hypotheses should give
 the investigation direction without dictating its answer.
 
-Quinn Slack describes the same bottleneck as getting what the human wants and
-knows into the agent's context, then pairing that information with ground truth
+Quinn Slack, an Amp co-founder, describes the same bottleneck as getting what
+the human wants and knows into the agent's context, then pairing that
+information with ground truth
 ([00:34:55–00:38:47](https://www.youtube.com/watch?v=FfCCEZ00RFw&t=2095s)).
 An agent may know the language, framework, and common architecture. It cannot
 infer an unstated product decision.
@@ -122,8 +125,9 @@ point to the truth, not repeat the whole project.
 
 Ball's “one-two punch” first asks the agent to find an asset or understand a
 mechanism. After that evidence enters the context, he asks for the change. In one
-example, “the CLI is the gold standard” defines the target more clearly than
-saying that another implementation is broken
+example, he tells the agent the CLI queuing implementation is “the gold
+standard for how it should work”—a clearer target than only saying the web
+version is broken
 ([04:32:16–04:35:04](https://www.youtube.com/watch?v=vii6P0vJhTw&t=16336s)).
 
 Sanfilippo also uses existing implementations to carry design choices that a
@@ -152,7 +156,7 @@ work. Give it the test command, reproducer, running application, logs,
 screenshots, trace, reference output, or conformance suite that matches the
 task. Ask it to return what it observed, not merely say that the work is done.
 
-Slack describes asking agents for videos, screenshots, and matrices across
+Slack describes asking agents for demo videos and full test matrices across
 versions, clients, platforms, and account states. The agent can spend hours on
 the checks; a human may spot the important defect seconds into the video
 ([00:13:17–00:17:03](https://www.youtube.com/watch?v=FfCCEZ00RFw&t=797s)).
@@ -169,8 +173,9 @@ when the route, API, UI, or integration must work. Keep human judgment for what 
 focused check cannot settle: product need, architecture, maintainability, and
 acceptable risk.
 
-Simon Willison makes this progression concrete: start with a failing test, make
-it pass, then boot and exercise the real service because a green suite does not
+Simon Willison, a co-creator of Django, makes this progression concrete: start
+with a failing test, make it pass, then boot and exercise the real service
+because a green suite does not
 prove that the application actually works
 ([00:04:41–00:07:33](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s)).
 
@@ -205,11 +210,13 @@ expected lifetime. Slack reports scrutinizing core APIs and storage while giving
 low-risk internal tools a longer leash
 ([00:25:47–00:30:37](https://www.youtube.com/watch?v=_L8xxUXOTk0&t=1547s)).
 
-Gergely Orosz reports a conservative approach in his own experiments: small,
-described tasks; tests; periodic refactoring; active tracking; and manual edits
+Gergely Orosz, who writes The Pragmatic Engineer newsletter, reports a
+conservative approach in his own experiments: small, described tasks; tests;
+periodic refactoring; active tracking; and manual edits
 that preserve his codebase awareness ([first-party
 account](https://blog.pragmaticengineer.com/new-trend-programming-by-kicking-off-parallel-ai-agents/)).
-Mario Zechner draws a similar risk boundary: low-consequence work can get a
+Mario Zechner, the creator of the Pi coding agent, draws a similar risk
+boundary: low-consequence work can get a
 longer leash, while he closely shapes APIs and foundations, with deterministic
 checks enforcing invariants that prose cannot guarantee
 ([00:07:33–00:12:00](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=453s),
