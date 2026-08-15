@@ -2,6 +2,7 @@
 title: 'Wake, Verify, Stop: Turning Agent Sessions into Durable Workstreams'
 description: 'A four-part operating contract for recurring agent work: persistent context, a wake-up cadence, an observable verifier, and a bounded stopping policy.'
 pubDate: 2026-08-07
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Workflows', 'Automation', 'Orchestration']
 draft: true
 unlisted: false
@@ -16,7 +17,7 @@ order: 10
 persistent context + wake-up cadence + verifier + stopping policy
 ```
 
-**Author synthesis from Jason Liu's workshop:** these four parts form a minimum operating contract for recurring agent work. Liu presents the components across examples of pinned Codex threads, scheduled heartbeats, goals, and monitor threads; he does not state this equation verbatim ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s), [00:34:49–00:41:08](https://www.youtube.com/watch?v=il1c1a2FufU&t=2089s), [00:55:53–00:58:43](https://www.youtube.com/watch?v=il1c1a2FufU&t=3353s)).
+**Author synthesis from a Codex workshop by Jason Liu of OpenAI:** these four parts form a minimum operating contract for recurring agent work. Liu presents the components across examples of pinned Codex threads, scheduled heartbeats, goals, and monitor threads; he does not state this equation verbatim ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s), [00:34:49–00:41:08](https://www.youtube.com/watch?v=il1c1a2FufU&t=2089s), [00:55:53–00:58:43](https://www.youtube.com/watch?v=il1c1a2FufU&t=3353s)).
 
 “Durable” is deliberately modest here. It means that a person can inspect and resume the workstream with explicit lifecycle rules. It does not promise crash recovery, exactly-once effects, or infrastructure-grade durable execution.
 
@@ -33,7 +34,7 @@ The model is useful because each missing part produces a recognizable failure:
 
 > Keep the state needed to resume; do not rely on an endless transcript.
 
-Liu treats named, pinned threads as ongoing workstreams and uses project files, memory, goals, plans, state files, and work logs to recover what matters ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s), [00:40:06–00:41:08](https://www.youtube.com/watch?v=il1c1a2FufU&t=2406s)). He also keeps an agent-maintained notes repository in Git and reviews its changes with `git diff` ([00:21:51–00:22:41](https://www.youtube.com/watch?v=il1c1a2FufU&t=1311s)).
+Liu treats named, pinned threads as ongoing workstreams and uses memory, goal files, plans, state files, and work logs to recover what matters ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s), [00:40:06–00:41:08](https://www.youtube.com/watch?v=il1c1a2FufU&t=2406s)). He also keeps an agent-maintained notes repository in Git and reviews its changes with `git diff` ([00:21:51–00:22:41](https://www.youtube.com/watch?v=il1c1a2FufU&t=1311s)).
 
 That distinction matters. A long transcript is accumulated conversation. Persistent state is the smaller set of facts that should govern the next run: current goal, accepted constraints, latest evidence, pending decisions, and next action.
 
@@ -43,7 +44,7 @@ That distinction matters. A long transcript is accumulated conversation. Persist
 
 > Wake on a useful signal, back off when nothing changes, and suppress empty noise.
 
-Liu describes heartbeats as scheduled messages sent into an existing thread, allowing it to reconsider work without starting from a fresh session ([00:34:49–00:40:06](https://www.youtube.com/watch?v=il1c1a2FufU&t=2089s)). Later, he recommends choosing how often those checks run, returning a minimal “no updates” response, and changing frequency as conditions change ([01:11:47–01:13:46](https://www.youtube.com/watch?v=il1c1a2FufU&t=4307s)).
+Liu describes heartbeats as scheduled messages sent into an existing thread, allowing it to reconsider work without starting from a fresh session ([00:34:49–00:40:06](https://www.youtube.com/watch?v=il1c1a2FufU&t=2089s)). Later, he recommends choosing how often those checks run and returning a one-word “no updates” reply when nothing has changed; adapting heartbeat frequency by weekday versus weekend is an idea he floats but says he has not tried ([01:11:47–01:13:46](https://www.youtube.com/watch?v=il1c1a2FufU&t=4307s)).
 
 Fixed schedules are only one option. A useful cadence can be periodic, event-driven, or adaptive. The contract should say what wakes the work, when to back off, and when silence is the correct output.
 
@@ -60,7 +61,7 @@ Without that contract, recurring work tends toward one of two failures: it sleep
 
 > The loop needs an observable predicate, but a green predicate proves only itself.
 
-Liu describes a goal as a verification step that lets the agent continue while the condition remains unmet ([00:40:06–00:41:08](https://www.youtube.com/watch?v=il1c1a2FufU&t=2406s)). That is stronger than telling an agent to “keep working,” because it gives the loop an observable reason to continue or stop.
+Liu describes a goal as a verification step that lets the agent continue while the condition remains unmet; his example goal migrates a Python project to Rust until all unit tests pass ([00:40:06–00:41:08](https://www.youtube.com/watch?v=il1c1a2FufU&t=2406s)). That is stronger than telling an agent to keep working, because it gives the loop an observable reason to continue or stop.
 
 The verifier still needs engineering judgment. “CI is green,” “the issue is closed,” and “the customer received a response” establish different properties. None proves the others. A weak verifier can make an active loop consistently wrong.
 
@@ -73,7 +74,7 @@ Changing a known-correct expectation should require separate approval.
 
 > Stop on success, exhaustion, expiry, uncertainty, or escalation.
 
-Liu recommends explicit stopping criteria for recurring jobs rather than an unqualified instruction to run forever ([01:11:47–01:13:46](https://www.youtube.com/watch?v=il1c1a2FufU&t=4307s)). A complete stopping policy should cover more than success:
+Liu asks whether a noisy recurring job has stopping criteria; his refund-chasing loop checked a support queue every five minutes, tightened to every minute as the wait shortened, and stopped once the money came back ([01:11:47–01:13:46](https://www.youtube.com/watch?v=il1c1a2FufU&t=4307s)). A complete stopping policy should cover more than success:
 
 - the verifier passes;
 - the deadline, attempt limit, or budget is reached;
@@ -97,7 +98,7 @@ This is the difference between a loop and a service somebody can own. [Amp as a 
 
 The four-part contract says when work wakes, which state it resumes, how it judges progress, and when it terminates. It does not make the agent safe.
 
-Liu warns that broad computer access can let a determined model route around a connector restriction by using the graphical interface instead ([00:52:40–00:54:49](https://www.youtube.com/watch?v=il1c1a2FufU&t=3160s)). Project instructions can guide behavior, but they are not enforced security boundaries. Liu also says his connector-heavy personal workflows are difficult to evaluate reproducibly and that he lacks a clear answer for cross-project memory leakage ([00:23:42–00:24:44](https://www.youtube.com/watch?v=il1c1a2FufU&t=1422s), [01:01:36–01:04:29](https://www.youtube.com/watch?v=il1c1a2FufU&t=3696s)).
+Liu warns that broad computer access can let a determined model route around a connector restriction by using the graphical interface instead, and says instructions in agent files have helped ([00:52:40–00:54:49](https://www.youtube.com/watch?v=il1c1a2FufU&t=3160s)). Reading such instructions as guidance rather than enforced security boundaries is author synthesis. Liu also says his connector-heavy personal workflows are difficult to evaluate reproducibly and that he lacks a clear answer for cross-project memory leakage ([00:23:42–00:24:44](https://www.youtube.com/watch?v=il1c1a2FufU&t=1422s), [01:01:36–01:04:29](https://www.youtube.com/watch?v=il1c1a2FufU&t=3696s)).
 
 Consequential workflows also need least privilege, scoped credentials, budgets and rate limits, observable actions, idempotent effects, revocation, and human approval where consequences demand it. Permissions answer **what the agent may do**. The loop contract answers **how recurring work should operate**. Keep both explicit.
 
