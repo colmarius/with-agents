@@ -19,6 +19,22 @@
   --color-prose-links-hover: #6366f1;
 }
 
+@layer base {
+  :root {
+    --safe-area-top: env(safe-area-inset-top, 0px);
+  }
+
+  body::before {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    height: var(--safe-area-top);
+    background: #fff;
+    content: "";
+    pointer-events: none;
+  }
+}
+
 @layer utilities {
   /* Shared prose base: light by default */
   .prose-base {
