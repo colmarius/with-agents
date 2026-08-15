@@ -2,7 +2,7 @@
 title: 'Right-Sized Threads, Durable State'
 description: 'How to decide when an agent thread should continue or restart, and how files and commits carry decisions between research, implementation, and verification.'
 pubDate: 2026-06-28
-updatedDate: 2026-08-13
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Workflows', 'Planning', 'dot-agents']
 draft: false
 unlisted: false
@@ -35,7 +35,7 @@ Research and planning are iterative. A new source can rule out an option. A prot
 
 A coordinator thread is the control room for a larger piece of work. It keeps the plan, delegates bounded tasks, and compares results. For example, use one thread to compare three designs and turn the choice into an accepted plan. Then give a fresh implementation thread that plan instead of the entire exploratory conversation.
 
-Current compaction and retrieval make continuity more practical. Amp reports a weeks-long thread compacted over 68 times and documents a reader that checks original messages and later reversals rather than trusting summaries alone ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)). Jason Liu similarly reports using improved compaction for named, pinned workstreams that delegate narrower tasks ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show capability, not that every long thread stays accurate.
+Current compaction and retrieval make continuity more practical. Amp reports a weeks-long thread compacted over 68 times and documents a reader that checks original messages and later reversals rather than trusting summaries alone ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)). OpenAI's Jason Liu similarly reports five-week-old pinned project threads, renamed by project and delegating to subagents, and credits compaction for making that possible ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show capability, not that every long thread stays accurate.
 
 A private review of 86 of my recent threads changed my default. Of 220 direct user messages, 177 continued an existing conversation. Broad work began with a full brief, then used short follow-ups pointing to files and commits. Small, well-defined tasks began with compact prompts. This is one person's usage, without outcome comparisons—not proof that long threads are better.
 
@@ -54,7 +54,7 @@ A **responsibility boundary** is where the job changes. An **independence bounda
 
 Fresh does not mean uninformed. The implementation thread receives the accepted plan, relevant files, constraints, and proof target. It still runs its own checks. A separate verifier reruns the important checks, looks for gaps, and reports findings without silently changing the requirements.
 
-Matt Pocock demonstrates fresh-context automated review followed by manual QA that catches a missing-table failure after automated checks passed ([01:04:23–01:12:21](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=3863s)). Kun describes a coordinator with separate adversarial review, tests, documentation checks, and CI gates ([00:37:41–00:45:28](https://www.youtube.com/watch?v=8ZgpAXe5V5w&t=2261s)). Those are practitioner patterns, not comparative reliability studies.
+Educator Matt Pocock recommends clearing context so review runs fresh, then demonstrates manual QA catching a missing-table failure after tests and type checks passed ([01:04:23–01:12:21](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=3863s)). Kun, a former Atlassian engineer who built coding agents there, sends most changes through a validation pipeline—adversarial review, tests, documentation checks, and watching CI—launched by his coordinator agent ([00:37:41–00:45:28](https://www.youtube.com/watch?v=8ZgpAXe5V5w&t=2261s)). Those are practitioner patterns, not comparative reliability studies.
 
 Keep one integration owner. Parallel discovery is easy to combine; overlapping mutation needs explicit isolation, merge order, and acceptance authority.
 
@@ -96,7 +96,7 @@ Return:
 Update durable state:
 ```
 
-Prompt length should follow missing information. Thorsten Ball's examples point agents to code, references, constraints, screenshots, and proof ([04:24:22–04:42:11](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15862s)). A short prompt works when a work item, commit, `AGENTS.md`, skill, and test command already make the contract discoverable. A broad or risky assignment should say more.
+Prompt length should follow missing information. Amp co-creator Thorsten Ball's example prompts point agents to code, references, constraints, and screenshots, and ask for proof such as a screenshot of the fixed component ([04:24:22–04:42:11](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15862s)). A short prompt works when a work item, commit, `AGENTS.md`, skill, and test command already make the contract discoverable. A broad or risky assignment should say more.
 
 Use this operating procedure:
 
@@ -112,7 +112,7 @@ Use this operating procedure:
 ## Sources used
 
 - Current Amp product guidance: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent), and the archived [“200k Tokens Is Plenty”](https://ampcode.com/notes/200k-tokens-is-plenty).
-- [Jason Liu, “Setting Yourself Up for Success”](https://www.youtube.com/watch?v=il1c1a2FufU) on named long-lived workstreams, compaction, and delegated threads.
+- [Jason Liu, “Full Workshop: Setting Yourself Up for Success”](https://www.youtube.com/watch?v=il1c1a2FufU) on long-lived pinned workstreams, compaction, and delegated threads.
 - [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15626s) on discoverable context and proof-oriented prompts.
 - [Matt Pocock, “Full Walkthrough: Workflow for AI Coding”](https://www.youtube.com/watch?v=-QFHIoCo-Ko) and [Kun's agentic-engineering setup](https://www.youtube.com/watch?v=8ZgpAXe5V5w) on separating implementation, review, and verification roles.
 - [dot-agents](https://dot-agents.dev/) supplies the work-item pattern described here.
