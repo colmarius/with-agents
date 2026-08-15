@@ -2,7 +2,7 @@
 title: 'Parallel Agents Need an Admission Policy'
 description: 'A practical pre-launch policy for classifying parallel agent work, capping it at integration capacity, cancelling stale attempts, and assigning one owner for the combined result.'
 pubDate: 2026-08-03
-updatedDate: 2026-08-14
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Workflows', 'Engineering Leadership', 'Orchestration']
 draft: false
 unlisted: false
@@ -21,7 +21,7 @@ Maggie Appleton of GitHub argues that faster implementation has removed many of
 the early alignment points where teams used to catch wrong or overlapping work.
 The unresolved decisions now arrive later as merge conflicts, duplicate changes,
 and pull-request queues that reviewers lack context for
-([00:02:42–00:05:12](https://www.youtube.com/watch?v=ClWD8OEYgp8&t=162s)).
+([00:02:42–00:06:01](https://www.youtube.com/watch?v=ClWD8OEYgp8&t=162s)).
 
 This article calls the pre-launch decision a **parallel-work admission policy**:
 classify the fan-out, identify overlap, name the downstream constraint, cap admitted
@@ -34,8 +34,8 @@ owns what each admitted lane must preserve.
 
 > Different kinds of fan-out need different stop and integration rules.
 
-Rustin Banks distinguishes parallel backlog work from competing attempts to the
-same task, after which tests or a person select a result
+Rustin Banks of Google Jules distinguishes parallel backlog work from competing
+attempts to the same task, after which tests or a person select a result
 ([00:03:51–00:04:44](https://www.youtube.com/watch?v=X4BwOu0GWb8&t=231s)). Turn
 that distinction into a two-step classification: first ask whether lanes only
 return findings or mutate state; then classify mutating work as independent,
@@ -51,19 +51,20 @@ That produces four operational outcomes:
 | **Shared mutation** | Attempts would touch the same interfaces, schemas, dependencies, or behavior. | Serialize by default, or partition the shared state before launching. |
 
 The conservative starting rule is **parallel discovery, serial mutation**. Luke
-Alvoeiro reports that Factory adopted that shape after concurrent workers
+Alvoeiro of Factory reports that the company adopted that shape after concurrent workers
 conflicted, duplicated work, and made inconsistent architectural decisions. Its
 Missions workflow serializes feature mutation while parallelizing read-only
 search, API research, and review
 ([00:09:23–00:10:15](https://www.youtube.com/watch?v=ow1we5PzK-o&t=563s)).
 
-Factory's account is a presenter report, not a controlled comparison. Sanfilippo
-separately warns that, for an individual developer, additional multi-agent
-orchestration can fragment attention and create merge problems. He describes a
-qualitative curve rather than a benchmark: a simple workflow captures most of the
-value, modest orchestration may add little, and excessive orchestration can reduce
-the result through context switching, divided attention, and merge problems
-([00:04:14–00:06:24](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=254s)).
+Factory's account is a presenter report, not a controlled comparison. Salvatore
+Sanfilippo separately warns that, for an individual developer, additional
+multi-agent orchestration can fragment attention and create merge problems. He
+describes an illustrative curve rather than a benchmark: a simple workflow captures
+most of the value, modest orchestration may add little, and excessive orchestration
+can reduce the result through context switching, divided attention, and merge
+problems
+([00:04:14–00:05:18](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=254s)).
 Serialization is not universal. It is a safe default until the team has shown that
 mutation boundaries are real. Worktrees or VMs prevent filesystem and runtime
 interference; they do not prevent contradictory clean branches.
@@ -123,10 +124,10 @@ scarce stage that must accept their outputs: product alignment, specialist
 review, CI, merge reconciliation, deployment, or post-release observation.
 
 Kyle Mistele gives a concrete backpressure rule from HumanLayer's loop workflow.
-Before a scheduled run starts, it checks whether a pull request with that loop's
-label remains open. If so, it stops. The result is at most one open pull request
-per loop, avoiding a stack of duplicate, conflicting, unreviewed work
-([00:15:10–00:16:13](https://www.youtube.com/watch?v=xIt_mTQp6mY&t=910s)).
+When a loop's workflow runs, it first checks whether a pull request with that
+loop's label is still open; if so, it shuts down. The result is at most one open
+pull request per loop, avoiding a stack of duplicate, conflicting, unreviewed work
+([00:15:10–00:17:17](https://www.youtube.com/watch?v=xIt_mTQp6mY&t=910s)).
 That exact limit is not mandatory. The principle is: **do not create the next
 unit when the previous unit has not cleared the human or machine gate that makes
 it useful.**
@@ -158,7 +159,7 @@ also needs a way to inspect and stop the lane before completion. Steve Yegge's
 explicitly experimental Gas Town account illustrates the observability half by
 contrasting first-class, contactable workers with opaque subagents that report only
 when finished
-([00:35:04–00:35:55](https://www.youtube.com/watch?v=aFsAOu2bgFk&t=2104s)).
+([00:34:02–00:35:55](https://www.youtube.com/watch?v=aFsAOu2bgFk&t=2042s)).
 
 Then make cancellation the normal outcome, not an agent failure. The lane should
 stop mutating, return any still-useful finding, and release its environment. Do not
@@ -208,5 +209,5 @@ to classify, constrain, cap, cancel, and serialize integration through one owner
 - [Kyle Mistele, “Loop Engineering from First Principles”](https://www.youtube.com/watch?v=xIt_mTQp6mY) — HumanLayer workflow account with one-open-PR backpressure.
 - [Luke Alvoeiro, “The Multi-Agent Architecture That Actually Ships”](https://www.youtube.com/watch?v=ow1we5PzK-o) — Factory product and architecture account, not a controlled comparison.
 - [Maggie Appleton, “Collaborative AI Engineering”](https://www.youtube.com/watch?v=ClWD8OEYgp8) — GitHub Next research talk on late alignment and coordination debt.
-- [Steve Yegge, “From IDEs to AI Agents”](https://www.youtube.com/watch?v=aFsAOu2bgFk) — experimental Gas Town account on inspectable, contactable workers versus opaque subagents.
-- [Salvatore Sanfilippo, “On the Fear of Falling Behind with AI”](https://www.youtube.com/watch?v=j-Hh4i5R7aI) — a first-person argument for simple orchestration, with an illustrative rather than measured account of its benefits.
+- [Steve Yegge, “From IDEs to AI Agents”](https://www.youtube.com/watch?v=aFsAOu2bgFk) — Pragmatic Engineer interview; experimental Gas Town account on inspectable, contactable workers versus opaque subagents.
+- [Salvatore Sanfilippo, “On the Fear of Falling Behind with AI”](https://www.youtube.com/watch?v=j-Hh4i5R7aI) — a first-person argument for simple orchestration, with an illustrative rather than measured account of its benefits. English descriptions here are editorial paraphrases of Italian captions.
