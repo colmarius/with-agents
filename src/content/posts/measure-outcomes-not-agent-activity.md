@@ -2,7 +2,7 @@
 title: 'Measure Outcomes, Not Agent Activity'
 description: 'A practical measurement framework for coding-agent adoption: separate activity from delivered value, net out rework and review cost, segment results, and keep vendor telemetry bounded.'
 pubDate: 2026-07-31
-updatedDate: 2026-08-13
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Measurement', 'Engineering Leadership', 'Adoption']
 draft: false
 unlisted: false
@@ -31,9 +31,9 @@ This table is editorial synthesis. Its purpose is to stop an activity proxy from
 
 > Gross output is not net delivery.
 
-In a conference-presented observational analysis, Denisov-Blanch reports a roughly 30–40% gross increase reduced to 15–20% after later rework ([00:09:49–00:10:36](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=589s)). The talk does not make those estimates reproducible, and they are not a benchmark. The useful lesson is that first-pass output can count work the system later corrects.
+Presenting Stanford's observational git-history study at a conference, Yegor Denisov-Blanch reports a roughly 30–40% gross increase reduced to 15–20% after later rework ([00:09:49–00:10:36](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=589s)). The talk does not make those estimates reproducible, and they are not a benchmark. The useful lesson is that first-pass output can count work the system later corrects.
 
-Controlled studies do not produce one replacement number. Three randomized workplace experiments with 4,867 developers found about 26% more completed tasks from access to 2022–2023 GitHub Copilot, but no customer or downstream-cost outcome ([Cui et al., 2026](https://doi.org/10.1287/mnsc.2025.00535)). A METR trial found that 16 experienced open-source developers took 19% longer on 246 familiar-repository tasks with early-2025 tools ([Becker et al., 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)). METR now says that estimate no longer represents current tools and believes developers were likely more sped up in early 2026 than in early 2025. Its later experiment likely omitted developers and tasks with the highest expected gains, while concurrent-agent work made elapsed-time reporting unreliable, so it did not publish a credible current effect size ([2026 design update](https://metr.org/blog/2026-02-24-uplift-update/)). Different treatments, populations, and outcome layers do not yield a universal forecast.
+Controlled studies do not produce one replacement number. Three randomized workplace experiments with 4,867 developers found about 26% more completed tasks from access to 2022–2023 GitHub Copilot, but no customer or downstream-cost outcome ([Cui et al., 2026](https://doi.org/10.1287/mnsc.2025.00535)). A METR trial found that 16 experienced open-source developers took 19% longer on 246 familiar-repository tasks with early-2025 tools ([Becker et al., 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/)). METR now believes developers were likely more sped up in early 2026 than in early 2025, but calls its newer data an unreliable signal: the later experiment systematically missed developers and tasks with the highest expected gains, and concurrent-agent work made elapsed-time reporting unreliable, so it published no credible current effect size ([2026 design update](https://metr.org/blog/2026-02-24-uplift-update/)). Different treatments, populations, and outcome layers do not yield a universal forecast.
 
 Review can create a second gap. In a favorable single-company rollout, pull-request volume grew 3.1× while the reviewer pool grew 1.5×. Human-review coverage fell from 89% to 68%, automated review rose from roughly 19% to 84%, and substantive human review fell from roughly 39% to 21% ([He et al., 2026](https://arxiv.org/html/2607.01904)). The July 2026 preprint is observational, the company targeted pull-request throughput, and merge and revert rates are weak short-horizon quality proxies. It supports review displacement, not a universal doubling.
 
@@ -43,7 +43,7 @@ Choose one primary delivery outcome. Treat rework, defects, review and queue tim
 
 > One average hides the work where agents help, stall, or add cost.
 
-Denisov-Blanch describes larger gains for simpler greenfield tasks and smaller, sometimes negative, gains for complex mature-project work across 136 teams at 27 companies ([00:11:38–00:14:14](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=698s)). He also treats language, codebase-size, and context relationships as illustrative rather than established ([00:14:14–00:17:09](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=854s)).
+Denisov-Blanch describes larger gains for simpler greenfield tasks and smaller, sometimes negative, gains for high-complexity work, with the weakest range for complex mature-project tasks, across 136 teams at 27 companies ([00:11:38–00:14:14](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=698s)). He presents the language-popularity comparison as observed data, but flags the codebase-size and context-length relationships as theoretical and illustrative rather than empirically established ([00:14:14–00:17:09](https://www.youtube.com/watch?v=tbDDYKRFjhk&t=854s)).
 
 Do not average away those conditions. Before a pilot starts, tag work by the dimensions likely to change the result:
 
@@ -60,7 +60,7 @@ Selection must be recorded before averaging too. METR found that some developers
 
 > Match each claim to the decision its study design can support.
 
-Commercial and internal reports can reveal operating detail; randomized evidence can estimate a bounded treatment effect. Neither transfers automatically. Name the design, outcome layer, population, period, affiliation, missing controls, and decision. Use presenter and qualitative evidence to identify mechanisms worth instrumenting, observational telemetry to find bottlenecks, and controlled studies for claims their actual treatment and outcome support.
+Commercial and internal reports can reveal operating detail; randomized evidence can estimate a bounded treatment effect. Neither transfers automatically. Name the design, outcome layer, population, period, affiliation, missing controls, and decision. Use presenter and qualitative evidence to identify mechanisms worth instrumenting, observational telemetry to find bottlenecks, and controlled studies for claims their actual treatment and outcome support. Denisov-Blanch's 15–20% net figure, for example, names a mechanism worth instrumenting — rework absorbing gross output — not a forecast for your team.
 
 ## Run a pilot that can disconfirm the rollout
 
@@ -99,6 +99,6 @@ Keep one primary delivery outcome and a few guardrails. State missing evidence r
 
 - [Cui et al., “The Effects of Generative AI on High-Skilled Work”](https://doi.org/10.1287/mnsc.2025.00535) — randomized trials at Microsoft, Accenture, and an anonymous Fortune 100 company; two authors were at Microsoft Research; completed tasks, not customer outcomes.
 - [METR's early-2025 study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) and [2026 update](https://metr.org/blog/2026-02-24-uplift-update/) — a historical bounded slowdown followed by selection and concurrency failures that prevent a credible current estimate.
-- [He et al., “AI Writes Faster Than Humans Can Review”](https://arxiv.org/html/2607.01904) — single-company observational preprint where pull-request throughput was the company's mandate metric; review displacement, not universal delivery value.
+- [He et al., “AI Writes Faster Than Humans Can Review”](https://arxiv.org/html/2607.01904) — single-company observational preprint where pull-request throughput was the company's mandate metric; review displacement, not universal delivery value. Its co-authors include Yegor Denisov-Blanch, whose talk is cited below, so these are overlapping research groups, not independent evidence lines.
 - [Anthropic's coding-skills study](https://www.anthropic.com/research/AI-assistance-coding-skills) — 52 mostly junior Python developers learning one unfamiliar library in a short vendor-run randomized study; not a durable deskilling claim.
 - [Yegor Denisov-Blanch, “Does AI Actually Boost Developer Productivity?”](https://www.youtube.com/watch?v=tbDDYKRFjhk) — presenter-reported activity, rework, and segmentation observations ([00:04:51–00:17:09]).
