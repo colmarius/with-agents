@@ -26,12 +26,14 @@ const {
   noindex,
 } = Astro.props;
 const isAgentPost = (tags || []).includes('AI Agents');
+const postPath = canonicalPath ?? `/posts/${slug}`;
+const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 ---
 
 <Layout
 	title={title}
 	description={description}
-	canonicalPath={canonicalPath ?? `/posts/${slug}`}
+	canonicalPath={postPath}
 	noindex={noindex}
 	ogType="article"
 >
@@ -56,13 +58,28 @@ const isAgentPost = (tags || []).includes('AI Agents');
 						))}
 					</div>
 				)}
-				<a
-					href={`/posts/${slug}/slides`}
-					class="slides-link"
-					aria-label={`View "${title}" as slides`}
-				>
-					→ View as slides
-				</a>
+				<div class="post-actions">
+					<a
+						href={`/posts/${slug}/slides`}
+						class="post-action"
+						aria-label={`View "${title}" as slides`}
+					>
+						→ View as slides
+					</a>
+					<button
+						type="button"
+						class="post-action"
+						data-share-button
+						data-share-title={title}
+						data-share-url={shareUrl}
+					>
+						<svg aria-hidden="true" viewBox="0 0 24 24">
+							<path d="M8.7 15.3 15.3 8.7M7 17H5a4 4 0 0 1 0-8h4M17 7h2a4 4 0 1 1 0 8h-4" />
+						</svg>
+						<span data-share-label>Copy link</span>
+					</button>
+					<span class="sr-only" aria-live="polite" data-share-status></span>
+				</div>
 			</div>
 		</header>
 
@@ -85,8 +102,71 @@ const isAgentPost = (tags || []).includes('AI Agents');
 
 <MermaidRenderer />
 
+<script>
+	const copyLink = async (url: string) => {
+		await navigator.clipboard.writeText(url);
+	};
+
+	document.querySelectorAll<HTMLButtonElement>('[data-share-button]').forEach((button) => {
+		const label = button.querySelector<HTMLElement>('[data-share-label]');
+		const status = button.parentElement?.querySelector<HTMLElement>('[data-share-status]');
+		const title = button.dataset.shareTitle;
+		const url = button.dataset.shareUrl;
+
+		if (!label || !status || !title || !url) return;
+
+		const shareData = { title, url };
+		const canShare = typeof navigator.share === 'function'
+			&& (typeof navigator.canShare !== 'function' || navigator.canShare(shareData));
+		const defaultLabel = canShare ? 'Share' : 'Copy link';
+		label.textContent = defaultLabel;
+
+		button.addEventListener('click', async () => {
+			button.disabled = true;
+			status.textContent = '';
+
+			try {
+				if (canShare) {
+					await navigator.share(shareData);
+					status.textContent = 'Page shared.';
+					return;
+				}
+
+				await copyLink(url);
+				label.textContent = 'Link copied';
+				status.textContent = 'Link copied to clipboard.';
+				window.setTimeout(() => {
+					label.textContent = defaultLabel;
+				}, 2000);
+			} catch (error) {
+				if (error instanceof DOMException && error.name === 'AbortError') return;
+
+				try {
+					await copyLink(url);
+					label.textContent = 'Link copied';
+					status.textContent = 'Sharing was unavailable, so the link was copied.';
+					window.setTimeout(() => {
+						label.textContent = defaultLabel;
+					}, 2000);
+				} catch {
+					status.textContent = 'Unable to share or copy the link.';
+				}
+			} finally {
+				button.disabled = false;
+			}
+		});
+	});
+</script>
+
 <style>
-	.slides-link {
+	.post-actions {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-left: auto;
+	}
+
+	.post-action {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
@@ -96,20 +176,38 @@ const isAgentPost = (tags || []).includes('AI Agents');
 		border: 1px solid #e5e7eb;
 		border-radius: 0.375rem;
 		padding: 0.375rem 0.625rem;
+		font-family: inherit;
+		line-height: 1.25rem;
 		text-decoration: none;
 		transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 		white-space: nowrap;
+		cursor: pointer;
 	}
 
-	.slides-link:hover {
+	.post-action:hover {
 		color: #111827;
 		background-color: #f9fafb;
 		border-color: #d1d5db;
 	}
 
-	.slides-link:focus-visible {
+	.post-action:focus-visible {
 		outline: 2px solid #3b82f6;
 		outline-offset: 2px;
+	}
+
+	.post-action:disabled {
+		cursor: wait;
+		opacity: 0.7;
+	}
+
+	.post-action svg {
+		width: 1rem;
+		height: 1rem;
+		fill: none;
+		stroke: currentColor;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1.75;
 	}
 
 	@media (max-width: 640px) {
@@ -117,6 +215,13 @@ const isAgentPost = (tags || []).includes('AI Agents');
 			flex-direction: column;
 			align-items: flex-start;
 			gap: 0.75rem;
+		}
+
+		.post-actions {
+			flex-direction: row;
+			align-items: center;
+			gap: 0.5rem;
+			margin-left: 0;
 		}
 
 		h1 {
