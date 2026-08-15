@@ -37,8 +37,13 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 	noindex={noindex}
 	ogType="article"
 >
+	<nav class="sticky-post-nav" aria-label="Back to posts" data-sticky-post-nav>
+		<div class="sticky-post-nav-inner">
+			<BackNav href="/posts" label="Back to Posts" />
+		</div>
+	</nav>
 	<article class="mx-auto max-w-2xl pb-16">
-		<nav class="mb-10" aria-label="Back">
+		<nav class="mb-10" aria-label="Back" data-post-back-nav>
 			<BackNav href="/posts" label="Back to Posts" />
 		</nav>
 		<header class="mb-12 pb-8 border-b border-slate-200">
@@ -103,6 +108,38 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 <MermaidRenderer />
 
 <script>
+	const originalBackNav = document.querySelector<HTMLElement>('[data-post-back-nav]');
+	const stickyBackNav = document.querySelector<HTMLElement>('[data-sticky-post-nav]');
+
+	if (originalBackNav && stickyBackNav) {
+		let originalBackNavBottom = 0;
+		let previousScrollY = Math.max(window.scrollY, 0);
+		let updateRequested = false;
+
+		const measureOriginalBackNav = () => {
+			originalBackNavBottom = originalBackNav.getBoundingClientRect().bottom + window.scrollY;
+		};
+
+		const updateStickyBackNav = () => {
+			const currentScrollY = Math.max(window.scrollY, 0);
+			const originalIsOutOfView = currentScrollY > originalBackNavBottom;
+			const isScrollingUp = currentScrollY < previousScrollY;
+
+			stickyBackNav.classList.toggle('is-visible', originalIsOutOfView && isScrollingUp);
+			previousScrollY = currentScrollY;
+			updateRequested = false;
+		};
+
+		measureOriginalBackNav();
+		window.addEventListener('resize', measureOriginalBackNav);
+		window.addEventListener('scroll', () => {
+			if (updateRequested) return;
+
+			updateRequested = true;
+			window.requestAnimationFrame(updateStickyBackNav);
+		}, { passive: true });
+	}
+
 	const copyLink = async (url: string) => {
 		await navigator.clipboard.writeText(url);
 	};
@@ -160,6 +197,33 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 </script>
 
 <style>
+	.sticky-post-nav {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 30;
+		border-bottom: 1px solid #e5e7eb;
+		background: #fff;
+		opacity: 0;
+		transform: translateY(-100%);
+		visibility: hidden;
+		transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+	}
+
+	.sticky-post-nav.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+		visibility: visible;
+	}
+
+	.sticky-post-nav-inner {
+		width: calc(100% - 4rem);
+		max-width: 42rem;
+		margin: 0 auto;
+		padding: 0.75rem 0;
+	}
+
 	.post-actions {
 		display: flex;
 		align-items: center;
@@ -211,6 +275,12 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 		stroke-width: 1.75;
 	}
 
+	@media (min-width: 640px) {
+		.sticky-post-nav-inner {
+			width: calc(100% - 6rem);
+		}
+	}
+
 	@media (max-width: 640px) {
 		.flex {
 			flex-direction: column;
@@ -227,6 +297,12 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 
 		h1 {
 			font-size: 2rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.sticky-post-nav {
+			transition: none;
 		}
 	}
 </style>
