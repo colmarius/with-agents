@@ -116,41 +116,42 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 		if (!label || !status || !title || !url) return;
 
 		const shareData = { title, url };
-		const canShare = typeof navigator.share === 'function'
+		let shareAvailable = typeof navigator.share === 'function'
 			&& (typeof navigator.canShare !== 'function' || navigator.canShare(shareData));
-		const defaultLabel = canShare ? 'Share' : 'Copy link';
-		label.textContent = defaultLabel;
+		label.textContent = shareAvailable ? 'Share' : 'Copy link';
+		const resetCopyLabel = () => window.setTimeout(() => {
+			label.textContent = 'Copy link';
+		}, 2000);
 
 		button.addEventListener('click', async () => {
 			button.disabled = true;
 			status.textContent = '';
 
-			try {
-				if (canShare) {
+			if (shareAvailable) {
+				try {
 					await navigator.share(shareData);
-					status.textContent = 'Page shared.';
-					return;
-				}
+					status.textContent = 'Share sheet opened.';
+				} catch (error) {
+					if (error instanceof DOMException && error.name === 'AbortError') return;
 
+					shareAvailable = false;
+					label.textContent = 'Copy link instead';
+					status.textContent = 'Sharing was unavailable. Copy the link instead.';
+				} finally {
+					button.disabled = false;
+				}
+				return;
+			}
+
+			try {
 				await copyLink(url);
 				label.textContent = 'Link copied';
 				status.textContent = 'Link copied to clipboard.';
-				window.setTimeout(() => {
-					label.textContent = defaultLabel;
-				}, 2000);
-			} catch (error) {
-				if (error instanceof DOMException && error.name === 'AbortError') return;
-
-				try {
-					await copyLink(url);
-					label.textContent = 'Link copied';
-					status.textContent = 'Sharing was unavailable, so the link was copied.';
-					window.setTimeout(() => {
-						label.textContent = defaultLabel;
-					}, 2000);
-				} catch {
-					status.textContent = 'Unable to share or copy the link.';
-				}
+				resetCopyLabel();
+			} catch {
+				label.textContent = 'Unable to copy';
+				status.textContent = 'Unable to copy the link.';
+				resetCopyLabel();
 			} finally {
 				button.disabled = false;
 			}
