@@ -24,6 +24,15 @@
     --safe-area-top: env(safe-area-inset-top, 0px);
   }
 
+  /* iOS Safari can report a zero top inset in portrait browser mode. */
+  @supports (-webkit-touch-callout: none) {
+    @media (orientation: portrait) and (max-width: 480px) {
+      :root {
+        --safe-area-top: max(env(safe-area-inset-top, 0px), 64px);
+      }
+    }
+  }
+
   body::before {
     position: fixed;
     inset: 0 0 auto;
