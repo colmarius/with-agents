@@ -2,7 +2,7 @@
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'A practical guide to keeping coding-agent intent, decisions, state, and proof in the repo instead of losing them in chat.'
 pubDate: 2026-07-02
-updatedDate: 2026-08-13
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: false
@@ -38,13 +38,13 @@ This post is the practical version: what to keep in the repo, what to leave in c
 
 A coding agent can inspect files, draft a plan, edit code, run commands, and summarize the result in minutes. Alignment does not accelerate automatically. Someone still needs to name the goal, constraints, tradeoffs, and proof target before the output becomes expensive to redirect.
 
-Noperator's essay [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) calls this "substantial form without discernible intent": agents can produce convincing code, tests, docs, migrations, screenshots, and PRs from vague instructions, leaving reviewers to reconstruct the goal.
+In [You can just say it](https://noperator.dev/posts/you-can-just-say-it/), Caleb Gross (noperator) names the pathology: generative AI "too easily allows substantial form without discernible intent." His essay is about creative artifacts in general; reading agent output the same way—convincing code, tests, docs, and PRs from vague instructions that leave reviewers reconstructing the goal—is author synthesis.
 
-Maggie Appleton's [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) describes the coordination cost: when implementation becomes cheap, "should we build it?" becomes harder than "how?" If the pull request is the first shared checkpoint, it must recover the missing goal, plan, assumptions, and proof.
+Maggie Appleton of GitHub Next describes the coordination cost in [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment): writing code is now fast and cheap, so the hard question is no longer how to build it but whether to build it—and the collapsed implementation window leaves the pull request carrying every alignment checkpoint at the end, when it is too late.
 
 Addy Osmani calls the ownership cost [cognitive surrender](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [comprehension debt](https://addyosmani.com/blog/comprehension-debt/): tests can be green while nobody can explain the implicit decisions or safely change the result.
 
-Durable context moves intent, constraints, accepted tradeoffs, proof targets, stop conditions, and human decisions before the diff becomes the only artifact.
+Durable context puts intent, constraints, accepted tradeoffs, proof targets, stop conditions, and human decisions on record before the diff becomes the only artifact.
 
 ## Start with the checkpoint you already trust
 
@@ -59,15 +59,7 @@ Where can a human still redirect the work?
 intent → plan → trace → diff → PR → release → incident
 ```
 
-Before prescribing a workflow, locate the operating boundary. Autocomplete has a different risk profile from several terminal agents working against the same repo.
-
-Ask three questions:
-
-- What may the agent do before it must stop for review?
-- Which intent, constraints, decisions, and proof targets survive outside chat?
-- Where can a human still change direction before rework becomes expensive?
-
-Durable context carries shared intent to a checkpoint where it can still change the work.
+Before prescribing a workflow, locate the operating boundary. Autocomplete has a different risk profile from several terminal agents working against the same repo. The three questions above are the whole exercise: durable context carries shared intent to a checkpoint where it can still change the work.
 
 ## The model is not your project memory
 
@@ -77,7 +69,7 @@ Simon Willison describes LLMs as [a lossy encyclopedia](https://simonwillison.ne
 
 For exact technical work, a correct repo-local example beats expecting the model to infer the rule.
 
-In one Amp example, Thorsten Ball reports that after a short UI-change request with a screenshot proof target, the agent read layered `AGENTS.md` files for the dev-server command, browser-automation and Storybook conventions, port, and checks, then returned the change and screenshots ([04:40:11–04:42:11](https://www.youtube.com/watch?v=vii6P0vJhTw&t=16811s)).
+In one Amp example, its co-creator Thorsten Ball reports that after a short UI-change request with a screenshot proof target, the agent read layered `AGENTS.md` files for the dev-server command, browser-automation and Storybook conventions, port, and checks, then returned the change and screenshots ([04:39:07–04:42:11](https://www.youtube.com/watch?v=vii6P0vJhTw&t=16747s)).
 
 Chat is RAM: fast, useful, temporary, and noisy. The repo is disk: versioned, reviewable, and available to the next engineer, agent, machine, and session. This is the core idea behind [`dot-agents`](https://dot-agents.dev/): chat can stay messy while files, checks, and work items preserve the parts that change future behavior. The judgment is deciding what to flush to disk.
 
@@ -132,7 +124,7 @@ AGENTS.md
 
 A useful `AGENTS.md` is short enough to be read and specific enough to change behavior. It should tell the agent what not to rediscover, not everything the project knows.
 
-Durable does not mean permanent. Cherny describes prompt ablation as deleting existing guidance, observing the model, and restoring only instructions justified by repeated failures; he recommends periodically retesting `CLAUDE.md`, skills, and hooks as models change ([00:03:21–00:08:54](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=201s)).
+Durable does not mean permanent. Boris Cherny, creator of Claude Code, describes prompt ablation as deleting existing guidance, observing the model, and restoring only instructions justified by repeated failures; he recommends periodically retesting `CLAUDE.md`, skills, and hooks as models change ([00:03:21–00:08:54](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=201s)).
 
 Good entries are concrete: the fast check command, a frontmatter rule, a transcript location, a security constraint, or the UI primitive this repo uses.
 
@@ -159,7 +151,7 @@ Use a skill when a workflow has a recognizable trigger and a repeatable path to 
 - What files, scripts, or references does it need?
 - What evidence proves the workflow is done?
 
-Use the description to tell the agent when the skill applies. Then run the same task with and without the skill, and keep only instructions that improve the result. Nick Nisi and Zack Proser demonstrate both steps and show an example where extra instructions made the agent perform worse. Their tests are informal, and the percentages they report are approximate ([00:07:46–00:09:24](https://www.youtube.com/watch?v=pFsfax19yOM&t=466s), [00:29:24–00:30:27](https://www.youtube.com/watch?v=pFsfax19yOM&t=1764s), [01:09:30–01:10:28](https://www.youtube.com/watch?v=pFsfax19yOM&t=4170s)).
+Use the description to tell the agent when the skill applies. Then run the same task with and without the skill, and keep only instructions that improve the result. Nick Nisi and Zack Proser of WorkOS describe both steps in their skills workshop: their shipped skills pass evals that compare runs with and without the skill, and Nisi reports a Next.js skill that made results worse by over-prescribing what the model already did well. The figures they quote are self-described approximations ([00:07:46–00:09:24](https://www.youtube.com/watch?v=pFsfax19yOM&t=466s), [00:29:24–00:30:27](https://www.youtube.com/watch?v=pFsfax19yOM&t=1764s), [01:09:30–01:10:28](https://www.youtube.com/watch?v=pFsfax19yOM&t=4170s)).
 
 Do not package preferences as skills. A style preference belongs in `AGENTS.md`, a formatter, or a linter. A skill earns its place when it prevents a future run from rediscovering the workflow.
 
@@ -292,11 +284,11 @@ Do not design the perfect agent operating model. Start with one repeated pain. S
 
 ## Sources used
 
-- Noperator, [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) — source for the "substantial form without discernible intent" framing.
+- Caleb Gross (noperator), [You can just say it](https://noperator.dev/posts/you-can-just-say-it/) — source for the "substantial form without discernible intent" framing; the essay is about creative artifacts generally, and its application to coding agents is author synthesis.
 - Maggie Appleton, [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) — source for the alignment bottleneck and collaborative AI engineering framing.
 - Addy Osmani, [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) — source for the surrender/debt framing and the gap between generated code and human understanding.
 - Simon Willison, [Lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/) — source for the lossy-compression mental model and the advice to provide correct examples for exact technical work.
-- Thorsten Ball, [“Think Harder: How I Prompt”](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15626s) ([04:40:11–04:42:11](https://www.youtube.com/watch?v=vii6P0vJhTw&t=16811s)) — an Amp practitioner account of a short UI-change prompt using layered `AGENTS.md` instructions and screenshot proof.
+- Thorsten Ball, [“Think Harder: How I Prompt”](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15626s) ([04:39:07–04:42:11](https://www.youtube.com/watch?v=vii6P0vJhTw&t=16747s)) — an Amp co-creator's account of a short UI-change prompt using layered `AGENTS.md` instructions and screenshot proof.
 - Boris Cherny, [We Cut 80% of Claude Code’s Prompt](https://www.youtube.com/watch?v=qyPCVqFUyDo) ([00:03:21–00:08:54](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=201s)) — source for model-by-model prompt ablation and restoring guidance only after repeated observed failures.
 - Nick Nisi and Zack Proser, [Writing & Using Skills](https://www.youtube.com/watch?v=pFsfax19yOM) ([00:07:46–00:09:24](https://www.youtube.com/watch?v=pFsfax19yOM&t=466s), [00:29:24–00:30:27](https://www.youtube.com/watch?v=pFsfax19yOM&t=1764s), [01:09:30–01:10:28](https://www.youtube.com/watch?v=pFsfax19yOM&t=4170s)) — a hands-on workshop on when skills load and how to test whether they improve a task; its evaluation figures are approximate.
 - Vaibhav Gupta, [fighting slop with slop](https://www.youtube.com/watch?v=AMiyLItEtLA) ([00:00:01–00:06:00](https://www.youtube.com/watch?v=AMiyLItEtLA&t=1s)) — a Boundary product and engineering-practice account supporting durable architecture guidance, reviewed design writing, executable boundaries, and trace-based issue discovery when traditional line review is reduced.
