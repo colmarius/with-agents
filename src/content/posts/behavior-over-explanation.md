@@ -2,7 +2,7 @@
 title: 'Behavior Over Explanation: Salvatore Sanfilippo on AI and Coding Agents'
 description: 'An editorial synthesis of Salvatore Sanfilippo’s Italian videos: treat explanations as hypotheses, use interventions and representative behavior to test them, and protect the attention needed to judge the result.'
 pubDate: 2026-07-27
-updatedDate: 2026-08-10
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Model Evaluation', 'Review']
 draft: false
 unlisted: true
@@ -37,11 +37,11 @@ This does not settle a philosophical definition of reasoning, and the videos do 
 
 > A passing suite or confident diagnosis matters only if it can distinguish working from broken behavior.
 
-Sanfilippo's clearest paper-level example concerns a hierarchical reasoning model. After an ARC-AGI reimplementation removed components one at a time, he reports that iterative refinement and data augmentation explained more of the performance than the headline hierarchy suggested ([00:03:53–00:07:58](https://www.youtube.com/watch?v=PHsxD4X2V2A&t=233s)). He recalled the exact score changes from memory, so the durable point is methodological: attribute a result to components whose removal materially changes it, not to the component with the best name.
+Sanfilippo's clearest paper-level example concerns a hierarchical reasoning model. After an ARC-AGI reimplementation removed components to see what still worked, he reports that iterative refinement and data augmentation explained more of the performance than the headline hierarchy suggested ([00:03:53–00:07:58](https://www.youtube.com/watch?v=PHsxD4X2V2A&t=233s)). He cited the score changes from memory and flagged them as uncertain, so the durable point is methodological: attribute a result to components whose removal materially changes it, not to the component with the best name.
 
 He applies the same standard to coding agents. In an April 25, 2026 personal test, an alternative model optimized a small Tcl interpreter while preserving the supplied benchmark and regression suite. The suite stayed green, but Sanfilippo reported only a modest speed gain, ineffective complexity, and semantics-changing bugs that a later Opus review identified outside the supplied tests ([00:07:47–00:14:11](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s)).
 
-In a June 10 project account, Sanfilippo reports that a strong model produced a persuasive explanation for a generation loop and defended it until he contrasted how the working and optimized paths reached the repeated-token state. The model then reconsidered ([00:05:44–00:09:03](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s)).
+In a June 10 project account, Sanfilippo reports that a strong model produced a persuasive explanation for a generation loop and defended it until he pointed out the asymmetry: the optimized build fell into the repeated-token state, while the working build never entered it. The model then reconsidered ([00:05:44–00:09:03](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s)).
 
 Ablation and behavioral QA are not equivalent forms of evidence, but they share a discipline: state what the proposed cause predicts, change or exercise the relevant condition, and see whether the predicted difference appears.
 
@@ -61,7 +61,7 @@ None of these sources defines a universal boundary. Use behavior as the acceptan
 
 > Every additional lane competes for the attention needed to challenge its result.
 
-Sanfilippo's February 17 account is experiential, not a measured productivity result: asynchronous agent work tempted him to open another project during each wait, fragmenting the working model needed to challenge plausible output ([00:04:03–00:06:16](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s)). His response was to keep one main project when understanding mattered and reserve unattended work for bounded searches or optimizations with inspectable results ([00:06:16–00:09:48](https://www.youtube.com/watch?v=id9QG-mQSOo&t=376s)).
+Sanfilippo's February 17 account is experiential, not a measured productivity result: asynchronous agent work tempted him to open another project during each wait, fragmenting his attention ([00:04:03–00:06:16](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s)). His response was to keep one main project when understanding mattered and reserve unattended work for overnight optimizations or bug hunts whose fixes he then checked ([00:06:16–00:09:48](https://www.youtube.com/watch?v=id9QG-mQSOo&t=376s)).
 
 The implication here is epistemic: concurrency becomes unsafe when nobody retains enough context to design or judge the behavioral check. [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) owns the operating policy.
 
