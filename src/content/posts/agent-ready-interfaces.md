@@ -38,12 +38,15 @@ A good agent-facing surface does not need to be a shell. It does need to let the
 agent combine operations without repeatedly translating intermediate results
 through the model.
 
-Nuno Campos's spreadsheet REPL at Witan separated the interface language from the
-implementation language: JavaScript provided a model-familiar composition layer
-while C# continued to own the spreadsheet implementation. Adding capability meant
-exposing another method and updating TypeScript definitions rather than creating
-another top-level tool
-([00:04:21–00:08:02](https://www.youtube.com/watch?v=HEFSExa0xl0&t=261s)).
+Nuno Campos's spreadsheet agent at Witan makes this concrete: roughly 15
+accumulated tools became one JavaScript REPL, with the old tools as functions the
+agent combines in a single call
+([00:04:21–00:08:02](https://www.youtube.com/watch?v=HEFSExa0xl0&t=261s)). The
+REPL also separated the interface language from the implementation language:
+JavaScript provided a model-familiar composition layer while C# continued to own
+the spreadsheet implementation, so adding capability meant exposing another
+method and updating TypeScript definitions rather than creating another
+top-level tool.
 
 Lawrence Jones at incident.io adds the large-domain case: narrow list, add,
 replace, and edit commands let the agent query large evaluation fixtures, while
