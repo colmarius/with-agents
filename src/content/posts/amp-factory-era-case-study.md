@@ -2,7 +2,7 @@
 title: 'Amp as a Factory-Era Coding-Agent Case Study'
 description: 'A source-backed Amp case study for task sizing, delegation, remote and event-driven execution, identity, lifecycle controls, cost governance, proof loops, and review.'
 pubDate: 2026-06-28
-updatedDate: 2026-08-13
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Amp', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false
@@ -17,7 +17,7 @@ order: 5
 Amp detail → reusable contract → workflow habit
 ```
 
-Amp is the concrete case study. The reusable subject is how a coding-agent system sizes work, delegates it, reconstructs context, runs elsewhere, proves output, and controls recurring execution. The exact Amp assertions below were checked on 2026-08-12 against the current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing page](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle).
+Amp is the concrete case study. The reusable subject is how a coding-agent system sizes work, delegates it, reconstructs context, runs elsewhere, proves output, and controls recurring execution. The exact Amp assertions below were checked on 2026-08-15 against the current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing page](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle).
 
 [Agentic Coding in 2026](/posts/agentic-coding-2026) owns the product-agnostic map. Use [Your Repo Is the Memory](/posts/durable-context-coding-agents) and [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) for repo-local context, [Make the Agent Prove It](/posts/make-the-agent-prove-it) for the proof ladder, and [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) for deciding whether work should fan out at all.
 
@@ -31,7 +31,7 @@ setup, build, test, and service load → orb size
 independent work bounded by integration capacity → worker count
 ```
 
-That mapping is synthesis. The mode descriptions and Oracle role come from Amp's current [Manual](https://ampcode.com/manual#agent-modes) and [Models page](https://ampcode.com/models):
+That mapping is synthesis, and so are the table's work shapes; the modes and Oracle role they map onto come from Amp's current [Manual](https://ampcode.com/manual#agent-modes) and [Models page](https://ampcode.com/models):
 
 | Work shape | Amp surface |
 | --- | --- |
@@ -120,7 +120,7 @@ Amp exposes several points where remote work can meet reality:
 - The [Orbs manual](https://ampcode.com/manual/orbs#features) lets reviewers browse files and changes, open a terminal in the agent's working copy, and sync changes locally while work continues remotely.
 - Amp's dated [Diffs announcement](https://ampcode.com/news/diffs) adds a web review surface, while `amp review` and repository Checks apply human or encoded criteria to the change ([Manual](https://ampcode.com/manual#code-review)).
 
-Amp's August 11, 2026 [“Orbs and Jellyware”](https://ampcode.com/podcast/season-02/episode-02) episode adds a concrete practitioner pattern. Quinn Slack and Thorsten Ball describe spending remote runtime on old and current CLI versions, platforms, web and SDK paths, runners, account permutations, end-to-end reruns, demo videos, and frame-level UI inspection [10:30]-[18:54], [23:42]-[26:38]. That is a vendor team report, not evidence that the same matrix transfers to every product. The reusable move is to spend cheap unattended runtime on more discriminating evidence, then return an artifact a reviewer can inspect quickly.
+Amp's August 11, 2026 [“Orbs and Jellyware”](https://ampcode.com/podcast/season-02/episode-02) episode adds a concrete practitioner pattern. Quinn Slack and Thorsten Ball, both of the Amp team, describe spending remote runtime on old and current CLI versions, platforms, web and SDK paths, runners, account permutations, end-to-end reruns, demo videos, and frame-level UI inspection [10:30]-[18:54], [23:42]-[26:38]. That is a vendor team report, not evidence that the same matrix transfers to every product. The reusable move is to spend cheap unattended runtime on more discriminating evidence, then return an artifact a reviewer can inspect quickly.
 
 Their production example keeps a stricter boundary: start an attachment-authentication migration with warning-only logs, inspect failure categories through read-only access, tighten enforcement incrementally, enable multiplayer intervention, and preserve rollback [18:54]-[22:40]. **Synthesis:** production feedback can strengthen proof only when authority, reversibility, observation, and escalation are explicit. It is not permission to let an unattended worker improvise consequential writes.
 
@@ -184,4 +184,4 @@ Tool details change; the work contracts do not. When Amp changes again, keep the
 
 ## Sources used
 
-- Canonical Amp product authority verified 2026-08-12: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle). Dated sources, including [“Size the Orbs of Production!”](https://ampcode.com/news/size-the-orbs-of-production) and [“Orbs and Jellyware”](https://ampcode.com/podcast/season-02/episode-02), are linked inline at the claims they support.
+- Canonical Amp product authority verified 2026-08-15: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle). Dated sources, including [“Size the Orbs of Production!”](https://ampcode.com/news/size-the-orbs-of-production) and [“Orbs and Jellyware”](https://ampcode.com/podcast/season-02/episode-02), are linked inline at the claims they support.
