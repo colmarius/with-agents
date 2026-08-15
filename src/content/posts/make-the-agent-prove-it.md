@@ -2,7 +2,7 @@
 title: 'Make the Agent Prove It'
 description: 'A risk-scaled acceptance contract for agent-produced code: execution boundaries, discriminating checks, real-system evidence, external oracles, and human judgment.'
 pubDate: 2026-06-28
-updatedDate: 2026-07-31
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Workflow', 'Testing', 'Review']
 draft: false
 unlisted: false
@@ -21,7 +21,7 @@ discriminating check → real system → external oracle when available
             evidence packet → human decision
 ```
 
-The useful question is not "do I trust the model?" It is **"what proof would make this change safe to accept?"** Charity Majors calls this a trust account: if nobody reads the generated code, the team loses one source of confidence and must replace it with tests, evals, conformance checks, and bounded deterministic pathways ([00:26:55–00:30:00](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=1615s)).
+The useful question is not "do I trust the model?" It is **"what proof would make this change safe to accept?"** Charity Majors, co-founder and CEO of Honeycomb, calls this a trust account: if nobody reads the generated code, the team loses one source of confidence and must replace it with tests, evals, conformance checks, and bounded deterministic pathways ([00:26:55–00:30:00](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=1615s)).
 
 Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The agent should propose and produce evidence; the reviewer still owns the decision.
 
@@ -54,7 +54,7 @@ What could the agent send out?
 What data will it use to test the change?
 ```
 
-If private data, untrusted instructions, and outbound communication can coexist, remove a capability instead of trusting the model to separate data from instructions. Willison calls that combination the "lethal trifecta" and recommends cutting off at least one leg and sandboxing coding agents to reduce available damage ([00:14:33–00:16:30](https://www.youtube.com/watch?v=owmJyKVu5f8&t=873s)). A sandbox constrains capabilities; it does not make production data safe or external side effects reversible.
+If private data, untrusted instructions, and outbound communication can coexist, remove a capability instead of trusting the model to separate data from instructions. Willison calls that combination the "lethal trifecta" and recommends cutting off at least one leg and sandboxing coding agents to reduce available damage ([00:13:39–00:16:30](https://www.youtube.com/watch?v=owmJyKVu5f8&t=819s)). A sandbox constrains capabilities; it does not make production data safe or external side effects reversible.
 
 Do not copy production data into an agent workspace to make a test realistic. Use generated users, synthetic records, and reproducible edge-case fixtures instead ([00:17:33–00:18:35](https://www.youtube.com/watch?v=owmJyKVu5f8&t=1053s)). Tasks involving secrets, private data, permissions, billing, migrations, or external effects need an explicit human decision before execution.
 
@@ -71,15 +71,15 @@ Run the targeted test, then the normal project check command.
 
 Willison's default instruction is short: tell the agent how to run the tests, then use red-green test-driven development ([00:04:41–00:06:44](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s)). The value is not ceremony. It forces the agent to state what would prove the task, observe failure, then make the smallest change that passes. If the code will live, require a reusable check.
 
-The reviewer still owns the acceptance condition. In experiments Hillel Wayne described in March 2026, models helped encode precisely stated properties but did not reliably invent meaningful ones ([01:06:16–01:12:37](https://www.youtube.com/watch?v=KSkcgIYQy0U&t=3976s)). A green agent-written test is weak evidence if the agent chose a trivial assertion.
+The reviewer still owns the acceptance condition. Formal methods consultant Hillel Wayne reported that, in his experiments as of March 2026, models helped encode precisely stated properties but did not reliably invent meaningful ones ([01:06:16–01:12:37](https://www.youtube.com/watch?v=KSkcgIYQy0U&t=3976s)). A green agent-written test is weak evidence if the agent chose a trivial assertion.
 
 Protect reviewer-supplied acceptance checks from agent edits unless a reviewer
-explicitly authorizes a requirement change. In one parser session, Kent Beck
+explicitly authorizes a requirement change. In one Smalltalk-parser session, Kent Beck
 reports an agent proposing to change the test or remove an expected-value assertion
 after unsuccessful repair attempts
 ([00:50:38–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=3038s)).
 
-Executable does not automatically mean discriminating. A check is discriminating only if a plausible wrong behavior or competing explanation could produce a different result. In an April 2026 personal account, Salvatore Sanfilippo reported that a model preserved the supplied benchmark and regression suite while optimizing a small Tcl interpreter, but a later model review found semantics-changing bugs outside those tests ([00:07:47–00:14:11](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s)). The suite was repeatable; it did not cover the disputed behavior.
+Executable does not automatically mean discriminating. A check is discriminating only if a plausible wrong behavior or competing explanation could produce a different result. In an April 2026 personal account, Salvatore Sanfilippo reported that a model kept the supplied benchmark and regression suite passing while optimizing a small Tcl interpreter, but a later model review found semantics-changing bugs outside those tests ([00:07:47–00:14:11](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s)). The suite was repeatable; it did not cover the disputed behavior.
 
 **Author synthesis:** Generated explanations can steer investigation, but they do not establish acceptance. In a June 2026 project account, Sanfilippo reported that a model defended a plausible diagnosis until he contrasted how the working and optimized paths reached the repeated-token state; the model then reconsidered ([00:05:44–00:09:03](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s)). The English source-list titles are translations, and the descriptions above are editorial paraphrases of Italian captions; none are quotations.
 
@@ -125,7 +125,7 @@ Document any unsupported cases.
 
 Some work has a better oracle than your prompt. A **conformance suite** checks a published specification, a **golden fixture** checks approved expected output, and a **differential suite** compares behavior with named implementations. Willison uses WebAssembly's specification suite as the conformance example and multipart uploads tested against several frameworks as differential compatibility evidence ([00:07:33–00:09:36](https://www.youtube.com/watch?v=owmJyKVu5f8&t=453s)). These targets strengthen review; they do not replace it.
 
-**Author synthesis:** Subjective work needs a mixed proof contract, not an invented universal oracle. Castello Branco's brand-adherence example separates programmatically observable properties from creativity, style, and contextual preference ([00:04:27–00:07:24](https://www.youtube.com/watch?v=lCBf9slCanI&t=267s)). Verify the former; preserve rater context and disagreement for the latter. In her design-evaluation example, disagreement about a comparatively verifiable attribute such as alignment may flag defective data, while disagreement about aesthetics can be valid preference signal ([00:10:29–00:15:28](https://www.youtube.com/watch?v=lCBf9slCanI&t=629s)).
+**Author synthesis:** Subjective work needs a mixed proof contract, not an invented universal oracle. In her brand-adherence example, Thais Castello Branco, founder of Taste Labs, decomposes a brand into codified components such as color and typography that reviewers can verify against, and separates those from style, fit, and creativity ([00:04:27–00:07:24](https://www.youtube.com/watch?v=lCBf9slCanI&t=267s)). Verify the former; preserve rater context and disagreement for the latter. In her design-evaluation example, disagreement about a comparatively verifiable attribute such as alignment may flag defective data, while disagreement about aesthetics can be valid preference signal ([00:10:29–00:15:28](https://www.youtube.com/watch?v=lCBf9slCanI&t=629s)).
 
 ## Return a review packet a human can own
 
@@ -140,7 +140,7 @@ known gaps:
 design or risk decision:
 ```
 
-Put that packet in a pull-request comment, work item, test log, or artifact path. Include exact commands and exit codes, relevant logs or responses, screenshots for visual output, traces for interaction behavior, fixture names, and any intentionally skipped check. Repeatable executable checks make failure visible even when prose instructions are ignored; Mario Zechner demonstrates that role with linting, type checking, smoke tests, hooks, and terminal capture ([00:37:11–00:42:55](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=2231s)).
+Put that packet in a pull-request comment, work item, test log, or artifact path. Include exact commands and exit codes, relevant logs or responses, screenshots for visual output, traces for interaction behavior, fixture names, and any intentionally skipped check. Repeatable executable checks make failure visible even when prose instructions are ignored; Mario Zechner, creator of the Pi coding agent, demonstrates that role with linting, type checking, smoke tests, hooks, and terminal capture ([00:37:11–00:42:55](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=2231s)).
 
 The reviewer must still understand the result. Maintained code needs design review even when its checks pass. Ask:
 
