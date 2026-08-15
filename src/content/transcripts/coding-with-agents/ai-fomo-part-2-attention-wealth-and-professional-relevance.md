@@ -1,6 +1,6 @@
 ---
-title: "FOMO parte 2: mille sessioni AI, smanie di arricchimento e altre frammentazioni dell'attenzione"
-summarySlug: "coding-with-agents/fomo-part-2-ai-sessions-wealth-and-fragmented-attention"
+title: "AI FOMO, Part 2: Attention, Wealth, and Professional Relevance"
+summarySlug: "coding-with-agents/ai-fomo-part-2-attention-wealth-and-professional-relevance"
 sourceUrl: "https://www.youtube.com/watch?v=L1pff4cmNCI"
 videoId: "L1pff4cmNCI"
 capturedAt: "2026-08-15T23:05:22.997Z"

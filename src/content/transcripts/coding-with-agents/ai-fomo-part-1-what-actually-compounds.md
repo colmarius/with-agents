@@ -1,6 +1,6 @@
 ---
-title: "Sulla paura di rimanere indietro nell'uso della AI"
-summarySlug: "coding-with-agents/on-the-fear-of-falling-behind-with-ai"
+title: "AI FOMO, Part 1: What Actually Compounds"
+summarySlug: "coding-with-agents/ai-fomo-part-1-what-actually-compounds"
 sourceUrl: "https://www.youtube.com/watch?v=j-Hh4i5R7aI"
 videoId: "j-Hh4i5R7aI"
 capturedAt: "2026-08-14T09:03:08.166Z"

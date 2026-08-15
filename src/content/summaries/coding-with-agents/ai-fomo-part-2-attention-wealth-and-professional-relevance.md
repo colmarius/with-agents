@@ -1,5 +1,5 @@
 ---
-title: "FOMO, Part 2: AI Sessions, Wealth, and Fragmented Attention"
+title: "AI FOMO, Part 2: Attention, Wealth, and Professional Relevance"
 resourceId: 45
 date: "2026-08-15"
 ---

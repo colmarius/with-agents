@@ -1,5 +1,5 @@
 ---
-title: "On the Fear of Falling Behind with AI"
+title: "AI FOMO, Part 1: What Actually Compounds"
 resourceId: 44
 date: "2026-08-12"
 ---
