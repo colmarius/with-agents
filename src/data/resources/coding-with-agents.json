@@ -1,5 +1,22 @@
 [
   {
+    "id": 45,
+    "primarySection": "workflows",
+    "title": "FOMO, Part 2: AI Sessions, Wealth, and Fragmented Attention — Salvatore Sanfilippo",
+    "subtitle": "Why more terminals are not more leverage, when asynchronous work helps, and which fears need a different response",
+    "url": "https://www.youtube.com/watch?v=L1pff4cmNCI",
+    "description": "In this Italian-language follow-up to his first FOMO video, Salvatore Sanfilippo argues that dozens of interactive coding-agent sessions dilute the human attention still needed for product direction and careful steering. He recommends focusing on a few related projects, reserving parallelism for long-horizon investigations, and separating workflow choices from startup economics and broad labor-market anxiety. The recommendations, project reports, and economic forecasts are practitioner judgments rather than measured comparisons.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-08-15",
+    "duration": "25m",
+    "topics": [
+      "prompting-orchestration",
+      "review-verification",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 44,
     "primarySection": "workflows",
     "title": "On the Fear of Falling Behind with AI — Salvatore Sanfilippo",
