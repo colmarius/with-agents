@@ -19,6 +19,7 @@ dist-ssr
 
 # Amp orb runtime files
 .amp/portals/
+.amp/portal-proxy.mjs
 
 # Editor directories and files
 .vscode/*
