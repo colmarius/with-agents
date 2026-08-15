@@ -38,3 +38,11 @@ npm --version
 
 echo 'Installing npm dependencies...'
 npm ci --no-audit --no-fund
+
+# Browser-verification fonts: without these, headless Chromium in the orb
+# lacks every western font in the site's font stack and takes the space
+# glyph from Noto Color Emoji, rendering huge word gaps in screenshots.
+if ! fc-list -q "Liberation Sans" 2>/dev/null; then
+  echo 'Installing fonts for browser verification...'
+  sudo apt-get install -y --no-install-recommends fonts-liberation fonts-noto-core
+fi
