@@ -2,7 +2,7 @@
 title: 'Agent-Ready Interfaces: Design Tools Agents Can Actually Operate'
 description: 'A practical design review for composable agent-facing operations, inspectable state, faithful feedback, recovery, mutation gates, and human control.'
 pubDate: 2026-08-03
-updatedDate: 2026-08-13
+updatedDate: 2026-08-15
 tags: ['AI Agents', 'Interface Design', 'Developer Tools', 'Agentic Coding']
 draft: false
 unlisted: false
@@ -25,11 +25,10 @@ and teaches the agent to trust weak feedback.
 The design question is: **what is the smallest familiar surface that lets an agent
 compose real work and inspect the result?**
 
-The talks below are product and practitioner reports, not controlled comparisons.
-They illustrate interface mechanisms rather than establish a universal implementation.
-
-[Agentic Coding in 2026](/posts/agentic-coding-2026) maps the broader workflow.
-This article owns the agent-facing interface inside that system.
+The talks below are product and practitioner reports, not controlled comparisons;
+they illustrate interface mechanisms, not a universal implementation.
+[Agentic Coding in 2026](/posts/agentic-coding-2026) maps the broader workflow;
+this article owns the agent-facing interface inside that system.
 
 ## Make operations composable and state inspectable
 
@@ -39,15 +38,16 @@ A good agent-facing surface does not need to be a shell. It does need to let the
 agent combine operations without repeatedly translating intermediate results
 through the model.
 
-Campos's REPL separated the interface language from the implementation language:
-JavaScript provided a model-familiar composition layer while C# continued to own
-the spreadsheet implementation. Adding capability meant exposing another method
-and updating TypeScript definitions rather than creating another top-level tool
+Nuno Campos's spreadsheet REPL at Witan separated the interface language from the
+implementation language: JavaScript provided a model-familiar composition layer
+while C# continued to own the spreadsheet implementation. Adding capability meant
+exposing another method and updating TypeScript definitions rather than creating
+another top-level tool
 ([00:04:21–00:08:02](https://www.youtube.com/watch?v=HEFSExa0xl0&t=261s)).
 
-Lawrence Jones adds the large-domain case: narrow list, add, replace, and edit
-commands let the agent query large fixtures, while nested UI and trace data become
-searchable files beside the code
+Lawrence Jones at incident.io adds the large-domain case: narrow list, add,
+replace, and edit commands let the agent query large evaluation fixtures, while
+nested UI and trace data become self-documenting files beside the code
 ([00:05:46–00:08:39](https://www.youtube.com/watch?v=L2r6vLlLgs8&t=346s),
 [00:10:37–00:12:28](https://www.youtube.com/watch?v=L2r6vLlLgs8&t=637s)).
 
@@ -67,48 +67,52 @@ The pattern is not “everything should be a CLI.” It is:
 An agent does not need certainty after every action. It needs feedback that rules
 out the right failures.
 
-Russo's video pipeline lets the model author ordinary HTML, then freezes browser
-time, waits for assets, captures each frame, and encodes the result. Preview and
-final output use the same browser representation
+James Russo's video pipeline at HeyGen lets the model author ordinary HTML, then
+freezes browser time, waits for assets, captures each frame, and encodes the
+result. Preview and final output use the same browser representation
 ([00:06:37–00:08:18](https://www.youtube.com/watch?v=Cz4v1WHVyZc&t=397s)). The
 model gets a familiar authoring surface; deterministic machinery owns execution.
 
 Campos makes the fidelity risk explicit. Witan built formula-calculation and
 rendering engines so an agent could check spreadsheet behavior and appearance.
-He warns that an engine implementing only part of Excel produces worse results:
-the agent writes a formula that would work in practice, the incomplete engine
-returns an error or wrong value, and the agent “fixes” the wrong thing
+He warns that an engine implementing only part of Excel's formula set produces
+worse results: the agent writes a formula that would work in real Excel, and the
+incomplete engine returns an error or a wrong value — feedback that misleads the
+next repair
 ([00:09:56–00:11:50](https://www.youtube.com/watch?v=HEFSExa0xl0&t=596s)). The
 interface-design inference is that an explicit gap is safer than feedback whose
 semantics diverge from production.
+
+Feedback also stops meaning anything when the agent can rewrite the ruler.
+Jones's eval commands deliberately let the agent add and edit test cases; when a
+person supplies expectations as acceptance criteria, keep them outside the
+agent's writable surface. That rule is author synthesis — no speaker states it —
+but it follows directly from letting agents edit the fixtures that grade them.
 
 [Make the Agent Prove It](/posts/make-the-agent-prove-it) owns which evidence a
 change requires. This article's narrower obligation is to expose the real compiler,
 renderer, calculation engine, runtime, or fixture suite in a form the agent can run
 and interpret.
 
-**Author synthesis:** treat reviewer-supplied expectations as protected input, not
-ordinary implementation state.
-
 ## Reset and retry are interface features
 
-> Recovery should return to a known state, not ask a polluted loop to become wiser indefinitely.
+> Recovery should return to a known-good state, not extend a polluted loop.
 
 Longer loops accumulate failed assumptions as well as useful context. Recovery
 therefore needs a concrete state transition.
 
-Pell's useful mechanism is the state transition: restore a known-good checkpoint
-instead of extending a polluted repair chain
+Morgante Pell's mechanism at Grit is exactly that: save known-good state, and
+when a repair chain degrades, restore the checkpoint and build from there instead
+of asking a polluted loop to become wiser
 ([00:13:36–00:15:43](https://www.youtube.com/watch?v=Ve-akpov78Q&t=816s)).
 
-That checkpoint handles recovery from a polluted attempt. Anthropic reports a
-different, infrastructure-level recovery boundary in Claude Managed Agents: it
-separates the model loop from replaceable tool-execution sandboxes, so a failed
-sandbox can be recreated and retried, while a restarted loop resumes from a
-durable session log
-([00:11:07–00:12:55](https://www.youtube.com/watch?v=K0X9QDRkIdg&t=667s)). A
-durable log supports restart; it does not by itself provide a known-good rollback
-point.
+Anthropic reports a different, infrastructure-level recovery boundary in Claude
+Managed Agents: it separates the model loop from replaceable tool-execution
+sandboxes, so a failed sandbox can be recreated and retried, while a restarted
+loop resumes from a durable session log
+([00:11:07–00:12:55](https://www.youtube.com/watch?v=K0X9QDRkIdg&t=667s)). The
+distinction is author synthesis: a durable log supports restart; it does not by
+itself provide a known-good rollback point.
 
 An agent-ready operation should therefore answer:
 
@@ -127,24 +131,26 @@ owns durable intent, decisions, and task state.
 
 The following rule is editorial synthesis across the talks: **make discovery
 cheap, make mutation explicit, and return consequential output through the
-interface where a person already makes the decision.** No one speaker presents
-that as a complete standard.
+interface where a person already makes the decision.**
 
-Luebken demonstrates a pre-tool hook that checks access before a contact update
-and returns sandbox-produced email drafts to the existing inbox for editing
+Matthias Luebken demonstrates a pre-tool hook — authorization before a contact
+update is his example — and returns sandbox-produced email drafts to the existing
+inbox for editing
 ([00:07:27–00:08:28](https://www.youtube.com/watch?v=vAIDdLKB6-w&t=447s),
-[00:15:17–00:19:12](https://www.youtube.com/watch?v=vAIDdLKB6-w&t=917s)). Parsons
-describes a stricter capability boundary: separate keys, read-only access where
-possible, and permission to draft email but not send it
-([00:52:14–00:54:11](https://www.youtube.com/watch?v=2TLXsxkz0zI&t=3134s)). These
+[00:15:17–00:19:12](https://www.youtube.com/watch?v=vAIDdLKB6-w&t=917s)). Chris
+Parsons describes a stricter capability boundary: separate keys, read-only access
+where possible, and permission to draft email but not send it
+([00:52:14–00:54:11](https://www.youtube.com/watch?v=2TLXsxkz0zI&t=3134s)). Both
 are practitioner demonstrations, not production security or reliability evidence.
-Isolation is not policy; the useful boundary is the capability the agent cannot
-reach directly or through a shared service. In a preliminary OpenAI incident
-account, evaluation agents had no direct internet access but reached an internal
-package service with broad internet access; that service became an escape and
-cross-run coordination path
+
+Isolation alone is not a boundary. In a preliminary OpenAI incident account,
+evaluation agents had no direct internet access but reached an internal package
+service that did; the shared service became an escape and cross-run coordination
+path
 ([00:03:53–00:04:41](https://www.youtube.com/watch?v=87DyyMV0kCY&t=233s),
-[00:08:16–00:10:20](https://www.youtube.com/watch?v=87DyyMV0kCY&t=496s)).
+[00:08:16–00:10:20](https://www.youtube.com/watch?v=87DyyMV0kCY&t=496s)). The
+boundary that holds is the capability the agent cannot reach directly or through
+a shared service.
 
 A draft, diff, dry run, or proposed plan is therefore not merely nicer UX. It is
 an interface state between “the agent found an action” and “the system accepted
