@@ -28,9 +28,9 @@ test('catalog resources have the approved primary section distribution', () => {
     ]),
   );
 
-  assert.equal(codingResources.length, 37);
+  assert.equal(codingResources.length, 38);
   assert.deepEqual(counts, {
-    workflows: 11,
+    workflows: 12,
     'agent-systems': 9,
     reliability: 9,
     'teams-ecosystem': 8,
