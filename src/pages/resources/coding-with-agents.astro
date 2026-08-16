@@ -2,21 +2,12 @@
 import { getCollection } from 'astro:content';
 import CodingWithAgentsList from '../../components/resources/CodingWithAgents';
 import ResourcesNav from '../../components/resources/ResourcesNav.astro';
+import { toManifestEntry } from '../../components/resources/summaryResolver';
 import { codingResources } from '../../data/resources/coding-with-agents';
 import Layout from '../../layouts/Layout.astro';
 
 const entries = await getCollection('summaries');
-const manifest = entries.map((e) => ({
-  slug: e.id.replace(/\//g, '__'),
-  resourceId: e.data.resourceId,
-  title: e.data.title,
-  date: e.data.date ?? null,
-  series: e.data.series ?? null,
-  episode: e.data.episode ?? null,
-  collection: e.data.collection ?? null,
-  order: e.data.order ?? null,
-  videoId: e.data.videoId ?? null,
-}));
+const manifest = entries.map(toManifestEntry);
 ---
 
 <Layout

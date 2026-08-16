@@ -6,7 +6,7 @@
 - **Static topic site** for practical coding-agent workflows, posts, slides, and curated resources
 - **Site**: <https://with-agents.dev>
 - **Repository**: `colmarius/with-agents` (public source repository)
-- **Path aliases**: `@components`, `@types`, `@assets`, `@layouts`, `@utils`, `@scripts`
+- **Path aliases**: `@components`, `@types`, `@layouts`, `@utils`, `@scripts` (defined in `tsconfig.json`)
 
 ## Commands
 
@@ -14,9 +14,10 @@
 - `npm run build` - Production build
 - `npm run preview` - Preview build
 - `npm run check` - Astro/TypeScript check
+- `npm test` - Unit tests (site data/resolver logic and `.agents/scripts`)
 - `npm run lint:fix` - Lint and format with Biome
 
-Run `npm run check` and `npm run build` after code or content changes. Run `npm run lint:fix` before committing when files may need formatting.
+Run `npm run check`, `npm test`, and `npm run build` after code or content changes. Run `npm run lint:fix` before committing when files may need formatting.
 
 ## Orb Proof Loop
 

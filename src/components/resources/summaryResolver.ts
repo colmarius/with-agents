@@ -10,6 +10,36 @@ export type ManifestEntry = {
   videoId: string | null;
 };
 
+/** Summary IDs contain `/`; encode as `__` so they work as route params. */
+export const encodeSummarySlug = (id: string) => id.replace(/\//g, '__');
+export const decodeSummarySlug = (slug: string) => slug.replace(/__/g, '/');
+
+type SummaryEntry = {
+  id: string;
+  data: {
+    resourceId: number;
+    title: string;
+    date?: Date;
+    series?: string;
+    episode?: number;
+    collection?: string;
+    order?: number;
+    videoId?: string;
+  };
+};
+
+export const toManifestEntry = (entry: SummaryEntry): ManifestEntry => ({
+  slug: encodeSummarySlug(entry.id),
+  resourceId: entry.data.resourceId,
+  title: entry.data.title,
+  date: entry.data.date ?? null,
+  series: entry.data.series ?? null,
+  episode: entry.data.episode ?? null,
+  collection: entry.data.collection ?? null,
+  order: entry.data.order ?? null,
+  videoId: entry.data.videoId ?? null,
+});
+
 export type SummaryRef =
   | { kind: 'single'; slug: string }
   | { kind: 'series'; series: string; entries: ManifestEntry[] }

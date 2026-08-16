@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
 import CodingWithAgentsList from '../../../components/resources/CodingWithAgents';
 import ResourcesNav from '../../../components/resources/ResourcesNav.astro';
+import { toManifestEntry } from '../../../components/resources/summaryResolver';
 import { codingResources } from '../../../data/resources/coding-with-agents';
 import {
   type ResourceSection,
@@ -25,17 +26,7 @@ const resources = codingResources.filter(
   (resource) => resource.primarySection === section.key,
 );
 const entries = await getCollection('summaries');
-const manifest = entries.map((entry) => ({
-  slug: entry.id.replace(/\//g, '__'),
-  resourceId: entry.data.resourceId,
-  title: entry.data.title,
-  date: entry.data.date ?? null,
-  series: entry.data.series ?? null,
-  episode: entry.data.episode ?? null,
-  collection: entry.data.collection ?? null,
-  order: entry.data.order ?? null,
-  videoId: entry.data.videoId ?? null,
-}));
+const manifest = entries.map(toManifestEntry);
 const canonicalPath = `/resources/coding-with-agents/${section.routeSlug}`;
 ---
 

@@ -419,11 +419,6 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
           filteredResources.map((resource) => (
             <ResourceListItem
               key={resource.id}
-              image={{
-                src: '',
-                alt: '',
-                className: 'hidden',
-              }}
               title={resource.title}
               badge={
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
@@ -431,7 +426,6 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
                 </span>
               }
               description={resource.description}
-              hideExternalLink={true}
               metadata={
                 resource.subtitle && (
                   <p className="text-base font-medium text-gray-700 mb-1">

@@ -17,6 +17,7 @@ A focused Astro site for practical coding-agent workflows: articles, generated s
 npm ci           # Install dependencies from the lockfile
 npm run dev      # Start dev server
 npm run check    # Astro/TypeScript check
+npm test         # Unit tests
 npm run lint:fix # Lint and format
 npm run build    # Build for production
 npm run preview  # Preview build locally

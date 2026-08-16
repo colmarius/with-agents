@@ -81,14 +81,7 @@ export default defineConfig({
     },
 
     resolve: {
-      alias: {
-        '@components': '/src/components',
-        '@config': '/src/config',
-        '@types': '/src/types',
-        '@assets': '/src/assets',
-        '@layouts': '/src/layouts',
-        '@utils': '/src/utils',
-      },
+      // Path aliases come from tsconfig.json, which Astro resolves natively.
       dedupe: ['react', 'react-dom'],
     },
 

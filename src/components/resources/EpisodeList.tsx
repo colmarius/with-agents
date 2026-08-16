@@ -17,7 +17,6 @@ type EpisodeListProps = {
   selectedSlug: string | null;
   onSelectEpisode: (path: string) => void;
   mode: 'series' | 'collection';
-  isLoading?: boolean;
   isCollapsed?: boolean;
 };
 
@@ -26,7 +25,6 @@ export const EpisodeList = ({
   selectedSlug,
   onSelectEpisode,
   mode,
-  isLoading = false,
   isCollapsed = false,
 }: EpisodeListProps) => {
   const listRef = useRef<HTMLDivElement>(null);
@@ -94,16 +92,6 @@ export const EpisodeList = ({
       setFocusedSlug(episode.path);
     }
   };
-
-  if (isLoading) {
-    return (
-      <div className="flex items-center justify-center p-8">
-        <div className="animate-pulse text-gray-500">
-          Loading {label.toLowerCase()}...
-        </div>
-      </div>
-    );
-  }
 
   if (episodes.length === 0) {
     return (

@@ -1,17 +1,21 @@
 import { getCollection, getEntry } from 'astro:content';
 import type { APIRoute } from 'astro';
+import {
+  decodeSummarySlug,
+  encodeSummarySlug,
+} from '../../../components/resources/summaryResolver';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
   const entries = await getCollection('summaries');
   return entries.map((e) => ({
-    params: { slug: e.id.replace(/\//g, '__') },
+    params: { slug: encodeSummarySlug(e.id) },
   }));
 }
 
 export const GET: APIRoute = async ({ params }) => {
-  const slug = params.slug?.replace(/__/g, '/') || '';
+  const slug = decodeSummarySlug(params.slug ?? '');
   const entry = await getEntry('summaries', slug);
 
   if (!entry) {
