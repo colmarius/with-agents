@@ -46,12 +46,6 @@ const canonicalUrl = new URL(
     <PwaHead />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <style>
-      body {
-        transition: opacity 50ms ease-out;
-      }
-    </style>
   </head>
   <body class="antialiased">
     <div class="mx-auto max-w-6xl px-8 py-16 sm:px-12 lg:px-16">
@@ -68,50 +62,5 @@ const canonicalUrl = new URL(
     </div>
 
     <PwaUpdatePrompt />
-
-    <script>
-      const initPage = () => {
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 150ms ease-out';
-
-        requestAnimationFrame(() => {
-          document.body.style.opacity = '1';
-        });
-      };
-
-      document.addEventListener('DOMContentLoaded', () => {
-        initPage();
-
-        const links = document.querySelectorAll('a[href^="/"], a[href^="./"], a[href^="../"]');
-
-        links.forEach(link => {
-          link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-
-            if (!href ||
-                href.startsWith('http') ||
-                href.startsWith('#') ||
-                (link as HTMLAnchorElement).target === '_blank' ||
-                link.hasAttribute('download')) {
-              return;
-            }
-
-            e.preventDefault();
-
-            document.body.style.opacity = '0';
-
-            setTimeout(() => {
-              window.location.href = href;
-            }, 150);
-          });
-        });
-      });
-
-      window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-          initPage();
-        }
-      });
-    </script>
   </body>
 </html>

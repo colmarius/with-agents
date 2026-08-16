@@ -104,38 +104,40 @@ export const EpisodeList = ({
   if (isCollapsed) return null;
 
   return (
-    <div
-      ref={listRef}
-      role="listbox"
-      aria-label={`${label} list`}
-      aria-activedescendant={
-        focusedSlug !== null ? `summary-${focusedSlug}` : undefined
-      }
-      tabIndex={0}
-      onKeyDown={handleKeyDown}
-      className="flex min-h-0 flex-col gap-1 overflow-y-auto overscroll-contain p-0 focus:outline-none text-sm text-gray-600 md:overflow-visible dark:text-zinc-300"
-    >
+    <>
       <h3 className="mb-2 hidden px-2.5 text-xs font-medium uppercase tracking-wide text-gray-500 md:block dark:text-zinc-400">
         {label}
       </h3>
-      {episodes.map((episode) => {
-        const isSelected = episode.path === selectedSlug;
-        const isFocused = episode.path === focusedSlug;
-        const trimmedTitle = episode.title.replace(
-          /\s*-\s*Episode\s+\d+$/i,
-          '',
-        );
-        return (
-          <button
-            type="button"
-            key={episode.path}
-            id={`summary-${episode.path}`}
-            ref={isSelected ? setSelectedRef : null}
-            role="option"
-            aria-selected={isSelected}
-            onClick={() => onSelectEpisode(episode.path)}
-            onFocus={() => setFocusedSlug(episode.path)}
-            className={`
+      <div
+        ref={listRef}
+        role="listbox"
+        aria-label={`${label} list`}
+        aria-activedescendant={
+          focusedSlug !== null ? `summary-${focusedSlug}` : undefined
+        }
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+        className="flex min-h-0 flex-col gap-1 overflow-y-auto overscroll-contain p-0 focus:outline-none text-sm text-gray-600 md:overflow-visible dark:text-zinc-300"
+      >
+        {episodes.map((episode) => {
+          const isSelected = episode.path === selectedSlug;
+          const isFocused = episode.path === focusedSlug;
+          const trimmedTitle = episode.title.replace(
+            /\s*-\s*Episode\s+\d+$/i,
+            '',
+          );
+          return (
+            <button
+              type="button"
+              key={episode.path}
+              id={`summary-${episode.path}`}
+              ref={isSelected ? setSelectedRef : null}
+              role="option"
+              aria-selected={isSelected}
+              tabIndex={-1}
+              onClick={() => onSelectEpisode(episode.path)}
+              onFocus={() => setFocusedSlug(episode.path)}
+              className={`
 							group w-full rounded-sm px-2.5 py-1.5 text-left transition-colors cursor-pointer
 							bg-transparent border border-transparent
 							focus:outline-none focus-visible:ring-1 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-0
@@ -147,35 +149,36 @@ export const EpisodeList = ({
                     : 'text-gray-600 dark:text-zinc-400 hover:text-gray-800 dark:hover:text-zinc-200 hover:bg-gray-50/40 dark:hover:bg-zinc-800/30'
               }
 						`}
-          >
-            <div className="flex items-center gap-2">
-              {showEpisodePrefix && (
+            >
+              <div className="flex items-center gap-2">
+                {showEpisodePrefix && (
+                  <span
+                    className={`shrink-0 tabular-nums text-[11px] tracking-wide ${
+                      isSelected
+                        ? 'text-gray-500 dark:text-zinc-300'
+                        : 'text-gray-400 dark:text-zinc-500'
+                    }`}
+                  >
+                    Ep {episode.episode}
+                  </span>
+                )}
                 <span
-                  className={`shrink-0 tabular-nums text-[11px] tracking-wide ${
+                  className={`flex-1 text-[13px] font-normal ${
+                    showEpisodePrefix ? 'truncate' : 'leading-snug'
+                  } ${
                     isSelected
-                      ? 'text-gray-500 dark:text-zinc-300'
-                      : 'text-gray-400 dark:text-zinc-500'
+                      ? 'text-gray-900 dark:text-zinc-100'
+                      : 'text-gray-600 dark:text-zinc-400 group-hover:text-gray-800 dark:group-hover:text-zinc-200'
                   }`}
+                  title={trimmedTitle}
                 >
-                  Ep {episode.episode}
+                  {trimmedTitle}
                 </span>
-              )}
-              <span
-                className={`flex-1 text-[13px] font-normal ${
-                  showEpisodePrefix ? 'truncate' : 'leading-snug'
-                } ${
-                  isSelected
-                    ? 'text-gray-900 dark:text-zinc-100'
-                    : 'text-gray-600 dark:text-zinc-400 group-hover:text-gray-800 dark:group-hover:text-zinc-200'
-                }`}
-                title={trimmedTitle}
-              >
-                {trimmedTitle}
-              </span>
-            </div>
-          </button>
-        );
-      })}
-    </div>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </>
   );
 };
