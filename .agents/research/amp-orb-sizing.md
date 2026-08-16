@@ -11,7 +11,7 @@ Treat agent mode and orb size as independent controls. Choose model capability f
 ## Key Findings
 
 - Amp introduced five `a1` orb sizes from 1 CPU and 2 GB of memory through 16 CPUs and 32 GB, with a new 4-CPU, 8-GB `a1.medium` tier.
-- A project owns the default orb size, while individual threads can use another size. The CLI supports `amp -ox "..." --orb-size <size>`, and an agent can be asked to create a thread in a smaller or larger orb.
+- A project owns the default orb size, while individual threads can use another size. The CLI supports `amp -ox "..." --orb-size <size>`, and an agent can be asked to create a thread in a smaller or larger orb. The current [What Are Orbs](https://ampcode.com/what-are-orbs) overview (checked 2026-08-16) adds a third scope: a workspace default for new projects. It repeats the same `a1` size and rate table.
 - Current orbs are billed by the minute, cost nothing while paused, and auto-pause after five minutes without activity. The main pricing page separately packages orb-hour allowances with Amp subscriptions.
 - Amp says the new `a1.medium` is 50% cheaper and a better fit for most projects than the former `a0.medium`. That is a dated vendor recommendation, not a workload benchmark; projects still need to validate setup time, peak memory, test parallelism, and build behavior on their own codebase.
 - Amp also reports faster startup, especially when another team member recently created an orb in the same project. The announcement provides no benchmark boundary, so use this as dated product direction rather than a transferable performance estimate.
@@ -79,4 +79,5 @@ The episode's highest-risk example is also its most useful boundary: an attachme
 - [Amp Orbs manual](https://ampcode.com/manual/orbs) — Canonical current sizes, rates, defaults, billing behavior, and thread-creation controls.
 - [Amp pricing](https://ampcode.com/pricing) — Current subscription allowances and general billing model.
 - [Amp Owner's Manual](https://ampcode.com/manual) — Current agent-mode, project, and agent-thread contracts.
+- [What Are Orbs](https://ampcode.com/what-are-orbs) — Current orb capability overview confirming the size table and adding the workspace-default sizing scope (checked 2026-08-16). Workflow and governance follow-ups live in [amp-orb-workflow-and-change-governance.md](amp-orb-workflow-and-change-governance.md).
 - [“Orbs and Jellyware”](https://ampcode.com/podcast/season-02/episode-02) — Dated Amp practitioner report on orb adoption, exhaustive verification, staged production feedback, and fast-changing software.
