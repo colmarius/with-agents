@@ -12,6 +12,7 @@
     "content:guard": "node .agents/scripts/public-content-guard.mjs",
     "youtube:transcript": "node .agents/scripts/save-youtube-transcript.mjs",
     "youtube:library": "node .agents/scripts/youtube-library.mjs",
+    "test": "node --test 'src/**/*.test.ts' '.agents/scripts/*.test.mjs'",
     "lint": "biome lint --write .",
     "lint:fix": "biome check --write ."
   },
