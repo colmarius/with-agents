@@ -182,6 +182,19 @@ export const timestamp = (offsetSeconds) => {
     .join(':');
 };
 
+export const parseEpisodeOption = (value) => {
+  if (value === undefined) {
+    return undefined;
+  }
+  const episode = Number(value);
+  if (!Number.isInteger(episode) || episode <= 0) {
+    throw new Error(
+      `--episode must be a positive integer, got ${JSON.stringify(value)}.`,
+    );
+  }
+  return episode;
+};
+
 export const yamlScalar = (value) => {
   if (typeof value === 'number') {
     return String(value);

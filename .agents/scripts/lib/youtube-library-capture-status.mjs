@@ -455,7 +455,10 @@ const captureOne = async ({
   const detail =
     fetched?.transcriptUnavailable ??
     'Transcript fetch returned no caption text.';
-  if (classification.outcome === 'unavailable') {
+  // Never replace an existing captured transcript's metadata with an
+  // unavailable record: that would create contradictory state (captured and
+  // unavailable) that the --retry filter skips forever.
+  if (classification.outcome === 'unavailable' && !candidate.state?.captured) {
     await writeJsonAtomic(
       videoPathForFile(candidate.videoId, 'metadata.json'),
       {

@@ -2373,3 +2373,58 @@ test('status reports derived playlist and author states, synthesis staleness, an
     /authors\/second-author\.md: stale; missing covered video IDs: third-reviewed/,
   );
 });
+
+test('a failed forced recapture keeps the captured transcript and metadata', async (t) => {
+  const root = await mkdtemp(
+    path.join(os.tmpdir(), 'youtube-capture-force-failure-'),
+  );
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  await writeManifestFixture(paths, catalog.playlists[0], [
+    availableEntry('KeptVideo01', 0),
+  ]);
+  await writeFixture(
+    paths.videoPathForFile('KeptVideo01', 'transcript.md'),
+    'transcript KeptVideo01',
+  );
+  const capturedMetadata = {
+    videoId: 'KeptVideo01',
+    capturedAt: '2026-07-01T00:00:00.000Z',
+    requestedLanguage: 'it',
+    language: 'it-IT',
+    kind: 'auto-generated',
+  };
+  await writeFixture(
+    paths.videoPathForFile('KeptVideo01', 'metadata.json'),
+    capturedMetadata,
+  );
+
+  const result = await captureCatalogVideos({
+    catalog,
+    force: true,
+    playlistSlugs: ['playlist'],
+    ...paths,
+    fetchVideoImpl: async () => unavailableTranscript('LanguageUnavailable'),
+    now: fixedNow,
+  });
+
+  assert.equal(result.queued, 1);
+  assert.equal(result.results[0].outcome, 'unavailable');
+  assert.equal(
+    await readFile(
+      paths.videoPathForFile('KeptVideo01', 'transcript.md'),
+      'utf8',
+    ),
+    'transcript KeptVideo01',
+  );
+  assert.deepEqual(
+    JSON.parse(
+      await readFile(
+        paths.videoPathForFile('KeptVideo01', 'metadata.json'),
+        'utf8',
+      ),
+    ),
+    capturedMetadata,
+  );
+});

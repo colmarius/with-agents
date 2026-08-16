@@ -7,6 +7,7 @@ import {
   filterTranscriptSegmentsByRange,
   normalizeSummarySlug,
   normalizeTranscriptRange,
+  parseEpisodeOption,
   renderTranscriptMarkdown,
   repoRelative,
   rootDir,
@@ -143,7 +144,7 @@ const prepareContext = async (inputUrl, options) => {
   const summarySlug = normalizeSummarySlug(
     options['summary-slug'] ?? `coding-with-agents/${slugify(title)}`,
   );
-  const episode = options.episode ? Number(options.episode) : undefined;
+  const episode = parseEpisodeOption(options.episode);
   const channel = cleanText(
     options.channel ?? options.source ?? metadata.channel,
   );

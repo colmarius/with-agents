@@ -8,6 +8,7 @@ import {
   filterTranscriptSegmentsByRange,
   normalizeTranscriptRange,
   normalizeYoutubeUrl,
+  parseEpisodeOption,
   renderTranscriptMarkdown,
   resolveContainedPath,
   safeContentPath,
@@ -311,4 +312,13 @@ test('surfaces typed caption-fetch failures without changing their reason string
   assert.equal(fetched.kind, 'auto-generated');
   assert.equal(fetched.transcriptAvailable, false);
   assert.deepEqual(fetched.segments, []);
+});
+
+test('parses episode options as positive integers only', () => {
+  assert.equal(parseEpisodeOption(undefined), undefined);
+  assert.equal(parseEpisodeOption('7'), 7);
+
+  for (const invalid of ['abc', '0', '-2', '1.5', '']) {
+    assert.throws(() => parseEpisodeOption(invalid), /positive integer/);
+  }
 });
