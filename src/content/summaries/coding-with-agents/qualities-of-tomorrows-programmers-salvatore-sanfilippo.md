@@ -6,9 +6,9 @@ date: "2026-08-16"
 
 *All English wording below is an editorial translation/paraphrase of Italian auto-generated captions; nothing is a verbatim quotation.*
 
-Salvatore Sanfilippo asks what makes an employed developer useful when someone else sets product direction and agents can generate code faster than people can read it. His answer shifts the role toward selective scope, system understanding, testability, reversible design, deliberate consolidation, and communication.
+Salvatore Sanfilippo asks how developers who do not control product direction can stay valuable when agents generate code faster than people can read it. His answer emphasizes pushing back on low-value scope, maintaining a strong mental model of the system, designing for testability, recognizing hard-to-reverse choices, pausing feature work to consolidate fragile foundations, and communicating architecture.
 
-The talk's strongest advice is to preserve human control over consequential ideas and evidence. Its broad recommendation against routine line-by-line review is a practitioner judgment, not a universal rule: the appropriate review depth still depends on failure impact, available independent checks, and how well the team understands the system. His Redis memory-reduction example is also a first-person report rather than a controlled comparison of human and agent contributions.
+The talk's strongest throughline is that faster implementation does not remove human responsibility for scope, consequential system decisions, or evidence that the system works. Its broad recommendation against routine line-by-line review is a practitioner judgment, not a universal rule: the appropriate review depth still depends on failure impact, available independent checks, and how well the team understands the system. His Redis memory-reduction example is also a first-person report rather than a controlled comparison of human and agent contributions.
 
 ### From Reading Lines to Governing the System
 
@@ -20,7 +20,7 @@ The talk's strongest advice is to preserve human control over consequential idea
 
 - **Design the system to be testable**: Sanfilippo recommends modular boundaries, extensive high-level integration tests, and execution infrastructure that can run checks at different granularities, from fast change-level feedback to full release matrices. He treats disposable test tooling as a good use of cheap code generation ([00:12:12–00:15:10](https://www.youtube.com/watch?v=ONeJRuhsoi4&t=732s)).
 - **Recognize decisions that are expensive to reverse**: Language, framework, core architecture, quality gates, and production schema choices can force rewrites or difficult migrations. He recommends flagging these decisions early, increasing reversibility where possible, and applying more scrutiny before committing ([00:15:10–00:18:05](https://www.youtube.com/watch?v=ONeJRuhsoi4&t=910s)).
-- **Stop feature work when the foundation becomes fragile**: Faster refactoring makes consolidation more feasible, but it does not make it automatic. Developers still need to recognize accumulated debt, argue for a pause, and resist using agent speed as a reason to keep adding complexity ([00:18:05–00:20:13](https://www.youtube.com/watch?v=ONeJRuhsoi4&t=1085s)).
+- **Stop feature work when the foundation becomes fragile**: Sanfilippo argues that agent-assisted refactoring can make consolidation faster, but not automatic. Developers still need to recognize accumulated debt, argue for a pause, and resist using agent speed as a reason to keep adding complexity ([00:18:05–00:20:13](https://www.youtube.com/watch?v=ONeJRuhsoi4&t=1085s)).
 - **Communicate the system model to people as well as agents**: Sanfilippo treats explanation as a core engineering skill: justify rejected features, onboard colleagues into the major components, and use design discussions to transfer the team's shared model rather than leaving each person to reconstruct it from code or an agent ([00:20:13–00:22:20](https://www.youtube.com/watch?v=ONeJRuhsoi4&t=1213s)).
 
 ### How It Connects

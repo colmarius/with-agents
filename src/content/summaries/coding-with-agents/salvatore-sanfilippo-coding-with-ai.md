@@ -22,12 +22,14 @@ The practical thread is expert supervision: agents can generate large implementa
 
 ### Where to start
 
-1. [Implementation effort, software ideas, and coding agents](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=57s) for the playlist's newest argument about what automation changes without trivializing programming.
+1. [Implementation effort, software ideas, and coding agents](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=57s) for the playlist's clearest argument about what automation changes without trivializing programming.
 2. [Check the ideas, not every generated line](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=1s) for its sharpest review argument.
 3. [Why specifications do not replace code](https://www.youtube.com/watch?v=0buzDrn0aIY&t=200s) for a concrete research-to-reference-to-implementation workflow.
 4. [Automatic programming fatigue](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s) for the attention and wellbeing limits of parallel agent work.
 5. [When a convincing model diagnosis is wrong](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s) for reciprocal review and the need for behavioral evidence.
 6. [Testing alternative models on real systems work](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=729s) for the gap between benchmarks, passing tests, and useful implementation.
 7. [When local inference makes sense](https://www.youtube.com/watch?v=IoE3Hi2zpwk&t=252s) for an end-to-end view of quality, prefill, generation, privacy, control, and hardware use.
+
+The August 16 standalone talk [The Qualities of Tomorrow’s Programmers](https://www.youtube.com/watch?v=ONeJRuhsoi4) turns the same shift in developer responsibility into practical advice on scope, system understanding, testability, reversibility, consolidation, and communication.
 
 Read the cross-playlist synthesis in [Behavior Over Explanation](/posts/behavior-over-explanation), or [watch the full Coding with AI playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA).

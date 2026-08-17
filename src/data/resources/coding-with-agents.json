@@ -3,7 +3,7 @@
     "id": 47,
     "primarySection": "reliability",
     "title": "The Qualities of Tomorrow’s Programmers — Salvatore Sanfilippo",
-    "subtitle": "How system models, testability, reversibility, and saying no replace routine line-by-line review",
+    "subtitle": "Beyond line-by-line review: system understanding, testability, reversibility, and scope judgment",
     "url": "https://www.youtube.com/watch?v=ONeJRuhsoi4",
     "description": "In this Italian-language talk, Salvatore Sanfilippo argues that developers remain valuable under agent-driven implementation by deciding what not to build, preserving a mental model of the system, designing for integration testing, flagging hard-to-reverse choices, pausing feature work to consolidate fragile foundations, and communicating architecture. His recommendation to avoid routine line-by-line review is a practitioner judgment, not a risk-independent rule.",
     "type": "video",
