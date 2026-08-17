@@ -1,5 +1,23 @@
 [
   {
+    "id": 46,
+    "primarySection": "reliability",
+    "title": "A Year of Agents — Armin Ronacher, CodeCrafts 2026",
+    "subtitle": "Why agent output can outrun understanding, and how useful friction keeps people responsible",
+    "url": "https://www.youtube.com/watch?v=u_k9cwDNPcM",
+    "description": "Armin Ronacher reflects on a year of building agents and software with agents. He argues that cheap generation can overwhelm review and erode codebase understanding, while code execution, constrained environments, deterministic checks, and targeted human callouts can preserve useful leverage. The incidents, productivity change, and organizational patterns are practitioner reports rather than independently measured results.",
+    "type": "video",
+    "source": "CodeCrafts",
+    "date": "2026-07-16",
+    "duration": "35m",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "safety-permissions",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 45,
     "primarySection": "workflows",
     "title": "AI FOMO, Part 2: Attention, Wealth, and Professional Relevance — Salvatore Sanfilippo",
