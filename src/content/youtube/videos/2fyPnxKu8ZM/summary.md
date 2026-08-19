@@ -21,7 +21,7 @@ Gergely Orosz interviews Addy Osmani about lessons from Osmani's 14 years at Goo
 - **Production signals belong inside the loop**: He argues that telemetry, user feedback, issue reports, analytics, and logs can inform prioritization and implementation, but still leaves room for a person to inspect consequential performance or behavior changes ([01:07:48]-[01:11:49]).
 - **Taste and accountability remain human responsibilities**: Models can check conformance to a specification, but Osmani distinguishes that from deciding whether a product is good. He uses Chromium ownership files to illustrate engineers being accountable for areas they did not write line by line ([01:12:51]-[01:16:03]).
 - **Writing with agents still needs an editorial owner**: Osmani uses research agents to map outside views, compares his handwritten draft with model drafts, and sometimes applies readability passes, but worries about homogenized AI prose and says he reviews every line before publishing ([01:18:00]-[01:27:01]).
-- **Engineering roles may become less narrowly defined**: His career advice is to add product sense, technical evangelism, go-to-market awareness, or other business-facing skills as implementation occupies less of the role ([01:28:05]-[01:30:12]).
+- **Engineering roles may become less narrowly defined**: His career advice is to add product sense, technical evangelism, go-to-market awareness, or other business-facing skills as implementation occupies less of the role ([01:12:51]-[01:13:55], [01:28:05]-[01:30:12]).
 
 ## Practical Implications
 
