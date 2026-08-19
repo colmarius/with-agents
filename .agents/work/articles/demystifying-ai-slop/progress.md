@@ -83,6 +83,12 @@ no longer featured on the homepage.
   main article outside the source appendix. A browser review found one orphaned
   word in the final slide heading; shortening the heading kept it on one line,
   with no clipping, overlap, or horizontal overflow.
+- An independent ultra-mode review approved publication with no blockers. Three
+  optional clarity improvements were applied: the opening message no longer
+  repeats the definition, the Sanfilippo paraphrase note names its subject, and
+  the four questions use a concise table that remains visible on the final slide.
+  Its remaining note concerned a pre-existing duplicate-manifest notice and did
+  not require a change.
 
 ## Remaining
 

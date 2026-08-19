@@ -10,7 +10,7 @@ order: 9
 
 ## AI slop arrives looking finished
 
-> AI slop looks finished while important work is still undone.
+> Polish is not proof that the work is finished.
 
 [Armin Ronacher describes](https://lucumr.pocoo.org/2026/5/24/pi-oss/) a recurring failure in Pi's issue tracker. A user has one useful observation, then asks AI to improve the report. AI adds confident root-cause guesses, fake-minimal reproductions, implementation advice, and long lists of possible errors. Maintainers must recover the original fact from polished fiction. Their coding agents may even treat that fiction as evidence and investigate the wrong path.
 
@@ -52,7 +52,7 @@ Collaboration always transfers work. A requested draft, disposable prototype, or
 
 The right check depends on the medium and the risk. Reading every word is a reasonable baseline for an email or issue report. For software, [the same interview asks](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=681s) what evidence would make unread generated code safe to ship. Tests, comparisons, and trusted review can replace some line-by-line reading. They do not remove the need to prove the result.
 
-Salvatore Sanfilippo gives a positive example. [In an Italian commentary](https://www.youtube.com/watch?v=atFlNxxS5f4&t=482s), he endorses Gross's account and applies it to generated software. That English description is editorial paraphrase, not a quotation. In [“Control the ideas, not the code”](https://antirez.com/news/169), he describes automating two DwarfStar inference implementations while he supplied domain knowledge, design, performance goals, correctness checks, QA, and tests.
+Salvatore Sanfilippo gives a positive example. [In an Italian commentary](https://www.youtube.com/watch?v=atFlNxxS5f4&t=482s), he endorses Gross's account and applies it to generated software. My English description of the video is a paraphrase, not a quotation. In [“Control the ideas, not the code”](https://antirez.com/news/169), he describes automating two DwarfStar inference implementations while he supplied domain knowledge, design, performance goals, correctness checks, QA, and tests.
 
 His point is not “ask for a product and walk away.” Expert attention may be better spent on architecture, product direction, and behavior than on every line. AI can author software without owning it.
 
@@ -72,10 +72,12 @@ Here, the local patch looks done, but the root problem remains. A large diff may
 
 > Ask about purpose, checking, ownership, and hidden work.
 
-1. **Purpose:** What is this for, who is it for, and how finished is it meant to be?
-2. **Checking:** What was checked, and is that enough for the risk?
-3. **Ownership:** Who understands the result, can fix it, and will take responsibility?
-4. **Hidden work:** What is still unfinished, and has the next person agreed to take it on?
+| Question | Ask |
+| --- | --- |
+| **Purpose** | Who is this for, what should it do, and how finished should it be? |
+| **Checking** | What was checked, and was it enough for the risk? |
+| **Ownership** | Who understands it, can fix it, and owns what happens next? |
+| **Hidden work** | What remains, and did the next person agree to take it? |
 
 Do not turn the questions into a score. A rough draft is not slop just because one answer is weak. The warning sign is the combination: it looks ready, no one has supplied enough purpose, checking, or ownership, and the unfinished work is hidden.
 
