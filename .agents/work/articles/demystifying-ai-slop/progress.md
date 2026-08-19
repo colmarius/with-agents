@@ -3,7 +3,7 @@
 ## Current Slice
 
 Implemented `src/content/posts/what-is-ai-slop.md` with the selected title and a
-1,285-word rendered body. The article uses six substantive sections plus a
+1,178-word rendered body. The article uses six substantive sections plus a
 non-slide `Sources used` appendix. It preserves false completion as the
 discriminator, Majors's time-asymmetry qualification, Sanfilippo's affirmative
 ownership case, explicit handoffs, and the authorship/ownership distinction.
@@ -15,7 +15,7 @@ ownership case, explicit handoffs, and the authorship/ownership distinction.
   Sanfilippo sources used by the article. Adjacent citations support the claims;
   the Italian commentary is identified as editorial paraphrase rather than
   quotation.
-- Counted 1,285 rendered body words with a Python regex count after removing
+- Counted 1,178 rendered body words with a Python regex count after removing
   frontmatter and Markdown link destinations.
 - Confirmed both internal article links map to existing post files. A real browser
   loaded each route and showed the expected article title.
@@ -62,6 +62,14 @@ ownership case, explicit handoffs, and the authorship/ownership distinction.
   The remaining source risk is limited to the use of captured auto-caption
   transcripts for the cited video passages; the article labels the Italian
   material as editorial paraphrase.
+- Human readability feedback prompted a full concision pass. The article now uses
+  a two-sentence plain-language definition, explains why the Majors time comparison
+  matters, replaces the invariant terminology with the concrete bad-session-file
+  example, and reduces the final test to four short questions. The body is 107
+  words shorter, and a sentence-length check found no 28-word sentences in the
+  main article outside the source appendix. A browser review found one orphaned
+  word in the final slide heading; shortening the heading kept it on one line,
+  with no clipping, overlap, or horizontal overflow.
 
 ## Remaining
 
