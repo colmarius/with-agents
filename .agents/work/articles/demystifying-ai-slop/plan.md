@@ -72,6 +72,22 @@ usable definition of AI slop without treating all AI-generated output as slop.
   - Notes: Leave the implementation as a reviewable commit. Do not push, deploy,
     close the work item, or remove its folder.
 
+- [x] **Task 4: Feature the article on the homepage**
+  - Scope: `src/pages/index.astro`
+  - Depends on: Task 3
+  - Acceptance:
+    - The primary homepage action and first core-entry card link to
+      `/posts/what-is-ai-slop`.
+    - Core-entry cards follow impact and reader progression rather than publication
+      date: AI slop, assignment brief, series map, durable context, proof, then
+      thread practice.
+    - Agent-Ready Interfaces is removed from the homepage only; its article and
+      full-posts-index entry remain available.
+    - Homepage copy describes AI slop as a core topic and keeps interface design in
+      the broader posts index.
+  - Notes: The homepage is editorial navigation; `/posts` remains the chronological
+    archive.
+
 ## Implementation Notes
 
 Use the proposed six-part progression in `research.md`, but combine sections when
@@ -106,6 +122,8 @@ context, proof, and outcome measurement instead of repeating those workflows.
 - Counterexamples and qualifications prevent an anti-AI or raw-time reading.
 - The article is publishable, source-backed, slide-compatible, and distinct from
   the site's existing workflow articles.
+- The homepage features the article first and keeps specialist interface guidance
+  in the full posts index rather than the core-entry grid.
 - The full repository validation and rendered-route browser check pass.
 
 ## Verification
@@ -117,3 +135,6 @@ context, proof, and outcome measurement instead of repeating those workflows.
 - `git diff --check` reports no whitespace errors.
 - A real-browser check of `/posts/what-is-ai-slop` confirms the selected title,
   section content, practical test, sources appendix, and working internal links.
+- A real-browser check of `/` confirms the primary action and first card open the
+  AI slop article, the six-card impact order is correct, and Agent-Ready Interfaces
+  is absent from the homepage.

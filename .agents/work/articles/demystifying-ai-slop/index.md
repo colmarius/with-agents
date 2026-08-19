@@ -14,13 +14,14 @@ planning and writing session.
 
 ## Summary
 
-The public article is implemented and verified. It defines AI slop as false
-completion in a broken responsibility loop: output is presented as more complete
-than its intent, assurance, and accountable ownership warrant, so unresolved work
-moves downstream as if it had already been done. The draft uses a generated issue
-report as its opening case, distinguishes authorship from medium- and risk-specific
-ownership, and closes with a four-question review test. Coordinator source,
-editorial, automated, and rendered-route review is complete.
+The public article and its homepage placement are implemented and verified. It
+defines AI slop as output that looks finished while clear purpose, enough checking,
+or ownership is missing, leaving unfinished work to the next person. It uses a
+generated issue report as its opening case, distinguishes authorship from
+medium- and risk-specific ownership, and closes with a four-question review test.
+The homepage presents it as the highest-impact entry point; Agent-Ready Interfaces
+remains available in the full posts index. Coordinator source, editorial,
+automated, and rendered-route review is complete.
 
 ## Artifacts
 
