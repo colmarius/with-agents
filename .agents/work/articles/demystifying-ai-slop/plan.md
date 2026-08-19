@@ -13,7 +13,7 @@ usable definition of AI slop without treating all AI-generated output as slop.
 
 ## Tasks
 
-- [ ] **Task 1: Draft the public article**
+- [x] **Task 1: Draft the public article**
   - Scope: `src/content/posts/what-is-ai-slop.md`
   - Depends on: none
   - Acceptance:
@@ -27,12 +27,12 @@ usable definition of AI slop without treating all AI-generated output as slop.
       delayed bill, and the practical test from `research.md`.
     - Each rendered `##` section starts with a concise blockquote slide message,
       and `## Sources used` remains a non-slide appendix.
-    - The article stays roughly 1,500–2,200 words and links to existing posts only
-      where they add a distinct next step.
+    - The article stays roughly 1,000–1,500 words without padding and links to
+      existing posts only where they add a distinct next step.
   - Notes: Start from `research.md`; do not turn the piece into a catalog of AI
     stylistic tells or a general argument against coding agents.
 
-- [ ] **Task 2: Audit the argument and source fidelity**
+- [x] **Task 2: Audit the argument and source fidelity**
   - Scope: `src/content/posts/what-is-ai-slop.md`,
     `.agents/work/articles/demystifying-ai-slop/research.md`
   - Depends on: Task 1
@@ -54,7 +54,7 @@ usable definition of AI slop without treating all AI-generated output as slop.
     Ronacher for the concrete failure, and Sanfilippo for the counterexample.
     Mario Zechner and Dex Horthy may support the delayed software consequences.
 
-- [ ] **Task 3: Record and verify the implementation**
+- [x] **Task 3: Record and verify the implementation**
   - Scope: `.agents/work/articles/demystifying-ai-slop/index.md`,
     `.agents/work/articles/demystifying-ai-slop/plan.md`,
     `.agents/work/articles/demystifying-ai-slop/progress.md`, rendered route
