@@ -7,6 +7,10 @@ Implemented `src/content/posts/what-is-ai-slop.md` with the selected title and a
 non-slide `Sources used` appendix. It preserves false completion as the
 discriminator, Majors's time-asymmetry qualification, Sanfilippo's affirmative
 ownership case, explicit handoffs, and the authorship/ownership distinction.
+The homepage now leads with the article and orders six featured entries by reader
+impact: diagnosis, assignment, landscape, context, proof, then execution practice.
+`Agent-Ready Interfaces` remains published in the complete `/posts` archive but is
+no longer featured on the homepage.
 
 ## Observed Evidence
 
@@ -32,6 +36,15 @@ ownership case, explicit handoffs, and the authorship/ownership distinction.
   planned headings and messages, kept five source entries in the appendix, showed
   one slide at a time, and advanced from slide 1 to 2 with the right-arrow key.
   The inspected final slide showed `6 / 6` without clipping or overlap.
+- Homepage browser check at 1280 px and 390 px: the primary CTA and first card
+  linked to `What Is AI Slop?`; the six cards appeared in the planned order;
+  `Agent-Ready Interfaces` was absent; and neither viewport had horizontal
+  overflow. The inspected desktop screenshot had no clipping or overlap.
+- `/posts` browser check: both `What Is AI Slop?` and `Agent-Ready Interfaces`
+  remained listed in the complete article archive.
+- After the homepage update, `npm run check`, `npm test`, `npm run build`, and
+  `npm run content:guard` passed. Astro reported zero diagnostics, all 82 tests
+  passed, 32 pages were built, and the public-content guard passed.
 - `git diff --check`: clean after the final scoped edits.
 
 ## Coordinator Review

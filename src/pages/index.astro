@@ -5,7 +5,7 @@ import Layout from '@layouts/Layout.astro';
 
 <Layout
   title="With Agents — Practical coding-agent workflows"
-  description="A source-backed field guide to coding-agent workflows: capable co-worker briefs, durable context, proof, agent-ready interfaces, right-sized threads, parallel work, outcome measurement, generated slides, and curated resources."
+  description="A source-backed field guide to coding-agent workflows: recognizing AI slop, writing capable co-worker briefs, preserving durable context, demanding proof, right-sizing threads, controlling parallel work, and measuring outcomes."
   canonicalPath="/"
 >
   <div class="max-w-4xl mx-auto space-y-24">
@@ -18,12 +18,12 @@ import Layout from '@layouts/Layout.astro';
           A practical field guide for agentic coding in 2026.
         </h1>
         <p class="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
-          With Agents is a source-backed series about coding agents: how to brief capable but context-limited agents, preserve repo-local knowledge, demand risk-scaled evidence, design operable interfaces, control parallel work, and measure outcomes.
+          With Agents is a source-backed series about coding agents: how to recognize AI slop, brief capable but context-limited agents, preserve repo-local knowledge, demand risk-scaled evidence, control parallel work, and measure outcomes.
         </p>
       </div>
       <div class="flex flex-col sm:flex-row gap-4">
-        <a href="/posts/capable-coworker-coding-agents" class="inline-flex items-center justify-center rounded-lg bg-gray-900 px-5 py-3 text-white transition-colors duration-200 hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          Start with the co-worker brief
+        <a href="/posts/what-is-ai-slop" class="inline-flex items-center justify-center rounded-lg bg-gray-900 px-5 py-3 text-white transition-colors duration-200 hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          Start with AI slop
         </a>
         <a href="/resources/coding-with-agents" class="inline-flex items-center justify-center rounded-lg border border-gray-300 px-5 py-3 text-gray-800 transition-colors duration-200 hover:border-gray-400 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
           Browse resources
@@ -40,25 +40,30 @@ import Layout from '@layouts/Layout.astro';
           Start by the problem you need to solve.
         </h2>
         <p class="max-w-3xl text-gray-600 leading-relaxed">
-          These primary entry points cover assignment design, the current landscape, durable context, operable interfaces, risk-scaled proof, and useful handoffs. The full posts index also covers tool case studies, parallel work, and outcome measurement.
+          These primary entry points cover AI slop, assignment design, the current landscape, durable context, risk-scaled proof, and useful handoffs. The full posts index also covers interface design, tool case studies, parallel work, and outcome measurement.
         </p>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2">
+        <a href="/posts/what-is-ai-slop" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">AI quality</p>
+          <h3 class="mb-3 text-2xl font-light text-gray-900">What Is AI Slop?</h3>
+          <p class="text-gray-600 leading-relaxed">A plain-language test for generated output that only looks finished: unclear purpose, weak checking, missing ownership, and hidden work.</p>
+        </a>
         <a href="/posts/capable-coworker-coding-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
           <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Assignment brief</p>
           <h3 class="mb-3 text-2xl font-light text-gray-900">Brief the Agent Like a Capable Co-Worker</h3>
           <p class="text-gray-600 leading-relaxed">A practical model for assigning work, supplying missing context, defining verification, and keeping authority and accountability with people.</p>
         </a>
-        <a href="/posts/durable-context-coding-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Context anchor</p>
-          <h3 class="mb-3 text-2xl font-light text-gray-900">Your Repo Is the Memory</h3>
-          <p class="text-gray-600 leading-relaxed">A field guide for keeping coding agents aligned with repo-local truth, shared state, proof, and human judgment.</p>
-        </a>
         <a href="/posts/agentic-coding-2026" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
           <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Series map</p>
           <h3 class="mb-3 text-2xl font-light text-gray-900">Agentic Coding in 2026</h3>
           <p class="text-gray-600 leading-relaxed">A practical field guide to cheap implementation, alignment, proof, useful friction, codebase infrastructure, context hygiene, and factory-era workflows.</p>
+        </a>
+        <a href="/posts/durable-context-coding-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Context anchor</p>
+          <h3 class="mb-3 text-2xl font-light text-gray-900">Your Repo Is the Memory</h3>
+          <p class="text-gray-600 leading-relaxed">A field guide for keeping coding agents aligned with repo-local truth, shared state, proof, and human judgment.</p>
         </a>
         <a href="/posts/make-the-agent-prove-it" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
           <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Proof contract</p>
@@ -69,11 +74,6 @@ import Layout from '@layouts/Layout.astro';
           <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Workflow practice</p>
           <h3 class="mb-3 text-2xl font-light text-gray-900">Right-Sized Threads, Durable State</h3>
           <p class="text-gray-600 leading-relaxed">How to keep connected work together, start fresh at clear responsibility boundaries, and synchronize threads through repository state.</p>
-        </a>
-        <a href="/posts/agent-ready-interfaces" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Interface design</p>
-          <h3 class="mb-3 text-2xl font-light text-gray-900">Agent-Ready Interfaces</h3>
-          <p class="text-gray-600 leading-relaxed">Six contracts for composable operations, inspectable state, faithful feedback, cheap recovery, narrow mutation, and a human return path.</p>
         </a>
       </div>
     </section>
