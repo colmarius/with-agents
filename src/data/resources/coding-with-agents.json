@@ -1,5 +1,18 @@
 [
   {
+    "id": 49,
+    "primarySection": "agent-systems",
+    "title": "Why AI Models Stop Learning — Rich Sutton and Khurram Javed",
+    "subtitle": "Continual learning, the Big World Hypothesis, and a research path beyond frozen model weights",
+    "url": "https://www.youtube.com/watch?v=xH7U7w9Qzlo",
+    "description": "Rich Sutton and Khurram Javed argue that deployed LLMs remain static because their weights do not update from experience. They propose continual learning from the real world, per-weight step-size optimization, Continual Backprop, and self-discovered abstractions as a path toward agents that keep adapting. Their claims about synthetic data, catastrophic forgetting, energy efficiency, and replacing the current LLM paradigm describe Oak Lab’s research agenda, not a system demonstrated at frontier-model scale.",
+    "type": "video",
+    "source": "Sequoia Capital",
+    "date": "2026-08-18",
+    "duration": "54m",
+    "topics": ["context-memory", "models-evaluation"]
+  },
+  {
     "id": 48,
     "primarySection": "workflows",
     "title": "So I tried Matt's skills...",

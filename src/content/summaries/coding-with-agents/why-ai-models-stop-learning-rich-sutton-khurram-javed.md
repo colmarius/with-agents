@@ -1,0 +1,24 @@
+---
+title: "Why AI Models Stop Learning — Rich Sutton and Khurram Javed"
+resourceId: 49
+date: "2026-08-18"
+---
+
+Rich Sutton and Khurram Javed make a research case for agents whose weights keep adapting after deployment. They argue that current LLM assistants can use context and external memory but do not learn in the stronger parametric sense because their weights stay fixed. They connect that limitation to finite training data, catastrophic forgetting, and the inability to discover useful abstractions from experience.
+
+This is Oak Lab’s research thesis, not a demonstrated frontier-scale system. The episode names concrete algorithmic ideas and efficiency targets, but does not present comparative results showing that they can train a modern frontier model or outperform the current LLM stack.
+
+### Key Points Covered
+
+- **The Bitter Lesson favors scalable learning methods, not ignorance of prior knowledge**: Sutton’s short version says to avoid becoming dependent on hand-coded human knowledge and instead pursue search and learning methods that improve with computation. He also stresses that prior knowledge and later learning are compatible; the problem is treating prior knowledge as a substitute for continued learning [00:07:07]-[00:10:48], [00:18:25]-[00:20:28].
+- **The Big World Hypothesis motivates continual learning**: Sutton and Javed argue that the real world is far more complex than any agent or simulator, so an agent must keep updating approximations from its own experience. Their rejection of synthetic data is specifically a rejection of human-designed simulation as a complete replacement for real-world learning, not a claim that simulation has no value [00:11:18]-[00:17:54].
+- **Context changes behavior without changing the model**: They distinguish in-context adaptation and external memory from parametric learning. In their framing, an assistant may remember a user through context, but a deployed model with frozen weights cannot keep building new internal representations in the way its original training did [00:22:28]-[00:25:32].
+- **Biology is inspiration, not an implementation constraint**: Sutton points to animals and human sensorimotor learning as evidence that intelligence learns from ongoing interaction, while explicitly rejecting a requirement that artificial systems reproduce biological mechanisms [00:26:02]-[00:30:36].
+- **Learning abstractions is as important as retaining facts**: The guests argue that current systems still lack a general way to discover abstractions from experience, learn a model of the world around those abstractions, and then plan with that learned model. Known-rule domains such as games and theorem proving do not solve this broader problem [00:32:07]-[00:38:42].
+- **Naive online weight updates cause catastrophic forgetting**: Updating a large model from one stream of new examples can damage earlier knowledge. Javed contrasts that with batch updates aggregated across many users, which reduce interference but do not provide efficient learning for one agent’s particular experience [00:38:42]-[00:40:13].
+- **Their proposed algorithm has two parts**: Per-weight, meta-learned step sizes would let most weights move slowly while a smaller subset adapts quickly. Generate-and-test methods would also inject new random features over time, with backpropagation testing their usefulness. Sutton identifies Continual Backprop as an early version of this approach [00:40:13]-[00:42:18].
+- **The proposal cannot simply be bolted onto a frozen model**: Javed says a model would need to train from scratch with continual-learning algorithms so that it learns both its initial knowledge and how to absorb later experience. That requirement makes the proposal substantially more expensive and uncertain than an adapter added after pre-training [00:42:18]-[00:43:19].
+- **Oak Lab’s ambition is a self-maintaining mind**: The target is one general design instantiated as many minds, each shaped by different experience, spanning low-level interaction and high-level reasoning while keeping its changing knowledge coherent. The trillion-parameter, 20-watt target is a five-to-ten-year projection based on assumed hardware and algorithmic gains, not a current result [00:43:49]-[00:47:24], [00:51:00]-[00:52:31].
+- **The guests see frontier labs as caught in a local minimum**: Their argument is organizational as well as technical: a new paradigm is likely to perform worse before it performs better, while established labs must keep improving products based on the current stack. Sutton nevertheless calls LLMs an unanticipated scientific breakthrough in language and presents continual learning as an extension beyond them, not a denial of their achievement [00:47:55]-[00:50:59].
+
+Full conversation: <https://www.youtube.com/watch?v=xH7U7w9Qzlo>
