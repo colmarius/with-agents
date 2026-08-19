@@ -21,3 +21,9 @@ The examples come from Browne’s projects and agent history. They show his pref
 - **Treat a skill set as maintained tooling**: Browne keeps selected skills in a repository, distributes them across his machines, and wants grouping and enable/disable controls. His closing advice is to read and edit the Markdown, refine it from personal usage, and remove what does not fit [00:21:48]-[00:22:52], [00:35:09]-[00:38:10].
 
 Full video: <https://www.youtube.com/watch?v=0oXOOlqVu5M>
+
+### Related here
+
+- [Durable Context for Coding Agents: Agent Skills are procedures](/posts/durable-context-coding-agents/#agent-skills-are-procedures) — when a repeatable workflow belongs in a skill and how to test whether it helps.
+- [Writing & Using Skills](/resources/coding-with-agents/workflows?summary=coding-with-agents__writing-and-using-agent-skills-nick-nisi-zack-proser) — a hands-on workshop on skill triggers, supporting files, and comparative evaluation.
+- [Matt Pocock’s Agentic Engineering Workflow](/resources/coding-with-agents/workflows?summary=coding-with-agents__matt-pococks-agentic-engineering-workflow) — Pocock’s companion explanation of deliberate invocation, reusable procedures, and human-owned direction.
