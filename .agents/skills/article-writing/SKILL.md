@@ -1,6 +1,6 @@
 ---
 name: article-writing
-description: "Writes, reviews, and refreshes concise, source-backed public posts. Use for drafting, simplifying, and source checking. Triggers on: write article, review article, refresh post, simplify article, source-fidelity review."
+description: "Writes and reviews concise source-backed posts. Use for drafting, refreshing, simplifying, source checks, or draft retirement. Triggers on: write article, review article, refresh, simplify article, source-fidelity review, retire draft, remove draft."
 ---
 
 # Article Writing Skill
@@ -248,7 +248,11 @@ When deletion is explicitly approved:
 - [ ] Active voice, short paragraphs, concrete examples.
 - [ ] No throat-clearing, no manifesto tone, no sales pitch.
 - [ ] Central claim or definition is understandable in one or two plain sentences.
+- [ ] Every sentence has a clear job; concrete behavior replaces avoidable shorthand.
 - [ ] Every heuristic states its purpose and its important limit.
+- [ ] Definition and category articles separate the rule from warning signs and
+      include a limiting case or counterexample when readers could overgeneralize.
+- [ ] Practical-framework labels are short, parallel, and reader-facing.
 - [ ] 4–6 substantive sections plus `Sources` when practical.
 - [ ] Each rendered `##` usually starts with a concise slide-message blockquote.
 - [ ] Slide blockquotes are presentation-friendly: one sentence or 1-3 short
@@ -275,6 +279,8 @@ When deletion is explicitly approved:
 
 - [ ] Every anchor supports the adjacent claim.
 - [ ] Synthesis is labeled as synthesis.
+- [ ] Attribution and source type—quote, paraphrase, translation, or synthesis—are
+      explicit and accurate.
 - [ ] No duplicated source recaps across posts.
 - [ ] No unsupported new product claims.
 - [ ] Load-bearing empirical claims name their design, outcome layer,
