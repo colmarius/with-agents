@@ -1,6 +1,6 @@
 # Demystifying AI Slop
 
-Status: researching
+Status: planned
 Category: articles
 Updated: 2026-08-19
 
@@ -19,26 +19,25 @@ false completion in a broken responsibility loop: output is presented as more
 complete than its intent, assurance, and accountable ownership warrant, so
 unresolved work moves downstream as if it had already been done. The recommended
 article should use a generated issue report as its opening case, then explain why
-ownership and assurance differ by medium and risk. No article draft or
-implementation plan exists yet.
+ownership and assurance differ by medium and risk. The selected title is “What Is
+AI Slop? When Generated Output Only Looks Finished,” and the article is ready for
+implementation from the active plan.
 
 ## Artifacts
 
 - Research: [research.md](research.md)
 - Captured source: [Salvatore Sanfilippo, “The Best Definition of AI Slop Ever Given”](../../../../src/content/transcripts/coding-with-agents/the-best-definition-of-ai-slop-ever-given.md)
 - PRD: none
-- Plan: none
+- Plan: [plan.md](plan.md)
 - Progress: none
 - Decisions: none
 - Handoffs: none
 
 ## Next Action
 
-- Create an article plan from the reviewed concept in [research.md](research.md),
-  choosing the final title before drafting.
+- Implement and verify [plan.md](plan.md), then return the draft for coordinator
+  review.
 
 ## Open Questions
 
-- [ ] Use the recommended “What Is AI Slop? When Generated Output Only Looks
-  Finished” or the alternate “What Is AI Slop? Form Without Intent, Work Without
-  Ownership”?
+- None.

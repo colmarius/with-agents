@@ -26,12 +26,12 @@ consequence.
 
 ## Proposed Article Concept
 
-### Recommended title
+### Selected title
 
 **What Is AI Slop? When Generated Output Only Looks Finished**
 
-Sharper alternate: **What Is AI Slop? Form Without Intent, Work Without
-Ownership**
+The thesis-first alternate, **What Is AI Slop? Form Without Intent, Work Without
+Ownership**, was not selected.
 
 Working description:
 
@@ -357,6 +357,5 @@ notes rather than separate article sections.
 main sources converge on false completion, responsibility, and hidden downstream
 cost, while the Sanfilippo counterexample prevents a simple anti-AI reading.
 
-Open editorial choices rather than research gaps:
-
-- [ ] Choose the final title: explanatory/searchable or thesis-first.
+The editorial title choice is resolved: use the explanatory, searchable title
+**What Is AI Slop? When Generated Output Only Looks Finished**.
