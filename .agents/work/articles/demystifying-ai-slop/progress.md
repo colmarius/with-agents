@@ -3,7 +3,7 @@
 ## Current Slice
 
 Implemented `src/content/posts/what-is-ai-slop.md` with the selected title and a
-1,284-word rendered body. The article uses six substantive sections plus a
+1,285-word rendered body. The article uses six substantive sections plus a
 non-slide `Sources used` appendix. It preserves false completion as the
 discriminator, Majors's time-asymmetry qualification, Sanfilippo's affirmative
 ownership case, explicit handoffs, and the authorship/ownership distinction.
@@ -15,7 +15,7 @@ ownership case, explicit handoffs, and the authorship/ownership distinction.
   Sanfilippo sources used by the article. Adjacent citations support the claims;
   the Italian commentary is identified as editorial paraphrase rather than
   quotation.
-- Counted 1,284 rendered body words with a Python regex count after removing
+- Counted 1,285 rendered body words with a Python regex count after removing
   frontmatter and Markdown link destinations.
 - Confirmed both internal article links map to existing post files. A real browser
   loaded each route and showed the expected article title.
@@ -55,6 +55,13 @@ ownership case, explicit handoffs, and the authorship/ownership distinction.
   produced six structured slides and five appendix sources; ArrowRight advanced
   from slide 1 to 2. Inspected article and slide screenshots had no clipping,
   overlap, or truncation.
+- An independent high-mode review found no blocking correctness or source-fidelity
+  issues and approved publication. Its two optional attribution refinements were
+  applied: the unread-code examples now belong to the interview exchange rather
+  than Majors alone, and the human-slop observation now sits beside Gross's source.
+  The remaining source risk is limited to the use of captured auto-caption
+  transcripts for the cited video passages; the article labels the Italian
+  material as editorial paraphrase.
 
 ## Remaining
 

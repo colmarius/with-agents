@@ -18,13 +18,15 @@ Ronacher asks for less: the command, expected behavior, actual behavior, and exa
 
 **The definition I use here is a synthesis:** AI slop is AI-amplified output presented as more complete than the intent, risk-appropriate judgment, and accountable ownership behind it warrant, so unresolved work moves downstream as if it had already been done.
 
-The definition is not “AI made it.” [Simon Willison's useful baseline](https://simonwillison.net/2024/May/8/slop/) is unwanted, unreviewed AI-generated content “mindlessly generated and thrust upon someone who didn't ask for it.” He explicitly distinguishes slop from AI-generated work in general. Humans can produce slop too; AI mainly makes convincing volume cheaper.
+The definition is not “AI made it.” [Simon Willison's useful baseline](https://simonwillison.net/2024/May/8/slop/) is unwanted, unreviewed AI-generated content “mindlessly generated and thrust upon someone who didn't ask for it.” He explicitly distinguishes slop from AI-generated work in general.
 
 ## Form can now outrun intent
 
 > Generative AI can produce the shape of finished work before anyone has decided what the work is for.
 
 [Caleb Gross separates](https://noperator.dev/posts/you-can-just-say-it/) a creative artifact into intent and material form. Creation normally forces a person to shape form toward a mental target. Generative AI can instead produce “substantial form with minimally applied intent,” even when the person asking has an unclear model of the outcome.
+
+Humans can produce the same failure; AI lowers the entry barrier.
 
 That is why slop can look competent. The issue has headings. The proposal has trade-offs. The code compiles. None of those properties establishes that someone chose the audience, constraints, readiness level, or acceptance bar. The form signals completion before the underlying decisions exist.
 
@@ -44,7 +46,7 @@ Ordinary collaboration transfers work too. A requested draft, a disposable proto
 
 > You do not need to type every line, but someone must understand, verify, and stand behind the result.
 
-The assurance method depends on the medium and the risk. For an email or issue report, reading every word is a reasonable baseline. [In the same interview](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=681s), Majors asks a different question about generated software: what evidence and repeated comparison would make unread code safe to ship? Removing line review removes one source of trust; it does not remove the obligation to rebuild trust elsewhere.
+The assurance method depends on the medium and the risk. For an email or issue report, reading every word is a reasonable baseline. [In the same interview](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=681s), the exchange asks a different question about generated software: what evidence and repeated comparison would make unread code safe to ship? Removing line review removes one source of trust; it does not remove the obligation to rebuild trust elsewhere.
 
 Salvatore Sanfilippo supplies the affirmative counterexample. [In an Italian commentary](https://www.youtube.com/watch?v=atFlNxxS5f4&t=482s), he endorses Gross's intent-and-form account and applies it to generated software. That English description is editorial paraphrase, not a quotation. In his English essay [“Control the ideas, not the code”](https://antirez.com/news/169), he describes DwarfStar as extensively automated implementation guided by domain understanding, design choices, performance goals, correctness comparisons, QA, and tests.
 
