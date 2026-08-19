@@ -46,6 +46,27 @@ export type SummaryRef =
   | { kind: 'collection'; collection: string; entries: ManifestEntry[] }
   | { kind: 'error'; message: string };
 
+export const resolveSummarySlug = (
+  ref: SummaryRef,
+  requestedSlug?: string,
+): string | null => {
+  if (ref.kind === 'error') return null;
+
+  if (ref.kind === 'single') {
+    return requestedSlug === undefined || requestedSlug === ref.slug
+      ? ref.slug
+      : null;
+  }
+
+  if (requestedSlug === undefined) {
+    return ref.entries[0]?.slug ?? null;
+  }
+
+  return ref.entries.some((entry) => entry.slug === requestedSlug)
+    ? requestedSlug
+    : null;
+};
+
 const invalid = (message: string): SummaryRef => ({ kind: 'error', message });
 
 export const resolveSummaryEntries = (

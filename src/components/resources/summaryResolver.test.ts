@@ -3,6 +3,7 @@ import test from 'node:test';
 import {
   type ManifestEntry,
   resolveSummaryEntries,
+  resolveSummarySlug,
 } from './summaryResolver.ts';
 
 const entry = (overrides: Partial<ManifestEntry> = {}): ManifestEntry => ({
@@ -123,4 +124,21 @@ test('rejects ambiguous and malformed grouped summaries', () => {
   for (const entries of invalidCases) {
     assert.equal(resolveSummaryEntries(entries)?.kind, 'error');
   }
+});
+
+test('resolves default and requested summary slugs', () => {
+  const single = resolveSummaryEntries([entry({ slug: 'standalone' })]);
+  assert.ok(single);
+  assert.equal(resolveSummarySlug(single), 'standalone');
+  assert.equal(resolveSummarySlug(single, 'standalone'), 'standalone');
+  assert.equal(resolveSummarySlug(single, 'other'), null);
+
+  const series = resolveSummaryEntries([
+    entry({ slug: 'latest', series: 'show', episode: 2 }),
+    entry({ slug: 'first', series: 'show', episode: 1 }),
+  ]);
+  assert.ok(series);
+  assert.equal(resolveSummarySlug(series), 'latest');
+  assert.equal(resolveSummarySlug(series, 'first'), 'first');
+  assert.equal(resolveSummarySlug(series, 'other'), null);
 });

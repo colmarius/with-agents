@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useIsMdUp } from '../../hooks';
 import type { CodingResource, ResourceTopic } from '../../types/resources';
 import { formatDate, titleCase } from '../../utils';
@@ -16,8 +16,40 @@ import { SummaryModal } from './SummaryModal';
 import {
   type ManifestEntry,
   resolveSummaryEntries,
+  resolveSummarySlug,
   type SummaryRef,
 } from './summaryResolver';
+
+const SUMMARY_QUERY_PARAM = 'summary';
+const SUMMARY_HISTORY_STATE_KEY = 'codingWithAgentsSummary';
+
+type SummaryHistoryMode = 'push' | 'replace';
+
+const getHistoryState = (): Record<string, unknown> =>
+  typeof window.history.state === 'object' && window.history.state !== null
+    ? { ...(window.history.state as Record<string, unknown>) }
+    : {};
+
+const setSummaryUrl = (slug: string, mode: SummaryHistoryMode) => {
+  const url = new URL(window.location.href);
+  url.searchParams.set(SUMMARY_QUERY_PARAM, slug);
+  const state = getHistoryState();
+
+  if (mode === 'push') {
+    state[SUMMARY_HISTORY_STATE_KEY] = true;
+    window.history.pushState(state, '', url);
+  } else {
+    window.history.replaceState(state, '', url);
+  }
+};
+
+const removeSummaryFromUrl = () => {
+  const url = new URL(window.location.href);
+  url.searchParams.delete(SUMMARY_QUERY_PARAM);
+  const state = getHistoryState();
+  delete state[SUMMARY_HISTORY_STATE_KEY];
+  window.history.replaceState(state, '', url);
+};
 
 const TOPIC_OPTIONS = [
   { slug: 'prompting-orchestration', label: 'Prompting & orchestration' },
@@ -56,8 +88,18 @@ type CodingWithAgentsProps = {
   resources: CodingResource[];
 };
 
+const fetchSummary = async (slug: string): Promise<string> => {
+  const response = await fetch(`/api/summaries/${slug}.json`);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch summary: ${response.statusText}`);
+  }
+  const data: SummaryData = await response.json();
+  return data.body;
+};
+
 const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
   const isMdUp = useIsMdUp();
+  const summaryRequestId = useRef(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedResource, setSelectedResource] =
     useState<CodingResource | null>(null);
@@ -100,6 +142,16 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
       );
     },
     [summaryEntriesByResourceId],
+  );
+
+  const resourcesById = useMemo(
+    () => new Map(resources.map((resource) => [resource.id, resource])),
+    [resources],
+  );
+
+  const summaryEntriesBySlug = useMemo(
+    () => new Map(manifest.map((entry) => [entry.slug, entry])),
+    [manifest],
   );
 
   const latestSummaryDates = useMemo(() => {
@@ -224,88 +276,8 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
     }
   };
 
-  const fetchSummary = async (slug: string): Promise<string> => {
-    const response = await fetch(`/api/summaries/${slug}.json`);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch summary: ${response.statusText}`);
-    }
-    const data: SummaryData = await response.json();
-    return data.body;
-  };
-
-  const handleOpenSummary = async (resource: CodingResource) => {
-    setSelectedResource(resource);
-    setModalOpen(true);
-    setIsLoading(true);
-    setError(null);
-    setSummaryContent('');
-    setEpisodes([]);
-    setSelectedSummarySlug(null);
-    setCurrentEpisodeTitle(null);
-    setIsEpisodeListExpanded(false);
-
-    try {
-      const ref = resolveSummaryRef(resource.id);
-      setSummaryRef(ref);
-
-      if (!ref) {
-        setError('No summary available for this resource.');
-        setIsLoading(false);
-        return;
-      }
-
-      if (ref.kind === 'error') {
-        setError(ref.message);
-        return;
-      }
-
-      if (ref.kind === 'single') {
-        const content = await fetchSummary(ref.slug);
-        setSummaryContent(content);
-      } else {
-        setEpisodes(ref.entries);
-
-        if (ref.entries.length > 0) {
-          const firstEpisode = ref.entries[0];
-          setSelectedSummarySlug(firstEpisode.slug);
-          setCurrentEpisodeTitle(firstEpisode.title);
-          const content = await fetchSummary(firstEpisode.slug);
-          setSummaryContent(content);
-        }
-      }
-    } catch (err) {
-      setError(
-        `Failed to load summary: ${err instanceof Error ? err.message : 'Unknown error'}`,
-      );
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleSelectEpisode = async (slug: string) => {
-    setSelectedSummarySlug(slug);
-    setIsEpisodeListExpanded(false);
-    setIsEpisodeLoading(true);
-    setError(null);
-
-    const episode = episodes.find((e) => e.slug === slug);
-    if (episode) {
-      setCurrentEpisodeTitle(episode.title);
-    }
-
-    try {
-      const content = await fetchSummary(slug);
-      setSummaryContent(content);
-    } catch (err) {
-      setError(
-        `Failed to load summary: ${err instanceof Error ? err.message : 'Unknown error'}`,
-      );
-    } finally {
-      setIsEpisodeLoading(false);
-    }
-  };
-
-  const handleCloseSummary = () => {
+  const resetSummary = useCallback(() => {
+    summaryRequestId.current += 1;
     setModalOpen(false);
     setSelectedResource(null);
     setSummaryContent('');
@@ -313,8 +285,167 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
     setSelectedSummarySlug(null);
     setSummaryRef(null);
     setError(null);
+    setIsLoading(false);
     setIsEpisodeListExpanded(false);
+    setIsEpisodeLoading(false);
     setCurrentEpisodeTitle(null);
+  }, []);
+
+  const openSummary = useCallback(
+    (
+      resource: CodingResource,
+      requestedSlug?: string,
+      historyMode: SummaryHistoryMode | null = null,
+    ): boolean => {
+      const ref = resolveSummaryRef(resource.id);
+      const selectedSlug = ref ? resolveSummarySlug(ref, requestedSlug) : null;
+
+      if (requestedSlug !== undefined && selectedSlug === null) {
+        return false;
+      }
+
+      const requestId = summaryRequestId.current + 1;
+      summaryRequestId.current = requestId;
+      setSelectedResource(resource);
+      setModalOpen(true);
+      setIsLoading(true);
+      setError(null);
+      setSummaryContent('');
+      setEpisodes([]);
+      setSelectedSummarySlug(selectedSlug);
+      setCurrentEpisodeTitle(null);
+      setIsEpisodeListExpanded(false);
+      setIsEpisodeLoading(false);
+      setSummaryRef(ref);
+
+      if (!ref) {
+        setError('No summary available for this resource.');
+        setIsLoading(false);
+        return true;
+      }
+
+      if (ref.kind === 'error') {
+        setError(ref.message);
+        setIsLoading(false);
+        return true;
+      }
+
+      if (!selectedSlug) {
+        setError('No summary available for this resource.');
+        setIsLoading(false);
+        return true;
+      }
+
+      if (historyMode) {
+        setSummaryUrl(selectedSlug, historyMode);
+      }
+
+      if (ref.kind === 'series' || ref.kind === 'collection') {
+        setEpisodes(ref.entries);
+        setCurrentEpisodeTitle(
+          ref.entries.find((entry) => entry.slug === selectedSlug)?.title ??
+            null,
+        );
+      }
+
+      void fetchSummary(selectedSlug)
+        .then((content) => {
+          if (summaryRequestId.current === requestId) {
+            setSummaryContent(content);
+          }
+        })
+        .catch((err: unknown) => {
+          if (summaryRequestId.current === requestId) {
+            setError(
+              `Failed to load summary: ${err instanceof Error ? err.message : 'Unknown error'}`,
+            );
+          }
+        })
+        .finally(() => {
+          if (summaryRequestId.current === requestId) {
+            setIsLoading(false);
+          }
+        });
+
+      return true;
+    },
+    [resolveSummaryRef],
+  );
+
+  useEffect(() => {
+    const syncSummaryFromUrl = () => {
+      const requestedSlug = new URL(window.location.href).searchParams.get(
+        SUMMARY_QUERY_PARAM,
+      );
+
+      if (!requestedSlug) {
+        resetSummary();
+        return;
+      }
+
+      const entry = summaryEntriesBySlug.get(requestedSlug);
+      const resource = entry ? resourcesById.get(entry.resourceId) : undefined;
+
+      if (!resource || !openSummary(resource, requestedSlug)) {
+        removeSummaryFromUrl();
+        resetSummary();
+      }
+    };
+
+    syncSummaryFromUrl();
+    window.addEventListener('popstate', syncSummaryFromUrl);
+    return () => window.removeEventListener('popstate', syncSummaryFromUrl);
+  }, [openSummary, resetSummary, resourcesById, summaryEntriesBySlug]);
+
+  const handleOpenSummary = (resource: CodingResource) => {
+    openSummary(resource, undefined, 'push');
+  };
+
+  const handleSelectEpisode = (slug: string) => {
+    const episode = episodes.find((entry) => entry.slug === slug);
+    if (!episode) return;
+
+    const requestId = summaryRequestId.current + 1;
+    summaryRequestId.current = requestId;
+    setSelectedSummarySlug(slug);
+    setIsEpisodeListExpanded(false);
+    setIsEpisodeLoading(true);
+    setError(null);
+    setCurrentEpisodeTitle(episode.title);
+    setSummaryUrl(slug, 'replace');
+
+    void fetchSummary(slug)
+      .then((content) => {
+        if (summaryRequestId.current === requestId) {
+          setSummaryContent(content);
+        }
+      })
+      .catch((err: unknown) => {
+        if (summaryRequestId.current === requestId) {
+          setError(
+            `Failed to load summary: ${err instanceof Error ? err.message : 'Unknown error'}`,
+          );
+        }
+      })
+      .finally(() => {
+        if (summaryRequestId.current === requestId) {
+          setIsEpisodeLoading(false);
+        }
+      });
+  };
+
+  const handleCloseSummary = () => {
+    const url = new URL(window.location.href);
+    const shouldGoBack =
+      url.searchParams.has(SUMMARY_QUERY_PARAM) &&
+      window.history.state?.[SUMMARY_HISTORY_STATE_KEY] === true;
+
+    resetSummary();
+    if (shouldGoBack) {
+      window.history.back();
+    } else {
+      removeSummaryFromUrl();
+    }
   };
 
   const summaryAvailability = useMemo(() => {
