@@ -1,6 +1,6 @@
 ---
 title: 'What Is AI Slop? When Generated Output Only Looks Finished'
-description: 'AI slop looks finished even though something important is missing: a clear purpose, enough checking, or someone who owns the result.'
+description: 'AI slop looks finished even though something important is missing: a clear purpose, evidence that it works, or someone who owns the result.'
 pubDate: 2026-08-19
 tags: ['AI Agents', 'Review', 'Engineering Leadership', 'AI Slop']
 draft: false
@@ -18,7 +18,7 @@ Ronacher asks for less: what you ran, what you expected, what happened, and the 
 
 I use this working definition, based on the sources below.
 
-**AI slop looks finished even though something important is missing: a clear purpose, enough checking, or someone who owns the result. The unfinished work is left to the next person.**
+**AI slop looks finished even though something important is missing: a clear purpose, evidence that it works, or someone who owns the result. The unfinished work is left to the next person.**
 
 This is false completion: the output looks done, but the work needed to trust it is not.
 
@@ -34,7 +34,7 @@ Humans can produce the same failure; AI lowers the entry barrier.
 
 That is why slop can look competent. The issue has headings. The proposal has trade-offs. The code compiles. But those signals do not tell us who the work is for, what constraints matter, or whether it is ready.
 
-A clear purpose does not guarantee good work. But without one, the recipient cannot know what the work should do. Without checking, they cannot know whether it succeeded. Slop looks finished before those questions have been answered.
+A clear purpose does not guarantee good work. But without one, the recipient cannot know what the work should do. Without evidence, they cannot know whether it succeeded. Slop looks finished before those questions have been answered.
 
 ## The missing work moves to the recipient
 
@@ -42,7 +42,7 @@ A clear purpose does not guarantee good work. But without one, the recipient can
 
 [Charity Majors offers a simple rule](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=2095s) for communication: do not send people material you have not read. She adds that it is probably slop when the recipient will spend longer reading it than you spent making it. The sender saves attention by spending the recipient's.
 
-Her rule of thumb is useful, but time alone does not decide it. Expert work can be quick to produce and slow to verify. Ask instead: did the sender check the result enough for what they claim, or leave the reading, fact-checking, and cleanup to someone else?
+Her rule of thumb is useful, but time alone does not decide it. Expert work can be quick to produce and slow to verify. Ask instead: did the sender provide enough evidence for what they claim, or leave the reading, fact-checking, and cleanup to someone else?
 
 Collaboration always transfers work. A requested draft, disposable prototype, or partial implementation is not slop just because someone else must continue it. A good handoff says what is unfinished and confirms that the next person agrees. Slop hides that work behind a finished surface.
 
@@ -50,7 +50,7 @@ Collaboration always transfers work. A requested draft, disposable prototype, or
 
 > AI can write the words or code; a person still has to own the result.
 
-The right check depends on the medium and the risk. Reading every word is a reasonable baseline for an email or issue report. For software, [the same interview asks](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=681s) what evidence would make unread generated code safe to ship. Tests, comparisons, and trusted review can replace some line-by-line reading. They do not remove the need to prove the result.
+The evidence needed depends on the medium and the risk. Reading every word is a reasonable baseline for an email or issue report. For software, [the same interview asks](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=681s) what evidence would make unread generated code safe to ship. Tests, comparisons, and trusted review can replace some line-by-line reading. They do not remove the need to prove the result.
 
 Salvatore Sanfilippo gives a positive example. [In an Italian commentary](https://www.youtube.com/watch?v=atFlNxxS5f4&t=482s), he endorses Gross's account and applies it to generated software. My English description of the video is a paraphrase, not a quotation. In [“Control the ideas, not the code”](https://antirez.com/news/169), he describes automating two DwarfStar inference implementations while he supplied domain knowledge, design, performance goals, correctness checks, QA, and tests.
 
@@ -64,24 +64,24 @@ Owning the result means you can explain how it works and defend the important ch
 
 Ronacher's issue report creates an immediate review cost. Code can send the bill later. An agent might see a malformed session file and add a tolerant reader, fallback, migration, and debug path. Each change looks reasonable. But the real fix may be to stop the system from writing bad session files in the first place.
 
-Here, the local patch looks done, but the root problem remains. A large diff may pass its tests while leaving product decisions and maintenance unresolved. It is not slop because it is large or generated. It becomes slop when it is presented as merge-ready without anyone owning the missing decisions and checks.
+Here, the local patch looks done, but the root problem remains. A large diff may pass its tests while leaving product decisions and maintenance unresolved. It is not slop because it is large or generated. It becomes slop when it is presented as merge-ready while decisions remain unowned and evidence is missing.
 
 [Your Repo Is the Memory](/posts/durable-context-coding-agents) shows how to preserve purpose and constraints before generation. [Make the Agent Prove It](/posts/make-the-agent-prove-it) shows how to choose evidence. The pattern is simple: the output looks done, responsibility is missing, and the next person gets the work.
 
 ## Four questions before you pass it on
 
-> Ask about purpose, checking, ownership, and hidden work.
+> Ask about purpose, evidence, ownership, and hidden work.
 
 | Question | Ask |
 | --- | --- |
 | **Purpose** | Who is this for, what should it do, and how finished should it be? |
-| **Checking** | What was checked, and was it enough for the risk? |
+| **Evidence** | What shows that this works, and is that enough for the risk? |
 | **Ownership** | Who understands it, can fix it, and owns what happens next? |
 | **Hidden work** | What remains, and did the next person agree to take it? |
 
-Do not turn the questions into a score. A rough draft is not slop just because one answer is weak. The warning sign is the combination: it looks ready, no one has supplied enough purpose, checking, or ownership, and the unfinished work is hidden.
+Do not turn the questions into a score. A rough draft is not slop just because one answer is weak. The warning sign is the combination: it looks ready, no one has supplied enough purpose, evidence, or ownership, and the unfinished work is hidden.
 
-Do not ask only whether AI made it. Ask what it is for, how it was checked, who owns it, and what work is still hidden.
+Do not ask only whether AI made it. Ask what it is for, what evidence supports it, who owns it, and what work is still hidden.
 
 ## Sources used
 

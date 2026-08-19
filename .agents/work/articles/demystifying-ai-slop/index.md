@@ -15,7 +15,7 @@ planning and writing session.
 ## Summary
 
 The public article and its homepage placement are implemented and verified. It
-defines AI slop as output that looks finished while clear purpose, enough checking,
+defines AI slop as output that looks finished while clear purpose, enough evidence,
 or ownership is missing, leaving unfinished work to the next person. It uses a
 generated issue report as its opening case, distinguishes authorship from
 medium- and risk-specific ownership, and closes with a four-question review test.
