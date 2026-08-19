@@ -1,6 +1,6 @@
 # Research: Amp Orb Sizing
 
-**Date:** 2026-08-12
+**Date:** 2026-08-19
 **Status:** complete
 **Question:** What do Amp's current orb controls and recent practitioner reports establish, and how should they change durable guidance about remote agent execution?
 
@@ -11,7 +11,8 @@ Treat agent mode and orb size as independent controls. Choose model capability f
 ## Key Findings
 
 - Amp introduced five `a1` orb sizes from 1 CPU and 2 GB of memory through 16 CPUs and 32 GB, with a new 4-CPU, 8-GB `a1.medium` tier.
-- A project owns the default orb size, while individual threads can use another size. The CLI supports `amp -ox "..." --orb-size <size>`, and an agent can be asked to create a thread in a smaller or larger orb. The current [What Are Orbs](https://ampcode.com/what-are-orbs) overview (checked 2026-08-16) adds a third scope: a workspace default for new projects. It repeats the same `a1` size and rate table.
+- The current Orbs manual and What Are Orbs page list 60 GB disks for every `a1` size. This replaces the 40 GB capacity recorded in the 2026-08-12 version of this note; neither current page dates the disk increase.
+- A project owns the default orb size, while individual threads can use another size. The CLI supports `amp -ox "..." --orb-size <size>`, and an agent can be asked to create a thread in a smaller or larger orb. The current [What Are Orbs](https://ampcode.com/what-are-orbs) overview (checked 2026-08-19) adds a third scope: a workspace default for new projects. It repeats the same `a1` size and rate table.
 - Current orbs are billed by the minute, cost nothing while paused, and auto-pause after five minutes without activity. The main pricing page separately packages orb-hour allowances with Amp subscriptions.
 - Amp says the new `a1.medium` is 50% cheaper and a better fit for most projects than the former `a0.medium`. That is a dated vendor recommendation, not a workload benchmark; projects still need to validate setup time, peak memory, test parallelism, and build behavior on their own codebase.
 - Amp also reports faster startup, especially when another team member recently created an orb in the same project. The announcement provides no benchmark boundary, so use this as dated product direction rather than a transferable performance estimate.
@@ -20,19 +21,19 @@ Treat agent mode and orb size as independent controls. Choose model capability f
 
 ## Current Size And Billing Reference
 
-Verified against the Orbs manual on 2026-08-12:
+Verified against the Orbs manual and What Are Orbs page on 2026-08-19:
 
 | Size | CPU | Memory | Disk | Individual/team rate |
 | --- | ---: | ---: | ---: | ---: |
-| `a1.tiny` | 1 | 2 GB | 40 GB | $0.08/hour |
-| `a1.small` | 2 | 4 GB | 40 GB | $0.17/hour |
-| `a1.medium` | 4 | 8 GB | 40 GB | $0.33/hour |
-| `a1.large` | 8 | 16 GB | 40 GB | $0.66/hour |
-| `a1.xxlarge` | 16 | 32 GB | 40 GB | $1.32/hour |
+| `a1.tiny` | 1 | 2 GB | 60 GB | $0.08/hour |
+| `a1.small` | 2 | 4 GB | 60 GB | $0.17/hour |
+| `a1.medium` | 4 | 8 GB | 60 GB | $0.33/hour |
+| `a1.large` | 8 | 16 GB | 60 GB | $0.66/hour |
+| `a1.xxlarge` | 16 | 32 GB | 60 GB | $1.32/hour |
 
 The Orbs manual says each project can choose its default size and names `a1.small` as the default for Megawatt personal projects; it does not name one universal default for other projects. Enterprise workspace rates are 50% higher. These defaults and rates are volatile product details; recheck the manual before using them for a budget.
 
-The pricing page currently includes 750 hours of small orbs with Megawatt and 1,000 hours of xxlarge orbs with Gigawatt. Subscription allowances and metered rates answer different budgeting questions and should not be conflated.
+The pricing page currently includes 750 hours of orbs with Megawatt and 1,000 hours of xxlarge orbs with Gigawatt. It no longer limits the Megawatt wording to small orbs. Subscription allowances and metered rates answer different budgeting questions and should not be conflated.
 
 ## Durable Operating Contract
 
@@ -78,5 +79,5 @@ The episode's highest-risk example is also its most useful boundary: an attachme
 - [Amp Orbs manual](https://ampcode.com/manual/orbs) — Canonical current sizes, rates, defaults, billing behavior, and thread-creation controls.
 - [Amp pricing](https://ampcode.com/pricing) — Current subscription allowances and general billing model.
 - [Amp Owner's Manual](https://ampcode.com/manual) — Current agent-mode, project, and agent-thread contracts.
-- [What Are Orbs](https://ampcode.com/what-are-orbs) — Current orb capability overview confirming the size table and adding the workspace-default sizing scope (checked 2026-08-16). Workflow and governance follow-ups live in [amp-orb-workflow-and-change-governance.md](amp-orb-workflow-and-change-governance.md).
+- [What Are Orbs](https://ampcode.com/what-are-orbs) — Current orb capability overview confirming the 60 GB size table and the workspace-default sizing scope (checked 2026-08-19). Workflow and governance follow-ups live in [amp-orb-workflow-and-change-governance.md](amp-orb-workflow-and-change-governance.md).
 - [“Orbs and Jellyware”](https://ampcode.com/podcast/season-02/episode-02) — Dated Amp practitioner report on orb adoption, exhaustive verification, staged production feedback, and fast-changing software.
