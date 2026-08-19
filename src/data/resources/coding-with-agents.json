@@ -1,5 +1,23 @@
 [
   {
+    "id": 48,
+    "primarySection": "workflows",
+    "title": "So I tried Matt's skills...",
+    "subtitle": "Theo Browne on auditing, testing, and adapting agent skills instead of blindly installing them",
+    "url": "https://www.youtube.com/watch?v=0oXOOlqVu5M",
+    "description": "After a week using skills from Matt Pocock and Lauren Tan's pstack, Theo Browne shows how he audits collections against his own agent history, treats descriptions as routing triggers, tests text-only skills before installation, and keeps only the workflows that fit. Examples cover clearer agent writing, design interviews, explicit invocation, blast-radius checks, decision trails, and cross-machine skill management. The results are personal demonstrations rather than controlled evaluations.",
+    "type": "video",
+    "source": "Theo - t3.gg",
+    "date": "2026-08-18",
+    "duration": "38m",
+    "topics": [
+      "prompting-orchestration",
+      "context-memory",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 47,
     "primarySection": "reliability",
     "title": "The Qualities of Tomorrow’s Programmers — Salvatore Sanfilippo",
