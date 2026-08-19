@@ -378,7 +378,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
         SUMMARY_QUERY_PARAM,
       );
 
-      if (!requestedSlug) {
+      if (requestedSlug === null) {
         resetSummary();
         return;
       }
