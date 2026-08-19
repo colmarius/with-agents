@@ -78,7 +78,8 @@ no longer featured on the homepage.
 - Human readability feedback prompted a full concision pass. The article now uses
   a two-sentence plain-language definition, explains why the Majors time comparison
   matters, replaces the invariant terminology with the concrete bad-session-file
-  example, and reduces the final test to four short questions. The body is 107
+  example, and reduces the final test to four short questions. It uses `Evidence`
+  rather than `Checking` to focus on support for the readiness claim. The body is 107
   words shorter, and a sentence-length check found no 28-word sentences in the
   main article outside the source appendix. A browser review found one orphaned
   word in the final slide heading; shortening the heading kept it on one line,
