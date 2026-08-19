@@ -2,7 +2,7 @@
 title: 'Behavior Over Explanation: Salvatore Sanfilippo on AI and Coding Agents'
 description: 'An editorial synthesis of Salvatore Sanfilippo’s Italian videos: treat explanations as hypotheses, use interventions and representative behavior to test them, and protect the attention needed to judge the result.'
 pubDate: 2026-07-27
-updatedDate: 2026-08-15
+updatedDate: 2026-08-19
 tags: ['AI Agents', 'Model Evaluation', 'Review']
 draft: false
 unlisted: true
@@ -63,7 +63,7 @@ None of these sources defines a universal boundary. Use behavior as the acceptan
 
 Sanfilippo's February 17 account is experiential, not a measured productivity result: asynchronous agent work tempted him to open another project during each wait, fragmenting his attention ([00:04:03–00:06:16](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s)). His response was to keep one main project when understanding mattered and reserve unattended work for overnight optimizations or bug hunts whose fixes he then checked ([00:06:16–00:09:48](https://www.youtube.com/watch?v=id9QG-mQSOo&t=376s)).
 
-The implication here is epistemic: concurrency becomes unsafe when nobody retains enough context to design or judge the behavioral check. [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) owns the operating policy.
+The implication here is epistemic: concurrency becomes unsafe when nobody retains enough context to design or judge the behavioral check.
 
 Labels suggest and explanations guide, but only a representative observation can reject the wrong story. Coding agents make that discipline more important because they can produce plausible code—and plausible accounts of that code—faster than a reviewer can inspect either one.
 

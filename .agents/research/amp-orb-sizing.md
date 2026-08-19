@@ -16,7 +16,7 @@ Treat agent mode and orb size as independent controls. Choose model capability f
 - Amp says the new `a1.medium` is 50% cheaper and a better fit for most projects than the former `a0.medium`. That is a dated vendor recommendation, not a workload benchmark; projects still need to validate setup time, peak memory, test parallelism, and build behavior on their own codebase.
 - Amp also reports faster startup, especially when another team member recently created an orb in the same project. The announcement provides no benchmark boundary, so use this as dated product direction rather than a transferable performance estimate.
 - In “Orbs and Jellyware,” Amp's founders report that near-zero startup friction, isolation, Portals, OIDC, and improved reliability changed their own team's orb adoption. This is a dated vendor practitioner report, not a controlled study or a sizing benchmark. It strengthens the case for measuring setup friction and usable feedback paths, but does not determine which CPU or memory tier a repository needs.
-- Smaller fan-out workers can lower compute cost, but compute availability does not make overlapping mutation safe or create review capacity. Apply a parallel-work admission policy first, then size each admitted worker.
+- Smaller fan-out workers can lower compute cost, but compute availability does not make overlapping mutation safe or create review capacity. Confirm that work is independent and reviewable before adding workers, then size each worker.
 
 ## Current Size And Billing Reference
 
@@ -49,7 +49,6 @@ A larger orb changes available CPU and memory, not the agent's reasoning capabil
 ## Content Incorporation
 
 - **Incorporate:** `src/content/posts/amp-factory-era-case-study.md`. Orb sizing directly strengthens its task-sizing and cost-governance thesis. “Orbs and Jellyware” also adds concrete, dated examples of using remote runtime for exhaustive matrices, demo artifacts, frame-level UI inspection, staged monitoring, and rollback rather than merely producing more changes.
-- **Research only:** `src/content/posts/parallel-agents-need-an-admission-policy.md`. The announcement's smaller fan-out example is compatible with the article, but it does not change the article's load-bearing constraint: downstream integration capacity. Product-specific execution controls already belong in the Amp case study.
 - **Research only:** `src/content/posts/agentic-coding-2026.md` and `src/content/posts/make-the-agent-prove-it.md`. The episode supports their feedback-loop and evidence arguments, but both already use stronger independent sources. Adding another Amp recap would duplicate support rather than change either thesis.
 - **Ignore for now:** the remaining public posts. None depends on Amp's orb lineup, rates, per-thread size control, or the episode's “jellyware” framing.
 

@@ -2,7 +2,7 @@
 title: 'Amp as a Factory-Era Coding-Agent Case Study'
 description: 'A source-backed Amp case study for task sizing, delegation, remote and event-driven execution, identity, lifecycle controls, cost governance, proof loops, and review.'
 pubDate: 2026-06-28
-updatedDate: 2026-08-16
+updatedDate: 2026-08-19
 tags: ['AI Agents', 'Amp', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false
@@ -19,7 +19,7 @@ Amp detail → reusable contract → workflow habit
 
 Amp is the concrete case study. The reusable subject is how a coding-agent system sizes work, delegates it, reconstructs context, runs elsewhere, proves output, and controls recurring execution. The exact Amp assertions below were checked on 2026-08-16 against the current [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [Models page](https://ampcode.com/models), [Plugin API](https://ampcode.com/manual/plugin-api), [Pricing page](https://ampcode.com/pricing), and [Chronicle](https://ampcode.com/chronicle).
 
-[Agentic Coding in 2026](/posts/agentic-coding-2026) owns the product-agnostic map. Use [Your Repo Is the Memory](/posts/durable-context-coding-agents) and [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) for repo-local context, [Make the Agent Prove It](/posts/make-the-agent-prove-it) for the proof ladder, and [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) for deciding whether work should fan out at all.
+[Agentic Coding in 2026](/posts/agentic-coding-2026) owns the product-agnostic map. Use [Your Repo Is the Memory](/posts/durable-context-coding-agents) and [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) for repo-local context, and [Make the Agent Prove It](/posts/make-the-agent-prove-it) for the proof ladder.
 
 ## Set reasoning and compute independently
 

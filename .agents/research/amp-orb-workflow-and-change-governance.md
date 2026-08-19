@@ -25,7 +25,6 @@ Treat the five sources as two clusters. The time capsules and the orbs overview 
   - Time Capsules 1 and 3 → proof section: desk-level examples of agent-led verification, portal review comments, and review depth scaled to blast radius.
   - Time Capsule 2 → delegation section: addressable threads on runners when the environment (certificates, devices) binds execution placement.
   - What Are Orbs → sizing section (workspace default for new projects) and sources list as the current orb capability overview.
-- **Research-only:** `src/content/posts/parallel-agents-need-an-admission-policy.md`. Time Capsule 1's high parallelism ("very overwhelming") is compatible color, but the article's load-bearing constraint remains downstream integration capacity, already supported.
 - **Research-only:** `src/content/posts/make-the-agent-prove-it.md` and `src/content/posts/agentic-coding-2026.md`. The capsules' verification examples duplicate support those posts already have from stronger independent sources; the Amp recap belongs in the case study.
 - **Research-only:** `src/content/posts/right-sized-threads-durable-state.md`. Nothing in the five sources changes its thread-sizing or synchronization claims.
 - **No resource-manifest entries.** The time capsules and notes are dated vendor workflow snapshots used as inline citations; the manifest's "Raising an Agent Season 2" entry already covers Amp's practitioner series. Revisit only if the Time Capsules series grows into a durable curated resource.

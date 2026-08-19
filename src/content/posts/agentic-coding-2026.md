@@ -2,7 +2,7 @@
 title: 'Agentic Coding in 2026: A Practical Field Guide'
 description: 'A source-backed map of agentic-coding workflows: alignment, proof, judgment boundaries, codebase infrastructure, context hygiene, and parallel execution.'
 pubDate: 2026-06-28
-updatedDate: 2026-08-15
+updatedDate: 2026-08-19
 tags: ['AI Agents', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false
@@ -142,7 +142,6 @@ So the factory-era checklist is not "launch more agents." It is:
 | The agent cannot operate or verify your system cleanly | [Agent-Ready Interfaces](/posts/agent-ready-interfaces) |
 | Review needs stronger evidence, or an explanation disagrees with behavior | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
 | Work needs a clearer responsibility boundary | [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) |
-| Parallel work is creating merge or review debt | [Parallel Agents Need an Admission Policy](/posts/parallel-agents-need-an-admission-policy) |
 | Agent activity is rising, but delivery value is unclear | [Measure Outcomes, Not Agent Activity](/posts/measure-outcomes-not-agent-activity) |
 | You want the talks behind the series | [The coding-with-agents resource hub](/resources/coding-with-agents) |
 
