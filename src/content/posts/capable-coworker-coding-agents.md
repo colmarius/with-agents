@@ -1,265 +1,211 @@
 ---
 title: 'Brief the Agent Like a Capable Co-Worker'
-description: 'A coding agent is capable but lacks project context. Give it a clear brief, useful starting points, verification, and authority limits.'
+description: 'A practical assignment model for giving coding agents purpose, context, acceptance criteria, authority boundaries, and human ownership.'
 pubDate: 2026-08-14
-updatedDate: 2026-08-15
+updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Prompting', 'Review']
 draft: false
 unlisted: false
 order: 11
 ---
 
-## A capable co-worker without your context
+## Start with the missing context
 
 > Capability is not project context.
 
-**Co-worker** here is an assignment metaphor, not a job description. A coding
-agent pairs a model with tools that let it work in a repository: form a
-hypothesis, edit files, run the software, observe the result, try again. That
-means I can assign an outcome instead of prescribing every edit.
+A coding agent can inspect a repository, edit files, run the software, observe
+the result, and adjust. That makes it possible to assign an outcome instead of
+prescribing every edit.
 
-But a capable agent still lacks the local context a colleague gains by working
-on the product: what the user needs, why a constraint exists, which trade-off
-the team rejected, where the best example lives, and what proof would make the
-change safe to accept.
+It still lacks what a colleague learns by working on the product: who needs the
+change, why a constraint exists, which trade-off the team rejected, where the
+best example lives, and what proof would make the result safe to accept.
 
-Thorsten Ball, a co-creator of the Amp coding agent, asks us to imagine a
-senior engineer dropped into an unfamiliar room with a repository, terminal,
-browser, and note. The engineer is capable;
-the missing information is local. A model may also fill in the gaps confidently
-where a person might challenge the request
+Thorsten Ball asks us to imagine an expert engineer dropped into a room with a
+repository, terminal, browser, and a note that says only “fix the bug with the
+upload.” The engineer is capable; the missing information is local. A model may
+also fill gaps confidently where a person might challenge the request
 ([00:05:02–00:08:50](https://www.youtube.com/watch?v=HegqGzD-kvc&t=302s)).
 
-So the useful question is not “What magic prompt makes the model smarter?” It is
-**“What would a capable co-worker need to know to carry this task?”**
+The useful question is therefore: **what does this agent need to know to carry
+this assignment?** “Co-worker” is an assignment metaphor, not a transfer of
+authority or responsibility.
 
-I use **operational agency** for one narrow capability: the agent can choose
-intermediate steps, observe feedback, and adjust. Given a bug, it can find the
-code, reproduce the failure, try an edit, run a check, and revise. That is
-capability within tools and boundaries people supply. It says nothing about
-consciousness, employment, authority, or responsibility.
+## Use a five-part assignment
 
-Salvatore Sanfilippo, the creator of Redis, similarly treats colleague,
-employee, collaborator, or mentor as whichever interaction frame helps,
-grounded in domain expertise and clear direction
-([00:02:08–00:06:24](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=128s)).
-The metaphor is useful when it improves the assignment, not when it substitutes
-for evidence.
-
-One caveat on scope: the evidence in this post comes from experienced
-developers using current coding agents. It does not show that every task, team,
-or novice can use the same delegation boundary.
-
-## Brief the job, not every edit
-
-> Give the co-worker the missing assignment context, then leave room to work.
+> State the purpose, context, acceptance criteria, authority boundary, and human owner.
 
 ```text
-Outcome:
-  What should be observably different?
-
-Task and scope:
-  What work is assigned?
-  Which surfaces are in scope?
-
-Relevant context:
-  Which user need, product rule,
-  or recent decision matters?
-
-Constraints and non-goals:
-  What must stay true?
-  What should not be built?
-
-Starting points:
-  Which code, docs, or examples help?
-  What should each establish?
-
-Hypotheses to investigate:
-  Which suspected causes or
-  alternatives are worth testing?
-
-Verification:
-  What evidence shows the result
-  or exposes a wrong approach?
-
-Authority and stop conditions:
-  Which actions need approval?
-  When should the agent ask?
-
-Return evidence:
-  What changed? What did checks show?
-  What differed from the brief?
-  What is uncertain?
+purpose · context · acceptance
+authority boundary · human owner
 ```
 
-This is a thinking checklist, not a form for every typo. Match the brief to the
-missing information. A small, reversible task in a clear repository may need one
-sentence. A cross-cutting or consequential task needs more.
+Each part closes a different gap:
 
-Two parts deserve extra care. For each starting point, say what it should
-establish—navigation, expected behavior, or an implementation pattern—because
-existing code is not automatically authoritative. And hypotheses should give
-the investigation direction without dictating its answer.
+| Part | Question to answer |
+| --- | --- |
+| **Purpose** | Why does this matter, and what should be observably different? |
+| **Context** | Which user need, project facts, constraints, references, and non-goals matter? |
+| **Acceptance criteria** | What behavior and evidence would make the result acceptable? |
+| **Authority boundary** | What may the agent do, what needs approval, and when must it stop? |
+| **Human accountability** | Who decides whether the result is right and accepts its consequences? |
 
-Quinn Slack, an Amp co-founder, describes the same bottleneck as getting what
-the human wants and knows into the agent's context, then pairing that
-information with ground truth
+This is a thinking checklist, not a form for every typo. A small, reversible
+task in a clear repository may need one sentence. A cross-cutting or
+consequential task needs more. Brief the job, then leave the agent room to
+investigate how to do it.
+
+```text
+Purpose and outcome:
+  Who needs this, why now,
+  and what should change?
+
+Task and scope:
+  What work and surfaces
+  are in scope?
+
+Context:
+  Which constraints, non-goals,
+  and decisions matter?
+  Where should the investigation
+  start, and why?
+  Which hypotheses are worth
+  testing?
+
+Acceptance criteria:
+  Which observable behavior
+  must hold?
+  Which checks or artifacts
+  should prove it?
+
+Authority boundary:
+  What may the agent change
+  or execute?
+  Which actions need approval?
+  When should it stop?
+
+Human owner:
+  Who makes product, design,
+  risk, and acceptance decisions?
+
+Return:
+  What changed?
+  What did the checks show?
+  What differed from the brief?
+  What remains uncertain?
+```
+
+Quinn Slack describes the bottleneck as getting what the human wants and knows
+into the agent's context, then pairing it with ground truth
 ([00:34:55–00:38:47](https://www.youtube.com/watch?v=FfCCEZ00RFw&t=2095s)).
-An agent may know the language, framework, and common architecture. It cannot
-infer an unstated product decision.
+General knowledge of a language or framework cannot supply an unstated product
+decision.
 
-This template assigns new work. When responsibility moves between threads or
-environments, [Right-Sized Threads, Durable
-State](/posts/right-sized-threads-durable-state) covers the accepted baseline,
-prior decisions, and handoff state.
+When responsibility moves between threads or environments, [Right-Sized
+Threads, Durable State](/posts/right-sized-threads-durable-state) extends this
+model with a baseline, accepted decisions, and handoff state.
 
-Recurring context belongs in the repository, not in a longer prompt each time.
-Put stable commands, conventions, boundaries, and known-good examples where the
-next person or agent can find them. [Your Repo Is the
-Memory](/posts/durable-context-coding-agents) covers that practice. The brief should
-point to the truth, not repeat the whole project.
-
-## Offer starting points and hypotheses, not a script
+## Guide the investigation without scripting it
 
 > Direction improves the investigation; premature certainty can trap it.
 
-Ball's “one-two punch” first asks the agent to find an asset or understand a
-mechanism. After that evidence enters the context, he asks for the change. In one
-example, he tells the agent the CLI queuing implementation is “the gold
-standard for how it should work”—a clearer target than only saying the web
-version is broken
+For each starting point, say what it should establish: navigation, expected
+behavior, a constraint, or an implementation pattern. Existing code is not
+automatically authoritative.
+
+Ball's “one-two punch” first asks the agent to understand a mechanism, then asks
+for the change. In one example, he identifies the CLI queue as the gold standard
+and names the behaviors that matter before asking the agent to repair the web
+version
 ([00:13:19–00:16:22](https://www.youtube.com/watch?v=HegqGzD-kvc&t=799s)).
 
-Sanfilippo also uses existing implementations to carry design choices that a
-new specification may omit. In one project, he gave previous implementations
-distinct reference roles—interface, internals, kernels, data movement—and added
-his own architectural ideas as the work developed
+Salvatore Sanfilippo reports giving previous implementations distinct roles as
+references for interface, internal design, kernels, and data movement
 ([00:12:03–00:16:17](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=723s)).
-That is his own report of the project, not an independent quality assessment.
+That is a first-person project account, not an independent quality assessment.
 
-I also share likely failure modes, suspicious sequences, alternative designs, or
-questions worth answering. I label them as hypotheses. A co-worker should be
-able to disprove the starting idea rather than optimize for agreement.
+Share likely failure modes or suspected causes as **hypotheses**, not conclusions.
+The agent should be able to disprove the starting idea. In one of my browser
+investigations, reproduction showed that the reported delete failure was really
+a later listener observing transitional state. That is a sanitized example, not
+a reliability claim.
 
-In one of my browser investigations, the initial framing treated the bug as a
-failed delete action. Reproduction showed the delete worked; the visible problem
-appeared afterward, when listeners observed a transitional state. The agent's
-useful contribution was replacing that diagnosis with a better one. That is one
-sanitized example, not a measured reliability claim.
+Recurring context belongs in the repository, not in a longer prompt each time.
+[Your Repo Is the Memory](/posts/durable-context-coding-agents) covers stable
+commands, conventions, boundaries, and known-good examples. The brief should
+point to that truth, not repeat the whole project.
 
-## Make verification part of the assignment
+## Put acceptance criteria in the brief
 
-> The co-worker needs access to evidence that can prove its approach wrong.
+> Define both the behavior you want and the evidence that could prove the result wrong.
 
-A capable agent becomes more useful when it can observe the consequences of its
-work. Give it the test command, reproducer, running application, logs,
+Acceptance criteria describe the required result. Verification produces evidence
+about that result. “The upload completes and remains visible after refresh” is a
+criterion; a focused test plus a browser run is evidence.
+
+Give the agent the test command, reproducer, running application, logs,
 screenshots, trace, reference output, or conformance suite that matches the
 task. Ask it to return what it observed, not merely say that the work is done.
-
-Slack describes asking agents for demo videos and full test matrices across
-versions, clients, platforms, and account states. The agent can spend hours on
-the checks; a human may spot the important defect seconds into the video
+Slack describes using demo videos and test matrices across versions, clients,
+platforms, and account states; a reviewer may spot a defect seconds into an
+artifact that took the agent much longer to produce
 ([00:13:17–00:17:03](https://www.youtube.com/watch?v=FfCCEZ00RFw&t=797s)).
-This moves some review from supervising edits to inspecting outcomes.
 
-Evidence must distinguish working behavior from plausible but wrong behavior.
-In one of my threads, a large mock-heavy test passed while modelling the
-external system poorly. Removing it was better than keeping a green check that
-could not settle the disputed behavior.
-
-The agent's explanation, implementation, and generated test can all share the
-same mistake. Ask what result would prove the approach wrong. Run the real system
-when the route, API, UI, or integration must work. Keep human judgment for what a
-focused check cannot settle: product need, architecture, maintainability, and
-acceptable risk.
-
-Simon Willison, a co-creator of Django, makes this progression concrete: start
-with a failing test, make it pass, then boot and exercise the real service
-because a green suite does not
-prove that the application actually works
+Simon Willison makes the progression concrete: start with a failing test, make
+it pass, then boot and exercise the real service because a green suite does not
+prove that the application works
 ([00:04:41–00:07:33](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s)).
 
-[Make the Agent Prove It](/posts/make-the-agent-prove-it) contains the full
-risk-scaled evidence ladder. The rule here is shorter: **put proof in the
-assignment, not in cleanup after the agent says it is done.**
+The agent's code, explanation, and generated test can share the same mistake.
+Ask what result would count against its approach, and keep human judgment for
+product need, architecture, maintainability, and acceptable risk. [Make the
+Agent Prove It](/posts/make-the-agent-prove-it) contains the full evidence ladder.
 
-## Three boundaries for delegation
+## Bound authority and keep accountability human
 <!-- slide:
 class: compact
 message: small
 -->
 
-> Capability, authority, and accountability are different.
+> Let the agent choose steps inside the assignment; keep consequential decisions with a named human.
 
-- **Operational agency — can it choose and act?** Within the assignment, it
-  can choose steps, use tools, observe results, and adapt. This is freedom over
-  how to do the work, not permission to decide whether the work should happen.
-- **Authority — may it act?** Only within limits people set.
-- **Accountability — who answers for the outcome?** People decide whether to
-  accept the work and remain answerable for it.
+- **Capability:** the agent can choose steps, use tools, observe results, and adapt.
+- **Authority:** it may act only within the limits people set.
+- **Accountability:** a person decides whether to accept the work and answers for the outcome.
 <!-- notes -->
 
-Calling an agent a co-worker must not hide those differences. The agent does
-not share the team's history, reputational stake, or maintenance pain. It has
-no default authority to push, publish, release, migrate data, or redefine
-success. Access is not permission: available tools or credentials do not
-authorize their use.
+Access is not permission. An available credential or tool does not authorize a
+push, publication, release, production write, migration, purchase, or change to
+the acceptance criteria. Name actions that need approval and conditions that
+must stop the work.
 
-Scale delegation and review with consequence, reversibility, inspectability, and
-expected lifetime. Slack reports scrutinizing core APIs and storage while giving
-low-risk internal tools a longer leash
-([00:25:47–00:30:37](https://www.youtube.com/watch?v=_L8xxUXOTk0&t=1547s)).
+Scale autonomy and review with consequence, reversibility, inspectability, and
+expected lifetime. Mario Zechner describes keeping close oversight of
+mission-critical, security-sensitive, and architectural work while allowing
+more freedom for lower-consequence internal tools. He still treats the engineer
+as accountable for system boundaries and output
+([00:07:33–00:11:14](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=453s)).
 
-Gergely Orosz, who writes The Pragmatic Engineer newsletter, reports a
-conservative approach in his own experiments: small, described tasks; tests;
-periodic refactoring; active tracking; and manual edits
-that preserve his codebase awareness ([first-party
-account](https://blog.pragmaticengineer.com/new-trend-programming-by-kicking-off-parallel-ai-agents/)).
-Mario Zechner, the creator of the Pi coding agent, draws a similar risk
-boundary: low-consequence work can get a
-longer leash, while he closely shapes APIs and foundations, with deterministic
-checks enforcing invariants that prose cannot guarantee
-([00:07:33–00:12:00](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=453s),
-[00:37:11–00:42:44](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=2231s)).
+A named human owner decides whether the work should exist, whether the evidence
+is sufficient, and whether the maintenance cost is acceptable. The agent can
+recommend; it cannot absorb the team's product, operational, or professional
+accountability.
 
-One result from my thread review keeps this boundary concrete. An agent
-implemented a feature and the tests passed. A separate agent reviewer found the
-implementation technically sound, but I chose not to merge it: the feature had
-not earned its permanent complexity. Correct implementation did not answer
-whether the product needed it.
+Before sending the assignment, check five lines:
 
-Treating the agent as a capable co-worker does not mean hovering over every
-tool call. It means assigning coherent work, supplying context the agent cannot
-infer, letting it investigate, and judging its evidence against the
-consequences. As the repository carries more recurring context, each brief can
-carry less. And trust stays specific: it attaches to a bounded class of tasks
-under a particular model, harness, repository, and check setup—not to “the
-agent” in general.
+1. **Purpose:** Why are we doing this, and what outcome matters?
+2. **Context:** What can the agent not infer, and where is the relevant truth?
+3. **Acceptance:** What behavior and evidence would make the result acceptable?
+4. **Authority:** What may it do, what needs approval, and when must it stop?
+5. **Owner:** Which person makes the final product, risk, and acceptance decisions?
 
-This model assumes someone can supply sound domain context and judge the
-result. The sources do not say how developers will build that judgment if they
-delegate the very work through which earlier practitioners learned it. That
-remains a real boundary.
-
-Before starting the next task, ask:
-
-1. What outcome and bounded task am I assigning?
-2. What relevant context, constraints, and non-goals are missing?
-3. Which code, references, and hypotheses should guide the investigation?
-4. What evidence could establish the outcome or prove the approach wrong?
-5. What may the agent do without approval, and when must it stop?
-6. Which results, deviations, and uncertainties must it return?
-
-That is how a capable agent becomes a useful co-worker while people retain
-authority and accountability.
+Then let the agent work inside that contract and judge the returned evidence.
 
 ## Sources used
 
-- [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=HegqGzD-kvc&t=302s), especially [00:05:02–00:22:55] on the context-starved senior-engineer model, information routing, reference implementations, and discoverable repository instructions.
+- [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=HegqGzD-kvc&t=302s), especially [00:05:02–00:16:22] on missing context, information routing, investigation prompts, and reference implementations.
 - [Quinn Slack and Thorsten Ball, “Raising an Agent, Season 2 Episode 2”](https://www.youtube.com/watch?v=FfCCEZ00RFw&t=797s), especially [00:13:17–00:17:03] and [00:34:55–00:38:47] on inspectable evidence and transferring human intent and knowledge.
-- [Quinn Slack, “Amp Code Founder on the Future of Coding Agents”](https://www.youtube.com/watch?v=_L8xxUXOTk0&t=1547s), especially [00:25:47–00:30:37] on engineering expertise and risk-scaled review.
-- [Salvatore Sanfilippo, “AI FOMO, Part 1: What Actually Compounds”](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=723s), especially [00:02:08–00:06:24] and [00:12:03–00:16:17] on colleague-like interaction, domain expertise, simple orchestration, and prior implementations as context. English descriptions here are editorial paraphrases of Italian captions.
-- [Gergely Orosz, “New trend: programming by kicking off parallel AI agents”](https://blog.pragmaticengineer.com/new-trend-programming-by-kicking-off-parallel-ai-agents/) on small tasks, tests, refactoring, tracking, retained code awareness, and uncertainty about parallel-agent productivity.
-- [Mario Zechner, “Pi Building Pi, OpenClaw's Minimalist Coding Agent”](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=453s), especially [00:07:33–00:12:00] and [00:37:11–00:42:44] on consequence-based delegation, module boundaries, and deterministic enforcement.
-- [Simon Willison, “Engineering Practices That Make Coding Agents Work”](https://www.youtube.com/watch?v=owmJyKVu5f8&t=155s), especially [00:02:35–00:12:35] on locally earned trust, tests, real-system execution, and maintained-code quality.
+- [Salvatore Sanfilippo, “AI FOMO, Part 1: What Actually Compounds”](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=723s), especially [00:12:03–00:16:17] on prior implementations as context. English descriptions here are editorial paraphrases of Italian captions.
+- [Mario Zechner, “Pi Building Pi, OpenClaw's Minimalist Coding Agent”](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=453s), especially [00:07:33–00:11:14] on consequence-based delegation, module boundaries, and human accountability.
+- [Simon Willison, “Engineering Practices That Make Coding Agents Work”](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s), especially [00:04:41–00:07:33] on tests and real-system execution.
 - Author synthesis from a private, purposive review of the author's Amp threads across several projects. The sample supplies sanitized examples and failure modes, not productivity estimates or population evidence; no private prompts, project details, or thread identifiers are reproduced.
