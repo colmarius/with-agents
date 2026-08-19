@@ -138,19 +138,21 @@ When an article appears on the homepage or in another curated list:
 
 ## 7. Use Independent Review Deliberately
 
-Use a fresh high- or ultra-mode reviewer when source breadth, translation,
-publication impact, or accumulated edits make an independent read worthwhile.
-Keep implementation and independent review separate: the reviewer should be
-read-only, and the coordinating thread should decide which suggestions improve the
-article.
+Use a fresh independent reviewer with sufficient reasoning depth when source
+breadth, translation, publication impact, or accumulated edits make another read
+worthwhile. Keep implementation and independent review separate. The reviewer may
+run non-writing checks and browser inspection, but should not edit source, run
+formatters or fix commands, commit, or push. The coordinating thread decides which
+suggestions improve the article.
 
 Adapt this compact prompt:
 
 ```text
-Review <branch or commit> against <base> for publication. Read-only: do not edit,
-commit, or push. Check argument clarity, concision, plain-language readability,
-source fidelity and attribution, internal links, and article/slide rendering.
-Separate blocking findings from optional improvements. Verify the repository checks
+Review <branch or commit> against <base> for publication. Read-only: do not edit
+source, run formatters or fix commands, commit, or push. Check argument clarity,
+concision, plain-language readability, source fidelity and attribution, internal
+links, and article/slide rendering. Separate blocking findings from optional
+improvements. Inspect recorded verification, rerun non-writing checks when useful,
 and inspect the article and slides in a real browser. Report exact file/line evidence
 and any residual source risk.
 ```

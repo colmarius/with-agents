@@ -1,6 +1,6 @@
 ---
 name: article-writing
-description: "Writes, reviews, and refreshes public posts under src/content/posts with a concise, source-backed house style. Use when drafting, simplifying, source-checking, tightening, retiring, or removing articles. Triggers on: write article, review article, refresh post, simplify article, source-fidelity review, style pass, retire draft, remove draft."
+description: "Writes, reviews, and refreshes concise, source-backed public posts. Use for drafting, simplifying, and source checking. Triggers on: write article, review article, refresh post, simplify article, source-fidelity review."
 ---
 
 # Article Writing Skill
@@ -26,27 +26,21 @@ skill adds the repeatable workflow and the checklists.
 - **Shape:** 4–6 substantive sections plus a `Sources` section when practical. Lead
   each section with its takeaway, not setup.
 - **Length:** prefer the shortest version that keeps the argument. When refreshing,
-  cut roughly 20–30% without flattening the point. If a post stays above target,
-  say why in the work-item progress log.
+  cut roughly 20–30% without flattening the point. If a post stays above target and
+  the review uses a work item, record why in `progress.md`.
 
 ## Plain-Language Precision
 
 - State the central claim or definition in one or two plain sentences. Label it as
   synthesis when it combines sources rather than quoting one.
-- Separate the real discriminator from warning signs. Style, polish, speed, volume,
-  provenance, or a single metric may indicate a problem without defining it.
-- Give every sentence a job: advance the claim, supply evidence, explain a limit,
-  show an example, or tell the reader what to do. Cut or move sentences whose job
-  is unclear.
+- Give every sentence a clear job and prefer concrete behavior over specialist
+  shorthand.
 - Explain why a heuristic matters and where it stops working. Do not leave a rule
   of thumb floating without its purpose or qualification.
-- Prefer concrete system behavior over specialist shorthand. Introduce the
-  concrete failure first; name the abstraction only when the name helps later.
-- Use short, parallel labels for practical frameworks. Prefer labels that name
-  what a reviewer needs (for example, `Evidence`) over vague process labels (for
-  example, `Checking`).
-- Treat long-sentence counts as a diagnostic, not a target. Split a sentence when
-  the reader must hold several claims, qualifications, or references at once.
+- For definition or category articles, separate the actual rule from warning signs
+  that may correlate with it.
+- Use short, parallel, reader-facing labels. Treat sentence-length counts as a
+  diagnostic, not a writing target.
 
 ## Source-Anchor Hygiene
 
@@ -225,8 +219,8 @@ npm run content:guard
 Run the affected article and slide routes in a real browser. Check representative
 desktop and mobile article states plus the final and most content-dense slides.
 Confirm practical artifacts intended for slides are visible rather than hidden in
-speaker notes. Record per-post word counts before/after and verification results in
-the active work item's `progress.md`.
+speaker notes. When the review uses a work item, record per-post word counts and
+verification results in `progress.md`.
 
 ## Retiring Or Removing A Draft
 
@@ -255,8 +249,6 @@ When deletion is explicitly approved:
 - [ ] No throat-clearing, no manifesto tone, no sales pitch.
 - [ ] Central claim or definition is understandable in one or two plain sentences.
 - [ ] Every heuristic states its purpose and its important limit.
-- [ ] Abstract terminology is explained with concrete behavior or removed.
-- [ ] Practical-framework labels are short, parallel, and reader-facing.
 - [ ] 4–6 substantive sections plus `Sources` when practical.
 - [ ] Each rendered `##` usually starts with a concise slide-message blockquote.
 - [ ] Slide blockquotes are presentation-friendly: one sentence or 1-3 short
@@ -283,10 +275,6 @@ When deletion is explicitly approved:
 
 - [ ] Every anchor supports the adjacent claim.
 - [ ] Synthesis is labeled as synthesis.
-- [ ] Quotes, paraphrases, translations, and synthesis are not blurred together.
-- [ ] Multi-speaker interviews attribute each claim and example to the right
-      speaker or to the exchange.
-- [ ] Translated or auto-captioned claims are source-checked and clearly labeled.
 - [ ] No duplicated source recaps across posts.
 - [ ] No unsupported new product claims.
 - [ ] Load-bearing empirical claims name their design, outcome layer,
@@ -323,11 +311,12 @@ When deletion is explicitly approved:
 - [ ] Article and slide routes pass representative desktop and mobile browser
       checks; intended slide artifacts are visible and unclipped.
 - [ ] `git diff --check` is clean.
-- [ ] Word counts and results recorded in the work item.
+- [ ] Word counts and results recorded when the review uses a work item.
 
 ## Definition Of Done
 
 The post carries one clear argument in the house style, every source anchor and
 internal link checks out, length targets are met or explained, stale drafts are
 retired or explicitly deleted, the article and slide routes render correctly, and
-the full repository checks pass with results recorded in the work item.
+the full repository checks pass. When the review uses a work item, it records only
+remaining work and decisive evidence.
