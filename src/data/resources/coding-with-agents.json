@@ -2,10 +2,10 @@
   {
     "id": 50,
     "primarySection": "reliability",
-    "title": "Software Fundamentals in the Age of AI — Robert C. Martin & Matt Pocock",
+    "title": "Software Fundamentals in the Age of AI — Uncle Bob & Matt Pocock",
     "subtitle": "Deterministic quality gates, specialized agents, modular architecture, and iterative planning",
     "url": "https://www.youtube.com/watch?v=zcLPGC-tvgk",
-    "description": "Robert C. Martin explains why agent speed makes formerly expensive checks such as mutation testing and complexity analysis practical, then describes a specialized specifier–coder–cleaner–hardener–QA pipeline. He and Matt Pocock discuss context trajectory, modular architecture, agent-specific TDD tradeoffs, iterative planning, and why software fundamentals still constrain agent-generated systems. Martin's productivity and quality claims are first-person reports rather than controlled comparisons.",
+    "description": "Uncle Bob explains why agent speed makes formerly expensive checks such as mutation testing and complexity analysis practical, then describes a specialized specifier–coder–cleaner–hardener–QA pipeline. He and Matt Pocock discuss context trajectory, modular architecture, agent-specific TDD tradeoffs, iterative planning, and why software fundamentals still constrain agent-generated systems. Uncle Bob's productivity and quality claims are first-person reports rather than controlled comparisons.",
     "type": "video",
     "source": "Matt Pocock",
     "date": "2026-08-19",
