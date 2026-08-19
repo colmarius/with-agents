@@ -1,13 +1,14 @@
 ---
 name: article-writing
-description: "Write and refresh public posts under src/content/posts with a consistent house style. Use when drafting, tightening, retiring, or removing articles. Triggers on: write article, refresh post, tighten article, style pass, retire draft, remove draft."
+description: "Writes, reviews, and refreshes public posts under src/content/posts with a concise, source-backed house style. Use when drafting, simplifying, source-checking, tightening, retiring, or removing articles. Triggers on: write article, review article, refresh post, simplify article, source-fidelity review, style pass, retire draft, remove draft."
 ---
 
 # Article Writing Skill
 
-Write and maintain the public coding-agent series with a consistent, source-backed
-house style. Use this skill for new posts, refresh passes, draft retirement, and
-explicitly approved draft removal.
+Write, review, and maintain the public coding-agent series with a consistent,
+source-backed house style. Use this skill for new posts, editorial and
+source-fidelity reviews, refresh passes, draft retirement, and explicitly approved
+draft removal.
 
 The always-visible contract lives in root `AGENTS.md` under "Article writing." This
 skill adds the repeatable workflow and the checklists.
@@ -28,11 +29,38 @@ skill adds the repeatable workflow and the checklists.
   cut roughly 20–30% without flattening the point. If a post stays above target,
   say why in the work-item progress log.
 
+## Plain-Language Precision
+
+- State the central claim or definition in one or two plain sentences. Label it as
+  synthesis when it combines sources rather than quoting one.
+- Separate the real discriminator from warning signs. Style, polish, speed, volume,
+  provenance, or a single metric may indicate a problem without defining it.
+- Give every sentence a job: advance the claim, supply evidence, explain a limit,
+  show an example, or tell the reader what to do. Cut or move sentences whose job
+  is unclear.
+- Explain why a heuristic matters and where it stops working. Do not leave a rule
+  of thumb floating without its purpose or qualification.
+- Prefer concrete system behavior over specialist shorthand. Introduce the
+  concrete failure first; name the abstraction only when the name helps later.
+- Use short, parallel labels for practical frameworks. Prefer labels that name
+  what a reviewer needs (for example, `Evidence`) over vague process labels (for
+  example, `Checking`).
+- Treat long-sentence counts as a diagnostic, not a target. Split a sentence when
+  the reader must hold several claims, qualifications, or references at once.
+
 ## Source-Anchor Hygiene
 
 - Each timestamp or citation must support the specific claim beside it.
 - Mark author synthesis as synthesis (for example, "that table is synthesis, not a
   quote").
+- Distinguish exact quotation, source-faithful paraphrase, translation, and author
+  synthesis. Name which one the reader is seeing when it could be ambiguous.
+- Attribute multi-speaker material precisely. If one speaker poses a question and
+  another supplies the examples, attribute the examples separately or refer to
+  "the exchange" rather than collapsing both into one speaker.
+- For translated or auto-captioned material, check the captured transcript, avoid
+  quotation marks unless the wording is verified, and identify editorial
+  translation or paraphrase in the sentence that uses it.
 - Keep only the anchors a post needs. Do not repeat the same source recap across
   posts; each post carries its own evidence.
 - Do not remove source anchors for factual claims that still need support.
@@ -158,6 +186,11 @@ presentation slide.
 
 ## Workflow
 
+For a systematic review of an existing post, follow
+[`references/reviewing-existing-articles.md`](references/reviewing-existing-articles.md).
+It separates argument, readability, source fidelity, article/slide rendering, and
+independent review so feedback can be judged instead of applied mechanically.
+
 ### 1. Frame the job
 
 - New post or refresh? What single argument must it carry?
@@ -182,12 +215,18 @@ presentation slide.
 ### 4. Build and record
 
 ```sh
+npm run lint:fix
 npm run check
+npm test
 npm run build
+npm run content:guard
 ```
 
-Run `npm run lint:fix` if formatting changed. Record per-post word counts
-before/after and verification results in the active work item's `progress.md`.
+Run the affected article and slide routes in a real browser. Check representative
+desktop and mobile article states plus the final and most content-dense slides.
+Confirm practical artifacts intended for slides are visible rather than hidden in
+speaker notes. Record per-post word counts before/after and verification results in
+the active work item's `progress.md`.
 
 ## Retiring Or Removing A Draft
 
@@ -214,6 +253,10 @@ When deletion is explicitly approved:
 - [ ] Important point first in each section.
 - [ ] Active voice, short paragraphs, concrete examples.
 - [ ] No throat-clearing, no manifesto tone, no sales pitch.
+- [ ] Central claim or definition is understandable in one or two plain sentences.
+- [ ] Every heuristic states its purpose and its important limit.
+- [ ] Abstract terminology is explained with concrete behavior or removed.
+- [ ] Practical-framework labels are short, parallel, and reader-facing.
 - [ ] 4–6 substantive sections plus `Sources` when practical.
 - [ ] Each rendered `##` usually starts with a concise slide-message blockquote.
 - [ ] Slide blockquotes are presentation-friendly: one sentence or 1-3 short
@@ -240,6 +283,10 @@ When deletion is explicitly approved:
 
 - [ ] Every anchor supports the adjacent claim.
 - [ ] Synthesis is labeled as synthesis.
+- [ ] Quotes, paraphrases, translations, and synthesis are not blurred together.
+- [ ] Multi-speaker interviews attribute each claim and example to the right
+      speaker or to the exchange.
+- [ ] Translated or auto-captioned claims are source-checked and clearly labeled.
 - [ ] No duplicated source recaps across posts.
 - [ ] No unsupported new product claims.
 - [ ] Load-bearing empirical claims name their design, outcome layer,
@@ -268,8 +315,13 @@ When deletion is explicitly approved:
 
 ### Verification
 
+- [ ] `npm run lint:fix` passes without unintended changes.
 - [ ] `npm run check` passes.
+- [ ] `npm test` passes.
 - [ ] `npm run build` passes.
+- [ ] `npm run content:guard` passes.
+- [ ] Article and slide routes pass representative desktop and mobile browser
+      checks; intended slide artifacts are visible and unclipped.
 - [ ] `git diff --check` is clean.
 - [ ] Word counts and results recorded in the work item.
 
@@ -277,5 +329,5 @@ When deletion is explicitly approved:
 
 The post carries one clear argument in the house style, every source anchor and
 internal link checks out, length targets are met or explained, stale drafts are
-retired or explicitly deleted, and `npm run check` + `npm run build` pass with
-results recorded in the work item.
+retired or explicitly deleted, the article and slide routes render correctly, and
+the full repository checks pass with results recorded in the work item.
