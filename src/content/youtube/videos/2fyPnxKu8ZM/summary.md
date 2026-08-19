@@ -6,10 +6,10 @@ publishedAt: "2026-08-19T16:45:00Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
-Gergely Orosz interviews Addy Osmani about lessons from Osmani's 14 years at Google, where he worked on Chrome, DevTools, Core Web Vitals, Gemini, and Cloud AI before leaving in 2026. Osmani connects his history of developer tooling to an agent-era argument: generated implementation can become cheaper and more autonomous, but engineers still need to preserve understanding, constrain high-risk work, and remain accountable for system and product outcomes ([00:00:00]-[00:00:50], [00:44:13]-[00:45:14], [01:00:46]-[01:05:47], [01:12:33]-[01:15:08]).
+Gergely Orosz interviews Addy Osmani about lessons from Osmani's 14 years at Google, where he worked on Chrome, DevTools, Core Web Vitals, Gemini, and Cloud AI before leaving in 2026. Osmani connects his history of developer tooling to an agent-era argument: generated implementation can become cheaper and more autonomous, but engineers still need to preserve understanding, constrain high-risk work, and remain accountable for system and product outcomes ([00:00:00]-[00:00:50], [00:44:13]-[00:45:14], [00:58:04]-[00:59:48], [01:00:46]-[01:05:47], [01:12:33]-[01:15:08], [01:26:15]-[01:27:02]).
 
 ## Key Ideas
 

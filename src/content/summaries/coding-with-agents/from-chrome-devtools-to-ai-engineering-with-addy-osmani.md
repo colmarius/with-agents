@@ -1,0 +1,24 @@
+---
+title: "From Chrome DevTools to AI Engineering, with Addy Osmani"
+resourceId: 35
+date: "2026-08-19"
+collection: "pragmatic-engineer-selected-conversations"
+order: 15
+videoId: "2fyPnxKu8ZM"
+---
+
+Gergely Orosz interviews Addy Osmani about lessons from 14 years at Google across Chrome, DevTools, Core Web Vitals, Gemini, and Cloud AI. Osmani connects that developer-tooling history to an agent-era argument: generated implementation can become cheaper and more autonomous, but engineers still need to preserve understanding, constrain high-risk work, and remain accountable for system and product outcomes ([00:00:00]-[00:00:50], [00:58:04]-[00:59:48], [01:00:46]-[01:05:47], [01:12:33]-[01:15:08]).
+
+### Key Points Covered
+
+- **Agents can expand feasible research without owning the thesis**: Osmani describes sending agents across conference materials to refine a keynote around ideas he had already chosen ([00:01:41]-[00:03:25]).
+- **Developer tools should expose execution evidence**: He presents Chrome DevTools as an evolving debugging surface that helps people interpret large traces and lets agents connect to the browser rather than replacing every developer's preferred editor ([00:34:20]-[00:36:13]).
+- **Cognitive surrender is a failure of understanding**: Osmani distinguishes cognitive debt—the erosion of memory and problem comprehension—from accepting an AI answer without critical thought ([01:00:46]-[01:02:29]).
+- **Mutual amplification requires deliberate records**: Because reading every sub-agent trajectory no longer scales, he reviews consequential decisions and asks agents to record learnings, friction, and unusual choices, while warning that generated explanations can be unreliable after context loss ([01:02:29]-[01:04:58]).
+- **Loops need risk and quality boundaries**: His loop-engineering model can prompt, implement, test, and verify, but he calls unconstrained blast radius and absent human review on critical changes a recipe for failure ([01:04:58]-[01:06:45]).
+- **Production signals belong inside the workflow**: Telemetry, user feedback, issue reports, analytics, and logs can improve prioritization and implementation, while consequential behavior changes still need appropriate inspection ([01:06:45]-[01:10:54]).
+- **Taste and accountability remain human responsibilities**: Models can check conformance to a specification, but Osmani distinguishes that from deciding whether a product is good. Chromium ownership files illustrate engineers being answerable for areas they did not write line by line ([01:12:33]-[01:15:08]).
+- **Engineering roles may become less narrowly defined**: He recommends adding product sense, technical evangelism, go-to-market awareness, or other business-facing skills as syntax writing occupies less of the role ([01:27:50]-[01:29:33]).
+- **The outlook claims remain forecasts**: Osmani expects cheaper construction to expand the software market and new roles to replace some automated work, but the episode does not provide labor or product-quality measurements for those predictions ([01:15:08]-[01:16:52]).
+
+Full video: <https://www.youtube.com/watch?v=2fyPnxKu8ZM>
