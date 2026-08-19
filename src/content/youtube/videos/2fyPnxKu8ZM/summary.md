@@ -15,11 +15,12 @@ Gergely Orosz interviews Addy Osmani about lessons from Osmani's 14 years at Goo
 
 - **Agents expand feasible research and preparation**: Osmani describes sending agents across conference materials to refine a keynote, treating the result as a way to extend his existing thesis rather than delegate the final judgment ([00:01:41]-[00:03:25]).
 - **Developer tools should meet people and agents where they work**: He presents Chrome DevTools as an evolving debugging surface rather than a replacement IDE, with newer work helping people interpret large traces and letting agents connect to the browser's execution evidence ([00:34:20]-[00:36:13]).
-- **Cognitive surrender is distinct from faster generation**: Osmani defines cognitive debt as erosion of memory and problem understanding, and cognitive surrender as adopting an AI answer without critical thought. He no longer reads every sub-agent trajectory, but reviews consequential decisions and asks agents to record learnings, friction, and unusual choices ([01:00:46]-[01:04:58]).
+- **Cognitive surrender is distinct from faster generation**: Osmani defines cognitive debt as erosion of memory and problem understanding, and cognitive surrender as adopting an AI answer without critical thought. He no longer reads every sub-agent trajectory, but reads the final decision summary end to end and asks agents to record learnings, friction, and unusual choices ([01:00:46]-[01:04:58]).
 - **Mutual amplification should improve both sides of the workflow**: The agent should accumulate useful project context while the engineer preserves enough understanding to diagnose failures and judge important decisions ([01:03:19]-[01:04:58]).
 - **Loops need risk and quality boundaries**: Osmani describes loop engineering as a system that can prompt, implement, test, and verify, while warning that unconstrained blast radius and absent human review on critical changes are a recipe for failure ([01:04:58]-[01:06:45]).
 - **Production signals belong inside the loop**: He argues that telemetry, user feedback, issue reports, analytics, and logs can inform prioritization and implementation, but still leaves room for a person to inspect consequential performance or behavior changes ([01:06:45]-[01:10:54]).
 - **Taste and accountability remain human responsibilities**: Models can check conformance to a specification, but Osmani distinguishes that from deciding whether a product is good. He uses Chromium ownership files to illustrate engineers being accountable for areas they did not write line by line ([01:12:33]-[01:15:08]).
+- **Writing with agents still needs an editorial owner**: Osmani uses research agents to map outside views, compares his handwritten draft with model drafts, and sometimes applies readability passes, but worries about homogenized AI prose and says he reviews every line before publishing ([01:17:41]-[01:26:15]).
 - **Engineering roles may become less narrowly defined**: His career advice is to add product sense, technical evangelism, go-to-market awareness, or other business-facing skills as implementation occupies less of the role ([01:27:50]-[01:29:33]).
 
 ## Practical Implications
@@ -39,4 +40,5 @@ Gergely Orosz interviews Addy Osmani about lessons from Osmani's 14 years at Goo
 ## Source
 
 - <https://www.youtube.com/watch?v=2fyPnxKu8ZM>
+- Publisher-approved Substack auto-transcript: <https://newsletter.pragmaticengineer.com/p/from-chrome-devtools-to-ai-engineering>
 - [transcript.md](./transcript.md)
