@@ -1,6 +1,6 @@
 # Demystifying AI Slop
 
-Status: planned
+Status: completed
 Category: articles
 Updated: 2026-08-19
 
@@ -14,29 +14,28 @@ planning and writing session.
 
 ## Summary
 
-Research and concept review are complete. The refined thesis is that AI slop is
-false completion in a broken responsibility loop: output is presented as more
-complete than its intent, assurance, and accountable ownership warrant, so
-unresolved work moves downstream as if it had already been done. The recommended
-article should use a generated issue report as its opening case, then explain why
-ownership and assurance differ by medium and risk. The selected title is “What Is
-AI Slop? When Generated Output Only Looks Finished,” and the article is ready for
-implementation from the active plan.
+The public article is implemented and verified. It defines AI slop as false
+completion in a broken responsibility loop: output is presented as more complete
+than its intent, assurance, and accountable ownership warrant, so unresolved work
+moves downstream as if it had already been done. The draft uses a generated issue
+report as its opening case, distinguishes authorship from medium- and risk-specific
+ownership, and closes with a four-question review test. Coordinator source,
+editorial, automated, and rendered-route review is complete.
 
 ## Artifacts
 
+- Article: [What Is AI Slop? When Generated Output Only Looks Finished](../../../../src/content/posts/what-is-ai-slop.md)
 - Research: [research.md](research.md)
 - Captured source: [Salvatore Sanfilippo, “The Best Definition of AI Slop Ever Given”](../../../../src/content/transcripts/coding-with-agents/the-best-definition-of-ai-slop-ever-given.md)
 - PRD: none
 - Plan: [plan.md](plan.md)
-- Progress: none
+- Progress: [progress.md](progress.md)
 - Decisions: none
 - Handoffs: none
 
 ## Next Action
 
-- Implement and verify [plan.md](plan.md), then return the draft for coordinator
-  review.
+- None.
 
 ## Open Questions
 
