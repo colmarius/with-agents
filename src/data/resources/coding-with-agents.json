@@ -1,5 +1,23 @@
 [
   {
+    "id": 51,
+    "primarySection": "agent-systems",
+    "title": "Meet Pi: The Minimalist, Self-Modifying Coding Agent",
+    "subtitle": "Mario Zechner and Armin Ronacher on Pi's small core, self-extension, and open ecosystem",
+    "url": "https://www.youtube.com/watch?v=RKHaecOi0CA",
+    "description": "CultRepo profiles Mario Zechner's path from open-source game tooling to Pi, a deliberately small coding-agent harness. Zechner explains Pi's nested tool loop, four-package Node.js and TypeScript architecture, and self-extension model; he and Armin Ronacher connect minimalism to predictable tools, human responsibility, open source, and model neutrality. The film's adoption figures and leaderboard placement are first-party reports without defined scope or methodology, while its commercial and open-foundation discussion describes an ambition rather than a detailed plan.",
+    "type": "video",
+    "source": "CultRepo",
+    "date": "2026-08-20",
+    "duration": "11m",
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "review-verification",
+      "open-source-ecosystem"
+    ]
+  },
+  {
     "id": 50,
     "primarySection": "reliability",
     "title": "Software Fundamentals in the Age of AI — Uncle Bob & Matt Pocock",
