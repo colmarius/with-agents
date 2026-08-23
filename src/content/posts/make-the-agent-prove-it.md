@@ -25,7 +25,7 @@ The useful question is not "do I trust the model?" It is **"what proof would mak
 
 Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The agent should propose and produce evidence; the reviewer still owns the decision.
 
-This is the risk-scaled acceptance contract for one agent-produced change. It assumes the system exposes checks the agent can run and interpret; [Agent-Ready Interfaces](/posts/agent-ready-interfaces) owns that design problem.
+This is the risk-scaled acceptance contract for one agent-produced change. It assumes the system exposes checks the agent can run and interpret.
 
 ## Choose proof from risk
 

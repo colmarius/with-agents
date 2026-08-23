@@ -91,10 +91,6 @@ Agents also do better when products expose modular boundaries, visible flow, sim
 
 That last point matters more as loops get longer. Raising an Agent episode 9 frames an "agent-native" codebase as one where the agent knows how to run, verify, authenticate, click around, and inspect output [00:10:51]-[00:17:15]. Zechner shows the same from the low-level side: `AGENTS.md`-style instructions are suggestions the model can ignore, so linters, typecheckers, smoke tests, and pre-commit hooks enforce them deterministically, and tmux screenshot capture lets the agent smoke-test terminal UI work itself [00:39:13]-[00:42:44]. The synthesis is not "write more docs"; it is "make the correct path easier for the next loop to discover and verify."
 
-[Agent-Ready Interfaces](/posts/agent-ready-interfaces) is the design deep dive:
-how to expose composable operations, inspectable state, faithful feedback,
-recovery, mutation gates, and a human return path.
-
 ## Keep exploration coherent and implementation bounded
 
 > Let exploration accumulate useful context; start bounded implementation from accepted decisions.
@@ -139,7 +135,6 @@ So the factory-era checklist is not "launch more agents." It is:
 | If the pain is... | Read... |
 | --- | --- |
 | Shared context keeps disappearing | [Your Repo Is the Memory](/posts/durable-context-coding-agents) |
-| The agent cannot operate or verify your system cleanly | [Agent-Ready Interfaces](/posts/agent-ready-interfaces) |
 | Review needs stronger evidence, or an explanation disagrees with behavior | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
 | Work needs a clearer responsibility boundary | [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) |
 | Agent activity is rising, but delivery value is unclear | [Measure Outcomes, Not Agent Activity](/posts/measure-outcomes-not-agent-activity) |
