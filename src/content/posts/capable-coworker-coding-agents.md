@@ -35,23 +35,8 @@ authority or responsibility.
 
 > State the purpose, context, acceptance criteria, authority boundary, and human owner.
 
-```text
-purpose · context · acceptance
-authority boundary · human owner
-```
-
-Each part closes a different gap:
-
-| Part | Question to answer |
-| --- | --- |
-| **Purpose** | Why does this matter, and what should be observably different? |
-| **Context** | Which user need, project facts, constraints, references, and non-goals matter? |
-| **Acceptance criteria** | What behavior and evidence would make the result acceptable? |
-| **Authority boundary** | What may the agent do, what needs approval, and when must it stop? |
-| **Human accountability** | Who decides whether the result is right and accepts its consequences? |
-
-This is a thinking checklist, not a form for every typo. A small, reversible
-task in a clear repository may need one sentence. A cross-cutting or
+Use these parts as a thinking checklist, not a form for every typo. A small,
+reversible task in a clear repository may need one sentence. A cross-cutting or
 consequential task needs more. Brief the job, then leave the agent room to
 investigate how to do it.
 
