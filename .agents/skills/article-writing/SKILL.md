@@ -157,6 +157,10 @@ presentation slide.
 - Optional visuals may immediately follow the blockquote: Mermaid, text diagrams,
   tables, inline SVG, figures, or Markdown images. Make them accessible with alt
   text, captions, or nearby prose that does not rely on color/image-only meaning.
+- Use `txt` fences for prose-like prompts and checklists: keep each complete
+  instruction on one source line and let the page wrap it. Reserve `text` fences
+  for diagrams whose line geometry must be preserved. Do not hard-wrap sentences
+  to fit a viewport.
 - Use `## Sources` or `## Sources used` for source appendices. They are not normal
   presentation slides; keep source detail available for article, notes, and print
   modes. Avoid variants like `## Sources consulted` unless you intentionally want

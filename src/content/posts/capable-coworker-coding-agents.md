@@ -40,38 +40,27 @@ reversible task in a clear repository may need one sentence. A cross-cutting or
 consequential task needs more. Brief the job, then leave the agent room to
 investigate how to do it.
 
-```text
-Purpose and outcome:
-  Who needs this, why now,
-  and what should change?
-
-Task and scope:
-  What work and surfaces
-  are in scope?
+```txt
+Purpose, task, and outcome:
+  Who needs this, and why now?
+  What work is in scope, and what should change?
 
 Context:
-  Which constraints, non-goals,
-  and decisions matter?
-  Where should the investigation
-  start, and why?
-  Which hypotheses are worth
-  testing?
+  Which constraints, non-goals, and decisions matter?
+  Where should the investigation start, and why?
+  Which hypotheses are worth testing?
 
 Acceptance criteria:
-  Which observable behavior
-  must hold?
-  Which checks or artifacts
-  should prove it?
+  Which observable behavior must hold?
+  Which checks or artifacts should prove it?
 
 Authority boundary:
-  What may the agent change
-  or execute?
+  What may the agent change or execute?
   Which actions need approval?
   When should it stop?
 
 Human owner:
-  Who makes product, design,
-  risk, and acceptance decisions?
+  Who makes product, design, risk, and acceptance decisions?
 
 Return:
   What changed?

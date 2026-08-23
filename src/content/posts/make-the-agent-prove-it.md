@@ -156,14 +156,12 @@ If nobody can answer those, the agent is not done.
 
 > Give the agent its proof contract before it optimizes for done.
 
-```text
+```txt
 Before editing:
 1. List the likely failure modes.
 2. Propose a low, medium, or high risk level.
-3. Propose the minimum focused checks, real-system evidence, and external
-   oracle needed.
-4. Stop for confirmation if the task touches data, permissions, dependencies,
-   migrations, security, billing, secrets, or external side effects.
+3. Propose the minimum focused checks, real-system evidence, and external oracle needed.
+4. Stop for confirmation if the task touches data, permissions, dependencies, migrations, security, billing, secrets, or external side effects.
 5. State what result would count against the proposed explanation or behavior.
 
 When the behavior can be expressed as an executable check:

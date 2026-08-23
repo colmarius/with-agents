@@ -96,6 +96,12 @@
     @apply bg-slate-50 border border-slate-200 rounded-md p-4;
   }
 
+  .prose-post pre[data-language="txt"],
+  .prose-slide pre[data-language="txt"] {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
   .dark .prose-base pre {
     @apply bg-slate-800 border-slate-700;
   }
