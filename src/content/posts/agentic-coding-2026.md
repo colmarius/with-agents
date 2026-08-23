@@ -130,7 +130,7 @@ So the factory-era checklist is not "launch more agents." It is:
 - preserve useful work state instead of losing it in chats
 - require evidence before accepting output
 - route irreversible or high-risk decisions to humans
-- constrain workflows that create review debt faster than the team can absorb it
+- constrain concurrency when review debt or fragmented context outruns the integration owner's ability to judge returned evidence
 
 ## Where to go next
 

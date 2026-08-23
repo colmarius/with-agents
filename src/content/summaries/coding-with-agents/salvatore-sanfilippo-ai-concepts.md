@@ -30,4 +30,4 @@ For coding-agent practitioners, its most useful habit is methodological: disting
 6. [Useful work per token and per joule](https://www.youtube.com/watch?v=ibcqRGQ7BKY&t=499s) for a speculative but useful prompt about measuring whole-task efficiency.
 7. [AI and the Fermi paradox](https://www.youtube.com/watch?v=cNYwbDI1QOY&t=183s) for a clear example of using a conceptual framework while preserving its evidentiary limits.
 
-Read the cross-playlist synthesis in [Behavior Over Explanation](/posts/behavior-over-explanation), or [watch the full AI concepts playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6).
+For the coding-agent application of this evidence standard, read [Make the Agent Prove It](/posts/make-the-agent-prove-it), or [watch the full AI concepts playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6).
