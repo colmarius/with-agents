@@ -1,5 +1,23 @@
 [
   {
+    "id": 53,
+    "primarySection": "agent-systems",
+    "title": "Pi Coding Agent - Deep Dive",
+    "subtitle": "0xSero on Pi's provider abstraction, agent loop, tools, extensions, and local-model workflows",
+    "url": "https://www.youtube.com/watch?v=5kLL0xUC28Q",
+    "description": "0xSero gives a live source-level tour of Pi's provider normalization, streamed agent loop, built-in tools, extension surface, session storage, and SDK, then shows how those pieces can support local models, delegated agents, and long-running goal loops. The presenter's cache-hit, latency, cost, and benchmark comparisons are demonstrations without enough linked configuration or methodology to treat them as controlled evaluations.",
+    "type": "video",
+    "source": "0xSero",
+    "date": "2026-08-21",
+    "duration": "30m",
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "context-memory",
+      "prompting-orchestration"
+    ]
+  },
+  {
     "id": 52,
     "primarySection": "teams-ecosystem",
     "title": "Sam Altman on Building OpenAI & Betting on the Impossible",
