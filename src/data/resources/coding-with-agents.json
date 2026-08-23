@@ -1,5 +1,23 @@
 [
   {
+    "id": 52,
+    "primarySection": "teams-ecosystem",
+    "title": "Sam Altman on Building OpenAI & Betting on the Impossible",
+    "subtitle": "Hands-on adoption, context-rich agents, iterative deployment, and research feedback loops",
+    "url": "https://www.youtube.com/watch?v=kG8AoExkX40",
+    "description": "David Senra asks Sam Altman how AI adoption, context, product strategy, and research management shape OpenAI. Altman points to Tobi Lütke’s hands-on agent use, admits that habits and product gaps slow adoption, argues for iterative deployment and accident reporting, proposes context-rich persistent agents, and describes leaderboards and external demos as feedback when no customers exist. His capability, safety, usage, and market claims are first-party reports or forecasts without independent evidence, and the privacy and permission implications of broad context access are not addressed.",
+    "type": "video",
+    "source": "David Senra",
+    "date": "2026-08-23",
+    "duration": "1h 18m",
+    "topics": [
+      "business-adoption",
+      "context-memory",
+      "models-evaluation",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 51,
     "primarySection": "agent-systems",
     "title": "Meet Pi: The Minimalist, Self-Modifying Coding Agent",
