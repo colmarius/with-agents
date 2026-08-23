@@ -98,11 +98,8 @@ references for interface, internal design, kernels, and data movement
 ([00:12:03–00:16:17](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=723s)).
 That is a first-person project account, not an independent quality assessment.
 
-Share likely failure modes or suspected causes as **hypotheses**, not conclusions.
-The agent should be able to disprove the starting idea. In one of my browser
-investigations, reproduction showed that the reported delete failure was really
-a later listener observing transitional state. That is a sanitized example, not
-a reliability claim.
+Present likely failure modes and suspected causes as **hypotheses**, not
+conclusions. Ask what evidence would disprove them.
 
 Recurring context belongs in the repository, not in a longer prompt each time.
 [Your Repo Is the Memory](/posts/durable-context-coding-agents) covers stable
@@ -182,4 +179,4 @@ Then let the agent work inside that contract and judge the returned evidence.
 - [Salvatore Sanfilippo, “AI FOMO, Part 1: What Actually Compounds”](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=723s), especially [00:12:03–00:16:17] on prior implementations as context. English descriptions here are editorial paraphrases of Italian captions.
 - [Mario Zechner, “Pi Building Pi, OpenClaw's Minimalist Coding Agent”](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=453s), especially [00:07:33–00:11:14] on consequence-based delegation, module boundaries, and human accountability.
 - [Simon Willison, “Engineering Practices That Make Coding Agents Work”](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s), especially [00:04:41–00:07:33] on tests and real-system execution.
-- Author synthesis from a private, purposive review of the author's Amp threads across several projects. The sample supplies sanitized examples and failure modes, not productivity estimates or population evidence; no private prompts, project details, or thread identifiers are reproduced.
+- The five-part assignment model is author synthesis of the sources above, not a framework quoted from one source.
