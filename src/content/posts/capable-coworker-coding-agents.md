@@ -28,7 +28,7 @@ senior engineer dropped into an unfamiliar room with a repository, terminal,
 browser, and note. The engineer is capable;
 the missing information is local. A model may also fill in the gaps confidently
 where a person might challenge the request
-([04:24:22–04:28:17](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15862s)).
+([00:05:02–00:08:50](https://www.youtube.com/watch?v=HegqGzD-kvc&t=302s)).
 
 So the useful question is not “What magic prompt makes the model smarter?” It is
 **“What would a capable co-worker need to know to carry this task?”**
@@ -128,7 +128,7 @@ mechanism. After that evidence enters the context, he asks for the change. In on
 example, he tells the agent the CLI queuing implementation is “the gold
 standard for how it should work”—a clearer target than only saying the web
 version is broken
-([04:32:16–04:35:04](https://www.youtube.com/watch?v=vii6P0vJhTw&t=16336s)).
+([00:13:19–00:16:22](https://www.youtube.com/watch?v=HegqGzD-kvc&t=799s)).
 
 Sanfilippo also uses existing implementations to carry design choices that a
 new specification may omit. In one project, he gave previous implementations
@@ -255,7 +255,7 @@ authority and accountability.
 
 ## Sources used
 
-- [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15862s), especially [04:24:22–04:42:11] on the context-starved senior-engineer model, information routing, reference implementations, and discoverable repository instructions.
+- [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=HegqGzD-kvc&t=302s), especially [00:05:02–00:22:55] on the context-starved senior-engineer model, information routing, reference implementations, and discoverable repository instructions.
 - [Quinn Slack and Thorsten Ball, “Raising an Agent, Season 2 Episode 2”](https://www.youtube.com/watch?v=FfCCEZ00RFw&t=797s), especially [00:13:17–00:17:03] and [00:34:55–00:38:47] on inspectable evidence and transferring human intent and knowledge.
 - [Quinn Slack, “Amp Code Founder on the Future of Coding Agents”](https://www.youtube.com/watch?v=_L8xxUXOTk0&t=1547s), especially [00:25:47–00:30:37] on engineering expertise and risk-scaled review.
 - [Salvatore Sanfilippo, “AI FOMO, Part 1: What Actually Compounds”](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=723s), especially [00:02:08–00:06:24] and [00:12:03–00:16:17] on colleague-like interaction, domain expertise, simple orchestration, and prior implementations as context. English descriptions here are editorial paraphrases of Italian captions.

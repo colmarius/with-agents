@@ -96,7 +96,7 @@ Return:
 Update durable state:
 ```
 
-Prompt length should follow missing information. Amp co-creator Thorsten Ball's example prompts point agents to code, references, constraints, and screenshots, and ask for proof such as a screenshot of the fixed component ([04:24:22–04:42:11](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15862s)). A short prompt works when a work item, commit, `AGENTS.md`, skill, and test command already make the contract discoverable. A broad or risky assignment should say more.
+Prompt length should follow missing information. Amp co-creator Thorsten Ball's example prompts point agents to code, references, constraints, and screenshots, and ask for proof such as a screenshot of the fixed component ([00:05:02–00:22:55](https://www.youtube.com/watch?v=HegqGzD-kvc&t=302s)). A short prompt works when a work item, commit, `AGENTS.md`, skill, and test command already make the contract discoverable. A broad or risky assignment should say more.
 
 Use this operating procedure:
 
@@ -113,7 +113,7 @@ Use this operating procedure:
 
 - Current Amp product guidance: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent), and the archived [“200k Tokens Is Plenty”](https://ampcode.com/notes/200k-tokens-is-plenty).
 - [Jason Liu, “Full Workshop: Setting Yourself Up for Success”](https://www.youtube.com/watch?v=il1c1a2FufU) on long-lived pinned workstreams, compaction, and delegated threads.
-- [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=vii6P0vJhTw&t=15626s) on discoverable context and proof-oriented prompts.
+- [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=HegqGzD-kvc) on discoverable context and proof-oriented prompts.
 - [Matt Pocock, “Full Walkthrough: Workflow for AI Coding”](https://www.youtube.com/watch?v=-QFHIoCo-Ko) and [Kun's agentic-engineering setup](https://www.youtube.com/watch?v=8ZgpAXe5V5w) on separating implementation, review, and verification roles.
 - [dot-agents](https://dot-agents.dev/) supplies the work-item pattern described here.
 - Author synthesis from a private review of one user's recent Amp threads; no private prompts or thread identifiers are reproduced.
