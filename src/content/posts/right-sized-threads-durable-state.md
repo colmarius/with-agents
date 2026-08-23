@@ -1,119 +1,117 @@
 ---
 title: 'Right-Sized Threads, Durable State'
-description: 'How to decide when an agent thread should continue or restart, and how files and commits carry decisions between research, implementation, and verification.'
+description: 'How to keep connected agent work in one thread, split only when separation helps, and carry accepted state across the boundary.'
 pubDate: 2026-06-28
-updatedDate: 2026-08-15
+updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Planning', 'dot-agents']
 draft: false
 unlisted: false
 order: 4
 ---
 
-## Thread length is an outcome, not a goal
+## Keep one thread for one connected job
+<!-- slide:
+class: compact
+message: small
+-->
 
-> Keep connected work in one thread; start fresh when the worker's role changes.
+> Continue while earlier work helps the next step; split when separation improves the work.
 
-```text
-research + planning + coordination
-        ↓ commit accepted state
-bounded implementation → independent verification
-```
-
-A right-sized thread does one connected job, whether it lasts five turns or five hundred. Continue when the next step depends on earlier exploration or feedback. Start fresh when the job changes, such as moving from research to implementation or from producing a change to independently testing it.
-
-Do not split work merely to reset the context window. Compaction makes long threads practical. But do not add an unrelated task merely because the thread already knows the repository.
-
-This is also Amp's current distinction: the [Manual](https://ampcode.com/manual#how-to-prompt) recommends one thread per task, while its archived [“200k Tokens Is Plenty”](https://ampcode.com/notes/200k-tokens-is-plenty) note now says that auto-compaction makes longer threads productive. **Thread length is an outcome, not the goal.**
-
-[Your Repo Is the Memory](/posts/durable-context-coding-agents) explains repository memory. This article explains when a workstream should continue and when a fresh worker should take over.
-
-## Keep coherent workstreams alive
-
-> Keep research, planning, and coordination together while each step still depends on what came before.
-
-Research and planning are iterative. A new source can rule out an option. A prototype can expose a missing requirement. User feedback can reverse a decision. Restarting after every step makes each new thread reconstruct that history before it can contribute.
-
-A coordinator thread is the control room for a larger piece of work. It keeps the plan, delegates bounded tasks, and compares results. For example, use one thread to compare three designs and turn the choice into an accepted plan. Then give a fresh implementation thread that plan instead of the entire exploratory conversation.
-
-Current compaction and retrieval make continuity more practical. Amp reports a weeks-long thread compacted over 68 times and documents a reader that checks original messages and later reversals rather than trusting summaries alone ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)). OpenAI's Jason Liu similarly reports five-week-old pinned project threads, renamed by project and delegating to subagents, and credits compaction for making that possible ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show capability, not that every long thread stays accurate.
-
-A private review of 86 of my recent threads changed my default. Of 220 direct user messages, 177 continued an existing conversation. Broad work began with a full brief, then used short follow-ups pointing to files and commits. Small, well-defined tasks began with compact prompts. This is one person's usage, without outcome comparisons—not proof that long threads are better.
-
-## Start fresh at responsibility and independence boundaries
-
-> Start a new thread when it creates a clearer assignment or a genuinely independent check.
-
-A **responsibility boundary** is where the job changes. An **independence boundary** is where the next worker should judge the result without inheriting the first worker's conclusions. Both can justify losing conversational context.
-
-| Boundary | Why start fresh? |
+| Question | Action |
 | --- | --- |
-| Broad exploration → implementation | Begin mutation from accepted decisions, not every discarded path. |
-| Implementer → verifier or tester | Check the behavior without treating the implementer's explanation as proof. |
-| Competing approach → selection | Keep alternatives isolated and judge them against one contract. |
-| Current task → unrelated task | Prevent convenient context from turning into mixed ownership. |
+| Same outcome, and earlier context helps? | Continue. |
+| Unrelated outcome? | Start a new thread. |
+| Fresh judgment, isolated changes, or different access would help? | Start a new thread. |
 
-Fresh does not mean uninformed. The implementation thread receives the accepted plan, relevant files, constraints, and proof target. It still runs its own checks. A separate verifier reruns the important checks, looks for gaps, and reports findings without silently changing the requirements.
+A thread is right-sized when it owns one connected job. A checkout bug can include reproduction, diagnosis, a fix, review feedback, and a route test. An unrelated documentation redesign belongs elsewhere.
 
-Educator Matt Pocock recommends clearing context so review runs fresh, then demonstrates manual QA catching a missing-table failure after tests and type checks passed ([01:04:23–01:12:21](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=3863s)). Kun, a former Atlassian engineer who built coding agents there, sends most changes through a validation pipeline—adversarial review, tests, documentation checks, and watching CI—launched by his coordinator agent ([00:37:41–00:45:28](https://www.youtube.com/watch?v=8ZgpAXe5V5w&t=2261s)). Those are practitioner patterns, not comparative reliability studies.
+Amp's current [prompting guidance](https://ampcode.com/manual#how-to-prompt) also says to use one thread per task: tasks can be long, but unrelated work does not belong together. Amp reports a thread compacted more than 68 times ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)), and Jason Liu of OpenAI shows five-week-old project threads delegating narrower work ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show that long threads can work; they do not show that longer is better.
 
-Keep one integration owner. Parallel discovery is easy to combine; overlapping mutation needs explicit isolation, merge order, and acceptance authority.
+[Your Repo Is the Memory](/posts/durable-context-coding-agents) covers reusable repository context. [Brief the Agent Like a Capable Co-Worker](/posts/capable-coworker-coding-agents) covers assignment briefs. This article covers when one assignment ends and another begins.
 
-## Durable repository state is the synchronization layer
+## Keep feedback with the job it can still change
 
-> Use the thread as working memory and the repository as the shared record.
-
-**Durable state** is the repository's declared current state: accepted decisions, constraints, status, proof, and the next action. A person can inspect and use it, but must still check its freshness and evidence.
-
-This repository uses a [dot-agents](https://dot-agents.dev/) work item as one concrete implementation:
+> Do not split a connected job just because it moved from research to planning to implementation.
 
 ```text
-.agents/work/<category>/<work>/
-├── index.md      # current status, artifacts, next action
-├── research.md   # optional distilled findings
-├── plan.md       # optional tasks, scope, acceptance, verification
-└── progress.md   # optional observed evidence, deviations, blockers
+report → reproduce → diagnose
+                     │
+             new evidence
+                     ▼
+choose → implement → verify
+         ▲              │
+         └── feedback ──┘
 ```
 
-Preserve the decision and its evidence, accepted constraints, current task, proof state, authority, unresolved questions, and next action. Label proof as inherited or rerun so the next worker knows what it can claim. Do not preserve the whole exploratory transcript.
+Research, planning, and implementation can stay together. If a prototype exposes a missing requirement or a test disproves the diagnosis, update the same plan.
 
-When work crosses threads or environments, use a commit as the synchronization point when the target can read it. A fresh orb clones the repository, so a local unpushed commit is an identifier, not transport: push a branch only when authorized, or transfer the required files explicitly ([Orbs manual](https://ampcode.com/manual/orbs#getting-started), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent)). A commit records state; it does not prove correctness.
+For a checkout bug, one thread can reproduce it, trace the request, test two causes, apply the supported fix, exercise the route, and absorb review feedback.
 
-Compaction and durable state solve different problems. Compaction keeps one conversation usable. Durable state lets a fresh worker resume the assignment and lets an independent verifier distinguish inherited claims from checks it actually reran.
+Keep the thread while its history explains decisions and feedback. If old attempts now obscure the task, write down the current decision and start a new thread from that record.
 
-## Hand off an assignment, not a transcript
+## Split only when separation helps
+<!-- slide:
+class: compact
+message: small
+-->
 
-> Tell the next thread what it owns, where the accepted state lives, and how to prove the result.
+> Split for clear ownership, independent judgment, isolated work, or needed access.
+
+- **Accepted design → implementation:** a bounded starting point and authority.
+- **Implementation → verification:** a fresh judgment.
+- **Parallel options → selection:** isolated changes to compare.
+- **Different environment:** access to the required machine or tools.
+
+These are options, not automatic gates. A phase change justifies a new thread only when a fresh worker or narrow change boundary helps.
+
+Fresh verification often deserves a split. Matt Pocock uses fresh-context review before manual QA finds a missing database table despite passing automated checks ([01:04:23–01:12:21](https://www.youtube.com/watch?v=-QFHIoCo-Ko&t=3863s)). Kun, a former Atlassian coding-agent engineer, demonstrates a separate pipeline for intent recovery, adversarial review, tests, documentation, and CI ([00:37:41–00:45:28](https://www.youtube.com/watch?v=8ZgpAXe5V5w&t=2261s)). These are examples, not reliability studies.
+
+## Carry accepted state across the boundary
+
+> Before a split, preserve the smallest record from which the next worker can act.
 
 ```text
-Outcome:
-Read first / canonical state:
-Baseline commit:
-Scope and non-goals:
-Decisions already made:
-Acceptance and verification:
-Authority and stop conditions:
-Return:
-Update durable state:
+handoff record
+├─ outcome + acceptance
+├─ read first + baseline
+├─ decisions + constraints
+├─ status + changed files
+├─ checks + results
+│  └─ inherited or rerun
+├─ questions + blockers
+├─ owner + limits
+└─ next action
 ```
 
-Prompt length should follow missing information. Amp co-creator Thorsten Ball's example prompts point agents to code, references, constraints, and screenshots, and ask for proof such as a screenshot of the fixed component ([00:05:02–00:22:55](https://www.youtube.com/watch?v=HegqGzD-kvc&t=302s)). A short prompt works when a work item, commit, `AGENTS.md`, skill, and test command already make the contract discoverable. A broad or risky assignment should say more.
+This is **durable state**: the accepted record that must survive the handoff. It records decisions, changes, and checks—not the transcript. Mark checks as inherited or rerun. Keep a discarded idea only when it prevents the next worker from reversing an accepted decision.
 
-Use this operating procedure:
+Keep this state in the repository for resumption, coordination, or review. A [dot-agents](https://dot-agents.dev/) work item is one option. A commit identifies a snapshot; it does not prove the work or make the files available elsewhere. Share the baseline through authorized Git or explicit file transfer before another thread depends on it ([Orbs manual](https://ampcode.com/manual/orbs#getting-started), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent)).
 
-1. keep research, planning, and coordination together while the workstream is coherent;
-2. distill decisions and proof targets into durable state;
-3. commit the accepted baseline and make it available through authorized shared Git or explicit file transfer before another environment depends on it;
-4. assign bounded implementation with explicit authority and checks;
-5. use fresh verification when independence is worth its cost;
-6. record deviations, exact checks and results, whether evidence was inherited or rerun, current status, and the next action;
-7. let one owner integrate the result and promote reusable learning;
-8. for a completed task-local work item, commit the final snapshot and then remove it; git history remains the archive.
+## Coordinate the split and name one integration owner
+
+> Coordination routes work; integration ownership decides what becomes the combined result.
+
+```text
+coordinator
+├─ implementation
+├─ environment test
+└─ verification
+         │
+         ▼
+integration owner
+         │
+         ▼
+combined decision
+```
+
+A **thread boundary** separates assignments; **durable state** crosses it. **Coordination** assigns work and gathers results. **Integration ownership** resolves overlap, verifies the combined result, and accepts or rejects it.
+
+The same person or thread may coordinate and integrate, but the jobs differ. Collecting reports does not grant authority to accept them. Name one integration owner to make and record the combined decision.
 
 ## Sources used
 
-- Current Amp product guidance: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent), and the archived [“200k Tokens Is Plenty”](https://ampcode.com/notes/200k-tokens-is-plenty).
-- [Jason Liu, “Full Workshop: Setting Yourself Up for Success”](https://www.youtube.com/watch?v=il1c1a2FufU) on long-lived pinned workstreams, compaction, and delegated threads.
-- [Thorsten Ball, “Think Harder: How I Prompt”](https://www.youtube.com/watch?v=HegqGzD-kvc) on discoverable context and proof-oriented prompts.
-- [Matt Pocock, “Full Walkthrough: Workflow for AI Coding”](https://www.youtube.com/watch?v=-QFHIoCo-Ko) and [Kun's agentic-engineering setup](https://www.youtube.com/watch?v=8ZgpAXe5V5w) on separating implementation, review, and verification roles.
+- Current Amp product guidance: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads), and [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent).
+- [Jason Liu, “Full Workshop: Setting Yourself Up for Success”](https://www.youtube.com/watch?v=il1c1a2FufU) on long-lived project threads, compaction, and delegated work.
+- [Matt Pocock, “Full Walkthrough: Workflow for AI Coding”](https://www.youtube.com/watch?v=-QFHIoCo-Ko) and [Kun's agentic-engineering setup](https://www.youtube.com/watch?v=8ZgpAXe5V5w) on separating implementation from review and verification.
 - [dot-agents](https://dot-agents.dev/) supplies the work-item pattern described here.
-- Author synthesis from a private review of one user's recent Amp threads; no private prompts or thread identifiers are reproduced.
+- The decision guide, definitions, and handoff record are author synthesis.
