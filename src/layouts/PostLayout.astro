@@ -249,6 +249,11 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 		cursor: pointer;
 	}
 
+	.post-action[data-share-button] {
+		justify-content: center;
+		min-inline-size: 6.625rem;
+	}
+
 	.post-action:hover {
 		color: #111827;
 		background-color: #f9fafb;
