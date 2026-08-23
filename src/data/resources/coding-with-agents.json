@@ -1,5 +1,23 @@
 [
   {
+    "id": 54,
+    "primarySection": "teams-ecosystem",
+    "title": "Coding Agents Don't Scale Themselves. Neither Do Your Teams.",
+    "subtitle": "Patrick Debois on shared context, platform ownership, team rituals, and organization-wide agent enablement",
+    "url": "https://www.youtube.com/watch?v=zCJtYuqwm7E",
+    "description": "Patrick Debois argues that coding-agent advantage will come less from individual prompting than from organizations improving the systems around agents. He recommends shifting retros from code failures to system failures, separating agent-ready work from decisions that need conversation, centralizing reusable context and tools behind a few maintained paved roads, and tracking human interventions and shared reuse. His dark-factory forecast, hiring model, and proposed metrics are practitioner guidance rather than validated organizational research.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-08-22",
+    "duration": "22m",
+    "topics": [
+      "collaboration-teams",
+      "tools-harnesses",
+      "context-memory",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 53,
     "primarySection": "agent-systems",
     "title": "Pi Coding Agent - Deep Dive",
