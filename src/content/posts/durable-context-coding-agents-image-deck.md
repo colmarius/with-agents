@@ -2,7 +2,7 @@
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents (Image Deck)'
 description: 'A visual presentation about keeping coding-agent intent, decisions, task state, and proof in the repository.'
 pubDate: 2026-07-02
-updatedDate: 2026-08-13
+updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: true
@@ -96,15 +96,15 @@ layout: image
 class: image-only
 -->
 
-![Generated slide contrasting broad lossy model memory with exact local repo truth.](/slides/durable-context-coding-agents-image-deck/Slide-7.webp)
+![Generated slide contrasting broad, lossy model memory with local, reviewable repository context.](/slides/durable-context-coding-agents-image-deck/Slide-7.webp)
 
 <!-- notes -->
 
 Simon Willison describes LLMs as [a lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/): they carry broad public patterns, but the compression loses details. The model cannot infer this repo's fast test command, migration rule, security constraint, product decision, or preferred module boundary.
 
-For exact technical work, a correct repo-local example beats expecting the model to infer the rule. Chat can remain temporary when it points to current, reviewable files.
+For exact technical work, a correct repo-local example beats expecting the model to infer the rule. Repo files are local, versioned, and reviewable, but not automatically authoritative. Chat can remain temporary when it points to current, reviewable files.
 
-In one Amp example, Thorsten Ball reports that after a short UI-change request with a screenshot proof target, the agent read layered `AGENTS.md` files for the dev-server command, browser-automation and Storybook conventions, port, and checks, then returned the change and screenshots ([00:20:22–00:22:55](https://www.youtube.com/watch?v=HegqGzD-kvc&t=1222s)).
+In one Amp example, its co-creator Thorsten Ball reports that after a short UI-change request with a screenshot proof target, the agent read layered `AGENTS.md` files for the dev-server command, browser-automation and Storybook conventions, port, and checks, then returned the change and screenshots ([00:20:22–00:22:55](https://www.youtube.com/watch?v=HegqGzD-kvc&t=1222s)).
 
 ## What should survive?
 <!-- slide:
@@ -265,7 +265,7 @@ Start with one real task. Write down what made the agent better. Repeat. `dot-ag
 - Maggie Appleton, [One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment) — source for the alignment bottleneck and collaborative AI engineering framing.
 - Addy Osmani, [Cognitive Surrender in Software Engineering](https://www.linkedin.com/posts/addyosmani_ai-programming-softwareengineering-activity-7457678048948064256-1pJl) and [Comprehension Debt](https://addyosmani.com/blog/comprehension-debt/) — source for the surrender/debt framing and the gap between generated code and human understanding.
 - Simon Willison, [Lossy encyclopedia](https://simonwillison.net/2025/Aug/29/lossy-encyclopedia/) — source for the lossy-compression mental model and the advice to provide correct examples for exact technical work.
-- Thorsten Ball, [“Think Harder: How I Prompt”](https://www.youtube.com/watch?v=HegqGzD-kvc) ([00:20:22–00:22:55](https://www.youtube.com/watch?v=HegqGzD-kvc&t=1222s)) — an Amp practitioner account of a short UI-change prompt using layered `AGENTS.md` instructions and screenshot proof.
+- Thorsten Ball, [“Think Harder: How I Prompt”](https://www.youtube.com/watch?v=HegqGzD-kvc) ([00:20:22–00:22:55](https://www.youtube.com/watch?v=HegqGzD-kvc&t=1222s)) — an Amp co-creator's account of a short UI-change prompt using layered `AGENTS.md` instructions and screenshot proof.
 - Boris Cherny, [We Cut 80% of Claude Code’s Prompt](https://www.youtube.com/watch?v=qyPCVqFUyDo) ([00:03:21–00:08:54](https://www.youtube.com/watch?v=qyPCVqFUyDo&t=201s)) — source for prompt ablation and restoring guidance only after repeated observed failures.
 - Nick Nisi and Zack Proser, [Writing & Using Skills](https://www.youtube.com/watch?v=pFsfax19yOM) ([00:07:46–00:09:24](https://www.youtube.com/watch?v=pFsfax19yOM&t=466s), [00:29:24–00:30:27](https://www.youtube.com/watch?v=pFsfax19yOM&t=1764s), [01:09:30–01:10:28](https://www.youtube.com/watch?v=pFsfax19yOM&t=4170s)) — a hands-on workshop on when skills load and how to test whether they improve a task; its evaluation figures are approximate.
 - Vaibhav Gupta, [fighting slop with slop](https://www.youtube.com/watch?v=AMiyLItEtLA) ([00:00:01–00:06:00](https://www.youtube.com/watch?v=AMiyLItEtLA&t=1s)) — a Boundary product and engineering-practice account supporting durable architecture guidance, reviewed design writing, executable boundaries, and trace-based issue discovery when traditional line review is reduced.

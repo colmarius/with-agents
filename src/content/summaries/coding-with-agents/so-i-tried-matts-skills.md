@@ -24,6 +24,6 @@ Full video: <https://www.youtube.com/watch?v=0oXOOlqVu5M>
 
 ### Related here
 
-- [Durable Context for Coding Agents: Agent Skills are procedures](/posts/durable-context-coding-agents/#agent-skills-are-procedures) — when a repeatable workflow belongs in a skill and how to test whether it helps.
+- [Durable Context for Coding Agents: Agent Skills are procedures](/posts/durable-context-coding-agents/#put-each-fact-in-the-smallest-useful-home) — when a repeatable workflow belongs in a skill and how to test whether it helps.
 - [Writing & Using Skills](/resources/coding-with-agents/workflows?summary=coding-with-agents__writing-and-using-agent-skills-nick-nisi-zack-proser) — a hands-on workshop on skill triggers, supporting files, and comparative evaluation.
 - [Matt Pocock’s Agentic Engineering Workflow](/resources/coding-with-agents/workflows?summary=coding-with-agents__matt-pococks-agentic-engineering-workflow) — Pocock’s companion explanation of deliberate invocation, reusable procedures, and human-owned direction.

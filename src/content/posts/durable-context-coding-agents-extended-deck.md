@@ -2,7 +2,7 @@
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'A richer slide-first alternate deck for durable context, repo memory, review checkpoints, and dot-agents workflows.'
 pubDate: 2026-07-02
-updatedDate: 2026-08-15
+updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: true
@@ -212,19 +212,19 @@ layout: text
 
 > The model knows public patterns; it does not know which pattern is true here.
 
-<figure class="talk-figure" aria-label="Model memory compared with repository truth">
+<figure class="talk-figure" aria-label="Model memory compared with local, versioned, reviewable repository context">
   <div class="talk-grid talk-grid--3">
     <div class="talk-card">
       <span>model memory</span>
       <strong>broad, compressed, lossy</strong>
     </div>
     <div class="talk-card talk-card--accent">
-      <span>repo truth</span>
-      <strong>exact, local, reviewable</strong>
+      <span>repo context</span>
+      <strong>local, versioned, reviewable</strong>
     </div>
     <div class="talk-card">
       <span>agent work</span>
-      <strong>useful when repo truth shapes it</strong>
+      <strong>useful when current repo context shapes it</strong>
     </div>
   </div>
 </figure>

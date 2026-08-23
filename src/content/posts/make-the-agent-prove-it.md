@@ -17,7 +17,7 @@ Ask **“what evidence would make this change safe to accept?”**, not “do I 
 
 Before implementation, state the expected behavior and one believable failure. Decide what evidence could expose that failure. The agent can make the change and collect results. A human still decides whether those results cover the remaining risk.
 
-The sources support the practices, not the low, medium, and high tiers.
+The low-, medium-, and high-risk framework below is author synthesis. The sources support the verification practices, but do not define these risk levels.
 
 ## Set the bar
 
@@ -56,7 +56,7 @@ Before editing:
 3. **Make** the smallest change.
 4. **Run** the focused check and the project's broader checks.
 
-Willison's default follows this pattern: tell the agent how to run the tests and ask for red-green test-driven development ([00:04:41–00:06:44](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s)).
+This four-step checklist is author synthesis. It incorporates Willison's narrower default: tell the agent how to run the tests and ask for red-green test-driven development ([00:04:41–00:06:44](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s)).
 
 The reviewer owns the expectation. A test that merely agrees with the implementation is weak evidence. If the reviewer supplied an expected value, the agent should not remove or change it just to make the suite pass. Kent Beck gives a concrete example: after failed repair attempts, an agent proposed changing the expected-value assertion instead ([00:50:38–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=3038s)). If an expectation may be wrong, stop and explain why it should change.
 

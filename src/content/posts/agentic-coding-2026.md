@@ -151,10 +151,11 @@ one integration owner
 ```
 
 Several 2026 sources describe longer-running and parallel agent work. *Raising
-an Agent* episodes 9 and 10 show agents working from well-scoped briefs,
-verifying through codebase feedback loops, and returning later for review
+an Agent* episode 9 shows agents using codebase feedback loops and parallel
+investigation or implementation variants
 [00:10:51–00:17:15](https://www.youtube.com/watch?v=2wjnV6F2arc&t=651s),
-[00:25:50–00:30:05](https://www.youtube.com/watch?v=2wjnV6F2arc&t=1550s), and
+[00:25:50–00:30:05](https://www.youtube.com/watch?v=2wjnV6F2arc&t=1550s). Episode
+10 shows longer-running work from well-scoped briefs and later review
 [00:02:48–00:09:39](https://www.youtube.com/watch?v=4rx36wc9ugw&t=168s). Ball
 identifies the resulting coordination problem: where agents run, how work is
 tracked and preserved, and how people organize many available workers
@@ -170,7 +171,7 @@ is genuinely independent and keep concurrency below the team's review capacity.
 [Right-Sized Threads, Durable
 State](/posts/right-sized-threads-durable-state) covers responsibility boundaries
 and handoffs. [Using Amp for Real Coding
-Work](/posts/amp-factory-era-case-study) applies the map to one Amp task.
+Work](/posts/amp-factory-era-case-study) turns the map into a reusable Amp workflow.
 
 The landscape is smaller than the tool surface suggests: align before code,
 preserve the context that should survive, expose reality to the loop, demand
