@@ -1,195 +1,88 @@
 ---
 title: 'Make the Agent Prove It'
-description: 'A risk-scaled acceptance contract for agent-produced code: execution boundaries, discriminating checks, real-system evidence, external oracles, and human judgment.'
+description: 'A practical acceptance framework for agent-written code: the harder a failure is to undo, the stronger the evidence required.'
 pubDate: 2026-06-28
-updatedDate: 2026-08-15
+updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflow', 'Testing', 'Review']
 draft: false
 unlisted: false
 order: 3
 ---
 
-## Make the agent prove it
+## Ask for evidence, not confidence
 
-> Trust starts with a proof question, not a model feeling.
+> Accept agent-written code by evidence, not confidence.
 
-```text
-risk → boundary → proof contract
-                    ↓
-discriminating check → real system → external oracle when available
-                    ↓
-            evidence packet → human decision
-```
+Ask **“what evidence would make this change safe to accept?”**, not “do I trust the model?” Charity Majors describes trust as an account: when nobody reads generated code, teams lose one source of confidence and must rebuild it through tests, evals, conformance checks, and bounded deterministic paths ([00:26:55–00:30:00](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=1615s)).
 
-The useful question is not "do I trust the model?" It is **"what proof would make this change safe to accept?"** Charity Majors, co-founder and CEO of Honeycomb, calls this a trust account: if nobody reads the generated code, the team loses one source of confidence and must replace it with tests, evals, conformance checks, and bounded deterministic pathways ([00:26:55–00:30:00](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=1615s)).
+Before implementation, state the expected behavior and one believable failure. Decide what evidence could expose that failure. The agent can make the change and collect results. A human still decides whether those results cover the remaining risk.
 
-Coding agents make code cheap to generate. They do not make broken behavior, leaked data, bad migrations, or unreadable diffs cheap to own. The agent should propose and produce evidence; the reviewer still owns the decision.
+The sources support the practices, not the low, medium, and high tiers.
 
-This is the risk-scaled acceptance contract for one agent-produced change. It assumes the system exposes checks the agent can run and interpret.
+## Set the bar
 
-## Choose proof from risk
+> Hard-to-undo or hidden failures need stronger evidence.
 
-> Risk chooses the proof stack before the prompt does.
-
-| Change type | Minimum proof before merge |
+| Risk and typical work | Minimum evidence |
 | --- | --- |
-| Copy, docs, or content | Rendered output, source anchors, spelling/link checks, and a scannable diff. |
-| Bug fix or helper function | A failing executable check or captured failing behavior, then the focused test plus normal project checks. |
-| API or server behavior | Tests plus the running service exercised with `curl`, logs, or a smoke script. |
-| UI behavior | An interaction test, browser trace, or recorded path; add screenshots when visual output matters. |
-| Protocol, parser, import/export, standard | A published conformance suite, approved golden fixtures, or differential tests against named implementations. |
-| Migration or data write | Representative non-production fixtures, dry-run and rollback evidence, relevant checks, and human approval. |
-| Permissions, security, dependencies, billing, external effects | Capability review, narrow authority, relevant checks, and explicit human approval. |
+| Low: docs or copy | Diff, render, and links |
+| Medium: bug, API, UI, parser | Captured failure, focused and project checks, changed path |
+| High: permission, migration, external write | Bounds, fixtures, relevant checks, dry run or rollback, approval |
 
-Scale proof by consequence, reversibility, exposure, and observability—not by diff size. The table is author synthesis from Simon Willison's test, manual-check, conformance, sandboxing, and mock-data workflow ([00:04:41–00:18:35](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s)).
+Rate risk with three questions:
 
-## Bound risky execution before it starts
+1. **Consequence:** What happens if this is wrong?
+2. **Reversibility:** How hard is the change to undo?
+3. **Detectability:** How likely is the failure to go unnoticed?
 
-> A boundary contract comes before code proof for consequential work.
+Diff size is a poor substitute. A one-line permission change can be high risk; a long documentation edit can be low risk. The levels guide judgment rather than calculate it.
 
-```text
-What could the agent read?
-What could the agent change?
-What could the agent send out?
-What data will it use to test the change?
-```
+For high-risk work:
 
-If private data, untrusted instructions, and outbound communication can coexist, remove a capability instead of trusting the model to separate data from instructions. Willison calls that combination the "lethal trifecta" and recommends cutting off at least one leg and sandboxing coding agents to reduce available damage ([00:13:39–00:16:30](https://www.youtube.com/watch?v=owmJyKVu5f8&t=819s)). A sandbox constrains capabilities; it does not make production data safe or external side effects reversible.
+- **Constrain execution** before it begins.
+- **Use representative fixtures**, not production data.
+- **Require approval** before an irreversible or external action.
 
-Do not copy production data into an agent workspace to make a test realistic. Use generated users, synthetic records, and reproducible edge-case fixtures instead ([00:17:33–00:18:35](https://www.youtube.com/watch?v=owmJyKVu5f8&t=1053s)). Tasks involving secrets, private data, permissions, billing, migrations, or external effects need an explicit human decision before execution.
+Willison recommends sandboxing to limit damage and realistic fake data instead of sensitive user data ([00:15:36–00:18:35](https://www.youtube.com/watch?v=owmJyKVu5f8&t=936s)).
 
-## Make the first proof executable
+## Define and run the checks
 
-> Make the first proof executable before the agent changes code.
+> A useful check can catch a believable wrong implementation.
 
-```text
-Before implementing, identify the failing check or capture the failing behavior.
-Run it and show the failure.
-Implement the smallest fix.
-Run the targeted test, then the normal project check command.
-```
-
-Willison's default instruction is short: tell the agent how to run the tests, then use red-green test-driven development ([00:04:41–00:06:44](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s)). The value is not ceremony. It forces the agent to state what would prove the task, observe failure, then make the smallest change that passes. If the code will live, require a reusable check.
-
-The reviewer still owns the acceptance condition. Formal methods consultant Hillel Wayne reported that, in his experiments as of March 2026, models helped encode precisely stated properties but did not reliably invent meaningful ones ([01:06:16–01:12:37](https://www.youtube.com/watch?v=KSkcgIYQy0U&t=3976s)). A green agent-written test is weak evidence if the agent chose a trivial assertion.
-
-Protect reviewer-supplied acceptance checks from agent edits unless a reviewer
-explicitly authorizes a requirement change. In one Smalltalk-parser session, Kent Beck
-reports an agent proposing to change the test or remove an expected-value assertion
-after unsuccessful repair attempts
-([00:50:38–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=3038s)).
-
-Executable does not automatically mean discriminating. A check is discriminating only if a plausible wrong behavior or competing explanation could produce a different result. In an April 2026 personal account, Salvatore Sanfilippo reported that a model kept the supplied benchmark and regression suite passing while optimizing a small Tcl interpreter, but a later model review found semantics-changing bugs outside those tests ([00:07:47–00:14:11](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s)). The suite was repeatable; it did not cover the disputed behavior.
-
-**Author synthesis:** Generated explanations can steer investigation, but they do not establish acceptance. In a June 2026 project account, Sanfilippo reported that a model defended a plausible diagnosis until he contrasted how the working and optimized paths reached the repeated-token state; the model then reconsidered ([00:05:44–00:09:03](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s)). The English source-list titles are translations, and the descriptions above are editorial paraphrases of Italian captions; none are quotations.
-
-Before accepting an explanation or green check, use the following audit; the template and provenance rule are author synthesis:
-
-```text
-claim:
-predicted behavioral difference:
-counter-evidence that would change the decision:
-discriminating test or intervention:
-observed result:
-evidence produced by the same model:
-decision:
-```
-
-If the same model wrote the code, explanation, and test, name that correlation in the review packet. Add a representative run, an independent check, or an external oracle when the risk warrants it.
-
-If the agent cannot explain what test would fail, that is information: you may be asking for an unclear behavior change, not a coding task.
-
-## Exercise the real system
-
-> Passing tests are not enough when the route, API, or UI has to work.
-
-```text
-Command: npm run dev
-Command: curl -i http://localhost:4321/api/example
-Expected: 200 plus the new field
-Actual: pasted response or saved log path
-```
-
-Passing tests do not prove the server boots, the route is wired, or the user-visible behavior works. Willison asks agents to start the application and exercise a new API with `curl`, because real-system checks find bugs the suite did not cover ([00:06:44–00:07:33](https://www.youtube.com/watch?v=owmJyKVu5f8&t=404s)). When the task touched a running system, ask for the actual response, trace, or screenshot—not only "all tests pass."
-
-## Use an external oracle for standards and compatibility
-
-> When correctness has an external target, use it instead of taste.
-
-```text
-Build or import the fixture suite.
-Show that it fails against the current implementation.
-Implement until the suite passes.
-Document any unsupported cases.
-```
-
-Some work has a better oracle than your prompt. A **conformance suite** checks a published specification, a **golden fixture** checks approved expected output, and a **differential suite** compares behavior with named implementations. Willison uses WebAssembly's specification suite as the conformance example and multipart uploads tested against several frameworks as differential compatibility evidence ([00:07:33–00:09:36](https://www.youtube.com/watch?v=owmJyKVu5f8&t=453s)). These targets strengthen review; they do not replace it.
-
-**Author synthesis:** Subjective work needs a mixed proof contract, not an invented universal oracle. In her brand-adherence example, Thais Castello Branco, founder of Taste Labs, decomposes a brand into codified components such as color and typography that reviewers can verify against, and separates those from style, fit, and creativity ([00:04:27–00:07:24](https://www.youtube.com/watch?v=lCBf9slCanI&t=267s)). Verify the former; preserve rater context and disagreement for the latter. In her design-evaluation example, disagreement about a comparatively verifiable attribute such as alignment may flag defective data, while disagreement about aesthetics can be valid preference signal ([00:10:29–00:15:28](https://www.youtube.com/watch?v=lCBf9slCanI&t=629s)).
-
-## Return a review packet a human can own
-
-> Evidence should survive the private agent transcript and expose what remains uncertain.
-
-```text
-behavior changed:
-commands and results:
-real-system or external-oracle evidence:
-evidence provenance or correlation:
-known gaps:
-design or risk decision:
-```
-
-Put that packet in a pull-request comment, work item, test log, or artifact path. Include exact commands and exit codes, relevant logs or responses, screenshots for visual output, traces for interaction behavior, fixture names, and any intentionally skipped check. Repeatable executable checks make failure visible even when prose instructions are ignored; Mario Zechner, creator of the Pi coding agent, demonstrates that role with linting, type checking, smoke tests, hooks, and terminal capture ([00:37:11–00:42:55](https://www.youtube.com/watch?v=DPgJjRdQWrg&t=2231s)).
-
-The reviewer must still understand the result. Maintained code needs design review even when its checks pass. Ask:
-
-1. What behavior changed?
-2. What proof covers that behavior?
-3. Could that proof distinguish the intended behavior from a plausible wrong result?
-4. What risk is not covered by the proof?
-5. Why is the resulting design small enough to maintain?
-
-If nobody can answer those, the agent is not done.
-
-## Give the agent a proof contract
-
-> Give the agent its proof contract before it optimizes for done.
-
-```txt
 Before editing:
-1. List the likely failure modes.
-2. Propose a low, medium, or high risk level.
-3. Propose the minimum focused checks, real-system evidence, and external oracle needed.
-4. Stop for confirmation if the task touches data, permissions, dependencies, migrations, security, billing, secrets, or external side effects.
-5. State what result would count against the proposed explanation or behavior.
 
-When the behavior can be expressed as an executable check:
-- show the failing check or current failing behavior;
-- confirm the check could fail for a plausible wrong result;
-- make the smallest change;
-- run the focused check, then the normal project checks.
+1. **State** the expected behavior and one plausible failure.
+2. **Capture** the current failure when possible.
+3. **Make** the smallest change.
+4. **Run** the focused check and the project's broader checks.
 
-Do not use production data. Use representative fixtures or synthetic edge cases.
+Willison's default follows this pattern: tell the agent how to run the tests and ask for red-green test-driven development ([00:04:41–00:06:44](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s)).
 
-Return:
-- behavior changed;
-- commands and results;
-- attached artifacts;
-- known gaps or skipped checks;
-- files changed;
-- decisions still requiring a human.
-```
+The reviewer owns the expectation. A test that merely agrees with the implementation is weak evidence. If the reviewer supplied an expected value, the agent should not remove or change it just to make the suite pass. Kent Beck gives a concrete example: after failed repair attempts, an agent proposed changing the expected-value assertion instead ([00:50:38–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=3038s)). If an expectation may be wrong, stop and explain why it should change.
 
-The agent proposes and produces the evidence; the reviewer decides whether it covers the actual risk.
+Automated checks are not the final state when behavior runs through a route, UI, or migration. Exercise the changed path:
+
+- **API:** Start the application and call the changed endpoint. Willison uses `curl` and notes that this can reveal failures the suite missed ([00:06:44–00:07:33](https://www.youtube.com/watch?v=owmJyKVu5f8&t=404s)).
+- **UI:** Perform the changed interaction and inspect the resulting state.
+- **Migration:** Use representative fixtures and exercise the dry run or rollback when available.
+
+Return the actual response, log, screenshot, or other artifact—not only “all tests pass.” When a published specification or trusted reference output already exists, compare against it. Willison uses WebAssembly's specification tests and cross-framework multipart behavior as examples ([00:07:33–00:09:36](https://www.youtube.com/watch?v=owmJyKVu5f8&t=453s)). An external target strengthens the evidence; it does not make the acceptance decision.
+
+## Make the decision
+
+> The agent reports what happened and what remains uncertain; a human accepts the risk.
+
+| Record | Include |
+| --- | --- |
+| Change | Expected behavior and plausible failure |
+| Risk | Level, reason, and execution boundary |
+| Evidence | Checks, results, and artifacts |
+| Decision | Gaps, accepted or rejected, by whom, and why |
+
+The packet should let a reviewer see which failure each check could catch and which risk remains uncovered. A passing suite is an input to that decision, not the decision itself. The final gate stays simple: **the agent can produce evidence, but it cannot accept its own risk.**
 
 ## Sources used
 
-- [Charity Majors, “Stop being skeptical about AI for development”](https://www.youtube.com/watch?v=HC8T1OlgYi0), especially [00:26:55]-[00:30:00] on rebuilding trust outside unread generated code.
-- [Simon Willison: Engineering practices that make coding agents work](https://www.youtube.com/watch?v=owmJyKVu5f8), especially [00:04:41]-[00:18:35].
-- [Pi Building Pi, OpenClaw's Minimalist Coding Agent](https://www.youtube.com/watch?v=DPgJjRdQWrg), especially [00:37:11]-[00:42:55].
-- [Formal methods with Hillel Wayne](https://www.youtube.com/watch?v=KSkcgIYQy0U), especially [01:06:16]-[01:12:37].
-- [TDD, AI agents and coding with Kent Beck](https://www.youtube.com/watch?v=aSXaxOdVtAQ), especially [00:50:38]-[00:51:42] on protecting expected behavior from agent changes to tests.
-- [Salvatore Sanfilippo, “Testing recent alternative models”](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=467s), especially [00:07:47]-[00:14:11].
-- [Salvatore Sanfilippo, “Further observations on Claude Fable”](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s), especially [00:05:44]-[00:09:03].
-- [Thais Castello Branco, “Ending AI Slop”](https://www.youtube.com/watch?v=lCBf9slCanI), especially [00:04:27]-[00:15:28] on decomposing subjective evaluation, routing verifiable components, and preserving preference disagreement.
+- [Charity Majors, “Stop being skeptical about AI for development,” 00:26:55–00:30:00](https://www.youtube.com/watch?v=HC8T1OlgYi0&t=1615s), on rebuilding trust outside unread generated code.
+- [Simon Willison, “Engineering practices that make coding agents work,” 00:04:41–00:18:35](https://www.youtube.com/watch?v=owmJyKVu5f8&t=281s).
+- [Kent Beck, “TDD, AI agents and coding,” 00:50:38–00:51:42](https://www.youtube.com/watch?v=aSXaxOdVtAQ&t=3038s), on protecting expected behavior from agent changes to tests.
