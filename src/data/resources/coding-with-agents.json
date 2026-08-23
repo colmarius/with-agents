@@ -1,5 +1,23 @@
 [
   {
+    "id": 55,
+    "primarySection": "teams-ecosystem",
+    "title": "How to Build a Self-Improving Company with AI",
+    "subtitle": "Tom Blomfield on recursive AI loops, legible company context, and flatter organizations",
+    "url": "https://www.youtube.com/watch?v=X_JsIHUfUjc",
+    "description": "YC General Partner Tom Blomfield argues that AI-native companies should be built as recursive loops connecting signals, policies, tools, quality gates, and feedback rather than adding copilots to existing hierarchies. He describes YC agents that monitor failed database queries and propose and deploy fixes, recommends AI-legible organizational knowledge and disposable internal software, and predicts flatter teams. The examples and five-times revenue-per-employee claim are first-party reports without evaluation details; recording all communications and autonomous deployment raise consent, privacy, security, and governance questions the talk does not resolve.",
+    "type": "video",
+    "source": "Y Combinator",
+    "date": "2026-05-21",
+    "duration": "13m",
+    "topics": [
+      "business-adoption",
+      "context-memory",
+      "safety-permissions",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 54,
     "primarySection": "teams-ecosystem",
     "title": "Coding Agents Don't Scale Themselves. Neither Do Your Teams.",
