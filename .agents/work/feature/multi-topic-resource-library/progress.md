@@ -83,3 +83,27 @@
 ### Next action
 
 - Prepare exact ordered candidate selections for the six broad collections and request user approval before any capture for those playlists.
+
+## 2026-08-24 — Curation candidates and full-series thin slices prepared
+
+- Three independent high-orb reviews produced exact, ordered, current-manifest candidate sets for the six broad playlists. The 67 proposed IDs are recorded in `catalog.json` with `curation.status: draft` and documented with roles and freshness gates in `curation.md`.
+- Draft counts: Serverless Expeditions 14, Google Cloud Essentials 8, Get Started with Google Cloud 12, Cloud Bytes 12, Beyond Your Bill 11, and Architecting with Google Cloud 10.
+- Draft status deliberately selects nothing for capture. User approval is required before any set becomes `reviewed`.
+- Ran one bounded `capture --limit 1` command for each approved full-series playlist. Strict English capture succeeded for all six:
+  - Cloud Security Basics — `MHtg2Au78LI`, auto-generated English.
+  - Security Command Center — `goJ_G2ygdSA`, manual English captions.
+  - Pub/Sub Made Easy — `cvu53CnZmGI`, auto-generated English.
+  - Pub/Sub Best Practices — `Oo5PXA4idI8`, auto-generated English.
+  - Engineering for Reliability — `DL_8bHeTlgg`, auto-generated English; this 15-second trailer contains no substantive spoken content and should be omitted from a public learning sequence.
+  - Build With Google Cloud — `IeMYQ-qJeK4`, auto-generated English.
+- Reviewed each captured transcript, wrote a source-faithful draft summary, and refreshed the corresponding draft playlist overview. Priyanka Vergadia’s obvious auto-captioned name was corrected source-faithfully in the Build transcript.
+
+### Verification
+
+- `npm run youtube:library -- status` — six captured/draft-summarized full-series videos; 55 full-series captures remain pending; all 67 broad candidates remain inactive under draft curation.
+- `npm run youtube:library -- audit` — passed for 713 tracked videos, 723 manifest occurrences, 186 transcripts, 186 summaries, 21 playlists, and 1 author; only the pre-existing intentional antirez duplicate notice was reported.
+- `git diff --check` — passed.
+
+### Next action
+
+- Request user approval or adjustments for the six candidate selections. Full-series backfill can continue in disjoint worker batches while broad capture remains blocked.
