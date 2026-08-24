@@ -6,17 +6,17 @@ publishedAt: "2021-10-20T23:00:12Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter explains how Cloud Monitoring metric scopes aggregate visibility across projects while a scoping project stores dashboards, alerts, uptime checks, and groups. The architectural separation and access-control concerns are durable; the 2021 console flow, API shape, terminology, and recommended configuration should be verified against current documentation.
 
 ## Key Ideas
 
-- [00:00:00] Each Google Cloud project hosts a metric scope and its associated monitoring configuration.
-- [00:01:03] A dedicated scoping project can centralize monitoring configuration without tying it to a workload project's lifecycle.
-- [00:02:07] Visibility across monitored projects remains controlled by IAM access to the relevant monitoring context.
-- [00:05:18] Metric-scope membership can be automated through the Cloud Monitoring API rather than maintained only through the console.
+- [00:00:00]-[00:01:03] In the model demonstrated in 2021, each Google Cloud project hosts a metric scope and stores that scope's alerts, uptime checks, dashboards, and monitoring groups.
+- [00:01:03]-[00:02:07] A dedicated scoping project can centralize cross-project dashboards and alerting configuration without tying that configuration to a workload project's lifecycle.
+- [00:02:07]-[00:03:12] Cross-project visibility is governed by IAM: access only to the staging project does not grant visibility into the production project through the monitoring scope.
+- [00:05:18]-[00:06:21] The walkthrough uses the then-current Cloud Monitoring API to automate adding a monitored-project resource to a metric scope.
 
 ## Practical Implications
 

@@ -1,6 +1,6 @@
 ---
 title: "Engineering for Reliability"
-status: draft
+status: reviewed
 coveredVideoIds:
   - DL_8bHeTlgg
   - qyfOE_78nT0
@@ -32,7 +32,7 @@ coveredVideoIds:
 
 - Manifest: 24 entries; 24 available and 0 unavailable.
 - Captured: 24.
-- Summaries: 24 drafts.
+- Summaries: 24 reviewed.
 - Incorporated: 24.
 - Pending video IDs: none.
 - Speaker attribution: Yuri identifies himself as a Google or Google Cloud SRE in 7 videos ([example](../../videos/qyfOE_78nT0/summary.md)); 16 substantive videos do not identify their presenter or an affiliation ([example](../../videos/U53wC2A75Is/summary.md)); the trailer has no substantive speaker ([summary](../../videos/DL_8bHeTlgg/summary.md)).
@@ -56,16 +56,17 @@ coveredVideoIds:
 
 - Yuri, identified as an SRE at Google Cloud, contrasts automatic OpenTelemetry instrumentation for quick dependency visibility with manual spans for application-specific operations and explicit context propagation ([summary](../../videos/RuyUXBOdjGI/summary.md)).
 - Yuri, identified as an SRE at Google Cloud, uses OpenTelemetry counters and histograms to carry request, error, and latency signals through a collector into a monitoring back end ([summary](../../videos/SCNObWlILqk/summary.md)).
-- Yuri, identified as an SRE at Google Cloud, frames managed Prometheus collection as preserving PromQL and scrape configuration while transferring collector infrastructure management to a provider ([summary](../../videos/YjEh_V7MRc4/summary.md)).
+- Yuri, identified as an SRE at Google Cloud, demonstrates translating one application's Prometheus Operator scrape configuration to managed collection and then querying the same application metric with PromQL; the source does not establish complete configuration or feature parity ([summary](../../videos/YjEh_V7MRc4/summary.md)).
 - Yuri, identified as a site reliability engineer at Google, treats quota headroom as a capacity signal that should be monitored before throttling causes user-visible failures ([summary](../../videos/VxXJUYcLmTk/summary.md)).
-- An unnamed presenter whose affiliation is not identified uses fleet, node, workload, container, alert, and deployment evidence to distinguish shared GKE infrastructure incidents from workload-local failures ([infrastructure summary](../../videos/lHCB_i_rWAI/summary.md), [service summary](../../videos/L6JnAhp3E-c/summary.md)).
+- Unnamed presenters whose affiliations are not identified use node, workload, container, alert, and deployment evidence to narrow GKE incidents while treating correlation and absent alerts as evidence rather than proof ([infrastructure summary](../../videos/lHCB_i_rWAI/summary.md), [service summary](../../videos/L6JnAhp3E-c/summary.md)).
 
 ## Revisions and Tensions
 
-- Editorial: The 15-second trailer still has no educational content; complete source preservation includes it, but a reviewed learning sequence should omit it unless the trailer itself has catalog value ([summary](../../videos/DL_8bHeTlgg/summary.md)).
+- Editorial: The 15-second trailer has no educational content. Complete source preservation includes it, but every future learning sequence must exclude it ([summary](../../videos/DL_8bHeTlgg/summary.md)).
 - Yuri, identified as an SRE at Google Cloud, describes one 2022 image-replacement Prometheus migration as easy, but the source does not cover high availability, rules, long-term data, rollback, or failure recovery ([summary](../../videos/hB8Oc-xudQc/summary.md)).
 - An unnamed presenter whose affiliation is not identified recommends reducing log volume and exclusions to control cost while acknowledging that excluded evidence may disappear from investigation and error-reporting workflows ([summary](../../videos/z6hpL8J-jG4/summary.md)).
-- An unnamed presenter whose affiliation is not identified recommends centralizing operational data for cross-team diagnosis, while access, retention, security boundaries, and administrative blast radius remain organization-specific design concerns ([summary](../../videos/rMOXWc5BUkc/summary.md)).
+- An unnamed presenter whose affiliation is not identified recommends centralizing operational data for cross-team diagnosis and defining retention and access from explicit requirements ([summary](../../videos/rMOXWc5BUkc/summary.md)).
+- Editorial: Centralization still leaves security boundaries, tenant isolation, and administrative blast radius as organization-specific design concerns ([enterprise summary](../../videos/rMOXWc5BUkc/summary.md), [logging summary](../../videos/hh_z8qEwGfQ/summary.md)).
 - Editorial: OpenCensus in the 2021 custom-metrics episode is legacy material; preserve its metric-design lesson but use current OpenTelemetry guidance for implementation ([summary](../../videos/eCcsxDln6I0/summary.md)).
 
 ## Practical Implications

@@ -6,17 +6,17 @@ publishedAt: "2021-12-01T16:00:34Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter outlines Cloud Logging practices for structured records, centralized storage, retention, access control, and export. The architectural principles remain useful, but the 2021 bucket defaults, retention limits, IAM roles, agent parsers, export integrations, and console procedures should be verified against current documentation.
 
 ## Key Ideas
 
-- [00:00:00] Structured logs make operational fields directly queryable instead of requiring regular expressions over an undifferentiated text payload.
-- [00:01:02] Applications, agents, APIs, and logging libraries should emit structured payloads in forms Cloud Logging can preserve and query.
-- [00:02:04] Centralized buckets can support consistent retention, location, and audit-log handling across projects.
-- [00:03:07] IAM and log views provide different levels of access control, while exports can feed external systems such as Splunk.
+- [00:00:00]-[00:01:02] Structured logs make individual fields queryable instead of requiring regular expressions or other string processing over a text payload.
+- [00:01:02]-[00:02:04] The presenter describes emitting structured JSON through supported agent parsers, the Cloud Logging API, or logging libraries configured for structured output.
+- [00:02:04]-[00:03:07] Centralized user-defined log buckets and sinks can support consistent handling across projects; in the 2021 walkthrough, bucket retention and storage location are configurable.
+- [00:03:07]-[00:04:09] IAM and log views provide different levels of access control, while the video presents then-current push and pull integrations for exporting logs to Splunk.
 
 ## Practical Implications
 

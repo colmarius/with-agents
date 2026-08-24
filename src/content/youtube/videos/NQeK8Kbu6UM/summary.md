@@ -6,7 +6,7 @@ publishedAt: "2021-08-11T15:00:22Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter explains how distributed traces separate end-to-end request latency from the time spent in individual services. Neither the title nor transcript identifies the presenter or an affiliation.
@@ -16,17 +16,17 @@ The core OpenTelemetry model of traces, parent and child spans, and propagated c
 ## Key Ideas
 
 - [00:00:00] Distributed tracing captures how requests traverse services and attributes latency along that path.
-- [00:01:02] A trace contains spans: a parent can represent user-visible latency while child spans represent downstream service calls.
+- [00:01:02]-[00:02:04] A trace contains spans: the parent describes latency observed by the user, while child spans capture calls and responses in the distributed system.
 - [00:02:04] Propagating context in HTTP headers lets a backend append spans to the same trace.
 - [00:03:07] A waterfall view makes large latency contributors visible, while span events and details add diagnostic context.
 
 ## Practical Implications
 
-Instrument service boundaries consistently, propagate trace context, and add spans around operations whose latency matters. Use OpenTelemetry as the portable instrumentation layer, but check current Cloud Trace exporter and SDK guidance before implementing the sample approach.
+Instrument service boundaries consistently, propagate trace context, and add spans around operations whose latency matters. The presenter recommends OpenTelemetry's APIs, libraries, agents, and collectors for capture, but check current OpenTelemetry APIs and Cloud Trace export guidance before implementing the 2021 sample approach.
 
 ## Questions and Tensions
 
-More spans and annotations improve diagnosis but add telemetry volume and instrumentation overhead. Useful traces also depend on correct context propagation across every relevant boundary.
+Custom spans and span events can add diagnostic detail, but the walkthrough does not discuss sampling, telemetry volume, or instrumentation overhead. Its unified frontend/backend trace depends on passing and extracting the appropriate HTTP-header context.
 
 ## Source
 

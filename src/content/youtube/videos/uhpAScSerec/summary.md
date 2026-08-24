@@ -6,7 +6,7 @@ publishedAt: "2021-06-02T15:00:34Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter explains how existing Google Cloud platform and logs-based metrics can supply service-level indicators for request-serving applications and data pipelines. The durable lesson is to select metrics that represent user-visible success, then express them as request-based or window-based ratios before setting an SLO.
@@ -16,7 +16,7 @@ The console screens, API shapes, product names, and configuration steps shown ar
 ## Key Ideas
 
 - [00:00:00] Request-based SLIs divide good work by total work, while window-based SLIs measure the fraction of intervals that meet a reliability threshold.
-- [00:02:06]-[00:04:11] Load-balancer request counts can support an availability SLI, but teams must deliberately decide whether client-error responses belong in the denominator and choose an evaluation window that makes error budgets useful.
+- [00:02:06]-[00:04:11] The example uses load-balancer request counts for an availability SLI, counting all requests as total and HTTP 200 responses as good. The presenter cautions that including responses such as 404s in the total requires a deliberate decision and recommends a rolling window for operational use in this example.
 - [00:05:13]-[00:06:17] A Dataflow freshness SLI can evaluate average system lag over short windows when per-element good-versus-total counting is unavailable.
 - [00:07:19]-[00:08:22] Logs-based metrics can turn structured request status data into good and total event counts for a custom availability SLI.
 

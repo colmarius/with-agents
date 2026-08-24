@@ -6,10 +6,10 @@ publishedAt: "2022-02-02T16:00:04Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
-This 15-second playlist trailer contains music and no substantive spoken material. The auto-generated caption consists only of a music marker and the word “you,” so it cannot support a reliability claim or instructional summary.
+This 15-second playlist trailer contains music and no substantive spoken material. Its auto-generated caption consists only of a music marker and the word “you,” so it provides no reliability instruction and supports no substantive summary. It must be excluded from any future learning sequence.
 
 ## Key Ideas
 
@@ -17,7 +17,7 @@ This 15-second playlist trailer contains music and no substantive spoken materia
 
 ## Practical Implications
 
-- Keep the item in the complete source manifest, but exclude it from a public learning sequence unless the trailer itself has catalog value.
+- Keep the item as source evidence, but exclude it from every future learning sequence; it is not educational content.
 - Do not infer the playlist’s thesis from its title or from later episodes when summarizing this source.
 
 ## Questions and Tensions

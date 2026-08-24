@@ -6,7 +6,7 @@ publishedAt: "2021-08-25T15:00:08Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter introduces Cloud Logging as the layer for investigating service events after metrics or traces reveal a problem. Neither the title nor transcript identifies the presenter or an affiliation.
@@ -16,8 +16,8 @@ The durable model is ingestion, routing, storage, access, querying, and live ins
 ## Key Ideas
 
 - [00:00:00] A log entry records an event with a timestamp, payload, and potentially resource, log-name, and severity metadata.
-- [00:01:01] Cloud Logging receives platform, application, infrastructure, and network logs through its API, then applies Log Router sink filters.
-- [00:02:05] Sinks can route or exclude entries, while log buckets organize indexed data and log views constrain access.
+- [00:01:01]-[00:02:05] Cloud Logging receives platform, application, infrastructure, and network logs through its API, after which Log Router sinks apply inclusion and exclusion filters.
+- [00:02:05]-[00:03:07] Sinks route entries to destinations or exclude matches from a destination; Cloud Logging log buckets organize stored, indexed data, and log views constrain access within buckets.
 - [00:04:11] Logs Explorer filters entries by fields such as GKE resource, container, and severity, then exposes payload and metadata for investigation.
 - [00:05:13] Streaming supports near-real-time debugging after a query narrows the relevant entries.
 
@@ -27,7 +27,7 @@ Design log routing, retention, exclusions, and access controls deliberately rath
 
 ## Questions and Tensions
 
-Exclusions can control cost but can also remove evidence needed during incidents. Centralizing logs improves cross-service investigation while increasing the importance of granular access controls and retention policy.
+The presenter describes exclusions as a cost optimization, but excluded evidence may be unavailable during later investigations. Centralizing logs can support cross-project investigation while increasing the importance of the granular access controls demonstrated with log views.
 
 ## Source
 

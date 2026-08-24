@@ -6,7 +6,7 @@ publishedAt: "2021-05-26T15:00:12Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter introduces SLIs and SLOs as a shared way to define and manage reliability for user-facing applications, APIs, and data pipelines. The core argument is that reliability should be designed and measured as a feature, using indicators tied to user interactions rather than a vague notion of uptime.
@@ -16,9 +16,9 @@ The Cloud Operations screens and procedures shown are from 2021 and may be dated
 ## Key Ideas
 
 - [00:00:00]-[00:01:03] Different service types have different user-facing reliability concerns, including availability, performance, throughput, correctness, and data-processing latency.
-- [00:02:05]-[00:03:07] An SLI counts a defined class of interactions and distinguishes successful events from the valid total, with exclusions such as client errors requiring deliberate policy.
+- [00:02:05]-[00:03:07] An SLI can express successful interactions as a fraction of total interactions; the example defines success as HTTP 200 and says teams may exclude 400 responses believed to result from misconfigured clients.
 - [00:03:07]-[00:04:12] An SLO combines an SLI, threshold, and evaluation window; the suggested target is the boundary at which typical users are just satisfied rather than an automatic 100 percent.
-- [00:06:18] Rolling windows replenish error budget through improved performance over time, unlike calendar windows that reset the budget at a boundary.
+- [00:06:18] The presenter warns that a calendar period restores the full error budget at rollover, whereas a rolling SLO does not create that one-time reset.
 
 ## Practical Implications
 
