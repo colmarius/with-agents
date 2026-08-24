@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import ResourceCatalogList from '../../components/resources/ResourceCatalog';
+import ResourcesNav from '../../components/resources/ResourcesNav.astro';
+import { toManifestEntry } from '../../components/resources/summaryResolver';
+import {
+  getCatalogResources,
+  resourceCatalogs,
+} from '../../data/resources/catalogs';
+import Layout from '../../layouts/Layout.astro';
+import type { ResourceCatalog } from '../../types/resources';
+
+export const getStaticPaths = (() =>
+  resourceCatalogs.map((catalog) => ({
+    params: { topic: catalog.slug },
+    props: { catalog },
+  }))) satisfies GetStaticPaths;
+
+type Props = {
+  catalog: ResourceCatalog;
+};
+
+const { catalog } = Astro.props;
+const resources = getCatalogResources(catalog);
+const entries = await getCollection('summaries');
+const manifest = entries.map(toManifestEntry);
+const canonicalPath = `/resources/${catalog.slug}`;
+---
+
+<Layout
+  title={`With Agents – ${catalog.title} Resources`}
+  description={catalog.description}
+  canonicalPath={canonicalPath}
+>
+  <div class="max-w-4xl mx-auto">
+    <ResourcesNav active="all" catalog={catalog} />
+
+    <h1 class="text-3xl md:text-4xl font-light mb-4 text-gray-900">
+      {catalog.title}
+    </h1>
+    <p class="text-lg text-gray-600 mb-12 font-light leading-relaxed">
+      {catalog.description}
+    </p>
+
+    <ResourceCatalogList
+      client:load
+      emptyMessage="Reviewed resources are being prepared for this topic."
+      manifest={manifest}
+      resources={resources}
+      topicOptions={catalog.topicOptions}
+    />
+  </div>
+</Layout>

@@ -385,7 +385,7 @@ test('resource validation rejects duplicate keys, IDs, dates, enums, and misalig
       "type": "invalid",
       "source": "Source",
       "date": "2026-02-30",
-      "topics": ["invalid-topic"]
+      "topics": [7]
     },
     {
       "id": 1,
@@ -414,7 +414,7 @@ draft: false
     assert.match(errors, /duplicates resource id 1/);
     assert.match(errors, /invalid date 2026-02-30/);
     assert.match(errors, /invalid type invalid/);
-    assert.match(errors, /invalid topic invalid-topic/);
+    assert.match(errors, /invalid topic 7/);
     assert.match(errors, /references missing resourceId 99/);
     assert.match(errors, /resource id 1 has no public summary/);
   } finally {
@@ -422,14 +422,14 @@ draft: false
   }
 });
 
-test('resource validation rejects missing and unknown primary sections', async () => {
+test('resource validation rejects missing and empty primary sections', async () => {
   const root = await createFixture({
     resourceValue: [
       ...resources({ date: undefined, primarySection: undefined }),
       {
         ...resources()[0],
         id: 2,
-        primarySection: 'unknown',
+        primarySection: '',
       },
     ],
   });
@@ -441,7 +441,50 @@ test('resource validation rejects missing and unknown primary sections', async (
       errors,
       /resource \$\[0\] has invalid primarySection undefined/,
     );
-    assert.match(errors, /resource \$\[1\] has invalid primarySection unknown/);
+    assert.match(errors, /resource \$\[1\] has invalid primarySection/);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('resource validation combines manifests and rejects global ID collisions', async () => {
+  const root = await createFixture({
+    post: `---
+title: 'Post'
+draft: false
+---
+`,
+  });
+  try {
+    await writeFixture(root, 'src/data/resources/cloud.json', [
+      {
+        ...resources()[0],
+        id: 2,
+        url: 'https://example.com/cloud',
+        primarySection: 'foundations-platform',
+        topics: ['gcp'],
+      },
+    ]);
+    await writeFixture(
+      root,
+      'src/content/summaries/cloud.md',
+      publicSummary(2),
+    );
+
+    const valid = await runPublicContentGuard({ repoRoot: root });
+    assert.deepEqual(valid.errors, []);
+    assert.equal(valid.stats.resourceCount, 2);
+
+    await writeFixture(root, 'src/data/resources/cloud.json', [
+      {
+        ...resources()[0],
+        url: 'https://example.com/cloud',
+        primarySection: 'foundations-platform',
+        topics: ['gcp'],
+      },
+    ]);
+    const duplicate = await runPublicContentGuard({ repoRoot: root });
+    assert.match(duplicate.errors.join('\n'), /duplicates resource id 1/);
   } finally {
     await rm(root, { recursive: true, force: true });
   }

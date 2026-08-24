@@ -1,33 +1,37 @@
 ---
 import { getCollection } from 'astro:content';
 import type { GetStaticPaths } from 'astro';
-import CodingWithAgentsList from '../../../components/resources/CodingWithAgents';
+import ResourceCatalogList from '../../../components/resources/ResourceCatalog';
 import ResourcesNav from '../../../components/resources/ResourcesNav.astro';
 import { toManifestEntry } from '../../../components/resources/summaryResolver';
-import { codingResources } from '../../../data/resources/coding-with-agents';
 import {
-  type ResourceSection,
-  resourceSections,
-} from '../../../data/resources/sections';
+  getCatalogResources,
+  resourceCatalogs,
+} from '../../../data/resources/catalogs';
 import Layout from '../../../layouts/Layout.astro';
+import type {
+  ResourceCatalog,
+  ResourceSection,
+} from '../../../types/resources';
 
 export const getStaticPaths = (() =>
-  resourceSections.map((section) => ({
-    params: { section: section.routeSlug },
-    props: { section },
-  }))) satisfies GetStaticPaths;
+  resourceCatalogs.flatMap((catalog) =>
+    catalog.sections.map((section) => ({
+      params: { topic: catalog.slug, section: section.routeSlug },
+      props: { catalog, section },
+    })),
+  )) satisfies GetStaticPaths;
 
 type Props = {
+  catalog: ResourceCatalog;
   section: ResourceSection;
 };
 
-const { section } = Astro.props;
-const resources = codingResources.filter(
-  (resource) => resource.primarySection === section.key,
-);
+const { catalog, section } = Astro.props;
+const resources = getCatalogResources(catalog, section.key);
 const entries = await getCollection('summaries');
 const manifest = entries.map(toManifestEntry);
-const canonicalPath = `/resources/coding-with-agents/${section.routeSlug}`;
+const canonicalPath = `/resources/${catalog.slug}/${section.routeSlug}`;
 ---
 
 <Layout
@@ -36,7 +40,7 @@ const canonicalPath = `/resources/coding-with-agents/${section.routeSlug}`;
   canonicalPath={canonicalPath}
 >
   <div class="max-w-4xl mx-auto">
-    <ResourcesNav active={section.key} />
+    <ResourcesNav active={section.key} catalog={catalog} />
 
     <h1 class="text-3xl md:text-4xl font-light mb-4 text-gray-900">
       {section.label}
@@ -45,10 +49,12 @@ const canonicalPath = `/resources/coding-with-agents/${section.routeSlug}`;
       {section.description}
     </p>
 
-    <CodingWithAgentsList
+    <ResourceCatalogList
       client:load
+      emptyMessage="Reviewed resources are being prepared for this collection."
       manifest={manifest}
       resources={resources}
+      topicOptions={catalog.topicOptions}
     />
   </div>
 </Layout>

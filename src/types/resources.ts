@@ -22,7 +22,7 @@ export const resourceTopics = [
 export type ResourceType = (typeof resourceTypes)[number];
 export type ResourceTopic = (typeof resourceTopics)[number];
 
-export type CodingResource = {
+export type Resource = {
   id: number;
   title: string;
   subtitle?: string;
@@ -32,6 +32,33 @@ export type CodingResource = {
   source: string;
   date: string;
   duration?: string;
+  topics: string[];
+};
+
+export type CodingResource = Resource & {
   topics: ResourceTopic[];
   primarySection: ResourceSectionKey;
+};
+
+export type ResourceTopicOption = {
+  slug: string;
+  label: string;
+};
+
+export type ResourceSection = {
+  key: string;
+  label: string;
+  description: string;
+  routeSlug: string;
+};
+
+export type ResourceCatalog = {
+  slug: string;
+  title: string;
+  description: string;
+  indexDescription: string;
+  sections: readonly ResourceSection[];
+  topicOptions: readonly ResourceTopicOption[];
+  resourceIds: readonly number[];
+  sectionByResourceId: Readonly<Record<number, string>>;
 };

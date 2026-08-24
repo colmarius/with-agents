@@ -2,6 +2,7 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { listPublicResourceManifestPaths } from './lib/public-resource-manifests.mjs';
 import { resolvePlaylistEditorialScope } from './lib/youtube-library-curation.mjs';
 import {
   hasFullStandaloneEvidence,
@@ -9,24 +10,6 @@ import {
 } from './lib/youtube-standalone-evidence.mjs';
 
 const resourceTypes = new Set(['article', 'playlist', 'podcast', 'video']);
-const resourcePrimarySections = new Set([
-  'agent-systems',
-  'reliability',
-  'teams-ecosystem',
-  'workflows',
-]);
-const resourceTopics = new Set([
-  'architecture-maintainability',
-  'business-adoption',
-  'collaboration-teams',
-  'context-memory',
-  'models-evaluation',
-  'open-source-ecosystem',
-  'prompting-orchestration',
-  'review-verification',
-  'safety-permissions',
-  'tools-harnesses',
-]);
 
 export const publicSourceExceptions = [];
 
@@ -594,37 +577,39 @@ const playlistIdFromUrl = (value) => {
 };
 
 const validateResources = async (repoRoot, errors, tracked) => {
-  const resourcePath = path.join(
-    repoRoot,
-    'src/data/resources/coding-with-agents.json',
-  );
-  const resourceSource = await readFile(resourcePath, 'utf8');
-  let resources = [];
-  try {
-    const parsed = parseJsonWithDuplicateKeys(resourceSource);
-    resources = parsed.value;
-    for (const duplicateKey of parsed.duplicateKeys) {
-      errors.push(
-        `src/data/resources/coding-with-agents.json has duplicate key ${duplicateKey}`,
-      );
+  const resourceSources = [];
+  const resourceEntries = [];
+  for (const resourcePath of await listPublicResourceManifestPaths(repoRoot)) {
+    const relativePath = path.relative(repoRoot, resourcePath);
+    const source = await readFile(resourcePath, 'utf8');
+    resourceSources.push({ filePath: resourcePath, source });
+
+    let manifest;
+    try {
+      const parsed = parseJsonWithDuplicateKeys(source);
+      manifest = parsed.value;
+      for (const duplicateKey of parsed.duplicateKeys) {
+        errors.push(`${relativePath} has duplicate key ${duplicateKey}`);
+      }
+    } catch (error) {
+      errors.push(`${relativePath} is invalid: ${error.message}`);
+      continue;
     }
-  } catch (error) {
-    errors.push(
-      `src/data/resources/coding-with-agents.json is invalid: ${error.message}`,
-    );
-    return { resourceSource, resourceCount: 0, summaryCount: 0 };
+
+    if (!Array.isArray(manifest)) {
+      errors.push(`${relativePath} must contain an array`);
+      continue;
+    }
+
+    manifest.forEach((resource, index) => {
+      resourceEntries.push({ index, relativePath, resource });
+    });
   }
 
-  if (!Array.isArray(resources)) {
-    errors.push(
-      'src/data/resources/coding-with-agents.json must contain an array',
-    );
-    return { resourceSource, resourceCount: 0, summaryCount: 0 };
-  }
-
+  const resources = resourceEntries.map(({ resource }) => resource);
   const resourceIds = new Set();
-  for (const [index, resource] of resources.entries()) {
-    const prefix = `resource $[${index}]`;
+  for (const { index, relativePath, resource } of resourceEntries) {
+    const prefix = `${relativePath} resource $[${index}]`;
     if (!Number.isInteger(resource.id) || resource.id <= 0) {
       errors.push(`${prefix} has invalid id ${String(resource.id)}`);
     } else if (resourceIds.has(resource.id)) {
@@ -638,7 +623,10 @@ const validateResources = async (repoRoot, errors, tracked) => {
     if (!resourceTypes.has(resource.type)) {
       errors.push(`${prefix} has invalid type ${String(resource.type)}`);
     }
-    if (!resourcePrimarySections.has(resource.primarySection)) {
+    if (
+      typeof resource.primarySection !== 'string' ||
+      resource.primarySection.length === 0
+    ) {
       errors.push(
         `${prefix} has invalid primarySection ${String(resource.primarySection)}`,
       );
@@ -647,7 +635,7 @@ const validateResources = async (repoRoot, errors, tracked) => {
       errors.push(`${prefix} must have a topics array`);
     } else {
       for (const topic of resource.topics) {
-        if (!resourceTopics.has(topic)) {
+        if (typeof topic !== 'string' || topic.length === 0) {
           errors.push(`${prefix} has invalid topic ${String(topic)}`);
         }
       }
@@ -769,7 +757,7 @@ const validateResources = async (repoRoot, errors, tracked) => {
   }
 
   return {
-    resourceSource,
+    resourceSources,
     resourceCount: resources.length,
     summaryCount: summaryFiles.length,
   };
@@ -812,14 +800,11 @@ export const runPublicContentGuard = async ({
     ...(
       await listFiles(path.join(repoRoot, 'src/content/summaries'), '.md')
     ).map((filePath) => ({ filePath, draftPost: false })),
-    {
-      filePath: path.join(
-        repoRoot,
-        'src/data/resources/coding-with-agents.json',
-      ),
-      contents: resourceValidation.resourceSource,
+    ...resourceValidation.resourceSources.map(({ filePath, source }) => ({
+      filePath,
+      contents: source,
       draftPost: false,
-    },
+    })),
   ];
 
   let referenceCount = 0;

@@ -1,5 +1,6 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { listPublicResourceManifestPaths } from './public-resource-manifests.mjs';
 import {
   canonicalYoutubeUrl,
   rootDir as defaultRepoRoot,
@@ -131,32 +132,50 @@ export const loadStandaloneYoutubeEvidence = async ({
 } = {}) => {
   const transcriptsRoot = path.join(repoRoot, 'src/content/transcripts');
   const summariesRoot = path.join(repoRoot, 'src/content/summaries');
-  const resourcesPath = path.join(
-    repoRoot,
-    'src/data/resources/coding-with-agents.json',
-  );
   const byVideoId = new Map();
   const errors = [];
 
-  const resourcesSource = await readOptional(resourcesPath);
-  let resources = [];
-  if (resourcesSource !== undefined) {
+  const resourcesById = new Map();
+  const duplicateResourceIds = new Set();
+  for (const resourcesPath of await listPublicResourceManifestPaths(repoRoot)) {
+    const relativePath = relativePosix(repoRoot, resourcesPath);
+    const resourcesSource = await readFile(resourcesPath, 'utf8');
+    let resources;
     try {
-      const parsed = JSON.parse(resourcesSource);
-      if (Array.isArray(parsed)) {
-        resources = parsed;
+      resources = JSON.parse(resourcesSource);
+      if (!Array.isArray(resources)) {
+        errors.push(
+          `Standalone resource manifest ${relativePath} must contain an array.`,
+        );
+        continue;
       }
     } catch (error) {
       errors.push(
-        `Could not parse standalone resource manifest: ${error.message}`,
+        `Could not parse standalone resource manifest ${relativePath}: ${error.message}`,
       );
+      continue;
+    }
+
+    for (const resource of resources) {
+      if (!Number.isInteger(resource?.id)) {
+        continue;
+      }
+      if (
+        resourcesById.has(resource.id) ||
+        duplicateResourceIds.has(resource.id)
+      ) {
+        if (!duplicateResourceIds.has(resource.id)) {
+          errors.push(
+            `Standalone resource manifests duplicate resource ID ${resource.id}.`,
+          );
+        }
+        duplicateResourceIds.add(resource.id);
+        resourcesById.delete(resource.id);
+        continue;
+      }
+      resourcesById.set(resource.id, resource);
     }
   }
-  const resourcesById = new Map(
-    resources
-      .filter((resource) => Number.isInteger(resource?.id))
-      .map((resource) => [resource.id, resource]),
-  );
 
   for (const transcriptPath of await listMarkdown(transcriptsRoot)) {
     const transcript = await readFile(transcriptPath, 'utf8');

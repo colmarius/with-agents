@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useIsMdUp } from '../../hooks';
-import type { CodingResource, ResourceTopic } from '../../types/resources';
+import type { Resource, ResourceTopicOption } from '../../types/resources';
 import { formatDate, titleCase } from '../../utils';
 import {
   Button,
@@ -21,7 +21,7 @@ import {
 } from './summaryResolver';
 
 const SUMMARY_QUERY_PARAM = 'summary';
-const SUMMARY_HISTORY_STATE_KEY = 'codingWithAgentsSummary';
+const SUMMARY_HISTORY_STATE_KEY = 'resourceCatalogSummary';
 
 type SummaryHistoryMode = 'push' | 'replace';
 
@@ -51,27 +51,7 @@ const removeSummaryFromUrl = () => {
   window.history.replaceState(state, '', url);
 };
 
-const TOPIC_OPTIONS = [
-  { slug: 'prompting-orchestration', label: 'Prompting & orchestration' },
-  { slug: 'context-memory', label: 'Context & memory' },
-  { slug: 'tools-harnesses', label: 'Tools & harnesses' },
-  { slug: 'review-verification', label: 'Review & verification' },
-  {
-    slug: 'architecture-maintainability',
-    label: 'Architecture & maintainability',
-  },
-  { slug: 'collaboration-teams', label: 'Collaboration & teams' },
-  { slug: 'safety-permissions', label: 'Safety & permissions' },
-  { slug: 'open-source-ecosystem', label: 'Open source ecosystem' },
-  { slug: 'models-evaluation', label: 'Models & evaluation' },
-  { slug: 'business-adoption', label: 'Business & adoption' },
-] as const satisfies ReadonlyArray<{ slug: ResourceTopic; label: string }>;
-
-type Topic = ResourceTopic;
-
-const TOPIC_LABELS = Object.fromEntries(
-  TOPIC_OPTIONS.map(({ slug, label }) => [slug, label]),
-) as Record<Topic, string>;
+type Topic = string;
 
 type SummaryData = {
   slug: string;
@@ -83,9 +63,11 @@ type SummaryData = {
   body: string;
 };
 
-type CodingWithAgentsProps = {
+type ResourceCatalogProps = {
   manifest: ManifestEntry[];
-  resources: CodingResource[];
+  resources: Resource[];
+  topicOptions: readonly ResourceTopicOption[];
+  emptyMessage: string;
 };
 
 const fetchSummary = async (slug: string): Promise<string> => {
@@ -97,12 +79,18 @@ const fetchSummary = async (slug: string): Promise<string> => {
   return data.body;
 };
 
-const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
+const ResourceCatalog = ({
+  manifest,
+  resources,
+  topicOptions,
+  emptyMessage,
+}: ResourceCatalogProps) => {
   const isMdUp = useIsMdUp();
   const summaryRequestId = useRef(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedResource, setSelectedResource] =
-    useState<CodingResource | null>(null);
+  const [selectedResource, setSelectedResource] = useState<Resource | null>(
+    null,
+  );
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
   const [isTopicFiltersOpen, setIsTopicFiltersOpen] = useState(false);
@@ -118,6 +106,12 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
   const [isEpisodeLoading, setIsEpisodeLoading] = useState(false);
   const [currentEpisodeTitle, setCurrentEpisodeTitle] = useState<string | null>(
     null,
+  );
+
+  const topicLabels = useMemo(
+    () =>
+      Object.fromEntries(topicOptions.map(({ slug, label }) => [slug, label])),
+    [topicOptions],
   );
 
   const summaryEntriesByResourceId = useMemo(() => {
@@ -176,14 +170,14 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
   }, [resolveSummaryRef, resources]);
 
   const getDisplayDate = useCallback(
-    (resource: CodingResource): Date => {
+    (resource: Resource): Date => {
       return latestSummaryDates[resource.id] ?? new Date(resource.date);
     },
     [latestSummaryDates],
   );
 
   const getDisplayDateLabel = useCallback(
-    (resource: CodingResource): string => {
+    (resource: Resource): string => {
       const dateLabel = formatDate(getDisplayDate(resource));
       if (resource.type === 'playlist' && latestSummaryDates[resource.id]) {
         return `Latest summary: ${dateLabel}`;
@@ -211,7 +205,9 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
       const summaryTitles = (
         summaryEntriesByResourceId.get(resource.id) ?? []
       ).map((entry) => entry.title);
-      const topicLabels = resource.topics.map((topic) => TOPIC_LABELS[topic]);
+      const resourceTopicLabels = resource.topics.map(
+        (topic) => topicLabels[topic],
+      );
 
       searchText[resource.id] = [
         resource.title,
@@ -219,7 +215,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
         resource.description,
         resource.source,
         resource.type,
-        ...topicLabels,
+        ...resourceTopicLabels,
         ...summaryTitles,
       ]
         .filter(Boolean)
@@ -228,7 +224,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
     });
 
     return searchText;
-  }, [resources, summaryEntriesByResourceId]);
+  }, [resources, summaryEntriesByResourceId, topicLabels]);
 
   const filteredResources = useMemo(
     () =>
@@ -253,7 +249,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
 
   const hasActiveFilters =
     normalizedSearchQuery.length > 0 || selectedTopic !== null;
-  const selectedTopicLabel = selectedTopic ? TOPIC_LABELS[selectedTopic] : null;
+  const selectedTopicLabel = selectedTopic ? topicLabels[selectedTopic] : null;
 
   const handleClearFilters = () => {
     setSearchQuery('');
@@ -261,7 +257,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
     setIsTopicFiltersOpen(false);
   };
 
-  const getLinkText = (type: CodingResource['type']) => {
+  const getLinkText = (type: Resource['type']) => {
     switch (type) {
       case 'video':
         return 'Watch Video';
@@ -293,7 +289,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
 
   const openSummary = useCallback(
     (
-      resource: CodingResource,
+      resource: Resource,
       requestedSlug?: string,
       historyMode: SummaryHistoryMode | null = null,
     ): boolean => {
@@ -397,7 +393,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
     return () => window.removeEventListener('popstate', syncSummaryFromUrl);
   }, [openSummary, resetSummary, resourcesById, summaryEntriesBySlug]);
 
-  const handleOpenSummary = (resource: CodingResource) => {
+  const handleOpenSummary = (resource: Resource) => {
     openSummary(resource, undefined, 'push');
   };
 
@@ -477,57 +473,59 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
             />
           </div>
 
-          <fieldset className="flex flex-col gap-3">
-            <legend className="sr-only">Topics</legend>
-            <div
-              className="hidden text-sm font-medium text-gray-700 md:block"
-              aria-hidden="true"
-            >
-              Topics
-            </div>
-            <button
-              type="button"
-              aria-expanded={isTopicFiltersOpen}
-              aria-controls="resource-topic-filters"
-              onClick={() => setIsTopicFiltersOpen(!isTopicFiltersOpen)}
-              className="flex w-full items-center justify-between rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 md:hidden"
-            >
-              <span>
-                {selectedTopicLabel
-                  ? `Topic: ${selectedTopicLabel}`
-                  : 'Topics: All'}
-              </span>
-              <ChevronDownIcon
-                className={`w-5 h-5 transition-transform ${
-                  isTopicFiltersOpen ? 'rotate-180' : ''
-                }`}
-              />
-            </button>
-            <div
-              id="resource-topic-filters"
-              className={`${isTopicFiltersOpen ? 'flex' : 'hidden'} flex-wrap gap-2 md:flex`}
-            >
-              {TOPIC_OPTIONS.map(({ slug, label }) => {
-                const isSelected = selectedTopic === slug;
+          {topicOptions.length > 0 && (
+            <fieldset className="flex flex-col gap-3">
+              <legend className="sr-only">Topics</legend>
+              <div
+                className="hidden text-sm font-medium text-gray-700 md:block"
+                aria-hidden="true"
+              >
+                Topics
+              </div>
+              <button
+                type="button"
+                aria-expanded={isTopicFiltersOpen}
+                aria-controls="resource-topic-filters"
+                onClick={() => setIsTopicFiltersOpen(!isTopicFiltersOpen)}
+                className="flex w-full items-center justify-between rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 md:hidden"
+              >
+                <span>
+                  {selectedTopicLabel
+                    ? `Topic: ${selectedTopicLabel}`
+                    : 'Topics: All'}
+                </span>
+                <ChevronDownIcon
+                  className={`w-5 h-5 transition-transform ${
+                    isTopicFiltersOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              <div
+                id="resource-topic-filters"
+                className={`${isTopicFiltersOpen ? 'flex' : 'hidden'} flex-wrap gap-2 md:flex`}
+              >
+                {topicOptions.map(({ slug, label }) => {
+                  const isSelected = selectedTopic === slug;
 
-                return (
-                  <button
-                    key={slug}
-                    type="button"
-                    aria-pressed={isSelected}
-                    onClick={() => setSelectedTopic(isSelected ? null : slug)}
-                    className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 ${
-                      isSelected
-                        ? 'border-gray-900 bg-gray-900 text-white'
-                        : 'border-gray-300 bg-white text-gray-700 hover:border-gray-500 hover:bg-gray-50'
-                    }`}
-                  >
-                    {label}
-                  </button>
-                );
-              })}
-            </div>
-          </fieldset>
+                  return (
+                    <button
+                      key={slug}
+                      type="button"
+                      aria-pressed={isSelected}
+                      onClick={() => setSelectedTopic(isSelected ? null : slug)}
+                      className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 ${
+                        isSelected
+                          ? 'border-gray-900 bg-gray-900 text-white'
+                          : 'border-gray-300 bg-white text-gray-700 hover:border-gray-500 hover:bg-gray-50'
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  );
+                })}
+              </div>
+            </fieldset>
+          )}
 
           <div className="flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-gray-600" aria-live="polite">
@@ -580,7 +578,7 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
                             key={topic}
                             className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs"
                           >
-                            {TOPIC_LABELS[topic]}
+                            {topicLabels[topic]}
                           </span>
                         ))}
                       </div>
@@ -621,8 +619,9 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
               No resources found
             </h2>
             <p className="mt-2 text-gray-600">
-              Try a different search term or clear the selected topic to see
-              more Coding with Agents resources.
+              {hasActiveFilters
+                ? 'Try a different search term or clear the selected topic.'
+                : emptyMessage}
             </p>
             {hasActiveFilters && (
               <Button
@@ -717,4 +716,4 @@ const CodingWithAgents = ({ manifest, resources }: CodingWithAgentsProps) => {
   );
 };
 
-export default CodingWithAgents;
+export default ResourceCatalog;

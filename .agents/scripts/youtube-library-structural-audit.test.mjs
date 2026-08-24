@@ -478,10 +478,10 @@ videoId: "AbCdEfGhI12"
   }
 });
 
-test('standalone excerpt evidence validates its range and records excerpt coverage', async () => {
+test('standalone excerpt evidence resolves non-coding manifests and records excerpt coverage', async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-excerpt-'));
   try {
-    await writeFixture(root, 'src/data/resources/coding-with-agents.json', [
+    await writeFixture(root, 'src/data/resources/cloud.json', [
       {
         id: 1,
         type: 'video',
