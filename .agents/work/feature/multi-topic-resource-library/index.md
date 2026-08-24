@@ -20,7 +20,11 @@ The playlist research, generic topic-catalog foundation, single-origin context h
 - Plan: [plan.md](plan.md)
 - Progress: [progress.md](progress.md)
 - Decisions: [decisions/site-topology.md](decisions/site-topology.md)
-- Handoffs: none
+- Active handoffs:
+  - [Cloud Security full-series backfill](https://ampcode.com/threads/T-01a035b0-410b-738a-8ec2-ce3c00e0c77b)
+  - [Pub/Sub full-series backfill](https://ampcode.com/threads/T-01a035b0-48f0-74cb-b71f-eab5e430ceeb)
+  - [Engineering for Reliability full-series backfill](https://ampcode.com/threads/T-01a035b0-5e4e-774a-8a02-33b7103de889)
+  - [Build With Google Cloud full-series backfill](https://ampcode.com/threads/T-01a035b0-6cca-7740-8c75-af8827d109ba)
 
 ## Next Action
 

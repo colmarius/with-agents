@@ -107,3 +107,9 @@
 ### Next action
 
 - Request user approval or adjustments for the six candidate selections. Full-series backfill can continue in disjoint worker batches while broad capture remains blocked.
+
+## 2026-08-24 — Full-series backfill delegated
+
+- Started four independent high-effort orb workers from committed feature-branch state. File ownership is disjoint by playlist: Cloud Security, Pub/Sub, Engineering for Reliability, and Build With Google Cloud.
+- Each worker must use bounded non-force capture, stop on throttle, keep source capture and draft editorial work in separate commits, refresh only its assigned overview, run local status/audit/tests, and return a transferable patch without pushing or merging.
+- The coordinator retains integration, combined review, and final verification. Broad-playlist capture remains blocked pending user approval of `curation.md`.
