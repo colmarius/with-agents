@@ -1,10 +1,7 @@
 {
   "videoId": "8YtsV8BNTqY",
-  "attemptedAt": "2026-08-24T21:53:10.275Z",
+  "capturedAt": "2026-08-24T22:09:06.302Z",
   "requestedLanguage": "en",
-  "availableLanguages": [],
-  "unavailable": {
-    "errorName": "YoutubeTranscriptVideoUnavailableError",
-    "detail": "Could not list available transcript languages: YoutubeTranscriptVideoUnavailableError: The video with ID \"8YtsV8BNTqY\" is no longer available or has been removed. Please check the video URL or ID and try again."
-  }
+  "language": "en",
+  "kind": "auto-generated"
 }
