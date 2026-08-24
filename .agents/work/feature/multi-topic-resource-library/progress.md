@@ -54,3 +54,32 @@
 ### Next action
 
 - Configure and synchronize all 12 approved Google Cloud Tech playlists, then prepare exact ordered candidates for the six broad collections before curation or capture.
+
+## 2026-08-24 — Google Cloud source playlists synchronized
+
+- Added all 12 approved playlists with stable `google-cloud-*` slugs, current official titles, `transcriptLanguage: en`, `summaryLanguage: en`, and `multiSpeaker: true`.
+- One coordinator-owned authoritative sync wrote complete manifests for 405 entries: 405 available, 0 unavailable, no duplicate IDs within a playlist, and no shared IDs across the 12 new playlists.
+- The synchronized counts and publication ranges match the live research snapshot. The manifests contain 151 public/31 unlisted Serverless entries and preserve all other currently unlisted items rather than treating them as unavailable.
+- Added accurate draft, zero-summary overviews for the six full-series collections. The six broad collections have empty draft curation records, which preserve their complete manifests while blocking accidental capture until exact ordered candidates are reviewed.
+
+### Public-impact review
+
+- Exact playlist-ID and all 405 video-ID searches found no references in `src/content/posts`, `src/content/summaries`, or `src/data/resources`.
+- Decision: keep current public content unchanged. The Cloud and Security catalogs remain empty, so the additions change no public orientation, resource date, corpus count, or published thesis.
+- Freshness risks remain editorial gates for later work: Security Command Center and product UI guidance are historical; Cloud DLP is now Sensitive Data Protection; Pub/Sub Lite is retired; and broad legacy playlists contain renamed or discontinued products.
+
+### Verification
+
+- `npm run lint:fix` — clean.
+- `npm run check` — 0 errors, warnings, or hints.
+- `npm test` — 88 tests passed after extending the committed-catalog expectation to all 21 tracked playlists.
+- `npm run youtube:library -- status` — all 12 manifests resolved; the six full collections report 61 pending captures and the six broad collections report inactive draft curation.
+- `npm run youtube:library -- audit` — passed for 713 tracked videos, 723 manifest occurrences, 180 transcripts, 180 summaries, 21 playlists, and 1 author; only the pre-existing intentional antirez duplicate notice was reported.
+- Targeted YouTube library tests — 63 passed.
+- `npm run content:guard` — passed for 713 tracked videos, 21 tracked playlists, 92 public references, 49 resources, and 100 public summaries.
+- `npm run build` — 44 pages built; the source-only catalog marker and YouTube source path remained absent from site imports and `dist`.
+- `git diff --check` — passed.
+
+### Next action
+
+- Prepare exact ordered candidate selections for the six broad collections and request user approval before any capture for those playlists.

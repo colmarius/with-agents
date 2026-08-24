@@ -1,0 +1,197 @@
+{
+  "playlistId": "PLIivdWyY5sqLOiLXJDlN-wKd0g7hf_9vC",
+  "entries": [
+    {
+      "videoId": "DL_8bHeTlgg",
+      "position": 0,
+      "title": "Engineering for Reliability is here!",
+      "publishedAt": "2022-02-02T16:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qyfOE_78nT0",
+      "position": 1,
+      "title": "How to set up Prometheus monitoring for your services",
+      "publishedAt": "2022-03-30T17:00:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hB8Oc-xudQc",
+      "position": 2,
+      "title": "Getting started with Managed Service for Prometheus: Ingestion",
+      "publishedAt": "2022-03-16T17:00:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Sd0iznXSVcc",
+      "position": 3,
+      "title": "How to troubleshoot the Ops Agent",
+      "publishedAt": "2022-03-14T23:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "VxXJUYcLmTk",
+      "position": 4,
+      "title": "How to monitor quotas in Google Cloud",
+      "publishedAt": "2022-02-16T16:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "z6hpL8J-jG4",
+      "position": 5,
+      "title": "How to find cloud logs and manage logging costs",
+      "publishedAt": "2021-12-15T16:00:37Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "hh_z8qEwGfQ",
+      "position": 6,
+      "title": "Best practices for Cloud Logging",
+      "publishedAt": "2021-12-01T16:00:34Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "pcMEFTxcco8",
+      "position": 7,
+      "title": "Best Practices for Cloud Monitoring",
+      "publishedAt": "2021-11-17T16:00:24Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "rMOXWc5BUkc",
+      "position": 8,
+      "title": "Best practices for Cloud Operations in the enterprise",
+      "publishedAt": "2021-11-03T15:00:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_FKdug6B5FM",
+      "position": 9,
+      "title": "How to use metrics scopes in Cloud Monitoring",
+      "publishedAt": "2021-10-20T23:00:12Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ilY4-Aw1Z2M",
+      "position": 10,
+      "title": "Observing container environments with Cloud Operations",
+      "publishedAt": "2021-10-06T15:00:20Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "Fzd6WP0_bWM",
+      "position": 11,
+      "title": "Monitoring compute infrastructure with the Cloud Ops Agent",
+      "publishedAt": "2021-09-22T15:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "M2bQxpyBpH0",
+      "position": 12,
+      "title": "Maintaining reliable services with advanced Cloud Logging features",
+      "publishedAt": "2021-09-08T15:00:07Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "IlUCyV8mcS0",
+      "position": 13,
+      "title": "Understand your services with Cloud Logging",
+      "publishedAt": "2021-08-25T15:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "NQeK8Kbu6UM",
+      "position": 14,
+      "title": "Distributed tracing with OpenTelemetry and Cloud Trace",
+      "publishedAt": "2021-08-11T15:00:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "L6JnAhp3E-c",
+      "position": 15,
+      "title": "Manage GKE services with Cloud Operations",
+      "publishedAt": "2021-06-30T15:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "lHCB_i_rWAI",
+      "position": 16,
+      "title": "Managing GKE infrastructure at scale",
+      "publishedAt": "2021-06-23T15:00:18Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "t1BGo-Il1AM",
+      "position": 17,
+      "title": "Alerting on error budget burn rate",
+      "publishedAt": "2021-06-16T15:00:34Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "eCcsxDln6I0",
+      "position": 18,
+      "title": "Defining SLIs with custom metrics",
+      "publishedAt": "2021-06-09T15:00:18Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "uhpAScSerec",
+      "position": 19,
+      "title": "Defining SLIs with platform metrics",
+      "publishedAt": "2021-06-02T15:00:34Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "U53wC2A75Is",
+      "position": 20,
+      "title": "Getting started with SLOs",
+      "publishedAt": "2021-05-26T15:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YjEh_V7MRc4",
+      "position": 21,
+      "title": "Migrating to the managed service for Prometheus",
+      "publishedAt": "2022-04-13T17:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RuyUXBOdjGI",
+      "position": 22,
+      "title": "Automatic instrumentation with OpenTelemetry",
+      "publishedAt": "2022-05-18T17:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "SCNObWlILqk",
+      "position": 23,
+      "title": "Creating custom metrics with OpenTelemetry",
+      "publishedAt": "2022-05-25T17:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "playlistId": "PLIivdWyY5sqIQ4_5PwyyXZVdsXr3wYhip",
+  "entries": [
+    {
+      "videoId": "CFw4peH2UwU",
+      "position": 0,
+      "title": "BigQuery in a minute",
+      "publishedAt": "2020-09-07T04:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CUwpXqEitA0",
+      "position": 1,
+      "title": "Filestore in a minute",
+      "publishedAt": "2020-08-31T04:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "TEyV9QmvXDQ",
+      "position": 2,
+      "title": "Local SSD in a minute",
+      "publishedAt": "2020-08-24T04:00:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zovhVfou-DI",
+      "position": 3,
+      "title": "Persistent Disk in a minute",
+      "publishedAt": "2020-08-17T04:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "wNOs3LlsH6k",
+      "position": 4,
+      "title": "Cloud Storage in a minute",
+      "publishedAt": "2020-08-09T16:00:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xfwlbt3QZrM",
+      "position": 5,
+      "title": "Anthos in a minute",
+      "publishedAt": "2020-08-03T04:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "pQ87vVMZK-A",
+      "position": 6,
+      "title": "Google Kubernetes Engine in a minute",
+      "publishedAt": "2020-07-27T04:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "IuK4gQeHRcI",
+      "position": 7,
+      "title": "Compute Engine in a minute",
+      "publishedAt": "2020-07-20T04:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "lzQNjZIGKaM",
+      "position": 8,
+      "title": "Cloud Run in a minute",
+      "publishedAt": "2020-07-13T04:00:11Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "Xuf3J6SKVV0",
+      "position": 9,
+      "title": "App Engine in a minute",
+      "publishedAt": "2020-07-06T04:00:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IemOAESlWKw",
+      "position": 10,
+      "title": "Firestore in a minute",
+      "publishedAt": "2020-09-21T04:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5bjYk6Hhd10",
+      "position": 11,
+      "title": "Cloud Spanner in a minute",
+      "publishedAt": "2020-10-05T04:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZMQ2n6i-7jw",
+      "position": 12,
+      "title": "Cloud SQL in a minute",
+      "publishedAt": "2020-10-19T04:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ra3Vow3-HHg",
+      "position": 13,
+      "title": "Memorystore in a minute",
+      "publishedAt": "2020-11-02T04:00:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Lq9uDOM4whI",
+      "position": 14,
+      "title": "Bigtable in a minute",
+      "publishedAt": "2020-11-16T05:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0RMT8uEplbM",
+      "position": 15,
+      "title": "BigQuery ML in a minute",
+      "publishedAt": "2020-11-30T05:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "XdsuDOQ9nkU",
+      "position": 16,
+      "title": "Dataflow in a minute",
+      "publishedAt": "2020-12-14T05:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jLI-84UjZLE",
+      "position": 17,
+      "title": "Cloud Pub/Sub in a minute",
+      "publishedAt": "2020-12-28T05:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CmRfB3h5H2Q",
+      "position": 18,
+      "title": "Public datasets in a minute",
+      "publishedAt": "2021-01-11T05:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "Jj6mp7Sam10",
+      "position": 19,
+      "title": "Dataproc in a minute",
+      "publishedAt": "2021-02-08T05:00:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xjsNWh1TLKo",
+      "position": 20,
+      "title": "Data Fusion in a minute",
+      "publishedAt": "2021-02-22T05:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pSjD5nHkXLU",
+      "position": 21,
+      "title": "Cloud Composer in a minute",
+      "publishedAt": "2021-03-08T05:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "guw5a6mJwqI",
+      "position": 22,
+      "title": "Data Catalog in a minute",
+      "publishedAt": "2021-03-22T04:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZBoFvaWr-Dk",
+      "position": 23,
+      "title": "Looker Studio in a minute",
+      "publishedAt": "2021-04-05T04:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5j8LfmRhHKQ",
+      "position": 24,
+      "title": "Cloud Operations Suite in a minute",
+      "publishedAt": "2021-04-19T04:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "hpUHZixlHiA",
+      "position": 25,
+      "title": "Cloud Logging in a minute",
+      "publishedAt": "2021-05-03T04:00:26Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7BLV24noNGc",
+      "position": 26,
+      "title": "Cloud Monitoring in a minute",
+      "publishedAt": "2021-05-17T04:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bbFeAt7cw1g",
+      "position": 27,
+      "title": "What is Dataplex?",
+      "publishedAt": "2021-06-01T16:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "K_Gn0pZysLg",
+      "position": 28,
+      "title": "Cloud Workflows in a minute",
+      "publishedAt": "2021-06-13T16:00:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ABlY7FexJJI",
+      "position": 29,
+      "title": "VPC Service Controls in a minute",
+      "publishedAt": "2021-06-28T04:00:02Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "hS_uvz4ohbo",
+      "position": 30,
+      "title": "Virtual Private Cloud in a minute",
+      "publishedAt": "2021-07-12T04:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zd5d9Vv1ZFE",
+      "position": 31,
+      "title": "Cloud IAM in a minute",
+      "publishedAt": "2021-07-18T16:00:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "fbEubYDGLYY",
+      "position": 32,
+      "title": "Cloud Armor in a minute",
+      "publishedAt": "2021-08-15T16:00:17Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "iX3rA3ELT2c",
+      "position": 33,
+      "title": "Cloud Key Management in a minute",
+      "publishedAt": "2021-08-22T16:00:33Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "kog1UueefQA",
+      "position": 34,
+      "title": "Confidential VMs and GKE Nodes in a minute",
+      "publishedAt": "2021-08-29T16:00:16Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "FfEiJlwkadg",
+      "position": 35,
+      "title": "Data Loss Prevention in a minute",
+      "publishedAt": "2021-09-05T16:00:14Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "y6NSnpiVSaQ",
+      "position": 36,
+      "title": "reCAPTCHA Enterprise in a minute",
+      "publishedAt": "2021-10-10T16:00:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0NbBGfMt4qA",
+      "position": 37,
+      "title": "BeyondCorp Enterprise in a minute",
+      "publishedAt": "2021-10-17T16:00:01Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "h8_xCbTYtTU",
+      "position": 38,
+      "title": "Analytics Hub in a minute",
+      "publishedAt": "2021-10-18T23:00:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "lJpStL2qMyY",
+      "position": 39,
+      "title": "Dataprep by Trifacta in a minute",
+      "publishedAt": "2022-06-03T16:00:26Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "UdpNYk0EP0g",
+      "position": 40,
+      "title": "BigLake in a minute",
+      "publishedAt": "2022-08-10T16:00:52Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "4ipObSeqeUQ",
+      "position": 41,
+      "title": "BigQuery object tables in a minute",
+      "publishedAt": "2022-11-15T17:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BL4ZlPEamDo",
+      "position": 42,
+      "title": "Cloud Functions in a minute",
+      "publishedAt": "2022-12-14T17:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AL2rAmWFZjM",
+      "position": 43,
+      "title": "Cloud Run in a minute",
+      "publishedAt": "2022-12-21T00:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "azbxckHW9oU",
+      "position": 44,
+      "title": "Google Cloud CDN in a minute",
+      "publishedAt": "2023-10-30T19:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

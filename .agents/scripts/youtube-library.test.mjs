@@ -241,6 +241,18 @@ test('loads and validates the committed source-only catalog', async () => {
       'mayank-gupta-west-coast-builders',
       'david-ondrej-coding-agents',
       'pragmatic-engineer-podcast',
+      'google-cloud-security-basics',
+      'google-cloud-security-command-center',
+      'google-cloud-serverless-expeditions',
+      'google-cloud-pubsub-made-easy',
+      'google-cloud-pubsub-best-practices',
+      'google-cloud-essentials',
+      'google-cloud-engineering-for-reliability',
+      'google-cloud-get-started',
+      'google-cloud-build',
+      'google-cloud-bytes',
+      'google-cloud-beyond-your-bill',
+      'google-cloud-architecting',
     ],
   );
 });

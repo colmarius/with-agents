@@ -1,0 +1,85 @@
+{
+  "playlistId": "PLIivdWyY5sqLO-4ePY-A2yROgONOA6Cz4",
+  "entries": [
+    {
+      "videoId": "MHtg2Au78LI",
+      "position": 0,
+      "title": "How to secure your cloud environment",
+      "publishedAt": "2020-02-05T00:00:02Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "IHBoUADMrHc",
+      "position": 1,
+      "title": "Top 3 access risks in Cloud Security",
+      "publishedAt": "2020-02-19T00:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "QJcRkpzW8Mw",
+      "position": 2,
+      "title": "Top 3 data risks in Cloud Security",
+      "publishedAt": "2020-03-03T16:00:04Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "N83Ru1c77U4",
+      "position": 3,
+      "title": "Top 3 platform risks in Cloud Security",
+      "publishedAt": "2020-03-24T23:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "qR-HMOcJC8c",
+      "position": 4,
+      "title": "Securing customer data",
+      "publishedAt": "2020-04-14T23:00:22Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "SwT_CHMh6g8",
+      "position": 5,
+      "title": "Securing your hardware for your software",
+      "publishedAt": "2020-04-28T23:00:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "LznrFv7iRNI",
+      "position": 6,
+      "title": "Manage resource access with Cloud IAM",
+      "publishedAt": "2021-05-07T16:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "wEGZXSd4uS4",
+      "position": 7,
+      "title": "Service accounts & security",
+      "publishedAt": "2021-05-13T23:00:11Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "dLOyUy1BlIs",
+      "position": 8,
+      "title": "How to use Cloud Logging  to detect security breaches",
+      "publishedAt": "2021-05-26T23:00:10Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "SaLHDNqrZ80",
+      "position": 9,
+      "title": "How to use Cloud Audit Logging",
+      "publishedAt": "2021-07-03T04:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

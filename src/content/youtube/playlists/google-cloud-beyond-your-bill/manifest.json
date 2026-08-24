@@ -1,0 +1,197 @@
+{
+  "playlistId": "PLIivdWyY5sqKJx6FwJMRcsnFIkkNFtsX9",
+  "entries": [
+    {
+      "videoId": "NOOhDq1JyIM",
+      "position": 0,
+      "title": "Organizing your GCP resources",
+      "publishedAt": "2019-08-27T18:03:21Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "TDHTcS2V4wI",
+      "position": 1,
+      "title": "Managing billing permissions",
+      "publishedAt": "2019-09-03T23:11:00Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "jRb8piwa2GI",
+      "position": 2,
+      "title": "Exploring your GCP costs with Billing reports",
+      "publishedAt": "2019-09-09T23:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ZyMO9XabUUM",
+      "position": 3,
+      "title": "Exporting your billing data and creating custom dashboards",
+      "publishedAt": "2019-09-14T16:13:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "BUY--UWUuyk",
+      "position": 4,
+      "title": "Managing billing accounts",
+      "publishedAt": "2019-09-19T21:59:24Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "MzclA_hdNLY",
+      "position": 5,
+      "title": "Google Cloud Platform resource management",
+      "publishedAt": "2019-09-19T22:01:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ikLMaRy-HWE",
+      "position": 6,
+      "title": "Understanding your GCP invoice",
+      "publishedAt": "2019-09-19T22:04:31Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "F4omjjMZ54k",
+      "position": 7,
+      "title": "Creating budgets and alerts for cost management",
+      "publishedAt": "2019-10-22T16:15:42Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "XpSBBFSBM9g",
+      "position": 8,
+      "title": "Setting up cost controls with quota",
+      "publishedAt": "2019-10-29T16:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "xVW1m-uBWAM",
+      "position": 9,
+      "title": "Understanding and analyzing your committed use discounts",
+      "publishedAt": "2019-11-05T17:00:11Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ZJv-Z02FVq0",
+      "position": 10,
+      "title": "Advanced cost controls with budgets",
+      "publishedAt": "2019-11-12T17:00:12Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "agFHx1cTwWw",
+      "position": 11,
+      "title": "Understanding your GKE costs",
+      "publishedAt": "2020-11-10T00:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "lC7LSUlZ4A8",
+      "position": 12,
+      "title": "Monitoring your GKE costs",
+      "publishedAt": "2020-11-17T00:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "qSadsjIDwCY",
+      "position": 13,
+      "title": "Virtual machines in GKE",
+      "publishedAt": "2020-11-24T00:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "7naCIxIaV1M",
+      "position": 14,
+      "title": "Autoscaling with GKE: Overview and pods",
+      "publishedAt": "2020-12-01T00:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "VNAWA6NkoBs",
+      "position": 15,
+      "title": "Autoscaling with GKE: Clusters and nodes",
+      "publishedAt": "2020-12-08T00:00:10Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "aJxxlCohVWU",
+      "position": 16,
+      "title": "Application optimization for GKE",
+      "publishedAt": "2020-12-15T00:00:01Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "5jidVfAfru8",
+      "position": 17,
+      "title": "Optimize GKE to run your application",
+      "publishedAt": "2020-12-22T00:00:00Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "8oddPqo-lsY",
+      "position": 18,
+      "title": "Update billing account and payments profile settings",
+      "publishedAt": "2021-03-20T16:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Ad49t21gTfw",
+      "position": 19,
+      "title": "Viewing, using, and tracking promotional credits",
+      "publishedAt": "2021-07-10T16:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "NeRYUoR4u0s",
+      "position": 20,
+      "title": "Creating a billing account",
+      "publishedAt": "2021-07-17T16:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vf3KF3DO0Oo",
+      "position": 21,
+      "title": "Optimize costs in GKE with monitoring systems",
+      "publishedAt": "2021-08-02T23:00:30Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "lPSdlTIJ00c",
+      "position": 22,
+      "title": "Monitoring for efficient cluster binpacking in GKE",
+      "publishedAt": "2021-08-04T16:00:18Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "3bbVOp4y3MI",
+      "position": 23,
+      "title": "Monitoring for app right-sizing in GKE",
+      "publishedAt": "2021-08-06T16:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    }
+  ]
+}

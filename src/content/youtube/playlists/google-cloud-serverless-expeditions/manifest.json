@@ -1,0 +1,1461 @@
+{
+  "playlistId": "PLIivdWyY5sqJwq_pgOxcHzusWjXDVCEiX",
+  "entries": [
+    {
+      "videoId": "RKvckuC6Bsk",
+      "position": 0,
+      "title": "How to modernize legacy codebases using AI coding agents (Step by step guide)",
+      "publishedAt": "2026-08-20T15:58:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_KQmsFIZVYw",
+      "position": 1,
+      "title": "Architecting production-ready AI apps with Google Cloud & Firebase",
+      "publishedAt": "2026-08-13T19:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WsNABV2QQXI",
+      "position": 2,
+      "title": "How to vibe code securely (without getting hacked)",
+      "publishedAt": "2026-08-06T16:00:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "o3aE4tw3vrI",
+      "position": 3,
+      "title": "Build a BigQuery AI agent with ADK & Cloud Run",
+      "publishedAt": "2026-07-23T19:00:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-L5khDHrQSE",
+      "position": 4,
+      "title": "Give your app search superpowers: Agent Retrieval (Vector Search 2.0)",
+      "publishedAt": "2026-07-16T19:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zvPyEKax914",
+      "position": 5,
+      "title": "7 tips for using Antigravity 2.0 on enterprise codebases, coding phase",
+      "publishedAt": "2026-06-18T16:00:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HyGm01UKfaE",
+      "position": 6,
+      "title": "5 tips for using Antigravity 2.0 on enterprise codebases, planning phase",
+      "publishedAt": "2026-06-04T16:00:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "M43nN___cl0",
+      "position": 7,
+      "title": "Stop rogue AI: Enforce policy & cut costs in Agent Development Kit (ADK)",
+      "publishedAt": "2026-05-28T16:00:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9ebzuW5PMW4",
+      "position": 8,
+      "title": "Your AI agent still has no memory? Fix it with these 3 patterns",
+      "publishedAt": "2026-05-14T16:00:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "b9Dx7uGxwsg",
+      "position": 9,
+      "title": "Your AI agent is forgetful. Here’s how to give it a brain.",
+      "publishedAt": "2026-05-07T16:00:56Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "mpgoqDUAN6k",
+      "position": 10,
+      "title": "How to scale to 60 million requests (with ZERO ops team) using Cloud Run",
+      "publishedAt": "2026-04-16T19:00:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "h7nYnzGQp9k",
+      "position": 11,
+      "title": "Build personal AI Assistants as Google Workspace Add-ons, in Gmail, Calendar, etc",
+      "publishedAt": "2026-04-02T16:01:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "UTulQhX85Jc",
+      "position": 12,
+      "title": "Talk to your data: Build AI agents to query databases & analyze video (Google ADK)",
+      "publishedAt": "2026-03-05T17:00:50Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0itd33_Mtwo",
+      "position": 13,
+      "title": "Before you scale: A guide to Cloud Run cost optimization",
+      "publishedAt": "2026-02-26T17:01:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aifIIkQcy4Y",
+      "position": 14,
+      "title": "Mastering Cloud Run costs: The 75% rule for choosing a billing model",
+      "publishedAt": "2026-02-19T20:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ks4M8b9Ul6E",
+      "position": 15,
+      "title": "Stop using MCP for everything! (RAG vs. A2A vs. Sub-agents)",
+      "publishedAt": "2026-02-12T17:01:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "20W-tHXcsb4",
+      "position": 16,
+      "title": "Stop guessing and start testing your AI agents with ADK",
+      "publishedAt": "2026-02-05T17:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "TokTTzq5rtg",
+      "position": 17,
+      "title": "Build a multi-agent AI app with Google Cloud",
+      "publishedAt": "2026-01-29T17:00:46Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3c2AlwSW64A",
+      "position": 18,
+      "title": "Building a life saving MCP server on Cloud Run (Avalanche demo)",
+      "publishedAt": "2025-12-18T17:00:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Gs0Cudlngfw",
+      "position": 19,
+      "title": "Run MongoDB compatible apps on Firestore (Zero code changes)",
+      "publishedAt": "2025-12-11T17:00:26Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ooHyVrYY_2U",
+      "position": 20,
+      "title": "Stop coding, start architecting: Google Antigravity + Cloud Run",
+      "publishedAt": "2025-12-08T17:01:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "rmlF03tFLQ4",
+      "position": 21,
+      "title": "Gemini CLI: Write and deploy a Cloud Run app in 5 minutes",
+      "publishedAt": "2025-11-20T17:01:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "knT3kN4EpOo",
+      "position": 22,
+      "title": "This AI agent runs on Cloud Run + NVIDIA GPUs",
+      "publishedAt": "2025-11-13T17:01:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "04Gap8vWV28",
+      "position": 23,
+      "title": "Power your AI agents with MCP tools on Google Cloud Run",
+      "publishedAt": "2025-11-06T17:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZZWucnh3wuo",
+      "position": 24,
+      "title": "We tried to jailbreak our AI (and Model Armor stopped it)",
+      "publishedAt": "2025-10-30T16:00:56Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JojcJe5dJTI",
+      "position": 25,
+      "title": "Don't guess: How to benchmark your AI prompts",
+      "publishedAt": "2025-10-23T19:00:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "LdKBJODIhwc",
+      "position": 26,
+      "title": "How to build a multi-agent app with ADK and Gemini",
+      "publishedAt": "2025-10-16T16:00:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AJrYWLBWPrI",
+      "position": 27,
+      "title": "Build an AI app that watches videos using Gemini",
+      "publishedAt": "2025-10-06T16:00:18Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YLz3Xtf8LTc",
+      "position": 28,
+      "title": "Secure Cloud Run with IAP (Identity-Aware Proxy)",
+      "publishedAt": "2025-08-21T20:03:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ushaHe0EegY",
+      "position": 29,
+      "title": "Let’s build a GenAI app on Cloud Run",
+      "publishedAt": "2025-07-17T16:01:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CfmG32Jvme8",
+      "position": 30,
+      "title": "Build AI agents with Cloud Run and Firebase Genkit",
+      "publishedAt": "2025-07-10T16:12:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "79e1vm-mTs4",
+      "position": 31,
+      "title": "FastAPI on Cloud Run",
+      "publishedAt": "2025-06-26T16:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Da3za3xXLF0",
+      "position": 32,
+      "title": "Cloud AI: it's just an API",
+      "publishedAt": "2025-06-19T16:00:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nGFXKTz2jZM",
+      "position": 33,
+      "title": "Moving from Cloud Run to GKE",
+      "publishedAt": "2025-06-12T17:26:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "x12EOsVt2oU",
+      "position": 34,
+      "title": "Moving from GKE to Cloud Run",
+      "publishedAt": "2025-06-05T16:31:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GKIUmb99HQc",
+      "position": 35,
+      "title": "How to host DeepSeek with Cloud Run GPUs in 3 steps",
+      "publishedAt": "2025-04-24T16:00:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nlzpGpyhFp4",
+      "position": 36,
+      "title": "Platform engineering with Cloud Run",
+      "publishedAt": "2025-04-03T16:01:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xC4PrDBrQ5I",
+      "position": 37,
+      "title": "How to use Gemini function calling with Cloud Run",
+      "publishedAt": "2025-01-23T17:01:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RSJUhq8w7f4",
+      "position": 38,
+      "title": "Text to image with Google Cloud’s Vertex AI on Cloud Run",
+      "publishedAt": "2025-01-16T17:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BvH6y7tC_eQ",
+      "position": 39,
+      "title": "How to use Stable Diffusion on Cloud Run",
+      "publishedAt": "2024-12-12T17:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "KGkMFe3GvJU",
+      "position": 40,
+      "title": "Cloud migration insights from banking",
+      "publishedAt": "2024-12-05T14:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ct1nuLS-wlA",
+      "position": 41,
+      "title": "Protecting sensitive data in AI apps",
+      "publishedAt": "2024-11-21T14:00:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NyqLVzX6kAQ",
+      "position": 42,
+      "title": "RAG vs Model tuning vs Large prompt window",
+      "publishedAt": "2024-11-14T17:00:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "OEwQ2-fkRag",
+      "position": 43,
+      "title": "RAG with LangChain on Google Cloud",
+      "publishedAt": "2024-11-07T14:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "I0DBxnTlaMw",
+      "position": 44,
+      "title": "Prompt engineering for developers",
+      "publishedAt": "2024-10-31T13:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5lcrA3sANHk",
+      "position": 45,
+      "title": "How to secure your cloud with VPC Service Controls",
+      "publishedAt": "2024-10-17T13:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IY-z00bfnOc",
+      "position": 46,
+      "title": "Use GPUs in Cloud Run",
+      "publishedAt": "2024-10-03T16:00:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7TLWPFFVpcA",
+      "position": 47,
+      "title": "How to reduce deployment risk with blue-green deployments",
+      "publishedAt": "2024-09-26T13:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PXOd6Oo9YYM",
+      "position": 48,
+      "title": "Calling Cloud Run from C#",
+      "publishedAt": "2024-09-19T16:00:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "w3eeocy48mQ",
+      "position": 49,
+      "title": "Safe RAG for LLMs",
+      "publishedAt": "2024-09-12T16:00:54Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kbbrMRcfTDU",
+      "position": 50,
+      "title": "Build AI chat apps on Google Cloud",
+      "publishedAt": "2024-08-29T16:00:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "84Ql00Bjh1Y",
+      "position": 51,
+      "title": "Infrastructure as code",
+      "publishedAt": "2024-08-22T13:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "fD9SiYSpiwE",
+      "position": 52,
+      "title": "Multimodal AI",
+      "publishedAt": "2024-08-15T16:00:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xzgkSAh-6sg",
+      "position": 53,
+      "title": "Run your Next.js app on Cloud Run",
+      "publishedAt": "2024-05-30T16:00:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bIL8Gb3D8Yg",
+      "position": 54,
+      "title": "Cloud Run Principle of Least Privilege",
+      "publishedAt": "2024-05-23T16:00:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "yHk3_kqqrAY",
+      "position": 55,
+      "title": "Cloud Run Jobs overrides",
+      "publishedAt": "2024-05-09T13:01:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8pu2fVQbbNs",
+      "position": 56,
+      "title": "Cloud Run volume mounts",
+      "publishedAt": "2024-04-04T19:04:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "tUeoLB15pno",
+      "position": 57,
+      "title": "Optimize Java on Cloud Run",
+      "publishedAt": "2024-02-29T23:34:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ntEiXdr1-zA",
+      "position": 58,
+      "title": "Using Serverless Generative AI | Google Vertex AI",
+      "publishedAt": "2024-02-22T17:00:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ArDuQDjW-DQ",
+      "position": 59,
+      "title": "Safe serverless deployments with Cloud Run",
+      "publishedAt": "2024-02-20T20:30:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "q1mo5EMqRGw",
+      "position": 60,
+      "title": "Google Cloud & Firebase: Two sides of the same coin",
+      "publishedAt": "2024-02-09T17:00:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "byLJcf20vOw",
+      "position": 61,
+      "title": "NoSQL in real-life projects",
+      "publishedAt": "2023-12-14T20:00:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "rOMroL3mhO4",
+      "position": 62,
+      "title": "Rust on Cloud Run",
+      "publishedAt": "2023-12-08T00:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8YtsV8BNTqY",
+      "position": 63,
+      "title": "Cloud Run scalability",
+      "publishedAt": "2023-12-01T05:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "tf4PdidGtL0",
+      "position": 64,
+      "title": "Run your Vue.js app on Google Cloud",
+      "publishedAt": "2023-11-17T05:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CDDf6-W8lEo",
+      "position": 65,
+      "title": "Run your Angular app on Google Cloud",
+      "publishedAt": "2023-11-10T00:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AmqI7hLU7ag",
+      "position": 66,
+      "title": "Long-running Cloud Run Jobs",
+      "publishedAt": "2023-11-02T16:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NMnKGHgw8aM",
+      "position": 67,
+      "title": "Run your React app on Google Cloud",
+      "publishedAt": "2023-10-26T16:14:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "SJcQBJeMXqA",
+      "position": 68,
+      "title": "Cloud Run to VPC, simplified",
+      "publishedAt": "2023-10-19T16:00:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "r3oZVYVSbqg",
+      "position": 69,
+      "title": "How to do alerting right",
+      "publishedAt": "2023-10-05T16:00:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Zi94omSXo-4",
+      "position": 70,
+      "title": "Is Serverless SRE needed?",
+      "publishedAt": "2023-09-29T05:57:55Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "v6ll4UxS0Os",
+      "position": 71,
+      "title": "Cloud Functions local debugging",
+      "publishedAt": "2023-09-21T17:10:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bUozJLKJ9Ow",
+      "position": 72,
+      "title": "Companies who switched to Cloud Run",
+      "publishedAt": "2023-09-14T16:00:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "otoqJXt46S8",
+      "position": 73,
+      "title": "Monitor your Cloud Run app",
+      "publishedAt": "2023-09-07T17:15:54Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "i3epeCk8ldc",
+      "position": 74,
+      "title": "Serverless is simple. Do I need CI/CD?",
+      "publishedAt": "2023-08-17T16:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZgVhU5qvK1M",
+      "position": 75,
+      "title": "How to use Github Actions with Google's Workload Identity Federation",
+      "publishedAt": "2023-06-29T16:00:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ayTGOuCaxuc",
+      "position": 76,
+      "title": "Cloud Run user auth for internal apps",
+      "publishedAt": "2023-06-08T23:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_H0Q_0oz5hM",
+      "position": 77,
+      "title": "Cloud Run deployments with YAML",
+      "publishedAt": "2023-06-01T23:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "yqMKr37mGJw",
+      "position": 78,
+      "title": "Retries and Saga pattern in Workflows",
+      "publishedAt": "2023-05-18T23:00:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "OJzbRMXx5O4",
+      "position": 79,
+      "title": "How to run your Java Spring Boot app serverless on Google Cloud",
+      "publishedAt": "2022-04-21T23:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "4v-eRnl2-7A",
+      "position": 80,
+      "title": "Cloud Run Jobs #Shorts",
+      "publishedAt": "2023-04-20T23:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "L3vClxcAsnY",
+      "position": 81,
+      "title": "How to use temp files in Cloud Run",
+      "publishedAt": "2023-04-06T23:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vJVrNkSCeTs",
+      "position": 82,
+      "title": "Asset inventory on Google Cloud #Shorts",
+      "publishedAt": "2023-03-30T23:00:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bvP5syhh2AI",
+      "position": 83,
+      "title": "Machine Learning Accelerator with Looker and BigQuery ML",
+      "publishedAt": "2023-03-23T23:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RklySZM7FFc",
+      "position": 84,
+      "title": "How to create a serverless Cloud Workstation",
+      "publishedAt": "2023-03-10T00:02:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "D-zlCUeYIxk",
+      "position": 85,
+      "title": "Evolving architecture of a serverless app",
+      "publishedAt": "2023-02-24T00:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WgUeNYFGFpo",
+      "position": 86,
+      "title": "Cloud Run session affinity",
+      "publishedAt": "2023-02-10T00:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pi0Ss24bqL4",
+      "position": 87,
+      "title": "Three ways to improve CI/CD in your serverless app",
+      "publishedAt": "2023-01-27T00:00:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pSdD28cY6r8",
+      "position": 88,
+      "title": "How to build an event-driven serverless app",
+      "publishedAt": "2023-01-13T00:00:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_u03uI-zCCk",
+      "position": 89,
+      "title": "What are smoke tests? | Serverless Reliability",
+      "publishedAt": "2022-12-16T00:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eTotLOVR7MQ",
+      "position": 90,
+      "title": "Deploy the same app to App Engine, Cloud Functions, and Cloud Run?",
+      "publishedAt": "2022-12-09T00:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ertbL2Rxbvk",
+      "position": 91,
+      "title": "How to design a serverless app",
+      "publishedAt": "2022-12-02T00:00:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GyRHRK61qro",
+      "position": 92,
+      "title": "How to design a user interface quickly",
+      "publishedAt": "2022-11-18T00:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xQClVtAECdg",
+      "position": 93,
+      "title": "What is Cloud IAM?",
+      "publishedAt": "2022-11-11T00:00:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "tGXz5cLdIMk",
+      "position": 94,
+      "title": "Container journey playbook",
+      "publishedAt": "2022-11-03T23:00:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "DMCi7WWTtX0",
+      "position": 95,
+      "title": "How to deploy Cloud Run services with GitHub Actions",
+      "publishedAt": "2022-10-27T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5qOwYSCb1Gg",
+      "position": 96,
+      "title": "Top 3 pain points for serverless developers",
+      "publishedAt": "2022-10-20T23:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5eeA7B41h78",
+      "position": 97,
+      "title": "Searching for extraterrestrials with Google Cloud",
+      "publishedAt": "2022-10-06T23:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qSLL2kZxvWM",
+      "position": 98,
+      "title": "Service Level Objectives for Cloud Run",
+      "publishedAt": "2022-09-29T23:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IL0tlj7H08c",
+      "position": 99,
+      "title": "From a virtual machine database to Firestore",
+      "publishedAt": "2022-09-22T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0aauc7fulHw",
+      "position": 100,
+      "title": "What you need to know about data gravity #Shorts",
+      "publishedAt": "2022-09-15T23:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GODdWdlqG2c",
+      "position": 101,
+      "title": "Building a highly available Cloud Run app with Cloud Spanner",
+      "publishedAt": "2022-09-13T04:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "p4SzzgNjsBU",
+      "position": 102,
+      "title": "How L’Oreal built a data warehouse on Google Cloud",
+      "publishedAt": "2022-09-01T23:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "VGi13NUxBYY",
+      "position": 103,
+      "title": "Continuous integration for Cloud Run",
+      "publishedAt": "2022-08-25T23:00:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6hzb-j_VfnI",
+      "position": 104,
+      "title": "How to export data from Looker to BigQuery",
+      "publishedAt": "2022-08-18T23:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "4URpj0h3mv8",
+      "position": 105,
+      "title": "How to build a three-tier serverless Cloud Run app",
+      "publishedAt": "2022-08-11T23:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZBmpVv4PTVo",
+      "position": 106,
+      "title": "How to optimize analytics with BigQuery #Shorts",
+      "publishedAt": "2022-08-04T23:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "gle26fT28Bw",
+      "position": 107,
+      "title": "Picking the right serverless platform (Part 1)",
+      "publishedAt": "2022-07-07T23:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PLu7M2rbkKA",
+      "position": 108,
+      "title": "3 ways to run scalable web apps on Google Cloud",
+      "publishedAt": "2022-06-23T23:00:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "C4A4FpoeWn8",
+      "position": 109,
+      "title": "How to mix and match serverless and serverful components #Shorts",
+      "publishedAt": "2022-06-16T23:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JuGyCNtyAI4",
+      "position": 110,
+      "title": "How to choose a platform for your cloud application #Shorts",
+      "publishedAt": "2022-06-09T23:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "LY5aIRgG5cw",
+      "position": 111,
+      "title": "Are containers important?",
+      "publishedAt": "2022-06-02T23:00:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RQMRXAGxLiw",
+      "position": 112,
+      "title": "Orchestration or Choreography?",
+      "publishedAt": "2022-05-26T23:00:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "e07TvWMmVI8",
+      "position": 113,
+      "title": "Introducing Cloud Run Jobs",
+      "publishedAt": "2022-05-19T23:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HgDCFDlts8Y",
+      "position": 114,
+      "title": "Code is a liability: Five ways to reduce it #Shorts",
+      "publishedAt": "2022-05-05T23:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "It2Dkg9_L8g",
+      "position": 115,
+      "title": "You came up with a new word for “serverless” #Shorts",
+      "publishedAt": "2022-04-28T23:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IqAe1WRPjfU",
+      "position": 116,
+      "title": "Understanding serverless relational data at scale",
+      "publishedAt": "2022-04-14T23:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HKuUmzSpljU",
+      "position": 117,
+      "title": "How to deploy an existing web app on Cloud Run",
+      "publishedAt": "2022-04-07T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ko9yfIZPkS0",
+      "position": 118,
+      "title": "How to access Google Sheets from Cloud Run #Shorts",
+      "publishedAt": "2022-03-31T23:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ul1cGarS23M",
+      "position": 119,
+      "title": "How to use Cloud Run \"always-on\" CPU allocation for background work",
+      "publishedAt": "2022-03-24T23:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "4aERrnbrtjo",
+      "position": 120,
+      "title": "Cloud Run committed use discounts #Shorts",
+      "publishedAt": "2022-03-17T23:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eJK3d69fW5c",
+      "position": 121,
+      "title": "Why do businesses go serverless?",
+      "publishedAt": "2022-02-18T00:00:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hQMZ5w9v4aA",
+      "position": 122,
+      "title": "How to use Cloud Functions in Looker",
+      "publishedAt": "2022-02-11T00:00:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "b7GdpEEvGDQ",
+      "position": 123,
+      "title": "How to ensure only trusted container images are deployed to Cloud Run",
+      "publishedAt": "2022-02-04T00:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jRAutJjW91I",
+      "position": 124,
+      "title": "Measure and reduce your cloud carbon footprint #Shorts",
+      "publishedAt": "2022-01-28T00:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2wvcZ_C0__w",
+      "position": 125,
+      "title": "How to find your bugs sooner with continuous integration #Shorts",
+      "publishedAt": "2022-01-21T00:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "mgTI-paDNQ4",
+      "position": 126,
+      "title": "How to port stateful web apps to Cloud Run",
+      "publishedAt": "2022-01-14T00:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "16zKkBtU5gI",
+      "position": 127,
+      "title": "How to access your private Google Cloud storage from Cloud Run #Shorts",
+      "publishedAt": "2021-12-17T00:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IfK_Rt_UOe8",
+      "position": 128,
+      "title": "What's a better word for \"serverless\"? #Shorts",
+      "publishedAt": "2021-12-10T00:00:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ElwivW74XY4",
+      "position": 129,
+      "title": "Top 3 cloud challenges and how to overcome them",
+      "publishedAt": "2021-12-03T00:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "JbEiek3MNWw",
+      "position": 130,
+      "title": "Designing a serverless finance system on Google Cloud",
+      "publishedAt": "2021-11-19T00:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "scdtpMBLT8A",
+      "position": 131,
+      "title": "How to set up Django on Cloud Run with Terraform",
+      "publishedAt": "2021-11-12T00:00:19Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "UuouRJe_tBg",
+      "position": 132,
+      "title": "Why you shouldn't aim for 100% uptime #Shorts",
+      "publishedAt": "2021-11-04T23:00:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0JCa2cS2AyE",
+      "position": 133,
+      "title": "How to do serverless monitoring right #shorts",
+      "publishedAt": "2021-10-28T23:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "B6M-xSzfmN8",
+      "position": 134,
+      "title": "How to run your shell script without a server #shorts",
+      "publishedAt": "2021-10-21T23:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NeF0paF4bX0",
+      "position": 135,
+      "title": "The most important Cloud graph #shorts",
+      "publishedAt": "2021-10-07T23:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "01nEGwJfhZA",
+      "position": 136,
+      "title": "How to run your container without servers",
+      "publishedAt": "2021-09-30T23:00:00Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "WHH7eQLbG_s",
+      "position": 137,
+      "title": "Simplify your web apps on Google Cloud Run #shorts",
+      "publishedAt": "2021-09-23T23:00:10Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "Cd3xinQwF5I",
+      "position": 138,
+      "title": "Canary deployments on Google Cloud Run #shorts",
+      "publishedAt": "2021-09-16T23:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "g6i-mb_3iWM",
+      "position": 139,
+      "title": "Websockets with Cloud Run",
+      "publishedAt": "2021-09-09T23:00:24Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "8H0qyWlyumo",
+      "position": 140,
+      "title": "Permissions on Google Cloud Run #shorts",
+      "publishedAt": "2021-08-27T16:08:48Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "T5xJTPOMfe8",
+      "position": 141,
+      "title": "Dev, test, and production environments with Google Serverless #shorts",
+      "publishedAt": "2021-08-19T23:00:18Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "S2evHtbl4F8",
+      "position": 142,
+      "title": "Understanding Pub/Sub ordering",
+      "publishedAt": "2021-08-12T23:00:22Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "X7-OcaGv5Yg",
+      "position": 143,
+      "title": "Debugging Cloud Functions",
+      "publishedAt": "2021-08-05T23:00:21Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "HAoxDCQRKus",
+      "position": 144,
+      "title": "Serverless in practice at GreenMobility pt. 2",
+      "publishedAt": "2021-07-01T23:00:04Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "YmL6N_JXyQU",
+      "position": 145,
+      "title": "Serverless in practice at GreenMobility pt. 1",
+      "publishedAt": "2021-06-24T23:00:15Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "5r21CVd6nwo",
+      "position": 146,
+      "title": "How to authenticate calls to your Google Cloud Run service",
+      "publishedAt": "2021-06-17T23:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "yDexJC_emEw",
+      "position": 147,
+      "title": "Using Cloud Run without learning containers #shorts",
+      "publishedAt": "2021-06-10T23:00:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HbsHC8gq_NQ",
+      "position": 148,
+      "title": "Designing a serverless app on Google Cloud",
+      "publishedAt": "2021-06-03T23:00:04Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "BjRAO51omQs",
+      "position": 149,
+      "title": "Speed up your API on Cloud Run with Memorystore caching",
+      "publishedAt": "2021-05-27T23:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "JIE89dneaGo",
+      "position": 150,
+      "title": "Manage your Cloud Run secrets securely with Secret Manager",
+      "publishedAt": "2021-05-13T15:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-I5VAS8PTU4",
+      "position": 151,
+      "title": "Speed up your Cloud Run service by hosting it closer to your users",
+      "publishedAt": "2021-05-06T23:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nJnrkcA7ZdA",
+      "position": 152,
+      "title": "Choreography vs Orchestration in microservices | Orchestration",
+      "publishedAt": "2021-04-29T23:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IySueJCBSmM",
+      "position": 153,
+      "title": "Choreography vs Orchestration  in microservices | Choreography",
+      "publishedAt": "2021-04-22T23:00:05Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "IBm0SmwEWpA",
+      "position": 154,
+      "title": "Terraform, serverless, and Cloud Run in practice",
+      "publishedAt": "2021-04-15T23:00:04Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "Ce93fpQrKCk",
+      "position": 155,
+      "title": "Infrastructure as code with Terraform and Cloud Run",
+      "publishedAt": "2021-04-08T23:00:05Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "EtMIEtLQNa0",
+      "position": 156,
+      "title": "Simplify Cloud Run development with Visual Studio Code",
+      "publishedAt": "2021-04-01T23:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "r9qvB-JH4jM",
+      "position": 157,
+      "title": "Optimize application performance with Cloud Run and Cloud SQL",
+      "publishedAt": "2021-03-25T23:00:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "cBrn5IM4mA8",
+      "position": 158,
+      "title": "Cloud Run + Cloud SQL, setup",
+      "publishedAt": "2021-03-18T23:00:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IVOp5TL5cK4",
+      "position": 159,
+      "title": "Calling a private Cloud Function from a virtual machine",
+      "publishedAt": "2021-03-12T00:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ezzZ--xt43c",
+      "position": 160,
+      "title": "Gcloud command-line tips and tricks",
+      "publishedAt": "2021-03-05T00:00:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_w_idf928WY",
+      "position": 161,
+      "title": "Creating a REST API with Node.js and MySQL",
+      "publishedAt": "2021-02-26T00:00:23Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "f8nQk62IkHM",
+      "position": 162,
+      "title": "Pub/Sub tips and tricks",
+      "publishedAt": "2021-02-19T00:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AdXOu_LEupA",
+      "position": 163,
+      "title": "Drive a REST API from a Google Sheet",
+      "publishedAt": "2021-02-12T00:00:02Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "R2b7aZTRf-c",
+      "position": 164,
+      "title": "Can Cloud Run handle these 9 workloads?",
+      "publishedAt": "2021-02-05T00:00:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ca8FgxpmKVE",
+      "position": 165,
+      "title": "Three alternatives for running your web app serverlessly",
+      "publishedAt": "2021-01-29T00:00:13Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "XIwbIimM49Y",
+      "position": 166,
+      "title": "How to trigger Cloud Run on a schedule",
+      "publishedAt": "2021-01-22T00:00:20Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "dImzMPtTATg",
+      "position": 167,
+      "title": "Scheduling dbt jobs with serverless",
+      "publishedAt": "2021-01-15T00:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "A7stLZjP7uI",
+      "position": 168,
+      "title": "Connecting to private GCE instances",
+      "publishedAt": "2021-01-08T00:00:04Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "4HAbnin3nto",
+      "position": 169,
+      "title": "Securing a REST API with JWT, code",
+      "publishedAt": "2020-12-18T00:00:04Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "-fbcOnrN-Eo",
+      "position": 170,
+      "title": "How to run multiple versions of Python in Cloud Run",
+      "publishedAt": "2020-12-11T00:00:01Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "Nf3KAY-i6zw",
+      "position": 171,
+      "title": "Point-and-click continuous deployment with Cloud Run",
+      "publishedAt": "2020-12-04T00:00:01Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "YMJwR7--tUw",
+      "position": 172,
+      "title": "Network-restricted functions",
+      "publishedAt": "2020-11-20T00:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "BPGpdwPRP6I",
+      "position": 173,
+      "title": "Securing a REST API with JWT, concepts",
+      "publishedAt": "2020-11-13T00:00:02Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "tsKZ_u_uIAs",
+      "position": 174,
+      "title": "Integrating Webhooks with Pub/Sub",
+      "publishedAt": "2020-11-06T00:00:14Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "53MCPoFr03E",
+      "position": 175,
+      "title": "Integrating Webhooks with Cloud Run",
+      "publishedAt": "2020-10-29T23:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xM9-FSU5MoY",
+      "position": 176,
+      "title": "Centralize access to your organization’s websites with Identity Aware Proxy (IAP)",
+      "publishedAt": "2020-10-22T23:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zRjOSxTpC3A",
+      "position": 177,
+      "title": "Cloud Functions vs. Cloud Run",
+      "publishedAt": "2020-10-15T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7Z1mgOxWTs8",
+      "position": 178,
+      "title": "Moving Cron Jobs to the Cloud",
+      "publishedAt": "2020-10-08T23:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Pk21gaNO6ag",
+      "position": 179,
+      "title": "Deploy Django applications to Google Cloud",
+      "publishedAt": "2020-10-01T23:00:02Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "M53VqNtioxE",
+      "position": 180,
+      "title": "Hosting a REST API with a Cloud Firestore backend",
+      "publishedAt": "2020-09-24T23:00:02Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "s2TIWIzCftM",
+      "position": 181,
+      "title": "Using Python on Google Cloud with Cloud Run",
+      "publishedAt": "2020-09-17T23:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

@@ -107,6 +107,126 @@
           "2fyPnxKu8ZM"
         ]
       }
+    },
+    {
+      "id": "PLIivdWyY5sqLO-4ePY-A2yROgONOA6Cz4",
+      "slug": "google-cloud-security-basics",
+      "title": "Cloud Security Basics",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
+    },
+    {
+      "id": "PLIivdWyY5sqIco0L8OvlPl06vStfo3PgR",
+      "slug": "google-cloud-security-command-center",
+      "title": "Getting Started with Cloud Security Command Center",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
+    },
+    {
+      "id": "PLIivdWyY5sqJwq_pgOxcHzusWjXDVCEiX",
+      "slug": "google-cloud-serverless-expeditions",
+      "title": "Serverless Expeditions",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "draft",
+        "videoIds": []
+      }
+    },
+    {
+      "id": "PLIivdWyY5sqKwVLe4BLJ-vlh9r9zCdOse",
+      "slug": "google-cloud-pubsub-made-easy",
+      "title": "Pub/Sub Made Easy",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
+    },
+    {
+      "id": "PLIivdWyY5sqJEOfKLoXD-0qYCW9vurXl6",
+      "slug": "google-cloud-pubsub-best-practices",
+      "title": "Pub/Sub Best Practices",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
+    },
+    {
+      "id": "PLIivdWyY5sqKh1gDR0WpP9iIOY00IE0xL",
+      "slug": "google-cloud-essentials",
+      "title": "Google Cloud Essentials",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "draft",
+        "videoIds": []
+      }
+    },
+    {
+      "id": "PLIivdWyY5sqLOiLXJDlN-wKd0g7hf_9vC",
+      "slug": "google-cloud-engineering-for-reliability",
+      "title": "Engineering for Reliability",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
+    },
+    {
+      "id": "PLIivdWyY5sqI_-9KtGd4aEMu7gEO2ZWja",
+      "slug": "google-cloud-get-started",
+      "title": "Get Started with Google Cloud",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "draft",
+        "videoIds": []
+      }
+    },
+    {
+      "id": "PLIivdWyY5sqLuHY9Lw3DSJbY9Y-eIGMKf",
+      "slug": "google-cloud-build",
+      "title": "Build With Google Cloud",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true
+    },
+    {
+      "id": "PLIivdWyY5sqIQ4_5PwyyXZVdsXr3wYhip",
+      "slug": "google-cloud-bytes",
+      "title": "Cloud Bytes",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "draft",
+        "videoIds": []
+      }
+    },
+    {
+      "id": "PLIivdWyY5sqKJx6FwJMRcsnFIkkNFtsX9",
+      "slug": "google-cloud-beyond-your-bill",
+      "title": "Beyond Your Bill",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "draft",
+        "videoIds": []
+      }
+    },
+    {
+      "id": "PLIivdWyY5sqJW9s6CamHi7D8Tb0fuUJ_a",
+      "slug": "google-cloud-architecting",
+      "title": "Architecting with Google Cloud",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "draft",
+        "videoIds": []
+      }
     }
   ],
   "relationships": [

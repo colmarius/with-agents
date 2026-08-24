@@ -1,0 +1,333 @@
+{
+  "playlistId": "PLIivdWyY5sqI_-9KtGd4aEMu7gEO2ZWja",
+  "entries": [
+    {
+      "videoId": "ujx-C2FO3_0",
+      "position": 0,
+      "title": "CloudSQL",
+      "publishedAt": "2018-06-12T14:53:42Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "oDQlSrMyHL0",
+      "position": 1,
+      "title": "Datastore",
+      "publishedAt": "2018-06-12T14:53:58Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "44wjceJfEVs",
+      "position": 2,
+      "title": "Cloud Spanner",
+      "publishedAt": "2018-06-12T14:54:13Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "d7bXH_2X760",
+      "position": 3,
+      "title": "Cloud Shell",
+      "publishedAt": "2018-06-12T14:54:26Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "NPs_-Y5nFgE",
+      "position": 4,
+      "title": "Google Cloud VPC",
+      "publishedAt": "2018-08-07T16:21:55Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "sT7-_qn71cw",
+      "position": 5,
+      "title": "Google Cloud Persistent Disks",
+      "publishedAt": "2018-08-20T18:45:37Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "DLU96iStGxc",
+      "position": 6,
+      "title": "Quickstart for Bigtable Using Cloud Shell",
+      "publishedAt": "2018-08-21T17:40:01Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "zsYsWx1higQ",
+      "position": 7,
+      "title": "App Engine Python",
+      "publishedAt": "2019-02-16T00:06:53Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "TfOO-fSzTNA",
+      "position": 8,
+      "title": "Google Cloud Storage",
+      "publishedAt": "2019-02-19T17:19:23Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "1XH0gLlGDdk",
+      "position": 9,
+      "title": "Google Cloud Compute Engine",
+      "publishedAt": "2019-04-27T16:59:53Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "pU1zA-DMlWk",
+      "position": 10,
+      "title": "Cloud Pub/Sub",
+      "publishedAt": "2019-04-28T17:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "gEzlEg-XtsE",
+      "position": 11,
+      "title": "Cloud Deployment Manager",
+      "publishedAt": "2019-05-15T15:03:34Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "Sdt-i-Q7tyA",
+      "position": 12,
+      "title": "Resource Access Control IAM Roles and Permissions",
+      "publishedAt": "2019-05-20T17:28:40Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "55MEcprbmYg",
+      "position": 13,
+      "title": "Text Parsing and Analysis with Python",
+      "publishedAt": "2019-08-18T16:00:00Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "odsyEtM0d-I",
+      "position": 14,
+      "title": "Text Parsing and Analysis for Node.js",
+      "publishedAt": "2019-08-31T16:00:10Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "BXgORU4_23Q",
+      "position": 15,
+      "title": "Text Parsing and Analysis for Go",
+      "publishedAt": "2019-09-08T16:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "naZ8oEKuR44",
+      "position": 16,
+      "title": "Converting speech to text with Node.js",
+      "publishedAt": "2019-09-15T16:00:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "um6XTAypa5k",
+      "position": 17,
+      "title": "Translating speech using cURL",
+      "publishedAt": "2019-09-21T16:00:17Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "_tw3md6k8aw",
+      "position": 18,
+      "title": "Securing App Engine apps with IAP",
+      "publishedAt": "2019-10-06T16:00:05Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "JLXLCv5nUCE",
+      "position": 19,
+      "title": "Setting up the BigQuery sandbox",
+      "publishedAt": "2020-02-20T00:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "D0x6B-4oUNM",
+      "position": 20,
+      "title": "CLI for GCP",
+      "publishedAt": "2020-03-11T23:00:05Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "s46l_PmXBAQ",
+      "position": 21,
+      "title": "Private Container Registry/Storage",
+      "publishedAt": "2020-03-25T23:00:14Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ysjCt3tNyV0",
+      "position": 22,
+      "title": "Build and package container artifacts",
+      "publishedAt": "2020-04-15T23:00:15Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "vM-2O-uKBNQ",
+      "position": 23,
+      "title": "Cloud Functions quickstart",
+      "publishedAt": "2020-04-29T23:00:32Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "vKotfdEnS8E",
+      "position": 24,
+      "title": "Managed Kubernetes quickstart",
+      "publishedAt": "2020-05-13T23:00:18Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "AgYImGHmvBA",
+      "position": 25,
+      "title": "Cloud Endpoints quickstart",
+      "publishedAt": "2020-06-17T23:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "BN8aO0LULyw",
+      "position": 26,
+      "title": "Image recognition and classification with Cloud Vision",
+      "publishedAt": "2020-07-01T23:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "h6dLd_k-4Rc",
+      "position": 27,
+      "title": "Running a query with the BigQuery web UI",
+      "publishedAt": "2020-07-15T23:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "cAhVvA83UcA",
+      "position": 28,
+      "title": "Load local data into BigQuery using the web UI",
+      "publishedAt": "2020-07-29T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3Z1SzQsYnH8",
+      "position": 29,
+      "title": "Setting up cost controls for BigQuery",
+      "publishedAt": "2020-08-12T23:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "4-rZd5DwEww",
+      "position": 30,
+      "title": "Locating and querying public datasets",
+      "publishedAt": "2020-08-26T23:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "rLxDugIE79U",
+      "position": 31,
+      "title": "Copying datasets in BigQuery",
+      "publishedAt": "2020-09-16T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0cyTHbkARwY",
+      "position": 32,
+      "title": "Querying Cloud SQL from BigQuery",
+      "publishedAt": "2020-10-21T23:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PoVbGE0HrRA",
+      "position": 33,
+      "title": "Making data public in Cloud Storage",
+      "publishedAt": "2020-12-17T00:00:05Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ExtyhPqE_Hs",
+      "position": 34,
+      "title": "Using object versioning",
+      "publishedAt": "2020-12-24T00:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "LxDHd0MsFXI",
+      "position": 35,
+      "title": "How to classify and redact sensitive data",
+      "publishedAt": "2021-03-24T15:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "E_ZDB4S6mSQ",
+      "position": 36,
+      "title": "Build a serverless application integration with Workflows",
+      "publishedAt": "2021-03-31T23:00:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RiZYhr9WTtQ",
+      "position": 37,
+      "title": "What are Google Cloud quickstarts?",
+      "publishedAt": "2022-02-15T17:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2XwDPPazX6o",
+      "position": 38,
+      "title": "How to use the BigQuery command-line tool",
+      "publishedAt": "2022-02-22T17:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "M_urADGk9BQ",
+      "position": 39,
+      "title": "How to use Cloud Storage with the command-line tool",
+      "publishedAt": "2022-03-15T17:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "SPcFViKU_xU",
+      "position": 40,
+      "title": "How to use Cloud Speech-to-Text with cURL",
+      "publishedAt": "2022-03-22T17:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

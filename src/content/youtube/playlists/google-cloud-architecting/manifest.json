@@ -1,0 +1,229 @@
+{
+  "playlistId": "PLIivdWyY5sqJW9s6CamHi7D8Tb0fuUJ_a",
+  "entries": [
+    {
+      "videoId": "kGUOGr37Yg4",
+      "position": 0,
+      "title": "How Google Photos scales to store 4 trillion photos and videos",
+      "publishedAt": "2023-07-31T19:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "w33u4YMc-Es",
+      "position": 1,
+      "title": "How Glance is modernizing phone lock screens",
+      "publishedAt": "2023-04-22T16:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xToe3sRFDLM",
+      "position": 2,
+      "title": "How Agrahyah distributes podcasts with Google Cloud",
+      "publishedAt": "2023-03-12T00:00:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "B77wPpV8ExE",
+      "position": 3,
+      "title": "Running a store with AI",
+      "publishedAt": "2022-12-17T17:00:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zcwMTmoTGbo",
+      "position": 4,
+      "title": "How to create ML models that teach themselves",
+      "publishedAt": "2022-11-12T17:00:50Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "gojEIojo7-I",
+      "position": 5,
+      "title": "Understanding graph databases with Neo4j",
+      "publishedAt": "2022-11-05T16:00:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jIrru50I-WY",
+      "position": 6,
+      "title": "Exploring observability with Chronosphere",
+      "publishedAt": "2022-10-15T23:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Pym8Evbf7Ak",
+      "position": 7,
+      "title": "How Twitter maximizes performance with BigQuery",
+      "publishedAt": "2022-10-08T15:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WuvG9ditSpQ",
+      "position": 8,
+      "title": "How to create a great AI Assistant",
+      "publishedAt": "2022-08-27T16:00:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "UAjDfvxxbf0",
+      "position": 9,
+      "title": "Scaling up remote development with itopia",
+      "publishedAt": "2022-07-16T16:00:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WPs2AcYJ2uE",
+      "position": 10,
+      "title": "Desktop apps with Citrix and Google Cloud",
+      "publishedAt": "2022-07-02T16:00:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "p8md_b6DtDA",
+      "position": 11,
+      "title": "The future of electric vehicles with Ather Energy and Google Cloud",
+      "publishedAt": "2022-04-16T16:00:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zVAF258K7LE",
+      "position": 12,
+      "title": "How airlines forecast demand with FLYR and Google Cloud",
+      "publishedAt": "2022-04-02T16:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Xz_9KlWgGSM",
+      "position": 13,
+      "title": "How a Cloud-Native Software Factory was built by HCL Software",
+      "publishedAt": "2022-03-19T16:00:26Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hNx5ZXvH7XI",
+      "position": 14,
+      "title": "How to scale with Apollo GraphQL",
+      "publishedAt": "2022-03-12T17:00:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-4Ci-zs2bwE",
+      "position": 15,
+      "title": "How to protect your company from cyberattacks",
+      "publishedAt": "2022-02-28T20:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Ey_h9gJPDbk",
+      "position": 16,
+      "title": "The solution to shared file storage with Netapp",
+      "publishedAt": "2022-02-19T17:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Hc5xAK0cWgA",
+      "position": 17,
+      "title": "How to build an AI-powered mobile ad platform",
+      "publishedAt": "2022-02-05T17:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "DY2AR8Wzg3Y",
+      "position": 18,
+      "title": "How does Uber scale to millions of concurrent requests?",
+      "publishedAt": "2022-01-23T22:34:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "wqESumEgyVQ",
+      "position": 19,
+      "title": "How to architect an AI/ML powered priority lane",
+      "publishedAt": "2022-01-08T17:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "46aomfLUxVQ",
+      "position": 20,
+      "title": "How to build a virtual employment center on Google Cloud & Workspace",
+      "publishedAt": "2021-12-11T17:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "lc68XluDeH4",
+      "position": 21,
+      "title": "How to migrate a data warehouse to BigQuery",
+      "publishedAt": "2021-11-20T17:00:23Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "8wuRy-QjeN0",
+      "position": 22,
+      "title": "How Marxent uses Google Cloud to power self-service 3D shopping apps",
+      "publishedAt": "2021-10-30T16:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "YG7GXjZ8En4",
+      "position": 23,
+      "title": "How does Pokémon Go scale to millions of requests?",
+      "publishedAt": "2021-10-16T16:00:12Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "MlJX0X9qerc",
+      "position": 24,
+      "title": "How to architect a no-code ML platform on Google Cloud",
+      "publishedAt": "2021-10-02T16:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "YxNRkw8Msdw",
+      "position": 25,
+      "title": "How to create a microservice architecture with Google Cloud",
+      "publishedAt": "2021-09-18T16:00:13Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "QjMl9lgcOU0",
+      "position": 26,
+      "title": "How to architect an AI/ML powered Healthcare platform on Google Cloud",
+      "publishedAt": "2021-09-04T16:00:10Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "xg_Z0rVftPs",
+      "position": 27,
+      "title": "How to build a Video Intelligence Platform on Google Cloud",
+      "publishedAt": "2021-08-28T16:00:32Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    }
+  ]
+}

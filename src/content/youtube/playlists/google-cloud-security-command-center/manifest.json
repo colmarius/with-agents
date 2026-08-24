@@ -1,0 +1,45 @@
+{
+  "playlistId": "PLIivdWyY5sqIco0L8OvlPl06vStfo3PgR",
+  "entries": [
+    {
+      "videoId": "goJ_G2ygdSA",
+      "position": 0,
+      "title": "How to use Cloud Security Scanner - Getting Started with Cloud Security Command Center",
+      "publishedAt": "2019-09-11T23:00:10Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "n70BdI7apXI",
+      "position": 1,
+      "title": "How to use Cloud Anomaly Detection - Getting Started with Cloud Security Command Center",
+      "publishedAt": "2019-09-18T17:03:05Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "0f5Dh8cGbyQ",
+      "position": 2,
+      "title": "How to use Event Threat Detection - Getting Started with Cloud Security Command Center",
+      "publishedAt": "2019-09-25T16:00:00Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ra_hnxqBzOc",
+      "position": 3,
+      "title": "How to use Cloud DLP - Getting Started with Cloud Security Command Center",
+      "publishedAt": "2019-10-02T16:14:29Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "L5nR0KPtn-Y",
+      "position": 4,
+      "title": "Getting Started with Security Health Analytics",
+      "publishedAt": "2019-10-23T16:00:59Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    }
+  ]
+}

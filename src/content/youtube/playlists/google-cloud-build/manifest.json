@@ -1,0 +1,45 @@
+{
+  "playlistId": "PLIivdWyY5sqLuHY9Lw3DSJbY9Y-eIGMKf",
+  "entries": [
+    {
+      "videoId": "IeMYQ-qJeK4",
+      "position": 0,
+      "title": "Introduction to Google Cloud",
+      "publishedAt": "2022-02-17T05:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0EBCMNoYvfc",
+      "position": 1,
+      "title": "How to build a modern banking app with Google Cloud",
+      "publishedAt": "2022-03-31T04:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aOaR4GAcKYU",
+      "position": 2,
+      "title": "How to build digital e-commerce platform on Google Cloud",
+      "publishedAt": "2022-01-20T05:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "c2I4G7UH408",
+      "position": 3,
+      "title": "Build a restaurant edge solution with Google Cloud | demo",
+      "publishedAt": "2022-08-18T04:00:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BX9BIHRfab0",
+      "position": 4,
+      "title": "How to build a social media photo sharing app on Google Cloud",
+      "publishedAt": "2022-09-08T04:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

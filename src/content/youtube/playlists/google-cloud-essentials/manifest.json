@@ -1,0 +1,197 @@
+{
+  "playlistId": "PLIivdWyY5sqKh1gDR0WpP9iIOY00IE0xL",
+  "entries": [
+    {
+      "videoId": "kzKFuHk8ovk",
+      "position": 0,
+      "title": "What is Google Cloud?",
+      "publishedAt": "2022-04-09T23:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GKEk1FzAN1A",
+      "position": 1,
+      "title": "Getting started with Google Cloud",
+      "publishedAt": "2021-05-14T15:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "f-Ly6qMETDY",
+      "position": 2,
+      "title": "Machine learning on Google Cloud",
+      "publishedAt": "2022-08-05T16:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jtPtSVSTb9Y",
+      "position": 3,
+      "title": "How to run code on Google Cloud",
+      "publishedAt": "2022-07-29T16:00:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "w2mL4sUOjVo",
+      "position": 4,
+      "title": "How to store data on Google Cloud",
+      "publishedAt": "2022-07-22T16:00:42Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ogzJovMsDIU",
+      "position": 5,
+      "title": "How to use the Google Cloud Free Program",
+      "publishedAt": "2022-04-23T23:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "27Pb5g7bEAA",
+      "position": 6,
+      "title": "How to use the Google Cloud Console",
+      "publishedAt": "2022-04-16T23:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "TH_OuqZ1ZKU",
+      "position": 7,
+      "title": "Platform overview - Code & build tools",
+      "publishedAt": "2020-09-13T16:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CjGv1bDy9rI",
+      "position": 8,
+      "title": "Debugging, distributed tracing, and profiling for web applications",
+      "publishedAt": "2020-08-21T15:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GANi9eRxhHs",
+      "position": 9,
+      "title": "Error reporting",
+      "publishedAt": "2020-08-07T16:03:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "gyDp-Cl_MdA",
+      "position": 10,
+      "title": "Cloud logging",
+      "publishedAt": "2020-07-24T16:00:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zR6CsTLTPsk",
+      "position": 11,
+      "title": "GCP vs. Firebase - Functions & Firestore",
+      "publishedAt": "2020-02-04T16:00:13Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "xbmYmgBEj4o",
+      "position": 12,
+      "title": "GCP vs. Firebase - Projects & storage",
+      "publishedAt": "2020-01-22T00:00:07Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "jh0fPT-AWwM",
+      "position": 13,
+      "title": "Top 3 ways to run your containers on Google Cloud",
+      "publishedAt": "2020-01-04T17:00:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "vmTRaAkYH7k",
+      "position": 14,
+      "title": "GCP Staying in touch",
+      "publishedAt": "2019-10-06T04:00:04Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "eSYOjZuDtDw",
+      "position": 15,
+      "title": "Hands-on GCP",
+      "publishedAt": "2019-09-10T23:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "tc2940Zwvyk",
+      "position": 16,
+      "title": "Platform Overview - Data & Storage",
+      "publishedAt": "2019-07-02T15:00:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "PBw9vD_BO5A",
+      "position": 17,
+      "title": "Platform Overview - Serverless",
+      "publishedAt": "2019-06-12T18:00:04Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "QR_LQQ-vvko",
+      "position": 18,
+      "title": "Platform Overview - Machine Learning",
+      "publishedAt": "2019-05-21T18:00:02Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "hHmBOv8z1D0",
+      "position": 19,
+      "title": "Platform Overview - Compute",
+      "publishedAt": "2019-05-14T00:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "3v9XWdFyh2E",
+      "position": 20,
+      "title": "Developer and Management Tools",
+      "publishedAt": "2019-03-09T00:54:53Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "FsbYh47q55o",
+      "position": 21,
+      "title": "The Cloud Console Tour",
+      "publishedAt": "2019-02-09T01:50:05Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "P2ADJdk5mYo",
+      "position": 22,
+      "title": "The Google Cloud Platform Free Trial and Free Tier",
+      "publishedAt": "2019-01-29T21:49:40Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "4D3X6Xl5c_Y",
+      "position": 23,
+      "title": "Welcome to Google Cloud Platform - the Essentials of GCP",
+      "publishedAt": "2019-01-11T18:00:44Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    }
+  ]
+}

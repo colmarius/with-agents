@@ -1,0 +1,53 @@
+{
+  "playlistId": "PLIivdWyY5sqJEOfKLoXD-0qYCW9vurXl6",
+  "entries": [
+    {
+      "videoId": "Oo5PXA4idI8",
+      "position": 0,
+      "title": "Pub/Sub Best Practices: Publishing",
+      "publishedAt": "2023-02-04T17:00:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aHc-DOP43a8",
+      "position": 1,
+      "title": "Pub/Sub Best Practices: Subscribing",
+      "publishedAt": "2023-02-11T17:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2-8wgvanQHI",
+      "position": 2,
+      "title": "Pub/Sub Best Practices: Features",
+      "publishedAt": "2023-02-18T17:00:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vY56eo74DNo",
+      "position": 3,
+      "title": "Pub/Sub Best Practices: Latency & Reliability",
+      "publishedAt": "2023-02-25T17:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "F0H9qt1w9JE",
+      "position": 4,
+      "title": "Pub/Sub Best Practices: Client Library",
+      "publishedAt": "2023-03-04T17:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pP6ipLkXnkk",
+      "position": 5,
+      "title": "Pub/Sub Best Practices: Patterns, Experimentation, and Testing",
+      "publishedAt": "2023-03-11T17:00:24Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}

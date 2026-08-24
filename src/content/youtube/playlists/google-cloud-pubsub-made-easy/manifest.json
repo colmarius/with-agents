@@ -1,0 +1,93 @@
+{
+  "playlistId": "PLIivdWyY5sqKwVLe4BLJ-vlh9r9zCdOse",
+  "entries": [
+    {
+      "videoId": "cvu53CnZmGI",
+      "position": 0,
+      "title": "Cloud Pub/Sub Overview - ep. 1",
+      "publishedAt": "2019-10-30T23:12:14Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "MjEam95VLiI",
+      "position": 1,
+      "title": "What is Cloud Pub/Sub? - ep. 2",
+      "publishedAt": "2019-11-28T17:00:03Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "f5DOsB7Nlw0",
+      "position": 2,
+      "title": "Cloud Pub/Sub in Action - ep. 3",
+      "publishedAt": "2019-12-10T17:22:43Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ML6P1ksHcqo",
+      "position": 3,
+      "title": "Cloud Pub/Sub Publishers - ep. 4",
+      "publishedAt": "2020-01-04T17:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "nQ9_Xur2aM4",
+      "position": 4,
+      "title": "Cloud Pub/Sub Subscribers - ep. 5",
+      "publishedAt": "2020-01-12T17:00:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "KObJkda4ZfY",
+      "position": 5,
+      "title": "Push or Pull Subscriber? - ep. 6",
+      "publishedAt": "2020-01-19T17:00:06Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "cCkwo6eEHIg",
+      "position": 6,
+      "title": "Receiving messages using Pull - ep. 7",
+      "publishedAt": "2020-02-28T16:00:07Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "k8lBOV-nRXI",
+      "position": 7,
+      "title": "Receiving Messages using Push to Cloud Function - ep.8",
+      "publishedAt": "2020-03-06T17:00:08Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "ZI9ndn2obDk",
+      "position": 8,
+      "title": "Using Cloud Pub/Sub with Cloud Run - ep. 9",
+      "publishedAt": "2020-03-13T16:00:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "VyLmmamuOVo",
+      "position": 9,
+      "title": "Replaying and discarding messages - ep. 10",
+      "publishedAt": "2020-03-27T16:00:13Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    },
+    {
+      "videoId": "fgVE1OoJ2XI",
+      "position": 10,
+      "title": "Choosing Pub Sub or Pub Sub Lite? - ep. 11",
+      "publishedAt": "2021-06-30T04:00:09Z",
+      "privacyStatus": "unlisted",
+      "available": true
+    }
+  ]
+}

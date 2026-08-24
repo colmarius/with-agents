@@ -43,7 +43,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - Real-browser verification covers the apex and all three context hubs at desktop and narrow viewport widths, plus one established Coding route.
   - Notes: Refactor information architecture only. Do not move established content merely for URL symmetry or publish placeholder Cloud/Security resources.
 
-- [ ] **Task 4: Configure and synchronize the 12 source playlists**
+- [x] **Task 4: Configure and synchronize the 12 source playlists**
   - Scope: `src/content/youtube/catalog.json`, `src/content/youtube/playlists/<slug>/manifest.json`, work-item impact record
   - Depends on: Task 3; approved `en` transcript/summary language and `multiSpeaker: true` (confirmed 2026-08-24)
   - Acceptance:
@@ -57,7 +57,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
   - Scope: source curation records, `src/content/youtube/videos/<video-id>/**`, playlist draft overviews
   - Depends on: Task 4; reviewed curation for broad playlists
   - Acceptance:
-    - Focused playlists of at most 11 coherent videos are explicitly classified as full-series candidates.
+    - The five focused playlists of at most 11 videos plus the cohesive 24-video Engineering for Reliability playlist are explicitly classified as full-series candidates.
     - Every broad playlist has a human-reviewed ordered curation or an explicit full-series decision before capture.
     - A separate `capture --playlist <slug> --limit 1` command proves English caption capture for every playlist; partial failures remain recorded rather than silently retried.
     - Every successful transcript receives a source-faithful draft source summary and every playlist receives a draft overview with exact coverage and pending IDs.
