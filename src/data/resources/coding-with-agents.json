@@ -1,5 +1,23 @@
 [
   {
+    "id": 56,
+    "primarySection": "workflows",
+    "title": "The Era of Compound Engineering",
+    "subtitle": "Kieran Klaassen on preserving judgment so each agent-assisted delivery improves the next",
+    "url": "https://www.youtube.com/watch?v=_ehJyfHg1Vk",
+    "description": "Kieran Klaassen presents compound engineering: keep human judgment at brainstorming and polish, automate the repeatable middle, and store corrections and rationale so future work starts with more context. Drawing on Cora, where he is the primary engineer with design and specialist database support, he demonstrates the loop. Claims that one engineer beats teams and implementation is ‘mostly solved’ are practitioner judgments; the talk provides no analytics for plugin adoption or comparative delivery, quality, or token-use measurements.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-08-20",
+    "duration": "21m",
+    "topics": [
+      "context-memory",
+      "prompting-orchestration",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 55,
     "primarySection": "teams-ecosystem",
     "title": "How to Build a Self-Improving Company with AI",
