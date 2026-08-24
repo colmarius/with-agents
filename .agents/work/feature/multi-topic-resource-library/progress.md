@@ -123,3 +123,21 @@
 ### Next action
 
 - Prove one strict-English thin slice for each broad playlist, then delegate the remaining selected IDs in disjoint playlist-owned batches.
+
+## 2026-08-24 — Thin slices complete and bounded backfills underway
+
+- Proved strict-English capture for the first approved selection in each broad playlist, inspected all six complete transcripts, made only source-faithful caption corrections, and added six draft summaries plus exact draft overviews.
+- Task 5 is complete: all 12 playlists now have an explicit capture scope, a successful bounded thin slice, a draft source summary, and a current draft overview.
+- Integrated the four disjoint full-series worker patches after checksum and application checks. Cloud Security Basics, Security Command Center, Pub/Sub Made Easy, Pub/Sub Best Practices, Engineering for Reliability, and Build With Google Cloud now have all 61 manifest entries captured and draft-summarized, with no pending or unavailable IDs.
+- Preserved material freshness warnings in the source layer, including retired Pub/Sub Lite, historical Security Command Center and service-account-key guidance, dated 2021–2022 observability/UI details, and point-in-time reference architectures.
+- Started six independent high-effort orb workers for the 61 remaining curated selections. Each owns one playlist’s video directories and overview, must keep capture and editorial commits separate, and will return an unpushed patch for coordinator review.
+
+### Verification
+
+- Initial six broad samples: status reports one captured draft summary and a current overview for every curated playlist.
+- Structural audit reports only the expected 67 selected videos without reviewed source evidence; malformed files, unresolved timestamp anchors, and other structural errors are absent.
+- Targeted YouTube library tests pass 44/44 at the current coordinator checkpoint. Integrated workers independently reported full source audits and repository checks; combined verification remains pending until all curated patches are integrated.
+
+### Next action
+
+- Inspect and integrate each curated-playlist patch, then run combined status, audit, tests, content guard, build, and source-only boundary checks before any review or publication work.

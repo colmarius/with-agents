@@ -10,7 +10,7 @@ Extend the site beyond its Coding with Agents catalog so cloud/GCP and security 
 
 ## Summary
 
-The playlist research, generic topic-catalog foundation, single-origin context hub, and source-playlist synchronization are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. All 12 approved Google Cloud Tech playlists have complete local manifests, and the six broad collections now have user-approved reviewed curation totaling 67 selected videos.
+The generic topic-catalog foundation, single-origin context hub, and synchronization of all 12 Google Cloud Tech playlists are complete. Every playlist now has a strict-English capture, draft source summary, and draft overview. The six full-series collections are fully captured and draft-summarized (61 videos); the six broad collections have user-approved curation totaling 67 selected videos, six captured samples, and disjoint high-orb backfills in progress for the remaining 61 selections. Public Cloud and Security resources remain intentionally unpublished pending dedicated source review.
 
 ## Artifacts
 
@@ -21,14 +21,16 @@ The playlist research, generic topic-catalog foundation, single-origin context h
 - Progress: [progress.md](progress.md)
 - Decisions: [decisions/site-topology.md](decisions/site-topology.md)
 - Active handoffs:
-  - [Cloud Security full-series backfill](https://ampcode.com/threads/T-01a035b0-410b-738a-8ec2-ce3c00e0c77b)
-  - [Pub/Sub full-series backfill](https://ampcode.com/threads/T-01a035b0-48f0-74cb-b71f-eab5e430ceeb)
-  - [Engineering for Reliability full-series backfill](https://ampcode.com/threads/T-01a035b0-5e4e-774a-8a02-33b7103de889)
-  - [Build With Google Cloud full-series backfill](https://ampcode.com/threads/T-01a035b0-6cca-7740-8c75-af8827d109ba)
+  - [Serverless Expeditions curated backfill](https://ampcode.com/threads/T-01a035bf-f70f-770b-ad76-15906f613aa8)
+  - [Google Cloud Essentials curated backfill](https://ampcode.com/threads/T-01a035c0-004a-7202-8fe3-4473a40a0a6e)
+  - [Get Started with Google Cloud curated backfill](https://ampcode.com/threads/T-01a035c0-08ee-73d1-ad76-a12af9b714d4)
+  - [Cloud Bytes curated backfill](https://ampcode.com/threads/T-01a035c0-1356-73ae-ab8a-a672e75da505)
+  - [Beyond Your Bill curated backfill](https://ampcode.com/threads/T-01a035c0-1d16-7683-953a-36b85ade5ee7)
+  - [Architecting with Google Cloud curated backfill](https://ampcode.com/threads/T-01a035c0-24ad-726b-9447-eedeff585392)
 
 ## Next Action
 
-- Prove one strict-English capture → draft summary → draft overview thin slice for each reviewed broad playlist, then delegate the remaining source backfill in disjoint playlist-owned batches.
+- Inspect and integrate the six curated-backfill patches, run combined source-library verification, and reconcile Task 6 before beginning the separate source-review/publication gate.
 
 ## Open Questions
 
