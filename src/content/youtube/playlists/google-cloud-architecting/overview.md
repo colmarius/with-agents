@@ -1,6 +1,6 @@
 ---
 title: "Architecting with Google Cloud"
-status: draft
+status: reviewed
 coveredVideoIds:
   - kGUOGr37Yg4
   - DY2AR8Wzg3Y
@@ -18,18 +18,19 @@ coveredVideoIds:
 
 - Manifest: 28 entries, all currently available.
 - Selected: 10 IDs in the reviewed curation; 18 manifest entries are unselected.
-- Summaries: 10 draft summaries.
+- Summaries: 10 reviewed summaries.
 - Incorporated: all 10 selected summaries.
 - Pending selected video IDs: none.
 
 ## Current Thesis
 
-- Dave and Tracy of Google Photos separate immutable media, transactional metadata, interactive serving, and asynchronous ML work ([summary](../../videos/kGUOGr37Yg4/summary.md)).
-- Ankit Srivasta of Uber and Cloud Spanner engineering director Preetham Shah describe choosing consistency from user-visible failure modes, then migrating live state at an inactive-session boundary ([summary](../../videos/DY2AR8Wzg3Y/summary.md)).
-- James of Niantic Labs separates strongly consistent player state from eventually consistent shared-world state and uses deterministic computation to align nearby players ([summary](../../videos/YG7GXjZ8En4/summary.md)).
-- David Ting of Nylas and Chang of Moloco describe event-first systems that separate latency-sensitive serving from asynchronous processing and feedback pipelines ([Nylas summary](../../videos/YxNRkw8Msdw/summary.md); [Moloco summary](../../videos/Hc5xAK0cWgA/summary.md)).
+- Dave and Tracy of Google Photos separate media bytes, Spanner metadata, interactive serving, and asynchronous ML work ([summary](../../videos/kGUOGr37Yg4/summary.md)).
+- Ankit Srivasta of Uber and Cloud Spanner engineering director Preetham Shah describe choosing consistency from user-visible failure modes, then migrating a session only when it had no active order ([summary](../../videos/DY2AR8Wzg3Y/summary.md)).
+- James of Niantic Labs separates Spanner-backed player state from eventually consistent shared-world state and uses deterministic computation to align nearby players ([summary](../../videos/YG7GXjZ8En4/summary.md)).
+- David Ting of Nylas describes an event-first microservice system, while Chang of Moloco separates a latency-bounded online inference path from offline feature, training, feedback, and analysis pipelines ([Nylas summary](../../videos/YxNRkw8Msdw/summary.md); [Moloco summary](../../videos/Hc5xAK0cWgA/summary.md)).
 - Ben of Arcules places buffering and selected compute at the edge before splitting media, metadata, configuration, and analytics in the cloud ([summary](../../videos/xg_Z0rVftPs/summary.md)).
-- Unnamed Twitter engineers and Gary Moriali of an unnamed health insurer treat warehouse migration as dependency mapping, parallel data movement, governed self-service, and output reconciliation ([Twitter summary](../../videos/Pym8Evbf7Ak/summary.md); [warehouse summary](../../videos/lc68XluDeH4/summary.md)).
+- Unnamed speakers presented as Twitter engineers describe separate batch and streaming replication, governed data ownership, isolated compute workspaces, and infrastructure reconciliation ([summary](../../videos/Pym8Evbf7Ak/summary.md)).
+- Gary Moriali of an unnamed health insurer describes an in-progress warehouse migration built around dependency assessment, staged data movement, and old-versus-new output comparison ([summary](../../videos/lc68XluDeH4/summary.md)).
 - Amol of Vida Health describes a healthcare data and application consolidation with assistive ML concepts, while Mason of Palo Alto Networks describes feeding endpoint posture into access decisions ([Vida summary](../../videos/QjMl9lgcOU0/summary.md); [security summary](../../videos/-4Ci-zs2bwE/summary.md)).
 
 ## Stable Ideas
@@ -41,7 +42,7 @@ coveredVideoIds:
 
 ## Emerging Ideas
 
-- Editorial: Edge buffering and deterministic computation offer two different ways to preserve useful behavior when centralized coordination is expensive or temporarily unavailable ([Arcules summary](../../videos/xg_Z0rVftPs/summary.md); [Niantic summary](../../videos/YG7GXjZ8En4/summary.md)).
+- Editorial: Edge buffering and deterministic computation address different distributed-system problems: intermittent connectivity at customer sites and a consistent shared view across independently serving game instances ([Arcules summary](../../videos/xg_Z0rVftPs/summary.md); [Niantic summary](../../videos/YG7GXjZ8En4/summary.md)).
 - Editorial: Several cases move operational policy into managed control planes, but doing so shifts architecture work toward contracts, quotas, observability, provider failure modes, and verification rather than eliminating it ([Photos summary](../../videos/kGUOGr37Yg4/summary.md); [Twitter summary](../../videos/Pym8Evbf7Ak/summary.md); [security summary](../../videos/-4Ci-zs2bwE/summary.md)).
 - Editorial: ML-heavy systems repeatedly separate data capture, feature or protocol preparation, online assistance or inference, and feedback; healthcare and advertising add domain risks that infrastructure diagrams do not resolve ([Moloco summary](../../videos/Hc5xAK0cWgA/summary.md); [Vida summary](../../videos/QjMl9lgcOU0/summary.md)).
 

@@ -6,19 +6,19 @@ publishedAt: "2022-10-08T15:00:27Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
-Priyanka Vergadia narrates a Google Cloud-produced walkthrough with unnamed Twitter engineers. They describe Twitter's 2022 hybrid analytics platform: batch and streaming replication into BigQuery, separate projects for compute and storage ownership, and infrastructure-as-code reconciliation for a large self-service data estate.
+Priyanka narrates a Google Cloud-produced walkthrough featuring unnamed speakers presented as Twitter engineers. They describe Twitter's 2022 hybrid analytics platform: batch and streaming replication into BigQuery, separate projects for compute and data storage, and infrastructure-as-code reconciliation for a large self-service data estate.
 
 ## Key Ideas
 
-- Twitter copied event data from HDFS and Kafka through separate batch and streaming paths, including Cloud Storage staging and a Kafka-to-Pub/Sub-to-BigQuery service. [00:01:03]-[00:04:16]
-- Teams used the resulting data for timeline analysis and abuse-detection investigation, including BigQuery ML-assisted model analysis. [00:04:16]-[00:06:23]
-- Compute and storage projects were separated so teams could have isolated workspaces and quotas while data projects applied tighter privacy, security, and protection controls. [00:05:20]-[00:07:26]
-- Storage projects were organized by owning identity, related event-log categories were grouped, and a view project preserved a consistent discovery interface. [00:07:26]-[00:10:37]
-- A scheduled GKE service generated Terraform from source-controlled configuration, reconciled existing resources, applied access and perimeter policies, and enabled required APIs; separate metadata services classified data and assigned retention. [00:10:37]-[00:12:46]
-- At this scale, default project, perimeter, dataset, job, and slot limits became architecture constraints requiring explicit capacity work with the provider. [00:12:46]-[00:14:53]
+- The speakers say Twitter copied event data from HDFS and Kafka through separate batch and streaming paths, including Cloud Storage staging and a Kafka-to-Pub/Sub-to-BigQuery service. [00:01:03]-[00:04:16]
+- They describe teams using the resulting data for timeline analytics and abuse investigations, including analysis and validation of Twitter's own abuse-detection models with BigQuery ML. [00:04:16]-[00:06:23]
+- They say compute and storage projects were separated so users and teams could have isolated workspaces and quotas while storage projects applied stricter privacy, security, and protection controls. [00:05:20]-[00:07:26]
+- In their account, storage projects were organized by owning identity, related event-log categories were grouped, and a view project preserved a consistent discovery interface. [00:07:26]-[00:10:37]
+- They describe a scheduled GKE service that generated Terraform from source-controlled configuration, reconciled existing resources, applied access and perimeter policies, and enabled required APIs; separate internal metadata services classified data and assigned retention. [00:10:37]-[00:12:46]
+- The speakers say project, perimeter, dataset, load-job, and slot limits became architecture constraints at Twitter's scale, requiring limit increases coordinated with Google Cloud teams. [00:12:46]-[00:14:53]
 
 ## Practical Implications
 
