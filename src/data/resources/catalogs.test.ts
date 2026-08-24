@@ -49,13 +49,22 @@ test('registry exposes independent coding, cloud, and security catalogs', () => 
     resourceCatalogs.map((entry) => entry.slug),
     ['coding-with-agents', 'cloud', 'security'],
   );
-  assert.equal(resources.length, 49);
+  assert.equal(resources.length, 61);
   assert.equal(
     getCatalogResources(requireCatalog('coding-with-agents')).length,
     49,
   );
-  assert.deepEqual(getCatalogResources(requireCatalog('cloud')), []);
-  assert.deepEqual(getCatalogResources(requireCatalog('security')), []);
+  assert.equal(getCatalogResources(requireCatalog('cloud')).length, 12);
+  assert.deepEqual(
+    getCatalogResources(requireCatalog('security')).map(({ id }) => id),
+    [57, 58],
+  );
+  assert.deepEqual(
+    getCatalogResources(requireCatalog('cloud'), 'security').map(
+      ({ id }) => id,
+    ),
+    [57, 58],
+  );
 });
 
 test('registry validation accepts canonical cross-catalog membership', () => {

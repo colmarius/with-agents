@@ -5,6 +5,7 @@ import type {
   ResourceTopicOption,
 } from '../../types/resources.ts';
 import { codingResources } from './coding-with-agents.ts';
+import { googleCloudResources } from './google-cloud.ts';
 import { resourceSections } from './sections.ts';
 
 const codingTopicOptions = [
@@ -141,13 +142,30 @@ const securityTopicOptions = [
   { slug: 'governance-compliance', label: 'Governance & compliance' },
 ] as const satisfies readonly ResourceTopicOption[];
 
-export const resources: Resource[] = codingResources.map(
-  ({ primarySection: _primarySection, ...resource }) => resource,
-);
+export const resources: Resource[] = [
+  ...codingResources,
+  ...googleCloudResources,
+].map(({ primarySection: _primarySection, ...resource }) => resource);
 
 const codingSectionByResourceId = Object.fromEntries(
   codingResources.map((resource) => [resource.id, resource.primarySection]),
 );
+
+const cloudResourceIds = [62, 64, 66, 59, 60, 61, 63, 68, 65, 67, 57, 58];
+
+const cloudSectionByResourceId = Object.fromEntries(
+  googleCloudResources.map((resource) => [
+    resource.id,
+    resource.primarySection,
+  ]),
+);
+
+const securityResourceIds = [57, 58];
+
+const securitySectionByResourceId = {
+  57: 'cloud-security',
+  58: 'threat-detection-response',
+};
 
 export const resourceCatalogs: readonly ResourceCatalog[] = [
   {
@@ -171,8 +189,8 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
       'Build a grounded cloud practice across architecture, services, operations, reliability, and cost.',
     sections: cloudSections,
     topicOptions: cloudTopicOptions,
-    resourceIds: [],
-    sectionByResourceId: {},
+    resourceIds: cloudResourceIds,
+    sectionByResourceId: cloudSectionByResourceId,
   },
   {
     slug: 'security',
@@ -183,8 +201,8 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
       'Study security as its own discipline while retaining links to cloud-specific controls and services.',
     sections: securitySections,
     topicOptions: securityTopicOptions,
-    resourceIds: [],
-    sectionByResourceId: {},
+    resourceIds: securityResourceIds,
+    sectionByResourceId: securitySectionByResourceId,
   },
 ];
 
