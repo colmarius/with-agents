@@ -10,7 +10,7 @@ Extend the site beyond its Coding with Agents catalog so cloud/GCP and security 
 
 ## Summary
 
-The generic topic-catalog foundation, single-origin context hub, and synchronization of all 12 Google Cloud Tech playlists are complete. Every playlist now has a strict-English capture, draft source summary, and draft overview. The six full-series collections are fully captured and draft-summarized (61 videos); the six broad collections have user-approved curation totaling 67 selected videos, six captured samples, and disjoint high-orb backfills in progress for the remaining 61 selections. Public Cloud and Security resources remain intentionally unpublished pending dedicated source review.
+The generic catalog foundation, single-origin context hub, and all 12 Google Cloud Tech manifests are complete. Explicit reviewed curation now selects 126 videos; all are captured and summarized. Eleven playlists (112 selected videos) and their overviews have passed dedicated source review; the final 14-video Serverless review is active. Twelve canonical public playlist records (IDs 57–68) are registered, with the two dedicated security collections cross-listed in Cloud and Security. Six disjoint public-summary batches are active for the 112 reviewed videos; Serverless public writing remains blocked on its independent source review.
 
 ## Artifacts
 
@@ -19,18 +19,21 @@ The generic topic-catalog foundation, single-origin context hub, and synchroniza
 - PRD: none
 - Plan: [plan.md](plan.md)
 - Progress: [progress.md](progress.md)
-- Decisions: [decisions/site-topology.md](decisions/site-topology.md)
+- Decisions:
+  - [Site topology](decisions/site-topology.md)
+  - [Google Cloud collection publication](decisions/google-cloud-collection-publication.md)
 - Active handoffs:
-  - [Serverless Expeditions curated backfill](https://ampcode.com/threads/T-01a035bf-f70f-770b-ad76-15906f613aa8)
-  - [Google Cloud Essentials curated backfill](https://ampcode.com/threads/T-01a035c0-004a-7202-8fe3-4473a40a0a6e)
-  - [Get Started with Google Cloud curated backfill](https://ampcode.com/threads/T-01a035c0-08ee-73d1-ad76-a12af9b714d4)
-  - [Cloud Bytes curated backfill](https://ampcode.com/threads/T-01a035c0-1356-73ae-ab8a-a672e75da505)
-  - [Beyond Your Bill curated backfill](https://ampcode.com/threads/T-01a035c0-1d16-7683-953a-36b85ade5ee7)
-  - [Architecting with Google Cloud curated backfill](https://ampcode.com/threads/T-01a035c0-24ad-726b-9447-eedeff585392)
+  - [Serverless Expeditions source review](https://ampcode.com/threads/T-01a035e1-86ed-70b7-9313-de852c10f2b0)
+  - [Cloud Security public summaries](https://ampcode.com/threads/T-01a035e4-867d-7494-81c0-9f4e705a03ec)
+  - [Pub/Sub public summaries](https://ampcode.com/threads/T-01a035e4-8e18-76d6-9cb5-e352a04ac315)
+  - [Cloud foundations public summaries](https://ampcode.com/threads/T-01a035e4-9576-74fc-b28e-4efec382c8e4)
+  - [Engineering for Reliability public summaries](https://ampcode.com/threads/T-01a035e4-9d0e-7516-beb5-f5d9eb51ba3d)
+  - [Build and Cloud Bytes public summaries](https://ampcode.com/threads/T-01a035e4-a5e9-75ea-a9f6-1ff7479d1d96)
+  - [FinOps and Architecting public summaries](https://ampcode.com/threads/T-01a035e4-aded-7040-a215-45db4c84714f)
 
 ## Next Action
 
-- Inspect and integrate the six curated-backfill patches, run combined source-library verification, and reconcile Task 6 before beginning the separate source-review/publication gate.
+- Integrate the Serverless source review and six public-summary batches, publish the reviewed Serverless child summaries as a final isolated batch, then run combined acceptance and browser proof for Task 8.
 
 ## Open Questions
 

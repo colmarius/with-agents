@@ -63,7 +63,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - Every successful transcript receives a source-faithful draft source summary and every playlist receives a draft overview with exact coverage and pending IDs.
   - Notes: Preflight selected Serverless videos because API caption flags are unreliable. Mark obsolete or historical material (for example Pub/Sub Lite and 2019 Security Command Center UI) explicitly.
 
-- [ ] **Task 6: Parallelize bounded source backfill**
+- [x] **Task 6: Parallelize bounded source backfill**
   - Scope: disjoint `src/content/youtube/videos/<video-id>/**` directories and one playlist overview per worker batch
   - Depends on: Task 5
   - Acceptance:

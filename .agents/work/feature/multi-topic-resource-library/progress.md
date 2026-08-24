@@ -141,3 +141,24 @@
 ### Next action
 
 - Inspect and integrate each curated-playlist patch, then run combined status, audit, tests, content guard, build, and source-only boundary checks before any review or publication work.
+
+## 2026-08-24 — Source backfill complete; publication batches active
+
+- Integrated all six curated backfills and recovered the 13 initially unavailable Serverless transcripts with one focused retry after status-only diagnostics established that the package's earlier `VideoUnavailableError` was a lossy HTTP-path failure, not evidence of caption removal.
+- All 126 selected Google Cloud videos are now captured and source-summarized. Task 6 is complete.
+- Dedicated claim, anchor, attribution, and overview reviews are complete for 11 playlists (112 selected videos). Architecting was the last integrated reviewed collection; Serverless now has all 14 draft summaries and an independent high-effort review in progress.
+- Added explicit reviewed curation for the six initially full-series playlists. Complete source manifests remain preserved, while the non-substantive Engineering for Reliability trailer and retired Pub/Sub Lite episode are omitted from public learning sequences.
+- Added 12 canonical Google Cloud playlist resource records with globally unique IDs 57–68. Cloud Security Basics and Security Command Center are cross-listed through catalog membership rather than duplicated.
+- Started six disjoint high-effort public-summary workers for the 112 reviewed selected videos. Serverless public summaries remain blocked until its source review is integrated.
+
+### Verification
+
+- Source status reports valid reviewed curation and current overviews for all collections; only Serverless remains draft at the review gate.
+- Structural audit now reports exactly 14 missing-reviewed-evidence errors, all for the selected Serverless summaries under active review; no structural, anchor, provenance, link, or coverage errors are present.
+- Full-series curation tests pass, with 10 Pub/Sub Made Easy episodes and 23 substantive Engineering for Reliability episodes selected as intended.
+- The canonical resource registry passes Astro check and focused catalog tests: 61 global resources, 12 Cloud members, and 2 canonical Security cross-list members.
+- Public content guard currently reports only the expected 12 missing public collection summaries plus the draft Serverless playlist reference; these are the active publication tasks.
+
+### Next action
+
+- Integrate and inspect the Serverless source review and six public-summary mboxes, start the final Serverless public-summary batch, then run combined repository and browser acceptance.
