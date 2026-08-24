@@ -114,7 +114,22 @@
       "title": "Cloud Security Basics",
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
-      "multiSpeaker": true
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "MHtg2Au78LI",
+          "IHBoUADMrHc",
+          "QJcRkpzW8Mw",
+          "N83Ru1c77U4",
+          "qR-HMOcJC8c",
+          "SwT_CHMh6g8",
+          "LznrFv7iRNI",
+          "wEGZXSd4uS4",
+          "dLOyUy1BlIs",
+          "SaLHDNqrZ80"
+        ]
+      }
     },
     {
       "id": "PLIivdWyY5sqIco0L8OvlPl06vStfo3PgR",
@@ -122,7 +137,17 @@
       "title": "Getting Started with Cloud Security Command Center",
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
-      "multiSpeaker": true
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "goJ_G2ygdSA",
+          "n70BdI7apXI",
+          "0f5Dh8cGbyQ",
+          "ra_hnxqBzOc",
+          "L5nR0KPtn-Y"
+        ]
+      }
     },
     {
       "id": "PLIivdWyY5sqJwq_pgOxcHzusWjXDVCEiX",
@@ -157,7 +182,22 @@
       "title": "Pub/Sub Made Easy",
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
-      "multiSpeaker": true
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "cvu53CnZmGI",
+          "MjEam95VLiI",
+          "f5DOsB7Nlw0",
+          "ML6P1ksHcqo",
+          "nQ9_Xur2aM4",
+          "KObJkda4ZfY",
+          "cCkwo6eEHIg",
+          "k8lBOV-nRXI",
+          "ZI9ndn2obDk",
+          "VyLmmamuOVo"
+        ]
+      }
     },
     {
       "id": "PLIivdWyY5sqJEOfKLoXD-0qYCW9vurXl6",
@@ -165,7 +205,18 @@
       "title": "Pub/Sub Best Practices",
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
-      "multiSpeaker": true
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "Oo5PXA4idI8",
+          "aHc-DOP43a8",
+          "2-8wgvanQHI",
+          "vY56eo74DNo",
+          "F0H9qt1w9JE",
+          "pP6ipLkXnkk"
+        ]
+      }
     },
     {
       "id": "PLIivdWyY5sqKh1gDR0WpP9iIOY00IE0xL",
@@ -194,7 +245,35 @@
       "title": "Engineering for Reliability",
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
-      "multiSpeaker": true
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "qyfOE_78nT0",
+          "hB8Oc-xudQc",
+          "Sd0iznXSVcc",
+          "VxXJUYcLmTk",
+          "z6hpL8J-jG4",
+          "hh_z8qEwGfQ",
+          "pcMEFTxcco8",
+          "rMOXWc5BUkc",
+          "_FKdug6B5FM",
+          "ilY4-Aw1Z2M",
+          "Fzd6WP0_bWM",
+          "M2bQxpyBpH0",
+          "IlUCyV8mcS0",
+          "NQeK8Kbu6UM",
+          "L6JnAhp3E-c",
+          "lHCB_i_rWAI",
+          "t1BGo-Il1AM",
+          "eCcsxDln6I0",
+          "uhpAScSerec",
+          "U53wC2A75Is",
+          "YjEh_V7MRc4",
+          "RuyUXBOdjGI",
+          "SCNObWlILqk"
+        ]
+      }
     },
     {
       "id": "PLIivdWyY5sqI_-9KtGd4aEMu7gEO2ZWja",
@@ -227,7 +306,17 @@
       "title": "Build With Google Cloud",
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
-      "multiSpeaker": true
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "IeMYQ-qJeK4",
+          "0EBCMNoYvfc",
+          "aOaR4GAcKYU",
+          "c2I4G7UH408",
+          "BX9BIHRfab0"
+        ]
+      }
     },
     {
       "id": "PLIivdWyY5sqIQ4_5PwyyXZVdsXr3wYhip",

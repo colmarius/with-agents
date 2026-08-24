@@ -166,3 +166,16 @@ Review notes:
 - Preserve historical product names in source titles, but normalize current taxonomy and add explicit freshness notes.
 - Keep `security` conditional at item/resource level except for the dedicated security collections.
 - Selection approval, source-summary review, playlist-overview review, and public publication remain separate gates.
+
+## Full-series publication selections
+
+The six initially full-series playlists now have explicit reviewed publication order so the public-content guard can verify every child summary. Complete manifests and source artifacts remain intact.
+
+- Cloud Security Basics: all 10 episodes.
+- Security Command Center: all 5 episodes.
+- Pub/Sub Made Easy: the first 10 episodes; omit retired Pub/Sub Lite episode `fgVE1OoJ2XI` from the learning sequence.
+- Pub/Sub Best Practices: all 6 episodes.
+- Engineering for Reliability: 23 substantive episodes; omit trailer `DL_8bHeTlgg` from the learning sequence.
+- Build With Google Cloud: all 5 episodes.
+
+Each remote playlist will publish as one canonical collection. Security Basics and Security Command Center can be cross-listed in both Cloud and Security without duplicating records or summaries. The two Pub/Sub playlists remain separate because they have distinct source provenance and reader outcomes.

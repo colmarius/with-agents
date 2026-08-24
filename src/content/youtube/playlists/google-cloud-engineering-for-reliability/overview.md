@@ -2,7 +2,6 @@
 title: "Engineering for Reliability"
 status: reviewed
 coveredVideoIds:
-  - DL_8bHeTlgg
   - qyfOE_78nT0
   - hB8Oc-xudQc
   - Sd0iznXSVcc
@@ -33,7 +32,8 @@ coveredVideoIds:
 - Manifest: 24 entries; 24 available and 0 unavailable.
 - Captured: 24.
 - Summaries: 24 reviewed.
-- Incorporated: 24.
+- Selected and incorporated: 23.
+- Omitted from the learning sequence: non-substantive trailer `DL_8bHeTlgg`; its reviewed source artifact remains preserved.
 - Pending video IDs: none.
 - Speaker attribution: Yuri identifies himself as a Google or Google Cloud SRE in 7 videos ([example](../../videos/qyfOE_78nT0/summary.md)); 16 substantive videos do not identify their presenter or an affiliation ([example](../../videos/U53wC2A75Is/summary.md)); the trailer has no substantive speaker ([summary](../../videos/DL_8bHeTlgg/summary.md)).
 
