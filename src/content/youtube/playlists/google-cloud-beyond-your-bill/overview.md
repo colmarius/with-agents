@@ -1,6 +1,6 @@
 ---
 title: "Beyond Your Bill"
-status: draft
+status: reviewed
 coveredVideoIds:
   - NOOhDq1JyIM
   - TDHTcS2V4wI
@@ -20,7 +20,7 @@ coveredVideoIds:
 - Manifest: 24 entries, all currently available.
 - Selected: 11 reviewed curation entries; 13 manifest entries are unselected.
 - Transcripts: 11 captured; 0 pending; 0 unavailable-recorded.
-- Summaries: 11 draft; 0 reviewed.
+- Summaries: 0 draft; 11 reviewed.
 - Incorporated: all 11 selected summaries.
 - Pending selected video IDs: none.
 - Attribution: this is a multi-speaker playlist. Two caption tracks identify Mark Mirchandani; the other nine selected transcripts do not name their presenters. Uploader metadata is not used as speaker or affiliation evidence.

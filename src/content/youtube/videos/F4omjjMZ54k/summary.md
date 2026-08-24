@@ -6,7 +6,7 @@ publishedAt: "2019-10-22T16:15:42Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter frames budgets as scoped monitoring rules that notify teams when actual or forecasted cost crosses configured thresholds. Budgets in this episode are explicitly not hard caps: they do not stop usage. All console paths, IAM rules, budget scopes and types, credit treatment, threshold semantics, notification recipients, Pub/Sub integration, and cost-update timing are a 2019 snapshot requiring current Google Cloud documentation.

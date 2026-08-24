@@ -1,6 +1,6 @@
 ---
 title: "Cloud Bytes"
-status: draft
+status: reviewed
 coveredVideoIds:
   - IuK4gQeHRcI
   - pQ87vVMZK-A
@@ -19,23 +19,24 @@ coveredVideoIds:
 ## Coverage
 
 - Manifest: 45 entries, all currently available.
-- Selected: 12 reviewed curation candidates; 33 unselected manifest entries.
-- Summaries: 12.
+- Selected: 12 videos in the reviewed curation; 33 unselected manifest entries.
+- Summaries: 12 reviewed.
 - Incorporated: 12.
 - Pending selected video IDs: none.
+- Attribution: this is an author-less, multi-speaker playlist. The selected transcripts name Priyanka Vergadia for Compute Engine and Stephanie for Cloud Spanner without affiliations; the other ten do not identify their presenters or affiliations.
 
 ## Current Thesis
 
-- Editorial: The selection is a service-family map rather than a current implementation guide: Compute Engine supplies infrastructure-controlled virtual machines, GKE supplies managed Kubernetes, and Cloud Run supplies managed container services and jobs ([Compute Engine](../../videos/IuK4gQeHRcI/summary.md), [GKE](../../videos/pQ87vVMZK-A/summary.md), [Cloud Run](../../videos/AL2rAmWFZjM/summary.md)).
-- Editorial: Storage and data services separate object storage, distributed relational transactions, analytical warehousing, asynchronous messaging, and managed batch/stream processing into distinct workload choices ([Cloud Storage](../../videos/wNOs3LlsH6k/summary.md), [Spanner](../../videos/5bjYk6Hhd10/summary.md), [BigQuery](../../videos/CFw4peH2UwU/summary.md), [Pub/Sub](../../videos/jLI-84UjZLE/summary.md), [Dataflow](../../videos/XdsuDOQ9nkU/summary.md)).
-- Editorial: The remaining primers separate network topology, resource authorization, data-exfiltration perimeters, and observability rather than collapsing them into a generic platform layer ([VPC](../../videos/hS_uvz4ohbo/summary.md), [IAM](../../videos/zd5d9Vv1ZFE/summary.md), [VPC Service Controls](../../videos/ABlY7FexJJI/summary.md), [Cloud Operations](../../videos/5j8LfmRhHKQ/summary.md)).
+- Editorial: The selection is a historical service-family map rather than a current implementation guide: its primers describe Compute Engine as infrastructure-controlled virtual machines, GKE as managed Kubernetes, and Cloud Run as managed container services and jobs ([Compute Engine](../../videos/IuK4gQeHRcI/summary.md), [GKE](../../videos/pQ87vVMZK-A/summary.md), [Cloud Run](../../videos/AL2rAmWFZjM/summary.md)).
+- Editorial: The storage and data primers distinguish object storage, distributed relational transactions, analytical warehousing, asynchronous messaging, and managed batch/stream processing as separate workload families ([Cloud Storage](../../videos/wNOs3LlsH6k/summary.md), [Spanner](../../videos/5bjYk6Hhd10/summary.md), [BigQuery](../../videos/CFw4peH2UwU/summary.md), [Pub/Sub](../../videos/jLI-84UjZLE/summary.md), [Dataflow](../../videos/XdsuDOQ9nkU/summary.md)).
+- Editorial: The remaining primers separate network topology, resource authorization, a service perimeter intended to reduce unauthorized data movement, and observability rather than collapsing them into a generic platform layer ([VPC](../../videos/hS_uvz4ohbo/summary.md), [IAM](../../videos/zd5d9Vv1ZFE/summary.md), [VPC Service Controls](../../videos/ABlY7FexJJI/summary.md), [Cloud Operations](../../videos/5j8LfmRhHKQ/summary.md)).
 
 ## Stable Ideas
 
 - Editorial: Choose the abstraction boundary deliberately: virtual machines maximize infrastructure control, Kubernetes preserves an orchestration API, and managed container runtimes remove more platform operation without removing workload responsibility ([Compute Engine](../../videos/IuK4gQeHRcI/summary.md), [GKE](../../videos/pQ87vVMZK-A/summary.md), [Cloud Run](../../videos/AL2rAmWFZjM/summary.md)).
 - Editorial: Keep data roles distinct: objects, transactions, analytical queries, messages, and processing pipelines have different consistency, scaling, lifecycle, and failure models ([Cloud Storage](../../videos/wNOs3LlsH6k/summary.md), [Spanner](../../videos/5bjYk6Hhd10/summary.md), [BigQuery](../../videos/CFw4peH2UwU/summary.md), [Pub/Sub](../../videos/jLI-84UjZLE/summary.md), [Dataflow](../../videos/XdsuDOQ9nkU/summary.md)).
 - Editorial: Observability tools collect evidence but still require instrumentation, retention, access, alert, SLO, and cost decisions ([Cloud Operations](../../videos/5j8LfmRhHKQ/summary.md)).
-- Editorial: IAM and VPC Service Controls are the selection’s dedicated security orientations—resource authorization and data-exfiltration perimeters respectively—while VPC is primarily network topology and connectivity ([IAM](../../videos/zd5d9Vv1ZFE/summary.md), [VPC Service Controls](../../videos/ABlY7FexJJI/summary.md), [VPC](../../videos/hS_uvz4ohbo/summary.md)).
+- Editorial: Security synthesis in this selection is limited to IAM's resource-authorization orientation and VPC Service Controls' service-perimeter orientation; VPC is treated only as network topology and connectivity, and the other primers do not establish a broader security posture ([IAM](../../videos/zd5d9Vv1ZFE/summary.md), [VPC Service Controls](../../videos/ABlY7FexJJI/summary.md), [VPC](../../videos/hS_uvz4ohbo/summary.md)).
 
 ## Emerging Ideas
 
@@ -50,6 +51,6 @@ coveredVideoIds:
 
 ## Practical Implications
 
-- Editorial: Use each primer to locate a service family, then validate current names, capabilities, supported configurations, regions, quotas, hard limits, lifecycle behavior, SLA conditions, and pricing before adoption.
-- Editorial: Test the omitted edges that dominate production outcomes: overload, retries and duplicates, regional failure, data recovery, upgrades, policy rollout, observability gaps, and cost under representative traffic.
+- Editorial: Use each primer only to locate a service family, then validate current names, branding, capabilities, IAM behavior, operational behavior, supported configurations, regions, quotas, hard limits, lifecycle behavior, SLA conditions, and pricing in current documentation before adoption.
+- Editorial: The primers omit production evidence about overload, retries and duplicates, regional failure, data recovery, upgrades, policy rollout, observability gaps, and cost under representative traffic; they should not be read as implementation advice.
 - Editorial: For security decisions, start with the IAM and VPC Service Controls summaries and current security documentation; do not infer a collection-wide security posture from brief feature mentions in unrelated service primers ([IAM](../../videos/zd5d9Vv1ZFE/summary.md), [VPC Service Controls](../../videos/ABlY7FexJJI/summary.md)).

@@ -6,10 +6,10 @@ publishedAt: "2020-07-20T04:00:03Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
-Priyanka Vergadia introduces Compute Engine as Google Cloud’s virtual-machine service. The one-minute format highlights machine-family selection, live migration, right-sizing, and several 2020 pricing mechanisms for existing or infrastructure-controlled workloads.
+The transcript names Priyanka Vergadia as the presenter but provides no affiliation. This 2020 primer introduces Compute Engine as Google Cloud’s virtual-machine service, highlighting machine-family selection, live migration, right-sizing, and several then-current pricing mechanisms.
 
 ## Key Ideas
 
@@ -20,8 +20,7 @@ Priyanka Vergadia introduces Compute Engine as Google Cloud’s virtual-machine 
 
 ## Practical Implications
 
-- Use virtual machines when workload compatibility or infrastructure control matters enough to justify operating-system, patching, scaling, and capacity responsibilities.
-- Match CPU, memory, accelerators, interruption tolerance, and commitment horizon to measured workload behavior rather than selecting from a generic example list.
+- The durable orientation is Compute Engine's role as the infrastructure-controlled virtual-machine option; the workload and machine examples are illustrative, not selection guidance.
 - Treat the machine families, discounts, and Preemptible VM terminology in this 2020 overview as dated; verify current Spot VM, pricing, availability, and maintenance behavior in current documentation.
 
 ## Questions and Tensions

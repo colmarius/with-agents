@@ -6,7 +6,7 @@ publishedAt: "2021-08-06T16:00:03Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter frames application right-sizing as a shared operating discipline: platform teams expose requests, limits, recommendations, and utilization at accountable boundaries; application owners use that evidence to tune workloads over time. Every GKE and Kubernetes claim about requests, limits, namespaces, RBAC, quotas, Vertical or Horizontal Pod Autoscaler metrics and recommendations, dashboards, replicas, tooling, and configuration is a 2021 snapshot requiring current documentation and workload validation.

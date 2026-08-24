@@ -6,7 +6,7 @@ publishedAt: "2020-09-07T04:00:02Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 The source does not name its presenter or provide a speaker affiliation. This 2020 primer distinguishes BigQuery as a managed analytical data warehouse for ingesting, storing, querying, and visualizing large datasets with SQL.
@@ -19,7 +19,7 @@ The source does not name its presenter or provide a speaker affiliation. This 20
 
 ## Practical Implications
 
-- Evaluate BigQuery for analytical workloads that benefit from separating warehouse infrastructure management from data modeling and SQL analysis.
+- The durable orientation is BigQuery's managed analytical-warehouse role; the primer does not compare it with transactional databases or establish a workload-specific design.
 - Validate current ingestion methods, SQL behavior, storage models, reservations and editions, quotas, limits, location constraints, and pricing in current documentation.
 
 ## Questions and Tensions

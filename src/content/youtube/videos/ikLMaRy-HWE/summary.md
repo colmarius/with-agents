@@ -6,7 +6,7 @@ publishedAt: "2019-09-19T22:04:31Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 Mark Mirchandani distinguishes the invoice or statement that says what is owed from operational billing reports that explain where cost came from. The durable governance lesson is to connect finance artifacts, detailed cost evidence, accountable billing administrators, and a documented escalation path. Every payment method, eligibility rule, invoice schedule and schema, console path, IAM restriction, support policy, and pricing example is a 2019 snapshot requiring current Google Cloud documentation and contract review.

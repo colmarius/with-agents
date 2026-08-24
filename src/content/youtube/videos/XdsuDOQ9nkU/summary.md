@@ -6,7 +6,7 @@ publishedAt: "2020-12-14T05:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 The source does not name its presenter or provide a speaker affiliation. This 2020 primer presents Dataflow as managed execution for Apache Beam batch and streaming pipelines, with infrastructure provisioning and worker scaling delegated to the service.
@@ -19,7 +19,7 @@ The source does not name its presenter or provide a speaker affiliation. This 20
 
 ## Practical Implications
 
-- Separate portable Beam pipeline logic from Dataflow-specific execution, scaling, networking, and operations choices.
+- The durable orientation is Dataflow's managed execution of Apache Beam batch and streaming pipelines; the portability claim applies to the Beam pipeline model, not every execution or operational choice.
 - Validate current Beam support, runner behavior, templates, notebook branding, worker options, streaming semantics, quotas, limits, and pricing in current documentation.
 
 ## Questions and Tensions

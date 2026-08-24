@@ -6,7 +6,7 @@ publishedAt: "2020-12-08T00:00:10Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter extends autoscaling from pods to nodes and node pools, emphasizing that scheduling constraints, disruption tolerance, provisioning delay, and workload behavior determine whether unused capacity can safely disappear. Every GKE and Kubernetes claim about Cluster Autoscaler, Node Auto-Provisioning, cost preferences, disruption budgets, system pods, annotations, logs, preemptible VMs, node pools, pause pods, formulas, metrics, and timings is a 2020 snapshot requiring current documentation and workload testing.

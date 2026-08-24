@@ -6,7 +6,7 @@ publishedAt: "2019-11-05T17:00:11Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter treats committed use as a portfolio decision: exchange flexibility for a lower rate only when durable demand can use the commitment, then monitor coverage and utilization. Every discount percentage, term, eligible resource, scope, interaction with other discounts, purchase path, quota, billing treatment, renewal behavior, IAM rule, and analysis-report field is a 2019 Compute Engine snapshot requiring current pricing, product documentation, and contract validation.

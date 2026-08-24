@@ -6,7 +6,7 @@ publishedAt: "2020-10-05T04:00:00Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 The transcript identifies the presenter only as Stephanie and provides no affiliation. This 2020 primer positions Cloud Spanner as a managed relational database that combines SQL and ACID transactions with horizontal scale, strong external consistency, and multi-region replication.
@@ -19,7 +19,7 @@ The transcript identifies the presenter only as Stephanie and provides no affili
 
 ## Practical Implications
 
-- Evaluate Spanner when relational transactions, horizontal scaling, and geographic distribution must coexist and justify a specialized managed database.
+- The durable orientation is Spanner's combination of relational transactions, horizontal scale, and geographic replication; the primer does not establish when that specialized database is warranted.
 - Verify current instance sizing, editions, SQL dialects, topology-dependent SLA terms, backup and recovery behavior, quotas, limits, and pricing in current documentation.
 
 ## Questions and Tensions

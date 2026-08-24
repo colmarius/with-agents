@@ -6,7 +6,7 @@ publishedAt: "2020-08-09T16:00:15Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 The source does not name its presenter or provide a speaker affiliation. This 2020 primer distinguishes Cloud Storage as object storage for immutable, unstructured data, organized as objects in project-associated buckets rather than as a conventional filesystem.
@@ -19,7 +19,7 @@ The source does not name its presenter or provide a speaker affiliation. This 20
 
 ## Practical Implications
 
-- Start with access frequency, retrieval needs, location, durability, and lifecycle requirements when choosing object-storage classes.
+- The durable orientation is Cloud Storage's object-and-bucket model and its use of storage classes for different access patterns; the 2020 examples are not class-selection guidance.
 - Validate current class names, minimum storage durations, retrieval and operation charges, location options, versioning behavior, lifecycle rules, IAM behavior, and service limits in current documentation.
 
 ## Questions and Tensions

@@ -6,7 +6,7 @@ publishedAt: "2019-09-14T16:13:09Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 Mark Mirchandani presents billing export as the data foundation for custom cost analysis: retain detailed records early, query them across allocation dimensions, and expose useful views to decision-makers. All Cloud Console paths, billing-administrator requirements, export timing and schema, BigQuery behavior, sample queries, Data Studio tooling, and field names shown are a 2019 snapshot and require current Google Cloud documentation.
@@ -27,7 +27,7 @@ Mark Mirchandani presents billing export as the data foundation for custom cost 
 
 ## Questions and Tensions
 
-- Early export improves historical analysis, but it introduces data access, privacy, schema-evolution, retention, and pipeline-cost responsibilities.
+- Early export improves later analysis, but the resulting dataset and pipeline still need explicit access, retention, schema-change, and cost ownership.
 - None of the 2019 console, IAM, export-schema, query, connector, or Data Studio instructions should be treated as current without documentation review.
 
 ## Source

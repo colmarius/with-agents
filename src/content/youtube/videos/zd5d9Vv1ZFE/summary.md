@@ -6,7 +6,7 @@ publishedAt: "2021-07-18T16:00:20Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 The source does not name its presenter or provide a speaker affiliation. This 2021 security primer presents Cloud Identity and Access Management (IAM) as centralized authorization policy for Google Cloud resources, organized across organizations, folders, and projects.
@@ -19,7 +19,7 @@ The source does not name its presenter or provide a speaker affiliation. This 20
 
 ## Practical Implications
 
-- Treat IAM as an authorization system: define principals, roles, resource hierarchy, and policy review around least privilege and separation of duties.
+- The durable orientation is IAM's role as resource authorization across the Google Cloud resource hierarchy; the primer does not cover the full identity or authentication lifecycle.
 - Validate current IAM naming, policy types, conditions, deny behavior, Resource Manager relationships, recommender scope, audit coverage, quotas, and limits in current documentation.
 
 ## Questions and Tensions

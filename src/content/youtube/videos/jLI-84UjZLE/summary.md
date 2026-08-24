@@ -6,7 +6,7 @@ publishedAt: "2020-12-28T05:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 The source does not name its presenter or provide a speaker affiliation. This 2020 primer presents Cloud Pub/Sub as managed asynchronous messaging that separates data producers from changing consumers through topics and subscriptions.
@@ -19,7 +19,7 @@ The source does not name its presenter or provide a speaker affiliation. This 20
 
 ## Practical Implications
 
-- Use topics and subscriptions to decouple event producers from independently evolving consumers and to support fan-out processing.
+- The durable orientation is Pub/Sub's topic-and-subscription model for asynchronous distribution between producers and independently changing consumers.
 - Validate current delivery semantics, ordering scope, filtering, retention, replay, regional behavior, quotas, limits, and pricing before selecting a design.
 
 ## Questions and Tensions

@@ -6,7 +6,7 @@ publishedAt: "2020-12-01T00:00:03Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter explains pod autoscaling as a cost-and-reliability control loop: relate demand to capacity, account for startup and restart latency, and keep enough headroom to absorb change without preserving waste indefinitely. Every GKE and Kubernetes autoscaler behavior, mode, metric, component, probe, recommendation window, compatibility rule, and configuration claim is a 2020 snapshot requiring current GKE and Kubernetes documentation plus workload testing.

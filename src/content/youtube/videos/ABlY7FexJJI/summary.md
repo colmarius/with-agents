@@ -6,7 +6,7 @@ publishedAt: "2021-06-28T04:00:02Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 The source does not name its presenter or provide a speaker affiliation. This 2021 security primer presents VPC Service Controls as service perimeters intended to reduce unauthorized data movement from protected Google Cloud services, including hybrid and multi-perimeter configurations.
@@ -19,7 +19,7 @@ The source does not name its presenter or provide a speaker affiliation. This 20
 
 ## Practical Implications
 
-- Use dry-run evaluation and log review before enforcing a perimeter, and treat VPC Service Controls as defense in depth rather than a replacement for IAM or network controls.
+- The durable orientation is a service-perimeter control intended to reduce unauthorized data movement; dry-run and enforce modes are historical capability descriptions, not rollout instructions.
 - Validate current supported services, ingress and egress model, access levels, bridge and perimeter behavior, limitations, logging, quotas, and pricing in current documentation.
 
 ## Questions and Tensions

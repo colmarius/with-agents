@@ -6,7 +6,7 @@ publishedAt: "2020-07-27T04:00:08Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 The source does not name its presenter or provide a speaker affiliation. This 2020 primer positions Google Kubernetes Engine (GKE) as managed Kubernetes for stateful and stateless containerized applications, with Google operating the control plane while workloads run in pods on cluster nodes.
@@ -19,7 +19,7 @@ The source does not name its presenter or provide a speaker affiliation. This 20
 
 ## Practical Implications
 
-- Treat GKE as the managed-Kubernetes choice when teams need Kubernetes APIs and ecosystem compatibility but want to delegate part of cluster operation.
+- The durable orientation is GKE's role as managed Kubernetes, with Google operating the control plane described by the primer rather than removing every cluster and workload responsibility.
 - Validate current cluster modes, supported versions, node and control-plane responsibilities, upgrade behavior, quotas, pricing, and security defaults in current documentation.
 
 ## Questions and Tensions

@@ -6,7 +6,7 @@ publishedAt: "2019-09-09T23:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter uses Cloud Billing reports to move from a total-cost question to trend, project, product, and SKU-level investigation. The durable FinOps pattern is to reconcile financial views, detect anomalies, narrow them through stable allocation dimensions, and hand a specific cost driver to an accountable owner. Every console layout, report field, forecast, credit category, discount behavior, and billing schema shown is a 2019 snapshot that requires current Google Cloud documentation.
@@ -27,7 +27,7 @@ An unnamed presenter uses Cloud Billing reports to move from a total-cost questi
 
 ## Questions and Tensions
 
-- Forecasts and comparisons inherit delayed, incomplete, or changing billing data and should not be treated as exact real-time signals.
+- The episode’s forecast extrapolates historical trends, so it is an estimate rather than an exact statement of future or real-time spend. Current forecast semantics require documentation review.
 - The 2019 console, filter taxonomy, credit and discount categories, report schema, and forecast semantics require current-doc validation.
 
 ## Source

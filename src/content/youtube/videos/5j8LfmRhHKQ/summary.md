@@ -6,7 +6,7 @@ publishedAt: "2021-04-19T04:00:03Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 The source does not name its presenter or provide a speaker affiliation. This 2021 primer uses the Cloud Operations Suite name for a group of observability tools spanning telemetry collection, dashboards, alerts, service-level objectives, logs, traces, debugging, and profiling.
@@ -19,7 +19,7 @@ The source does not name its presenter or provide a speaker affiliation. This 20
 
 ## Practical Implications
 
-- Design observability around signals and operational questions first, then map logs, metrics, traces, profiles, alerts, and SLOs to current products.
+- The durable orientation is a family of observability capabilities across logs, metrics, traces, debugging, and profiling, not a guarantee that the 2021 bundle or every named tool persists.
 - Verify current Google Cloud Observability branding, product availability, query languages, retention, ingestion limits, quotas, and pricing; the 2021 suite and free-tier statements are historical.
 
 ## Questions and Tensions

@@ -6,7 +6,7 @@ publishedAt: "2019-08-27T18:03:21Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter connects Google Cloud’s resource hierarchy to access control, billing ownership, and cost attribution. The 2019 episode recommends beginning with a simple structure, maintaining administrator redundancy, exporting billing data early, and using folders, projects, labels, and naming conventions deliberately.
