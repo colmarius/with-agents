@@ -1,0 +1,125 @@
+---
+import DotAgentsHighlight from '@components/DotAgentsHighlight.astro';
+import Layout from '@layouts/Layout.astro';
+import type { GetStaticPaths } from 'astro';
+import {
+  getCatalogResources,
+  getResourceCatalog,
+} from '../data/resources/catalogs';
+import { type SiteContext, siteContexts } from '../data/site-contexts';
+
+export const getStaticPaths = (() =>
+  siteContexts.map((context) => ({
+    params: { context: context.slug },
+    props: { context },
+  }))) satisfies GetStaticPaths;
+
+type Props = {
+  context: SiteContext;
+};
+
+const { context } = Astro.props;
+const catalog = getResourceCatalog(context.catalogSlug);
+
+if (!catalog) {
+  throw new Error(
+    `Site context ${context.slug} references unknown catalog ${context.catalogSlug}`,
+  );
+}
+
+const resourceCount = getCatalogResources(catalog).length;
+const catalogPath = `/resources/${catalog.slug}`;
+---
+
+<Layout
+  title={`${context.title} – With Agents`}
+  description={context.description}
+  canonicalPath={`/${context.slug}`}
+>
+  <div class="mx-auto max-w-4xl space-y-20">
+    <section class="space-y-8">
+      <p class="text-sm font-medium uppercase tracking-[0.25em] text-indigo-600">
+        {context.title}
+      </p>
+      <div class="space-y-6">
+        <h1 class="max-w-3xl text-5xl font-light leading-tight text-gray-950 md:text-6xl">
+          {context.promise}
+        </h1>
+        <p class="max-w-3xl text-xl font-light leading-relaxed text-gray-600 md:text-2xl">
+          {context.description}
+        </p>
+      </div>
+      <div class="flex flex-col gap-4 sm:flex-row">
+        {
+          context.actions.map((action, index) => (
+            <a
+              href={action.href}
+              class:list={[
+                'inline-flex items-center justify-center rounded-lg px-5 py-3 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2',
+                index === 0
+                  ? 'bg-gray-900 text-white hover:bg-gray-700'
+                  : 'border border-gray-300 text-gray-800 hover:border-gray-400 hover:bg-gray-50',
+              ]}
+            >
+              {action.label}
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section aria-labelledby="coverage-heading" class="space-y-6">
+      <div class="space-y-3">
+        <p class="text-sm font-medium uppercase tracking-[0.2em] text-indigo-600">
+          Coverage
+        </p>
+        <h2 id="coverage-heading" class="text-3xl font-light text-gray-900">
+          What you’ll find here
+        </h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {
+          context.focusAreas.map((area) => (
+            <div class="rounded-xl border border-gray-200 bg-white p-6">
+              <h3 class="mb-3 text-xl font-medium text-gray-900">
+                {area.title}
+              </h3>
+              <p class="leading-relaxed text-gray-600">{area.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      aria-labelledby="catalog-heading"
+      class="rounded-2xl border border-indigo-100 bg-indigo-50/60 p-6 md:p-8"
+    >
+      <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-indigo-700">
+        Resource catalog
+      </p>
+      <h2 id="catalog-heading" class="mb-3 text-3xl font-light text-gray-900">
+        {
+          resourceCount > 0
+            ? `${resourceCount} reviewed resources, available now`
+            : 'Reviewed collections are being prepared'
+        }
+      </h2>
+      <p class="mb-6 max-w-3xl leading-relaxed text-gray-600">
+        {
+          resourceCount > 0
+            ? `Browse the ${catalog.title} catalog by collection or topic, search the full library, and open source-backed editorial summaries.`
+            : `The ${catalog.title} catalog structure is ready. Resources will appear only after source review; no placeholder entries are published.`
+        }
+      </p>
+      <a
+        href={catalogPath}
+        class="inline-flex items-center font-medium text-indigo-700 transition-colors hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 rounded-sm"
+      >
+        {resourceCount > 0 ? 'Browse reviewed resources' : 'View the catalog'} →
+      </a>
+    </section>
+
+    {context.slug === 'coding' && <DotAgentsHighlight />}
+  </div>
+</Layout>

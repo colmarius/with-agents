@@ -1,83 +1,86 @@
 ---
-import DotAgentsHighlight from '@components/DotAgentsHighlight.astro';
 import Layout from '@layouts/Layout.astro';
+import {
+  getCatalogResources,
+  getResourceCatalog,
+} from '../data/resources/catalogs';
+import { siteContexts } from '../data/site-contexts';
+
+const contexts = siteContexts.map((context) => {
+  const catalog = getResourceCatalog(context.catalogSlug);
+  if (!catalog) {
+    throw new Error(
+      `Site context ${context.slug} references unknown catalog ${context.catalogSlug}`,
+    );
+  }
+
+  return {
+    ...context,
+    resourceCount: getCatalogResources(catalog).length,
+  };
+});
 ---
 
 <Layout
-  title="With Agents — Practical coding-agent workflows"
-  description="A source-backed field guide to coding-agent workflows: recognizing AI slop, writing capable co-worker briefs, preserving durable context, demanding proof, right-sizing threads, coordinating agent work, and measuring outcomes."
+  title="With Agents — Practical engineering context"
+  description="Source-backed field guides and reviewed resource collections for coding with agents, cloud engineering, and security."
   canonicalPath="/"
 >
-  <div class="max-w-4xl mx-auto space-y-24">
-    <section class="space-y-8">
+  <div class="mx-auto max-w-5xl space-y-20">
+    <section class="max-w-4xl space-y-8">
       <p class="text-sm font-medium uppercase tracking-[0.25em] text-indigo-600">
-        Practical coding-agent workflows
+        Practical engineering context
       </p>
       <div class="space-y-6">
-        <h1 class="text-5xl md:text-6xl font-light leading-tight text-gray-950">
-          A practical field guide for agentic coding in 2026.
+        <h1 class="text-5xl font-light leading-tight text-gray-950 md:text-6xl">
+          Build, operate, and protect software with better context.
         </h1>
-        <p class="text-xl md:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl">
-          With Agents is a source-backed series about coding agents: how to recognize AI slop, brief capable but context-limited agents, preserve repo-local knowledge, demand risk-scaled evidence, coordinate agent work, and measure outcomes.
+        <p class="max-w-3xl text-xl font-light leading-relaxed text-gray-600 md:text-2xl">
+          With Agents pairs practical field guides with carefully reviewed
+          resource collections for coding with agents, cloud engineering, and
+          security.
         </p>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href="/posts/what-is-ai-slop" class="inline-flex items-center justify-center rounded-lg bg-gray-900 px-5 py-3 text-white transition-colors duration-200 hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          Start with AI slop
-        </a>
-        <a href="/resources/coding-with-agents" class="inline-flex items-center justify-center rounded-lg border border-gray-300 px-5 py-3 text-gray-800 transition-colors duration-200 hover:border-gray-400 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          Browse resources
-        </a>
       </div>
     </section>
 
-    <section class="space-y-6">
+    <section aria-labelledby="contexts-heading" class="space-y-6">
       <div class="space-y-3">
         <p class="text-sm font-medium uppercase tracking-[0.2em] text-indigo-600">
-          Core entry points
+          Choose a context
         </p>
-        <h2 class="text-3xl font-light text-gray-900">
-          Start by the problem you need to solve.
+        <h2 id="contexts-heading" class="text-3xl font-light text-gray-900">
+          Start with the work in front of you.
         </h2>
-        <p class="max-w-3xl text-gray-600 leading-relaxed">
-          These primary entry points cover AI slop, assignment design, the current landscape, durable context, risk-scaled proof, and useful handoffs. The full posts index also covers tool case studies, agent coordination, and outcome measurement.
-        </p>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-2">
-        <a href="/posts/what-is-ai-slop" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">AI quality</p>
-          <h3 class="mb-3 text-2xl font-light text-gray-900">What Is AI Slop?</h3>
-          <p class="text-gray-600 leading-relaxed">A plain-language test for generated output that only looks finished: unclear purpose, little evidence, missing ownership, and hidden work.</p>
-        </a>
-        <a href="/posts/capable-coworker-coding-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Assignment brief</p>
-          <h3 class="mb-3 text-2xl font-light text-gray-900">Brief the Agent Like a Capable Co-Worker</h3>
-          <p class="text-gray-600 leading-relaxed">A practical model for assigning work, supplying missing context, defining verification, and keeping authority and accountability with people.</p>
-        </a>
-        <a href="/posts/agentic-coding-2026" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Series map</p>
-          <h3 class="mb-3 text-2xl font-light text-gray-900">Agentic Coding in 2026</h3>
-          <p class="text-gray-600 leading-relaxed">A practical field guide to cheap implementation, alignment, proof, useful friction, codebase infrastructure, context hygiene, and factory-era workflows.</p>
-        </a>
-        <a href="/posts/durable-context-coding-agents" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Context anchor</p>
-          <h3 class="mb-3 text-2xl font-light text-gray-900">Your Repo Is the Memory</h3>
-          <p class="text-gray-600 leading-relaxed">A field guide for keeping coding agents aligned with repo-local truth, shared state, proof, and human judgment.</p>
-        </a>
-        <a href="/posts/make-the-agent-prove-it" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Proof contract</p>
-          <h3 class="mb-3 text-2xl font-light text-gray-900">Make the Agent Prove It</h3>
-          <p class="text-gray-600 leading-relaxed">A risk-scaled acceptance contract for discriminating tests, real-system checks, external oracles, evidence packets, boundaries, and review.</p>
-        </a>
-        <a href="/posts/right-sized-threads-durable-state" class="rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
-          <p class="mb-3 text-sm font-medium uppercase tracking-wide text-indigo-600">Workflow practice</p>
-          <h3 class="mb-3 text-2xl font-light text-gray-900">Right-Sized Threads, Durable State</h3>
-          <p class="text-gray-600 leading-relaxed">How to keep connected work together, start fresh at clear responsibility boundaries, and synchronize threads through repository state.</p>
-        </a>
+      <div class="grid gap-6 md:grid-cols-3">
+        {
+          contexts.map((context) => (
+            <a
+              href={`/${context.slug}`}
+              class="group flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 transition-all duration-200 hover:border-gray-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+            >
+              <h3 class="mb-3 text-2xl font-light text-gray-900">
+                {context.title}
+              </h3>
+              <p class="mb-6 flex-1 leading-relaxed text-gray-600">
+                {context.description}
+              </p>
+              <p class="text-sm font-medium text-indigo-700">
+                {context.resourceCount > 0
+                  ? `${context.resourceCount} reviewed resources →`
+                  : 'Reviewed collections in preparation →'}
+              </p>
+            </a>
+          ))
+        }
       </div>
     </section>
 
-    <DotAgentsHighlight />
+    <aside class="border-l-2 border-indigo-200 pl-6 text-gray-600">
+      Coding guidance and resources are available now. Cloud and Security
+      collections will appear only after source review, rather than as
+      placeholder entries.
+    </aside>
   </div>
 </Layout>
