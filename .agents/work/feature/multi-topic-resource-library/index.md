@@ -10,7 +10,7 @@ Extend the site beyond its Coding with Agents catalog so cloud/GCP and security 
 
 ## Summary
 
-The generic catalog foundation, single-origin context hub, and all 12 Google Cloud Tech manifests are complete. Explicit reviewed curation now selects 126 videos; all are captured and summarized. Eleven playlists (112 selected videos) and their overviews have passed dedicated source review; the final 14-video Serverless review is active. Twelve canonical public playlist records (IDs 57–68) are registered, with the two dedicated security collections cross-listed in Cloud and Security. Six disjoint public-summary batches are active for the 112 reviewed videos; Serverless public writing remains blocked on its independent source review.
+The generic catalog foundation, single-origin context hub, and all 12 Google Cloud Tech manifests are complete. Explicit reviewed curation selects 126 videos; all are captured, summarized, and independently source-reviewed, and the structural audit passes. Twelve canonical public playlist records (IDs 57–68) are registered, with the two dedicated security collections cross-listed in Cloud and Security. Seven disjoint public-summary batches are active for all 126 selected videos.
 
 ## Artifacts
 
@@ -23,7 +23,7 @@ The generic catalog foundation, single-origin context hub, and all 12 Google Clo
   - [Site topology](decisions/site-topology.md)
   - [Google Cloud collection publication](decisions/google-cloud-collection-publication.md)
 - Active handoffs:
-  - [Serverless Expeditions source review](https://ampcode.com/threads/T-01a035e1-86ed-70b7-9313-de852c10f2b0)
+  - [Serverless Expeditions public summaries](https://ampcode.com/threads/T-01a035ea-5a26-76b0-a8e6-fe0ddfc9b695)
   - [Cloud Security public summaries](https://ampcode.com/threads/T-01a035e4-867d-7494-81c0-9f4e705a03ec)
   - [Pub/Sub public summaries](https://ampcode.com/threads/T-01a035e4-8e18-76d6-9cb5-e352a04ac315)
   - [Cloud foundations public summaries](https://ampcode.com/threads/T-01a035e4-9576-74fc-b28e-4efec382c8e4)
@@ -33,7 +33,7 @@ The generic catalog foundation, single-origin context hub, and all 12 Google Clo
 
 ## Next Action
 
-- Integrate the Serverless source review and six public-summary batches, publish the reviewed Serverless child summaries as a final isolated batch, then run combined acceptance and browser proof for Task 8.
+- Integrate and inspect the seven public-summary batches, then run combined acceptance and browser proof for Task 8.
 
 ## Open Questions
 

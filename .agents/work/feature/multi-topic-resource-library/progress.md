@@ -162,3 +162,14 @@
 ### Next action
 
 - Integrate and inspect the Serverless source review and six public-summary mboxes, start the final Serverless public-summary batch, then run combined repository and browser acceptance.
+
+## 2026-08-24 — All Google Cloud source evidence reviewed
+
+- Integrated the independent Serverless claim, timestamp, attribution, and overview review. All 14 selected summaries and the overview are reviewed; no transcript edit was needed.
+- The complete Google Cloud publication corpus now has 126 selected, captured, summarized, and independently reviewed videos across 12 playlists.
+- Structural audit passes for the full source library: 713 tracked videos, 723 manifest occurrences, 308 transcripts, 308 summaries, 21 playlists, and 1 author. Only the pre-existing antirez duplicate notice remains.
+- Started the final disjoint public-summary batch for the 14 Serverless selections. Seven public workers now cover all 126 child summaries.
+
+### Next action
+
+- Integrate and inspect all seven public-summary mboxes, then run the public-content guard, combined repository checks, and representative browser proof.
