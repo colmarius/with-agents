@@ -57,7 +57,7 @@ export const siteContexts = [
     title: 'Cloud / GCP',
     promise: 'Build and operate cloud systems with clearer context.',
     description:
-      'Reviewed, source-backed guidance on cloud architecture, services, data systems, reliability, operations, and cost is being prepared, beginning with Google Cloud.',
+      'Reviewed, source-backed guidance on cloud architecture, services, data systems, reliability, operations, and cost, beginning with Google Cloud.',
     catalogSlug: 'cloud',
     navigationPrefixes: ['/cloud'],
     focusAreas: [
@@ -87,7 +87,7 @@ export const siteContexts = [
     title: 'Security',
     promise: 'Treat security as an engineering system.',
     description:
-      'Reviewed, source-backed guidance across cloud security, applications, identity, data protection, threat response, governance, and compliance is being prepared.',
+      'Reviewed, source-backed guidance across cloud security, applications, identity, data protection, threat response, governance, and compliance.',
     catalogSlug: 'security',
     navigationPrefixes: ['/security'],
     focusAreas: [

@@ -10,7 +10,7 @@ Extend the site beyond its Coding with Agents catalog so cloud/GCP and security 
 
 ## Summary
 
-The playlist research and generic topic-catalog foundation are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. English transcript/summary language, multi-speaker attribution, the six-full/six-curated capture split, and the single-origin context-hub architecture are approved. The context-hub refactor is the active implementation slice before playlist onboarding.
+The playlist research, generic topic-catalog foundation, and single-origin context hub are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. English transcript/summary language, multi-speaker attribution, the six-full/six-curated capture split, and the single-origin context-hub architecture are approved. Playlist onboarding is the active implementation slice.
 
 ## Artifacts
 
@@ -23,7 +23,7 @@ The playlist research and generic topic-catalog foundation are complete. Cloud a
 
 ## Next Action
 
-- Integrate and verify the delegated generic apex plus `/coding`, `/cloud`, and `/security` context-hub refactor, then configure and synchronize the twelve source playlists.
+- Configure and synchronize the twelve approved Google Cloud Tech playlists, retaining complete manifests before proposing exact ordered curation for the six broad collections.
 
 ## Open Questions
 

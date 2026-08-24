@@ -35,3 +35,22 @@
 - Work moved to local branch `feature/multi-topic-resource-library`; local `main` again matches `origin/main`.
 - The active slice is a generic apex plus `/coding`, `/cloud`, and `/security` context hubs while preserving established Coding URLs, one PWA, and the current deployment.
 - Implementation is delegated to a high-effort orb; the coordinator retains plan ownership, integration, and combined verification.
+
+## 2026-08-24 — Context-hub refactor integrated
+
+- Integrated the delegated context-hub implementation as `ecd7efd` (`feat: add single-origin context hubs`).
+- `/` is now the umbrella entry; `/coding`, `/cloud`, and `/security` provide distinct context landings; and global navigation preserves established Coding and resource routes.
+- Kept one Astro app, origin, PWA, and deployment. No resource content, source-library files, route migrations, or hosting configuration changed in this slice.
+
+### Verification
+
+- `npm run lint:fix` — clean.
+- `npm run check` — 0 errors, warnings, or hints.
+- `npm test` — 88 tests passed.
+- `npm run content:guard` — passed; only the pre-existing intentional antirez duplicate notice was reported.
+- `npm run build` — 44 pages built, including `/`, all three context hubs, established post and slide routes, and all resource catalog routes.
+- Real-browser checks — `/`, `/coding`, `/cloud`, `/security`, and `/resources/coding-with-agents` rendered their expected headings and active navigation styling with no horizontal overflow or browser errors. At 390×844, the Cloud mobile menu exposed all five destinations, locked body scrolling while open, and closed and unlocked on Escape.
+
+### Next action
+
+- Configure and synchronize all 12 approved Google Cloud Tech playlists, then prepare exact ordered candidates for the six broad collections before curation or capture.

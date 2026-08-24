@@ -32,7 +32,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - Existing guard behavior and curated collection invariants remain covered by tests.
   - Notes: Do not weaken the requirement that publishable resources have public summaries or that tracked source references are reviewed.
 
-- [ ] **Task 3: Refactor the apex and add context hubs**
+- [x] **Task 3: Refactor the apex and add context hubs**
   - Scope: `src/pages/index.astro`, new context landing routes, shared header/navigation and landing components, focused tests
   - Depends on: Tasks 1-2
   - Acceptance:
