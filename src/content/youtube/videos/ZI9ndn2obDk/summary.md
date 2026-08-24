@@ -6,7 +6,7 @@ publishedAt: "2020-03-13T16:00:09Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter whose affiliation is not stated demonstrates an authenticated Pub/Sub push subscription targeting a Cloud Run container. The episode contrasts function deployment with container control, then wires a private service to Pub/Sub through service accounts and IAM.
@@ -21,7 +21,7 @@ An unnamed presenter whose affiliation is not stated demonstrates an authenticat
 ## Practical Implications
 
 - Keep the Cloud Run endpoint private and grant invocation only to the intended push identity.
-- Treat the commands, Container Registry references, IAM roles, and console flow as historical; use current Cloud Run and Pub/Sub authenticated-push documentation.
+- Treat the `gcloud` commands, Container Registry image path, IAM role-grant sequence, and console flow as a 2020 walkthrough; use current Cloud Run build/deployment and Pub/Sub authenticated-push documentation.
 
 ## Questions and Tensions
 

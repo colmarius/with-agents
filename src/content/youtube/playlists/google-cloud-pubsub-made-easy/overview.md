@@ -1,6 +1,6 @@
 ---
 title: "Pub/Sub Made Easy"
-status: draft
+status: reviewed
 coveredVideoIds:
   - cvu53CnZmGI
   - MjEam95VLiI
@@ -18,14 +18,14 @@ coveredVideoIds:
 ## Coverage
 
 - Manifest: 11 entries, all currently available.
-- Summaries: 11.
+- Summaries: 11, all reviewed.
 - Incorporated: 11.
 - Pending video IDs: none.
 
 ## Current Thesis
 
-- Editorial: Across the full series, Pub/Sub is presented as a managed boundary between producers and independently recovering consumers, but successful use still requires explicit subscription topology, acknowledgement semantics, flow control, replay planning, and endpoint security ([overview](../../videos/cvu53CnZmGI/summary.md), [subscriptions](../../videos/MjEam95VLiI/summary.md), [subscriber behavior](../../videos/nQ9_Xur2aM4/summary.md), [pull](../../videos/cCkwo6eEHIg/summary.md), [replay](../../videos/VyLmmamuOVo/summary.md)).
-- Editorial: The tutorial progresses from concepts to 2019–2020 deployment walkthroughs, so architectural principles are more reusable than its limits, console paths, credentials, product comparisons, or platform commands ([publisher](../../videos/ML6P1ksHcqo/summary.md), [Cloud Functions](../../videos/k8lBOV-nRXI/summary.md), [Cloud Run](../../videos/ZI9ndn2obDk/summary.md), [historical product comparison](../../videos/fgVE1OoJ2XI/summary.md)).
+- Editorial: Across the full series, Pub/Sub is presented as a managed boundary between producers and independently recovering consumers, but successful use still requires explicit subscription topology, acknowledgement semantics, flow control, replay planning, and endpoint security ([overview](../../videos/cvu53CnZmGI/summary.md), [subscriptions](../../videos/MjEam95VLiI/summary.md), [subscriber behavior](../../videos/nQ9_Xur2aM4/summary.md), [pull](../../videos/cCkwo6eEHIg/summary.md), [Cloud Functions](../../videos/k8lBOV-nRXI/summary.md), [Cloud Run](../../videos/ZI9ndn2obDk/summary.md), [replay](../../videos/VyLmmamuOVo/summary.md)).
+- Editorial: Ten episodes published in 2019–2020 move from concepts into period-specific deployment walkthroughs, and the 2021 finale compares products available at that time. Architectural principles are therefore more reusable than the series' limits, console paths, credentials, product comparisons, or platform commands ([publisher](../../videos/ML6P1ksHcqo/summary.md), [Cloud Functions](../../videos/k8lBOV-nRXI/summary.md), [Cloud Run](../../videos/ZI9ndn2obDk/summary.md), [historical product comparison](../../videos/fgVE1OoJ2XI/summary.md)).
 
 ## Stable Ideas
 
@@ -42,12 +42,12 @@ coveredVideoIds:
 
 ## Revisions and Tensions
 
-- Editorial: The series repeatedly states concrete retention, request-size, ordering, endpoint, and subscription-expiration behavior that was current when published; each operational value needs current-documentation verification ([publisher](../../videos/ML6P1ksHcqo/summary.md), [subscriber behavior](../../videos/nQ9_Xur2aM4/summary.md), [replay](../../videos/VyLmmamuOVo/summary.md)).
+- Editorial: The series states concrete retention, request-size, ordering, endpoint-certificate, acknowledgement, and subscription-expiration behavior as 2019–2020 mechanics; each operational value or default needs current-documentation verification ([overview](../../videos/cvu53CnZmGI/summary.md), [publisher](../../videos/ML6P1ksHcqo/summary.md), [subscriber behavior](../../videos/nQ9_Xur2aM4/summary.md), [push or pull](../../videos/KObJkda4ZfY/summary.md), [Cloud Functions](../../videos/k8lBOV-nRXI/summary.md), [replay](../../videos/VyLmmamuOVo/summary.md)).
 - Editorial: The downloaded service-account key demonstration and older Container Registry/Cloud Functions/Cloud Run setup should be treated as historical walkthroughs, with current identity and deployment guidance taking precedence ([walkthrough](../../videos/f5DOsB7Nlw0/summary.md), [Cloud Functions](../../videos/k8lBOV-nRXI/summary.md), [Cloud Run](../../videos/ZI9ndn2obDk/summary.md)).
 - Editorial: Replay and retention improve recoverability but increase storage, duplicate-processing, and destructive-purge risk; transport features cannot guarantee safe external side effects ([replay](../../videos/VyLmmamuOVo/summary.md)).
 
 ## Practical Implications
 
-- Editorial: Design topic and subscription boundaries, idempotency, acknowledgement timing, backlog alerts, replay, and dead-letter handling together before tuning clients ([subscriptions](../../videos/MjEam95VLiI/summary.md), [subscriber behavior](../../videos/nQ9_Xur2aM4/summary.md), [replay](../../videos/VyLmmamuOVo/summary.md)).
+- Editorial: Design topic and subscription boundaries, idempotency, acknowledgement timing, backlog alerts, and replay together before tuning clients ([subscriptions](../../videos/MjEam95VLiI/summary.md), [subscriber behavior](../../videos/nQ9_Xur2aM4/summary.md), [replay](../../videos/VyLmmamuOVo/summary.md)).
 - Editorial: Load-test batch and flow-control settings with representative payloads and processing times, then scale from backlog and resource signals rather than one headline throughput number ([publisher](../../videos/ML6P1ksHcqo/summary.md), [pull](../../videos/cCkwo6eEHIg/summary.md)).
 - Editorial: Use authenticated endpoints and current workload identity patterns; do not carry forward the series' old downloaded-key or platform-command examples without review ([walkthrough](../../videos/f5DOsB7Nlw0/summary.md), [Cloud Functions](../../videos/k8lBOV-nRXI/summary.md), [Cloud Run](../../videos/ZI9ndn2obDk/summary.md)).

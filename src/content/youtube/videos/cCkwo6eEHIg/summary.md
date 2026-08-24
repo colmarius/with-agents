@@ -6,7 +6,7 @@ publishedAt: "2020-02-28T16:00:07Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter whose affiliation is not stated uses the Cat-Out example to compare streaming and synchronous pull. The episode focuses on high-volume consumption, message attributes, subscriber scaling, flow control, concurrency, and acknowledgement-deadline management.
@@ -21,7 +21,7 @@ An unnamed presenter whose affiliation is not stated uses the Cat-Out example to
 ## Practical Implications
 
 - Scale subscribers from backlog, processing cost, and resource saturation together; adding workers without flow control can merely redistribute overload.
-- Use supported client-library lease management where possible, and verify current streaming-pull behavior and monitoring metrics.
+- Use supported client-library lease management where possible, and verify current streaming-pull behavior, monitoring product names and metrics, and client defaults rather than treating the 2020 advice as current configuration guidance.
 
 ## Questions and Tensions
 

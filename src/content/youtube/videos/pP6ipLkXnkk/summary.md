@@ -6,17 +6,17 @@ publishedAt: "2023-03-11T17:00:24Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Chloe, whose affiliation is not stated in the transcript, closes the series with eight operational practices spanning resource naming, fan-out limits, credentials, low-throughput latency, local emulation, billing labels, regional consumption, and retention cost.
 
 ## Key Ideas
 
-- Unique resource names avoid stale-cache delays after deletion and recreation, while very high subscription fan-out should be checked against service limits. [00:00:00]-[00:01:04]
+- Unique resource names avoid stale-cache delays after deletion and same-name recreation. The episode discourages high subscription fan-out and cites a hard limit of 10,000 subscriptions; that 2023 limit must be checked before use. [00:00:00]-[00:01:04]
 - Granular subscriber credentials improve attribution and access control when consumers are managed independently. [00:00:00]-[00:01:04]
-- For then-described low-throughput latency behavior, the episode suggests heartbeat messages; it also recommends the local Pub/Sub emulator for development and testing. [00:01:04]-[00:02:10]
-- Labels support billing breakdowns, nearby-region consumption can reduce network egress, and overlapping topic/subscription retention can be adjusted to avoid unnecessary storage. [00:01:04]-[00:02:10]
+- For a low-throughput stream that requires low delivery latency, the episode says Pub/Sub works best with high-throughput streams and suggests small heartbeat messages to keep a topic warm. This is point-in-time service-behavior advice to validate before adding traffic. It separately recommends the local Pub/Sub emulator for development and testing. [00:01:04]-[00:02:10]
+- The episode says labels are forwarded to billing and can break down charges by label; consuming in the publish region or a nearby region can minimize network-egress charges; and, when one team manages both resources and topic retention exceeds subscription retention, removing subscription retention can save storage cost. These pricing and retention recommendations require current verification. [00:01:04]-[00:02:10]
 
 ## Practical Implications
 

@@ -6,14 +6,14 @@ publishedAt: "2020-01-19T17:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Priyanka, whose affiliation is not stated in the transcript, compares push and pull subscriptions across endpoint requirements, load balancing, flow control, efficiency, and serverless operation. The choice is presented as workload-dependent rather than as a universal preference.
 
 ## Key Ideas
 
-- Pull clients need authorized API access, while push requires a publicly reachable HTTPS endpoint; push can avoid Pub/Sub client credentials and libraries in the receiving application. [00:00:00]-[00:01:04]
+- Pull clients need authorized API access, while the 2020 push description requires a publicly reachable HTTPS endpoint with a non-self-signed certificate; push can avoid Pub/Sub client credentials and libraries in the receiving application. [00:00:00]-[00:02:07]
 - Pull workers share a subscription and divide messages, whereas push can target a load balancer or let multiple subscriptions fan into one webhook. [00:01:04]-[00:02:07]
 - Pull clients control intake and acknowledgement deadlines; push uses server-managed backoff when the endpoint fails or responds slowly. [00:02:07]-[00:03:09]
 - The episode favors pull for high-volume, throughput-sensitive, or private-endpoint workloads and push for lightweight webhooks and scale-to-zero services. [00:03:09]-[00:04:12]

@@ -6,7 +6,7 @@ publishedAt: "2021-06-30T04:00:09Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter whose affiliation is not stated compares the event-ingestion options available in 2021: Cloud Storage buffering, Pub/Sub, Pub/Sub Lite, self-managed Kafka, and Confluent Cloud. This episode is retained as retired historical content: Pub/Sub Lite is no longer a current product choice, so its selection guidance must not be used as present-day advice.

@@ -6,7 +6,7 @@ publishedAt: "2023-02-11T17:00:01Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Chloe, whose affiliation is not stated in the transcript, presents six subscriber practices spanning resource creation, delivery type, acknowledgement order, ordered-message redelivery, streaming pull, and flow control.
@@ -14,9 +14,9 @@ Chloe, whose affiliation is not stated in the transcript, presents six subscribe
 ## Key Ideas
 
 - Create a subscription or enable topic retention before publishing when messages must remain available for later consumption. [00:00:00]-[00:01:04]
-- Select among the then-described pull, push, and BigQuery subscription types according to the required delivery path. [00:00:00]-[00:01:04]
+- The episode says Pub/Sub then offered pull, push, and BigQuery subscription delivery types and directs viewers to choose by delivery needs; this 2023 list is not a current exhaustive comparison. [00:00:00]-[00:01:04]
 - Process before acknowledging; with ordering keys, redelivery of one message also causes later messages for that key to be redelivered. [00:01:04]-[00:02:09]
-- Streaming pull maintains a bidirectional connection for continuous receipt, while outstanding-message flow-control limits protect underprovisioned subscribers and leave work for peers. [00:02:09]-[00:03:13]
+- Streaming pull maintains a persistent bidirectional connection for continuous receipt; with official client libraries, the episode recommends a maximum-outstanding-messages flow-control setting to protect underprovisioned subscribers and avoid starving peers that can process work. [00:02:09]-[00:03:13]
 
 ## Practical Implications
 

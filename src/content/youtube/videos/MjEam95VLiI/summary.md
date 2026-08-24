@@ -6,14 +6,14 @@ publishedAt: "2019-11-28T17:00:03Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter whose affiliation is not stated explains Pub/Sub's topic-and-subscription model through the series' fictional order-processing system. The episode connects fan-out and fan-in messaging with globally distributed service integration, streaming ingestion, and asynchronous workflows.
 
 ## Key Ideas
 
-- Publishers send messages to named topics, while subscribers receive each subscription's backlog through push or pull and acknowledge processed messages. [00:00:00]-[00:01:03]
+- Publishers send messages to named topics, while subscribers receive each subscription's backlog through push or pull and acknowledge processed messages. [00:00:00]-[00:02:06]
 - Separate subscriptions support one-to-many fan-out and many-to-one integration without requiring a publisher to address each consumer directly. [00:01:03]-[00:02:06]
 - The Cat-Out example assigns topics to producer services and subscriptions to downstream services, then presents Pub/Sub as the global transport between services in different regions. [00:02:06]-[00:03:09]
 - The episode groups use cases into streaming analytics/data ingestion and asynchronous application workflows, with targets ranging from processing systems to databases and serverless services. [00:03:09]-[00:05:19]

@@ -6,16 +6,16 @@ publishedAt: "2020-01-12T17:00:09Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Priyanka, whose affiliation is not stated in the transcript, introduces subscription delivery state, acknowledgement deadlines, duplicate and out-of-order delivery, and push versus pull mechanics. The episode emphasizes that subscriber correctness depends on acknowledgement and idempotent processing rather than on receiving every message exactly once.
 
 ## Key Ideas
 
-- Each subscription belongs to one topic and receives published messages at least once, subject to configured retention; the episode warns that publishing to a topic with no subscription loses that delivery opportunity. [00:00:00]-[00:01:04]
+- Each subscription belongs to one topic and receives published messages at least once, subject to the episode's then-current retention limits; the episode warns that publishing to a topic with no subscription loses that delivery opportunity. [00:00:00]-[00:02:09]
 - An unacknowledged message remains outstanding until its acknowledgement deadline and can then be redelivered; subscribers must tolerate duplicates and possible reordering. [00:01:04]-[00:02:09]
-- Pull subscribers request messages and acknowledge by ID, while push subscribers acknowledge by returning a successful HTTP response. [00:02:09]-[00:03:14]
+- Pull subscribers request messages and acknowledge by ID, while push subscribers acknowledge by returning a successful HTTP response. [00:02:09]-[00:04:19]
 - Push delivery adjusts request rate based on endpoint success, and inactive subscriptions can expire under the then-current default policy. [00:03:14]-[00:04:19]
 
 ## Practical Implications

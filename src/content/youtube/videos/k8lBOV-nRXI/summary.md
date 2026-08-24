@@ -6,7 +6,7 @@ publishedAt: "2020-03-06T17:00:08Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 Priyanka Vergadia, whose affiliation is not stated in the transcript, demonstrates a Pub/Sub push subscription backed by Cloud Functions. She covers webhook acknowledgement, automatic delivery-rate adjustment, authenticated push, and a console-created function trigger.
@@ -21,7 +21,7 @@ Priyanka Vergadia, whose affiliation is not stated in the transcript, demonstrat
 ## Practical Implications
 
 - Validate authenticated push requests and return success only after the processing boundary that should prevent redelivery.
-- Recheck current Cloud Functions generations, trigger creation, supported response codes, retry policy, and IAM setup before following the 2020 console steps.
+- Treat the console-created Cloud Functions trigger, response-code list, maintenance-mode delivery switch, and subscription replacement advice as a 2020 walkthrough; recheck current function generations, trigger creation, retry behavior, backlog consequences, and IAM setup.
 
 ## Questions and Tensions
 

@@ -6,17 +6,17 @@ publishedAt: "2023-03-04T17:00:10Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Chloe, whose affiliation is not stated in the transcript, offers six client-library practices covering language performance, client reuse, flow control, upgrades, asynchronous Node.js APIs, and subscriber lease management. Several recommendations are version-sensitive and need current benchmarking and documentation.
 
 ## Key Ideas
 
-- The episode recommends Java over Python for the tested performance context and points to comparative client benchmarks. [00:00:00]-[00:01:03]
-- Reusing publisher clients avoids repeated cold starts, while publisher and subscriber flow-control settings constrain outstanding work under latency or timeout pressure. [00:00:00]-[00:02:06]
+- The episode broadly recommends the Java client over Python “for performance reasons” and points to a linked comparison, but gives no workload, versions, measurements, or results in the transcript. Treat this as point-in-time 2023 advice, not a durable language choice. [00:00:00]-[00:01:03]
+- Reusing a publisher client avoids repeatedly paying the slower first-publish startup. The episode separately suggests publisher flow control when publish requests often time out with high latency and lower subscriber flow-control settings so fewer messages are processed at once. [00:00:00]-[00:02:06]
 - Staying current on client-library versions provides fixes and access to newer features. [00:01:03]-[00:02:06]
-- Node.js operations should use asynchronous promise-based APIs, and streaming-pull libraries manage acknowledgement-deadline extensions for subscribers. [00:01:03]-[00:02:06]
+- For the then-current Node.js library, the episode recommends asynchronous, promise-based operations over callbacks and names `subscription.on`, `topic.publishMessage`, and `topic.flowControlled`. It also recommends streaming pull because the libraries manage `modAck` acknowledgement-deadline changes. These API names and behavior are version-sensitive. [00:01:03]-[00:02:06]
 
 ## Practical Implications
 

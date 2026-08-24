@@ -6,7 +6,7 @@ publishedAt: "2019-12-10T17:22:43Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter whose affiliation is not stated walks through a 2019 console-and-Python demonstration of one publisher and two pull subscriptions. The demo shows that each subscription retains its own delivery state, allowing a subscriber that starts later to receive an earlier message.
@@ -21,7 +21,7 @@ An unnamed presenter whose affiliation is not stated walks through a 2019 consol
 ## Practical Implications
 
 - Use separate subscriptions when consumers need independent acknowledgement and recovery state.
-- Treat the downloaded long-lived service-account key flow as a historical demo, not a current security recommendation; use current authentication guidance for real deployments.
+- Treat the downloaded JSON service-account key and environment-variable flow as a historical demo, not a current security recommendation; prefer current keyless workload authentication guidance for real deployments.
 
 ## Questions and Tensions
 
