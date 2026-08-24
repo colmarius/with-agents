@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Cloud Security Command Center"
-status: draft
+status: reviewed
 coveredVideoIds:
   - goJ_G2ygdSA
   - n70BdI7apXI
@@ -11,15 +11,15 @@ coveredVideoIds:
 
 ## Coverage
 
-- Manifest: 5 entries, all currently available.
-- Summaries: 5.
-- Incorporated: 5.
+- Manifest: 5 entries, all recorded as available.
+- Summaries: 5 reviewed summaries.
+- Incorporated: all 5 summaries.
 - Pending video IDs: none.
 
 ## Current Thesis
 
 - Editorial: The 2019 series presents Security Command Center as an organization-level findings hub that brings together application scanning, behavioral anomalies, log-based threat detection, sensitive-data discovery, and configuration posture ([Web Security Scanner](../../videos/goJ_G2ygdSA/summary.md), [Anomaly Detection](../../videos/n70BdI7apXI/summary.md), [Event Threat Detection](../../videos/0f5Dh8cGbyQ/summary.md), [Cloud DLP](../../videos/ra_hnxqBzOc/summary.md), [Security Health Analytics](../../videos/L5nR0KPtn-Y/summary.md)).
-- Editorial: A finding is the start of an investigation: useful operation requires source enablement, scope and permissions, supporting evidence, asset ownership, triage, and an authorized remediation path ([Anomaly Detection](../../videos/n70BdI7apXI/summary.md), [Security Health Analytics](../../videos/L5nR0KPtn-Y/summary.md)).
+- Editorial: A finding is the start of an investigation: useful operation requires source enablement, scope and permissions, supporting evidence, asset ownership, triage, and an authorized remediation path ([Anomaly Detection](../../videos/n70BdI7apXI/summary.md), [Event Threat Detection](../../videos/0f5Dh8cGbyQ/summary.md), [Security Health Analytics](../../videos/L5nR0KPtn-Y/summary.md)).
 
 ## Stable Ideas
 
@@ -33,7 +33,7 @@ coveredVideoIds:
 
 ## Revisions and Tensions
 
-- Editorial: The conceptual split between finding sources and a central posture view remains useful, but all five episodes show 2019 names, editions, roles, integrations, detector taxonomies, defaults, and console paths that require current-documentation review ([Web Security Scanner](../../videos/goJ_G2ygdSA/summary.md), [Anomaly Detection](../../videos/n70BdI7apXI/summary.md), [Security Health Analytics](../../videos/L5nR0KPtn-Y/summary.md)).
+- Editorial: The conceptual split between finding sources and a central posture view remains useful, but these five 2019 demonstrations are not current instructions: their product names, editions, roles, integrations, detector taxonomies, defaults, recommendations, and console paths require verification against current documentation ([Web Security Scanner](../../videos/goJ_G2ygdSA/summary.md), [Anomaly Detection](../../videos/n70BdI7apXI/summary.md), [Event Threat Detection](../../videos/0f5Dh8cGbyQ/summary.md), [Cloud DLP](../../videos/ra_hnxqBzOc/summary.md), [Security Health Analytics](../../videos/L5nR0KPtn-Y/summary.md)).
 - Editorial: Fast remediation can reduce exposure, but deleting a resource or applying a recommended configuration can disrupt service or destroy evidence unless containment, validation, rollback, and forensic preservation are defined ([Anomaly Detection](../../videos/n70BdI7apXI/summary.md), [Security Health Analytics](../../videos/L5nR0KPtn-Y/summary.md)).
 
 ## Practical Implications

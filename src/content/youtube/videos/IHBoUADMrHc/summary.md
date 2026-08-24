@@ -6,7 +6,7 @@ publishedAt: "2020-02-19T00:00:03Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter uses the recurring Cloud Detective and Bad Actor characters to frame access security as the problem of admitting the right identity, from an acceptable device and context, to the right resource. The episode combines network protection, phishing-resistant authentication, application access policy, and endpoint controls as overlapping defenses.
@@ -14,9 +14,9 @@ An unnamed presenter uses the recurring Cloud Detective and Bad Actor characters
 ## Key Ideas
 
 - Access risks include stolen credentials, phishing, man-in-the-middle interception, denial-of-service attacks, and accidental or malicious use of excessive permissions. [00:01:04]-[00:02:10]
-- TLS termination and load-balancing infrastructure are presented as defenses against interception and large denial-of-service attacks. [00:02:10]-[00:03:13]
-- Risk-aware sign-in and hardware security keys add stronger evidence than a password alone. [00:03:13]-[00:04:15]
-- Identity-Aware Proxy and endpoint management add application, group/domain, and device context to an access decision. [00:04:15]-[00:05:20]
+- The 2020 episode presents encrypted internet access, TLS termination, and load-balancing infrastructure as defenses against interception and denial-of-service attacks. [00:02:10]-[00:03:13]
+- It presents risk-aware sign-in and hardware security keys as stronger evidence than a password alone. [00:03:13]-[00:04:15]
+- It presents Identity-Aware Proxy and G Suite endpoint management as ways to add application, group or domain, and device context to an access decision. [00:04:15]-[00:05:20]
 
 ## Practical Implications
 

@@ -6,17 +6,17 @@ publishedAt: "2022-09-08T04:00:04Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
-Priyanka and her guest Christopher walk through a 2022 reference architecture for a pet photo-sharing application. The captured source gives Christopher no surname or affiliation, so none is inferred. The transferable design separates stateless serving, identity, relational metadata, media objects, asynchronous notifications, caching, and optional machine-learning features; the named Google Cloud products are point-in-time choices.
+Priyanka and her guest Christopher walk through a 2022 reference architecture for a pet photo-sharing application. The captured source gives Christopher no surname and gives neither speaker an affiliation, so none is inferred. The transferable design separates stateless serving, identity, relational metadata, media objects, asynchronous notifications, caching, and optional machine-learning features; the named Google Cloud products are point-in-time choices.
 
 ## Key Ideas
 
 - The application scope includes accounts, feeds, follows, and post creation and editing, with growth introducing concerns around servers, authentication, traffic, networking, and databases. [00:01:02]-[00:02:06]
-- Christopher maps stateless application serving to Cloud Run, deployment automation to Cloud Build, and geographically distributed traffic to regional instances behind Cloud Load Balancing. [00:03:09]-[00:04:14]
-- Identity Platform handles account flows, while profile and caption data use Cloud SQL and existing MySQL or PostgreSQL data can move through Database Migration Service. [00:04:14]-[00:06:23]
-- Media files move to Cloud Storage, event-driven functions can transform uploads, and translation, recommendation, or custom-model services are presented as optional enhancements. [00:06:23]-[00:08:33]
+- In the 2022 reference design, Christopher maps stateless application serving to Cloud Run, deployment automation to Cloud Build, and geographically distributed traffic to regional instances behind Cloud Load Balancing. [00:03:09]-[00:04:14]
+- Christopher proposes Identity Platform for account flows and Cloud SQL for profile and caption data, with Database Migration Service as the migration path for existing MySQL or PostgreSQL data. [00:04:14]-[00:06:23]
+- Christopher proposes Cloud Storage for media files and event-driven functions for upload transformation, then presents translation, recommendation, and custom-model services as optional enhancements. [00:06:23]-[00:08:33]
 - Christopher assigns frequently accessed content to CDN caching and follow or comment notifications to Pub/Sub, then recaps the services as one end-to-end deployment. [00:08:33]-[00:10:40]
 
 ## Practical Implications

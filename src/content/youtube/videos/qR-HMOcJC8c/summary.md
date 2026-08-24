@@ -6,16 +6,16 @@ publishedAt: "2020-04-14T23:00:22Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter and the Cloud Detective and Bad Actor characters describe provider controls for customer data at rest and in transit. The episode covers logical tenant isolation, restricted employee access, encryption layers, network routing, authenticated service communication, and network access controls.
 
 ## Key Ideas
 
-- The episode says customer data is logically isolated, employee access is restricted, data is not used for advertising or sold, deletion is completed within a stated period, and export tools support portability. [00:01:03]-[00:02:08]
-- Storage services can use centrally managed keys for application-layer encryption, supplemented by lower-level protections such as hardware encryption. [00:02:08]-[00:03:11]
-- Google's network is presented as reducing public-internet hops, with Google Front Ends filtering malicious traffic before data moves through protected internal paths. [00:02:08]-[00:03:11]
+- The episode made 2020 assurances that customer data was logically isolated, employee access was restricted, data was not scanned for advertising or sold, deletion would finish within 180 days, and export tools supported portability. [00:01:03]-[00:02:08]
+- It said storage services could be configured to use centrally managed keys for application-layer encryption, supplemented by lower-level protections such as hardware encryption. [00:02:08]-[00:03:11]
+- It presented Google's network as reducing public-internet hops, with Google Front Ends filtering malicious traffic before data moved through internal paths. [00:02:08]-[00:03:11]
 - Cryptographic RPC mechanisms, inter-service encryption, firewalls, and access-control lists provide layers that do not rely solely on the network path. [00:03:11]-[00:04:17]
 
 ## Practical Implications

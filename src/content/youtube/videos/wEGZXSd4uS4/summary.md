@@ -6,7 +6,7 @@ publishedAt: "2021-05-13T23:00:11Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter and the Cloud Detective and Bad Actor characters present service accounts as identities for applications and scripts, avoiding the need to share a person's credentials. The episode stresses narrow permissions, restricted impersonation, key avoidance, secure key handling when unavoidable, naming, and cleanup.
@@ -15,8 +15,8 @@ An unnamed presenter and the Cloud Detective and Bad Actor characters present se
 
 - Reusing user credentials in automation creates sharing and storage risks because a script needs persistent access without a person approving every request. [00:01:02]-[00:02:04]
 - A dedicated service account can call APIs for a workload while administrators separately control who may use or manage that identity. [00:02:04]-[00:03:08]
-- Attaching a service account to a Google Cloud resource avoids handling a password, while downloaded keys turn identity management into a secrets-management problem. [00:03:08]-[00:04:12]
-- If keys are used, the episode recommends secure storage and rotation; it also recommends descriptive names, usage logging, and disabling identities that are no longer needed. [00:04:12]-[00:06:18]
+- The 2021 episode says attaching a service account to a Google Cloud resource avoids handling a password, while downloaded keys turn identity management into a secrets-management problem. [00:03:08]-[00:04:12]
+- For keys, it recommends secure storage and rotation; it also recommends descriptive names, usage logging, and disabling identities that are no longer needed. These are historical recommendations, not a current endorsement of long-lived keys. [00:04:12]-[00:06:18]
 
 ## Practical Implications
 

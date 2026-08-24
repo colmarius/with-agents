@@ -6,7 +6,7 @@ publishedAt: "2021-05-26T23:00:10Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter and the Cloud Detective and Bad Actor characters warn against immediately logging into a suspected compromised instance. The episode instead demonstrates exporting logs to a separate monitoring project so responders can investigate without exposing administrator credentials or relying on the affected environment.
@@ -15,8 +15,8 @@ An unnamed presenter and the Cloud Detective and Bad Actor characters warn again
 
 - Logging directly into a suspected compromised server can expose administrator credentials to an attacker who anticipated that response. [00:01:03]-[00:02:06]
 - Forensic logs stored in a separate Google Cloud project let responders inspect activity without depending on or modifying the suspected system. [00:02:06]-[00:03:09]
-- Log sinks can route selected entries to Cloud Storage, Pub/Sub, BigQuery, or Cloud Logging buckets; the demonstration centralizes indexed logs in a monitoring project. [00:02:06]-[00:03:09]
-- The example finds no supporting evidence for the claimed breach, reinforcing that responders should validate an alert before taking intrusive action. [00:03:09]-[00:04:14]
+- In the 2021 demonstration, log sinks route selected entries to Cloud Storage, Pub/Sub, BigQuery, or Cloud Logging buckets, and indexed logs are centralized in a monitoring project. [00:02:06]-[00:03:09]
+- The example finds no suspicious log activity supporting the claimed full breach; the attacker instead says the objective was to capture credentials during a login. [00:03:09]-[00:04:14]
 
 ## Practical Implications
 

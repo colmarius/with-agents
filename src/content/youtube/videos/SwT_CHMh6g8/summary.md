@@ -6,7 +6,7 @@ publishedAt: "2020-04-28T23:00:09Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter uses the Cloud Detective and Bad Actor characters to connect physical data-center security with hardware identity, verified software, and virtual-machine isolation. The episode presents facilities, Titan hardware, and KVM hardening as mutually reinforcing platform controls.
@@ -14,9 +14,9 @@ An unnamed presenter uses the Cloud Detective and Bad Actor characters to connec
 ## Key Ideas
 
 - Physical security covers both restricted access to data centers and assurance that the physical and virtual systems running applications have a trustworthy root. [00:01:05]-[00:02:07]
-- Custom server and network hardware plus Titan chips are described as mechanisms for identifying and authenticating devices at the hardware level. [00:02:07]-[00:03:10]
-- Titan provides a hardware root of trust, firmware and software integrity checks, machine identity, and tamper-evident audit evidence. [00:03:10]-[00:04:15]
-- KVM supplies VM isolation, while code review, fuzzing, removal of unused components, and a smaller virtual-machine monitor are presented as additional hardening. [00:04:15]-[00:05:20]
+- The episode's 2020 architecture account describes custom server and network hardware plus Titan chips as mechanisms for identifying and authenticating devices at the hardware level. [00:02:07]-[00:03:10]
+- It says Titan provides a hardware root of trust, firmware and software integrity checks, machine identity, and tamper-evident logging. [00:03:10]-[00:04:15]
+- It says KVM supplies VM isolation and presents code review, fuzzing, removal of unused components, and Google's own user-space virtual-machine monitor as additional hardening. [00:04:15]-[00:05:20]
 
 ## Practical Implications
 

@@ -6,17 +6,17 @@ publishedAt: "2019-09-11T23:00:10Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
-An unnamed presenter demonstrates the 2019 Cloud Security Command Center workflow for configuring and running Web Security Scanner against a deployed application. The walkthrough covers scan creation, scheduling, execution, findings, and the relationship between scanner results and the broader Security Command Center dashboard.
+An unnamed presenter demonstrates a 2019 Cloud Security Command Center workflow for configuring and running Web Security Scanner against an application. The walkthrough covers scan creation, scheduling, execution, findings, and the then-current relationship between scanner results and the Security Command Center dashboard. It is a historical product demonstration, not current setup guidance.
 
 ## Key Ideas
 
-- Web Security Scanner was presented as an integrated tool for detecting common vulnerabilities in App Engine, Compute Engine, and Google Kubernetes Engine applications before production deployment. [00:00:00]-[00:00:50]
-- The demonstrated setup requires an existing application, suitable project permissions, the Web Security Scanner API, a starting URL, and an immediate or recurring scan configuration. [00:00:00]-[00:00:50]
+- Web Security Scanner was presented as a tool built into Security Command Center that could scan App Engine, Compute Engine, and Google Kubernetes Engine applications for common vulnerabilities before production deployment. [00:00:00]
+- The demonstrated setup used a running application, an account with the owner or developer role for that application, the Web Security Scanner API, a starting URL, and an immediate, on-demand, or scheduled scan. [00:00:00]-[00:00:50], [00:02:41]
 - Scan duration depends on application complexity, links, interactive elements, JavaScript, and service load; the scanner explores reachable links and attempts to exercise inputs and handlers. [00:00:50]-[00:01:49]
-- Findings include categories such as cross-site scripting, mixed content, and insecure libraries, with Security Command Center providing an organization-level findings view and detail needed to investigate or reproduce an issue. [00:01:49]-[00:02:41]
+- The demonstration listed cross-site scripting, Flash injection, mixed content, and outdated or insecure libraries, then showed an organization-level findings view and detail that could help locate or reproduce an issue. [00:01:49]-[00:02:41]
 
 ## Practical Implications
 

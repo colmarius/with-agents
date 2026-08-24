@@ -6,17 +6,17 @@ publishedAt: "2019-10-02T16:14:29Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
-An unnamed presenter demonstrates the 2019 setup for sending Cloud DLP scan findings into Cloud Security Command Center. The walkthrough covers repository scope, API and role setup, enabling DLP as a security source, examining an info-type finding, and following the affected resource for analysis or remediation.
+An unnamed presenter demonstrates a 2019 setup for sending Cloud DLP scan results into Cloud Security Command Center. The walkthrough covers repository scope, API and role setup, enabling DLP as a security source, examining an info-type finding, and following the affected resource for analysis or remediation. It is a historical product demonstration, not current Sensitive Data Protection setup guidance.
 
 ## Key Ideas
 
-- Cloud DLP is presented as a classification and redaction service for sensitive elements such as identifiers, contact details, payment data, and cloud credentials. [00:00:00]-[00:00:55]
-- Sending findings to Security Command Center requires a repository in the enabled organization, the DLP API, IAM roles, and DLP enabled as a security source. [00:00:55]-[00:02:39]
-- DLP uses info types to define sensitive-data patterns and exposes resulting findings through the Security Command Center dashboard. [00:02:39]-[00:03:27]
-- The example follows a credit-card finding to its asset and external URI, then suggests analysis in BigQuery or contacting the resource owner for remediation. [00:03:27]
+- Cloud DLP was presented as a classification and redaction service for sensitive elements such as identifiers, contact details, payment data, and Google Cloud credentials. [00:00:00]
+- The demonstrated integration used a supported repository in the same organization as Cloud SCC, the Cloud DLP API, the named IAM roles, and Cloud DLP Data Discovery enabled as a security source. [00:00:55]-[00:02:39]
+- The presenter describes info types as the sensitive-data types Cloud DLP scanned for and shows resulting findings in the Security Command Center dashboard. [00:02:39]-[00:03:27]
+- The example follows a credit-card finding to its asset and external URI, then suggests additional BigQuery analysis or contacting the owner to remediate the resource. [00:03:27]
 
 ## Practical Implications
 

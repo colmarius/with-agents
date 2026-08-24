@@ -1,6 +1,6 @@
 ---
 title: "Cloud Security Basics"
-status: draft
+status: reviewed
 coveredVideoIds:
   - MHtg2Au78LI
   - IHBoUADMrHc
@@ -23,6 +23,7 @@ coveredVideoIds:
 
 ## Current Thesis
 
+- Editorial: This overview synthesizes a 2020–2021 series. Its product behavior, architecture assertions, roles, defaults, costs, limits, and console workflows are historical evidence, not current Google Cloud instructions; current implementation decisions require current documentation and assurance evidence ([platform risk](../../videos/N83Ru1c77U4/summary.md), [service accounts](../../videos/wEGZXSd4uS4/summary.md), [audit logging](../../videos/SaLHDNqrZ80/summary.md)).
 - Editorial: Cloud security is a shared-responsibility system: the provider secures the underlying platform, customers secure applications and policy, and infrastructure controls depend on both provider capabilities and customer configuration ([shared responsibility](../../videos/MHtg2Au78LI/summary.md), [platform risk](../../videos/N83Ru1c77U4/summary.md)).
 - Editorial: Effective defense layers identity and device context, least-privilege resource policy, data controls, platform assurance, monitoring, audit evidence, and tested response rather than relying on any single product ([access risk](../../videos/IHBoUADMrHc/summary.md), [data risk](../../videos/QJcRkpzW8Mw/summary.md), [audit logging](../../videos/SaLHDNqrZ80/summary.md)).
 
@@ -39,7 +40,7 @@ coveredVideoIds:
 
 ## Revisions and Tensions
 
-- Editorial: The durable concepts—shared responsibility, least privilege, defense in depth, independent logging, and audit review—outlast the specific products, defaults, statistics, roles, and console paths shown in the 2020–2021 episodes; every summary marks those details for current-documentation review ([access risk](../../videos/IHBoUADMrHc/summary.md), [service accounts](../../videos/wEGZXSd4uS4/summary.md), [audit logging](../../videos/SaLHDNqrZ80/summary.md)).
+- Editorial: The durable concepts—shared responsibility, least privilege, defense in depth, independent logging, and audit review—outlast the specific products, architecture claims, defaults, statistics, roles, key procedures, costs, and console paths shown in the 2020–2021 episodes; the individual summaries bound those details historically ([access risk](../../videos/IHBoUADMrHc/summary.md), [customer data](../../videos/qR-HMOcJC8c/summary.md), [service accounts](../../videos/wEGZXSd4uS4/summary.md), [audit logging](../../videos/SaLHDNqrZ80/summary.md)).
 - Editorial: Centralized identity and telemetry improve consistency but also create high-value control planes whose administration, integrity, retention, and recovery need independent safeguards ([IAM](../../videos/LznrFv7iRNI/summary.md), [Cloud Logging](../../videos/dLOyUy1BlIs/summary.md)).
 
 ## Practical Implications

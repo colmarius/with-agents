@@ -6,7 +6,7 @@ publishedAt: "2021-07-03T04:00:17Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter and the Cloud Detective and Bad Actor characters use an insider-access scenario to explain audit logs as evidence for investigations. The episode distinguishes several audit-log categories, their stated defaults and costs, and the need to combine logs with alerts and a regular review process.
@@ -14,8 +14,8 @@ An unnamed presenter and the Cloud Detective and Bad Actor characters use an ins
 ## Key Ideas
 
 - Audit trails help investigators identify who accessed or changed resources and support both active investigations and post-incident analysis. [00:02:06]-[00:03:09]
-- The episode distinguishes Admin Activity, Data Access, System Event, and Policy Denied audit logs, with different stated enablement, cost, and disablement properties. [00:03:09]-[00:05:16]
-- Audit logs are evidence rather than a built-in judgment that activity is suspicious, and the episode notes that records can arrive with delay. [00:05:16]-[00:06:18]
+- The 2021 episode distinguishes Admin Activity, Data Access, System Event, and Policy Denied audit logs, with then-current enablement, cost, and disablement properties. [00:03:09]-[00:05:16]
+- It says audit logs do not identify suspicious events by themselves and describes them as best-effort records that could be delayed by up to five minutes. [00:05:16]-[00:06:18]
 - Data Access logs allow the demonstration to trace unexpected file access, while alerts and recurring review are recommended for ongoing detection. [00:05:16]-[00:06:18]
 
 ## Practical Implications

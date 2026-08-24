@@ -6,7 +6,7 @@ publishedAt: "2021-05-07T16:00:08Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter and the Cloud Detective and Bad Actor characters explain Cloud IAM as a scalable alternative to manually granting resource access. The episode introduces identities, resources, permissions, roles, policies, and groups, then emphasizes group-based assignment and descriptive naming.
@@ -14,9 +14,9 @@ An unnamed presenter and the Cloud Detective and Bad Actor characters explain Cl
 ## Key Ideas
 
 - Access management must balance least privilege with timely access for people and applications; manual approval becomes unwieldy as organizations grow. [00:01:02]-[00:02:05]
-- Cloud IAM centralizes resource access for services such as Compute Engine, Pub/Sub, Cloud Storage, and App Engine. [00:02:05]-[00:03:09]
-- Members receive roles containing permissions, while policies bind members to roles on resources. [00:03:09]-[00:04:13]
-- Groups let organizations manage role assignment through membership and synchronize an existing directory as a source of truth. [00:04:13]-[00:06:18]
+- The episode presents the 2021 Cloud IAM model as centralized resource-access management for services such as Compute Engine, Pub/Sub, Cloud Storage, and App Engine. [00:02:05]-[00:03:09]
+- In that model, members receive roles containing permissions, while policies bind members to roles on resources. [00:03:09]-[00:04:13]
+- It says groups let organizations manage role assignment through membership and describes continuously synchronizing an existing directory as a source of truth. [00:04:13]-[00:06:18]
 
 ## Practical Implications
 

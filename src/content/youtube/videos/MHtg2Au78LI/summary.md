@@ -6,15 +6,15 @@ publishedAt: "2020-02-05T00:00:02Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter and a recurring “cloud detective” character introduce Google Cloud’s shared-responsibility model. The episode separates platform, infrastructure, and application responsibilities, then groups security work into infrastructure, preventive, and forensic actions.
 
 ## Key Ideas
 
-- Enterprises need consistent authorization, authentication, proactive threat prevention, regulatory compliance, and clear control boundaries for every request, not only during incident response. [00:00:00]-[00:02:03]
-- Google secures the underlying platform, customers secure their applications, and infrastructure controls such as virtual machines, networks, and data access remain a shared responsibility supported by provider tooling. [00:01:02]-[00:03:05]
+- The episode says enterprises need consistent authorization and authentication for requests, proactive threat prevention, attention to regulatory requirements, and clear control over the areas assigned to internal teams. [00:00:00]-[00:02:03]
+- In the episode's 2020 model, Google operates the underlying platform, customers secure their applications, and customers configure infrastructure controls such as virtual machines, networks, and data access with provider tooling. [00:01:02]-[00:03:05]
 - Preventive controls limit access through tools such as IAM and Identity-Aware Proxy, while forensic controls use logging and monitoring to detect and investigate suspicious behavior. [00:03:05]-[00:04:08]
 - The presenter rejects the idea that using managed cloud infrastructure makes an application automatically secure: customers remain responsible for their services and should combine prevention, detection, and recovery planning. [00:04:08]-[00:05:11]
 

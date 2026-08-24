@@ -6,15 +6,15 @@ publishedAt: "2020-03-03T16:00:04Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter and the recurring Cloud Detective and Bad Actor characters organize data risk around who can reach data, what enters the system, where data is stored or transferred, and whether the underlying machines are trustworthy. The proposed controls combine least privilege, encryption, inspection, logging, policy guardrails, and secure compute.
 
 ## Key Ideas
 
-- Data security includes limiting sensitive data, locating what is stored, rejecting harmful or unsanitized input, preventing loss, and protecting storage hosts from compromise. [00:01:05]-[00:02:09]
-- The episode maps those risks to IAM, encryption, logging and monitoring, DLP, organization policy, and VM-management controls. [00:02:09]-[00:03:15]
+- The episode advises avoiding stored PII, knowing where data is stored, rejecting harmful or unsanitized input, preventing loss, and protecting storage hosts from compromise. Its categorical PII advice is a high-level 2020 simplification, not current legal or product guidance. [00:01:05]-[00:02:09]
+- It maps those risks to the then-current IAM, encryption, logging and monitoring, DLP, Organization Policy, and VM-management examples. [00:02:09]-[00:03:15]
 - Least-privilege IAM limits unnecessary access, while monitoring provides evidence and alerts when access violates expectations. [00:03:15]-[00:04:17]
 - Organization Policy is presented as a centralized way to apply compliance guardrails, illustrated by requiring customer-managed encryption keys for Cloud SQL changes. [00:04:17]-[00:05:20]
 
