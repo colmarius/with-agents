@@ -113,3 +113,13 @@
 - Started four independent high-effort orb workers from committed feature-branch state. File ownership is disjoint by playlist: Cloud Security, Pub/Sub, Engineering for Reliability, and Build With Google Cloud.
 - Each worker must use bounded non-force capture, stop on throttle, keep source capture and draft editorial work in separate commits, refresh only its assigned overview, run local status/audit/tests, and return a transferable patch without pushing or merging.
 - The coordinator retains integration, combined review, and final verification. Broad-playlist capture remains blocked pending user approval of `curation.md`.
+
+## 2026-08-24 — Broad-playlist curation approved
+
+- The user approved all six exact ordered selections without changes.
+- Promoted the six curation records from `draft` to `reviewed`: 67 selected videos across Serverless Expeditions, Google Cloud Essentials, Get Started with Google Cloud, Cloud Bytes, Beyond Your Bill, and Architecting with Google Cloud.
+- This approval activates source capture only. Individual source summaries, playlist overviews, public summaries, and publication remain draft/review gates.
+
+### Next action
+
+- Prove one strict-English thin slice for each broad playlist, then delegate the remaining selected IDs in disjoint playlist-owned batches.

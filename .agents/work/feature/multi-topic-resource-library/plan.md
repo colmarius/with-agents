@@ -53,7 +53,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - Additions receive the mandatory public-impact review and the exact manifest diff is inspected.
   - Notes: Sync is coordinator-owned and sequential. Workers must not concurrently edit the shared catalog or manifests.
 
-- [ ] (blocked) **Task 5: Establish capture scope and prove one thin slice per playlist**
+- [ ] **Task 5: Establish capture scope and prove one thin slice per playlist**
   - Scope: source curation records, `src/content/youtube/videos/<video-id>/**`, playlist draft overviews
   - Depends on: Task 4; reviewed curation for broad playlists
   - Acceptance:

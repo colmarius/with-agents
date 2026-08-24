@@ -1,18 +1,18 @@
 # Google Cloud playlist curation candidates
 
-Status: draft — awaiting user approval
+Status: reviewed — approved by the user on 2026-08-24
 Prepared: 2026-08-24
 
-These are proposed editorial display orders, not mutable YouTube playlist positions. Complete manifests remain authoritative for remote membership and drift. Draft curation blocks capture and creates no publication obligation until each selection is approved and changed to `reviewed`.
+These are approved editorial display orders, not mutable YouTube playlist positions. Complete manifests remain authoritative for remote membership and drift. Reviewed curation activates source capture for only these IDs; source-summary review, overview review, and publication remain separate gates.
 
 ## Approval checklist
 
-- [ ] Serverless Expeditions — 14 of 182
-- [ ] Google Cloud Essentials — 8 of 24
-- [ ] Get Started with Google Cloud — 12 of 41
-- [ ] Cloud Bytes — 12 of 45
-- [ ] Beyond Your Bill — 11 of 24
-- [ ] Architecting with Google Cloud — 10 of 28
+- [x] Serverless Expeditions — 14 of 182
+- [x] Google Cloud Essentials — 8 of 24
+- [x] Get Started with Google Cloud — 12 of 41
+- [x] Cloud Bytes — 12 of 45
+- [x] Beyond Your Bill — 11 of 24
+- [x] Architecting with Google Cloud — 10 of 28
 
 ## Serverless Expeditions
 

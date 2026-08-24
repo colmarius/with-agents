@@ -10,7 +10,7 @@ Extend the site beyond its Coding with Agents catalog so cloud/GCP and security 
 
 ## Summary
 
-The playlist research, generic topic-catalog foundation, single-origin context hub, and source-playlist synchronization are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. All 12 approved Google Cloud Tech playlists have complete local manifests; the six broad collections are capture-blocked behind draft curation until exact ordered selections are approved.
+The playlist research, generic topic-catalog foundation, single-origin context hub, and source-playlist synchronization are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. All 12 approved Google Cloud Tech playlists have complete local manifests, and the six broad collections now have user-approved reviewed curation totaling 67 selected videos.
 
 ## Artifacts
 
@@ -28,11 +28,11 @@ The playlist research, generic topic-catalog foundation, single-origin context h
 
 ## Next Action
 
-- Ask the user to approve or adjust the six exact ordered selections in [curation.md](curation.md). Continue the already-approved full-series backfill independently; do not capture any broad playlist until its selection is reviewed.
+- Prove one strict-English capture → draft summary → draft overview thin slice for each reviewed broad playlist, then delegate the remaining source backfill in disjoint playlist-owned batches.
 
 ## Open Questions
 
 - [x] Confirm `transcriptLanguage: en`, `summaryLanguage: en`, and `multiSpeaker: true` for all 12 playlists.
 - [x] Approve the proposed six-full/six-curated capture split.
-- [ ] Approve the exact ordered selections for the six broad or stale playlists after candidate curation is prepared.
+- [x] Approve the exact ordered selections for the six broad or stale playlists after candidate curation is prepared.
 - [x] Confirm the single-origin hub and context-path architecture before restructuring the main site.
