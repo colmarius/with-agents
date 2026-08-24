@@ -6,7 +6,7 @@ publishedAt: "2022-05-19T23:00:10Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Martin speaks with Carolina, identified in the transcript as a Cloud Run product manager, about the then-new Cloud Run Jobs capability for unattended containerized batch work. The demo processes invoices from Cloud Storage with Document AI and writes extracted data to Firestore.
@@ -15,7 +15,7 @@ Martin speaks with Carolina, identified in the transcript as a Cloud Run product
 
 - Cloud Run Jobs target work such as migrations, cleanup, imports, exports, and reports that should run unattended to completion rather than serve HTTP requests. [00:00:00]-[00:01:52]
 - The demo reads invoice PDFs from Cloud Storage, extracts fields through Document AI, stores results in Firestore, and moves processed files aside. [00:01:52]-[00:02:55]
-- As shown in May 2022, a job is built as a container, created with `gcloud run jobs create`, and started from the console or command line. [00:02:55]-[00:03:57]
+- As shown in May 2022, the container is built with Cloud Build, the job is created with `gcloud run jobs create`, and an execution is started from the console or command line. [00:02:55]-[00:03:57]
 - The 2022 demo schedules execution through Cloud Scheduler and the Cloud Run Admin API, using an OAuth token and a service account described as having Cloud Run Invoker permission on the job. [00:03:57]-[00:05:00]
 - Multiple tasks can partition a larger input set so independent portions run in parallel. [00:05:00]-[00:06:04]
 

@@ -6,7 +6,7 @@ publishedAt: "2023-05-18T23:00:34Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Mete and an unnamed host explain how Google Cloud Workflows can orchestrate an order flow, retry transient failures, and compensate for permanent failures. The transcript identifies Mete by first name but gives no affiliation for either speaker.
@@ -14,13 +14,13 @@ Mete and an unnamed host explain how Google Cloud Workflows can orchestrate an o
 ## Key Ideas
 
 - A workflow can call order and customer services in sequence without making those services call each other directly. [00:00:00]-[00:02:08]
-- Retry policies address intermittent failures, while a permanent failure such as insufficient credit needs different handling. [00:02:08]-[00:04:15]
+- Mete demonstrates the Workflows default retry policy around an HTTP call as a response to intermittent failures; he says a permanent failure such as insufficient credit needs different handling. [00:02:08]-[00:04:15]
 - In the example Saga, failure to reserve credit triggers cancellation of the pending order; successful reservation proceeds to approval. [00:04:15]-[00:05:19]
 - Mete characterizes the Saga approach as eventual consistency for distributed operations that cannot use a database transaction. [00:05:19]
 
 ## Practical Implications
 
-- Treat retry and compensation as separate design decisions: retries need a bounded transient-failure policy, while compensation must correspond to an earlier side effect.
+- Editorial synthesis: treat retry and compensation as separate design decisions; define a bounded transient-failure policy and tie compensation to an earlier side effect.
 - The demonstrated Workflows YAML and console behavior reflect the service shown in 2023; verify current syntax and defaults before implementing it.
 
 ## Questions and Tensions

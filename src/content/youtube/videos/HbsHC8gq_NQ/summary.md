@@ -6,7 +6,7 @@ publishedAt: "2021-06-03T23:00:04Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Martin and Dina design an internal application for requesting, approving, scanning, and auditing open server ports. The discussion is an architectural exercise rather than a completed implementation, and its product, console, and access-control guidance reflects Google Cloud as presented in June 2021.
@@ -15,7 +15,7 @@ Martin and Dina design an internal application for requesting, approving, scanni
 
 - Put Identity-Aware Proxy in front of App Engine to restrict the internal application and distinguish developer and administrator access; treat this as 2021-era IAM and product guidance. [00:01:03]-[00:03:10]
 - Store operational request state in Firestore because the proposed access pattern is hierarchical and does not require substantial aggregation. [00:03:10]-[00:04:15]
-- Use Cloud Scheduler to start a nightly scan, then fan work out through Pub/Sub so each Cloud Function handles a small unit that can be retried independently. [00:04:15]-[00:07:24]
+- Use Cloud Scheduler to start a nightly scan, then fan work out through Pub/Sub so each worker function handles one server—or possibly one server-port pair—and failures can be retried at that granularity. [00:04:15]-[00:08:26]
 - Publish scan results once, route mismatches through a filtered subscription for administrator email, and send all results to BigQuery for audit reporting in Data Studio. [00:07:24]-[00:11:34]
 
 ## Practical Implications

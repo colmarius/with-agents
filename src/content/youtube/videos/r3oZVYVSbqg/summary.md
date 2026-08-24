@@ -6,7 +6,7 @@ publishedAt: "2023-10-05T16:00:41Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Aaron, who identifies himself as a Cloud Operations Advocate at Google, and an unnamed host discuss reducing alert noise through an SRE-oriented focus on user impact, automation, and actionable notification paths.
@@ -21,13 +21,13 @@ Aaron, who identifies himself as a Cloud Operations Advocate at Google, and an u
 
 ## Practical Implications
 
-- Start alert reviews from user-visible service outcomes, then remove resource-level notifications covered by reliable automation.
-- Give each remaining alert an owner, expected action, urgency, and diagnostic context; verify current Cloud Monitoring, SLO, Cloud Run failover, notification-channel, and console behavior because the details are from 2023.
+- Editorial: Start alert reviews from user-visible service outcomes, then remove resource-level notifications covered by reliable automation.
+- Editorial: Give each remaining alert an owner, expected action, urgency, and diagnostic context. The named Cloud Monitoring, SLO, Cloud Run, notification-channel, and console behavior is a 2023 product snapshot and should be checked against current documentation.
 
 ## Questions and Tensions
 
-- Symptom-based alerting reduces noise but still needs diagnostics that help responders identify underlying causes.
-- The discussion gives rules of thumb rather than thresholds for SLO burn rates, traffic seasonality, or low-volume services.
+- Editorial: Symptom-based alerting reduces noise but still needs diagnostics that help responders identify underlying causes.
+- Editorial: The discussion gives rules of thumb rather than thresholds for SLO burn rates, traffic seasonality, or low-volume services.
 
 ## Source
 

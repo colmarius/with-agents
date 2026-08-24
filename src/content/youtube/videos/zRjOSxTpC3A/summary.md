@@ -6,17 +6,17 @@ publishedAt: "2020-10-15T23:00:06Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Martin and Grant compare two 2020-era serverless execution models through a fictional wildlife-camera system. An event-triggered image-processing function illustrates Cloud Functions, while a containerized REST API illustrates Cloud Run and its revision traffic splitting and custom-domain support.
 
 ## Key Ideas
 
-- The image pipeline reacts to finalized Cloud Storage uploads, invokes the Vision API, filters detected labels, and writes matching animal sightings to Firestore without an application explicitly calling the function. [00:00:00]-[00:06:22]
+- The image pipeline reacts to finalized Cloud Storage uploads, invokes the Vision API, filters detected labels, and writes matching animal sightings to Firestore without an application explicitly calling the function. [00:01:04]-[00:06:22]
 - The presenters choose an event-triggered function for the first workload because the platform connects the storage event to the handler with less application and deployment setup. [00:01:04]-[00:04:14]
-- They choose Cloud Run for a REST API because the team wants a container, an HTTP server, revision-level traffic splitting, and a custom domain, accepting responsibility for more application setup. [00:08:30]-[00:13:48]
-- Revision traffic splitting is used to send a small percentage of requests to a new version before full promotion, separating deployment from exposure. [00:15:55]-[00:18:02]
+- They choose Cloud Run for a REST API because the team wants containers, traffic splitting, and a custom domain; the example also requires the application to configure and listen on its own HTTP server. [00:08:30]-[00:10:36]
+- In the 2020 console demonstration, revision traffic splitting sends 10% of requests to the newest revision and the rest to a previous revision. [00:15:55]-[00:18:02]
 
 ## Practical Implications
 

@@ -1,6 +1,6 @@
 ---
 title: "Serverless Expeditions"
-status: draft
+status: reviewed
 coveredVideoIds:
   - zRjOSxTpC3A
   - HbsHC8gq_NQ
@@ -22,7 +22,7 @@ coveredVideoIds:
 
 - Manifest: 182 entries, all currently available according to the committed manifest.
 - Selected: 14 reviewed sources; all 14 are captured.
-- Summaries: 14, all at `draft` and none yet `reviewed`.
+- Summaries: 14, all `reviewed`.
 - Incorporated: 14.
 - Pending selected video IDs: none.
 - Unavailable selected video IDs: none.
@@ -46,7 +46,7 @@ coveredVideoIds:
 ## Emerging Ideas
 
 - Editorial: **Separate 2025–26 AI-agent appendix — MCP tools:** The November 2025 demonstration presents MCP as a common tool-discovery and invocation layer, with Cloud Run hosting an MCP server and an ADK agent. Authentication was explicitly described as evolving, so the protocol, FastMCP behavior, ADK integration, and Cloud Run authentication pattern are point-in-time evidence, not current guarantees ([MCP tools summary](../../videos/04Gap8vWV28/summary.md); 2025-11-06, `04Gap8vWV28` [00:00:00]-[00:08:30]).
-- Editorial: **Separate 2025–26 AI-agent appendix — data agents:** The July 2026 demonstration uses ADK and a managed BigQuery MCP server, treats instructions as versioned operational context, and compares Cloud Run with Agent Engine deployment. Managed MCP availability, Agent Engine interfaces, model behavior, and the claim that table access grounds answers are all fast-moving and require independent evaluation ([BigQuery agent summary](../../videos/o3aE4tw3vrI/summary.md); 2026-07-23, `o3aE4tw3vrI` [00:00:51]-[00:07:07]).
+- Editorial: **Separate 2025–26 AI-agent appendix — data agents:** The July 2026 demonstration uses ADK and a managed BigQuery MCP server, treats instructions as versioned operational context, and compares Cloud Run with Agent Engine deployment. Managed MCP availability, Agent Engine interfaces, model behavior, and the guest's stronger claim that reading actual tables means the agent is not hallucinating are all fast-moving and require independent evaluation ([BigQuery agent summary](../../videos/o3aE4tw3vrI/summary.md); 2026-07-23, `o3aE4tw3vrI` [00:00:51]-[00:07:07]).
 - Editorial: These two videos are useful as an appendix about tools, instructions, authorization, evaluation, and deployment choices. They should not be read as evidence that AI-agent frameworks replace the collection’s stable eventing, data, security, delivery, or reliability responsibilities.
 
 ## Revisions and Tensions
@@ -54,7 +54,7 @@ coveredVideoIds:
 - Editorial: The October 2020 Functions-versus-Run comparison predates Cloud Run functions convergence. Its runtime list, registry, deployment commands, custom-domain path, and feature matrix document that episode’s moment rather than a current selection boundary (2020-10-15, `zRjOSxTpC3A` [00:00:00]-[00:19:05]; [summary](../../videos/zRjOSxTpC3A/summary.md)).
 - Editorial: The 2021 architecture, Pub/Sub, Secret Manager, and Terraform episodes show then-current commands, IAM permissions, APIs, console controls, and integrations. Their design concerns remain useful, but implementation details need current documentation (2021-04-08, `Ce93fpQrKCk` [00:01:03]-[00:04:16]; 2021-05-13, `JIE89dneaGo` [00:01:03]-[00:05:14]; 2021-06-03, `HbsHC8gq_NQ` [00:01:03]-[00:12:38]; 2021-08-12, `S2evHtbl4F8` [00:01:05]-[00:06:18]).
 - Editorial: The December 2023 Cloud Run load test reports success for one short synthetic setup, but omits request rate, latency distribution, instance count, configuration, region, concurrency, and duration. It is not a capacity guarantee for another workload (2023-12-01, `8YtsV8BNTqY` [00:00:00]-[00:06:26]; [summary](../../videos/8YtsV8BNTqY/summary.md)).
-- Editorial: The April 2022 Spanner episode’s billion-request scale, consistency, availability, processing-unit, CPU-threshold, and price statements are point-in-time product and aggregate-usage claims, not demonstrated per-application results or current commercial terms (2022-04-14, `IqAe1WRPjfU` [00:01:03]-[00:07:21]; [summary](../../videos/IqAe1WRPjfU/summary.md)).
+- Editorial: The April 2022 Spanner episode’s unqualified product-wide request-rate figure, consistency, availability, processing-unit, CPU-threshold, and price statements are point-in-time claims, not demonstrated per-application results or current commercial terms (2022-04-14, `IqAe1WRPjfU` [00:01:03]-[00:07:21]; [summary](../../videos/IqAe1WRPjfU/summary.md)).
 - Editorial: The 2024 delivery episode presents canary and experiment heuristics rather than universal rollout formulas. Cohort assignment, observation windows, session affinity, feature controls, metrics, and capacity must fit the application ([safe deployments](../../videos/ArDuQDjW-DQ/summary.md)).
 
 ## Practical Implications

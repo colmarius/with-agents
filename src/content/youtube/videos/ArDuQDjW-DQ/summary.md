@@ -6,7 +6,7 @@ publishedAt: "2024-02-20T20:30:05Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Martin hosts Steve, who says he spent more than a decade as a Google site reliability engineer across Search, Android, YouTube, and Cloud. They present four progressively more advanced practices for safer serverless deployments.
@@ -21,13 +21,13 @@ Martin hosts Steve, who says he spent more than a decade as a Google site reliab
 
 ## Practical Implications
 
-- A team can first remove manual deployment steps and rehearse rollback before adopting cohort infrastructure.
-- Release automation should preserve production checks and product-launch timing rather than treating maximum frequency as the only goal.
+- Editorial: A team can first remove manual deployment steps and rehearse rollback before adopting cohort infrastructure.
+- Editorial: Release automation should preserve production checks and product-launch timing rather than treating maximum frequency as the only goal.
 
 ## Questions and Tensions
 
-- Smaller, frequent releases reduce change size, but simultaneous component changes can complicate diagnosis.
-- Experiments offer precise exposure control but require management tooling, code integration, metrics, and capacity planning.
+- Steve argues that smaller, more frequent releases are safer, while warning that components changing at different frequencies can complicate troubleshooting. [00:03:12]-[00:04:14]
+- Editorial: Experiments offer precise exposure control but require management tooling, code integration, metrics, and capacity planning; the talk sketches these costs rather than evaluating specific implementations.
 
 ## Source
 
