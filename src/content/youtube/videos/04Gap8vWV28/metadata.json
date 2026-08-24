@@ -1,0 +1,10 @@
+{
+  "videoId": "04Gap8vWV28",
+  "attemptedAt": "2026-08-24T21:53:37.324Z",
+  "requestedLanguage": "en",
+  "availableLanguages": [],
+  "unavailable": {
+    "errorName": "YoutubeTranscriptVideoUnavailableError",
+    "detail": "Could not list available transcript languages: YoutubeTranscriptVideoUnavailableError: The video with ID \"04Gap8vWV28\" is no longer available or has been removed. Please check the video URL or ID and try again."
+  }
+}

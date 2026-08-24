@@ -1,0 +1,10 @@
+{
+  "videoId": "o3aE4tw3vrI",
+  "attemptedAt": "2026-08-24T21:53:40.288Z",
+  "requestedLanguage": "en",
+  "availableLanguages": [],
+  "unavailable": {
+    "errorName": "YoutubeTranscriptVideoUnavailableError",
+    "detail": "Could not list available transcript languages: YoutubeTranscriptVideoUnavailableError: The video with ID \"o3aE4tw3vrI\" is no longer available or has been removed. Please check the video URL or ID and try again."
+  }
+}
