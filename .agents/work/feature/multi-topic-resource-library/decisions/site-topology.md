@@ -1,7 +1,7 @@
 # Decision: Keep one origin until contexts become independent products
 
 Date: 2026-08-24
-Status: proposed
+Status: accepted
 
 ## Context
 

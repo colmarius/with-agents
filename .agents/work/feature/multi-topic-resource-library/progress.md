@@ -27,5 +27,11 @@
 
 ### Blockers
 
-- Confirm the proposed single-origin topology before restructuring the main site.
 - Approve exact ordered selections for the six broad or stale playlists after candidate curation is prepared.
+
+## 2026-08-24 — Context-hub refactor started
+
+- The user accepted the bounded single-origin refactor before public Cloud and Security onboarding.
+- Work moved to local branch `feature/multi-topic-resource-library`; local `main` again matches `origin/main`.
+- The active slice is a generic apex plus `/coding`, `/cloud`, and `/security` context hubs while preserving established Coding URLs, one PWA, and the current deployment.
+- Implementation is delegated to a high-effort orb; the coordinator retains plan ownership, integration, and combined verification.

@@ -5,6 +5,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
 ## Goals
 
 - Preserve all existing Coding with Agents URLs and behavior while removing topic-specific infrastructure from the reusable catalog path.
+- Make `with-agents.dev` an umbrella entry point with distinct Coding, Cloud, and Security context hubs on the same origin.
 - Model Cloud and Security as separate top-level catalogs with canonical resources that can be cross-listed without duplication.
 - Track complete remote manifests for all 12 playlists and produce reviewable transcript-backed selections rather than an unbounded 405-video backfill.
 - Keep source capture, editorial review, public summaries, and publication as explicit gates with deterministic checks.
@@ -31,9 +32,20 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - Existing guard behavior and curated collection invariants remain covered by tests.
   - Notes: Do not weaken the requirement that publishable resources have public summaries or that tracked source references are reviewed.
 
-- [ ] **Task 3: Configure and synchronize the 12 source playlists**
+- [ ] **Task 3: Refactor the apex and add context hubs**
+  - Scope: `src/pages/index.astro`, new context landing routes, shared header/navigation and landing components, focused tests
+  - Depends on: Tasks 1-2
+  - Acceptance:
+    - `/` states one credible umbrella promise and routes users to Coding with Agents, Cloud / GCP, and Security.
+    - `/coding`, `/cloud`, and `/security` provide context-specific landing pages and navigation without duplicating the resource catalog implementation.
+    - Existing `/posts`, `/posts/<slug>`, `/resources/coding-with-agents`, resource section, summary-query, and slide URLs remain canonical and functional.
+    - One canonical origin, web app manifest, root service worker, and deployment remain in place; no subdomain or monorepo migration is introduced.
+    - Real-browser verification covers the apex and all three context hubs at desktop and narrow viewport widths, plus one established Coding route.
+  - Notes: Refactor information architecture only. Do not move established content merely for URL symmetry or publish placeholder Cloud/Security resources.
+
+- [ ] **Task 4: Configure and synchronize the 12 source playlists**
   - Scope: `src/content/youtube/catalog.json`, `src/content/youtube/playlists/<slug>/manifest.json`, work-item impact record
-  - Depends on: approved `en` transcript/summary language and `multiSpeaker: true` (confirmed 2026-08-24)
+  - Depends on: Task 3; approved `en` transcript/summary language and `multiSpeaker: true` (confirmed 2026-08-24)
   - Acceptance:
     - All supplied playlist IDs are present once with current official titles and stable `google-cloud-*` slugs.
     - Each playlist uses exactly one explicit attribution mode; the Google Cloud Tech channel is not inferred to be an author.
@@ -41,9 +53,9 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - Additions receive the mandatory public-impact review and the exact manifest diff is inspected.
   - Notes: Sync is coordinator-owned and sequential. Workers must not concurrently edit the shared catalog or manifests.
 
-- [ ] (blocked) **Task 4: Establish capture scope and prove one thin slice per playlist**
+- [ ] (blocked) **Task 5: Establish capture scope and prove one thin slice per playlist**
   - Scope: source curation records, `src/content/youtube/videos/<video-id>/**`, playlist draft overviews
-  - Depends on: Task 3; reviewed curation for broad playlists
+  - Depends on: Task 4; reviewed curation for broad playlists
   - Acceptance:
     - Focused playlists of at most 11 coherent videos are explicitly classified as full-series candidates.
     - Every broad playlist has a human-reviewed ordered curation or an explicit full-series decision before capture.
@@ -51,18 +63,18 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - Every successful transcript receives a source-faithful draft source summary and every playlist receives a draft overview with exact coverage and pending IDs.
   - Notes: Preflight selected Serverless videos because API caption flags are unreliable. Mark obsolete or historical material (for example Pub/Sub Lite and 2019 Security Command Center UI) explicitly.
 
-- [ ] **Task 5: Parallelize bounded source backfill**
+- [ ] **Task 6: Parallelize bounded source backfill**
   - Scope: disjoint `src/content/youtube/videos/<video-id>/**` directories and one playlist overview per worker batch
-  - Depends on: Task 4
+  - Depends on: Task 5
   - Acceptance:
     - High-effort orb workers own disjoint playlist groups and receive the stabilized catalog/manifests plus exact selection IDs.
     - Each worker uses one bounded capture command per assigned batch, writes only draft editorial artifacts, packages reviewable files, and reports per-video caption/source issues.
     - The coordinator inspects transferred files, resolves global video-ID collisions, refreshes overviews from summaries, and runs combined status/audit checks.
   - Notes: Keep capture, editorial writing, and dedicated review as distinct hats. Do not ask workers to push, merge, or mutate shared Git state.
 
-- [ ] (manual-verify) **Task 6: Review and publish Cloud and Security collections**
+- [ ] (manual-verify) **Task 7: Review and publish Cloud and Security collections**
   - Scope: source summary/overview status, public resource manifests, `src/content/summaries/cloud/**`, `src/content/summaries/security/**`, resource index cards
-  - Depends on: Task 5
+  - Depends on: Task 6
   - Acceptance:
     - A dedicated reviewer checks every published claim and timestamp range against adjacent transcript context before source artifacts become `reviewed`.
     - Canonical playlist resources are created once with globally unique IDs; cloud-security playlists are cross-listed in both catalogs through membership, not duplicated records.
@@ -70,9 +82,9 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - `/resources` presents Coding with Agents, Cloud, and Security; topic pages expose the intended sections/tags and only reviewed summary content.
   - Notes: Curation approval, source-summary review, overview review, and public-content publication are separate gates.
 
-- [ ] (manual-verify) **Task 7: Run combined acceptance and browser proof**
+- [ ] (manual-verify) **Task 8: Run combined acceptance and browser proof**
   - Scope: repository-wide checks and affected rendered routes
-  - Depends on: Tasks 1-6
+  - Depends on: Tasks 1-7
   - Acceptance:
     - `npm run lint:fix`, `npm run check`, `npm test`, `npm run youtube:library -- status`, `npm run youtube:library -- audit`, `npm run content:guard`, and `npm run build` pass.
     - Source-only boundary searches find no imports from `src/content/youtube` into site code and no source-only catalog marker in `dist`.
@@ -91,6 +103,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
 ## Constraints / Decisions
 
 - Cloud and Security are separate top-level catalogs; GCP is a provider facet under Cloud.
+- The apex is an umbrella entry point for three contexts on one origin; subdomains and a multi-app monorepo are deferred until independent product behavior is demonstrated.
 - Cloud-security resources may belong to both catalogs, but one canonical record and one public summary identity own the content.
 - Google Cloud Tech is the uploader/curator for these playlists, not an inferred author.
 - The full 405-item remote corpus is tracked; the editorial/public corpus is bounded by reviewed selections.

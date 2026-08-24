@@ -1,6 +1,6 @@
 # Multi-topic resource library
 
-Status: blocked
+Status: in-progress
 Category: feature
 Updated: 2026-08-24
 
@@ -10,7 +10,7 @@ Extend the site beyond its Coding with Agents catalog so cloud/GCP and security 
 
 ## Summary
 
-The playlist research and generic topic-catalog foundation are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. English transcript/summary language, multi-speaker attribution, and the six-full/six-curated capture split are approved. Site-topology research recommends one origin with distinct context paths now and a four-app monorepo only if the contexts later become independent products.
+The playlist research and generic topic-catalog foundation are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. English transcript/summary language, multi-speaker attribution, the six-full/six-curated capture split, and the single-origin context-hub architecture are approved. The context-hub refactor is the active implementation slice before playlist onboarding.
 
 ## Artifacts
 
@@ -23,11 +23,11 @@ The playlist research and generic topic-catalog foundation are complete. Cloud a
 
 ## Next Action
 
-- Confirm the proposed single-origin site topology, then add all twelve playlist definitions to the source-only catalog and run one bounded capture before approving bulk transcript sync.
+- Integrate and verify the delegated generic apex plus `/coding`, `/cloud`, and `/security` context-hub refactor, then configure and synchronize the twelve source playlists.
 
 ## Open Questions
 
 - [x] Confirm `transcriptLanguage: en`, `summaryLanguage: en`, and `multiSpeaker: true` for all 12 playlists.
 - [x] Approve the proposed six-full/six-curated capture split.
 - [ ] Approve the exact ordered selections for the six broad or stale playlists after candidate curation is prepared.
-- [ ] Confirm the proposed single-origin hub and context-path architecture before restructuring the main site.
+- [x] Confirm the single-origin hub and context-path architecture before restructuring the main site.
