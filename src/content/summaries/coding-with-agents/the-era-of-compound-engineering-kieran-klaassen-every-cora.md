@@ -29,4 +29,6 @@ This is a practitioner demonstration and product talk, not a comparative workflo
 - **Document why a decision happened**: Code records the result, but Klaassen argues that generalization needs the reasoning behind it. He recommends using traces and postmortems to identify the decision that caused a failure and convert that explanation into changed behavior for the next run ([00:17:11–00:19:08](https://www.youtube.com/watch?v=_ehJyfHg1Vk&t=1031s)).
 - **Judge compounding by future work, not present output alone**: His closing standard is that shipping a feature should make the next feature easier rather than merely adding complexity. That requires understanding the problem before delegating and applying taste after the automated loop returns ([00:19:08–00:19:56](https://www.youtube.com/watch?v=_ehJyfHg1Vk&t=1148s)).
 
+[Explore the Compound Engineering repository on GitHub](https://github.com/EveryInc/compound-engineering-plugin).
+
 [Watch the full talk on YouTube](https://www.youtube.com/watch?v=_ehJyfHg1Vk).
