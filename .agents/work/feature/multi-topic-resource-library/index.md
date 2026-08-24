@@ -15,6 +15,7 @@ The playlist research, generic topic-catalog foundation, single-origin context h
 ## Artifacts
 
 - Research: [research.md](research.md)
+- Curation candidates: [curation.md](curation.md)
 - PRD: none
 - Plan: [plan.md](plan.md)
 - Progress: [progress.md](progress.md)
@@ -23,7 +24,7 @@ The playlist research, generic topic-catalog foundation, single-origin context h
 
 ## Next Action
 
-- Prepare exact ordered candidate selections for Serverless Expeditions, Google Cloud Essentials, Get Started with Google Cloud, Cloud Bytes, Beyond Your Bill, and Architecting with Google Cloud for user approval before capture.
+- Ask the user to approve or adjust the six exact ordered selections in [curation.md](curation.md). Continue the already-approved full-series backfill independently; do not capture any broad playlist until its selection is reviewed.
 
 ## Open Questions
 
