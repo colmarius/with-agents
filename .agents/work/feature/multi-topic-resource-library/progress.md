@@ -17,12 +17,15 @@
 - Source-only boundary check — no source-only catalog marker was emitted to `dist`.
 - Real-browser checks — `/resources` listed all three topics; `/resources/cloud` and `/resources/security/cloud-security` rendered their catalog-specific navigation and preparation states; `/resources/coding-with-agents` retained 49 resources, filtering, and the summary modal with URL state. No page errors were reported.
 
+## 2026-08-24 — Capture metadata approved and site topology researched
+
+- The user approved `transcriptLanguage: en`, `summaryLanguage: en`, and `multiSpeaker: true` for all twelve playlists.
+- The user approved full capture for the six focused collections and reviewed curation for the six broad or stale collections.
+- Local and external research plus Oracle review recommend retaining one Astro app and one origin, giving the apex a generic umbrella landing page, and introducing distinct `/coding`, `/cloud`, and `/security` context landing pages without moving established content URLs immediately.
+- A four-app Astro monorepo on separate subdomains remains the correct later architecture only if the contexts develop independent audiences, navigation, release ownership, or PWA needs. GitHub Pages cannot directly deploy four sites from this one repository; Cloudflare Pages or Vercel can.
+- No site-topology or deployment changes were made during this research step.
+
 ### Blockers
 
-The source-library contract requires explicit values rather than inferred metadata. Before adding or syncing the twelve playlists, confirm that all use:
-
-- `transcriptLanguage: en`
-- `summaryLanguage: en`
-- `multiSpeaker: true`
-
-The six broad or stale playlists also need human approval of exact curation before selected captures can be marked reviewed.
+- Confirm the proposed single-origin topology before restructuring the main site.
+- Approve exact ordered selections for the six broad or stale playlists after candidate curation is prepared.

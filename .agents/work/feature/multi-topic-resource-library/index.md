@@ -10,7 +10,7 @@ Extend the site beyond its Coding with Agents catalog so cloud/GCP and security 
 
 ## Summary
 
-The playlist research and generic topic-catalog foundation are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. Source capture is waiting on explicit language and multi-speaker confirmation; broad playlist curation is waiting on human approval.
+The playlist research and generic topic-catalog foundation are complete. Cloud and Security now have independent public routes, existing Coding with Agents behavior remains compatible, and public-resource validation is topic-agnostic. English transcript/summary language, multi-speaker attribution, and the six-full/six-curated capture split are approved. Site-topology research recommends one origin with distinct context paths now and a four-app monorepo only if the contexts later become independent products.
 
 ## Artifacts
 
@@ -18,14 +18,16 @@ The playlist research and generic topic-catalog foundation are complete. Cloud a
 - PRD: none
 - Plan: [plan.md](plan.md)
 - Progress: [progress.md](progress.md)
-- Decisions: none
+- Decisions: [decisions/site-topology.md](decisions/site-topology.md)
 - Handoffs: none
 
 ## Next Action
 
-- Obtain the language and speaker-attribution confirmation, add all twelve playlist definitions to the source-only catalog, and run one bounded capture before approving bulk transcript sync.
+- Confirm the proposed single-origin site topology, then add all twelve playlist definitions to the source-only catalog and run one bounded capture before approving bulk transcript sync.
 
 ## Open Questions
 
-- [ ] Confirm `transcriptLanguage: en`, `summaryLanguage: en`, and `multiSpeaker: true` for all 12 playlists before editing `src/content/youtube/catalog.json`.
-- [ ] Approve the proposed full-capture versus curated scope, including exact selections for the six broad or stale playlists.
+- [x] Confirm `transcriptLanguage: en`, `summaryLanguage: en`, and `multiSpeaker: true` for all 12 playlists.
+- [x] Approve the proposed six-full/six-curated capture split.
+- [ ] Approve the exact ordered selections for the six broad or stale playlists after candidate curation is prepared.
+- [ ] Confirm the proposed single-origin hub and context-path architecture before restructuring the main site.

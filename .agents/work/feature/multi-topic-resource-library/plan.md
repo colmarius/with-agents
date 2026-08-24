@@ -31,9 +31,9 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - Existing guard behavior and curated collection invariants remain covered by tests.
   - Notes: Do not weaken the requirement that publishable resources have public summaries or that tracked source references are reviewed.
 
-- [ ] (blocked) **Task 3: Configure and synchronize the 12 source playlists**
+- [ ] **Task 3: Configure and synchronize the 12 source playlists**
   - Scope: `src/content/youtube/catalog.json`, `src/content/youtube/playlists/<slug>/manifest.json`, work-item impact record
-  - Depends on: explicit confirmation of `en` transcript/summary language and `multiSpeaker: true`
+  - Depends on: approved `en` transcript/summary language and `multiSpeaker: true` (confirmed 2026-08-24)
   - Acceptance:
     - All supplied playlist IDs are present once with current official titles and stable `google-cloud-*` slugs.
     - Each playlist uses exactly one explicit attribution mode; the Google Cloud Tech channel is not inferred to be an author.
