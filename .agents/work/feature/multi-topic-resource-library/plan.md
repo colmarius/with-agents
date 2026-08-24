@@ -72,7 +72,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - The coordinator inspects transferred files, resolves global video-ID collisions, refreshes overviews from summaries, and runs combined status/audit checks.
   - Notes: Keep capture, editorial writing, and dedicated review as distinct hats. Do not ask workers to push, merge, or mutate shared Git state.
 
-- [ ] (manual-verify) **Task 7: Review and publish Cloud and Security collections**
+- [x] (manual-verify) **Task 7: Review and publish Cloud and Security collections**
   - Scope: source summary/overview status, public resource manifests, `src/content/summaries/cloud/**`, `src/content/summaries/security/**`, resource index cards
   - Depends on: Task 6
   - Acceptance:
@@ -82,7 +82,7 @@ Generalize the public resource catalog for independent Cloud and Security topics
     - `/resources` presents Coding with Agents, Cloud, and Security; topic pages expose the intended sections/tags and only reviewed summary content.
   - Notes: Curation approval, source-summary review, overview review, and public-content publication are separate gates.
 
-- [ ] (manual-verify) **Task 8: Run combined acceptance and browser proof**
+- [x] (manual-verify) **Task 8: Run combined acceptance and browser proof**
   - Scope: repository-wide checks and affected rendered routes
   - Depends on: Tasks 1-7
   - Acceptance:

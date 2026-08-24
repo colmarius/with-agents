@@ -173,3 +173,21 @@
 ### Next action
 
 - Integrate and inspect all seven public-summary mboxes, then run the public-content guard, combined repository checks, and representative browser proof.
+
+## 2026-08-24 — Publication and final acceptance complete
+
+- Integrated and inspected all seven public-summary batches. Exactly 126 public child summaries now match the reviewed selections, order, titles, dates, resource IDs, canonical video URLs, and transcript timestamp anchors for the 12 Google Cloud collections.
+- Published one canonical resource for each playlist as IDs 57–68. Cloud exposes all 12; Security cross-lists the two security collections without duplicating their records or summaries.
+- Preserved complete source manifests while excluding the retired Pub/Sub Lite episode and non-substantive Engineering for Reliability trailer from the public learning sequences.
+
+### Verification
+
+- `npm run lint:fix` — clean.
+- `npm test` — 88 tests passed.
+- `npm run youtube:library -- status` — all Google Cloud selections reviewed with current overviews.
+- `npm run youtube:library -- audit` — passed for 713 tracked videos, 723 manifest occurrences, 308 transcripts, 308 summaries, 21 playlists, and 1 author; only the intentional antirez duplicate notice remains.
+- `npm run content:guard` — passed for 713 tracked videos, 21 playlists, 230 public references, 61 resources, and 226 public summaries.
+- `npm run check` — 0 errors, warnings, or hints.
+- `npm run build` — 44 pages built and 344 PWA files precached.
+- Exact 126-item public/source mapping, source-only import and generated-output boundaries, and `git diff --check` — passed.
+- Real-browser acceptance — `/resources` showed 49 Coding, 12 Cloud, and 2 Security resources; `/resources/cloud` rendered all 12 and supported search and topic filtering; `/resources/security` rendered the two canonical cross-list members. The Serverless modal exposed all 14 ordered summaries, updated query state, and rendered the first and final items with canonical links and the final fast-moving AI caveat. At 390×844, the catalog, topic dropdown, and 14-option modal had no horizontal overflow, modal body scrolling locked correctly, and no browser errors were reported. A full mobile catalog capture is retained at `.amp/in/artifacts/google-cloud-resources-mobile-full.png`.
