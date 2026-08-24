@@ -6,7 +6,7 @@ publishedAt: "2022-03-22T17:00:14Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter demonstrates a 2022 synchronous Speech-to-Text REST request with cURL, using a FLAC object in Cloud Storage and reading the returned transcript and confidence value.

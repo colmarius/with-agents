@@ -6,7 +6,7 @@ publishedAt: "2020-12-24T00:00:08Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter demonstrates Cloud Storage Object Versioning with the legacy `gsutil` CLI, including enabling or disabling the feature, checking its state, listing versions, and addressing an older generation.

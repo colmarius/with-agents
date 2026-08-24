@@ -1,6 +1,6 @@
 ---
 title: "Google Cloud Essentials"
-status: draft
+status: reviewed
 coveredVideoIds:
   - kzKFuHk8ovk
   - jtPtSVSTb9Y
@@ -15,9 +15,9 @@ coveredVideoIds:
 ## Coverage
 
 - Manifest: 24 entries; 24 available and 0 unavailable/private/deleted.
-- Selected: 8 reviewed curation candidates; 16 unselected entries remain manifest-tracked only.
+- Selected: 8 videos in the reviewed curation; 16 unselected entries remain manifest-tracked only.
 - Captured: 8; unavailable-recorded: 0.
-- Summaries: 8 draft and 0 reviewed.
+- Summaries: 8 reviewed and 0 draft.
 - Incorporated: 8.
 - Pending selected video IDs: none.
 
@@ -46,7 +46,7 @@ coveredVideoIds:
 - Editorial: GCP and Firebase branding and console workflows have evolved; shared-project concepts remain useful, but setup, default buckets, deletion controls, IAM, and SDK behavior require current verification ([Firebase projects](../../videos/xbmYmgBEj4o/summary.md)).
 - Editorial: The container episode's Anthos and Google Container Registry paths reflect 2020 boundaries; current GKE modes, Cloud Run capabilities, Artifact Registry guidance, and deployment support must replace literal instructions ([containers](../../videos/jh0fPT-AWwM/summary.md)).
 - Editorial: Cloud Functions and Cloud Run were presented as more separate products than later Cloud Run functions convergence implies, so old serverless recommendations cannot be applied verbatim ([compute](../../videos/jtPtSVSTb9Y/summary.md), [Firebase projects](../../videos/xbmYmgBEj4o/summary.md), [error reporting](../../videos/GANi9eRxhHs/summary.md)).
-- Editorial: Logs Explorer, routing, Error Reporting integrations, notification paths, retention, and pricing belong to a changing observability surface; the 2020 details are orientation only ([logging](../../videos/gyDp-Cl_MdA/summary.md), [error reporting](../../videos/GANi9eRxhHs/summary.md)).
+- Editorial: Logs Explorer, routing, Error Reporting integrations, notification paths, retention, and pricing belong to a changing observability surface; the 2020 details are orientation only, and the logging video's auto-captions leave its free-ingestion quantity unresolved ([logging](../../videos/gyDp-Cl_MdA/summary.md), [error reporting](../../videos/GANi9eRxhHs/summary.md)).
 
 ## Practical Implications
 

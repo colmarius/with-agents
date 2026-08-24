@@ -1,6 +1,6 @@
 ---
 title: "Get Started with Google Cloud"
-status: draft
+status: reviewed
 coveredVideoIds:
   - RiZYhr9WTtQ
   - NPs_-Y5nFgE
@@ -21,7 +21,7 @@ coveredVideoIds:
 - Manifest: 41 entries, all currently available.
 - Selected: 12 reviewed curation entries; 29 manifest entries are unselected.
 - Captured: 12 selected transcripts.
-- Summaries: 12, all draft.
+- Summaries: 12, all reviewed.
 - Incorporated: 12.
 - Pending selected video IDs: none.
 - Unavailable selected video IDs: none.

@@ -6,7 +6,7 @@ publishedAt: "2020-09-13T16:00:10Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter—the transcript states neither a name nor an affiliation—contrasts an IDE-centered inner loop with a managed, repeatable Cloud Build pipeline. The separation between developer feedback and automated builds is durable; the 2020 plugins, commands, integrations, registries, and deployment targets require current documentation.

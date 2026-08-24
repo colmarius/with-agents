@@ -6,7 +6,7 @@ publishedAt: "2022-02-15T17:00:30Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter explains Google Cloud quickstarts as short, task-focused introductions to products. The episode distinguishes console, command-line, and client-library paths, then walks through the structure of a Vision API quickstart.

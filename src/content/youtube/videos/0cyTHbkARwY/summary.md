@@ -6,7 +6,7 @@ publishedAt: "2020-10-21T23:00:00Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter demonstrates a 2020 BigQuery federated-query setup for reading MySQL or PostgreSQL data in Cloud SQL through a connection resource and the `EXTERNAL_QUERY` function.

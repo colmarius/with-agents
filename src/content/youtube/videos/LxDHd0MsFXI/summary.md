@@ -6,7 +6,7 @@ publishedAt: "2021-03-24T15:00:14Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter demonstrates a 2021 Node.js quickstart for the product then called the Data Loss Prevention API or Cloud DLP, now named Sensitive Data Protection. Despite the video title, the shown sample inspects text and identifies sensitive findings; it does not demonstrate redaction.

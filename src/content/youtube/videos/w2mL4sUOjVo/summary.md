@@ -6,7 +6,7 @@ publishedAt: "2022-07-22T16:00:42Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Ryan, whose affiliation is not stated in the transcript, surveys object storage, relational and document databases, analytics, and large-scale data systems. The durable lesson is to choose from data shape and access requirements; the 2022 commands, console steps, product claims, and limits are historical and need current documentation.

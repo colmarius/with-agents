@@ -6,7 +6,7 @@ publishedAt: "2018-08-20T18:45:37Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter demonstrates a 2018 Compute Engine flow for creating a blank standard Persistent Disk, attaching it to a VM, formatting it, and mounting it from an SSH session.

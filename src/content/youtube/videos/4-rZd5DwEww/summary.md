@@ -6,7 +6,7 @@ publishedAt: "2020-08-26T23:00:03Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter uses a 2020 Google Cloud console to locate a public American Community Survey data set, inspect its metadata and schema, run a sample BigQuery query, and point to a no-code visualization path.

@@ -6,7 +6,7 @@ publishedAt: "2020-08-07T16:03:23Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter—the transcript states neither a name nor an affiliation—explains a 2020 Error Reporting workflow that groups application failures, tracks their lifecycle, and sends notifications. The durable idea is to turn repeated stack traces into triage units; the supported runtimes, setup, UI, and notification paths require current documentation.

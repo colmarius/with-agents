@@ -6,7 +6,7 @@ publishedAt: "2018-08-07T16:21:55Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter demonstrates the 2018 Google Cloud console flow for creating one auto mode VPC network and one custom mode VPC network with regional subnets.

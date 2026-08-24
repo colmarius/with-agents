@@ -6,7 +6,7 @@ publishedAt: "2020-08-12T23:00:01Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter explains a 2020 BigQuery cost-control technique: custom daily query quotas at project and per-user scope.
@@ -14,7 +14,7 @@ An unnamed presenter explains a 2020 BigQuery cost-control technique: custom dai
 ## Key Ideas
 
 - A project-level custom quota limits aggregate query data processed by users in that project, while a user-level quota applies separately to each user or service account. [00:00:01]-[00:01:06]
-- When both quota types apply, usage counts against both and the stricter limit governs the query. [00:00:01]
+- When both quota types apply, usage counts against both and the stricter limit governs the query. [00:00:01]-[00:01:06]
 - The demonstration filters BigQuery API quotas, enters limits in tebibytes, and explains that BigQuery returns an error after a daily limit is exceeded. [00:01:06]
 
 ## Practical Implications

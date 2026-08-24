@@ -6,7 +6,7 @@ publishedAt: "2019-05-20T17:28:40Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: caption
-status: draft
+status: reviewed
 ---
 
 An unnamed speaker demonstrates the basic IAM relationship among a principal, a role, and resulting access by granting and then removing the Storage Admin role in a 2019 Google Cloud project.

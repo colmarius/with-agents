@@ -6,7 +6,7 @@ publishedAt: "2020-01-04T17:00:09Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter—the transcript states neither a name nor an affiliation—compares three 2020 container runtime models: GKE, Cloud Run, and Compute Engine. The durable distinction is how much infrastructure and orchestration control each model exposes; the Anthos, registry, UI, and product-boundary details are historical.

@@ -6,7 +6,7 @@ publishedAt: "2020-01-22T00:00:07Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter—the transcript states neither a name nor an affiliation—explains the shared project, billing, and Cloud Storage substrate behind Firebase and the then-named GCP. The 2020 console steps and platform branding are historical, but the distinction between shared resources and different developer-facing controls remains useful.

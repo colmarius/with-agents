@@ -6,7 +6,7 @@ publishedAt: "2022-07-29T16:00:29Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 Ryan, whose affiliation is not stated in the transcript, organizes Google Cloud compute services along a spectrum from managed platforms to customizable infrastructure. The 2022 service map is useful for identifying the operational control a workload needs, but its product boundaries and pricing descriptions require current documentation.

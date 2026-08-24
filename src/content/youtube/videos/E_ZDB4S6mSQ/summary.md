@@ -6,7 +6,7 @@ publishedAt: "2021-03-31T23:00:05Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter creates, deploys, and executes a 2021 Google Cloud Workflows example that combines a deployed Cloud Function with the Wikipedia API.

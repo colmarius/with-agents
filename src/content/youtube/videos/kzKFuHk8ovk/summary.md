@@ -6,10 +6,10 @@ publishedAt: "2022-04-09T23:00:14Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
-Ryan gives a short 2022 orientation to cloud computing and Google Cloud. The episode introduces managed infrastructure through a seasonal retail example, then surveys compute, storage, databases, and machine-learning services before combining several of them in a fictional application.
+Ryan, whose affiliation is not stated in the transcript, gives a short 2022 orientation to cloud computing and Google Cloud. The episode introduces managed infrastructure through a seasonal retail example, then surveys compute, storage, databases, and machine-learning services before combining several of them in a fictional application.
 
 ## Key Ideas
 

@@ -6,7 +6,7 @@ publishedAt: "2019-10-06T16:00:05Z"
 sourceLanguage: en
 summaryLanguage: en
 captionKind: auto-generated
-status: draft
+status: reviewed
 ---
 
 An unnamed presenter deploys a sample App Engine application and demonstrates a 2019 Identity-Aware Proxy setup that permits an authorized account while denying another account.
