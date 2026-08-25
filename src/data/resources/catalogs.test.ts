@@ -49,10 +49,10 @@ test('registry exposes independent coding, cloud, and security catalogs', () => 
     resourceCatalogs.map((entry) => entry.slug),
     ['coding-with-agents', 'cloud', 'security'],
   );
-  assert.equal(resources.length, 62);
+  assert.equal(resources.length, 63);
   assert.equal(
     getCatalogResources(requireCatalog('coding-with-agents')).length,
-    50,
+    51,
   );
   assert.equal(getCatalogResources(requireCatalog('cloud')).length, 12);
   assert.deepEqual(
