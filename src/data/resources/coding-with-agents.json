@@ -1,5 +1,23 @@
 [
   {
+    "id": 69,
+    "primarySection": "agent-systems",
+    "title": "Every Repo Is a Software Factory Now | Don Syme, GitHub",
+    "subtitle": "Continuous AI, bounded repository automation, cost controls, and evidence-rich review",
+    "url": "https://www.youtube.com/watch?v=quVzmAb9oqs",
+    "description": "GitHub Principal Researcher Don Syme defines continuous AI as recurring, shared agent work that operates beside deterministic CI/CD. He explains GitHub Agentic Workflows, bounded repository context, permission and security controls, cross-repository limits, scheduled cost management, concurrent model evaluation, and quality gates that equip human reviewers with evidence. The implementation and operational claims are first-party reports about a public-preview GitHub product, without an independent security assessment or comparative evaluation data.",
+    "type": "video",
+    "source": "AI Native Dev",
+    "date": "2026-08-18",
+    "duration": "1h 4m",
+    "topics": [
+      "tools-harnesses",
+      "safety-permissions",
+      "models-evaluation",
+      "review-verification"
+    ]
+  },
+  {
     "id": 56,
     "primarySection": "workflows",
     "title": "The Era of Compound Engineering",
