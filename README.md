@@ -1,6 +1,6 @@
 # with-agents
 
-A focused Astro site for practical coding-agent workflows: articles, generated slides, curated media, and summaries for developers learning to work effectively with agents.
+A multi-context Astro site for practical engineering: articles, generated slides, and source-backed resource collections for coding agents, cloud/GCP, and security.
 
 **Live site target**: [with-agents.dev](https://with-agents.dev)
 
@@ -28,8 +28,8 @@ npm run preview  # Preview build locally
 ```text
 src/
 ├── components/    # Astro and React components
-├── content/       # Posts and resource summaries
-├── data/          # Resource manifests
+├── content/       # Posts, public summaries, and source-only YouTube evidence
+├── data/          # Canonical resource manifests and catalog registry
 ├── hooks/         # React hooks
 ├── layouts/       # Astro layouts
 ├── pages/         # Routes and API endpoints
