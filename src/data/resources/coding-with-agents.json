@@ -1,5 +1,18 @@
 [
   {
+    "id": 73,
+    "primarySection": "teams-ecosystem",
+    "title": "Software Development Now Costs Less Than Minimum Wage",
+    "subtitle": "Geoffrey Huntley on model-first companies, agent literacy, and the changing economics of implementation",
+    "url": "https://www.youtube.com/watch?v=7Pkwv353DeI",
+    "description": "Geoffrey Huntley argues that cheap model inference and persistent agent loops are lowering the cost of software implementation and will favor lean, model-first companies. He recommends deliberate practice, building a small agent to understand the loop, modernizing workflows before adoption, and shifting judgment toward what should be built. The headline $10.42-per-hour figure excludes workload, quality, supervision, and maintenance details; the token spend, productivity, staffing, and market claims are first-party anecdotes or forecasts rather than measured comparisons.",
+    "type": "video",
+    "source": "Geoffrey Huntley",
+    "date": "2026-05-05",
+    "duration": "51m",
+    "topics": ["business-adoption", "collaboration-teams", "tools-harnesses"]
+  },
+  {
     "id": 72,
     "primarySection": "reliability",
     "title": "Beyond Code Coverage: Functionality Testing with Playwright MCP",
