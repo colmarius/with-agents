@@ -1,5 +1,23 @@
 [
   {
+    "id": 71,
+    "primarySection": "reliability",
+    "title": "Creator of TypeScript: 10x Faster TypeScript, Why AI Won't Replace SWEs | Anders Hejlsberg",
+    "subtitle": "Anders Hejlsberg on TypeScript's Go port, deterministic AI assistance, compiler feedback, and software responsibility",
+    "url": "https://www.youtube.com/watch?v=cywK3XYYJ2o",
+    "description": "Ryan Peterman interviews Anders Hejlsberg about TypeScript's compatibility-preserving port from TypeScript to Go, the role of shared-memory concurrency in its reported 10x speedup, and why faster compilers matter to coding-agent feedback loops. Hejlsberg recommends using AI to create deterministic transformation tools rather than trusting one-off generated answers, argues that typed incumbent languages benefit agents, and keeps responsibility with engineers who understand and review what they ship. The performance, adoption, and capability claims are first-party reports and practitioner judgments rather than independently demonstrated comparisons.",
+    "type": "video",
+    "source": "Ryan Peterman",
+    "date": "2026-08-17",
+    "duration": "1h 6m",
+    "topics": [
+      "architecture-maintainability",
+      "tools-harnesses",
+      "review-verification",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 70,
     "primarySection": "teams-ecosystem",
     "title": "The REWORK Podcast — selected coding-agent conversations",
