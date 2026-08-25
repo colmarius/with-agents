@@ -2,6 +2,9 @@
 title: "Competing with giants, the end of SaaS & other listener questions"
 resourceId: 70
 date: "2026-08-19"
+collection: "rework-coding-with-agents"
+order: 1
+videoId: "wpdi1bp-EbU"
 ---
 
 REWORK host Kimberly Rhodes asks 37signals co-founders Jason Fried and David Heinemeier Hansson whether agent-built custom software will end SaaS. They see the near-term threat as uneven: expensive, disliked enterprise deployments are exposed, while most low- and mid-market customers still pay vendors to own the maintenance, operations, and product decisions.

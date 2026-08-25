@@ -389,6 +389,26 @@
           "-4Ci-zs2bwE"
         ]
       }
+    },
+    {
+      "id": "PLwo5Hcps5IkBBAv1-_HPOMvC4Rn1p8lsQ",
+      "slug": "rework-coding-with-agents",
+      "title": "The REWORK Podcast",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "wpdi1bp-EbU",
+          "pdPXbXE5xw0",
+          "otvGsbeOdfc",
+          "oE1Y_6W4Mj8",
+          "EwFT3h55oOc",
+          "AkeTmfUW4_U",
+          "GifToS0FTII"
+        ]
+      }
     }
   ],
   "relationships": [
