@@ -5,6 +5,11 @@
       "id": "antirez",
       "slug": "antirez",
       "displayName": "Salvatore Sanfilippo"
+    },
+    {
+      "id": "matt-pocock",
+      "slug": "matt-pocock",
+      "displayName": "Matt Pocock"
     }
   ],
   "playlists": [
@@ -21,6 +26,24 @@
       "title": "Coding with AI",
       "transcriptLanguage": "it",
       "summaryLanguage": "en"
+    },
+    {
+      "id": "UUswG6FSbgZjbWtdf_hMLaow",
+      "slug": "matt-pocock-agent-skills",
+      "title": "Matt Pocock: Agent Skills for Real Engineers",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "UzMNBN6xLLA",
+          "mh5XZ-L5SFQ",
+          "M6mYodf0dJM",
+          "n0VhIVtviC0",
+          "F3lL98Pj90o",
+          "gaDdrDdczO4"
+        ]
+      }
     },
     {
       "id": "PLcfpQ4tk2k0UwfWS-f6KDInzHc3um4naZ",
@@ -418,6 +441,10 @@
         "PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
         "PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA"
       ]
+    },
+    {
+      "authorId": "matt-pocock",
+      "playlistIds": ["UUswG6FSbgZjbWtdf_hMLaow"]
     }
   ]
 }

@@ -1,0 +1,2397 @@
+{
+  "playlistId": "UUswG6FSbgZjbWtdf_hMLaow",
+  "entries": [
+    {
+      "videoId": "zcLPGC-tvgk",
+      "position": 0,
+      "title": "LIVE: Uncle Bob on Software Fundamentals in the Age of AI",
+      "publishedAt": "2026-08-19T16:21:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "gaDdrDdczO4",
+      "position": 1,
+      "title": "New Skills! v1.2 brings /wait-what, /writing-for-agents, and fixes /grill-me",
+      "publishedAt": "2026-08-05T15:28:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "F3lL98Pj90o",
+      "position": 2,
+      "title": "/wayfinder: Nothing is too big to plan anymore",
+      "publishedAt": "2026-07-30T10:17:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "n0VhIVtviC0",
+      "position": 3,
+      "title": "Don't waste time on specs: /prototype instead",
+      "publishedAt": "2026-07-23T14:00:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0l7zOp260yc",
+      "position": 4,
+      "title": "There is no such thing as greenfield",
+      "publishedAt": "2026-07-21T10:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5hYsBUMmr-I",
+      "position": 5,
+      "title": "Using /grill-me for interviews?!",
+      "publishedAt": "2026-07-20T10:26:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sOd7svdu_1I",
+      "position": 6,
+      "title": "What is the dumb zone?",
+      "publishedAt": "2026-07-20T10:17:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Yn8h5Ip-L9c",
+      "position": 7,
+      "title": "Do you even need human review?",
+      "publishedAt": "2026-07-20T10:11:55Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "tLyfDIt9wHg",
+      "position": 8,
+      "title": "This change makes /grill-me SO MUCH BETTER",
+      "publishedAt": "2026-07-17T11:20:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "32LyZyFQhCQ",
+      "position": 9,
+      "title": "Framework Hell, Tutorial Hell... now Skill Hell",
+      "publishedAt": "2026-07-17T10:34:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "A0scuiiGBC4",
+      "position": 10,
+      "title": "Kill your MEMORY.md",
+      "publishedAt": "2026-07-17T10:10:42Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eEjBhVI9Qok",
+      "position": 11,
+      "title": "Do software fundamentals still matter?",
+      "publishedAt": "2026-07-16T12:14:54Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "glaIO6OYh74",
+      "position": 12,
+      "title": "My /teach skill is still insane",
+      "publishedAt": "2026-07-16T11:11:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "oLx4yCbeklQ",
+      "position": 13,
+      "title": "Claude Code's system tools are SO BLOATED",
+      "publishedAt": "2026-07-16T10:20:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "M6mYodf0dJM",
+      "position": 14,
+      "title": "mattpocock/skills: A complete AI Coding workflow, end-to-end",
+      "publishedAt": "2026-07-16T09:32:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "U832hShMVnc",
+      "position": 15,
+      "title": "I'm thinking about changing my most popular skill",
+      "publishedAt": "2026-07-16T08:16:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "t34UuBxB2YQ",
+      "position": 16,
+      "title": "My #1 book recommendation for strategic programming",
+      "publishedAt": "2026-07-16T08:06:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Fj8DKMbdIzU",
+      "position": 17,
+      "title": "Delete (most of) your docs",
+      "publishedAt": "2026-07-16T08:04:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "e-pFrQ_Rh0s",
+      "position": 18,
+      "title": "AI Coding is exhausting",
+      "publishedAt": "2026-07-15T14:50:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "SF1Ab0Y-9BY",
+      "position": 19,
+      "title": "Don't know which model to choose? *taps the graph*",
+      "publishedAt": "2026-07-15T12:49:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CE57AICfAew",
+      "position": 20,
+      "title": "A dictionary of AI Coding",
+      "publishedAt": "2026-07-15T11:40:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "H-JHumbpORI",
+      "position": 21,
+      "title": "My agent hallucinated - what do I do?",
+      "publishedAt": "2026-07-15T11:34:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "iQb3F9UzBR4",
+      "position": 22,
+      "title": "Your effort level is TOO DAMN HIGH",
+      "publishedAt": "2026-07-15T10:20:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8WLi98SEdeU",
+      "position": 23,
+      "title": "/handoff + /teach is awesome for learning while coding",
+      "publishedAt": "2026-07-15T10:15:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "251hsWgoTPM",
+      "position": 24,
+      "title": "LIVE: The /wayfinder Demo",
+      "publishedAt": "2026-07-13T16:25:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "A8mokin_YOs",
+      "position": 25,
+      "title": "New Skills! v1.1 brings /wayfinder, /research, /implement, /to-spec, /to-tickets",
+      "publishedAt": "2026-07-08T14:26:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "s5T5oQJcJ6U",
+      "position": 26,
+      "title": "Learn anything with the /teach skill",
+      "publishedAt": "2026-06-08T17:07:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "mh5XZ-L5SFQ",
+      "position": 27,
+      "title": "Can Cursor's HARDCORE Review Skill Stop The Slop?",
+      "publishedAt": "2026-05-28T14:00:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "UzMNBN6xLLA",
+      "position": 28,
+      "title": "9 Things People Get Wrong With My /grill-* skills",
+      "publishedAt": "2026-05-25T13:22:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dtAJ2dOd3ko",
+      "position": 29,
+      "title": "/handoff is my new favourite skill",
+      "publishedAt": "2026-05-21T10:32:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6BB6exR8Zd8",
+      "position": 30,
+      "title": "I stopped using /grill-me for coding. Here’s what I use instead:",
+      "publishedAt": "2026-05-14T14:22:56Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "lNOQaakmyDU",
+      "position": 31,
+      "title": "Anthropic's \"dedicated monthly credit\" is actually a huge cut",
+      "publishedAt": "2026-05-13T20:12:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "DNqsMXH6Eog",
+      "position": 32,
+      "title": "New Skills! /handoff, /prototype, /review and /writing-* | Skills Changelog",
+      "publishedAt": "2026-05-12T09:56:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "MzWIIlx0Gpc",
+      "position": 33,
+      "title": "Burn through the backlog from hell with /triage",
+      "publishedAt": "2026-05-07T15:00:43Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "E5-QK3CDVQM",
+      "position": 34,
+      "title": "I Open-Sourced My Own AFK Software Factory",
+      "publishedAt": "2026-04-30T13:28:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3MP8D-mdheA",
+      "position": 35,
+      "title": "How To De-Slop A Codebase Ruined By AI (with one skill)",
+      "publishedAt": "2026-04-29T15:09:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "K-mA3MZ_EzU",
+      "position": 36,
+      "title": "LIVE: Watch me build a brand-new project from scratch",
+      "publishedAt": "2026-04-17T16:13:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9VNG0h4pLh0",
+      "position": 37,
+      "title": "Never Trust An LLM",
+      "publishedAt": "2026-03-27T18:02:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "llwTBpPqo9A",
+      "position": 38,
+      "title": "Claude Code tried to improve /init... Is it any better?",
+      "publishedAt": "2026-03-23T15:02:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hX7yG1KVYhI",
+      "position": 39,
+      "title": "Building a REAL feature with Claude Code: every step explained",
+      "publishedAt": "2026-03-18T14:16:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "EJyuu6zlQCg",
+      "position": 40,
+      "title": "5 Claude Code skills I use every single day",
+      "publishedAt": "2026-03-16T16:01:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Ah9p7v7nJWg",
+      "position": 41,
+      "title": "The 7 phases of AI-driven development",
+      "publishedAt": "2026-03-03T22:47:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "uC44zFz7JSM",
+      "position": 42,
+      "title": "Your codebase is NOT ready for AI (here's how to fix it)",
+      "publishedAt": "2026-02-26T09:43:59Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3CSi8QAoN-s",
+      "position": 43,
+      "title": "How to actually force Claude Code to use the right CLI (don't use CLAUDE.md)",
+      "publishedAt": "2026-02-25T10:48:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9tmsq-Gvx6g",
+      "position": 44,
+      "title": "Never Run claude /init",
+      "publishedAt": "2026-02-24T09:32:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hYZdIwFIy-c",
+      "position": 45,
+      "title": "Red Green Refactor is OP With Claude Code",
+      "publishedAt": "2026-02-23T15:58:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "yv8VZpov8bk",
+      "position": 46,
+      "title": "I'm using claude --worktree for everything now",
+      "publishedAt": "2026-02-21T16:17:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NKu3T9FUjmU",
+      "position": 47,
+      "title": "LIVE: Chat with AI Coding Wizard Dex Horthy",
+      "publishedAt": "2026-01-17T05:20:46Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WNx-s-RxVxk",
+      "position": 48,
+      "title": "I was an AI skeptic. Then I tried plan mode",
+      "publishedAt": "2026-01-15T16:31:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pSritFeoYFo",
+      "position": 49,
+      "title": "Frontend is HARDER for AI than backend (here's how to fix it)",
+      "publishedAt": "2026-01-12T15:11:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_IK18goX4X8",
+      "position": 50,
+      "title": "Ship working code while you sleep with the Ralph Wiggum technique",
+      "publishedAt": "2026-01-05T15:28:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kZ-zzHVUrO4",
+      "position": 51,
+      "title": "How I use Claude Code for real engineering",
+      "publishedAt": "2025-10-27T15:31:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YCrj0E_P6ls",
+      "position": 52,
+      "title": "AI SDK 6 is SWEET",
+      "publishedAt": "2025-10-24T10:27:26Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-uW5-TaVXu4",
+      "position": 53,
+      "title": "Most devs don’t understand how context windows work",
+      "publishedAt": "2025-10-22T11:27:43Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AtYtuVTZCQU",
+      "position": 54,
+      "title": "Most devs don't understand what agents are",
+      "publishedAt": "2025-10-08T15:10:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "I12Mf8KBT1I",
+      "position": 55,
+      "title": "Make Claude Code give you answers, not essays",
+      "publishedAt": "2025-10-08T13:01:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Mhy_n83V5pc",
+      "position": 56,
+      "title": "Tell your LLM to SACRIFICE GRAMMAR",
+      "publishedAt": "2025-10-08T12:00:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2U8z7y3uTYE",
+      "position": 57,
+      "title": "The hidden security risk in your system prompts",
+      "publishedAt": "2025-09-25T13:02:48Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_1KrC_5Xv4s",
+      "position": 58,
+      "title": "Stop giving your LLM more tools",
+      "publishedAt": "2025-09-25T12:02:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kDnxr8W-bdE",
+      "position": 59,
+      "title": "What even are Agents and Workflows?",
+      "publishedAt": "2025-09-24T13:03:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "VxDNUKw83PY",
+      "position": 60,
+      "title": "AI Agents are SO simple to build",
+      "publishedAt": "2025-09-24T12:02:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9P36wMntNSI",
+      "position": 61,
+      "title": "Stop stuffing your context window (here's why)",
+      "publishedAt": "2025-09-23T12:02:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "V94BUC1kop8",
+      "position": 62,
+      "title": "How LLM tools work under the hood",
+      "publishedAt": "2025-09-22T14:31:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nKSk_TiR8YA",
+      "position": 63,
+      "title": "Most devs don't understand how LLM tokens work",
+      "publishedAt": "2025-09-19T11:31:59Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WwRE-SKdmKs",
+      "position": 64,
+      "title": "What messages you send to the LLM actually look like",
+      "publishedAt": "2025-09-18T14:05:55Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IVZ2OL8mU8c",
+      "position": 65,
+      "title": "Most devs don't know how LLM tokens work",
+      "publishedAt": "2025-09-17T12:02:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AFM2N9ifYFI",
+      "position": 66,
+      "title": "Yes, LLM's can produce more than just text",
+      "publishedAt": "2025-09-16T16:30:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "1yoW9OH9YAk",
+      "position": 67,
+      "title": "A GORGEOUS component library for AI-powered apps",
+      "publishedAt": "2025-07-10T12:03:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xnUYnd-Pgeg",
+      "position": 68,
+      "title": "Most companies are NOT READY for background agents",
+      "publishedAt": "2025-07-03T12:02:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "UW13VOdqb7o",
+      "position": 69,
+      "title": "The unreadable library that captured my heart",
+      "publishedAt": "2025-06-30T12:04:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "S2GChOwivwQ",
+      "position": 70,
+      "title": "Effect: the unreadable library that captured my heart",
+      "publishedAt": "2025-06-30T06:24:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "fhCEwk7NmC0",
+      "position": 71,
+      "title": "The ESSENTIAL resource for improving your prompting",
+      "publishedAt": "2025-06-20T13:04:57Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "EjjPMHwPRlw",
+      "position": 72,
+      "title": "The AI Engineer mindset is WILD",
+      "publishedAt": "2025-06-20T12:03:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "C9qjWgh7aEE",
+      "position": 73,
+      "title": "Here's a NASTY UX problem in most AI-powered apps",
+      "publishedAt": "2025-06-19T13:07:55Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "mLswSaigQHQ",
+      "position": 74,
+      "title": "AI app devs HAVE to know about this tool",
+      "publishedAt": "2025-06-19T12:04:43Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PxV1swOlcvI",
+      "position": 75,
+      "title": "The one indispensable tool to any AI app developer - Observability",
+      "publishedAt": "2025-06-18T13:02:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "fllVY1HqVCU",
+      "position": 76,
+      "title": "This library is ESSENTIAL for building AI apps in TypeScript",
+      "publishedAt": "2025-06-18T12:02:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HtsFKx9mAu8",
+      "position": 77,
+      "title": "The bitter lesson",
+      "publishedAt": "2025-06-17T14:05:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BRe7TbqyAGg",
+      "position": 78,
+      "title": "Your types cannot hide from the wizard #3",
+      "publishedAt": "2025-06-17T13:22:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_Wb8VF-M4go",
+      "position": 79,
+      "title": "Here's a CRAZY bit of TypeScript magic",
+      "publishedAt": "2025-06-16T15:46:52Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "X-ocnGc7Xeg",
+      "position": 80,
+      "title": "Sometimes 'Type Faith' is enough",
+      "publishedAt": "2025-06-16T13:11:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HDaPLwZWguo",
+      "position": 81,
+      "title": "You HAVE to know this TypeScript pattern",
+      "publishedAt": "2025-06-13T20:16:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qdwk23eBpeo",
+      "position": 82,
+      "title": "SO many TypeScript devs make this mistake",
+      "publishedAt": "2025-06-13T20:16:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Q1_7IPXoG1s",
+      "position": 83,
+      "title": "You can DO that in Node?! #2",
+      "publishedAt": "2025-06-12T13:41:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hQeFamY1308",
+      "position": 84,
+      "title": "This library makes building AI-powered apps EASY",
+      "publishedAt": "2025-06-10T13:21:48Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CK6t1goWxw8",
+      "position": 85,
+      "title": "Building AI Apps That Don't Suck - Handoffs",
+      "publishedAt": "2025-06-09T15:46:44Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JMkYMiSSlkA",
+      "position": 86,
+      "title": "TypeScript is the language of OpenAI's multi-agent framework",
+      "publishedAt": "2025-06-09T13:11:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Q9I8sMfq-FM",
+      "position": 87,
+      "title": "Building LLM apps that don't suck - Guardrails",
+      "publishedAt": "2025-06-06T15:33:48Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PA-Kqfi4uCk",
+      "position": 88,
+      "title": "OpenAI is getting serious about TypeScript",
+      "publishedAt": "2025-06-06T14:47:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8iNgc1-PwMk",
+      "position": 89,
+      "title": "Mastra, the AWESOME new TypeScript AI Agent framework",
+      "publishedAt": "2025-06-05T15:50:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "b2ntTXVlGQk",
+      "position": 90,
+      "title": "Agents are dead, long live workflows",
+      "publishedAt": "2025-06-05T13:38:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "uNkv2t6c40o",
+      "position": 91,
+      "title": "This language is AMAZING for building AI agents",
+      "publishedAt": "2025-06-04T20:43:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "E2T_MkeITsA",
+      "position": 92,
+      "title": "Your types can't hide from me #2",
+      "publishedAt": "2025-06-04T14:14:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "n3J28iswOjs",
+      "position": 93,
+      "title": "Open source libraries you have to know - Arktype",
+      "publishedAt": "2025-06-04T13:53:48Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kB-r-alEmtw",
+      "position": 94,
+      "title": "The TypeScript hill I'm willing to die on",
+      "publishedAt": "2025-06-03T18:21:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "irOgiE6wkP8",
+      "position": 95,
+      "title": "Feed me your TypeScript problems, I'm hungry",
+      "publishedAt": "2025-06-03T14:14:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0mXf25h5eTU",
+      "position": 96,
+      "title": "Open source libraries you have to know - Valibot",
+      "publishedAt": "2025-06-03T13:21:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "tpkqHJPufFg",
+      "position": 97,
+      "title": "Node can DO that? #1",
+      "publishedAt": "2025-06-02T15:46:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RHfGKRt5ovc",
+      "position": 98,
+      "title": "Value objects are SO underused in TS",
+      "publishedAt": "2025-06-02T13:12:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RSG2qySs0ps",
+      "position": 99,
+      "title": "Parameters is SO helpful",
+      "publishedAt": "2025-06-01T19:46:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AP-mYeXG9nY",
+      "position": 100,
+      "title": "Library types can run, but they can't hide",
+      "publishedAt": "2025-06-01T19:32:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BjGYln6eOcc",
+      "position": 101,
+      "title": "console.dir, where have you been all my life",
+      "publishedAt": "2025-06-01T18:13:42Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "A6MNBK8rNDk",
+      "position": 102,
+      "title": "Will the art of coding disappear?",
+      "publishedAt": "2025-06-01T09:05:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3Bev2FG_Slw",
+      "position": 103,
+      "title": "Remix v3 DROPS React...",
+      "publishedAt": "2025-06-01T09:05:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Z5wP-_18fTU",
+      "position": 104,
+      "title": "Yes, template literal error codes are actually useful",
+      "publishedAt": "2025-06-01T08:50:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xPzp5XwZlRU",
+      "position": 105,
+      "title": "Branded types are AWESOME for units",
+      "publishedAt": "2025-06-01T08:50:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "rFdORlOWWe4",
+      "position": 106,
+      "title": "Branded types have saved my ass so many times",
+      "publishedAt": "2025-05-31T20:33:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zEg_hVMgTZI",
+      "position": 107,
+      "title": "I HATE IT when TS devs do this",
+      "publishedAt": "2025-05-31T20:32:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zOseJFD447U",
+      "position": 108,
+      "title": "Template literal types for error codes are awesome",
+      "publishedAt": "2025-05-31T13:50:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Hw9ytLUln5A",
+      "position": 109,
+      "title": "Vibe coders won't be able to fix bugs",
+      "publishedAt": "2025-05-31T13:38:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "gG8eMuzwpFQ",
+      "position": 110,
+      "title": "I met ANDERS HEJLSBERG",
+      "publishedAt": "2025-05-31T13:35:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "QuOsGbECU3k",
+      "position": 111,
+      "title": "This proposal makes JavaScript way more random",
+      "publishedAt": "2025-05-31T12:17:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "rtXRPN4BHVk",
+      "position": 112,
+      "title": "TypeScript is 10X FASTER on a 1.5M LOC Codebase",
+      "publishedAt": "2025-05-31T08:52:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Q72K5BJlXRU",
+      "position": 113,
+      "title": "A SINGLE developer shipped Temporal to Firefox",
+      "publishedAt": "2025-05-31T08:33:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Y0iBvBJbMiE",
+      "position": 114,
+      "title": "Has TypeScript gone too far?",
+      "publishedAt": "2025-05-30T21:03:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GU_ZIUp3iwM",
+      "position": 115,
+      "title": "Key Optional vs Value Optional",
+      "publishedAt": "2025-05-30T20:29:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kbDhpqb5FwI",
+      "position": 116,
+      "title": "indexed access types are pretty sweet",
+      "publishedAt": "2025-05-30T20:20:46Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "lraHlXpuhKs",
+      "position": 117,
+      "title": "6 TypeScript tips to turn you into a WIZARD",
+      "publishedAt": "2025-05-16T15:33:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hFenspfGLTk",
+      "position": 118,
+      "title": "Arrays, objects... now ‘composites’?",
+      "publishedAt": "2025-05-09T15:13:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "e0AIkYrXAYE",
+      "position": 119,
+      "title": "Types vs Interfaces: What I Got Wrong In 2022",
+      "publishedAt": "2025-04-18T15:51:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xcm53k0ePmY",
+      "position": 120,
+      "title": "Zod 4 is out, and it is CRAZY",
+      "publishedAt": "2025-04-11T17:40:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "FRogt98OF80",
+      "position": 121,
+      "title": "Build An MCP Server In 5 Prompts // Vibe Coding That Doesn't Suck",
+      "publishedAt": "2025-04-08T15:30:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NrEW7F2WCNA",
+      "position": 122,
+      "title": "LIVE: Anders Hejlsberg on TypeScript’s Go Port",
+      "publishedAt": "2025-03-14T17:23:57Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "MC2BwMGFRx4",
+      "position": 123,
+      "title": "Get Started With The Model Context Protocol // 2-Minute Tutorial",
+      "publishedAt": "2025-03-07T14:42:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zeNh4fuJhcA",
+      "position": 124,
+      "title": "TypeScript shipped a flag to disable enums",
+      "publishedAt": "2025-01-24T17:14:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "mojZpktAiYQ",
+      "position": 125,
+      "title": "A Complete Guide To Vercel’s AI SDK // The ESSENTIAL Tool For Shipping AI Apps",
+      "publishedAt": "2025-01-21T19:27:42Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0uGkjjKLCsU",
+      "position": 126,
+      "title": "It FINALLY happened",
+      "publishedAt": "2025-01-08T12:59:44Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jEeQC6I8nlY",
+      "position": 127,
+      "title": "Yes, we CAN make Object.assign type-safe...",
+      "publishedAt": "2024-11-08T10:21:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RV01eSRO_Zk",
+      "position": 128,
+      "title": "Node 23 fixes the worst thing about JavaScript",
+      "publishedAt": "2024-10-23T07:05:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Ozg5UqaD5fg",
+      "position": 129,
+      "title": "Going weirdly deep on console.log",
+      "publishedAt": "2024-10-21T18:17:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Zsj1UlCsuio",
+      "position": 130,
+      "title": "5 Things They’ll NEVER Add To TypeScript",
+      "publishedAt": "2024-09-05T14:46:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6b93kmYy6rI",
+      "position": 131,
+      "title": "Coding ROAD TRIP",
+      "publishedAt": "2024-07-12T05:14:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JQ8m_Q7gVfM",
+      "position": 132,
+      "title": "My weirdest stream idea ever",
+      "publishedAt": "2024-07-11T23:43:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "LzCMVyAcZKE",
+      "position": 133,
+      "title": "Coding ROAD TRIP",
+      "publishedAt": "2024-07-11T15:39:44Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Lx16PaoAYBs",
+      "position": 134,
+      "title": "Excess Properties in TS are SUPER weird #typescript",
+      "publishedAt": "2024-07-11T14:09:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "wgcfq51twe0",
+      "position": 135,
+      "title": "This launch took 11 MONTHS of my life",
+      "publishedAt": "2024-07-08T13:30:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RBxhezE-B-I",
+      "position": 136,
+      "title": "SUPER nice pattern for React props #typescript #react",
+      "publishedAt": "2024-06-24T08:37:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sciBO_IaxTw",
+      "position": 137,
+      "title": "TypeScript 5.5 is a BANGER",
+      "publishedAt": "2024-06-21T14:34:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hRyU0bN7qhw",
+      "position": 138,
+      "title": "My \"as few deps as possible\" monorepo setup",
+      "publishedAt": "2024-05-17T14:32:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-OS94Unjrx0",
+      "position": 139,
+      "title": "Wide vs Narrow Types #typescript",
+      "publishedAt": "2024-03-12T00:00:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PZxjqM59XKA",
+      "position": 140,
+      "title": "TypeScript vs ESLint #typescript #javascript",
+      "publishedAt": "2024-03-07T00:00:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "pbjDMJl2ufQ",
+      "position": 141,
+      "title": "Return Types vs Inference #typescript",
+      "publishedAt": "2024-03-05T00:00:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JoDXi9XzRG0",
+      "position": 142,
+      "title": "What is graphql-codegen? #graphql #typescript",
+      "publishedAt": "2024-02-29T00:00:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "H5zkMDODnU8",
+      "position": 143,
+      "title": "What is 'const as const'? #typescript",
+      "publishedAt": "2024-02-27T00:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_Ec-3jgoRag",
+      "position": 144,
+      "title": "What is tRPC? #typescript",
+      "publishedAt": "2024-02-22T00:01:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PzhxN1u6ziQ",
+      "position": 145,
+      "title": "Everyone's talking about gql.tada",
+      "publishedAt": "2024-02-21T11:13:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7WiSBNxhriQ",
+      "position": 146,
+      "title": "What is Zod? #typescript",
+      "publishedAt": "2024-02-20T14:35:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nGAlYN0TO6Q",
+      "position": 147,
+      "title": "React is going to change SO MUCH in 2024 #react",
+      "publishedAt": "2024-02-19T10:25:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CFqE2qxb6AE",
+      "position": 148,
+      "title": "Partial in TypeScript #typescript",
+      "publishedAt": "2024-02-17T12:02:26Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qT5xlBxGEyQ",
+      "position": 149,
+      "title": "Omit in TypeScript #typescript",
+      "publishedAt": "2024-02-16T19:38:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "J5S8jFmnhdw",
+      "position": 150,
+      "title": "Why does 'any' exist in TypeScript? #typescript",
+      "publishedAt": "2024-02-15T00:00:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Gz9xnlE6i98",
+      "position": 151,
+      "title": "JSX.Element vs React.ReactNode #typescript #react",
+      "publishedAt": "2024-02-13T14:35:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NACZ-fx1O8A",
+      "position": 152,
+      "title": "TypeScript 5.4 Beta Is Out! #typescript",
+      "publishedAt": "2024-02-08T00:00:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "onT3QjB58gs",
+      "position": 153,
+      "title": "I just merged my 8th PR to React! #react #typescript",
+      "publishedAt": "2024-02-06T14:35:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "QSIXYMIJkQg",
+      "position": 154,
+      "title": "8 TypeScript Tips To Expand Your Mind (and improve your code)",
+      "publishedAt": "2024-02-06T13:44:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NnkaRVubtA4",
+      "position": 155,
+      "title": "Using 'using' for unit tests #typescript #javascript",
+      "publishedAt": "2024-02-01T00:00:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "m-BFtuiXpWw",
+      "position": 156,
+      "title": "Does TypeScript help you ship faster? #typescript",
+      "publishedAt": "2024-01-30T14:35:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "deenC-vH14E",
+      "position": 157,
+      "title": "Building a type-safe fetch in #typescript",
+      "publishedAt": "2024-01-24T00:00:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "961FMGvAoLg",
+      "position": 158,
+      "title": "TypeScript version mismatches are a PITA #typescript",
+      "publishedAt": "2024-01-17T00:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zqz-lEHjJr4",
+      "position": 159,
+      "title": "Most React devs don’t understand generic components",
+      "publishedAt": "2024-01-15T15:00:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Ck5basbqjcA",
+      "position": 160,
+      "title": "JSDoc vs TypeScript #typescript",
+      "publishedAt": "2024-01-10T00:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0zp9bkEfaOc",
+      "position": 161,
+      "title": "Declaring globals isn't that hard",
+      "publishedAt": "2024-01-08T15:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eZzX_7vdXp8",
+      "position": 162,
+      "title": "Turning a string to an object?! #typescript",
+      "publishedAt": "2024-01-08T00:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5dCTWOaQPPY",
+      "position": 163,
+      "title": "Declaring globals really isn't that hard #typescript",
+      "publishedAt": "2024-01-05T00:00:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "QCY_yPiJFKU",
+      "position": 164,
+      "title": "ElementRef is so under-used #react #typescript",
+      "publishedAt": "2024-01-03T00:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "r1L35zxZQPE",
+      "position": 165,
+      "title": "Most TS devs don't understand 'satisfies'",
+      "publishedAt": "2024-01-01T11:30:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "s1t1LQjntx4",
+      "position": 166,
+      "title": "New Free Total TypeScript Tutorial! #typescript",
+      "publishedAt": "2024-01-01T00:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "TPSTKZ-oKdw",
+      "position": 167,
+      "title": "Typing createContext in React #typescript #react",
+      "publishedAt": "2023-12-29T00:00:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dnh6jfi2i08",
+      "position": 168,
+      "title": "string-ts is NUTS #typescript",
+      "publishedAt": "2023-12-28T00:00:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "TrR1dk5MrkE",
+      "position": 169,
+      "title": "Application vs Library TS #typescript",
+      "publishedAt": "2023-12-27T00:00:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "tLSWCYrcvOk",
+      "position": 170,
+      "title": "Don't Put Your Types In .d.ts files #typescript",
+      "publishedAt": "2023-12-26T16:58:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "MzpGJqiyj7E",
+      "position": 171,
+      "title": "Merry TypeScript Christmas! #typescript",
+      "publishedAt": "2023-12-25T00:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "O4IoO--nzew",
+      "position": 172,
+      "title": "Will TS or JS win our AI future? #typescript #javascript #ai",
+      "publishedAt": "2023-12-24T00:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8C2rfdTHCMs",
+      "position": 173,
+      "title": "Indexed Access Types + Unions = Carnage",
+      "publishedAt": "2023-12-22T16:20:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dBghzhMSfDY",
+      "position": 174,
+      "title": "React FC used to be crap, now it's fine",
+      "publishedAt": "2023-12-22T16:09:52Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Thgyblv-NEU",
+      "position": 175,
+      "title": "React Aria Components 1.0",
+      "publishedAt": "2023-12-21T15:10:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hmWLXgLtO_c",
+      "position": 176,
+      "title": "TypeScript vs JavaScript",
+      "publishedAt": "2023-12-18T16:53:58Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "mKiCj7mEbw4",
+      "position": 177,
+      "title": "The IIMT",
+      "publishedAt": "2023-12-18T16:33:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HFWE2Cr6iCM",
+      "position": 178,
+      "title": "How did I not know this VSCode shortcut...",
+      "publishedAt": "2023-12-18T15:25:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "J7JmmMLmh8A",
+      "position": 179,
+      "title": "Using 'as const' is never not awesome #typescript",
+      "publishedAt": "2023-12-18T14:55:57Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "90K5IIfmCHU",
+      "position": 180,
+      "title": "Import Attributes in TS 5.3 #typescript",
+      "publishedAt": "2023-11-21T16:46:18Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-SM-xZLMj-g",
+      "position": 181,
+      "title": "TypeScript 5.3 is a no-brainer upgrade",
+      "publishedAt": "2023-11-21T16:26:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "uiOJ5_7cB4I",
+      "position": 182,
+      "title": "Rethink your life choices before you do this...",
+      "publishedAt": "2023-10-16T10:04:26Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eJXVEju3XLM",
+      "position": 183,
+      "title": "The TSConfig Cheat Sheet",
+      "publishedAt": "2023-10-11T11:26:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8ORIzvgNWhU",
+      "position": 184,
+      "title": "'.js' files in TypeScript - why?!",
+      "publishedAt": "2023-10-10T10:57:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Nml_DvDTmJc",
+      "position": 185,
+      "title": "as const is GOATED",
+      "publishedAt": "2023-09-20T11:20:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6_JNPmjSevo",
+      "position": 186,
+      "title": "Import vs Require: The Biggest JavaScript Divide",
+      "publishedAt": "2023-09-20T08:44:57Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZL3z1oBZntk",
+      "position": 187,
+      "title": "TypeScript Performance with Aleksandra Sikora",
+      "publishedAt": "2023-09-14T16:08:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "fTytLwTSVoM",
+      "position": 188,
+      "title": "DRY up your TS code with keyof",
+      "publishedAt": "2023-09-08T16:57:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "h5ymIiux6NU",
+      "position": 189,
+      "title": "TypeScript 5.3 First Look",
+      "publishedAt": "2023-08-24T16:34:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "mSnDUMybZXk",
+      "position": 190,
+      "title": "TypeScript, Node, esbuild, Commander... Let's build a CLI!",
+      "publishedAt": "2023-08-15T15:46:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6F9m-938_1s",
+      "position": 191,
+      "title": "String Literals are GREAT",
+      "publishedAt": "2023-08-14T14:13:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IolO9pr4C10",
+      "position": 192,
+      "title": "Turn Unknown into ANYTHING",
+      "publishedAt": "2023-08-11T20:30:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qUuSD1vUl6k",
+      "position": 193,
+      "title": "TypeScript LOVES errors",
+      "publishedAt": "2023-08-11T20:05:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Gxd4StCrN3g",
+      "position": 194,
+      "title": "Dynamic objects should NOT be this hard",
+      "publishedAt": "2023-08-10T14:56:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6M9aZzm-kEc",
+      "position": 195,
+      "title": "as const: the most underrated TypeScript feature",
+      "publishedAt": "2023-08-08T10:51:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "795SKl70JK8",
+      "position": 196,
+      "title": "Everyone's talking about Valibot",
+      "publishedAt": "2023-08-04T17:03:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JuULWGuoI1A",
+      "position": 197,
+      "title": "Fix your useRefs with ElementRef",
+      "publishedAt": "2023-07-25T15:19:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nHzyoGKo0g4",
+      "position": 198,
+      "title": "LIVE: Build a Content Platform with Next.js App Directory, TypeScript, Tailwind and shadcn/ui",
+      "publishedAt": "2023-07-19T15:26:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "i4-QixSfCpY",
+      "position": 199,
+      "title": "The empty object is TypeScript's weirdest type",
+      "publishedAt": "2023-07-19T10:45:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "VLyY9UC9W80",
+      "position": 200,
+      "title": "Will this code error?",
+      "publishedAt": "2023-07-09T16:21:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zu-EgnbmcLY",
+      "position": 201,
+      "title": "Don't put your types in .d.ts files",
+      "publishedAt": "2023-07-07T15:04:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GOq0VgvB0m0",
+      "position": 202,
+      "title": "Will This TypeScript Code Error?!",
+      "publishedAt": "2023-07-06T16:40:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8HoOxOd86M4",
+      "position": 203,
+      "title": "8 Tips from the TS Wizard - using, as const, never",
+      "publishedAt": "2023-07-04T15:00:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "VqdVaix3Zvw",
+      "position": 204,
+      "title": "var, const, let... now ‘using’?",
+      "publishedAt": "2023-06-30T15:37:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "15PKLbfWmbQ",
+      "position": 205,
+      "title": "Why TypeScript Migrations Fail",
+      "publishedAt": "2023-05-15T16:23:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Ct4vOdh8ma4",
+      "position": 206,
+      "title": "I'm learning VUEEEEEEEE",
+      "publishedAt": "2023-05-06T03:52:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "QL7PPuefqR8",
+      "position": 207,
+      "title": "Hunting for any's in Sentry's codebase!",
+      "publishedAt": "2023-05-03T15:10:57Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Rf_k8kSAFU0",
+      "position": 208,
+      "title": "React.ComponentProps is such a lifesaver",
+      "publishedAt": "2023-05-03T08:29:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2lCCKiWGlC0",
+      "position": 209,
+      "title": "Prettify for Classes",
+      "publishedAt": "2023-05-02T14:30:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jWwsvoSf5UI",
+      "position": 210,
+      "title": "LIVE: I've joined the AI revolution",
+      "publishedAt": "2023-04-27T15:31:01Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PHcm4Hwot2c",
+      "position": 211,
+      "title": "The TS Playground has PLUGINS",
+      "publishedAt": "2023-04-20T13:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "DTYNJjKlzFs",
+      "position": 212,
+      "title": "TypeScript just unblocked React Server Components",
+      "publishedAt": "2023-04-19T09:51:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "q1im-hMlKhM",
+      "position": 213,
+      "title": "You're typing process.env wrong",
+      "publishedAt": "2023-04-18T13:00:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-_0wMxtRVqA",
+      "position": 214,
+      "title": "Everyone's talking about ArkType",
+      "publishedAt": "2023-04-17T13:30:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "QDANnOSMCOw",
+      "position": 215,
+      "title": "Everyone's talking about HOTScript",
+      "publishedAt": "2023-04-14T14:32:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qA65QjWCl60",
+      "position": 216,
+      "title": "This TS naming convention is weird",
+      "publishedAt": "2023-04-12T10:56:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "tKLg_sDxlF8",
+      "position": 217,
+      "title": "Array.filter on the type level",
+      "publishedAt": "2023-03-27T14:00:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "czptRA4IeCc",
+      "position": 218,
+      "title": "Should you still be using Redux in 2023?",
+      "publishedAt": "2023-03-27T12:15:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-F4k8A5S530",
+      "position": 219,
+      "title": "Compound Components are SUPER intuitive",
+      "publishedAt": "2023-03-22T15:26:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "u_zoRJh9krU",
+      "position": 220,
+      "title": "Understanding React's types",
+      "publishedAt": "2023-03-16T16:51:50Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "M3TPmOpNFCs",
+      "position": 221,
+      "title": "Dan Abramov asked me to help fix React",
+      "publishedAt": "2023-03-16T10:38:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5weFyMoBGN4",
+      "position": 222,
+      "title": "Codegen: The good, the bad and the ugly",
+      "publishedAt": "2023-03-09T12:15:43Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "S6rcrkbsDI0",
+      "position": 223,
+      "title": "Learn tRPC in 5 minutes",
+      "publishedAt": "2023-03-08T13:47:52Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WuHSnvsO6Mg",
+      "position": 224,
+      "title": "Total TypeScript Tour and AMA!",
+      "publishedAt": "2023-03-07T18:07:57Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hPholNWkc7s",
+      "position": 225,
+      "title": "They nearly gave JavaScript types",
+      "publishedAt": "2023-03-07T15:18:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ExhQxFapKCs",
+      "position": 226,
+      "title": "Solving the 'any' problem is harder than you think",
+      "publishedAt": "2023-03-06T16:27:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HyqHhjKMnyE",
+      "position": 227,
+      "title": "Testing in TypeScript SUCKS - let's make it better",
+      "publishedAt": "2023-03-03T17:05:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ttUbH_JAHFI",
+      "position": 228,
+      "title": "ENDING EVERY TYPESCRIPT DEBATE in 90 minutes",
+      "publishedAt": "2023-02-28T19:00:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aKTSC4D1GL8",
+      "position": 229,
+      "title": "The NPM Library Speedrun - 90 minutes to build, CI, and publish",
+      "publishedAt": "2023-02-22T07:08:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bUts4HJJjV4",
+      "position": 230,
+      "title": "Does ts-reset fix TypeScript?",
+      "publishedAt": "2023-02-21T15:54:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nwSe95uFN8E",
+      "position": 231,
+      "title": "Should you use return types?",
+      "publishedAt": "2023-02-01T11:57:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "iOTAFRFgm8I",
+      "position": 232,
+      "title": "TypeScript 5.0 BETA IS HERE",
+      "publishedAt": "2023-01-27T12:32:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zYSmBpPYnyk",
+      "position": 233,
+      "title": "When you accidentally interview a TypeScript Wizard",
+      "publishedAt": "2023-01-26T13:56:42Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9N50YV5NHaE",
+      "position": 234,
+      "title": "Zod + Generics is HEAVEN",
+      "publishedAt": "2023-01-25T14:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "C14MSrJGGBg",
+      "position": 235,
+      "title": "Automate your life with TypeScript",
+      "publishedAt": "2023-01-18T14:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "EU0TB_8KHpY",
+      "position": 236,
+      "title": "TypeScript's Utility Types... Blazing fast",
+      "publishedAt": "2023-01-17T14:15:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "37PafxU_uzQ",
+      "position": 237,
+      "title": "Blazing Fast Tips: React & TypeScript",
+      "publishedAt": "2023-01-16T12:03:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eh89VE3Mk5g",
+      "position": 238,
+      "title": "Blazing Fast Tips: Publishing to NPM",
+      "publishedAt": "2023-01-14T15:00:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "u0adKDu--cA",
+      "position": 239,
+      "title": "My favourite VSCode extension has 3k downloads",
+      "publishedAt": "2023-01-13T10:26:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dLPgQRbVquo",
+      "position": 240,
+      "title": "Generics: The most intimidating TypeScript feature",
+      "publishedAt": "2023-01-12T18:09:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7x7fLTnxAUk",
+      "position": 241,
+      "title": "The most common TypeScript error",
+      "publishedAt": "2023-01-04T16:33:41Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0FoXZsBfJD0",
+      "position": 242,
+      "title": "TypeScript Utility Types: Omit and Pick",
+      "publishedAt": "2022-12-28T12:26:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "l2iVQkY6mXQ",
+      "position": 243,
+      "title": "I quit Vercel to make content",
+      "publishedAt": "2022-12-20T15:02:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hLZXJTm7TEk",
+      "position": 244,
+      "title": "Infer is easier than you think",
+      "publishedAt": "2022-12-19T09:20:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jjMbPt_H3RQ",
+      "position": 245,
+      "title": "Enums considered harmful",
+      "publishedAt": "2022-12-15T15:26:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hk6ZkD0Vg3w",
+      "position": 246,
+      "title": "Const type parameters are so powerful",
+      "publishedAt": "2022-12-14T14:20:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YmxwicpROps",
+      "position": 247,
+      "title": "TypeScript Speedrun: Crash Course for Beginners",
+      "publishedAt": "2022-12-13T15:03:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CughWjaoXZw",
+      "position": 248,
+      "title": "The best TypeScript library just got better",
+      "publishedAt": "2022-12-12T15:18:59Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0tR89PcQRAc",
+      "position": 249,
+      "title": "Vercel wants you to fetch data like this",
+      "publishedAt": "2022-12-11T18:15:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PHvT3QShPTo",
+      "position": 250,
+      "title": "WASM is not ready",
+      "publishedAt": "2022-12-09T14:32:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "qMmc0IwXa7U",
+      "position": 251,
+      "title": "Vercel's OG image service is incredible",
+      "publishedAt": "2022-12-08T15:05:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zM9UPcIyyhQ",
+      "position": 252,
+      "title": "[DEPRECATED] TypeScript: Should you use Types or Interfaces?",
+      "publishedAt": "2022-12-05T21:56:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WkSCJYCY5T0",
+      "position": 253,
+      "title": "Records & Tuples are COMING to JavaScript",
+      "publishedAt": "2022-12-05T11:11:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9aWlsXGmi_E",
+      "position": 254,
+      "title": "This Unknown Bit Of TS Syntax Is Everywhere",
+      "publishedAt": "2022-12-02T15:59:28Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "fnQusZt49_Y",
+      "position": 255,
+      "title": "Stop using defaultProps (React 18.3 preview)",
+      "publishedAt": "2022-11-29T14:31:11Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Danki1DyiuI",
+      "position": 256,
+      "title": "TypeScript 4.9 deep dive",
+      "publishedAt": "2022-11-28T14:00:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PTU-H6Wwbh8",
+      "position": 257,
+      "title": "TypeScript 5.0 is coming...",
+      "publishedAt": "2022-11-26T16:29:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dg1eJZk7waw",
+      "position": 258,
+      "title": "Why YOU should migrate to TypeScript",
+      "publishedAt": "2022-11-03T13:25:50Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "iNs_z-vsfVM",
+      "position": 259,
+      "title": "How is this a thing?! - Type Challenges #5",
+      "publishedAt": "2022-07-28T23:00:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dZWJrjzqvv8",
+      "position": 260,
+      "title": "Our first look at INFER - Type Challenges #4",
+      "publishedAt": "2022-07-27T23:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nK6qW_NsPvc",
+      "position": 261,
+      "title": "Transforming a TUPLE to an OBJECT - Type Challenges #3",
+      "publishedAt": "2022-07-27T09:02:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "U1EygIpjAEM",
+      "position": 262,
+      "title": "Is \"+readonly\" really legal?! - Type Challenges #2",
+      "publishedAt": "2022-07-22T10:10:56Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "knOgB-Aa8Pc",
+      "position": 263,
+      "title": "KEYOF and EXTENDS right off the bat?! - Type Challenges #1",
+      "publishedAt": "2022-07-21T06:53:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Vr1BUFw6dJM",
+      "position": 264,
+      "title": "OVERLOADS vs GENERICS: which is better? - Advanced TypeScript",
+      "publishedAt": "2022-07-20T09:21:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PEQn1a6xOHc",
+      "position": 265,
+      "title": "Fix ANNOYING OBJECT KEYS with infer and template literals",
+      "publishedAt": "2022-07-18T09:46:52Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "plsnFfbqVEo",
+      "position": 266,
+      "title": "The SECRET POWER of indexed access types - Advanced TypeScript",
+      "publishedAt": "2022-07-11T15:24:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IvDS2DZbWW0",
+      "position": 267,
+      "title": "The one problem only GENERICS can solve",
+      "publishedAt": "2022-06-21T08:41:14Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6l3Q9DjbQ7A",
+      "position": 268,
+      "title": "This saved me HOURS of refactoring time",
+      "publishedAt": "2022-06-20T23:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jxSh-RZTCws",
+      "position": 269,
+      "title": "Literal types are SO USEFUL in TS - Advanced TypeScript",
+      "publishedAt": "2022-06-19T23:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sZ6vkIQMwT8",
+      "position": 270,
+      "title": "Preconstruct is AMAZING for bundling TS libraries - Advanced TypeScript",
+      "publishedAt": "2022-06-16T23:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "z7thLMrTrZs",
+      "position": 271,
+      "title": "DRY up your generic signatures with DEFAULT GENERICS - Advanced TypeScript",
+      "publishedAt": "2022-06-15T23:00:18Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8lM609lci7E",
+      "position": 272,
+      "title": "Master ASSERTION FUNCTIONS in TypeScript - Advanced TypeScript",
+      "publishedAt": "2022-06-14T23:00:07Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sswUBXaoXSI",
+      "position": 273,
+      "title": "Turn MODULES INTO TYPES with typeof import - Advanced TypeScript",
+      "publishedAt": "2022-06-13T23:00:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AhzjPAtzGTs",
+      "position": 274,
+      "title": "DEEP PARTIAL in TypeScript - Advanced TypeScript",
+      "publishedAt": "2022-06-12T23:00:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7BnoNWu2y3Y",
+      "position": 275,
+      "title": "CUSTOM ERRORS in TypeScript? - Advanced TypeScript",
+      "publishedAt": "2022-06-09T23:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-rJ2XzQg8Ek",
+      "position": 276,
+      "title": "Master Generic Slots in TypeScript - Advanced TypeScript",
+      "publishedAt": "2022-06-08T23:00:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vCq9QsDinvo",
+      "position": 277,
+      "title": "React Components with GENERICS? - Advanced TypeScript",
+      "publishedAt": "2022-06-07T09:32:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GW00zebIt0g",
+      "position": 278,
+      "title": "Improving OBJECT.KEYS in TypeScript - Advanced TypeScript",
+      "publishedAt": "2022-06-07T09:31:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "VBsKNKEZNnY",
+      "position": 279,
+      "title": "Extracting React Props using CONDITIONAL TYPES - Advanced TypeScript",
+      "publishedAt": "2022-06-01T23:00:18Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "xZ8BBBdMwQI",
+      "position": 280,
+      "title": "Using EXTENDS to constrain generics - Advanced TypeScript",
+      "publishedAt": "2022-05-31T23:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "D1a8OoBWi1g",
+      "position": 281,
+      "title": "Master FUNCTION OVERLOADS with 'compose' - Advanced TypeScript",
+      "publishedAt": "2022-05-31T11:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8gDpiILuf2I",
+      "position": 282,
+      "title": "Decode search params with TYPESCRIPT ONLY - Advanced TypeScript",
+      "publishedAt": "2022-05-30T09:58:52Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "byCYSXVmH6E",
+      "position": 283,
+      "title": "Using DECLARE GLOBAL for amazing inference - Advanced TypeScript",
+      "publishedAt": "2022-05-29T14:37:46Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "lMfGp29Ht8c",
+      "position": 284,
+      "title": "WHEN should I use a Generic? - Advanced TypeScript",
+      "publishedAt": "2022-05-29T14:37:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JwZaP3pY7Zo",
+      "position": 285,
+      "title": "\"noUncheckedIndexedAccess\" - the BEST config option you've never heard of",
+      "publishedAt": "2022-05-29T14:35:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "M4-Jl9JWGmo",
+      "position": 286,
+      "title": "REMOVE a member of a Union Type - Advanced TypeScript",
+      "publishedAt": "2022-05-29T14:34:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YE_3WwX-Dl8",
+      "position": 287,
+      "title": "Dynamic function arguments with GENERICS - Advanced TypeScript",
+      "publishedAt": "2022-05-29T14:23:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "F7O4gA0GXqI",
+      "position": 288,
+      "title": "Advanced TypeScript with Matt (LIVE)",
+      "publishedAt": "2022-04-30T03:48:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Y5ZoVXjLqLA",
+      "position": 289,
+      "title": "Integrating Form Libraries (in React/Vue/Svelte) with XState",
+      "publishedAt": "2022-02-22T17:34:59Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "wykDyFwr8Lk",
+      "position": 290,
+      "title": "Modelling Statecharts: A step-by-step guide",
+      "publishedAt": "2022-02-14T14:46:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2eurRx-tR-I",
+      "position": 291,
+      "title": "XState Docs Speedrun - 2022",
+      "publishedAt": "2022-02-09T18:51:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RklT33R6v10",
+      "position": 292,
+      "title": "Checking out a new DSL for XState - Lucy!",
+      "publishedAt": "2021-05-01T21:16:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "LrF4NHMB2L8",
+      "position": 293,
+      "title": "Designing State Machines #3 - Video Call",
+      "publishedAt": "2021-03-06T15:26:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BL3QQeOvqYo",
+      "position": 294,
+      "title": "Designing State Machines #2 - Authentication",
+      "publishedAt": "2021-02-27T17:37:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Km8QGtRr1z8",
+      "position": 295,
+      "title": "Designing State Machines #1 - Fetch Logic",
+      "publishedAt": "2021-02-27T17:13:45Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "1kJcnFBrk2I",
+      "position": 296,
+      "title": "XState - Global state in React",
+      "publishedAt": "2021-02-04T21:06:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "nUKA0xhkZc8",
+      "position": 297,
+      "title": "XState Brain Teaser 2 - Async Validation",
+      "publishedAt": "2021-01-19T14:19:00Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "EEShpJ780aU",
+      "position": 298,
+      "title": "Build an Express App with Sextant #1 - Getting Started",
+      "publishedAt": "2020-11-10T14:45:21Z",
+      "privacyStatus": "public",
+      "available": true
+    }
+  ]
+}
