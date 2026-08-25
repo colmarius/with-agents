@@ -13,13 +13,13 @@ coveredVideoIds:
 
 ## Coverage
 
-The manifest contains 137 available entries. This overview incorporates all 7 videos in the reviewed coding-agent selection: 1 reuses an existing standalone transcript and public summary, and 6 have source-library transcripts and summaries. The remaining 130 entries are tracked but unselected; 0 selected videos are pending or unavailable.
+The manifest contains 137 available entries. This overview incorporates all 7 videos in the reviewed coding-agent selection, each with a source-library transcript and summary. The remaining 130 entries are tracked but unselected; 0 selected videos are pending or unavailable.
 
 37signals is the curator and source channel for this multi-speaker playlist, not its author. Speakers and affiliations vary by episode and are established in the individual evidence.
 
 ## Current Thesis
 
-- Jason Fried and David Heinemeier Hansson argue that agent-built custom software expands competition but does not remove maintenance, operations, product judgment, or ownership from build-versus-buy decisions ([summary](../../../summaries/coding-with-agents/competing-with-giants-the-end-of-saas-other-listener-questions-rework.md)).
+- Jason Fried and David Heinemeier Hansson argue that agent-built custom software expands competition but does not remove maintenance, operations, product judgment, or ownership from build-versus-buy decisions ([summary](../../videos/wpdi1bp-EbU/summary.md)).
 - Fried and Hansson describe Basecamp 5 as an AI-accelerated development cycle in which agents speed exploration and diagnosis while increasing the need for architecture, review, product restraint, and cost awareness ([summary](../../videos/pdPXbXE5xw0/summary.md)).
 - Hansson describes working prototypes as design specifications whose production implementation may need to be replaced, then emphasizes durability, cohesion, and finishing work after the fast first draft ([summary](../../videos/otvGsbeOdfc/summary.md)).
 - Hansson presents command-line tools and skills as a direct, feedback-producing interface through which external agents can act inside Basecamp, while leaving authentication and governance questions outside the demonstration ([summary](../../videos/oE1Y_6W4Mj8/summary.md)).
@@ -32,7 +32,7 @@ The manifest contains 137 available entries. This overview incorporates all 7 vi
 
 - Fried and Hansson repeatedly separate prototypes that reveal a product direction from software that is ready to operate and maintain ([summary](../../videos/pdPXbXE5xw0/summary.md), [summary](../../videos/otvGsbeOdfc/summary.md), [summary](../../videos/EwFT3h55oOc/summary.md)).
 - Hansson retains senior review for consequential generated changes and says working drafts may be rewritten or discarded when they miss architectural or interface goals ([summary](../../videos/pdPXbXE5xw0/summary.md), [summary](../../videos/AkeTmfUW4_U/summary.md)).
-- Fried and Hansson treat taste, scope, cohesion, maintenance, and operational ownership as product constraints that cheaper implementation does not eliminate ([summary](../../../summaries/coding-with-agents/competing-with-giants-the-end-of-saas-other-listener-questions-rework.md), [summary](../../videos/pdPXbXE5xw0/summary.md), [summary](../../videos/otvGsbeOdfc/summary.md)).
+- Fried and Hansson treat taste, scope, cohesion, maintenance, and operational ownership as product constraints that cheaper implementation does not eliminate ([summary](../../videos/wpdi1bp-EbU/summary.md), [summary](../../videos/pdPXbXE5xw0/summary.md), [summary](../../videos/otvGsbeOdfc/summary.md)).
 - Hansson and Fried scale their advice to consequence: disposable local experiments tolerate more autonomy than software involving sensitive data, consequential failure, or a large production audience ([summary](../../videos/EwFT3h55oOc/summary.md), [summary](../../videos/AkeTmfUW4_U/summary.md), [summary](../../videos/GifToS0FTII/summary.md)).
 - Editorial: The episodes consistently preserve human ownership of product direction, architecture, review, and operational consequences even as implementation becomes faster.
 
@@ -41,7 +41,7 @@ The manifest contains 137 available entries. This overview incorporates all 7 vi
 - Fried's design workflow turns a working agent-built interaction and temporary local data into evidence that can inform subsequent production decisions ([summary](../../videos/EwFT3h55oOc/summary.md)).
 - Hansson reports using terminal agents not only for implementation but also for security-report triage and cross-system production diagnosis, while presenting routine access-log review as a candidate use ([summary](../../videos/AkeTmfUW4_U/summary.md)).
 - Hansson presents command-line interfaces and skills as an agent-accessibility layer that can expose existing product actions before a company finds useful embedded AI features ([summary](../../videos/oE1Y_6W4Mj8/summary.md)).
-- Fried and Hansson expect agent-assisted custom software to increase the number of viable human-led competitors before agents can independently supply strong product direction ([summary](../../../summaries/coding-with-agents/competing-with-giants-the-end-of-saas-other-listener-questions-rework.md)).
+- Fried and Hansson expect agent-assisted custom software to increase the number of viable human-led competitors before agents can independently supply strong product direction ([summary](../../videos/wpdi1bp-EbU/summary.md)).
 - Editorial: Together, the selected episodes suggest a progression from personal drafting and disposable prototypes toward shared product tools and production investigations, but they do not measure whether this progression improves quality or total delivery cost.
 
 ## Revisions and Tensions
@@ -49,7 +49,7 @@ The manifest contains 137 available entries. This overview incorporates all 7 vi
 - Hansson's January 2026 account reports that terminal agents had become useful enough for regular retained work, while his July 2026 account places stronger emphasis on the architectural and review burden created when most fixes and upgrades begin with prompts ([summary](../../videos/AkeTmfUW4_U/summary.md), [summary](../../videos/pdPXbXE5xw0/summary.md)).
 - Fast working prototypes help Fried and 37signals evaluate product ideas, but Fried and Hansson also warn that a convincing demonstration can outrun the builder's ability to secure, diagnose, maintain, or finish the resulting system ([summary](../../videos/EwFT3h55oOc/summary.md), [summary](../../videos/GifToS0FTII/summary.md), [summary](../../videos/otvGsbeOdfc/summary.md)).
 - Agent-accessible interfaces can reduce interaction latency and integration friction, but the Basecamp demonstration does not establish authentication, permission scoping, auditability, recovery behavior, or comparative reliability ([summary](../../videos/oE1Y_6W4Mj8/summary.md)).
-- More generated implementation can expand product and business options while also increasing feature pressure, review demand, token cost, and software that someone must own ([summary](../../../summaries/coding-with-agents/competing-with-giants-the-end-of-saas-other-listener-questions-rework.md), [summary](../../videos/pdPXbXE5xw0/summary.md), [summary](../../videos/otvGsbeOdfc/summary.md)).
+- More generated implementation can expand product and business options while also increasing feature pressure, review demand, token cost, and software that someone must own ([summary](../../videos/wpdi1bp-EbU/summary.md), [summary](../../videos/pdPXbXE5xw0/summary.md), [summary](../../videos/otvGsbeOdfc/summary.md)).
 - Editorial: These are first-party practitioner reports and forecasts, not controlled comparisons; the collection does not establish general productivity, defect, cost, security, or market effects.
 
 ## Practical Implications

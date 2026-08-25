@@ -1,6 +1,5 @@
 ---
 title: "Competing with giants, the end of SaaS & other listener questions – REWORK"
-summarySlug: "coding-with-agents/competing-with-giants-the-end-of-saas-other-listener-questions-rework"
 sourceUrl: "https://www.youtube.com/watch?v=wpdi1bp-EbU"
 videoId: "wpdi1bp-EbU"
 capturedAt: "2026-08-25T15:18:20.757Z"
