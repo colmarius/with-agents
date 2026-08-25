@@ -1,6 +1,6 @@
 ---
 title: "AI Revisited"
-resourceId: 69
+resourceId: 70
 date: "2026-01-21"
 collection: "rework-coding-with-agents"
 order: 6

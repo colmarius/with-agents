@@ -1,6 +1,6 @@
 ---
 title: "Pencils down"
-resourceId: 69
+resourceId: 70
 date: "2026-04-02"
 collection: "rework-coding-with-agents"
 order: 3

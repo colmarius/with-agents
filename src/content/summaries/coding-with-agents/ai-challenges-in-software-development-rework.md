@@ -1,6 +1,6 @@
 ---
 title: "AI Challenges in Software Development"
-resourceId: 69
+resourceId: 70
 date: "2026-07-01"
 collection: "rework-coding-with-agents"
 order: 2

@@ -1,6 +1,6 @@
 ---
 title: "Bring your AI agents to Basecamp"
-resourceId: 69
+resourceId: 70
 date: "2026-03-25"
 collection: "rework-coding-with-agents"
 order: 4

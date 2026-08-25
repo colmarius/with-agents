@@ -1,6 +1,6 @@
 ---
 title: "Building with LLMs, finding a co-founder & other listener questions"
-resourceId: 69
+resourceId: 70
 date: "2025-08-20"
 collection: "rework-coding-with-agents"
 order: 7
