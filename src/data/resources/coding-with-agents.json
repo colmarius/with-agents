@@ -1,5 +1,18 @@
 [
   {
+    "id": 70,
+    "primarySection": "teams-ecosystem",
+    "title": "Competing with Giants, the End of SaaS & Other Listener Questions",
+    "subtitle": "Jason Fried and DHH on where agent-built software threatens SaaS—and where product ownership still wins",
+    "url": "https://www.youtube.com/watch?v=wpdi1bp-EbU",
+    "description": "Jason Fried and David Heinemeier Hansson argue that agent-built replacements currently threaten expensive, disliked, heavily customized enterprise SaaS more than inexpensive tools: most customers still do not want to own maintenance, operations, backups, workflow design, or employee continuity. They expect agents to rearrange software but say human taste, product cohesion, and domain knowledge still drive strong outcomes, while cheaper implementation enables more small competitors. These are the 37signals founders’ market observations and forecasts, not adoption measurements.",
+    "type": "podcast",
+    "source": "37signals",
+    "date": "2026-08-19",
+    "duration": "29m",
+    "topics": ["business-adoption"]
+  },
+  {
     "id": 69,
     "primarySection": "agent-systems",
     "title": "Every Repo Is a Software Factory Now | Don Syme, GitHub",
