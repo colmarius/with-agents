@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import { getCatalogResources } from '../../data/resources/catalogs';
+import Layout from '../../layouts/Layout.astro';
+import type { ResourceCatalog, ResourceSection } from '../../types/resources';
+import ResourceCatalogList from './ResourceCatalog';
+import ResourcesNav from './ResourcesNav.astro';
+import { toManifestEntry } from './summaryResolver';
+
+type Props = {
+  catalog: ResourceCatalog;
+  section?: ResourceSection;
+};
+
+const { catalog, section } = Astro.props;
+const resources = getCatalogResources(catalog, section?.key);
+const manifest = (await getCollection('summaries')).map(toManifestEntry);
+const heading = section?.label ?? catalog.title;
+const description = section?.description ?? catalog.description;
+const canonicalPath = section
+  ? `/resources/${catalog.slug}/${section.routeSlug}`
+  : `/resources/${catalog.slug}`;
+const pageTitle = section
+  ? `With Agents – ${section.label}`
+  : `With Agents – ${catalog.title} Resources`;
+---
+
+<Layout
+  title={pageTitle}
+  description={description}
+  canonicalPath={canonicalPath}
+>
+  <div class="max-w-4xl mx-auto">
+    <ResourcesNav active={section?.key ?? 'all'} catalog={catalog} />
+
+    <h1 class="text-3xl md:text-4xl font-light mb-4 text-gray-900">
+      {heading}
+    </h1>
+    <p class="text-lg text-gray-600 mb-12 font-light leading-relaxed">
+      {description}
+    </p>
+
+    <ResourceCatalogList
+      client:load
+      emptyMessage={`Reviewed resources are being prepared for this ${section ? 'collection' : 'topic'}.`}
+      manifest={manifest}
+      resources={resources}
+      topicOptions={catalog.topicOptions}
+    />
+  </div>
+</Layout>
