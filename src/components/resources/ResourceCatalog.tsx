@@ -87,6 +87,7 @@ const ResourceCatalog = ({
 }: ResourceCatalogProps) => {
   const isMdUp = useIsMdUp();
   const summaryRequestId = useRef(0);
+  const summaryContentRef = useRef<HTMLElement>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedResource, setSelectedResource] = useState<Resource | null>(
     null,
@@ -393,6 +394,11 @@ const ResourceCatalog = ({
     return () => window.removeEventListener('popstate', syncSummaryFromUrl);
   }, [openSummary, resetSummary, resourcesById, summaryEntriesBySlug]);
 
+  useEffect(() => {
+    if (selectedSummarySlug === null) return;
+    summaryContentRef.current?.scrollTo({ top: 0 });
+  }, [selectedSummarySlug]);
+
   const handleOpenSummary = (resource: Resource) => {
     openSummary(resource, undefined, 'push');
   };
@@ -688,6 +694,7 @@ const ResourceCatalog = ({
               />
             </aside>
             <main
+              ref={summaryContentRef}
               className={`relative flex-1 min-w-0 overflow-y-auto overscroll-contain p-6 pt-0 md:block md:pt-6 md:pl-0 ${
                 isEpisodeListExpanded ? 'hidden' : ''
               }`}
