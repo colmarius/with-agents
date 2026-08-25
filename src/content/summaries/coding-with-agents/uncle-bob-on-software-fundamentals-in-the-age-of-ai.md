@@ -1,7 +1,10 @@
 ---
 title: "Software Fundamentals in the Age of AI"
-resourceId: 50
+resourceId: 74
 date: "2026-08-19"
+collection: "matt-pocock-agent-skills"
+order: 7
+videoId: "zcLPGC-tvgk"
 ---
 
 [Uncle Bob Martin](https://www.cleancoder.com/), the programmer, speaker, and teacher behind *Clean Code* and *Clean Architecture*, describes a coding-agent workflow that trades some raw generation speed for deterministic evidence: complexity and coverage checks, mutation testing, acceptance tests, system-level QA, and explicit architecture constraints. His broader argument is that clean boundaries and software fundamentals still matter because agents also lose effectiveness when code becomes hard to reason about.

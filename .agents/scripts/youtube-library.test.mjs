@@ -234,6 +234,7 @@ test('loads and validates the committed source-only catalog', async () => {
     [
       'antirez-ai-concepts',
       'antirez-coding-with-ai',
+      'matt-pocock-agent-skills',
       'ai-engineer-swe-agents-2025',
       'ai-engineer-agent-reliability-2025',
       'ai-engineer-agentic-engineering',

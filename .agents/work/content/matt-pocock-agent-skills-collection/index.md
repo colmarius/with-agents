@@ -1,6 +1,6 @@
 # Matt Pocock agent-skills collection
 
-Status: in-progress
+Status: completed
 Category: content
 Updated: 2026-08-25
 
@@ -10,7 +10,7 @@ Create a new Matt Pocock collection from his recent YouTube uploads, emphasizing
 
 ## Summary
 
-The official uploads playlist and six-video curation are synchronized. All six English transcripts, source summaries, the playlist overview, and author synthesis have passed dedicated editorial review and structural audit. Public collection publication is next.
+The official uploads playlist and seven-video curation are synchronized and published as one coding-with-agents collection. Six selected videos have reviewed source-library transcripts and summaries; the existing Uncle Bob conversation reuses its reviewed standalone evidence as item 7. The standalone Uncle Bob resource was consolidated into the collection, and source, application, build, and browser checks pass.
 
 ## Artifacts
 
@@ -23,7 +23,7 @@ The official uploads playlist and six-video curation are synchronized. All six E
 
 ## Next Action
 
-- Execute Task 4 in [plan.md](plan.md): publish the six matching public summaries and canonical resource.
+- None.
 
 ## Open Questions
 

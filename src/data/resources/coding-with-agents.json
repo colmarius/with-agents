@@ -1,5 +1,23 @@
 [
   {
+    "id": 74,
+    "primarySection": "workflows",
+    "title": "Matt Pocock: Agent Skills and Engineering Workflows",
+    "subtitle": "Seven videos on grilling, prototyping, planning, review, and software quality",
+    "url": "https://www.youtube.com/playlist?list=UUswG6FSbgZjbWtdf_hMLaow",
+    "description": "A reviewed seven-video route through Matt Pocock's recent agent-skills and engineering-workflow uploads, published between May 25 and August 19, 2026. Six tutorials cover active Grill Me interviews, ambitious anti-slop review, repository-aware implementation, throwaway prototypes, Wayfinder decision maps, agent-facing writing, deterministic setup, and collaborator questionnaires. In a conversation hosted by Pocock, Uncle Bob Martin argues for deterministic quality gates, specialized agents, modular architecture, and iterative planning. Pocock's demonstrations and Uncle Bob's thresholds, productivity reports, and quality claims are practitioner evidence rather than controlled comparisons.",
+    "type": "playlist",
+    "source": "Matt Pocock",
+    "date": "2026-08-19",
+    "topics": [
+      "prompting-orchestration",
+      "tools-harnesses",
+      "review-verification",
+      "context-memory",
+      "architecture-maintainability"
+    ]
+  },
+  {
     "id": 73,
     "primarySection": "teams-ecosystem",
     "title": "Software Development Now Costs Less Than Minimum Wage",
@@ -189,24 +207,6 @@
       "architecture-maintainability",
       "review-verification",
       "open-source-ecosystem"
-    ]
-  },
-  {
-    "id": 50,
-    "primarySection": "reliability",
-    "title": "Software Fundamentals in the Age of AI — Uncle Bob & Matt Pocock",
-    "subtitle": "Deterministic quality gates, specialized agents, modular architecture, and iterative planning",
-    "url": "https://www.youtube.com/watch?v=zcLPGC-tvgk",
-    "description": "Uncle Bob explains why agent speed makes formerly expensive checks such as mutation testing and complexity analysis practical, then describes a specialized specifier–coder–cleaner–hardener–QA pipeline. He and Matt Pocock discuss context trajectory, modular architecture, agent-specific TDD tradeoffs, iterative planning, and why software fundamentals still constrain agent-generated systems. Uncle Bob's productivity and quality claims are first-person reports rather than controlled comparisons.",
-    "type": "video",
-    "source": "Matt Pocock",
-    "date": "2026-08-19",
-    "duration": "57m",
-    "topics": [
-      "review-verification",
-      "architecture-maintainability",
-      "tools-harnesses",
-      "prompting-orchestration"
     ]
   },
   {
