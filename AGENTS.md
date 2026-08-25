@@ -3,7 +3,7 @@
 ## Stack & Architecture
 
 - **Astro v7** + React 19 + TailwindCSS v4
-- **Static topic site** for practical coding-agent workflows, posts, slides, and curated resources
+- **Static multi-context knowledge site** for practical coding-agent, cloud/GCP, and security workflows, posts, slides, and curated resources
 - **Site**: <https://with-agents.dev>
 - **Repository**: `colmarius/with-agents` (public source repository)
 - **Path aliases**: `@components`, `@types`, `@layouts`, `@utils`, `@scripts` (defined in `tsconfig.json`)
@@ -31,8 +31,8 @@ Run `npm run check`, `npm test`, and `npm run build` after code or content chang
 ```text
 src/
 ├── components/    # Astro and React components
-├── content/       # Astro content collections and transcript source files
-├── data/          # Resource manifests
+├── content/       # Astro content plus source-only YouTube evidence
+├── data/          # Canonical resource manifests and catalog registry
 ├── hooks/         # React hooks
 ├── layouts/       # Astro layouts
 ├── pages/         # Routes and API endpoints
@@ -44,10 +44,12 @@ src/
 
 Important routes:
 
-- `/` - topic-site landing page
+- `/` - umbrella landing page
+- `/coding`, `/cloud`, and `/security` - context landing pages
 - `/posts` and `/posts/[slug]` - article path
 - `/posts/[slug]/slides` - generated slide view for each published post
-- `/resources` and `/resources/coding-with-agents` - curated resources and summaries
+- `/resources` - catalog index
+- `/resources/[topic]` and `/resources/[topic]/[section]` - catalog and section pages
 - `/api/summaries/[slug].json` - prerendered summary JSON for the React resource modal
 
 ## Code Conventions
@@ -61,12 +63,18 @@ Important routes:
 
 ## Content Guidelines
 
-- Keep the site focused on coding agents, agent workflows, Amp, and supporting developer practices.
+- Keep the site focused on practical coding-agent, cloud/platform, and security engineering knowledge and their supporting developer practices.
 - Avoid personal-site pages, personal-only assets, or unrelated resource collections.
 - Draft posts must use `draft: true`; production builds should not publish drafts.
-- When adding resources, keep `src/data/resources/coding-with-agents.json` and `src/content/summaries/**` aligned by `resourceId`.
 - Internal links should point only to routes that exist in this repository, unless intentionally linking to an external site.
 - Publishable posts, public summaries, and resources may cite a video or playlist tracked in `src/content/youtube/` only when its source summary or playlist overview is `reviewed`, unless `.agents/scripts/public-content-guard.mjs` records a path-specific exception with a reason. Draft posts may cite draft sources for work in progress, but the guard reports them as warnings.
+
+### Resource catalog maintenance
+
+- Keep one canonical resource record in a registered manifest under `src/data/resources/`; resource IDs are globally unique, and public summaries under `src/content/summaries/**` join that record through `resourceId`.
+- `src/data/resources/catalogs.ts` owns catalog metadata, display order, membership, and per-catalog section assignment. Cross-list a resource by reusing its canonical ID in each catalog's `resourceIds` and `sectionByResourceId`; never duplicate the resource record or its summaries.
+- For a public playlist collection, follow `src/content/youtube/AGENTS.md`. The public children's `collection`, `order`, and `videoId` values must exactly match reviewed curation, and source summaries plus the playlist overview must be reviewed before publication.
+- Run `npm run content:guard` after resource or public-summary changes. When tracked YouTube source evidence changes, also run `npm run youtube:library -- status` and `npm run youtube:library -- audit`.
 
 ### Article writing
 
@@ -97,7 +105,7 @@ X-only livestreams or broadcasts do not need transcript sidecars. If an entry in
 
 2. If regenerating an existing transcript, do the mechanical regeneration first. `--force` replaces the transcript sidecar with current YouTube caption output and will overwrite any prior manual transcript fixes.
 3. After the final regeneration for a video, do an editorial transcript pass only when needed. Fix obvious source-faithful auto-caption issues: names, product/model casing, obvious substitutions, punctuation that changes meaning, and stray caption markers. Do not rewrite or editorialize the transcript.
-4. For a summary request, read the saved transcript and write/update the public summary by hand as normal content work. Update `src/data/resources/coding-with-agents.json` only if a new resource manifest entry is needed.
+4. For a summary request, read the saved transcript and write/update the public summary by hand as normal content work. Update the applicable registered manifest under `src/data/resources/` and its catalog membership only when a new canonical resource record is needed.
 
 When reviewing or updating transcript-backed summaries, compare the summary against the transcript before editing. Fix copied-forward episode content, placeholder summaries, unsupported claims, wrong speaker/name/model attributions, and misleading timestamp citations. Prefer concise timestamped bullets for the main transcript-backed themes. Keep external bio/context claims only when they are present in the transcript or already trusted in the resource manifest.
 
