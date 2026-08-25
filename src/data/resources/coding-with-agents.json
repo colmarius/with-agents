@@ -1,5 +1,22 @@
 [
   {
+    "id": 72,
+    "primarySection": "reliability",
+    "title": "Beyond Code Coverage: Functionality Testing with Playwright MCP",
+    "subtitle": "Marlene Mhangami on behavior-first agent testing and human-owned refactoring",
+    "url": "https://www.youtube.com/watch?v=FWEInOtngmM",
+    "description": "Marlene Mhangami presents a behavior-first testing loop for agent-generated web changes: derive feature-level Playwright tests from expected user behavior, let the agent implement against those tests, inspect the browser evidence, and then spend human attention on refactoring. A prepared GitHub Copilot CLI and Playwright MCP demo exercises search and filtering in a sample application. It illustrates the workflow rather than comparing its defect detection or maintenance cost with other approaches, and the demonstrated checks remain browser-bound.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-05-16",
+    "duration": "20m",
+    "topics": [
+      "review-verification",
+      "tools-harnesses",
+      "architecture-maintainability"
+    ]
+  },
+  {
     "id": 71,
     "primarySection": "reliability",
     "title": "Creator of TypeScript: 10x Faster TypeScript, Why AI Won't Replace SWEs | Anders Hejlsberg",
