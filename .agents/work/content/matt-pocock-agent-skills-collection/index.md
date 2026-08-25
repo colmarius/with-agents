@@ -10,7 +10,7 @@ Create a new Matt Pocock collection from his recent YouTube uploads, emphasizing
 
 ## Summary
 
-Research confirmed Matt Pocock's official channel and uploads playlist and narrowed the strict 2026-05-25 through 2026-08-25 window to six complementary long-form videos. Oracle endorsed the six-video curation and strict date boundary. Implementation is in progress, beginning with catalog onboarding and authoritative playlist synchronization.
+The official uploads playlist and six-video curation are synchronized. All six English transcripts, source summaries, the playlist overview, and author synthesis have passed dedicated editorial review and structural audit. Public collection publication is next.
 
 ## Artifacts
 
@@ -23,7 +23,7 @@ Research confirmed Matt Pocock's official channel and uploads playlist and narro
 
 ## Next Action
 
-- Execute Task 2 in [plan.md](plan.md): capture one thin slice, review it, then complete bounded capture.
+- Execute Task 4 in [plan.md](plan.md): publish the six matching public summaries and canonical resource.
 
 ## Open Questions
 

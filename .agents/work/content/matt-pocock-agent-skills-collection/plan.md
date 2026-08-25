@@ -17,7 +17,7 @@ Onboard Matt Pocock's uploads playlist as an author-linked source, review the si
     - Selected `status`, `check`, and `sync` commands succeed, and the authoritative manifest contains every selected ID.
     - Public-impact review records the addition as isolated from existing public identities.
 
-- [ ] **Task 2: Prove the capture thin slice and complete bounded capture**
+- [x] **Task 2: Prove the capture thin slice and complete bounded capture**
   - Scope: `src/content/youtube/videos/{UzMNBN6xLLA,mh5XZ-L5SFQ,M6mYodf0dJM,n0VhIVtviC0,F3lL98Pj90o,gaDdrDdczO4}/`
   - Depends on: Task 1
   - Acceptance:
@@ -25,7 +25,7 @@ Onboard Matt Pocock's uploads playlist as an author-linked source, review the si
     - Remaining selected sources are captured in one bounded follow-up command without force or unrelated capture.
     - Every selected source has metadata and a transcript in the configured English language.
 
-- [ ] **Task 3: Write and independently review source editorial artifacts**
+- [x] **Task 3: Write and independently review source editorial artifacts**
   - Scope: selected `summary.md` files, `src/content/youtube/playlists/matt-pocock-agent-skills/overview.md`, `src/content/youtube/authors/matt-pocock.md`
   - Depends on: Task 2
   - Acceptance:
