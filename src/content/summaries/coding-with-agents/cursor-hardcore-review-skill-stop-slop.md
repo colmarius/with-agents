@@ -3,7 +3,7 @@ title: "Can Cursor's HARDCORE Review Skill Stop The Slop?"
 resourceId: 74
 date: "2026-05-28"
 collection: "matt-pocock-agent-skills"
-order: 2
+order: 6
 videoId: "mh5XZ-L5SFQ"
 ---
 

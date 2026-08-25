@@ -60,6 +60,9 @@ A playlist may add an editorial selection to its catalog record:
 - `reviewed` records the human-approved ordered selection. Every selected ID
   must be available and present in the committed manifest. The editorial order
   does not need to match remote playlist position.
+- For new or revised curation, default to descending publication date so the
+  most recent video appears first. A human-approved editorial or pedagogical
+  sequence may intentionally override this default.
 - Manifests always retain the complete remote playlist, and check/sync drift
   always compares full remote membership. Unselected videos stay tracked for
   deterministic drift without creating transcript or summary obligations.

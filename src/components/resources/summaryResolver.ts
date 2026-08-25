@@ -183,8 +183,8 @@ export const resolveSummaryEntries = (
         (a, b) =>
           (hasCuratedMetadata
             ? (a.order as number) - (b.order as number)
-            : new Date(a.date as Date | string).getTime() -
-              new Date(b.date as Date | string).getTime()) ||
+            : new Date(b.date as Date | string).getTime() -
+              new Date(a.date as Date | string).getTime()) ||
           a.slug.localeCompare(b.slug),
       ),
     };

@@ -43,20 +43,20 @@ test('resolves standalone, numbered series, and collection summaries', () => {
     collection?.kind === 'collection'
       ? collection.entries.map(({ slug }) => slug)
       : [],
-    ['c', 'a', 'b'],
+    ['a', 'b', 'c'],
   );
   const curatedCollection = resolveSummaryEntries([
     entry({
       slug: 'second',
       collection: 'selected',
-      date: '2026-01-01',
+      date: '2026-02-01',
       order: 2,
       videoId: 'video-two',
     }),
     entry({
       slug: 'first',
       collection: 'selected',
-      date: '2026-02-01',
+      date: '2026-01-01',
       order: 1,
       videoId: 'video-one',
     }),
