@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import BackNav from '@components/BackNav.astro';
+import ScrollBackNav from '@components/ScrollBackNav.astro';
 import Layout from '@layouts/Layout.astro';
 import { formatDate, getPostPath } from '@utils';
 import type { SiteContext } from '../../data/site-contexts';
@@ -24,9 +24,11 @@ const sortedPosts = [...posts].sort(
 	canonicalPath={`/${context.slug}/posts`}
 >
 	<div class="posts-container">
-		<nav class="mb-10" aria-label="Parent page">
-			<BackNav href={`/${context.slug}`} label={`Back to ${context.title}`} />
-		</nav>
+		<ScrollBackNav
+			href={`/${context.slug}`}
+			label={`Back to ${context.title}`}
+			class="mb-10"
+		/>
 		<header class="posts-header">
 			<h1 class="text-4xl md:text-5xl font-light mb-4 text-gray-900">Field guides</h1>
 			<p class="text-xl text-gray-600 mb-16 font-light leading-relaxed">

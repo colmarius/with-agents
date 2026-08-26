@@ -1,0 +1,126 @@
+---
+import BackNav from './BackNav.astro';
+
+type Props = {
+  href: string;
+  label?: string;
+  class?: string;
+  ariaLabel?: string;
+};
+
+const {
+  href,
+  label = 'Back',
+  class: className = '',
+  ariaLabel = 'Parent page',
+} = Astro.props;
+---
+
+<div data-scroll-back-nav>
+  <nav
+    class={className}
+    aria-label={ariaLabel}
+    data-scroll-back-nav-source
+  >
+    <BackNav href={href} label={label} />
+  </nav>
+  <nav
+    class="scroll-back-nav-sticky"
+    aria-label={ariaLabel}
+    data-scroll-back-nav-sticky
+  >
+    <div class="scroll-back-nav-inner">
+      <BackNav href={href} label={label} />
+    </div>
+  </nav>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-scroll-back-nav]').forEach(
+    (root) => {
+      const source = root.querySelector<HTMLElement>(
+        '[data-scroll-back-nav-source]',
+      );
+      const sticky = root.querySelector<HTMLElement>(
+        '[data-scroll-back-nav-sticky]',
+      );
+
+      if (!source || !sticky) return;
+
+      let sourceBottom = 0;
+      let previousScrollY = Math.max(window.scrollY, 0);
+      let updateRequested = false;
+
+      const measureSource = () => {
+        const sourceBounds = source.getBoundingClientRect();
+        sourceBottom = sourceBounds.bottom + window.scrollY;
+        sticky.style.setProperty(
+          '--scroll-back-nav-inline-start',
+          `${sourceBounds.left}px`,
+        );
+      };
+
+      const updateStickyNav = () => {
+        const currentScrollY = Math.max(window.scrollY, 0);
+        const sourceIsOutOfView = currentScrollY > sourceBottom;
+        const isScrollingUp = currentScrollY < previousScrollY;
+
+        sticky.classList.toggle(
+          'is-visible',
+          sourceIsOutOfView && isScrollingUp,
+        );
+        previousScrollY = currentScrollY;
+        updateRequested = false;
+      };
+
+      measureSource();
+      window.addEventListener('resize', measureSource);
+      window.addEventListener(
+        'scroll',
+        () => {
+          if (updateRequested) return;
+
+          updateRequested = true;
+          window.requestAnimationFrame(updateStickyNav);
+        },
+        { passive: true },
+      );
+    },
+  );
+</script>
+
+<style>
+  .scroll-back-nav-sticky {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 30;
+    border-bottom: 1px solid #e5e7eb;
+    background: #fff;
+    opacity: 0;
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition:
+      opacity 0.18s ease,
+      transform 0.18s ease,
+      visibility 0.18s;
+  }
+
+  .scroll-back-nav-sticky.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .scroll-back-nav-inner {
+    padding-block: 0.75rem;
+    padding-inline-start: var(--scroll-back-nav-inline-start, 2rem);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-back-nav-sticky {
+      transition: none;
+    }
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-import BackNav from '@components/BackNav.astro';
+import ScrollBackNav from '@components/ScrollBackNav.astro';
 import { siteContexts } from '../../data/site-contexts';
 import type { ResourceCatalog } from '../../types/resources';
 
@@ -35,8 +35,12 @@ const linkClass = (isActive: boolean) =>
   }`;
 ---
 
+<ScrollBackNav
+  href={parentLink.href}
+  label={parentLink.label}
+  class="mb-6"
+/>
 <nav class="mb-10" aria-label={`${catalog.title} collections`}>
-  <BackNav href={parentLink.href} label={parentLink.label} class="mb-6" />
   <div class="flex flex-wrap gap-2">
     <a
       href={`/resources/${catalog.slug}`}

@@ -1,6 +1,6 @@
 ---
-import BackNav from '@components/BackNav.astro';
 import DotAgentsHighlight from '../../components/DotAgentsHighlight.astro';
+import ScrollBackNav from '../../components/ScrollBackNav.astro';
 import {
   getCatalogResources,
   resourceCatalogs,
@@ -28,9 +28,7 @@ const codingSections = (codingCatalog?.sections ?? []).map((section) => ({
   canonicalPath="/resources"
 >
   <div class="max-w-4xl mx-auto">
-    <nav class="mb-10" aria-label="Parent page">
-      <BackNav href="/" label="Back to Home" />
-    </nav>
+    <ScrollBackNav href="/" label="Back to Home" class="mb-10" />
     <h1 class="text-4xl md:text-5xl font-light mb-4 text-gray-900">
       Resources
     </h1>

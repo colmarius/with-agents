@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import BackNav from '@components/BackNav.astro';
 import DotAgentsHighlight from '@components/DotAgentsHighlight.astro';
+import ScrollBackNav from '@components/ScrollBackNav.astro';
 import Layout from '@layouts/Layout.astro';
 import { getFieldGuideListPath, getPostPath, isPublicListedPost } from '@utils';
 import type { GetStaticPaths } from 'astro';
@@ -56,9 +56,7 @@ const fieldGuideListPath = getFieldGuideListPath(context.slug);
 >
   <div class="mx-auto max-w-5xl space-y-16 md:space-y-24">
     <header class="max-w-4xl space-y-7">
-      <nav aria-label="Parent page">
-        <BackNav href="/" label="Back to Home" />
-      </nav>
+      <ScrollBackNav href="/" label="Back to Home" />
       <p class="text-sm font-medium uppercase tracking-[0.25em] text-indigo-600">
         {context.title}
       </p>
