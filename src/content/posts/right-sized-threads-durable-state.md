@@ -2,7 +2,7 @@
 title: 'Right-Sized Threads, Durable State'
 description: 'How to keep connected agent work in one thread, split only when separation helps, and carry accepted state across the boundary.'
 pubDate: 2026-06-28
-updatedDate: 2026-08-23
+updatedDate: 2026-08-26
 tags: ['AI Agents', 'Workflows', 'Planning', 'dot-agents']
 draft: false
 unlisted: false
@@ -25,7 +25,7 @@ message: small
 
 A thread is right-sized when it owns one connected job. A checkout bug can include reproduction, diagnosis, a fix, review feedback, and a route test. An unrelated documentation redesign belongs elsewhere.
 
-Amp's current [prompting guidance](https://ampcode.com/manual#how-to-prompt) also says to use one thread per task: tasks can be long, but unrelated work does not belong together. Amp reports a thread compacted more than 68 times ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)), and Jason Liu of OpenAI shows five-week-old project threads delegating narrower work ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show that long threads can work; they do not show that longer is better.
+Amp's current [prompting guidance](https://ampcode.com/docs/prompting#how-to-prompt) also says to use one thread per task: tasks can be long, but unrelated work does not belong together. Amp reports a thread compacted more than 68 times ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)), and Jason Liu of OpenAI shows five-week-old project threads delegating narrower work ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show that long threads can work; they do not show that longer is better.
 
 [Your Repo Is the Memory](/posts/durable-context-coding-agents) covers reusable repository context. [Brief the Agent Like a Capable Co-Worker](/posts/capable-coworker-coding-agents) covers assignment briefs. This article covers when one assignment ends and another begins.
 
@@ -85,7 +85,7 @@ handoff record
 
 This is **durable state**: the accepted record that must survive the handoff. It records decisions, changes, and checks—not the transcript. Mark checks as inherited or rerun. Keep a discarded idea only when it prevents the next worker from reversing an accepted decision.
 
-Keep this state in the repository for resumption, coordination, or review. A [dot-agents](https://dot-agents.dev/) work item is one option. A commit identifies a snapshot; it does not prove the work or make the files available elsewhere. Share the baseline through authorized Git or explicit file transfer before another thread depends on it ([Orbs manual](https://ampcode.com/manual/orbs#getting-started), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent)).
+Keep this state in the repository for resumption, coordination, or review. A [dot-agents](https://dot-agents.dev/) work item is one option. A commit identifies a snapshot; it does not prove the work or make the files available elsewhere. Share the baseline through authorized Git or explicit file transfer before another thread depends on it ([Agent to Agent](https://ampcode.com/docs/orbs/agent-to-agent), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent)).
 
 ## Coordinate the split and name one integration owner
 
@@ -110,7 +110,7 @@ The same person or thread may coordinate and integrate, but the jobs differ. Col
 
 ## Sources used
 
-- Current Amp product guidance: [Manual](https://ampcode.com/manual), [Orbs manual](https://ampcode.com/manual/orbs), [“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads), and [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent).
+- Current Amp product guidance: [Prompting](https://ampcode.com/docs/prompting), [Orbs](https://ampcode.com/docs/orbs), [Agent to Agent](https://ampcode.com/docs/orbs/agent-to-agent), [“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads), and [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent).
 - [Jason Liu, “Full Workshop: Setting Yourself Up for Success”](https://www.youtube.com/watch?v=il1c1a2FufU) on long-lived project threads, compaction, and delegated work.
 - [Matt Pocock, “Full Walkthrough: Workflow for AI Coding”](https://www.youtube.com/watch?v=-QFHIoCo-Ko) and [Kun's agentic-engineering setup](https://www.youtube.com/watch?v=8ZgpAXe5V5w) on separating implementation from review and verification.
 - [dot-agents](https://dot-agents.dev/) supplies the work-item pattern described here.
