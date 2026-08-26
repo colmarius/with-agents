@@ -1,5 +1,24 @@
 [
   {
+    "id": 75,
+    "primarySection": "reliability",
+    "title": "How AI Is Changing Software Development with Simon Willison",
+    "subtitle": "Production accountability, review discipline, conceptual integrity, and the cognitive cost of cheap code",
+    "url": "https://talkingpostgres.com/episodes/how-ai-is-changing-software-development-with-simon-willison",
+    "description": "Claire Giordano interviews Simon Willison about delegating implementation to coding agents while retaining understanding and accountability for production software. Willison uses explicit success criteria, red-green TDD, small reviewable changes, aggressive nitpicking for large diffs, and throws away off-concept generated features to preserve conceptual integrity. His speed, token-cost, security, review-volume, and labor observations are practitioner reports and forecasts rather than controlled measurements; the episode also examines cognitive load, open-source maintenance, and the renewed value of engineering management and QA skills.",
+    "type": "podcast",
+    "source": "Talking Postgres",
+    "date": "2026-08-14",
+    "duration": "1h 31m",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "collaboration-teams",
+      "open-source-ecosystem",
+      "prompting-orchestration"
+    ]
+  },
+  {
     "id": 74,
     "primarySection": "workflows",
     "title": "Matt Pocock: Agent Skills and Engineering Workflows",
