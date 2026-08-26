@@ -31,6 +31,7 @@ test('only coding curates public field guides', () => {
         featuredPostIds: [
           'agentic-coding-2026',
           'capable-coworker-coding-agents',
+          'durable-context-coding-agents',
           'make-the-agent-prove-it',
         ],
       },

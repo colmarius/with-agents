@@ -102,7 +102,7 @@ const fieldGuideListPath = getFieldGuideListPath(context.slug);
           </h2>
         </div>
 
-        <ul class="grid gap-5 lg:grid-cols-3">
+        <ul class="grid gap-5 md:grid-cols-2">
           {featuredPosts.map((post) => (
             <li>
               <a
@@ -123,24 +123,23 @@ const fieldGuideListPath = getFieldGuideListPath(context.slug);
       </section>
     )}
 
-    <section
-      aria-labelledby="catalog-heading"
-      class="rounded-2xl border border-indigo-100 bg-indigo-50/60 p-6 md:p-8"
-    >
-      <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-indigo-700">
-        Resource catalog
-      </p>
-      <h2 id="catalog-heading" class="mb-3 text-3xl font-light text-gray-900">
-        {resourceCount} reviewed resources, available now
-      </h2>
-      <p class="mb-6 max-w-3xl leading-relaxed text-gray-600">
-        Browse the {catalog.title} catalog by collection or topic, search the full library, and open source-backed editorial summaries.
-      </p>
+    <section aria-labelledby="catalog-heading">
       <a
         href={catalogPath}
-        class="inline-flex items-center rounded-sm font-medium text-indigo-700 transition-colors hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+        class="group block rounded-2xl border border-indigo-100 bg-indigo-50/60 p-6 transition-all duration-200 hover:border-indigo-200 hover:bg-indigo-50 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 md:p-8"
       >
-        Browse reviewed resources →
+        <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-indigo-700">
+          Resource catalog
+        </p>
+        <h2 id="catalog-heading" class="mb-3 text-3xl font-light text-gray-900">
+          {resourceCount} reviewed resources, available now
+        </h2>
+        <p class="mb-6 max-w-3xl leading-relaxed text-gray-600">
+          Browse the {catalog.title} catalog by collection or topic, search the full library, and open source-backed editorial summaries.
+        </p>
+        <span class="font-medium text-indigo-700 transition-colors group-hover:text-indigo-500">
+          Browse reviewed resources →
+        </span>
       </a>
     </section>
 
