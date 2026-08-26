@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
+import BackNav from '@components/BackNav.astro';
 import MarkdownRenderer from '@components/resources/MarkdownRenderer';
 import {
   encodeSummarySlug,
@@ -146,13 +147,12 @@ if (!primaryMembership) {
   canonicalPath={canonicalPath}
   ogType="article"
 >
-  <div class="mx-auto max-w-5xl pb-16">
-    <ScrollBackNav
-      href={primaryMembership.href}
-      label={`Back to ${primaryMembership.catalogTitle} resources`}
-      class="mb-8"
-    />
-
+  <div
+    class:list={[
+      'mx-auto pb-16',
+      isGrouped ? 'max-w-5xl' : 'max-w-2xl',
+    ]}
+  >
     <div
       class:list={[
         isGrouped &&
@@ -161,50 +161,81 @@ if (!primaryMembership) {
     >
       {
         isGrouped && (
-          <aside class="hidden lg:block">
-            <div class:list={[groupedEntries.length <= 12 && 'sticky top-6']}>
-              <div class="flex items-baseline justify-between gap-3">
-                <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-500">
-                  {navigationLabel}
-                </h2>
-                <span class="text-xs tabular-nums text-gray-500">
-                  {selectedIndex + 1} of {groupedEntries.length}
-                </span>
+          <aside class="hidden lg:block lg:self-stretch">
+            <nav
+              aria-label="Summary navigation"
+              class="summary-navigation-rail sticky top-6 flex max-h-[calc(100dvh-12rem)] flex-col"
+            >
+              <BackNav
+                href={primaryMembership.href}
+                label={`Back to ${primaryMembership.catalogTitle} resources`}
+                class="shrink-0"
+              />
+              <div class="mt-6 flex min-h-0 flex-1 flex-col border-t border-slate-200 pt-5">
+                <div class="flex shrink-0 items-baseline justify-between gap-3">
+                  <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                    {navigationLabel}
+                  </h2>
+                  <span class="text-xs tabular-nums text-gray-500">
+                    {selectedIndex + 1} of {groupedEntries.length}
+                  </span>
+                </div>
+                <div
+                  class="summary-index-scroll mt-3 min-h-0 flex-1 overflow-y-auto pr-2"
+                  data-summary-index-scroll
+                >
+                  <ol class="border-l border-slate-200 pb-px">
+                    {groupedEntries.map((entry) => {
+                      const isCurrent = entry.slug === summarySlug;
+                      return (
+                        <li>
+                          <a
+                            href={getSummaryPath(entry.slug)}
+                            aria-current={isCurrent ? 'page' : undefined}
+                            class:list={[
+                              '-ml-px block border-l-2 py-1.5 pl-3 pr-2 text-sm leading-snug transition-colors focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-600/50',
+                              isCurrent
+                                ? 'border-indigo-600 font-medium text-slate-950'
+                                : 'border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-900',
+                            ]}
+                          >
+                            {summaryRef.kind === 'series' && (
+                              <span class="mb-0.5 block text-xs font-medium text-gray-500">
+                                Episode {entry.episode}
+                              </span>
+                            )}
+                            {trimEpisodeSuffix(entry.title)}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
               </div>
-              <nav class="mt-3" aria-label={navigationLabel}>
-                <ol class="space-y-1">
-                  {groupedEntries.map((entry) => {
-                    const isCurrent = entry.slug === summarySlug;
-                    return (
-                      <li>
-                        <a
-                          href={getSummaryPath(entry.slug)}
-                          aria-current={isCurrent ? 'page' : undefined}
-                          class:list={[
-                            'block rounded-md border px-3 py-2 text-sm leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2',
-                            isCurrent
-                              ? 'border-indigo-200 bg-indigo-50 text-gray-900'
-                              : 'border-transparent text-gray-600 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-900',
-                          ]}
-                        >
-                          {summaryRef.kind === 'series' && (
-                            <span class="mb-0.5 block text-xs font-medium text-gray-500">
-                              Episode {entry.episode}
-                            </span>
-                          )}
-                          {trimEpisodeSuffix(entry.title)}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </nav>
-            </div>
+            </nav>
           </aside>
         )
       }
 
-      <article class:list={['min-w-0', !isGrouped && 'mx-auto max-w-2xl']}>
+      <article class="min-w-0">
+        {
+          isGrouped ? (
+            <div class="lg:hidden">
+              <ScrollBackNav
+                href={primaryMembership.href}
+                label={`Back to ${primaryMembership.catalogTitle} resources`}
+                class="mb-8"
+              />
+            </div>
+          ) : (
+            <ScrollBackNav
+              href={primaryMembership.href}
+              label={`Back to ${primaryMembership.catalogTitle} resources`}
+              class="mb-8"
+            />
+          )
+        }
+
         <header class="mb-8 border-b border-slate-200 pb-7 sm:mb-10">
           {
             showResourceTitle && (
@@ -245,7 +276,7 @@ if (!primaryMembership) {
               href={resource.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-800 transition-colors hover:border-gray-400 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+              class="inline-flex min-h-11 items-center gap-1.5 py-2 text-sm font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-4 transition-colors hover:text-indigo-500 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
             >
               {originalLinkLabel}
               <span aria-hidden="true">↗</span>
@@ -274,8 +305,8 @@ if (!primaryMembership) {
 
         {
           isGrouped && (
-            <details class="group mb-8 rounded-lg border border-gray-200 bg-white lg:hidden">
-              <summary class="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 rounded-lg px-4 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-600/50 [&::-webkit-details-marker]:hidden">
+            <details class="group mb-8 border-y border-slate-200 lg:hidden">
+              <summary class="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-600/50 [&::-webkit-details-marker]:hidden">
                 <span class="min-w-0">
                   <span class="block text-xs font-semibold uppercase tracking-wide text-gray-500">
                     {navigationLabel}
@@ -303,10 +334,10 @@ if (!primaryMembership) {
                 </span>
               </summary>
               <nav
-                class="border-t border-gray-200 p-2"
+                class="border-t border-slate-200 py-2"
                 aria-label={navigationLabel}
               >
-                <ol class="space-y-1">
+                <ol class="border-l border-slate-200">
                   {groupedEntries.map((entry) => {
                     const isCurrent = entry.slug === summarySlug;
                     return (
@@ -315,10 +346,10 @@ if (!primaryMembership) {
                           href={getSummaryPath(entry.slug)}
                           aria-current={isCurrent ? 'page' : undefined}
                           class:list={[
-                            'block rounded-md px-3 py-2 text-sm leading-snug focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50',
+                            '-ml-px block border-l-2 py-2 pl-3 pr-2 text-sm leading-snug focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-600/50',
                             isCurrent
-                              ? 'bg-indigo-50 text-gray-900'
-                              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                              ? 'border-indigo-600 font-medium text-slate-950'
+                              : 'border-transparent text-slate-500 hover:border-slate-300 hover:text-slate-900',
                           ]}
                         >
                           {summaryRef.kind === 'series' && (
@@ -342,21 +373,21 @@ if (!primaryMembership) {
         {
           isGrouped && (previousEntry || nextEntry) && (
             <nav
-              class="mt-12 grid grid-cols-1 gap-3 border-t border-gray-200 pt-8 sm:grid-cols-2"
+              class="mt-14 grid grid-cols-1 gap-x-8 gap-y-3 border-t border-slate-200 pt-6 sm:grid-cols-2"
               aria-label={`${navigationLabel} pagination`}
             >
               {previousEntry ? (
                 <a
                   href={getSummaryPath(previousEntry.slug)}
-                  class="rounded-lg border border-gray-200 p-4 text-left transition-colors hover:border-gray-300 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50"
+                  class="group py-2 text-left focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50"
                 >
-                  <span class="block text-xs font-medium uppercase tracking-wide text-gray-500">
+                  <span class="block text-xs font-medium uppercase tracking-wide text-slate-500">
                     ←{' '}
                     {summaryRef.kind === 'series'
                       ? 'Newer episode'
                       : 'Previous summary'}
                   </span>
-                  <span class="mt-1 block text-sm font-medium text-gray-900">
+                  <span class="mt-1 block text-sm font-medium text-slate-800 transition-colors group-hover:text-indigo-700">
                     {trimEpisodeSuffix(previousEntry.title)}
                   </span>
                 </a>
@@ -366,15 +397,15 @@ if (!primaryMembership) {
               {nextEntry && (
                 <a
                   href={getSummaryPath(nextEntry.slug)}
-                  class="rounded-lg border border-gray-200 p-4 text-left transition-colors hover:border-gray-300 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 sm:text-right"
+                  class="group py-2 text-left focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 sm:text-right"
                 >
-                  <span class="block text-xs font-medium uppercase tracking-wide text-gray-500">
+                  <span class="block text-xs font-medium uppercase tracking-wide text-slate-500">
                     {summaryRef.kind === 'series'
                       ? 'Older episode'
                       : 'Next summary'}{' '}
                     →
                   </span>
-                  <span class="mt-1 block text-sm font-medium text-gray-900">
+                  <span class="mt-1 block text-sm font-medium text-slate-800 transition-colors group-hover:text-indigo-700">
                     {trimEpisodeSuffix(nextEntry.title)}
                   </span>
                 </a>
@@ -383,26 +414,81 @@ if (!primaryMembership) {
           )
         }
 
-        <footer class="mt-12 border-t border-gray-200 pt-8">
-          <p class="text-sm font-medium text-gray-700">
-            Find this resource in:
-          </p>
-          <ul class="mt-3 flex flex-wrap gap-2">
+        <footer class="mt-14 border-t border-slate-200 pt-6">
+          <p class="text-sm leading-relaxed text-slate-500">
+            <span>Find this resource in </span>
             {
-              catalogMemberships.map((membership) => (
-                <li>
+              catalogMemberships.map((membership, index) => (
+                <>
+                  {index > 0 && <span aria-hidden="true">; </span>}
                   <a
                     href={membership.href}
-                    class="inline-flex rounded-md border border-gray-200 px-3 py-2 text-sm font-medium text-indigo-700 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+                    class="font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-2 transition-colors hover:text-indigo-500 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
                   >
                     {membership.catalogTitle} · {membership.sectionTitle}
                   </a>
-                </li>
+                </>
               ))
             }
-          </ul>
+            <span>.</span>
+          </p>
         </footer>
       </article>
     </div>
   </div>
 </Layout>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>('[data-summary-index-scroll]')
+    .forEach((index) => {
+      const current = index.querySelector<HTMLElement>('[aria-current="page"]');
+      if (!current) return;
+
+      const revealCurrent = () => {
+        window.requestAnimationFrame(() => {
+          if (index.clientHeight === 0 || index.scrollHeight <= index.clientHeight) {
+            return;
+          }
+
+          const indexBounds = index.getBoundingClientRect();
+          const currentBounds = current.getBoundingClientRect();
+          if (
+            currentBounds.top >= indexBounds.top &&
+            currentBounds.bottom <= indexBounds.bottom
+          ) {
+            return;
+          }
+
+          index.scrollTop +=
+            currentBounds.top -
+            indexBounds.top -
+            (index.clientHeight - currentBounds.height) / 2;
+        });
+      };
+
+      revealCurrent();
+      window.addEventListener('resize', revealCurrent);
+    });
+</script>
+
+<style>
+  .summary-index-scroll {
+    scrollbar-width: thin;
+  }
+
+  @media (min-width: 64rem) and (max-height: 35.999rem) {
+    .summary-navigation-rail {
+      position: static;
+      max-height: none;
+    }
+
+    .summary-index-scroll {
+      overflow: visible;
+    }
+  }
+
+  :global(html) {
+    scroll-padding-top: 4rem;
+  }
+</style>
