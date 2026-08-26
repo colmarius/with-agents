@@ -6,14 +6,8 @@ export type SiteContext = {
   description: string;
   catalogSlug: string;
   navigationPrefixes: readonly string[];
-  focusAreas: readonly {
-    title: string;
-    description: string;
-  }[];
-  actions: readonly {
-    href: string;
-    label: string;
-  }[];
+  featuredPostIds?: readonly string[];
+  featuredResourceIds: readonly number[];
 };
 
 export const siteContexts = [
@@ -26,30 +20,12 @@ export const siteContexts = [
       'Practical, source-backed guidance for scoping, briefing, coordinating, and verifying agent-assisted software work.',
     catalogSlug: 'coding-with-agents',
     navigationPrefixes: ['/coding', '/posts'],
-    focusAreas: [
-      {
-        title: 'Brief the work',
-        description:
-          'Turn intent into bounded assignments with enough context, authority, and acceptance criteria.',
-      },
-      {
-        title: 'Preserve context',
-        description:
-          'Keep decisions, constraints, and verification close to the repository so work survives the next thread.',
-      },
-      {
-        title: 'Demand evidence',
-        description:
-          'Scale tests, real-system checks, and review to the risk and blast radius of each change.',
-      },
+    featuredPostIds: [
+      'agentic-coding-2026',
+      'capable-coworker-coding-agents',
+      'make-the-agent-prove-it',
     ],
-    actions: [
-      { href: '/posts', label: 'Browse posts' },
-      {
-        href: '/resources/coding-with-agents',
-        label: 'Explore the resource catalog',
-      },
-    ],
+    featuredResourceIds: [74, 38, 14],
   },
   {
     slug: 'cloud',
@@ -60,26 +36,7 @@ export const siteContexts = [
       'Reviewed, source-backed guidance on cloud architecture, services, data systems, reliability, operations, and cost, beginning with Google Cloud.',
     catalogSlug: 'cloud',
     navigationPrefixes: ['/cloud'],
-    focusAreas: [
-      {
-        title: 'Platforms & architecture',
-        description:
-          'Cloud foundations, provider services, workload design, and architecture trade-offs.',
-      },
-      {
-        title: 'Data & applications',
-        description:
-          'Data systems, messaging, serverless platforms, and application delivery.',
-      },
-      {
-        title: 'Operations & governance',
-        description:
-          'Reliability, observability, cost, security, and production operations.',
-      },
-    ],
-    actions: [
-      { href: '/resources/cloud', label: 'View the Cloud resource catalog' },
-    ],
+    featuredResourceIds: [62, 59, 63],
   },
   {
     slug: 'security',
@@ -90,28 +47,6 @@ export const siteContexts = [
       'Reviewed, source-backed guidance across cloud security, applications, identity, data protection, threat response, governance, and compliance.',
     catalogSlug: 'security',
     navigationPrefixes: ['/security'],
-    focusAreas: [
-      {
-        title: 'Identity & data',
-        description:
-          'Authentication, authorization, least privilege, privacy, secrets, and data protection.',
-      },
-      {
-        title: 'Applications & platforms',
-        description:
-          'Secure software, workloads, networks, infrastructure, and delivery systems.',
-      },
-      {
-        title: 'Detection & governance',
-        description:
-          'Monitoring, investigation, incident response, risk, policy, and assurance.',
-      },
-    ],
-    actions: [
-      {
-        href: '/resources/security',
-        label: 'View the Security resource catalog',
-      },
-    ],
+    featuredResourceIds: [57, 58],
   },
 ] as const satisfies readonly SiteContext[];
