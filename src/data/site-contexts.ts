@@ -7,7 +7,6 @@ export type SiteContext = {
   catalogSlug: string;
   navigationPrefixes: readonly string[];
   featuredPostIds?: readonly string[];
-  featuredResourceIds: readonly number[];
 };
 
 export const siteContexts = [
@@ -25,7 +24,6 @@ export const siteContexts = [
       'capable-coworker-coding-agents',
       'make-the-agent-prove-it',
     ],
-    featuredResourceIds: [74, 38, 14],
   },
   {
     slug: 'cloud',
@@ -36,7 +34,6 @@ export const siteContexts = [
       'Reviewed, source-backed guidance on cloud architecture, services, data systems, reliability, operations, and cost, beginning with Google Cloud.',
     catalogSlug: 'cloud',
     navigationPrefixes: ['/cloud'],
-    featuredResourceIds: [62, 59, 63],
   },
   {
     slug: 'security',
@@ -47,6 +44,5 @@ export const siteContexts = [
       'Reviewed, source-backed guidance across cloud security, applications, identity, data protection, threat response, governance, and compliance.',
     catalogSlug: 'security',
     navigationPrefixes: ['/security'],
-    featuredResourceIds: [57, 58],
   },
 ] as const satisfies readonly SiteContext[];

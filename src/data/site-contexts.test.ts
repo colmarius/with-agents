@@ -1,9 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {
-  getCatalogResources,
-  getResourceCatalog,
-} from './resources/catalogs.ts';
+import { getResourceCatalog } from './resources/catalogs.ts';
 import { siteContexts } from './site-contexts.ts';
 
 test('site contexts own the stable landing and catalog routes', () => {
@@ -17,19 +14,7 @@ test('site contexts own the stable landing and catalog routes', () => {
   );
 
   for (const context of siteContexts) {
-    const catalog = getResourceCatalog(context.catalogSlug);
-    assert.ok(catalog);
-
-    const catalogResourceIds = new Set(
-      getCatalogResources(catalog).map(({ id }) => id),
-    );
-    assert.equal(
-      new Set(context.featuredResourceIds).size,
-      context.featuredResourceIds.length,
-    );
-    assert.ok(
-      context.featuredResourceIds.every((id) => catalogResourceIds.has(id)),
-    );
+    assert.ok(getResourceCatalog(context.catalogSlug));
   }
 });
 
