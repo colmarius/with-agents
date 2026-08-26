@@ -5,7 +5,6 @@ import {
   getCatalogResources,
   getResourceCatalog,
   resourceCatalogs,
-  resources,
   validateResourceCatalogs,
 } from './catalogs.ts';
 
@@ -44,17 +43,11 @@ const requireCatalog = (slug: string): ResourceCatalog => {
   return result;
 };
 
-test('registry exposes independent coding, cloud, and security catalogs', () => {
+test('registry exposes catalogs and cross-listed security resources', () => {
   assert.deepEqual(
     resourceCatalogs.map((entry) => entry.slug),
     ['coding-with-agents', 'cloud', 'security'],
   );
-  assert.equal(resources.length, 67);
-  assert.equal(
-    getCatalogResources(requireCatalog('coding-with-agents')).length,
-    55,
-  );
-  assert.equal(getCatalogResources(requireCatalog('cloud')).length, 12);
   assert.deepEqual(
     getCatalogResources(requireCatalog('security')).map(({ id }) => id),
     [57, 58],

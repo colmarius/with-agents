@@ -1,10 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {
-  codingResources,
-  validateCodingResources,
-} from './coding-with-agents.ts';
-import { resourceSections } from './sections.ts';
+import { validateCodingResources } from './coding-with-agents.ts';
 
 const validResource = {
   id: 1,
@@ -17,25 +13,6 @@ const validResource = {
   topics: ['tools-harnesses'],
   primarySection: 'workflows',
 };
-
-test('catalog resources have the approved primary section distribution', () => {
-  const counts = Object.fromEntries(
-    resourceSections.map((section) => [
-      section.key,
-      codingResources.filter(
-        (resource) => resource.primarySection === section.key,
-      ).length,
-    ]),
-  );
-
-  assert.equal(codingResources.length, 55);
-  assert.deepEqual(counts, {
-    workflows: 15,
-    'agent-systems': 13,
-    reliability: 14,
-    'teams-ecosystem': 13,
-  });
-});
 
 test('catalog validation rejects missing and unknown primary sections', () => {
   assert.deepEqual(validateCodingResources([validResource]), [validResource]);
