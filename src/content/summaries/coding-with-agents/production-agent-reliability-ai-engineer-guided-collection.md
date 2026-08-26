@@ -21,4 +21,4 @@ The collection focuses on operating production agents rather than proving one ge
 
 Editorially, the six talks suggest a compact sequence: justify the expected value, mark deterministic and model-controlled boundaries, assign durable state and recovery ownership, bound plans and tools, evaluate the composed lifecycle, and check whether the result improves human control. Component reliability does not automatically transfer to the system around it.
 
-For the narrower proof required on each generated change, see [Make the Agent Prove It](/posts/make-the-agent-prove-it). [Watch the full Agent Reliability playlist](https://www.youtube.com/playlist?list=PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai) for the two additional talks and the source context behind this route.
+For the narrower proof required on each generated change, see [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it). [Watch the full Agent Reliability playlist](https://www.youtube.com/playlist?list=PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai) for the two additional talks and the source context behind this route.

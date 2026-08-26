@@ -1,6 +1,7 @@
 ---
 title: 'Brief the Agent Like a Capable Co-Worker'
 description: 'A practical assignment model for giving coding agents purpose, context, acceptance criteria, authority boundaries, and human ownership.'
+context: coding
 pubDate: 2026-08-14
 updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Prompting', 'Review']
@@ -76,7 +77,7 @@ General knowledge of a language or framework cannot supply an unstated product
 decision.
 
 When responsibility moves between threads or environments, [Right-Sized
-Threads, Durable State](/posts/right-sized-threads-durable-state) extends this
+Threads, Durable State](/coding/posts/right-sized-threads-durable-state) extends this
 model with a baseline, accepted decisions, and handoff state.
 
 ## Guide the investigation without scripting it
@@ -102,7 +103,7 @@ Present likely failure modes and suspected causes as **hypotheses**, not
 conclusions. Ask what evidence would disprove them.
 
 Recurring context belongs in the repository, not in a longer prompt each time.
-[Your Repo Is the Memory](/posts/durable-context-coding-agents) covers stable
+[Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) covers stable
 commands, conventions, boundaries, and known-good examples. The brief should
 point to that truth, not repeat the whole project.
 
@@ -130,7 +131,7 @@ prove that the application works
 The agent's code, explanation, and generated test can share the same mistake.
 Ask what result would count against its approach, and keep human judgment for
 product need, architecture, maintainability, and acceptable risk. [Make the
-Agent Prove It](/posts/make-the-agent-prove-it) contains the full evidence ladder.
+Agent Prove It](/coding/posts/make-the-agent-prove-it) contains the full evidence ladder.
 
 ## Bound authority and keep accountability human
 <!-- slide:

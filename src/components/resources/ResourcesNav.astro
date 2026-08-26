@@ -1,5 +1,6 @@
 ---
 import BackNav from '@components/BackNav.astro';
+import { siteContexts } from '../../data/site-contexts';
 import type { ResourceCatalog } from '../../types/resources';
 
 type Props = {
@@ -8,6 +9,23 @@ type Props = {
 };
 
 const { active, catalog } = Astro.props;
+const context = siteContexts.find(
+  (siteContext) => siteContext.catalogSlug === catalog.slug,
+);
+
+if (!context) {
+  throw new Error(
+    `Resource catalog ${catalog.slug} has no owning site context`,
+  );
+}
+
+const parentLink =
+  active === 'all'
+    ? { href: `/${context.slug}`, label: `Back to ${context.title}` }
+    : {
+        href: `/resources/${catalog.slug}`,
+        label: `Back to all ${catalog.title} resources`,
+      };
 
 const linkClass = (isActive: boolean) =>
   `px-4 py-2 rounded-full text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 ${
@@ -18,7 +36,7 @@ const linkClass = (isActive: boolean) =>
 ---
 
 <nav class="mb-10" aria-label={`${catalog.title} collections`}>
-  <BackNav href="/resources" label="Back to Resources" class="mb-6" />
+  <BackNav href={parentLink.href} label={parentLink.label} class="mb-6" />
   <div class="flex flex-wrap gap-2">
     <a
       href={`/resources/${catalog.slug}`}

@@ -1,6 +1,7 @@
 ---
 title: 'What Is AI Slop? When Generated Output Only Looks Finished'
 description: 'AI slop looks finished even though something important is missing: a clear purpose, evidence that it works, or someone who owns the result.'
+context: coding
 pubDate: 2026-08-19
 tags: ['AI Agents', 'Review', 'Engineering Leadership', 'AI Slop']
 draft: false
@@ -66,7 +67,7 @@ Ronacher's issue report creates an immediate review cost. Code can send the bill
 
 Here, the local patch looks done, but the root problem remains. A large diff may pass its tests while leaving product decisions and maintenance unresolved. It is not slop because it is large or generated. It becomes slop when it is presented as merge-ready while decisions remain unowned and evidence is missing.
 
-[Your Repo Is the Memory](/posts/durable-context-coding-agents) shows how to preserve purpose and constraints before generation. [Make the Agent Prove It](/posts/make-the-agent-prove-it) shows how to choose evidence. The pattern is simple: the output looks done, responsibility is missing, and the next person gets the work.
+[Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) shows how to preserve purpose and constraints before generation. [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) shows how to choose evidence. The pattern is simple: the output looks done, responsibility is missing, and the next person gets the work.
 
 ## Four questions before you pass it on
 

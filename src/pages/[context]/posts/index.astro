@@ -1,0 +1,39 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import FieldGuideListPage from '@components/posts/FieldGuideListPage.astro';
+import type { GetStaticPaths } from 'astro';
+import { type SiteContext, siteContexts } from '../../../data/site-contexts';
+import {
+  assertPostListParents,
+  isPublicListedPost,
+} from '../../../utils/posts';
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection('posts');
+  assertPostListParents(posts, import.meta.env.PROD);
+
+  return siteContexts.flatMap((context) => {
+    const contextPosts = posts.filter(
+      (post) => post.data.context === context.slug && isPublicListedPost(post),
+    );
+
+    return contextPosts.length > 0
+      ? [
+          {
+            params: { context: context.slug },
+            props: { context, posts: contextPosts },
+          },
+        ]
+      : [];
+  });
+}) satisfies GetStaticPaths;
+
+type Props = {
+  context: SiteContext;
+  posts: CollectionEntry<'posts'>[];
+};
+
+const { context, posts } = Astro.props;
+---
+
+<FieldGuideListPage context={context} posts={posts} />

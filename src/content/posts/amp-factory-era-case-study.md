@@ -1,6 +1,7 @@
 ---
 title: 'Using Amp for Real Coding Work'
 description: 'How to brief, place, delegate, and verify a coding task with Amp.'
+context: coding
 pubDate: 2026-06-28
 updatedDate: 2026-08-26
 tags: ['AI Agents', 'Amp', 'Workflows', 'Agentic Coding']

@@ -32,4 +32,4 @@ The practical thread is expert supervision: agents can generate large implementa
 
 The August 16 standalone talk [The Qualities of Tomorrow’s Programmers](https://www.youtube.com/watch?v=ONeJRuhsoi4) turns the same shift in developer responsibility into practical advice on scope, system understanding, testability, reversibility, consolidation, and communication.
 
-For the full risk-scaled acceptance workflow, read [Make the Agent Prove It](/posts/make-the-agent-prove-it), or [watch the full Coding with AI playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA).
+For the full risk-scaled acceptance workflow, read [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it), or [watch the full Coding with AI playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA).

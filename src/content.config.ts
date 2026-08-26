@@ -1,21 +1,37 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { siteContextSlugs } from './data/site-contexts';
+import { isPostCanonicalPath } from './utils/posts';
 
 const posts = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
-    updatedDate: z.coerce.date().optional(),
-    tags: z.array(z.string()).optional(),
-    draft: z.boolean().default(false),
-    unlisted: z.boolean().default(false),
-    canonicalPath: z.string().startsWith('/').optional(),
-    noindex: z.boolean().default(false),
-    order: z.number(),
-  }),
+  schema: z
+    .object({
+      title: z.string(),
+      description: z.string(),
+      context: z.enum(siteContextSlugs),
+      pubDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      tags: z.array(z.string()).optional(),
+      draft: z.boolean().default(false),
+      unlisted: z.boolean().default(false),
+      canonicalPath: z.string().startsWith('/').optional(),
+      noindex: z.boolean().default(false),
+      order: z.number(),
+    })
+    .superRefine((post, context) => {
+      if (
+        post.canonicalPath &&
+        !isPostCanonicalPath(post.context, post.canonicalPath)
+      ) {
+        context.addIssue({
+          code: 'custom',
+          path: ['canonicalPath'],
+          message: `canonicalPath must match /${post.context}/posts/<slug>`,
+        });
+      }
+    }),
 });
 
 const summaries = defineCollection({

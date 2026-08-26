@@ -1,6 +1,7 @@
 ---
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'How to decide which coding-agent context belongs in chat, AGENTS.md, skills, work items, docs, tests, and saved results.'
+context: coding
 pubDate: 2026-07-02
 updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
@@ -32,7 +33,7 @@ class: title
 
 **Durable repo-local knowledge** is the smaller set of accepted facts stored in versioned files: the command every agent should run, the product decision a future change must preserve, the current task's next action, or the test that catches a repeated mistake. A fresh agent, teammate, or CI job can inspect it without recovering the original conversation.
 
-The goal is not to save chat. It is to select what should still change behavior after the chat is gone. If you prefer the visual treatment, use the [image-slide version](/posts/durable-context-coding-agents-image-deck/slides/#1).
+The goal is not to save chat. It is to select what should still change behavior after the chat is gone. If you prefer the visual treatment, use the [image-slide version](/coding/posts/durable-context-coding-agents-image-deck/slides/#1).
 
 Why does this matter now? Caleb Gross describes generative AI as making “substantial form without discernible intent” unusually easy; applying that observation to code is author synthesis ([You can just say it](https://noperator.dev/posts/you-can-just-say-it/)). Maggie Appleton argues that cheap implementation pushes team alignment onto the critical path ([One Developer, Two Dozen Agents, Zero Alignment](https://maggieappleton.com/zero-alignment)). Addy Osmani calls the gap between existing code and human understanding [comprehension debt](https://addyosmani.com/blog/comprehension-debt/). Repo-local knowledge does not solve those problems by itself, but it keeps intent and understanding from living only in a private thread.
 
@@ -96,7 +97,7 @@ Use this loop:
 
 When a lesson repeats, promote only the reusable part: a short repository-wide rule to `AGENTS.md`, a full procedure to a skill, or a mechanical requirement to a script or test. Then remove the completed task notes; Git history can preserve the record without loading it into future runs.
 
-This article owns that storage decision. [Brief the Agent Like a Capable Co-Worker](/posts/capable-coworker-coding-agents) covers the initial assignment. [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) covers continuation, fresh workers, and handoffs. [Make the Agent Prove It](/posts/make-the-agent-prove-it) covers risk-scaled verification. Link to those contracts instead of copying them into every work item.
+This article owns that storage decision. [Brief the Agent Like a Capable Co-Worker](/coding/posts/capable-coworker-coding-agents) covers the initial assignment. [Right-Sized Threads, Durable State](/coding/posts/right-sized-threads-durable-state) covers continuation, fresh workers, and handoffs. [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) covers risk-scaled verification. Link to those contracts instead of copying them into every work item.
 
 ## Keep repository memory trustworthy
 
@@ -144,4 +145,4 @@ Do not design a perfect memory system. Fix one repeated loss of context, then ch
 - Nick Nisi and Zack Proser, [Writing & Using Skills](https://www.youtube.com/watch?v=pFsfax19yOM) ([00:29:24–00:30:27](https://www.youtube.com/watch?v=pFsfax19yOM&t=1764s), [01:09:30–01:10:28](https://www.youtube.com/watch?v=pFsfax19yOM&t=4170s)) — a hands-on workshop on testing whether a skill improves a task; its evaluation figures are approximate.
 - [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
 - [`dot-agents`](https://dot-agents.dev/) — source material for file-backed task state.
-- [Brief the Agent Like a Capable Co-Worker](/posts/capable-coworker-coding-agents), [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state), and [Make the Agent Prove It](/posts/make-the-agent-prove-it) — internal companion guides for assignments, thread management, and verification.
+- [Brief the Agent Like a Capable Co-Worker](/coding/posts/capable-coworker-coding-agents), [Right-Sized Threads, Durable State](/coding/posts/right-sized-threads-durable-state), and [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) — internal companion guides for assignments, thread management, and verification.

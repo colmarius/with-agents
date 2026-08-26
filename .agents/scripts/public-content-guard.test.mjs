@@ -109,7 +109,7 @@ const writeDurableContextDeckFixture = async (root) => {
   await writeFixture(
     root,
     'src/content/posts/durable-context-coding-agents.md',
-    '[Image deck](/posts/durable-context-coding-agents-image-deck/slides/#1)',
+    '[Image deck](/coding/posts/durable-context-coding-agents-image-deck/slides/#1)',
   );
   await writeFixture(
     root,

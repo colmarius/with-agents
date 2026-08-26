@@ -1,6 +1,7 @@
 ---
 title: 'Agentic Coding in 2026: A Practical Map'
 description: 'A 2026 map of coding-agent work: brief the task, preserve context, verify behavior, keep consequential decisions human, and scale only what works.'
+context: coding
 pubDate: 2026-06-28
 updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Agentic Coding']
@@ -29,11 +30,11 @@ If you have 30 seconds, start with the bottleneck you recognize:
 
 | Your bottleneck | Start here |
 | --- | --- |
-| The assignment is vague | [Brief the Agent Like a Capable Co-Worker](/posts/capable-coworker-coding-agents) |
-| Shared context keeps disappearing | [Your Repo Is the Memory](/posts/durable-context-coding-agents) |
-| The agent cannot inspect or prove the real system | [Make the Agent Prove It](/posts/make-the-agent-prove-it) |
-| Work must cross threads or environments | [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) |
-| You want to apply this workflow in Amp | [Using Amp for Real Coding Work](/posts/amp-factory-era-case-study) |
+| The assignment is vague | [Brief the Agent Like a Capable Co-Worker](/coding/posts/capable-coworker-coding-agents) |
+| Shared context keeps disappearing | [Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) |
+| The agent cannot inspect or prove the real system | [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) |
+| Work must cross threads or environments | [Right-Sized Threads, Durable State](/coding/posts/right-sized-threads-durable-state) |
+| You want to apply this workflow in Amp | [Using Amp for Real Coding Work](/coding/posts/amp-factory-era-case-study) |
 | You want the talks behind the series | [The coding-with-agents resource hub](/resources/coding-with-agents) |
 
 The map uses a simple definition: a coding agent is an LLM that uses tools in a
@@ -73,9 +74,9 @@ practitioner diagnosis, not a measured productivity result.
 The practical response is not more ceremony. Give the agent the missing
 assignment context before it edits: outcome, scope, constraints, starting
 points, proof, and authority limits. [Brief the Agent Like a Capable
-Co-Worker](/posts/capable-coworker-coding-agents) owns that brief. Put recurring
+Co-Worker](/coding/posts/capable-coworker-coding-agents) owns that brief. Put recurring
 commands, decisions, and accepted state where the next run can find them;
-[Your Repo Is the Memory](/posts/durable-context-coding-agents) owns that system.
+[Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) owns that system.
 
 ## Make the work easy to inspect
 
@@ -112,7 +113,7 @@ These are practitioner patterns, not controlled comparisons.
 longer independently proves its work. Improve one real feedback path at a time.
 When the risk requires independence, keep reviewer-supplied acceptance
 conditions outside the agent's writable loop. [Make the Agent Prove
-It](/posts/make-the-agent-prove-it) covers the risk-scaled proof contract.
+It](/coding/posts/make-the-agent-prove-it) covers the risk-scaled proof contract.
 
 ## Keep consequential decisions human
 
@@ -169,9 +170,9 @@ and an owner who can integrate or reject the result. Then parallelize work that
 is genuinely independent and keep concurrency below the team's review capacity.
 
 [Right-Sized Threads, Durable
-State](/posts/right-sized-threads-durable-state) covers responsibility boundaries
+State](/coding/posts/right-sized-threads-durable-state) covers responsibility boundaries
 and handoffs. [Using Amp for Real Coding
-Work](/posts/amp-factory-era-case-study) turns the map into a reusable Amp workflow.
+Work](/coding/posts/amp-factory-era-case-study) turns the map into a reusable Amp workflow.
 
 The landscape is smaller than the tool surface suggests: align before code,
 preserve the context that should survive, expose reality to the loop, demand

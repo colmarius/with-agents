@@ -1,12 +1,13 @@
 ---
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'A richer slide-first alternate deck for durable context, repo memory, review checkpoints, and dot-agents workflows.'
+context: coding
 pubDate: 2026-07-02
 updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: true
-canonicalPath: '/posts/durable-context-coding-agents'
+canonicalPath: '/coding/posts/durable-context-coding-agents'
 noindex: true
 order: 3
 ---
@@ -393,7 +394,7 @@ layout: text
 
 Small work stays in the current conversation. Durable work uses a work item, a plan when needed, current-thread implementation by default, and recorded evidence. A handoff is an optional branch when another worker, environment, or independent judgment helps enough to justify the transfer.
 
-The work item connects contexts without dragging every stale search, false start, or abandoned option into the next run. [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) is the tactical version of this loop. When the work is complete, promote reusable lessons, commit the final snapshot, and remove the task-local item; git history remains the archive.
+The work item connects contexts without dragging every stale search, false start, or abandoned option into the next run. [Right-Sized Threads, Durable State](/coding/posts/right-sized-threads-durable-state) is the tactical version of this loop. When the work is complete, promote reusable lessons, commit the final snapshot, and remove the task-local item; git history remains the archive.
 
 ## Move review earlier than the PR
 <!-- slide:
@@ -449,7 +450,7 @@ Evidence is part of durable context because "done" is otherwise too easy to say.
 
 Repo state is not automatically trusted state: committed does not mean verified. Record which checks were rerun for this change and which results were inherited; where the baseline is already noisy, preserve enough evidence to distinguish old failures from new ones.
 
-For a content change in this repo, the normal proof is `npm run check` and `npm run build`. For UI work, evidence may include a screenshot or browser trace. For API work, it may include `curl` output or an integration test. For migrations, it may include a dry run and rollback note. The full ladder is in [Make the Agent Prove It](/posts/make-the-agent-prove-it).
+For a content change in this repo, the normal proof is `npm run check` and `npm run build`. For UI work, evidence may include a screenshot or browser trace. For API work, it may include `curl` output or an integration test. For migrations, it may include a dry run and rollback note. The full ladder is in [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it).
 
 Evidence does not replace judgment. It gives judgment something concrete to inspect.
 
@@ -551,6 +552,6 @@ Do not design the perfect agent operating model. Start with one repeated pain. S
 - Nick Nisi and Zack Proser, [Writing & Using Skills](https://www.youtube.com/watch?v=pFsfax19yOM) ([00:07:46–00:09:24](https://www.youtube.com/watch?v=pFsfax19yOM&t=466s), [00:29:24–00:30:27](https://www.youtube.com/watch?v=pFsfax19yOM&t=1764s), [01:09:30–01:10:28](https://www.youtube.com/watch?v=pFsfax19yOM&t=4170s)) — a hands-on workshop on when skills load and how to test whether they improve a task; its evaluation figures are approximate.
 - Vaibhav Gupta, [fighting slop with slop](https://www.youtube.com/watch?v=AMiyLItEtLA) ([00:00:01–00:06:00](https://www.youtube.com/watch?v=AMiyLItEtLA&t=1s)) — a Boundary product and engineering-practice account supporting durable architecture guidance, reviewed design writing, executable boundaries, and trace-based issue discovery when traditional line review is reduced.
 - [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
-- [`dot-agents`](https://dot-agents.dev/) and [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state) — source material for file-backed task state and handoffs.
-- [Make the Agent Prove It](/posts/make-the-agent-prove-it) — internal companion piece for the evidence ladder.
+- [`dot-agents`](https://dot-agents.dev/) and [Right-Sized Threads, Durable State](/coding/posts/right-sized-threads-durable-state) — source material for file-backed task state and handoffs.
+- [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) — internal companion piece for the evidence ladder.
 - Author synthesis from a private review of the author's own agent threads (one user's corpus); no thread content, prompts, or identifiers are reproduced.

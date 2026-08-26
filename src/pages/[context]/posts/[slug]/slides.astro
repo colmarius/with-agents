@@ -3,27 +3,28 @@ import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BackNav from '@components/BackNav.astro';
 import PwaHead from '@components/PwaHead.astro';
 import PwaUpdatePrompt from '@components/PwaUpdatePrompt.astro';
-import '../../../styles/global.css';
+import { createPostStaticPaths, getPostPath } from '@utils';
+import '../../../../styles/global.css';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-
-  const filteredPosts = import.meta.env.PROD
-    ? posts.filter((post) => !post.data.draft)
-    : posts;
-
-  return filteredPosts.map((post) => ({
-    params: { slug: post.id },
-    props: post,
-  }));
+  return createPostStaticPaths(
+    await getCollection('posts'),
+    import.meta.env.PROD,
+  );
 }
 
 type Props = CollectionEntry<'posts'>;
 
 const post = Astro.props;
 const { Content } = await render(post);
+if (Astro.params.context !== post.data.context) {
+  throw new Error(
+    `Post ${post.id} slides rendered under the wrong site context`,
+  );
+}
+const postPath = post.data.canonicalPath ?? getPostPath(post);
 const canonicalUrl = new URL(
-  `/posts/${post.id}`,
+  postPath,
   Astro.site ?? Astro.url.origin,
 ).toString();
 const slidesTitle = `${post.data.title} - Slides`;
@@ -663,7 +664,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
     <div
       class="slide-topbar fixed top-0 left-0 right-0 h-14 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-50"
     >
-      <BackNav href={`/posts/${post.id}`} label="Back to Post" />
+      <BackNav href={getPostPath(post)} label="Back to field guide" />
       <div
         class="text-sm font-semibold text-slate-900 flex-1 text-center truncate px-4"
       >
@@ -704,7 +705,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
           <p class="text-slate-700">
             This generated slide view needs JavaScript. You can still read the
             source article:
-            <a class="text-indigo-700 underline" href={`/posts/${post.id}`}>
+            <a class="text-indigo-700 underline" href={getPostPath(post)}>
               {post.data.title}
             </a>.
           </p>

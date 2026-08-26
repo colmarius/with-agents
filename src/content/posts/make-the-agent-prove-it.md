@@ -1,6 +1,7 @@
 ---
 title: 'Make the Agent Prove It'
 description: 'A practical acceptance framework for agent-written code: the harder a failure is to undo, the stronger the evidence required.'
+context: coding
 pubDate: 2026-06-28
 updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflow', 'Testing', 'Review']

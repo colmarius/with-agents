@@ -1,7 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
+import BackNav from '@components/BackNav.astro';
 import DotAgentsHighlight from '@components/DotAgentsHighlight.astro';
 import Layout from '@layouts/Layout.astro';
+import { getFieldGuideListPath, getPostPath, isPublicListedPost } from '@utils';
 import type { GetStaticPaths } from 'astro';
 import {
   getCatalogResources,
@@ -31,12 +33,12 @@ if (!catalog) {
 const catalogPath = `/resources/${catalog.slug}`;
 const resourceCount = getCatalogResources(catalog).length;
 
-const publicPosts = (await getCollection('posts')).filter(
-  (post) => !post.data.draft && !post.data.unlisted,
+const contextPosts = (await getCollection('posts')).filter(
+  (post) => post.data.context === context.slug && isPublicListedPost(post),
 );
-const publicPostById = new Map(publicPosts.map((post) => [post.id, post]));
+const contextPostById = new Map(contextPosts.map((post) => [post.id, post]));
 const featuredPosts = (context.featuredPostIds ?? []).map((postId) => {
-  const post = publicPostById.get(postId);
+  const post = contextPostById.get(postId);
   if (!post) {
     throw new Error(
       `Site context ${context.slug} features unavailable post ${postId}`,
@@ -44,6 +46,7 @@ const featuredPosts = (context.featuredPostIds ?? []).map((postId) => {
   }
   return post;
 });
+const fieldGuideListPath = getFieldGuideListPath(context.slug);
 ---
 
 <Layout
@@ -53,6 +56,9 @@ const featuredPosts = (context.featuredPostIds ?? []).map((postId) => {
 >
   <div class="mx-auto max-w-5xl space-y-16 md:space-y-24">
     <header class="max-w-4xl space-y-7">
+      <nav aria-label="Parent page">
+        <BackNav href="/" label="Back to Home" />
+      </nav>
       <p class="text-sm font-medium uppercase tracking-[0.25em] text-indigo-600">
         {context.title}
       </p>
@@ -69,12 +75,12 @@ const featuredPosts = (context.featuredPostIds ?? []).map((postId) => {
         class="flex flex-col gap-4 sm:flex-row"
       >
         <a
-          href={featuredPosts.length > 0 ? '/posts' : catalogPath}
+          href={contextPosts.length > 0 ? fieldGuideListPath : catalogPath}
           class="inline-flex items-center justify-center rounded-lg bg-gray-900 px-5 py-3 font-medium text-white transition-colors duration-200 hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
         >
-          {featuredPosts.length > 0 ? 'Browse all field guides' : 'Explore resource catalog'}
+          {contextPosts.length > 0 ? 'Browse all field guides' : 'Explore resource catalog'}
         </a>
-        {featuredPosts.length > 0 && (
+        {contextPosts.length > 0 && (
           <a
             href={catalogPath}
             class="inline-flex items-center justify-center rounded-lg border border-gray-300 px-5 py-3 font-medium text-gray-800 transition-colors duration-200 hover:border-gray-400 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
@@ -100,7 +106,7 @@ const featuredPosts = (context.featuredPostIds ?? []).map((postId) => {
           {featuredPosts.map((post) => (
             <li>
               <a
-                href={`/posts/${post.id}`}
+                href={getPostPath(post)}
                 class="group flex flex-col rounded-xl border border-gray-200 bg-white p-5 transition-all duration-200 hover:border-indigo-200 hover:bg-indigo-50/30 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 sm:h-full"
               >
                 <h3 class="mb-3 text-xl font-medium leading-snug text-gray-950 transition-colors group-hover:text-indigo-700">

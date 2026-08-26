@@ -1,12 +1,13 @@
 ---
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents (Image Deck)'
 description: 'A visual presentation about keeping coding-agent intent, decisions, task state, and proof in the repository.'
+context: coding
 pubDate: 2026-07-02
 updatedDate: 2026-08-23
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: true
-canonicalPath: '/posts/durable-context-coding-agents'
+canonicalPath: '/coding/posts/durable-context-coding-agents'
 noindex: true
 order: 4
 ---
@@ -270,4 +271,4 @@ Start with one real task. Write down what made the agent better. Repeat. `dot-ag
 - Nick Nisi and Zack Proser, [Writing & Using Skills](https://www.youtube.com/watch?v=pFsfax19yOM) ([00:07:46–00:09:24](https://www.youtube.com/watch?v=pFsfax19yOM&t=466s), [00:29:24–00:30:27](https://www.youtube.com/watch?v=pFsfax19yOM&t=1764s), [01:09:30–01:10:28](https://www.youtube.com/watch?v=pFsfax19yOM&t=4170s)) — a hands-on workshop on when skills load and how to test whether they improve a task; its evaluation figures are approximate.
 - Vaibhav Gupta, [fighting slop with slop](https://www.youtube.com/watch?v=AMiyLItEtLA) ([00:00:01–00:06:00](https://www.youtube.com/watch?v=AMiyLItEtLA&t=1s)) — a Boundary product and engineering-practice account supporting durable architecture guidance, reviewed design writing, executable boundaries, and trace-based issue discovery when traditional line review is reduced.
 - [`AGENTS.md`](https://agents.md/), [Agent Skills](https://agentskills.io/home), and [Codex Skills](https://developers.openai.com/codex/skills) — source material for map and procedure conventions.
-- [`dot-agents`](https://dot-agents.dev/), [Right-Sized Threads, Durable State](/posts/right-sized-threads-durable-state), and [Make the Agent Prove It](/posts/make-the-agent-prove-it) — source material for file-backed task state, handoffs, and the evidence ladder.
+- [`dot-agents`](https://dot-agents.dev/), [Right-Sized Threads, Durable State](/coding/posts/right-sized-threads-durable-state), and [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) — source material for file-backed task state, handoffs, and the evidence ladder.

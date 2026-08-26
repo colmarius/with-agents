@@ -1,17 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BackNav from '@components/BackNav.astro';
 import Layout from '@layouts/Layout.astro';
-import { formatDate } from '@utils';
+import { formatDate, getPostPath } from '@utils';
+import type { SiteContext } from '../../data/site-contexts';
 
-const allPosts = await getCollection('posts');
+type Props = {
+  context: SiteContext;
+  posts: CollectionEntry<'posts'>[];
+};
 
-const publishedPosts = import.meta.env.PROD
-  ? allPosts.filter((post) => !post.data.draft)
-  : allPosts;
-
-const listedPosts = publishedPosts.filter((post) => !post.data.unlisted);
-
-const sortedPosts = [...listedPosts].sort(
+const { context, posts } = Astro.props;
+const sortedPosts = [...posts].sort(
   (a, b) =>
     b.data.pubDate.getTime() - a.data.pubDate.getTime() ||
     a.data.order - b.data.order,
@@ -19,21 +19,24 @@ const sortedPosts = [...listedPosts].sort(
 ---
 
 <Layout
-	title="Posts - With Agents"
-	description="Source-backed posts on coding agents, durable context, proof, tool case studies, parallel work, outcome measurement, and agent-friendly software engineering."
-	canonicalPath="/posts"
+	title={`${context.title} field guides - With Agents`}
+	description={`Source-backed field guides for ${context.title}.`}
+	canonicalPath={`/${context.slug}/posts`}
 >
 	<div class="posts-container">
+		<nav class="mb-10" aria-label="Parent page">
+			<BackNav href={`/${context.slug}`} label={`Back to ${context.title}`} />
+		</nav>
 		<header class="posts-header">
-			<h1 class="text-4xl md:text-5xl font-light mb-4 text-gray-900">Posts</h1>
+			<h1 class="text-4xl md:text-5xl font-light mb-4 text-gray-900">Field guides</h1>
 			<p class="text-xl text-gray-600 mb-16 font-light leading-relaxed">
-				Practical writing on coding-agent workflows, durable context, evidence, tool case studies, and agent-friendly software engineering.
+				Practical, source-backed guidance for {context.title}.
 			</p>
 		</header>
 
 		<div class="posts-list">
 			{sortedPosts.map((post) => (
-				<a href={`/posts/${post.id}`} class="post-card">
+				<a href={getPostPath(post)} class="post-card">
 					<h2>{post.data.title}</h2>
 					<p class="post-excerpt">{post.data.description}</p>
 					<div class="post-meta">
@@ -53,7 +56,7 @@ const sortedPosts = [...listedPosts].sort(
 		</div>
 
 		{sortedPosts.length === 0 && (
-			<p class="no-posts">No posts yet. Check back soon!</p>
+			<p class="no-posts">No field guides yet. Check back soon!</p>
 		)}
 	</div>
 </Layout>

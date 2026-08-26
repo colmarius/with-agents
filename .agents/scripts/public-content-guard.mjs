@@ -27,7 +27,7 @@ const durableContextDeck = {
   imageHeight: 941,
   imageWidth: 1672,
   publicImagePrefix: '/slides/durable-context-coding-agents-image-deck/',
-  slideRoute: '/posts/durable-context-coding-agents-image-deck/slides/',
+  slideRoute: '/coding/posts/durable-context-coding-agents-image-deck/slides/',
 };
 
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

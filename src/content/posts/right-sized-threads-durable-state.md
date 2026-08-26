@@ -1,6 +1,7 @@
 ---
 title: 'Right-Sized Threads, Durable State'
 description: 'How to keep connected agent work in one thread, split only when separation helps, and carry accepted state across the boundary.'
+context: coding
 pubDate: 2026-06-28
 updatedDate: 2026-08-26
 tags: ['AI Agents', 'Workflows', 'Planning', 'dot-agents']
@@ -27,7 +28,7 @@ A thread is right-sized when it owns one connected job. A checkout bug can inclu
 
 Amp's current [prompting guidance](https://ampcode.com/docs/prompting#how-to-prompt) also says to use one thread per task: tasks can be long, but unrelated work does not belong together. Amp reports a thread compacted more than 68 times ([“Read Bigger Threads”](https://ampcode.com/news/read-bigger-threads)), and Jason Liu of OpenAI shows five-week-old project threads delegating narrower work ([00:03:02–00:07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s)). These examples show that long threads can work; they do not show that longer is better.
 
-[Your Repo Is the Memory](/posts/durable-context-coding-agents) covers reusable repository context. [Brief the Agent Like a Capable Co-Worker](/posts/capable-coworker-coding-agents) covers assignment briefs. This article covers when one assignment ends and another begins.
+[Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) covers reusable repository context. [Brief the Agent Like a Capable Co-Worker](/coding/posts/capable-coworker-coding-agents) covers assignment briefs. This article covers when one assignment ends and another begins.
 
 ## Keep feedback with the job it can still change
 

@@ -1,11 +1,14 @@
+export const siteContextSlugs = ['coding', 'cloud', 'security'] as const;
+
+export type SiteContextSlug = (typeof siteContextSlugs)[number];
+
 export type SiteContext = {
-  slug: string;
+  slug: SiteContextSlug;
   navigationLabel: string;
   title: string;
   promise: string;
   description: string;
   catalogSlug: string;
-  navigationPrefixes: readonly string[];
   featuredPostIds?: readonly string[];
 };
 
@@ -18,7 +21,6 @@ export const siteContexts = [
     description:
       'Practical, source-backed guidance for scoping, briefing, coordinating, and verifying agent-assisted software work.',
     catalogSlug: 'coding-with-agents',
-    navigationPrefixes: ['/coding', '/posts'],
     featuredPostIds: [
       'agentic-coding-2026',
       'capable-coworker-coding-agents',
@@ -33,7 +35,6 @@ export const siteContexts = [
     description:
       'Reviewed, source-backed guidance on cloud architecture, services, data systems, reliability, operations, and cost, beginning with Google Cloud.',
     catalogSlug: 'cloud',
-    navigationPrefixes: ['/cloud'],
   },
   {
     slug: 'security',
@@ -43,6 +44,5 @@ export const siteContexts = [
     description:
       'Reviewed, source-backed guidance across cloud security, applications, identity, data protection, threat response, governance, and compliance.',
     catalogSlug: 'security',
-    navigationPrefixes: ['/security'],
   },
 ] as const satisfies readonly SiteContext[];

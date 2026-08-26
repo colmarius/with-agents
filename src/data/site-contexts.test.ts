@@ -18,20 +18,6 @@ test('site contexts own the stable landing and catalog routes', () => {
   }
 });
 
-test('coding navigation owns established post routes', () => {
-  assert.deepEqual(
-    siteContexts.map(({ slug, navigationPrefixes }) => ({
-      slug,
-      navigationPrefixes,
-    })),
-    [
-      { slug: 'coding', navigationPrefixes: ['/coding', '/posts'] },
-      { slug: 'cloud', navigationPrefixes: ['/cloud'] },
-      { slug: 'security', navigationPrefixes: ['/security'] },
-    ],
-  );
-});
-
 test('only coding curates public field guides', () => {
   assert.deepEqual(
     siteContexts.map((context) => ({
