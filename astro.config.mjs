@@ -14,6 +14,9 @@ const addDirectoryAliases = async (entries) => ({
     if (!entry.url.endsWith(indexPathSuffix)) {
       return [entry];
     }
+    if (entry.url.startsWith('summaries/')) {
+      return [entry];
+    }
 
     return [
       entry,

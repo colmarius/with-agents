@@ -8,6 +8,23 @@ type MarkdownRendererProps = {
 };
 
 function MarkdownRenderer({ markdown }: MarkdownRendererProps) {
+  const normalizedMarkdown = useMemo(() => {
+    const headingLevels = Array.from(
+      markdown.matchAll(/^(#{1,6})\s/gm),
+      (match) => match[1].length,
+    );
+    const firstHeadingLevel =
+      headingLevels.length > 0 ? Math.min(...headingLevels) : 2;
+    const headingOffset = Math.max(0, firstHeadingLevel - 2);
+
+    if (headingOffset === 0) return markdown;
+
+    return markdown.replace(
+      /^(#{1,6})(\s)/gm,
+      (_, hashes, spacing) => `${hashes.slice(headingOffset)}${spacing}`,
+    );
+  }, [markdown]);
+
   const components = useMemo<Components>(
     () => ({
       a: ({ children, href, ...props }) => {
@@ -24,19 +41,23 @@ function MarkdownRenderer({ markdown }: MarkdownRendererProps) {
           >
             {children}
             {isExternal && (
-              <svg
-                className="inline-block w-4 h-4 flex-shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
+              <>
+                <span className="sr-only">(opens in a new tab)</span>
+                <svg
+                  className="inline-block w-4 h-4 flex-shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </>
             )}
           </a>
         );
@@ -46,13 +67,13 @@ function MarkdownRenderer({ markdown }: MarkdownRendererProps) {
   );
 
   return (
-    <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-a:text-blue-600 hover:prose-a:text-blue-800 prose-code:text-gray-900 prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-900 prose-pre:text-gray-100">
+    <div className="prose-post">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeSanitize]}
         components={components}
       >
-        {markdown}
+        {normalizedMarkdown}
       </ReactMarkdown>
     </div>
   );

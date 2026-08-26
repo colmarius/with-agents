@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {
+  getSummaryPath,
   type ManifestEntry,
   resolveSummaryEntries,
   resolveSummarySlug,
@@ -141,4 +142,11 @@ test('resolves default and requested summary slugs', () => {
   assert.equal(resolveSummarySlug(series), 'latest');
   assert.equal(resolveSummarySlug(series, 'first'), 'first');
   assert.equal(resolveSummarySlug(series, 'other'), null);
+});
+
+test('builds canonical paths from encoded nested summary slugs', () => {
+  assert.equal(
+    getSummaryPath('coding-with-agents__series__episode-one'),
+    '/summaries/coding-with-agents/series/episode-one/',
+  );
 });

@@ -1,19 +1,10 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useIsMdUp } from '../../hooks';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { Resource, ResourceTopicOption } from '../../types/resources';
 import { formatDate, titleCase } from '../../utils';
-import {
-  Button,
-  ChevronDownIcon,
-  CollapsibleButton,
-  DocumentIcon,
-  ExternalLinkIcon,
-} from '../ui';
-import { EpisodeList } from './EpisodeList';
-import MarkdownRenderer from './MarkdownRenderer';
+import { Button, ChevronDownIcon, DocumentIcon, ExternalLinkIcon } from '../ui';
 import ResourceListItem from './ResourceListItem';
-import { SummaryModal } from './SummaryModal';
 import {
+  getSummaryPath,
   type ManifestEntry,
   resolveSummaryEntries,
   resolveSummarySlug,
@@ -21,47 +12,8 @@ import {
 } from './summaryResolver';
 
 const SUMMARY_QUERY_PARAM = 'summary';
-const SUMMARY_HISTORY_STATE_KEY = 'resourceCatalogSummary';
-
-type SummaryHistoryMode = 'push' | 'replace';
-
-const getHistoryState = (): Record<string, unknown> =>
-  typeof window.history.state === 'object' && window.history.state !== null
-    ? { ...(window.history.state as Record<string, unknown>) }
-    : {};
-
-const setSummaryUrl = (slug: string, mode: SummaryHistoryMode) => {
-  const url = new URL(window.location.href);
-  url.searchParams.set(SUMMARY_QUERY_PARAM, slug);
-  const state = getHistoryState();
-
-  if (mode === 'push') {
-    state[SUMMARY_HISTORY_STATE_KEY] = true;
-    window.history.pushState(state, '', url);
-  } else {
-    window.history.replaceState(state, '', url);
-  }
-};
-
-const removeSummaryFromUrl = () => {
-  const url = new URL(window.location.href);
-  url.searchParams.delete(SUMMARY_QUERY_PARAM);
-  const state = getHistoryState();
-  delete state[SUMMARY_HISTORY_STATE_KEY];
-  window.history.replaceState(state, '', url);
-};
 
 type Topic = string;
-
-type SummaryData = {
-  slug: string;
-  title: string;
-  date: string | null;
-  series: string | null;
-  episode: number | null;
-  collection: string | null;
-  body: string;
-};
 
 type ResourceCatalogProps = {
   manifest: ManifestEntry[];
@@ -70,44 +22,15 @@ type ResourceCatalogProps = {
   emptyMessage: string;
 };
 
-const fetchSummary = async (slug: string): Promise<string> => {
-  const response = await fetch(`/api/summaries/${slug}.json`);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch summary: ${response.statusText}`);
-  }
-  const data: SummaryData = await response.json();
-  return data.body;
-};
-
 const ResourceCatalog = ({
   manifest,
   resources,
   topicOptions,
   emptyMessage,
 }: ResourceCatalogProps) => {
-  const isMdUp = useIsMdUp();
-  const summaryRequestId = useRef(0);
-  const summaryContentRef = useRef<HTMLElement>(null);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedResource, setSelectedResource] = useState<Resource | null>(
-    null,
-  );
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
   const [isTopicFiltersOpen, setIsTopicFiltersOpen] = useState(false);
-  const [summaryContent, setSummaryContent] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [summaryRef, setSummaryRef] = useState<SummaryRef | null>(null);
-  const [episodes, setEpisodes] = useState<ManifestEntry[]>([]);
-  const [selectedSummarySlug, setSelectedSummarySlug] = useState<string | null>(
-    null,
-  );
-  const [error, setError] = useState<string | null>(null);
-  const [isEpisodeListExpanded, setIsEpisodeListExpanded] = useState(false);
-  const [isEpisodeLoading, setIsEpisodeLoading] = useState(false);
-  const [currentEpisodeTitle, setCurrentEpisodeTitle] = useState<string | null>(
-    null,
-  );
 
   const topicLabels = useMemo(
     () =>
@@ -139,15 +62,20 @@ const ResourceCatalog = ({
     [summaryEntriesByResourceId],
   );
 
-  const resourcesById = useMemo(
-    () => new Map(resources.map((resource) => [resource.id, resource])),
-    [resources],
-  );
-
   const summaryEntriesBySlug = useMemo(
     () => new Map(manifest.map((entry) => [entry.slug, entry])),
     [manifest],
   );
+
+  useEffect(() => {
+    const legacySlug = new URL(window.location.href).searchParams.get(
+      SUMMARY_QUERY_PARAM,
+    );
+
+    if (legacySlug && summaryEntriesBySlug.has(legacySlug)) {
+      window.location.replace(getSummaryPath(legacySlug));
+    }
+  }, [summaryEntriesBySlug]);
 
   const latestSummaryDates = useMemo(() => {
     const dates: Record<number, Date> = {};
@@ -273,189 +201,16 @@ const ResourceCatalog = ({
     }
   };
 
-  const resetSummary = useCallback(() => {
-    summaryRequestId.current += 1;
-    setModalOpen(false);
-    setSelectedResource(null);
-    setSummaryContent('');
-    setEpisodes([]);
-    setSelectedSummarySlug(null);
-    setSummaryRef(null);
-    setError(null);
-    setIsLoading(false);
-    setIsEpisodeListExpanded(false);
-    setIsEpisodeLoading(false);
-    setCurrentEpisodeTitle(null);
-  }, []);
-
-  const openSummary = useCallback(
-    (
-      resource: Resource,
-      requestedSlug?: string,
-      historyMode: SummaryHistoryMode | null = null,
-    ): boolean => {
-      const ref = resolveSummaryRef(resource.id);
-      const selectedSlug = ref ? resolveSummarySlug(ref, requestedSlug) : null;
-
-      if (requestedSlug !== undefined && selectedSlug === null) {
-        return false;
-      }
-
-      const requestId = summaryRequestId.current + 1;
-      summaryRequestId.current = requestId;
-      setSelectedResource(resource);
-      setModalOpen(true);
-      setIsLoading(true);
-      setError(null);
-      setSummaryContent('');
-      setEpisodes([]);
-      setSelectedSummarySlug(selectedSlug);
-      setCurrentEpisodeTitle(null);
-      setIsEpisodeListExpanded(false);
-      setIsEpisodeLoading(false);
-      setSummaryRef(ref);
-
-      if (!ref) {
-        setError('No summary available for this resource.');
-        setIsLoading(false);
-        return true;
-      }
-
-      if (ref.kind === 'error') {
-        setError(ref.message);
-        setIsLoading(false);
-        return true;
-      }
-
-      if (!selectedSlug) {
-        setError('No summary available for this resource.');
-        setIsLoading(false);
-        return true;
-      }
-
-      if (historyMode) {
-        setSummaryUrl(selectedSlug, historyMode);
-      }
-
-      if (ref.kind === 'series' || ref.kind === 'collection') {
-        setEpisodes(ref.entries);
-        setCurrentEpisodeTitle(
-          ref.entries.find((entry) => entry.slug === selectedSlug)?.title ??
-            null,
-        );
-      }
-
-      void fetchSummary(selectedSlug)
-        .then((content) => {
-          if (summaryRequestId.current === requestId) {
-            setSummaryContent(content);
-          }
-        })
-        .catch((err: unknown) => {
-          if (summaryRequestId.current === requestId) {
-            setError(
-              `Failed to load summary: ${err instanceof Error ? err.message : 'Unknown error'}`,
-            );
-          }
-        })
-        .finally(() => {
-          if (summaryRequestId.current === requestId) {
-            setIsLoading(false);
-          }
-        });
-
-      return true;
-    },
-    [resolveSummaryRef],
-  );
-
-  useEffect(() => {
-    const syncSummaryFromUrl = () => {
-      const requestedSlug = new URL(window.location.href).searchParams.get(
-        SUMMARY_QUERY_PARAM,
-      );
-
-      if (requestedSlug === null) {
-        resetSummary();
-        return;
-      }
-
-      const entry = summaryEntriesBySlug.get(requestedSlug);
-      const resource = entry ? resourcesById.get(entry.resourceId) : undefined;
-
-      if (!resource || !openSummary(resource, requestedSlug)) {
-        removeSummaryFromUrl();
-        resetSummary();
-      }
-    };
-
-    syncSummaryFromUrl();
-    window.addEventListener('popstate', syncSummaryFromUrl);
-    return () => window.removeEventListener('popstate', syncSummaryFromUrl);
-  }, [openSummary, resetSummary, resourcesById, summaryEntriesBySlug]);
-
-  useEffect(() => {
-    if (selectedSummarySlug === null) return;
-    summaryContentRef.current?.scrollTo({ top: 0 });
-  }, [selectedSummarySlug]);
-
-  const handleOpenSummary = (resource: Resource) => {
-    openSummary(resource, undefined, 'push');
-  };
-
-  const handleSelectEpisode = (slug: string) => {
-    const episode = episodes.find((entry) => entry.slug === slug);
-    if (!episode) return;
-
-    const requestId = summaryRequestId.current + 1;
-    summaryRequestId.current = requestId;
-    setSelectedSummarySlug(slug);
-    setIsEpisodeListExpanded(false);
-    setIsEpisodeLoading(true);
-    setError(null);
-    setCurrentEpisodeTitle(episode.title);
-    setSummaryUrl(slug, 'replace');
-
-    void fetchSummary(slug)
-      .then((content) => {
-        if (summaryRequestId.current === requestId) {
-          setSummaryContent(content);
-        }
-      })
-      .catch((err: unknown) => {
-        if (summaryRequestId.current === requestId) {
-          setError(
-            `Failed to load summary: ${err instanceof Error ? err.message : 'Unknown error'}`,
-          );
-        }
-      })
-      .finally(() => {
-        if (summaryRequestId.current === requestId) {
-          setIsEpisodeLoading(false);
-        }
-      });
-  };
-
-  const handleCloseSummary = () => {
-    const url = new URL(window.location.href);
-    const shouldGoBack =
-      url.searchParams.has(SUMMARY_QUERY_PARAM) &&
-      window.history.state?.[SUMMARY_HISTORY_STATE_KEY] === true;
-
-    resetSummary();
-    if (shouldGoBack) {
-      window.history.back();
-    } else {
-      removeSummaryFromUrl();
-    }
-  };
-
-  const summaryAvailability = useMemo(() => {
-    const availability: Record<number, boolean> = {};
+  const summaryPaths = useMemo(() => {
+    const paths: Record<number, string> = {};
     sortedResources.forEach((r) => {
-      availability[r.id] = resolveSummaryRef(r.id) !== null;
+      const ref = resolveSummaryRef(r.id);
+      const slug = ref ? resolveSummarySlug(ref) : null;
+      if (slug) {
+        paths[r.id] = getSummaryPath(slug);
+      }
     });
-    return availability;
+    return paths;
   }, [sortedResources, resolveSummaryRef]);
 
   return (
@@ -552,72 +307,78 @@ const ResourceCatalog = ({
       <div className="space-y-8">
         {filteredResources.length > 0 ? (
           filteredResources.map((resource) => (
-            <ResourceListItem
+            <div
               key={resource.id}
-              title={resource.title}
-              badge={
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                  {titleCase(resource.type)}
-                </span>
-              }
-              description={resource.description}
-              metadata={
-                resource.subtitle && (
-                  <p className="text-base font-medium text-gray-700 mb-1">
-                    {resource.subtitle}
-                  </p>
-                )
-              }
+              id={`resource-${resource.id}`}
+              className="scroll-mt-24"
             >
-              <div className="flex flex-col gap-4 w-full">
-                <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:gap-4 md:items-start w-full">
-                  <div className="flex flex-col gap-2">
-                    <div className="text-sm text-gray-500 flex flex-wrap items-center gap-x-4 gap-y-1">
-                      <span className="font-medium">{resource.source}</span>
-                      <span>{getDisplayDateLabel(resource)}</span>
+              <ResourceListItem
+                title={resource.title}
+                badge={
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                    {titleCase(resource.type)}
+                  </span>
+                }
+                description={resource.description}
+                metadata={
+                  resource.subtitle && (
+                    <p className="text-base font-medium text-gray-700 mb-1">
+                      {resource.subtitle}
+                    </p>
+                  )
+                }
+              >
+                <div className="flex flex-col gap-4 w-full">
+                  <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:gap-4 md:items-start w-full">
+                    <div className="flex flex-col gap-2">
+                      <div className="text-sm text-gray-500 flex flex-wrap items-center gap-x-4 gap-y-1">
+                        <span className="font-medium">{resource.source}</span>
+                        <span>{getDisplayDateLabel(resource)}</span>
+                      </div>
+
+                      {resource.topics.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {resource.topics.map((topic) => (
+                            <span
+                              key={topic}
+                              className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs"
+                            >
+                              {topicLabels[topic]}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
-                    {resource.topics.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {resource.topics.map((topic) => (
-                          <span
-                            key={topic}
-                            className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs"
-                          >
-                            {topicLabels[topic]}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 md:justify-self-end md:flex-shrink-0">
-                    {summaryAvailability[resource.id] && (
+                    <div className="flex flex-wrap gap-2 md:justify-self-end md:flex-shrink-0">
+                      {summaryPaths[resource.id] && (
+                        <Button
+                          as="a"
+                          variant="secondary"
+                          href={summaryPaths[resource.id]}
+                        >
+                          <DocumentIcon />
+                          {resource.type === 'playlist'
+                            ? 'Read Summaries'
+                            : 'Read Summary'}
+                        </Button>
+                      )}
                       <Button
-                        variant="secondary"
-                        onClick={() => handleOpenSummary(resource)}
-                        aria-haspopup="dialog"
+                        as="a"
+                        variant="primary"
+                        href={resource.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <DocumentIcon />
-                        Read{' '}
-                        {resource.type === 'playlist' ? 'Summaries' : 'Summary'}
+                        {getLinkText(resource.type)}
+                        <ExternalLinkIcon />
+                        <span className="sr-only">(opens in a new tab)</span>
                       </Button>
-                    )}
-                    <Button
-                      as="a"
-                      variant="primary"
-                      href={resource.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {getLinkText(resource.type)}
-                      <ExternalLinkIcon />
-                      <span className="sr-only">(opens in a new tab)</span>
-                    </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </ResourceListItem>
+              </ResourceListItem>
+            </div>
           ))
         ) : (
           <div className="rounded-lg border border-dashed border-gray-300 bg-white p-8 text-center">
@@ -641,84 +402,6 @@ const ResourceCatalog = ({
           </div>
         )}
       </div>
-
-      <SummaryModal
-        isOpen={modalOpen}
-        onClose={handleCloseSummary}
-        title={selectedResource?.title || ''}
-      >
-        {isLoading ? (
-          <div className="flex justify-center items-center p-8">
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600" />
-          </div>
-        ) : error ? (
-          <div className="p-6">
-            <div className="text-red-600 p-4 bg-red-50 rounded-lg">{error}</div>
-          </div>
-        ) : (summaryRef?.kind === 'series' ||
-            summaryRef?.kind === 'collection') &&
-          episodes.length > 0 ? (
-          <div className="flex flex-col md:flex-row gap-6 min-h-0 flex-1 md:overflow-hidden">
-            <aside
-              className={`flex min-h-0 flex-col md:block md:w-64 md:flex-none md:overflow-y-auto md:max-h-full p-6 pb-0 md:pr-0 md:pb-6 ${
-                isEpisodeListExpanded ? 'flex-1' : 'shrink-0'
-              }`}
-            >
-              <div
-                className={`shrink-0 md:hidden ${
-                  isEpisodeListExpanded ? 'mb-3' : ''
-                }`}
-              >
-                <CollapsibleButton
-                  label={
-                    summaryRef.kind === 'collection'
-                      ? 'Selected videos'
-                      : 'Episodes'
-                  }
-                  isOpen={isEpisodeListExpanded}
-                  onClick={() =>
-                    setIsEpisodeListExpanded(!isEpisodeListExpanded)
-                  }
-                />
-              </div>
-              <EpisodeList
-                episodes={episodes.map((e) => ({
-                  path: e.slug,
-                  episode: e.episode,
-                  title: e.title,
-                }))}
-                selectedSlug={selectedSummarySlug}
-                onSelectEpisode={handleSelectEpisode}
-                mode={summaryRef.kind}
-                isCollapsed={!isMdUp && !isEpisodeListExpanded}
-              />
-            </aside>
-            <main
-              ref={summaryContentRef}
-              className={`relative flex-1 min-w-0 overflow-y-auto overscroll-contain p-6 pt-0 md:block md:pt-6 md:pl-0 ${
-                isEpisodeListExpanded ? 'hidden' : ''
-              }`}
-              aria-busy={isEpisodeLoading}
-            >
-              {isEpisodeLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-white/60 pointer-events-none">
-                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600" />
-                </div>
-              )}
-              {currentEpisodeTitle && (
-                <h2 className="text-xl font-semibold text-gray-900 mb-4 not-prose">
-                  {currentEpisodeTitle}
-                </h2>
-              )}
-              <MarkdownRenderer markdown={summaryContent} />
-            </main>
-          </div>
-        ) : (
-          <div className="flex-1 overflow-y-auto overscroll-contain p-6">
-            <MarkdownRenderer markdown={summaryContent} />
-          </div>
-        )}
-      </SummaryModal>
     </section>
   );
 };

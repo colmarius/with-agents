@@ -1,0 +1,408 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import MarkdownRenderer from '@components/resources/MarkdownRenderer';
+import {
+  encodeSummarySlug,
+  getSummaryPath,
+  resolveSummaryEntries,
+  resolveSummarySlug,
+  type SummaryRef,
+  toManifestEntry,
+} from '@components/resources/summaryResolver';
+import ScrollBackNav from '@components/ScrollBackNav.astro';
+import Layout from '@layouts/Layout.astro';
+import { formatDate } from '@utils';
+import { resourceCatalogs, resources } from '../../data/resources/catalogs';
+import type { Resource } from '../../types/resources';
+
+type Props = {
+  resource: Resource;
+  summary: CollectionEntry<'summaries'>;
+  summaryRef: SummaryRef;
+};
+
+export async function getStaticPaths() {
+  const summaries = await getCollection('summaries');
+  const manifest = summaries.map(toManifestEntry);
+  const resourcesById = new Map(
+    resources.map((resource) => [resource.id, resource]),
+  );
+  const entriesByResourceId = new Map<number, typeof manifest>();
+
+  for (const entry of manifest) {
+    const entries = entriesByResourceId.get(entry.resourceId);
+    if (entries) {
+      entries.push(entry);
+    } else {
+      entriesByResourceId.set(entry.resourceId, [entry]);
+    }
+  }
+
+  return summaries.map((summary) => {
+    const resource = resourcesById.get(summary.data.resourceId);
+    if (!resource) {
+      throw new Error(
+        `Summary ${summary.id} references unknown resource ${summary.data.resourceId}`,
+      );
+    }
+
+    const summaryRef = resolveSummaryEntries(
+      entriesByResourceId.get(resource.id) ?? [],
+    );
+    const summarySlug = encodeSummarySlug(summary.id);
+
+    if (
+      !summaryRef ||
+      summaryRef.kind === 'error' ||
+      resolveSummarySlug(summaryRef, summarySlug) === null
+    ) {
+      const reason =
+        summaryRef?.kind === 'error'
+          ? summaryRef.message
+          : 'summary is not owned by its resource';
+      throw new Error(
+        `Cannot create summary page for ${summary.id}: ${reason}`,
+      );
+    }
+
+    if (
+      !resourceCatalogs.some((catalog) =>
+        catalog.resourceIds.includes(resource.id),
+      )
+    ) {
+      throw new Error(
+        `Summary ${summary.id} belongs to resource ${resource.id}, which is not in a catalog`,
+      );
+    }
+
+    return {
+      params: { slug: summary.id },
+      props: { resource, summary, summaryRef },
+    };
+  });
+}
+
+const { resource, summary, summaryRef } = Astro.props;
+const summarySlug = encodeSummarySlug(summary.id);
+const canonicalPath = getSummaryPath(summarySlug);
+const summaryDate = summary.data.date ?? new Date(resource.date);
+const groupedEntries =
+  summaryRef.kind === 'series' || summaryRef.kind === 'collection'
+    ? summaryRef.entries
+    : [];
+const selectedIndex = groupedEntries.findIndex(
+  (entry) => entry.slug === summarySlug,
+);
+const previousEntry =
+  selectedIndex > 0 ? groupedEntries[selectedIndex - 1] : null;
+const nextEntry =
+  selectedIndex >= 0 && selectedIndex < groupedEntries.length - 1
+    ? groupedEntries[selectedIndex + 1]
+    : null;
+const isGrouped = groupedEntries.length > 0;
+const navigationLabel =
+  summaryRef.kind === 'series' ? 'Episodes' : 'In this collection';
+const showResourceTitle = resource.title !== summary.data.title;
+const originalLinkLabel =
+  resource.type === 'video'
+    ? 'Watch original video'
+    : resource.type === 'playlist'
+      ? 'Open original playlist'
+      : resource.type === 'podcast'
+        ? 'Listen to original podcast'
+        : 'Read original article';
+const trimEpisodeSuffix = (title: string) =>
+  title.replace(/\s*-\s*Episode\s+\d+$/i, '');
+const catalogMemberships = resourceCatalogs.flatMap((catalog) => {
+  if (!catalog.resourceIds.includes(resource.id)) return [];
+
+  const sectionKey = catalog.sectionByResourceId[resource.id];
+  const section = catalog.sections.find((entry) => entry.key === sectionKey);
+  if (!section) {
+    throw new Error(
+      `Resource ${resource.id} has no valid section in catalog ${catalog.slug}`,
+    );
+  }
+
+  return [
+    {
+      catalogTitle: catalog.title,
+      sectionTitle: section.label,
+      href: `/resources/${catalog.slug}/${section.routeSlug}#resource-${resource.id}`,
+    },
+  ];
+});
+const primaryMembership = catalogMemberships[0];
+const otherCatalogMemberships = catalogMemberships.slice(1);
+
+if (!primaryMembership) {
+  throw new Error(`Resource ${resource.id} has no catalog membership`);
+}
+---
+
+<Layout
+  title={`${summary.data.title} – Summary – With Agents`}
+  description={resource.description}
+  canonicalPath={canonicalPath}
+  ogType="article"
+>
+  <div class="mx-auto max-w-5xl pb-16">
+    <ScrollBackNav
+      href={primaryMembership.href}
+      label={`Back to ${primaryMembership.catalogTitle} resources`}
+      class="mb-8"
+    />
+
+    <div
+      class:list={[
+        isGrouped &&
+          'lg:grid lg:grid-cols-[16rem_minmax(0,42rem)] lg:items-start lg:justify-center lg:gap-12',
+      ]}
+    >
+      {
+        isGrouped && (
+          <aside class="hidden lg:block">
+            <div class:list={[groupedEntries.length <= 12 && 'sticky top-6']}>
+              <div class="flex items-baseline justify-between gap-3">
+                <h2 class="text-xs font-semibold uppercase tracking-wider text-gray-500">
+                  {navigationLabel}
+                </h2>
+                <span class="text-xs tabular-nums text-gray-500">
+                  {selectedIndex + 1} of {groupedEntries.length}
+                </span>
+              </div>
+              <nav class="mt-3" aria-label={navigationLabel}>
+                <ol class="space-y-1">
+                  {groupedEntries.map((entry) => {
+                    const isCurrent = entry.slug === summarySlug;
+                    return (
+                      <li>
+                        <a
+                          href={getSummaryPath(entry.slug)}
+                          aria-current={isCurrent ? 'page' : undefined}
+                          class:list={[
+                            'block rounded-md border px-3 py-2 text-sm leading-snug transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2',
+                            isCurrent
+                              ? 'border-indigo-200 bg-indigo-50 text-gray-900'
+                              : 'border-transparent text-gray-600 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-900',
+                          ]}
+                        >
+                          {summaryRef.kind === 'series' && (
+                            <span class="mb-0.5 block text-xs font-medium text-gray-500">
+                              Episode {entry.episode}
+                            </span>
+                          )}
+                          {trimEpisodeSuffix(entry.title)}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </nav>
+            </div>
+          </aside>
+        )
+      }
+
+      <article class:list={['min-w-0', !isGrouped && 'mx-auto max-w-2xl']}>
+        <header class="mb-8 border-b border-slate-200 pb-7 sm:mb-10">
+          {
+            showResourceTitle && (
+              <p class="mb-3 text-sm font-medium text-indigo-700">
+                {resource.title}
+              </p>
+            )
+          }
+          <h1 class="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
+            {summary.data.title}
+          </h1>
+          <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-600">
+            <span class="font-medium text-slate-700">{resource.source}</span>
+            <span aria-hidden="true">·</span>
+            <time datetime={summaryDate.toISOString()}>{formatDate(summaryDate)}</time>
+            {
+              summaryRef.kind === 'series' && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span>Episode {summary.data.episode}</span>
+                </>
+              )
+            }
+            {
+              isGrouped && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <span>
+                    {selectedIndex + 1} of {groupedEntries.length}
+                  </span>
+                </>
+              )
+            }
+          </div>
+
+          <div class="mt-5 flex flex-wrap items-center gap-3">
+            <a
+              href={resource.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex min-h-11 items-center gap-1.5 rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm font-medium text-gray-800 transition-colors hover:border-gray-400 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+            >
+              {originalLinkLabel}
+              <span aria-hidden="true">↗</span>
+              <span class="sr-only">(opens in a new tab)</span>
+            </a>
+            {
+              otherCatalogMemberships.length > 0 && (
+                <nav aria-label="Other resource catalogs" class="text-sm text-gray-500">
+                  <span>Also in </span>
+                  {otherCatalogMemberships.map((membership, index) => (
+                    <>
+                      {index > 0 && <span aria-hidden="true"> · </span>}
+                      <a
+                        href={membership.href}
+                        class="text-indigo-700 underline decoration-indigo-300 underline-offset-2 hover:text-indigo-500 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+                      >
+                        {membership.catalogTitle}
+                      </a>
+                    </>
+                  ))}
+                </nav>
+              )
+            }
+          </div>
+        </header>
+
+        {
+          isGrouped && (
+            <details class="group mb-8 rounded-lg border border-gray-200 bg-white lg:hidden">
+              <summary class="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 rounded-lg px-4 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-600/50 [&::-webkit-details-marker]:hidden">
+                <span class="min-w-0">
+                  <span class="block text-xs font-semibold uppercase tracking-wide text-gray-500">
+                    {navigationLabel}
+                  </span>
+                  <span class="mt-0.5 block text-sm font-medium leading-snug text-gray-900">
+                    Browse {groupedEntries.length} summaries
+                  </span>
+                </span>
+                <span class="flex shrink-0 items-center gap-2 text-xs tabular-nums text-gray-500">
+                  <span>{selectedIndex + 1} of {groupedEntries.length}</span>
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    class="h-4 w-4 transition-transform group-open:rotate-180"
+                  >
+                    <path
+                      d="m5 7.5 5 5 5-5"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.75"
+                    />
+                  </svg>
+                </span>
+              </summary>
+              <nav
+                class="border-t border-gray-200 p-2"
+                aria-label={navigationLabel}
+              >
+                <ol class="space-y-1">
+                  {groupedEntries.map((entry) => {
+                    const isCurrent = entry.slug === summarySlug;
+                    return (
+                      <li>
+                        <a
+                          href={getSummaryPath(entry.slug)}
+                          aria-current={isCurrent ? 'page' : undefined}
+                          class:list={[
+                            'block rounded-md px-3 py-2 text-sm leading-snug focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50',
+                            isCurrent
+                              ? 'bg-indigo-50 text-gray-900'
+                              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                          ]}
+                        >
+                          {summaryRef.kind === 'series' && (
+                            <span class="mr-2 text-xs font-medium text-gray-500">
+                              Ep {entry.episode}
+                            </span>
+                          )}
+                          {trimEpisodeSuffix(entry.title)}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </nav>
+            </details>
+          )
+        }
+
+        <MarkdownRenderer markdown={summary.body ?? ''} />
+
+        {
+          isGrouped && (previousEntry || nextEntry) && (
+            <nav
+              class="mt-12 grid grid-cols-1 gap-3 border-t border-gray-200 pt-8 sm:grid-cols-2"
+              aria-label={`${navigationLabel} pagination`}
+            >
+              {previousEntry ? (
+                <a
+                  href={getSummaryPath(previousEntry.slug)}
+                  class="rounded-lg border border-gray-200 p-4 text-left transition-colors hover:border-gray-300 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50"
+                >
+                  <span class="block text-xs font-medium uppercase tracking-wide text-gray-500">
+                    ←{' '}
+                    {summaryRef.kind === 'series'
+                      ? 'Newer episode'
+                      : 'Previous summary'}
+                  </span>
+                  <span class="mt-1 block text-sm font-medium text-gray-900">
+                    {trimEpisodeSuffix(previousEntry.title)}
+                  </span>
+                </a>
+              ) : (
+                <span class="hidden sm:block" />
+              )}
+              {nextEntry && (
+                <a
+                  href={getSummaryPath(nextEntry.slug)}
+                  class="rounded-lg border border-gray-200 p-4 text-left transition-colors hover:border-gray-300 hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 sm:text-right"
+                >
+                  <span class="block text-xs font-medium uppercase tracking-wide text-gray-500">
+                    {summaryRef.kind === 'series'
+                      ? 'Older episode'
+                      : 'Next summary'}{' '}
+                    →
+                  </span>
+                  <span class="mt-1 block text-sm font-medium text-gray-900">
+                    {trimEpisodeSuffix(nextEntry.title)}
+                  </span>
+                </a>
+              )}
+            </nav>
+          )
+        }
+
+        <footer class="mt-12 border-t border-gray-200 pt-8">
+          <p class="text-sm font-medium text-gray-700">
+            Find this resource in:
+          </p>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            {
+              catalogMemberships.map((membership) => (
+                <li>
+                  <a
+                    href={membership.href}
+                    class="inline-flex rounded-md border border-gray-200 px-3 py-2 text-sm font-medium text-indigo-700 transition-colors hover:border-gray-300 hover:bg-gray-50 hover:text-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+                  >
+                    {membership.catalogTitle} · {membership.sectionTitle}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </footer>
+      </article>
+    </div>
+  </div>
+</Layout>

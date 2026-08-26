@@ -13,6 +13,11 @@ export type ManifestEntry = {
 /** Summary IDs contain `/`; encode as `__` so they work as route params. */
 export const encodeSummarySlug = (id: string) => id.replace(/\//g, '__');
 export const decodeSummarySlug = (slug: string) => slug.replace(/__/g, '/');
+export const getSummaryPath = (slug: string) =>
+  `/summaries/${decodeSummarySlug(slug)
+    .split('/')
+    .map(encodeURIComponent)
+    .join('/')}/`;
 
 type SummaryEntry = {
   id: string;
