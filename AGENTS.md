@@ -76,6 +76,16 @@ Important routes:
 - For a public playlist collection, follow `src/content/youtube/AGENTS.md`. The public children's `collection`, `order`, and `videoId` values must exactly match reviewed curation, and source summaries plus the playlist overview must be reviewed before publication.
 - Run `npm run content:guard` after resource or public-summary changes. When tracked YouTube source evidence changes, also run `npm run youtube:library -- status` and `npm run youtube:library -- audit`.
 
+### Amp resource refresh
+
+When a request includes **“refresh amp resources”**, run a narrow delta audit rather than a general catalog sweep:
+
+1. Load the `research` skill and read the existing `.agents/research/amp-*.md` notes before fetching sources.
+2. Force-refresh the supplied official URLs and Amp Chronicle. Compare only items newer than the latest dated research baseline, then read the current Docs pages directly implicated by those items. Treat Docs as current behavior and Chronicle/News as dated evidence.
+3. Update reusable research when the delta adds or changes a durable fact. Update public posts only when a supported claim, workflow contract, or citation is stale; load the `article-writing` skill first. Keep interface details, routing, pricing, and one-off announcements research-only by default, and do not add a resource-manifest entry without a durable catalog use case.
+4. Search the full owning article for the changed concept and validate exact links, not only domains. Use Oracle only for a specific unresolved, high-impact evidence judgment—not as a routine review step.
+5. Run the checks required for the files changed, including link and browser checks for rendered updates. Report the source delta, files changed, deliberately unchanged public content, and decisive verification. Do not ship or archive unless explicitly requested.
+
 ### Article writing
 
 When writing or refreshing public posts under `src/content/posts/`, follow this contract and load the `article-writing` skill for the full workflow and checklists.

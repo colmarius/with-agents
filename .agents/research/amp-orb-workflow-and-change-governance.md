@@ -1,16 +1,17 @@
 # Research: Amp Orb Workflow Snapshots and Change Governance
 
-**Date:** 2026-08-26
+**Date:** 2026-08-27
 **Status:** complete
-**Question:** What do Amp's current orb workflow sources and Chronicle updates through 2026-08-26 establish, and which public posts should incorporate them?
+**Question:** What do Amp's current orb workflow sources and Chronicle updates through 2026-08-27 establish, and which public posts should incorporate them?
 
 ## Recommendation
 
-Treat Chronicle items as dated product and workflow evidence subordinate to the current Amp Docs, which replaced the Owner's Manual URLs. The August 21-25 updates add three useful boundaries: project-stored setup can unblock cloning or bridge uncommitted configuration but is less reviewable than repository setup; usage data can inform cost and orb-size review without turning agent mode into a machine-capacity control; and friendly portal hostnames improve sharing without proving readiness or correctness. Incorporate those changes only where they alter the Amp case study or repair retired documentation links; keep product positioning and volatile pricing in research.
+Treat Chronicle items as dated product and workflow evidence subordinate to the current Amp Docs, which replaced the Owner's Manual URLs. The August 21-27 updates add four useful boundaries: project-stored setup can unblock cloning or bridge uncommitted configuration but is less reviewable than repository setup; usage data can inform cost and orb-size review without turning agent mode into a machine-capacity control; friendly portal hostnames improve sharing without proving readiness or correctness; and the announced TUI-sidebar removal assigns local interactive work to the terminal while web and native apps manage cross-environment thread volume. Incorporate changes only where they alter the Amp case study or repair retired documentation links; keep interface direction, product positioning, and volatile pricing in research.
 
 ## Key Findings
 
 - The old `/manual` and `/manual/orbs` pages now direct readers to Amp Docs. The current canonical pages preserve the relevant contracts: one task per thread, layered `AGENTS.md`, four Dial modes selected by task difficulty, isolated specialist subagents, Oracle as a higher-cost second opinion, per-thread orbs, committed lifecycle hooks, supervised portal services, Multiplayer, Automations, and event-driven webhooks. Public citations should target the dedicated `/docs/**` pages rather than retired Manual anchors.
+- “So Long, TUI Sidebar” (2026-08-27) announces removal of the TUI sidebar. Amp assigns the TUI to local, interactive threads in one environment, where terminal tabs and panes already provide multiplexing, and assigns the web and native apps to tracking larger thread sets across orbs, runners, teams, and cross-agent messages. This is dated interface direction, not evidence that remote execution or a particular client improves outcomes; the announcement does not give a removal version or date.
 - "Setup Without a Commit" (2026-08-25) and the current Customizing Orbs docs add project-stored scripts outside the repository. A pre-clone script runs before repository access and can install Git extensions, certificates, proxies, private-network access, or credential helpers; a pre-setup script runs immediately before `.agents/setup`. The normal lifecycle remains pre-clone → clone/update → pre-setup → committed `.agents/setup` → credentials → committed `.agents/resume`. This is useful for clone prerequisites and transitional setup, but stable shared setup remains easier to review and version when committed.
 - "Explain Usage" (2026-08-21) lets Puck read personal and per-thread token, credit, and orb usage. The same data is available through `amp usage --details` and `amp threads usage <thread-id> --details`. This supports evidence-based cost and orb-size review; it does not turn agent mode into a machine-capacity control or establish a transferable performance benchmark.
 - "Friendly URLs for Sharing Orbs" (2026-08-23) adds managed hostnames and personal or workspace custom domains. Current Portal docs say a custom hostname remains assigned after its thread is archived and can be moved with `--take-over`; access remains separate from naming, and a configured URL can exist after readiness failure. A friendlier address improves review distribution, not proof.
@@ -42,6 +43,7 @@ Treat Chronicle items as dated product and workflow evidence subordinate to the 
   - Pass the Orb → orchestration section: teammate mentions are an invitation surface; ownership, cost attribution, access scope, and expiry remain separate controls.
 - **Incorporate:** `src/content/posts/right-sized-threads-durable-state.md` only to replace retired Manual links with current Prompting and Orbs Docs URLs; the new items do not change its thread-sizing thesis.
 - **Research-only:** Friendly URLs and Orbs, Explained. They add sharing convenience and a first-party overview but do not change the case study's acceptance or proof contract.
+- **Research-only:** So Long, TUI Sidebar. The Amp case study intentionally omits interface details, and the general field guide already describes thread tracking and coordination as the constraint created by many workers. The announcement sharpens product-surface guidance but changes neither article's load-bearing workflow.
 - **Research-only:** Education Discount. The $10/month offer was reconfirmed on 2026-08-26 but remains volatile and is not load-bearing for task sizing or cost governance.
 - **Research-only:** `src/content/posts/make-the-agent-prove-it.md` and `src/content/posts/agentic-coding-2026.md`. The capsules' verification examples duplicate support those posts already have from stronger independent sources; the Amp recap belongs in the case study.
 - **No resource-manifest entries.** The time capsules and notes are dated vendor workflow snapshots used as inline citations; the manifest's "Raising an Agent Season 2" entry already covers Amp's practitioner series. Revisit only if the Time Capsules series grows into a durable curated resource.
@@ -70,6 +72,10 @@ The four new items after the prior research pass split cleanly by durable value.
 
 The three news items split by workflow role. Explain Usage exposes personal and per-thread usage through Puck and CLI commands, which makes right-sizing inspectable. Setup Without a Commit adds project-stored pre-clone and pre-setup scripts for repository-access prerequisites and transitional setup. Friendly URLs improves Portal sharing, but current Portal docs preserve separate access and readiness contracts. The Orbs, Explained note is a useful first-party map, not a replacement for canonical documentation or independent evidence.
 
+### August 27 Chronicle update
+
+So Long, TUI Sidebar assigns different coordination scales to different clients: the TUI remains for closely supervised local work in one environment, while web and native apps own the growing cross-environment thread inventory. The stated drivers are orbs, runners, cross-agent messages, and team-scale parallel work. This supports a dated surface-selection note, not a claim about productivity or a new execution, delegation, or verification contract.
+
 ### Docs migration
 
 The retired Owner's Manual URLs now land on Amp Docs. Dedicated Docs pages provide narrower, more stable anchors for prompting, `AGENTS.md`, modes and subagents, Oracle, orb lifecycle, sizes, portals, collaboration, automation, webhooks, runners, and plugins. The current docs preserve the case study's main operating contract while adding project-stored setup scripts and more explicit portal-readiness boundaries.
@@ -84,7 +90,8 @@ The retired Owner's Manual URLs now land on Amp Docs. Dedicated Docs pages provi
 - [Amp Docs](https://ampcode.com/docs) — Current documentation entry point after the Owner's Manual migration (checked 2026-08-26).
 - [Prompting](https://ampcode.com/docs/prompting), [AGENTS.md](https://ampcode.com/docs/customize/agents-md), [Modes & Models](https://ampcode.com/docs/models-and-subagents), and [Tools](https://ampcode.com/docs/tools) — Current task, repository-guidance, subagent, and Oracle contracts.
 - [Customizing Orbs](https://ampcode.com/docs/orbs/customizing), [Sizes & Costs](https://ampcode.com/docs/orbs/sizes-and-costs), [Portals](https://ampcode.com/docs/orbs/portals), [Multiplayer](https://ampcode.com/docs/orbs/multiplayer), [Automations](https://ampcode.com/docs/orbs/automations), and [Event-Driven Orbs](https://ampcode.com/docs/orbs/event-driven) — Current orb setup, execution, review, collaboration, scheduling, and webhook contracts.
-- [Amp Chronicle](https://ampcode.com/chronicle) — Publication context and dates for the notes, time capsules, and August updates (checked 2026-08-26).
+- [Amp Chronicle](https://ampcode.com/chronicle) — Publication context and dates for the notes, time capsules, and August updates (checked 2026-08-27).
+- [So Long, TUI Sidebar](https://ampcode.com/news/so-long-tui-sidebar) — Dated client-surface direction: local interactive work in the TUI; cross-environment thread tracking in web and native apps.
 - [Setup Without a Commit](https://ampcode.com/news/setup-without-a-commit) — Dated project-stored pre-clone and pre-setup workflow.
 - [Explain Usage](https://ampcode.com/news/explain-usage) — Dated Puck and CLI usage-inspection workflow.
 - [Friendly URLs for Sharing Orbs](https://ampcode.com/news/friendly-urls-for-sharing-orbs) — Dated managed-hostname and custom-domain announcement.
