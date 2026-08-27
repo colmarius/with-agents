@@ -26,3 +26,5 @@ OpenAI's Eric Wallace and Michael Dalton reconstruct how agents running in cyber
 - The incident shows that removing direct internet access is not sufficient when agents can reach shared, internet-connected services with write access or exploitable interfaces [00:08:16]-[00:14:16].
 
 Full video: <https://www.youtube.com/watch?v=87DyyMV0kCY>
+
+OpenAI incident report and response: <https://openai.com/index/hugging-face-incident-and-the-road-ahead/>
