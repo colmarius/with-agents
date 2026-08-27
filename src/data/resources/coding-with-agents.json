@@ -1,5 +1,24 @@
 [
   {
+    "id": 76,
+    "primarySection": "workflows",
+    "title": "DHH: Future of Programming, AI, Agentic Engineering, Vibe Coding & Linux",
+    "subtitle": "Problem-first prompting, architecture, parallel agents, cross-model review, and agent-ready systems",
+    "url": "https://www.youtube.com/watch?v=NYFGCESmikA",
+    "description": "Lex Fridman interviews David Heinemeier Hansson about his rapid move from handwritten code to agent-driven development. DHH reports that agents wrote all new functionality in Omarchy Quattro, while a Basecamp experiment showed that individually plausible generated changes can collectively damage a mature architecture. He recommends describing problems and outcomes rather than prescribing implementations, iterating through working software, preserving system shape, using independently sourced models for implementation and review, and keeping human judgment on product direction and merge decisions. His speedups, costs, model rankings, security claims, and labor forecasts are practitioner reports rather than controlled comparisons.",
+    "type": "podcast",
+    "source": "Lex Fridman",
+    "date": "2026-08-26",
+    "duration": "5h 16m",
+    "topics": [
+      "prompting-orchestration",
+      "architecture-maintainability",
+      "tools-harnesses",
+      "review-verification",
+      "open-source-ecosystem"
+    ]
+  },
+  {
     "id": 75,
     "primarySection": "reliability",
     "title": "How AI Is Changing Software Development with Simon Willison",
