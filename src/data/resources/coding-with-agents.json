@@ -683,7 +683,7 @@
     "primarySection": "agent-systems",
     "title": "Raising an Agent Season 2 - Series",
     "url": "https://ampcode.com/podcast",
-    "description": "The second season of Amp's documentary podcast follows the team's move from locally managed coding agents to remote-controllable, parallel agents running in isolated environments. The first two episodes cover Amp Neo, ephemeral orbs, standardized team environments, exhaustive verification, production feedback loops, and 'jellyware': software that stays high quality while becoming faster to change and repair.",
+    "description": "The second season of Amp's documentary podcast follows the team's move from locally managed coding agents to remote-controllable, parallel agents running in isolated environments. The first three episodes cover Amp Neo, ephemeral orbs, exhaustive verification, production feedback loops, 'jellyware,' and how cheaper intelligence could change software economics, build-versus-buy decisions, and the work developers own.",
     "type": "playlist",
     "source": "Amp, Inc.",
     "date": "2026-07-17",
