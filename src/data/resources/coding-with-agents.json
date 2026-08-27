@@ -19,6 +19,24 @@
     ]
   },
   {
+    "id": 77,
+    "primarySection": "agent-systems",
+    "title": "Don't Build Agents, Build Environments Instead",
+    "subtitle": "Adam Azzam on dev boxes, resumable sessions, secret isolation, and control-plane design",
+    "url": "https://www.youtube.com/watch?v=JolFqvXj3BE",
+    "description": "Modal's Adam Azzam argues that the difficult part of background coding agents is the environment around the harness. He distinguishes bare sandboxes from task-ready dev boxes, explains why agent sessions need persistence and fast resumption rather than CI-style reruns, and recommends versioned per-repository images, secret-injecting proxies, and a control plane separated from disposable execution environments. The Ramp scale, pull-request share, startup-time, and operational claims are first-party reports presented in a Modal product talk rather than independently evaluated comparisons.",
+    "type": "video",
+    "source": "Hamel Husain",
+    "date": "2026-08-25",
+    "duration": "27m",
+    "topics": [
+      "tools-harnesses",
+      "safety-permissions",
+      "context-memory",
+      "architecture-maintainability"
+    ]
+  },
+  {
     "id": 75,
     "primarySection": "reliability",
     "title": "How AI Is Changing Software Development with Simon Willison",
