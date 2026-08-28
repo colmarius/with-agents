@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { hasFullStandaloneEvidence } from './youtube-standalone-evidence.mjs';
 
 const youtubeVideoIdPattern = /^[A-Za-z0-9_-]{11}$/;
 const recommendations = new Set(['keep', 'remove']);
@@ -97,7 +98,36 @@ export const readResourceIntakeDecisions = async ({ playlist, filePath }) => {
   return validateResourceIntakeDecisions(value, playlist);
 };
 
-export const buildResourceIntakeStatus = ({ manifest, decisions }) => {
+export const validateResourceIntakeEvidence = ({
+  playlist,
+  decisions,
+  standaloneEvidenceByVideoId,
+}) =>
+  decisions.processed
+    .filter(
+      ({ videoId }) =>
+        !hasFullStandaloneEvidence(standaloneEvidenceByVideoId, videoId),
+    )
+    .map(
+      ({ videoId }) =>
+        `Resource intake ${playlist.slug} decision for ${videoId} has no complete standalone public resource, transcript, and summary evidence.`,
+    );
+
+export const buildResourceIntakeStatus = ({
+  playlist,
+  manifest,
+  decisions,
+  standaloneEvidenceByVideoId,
+}) => {
+  const evidenceErrors = validateResourceIntakeEvidence({
+    playlist,
+    decisions,
+    standaloneEvidenceByVideoId,
+  });
+  if (evidenceErrors.length > 0) {
+    throw new Error(evidenceErrors.join(' '));
+  }
+
   const availableVideoIds = [
     ...new Set(
       manifest.entries

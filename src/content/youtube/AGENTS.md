@@ -105,7 +105,13 @@ must contain exactly a unique `videoId` and a `keep` or `remove`
 recommendation. Keep decisions after remote removal so a later re-addition is
 not reprocessed. Add a decision only after the standalone resource workflow,
 review, checks, recommendation, and portal verification are complete. Status
-reports available manifest IDs absent from this file as pending.
+reports available manifest IDs absent from this file as pending. Status and
+structural audit fail when a processed ID does not resolve to a complete public
+resource, transcript, and summary. A playlist-backed series episode must carry
+matching `series` and `episode` metadata in its transcript and public summary;
+the transcript's `videoId` identifies the source. The temporary intake playlist
+ID must never appear in public content; its member videos remain independently
+publishable standalone sources.
 
 ## Editorial workflow
 

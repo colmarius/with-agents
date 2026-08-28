@@ -687,6 +687,7 @@ export const buildLibraryStatus = async ({
 }) => {
   const manifestsByPlaylistId = new Map();
   const scopesByPlaylistId = new Map();
+  const intakeDecisionsByPlaylistId = new Map();
   const standaloneEligibleVideoIds = new Set();
   for (const playlist of catalog.playlists) {
     const manifest = await readPlaylistManifest({
@@ -700,7 +701,16 @@ export const buildLibraryStatus = async ({
     manifestsByPlaylistId.set(playlist.id, manifest);
     const scope = resolvePlaylistEditorialScope(playlist, manifest);
     scopesByPlaylistId.set(playlist.id, scope);
-    if (scope.mode === 'curated' && scope.status === 'reviewed') {
+    if (scope.mode === 'resource-intake') {
+      const decisions = await readResourceIntakeDecisions({
+        playlist,
+        filePath: intakePathForPlaylist(playlist),
+      });
+      intakeDecisionsByPlaylistId.set(playlist.id, decisions);
+      for (const { videoId } of decisions.processed) {
+        standaloneEligibleVideoIds.add(videoId);
+      }
+    } else if (scope.mode === 'curated' && scope.status === 'reviewed') {
       for (const videoId of scope.selectedVideoIds) {
         standaloneEligibleVideoIds.add(videoId);
       }
@@ -770,15 +780,17 @@ export const buildLibraryStatus = async ({
       manifestUnavailable,
     };
     if (scope.mode === 'resource-intake') {
-      const decisions = await readResourceIntakeDecisions({
-        playlist,
-        filePath: intakePathForPlaylist(playlist),
-      });
+      const decisions = intakeDecisionsByPlaylistId.get(playlist.id);
       playlistStatuses.push({
         playlist,
         synced: true,
         totals,
-        intake: buildResourceIntakeStatus({ manifest, decisions }),
+        intake: buildResourceIntakeStatus({
+          playlist,
+          manifest,
+          decisions,
+          standaloneEvidenceByVideoId: standaloneEvidence.byVideoId,
+        }),
       });
       continue;
     }

@@ -471,7 +471,7 @@ test('reviewed playlist curation preserves approved order and validates manifest
   ]);
 });
 
-test('resource intake status tracks durable decisions without creating source-editorial obligations', async (t) => {
+test('resource intake status requires standalone public evidence without source-library artifacts', async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const paths = fixturePaths(root);
@@ -498,7 +498,25 @@ test('resource intake status tracks durable decisions without creating source-ed
   assert.equal(scope.mode, 'resource-intake');
   assert.deepEqual(scope.activeEntries, []);
 
-  const status = await buildLibraryStatus({ catalog, ...paths });
+  await assert.rejects(
+    buildLibraryStatus({
+      catalog,
+      ...paths,
+      standaloneEvidenceByVideoId: new Map([
+        ['AbCdEfGhI12', { videoId: 'AbCdEfGhI12' }],
+      ]),
+    }),
+    /HiStOrIcAl3.*no complete standalone public resource/,
+  );
+
+  const status = await buildLibraryStatus({
+    catalog,
+    ...paths,
+    standaloneEvidenceByVideoId: new Map([
+      ['AbCdEfGhI12', { videoId: 'AbCdEfGhI12' }],
+      ['HiStOrIcAl3', { videoId: 'HiStOrIcAl3' }],
+    ]),
+  });
   assert.deepEqual(status.playlists[1].intake, {
     processed: 1,
     pending: 1,

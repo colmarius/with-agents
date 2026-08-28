@@ -246,13 +246,21 @@ export const loadStandaloneYoutubeEvidence = async ({
       typeof summaryFields.collection === 'string' &&
       Number.isInteger(summaryFields.order) &&
       summaryFields.order > 0;
+    const episodicSeriesResource =
+      resource.type === 'playlist' &&
+      typeof summaryFields.series === 'string' &&
+      summaryFields.series === fields.series &&
+      Number.isInteger(summaryFields.episode) &&
+      summaryFields.episode > 0 &&
+      summaryFields.episode === fields.episode;
     if (
       !canonicalVideoResource &&
       !excerptVideoResource &&
-      !curatedCollectionResource
+      !curatedCollectionResource &&
+      !episodicSeriesResource
     ) {
       errors.push(
-        `Standalone summary ${fields.summarySlug}.md must resolve to video ${videoId} through a canonical video resource or curated collection item.`,
+        `Standalone summary ${fields.summarySlug}.md must resolve to video ${videoId} through a canonical video resource, curated collection item, or series episode.`,
       );
       continue;
     }

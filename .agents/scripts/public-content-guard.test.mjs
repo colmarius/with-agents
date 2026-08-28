@@ -349,8 +349,18 @@ Bare source AbCdEfGhI12.
   }
 });
 
-test('guard excludes resource-intake membership from publication provenance', async () => {
-  const root = await createFixture({ videoStatus: 'draft' });
+test('guard excludes resource-intake membership but forbids public playlist references', async () => {
+  const root = await createFixture({
+    post: `---
+title: 'Post'
+draft: false
+---
+`,
+    resourceValue: resources({
+      type: 'article',
+      url: 'https://example.com/article',
+    }),
+  });
   try {
     const catalogPath = path.join(root, 'src/content/youtube/catalog.json');
     const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
@@ -366,7 +376,24 @@ test('guard excludes resource-intake membership from publication provenance', as
     const result = await runPublicContentGuard({ repoRoot: root });
     assert.deepEqual(result.errors, []);
     assert.equal(result.stats.videoCount, 0);
-    assert.equal(result.stats.playlistCount, 0);
+    assert.equal(result.stats.playlistCount, 1);
+
+    await writeFixture(
+      root,
+      'src/content/posts/post.md',
+      `---
+title: 'Post'
+draft: false
+---
+
+Intake queue: https://www.youtube.com/playlist?list=PLfixture1234567890
+`,
+    );
+    const cited = await runPublicContentGuard({ repoRoot: root });
+    assert.match(
+      cited.errors.join('\n'),
+      /cites tracked playlist PLfixture1234567890 with source status resource-intake/,
+    );
   } finally {
     await rm(root, { recursive: true, force: true });
   }

@@ -5,7 +5,10 @@ import {
   validateCatalog,
 } from './youtube-library-core.mjs';
 import { resolvePlaylistEditorialScope } from './youtube-library-curation.mjs';
-import { readResourceIntakeDecisions } from './youtube-resource-intake.mjs';
+import {
+  readResourceIntakeDecisions,
+  validateResourceIntakeEvidence,
+} from './youtube-resource-intake.mjs';
 import {
   hasFullStandaloneEvidence,
   loadStandaloneYoutubeEvidence,
@@ -335,8 +338,10 @@ export const auditYoutubeLibraryStructure = async ({
   const trackedVideoIds = new Set();
   const membershipsByVideoId = new Map();
   const scopesByPlaylistId = new Map();
+  const intakeDecisionsByPlaylistId = new Map();
   const playlistVideoIds = new Map();
   const playlistSummaries = new Map();
+  const standaloneEligibleVideoIds = new Set();
   for (const playlist of catalog.playlists) {
     stats.playlists += 1;
     const manifestFile = path.join(
@@ -409,12 +414,20 @@ export const auditYoutubeLibraryStructure = async ({
         'intake.json',
       );
       try {
-        await readResourceIntakeDecisions({
+        const decisions = await readResourceIntakeDecisions({
           playlist,
           filePath: intakeFile,
         });
+        intakeDecisionsByPlaylistId.set(playlist.id, { playlist, decisions });
+        for (const { videoId } of decisions.processed) {
+          standaloneEligibleVideoIds.add(videoId);
+        }
       } catch (error) {
         errors.push(error.message);
+      }
+    } else if (scope.mode === 'curated' && scope.status === 'reviewed') {
+      for (const videoId of scope.selectedVideoIds) {
+        standaloneEligibleVideoIds.add(videoId);
       }
     }
     scopesByPlaylistId.set(playlist.id, scope);
@@ -422,18 +435,20 @@ export const auditYoutubeLibraryStructure = async ({
   }
   stats.uniqueVideos = trackedVideoIds.size;
 
-  const standaloneEligibleVideoIds = new Set(
-    [...scopesByPlaylistId.values()].flatMap((scope) =>
-      scope.mode === 'curated' && scope.status === 'reviewed'
-        ? scope.selectedVideoIds
-        : [],
-    ),
-  );
   const standaloneEvidence = await loadStandaloneYoutubeEvidence({
     repoRoot,
     videoIds: standaloneEligibleVideoIds,
   });
   errors.push(...standaloneEvidence.errors);
+  for (const { playlist, decisions } of intakeDecisionsByPlaylistId.values()) {
+    errors.push(
+      ...validateResourceIntakeEvidence({
+        playlist,
+        decisions,
+        standaloneEvidenceByVideoId: standaloneEvidence.byVideoId,
+      }),
+    );
+  }
 
   const summarizedVideoIds = new Set();
   const summaryStatuses = new Map();

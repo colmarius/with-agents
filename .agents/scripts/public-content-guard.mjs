@@ -484,10 +484,11 @@ const readTrackedLibrary = async (repoRoot, notices) => {
   const standaloneEligibleVideoIds = new Set();
 
   for (const playlist of catalog.playlists) {
+    playlistIds.add(playlist.id);
     if (playlist.resourceIntake === true) {
+      playlistStatuses.set(playlist.id, 'resource-intake');
       continue;
     }
-    playlistIds.add(playlist.id);
     const manifest = JSON.parse(
       await readFile(
         path.join(youtubeRoot, 'playlists', playlist.slug, 'manifest.json'),
