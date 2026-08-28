@@ -426,6 +426,7 @@ draft: false
         'src/pages/index.astro',
         'src/components/Intake.astro',
         'src/layouts/Layout.astro',
+        'src/data/resources/catalogs.ts',
         'public/intake.txt',
       ].map((relativePath) =>
         writeFixture(root, relativePath, 'PLfixture1234567890\n'),
@@ -436,6 +437,7 @@ draft: false
       'src/pages/index.astro',
       'src/components/Intake.astro',
       'src/layouts/Layout.astro',
+      'src/data/resources/catalogs.ts',
       'public/intake.txt',
     ]) {
       assert.match(

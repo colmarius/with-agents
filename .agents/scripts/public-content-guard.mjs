@@ -812,13 +812,31 @@ export const runPublicContentGuard = async ({
     .filter(([, status]) => status === 'resource-intake')
     .map(([playlistId]) => playlistId);
   if (resourceIntakePlaylistIds.length > 0) {
+    const resourceManifestPaths = new Set(
+      resourceValidation.resourceSources.map(({ filePath }) => filePath),
+    );
     const publishableSourceFiles = (
       await Promise.all(
-        ['src/pages', 'src/components', 'src/layouts', 'public'].map(
-          (directory) => listFiles(path.join(repoRoot, directory)),
-        ),
+        [
+          'src/pages',
+          'src/components',
+          'src/layouts',
+          'src/data/resources',
+          'public',
+        ].map((directory) => listFiles(path.join(repoRoot, directory))),
       )
-    ).flat();
+    )
+      .flat()
+      .filter((filePath) => {
+        const relativePath = path.relative(repoRoot, filePath);
+        return (
+          !resourceManifestPaths.has(filePath) &&
+          !(
+            relativePath.startsWith(`src/data/resources${path.sep}`) &&
+            /\.(?:test|spec)\.[^.]+$/.test(path.basename(filePath))
+          )
+        );
+      });
     for (const filePath of publishableSourceFiles) {
       const contents = await readFile(filePath, 'utf8');
       const relativePath = path.relative(repoRoot, filePath);
