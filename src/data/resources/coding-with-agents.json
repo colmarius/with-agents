@@ -1,5 +1,40 @@
 [
   {
+    "id": 81,
+    "primarySection": "workflows",
+    "title": "Software Engineering Is Becoming Plan and Review — Louis Knight-Webb, Vibe Kanban",
+    "subtitle": "Task-dependent planning, asynchronous agents, and review-centered interfaces",
+    "url": "https://www.youtube.com/watch?v=W76woOYHlvY",
+    "description": "Vibe Kanban founder Louis Knight-Webb argues that coding agents shift engineering effort from implementation into planning and review. He contrasts plan-heavy and review-heavy supervision, proposes closer involvement for stateful front-end features and specification-first execution for back-end work, migrations, and refactoring, and connects longer verification runs to parallel workstreams and review-centered interfaces. His time-saving rules, five-minute threshold, task matrix, product-usage figures, and market claims are practitioner heuristics or first-party reports rather than measured comparisons; the live demo covers one prepared website change.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-05-02",
+    "duration": "20m",
+    "topics": [
+      "prompting-orchestration",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
+    "id": 80,
+    "primarySection": "agent-systems",
+    "title": "Full Workshop: Build Your Own Deep Research Agents - Louis-François Bouchard, Paul Iusztin, Samridhi",
+    "subtitle": "An MCP research loop, inspectable artifact handoff, constrained writing workflow, and calibrated LLM judge",
+    "url": "https://www.youtube.com/watch?v=mYSRn6PC1mc",
+    "description": "Louis-François Bouchard, Samridhi, and Paul Iusztin build a deep-research agent that plans searches, analyzes web and video sources, persists intermediate evidence, and compiles a cited Markdown artifact for a separate writing workflow. They explain when to prefer fixed workflows over agents, when context pressure justifies delegation, how skills differ from MCP servers, and how to trace runs and calibrate an LLM judge against expert labels. The implementation is a local Gemini, Claude Code, FastMCP, and Opik workshop rather than a comparative evaluation; the demonstrated development and test splits contain five samples each, citation correctness is not measured, and the judge later passes every simulated online trace despite contrary labels.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-04-20",
+    "duration": "1h 57m",
+    "topics": [
+      "tools-harnesses",
+      "prompting-orchestration",
+      "context-memory",
+      "models-evaluation"
+    ]
+  },
+  {
     "id": 79,
     "primarySection": "agent-systems",
     "title": "Agentic SDLC at Uber — Uday Kiran Medisetty & Adam Huda, Uber",
