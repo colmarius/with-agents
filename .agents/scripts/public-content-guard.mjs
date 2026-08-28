@@ -821,6 +821,7 @@ export const runPublicContentGuard = async ({
           'src/pages',
           'src/components',
           'src/layouts',
+          'src/scripts',
           'src/data/resources',
           'public',
         ].map((directory) => listFiles(path.join(repoRoot, directory))),

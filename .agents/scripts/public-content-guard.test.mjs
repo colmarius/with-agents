@@ -405,6 +405,7 @@ test('guard excludes resource-intake membership but forbids public playlist refe
       'src/pages/index.astro',
       'src/components/Intake.astro',
       'src/layouts/Layout.astro',
+      'src/scripts/intake.ts',
       'src/data/resources/catalogs.ts',
       'public/intake.txt',
     ];
