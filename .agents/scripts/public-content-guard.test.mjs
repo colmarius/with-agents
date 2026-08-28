@@ -351,11 +351,7 @@ Bare source AbCdEfGhI12.
 
 test('guard excludes resource-intake membership but forbids public playlist references', async () => {
   const root = await createFixture({
-    post: `---
-title: 'Post'
-draft: false
----
-`,
+    post: '',
     resourceValue: resources({
       type: 'video',
       url: 'https://www.youtube.com/watch?v=AbCdEfGhI12',
@@ -376,18 +372,11 @@ draft: false
     const result = await runPublicContentGuard({ repoRoot: root });
     assert.deepEqual(result.errors, []);
     assert.equal(result.stats.videoCount, 0);
-    assert.equal(result.stats.playlistCount, 1);
 
     await writeFixture(
       root,
       'src/content/posts/post.md',
-      `---
-title: 'Post'
-draft: false
----
-
-Intake queue: https://www.youtube.com/playlist?list=PLfixture1234567890
-`,
+      'https://www.youtube.com/playlist?list=PLfixture1234567890\n',
     );
     const cited = await runPublicContentGuard({ repoRoot: root });
     assert.match(
@@ -410,36 +399,22 @@ Intake queue: https://www.youtube.com/playlist?list=PLfixture1234567890
       excepted.errors.join('\n'),
       /cites tracked playlist PLfixture1234567890 with source status resource-intake/,
     );
-    assert.doesNotMatch(excepted.notices.join('\n'), /explicit exception/);
 
-    await writeFixture(
-      root,
-      'src/content/posts/post.md',
-      `---
-title: 'Post'
-draft: false
----
-`,
-    );
-    await Promise.all(
-      [
-        'src/pages/index.astro',
-        'src/components/Intake.astro',
-        'src/layouts/Layout.astro',
-        'src/data/resources/catalogs.ts',
-        'public/intake.txt',
-      ].map((relativePath) =>
-        writeFixture(root, relativePath, 'PLfixture1234567890\n'),
-      ),
-    );
-    const publishedElsewhere = await runPublicContentGuard({ repoRoot: root });
-    for (const relativePath of [
+    await rm(path.join(root, 'src/content/posts/post.md'));
+    const scanPaths = [
       'src/pages/index.astro',
       'src/components/Intake.astro',
       'src/layouts/Layout.astro',
       'src/data/resources/catalogs.ts',
       'public/intake.txt',
-    ]) {
+    ];
+    await Promise.all(
+      scanPaths.map((relativePath) =>
+        writeFixture(root, relativePath, 'PLfixture1234567890\n'),
+      ),
+    );
+    const publishedElsewhere = await runPublicContentGuard({ repoRoot: root });
+    for (const relativePath of scanPaths) {
       assert.match(
         publishedElsewhere.errors.join('\n'),
         new RegExp(

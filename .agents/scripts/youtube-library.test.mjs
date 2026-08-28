@@ -321,7 +321,7 @@ test('catalog validation rejects broken relationships', () => {
   );
 });
 
-test('catalog validation requires exactly one playlist attribution mode', () => {
+test('catalog validation strictly validates playlist markers and attribution', () => {
   const catalog = multiPlaylistCatalog({ secondIsMultiSpeaker: true });
   assert.equal(validateCatalog(catalog), catalog);
 
@@ -332,13 +332,15 @@ test('catalog validation requires exactly one playlist attribution mode', () => 
     /Playlist second has no author relationship/,
   );
 
-  for (const value of [false, 'true', 1, null, undefined]) {
-    const invalidMarker = structuredClone(catalog);
-    invalidMarker.playlists[1].multiSpeaker = value;
-    assert.throws(
-      () => validateCatalog(invalidMarker),
-      /multiSpeaker must be true when present/,
-    );
+  for (const marker of ['multiSpeaker', 'resourceIntake']) {
+    for (const value of [false, 'true', 1, null, undefined]) {
+      const invalidMarker = structuredClone(catalog);
+      invalidMarker.playlists[1][marker] = value;
+      assert.throws(
+        () => validateCatalog(invalidMarker),
+        new RegExp(`${marker} must be true when present`),
+      );
+    }
   }
 
   const conflicting = structuredClone(catalog);
@@ -347,29 +349,15 @@ test('catalog validation requires exactly one playlist attribution mode', () => 
     () => validateCatalog(conflicting),
     /cannot have both an author relationship and multiSpeaker: true/,
   );
-});
 
-test('catalog validation strictly validates resource intake playlists', () => {
-  const catalog = multiPlaylistCatalog({ secondIsMultiSpeaker: true });
-  catalog.playlists[1].resourceIntake = true;
-  assert.equal(validateCatalog(catalog), catalog);
-
-  for (const value of [false, 'true', 1, null, undefined]) {
-    const invalidMarker = structuredClone(catalog);
-    invalidMarker.playlists[1].resourceIntake = value;
-    assert.throws(
-      () => validateCatalog(invalidMarker),
-      /resourceIntake must be true when present/,
-    );
-  }
-
-  const conflicting = structuredClone(catalog);
-  conflicting.playlists[1].curation = {
+  const intakeWithCuration = structuredClone(catalog);
+  intakeWithCuration.playlists[1].resourceIntake = true;
+  intakeWithCuration.playlists[1].curation = {
     status: 'draft',
     videoIds: [],
   };
   assert.throws(
-    () => validateCatalog(conflicting),
+    () => validateCatalog(intakeWithCuration),
     /cannot combine resourceIntake with curation/,
   );
 });
@@ -469,70 +457,18 @@ test('reviewed playlist curation preserves approved order and validates manifest
   ]);
 });
 
-test('resource intake status derives pending videos from public evidence', async (t) => {
+test('resource intake derives status without capture or synthesis obligations', async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const paths = fixturePaths(root);
-  const catalog = multiPlaylistCatalog({ secondIsMultiSpeaker: true });
-  const playlist = catalog.playlists[1];
+  const catalog = validCatalog();
+  const playlist = catalog.playlists[0];
   playlist.resourceIntake = true;
-  await writeManifestFixture(paths, catalog.playlists[0], []);
   await writeManifestFixture(paths, playlist, [
     availableEntry('AbCdEfGhI12', 0),
     availableEntry('ZxYwVuTsRq1', 1),
-    availableEntry('RmCvId00001', 2),
-    availableEntry('ExCeRpT0001', 3),
-  ]);
-
-  const scope = resolvePlaylistEditorialScope(playlist, {
-    playlistId: playlist.id,
-    entries: [availableEntry('AbCdEfGhI12', 0)],
-  });
-  assert.equal(scope.mode, 'resource-intake');
-  assert.deepEqual(scope.activeEntries, []);
-
-  const status = await buildLibraryStatus({
-    catalog,
-    ...paths,
-    standaloneEvidenceByVideoId: new Map([
-      ['AbCdEfGhI12', { coverage: 'full' }],
-      ['RmCvId00001', { coverage: 'full' }],
-      ['ExCeRpT0001', { coverage: 'excerpt' }],
-    ]),
-  });
-  assert.deepEqual(status.playlists[1].intake, {
-    integrated: 2,
-    pending: 2,
-    pendingVideoIds: ['ZxYwVuTsRq1', 'ExCeRpT0001'],
-  });
-  assert.match(
-    formatLibraryStatus(status),
-    /resource intake: 2 integrated; 2 pending/,
-  );
-  assert.match(formatLibraryStatus(status), /ZxYwVuTsRq1/);
-  await assert.rejects(
-    captureCatalogVideos({
-      catalog,
-      playlistSlugs: [playlist.slug],
-      ...paths,
-      repoRoot: root,
-    }),
-    /standalone resource workflow/,
-  );
-});
-
-test('resource intake status keeps interrupted standalone evidence pending', async (t) => {
-  const root = await mkdtemp(
-    path.join(os.tmpdir(), 'youtube-intake-interrupted-'),
-  );
-  t.after(() => rm(root, { recursive: true, force: true }));
-  const paths = fixturePaths(root);
-  const catalog = multiPlaylistCatalog({ secondIsMultiSpeaker: true });
-  const playlist = catalog.playlists[1];
-  playlist.resourceIntake = true;
-  await writeManifestFixture(paths, catalog.playlists[0], []);
-  await writeManifestFixture(paths, playlist, [
-    availableEntry('InCmPlEtE01', 0),
+    availableEntry('ExCeRpT0001', 2),
+    availableEntry('InCmPlEtE01', 3),
   ]);
   await writeFixture(
     path.join(root, 'src/content/transcripts/coding-with-agents/incomplete.md'),
@@ -554,42 +490,54 @@ durationSeconds: 120
   const status = await buildLibraryStatus({
     catalog,
     ...paths,
-    repoRoot: root,
+    standaloneEvidenceByVideoId: new Map([
+      ['AbCdEfGhI12', { coverage: 'full' }],
+      ['ExCeRpT0001', { coverage: 'excerpt' }],
+    ]),
   });
-
-  assert.deepEqual(status.playlists[1].intake, {
-    integrated: 0,
-    pending: 1,
-    pendingVideoIds: ['InCmPlEtE01'],
-  });
-});
-
-test('author-backed resource intake has no author synthesis obligation', async (t) => {
-  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-author-'));
-  t.after(() => rm(root, { recursive: true, force: true }));
-  const paths = fixturePaths(root);
-  const catalog = validCatalog();
-  const playlist = catalog.playlists[0];
-  playlist.resourceIntake = true;
-  await writeManifestFixture(paths, playlist, [
-    availableEntry('AbCdEfGhI12', 0),
-  ]);
-
-  const status = await buildLibraryStatus({
-    catalog,
-    ...paths,
-    standaloneEvidenceByVideoId: new Map(),
+  assert.deepEqual(status.playlists[0].intake, {
+    integrated: 1,
+    pending: 3,
+    pendingVideoIds: ['ZxYwVuTsRq1', 'ExCeRpT0001', 'InCmPlEtE01'],
   });
   assert.deepEqual(status.authors, []);
-  assert.doesNotMatch(formatLibraryStatus(status), /Author author/);
+  assert.match(
+    formatLibraryStatus(status),
+    /resource intake: 1 integrated; 3 pending/,
+  );
+  assert.match(formatLibraryStatus(status), /ZxYwVuTsRq1/);
 
-  await rm(paths.manifestPathForPlaylist(playlist));
-  const unsyncedStatus = await buildLibraryStatus({
+  const defaultCapture = await captureCatalogVideos({
     catalog,
     ...paths,
-    standaloneEvidenceByVideoId: new Map(),
+    repoRoot: root,
   });
-  assert.deepEqual(unsyncedStatus.authors, []);
+  assert.equal(defaultCapture.queued, 0);
+  await assert.rejects(
+    captureCatalogVideos({
+      catalog,
+      playlistSlugs: [playlist.slug],
+      ...paths,
+      repoRoot: root,
+    }),
+    /standalone resource workflow/,
+  );
+
+  const interrupted = await buildLibraryStatus({
+    catalog,
+    ...paths,
+    repoRoot: root,
+  });
+  assert.deepEqual(interrupted.playlists[0].intake, {
+    integrated: 0,
+    pending: 4,
+    pendingVideoIds: [
+      'AbCdEfGhI12',
+      'ZxYwVuTsRq1',
+      'ExCeRpT0001',
+      'InCmPlEtE01',
+    ],
+  });
 });
 
 test('library paths cannot escape the fixed root', () => {

@@ -197,34 +197,16 @@ test('structural audit passes valid files and reports duplicate membership witho
 test('structural audit accepts resource intake without editorial artifacts', async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-audit-'));
   try {
-    await writeFixture(root, 'catalog.json', {
-      publication: 'source-only',
-      authors: [
-        { id: 'author-id', slug: 'author', displayName: 'Example Author' },
-      ],
-      playlists: [
-        {
-          id: 'playlist-id',
-          slug: 'intake',
-          title: 'Resource Intake',
-          transcriptLanguage: 'en',
-          summaryLanguage: 'en',
-          resourceIntake: true,
-        },
-      ],
-      relationships: [{ authorId: 'author-id', playlistIds: ['playlist-id'] }],
-    });
-    await writeFixture(root, 'playlists/intake/manifest.json', {
-      playlistId: 'playlist-id',
-      entries: [
-        {
-          videoId: 'AbCdEfGhI12',
-          position: 0,
-          title: 'Candidate',
-          available: true,
-        },
-      ],
-    });
+    await writeValidLibrary(root);
+    const catalogPath = path.join(root, 'catalog.json');
+    const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+    catalog.playlists[0].resourceIntake = true;
+    await writeFixture(root, 'catalog.json', catalog);
+    await Promise.all([
+      rm(path.join(root, 'playlists/playlist/overview.md')),
+      rm(path.join(root, 'authors/author.md')),
+      rm(path.join(root, 'videos/video-id'), { recursive: true }),
+    ]);
 
     const valid = await auditYoutubeLibraryStructure({
       libraryRoot: root,
@@ -520,14 +502,19 @@ videoId: "AbCdEfGhI12"
   }
 });
 
-test('standalone evidence resolves explicit series episode associations', async () => {
-  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-series-'));
+test('standalone evidence resolves series and excerpt associations', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-excerpt-'));
   try {
-    await writeFixture(root, 'src/data/resources/coding-with-agents.json', [
+    await writeFixture(root, 'src/data/resources/cloud.json', [
       {
         id: 1,
         type: 'playlist',
         url: 'https://example.com/podcast',
+      },
+      {
+        id: 2,
+        type: 'video',
+        url: 'https://www.youtube.com/watch?v=AbCdEfGhI12&t=100s',
       },
     ]);
     await writeFixture(
@@ -536,15 +523,18 @@ test('standalone evidence resolves explicit series episode associations', async 
       `---
 title: "Episode"
 summarySlug: "episode"
-sourceUrl: "https://www.youtube.com/watch?v=AbCdEfGhI12"
-videoId: "AbCdEfGhI12"
+sourceUrl: "https://www.youtube.com/watch?v=SeRiEs00001"
+videoId: "SeRiEs00001"
 capturedAt: "2026-08-28T00:00:00.000Z"
 series: "example-series"
 episode: 3
 ---
 `,
     );
-    const summaryPath = path.join(root, 'src/content/summaries/episode.md');
+    const episodeSummaryPath = path.join(
+      root,
+      'src/content/summaries/episode.md',
+    );
     await writeFixture(
       root,
       'src/content/summaries/episode.md',
@@ -556,36 +546,6 @@ episode: 3
 ---
 `,
     );
-
-    const valid = await loadStandaloneYoutubeEvidence({ repoRoot: root });
-    assert.deepEqual(valid.errors, []);
-    assert.equal(valid.byVideoId.get('AbCdEfGhI12')?.coverage, 'full');
-
-    const mismatched = (await readFile(summaryPath, 'utf8')).replace(
-      'episode: 3',
-      'episode: 2',
-    );
-    await writeFile(summaryPath, mismatched, 'utf8');
-    const invalid = await loadStandaloneYoutubeEvidence({ repoRoot: root });
-    assert.match(
-      invalid.errors.join('\n'),
-      /canonical video resource, curated collection item, or series episode/,
-    );
-  } finally {
-    await rm(root, { recursive: true, force: true });
-  }
-});
-
-test('standalone excerpt evidence resolves non-coding manifests and records excerpt coverage', async () => {
-  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-excerpt-'));
-  try {
-    await writeFixture(root, 'src/data/resources/cloud.json', [
-      {
-        id: 1,
-        type: 'video',
-        url: 'https://www.youtube.com/watch?v=AbCdEfGhI12&t=100s',
-      },
-    ]);
     await writeFixture(
       root,
       'src/content/transcripts/excerpt.md',
@@ -612,18 +572,34 @@ sourceEndSeconds: 200
       'src/content/summaries/excerpt.md',
       `---
 title: "Excerpt"
-resourceId: 1
+resourceId: 2
 ---
 `,
     );
 
     const valid = await loadStandaloneYoutubeEvidence({ repoRoot: root });
     assert.deepEqual(valid.errors, []);
+    assert.equal(valid.byVideoId.get('SeRiEs00001')?.coverage, 'full');
     assert.equal(valid.byVideoId.get('AbCdEfGhI12')?.coverage, 'excerpt');
     assert.equal(
       hasFullStandaloneEvidence(valid.byVideoId, 'AbCdEfGhI12'),
       false,
     );
+
+    const episodeSummary = await readFile(episodeSummaryPath, 'utf8');
+    await writeFile(
+      episodeSummaryPath,
+      episodeSummary.replace('episode: 3', 'episode: 2'),
+      'utf8',
+    );
+    const mismatchedEpisode = await loadStandaloneYoutubeEvidence({
+      repoRoot: root,
+    });
+    assert.match(
+      mismatchedEpisode.errors.join('\n'),
+      /canonical video resource, curated collection item, or series episode/,
+    );
+    await writeFile(episodeSummaryPath, episodeSummary, 'utf8');
 
     const transcriptPath = path.join(
       root,
