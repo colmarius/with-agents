@@ -528,6 +528,38 @@ test('resource intake status reports queue decisions and playlist removal candid
   );
 });
 
+test('author-backed resource intake has no author synthesis obligation', async (t) => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-author-'));
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = validCatalog();
+  const playlist = catalog.playlists[0];
+  playlist.resourceIntake = true;
+  await writeManifestFixture(paths, playlist, [
+    availableEntry('AbCdEfGhI12', 0),
+  ]);
+  await writeFixture(paths.intakePathForPlaylist(playlist), {
+    playlistId: playlist.id,
+    processed: [],
+  });
+
+  const status = await buildLibraryStatus({
+    catalog,
+    ...paths,
+    standaloneEvidenceByVideoId: new Map(),
+  });
+  assert.deepEqual(status.authors, []);
+  assert.doesNotMatch(formatLibraryStatus(status), /Author author/);
+
+  await rm(paths.manifestPathForPlaylist(playlist));
+  const unsyncedStatus = await buildLibraryStatus({
+    catalog,
+    ...paths,
+    standaloneEvidenceByVideoId: new Map(),
+  });
+  assert.deepEqual(unsyncedStatus.authors, []);
+});
+
 test('library paths cannot escape the fixed root', () => {
   assert.match(
     libraryPath('videos/8gg-oJr4dTY/transcript.md'),

@@ -199,7 +199,9 @@ test('structural audit validates resource intake decision syntax without public 
   try {
     await writeFixture(root, 'catalog.json', {
       publication: 'source-only',
-      authors: [],
+      authors: [
+        { id: 'author-id', slug: 'author', displayName: 'Example Author' },
+      ],
       playlists: [
         {
           id: 'playlist-id',
@@ -207,11 +209,10 @@ test('structural audit validates resource intake decision syntax without public 
           title: 'Resource Intake',
           transcriptLanguage: 'en',
           summaryLanguage: 'en',
-          multiSpeaker: true,
           resourceIntake: true,
         },
       ],
-      relationships: [],
+      relationships: [{ authorId: 'author-id', playlistIds: ['playlist-id'] }],
     });
     await writeFixture(root, 'playlists/intake/manifest.json', {
       playlistId: 'playlist-id',

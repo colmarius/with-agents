@@ -865,9 +865,12 @@ export const buildLibraryStatus = async ({
   const authorStatuses = [];
   for (const relationship of catalog.relationships) {
     const author = authorsById.get(relationship.authorId);
-    const playlists = relationship.playlistIds.map((playlistId) =>
-      playlistsById.get(playlistId),
-    );
+    const playlists = relationship.playlistIds
+      .map((playlistId) => playlistsById.get(playlistId))
+      .filter((playlist) => playlist.resourceIntake !== true);
+    if (playlists.length === 0) {
+      continue;
+    }
     const videoIds = [];
     const seenVideoIds = new Set();
     for (const playlist of playlists) {

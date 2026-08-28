@@ -859,13 +859,21 @@ export const runPublicContentGuard = async ({
         if (status === 'reviewed') {
           continue;
         }
+        const message = `${relativePath}:${line} cites tracked ${kind} ${id} with source status ${status}`;
+        if (status === 'resource-intake') {
+          if (isDraftPost) {
+            warnings.push(`${message}; draft post is not publishable`);
+          } else {
+            errors.push(message);
+          }
+          continue;
+        }
         const exception = exceptionFor(
           activeExceptions,
           kind,
           id,
           relativePath,
         );
-        const message = `${relativePath}:${line} cites tracked ${kind} ${id} with source status ${status}`;
         if (exception) {
           notices.push(`${message}; explicit exception: ${exception.reason}`);
         } else if (isDraftPost) {

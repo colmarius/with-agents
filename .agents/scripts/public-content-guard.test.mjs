@@ -428,6 +428,23 @@ Intake queue: https://www.youtube.com/playlist?list=PLfixture1234567890
       cited.errors.join('\n'),
       /cites tracked playlist PLfixture1234567890 with source status resource-intake/,
     );
+
+    const excepted = await runPublicContentGuard({
+      repoRoot: root,
+      exceptions: [
+        {
+          kind: 'playlist',
+          id: 'PLfixture1234567890',
+          path: 'src/content/posts/post.md',
+          reason: 'A generic exception must not publish the intake queue.',
+        },
+      ],
+    });
+    assert.match(
+      excepted.errors.join('\n'),
+      /cites tracked playlist PLfixture1234567890 with source status resource-intake/,
+    );
+    assert.doesNotMatch(excepted.notices.join('\n'), /explicit exception/);
   } finally {
     await rm(root, { recursive: true, force: true });
   }

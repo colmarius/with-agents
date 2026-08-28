@@ -680,6 +680,15 @@ export const auditYoutubeLibraryStructure = async ({
   );
   for (const author of catalog.authors) {
     stats.authors += 1;
+    const relatedPlaylistIds = catalog.relationships
+      .filter((relationship) => relationship.authorId === author.id)
+      .flatMap((relationship) => relationship.playlistIds)
+      .filter(
+        (playlistId) => playlistsById.get(playlistId)?.resourceIntake !== true,
+      );
+    if (relatedPlaylistIds.length === 0) {
+      continue;
+    }
     const authorFile = path.join(libraryRoot, 'authors', `${author.slug}.md`);
     const authorSource = await readOptional(authorFile);
     const authorName = relativePath(libraryRoot, authorFile);
@@ -698,9 +707,6 @@ export const auditYoutubeLibraryStructure = async ({
       errors.push(`${authorName} authorId must match catalog.json`);
     }
     validateStatus(frontmatter.fields.get('status'), authorName, errors);
-    const relatedPlaylistIds = catalog.relationships
-      .filter((relationship) => relationship.authorId === author.id)
-      .flatMap((relationship) => relationship.playlistIds);
     const authorVideoIds = new Set();
     const authorSummaries = new Set();
     for (const playlistId of relatedPlaylistIds) {
