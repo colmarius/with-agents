@@ -1,5 +1,143 @@
 [
   {
+    "id": 96,
+    "primarySection": "reliability",
+    "title": "The Last Human Code Review: Building Trust in AI-Generated Code — Itamar Friedman, Qodo",
+    "subtitle": "Rule-cited review, intervention-based calibration, and graph-scoped approval policy",
+    "url": "https://www.youtube.com/watch?v=s-aixZYJG4c",
+    "description": "Qodo CEO and co-founder Itamar Friedman proposes a gradual path from human-reviewed pull requests to automated approval and blocking: cite the team-owned rules used in each review, observe human interventions over a calibration window, then add semantic approval policies incrementally. His proposed context engine maps rules, service contracts, incident history, discussions, and accepted or rejected feedback onto software-graph nodes and edges so review can consider concurrent changes. This is a first-party product presentation; its anonymous benchmark observation, 100-pull-request readiness heuristic, 10x velocity claim, and zero-outage goal lack methods or measured outcomes, and it does not address false negatives, reviewer fatigue, policy drift, or rollback.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-08-20",
+    "duration": "18m",
+    "topics": [
+      "review-verification",
+      "context-memory",
+      "architecture-maintainability"
+    ]
+  },
+  {
+    "id": 95,
+    "primarySection": "teams-ecosystem",
+    "title": "Four dimensions of burnout: An anti-burnout framework for the AI era",
+    "subtitle": "A demands-and-resources audit for AI-era engineering teams, with untested AI-specific claims",
+    "url": "https://www.youtube.com/watch?v=iJGKH45w4Q8",
+    "description": "Dominika Rogala presents a three-step burnout audit for engineering leaders: map exhaustion, emotional distance, reduced efficacy, and a speaker-added identity gap; list team job demands and resources; then reduce demands and add resources. She argues that AI can lower effort per task while retaining human accountability and increasing context switching, cognitive load, adaptation, and performance expectations, and suggests fewer priorities, protected focus and tool-learning time, local decision authority, one-on-ones, and buffer weeks. The talk does not study coding-agent teams, measure outcomes, identify the ICSE study it cites, or support several psychological and economic claims with enough methodology to generalize; its AI-specific section is brief and the interventions are general management guidance.",
+    "type": "video",
+    "source": "LeadDev",
+    "date": "2026-08-19",
+    "duration": "27m",
+    "topics": ["collaboration-teams", "business-adoption"]
+  },
+  {
+    "id": 94,
+    "primarySection": "teams-ecosystem",
+    "title": "The Workflow of the Future With Zed",
+    "subtitle": "Fine-grained conversation and code provenance for collaborative agent worktrees",
+    "url": "https://www.youtube.com/watch?v=GsLyhrxaMIo",
+    "description": "Syntax hosts Wes Bos and Scott Tolinski interview Zed co-founder Nathan Sobo about Delta, a collaborative agent editor backed by DeltaDB. Sobo describes versioning below commits, conversation-to-code provenance, conflict-free replicated worktrees, shared local and hosted sessions, and inline annotations that keep agent output and review in one context. This is a founder account of a just-launched beta, not a workflow demo or comparative study; it reports no team outcomes, review-accuracy evidence, or synchronization-reliability data, and the repository-wide cross-version index was still roadmap. Conflict-free replication can still converge on semantically conflicting code.",
+    "type": "podcast",
+    "source": "Syntax",
+    "date": "2026-08-12",
+    "duration": "1h",
+    "topics": ["collaboration-teams", "context-memory", "tools-harnesses"]
+  },
+  {
+    "id": 93,
+    "primarySection": "agent-systems",
+    "title": "Hands on with Gemini 3.7 Flash",
+    "subtitle": "Customer examples of model-tier routing and sub-agent dispatch, without a reproducible evaluation",
+    "url": "https://www.youtube.com/watch?v=kacf2bib-X0",
+    "description": "Google DeepMind's Paige Bailey speaks with Matthew Terrell of Box, Madhav Jha of Emergent, and Ivan Zhou of Databricks about using Gemini 3.7 Flash for scale-sensitive agent work. The participants describe choosing a minimum viable model, dispatching parallel sub-agents, and routing intent classification to a fast model before a frontier planner. The video provides no implementation, task suite, reliability threshold, comparison protocol, or measured results; token, latency, cost, and 10x claims are version-sensitive first-party or partner reports.",
+    "type": "video",
+    "source": "Google for Developers",
+    "date": "2026-08-17",
+    "duration": "4m",
+    "topics": [
+      "models-evaluation",
+      "tools-harnesses",
+      "prompting-orchestration"
+    ]
+  },
+  {
+    "id": 92,
+    "primarySection": "agent-systems",
+    "title": "How Anthropic uses Claude Code: Agentic Software Engineering at Scale - Daisy Hollman",
+    "subtitle": "Context-budgeted plugins, event-driven feedback, and isolated coordination across persistent agents",
+    "url": "https://www.youtube.com/watch?v=shZgedW15vg",
+    "description": "Claude Code engineer Daisy Hollman explains a context-budgeted approach to agentic software engineering beyond a single repository: audit external work systems, treat context and prefix-cache costs as architecture constraints, and prefer lazy or event-driven context. She compares MCP tools, skills, subagents, and hooks, then describes her personal named-worktree setup plus agent messaging, scheduled CI wake-ups, guarded auto mode, Fleet View, and remote control. The cache, model, Mozilla bug-fix, safety, cost, and developer-throughput claims are presenter or vendor reports without comparative methods, independent audit, defect measures, or business outcomes; several roadmap details are tentative.",
+    "type": "video",
+    "source": "NDC Conferences",
+    "date": "2026-08-11",
+    "duration": "1h",
+    "topics": [
+      "context-memory",
+      "tools-harnesses",
+      "prompting-orchestration",
+      "review-verification"
+    ]
+  },
+  {
+    "id": 91,
+    "primarySection": "workflows",
+    "title": "Shipped 23 Amp threads live",
+    "url": "https://www.youtube.com/watch?v=TVQofFkWkFc",
+    "description": "Quinn Slack live-streams Amp's parallel-thread workflow: review isolated changes with diffs, history, Storybook states, portals, screenshots, and videos; ship a bounded change; then message another thread to rebase on current main and continue staged work. The title's throughput framing is not independently supported: the stream reports 22 archived threads, equates them with merged changes, and provides no defect, rework, review-time, or comparative outcome data. Most product-surface and direct-to-main details are Amp-specific and overlap the existing Raising an Agent Season 2 and Amp resources.",
+    "type": "video",
+    "source": "Quinn Slack",
+    "date": "2026-07-29",
+    "duration": "2h 44m",
+    "topics": ["tools-harnesses", "review-verification", "collaboration-teams"]
+  },
+  {
+    "id": 90,
+    "primarySection": "workflows",
+    "title": "How I build software - time capsule from July 27, 2026",
+    "subtitle": "Observation-led dispatch, representative test surfaces, and environment-specific verification",
+    "url": "https://www.youtube.com/watch?v=zcwokjZcSZs",
+    "description": "Quinn Slack live-demonstrates an Amp workflow that starts from running-product observation, dispatches newly discovered defects into isolated threads, uses component and full-application test surfaces, creates missing fixture state, scales code review to consequence, and routes platform-specific work to a matching runner. The recording is first-party product and workflow evidence; its speed, cost, model-capability, and testing-volume claims have no comparative baseline, several dispatched tasks remain unfinished, and the operating mechanisms substantially overlap existing catalog coverage.",
+    "type": "video",
+    "source": "Quinn Slack",
+    "date": "2026-07-27",
+    "duration": "25m",
+    "topics": [
+      "prompting-orchestration",
+      "review-verification",
+      "tools-harnesses",
+      "context-memory"
+    ]
+  },
+  {
+    "id": 89,
+    "primarySection": "agent-systems",
+    "title": "Intelligence + Continual Learning = Expertise — Yu Su, NeoCognition",
+    "subtitle": "A conceptual taxonomy of intelligence, situated expertise, and continual-learning design choices",
+    "url": "https://www.youtube.com/watch?v=I6aiEf3aEFQ",
+    "description": "Yu Su distinguishes raw intelligence—the capacity to reason from supplied context—from expertise—accumulated, situated competence that selects context and compresses search. He defines continual learning as adaptive compression of episodes, facts, procedures, or feedback into reusable parameters, vectors, graphs, skills, or world models, but presents this as a design taxonomy rather than an implemented mechanism. The Anthropic revenue claim, orthogonal intelligence/expertise graph, unbounded-expertise hypothesis, private-data opportunity, institutional-memory framing, and forecast of abundant expert support have no methods, system demonstration, benchmark, learning curve, or comparative evidence.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-08-12",
+    "duration": "20m",
+    "topics": ["context-memory", "models-evaluation"]
+  },
+  {
+    "id": 88,
+    "primarySection": "teams-ecosystem",
+    "title": "How Forward Deployed Engineering is done at Factory — Eno Reyes",
+    "subtitle": "A product-feedback, validation, exemplar, and customer-handoff model for deployed engineers",
+    "url": "https://www.youtube.com/watch?v=wpOA-UXynoM",
+    "description": "Factory co-founder and CTO Eno Reyes defines deployed engineers as a customer-to-product feedback and enablement function rather than professional services. They learn a customer's environment and software workflow, connect technical changes to business outcomes, help integrate Factory's platform, improve agent readiness through deterministic validation, establish exemplars, and leave the customer's team to scale them. The recording shows no engagement artifacts, deployed case, evaluation protocol, security assessment, or measured customer outcome; its migration, autonomy, model-independence, air-gap, and agent-capability claims are first-party reports, hypotheticals, or unsupported assertions.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-07-28",
+    "duration": "21m",
+    "topics": [
+      "business-adoption",
+      "collaboration-teams",
+      "review-verification"
+    ]
+  },
+  {
     "id": 87,
     "primarySection": "teams-ecosystem",
     "title": "The Future of AI Agents with Andrew Ng | Interrupt 26",
