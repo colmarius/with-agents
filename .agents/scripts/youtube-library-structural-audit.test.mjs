@@ -194,7 +194,7 @@ test('structural audit passes valid files and reports duplicate membership witho
   }
 });
 
-test('structural audit requires standalone public evidence for every resource intake decision', async () => {
+test('structural audit validates resource intake decision syntax without public artifacts', async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-audit-'));
   try {
     await writeFixture(root, 'catalog.json', {
@@ -231,53 +231,6 @@ test('structural audit requires standalone public evidence for every resource in
         { videoId: 'HiStOrIcAl3', recommendation: 'remove' },
       ],
     });
-
-    const missingEvidence = await auditYoutubeLibraryStructure({
-      libraryRoot: root,
-      repoRoot: root,
-    });
-    assert.match(
-      missingEvidence.errors.join('\n'),
-      /AbCdEfGhI12.*no complete standalone public resource/,
-    );
-    assert.match(
-      missingEvidence.errors.join('\n'),
-      /HiStOrIcAl3.*no complete standalone public resource/,
-    );
-
-    const processedVideoIds = ['AbCdEfGhI12', 'HiStOrIcAl3'];
-    await writeFixture(
-      root,
-      'src/data/resources/coding-with-agents.json',
-      processedVideoIds.map((videoId, index) => ({
-        id: index + 1,
-        type: 'video',
-        url: `https://www.youtube.com/watch?v=${videoId}`,
-      })),
-    );
-    for (const [index, videoId] of processedVideoIds.entries()) {
-      await writeFixture(
-        root,
-        `src/content/transcripts/${videoId}.md`,
-        `---
-title: "${videoId}"
-summarySlug: "${videoId}"
-sourceUrl: "https://www.youtube.com/watch?v=${videoId}"
-videoId: "${videoId}"
-capturedAt: "2026-08-28T00:00:00.000Z"
----
-`,
-      );
-      await writeFixture(
-        root,
-        `src/content/summaries/${videoId}.md`,
-        `---
-title: "${videoId}"
-resourceId: ${index + 1}
----
-`,
-      );
-    }
 
     const valid = await auditYoutubeLibraryStructure({
       libraryRoot: root,

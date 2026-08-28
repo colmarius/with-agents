@@ -471,7 +471,7 @@ test('reviewed playlist curation preserves approved order and validates manifest
   ]);
 });
 
-test('resource intake status requires standalone public evidence without source-library artifacts', async (t) => {
+test('resource intake status reports queue decisions and playlist removal candidates', async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const paths = fixturePaths(root);
@@ -482,11 +482,13 @@ test('resource intake status requires standalone public evidence without source-
   await writeManifestFixture(paths, playlist, [
     availableEntry('AbCdEfGhI12', 0),
     availableEntry('ZxYwVuTsRq1', 1),
+    availableEntry('RmCvId00001', 2),
   ]);
   await writeFixture(paths.intakePathForPlaylist(playlist), {
     playlistId: playlist.id,
     processed: [
       { videoId: 'AbCdEfGhI12', recommendation: 'keep' },
+      { videoId: 'RmCvId00001', recommendation: 'remove' },
       { videoId: 'HiStOrIcAl3', recommendation: 'remove' },
     ],
   });
@@ -498,37 +500,23 @@ test('resource intake status requires standalone public evidence without source-
   assert.equal(scope.mode, 'resource-intake');
   assert.deepEqual(scope.activeEntries, []);
 
-  await assert.rejects(
-    buildLibraryStatus({
-      catalog,
-      ...paths,
-      standaloneEvidenceByVideoId: new Map([
-        ['AbCdEfGhI12', { videoId: 'AbCdEfGhI12' }],
-      ]),
-    }),
-    /HiStOrIcAl3.*no complete standalone public resource/,
-  );
-
-  const status = await buildLibraryStatus({
-    catalog,
-    ...paths,
-    standaloneEvidenceByVideoId: new Map([
-      ['AbCdEfGhI12', { videoId: 'AbCdEfGhI12' }],
-      ['HiStOrIcAl3', { videoId: 'HiStOrIcAl3' }],
-    ]),
-  });
+  const status = await buildLibraryStatus({ catalog, ...paths });
   assert.deepEqual(status.playlists[1].intake, {
-    processed: 1,
+    processed: 2,
     pending: 1,
     keep: 1,
-    remove: 0,
+    remove: 1,
     historical: 1,
+    historicalKeep: 0,
+    historicalRemove: 1,
     pendingVideoIds: ['ZxYwVuTsRq1'],
+    removeVideoIds: ['RmCvId00001'],
   });
   assert.match(
     formatLibraryStatus(status),
-    /resource intake: 1 processed; 1 pending; 1 keep; 0 remove; 1 historical/,
+    /resource intake decisions: 2 current; 1 pending; 1 keep; 1 remove; 1 historical/,
   );
+  assert.match(formatLibraryStatus(status), /RmCvId00001/);
   await assert.rejects(
     captureCatalogVideos({
       catalog,

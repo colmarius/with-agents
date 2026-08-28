@@ -357,8 +357,8 @@ draft: false
 ---
 `,
     resourceValue: resources({
-      type: 'article',
-      url: 'https://example.com/article',
+      type: 'video',
+      url: 'https://www.youtube.com/watch?v=AbCdEfGhI12',
     }),
   });
   try {
@@ -366,6 +366,11 @@ draft: false
     const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
     catalog.playlists[0].resourceIntake = true;
     await writeFixture(root, 'src/content/youtube/catalog.json', catalog);
+    const intakePath = 'src/content/youtube/playlists/fixture/intake.json';
+    await writeFixture(root, intakePath, {
+      playlistId: 'PLfixture1234567890',
+      processed: [],
+    });
     await rm(
       path.join(root, 'src/content/youtube/playlists/fixture/overview.md'),
     );
@@ -378,6 +383,35 @@ draft: false
     assert.equal(result.stats.videoCount, 0);
     assert.equal(result.stats.playlistCount, 1);
 
+    await writeFixture(root, intakePath, {
+      playlistId: 'PLfixture1234567890',
+      processed: [{ videoId: 'AbCdEfGhI12', recommendation: 'keep' }],
+    });
+    const unintegrated = await runPublicContentGuard({ repoRoot: root });
+    assert.match(
+      unintegrated.errors.join('\n'),
+      /AbCdEfGhI12.*no complete standalone public resource/,
+    );
+
+    await writeFixture(
+      root,
+      'src/content/transcripts/summary.md',
+      `---
+title: "Integrated intake video"
+summarySlug: "summary"
+sourceUrl: "https://www.youtube.com/watch?v=AbCdEfGhI12"
+videoId: "AbCdEfGhI12"
+capturedAt: "2026-08-28T00:00:00.000Z"
+---
+`,
+    );
+    const integrated = await runPublicContentGuard({ repoRoot: root });
+    assert.deepEqual(integrated.errors, []);
+
+    await writeFixture(root, intakePath, {
+      playlistId: 'PLfixture1234567890',
+      processed: [],
+    });
     await writeFixture(
       root,
       'src/content/posts/post.md',

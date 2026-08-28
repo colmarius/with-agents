@@ -1,5 +1,4 @@
 import { readFile } from 'node:fs/promises';
-import { hasFullStandaloneEvidence } from './youtube-standalone-evidence.mjs';
 
 const youtubeVideoIdPattern = /^[A-Za-z0-9_-]{11}$/;
 const recommendations = new Set(['keep', 'remove']);
@@ -98,36 +97,7 @@ export const readResourceIntakeDecisions = async ({ playlist, filePath }) => {
   return validateResourceIntakeDecisions(value, playlist);
 };
 
-export const validateResourceIntakeEvidence = ({
-  playlist,
-  decisions,
-  standaloneEvidenceByVideoId,
-}) =>
-  decisions.processed
-    .filter(
-      ({ videoId }) =>
-        !hasFullStandaloneEvidence(standaloneEvidenceByVideoId, videoId),
-    )
-    .map(
-      ({ videoId }) =>
-        `Resource intake ${playlist.slug} decision for ${videoId} has no complete standalone public resource, transcript, and summary evidence.`,
-    );
-
-export const buildResourceIntakeStatus = ({
-  playlist,
-  manifest,
-  decisions,
-  standaloneEvidenceByVideoId,
-}) => {
-  const evidenceErrors = validateResourceIntakeEvidence({
-    playlist,
-    decisions,
-    standaloneEvidenceByVideoId,
-  });
-  if (evidenceErrors.length > 0) {
-    throw new Error(evidenceErrors.join(' '));
-  }
-
+export const buildResourceIntakeStatus = ({ manifest, decisions }) => {
   const availableVideoIds = [
     ...new Set(
       manifest.entries
@@ -142,6 +112,12 @@ export const buildResourceIntakeStatus = ({
   const currentProcessed = availableVideoIds
     .map((videoId) => processedByVideoId.get(videoId))
     .filter(Boolean);
+  const historical = decisions.processed.filter(
+    (entry) => !currentVideoIds.has(entry.videoId),
+  );
+  const removeVideoIds = currentProcessed
+    .filter((entry) => entry.recommendation === 'remove')
+    .map((entry) => entry.videoId);
 
   return {
     processed: currentProcessed.length,
@@ -151,11 +127,16 @@ export const buildResourceIntakeStatus = ({
     remove: currentProcessed.filter(
       (entry) => entry.recommendation === 'remove',
     ).length,
-    historical: decisions.processed.filter(
-      (entry) => !currentVideoIds.has(entry.videoId),
+    historical: historical.length,
+    historicalKeep: historical.filter(
+      (entry) => entry.recommendation === 'keep',
+    ).length,
+    historicalRemove: historical.filter(
+      (entry) => entry.recommendation === 'remove',
     ).length,
     pendingVideoIds: availableVideoIds.filter(
       (videoId) => !processedByVideoId.has(videoId),
     ),
+    removeVideoIds,
   };
 };

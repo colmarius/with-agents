@@ -687,7 +687,6 @@ export const buildLibraryStatus = async ({
 }) => {
   const manifestsByPlaylistId = new Map();
   const scopesByPlaylistId = new Map();
-  const intakeDecisionsByPlaylistId = new Map();
   const standaloneEligibleVideoIds = new Set();
   for (const playlist of catalog.playlists) {
     const manifest = await readPlaylistManifest({
@@ -701,16 +700,7 @@ export const buildLibraryStatus = async ({
     manifestsByPlaylistId.set(playlist.id, manifest);
     const scope = resolvePlaylistEditorialScope(playlist, manifest);
     scopesByPlaylistId.set(playlist.id, scope);
-    if (scope.mode === 'resource-intake') {
-      const decisions = await readResourceIntakeDecisions({
-        playlist,
-        filePath: intakePathForPlaylist(playlist),
-      });
-      intakeDecisionsByPlaylistId.set(playlist.id, decisions);
-      for (const { videoId } of decisions.processed) {
-        standaloneEligibleVideoIds.add(videoId);
-      }
-    } else if (scope.mode === 'curated' && scope.status === 'reviewed') {
+    if (scope.mode === 'curated' && scope.status === 'reviewed') {
       for (const videoId of scope.selectedVideoIds) {
         standaloneEligibleVideoIds.add(videoId);
       }
@@ -780,17 +770,15 @@ export const buildLibraryStatus = async ({
       manifestUnavailable,
     };
     if (scope.mode === 'resource-intake') {
-      const decisions = intakeDecisionsByPlaylistId.get(playlist.id);
+      const decisions = await readResourceIntakeDecisions({
+        playlist,
+        filePath: intakePathForPlaylist(playlist),
+      });
       playlistStatuses.push({
         playlist,
         synced: true,
         totals,
-        intake: buildResourceIntakeStatus({
-          playlist,
-          manifest,
-          decisions,
-          standaloneEvidenceByVideoId: standaloneEvidence.byVideoId,
-        }),
+        intake: buildResourceIntakeStatus({ manifest, decisions }),
       });
       continue;
     }
@@ -1169,8 +1157,10 @@ export const formatLibraryCheckReport = (report) => {
     }
     if (local.intake) {
       lines.push(
-        `  local resource intake: ${local.intake.processed} processed; ${local.intake.pending} pending; ${local.intake.keep} keep; ${local.intake.remove} remove; ${local.intake.historical} historical`,
+        `  local resource intake decisions: ${local.intake.processed} current; ${local.intake.pending} pending; ${local.intake.keep} keep; ${local.intake.remove} remove; ${local.intake.historical} historical`,
+        `  local historical decisions: ${local.intake.historicalKeep} keep; ${local.intake.historicalRemove} remove`,
         `  local pending video IDs: ${local.intake.pendingVideoIds.join(', ') || 'none'}`,
+        `  local playlist removal candidates: ${local.intake.removeVideoIds.join(', ') || 'none'}`,
       );
       continue;
     }
@@ -1234,8 +1224,10 @@ export const formatLibraryStatus = (status) => {
     );
     if (playlistStatus.intake) {
       lines.push(
-        `  resource intake: ${playlistStatus.intake.processed} processed; ${playlistStatus.intake.pending} pending; ${playlistStatus.intake.keep} keep; ${playlistStatus.intake.remove} remove; ${playlistStatus.intake.historical} historical`,
+        `  resource intake decisions: ${playlistStatus.intake.processed} current; ${playlistStatus.intake.pending} pending; ${playlistStatus.intake.keep} keep; ${playlistStatus.intake.remove} remove; ${playlistStatus.intake.historical} historical`,
+        `  historical decisions: ${playlistStatus.intake.historicalKeep} keep; ${playlistStatus.intake.historicalRemove} remove`,
         `  pending video IDs: ${playlistStatus.intake.pendingVideoIds.join(', ') || 'none'}`,
+        `  playlist removal candidates: ${playlistStatus.intake.removeVideoIds.join(', ') || 'none'}`,
       );
       sections.push(lines.join('\n'));
       continue;
