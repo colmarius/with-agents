@@ -104,6 +104,22 @@ export const validateCatalog = (catalog) => {
         `catalog.playlists[${index}].multiSpeaker must be true when present.`,
       );
     }
+    if (
+      Object.hasOwn(playlist, 'resourceIntake') &&
+      playlist.resourceIntake !== true
+    ) {
+      throw new Error(
+        `catalog.playlists[${index}].resourceIntake must be true when present.`,
+      );
+    }
+    if (
+      playlist.resourceIntake === true &&
+      Object.hasOwn(playlist, 'curation')
+    ) {
+      throw new Error(
+        `catalog.playlists[${index}] cannot combine resourceIntake with curation.`,
+      );
+    }
     validatePlaylistCuration(playlist, `catalog.playlists[${index}]`);
   });
 

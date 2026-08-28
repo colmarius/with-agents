@@ -101,6 +101,8 @@ When writing or refreshing public posts under `src/content/posts/`, follow this 
 
 When asked to check, sync, or update tracked YouTube playlists, retry unavailable library captions, or add a tracked playlist, load the `maintaining-youtube-library` skill. Standalone-video summaries continue to use the transcript workflow below. Follow [`src/content/youtube/AGENTS.md`](src/content/youtube/AGENTS.md); keep that tree source-only and never publish it through Astro.
 
+When asked to **refresh coding-agent intake** or **process coding-agent intake**, load the same skill; it owns the temporary-playlist queue and standalone-resource workflow.
+
 ### YouTube transcript workflow
 
 Use this workflow when the user provides a YouTube video link/title or asks for a video summary.

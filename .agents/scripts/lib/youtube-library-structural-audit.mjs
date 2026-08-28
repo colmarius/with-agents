@@ -5,6 +5,7 @@ import {
   validateCatalog,
 } from './youtube-library-core.mjs';
 import { resolvePlaylistEditorialScope } from './youtube-library-curation.mjs';
+import { readResourceIntakeDecisions } from './youtube-resource-intake.mjs';
 import {
   hasFullStandaloneEvidence,
   loadStandaloneYoutubeEvidence,
@@ -400,6 +401,22 @@ export const auditYoutubeLibraryStructure = async ({
     }
     const scope = resolvePlaylistEditorialScope(playlist, manifest);
     errors.push(...scope.errors);
+    if (scope.mode === 'resource-intake') {
+      const intakeFile = path.join(
+        libraryRoot,
+        'playlists',
+        playlist.slug,
+        'intake.json',
+      );
+      try {
+        await readResourceIntakeDecisions({
+          playlist,
+          filePath: intakeFile,
+        });
+      } catch (error) {
+        errors.push(error.message);
+      }
+    }
     scopesByPlaylistId.set(playlist.id, scope);
     playlistVideoIds.set(playlist.id, ids);
   }
@@ -571,6 +588,10 @@ export const auditYoutubeLibraryStructure = async ({
       selectedVideoIds: [...allIds],
       errors: [],
     };
+    if (scope.mode === 'resource-intake') {
+      playlistSummaries.set(playlist.id, new Set());
+      continue;
+    }
     const ids =
       scope.mode === 'curated' ? new Set(scope.selectedVideoIds) : allIds;
     const allowsStandaloneEvidence =

@@ -349,6 +349,29 @@ Bare source AbCdEfGhI12.
   }
 });
 
+test('guard excludes resource-intake membership from publication provenance', async () => {
+  const root = await createFixture({ videoStatus: 'draft' });
+  try {
+    const catalogPath = path.join(root, 'src/content/youtube/catalog.json');
+    const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+    catalog.playlists[0].resourceIntake = true;
+    await writeFixture(root, 'src/content/youtube/catalog.json', catalog);
+    await rm(
+      path.join(root, 'src/content/youtube/playlists/fixture/overview.md'),
+    );
+    await rm(
+      path.join(root, 'src/content/youtube/videos/AbCdEfGhI12/summary.md'),
+    );
+
+    const result = await runPublicContentGuard({ repoRoot: root });
+    assert.deepEqual(result.errors, []);
+    assert.equal(result.stats.videoCount, 0);
+    assert.equal(result.stats.playlistCount, 0);
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
 test('guard enforces reviewed playlist overviews and accepts explicit scoped exceptions', async () => {
   const root = await createFixture({ playlistStatus: 'draft' });
   try {

@@ -1,6 +1,6 @@
 ---
 name: maintaining-youtube-library
-description: "Maintains the source-only YouTube knowledge library. Triggers on: check tracked playlists for new or changed videos, sync or update the library, retry unavailable captions, add a tracked playlist."
+description: "Maintains tracked YouTube sources and the coding-agent resource intake. Triggers on: check or sync tracked playlists, retry captions, add a playlist, refresh coding-agent intake, process coding-agent intake."
 ---
 
 # Maintaining the YouTube Library
@@ -173,6 +173,63 @@ failures. Do not retry them during every routine check or sync.
    metadata changes, then handle any newly possible editorial work deliberately
    at `draft` under the authoritative contract.
 3. Finish with the mutating-workflow checks below.
+
+## Coding-Agent Resource Intake
+
+Use this bounded mode when asked to **refresh coding-agent intake** or **process
+coding-agent intake**. The configured slug is
+`coding-agents-resource-intake`. It is a temporary multi-speaker queue for
+standalone public resources, not a public playlist collection.
+
+1. A refresh-only request is read-only:
+
+   ```sh
+   npm run youtube:library -- check --playlist coding-agents-resource-intake
+   ```
+
+   Report remote additions and local pending IDs. Do not sync or process unless
+   the user explicitly asks for mutation.
+2. For an authorized update, inspect Git state, run the selected check once,
+   then run exactly one authoritative selected sync:
+
+   ```sh
+   npm run youtube:library -- sync --playlist coding-agents-resource-intake
+   npm run youtube:library -- status
+   ```
+
+   Process the status report's pending IDs, not only the sync additions; this
+   preserves unfinished work across sessions. Never run library `capture` for
+   this playlist.
+3. Work in a bounded batch. For each pending ID, first search exact video IDs
+   and canonical URLs in `src/data/resources/`, `src/content/summaries/`, and
+   `src/content/transcripts/`. Reuse and repair complete existing artifacts;
+   never duplicate a canonical resource.
+4. For a genuinely new video, follow the root standalone YouTube workflow:
+   capture the transcript, read it fully, add one canonical resource under
+   `coding-with-agents`, assign its strongest catalog section and topics, and
+   write the public summary. Preserve source-supported attribution and qualify
+   anecdotes, vendor claims, forecasts, and demonstrations.
+5. Self-review claim-to-transcript fidelity and catalog novelty, then use an
+   independent high-mode reviewer when useful and address actionable feedback.
+   Consult Oracle only when direct investigation leaves a specific,
+   high-impact source-fidelity or publication judgment unresolved; Oracle is
+   not a routine approval gate.
+6. Recommend `keep` only when the item adds a durable workflow, mechanism,
+   evidence boundary, or perspective not already represented strongly in the
+   catalog. Recommend `remove` when it is substantially duplicative,
+   superficial, or too product-specific to improve resource navigation. After
+   all checks and browser verification pass, append the ID and recommendation
+   to `playlists/coding-agents-resource-intake/intake.json`; never mark it
+   processed earlier.
+7. Run the full checks required for public resource and tracked-source changes,
+   then run `amp orb services ensure` and verify the affected resource in a real
+   browser. Report, for each video: a short summary, `keep`/`remove` with one
+   concrete reason, the public resource link, and the exact portal URL. End with
+   the remaining pending count.
+
+Independent work may use separate high-mode orbs when items do not edit the same
+files. Keep final integration, the intake decision update, combined checks, and
+portal verification in one owning thread.
 
 ## Structural Audit and Editorial Review
 

@@ -484,6 +484,9 @@ const readTrackedLibrary = async (repoRoot, notices) => {
   const standaloneEligibleVideoIds = new Set();
 
   for (const playlist of catalog.playlists) {
+    if (playlist.resourceIntake === true) {
+      continue;
+    }
     playlistIds.add(playlist.id);
     const manifest = JSON.parse(
       await readFile(

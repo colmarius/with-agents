@@ -17,8 +17,9 @@ src/content/youtube/
 │   └── <author-slug>.md
 ├── playlists/
 │   └── <playlist-slug>/
+│       ├── intake.json      # resource-intake playlists only
 │       ├── manifest.json
-│       └── overview.md
+│       └── overview.md      # editorial source playlists only
 └── videos/
     └── <video-id>/
         ├── metadata.json
@@ -78,6 +79,33 @@ instead of being duplicated under `videos/`. Reuse is valid only when tooling
 can strictly connect the canonical video ID, transcript `summarySlug`, public
 summary, and either its canonical video resource or curated collection item.
 Ambiguous, duplicate, or broken associations fail checks.
+
+### Resource-intake playlists
+
+A temporary playlist that queues standalone public resources may set
+`resourceIntake: true` in its catalog record. It must not also define
+`curation`. Sync still owns its complete remote manifest, but it creates no
+library capture, video-summary, playlist-overview, or author-synthesis
+obligation. Process each pending video through the root standalone transcript
+and resource workflow instead of `youtube:library capture`.
+
+Store completion decisions at `playlists/<playlist-slug>/intake.json`:
+
+```json
+{
+  "playlistId": "<catalog playlist id>",
+  "processed": [
+    { "videoId": "<youtube video id>", "recommendation": "keep" }
+  ]
+}
+```
+
+The file must contain exactly `playlistId` and `processed`. Each processed item
+must contain exactly a unique `videoId` and a `keep` or `remove`
+recommendation. Keep decisions after remote removal so a later re-addition is
+not reprocessed. Add a decision only after the standalone resource workflow,
+review, checks, recommendation, and portal verification are complete. Status
+reports available manifest IDs absent from this file as pending.
 
 ## Editorial workflow
 

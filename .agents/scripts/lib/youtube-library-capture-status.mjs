@@ -8,6 +8,10 @@ import {
 } from './youtube-library-core.mjs';
 import { resolvePlaylistEditorialScope } from './youtube-library-curation.mjs';
 import {
+  buildResourceIntakeStatus,
+  readResourceIntakeDecisions,
+} from './youtube-resource-intake.mjs';
+import {
   hasFullStandaloneEvidence,
   loadStandaloneYoutubeEvidence,
 } from './youtube-standalone-evidence.mjs';
@@ -44,6 +48,8 @@ const defaultVideoPathForFile = (videoId, fileName) =>
   libraryPath(`videos/${videoId}/${fileName}`);
 const defaultOverviewPathForPlaylist = (playlist) =>
   libraryPath(`playlists/${playlist.slug}/overview.md`);
+const defaultIntakePathForPlaylist = (playlist) =>
+  libraryPath(`playlists/${playlist.slug}/intake.json`);
 const defaultAuthorPathForAuthor = (author) =>
   libraryPath(`authors/${author.slug}.md`);
 const defaultSleep = (milliseconds) =>
@@ -203,6 +209,14 @@ const captureCandidates = async ({
     const scope = resolvePlaylistEditorialScope(playlist, manifest);
     if (scope.errors.length > 0) {
       throw new Error(scope.errors.join(' '));
+    }
+    if (
+      scope.mode === 'resource-intake' &&
+      explicitlySelected.has(playlist.slug)
+    ) {
+      throw new Error(
+        `Playlist ${playlist.slug} is a resource intake; process its pending videos through the standalone resource workflow instead of library capture.`,
+      );
     }
     if (
       scope.mode === 'curated' &&
@@ -666,6 +680,7 @@ export const buildLibraryStatus = async ({
   manifestPathForPlaylist = defaultManifestPathForPlaylist,
   videoPathForFile = defaultVideoPathForFile,
   overviewPathForPlaylist = defaultOverviewPathForPlaylist,
+  intakePathForPlaylist = defaultIntakePathForPlaylist,
   authorPathForAuthor = defaultAuthorPathForAuthor,
   repoRoot = rootDir,
   standaloneEvidenceByVideoId,
@@ -747,9 +762,28 @@ export const buildLibraryStatus = async ({
       (entry) => entry.available,
     );
     const scope = scopesByPlaylistId.get(playlist.id);
-    const editorialEntries = scope.activeEntries;
     const manifestUnavailable =
       manifest.entries.length - availableEntries.length;
+    const totals = {
+      entries: manifest.entries.length,
+      available: availableEntries.length,
+      manifestUnavailable,
+    };
+    if (scope.mode === 'resource-intake') {
+      const decisions = await readResourceIntakeDecisions({
+        playlist,
+        filePath: intakePathForPlaylist(playlist),
+      });
+      playlistStatuses.push({
+        playlist,
+        synced: true,
+        totals,
+        intake: buildResourceIntakeStatus({ manifest, decisions }),
+      });
+      continue;
+    }
+
+    const editorialEntries = scope.activeEntries;
     const states = { captured: 0, pending: 0, unavailable: 0 };
     const unavailableVideoIds = [];
     const summaries = { missing: 0, draft: 0, reviewed: 0 };
@@ -797,11 +831,7 @@ export const buildLibraryStatus = async ({
     playlistStatuses.push({
       playlist,
       synced: true,
-      totals: {
-        entries: manifest.entries.length,
-        available: availableEntries.length,
-        manifestUnavailable,
-      },
+      totals,
       curation:
         scope.mode === 'curated'
           ? {
@@ -885,6 +915,16 @@ const projectSynthesis = (synthesis) => ({
 const projectPlaylistLocalStatus = (playlistStatus) => {
   if (!playlistStatus.synced) {
     return { synced: false };
+  }
+  if (playlistStatus.intake) {
+    return {
+      synced: true,
+      totals: { ...playlistStatus.totals },
+      intake: {
+        ...playlistStatus.intake,
+        pendingVideoIds: [...playlistStatus.intake.pendingVideoIds],
+      },
+    };
   }
 
   const local = {
@@ -985,6 +1025,7 @@ export const buildLibraryCheckReport = ({
     availabilityChanges: 0,
   };
   let pendingTranscripts = 0;
+  let pendingIntakeVideos = 0;
   let missingSummaries = 0;
   let staleSyntheses = 0;
   let errors = 0;
@@ -1007,6 +1048,10 @@ export const buildLibraryCheckReport = ({
         playlist.remote.diff.privacyChanges.length;
     }
     if (playlist.local.synced) {
+      if (playlist.local.intake) {
+        pendingIntakeVideos += playlist.local.intake.pending;
+        continue;
+      }
       pendingTranscripts += playlist.local.transcripts.pending;
       missingSummaries += playlist.local.summaries.missing;
       if (playlist.local.overview.state !== 'current') {
@@ -1024,6 +1069,7 @@ export const buildLibraryCheckReport = ({
     summary: {
       remoteChanges,
       pendingTranscripts,
+      pendingIntakeVideos,
       missingSummaries,
       staleSyntheses,
       errors,
@@ -1039,6 +1085,7 @@ export const checkLibrary = async ({
   manifestPathForPlaylist = defaultManifestPathForPlaylist,
   videoPathForFile = defaultVideoPathForFile,
   overviewPathForPlaylist = defaultOverviewPathForPlaylist,
+  intakePathForPlaylist = defaultIntakePathForPlaylist,
   authorPathForAuthor = defaultAuthorPathForAuthor,
 }) => {
   const selectedPlaylists = selectCatalogPlaylists(catalog, playlistSlugs);
@@ -1048,6 +1095,7 @@ export const checkLibrary = async ({
     manifestPathForPlaylist,
     videoPathForFile,
     overviewPathForPlaylist,
+    intakePathForPlaylist,
     authorPathForAuthor,
   });
   const remoteResults = await checkCatalogPlaylists({
@@ -1107,6 +1155,13 @@ export const formatLibraryCheckReport = (report) => {
         `  local curation errors: ${local.curation.errors.join(' ') || 'none'}`,
       );
     }
+    if (local.intake) {
+      lines.push(
+        `  local resource intake: ${local.intake.processed} processed; ${local.intake.pending} pending; ${local.intake.keep} keep; ${local.intake.remove} remove; ${local.intake.historical} historical`,
+        `  local pending video IDs: ${local.intake.pendingVideoIds.join(', ') || 'none'}`,
+      );
+      continue;
+    }
     lines.push(
       `  local transcripts: ${local.transcripts.captured} captured; ${local.transcripts.pending} pending; ${local.transcripts.unavailable} unavailable-recorded`,
       `  local unavailable video IDs: ${local.unavailableVideoIds.join(', ') || 'none'}`,
@@ -1137,7 +1192,7 @@ export const formatLibraryCheckReport = (report) => {
   lines.push(
     '',
     `Summary: ${remoteChanges.playlists} playlists with remote changes; ${remoteChanges.firstSyncs} first syncs; ${remoteChanges.additions} additions; ${remoteChanges.removals} removals; ${remoteChanges.moves} moves; ${remoteChanges.retitles} retitles; ${remoteChanges.availabilityChanges} availability changes`,
-    `Local work: ${report.summary.pendingTranscripts} pending transcripts; ${report.summary.missingSummaries} missing summaries; ${report.summary.staleSyntheses} missing/stale syntheses`,
+    `Local work: ${report.summary.pendingIntakeVideos} pending intake videos; ${report.summary.pendingTranscripts} pending transcripts; ${report.summary.missingSummaries} missing summaries; ${report.summary.staleSyntheses} missing/stale syntheses`,
     `Errors: ${report.summary.errors}`,
   );
   return lines.join('\n');
@@ -1165,6 +1220,14 @@ export const formatLibraryStatus = (status) => {
     lines.push(
       `  manifest: ${totals.entries} entries; ${totals.available} available; ${totals.manifestUnavailable} unavailable/private/deleted`,
     );
+    if (playlistStatus.intake) {
+      lines.push(
+        `  resource intake: ${playlistStatus.intake.processed} processed; ${playlistStatus.intake.pending} pending; ${playlistStatus.intake.keep} keep; ${playlistStatus.intake.remove} remove; ${playlistStatus.intake.historical} historical`,
+        `  pending video IDs: ${playlistStatus.intake.pendingVideoIds.join(', ') || 'none'}`,
+      );
+      sections.push(lines.join('\n'));
+      continue;
+    }
     if (playlistStatus.curation) {
       lines.push(
         `  curation: ${playlistStatus.curation.status}; ${playlistStatus.curation.candidates} candidates; ${playlistStatus.curation.selected} selected; ${playlistStatus.curation.unselected} unselected`,

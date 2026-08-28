@@ -194,6 +194,67 @@ test('structural audit passes valid files and reports duplicate membership witho
   }
 });
 
+test('structural audit validates resource intake decisions without requiring editorial artifacts', async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-audit-'));
+  try {
+    await writeFixture(root, 'catalog.json', {
+      publication: 'source-only',
+      authors: [],
+      playlists: [
+        {
+          id: 'playlist-id',
+          slug: 'intake',
+          title: 'Resource Intake',
+          transcriptLanguage: 'en',
+          summaryLanguage: 'en',
+          multiSpeaker: true,
+          resourceIntake: true,
+        },
+      ],
+      relationships: [],
+    });
+    await writeFixture(root, 'playlists/intake/manifest.json', {
+      playlistId: 'playlist-id',
+      entries: [
+        {
+          videoId: 'AbCdEfGhI12',
+          position: 0,
+          title: 'Candidate',
+          available: true,
+        },
+      ],
+    });
+    await writeFixture(root, 'playlists/intake/intake.json', {
+      playlistId: 'playlist-id',
+      processed: [
+        { videoId: 'AbCdEfGhI12', recommendation: 'keep' },
+        { videoId: 'HiStOrIcAl3', recommendation: 'remove' },
+      ],
+    });
+
+    const valid = await auditYoutubeLibraryStructure({
+      libraryRoot: root,
+      repoRoot: root,
+    });
+    assert.deepEqual(valid.errors, []);
+
+    await writeFixture(root, 'playlists/intake/intake.json', {
+      playlistId: 'playlist-id',
+      processed: [{ videoId: 'AbCdEfGhI12', recommendation: 'undecided' }],
+    });
+    const invalid = await auditYoutubeLibraryStructure({
+      libraryRoot: root,
+      repoRoot: root,
+    });
+    assert.match(
+      invalid.errors.join('\n'),
+      /recommendation must be keep or remove/,
+    );
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
 test('structural audit rejects unordered chunks and unresolved or reversed anchor endpoints', async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-audit-'));
   try {

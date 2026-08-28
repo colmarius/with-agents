@@ -433,6 +433,15 @@
           "GifToS0FTII"
         ]
       }
+    },
+    {
+      "id": "PLCyc6uqoq0jFIe5r2llH52HcdBN890DV6",
+      "slug": "coding-agents-resource-intake",
+      "title": "Coding with Agents Resource Intake",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "resourceIntake": true
     }
   ],
   "relationships": [

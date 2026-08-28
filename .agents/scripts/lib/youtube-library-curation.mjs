@@ -52,6 +52,20 @@ export const resolvePlaylistEditorialScope = (playlist, manifest) => {
   }
 
   const manifestVideoIds = [...entriesByVideoId.keys()];
+  if (playlist.resourceIntake === true) {
+    const candidateVideoIds = manifest.entries
+      .filter((entry) => entry.available)
+      .map((entry) => entry.videoId);
+    return {
+      mode: 'resource-intake',
+      status: 'reviewed',
+      candidateVideoIds: [...new Set(candidateVideoIds)],
+      selectedVideoIds: [],
+      activeEntries: [],
+      unselectedVideoIds: manifestVideoIds,
+      errors: [],
+    };
+  }
   if (!playlist.curation) {
     const activeEntries = manifest.entries.filter((entry) => entry.available);
     const activeVideoIds = [
