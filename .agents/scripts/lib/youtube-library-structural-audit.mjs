@@ -416,7 +416,7 @@ export const auditYoutubeLibraryStructure = async ({
     repoRoot,
     videoIds: standaloneEligibleVideoIds,
   });
-  errors.push(...standaloneEvidence.errors);
+  errors.push(...standaloneEvidence.errors, ...standaloneEvidence.incomplete);
 
   const summarizedVideoIds = new Set();
   const summaryStatuses = new Map();

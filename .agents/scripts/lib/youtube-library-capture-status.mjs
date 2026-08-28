@@ -240,8 +240,12 @@ const captureCandidates = async ({
         repoRoot,
         videoIds: standaloneEligibleVideoIds,
       });
-  if (standaloneEvidence.errors.length > 0) {
-    throw new Error(standaloneEvidence.errors.join(' '));
+  const standaloneIssues = [
+    ...standaloneEvidence.errors,
+    ...(standaloneEvidence.incomplete ?? []),
+  ];
+  if (standaloneIssues.length > 0) {
+    throw new Error(standaloneIssues.join(' '));
   }
 
   const selectedPlaylistIds = new Set(playlists.map((playlist) => playlist.id));

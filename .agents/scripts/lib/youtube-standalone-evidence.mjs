@@ -134,6 +134,7 @@ export const loadStandaloneYoutubeEvidence = async ({
   const summariesRoot = path.join(repoRoot, 'src/content/summaries');
   const byVideoId = new Map();
   const errors = [];
+  const incomplete = [];
 
   const resourcesById = new Map();
   const duplicateResourceIds = new Set();
@@ -221,7 +222,7 @@ export const loadStandaloneYoutubeEvidence = async ({
     const summaryPath = path.join(summariesRoot, `${fields.summarySlug}.md`);
     const summary = await readOptional(summaryPath);
     if (summary === undefined) {
-      errors.push(
+      incomplete.push(
         `Standalone transcript ${transcriptRelative} has no matching public summary.`,
       );
       continue;
@@ -229,7 +230,7 @@ export const loadStandaloneYoutubeEvidence = async ({
     const summaryFields = readFrontmatter(summary);
     const resource = resourcesById.get(summaryFields.resourceId);
     if (!resource) {
-      errors.push(
+      incomplete.push(
         `Standalone summary ${fields.summarySlug}.md has no matching resource.`,
       );
       continue;
@@ -282,5 +283,5 @@ export const loadStandaloneYoutubeEvidence = async ({
     });
   }
 
-  return { byVideoId, errors };
+  return { byVideoId, errors, incomplete };
 };

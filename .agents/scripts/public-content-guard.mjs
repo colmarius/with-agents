@@ -35,13 +35,24 @@ const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const listFiles = async (directory, extension) => {
   const files = [];
   const visit = async (currentDirectory) => {
-    const entries = await readdir(currentDirectory, { withFileTypes: true });
+    let entries;
+    try {
+      entries = await readdir(currentDirectory, { withFileTypes: true });
+    } catch (error) {
+      if (error.code === 'ENOENT') {
+        return;
+      }
+      throw error;
+    }
     entries.sort((left, right) => left.name.localeCompare(right.name));
     for (const entry of entries) {
       const entryPath = path.join(currentDirectory, entry.name);
       if (entry.isDirectory()) {
         await visit(entryPath);
-      } else if (entry.isFile() && entry.name.endsWith(extension)) {
+      } else if (
+        entry.isFile() &&
+        (extension === undefined || entry.name.endsWith(extension))
+      ) {
         files.push(entryPath);
       }
     }
@@ -563,7 +574,10 @@ const readTrackedLibrary = async (repoRoot, notices) => {
     playlistIds,
     playlistScopes,
     playlistStatuses,
-    standaloneErrors: standaloneEvidence.errors,
+    standaloneErrors: [
+      ...standaloneEvidence.errors,
+      ...standaloneEvidence.incomplete,
+    ],
     videoIds,
     videoStatuses,
   };
@@ -793,6 +807,32 @@ export const runPublicContentGuard = async ({
   errors.push(...validateExceptions(activeExceptions, tracked));
   const resourceValidation = await validateResources(repoRoot, errors, tracked);
   await validateDurableContextImageDeck(repoRoot, errors);
+
+  const resourceIntakePlaylistIds = [...tracked.playlistStatuses]
+    .filter(([, status]) => status === 'resource-intake')
+    .map(([playlistId]) => playlistId);
+  if (resourceIntakePlaylistIds.length > 0) {
+    const publishableSourceFiles = (
+      await Promise.all(
+        ['src/pages', 'src/components', 'src/layouts', 'public'].map(
+          (directory) => listFiles(path.join(repoRoot, directory)),
+        ),
+      )
+    ).flat();
+    for (const filePath of publishableSourceFiles) {
+      const contents = await readFile(filePath, 'utf8');
+      const relativePath = path.relative(repoRoot, filePath);
+      for (const playlistId of resourceIntakePlaylistIds) {
+        const index = contents.indexOf(playlistId);
+        if (index !== -1) {
+          const line = contents.slice(0, index).split('\n').length;
+          errors.push(
+            `${relativePath}:${line} publishes resource-intake playlist ${playlistId}`,
+          );
+        }
+      }
+    }
+  }
 
   const publicFiles = [
     ...(await listFiles(path.join(repoRoot, 'src/content/posts'), '.md')).map(

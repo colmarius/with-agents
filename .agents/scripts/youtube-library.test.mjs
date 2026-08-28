@@ -521,6 +521,49 @@ test('resource intake status derives pending videos from public evidence', async
   );
 });
 
+test('resource intake status keeps interrupted standalone evidence pending', async (t) => {
+  const root = await mkdtemp(
+    path.join(os.tmpdir(), 'youtube-intake-interrupted-'),
+  );
+  t.after(() => rm(root, { recursive: true, force: true }));
+  const paths = fixturePaths(root);
+  const catalog = multiPlaylistCatalog({ secondIsMultiSpeaker: true });
+  const playlist = catalog.playlists[1];
+  playlist.resourceIntake = true;
+  await writeManifestFixture(paths, catalog.playlists[0], []);
+  await writeManifestFixture(paths, playlist, [
+    availableEntry('InCmPlEtE01', 0),
+  ]);
+  await writeFixture(
+    path.join(root, 'src/content/transcripts/coding-with-agents/incomplete.md'),
+    `---
+title: "Incomplete intake"
+summarySlug: "coding-with-agents/incomplete"
+sourceUrl: "https://www.youtube.com/watch?v=InCmPlEtE01"
+videoId: "InCmPlEtE01"
+capturedAt: "2026-08-28T00:00:00.000Z"
+durationSeconds: 120
+---
+
+## Transcript
+
+[00:00:01] Captured before its summary and resource were added.
+`,
+  );
+
+  const status = await buildLibraryStatus({
+    catalog,
+    ...paths,
+    repoRoot: root,
+  });
+
+  assert.deepEqual(status.playlists[1].intake, {
+    integrated: 0,
+    pending: 1,
+    pendingVideoIds: ['InCmPlEtE01'],
+  });
+});
+
 test('author-backed resource intake has no author synthesis obligation', async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-author-'));
   t.after(() => rm(root, { recursive: true, force: true }));

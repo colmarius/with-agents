@@ -411,6 +411,40 @@ Intake queue: https://www.youtube.com/playlist?list=PLfixture1234567890
       /cites tracked playlist PLfixture1234567890 with source status resource-intake/,
     );
     assert.doesNotMatch(excepted.notices.join('\n'), /explicit exception/);
+
+    await writeFixture(
+      root,
+      'src/content/posts/post.md',
+      `---
+title: 'Post'
+draft: false
+---
+`,
+    );
+    await Promise.all(
+      [
+        'src/pages/index.astro',
+        'src/components/Intake.astro',
+        'src/layouts/Layout.astro',
+        'public/intake.txt',
+      ].map((relativePath) =>
+        writeFixture(root, relativePath, 'PLfixture1234567890\n'),
+      ),
+    );
+    const publishedElsewhere = await runPublicContentGuard({ repoRoot: root });
+    for (const relativePath of [
+      'src/pages/index.astro',
+      'src/components/Intake.astro',
+      'src/layouts/Layout.astro',
+      'public/intake.txt',
+    ]) {
+      assert.match(
+        publishedElsewhere.errors.join('\n'),
+        new RegExp(
+          `${relativePath.replaceAll('.', '\\.')}:1 publishes resource-intake playlist PLfixture1234567890`,
+        ),
+      );
+    }
   } finally {
     await rm(root, { recursive: true, force: true });
   }
