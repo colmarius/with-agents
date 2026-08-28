@@ -1,5 +1,40 @@
 [
   {
+    "id": 85,
+    "primarySection": "reliability",
+    "title": "High Leverage - Ep. #9, The AI Coding Paradigm Shift with Simon Willison",
+    "subtitle": "Deterministic cores, risk-based review, and real-use evidence for generated software",
+    "url": "https://www.youtube.com/watch?v=D76X-96tpTY",
+    "description": "Joe Ruscio interviews Simon Willison about adapting software practice when coding agents make implementation cheap. Willison proposes concentrating design effort in a stable data model and robust API beneath vibe-coded or user-generated interfaces, scaling human review with the consequence of the code, and treating sustained real-world use as stronger trust evidence than polished generated tests or documentation. His reliability, adoption, model, speed, cost, and market claims are practitioner reports rather than controlled comparisons.",
+    "type": "podcast",
+    "source": "Heavybit",
+    "date": "2026-05-05",
+    "duration": "53m",
+    "topics": [
+      "architecture-maintainability",
+      "review-verification",
+      "business-adoption"
+    ]
+  },
+  {
+    "id": 84,
+    "primarySection": "workflows",
+    "title": "Senior Dev: This \"Grill Me\" Prompt Is Going Viral Among Top Engineers",
+    "subtitle": "Matt Pocock on explicit interfaces, shared domain language, harness control, and Grill Me",
+    "url": "https://www.youtube.com/watch?v=rlM_fAKxB3Q",
+    "description": "Latent Space interviews Matt Pocock about software fundamentals for agent-assisted work: preserve human understanding of architecture, delegate behind deliberate interfaces, build a repository vocabulary document, and choose explicitly between harness convenience and observability. Grill Me appears only in the final transcript segment and repeats his established interview-to-shared-design pattern. The architecture and tool claims are practitioner judgments without comparative evidence, and the recording does not substantiate the title's viral-adoption framing.",
+    "type": "video",
+    "source": "Latent Space",
+    "date": "2026-05-07",
+    "duration": "22m",
+    "topics": [
+      "architecture-maintainability",
+      "prompting-orchestration",
+      "context-memory",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 83,
     "primarySection": "agent-systems",
     "title": "Hacking pi, the little coding agent that could, using pi",
