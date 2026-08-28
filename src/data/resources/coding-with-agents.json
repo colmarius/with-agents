@@ -1,5 +1,31 @@
 [
   {
+    "id": 87,
+    "primarySection": "teams-ecosystem",
+    "title": "The Future of AI Agents with Andrew Ng | Interrupt 26",
+    "subtitle": "Workflow redesign, portfolio selection, vendor optionality, and agent-ready data",
+    "url": "https://www.youtube.com/watch?v=OaRhpwz_TGM",
+    "description": "Harrison Chase interviews Andrew Ng about how faster coding shifts bottlenecks beyond implementation, why enterprises should pair bottom-up experiments with top-down workflow redesign, and how technical and business analysis can narrow hundreds of ideas to a small funded portfolio. Ng also discusses current documentation for coding agents, forward-deployed engineers, vendor optionality, and permissions and governance for unstructured data. The team, bank, productivity, ROI, market, spending, and model-gap claims are first-party reports, estimates, or forecasts without comparative methods or measured outcomes.",
+    "type": "video",
+    "source": "LangChain",
+    "date": "2026-06-17",
+    "duration": "32m",
+    "topics": ["business-adoption", "collaboration-teams"]
+  },
+  {
+    "id": 86,
+    "primarySection": "agent-systems",
+    "title": "Google's Open Knowledge Format: Just Markdown for AI Agents",
+    "subtitle": "A portable concept-and-bundle contract for agent knowledge, with reference producer and consumer tools",
+    "url": "https://www.youtube.com/watch?v=14C0E6pwBIQ",
+    "description": "Prism Labs explains Google Cloud's v0.1 Open Knowledge Format proposal: concept IDs are bundle-relative Markdown paths without the `.md` suffix, YAML frontmatter exposes a minimal typed metadata surface, ordinary links target concept files and form a graph, and optional index and log files support navigation and history. Google provides a BigQuery enrichment agent, static graph visualizer, sample bundles, and Knowledge Catalog ingestion as first-party proofs of concept. The recording does not demonstrate independent cross-vendor interchange, retrieval quality, maintenance accuracy, or broad adoption, and it inconsistently describes all six named fields as required even though `type` alone is required.",
+    "type": "video",
+    "source": "Prism Labs",
+    "date": "2026-06-14",
+    "duration": "7m",
+    "topics": ["context-memory", "tools-harnesses", "open-source-ecosystem"]
+  },
+  {
     "id": 85,
     "primarySection": "reliability",
     "title": "High Leverage - Ep. #9, The AI Coding Paradigm Shift with Simon Willison",
