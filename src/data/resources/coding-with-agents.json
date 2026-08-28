@@ -1,5 +1,37 @@
 [
   {
+    "id": 83,
+    "primarySection": "agent-systems",
+    "title": "Hacking pi, the little coding agent that could, using pi",
+    "subtitle": "Mario Zechner live-builds Pi with Pi, from terminal behavior checks to session branching",
+    "url": "https://www.youtube.com/watch?v=dWlhu0aWCb8",
+    "description": "Mario Zechner live-builds Pi with Pi, using a focused key-code program and checks across terminal applications to repair editor shortcuts, then switching between Claude and GPT-5.1 when both initial implementations fail. He reviews diffs, updates documentation and the changelog, releases the fix, and demonstrates a branch-from-message workflow that creates a new session from an earlier user prompt. The first 25 minutes have no recorded audio, and the model speed and quality comments are informal observations rather than controlled comparisons.",
+    "type": "video",
+    "source": "Mario Zechner",
+    "date": "2025-11-14",
+    "duration": "2h 13m",
+    "topics": ["tools-harnesses", "review-verification", "context-memory"]
+  },
+  {
+    "id": 82,
+    "primarySection": "workflows",
+    "title": "I can't sleep gud anymore - A Practical Guide to Agentic Computering",
+    "subtitle": "Mario Zechner on disk-backed agent state, queryable context, compaction recovery, and review checkpoints",
+    "url": "https://www.youtube.com/watch?v=sq6a3WC5_Ns",
+    "description": "Mario Zechner demonstrates a control-heavy Claude Code workflow for established codebases: reviewed project documentation, pre-compaction task summaries, symbol indexes queried with jq, persisted porting plans and conventions, compilation, and human checkpoints. His report that this reduced a 68-file Spine runtime port from about two weeks to one day is an anecdote without task logs, quality measures, or a controlled baseline. The July 2025 Claude Code internals, pricing, and permission behavior are historical, and his use of a permission-bypass flag is not a security recommendation.",
+    "type": "video",
+    "source": "Mario Zechner",
+    "date": "2025-07-01",
+    "duration": "1h 25m",
+    "topics": [
+      "context-memory",
+      "prompting-orchestration",
+      "review-verification",
+      "tools-harnesses",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 81,
     "primarySection": "workflows",
     "title": "Software Engineering Is Becoming Plan and Review — Louis Knight-Webb, Vibe Kanban",
