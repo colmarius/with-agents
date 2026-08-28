@@ -17,7 +17,6 @@ src/content/youtube/
 │   └── <author-slug>.md
 ├── playlists/
 │   └── <playlist-slug>/
-│       ├── intake.json      # resource-intake playlists only
 │       ├── manifest.json
 │       └── overview.md      # editorial source playlists only
 └── videos/
@@ -89,37 +88,23 @@ library capture, video-summary, playlist-overview, or author-synthesis
 obligation. Process each pending video through the root standalone transcript
 and resource workflow instead of `youtube:library capture`.
 
-Store completion decisions at `playlists/<playlist-slug>/intake.json`:
+Status derives the queue directly from current manifest membership and complete
+standalone public evidence. A video is integrated only when the shared resolver
+connects its canonical resource, transcript, and public summary; otherwise it
+remains pending. A playlist-backed series episode must carry matching `series`
+and `episode` metadata in its transcript and public summary; the transcript's
+`videoId` identifies the source. Structural audit owns source-library shape,
+while `content:guard` owns public resource validity and forbids publishing the
+temporary intake playlist itself.
 
-```json
-{
-  "playlistId": "<catalog playlist id>",
-  "processed": [
-    { "videoId": "<youtube video id>", "recommendation": "keep" }
-  ]
-}
-```
-
-The file must contain exactly `playlistId` and `processed`. Each processed item
-must contain exactly a unique `videoId` and a `keep` or `remove`
-recommendation. Keep decisions after remote removal so a later re-addition is
-not reprocessed. Add a decision only after the standalone resource workflow,
-review, checks, recommendation, and portal verification are complete. Status
-reports available manifest IDs absent from this file as pending and current
-`remove` decisions as playlist-removal candidates. Structural audit owns the
-source-library shape and decision syntax; `content:guard` owns the public join
-and fails when a processed ID does not resolve to a complete public resource,
-transcript, and summary. A playlist-backed series episode must carry matching
-`series` and `episode` metadata in its transcript and public summary; the
-transcript's `videoId` identifies the source.
-
-A `remove` recommendation never deletes the public resource or evidence. After
-explicit approval to change the external playlist, remove that video from the
-YouTube playlist and sync normally; the retained decision then becomes
-historical and prevents accidental reprocessing. Never mutate the external
-playlist from status, audit, sync, or guard. The temporary intake playlist ID
-must not appear in public content; its member videos remain independently
-publishable standalone sources.
+Keep `keep` or `remove` recommendations in the active chat only; do not persist
+them in repository files. A `remove` recommendation never deletes the public
+resource or evidence. After explicit approval to change the external playlist,
+remove that video from YouTube and sync normally. If it is later re-added, its
+existing public evidence makes it integrated without reprocessing. Never mutate
+the external playlist from status, audit, sync, or guard. The temporary intake
+playlist ID must not appear in public content; its member videos remain
+independently publishable standalone sources.
 
 ## Editorial workflow
 

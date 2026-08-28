@@ -4,7 +4,6 @@ import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { listPublicResourceManifestPaths } from './lib/public-resource-manifests.mjs';
 import { resolvePlaylistEditorialScope } from './lib/youtube-library-curation.mjs';
-import { readResourceIntakeDecisions } from './lib/youtube-resource-intake.mjs';
 import {
   hasFullStandaloneEvidence,
   loadStandaloneYoutubeEvidence,
@@ -483,30 +482,11 @@ const readTrackedLibrary = async (repoRoot, notices) => {
   const playlistStatuses = new Map();
   const playlistScopes = new Map();
   const standaloneEligibleVideoIds = new Set();
-  const intakeDecisions = [];
-  const sourceErrors = [];
 
   for (const playlist of catalog.playlists) {
     playlistIds.add(playlist.id);
     if (playlist.resourceIntake === true) {
       playlistStatuses.set(playlist.id, 'resource-intake');
-      try {
-        const decisions = await readResourceIntakeDecisions({
-          playlist,
-          filePath: path.join(
-            youtubeRoot,
-            'playlists',
-            playlist.slug,
-            'intake.json',
-          ),
-        });
-        intakeDecisions.push({ playlist, decisions });
-        for (const { videoId } of decisions.processed) {
-          standaloneEligibleVideoIds.add(videoId);
-        }
-      } catch (error) {
-        sourceErrors.push(error.message);
-      }
       continue;
     }
     const manifest = JSON.parse(
@@ -557,16 +537,6 @@ const readTrackedLibrary = async (repoRoot, notices) => {
     repoRoot,
     videoIds: standaloneEligibleVideoIds,
   });
-  sourceErrors.push(...standaloneEvidence.errors);
-  for (const { playlist, decisions } of intakeDecisions) {
-    for (const { videoId } of decisions.processed) {
-      if (!hasFullStandaloneEvidence(standaloneEvidence.byVideoId, videoId)) {
-        sourceErrors.push(
-          `Resource intake ${playlist.slug} decision for ${videoId} has no complete standalone public resource, transcript, and summary evidence.`,
-        );
-      }
-    }
-  }
 
   for (const videoId of videoIds) {
     try {
@@ -593,7 +563,7 @@ const readTrackedLibrary = async (repoRoot, notices) => {
     playlistIds,
     playlistScopes,
     playlistStatuses,
-    sourceErrors,
+    standaloneErrors: standaloneEvidence.errors,
     videoIds,
     videoStatuses,
   };
@@ -807,7 +777,7 @@ export const runPublicContentGuard = async ({
   const activeExceptions =
     exceptions ?? (repoRoot === defaultRepoRoot ? publicSourceExceptions : []);
   const tracked = await readTrackedLibrary(repoRoot, notices);
-  errors.push(...tracked.sourceErrors);
+  errors.push(...tracked.standaloneErrors);
   for (const [playlistId, scope] of tracked.playlistScopes) {
     errors.push(...scope.errors);
     if (

@@ -194,7 +194,7 @@ test('structural audit passes valid files and reports duplicate membership witho
   }
 });
 
-test('structural audit validates resource intake decision syntax without public artifacts', async () => {
+test('structural audit accepts resource intake without editorial artifacts', async () => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-audit-'));
   try {
     await writeFixture(root, 'catalog.json', {
@@ -225,32 +225,12 @@ test('structural audit validates resource intake decision syntax without public 
         },
       ],
     });
-    await writeFixture(root, 'playlists/intake/intake.json', {
-      playlistId: 'playlist-id',
-      processed: [
-        { videoId: 'AbCdEfGhI12', recommendation: 'keep' },
-        { videoId: 'HiStOrIcAl3', recommendation: 'remove' },
-      ],
-    });
 
     const valid = await auditYoutubeLibraryStructure({
       libraryRoot: root,
       repoRoot: root,
     });
     assert.deepEqual(valid.errors, []);
-
-    await writeFixture(root, 'playlists/intake/intake.json', {
-      playlistId: 'playlist-id',
-      processed: [{ videoId: 'AbCdEfGhI12', recommendation: 'undecided' }],
-    });
-    const invalid = await auditYoutubeLibraryStructure({
-      libraryRoot: root,
-      repoRoot: root,
-    });
-    assert.match(
-      invalid.errors.join('\n'),
-      /recommendation must be keep or remove/,
-    );
   } finally {
     await rm(root, { recursive: true, force: true });
   }

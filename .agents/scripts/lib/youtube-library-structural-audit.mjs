@@ -5,7 +5,6 @@ import {
   validateCatalog,
 } from './youtube-library-core.mjs';
 import { resolvePlaylistEditorialScope } from './youtube-library-curation.mjs';
-import { readResourceIntakeDecisions } from './youtube-resource-intake.mjs';
 import {
   hasFullStandaloneEvidence,
   loadStandaloneYoutubeEvidence,
@@ -401,22 +400,6 @@ export const auditYoutubeLibraryStructure = async ({
     }
     const scope = resolvePlaylistEditorialScope(playlist, manifest);
     errors.push(...scope.errors);
-    if (scope.mode === 'resource-intake') {
-      const intakeFile = path.join(
-        libraryRoot,
-        'playlists',
-        playlist.slug,
-        'intake.json',
-      );
-      try {
-        await readResourceIntakeDecisions({
-          playlist,
-          filePath: intakeFile,
-        });
-      } catch (error) {
-        errors.push(error.message);
-      }
-    }
     scopesByPlaylistId.set(playlist.id, scope);
     playlistVideoIds.set(playlist.id, ids);
   }

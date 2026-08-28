@@ -217,26 +217,25 @@ standalone public resources, not a public playlist collection.
 6. Recommend `keep` only when the item adds a durable workflow, mechanism,
    evidence boundary, or perspective not already represented strongly in the
    catalog. Recommend `remove` when it is substantially duplicative,
-   superficial, or too product-specific to improve resource navigation. After
-   all checks and browser verification pass, append the ID and recommendation
-   to `playlists/coding-agents-resource-intake/intake.json`; never mark it
-   processed earlier. A `remove` decision still keeps the canonical public
-   resource, transcript, and summary; status reports it separately as a
-   playlist-removal candidate.
-7. Run `npm run content:guard` to verify that every processed decision resolves
-   through the normal public-resource workflow, then run the remaining checks
-   required for public resource and tracked-source changes. Run
+   superficial, or too product-specific to improve resource navigation. Keep
+   the recommendation and rationale in the active chat only; never write them
+   to a repository decision file. Either recommendation still keeps the
+   canonical public resource, transcript, and summary.
+7. Run `npm run youtube:library -- status` to verify that completed items resolve
+   through the normal public-resource workflow and disappear from the pending
+   list. Run `npm run content:guard` and the remaining checks required for public
+   resource and tracked-source changes. Run
    `amp orb services ensure` and verify the affected resource in a real browser.
    Report, for each video: a short summary, `keep`/`remove` with one concrete
    reason, the public resource link, and the exact portal URL. End with the
-   remaining pending count and the current playlist-removal candidate IDs.
-8. Do not remove candidates from the external YouTube playlist unless the user
-   explicitly requests that shared-state change. After approved pruning, retain
-   the decisions and use the next normal check/sync to make them historical; do
-   not delete their public resources or source evidence.
+   remaining pending count.
+8. Do not apply `remove` recommendations to the external YouTube playlist unless
+   the user explicitly requests that shared-state change. Use only decisions the
+   user accepted in chat. After approved pruning, sync normally; do not delete
+   public resources or source evidence.
 
 Independent work may use separate high-mode orbs when items do not edit the same
-files. Keep final integration, the intake decision update, combined checks, and
+files. Keep final integration, combined checks, recommendation reporting, and
 portal verification in one owning thread.
 
 ## Structural Audit and Editorial Review

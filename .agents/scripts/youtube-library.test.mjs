@@ -182,8 +182,6 @@ const fixturePaths = (root) => ({
     path.join(root, 'videos', videoId, fileName),
   overviewPathForPlaylist: (playlist) =>
     path.join(root, 'playlists', playlist.slug, 'overview.md'),
-  intakePathForPlaylist: (playlist) =>
-    path.join(root, 'playlists', playlist.slug, 'intake.json'),
   authorPathForAuthor: (author) =>
     path.join(root, 'authors', `${author.slug}.md`),
 });
@@ -471,7 +469,7 @@ test('reviewed playlist curation preserves approved order and validates manifest
   ]);
 });
 
-test('resource intake status reports queue decisions and playlist removal candidates', async (t) => {
+test('resource intake status derives pending videos from public evidence', async (t) => {
   const root = await mkdtemp(path.join(os.tmpdir(), 'youtube-intake-'));
   t.after(() => rm(root, { recursive: true, force: true }));
   const paths = fixturePaths(root);
@@ -483,15 +481,8 @@ test('resource intake status reports queue decisions and playlist removal candid
     availableEntry('AbCdEfGhI12', 0),
     availableEntry('ZxYwVuTsRq1', 1),
     availableEntry('RmCvId00001', 2),
+    availableEntry('ExCeRpT0001', 3),
   ]);
-  await writeFixture(paths.intakePathForPlaylist(playlist), {
-    playlistId: playlist.id,
-    processed: [
-      { videoId: 'AbCdEfGhI12', recommendation: 'keep' },
-      { videoId: 'RmCvId00001', recommendation: 'remove' },
-      { videoId: 'HiStOrIcAl3', recommendation: 'remove' },
-    ],
-  });
 
   const scope = resolvePlaylistEditorialScope(playlist, {
     playlistId: playlist.id,
@@ -500,23 +491,25 @@ test('resource intake status reports queue decisions and playlist removal candid
   assert.equal(scope.mode, 'resource-intake');
   assert.deepEqual(scope.activeEntries, []);
 
-  const status = await buildLibraryStatus({ catalog, ...paths });
+  const status = await buildLibraryStatus({
+    catalog,
+    ...paths,
+    standaloneEvidenceByVideoId: new Map([
+      ['AbCdEfGhI12', { coverage: 'full' }],
+      ['RmCvId00001', { coverage: 'full' }],
+      ['ExCeRpT0001', { coverage: 'excerpt' }],
+    ]),
+  });
   assert.deepEqual(status.playlists[1].intake, {
-    processed: 2,
-    pending: 1,
-    keep: 1,
-    remove: 1,
-    historical: 1,
-    historicalKeep: 0,
-    historicalRemove: 1,
-    pendingVideoIds: ['ZxYwVuTsRq1'],
-    removeVideoIds: ['RmCvId00001'],
+    integrated: 2,
+    pending: 2,
+    pendingVideoIds: ['ZxYwVuTsRq1', 'ExCeRpT0001'],
   });
   assert.match(
     formatLibraryStatus(status),
-    /resource intake decisions: 2 current; 1 pending; 1 keep; 1 remove; 1 historical/,
+    /resource intake: 2 integrated; 2 pending/,
   );
-  assert.match(formatLibraryStatus(status), /RmCvId00001/);
+  assert.match(formatLibraryStatus(status), /ZxYwVuTsRq1/);
   await assert.rejects(
     captureCatalogVideos({
       catalog,
@@ -538,10 +531,6 @@ test('author-backed resource intake has no author synthesis obligation', async (
   await writeManifestFixture(paths, playlist, [
     availableEntry('AbCdEfGhI12', 0),
   ]);
-  await writeFixture(paths.intakePathForPlaylist(playlist), {
-    playlistId: playlist.id,
-    processed: [],
-  });
 
   const status = await buildLibraryStatus({
     catalog,
