@@ -1,5 +1,41 @@
 [
   {
+    "id": 79,
+    "primarySection": "agent-systems",
+    "title": "Agentic SDLC at Uber — Uday Kiran Medisetty & Adam Huda, Uber",
+    "subtitle": "Shared agent infrastructure, pre-CI validation, and managed maintenance loops",
+    "url": "https://www.youtube.com/watch?v=17-YSUHo6Lk",
+    "description": "Uber engineers Uday Kiran Medisetty and Adam Huda present six shared building blocks for a managed software factory: model and MCP gateways, pre-provisioned DevPods, a skills marketplace, a context graph, and the Cortana assistant. A staged feature walkthrough connects product exploration to Minion implementation, inner-loop visual and integration checks, self-healing CI, evidence-rich review, and bounded maintenance loops. The adoption, request-volume, token-saving, output, and quality claims are first-party reports without definitions, comparative baselines, defect or business-outcome measures, or an independent security assessment; the speakers say the components remain at different stages of maturity and rollout.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-08-21",
+    "duration": "18m",
+    "topics": [
+      "tools-harnesses",
+      "context-memory",
+      "review-verification",
+      "business-adoption"
+    ]
+  },
+  {
+    "id": 78,
+    "primarySection": "workflows",
+    "title": "Stop Writing Prompts. Start Writing Specs.",
+    "subtitle": "Roelant Dieben demonstrates an end-to-end GitHub Spec Kit workflow",
+    "url": "https://www.youtube.com/watch?v=Orr7qadkZD8",
+    "description": "Roelant Dieben demonstrates GitHub Spec Kit with GitHub Copilot: store non-negotiable rules in a constitution, capture functional intent in a specification, move technical choices into a plan, generate ordered tasks, and implement an HTTP MCP server. The prompt-heavy demo uses prepared branches for most completed stages and shows one MCP Inspector result, but provides no prompt-first baseline, test output, security review, team-review exercise, or comparative quality, time, cost, and maintenance evidence.",
+    "type": "video",
+    "source": "Microsoft Developer",
+    "date": "2026-08-24",
+    "duration": "22m",
+    "topics": [
+      "prompting-orchestration",
+      "context-memory",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 76,
     "primarySection": "workflows",
     "title": "DHH: Future of Programming, AI, Agentic Engineering, Vibe Coding & Linux",
