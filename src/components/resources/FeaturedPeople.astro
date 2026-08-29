@@ -29,9 +29,15 @@ const people = codingWithAgentsFeaturedPeople.map((person) => {
     };
   });
 
-  if (new Set(summaries.map(({ resourceId }) => resourceId)).size !== 2) {
+  if (summaries.length < 2 || summaries.length > 5) {
     throw new Error(
-      `Featured practitioner ${person.name} must link to two different canonical resources`,
+      `Featured practitioner ${person.name} must link to between two and five summaries`,
+    );
+  }
+
+  if (new Set(summaries.map(({ resourceId }) => resourceId)).size < 2) {
+    throw new Error(
+      `Featured practitioner ${person.name} must span at least two canonical resources`,
     );
   }
 
@@ -47,7 +53,7 @@ const people = codingWithAgentsFeaturedPeople.map((person) => {
   >
     <span class="font-medium">Featured practitioners</span>
     <span class="ml-2 text-sm text-gray-500">
-      Browse five recurring voices
+      Browse {people.length} recurring voices
     </span>
   </summary>
 
@@ -56,7 +62,7 @@ const people = codingWithAgentsFeaturedPeople.map((person) => {
       A deliberately limited set of starting points, not an exhaustive
       participant index.
     </p>
-    <ul class="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+    <ul class="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {
         people.map((person) => (
           <li>
