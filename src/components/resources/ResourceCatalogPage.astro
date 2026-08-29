@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { getCatalogResources } from '../../data/resources/catalogs';
 import Layout from '../../layouts/Layout.astro';
 import type { ResourceCatalog, ResourceSection } from '../../types/resources';
+import FeaturedPeople from './FeaturedPeople.astro';
 import ResourceCatalogList from './ResourceCatalog';
 import ResourcesNav from './ResourcesNav.astro';
 import { toManifestEntry } from './summaryResolver';
@@ -23,6 +24,8 @@ const canonicalPath = section
 const pageTitle = section
   ? `With Agents – ${section.label}`
   : `With Agents – ${catalog.title} Resources`;
+const showFeaturedPeople =
+  catalog.slug === 'coding-with-agents' && section === undefined;
 ---
 
 <Layout
@@ -36,9 +39,16 @@ const pageTitle = section
     <h1 class="text-3xl md:text-4xl font-light mb-4 text-gray-900">
       {heading}
     </h1>
-    <p class="text-lg text-gray-600 mb-12 font-light leading-relaxed">
+    <p
+      class:list={[
+        'text-lg text-gray-600 font-light leading-relaxed',
+        showFeaturedPeople ? 'mb-6' : 'mb-12',
+      ]}
+    >
       {description}
     </p>
+
+    {showFeaturedPeople && <FeaturedPeople manifest={manifest} />}
 
     <ResourceCatalogList
       client:load

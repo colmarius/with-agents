@@ -1,0 +1,81 @@
+---
+import { codingWithAgentsFeaturedPeople } from '../../data/resources/coding-with-agents-featured-people';
+import {
+  encodeSummarySlug,
+  getSummaryPath,
+  type ManifestEntry,
+} from './summaryResolver';
+
+type Props = {
+  manifest: readonly ManifestEntry[];
+};
+
+const { manifest } = Astro.props;
+const manifestBySlug = new Map(manifest.map((entry) => [entry.slug, entry]));
+
+const people = codingWithAgentsFeaturedPeople.map((person) => {
+  const summaries = person.summaryIds.map((summaryId) => {
+    const summary = manifestBySlug.get(encodeSummarySlug(summaryId));
+    if (!summary) {
+      throw new Error(
+        `Featured practitioner ${person.name} references missing summary ${summaryId}`,
+      );
+    }
+
+    return {
+      title: summary.title,
+      href: getSummaryPath(summary.slug),
+      resourceId: summary.resourceId,
+    };
+  });
+
+  if (new Set(summaries.map(({ resourceId }) => resourceId)).size !== 2) {
+    throw new Error(
+      `Featured practitioner ${person.name} must link to two different canonical resources`,
+    );
+  }
+
+  return { name: person.name, summaries };
+});
+---
+
+<details
+  class="group mb-8 rounded-lg border border-gray-200 bg-white shadow-sm"
+>
+  <summary
+    class="cursor-pointer px-5 py-4 text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+  >
+    <span class="font-medium">Featured practitioners</span>
+    <span class="ml-2 text-sm text-gray-500">
+      Browse five recurring voices
+    </span>
+  </summary>
+
+  <div class="border-t border-gray-100 px-5 py-5">
+    <p class="text-sm leading-relaxed text-gray-600">
+      A deliberately limited set of starting points, not an exhaustive
+      participant index.
+    </p>
+    <ul class="mt-5 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        people.map((person) => (
+          <li>
+            <h3 class="font-medium text-gray-900">{person.name}</h3>
+            <ul class="mt-2 space-y-2">
+              {person.summaries.map((summary) => (
+                <li>
+                  <a
+                    href={summary.href}
+                    class="text-sm font-medium leading-snug text-indigo-700 underline decoration-indigo-200 underline-offset-4 transition-colors hover:text-indigo-500 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2"
+                  >
+                    {summary.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</details>
