@@ -121,6 +121,7 @@
   .prose-post code:not(pre code),
   .prose-slide code:not(pre code) {
     @apply font-medium bg-slate-100 px-1.5 py-0.5 rounded;
+    overflow-wrap: anywhere;
   }
 
   .dark .prose-post code:not(pre code),
