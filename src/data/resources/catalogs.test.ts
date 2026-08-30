@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { globSync, readFileSync } from 'node:fs';
 import test from 'node:test';
 import type { Resource, ResourceCatalog } from '../../types/resources.ts';
 import {
@@ -50,13 +51,45 @@ test('registry exposes catalogs and cross-listed security resources', () => {
   );
   assert.deepEqual(
     getCatalogResources(requireCatalog('security')).map(({ id }) => id),
-    [57, 58],
+    [98, 57, 100, 101, 102, 103, 105, 106, 58, 104],
+  );
+  assert.deepEqual(
+    getCatalogResources(requireCatalog('cloud')).map(({ id }) => id),
+    [97, 98, 99, 62, 64, 66, 100, 59, 60, 61, 63, 68, 65, 67, 101, 57, 58],
   );
   assert.deepEqual(
     getCatalogResources(requireCatalog('cloud'), 'security').map(
       ({ id }) => id,
     ),
-    [57, 58],
+    [101, 57, 58],
+  );
+  assert.deepEqual(
+    getCatalogResources(requireCatalog('security'), 'identity-access').map(
+      ({ id }) => id,
+    ),
+    [100, 101, 102, 103, 105, 106],
+  );
+});
+
+test('new Cloud and Security articles have one standalone summary each', () => {
+  const resourceIds = Array.from({ length: 10 }, (_, index) => index + 97);
+  const summaryCountByResourceId = new Map(
+    resourceIds.map((resourceId) => [resourceId, 0]),
+  );
+
+  for (const path of globSync('src/content/summaries/**/*.md')) {
+    const summary = readFileSync(path, 'utf8');
+    const resourceId = Number(summary.match(/^resourceId: (\d+)$/m)?.[1]);
+    const count = summaryCountByResourceId.get(resourceId);
+    if (count === undefined) continue;
+
+    assert.doesNotMatch(summary, /^collection:/m, `${path} must be standalone`);
+    summaryCountByResourceId.set(resourceId, count + 1);
+  }
+
+  assert.deepEqual(
+    [...summaryCountByResourceId.values()],
+    resourceIds.map(() => 1),
   );
 });
 

@@ -1,0 +1,67 @@
+[
+  {
+    "id": 102,
+    "primarySection": "identity-access",
+    "title": "RFC 9700: Best Current Practice for OAuth 2.0 Security",
+    "subtitle": "Current OAuth deployment requirements for redirect flows, tokens, clients, and proxies",
+    "url": "https://www.rfc-editor.org/rfc/rfc9700.html",
+    "description": "The IETF's OAuth 2.0 Security Best Current Practice updates the original framework's threat model and deployment advice. It requires or recommends stricter redirect handling, PKCE, replay defenses, token privilege restriction, secure client authentication, and hardened proxy boundaries while deprecating weaker grants and response modes.",
+    "type": "article",
+    "source": "RFC Editor",
+    "date": "2025-01-30",
+    "topics": ["identity-access", "application-security"]
+  },
+  {
+    "id": 103,
+    "primarySection": "identity-access",
+    "title": "OpenID Connect Core 1.0 incorporating errata set 2",
+    "subtitle": "The normative identity layer over OAuth 2.0 and its token-validation contract",
+    "url": "https://openid.net/specs/openid-connect-core-1_0.html",
+    "description": "OpenID Connect Core defines authentication over OAuth 2.0 using signed ID Tokens and, optionally, UserInfo. It specifies flows, claims, subject identifiers, discovery relationships, and relying-party validation, but its historic implicit and hybrid flows need constraints from current OAuth security guidance.",
+    "type": "article",
+    "source": "OpenID Foundation",
+    "date": "2023-12-15",
+    "topics": ["identity-access"]
+  },
+  {
+    "id": 104,
+    "primarySection": "application-platform",
+    "title": "OWASP API Security Top 10 — 2023",
+    "subtitle": "A practical risk taxonomy for API authorization, business logic, resources, inventory, and dependencies",
+    "url": "https://owasp.org/API-Security/editions/2023/en/0x00-header/",
+    "description": "OWASP's second API Security Top 10 is an awareness and threat-modeling taxonomy, not an implementation standard. Its ten risk families connect object, property, and function authorization with authentication, resource consumption, business-flow abuse, SSRF, configuration, inventory, and third-party API trust.",
+    "type": "article",
+    "source": "OWASP Foundation",
+    "date": "2023-06-05",
+    "topics": [
+      "application-security",
+      "identity-access",
+      "data-protection",
+      "threat-detection"
+    ]
+  },
+  {
+    "id": 105,
+    "primarySection": "identity-access",
+    "title": "Web Authentication: An API for accessing Public Key Credentials Level 2",
+    "subtitle": "The stable W3C baseline for origin-bound public-key registration and authentication",
+    "url": "https://www.w3.org/TR/webauthn-2/",
+    "description": "The W3C Recommendation defines the browser and relying-party contract for registering and using origin-bound public-key credentials. It is the stable normative baseline for WebAuthn ceremonies, server verification, authenticator data, user presence and verification, attestation, privacy, and security considerations.",
+    "type": "article",
+    "source": "World Wide Web Consortium (W3C)",
+    "date": "2021-04-08",
+    "topics": ["identity-access", "application-security"]
+  },
+  {
+    "id": 106,
+    "primarySection": "identity-access",
+    "title": "Better Auth Security",
+    "subtitle": "A review point for a fast-moving TypeScript authentication framework's controls and trade-offs",
+    "url": "https://www.better-auth.com/docs/reference/security",
+    "description": "A mutable implementation reference for Better Auth's password hashing, secret rotation, sessions, CSRF and redirect defenses, cookies, OAuth state and PKCE, rate limiting, proxy trust, and outbound requests. Use it to assess framework configuration, not as a substitute for OAuth, OIDC, or WebAuthn standards.",
+    "type": "article",
+    "source": "Better Auth",
+    "date": "2026-08-29",
+    "topics": ["identity-access", "application-security"]
+  }
+]

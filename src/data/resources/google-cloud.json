@@ -160,5 +160,65 @@
     "date": "2023-07-31",
     "duration": "2h 32m",
     "topics": ["gcp", "architecture", "data-messaging", "cloud-security"]
+  },
+  {
+    "id": 97,
+    "primarySection": "foundations-platform",
+    "title": "Google Cloud Well-Architected Framework",
+    "subtitle": "Six pillars for reviewing cloud architecture and operations",
+    "url": "https://docs.cloud.google.com/architecture/framework",
+    "description": "A six-pillar review framework for designing and operating secure, reliable, efficient, high-performing, cost-effective, and sustainable cloud workloads.",
+    "type": "article",
+    "source": "Google Cloud",
+    "date": "2026-01-28",
+    "topics": ["gcp", "architecture", "reliability", "finops", "cloud-security"]
+  },
+  {
+    "id": 98,
+    "primarySection": "foundations-platform",
+    "title": "Enterprise foundations blueprint",
+    "subtitle": "A Terraform-backed baseline for enterprise governance and security",
+    "url": "https://docs.cloud.google.com/architecture/blueprints/security-foundations",
+    "description": "Google's reference foundation for consistent resource hierarchy, identity, networking, logging, policy, secrets, keys, and threat detection at enterprise scale.",
+    "type": "article",
+    "source": "Google Cloud",
+    "date": "2025-05-15",
+    "topics": ["gcp", "cloud-security"]
+  },
+  {
+    "id": 99,
+    "primarySection": "foundations-platform",
+    "title": "Professional Network Engineer Certification",
+    "subtitle": "A sixteen-activity learning path for Google Cloud networking",
+    "url": "https://www.skills.google/paths/14",
+    "description": "A practical learning path spanning Google Cloud networking fundamentals, routing, load balancing, security, architecture, hybrid connectivity, observability, GKE, and skill-badge labs.",
+    "type": "article",
+    "source": "Google Cloud Skills",
+    "date": "2026-08-29",
+    "topics": ["gcp", "architecture", "reliability", "cloud-security"]
+  },
+  {
+    "id": 100,
+    "primarySection": "applications-serverless",
+    "title": "Configure Workload Identity Federation with deployment pipelines",
+    "subtitle": "Keyless authentication from external CI/CD systems to Google Cloud",
+    "url": "https://docs.cloud.google.com/iam/docs/workload-identity-federation-with-deployment-pipelines",
+    "description": "A practical guide to exchanging deployment-platform OIDC tokens for short-lived Google Cloud credentials with explicit admission and IAM controls.",
+    "type": "article",
+    "source": "Google Cloud",
+    "date": "2026-08-28",
+    "topics": ["gcp", "cloud-security"]
+  },
+  {
+    "id": 101,
+    "primarySection": "security",
+    "title": "Best practices for using Workload Identity Federation",
+    "subtitle": "Trust, least-privilege, and audit controls for external workloads",
+    "url": "https://docs.cloud.google.com/iam/docs/best-practices-for-using-workload-identity-federation",
+    "description": "Google's security guidance for hardening federated workload trust against spoofing, privilege escalation, weak audit trails, and malicious credential configurations.",
+    "type": "article",
+    "source": "Google Cloud",
+    "date": "2026-08-28",
+    "topics": ["gcp", "cloud-security"]
   }
 ]

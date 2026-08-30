@@ -1,8 +1,8 @@
 # Cloud and Security Resource Candidates
 
-Status: in-progress
+Status: completed
 Category: research
-Updated: 2026-08-29
+Updated: 2026-08-30
 
 ## Why
 
@@ -12,10 +12,12 @@ GitHub and Vercel to Google Cloud, secure APIs, OAuth/OIDC, and Better Auth.
 
 ## Summary
 
-The user approved the ten-resource, canonical-document-first tranche. Two
-high-mode implementation orbs own disjoint Cloud/WIF and Security drafts while
-the coordinator owns catalog integration, editorial review, repository checks,
-and browser proof. New playlist tracking remains deferred.
+The approved canonical-document-first tranche is complete: ten resources and
+ten standalone summaries now cover current Cloud architecture, WIF, OAuth,
+OIDC, API security, WebAuthn, and Better Auth. Shared GCP security resources are
+cross-listed without duplicate records. Independent review, repository checks,
+desktop/mobile browser assertions, and frame-by-frame recording review passed.
+New playlist tracking remains deferred.
 
 ## Artifacts
 
@@ -28,8 +30,7 @@ and browser proof. New playlist tracking remains deferred.
 
 ## Next Action
 
-- Integrate and review the two high-mode implementation drafts, then run the
-  combined content, build, and browser proof loop.
+- None.
 
 ## Open Questions
 

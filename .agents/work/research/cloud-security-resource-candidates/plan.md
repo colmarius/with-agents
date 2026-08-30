@@ -11,7 +11,7 @@ Publish the approved ten-resource tranche without adding a new tracked playlist.
 
 ## Tasks
 
-- [ ] **Task 1: Implement Cloud and WIF resources**
+- [x] **Task 1: Implement Cloud and WIF resources**
   - Scope: `src/data/resources/google-cloud.json`, five standalone summaries under `src/content/summaries/google-cloud/`
   - Depends on: none
   - Acceptance:
@@ -19,7 +19,7 @@ Publish the approved ten-resource tranche without adding a new tracked playlist.
     - Every resource has one concise public summary grounded in the audited official sources.
   - Notes: A high-mode orb owns the isolated draft; the coordinator reviews and integrates it.
 
-- [ ] **Task 2: Implement Security resources**
+- [x] **Task 2: Implement Security resources**
   - Scope: `src/data/resources/security.json`, `src/data/resources/security.ts`, five summaries under `src/content/summaries/security/`
   - Depends on: none
   - Acceptance:
@@ -27,7 +27,7 @@ Publish the approved ten-resource tranche without adding a new tracked playlist.
     - Standards remain primary; Better Auth is clearly framed as a fast-moving implementation reference.
   - Notes: A second high-mode orb owns the isolated draft; the coordinator reviews and integrates it.
 
-- [ ] **Task 3: Integrate catalog ownership and cross-listing**
+- [x] **Task 3: Integrate catalog ownership and cross-listing**
   - Scope: `src/data/resources/catalogs.ts`, `src/data/resources/catalogs.test.ts`, resource manifest imports
   - Depends on: Tasks 1 and 2
   - Acceptance:
@@ -35,7 +35,7 @@ Publish the approved ten-resource tranche without adding a new tracked playlist.
     - Enterprise foundations and both WIF records are cross-listed into the intended Security sections without duplicate records.
     - The five Security-owned records are available only in the Security catalog.
 
-- [ ] **Task 4: Run editorial and source-fidelity review**
+- [x] **Task 4: Run editorial and source-fidelity review**
   - Scope: all ten resource records and summaries
   - Depends on: Tasks 1–3
   - Acceptance:
@@ -43,14 +43,14 @@ Publish the approved ten-resource tranche without adding a new tracked playlist.
     - The WIF summaries preserve immutable-claim, admission-condition, direct-access/impersonation, exact-principal, and IAM-role caveats.
     - Supporting URLs remain citations inside summaries rather than becoming extra records.
 
-- [ ] **Task 5: Run repository verification**
+- [x] **Task 5: Run repository verification**
   - Scope: all changed files
   - Depends on: Tasks 1–4
   - Acceptance:
     - `npm run lint:fix`, `npm run content:guard`, `npm run check`, `npm test`, and `npm run build` pass.
     - `git diff --check` is clean and no generated output is committed.
 
-- [ ] **Task 6: Prove rendered behavior**
+- [x] **Task 6: Prove rendered behavior**
   - Scope: `/resources/cloud/`, `/resources/security/`, affected section routes, and representative summary routes
   - Depends on: Task 5
   - Acceptance:

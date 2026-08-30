@@ -179,6 +179,7 @@ const ResourceCatalog = ({
   const hasActiveFilters =
     normalizedSearchQuery.length > 0 || selectedTopic !== null;
   const selectedTopicLabel = selectedTopic ? topicLabels[selectedTopic] : null;
+  const resourceNoun = sortedResources.length === 1 ? 'resource' : 'resources';
 
   const handleClearFilters = () => {
     setSearchQuery('');
@@ -291,8 +292,8 @@ const ResourceCatalog = ({
           <div className="flex flex-col gap-3 border-t border-gray-100 pt-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-gray-600" aria-live="polite">
               {hasActiveFilters
-                ? `Showing ${filteredResources.length} of ${sortedResources.length} resources`
-                : `Showing ${sortedResources.length} resources`}
+                ? `Showing ${filteredResources.length} of ${sortedResources.length} ${resourceNoun}`
+                : `Showing ${sortedResources.length} ${resourceNoun}`}
             </p>
             {hasActiveFilters && (
               <Button variant="ghost" onClick={handleClearFilters}>

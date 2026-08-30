@@ -7,6 +7,7 @@ import type {
 import { codingResources } from './coding-with-agents.ts';
 import { googleCloudResources } from './google-cloud.ts';
 import { resourceSections } from './sections.ts';
+import { securityResources } from './security.ts';
 
 const codingTopicOptions = [
   { slug: 'prompting-orchestration', label: 'Prompting & orchestration' },
@@ -145,13 +146,16 @@ const securityTopicOptions = [
 export const resources: Resource[] = [
   ...codingResources,
   ...googleCloudResources,
+  ...securityResources,
 ].map(({ primarySection: _primarySection, ...resource }) => resource);
 
 const codingSectionByResourceId = Object.fromEntries(
   codingResources.map((resource) => [resource.id, resource.primarySection]),
 );
 
-const cloudResourceIds = [62, 64, 66, 59, 60, 61, 63, 68, 65, 67, 57, 58];
+const cloudResourceIds = [
+  97, 98, 99, 62, 64, 66, 100, 59, 60, 61, 63, 68, 65, 67, 101, 57, 58,
+];
 
 const cloudSectionByResourceId = Object.fromEntries(
   googleCloudResources.map((resource) => [
@@ -160,10 +164,16 @@ const cloudSectionByResourceId = Object.fromEntries(
   ]),
 );
 
-const securityResourceIds = [57, 58];
+const securityResourceIds = [98, 57, 100, 101, 102, 103, 105, 106, 58, 104];
 
 const securitySectionByResourceId = {
+  98: 'cloud-security',
   57: 'cloud-security',
+  100: 'identity-access',
+  101: 'identity-access',
+  ...Object.fromEntries(
+    securityResources.map((resource) => [resource.id, resource.primarySection]),
+  ),
   58: 'threat-detection-response',
 };
 
