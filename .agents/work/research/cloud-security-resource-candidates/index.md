@@ -1,6 +1,6 @@
 # Cloud and Security Resource Candidates
 
-Status: blocked
+Status: in-progress
 Category: research
 Updated: 2026-08-29
 
@@ -12,26 +12,24 @@ GitHub and Vercel to Google Cloud, secure APIs, OAuth/OIDC, and Better Auth.
 
 ## Summary
 
-The three independent high-mode audits, direct verification, and Oracle review
-are consolidated. The final recommendation is a ten-resource,
-canonical-document-first tranche: three Cloud foundations, two WIF resources,
-four protocol/security foundations, and one Better Auth implementation
-reference. New playlist tracking is deferred. No catalog records or tracked
-playlists were added or synchronized in this work item.
+The user approved the ten-resource, canonical-document-first tranche. Two
+high-mode implementation orbs own disjoint Cloud/WIF and Security drafts while
+the coordinator owns catalog integration, editorial review, repository checks,
+and browser proof. New playlist tracking remains deferred.
 
 ## Artifacts
 
 - Research: [candidate audit](research.md)
 - PRD: none
-- Plan: none
+- Plan: [implementation plan](plan.md)
 - Progress: none
 - Decisions: none
 - Handoffs: [Cloud / GCP audit](https://ampcode.com/threads/T-01a04f38-2462-7660-a2bf-e6db43612b18), [Workload Identity Federation audit](https://ampcode.com/threads/T-01a04f38-2cf8-731b-916a-0918122f5522), [secure API and Better Auth audit](https://ampcode.com/threads/T-01a04f38-342c-72ba-84e1-b45e10862475)
 
 ## Next Action
 
-- Await user approval or reprioritization of the recommended first tranche
-  before creating public resource records, summaries, or tracked playlists.
+- Integrate and review the two high-mode implementation drafts, then run the
+  combined content, build, and browser proof loop.
 
 ## Open Questions
 
