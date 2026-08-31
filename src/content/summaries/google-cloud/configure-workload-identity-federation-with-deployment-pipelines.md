@@ -4,7 +4,7 @@ resourceId: 100
 date: "2026-08-28"
 ---
 
-Replace stored service-account keys with a narrowly admitted token exchange. The trust path is: a deployment job obtains an external OIDC token; the Google Cloud provider verifies its signature, issuer, audience, mappings, and admission condition; Security Token Service (STS) exchanges it for a short-lived federated token.
+Replace stored service-account keys with a token exchange that admits only the intended workload. The trust path: a deployment job obtains an external OIDC token; the Google Cloud provider verifies its signature, issuer, audience, mappings, and admission condition; Security Token Service (STS) exchanges it for a short-lived federated token.
 
 ### Bind the workload that actually deploys
 
@@ -12,9 +12,16 @@ For GitHub, map and constrain immutable `repository_id` and `repository_owner_id
 
 Vercel's documented claims do not distinguish a build from a Function, or one preview branch from another. A production build and production runtime in one Vercel project therefore share the same documented identity boundary. If deployment needs more authority than runtime, use a distinct CI identity such as GitHub Actions OIDC or isolate deployment in another Vercel project; a caller-selectable custom audience is not that separation.
 
-Grant IAM to the exact identity: `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT` for one mapped subject, or `principalSet://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/attribute.ATTRIBUTE_NAME/ATTRIBUTE_VALUE` for a deliberately scoped set. These identifiers use the pool project's **number**, not its ID. Prefer direct resource access where the target API supports federated principals. If it does not, let the federated identity impersonate a dedicated service account by granting `roles/iam.workloadIdentityUser` on that account—not merely `roles/iam.serviceAccountUser`—then grant the account only its workload permissions.
+### Grant IAM to the exact identity
 
-Cloud Run's Admin API supports federated API callers, but direct WIF invocation through `run.routes.invoke` does not. A private service therefore needs a dedicated caller service account with `roles/run.invoker` on the exact receiving service.
+Bind roles to the narrowest principal. Both forms use the pool project's **number**, not its ID:
+
+- One mapped subject: `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT`
+- A deliberately scoped set: `principalSet://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/attribute.ATTRIBUTE_NAME/ATTRIBUTE_VALUE`
+
+Prefer direct resource access where the target API supports federated principals. Where it does not, let the federated identity impersonate a dedicated service account: grant `roles/iam.workloadIdentityUser` on that account—not merely `roles/iam.serviceAccountUser`—then grant the account only its workload permissions.
+
+Cloud Run shows why the compatibility matrix matters: its Admin API supports federated API callers, but direct WIF invocation through `run.routes.invoke` does not. A private service therefore needs a dedicated caller service account with `roles/run.invoker` on the exact receiving service.
 
 ### Apply it: Vercel Function to private Cloud Run
 
@@ -39,11 +46,11 @@ Here, “private Cloud Run” means IAM-protected with no anonymous invoker, not
 
 ### Pipeline-specific cautions
 
-GitHub's `id-token: write` only permits the job to retrieve an OIDC token; it grants no cloud write access by itself. Current `google-github-actions/auth` documentation uses `auth@v3` and supports direct federation or impersonation. Google's deployment guide still embeds older `auth@v1` and checkout examples, so its action versions may lag the current action documentation. Recheck action versions, commands, provider claims, and service compatibility when implementing.
+**GitHub Actions.** `id-token: write` only permits the job to retrieve an OIDC token; it grants no cloud write access by itself. Current `google-github-actions/auth` documentation uses `auth@v3` and supports direct federation or impersonation, while Google's deployment guide still embeds older `auth@v1` and checkout examples. Recheck action versions, commands, provider claims, and service compatibility when implementing.
 
-Vercel provides one-hour tokens to builds through `VERCEL_OIDC_TOKEN`. Functions receive request-scoped tokens through `x-vercel-oidc-token`; Vercel can reuse them for up to 90 minutes and gives them a two-hour lifetime. Development tokens last 12 hours, and local `vercel env pull` writes one to `.env.local`. Keep that file untracked, admit development separately, retrieve Function tokens lazily, and do not add an application-level raw-token cache.
+**Vercel token handling.** Builds get one-hour tokens through `VERCEL_OIDC_TOKEN`. Functions receive request-scoped tokens through `x-vercel-oidc-token`; Vercel can reuse them for up to 90 minutes and gives them a two-hour lifetime. Development tokens last 12 hours, and local `vercel env pull` writes one to `.env.local`. Keep that file untracked, admit development separately, retrieve Function tokens lazily, and do not add an application-level raw-token cache.
 
-Vercel's GCP page is a mutable setup walkthrough, not the authority for Google IAM roles or STS syntax. Its current wording around service-account access and its custom-audience example can be read as `roles/iam.serviceAccountUser` and the `https://...` audience at both boundaries. Follow Google's current `roles/iam.workloadIdentityUser` and `//iam.googleapis.com/...` STS contracts instead, and test the actual exchange with pinned library versions.
+**Vercel's GCP walkthrough.** It is a mutable setup guide, not the authority for Google IAM roles or STS syntax. Its current wording around service-account access and its custom-audience example can be read as `roles/iam.serviceAccountUser` and the `https://...` audience at both boundaries. Follow Google's current `roles/iam.workloadIdentityUser` and `//iam.googleapis.com/...` STS contracts instead, and test the actual exchange with pinned library versions.
 
 Google marked the deployment guide updated on 2026-08-28.
 

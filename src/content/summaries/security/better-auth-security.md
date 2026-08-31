@@ -4,15 +4,23 @@ resourceId: 106
 date: "2026-08-29"
 ---
 
-The [Better Auth security page](https://www.better-auth.com/docs/reference/security) is a useful review point for one fast-moving TypeScript authentication implementation, not a protocol foundation. This summary reflects the mutable documentation as reviewed in August 2026; verify the current docs and code before adopting or changing a production configuration.
+The [Better Auth security page](https://www.better-auth.com/docs/reference/security) is a useful review point for a fast-moving TypeScript authentication implementation, not a protocol foundation. This summary reflects the mutable documentation as reviewed in August 2026; verify the current docs and code before adopting or changing a production configuration.
 
-The [framework documentation](https://www.better-auth.com/docs) describes defaults and extension points for authentication and authorization. The reviewed security page documents scrypt password hashing by default, versioned secret rotation, database- or secondary-storage-backed sessions when configured, origin and Fetch Metadata checks, `SameSite=Lax` and `HttpOnly` cookies, OAuth state and PKCE, route rate limits, configurable proxy trust, and refusal to follow redirects for server-side OAuth/OIDC requests. These controls reduce common mistakes; they do not define application authorization policy or remove the need to follow OAuth, OIDC, WebAuthn, and cookie standards.
+The [framework documentation](https://www.better-auth.com/docs) describes defaults and extension points for authentication and authorization. The reviewed security page documents these controls:
+
+- scrypt password hashing by default and versioned secret rotation;
+- database- or secondary-storage-backed sessions when configured;
+- origin and Fetch Metadata checks, with `SameSite=Lax` and `HttpOnly` cookies;
+- OAuth state and PKCE, plus refusal to follow redirects for server-side OAuth/OIDC requests;
+- route rate limits and configurable proxy trust.
+
+These controls reduce common mistakes; they do not define application authorization policy or remove the need to follow OAuth, OIDC, WebAuthn, and cookie standards.
 
 ### Material configuration trade-offs
 
-- The [session-management guide](https://www.better-auth.com/docs/concepts/session-management) says that omitting a database enables stateless session management, while a configured database supports durable lookup and individual revocation. Cookie caching can serve a signed session snapshot without a database read, so a session revoked elsewhere can remain usable until the cache `maxAge` expires unless a sensitive request bypasses the cache. Fully stateless cookie sessions cannot be individually revoked without external state; changing the cookie version invalidates all sessions, not one.
-- `disableOriginCheck` disables callback and redirect URL validation **and**, for backward compatibility, CSRF protection. Broad wildcard trusted origins expand who can submit trusted requests or receive redirects; protocol-agnostic patterns also accept multiple schemes. Prefer exact HTTPS origins.
-- `trustedProxyHeaders` may derive the base URL from `X-Forwarded-Host` and `X-Forwarded-Proto` when no configured or environment base URL exists. Enable it only when a trusted proxy overwrites those headers and clients cannot forge them. Apply the same boundary discipline to client-IP headers used for rate limiting.
+- **Session storage and revocation:** the [session-management guide](https://www.better-auth.com/docs/concepts/session-management) says that omitting a database enables stateless session management, while a configured database supports durable lookup and individual revocation. Cookie caching can serve a signed session snapshot without a database read, so a session revoked elsewhere can remain usable until the cache `maxAge` expires unless a sensitive request bypasses the cache. Fully stateless cookie sessions cannot be individually revoked without external state; changing the cookie version invalidates all sessions, not one.
+- **Origin checks:** `disableOriginCheck` disables callback and redirect URL validation **and**, for backward compatibility, CSRF protection. Broad wildcard trusted origins expand who can submit trusted requests or receive redirects; protocol-agnostic patterns also accept multiple schemes. Prefer exact HTTPS origins.
+- **Proxy trust:** `trustedProxyHeaders` may derive the base URL from `X-Forwarded-Host` and `X-Forwarded-Proto` when no configured or environment base URL exists. Enable it only when a trusted proxy overwrites those headers and clients cannot forge them. Apply the same boundary discipline to client-IP headers used for rate limiting.
 
 Better Auth's checks protect its authentication routes; the surrounding application's state-changing routes still need authorization and CSRF defenses. Prefer a same-origin, host-only session boundary where possible, and do not treat `SameSite=Lax` as the only CSRF control.
 

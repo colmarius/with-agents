@@ -14,7 +14,7 @@ The list spans several different failure boundaries:
 
 ### Turn the taxonomy into engineering work
 
-For each endpoint, record the caller types, object relationships, allowed actions and properties, data classification, resource limits, downstream calls, expected business frequency, and detectable abuse signals. Add negative tests across tenants and roles; vary object IDs and fields independently; test deprecated versions and shadow hosts; constrain outbound destinations; and observe authorization failures, throttling, and abnormal business-flow activity without logging secrets.
+For each endpoint, record the caller types, object relationships, allowed actions and properties, data classification, resource limits, downstream calls, expected business frequency, and detectable abuse signals. Add negative tests across tenants and roles, varying object IDs and fields independently. Test deprecated versions and shadow hosts, constrain outbound destinations, and observe authorization failures, throttling, and abnormal business-flow activity without logging secrets.
 
 Use the [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) to make the three access-control categories concrete: enforce least privilege, deny by default, validate permission on every request, and check the specific object or function even when an identifier can be guessed. Centralize policy where practical, but test the actual request paths with unit and integration coverage and log failed decisions in a useful, non-sensitive form.
 

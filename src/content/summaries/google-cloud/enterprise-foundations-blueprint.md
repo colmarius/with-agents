@@ -14,7 +14,9 @@ The design combines three layers:
 - **Policy controls** use organization policies plus infrastructure-as-code validation to prevent risky configurations before and after deployment.
 - **Detective controls** centralize audit and security logs and connect Security Command Center findings to operational response.
 
-Cloud Identity integrates the existing identity provider, while IAM grants job-based access through groups. Foundation changes flow through privileged CI/CD identities rather than routine user access. Central projects separate responsibilities for logging, Secret Manager, Cloud KMS, and security operations; project metadata supports governance and cost attribution.
+Cloud Identity integrates the existing identity provider, while IAM grants job-based access through groups. Foundation changes flow through privileged CI/CD identities rather than routine user access.
+
+Central projects separate responsibilities for logging, Secret Manager, Cloud KMS, and security operations; project metadata supports governance and cost attribution.
 
 ### Treat the repository as a starting point
 
