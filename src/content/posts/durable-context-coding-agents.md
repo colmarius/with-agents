@@ -3,7 +3,7 @@ title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'How to decide which coding-agent context belongs in chat, AGENTS.md, skills, work items, docs, tests, and saved results.'
 context: coding
 pubDate: 2026-07-02
-updatedDate: 2026-08-23
+updatedDate: 2026-09-02
 tags: ['AI Agents', 'Workflows', 'Agent Skills', 'dot-agents']
 draft: false
 unlisted: false
@@ -93,9 +93,7 @@ Use this loop:
 2. **Write accepted decisions where they belong.** Update the active work item for task-local state; update a design note or test for a fact that should outlive the task.
 3. **Make interrupted work restartable when necessary.** Record the current baseline, blocker, evidence already observed, and one exact next action. Do not paste the transcript.
 4. **Keep proof visible.** Commit the test or fixture when it has lasting value. Put one-off command results, screenshots, or review decisions in the work item or an intentional artifact path.
-5. **Close the loop.** Move a repeated lesson into `AGENTS.md`, a skill, a check, or a durable design note. Remove completed task-local state when the repository's history is enough.
-
-When a lesson repeats, promote only the reusable part: a short repository-wide rule to `AGENTS.md`, a full procedure to a skill, or a mechanical requirement to a script or test. Then remove the completed task notes; Git history can preserve the record without loading it into future runs.
+5. **Close the loop.** When a lesson repeats, promote only its reusable part: a short repository-wide rule to `AGENTS.md`, a full procedure to a skill, a mechanical requirement to a script or test, or a design choice to a short decision note. Then remove the completed task notes; Git history keeps the record without loading it into future runs.
 
 This article owns that storage decision. [Brief the Agent Like a Capable Co-Worker](/coding/posts/capable-coworker-coding-agents) covers the initial assignment. [Right-Sized Threads, Durable State](/coding/posts/right-sized-threads-durable-state) covers continuation, fresh workers, and handoffs. [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) covers risk-scaled verification. Link to those contracts instead of copying them into every work item.
 

@@ -3,7 +3,7 @@ title: 'Using Amp for Real Coding Work'
 description: 'How to brief, place, delegate, and verify a coding task with Amp.'
 context: coding
 pubDate: 2026-06-28
-updatedDate: 2026-08-26
+updatedDate: 2026-09-02
 tags: ['AI Agents', 'Amp', 'Workflows', 'Agentic Coding']
 draft: false
 unlisted: false
@@ -66,20 +66,19 @@ message: small
 
 Amp documents modes as capability presets, not promises about a fixed model
 ([The Dial](https://ampcode.com/docs/the-dial),
-[Models](https://ampcode.com/models)). Orbs are remote machines whose baseline can
-be reconstructed through committed setup and resume hooks. Project settings can
-also supply pre-clone prerequisites and a pre-setup script outside the repository
-([Customizing Orbs](https://ampcode.com/docs/orbs/customizing)). Use project-stored
-scripts for clone blockers or transitional setup; keep stable team setup in the
-repository so it can be reviewed with the code. A registered
-[runner](https://ampcode.com/docs/cli/runners) executes on the selected live
-machine.
+[Models](https://ampcode.com/models)). An orb is a remote machine rebuilt from
+committed setup and resume hooks; project settings can add pre-clone prerequisites
+and a pre-setup script outside the repository
+([Customizing Orbs](https://ampcode.com/docs/orbs/customizing)). Keep stable team
+setup in the repository, where it is reviewed with the code, and use project-stored
+scripts only for clone blockers or transitional setup. A registered
+[runner](https://ampcode.com/docs/cli/runners) executes on the live machine you
+choose.
 
-Mode and environment solve separate problems: mode addresses task uncertainty;
-environment supplies the required machine state. Change either only for a concrete
-task need. Orb size is a third control: choose it from build, test, and service
-load, then inspect personal or per-thread usage through Puck or the CLI before
-changing the default
+Mode answers task uncertainty; environment supplies machine state. Change either
+only for a concrete task need. Orb size is a third control: pick it from build,
+test, and service load, and inspect personal or per-thread usage through Puck or
+the CLI before changing the default
 ([Sizes & Costs](https://ampcode.com/docs/orbs/sizes-and-costs),
 [“Explain Usage”](https://ampcode.com/news/explain-usage)).
 
@@ -94,8 +93,8 @@ Use one only when an independent investigation, test run, or review can be hande
 back that way. Ask Oracle only when a specific unresolved question could change an
 important decision ([Tools](https://ampcode.com/docs/tools#oracle)).
 
-Keep overlapping edits and final integration with one owner. Otherwise, stay with
-one agent.
+Keep overlapping edits and final integration with one owner. Otherwise, one agent
+is enough.
 
 ## Require proof before accepting the change
 

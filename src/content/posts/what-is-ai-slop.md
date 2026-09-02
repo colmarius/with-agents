@@ -3,6 +3,7 @@ title: 'What Is AI Slop? When Generated Output Only Looks Finished'
 description: 'AI slop looks finished even though something important is missing: a clear purpose, evidence that it works, or someone who owns the result.'
 context: coding
 pubDate: 2026-08-19
+updatedDate: 2026-09-02
 tags: ['AI Agents', 'Review', 'Engineering Leadership', 'AI Slop']
 draft: false
 unlisted: false
@@ -33,9 +34,9 @@ The definition is not “AI made it.” [Simon Willison calls](https://simonwill
 
 Humans can produce the same failure; AI lowers the entry barrier.
 
-That is why slop can look competent. The issue has headings. The proposal has trade-offs. The code compiles. But those signals do not tell us who the work is for, what constraints matter, or whether it is ready.
+That is why slop can look competent. The issue has headings. The proposal has trade-offs. The code compiles. But those signals do not say who the work is for, what constraints matter, or whether it is ready.
 
-A clear purpose does not guarantee good work. But without one, the recipient cannot know what the work should do. Without evidence, they cannot know whether it succeeded. Slop looks finished before those questions have been answered.
+A clear purpose does not guarantee good work. Without one, though, the recipient cannot know what the work should do, and without evidence they cannot know whether it succeeded.
 
 ## The missing work moves to the recipient
 
@@ -65,9 +66,9 @@ Owning the result means you can explain how it works and defend the important ch
 
 Ronacher's issue report creates an immediate review cost. Code can send the bill later. An agent might see a malformed session file and add a tolerant reader, fallback, migration, and debug path. Each change looks reasonable. But the real fix may be to stop the system from writing bad session files in the first place.
 
-Here, the local patch looks done, but the root problem remains. A large diff may pass its tests while leaving product decisions and maintenance unresolved. It is not slop because it is large or generated. It becomes slop when it is presented as merge-ready while decisions remain unowned and evidence is missing.
+The local patch looks done, but the root problem remains. A large diff may pass its tests while leaving product decisions and maintenance unresolved. It is not slop because it is large or generated. It becomes slop when it is presented as merge-ready while decisions remain unowned and evidence is missing.
 
-[Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) shows how to preserve purpose and constraints before generation. [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) shows how to choose evidence. The pattern is simple: the output looks done, responsibility is missing, and the next person gets the work.
+[Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) shows how to preserve purpose and constraints before generation. [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it) shows how to choose evidence.
 
 ## Four questions before you pass it on
 
@@ -82,7 +83,7 @@ Here, the local patch looks done, but the root problem remains. A large diff may
 
 Do not turn the questions into a score. A rough draft is not slop just because one answer is weak. The warning sign is the combination: it looks ready, no one has supplied enough purpose, evidence, or ownership, and the unfinished work is hidden.
 
-Do not ask only whether AI made it. Ask what it is for, what evidence supports it, who owns it, and what work is still hidden.
+Whether AI made it is the wrong question. Ask what it is for, what evidence supports it, who owns it, and what work is still hidden.
 
 ## Sources used
 
