@@ -1,5 +1,18 @@
 [
   {
+    "id": 107,
+    "primarySection": "teams-ecosystem",
+    "title": "AI made me doubt everything about programming by Felienne Hermans - DDD Europe 2026",
+    "subtitle": "A social critique of complexity, benchmark culture, and treating AI adoption as inevitable",
+    "url": "https://www.youtube.com/watch?v=0-6-f94n_9M",
+    "description": "Computer science professor and Hedy creator Felienne Hermans argues that programming culture rewards difficult technical work over accessibility and social purpose. Moving from localized numerals to feminist epistemology, computing history, chess-derived AI benchmarks, and Peter Naur’s theory-building account of programming, she asks developers to treat LLM use as a choice rather than an inevitability and to focus on problems worth solving. This is an argumentative keynote, not an empirical evaluation; its broad claims about programmers, AI research, and machine understanding are illustrative rather than systematically demonstrated.",
+    "type": "video",
+    "source": "Domain-Driven Design Europe",
+    "date": "2026-08-30",
+    "duration": "48m",
+    "topics": ["collaboration-teams", "business-adoption", "models-evaluation"]
+  },
+  {
     "id": 96,
     "primarySection": "reliability",
     "title": "The Last Human Code Review: Building Trust in AI-Generated Code — Itamar Friedman, Qodo",
