@@ -115,7 +115,28 @@ const {
 
   .scroll-back-nav-inner {
     padding-block: 0.75rem;
-    padding-inline-start: var(--scroll-back-nav-inline-start, 2rem);
+    padding-inline-start: max(
+      var(--scroll-back-nav-inline-start, 2rem),
+      2rem
+    );
+  }
+
+  @media (min-width: 40rem) {
+    .scroll-back-nav-inner {
+      padding-inline-start: max(
+        var(--scroll-back-nav-inline-start, 3rem),
+        3rem
+      );
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .scroll-back-nav-inner {
+      padding-inline-start: max(
+        var(--scroll-back-nav-inline-start, 4rem),
+        4rem
+      );
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
