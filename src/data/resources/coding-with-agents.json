@@ -13,6 +13,19 @@
     "topics": ["safety-permissions", "models-evaluation", "tools-harnesses"]
   },
   {
+    "id": 112,
+    "primarySection": "teams-ecosystem",
+    "title": "How to Stop Building Products Nobody Wants",
+    "subtitle": "Teresa Torres and Hamel Husain on continuous discovery, customer interviews, and AI evals",
+    "url": "https://www.youtube.com/watch?v=K3cmR_i3dF0",
+    "description": "Teresa Torres explains how story-based customer interviews, assumption tests, and opportunity solution trees help teams decide what to build. With Hamel Husain, she connects discovery to AI evaluation through her interview coach and synthesis tools: domain-specific error analysis, traceable tree changes, and corrective agent loops. A practitioner account of product discovery and AI reliability, not a benchmark of model capability.",
+    "type": "video",
+    "source": "Hamel Husain",
+    "date": "2026-09-02",
+    "duration": "1h 31m",
+    "topics": ["business-adoption", "models-evaluation", "review-verification"]
+  },
+  {
     "id": 108,
     "primarySection": "agent-systems",
     "title": "Sento puzza di AGI: Chollet, GPT Astra e Fable 5 1",
