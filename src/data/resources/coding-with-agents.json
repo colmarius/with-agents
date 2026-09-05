@@ -52,12 +52,12 @@
     "topics": ["collaboration-teams", "business-adoption", "models-evaluation"]
   },
   {
-    "id": 109,
+    "id": 111,
     "primarySection": "teams-ecosystem",
     "title": "Andrew Ng: The Biggest Opportunities in AI Aren't Where You Think",
     "subtitle": "Task automation, learning with AI, hiring people who build, and the product management bottleneck",
     "url": "https://www.youtube.com/watch?v=o-wv_szZ0V0",
-    "description": "Silicon Valley Girl interviews Andrew Ng, who argues that AI automates 30–40% of tasks in many jobs rather than whole jobs, making the remaining human work more valuable and software engineering the forerunner of broader roles. He says AI as commonly used harms learning retention, hires marketers by asking what they have built, keeps material non-public data on local or on-prem models, and argues that cheap building has moved the bottleneck to deciding what to build. This is an opinion interview with unnamed study references, not an evaluation.",
+    "description": "Silicon Valley Girl interviews Andrew Ng, who argues that AI might automate 30–40% of tasks in many jobs rather than whole jobs, making the remaining human work more valuable. He describes how AI broadens professional roles, warns that common usage patterns hurt learning, and hires marketers by asking what software they have built. For his own most sensitive work, he avoids AI or uses a local model. His advice to builders: learn AI, build fast, and talk to customers to decide what to build. This is an opinion interview with unnamed study references, not an evaluation.",
     "type": "video",
     "source": "Silicon Valley Girl",
     "date": "2026-08-28",
