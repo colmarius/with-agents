@@ -52,6 +52,19 @@
     "topics": ["collaboration-teams", "business-adoption", "models-evaluation"]
   },
   {
+    "id": 108,
+    "primarySection": "teams-ecosystem",
+    "title": "Andrew Ng: The Biggest Opportunities in AI Aren't Where You Think",
+    "subtitle": "AI adoption, learning, and hiring for people who build with AI",
+    "url": "https://www.youtube.com/watch?v=o-wv_szZ0V0",
+    "description": "Silicon Valley Girl interviews Andrew Ng about AI opportunities, career preparation, and learning. The publisher’s description highlights his distinction between automating tasks and replacing jobs, and his preference for hiring people who can build with AI rather than only use it. This entry is based on the publisher’s description and chapter list; captions could not be retrieved, so no transcript-backed summary is available.",
+    "type": "video",
+    "source": "Silicon Valley Girl",
+    "date": "2026-08-28",
+    "duration": "38m",
+    "topics": ["business-adoption", "collaboration-teams"]
+  },
+  {
     "id": 96,
     "primarySection": "reliability",
     "title": "The Last Human Code Review: Building Trust in AI-Generated Code — Itamar Friedman, Qodo",
