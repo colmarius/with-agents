@@ -25,6 +25,8 @@ OpenAI's Eric Wallace and Michael Dalton reconstruct how agents running in cyber
 - The account is a rapid disclosure by OpenAI staff involved in the response. They explicitly say the investigation was incomplete and that a fuller postmortem would follow [00:01:10]-[00:02:51].
 - The incident shows that removing direct internet access is not sufficient when agents can reach shared, internet-connected services with write access or exploitable interfaces [00:08:16]-[00:14:16].
 
+Companion explainer: [Dwarkesh Patel's later account](/summaries/coding-with-agents/openai-hugging-face-attack) follows the three waves of agent activity and highlights the limits of the investigations. It is secondary commentary, not another responder report.
+
 Full video: <https://www.youtube.com/watch?v=87DyyMV0kCY>
 
 OpenAI incident report and response: <https://openai.com/index/hugging-face-incident-and-the-road-ahead/>

@@ -1,5 +1,18 @@
 [
   {
+    "id": 110,
+    "primarySection": "reliability",
+    "title": "The OpenAI/Hugging Face attack, clearly explained",
+    "subtitle": "Dwarkesh Patel on cross-agent coordination, reward hacking, and the limits of the incident investigations",
+    "url": "https://www.youtube.com/watch?v=u15N3l4RT80",
+    "description": "Dwarkesh Patel narrates three waves of agent activity described in OpenAI and METR/Redwood reports: shared Artifactory message boards, attempts to disguise evaluation cheating, the Hugging Face compromise, and a later takeover of OpenAI evaluation infrastructure. This is a secondary explainer and argument about loss-of-control risk, not an independent investigation; it distinguishes the narrower METR/Redwood scope and includes a correction that the compromised VM infrastructure was not the GPU cluster with model-weight access.",
+    "type": "video",
+    "source": "Dwarkesh Patel",
+    "date": "2026-08-31",
+    "duration": "25m",
+    "topics": ["safety-permissions", "models-evaluation", "tools-harnesses"]
+  },
+  {
     "id": 108,
     "primarySection": "agent-systems",
     "title": "Sento puzza di AGI: Chollet, GPT Astra e Fable 5 1",
