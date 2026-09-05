@@ -1,5 +1,18 @@
 [
   {
+    "id": 108,
+    "primarySection": "agent-systems",
+    "title": "Sento puzza di AGI: Chollet, GPT Astra e Fable 5 1",
+    "subtitle": "Salvatore Sanfilippo on reasoning, harnesses, and evaluating models through useful software optimizations",
+    "url": "https://www.youtube.com/watch?v=I-5j_nzqnAo",
+    "description": "In Italian, Salvatore Sanfilippo interprets reported ARC-AGI reasoning results and argues that model evaluations should measure useful software improvements rather than rely on aggregate leaderboards. He proposes repeated Redis optimization tasks with a token budget and passing tests, and reports a Fable 5.1 inference-speed improvement in his Dwarf Star project. This is practitioner commentary: the speedup is anecdotal, the AGI conclusion is his interpretation, and the looping-transformer discussion is explicitly speculative.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-09-04",
+    "duration": "21m",
+    "topics": ["models-evaluation", "tools-harnesses", "review-verification"]
+  },
+  {
     "id": 107,
     "primarySection": "teams-ecosystem",
     "title": "AI made me doubt everything about programming by Felienne Hermans - DDD Europe 2026",
