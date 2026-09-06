@@ -1,5 +1,22 @@
 [
   {
+    "id": 113,
+    "primarySection": "workflows",
+    "title": "Refactoring Legacy Codebases",
+    "subtitle": "Cursor workshop on coverage audits, scoped migration plans, Jira handoffs, and cloud-agent review",
+    "url": "https://www.youtube.com/watch?v=hiSkMVXdSfA",
+    "description": "Cursor's field-engineering workshop uses a WordPress PHP-to-React migration to demonstrate auditing test gaps, narrowing a plan to one screen, creating phased Jira tickets, and delegating implementation to cloud agents with separate PRs and review evidence. It also sketches maintenance automations. The live migration does not finish during the session; earlier runs illustrate testing and multi-PR review, not proof of regression-free migration.",
+    "type": "video",
+    "source": "Cursor",
+    "date": "2026-09-03",
+    "duration": "59m",
+    "topics": [
+      "architecture-maintainability",
+      "prompting-orchestration",
+      "review-verification"
+    ]
+  },
+  {
     "id": 110,
     "primarySection": "reliability",
     "title": "The OpenAI/Hugging Face attack, clearly explained",
