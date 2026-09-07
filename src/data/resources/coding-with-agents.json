@@ -34,6 +34,24 @@
     ]
   },
   {
+    "id": 117,
+    "primarySection": "workflows",
+    "title": "My Agentic Engineering Workflow (after 6,775 sessions)",
+    "subtitle": "David Ondrej on reusable skills, human-owned decisions, parallel agents, and bounded review",
+    "url": "https://www.youtube.com/watch?v=c9nRxEy1kUY",
+    "description": "David Ondrej walks through his multi-agent setup: persistent VPS sessions, reusable planning and review skills, worktree isolation, serialized shipping, architecture decision records, and read-only production analysis. A Hostinger-sponsored practitioner demo, not a productivity benchmark or security recipe; command-pattern hooks do not establish safe unrestricted execution, and the root-access and credential-discovery example should not be copied as a default.",
+    "type": "video",
+    "source": "David Ondrej",
+    "date": "2026-09-07",
+    "duration": "54m",
+    "topics": [
+      "prompting-orchestration",
+      "tools-harnesses",
+      "review-verification",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 114,
     "primarySection": "workflows",
     "title": "Just stop looking at the code - Kent C. Dodds",
