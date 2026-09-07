@@ -1,5 +1,22 @@
 [
   {
+    "id": 115,
+    "primarySection": "agent-systems",
+    "title": "Agentic UX: Three Ways to Let an Agent Build Its Own UI - Tyler Slaton, CopilotKit",
+    "subtitle": "Controlled components, declarative composition, and sandbox-generated UI over AG-UI",
+    "url": "https://www.youtube.com/watch?v=mGyyTVk8Ggw",
+    "description": "Tyler Slaton demonstrates an incident-triage agent with CopilotKit and Mastra, moving from tool-mapped React components to schema-driven composition and open-ended UI generation. He shows suspend/resume approval and Slack delivery through AG-UI. A vendor-led demonstration of UI design trade-offs, not evidence of production incident remediation or secure execution of generated code; the self-learning SDK is described as work in progress.",
+    "type": "video",
+    "source": "Mastra",
+    "date": "2026-09-07",
+    "duration": "28m",
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "prompting-orchestration"
+    ]
+  },
+  {
     "id": 114,
     "primarySection": "workflows",
     "title": "Just stop looking at the code - Kent C. Dodds",
