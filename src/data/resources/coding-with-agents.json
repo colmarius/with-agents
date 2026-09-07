@@ -1,5 +1,23 @@
 [
   {
+    "id": 114,
+    "primarySection": "workflows",
+    "title": "Just stop looking at the code - Kent C. Dodds",
+    "subtitle": "Kody, reusable automation, system-level review, and human product ownership",
+    "url": "https://www.youtube.com/watch?v=0-FbGBb3qeg",
+    "description": "Kent C. Dodds and Joel Hooks discuss turning agent-driven processes into durable software, composing reusable primitives, recording invariants and architecture decisions, and keeping product choices and accountability human. Dodds describes Kody's risk-based auto-merge workflow and domain-checked secret substitution. This is a practitioner account from an early-access product, not proof that code review is unnecessary or that agents are immune to prompt injection.",
+    "type": "video",
+    "source": "MEGA DEV",
+    "date": "2026-09-07",
+    "duration": "1h 11m",
+    "topics": [
+      "architecture-maintainability",
+      "prompting-orchestration",
+      "review-verification",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 113,
     "primarySection": "workflows",
     "title": "Refactoring Legacy Codebases",
