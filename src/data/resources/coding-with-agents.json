@@ -17,6 +17,23 @@
     ]
   },
   {
+    "id": 116,
+    "primarySection": "workflows",
+    "title": "Anthropic Just Revealed 7 New Rules for Prompting Claude 5 Models",
+    "subtitle": "Ben AI on complete task briefs, clarification interviews, intent, and exit criteria",
+    "url": "https://www.youtube.com/watch?v=HDmBwU5uvEE",
+    "description": "Ben AI presents seven prompting rules: specify the whole job, clarify unknowns, explain intent, define completion, give reasons for guardrails, avoid redundant double-check prompts, and set a reusable output style. A creator's interpretation of Anthropic guidance with personal examples, not a comparative evaluation; the advice about verification prompts should not replace task-specific tests or required review.",
+    "type": "video",
+    "source": "Ben AI",
+    "date": "2026-09-02",
+    "duration": "13m",
+    "topics": [
+      "prompting-orchestration",
+      "context-memory",
+      "review-verification"
+    ]
+  },
+  {
     "id": 114,
     "primarySection": "workflows",
     "title": "Just stop looking at the code - Kent C. Dodds",
