@@ -1,5 +1,23 @@
 [
   {
+    "id": 118,
+    "primarySection": "agent-systems",
+    "title": "Why The Harness Matters More Than The Model | YC Paper Club",
+    "subtitle": "Prime Agent, OpenJarvis, and QM on persistent state, local optimization, and shared-agent permissions",
+    "url": "https://www.youtube.com/watch?v=n9xKblqyQ28",
+    "description": "Seth Karten, Jon Saad-Falcon, Josh France, and Regan Bell present three harness designs: programmatic context and persistent subagents in Prime Agent, cloud-assisted optimization of local OpenJarvis stacks, and QM's separation of conversations from execution sandboxes. A research and practitioner session with reported benchmark results, mixed self-improvement outcomes, and explicit warnings about approval fatigue and information sharing—not proof that harnesses universally outweigh models. Summary based on a user-supplied transcript.",
+    "type": "video",
+    "source": "Y Combinator",
+    "date": "2026-09-07",
+    "duration": "1h",
+    "topics": [
+      "tools-harnesses",
+      "context-memory",
+      "models-evaluation",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 115,
     "primarySection": "agent-systems",
     "title": "Agentic UX: Three Ways to Let an Agent Build Its Own UI - Tyler Slaton, CopilotKit",
