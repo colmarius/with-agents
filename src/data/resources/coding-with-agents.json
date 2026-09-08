@@ -18,6 +18,19 @@
     ]
   },
   {
+    "id": 120,
+    "primarySection": "teams-ecosystem",
+    "title": "Paul Graham On Startups, Ambition, and Great Founders",
+    "subtitle": "Founder motivation, milestone funding, and why AI does not remove the need to ship",
+    "url": "https://www.youtube.com/watch?v=5bxp78i96S8",
+    "description": "Paul Graham discusses ambition, founder determination, starting with limited capital, and YC's batch model. The AI-relevant sections cover uneven model capabilities, shipping speed as a continuing signal, and inference bills as a new startup cost. A founder interview offering experience and opinion, not a coding-agent tutorial or a measured forecast of AI economics.",
+    "type": "video",
+    "source": "Y Combinator",
+    "date": "2026-09-08",
+    "duration": "21m",
+    "topics": ["business-adoption", "collaboration-teams"]
+  },
+  {
     "id": 118,
     "primarySection": "agent-systems",
     "title": "Why The Harness Matters More Than The Model | YC Paper Club",
