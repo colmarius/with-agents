@@ -19,7 +19,7 @@ export const siteContexts = [
     title: 'Coding with Agents',
     promise: 'Build better software with coding agents.',
     description:
-      'Practical, source-backed guidance for scoping, briefing, coordinating, and verifying agent-assisted software work.',
+      'Scope a task, brief a coding agent, coordinate the work, and check the result.',
     catalogSlug: 'coding-with-agents',
     featuredPostIds: [
       'agentic-coding-2026',

@@ -182,7 +182,7 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
     slug: 'coding-with-agents',
     title: 'Coding with Agents',
     description:
-      'Podcasts, videos, and playlists exploring AI-powered coding workflows, agentic design patterns, and the future of software development.',
+      'Podcasts, videos, and playlists on coding-agent workflows, harness design, verification, and team practices.',
     indexDescription:
       'Search practical coding-agent workflows, systems, reliability practices, and team experience.',
     sections: resourceSections,

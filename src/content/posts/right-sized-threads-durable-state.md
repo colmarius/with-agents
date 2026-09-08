@@ -84,7 +84,7 @@ handoff record
 └─ next action
 ```
 
-This is **durable state**: the accepted record that must survive the handoff. It records decisions, changes, and checks—not the transcript. Mark checks as inherited or rerun. Keep a discarded idea only when it prevents the next worker from reversing an accepted decision.
+This is **durable state**: the accepted record that must survive the handoff. It records decisions, changes, and checks—not the transcript. Mark which check results were carried over from the previous worker and which checks were rerun for the current work. Keep a discarded idea only when it prevents the next worker from reversing an accepted decision.
 
 Keep this state in the repository for resumption, coordination, or review. A [dot-agents](https://dot-agents.dev/) work item is one option. A commit identifies a snapshot; it does not prove the work or make the files available elsewhere. Share the baseline through authorized Git or explicit file transfer before another thread depends on it ([Agent to Agent](https://ampcode.com/docs/orbs/agent-to-agent), [“From Agent to Agent”](https://ampcode.com/news/from-agent-to-agent)).
 

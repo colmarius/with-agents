@@ -50,7 +50,7 @@ Willison recommends sandboxing to limit damage and realistic fake data instead o
 
 > A useful check can catch a believable wrong implementation.
 
-Before editing:
+Use this sequence:
 
 1. **State** the expected behavior and one plausible failure.
 2. **Capture** the current failure when possible.

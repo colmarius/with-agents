@@ -20,7 +20,10 @@ Five core principles shape that review:
 
 ### A practical review sequence
 
-Start with a current architecture diagram and the user outcomes the workload must protect. Review every pillar with engineering, operations, security, finance, and sustainability stakeholders; record accepted risks, owners, and measurable targets. Convert findings into prioritized work rather than treating every recommendation as mandatory. Revisit the review after material workload, traffic, regulatory, or organizational changes.
+1. Start with a current architecture diagram and the user outcomes the workload must protect.
+2. Review every pillar with engineering, operations, security, finance, and sustainability stakeholders. Record accepted risks, owners, and measurable targets.
+3. Convert findings into prioritized work rather than treating every recommendation as mandatory.
+4. Revisit the review after material workload, traffic, regulatory, or organizational changes.
 
 The framework provides recommendations, not a product-selection formula or proof of compliance. Teams still need workload-specific threat models, SLOs, capacity evidence, cost data, recovery tests, and regulatory review.
 

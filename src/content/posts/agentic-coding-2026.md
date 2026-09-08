@@ -74,9 +74,9 @@ practitioner diagnosis, not a measured productivity result.
 The practical response is not more ceremony. Give the agent the missing
 assignment context before it edits: outcome, scope, constraints, starting
 points, proof, and authority limits. [Brief the Agent Like a Capable
-Co-Worker](/coding/posts/capable-coworker-coding-agents) owns that brief. Put recurring
+Co-Worker](/coding/posts/capable-coworker-coding-agents) shows how to write that brief. Put recurring
 commands, decisions, and accepted state where the next run can find them;
-[Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) owns that system.
+[Your Repo Is the Memory](/coding/posts/durable-context-coding-agents) covers storing reusable repository context.
 
 ## Make the work easy to inspect
 
@@ -113,7 +113,7 @@ These are practitioner patterns, not controlled comparisons.
 longer independently proves its work. Improve one real feedback path at a time.
 When the risk requires independence, keep reviewer-supplied acceptance
 conditions outside the agent's writable loop. [Make the Agent Prove
-It](/coding/posts/make-the-agent-prove-it) covers the risk-scaled proof contract.
+It](/coding/posts/make-the-agent-prove-it) explains how to choose evidence based on consequence, reversibility, and detectability.
 
 ## Keep consequential decisions human
 
