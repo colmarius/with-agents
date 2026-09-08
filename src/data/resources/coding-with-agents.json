@@ -1,5 +1,23 @@
 [
   {
+    "id": 119,
+    "primarySection": "teams-ecosystem",
+    "title": "Sam Altman on Astra, AGI, and the future of OpenAI",
+    "subtitle": "Frontier training safety, computer-use agents, and the convergence of chat and coding",
+    "url": "https://www.youtube.com/watch?v=VeizK1M7V7E",
+    "description": "Sam Altman discusses delayed frontier reinforcement-learning runs, alignment as following user intent, Astra computer use, and a unified ChatGPT/Codex experience. He also addresses compute constraints, privacy, and OpenAI's product priorities. A company leader's account and roadmap, not an independent evaluation of model capabilities or safety guarantees.",
+    "type": "video",
+    "source": "Sources Podcast",
+    "date": "2026-09-01",
+    "duration": "1h 9m",
+    "topics": [
+      "models-evaluation",
+      "safety-permissions",
+      "tools-harnesses",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 118,
     "primarySection": "agent-systems",
     "title": "Why The Harness Matters More Than The Model | YC Paper Club",
