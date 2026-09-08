@@ -4,7 +4,7 @@ resourceId: 44
 date: "2026-08-12"
 ---
 
-*All English wording below is an editorial translation/paraphrase of Italian auto-generated captions; nothing is a verbatim quotation.*
+*This summary paraphrases Italian auto-generated captions and includes a labeled editorial implication; it contains no verbatim quotations.*
 
 Salvatore Sanfilippo's answer to coding-agent FOMO is to separate fast-expiring tool knowledge from capabilities that compound: domain and software knowledge, practical intuition about model behavior, and clear communication. His preferred workflow follows from that distinction: keep orchestration simple, communicate intent quickly, and reuse working implementations as context.
 
