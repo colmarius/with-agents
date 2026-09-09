@@ -209,7 +209,8 @@ standalone public resources, not a public playlist collection.
    `coding-with-agents`, assign its strongest catalog section and topics, and
    write the public summary. Preserve source-supported attribution and qualify
    anecdotes, vendor claims, forecasts, and demonstrations.
-5. Self-review claim-to-transcript fidelity and catalog novelty, then use an
+5. Self-review reader understanding using root `AGENTS.md`'s Summary readability
+   review, claim-to-transcript fidelity, and catalog novelty, then use an
    independent high-mode reviewer when useful and address actionable feedback.
    Consult Oracle only when direct investigation leaves a specific,
    high-impact source-fidelity or publication judgment unresolved; Oracle is
@@ -249,7 +250,9 @@ duplicates without deduping or mutating them.
 A passing audit is not an editorial review. Before setting an artifact to
 `reviewed`, a human or dedicated reviewer must compare each claim with the full
 adjacent transcript context and verify that both the start and end of every
-anchor range cover the complete claim. The reviewer must still judge
+anchor range cover the complete claim. Apply root `AGENTS.md`'s Summary
+readability review: the intended reader must be able to follow each main point
+and its necessary explanation without reopening the transcript. Also judge
 translation fidelity, attribution, qualification, and unsupported certainty;
 the structural audit does not score prose or infer whether a claim is accurate.
 

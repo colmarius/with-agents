@@ -114,6 +114,10 @@ capture, and status tooling must not silently generate or replace them, and no
 LLM API belongs in this workflow. New editorial artifacts begin as `draft`.
 Set `reviewed` only after an explicit human or dedicated review pass.
 
+Apply root `AGENTS.md`'s Summary readability review to summaries and syntheses.
+The schemas, headings, disclosures, and publication gates below remain
+authoritative.
+
 For a consolidated public playlist collection, every public summary must have
 the same `collection`, a unique positive `order`, and its canonical `videoId`.
 The resulting IDs and order must exactly match the catalog's reviewed curation.
@@ -180,6 +184,11 @@ Use concise Key Ideas bullets with transcript anchors in `[HH:MM:SS]` or
 `[HH:MM:SS]-[HH:MM:SS]` form that match the sibling transcript chunks. The
 Source section must contain the canonical video URL and
 `[transcript.md](./transcript.md)`.
+
+Required headings organize the material; they are not content quotas. Do not
+repeat Key Ideas merely to populate another section. Label editorial
+implications or questions. Where no grounded point applies, say so briefly
+rather than inventing advice or a tension.
 
 ### Playlist overviews
 

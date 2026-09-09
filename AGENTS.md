@@ -92,7 +92,7 @@ When writing or refreshing public posts under `src/content/posts/`, follow this 
 
 - **Audience:** experienced developers, tech leads, and agent-heavy practitioners who want practical coding-agent workflows.
 - **Tone:** direct, calm, source-backed, concise; skeptical but constructive. Not salesy, manifesto-like, or slangy.
-- **Concision:** important point first; active sentences; short paragraphs; concrete examples; no throat-clearing. Prefer the shortest version that keeps the argument.
+- **Concision:** important point first; active sentences; short paragraphs; concrete examples; no throat-clearing. Prefer the shortest version the intended reader can understand without losing the reasoning or evidence boundary.
 - **Source anchors:** anchors must support the specific claim they sit beside. Mark author synthesis as synthesis. Do not pad posts with repeated source recaps.
 - **Internal links:** link only to routes that exist in this repo. Never link retired drafts or old/unavailable article routes from public posts.
 - **Post/slide convention:** public posts also generate `/slides` views. Normal rendered `##` sections should usually start with a concise blockquote slide message. Optional immediate visuals need accessible alt text, captions, or nearby explanatory prose. Use exact `## Sources` or `## Sources used` headings for source appendices; they are not normal slides.
@@ -123,10 +123,10 @@ When reviewing or updating transcript-backed summaries, compare the summary agai
 
 #### Summary readability review
 
-- Explain the mechanism, not just its label: state what causes what and why it matters. Replace abstract shorthand such as "a tension between objectives" with the concrete behaviors that conflict; define necessary technical terms in place.
-- Make comparisons explicit: explain what the existing approach does, what a proposal adds, and how behavior would differ. Prefer a source-backed example. Do not imply that an existing approach lacks a capability merely because the proposal implements it differently.
-- Keep each bullet focused. Split a claim from a separate mechanism, objection, or consequence when it becomes overloaded. Prefer short sentences, but retain the explanation rather than compressing it into jargon. Check whether a reader can explain the point without opening the transcript.
-- State whether the summary paraphrases original-language or translated/auto-generated captions; do not imply an original-audio check that was not performed. Preserve speaker attribution and distinguish observations, proposals, and forecasts. Do not add training methods, implementation details, or model-specific claims absent from the source. Label editorial implications and any added illustrations.
+- Explain source-supported mechanisms, not just their labels; define necessary terms in place. State what causes what and why it matters. If the source offers an analogy, proposal, or unexplained effect, preserve that status rather than supplying a missing mechanism.
+- Make comparisons explicit: explain the existing approach, what the proposal changes, and which behavioral differences the source establishes. Prefer a source-backed example. Do not imply that an existing approach lacks a capability merely because the proposal implements it differently.
+- Keep a claim and its necessary explanation or qualification together; split distinct points when a bullet becomes overloaded. Cut repetition, not needed explanation, and do not expand every point into a tutorial. Check whether the intended reader can explain the main point without opening the transcript.
+- Disclose known transcript language, caption kind, and editorial translation once when that basis applies throughout; follow any stricter source-library disclosure rules. Do not guess provenance or imply an original-audio check that was not performed. Preserve speaker attribution and distinguish observations, proposals, and forecasts. Label editorial implications and added illustrations; neither may supply unsupported training methods, implementation details, or model-specific claims.
 - After splitting or expanding a passage, check each explanation and example against the saved transcript. Keep citations beside the claims they support, with ranges covering the full supporting passage; do not reuse a broad anchor without checking it.
 
 Store committed transcripts under `src/content/transcripts/**` using the same relative slug as the matching summary. Example:

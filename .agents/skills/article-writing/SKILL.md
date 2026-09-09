@@ -23,18 +23,20 @@ skill adds the repeatable workflow and the checklists.
   examples and prompts over abstraction. No throat-clearing or meta-history.
 - **Skim test:** the title, description, headings, slide messages, and one practical
   artifact should expose the reader job, argument, and next action in 30 seconds.
-- **Shape:** 4–6 substantive sections plus a `Sources` section when practical. Lead
-  each section with its takeaway, not setup.
-- **Length:** prefer the shortest version that keeps the argument. When refreshing,
-  cut roughly 20–30% without flattening the point. If a post stays above target and
-  the review uses a work item, record why in `progress.md`.
+- **Shape:** choose sections for the argument and slide sequence, not a fixed
+  count. Each section should have a distinct job and lead with its takeaway.
+- **Length:** remove repetition and unnecessary setup, not explanations, examples,
+  or qualifications needed to understand the argument. A refresh may shorten,
+  retain, or expand the post; there is no default percentage reduction.
 
 ## Plain-Language Precision
 
 - State the central claim or definition in one or two plain sentences. Label it as
   synthesis when it combines sources rather than quoting one.
-- Give every sentence a clear job and prefer concrete behavior over specialist
-  shorthand.
+- Give every sentence a clear job. Explain central terms and source-supported
+  mechanisms in place; for comparisons, name the baseline, proposed change, and
+  supported behavioral difference. Do not assume specialist shorthand is clear
+  merely because the audience is experienced, or invent a missing mechanism.
 - Explain why a heuristic matters and where it stops working. Do not leave a rule
   of thumb floating without its purpose or qualification.
 - For definition or category articles, separate the actual rule from warning signs
@@ -54,7 +56,9 @@ skill adds the repeatable workflow and the checklists.
   "the exchange" rather than collapsing both into one speaker.
 - For translated or auto-captioned material, check the captured transcript, avoid
   quotation marks unless the wording is verified, and identify editorial
-  translation or paraphrase in the sentence that uses it.
+  translation or paraphrase at first use or in a clearly scoped disclosure.
+  Repeat when the source basis changes; keep speaker attribution and citations
+  beside the claims they support.
 - Keep only the anchors a post needs. Do not repeat the same source recap across
   posts; each post carries its own evidence.
 - Do not remove source anchors for factual claims that still need support.
@@ -151,9 +155,10 @@ presentation slide.
 - Only contiguous visual blocks immediately after the blockquote stay on the
   slide. Once normal prose, lists, or non-visual code starts, the rest of the
   section is speaker/reader notes.
-- Put citations, examples, caveats, prompts, and read-along context in normal
-  prose after the blockquote; that prose becomes speaker/reader notes in slide
-  mode.
+- Keep any qualification that changes the truth of the takeaway visible in the
+  slide message. Put supporting detail, citations, examples, prompts, and
+  read-along context in prose after the blockquote; that prose becomes
+  speaker/reader notes in slide mode.
 - Optional visuals may immediately follow the blockquote: Mermaid, text diagrams,
   tables, inline SVG, figures, or Markdown images. Make them accessible with alt
   text, captions, or nearby prose that does not rely on color/image-only meaning.
@@ -168,7 +173,8 @@ presentation slide.
 
 ### Presentation strategy
 
-- Prefer one idea per slide and sparse visible text; keep nuance in notes.
+- Prefer one idea per slide and sparse visible text; keep supporting nuance in
+  notes without removing qualifications needed for an accurate takeaway.
 - Dry-run the real presentation before adding machinery. When a complex idea needs
   staged reveal, prefer adjacent Markdown sections or static diagram stages that
   still read naturally in article and print modes.
@@ -193,7 +199,8 @@ independent review so feedback can be judged instead of applied mechanically.
 
 - New post or refresh? What single argument must it carry?
 - Which existing posts does it link to, and what is this post's distinct role?
-- Set a word-count target and the sections that earn their place.
+- Identify the explanations and sections the reader needs. Set a word budget only
+  when the task or publication constraint calls for one.
 
 ### 2. Draft or trim
 
@@ -257,7 +264,8 @@ When deletion is explicitly approved:
 - [ ] Definition and category articles separate the rule from warning signs and
       include a limiting case or counterexample when readers could overgeneralize.
 - [ ] Practical-framework labels are short, parallel, and reader-facing.
-- [ ] 4–6 substantive sections plus `Sources` when practical.
+- [ ] Each substantive section has a distinct job; section count follows the
+      argument and slide sequence.
 - [ ] Each rendered `##` usually starts with a concise slide-message blockquote.
 - [ ] Slide blockquotes are presentation-friendly: one sentence or 1-3 short
       clauses, with citation clutter moved to notes/prose.
@@ -266,7 +274,7 @@ When deletion is explicitly approved:
 
 - [ ] Article mode reads naturally with the blockquote as the section takeaway.
 - [ ] Slide mode has a clear main message without notes-only context leaking onto
-      the slide.
+      the slide or essential qualifications disappearing into notes.
 - [ ] Notes/prose after the blockquote carries citations, caveats, prompts, and
       examples needed for read-along or speaker context.
 - [ ] Optional immediate visuals are accessible and understandable without relying
@@ -276,8 +284,9 @@ When deletion is explicitly approved:
 
 ### Length
 
-- [ ] Cut ~20–30% on a refresh without losing core claims.
-- [ ] Per-post target met, or the exception is explained in `progress.md`.
+- [ ] Unnecessary text is removed without losing necessary explanation or evidence
+      boundaries; any explicitly requested length constraint is met or its
+      tradeoff reported.
 
 ### Sources
 
@@ -326,7 +335,7 @@ When deletion is explicitly approved:
 ## Definition Of Done
 
 The post carries one clear argument in the house style, every source anchor and
-internal link checks out, length targets are met or explained, stale drafts are
-retired or explicitly deleted, the article and slide routes render correctly, and
-the full repository checks pass. When the review uses a work item, it records only
-remaining work and decisive evidence.
+internal link checks out, necessary explanations are retained and unnecessary text
+is removed, stale drafts are retired or explicitly deleted, the article and slide
+routes render correctly, and the full repository checks pass. When the review uses
+a work item, it records only remaining work and decisive evidence.

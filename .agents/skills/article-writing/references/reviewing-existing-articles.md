@@ -64,8 +64,10 @@ Use these tests:
 - **Definition test:** Can the central idea be said in one or two short sentences
   without relying on jargon introduced later?
 - **Purpose test:** Can you explain why each heuristic or comparison appears?
-- **Concrete test:** Replace abstract nouns with the behavior, failure, decision,
-  or cost they describe.
+- **Concrete test:** Can the intended reader explain what happens, why it matters,
+  and—for a comparison—what changes? Replace unexplained labels with concrete
+  behavior while preserving the source's uncertainty. If the mechanism is
+  unspecified, say so rather than inventing one.
 - **Sentence test:** Split sentences that ask the reader to retain multiple claims,
   caveats, attributions, or examples at once. Flagging sentences above roughly 28
   words can reveal candidates, but word count is not the decision rule.
