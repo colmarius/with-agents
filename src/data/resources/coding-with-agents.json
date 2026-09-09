@@ -1032,7 +1032,7 @@
     "primarySection": "teams-ecosystem",
     "title": "State of Agentic Coding - Series",
     "url": "https://www.youtube.com/playlist?list=PLg3sejGUAdUZMKADp-KCcC6m5qKjD88bT",
-    "description": "Armin Ronacher and Ben Vinegar track agentic coding through monthly conversations about models, harnesses, software quality, open source, infrastructure, economics, and the changing role of developers. Episode 9 covers more autonomous models, provider lock-in, opaque inference markets, subscription subsidies, terminal interfaces, and the hosts’ contrasting approaches to remote agents.",
+    "description": "Armin Ronacher and Ben Vinegar track agentic coding through monthly conversations about models, harnesses, software quality, open source, infrastructure, economics, and the changing role of developers. Episode 10 contrasts automated regression checks with their maintenance cost, examines architecture failures behind working code, and asks why more agent activity does not necessarily improve team outcomes.",
     "type": "playlist",
     "source": "Armin Ronacher",
     "date": "2025-12-15",
