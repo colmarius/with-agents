@@ -50,6 +50,16 @@ export const isPostCanonicalPath = (
 export const isPublicListedPost = (post: ListedPost) =>
   !post.data.draft && !post.data.unlisted;
 
+export const isSearchablePost = (
+  post: ListedPost & {
+    data: { noindex?: boolean; canonicalPath?: string };
+  },
+) =>
+  isPublicListedPost(post) &&
+  !post.data.noindex &&
+  (!post.data.canonicalPath ||
+    post.data.canonicalPath.replace(/\/$/, '') === getPostPath(post));
+
 export const assertPostListParents = (
   posts: ListedPost[],
   production: boolean,

@@ -217,7 +217,7 @@ if (!primaryMembership) {
         )
       }
 
-      <article class="min-w-0">
+      <article class="min-w-0" data-search-body data-search-title={summary.data.title} data-search-parent={resource.title}>
         {
           isGrouped ? (
             <div class="lg:hidden">
@@ -247,6 +247,10 @@ if (!primaryMembership) {
           <h1 class="text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
             {summary.data.title}
           </h1>
+          {resource.subtitle && resource.subtitle !== resource.description && (
+            <p class="mt-4 text-base font-medium leading-relaxed text-slate-700">{resource.subtitle}</p>
+          )}
+          <p class="mt-4 text-base leading-relaxed text-slate-600">{resource.description}</p>
           <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-600">
             <span class="font-medium text-slate-700">{resource.source}</span>
             <span aria-hidden="true">·</span>
@@ -271,7 +275,7 @@ if (!primaryMembership) {
             }
           </div>
 
-          <div class="mt-5 flex flex-wrap items-center gap-3">
+          <div class="mt-5 flex flex-wrap items-center gap-3" data-search-ignore>
             <a
               href={resource.url}
               target="_blank"
@@ -305,7 +309,7 @@ if (!primaryMembership) {
 
         {
           isGrouped && (
-            <details class="group mb-8 border-y border-slate-200 lg:hidden">
+            <details class="group mb-8 border-y border-slate-200 lg:hidden" data-search-ignore>
               <summary class="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-600/50 [&::-webkit-details-marker]:hidden">
                 <span class="min-w-0">
                   <span class="block text-xs font-semibold uppercase tracking-wide text-gray-500">

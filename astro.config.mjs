@@ -5,7 +5,13 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import { generateSW } from 'workbox-build';
+import {
+  assertSearchPrecache,
+  buildSearch,
+  maximumSearchFileBytes,
+} from './src/search/build.ts';
 
+const site = 'https://with-agents.dev';
 const indexPathSuffix = '/index.html';
 
 /** @type {import('workbox-build').ManifestTransform} */
@@ -35,11 +41,19 @@ const pwa = {
   hooks: {
     'astro:build:done': async ({ dir }) => {
       const outputDirectory = fileURLToPath(dir);
+      await buildSearch(outputDirectory, site);
       const { count, size, warnings } = await generateSW({
         globDirectory: outputDirectory,
         swDest: fileURLToPath(new URL('sw.js', dir)),
         globPatterns: ['**/*.{html,css,js,json,webmanifest,svg,png,webp}'],
-        manifestTransforms: [addDirectoryAliases],
+        maximumFileSizeToCacheInBytes: maximumSearchFileBytes,
+        manifestTransforms: [
+          addDirectoryAliases,
+          async (entries) => {
+            await assertSearchPrecache(entries, outputDirectory);
+            return { manifest: entries, warnings: [] };
+          },
+        ],
         directoryIndex: 'index.html',
         navigateFallback: null,
         cleanupOutdatedCaches: true,
@@ -61,7 +75,7 @@ const pwa = {
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://with-agents.dev',
+  site,
   compressHTML: true,
   integrations: [react(), pwa],
 

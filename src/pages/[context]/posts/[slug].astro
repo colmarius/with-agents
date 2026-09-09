@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import PostLayout from '@layouts/PostLayout.astro';
 import { createPostStaticPaths, getPostPath, getPostSlidesPath } from '@utils';
+import { isSearchablePost } from '../../../utils/posts';
 
 export async function getStaticPaths() {
   return createPostStaticPaths(
@@ -29,6 +30,7 @@ if (Astro.params.context !== post.data.context) {
 	tags={post.data.tags}
 	canonicalPath={post.data.canonicalPath}
 	noindex={post.data.noindex}
+	searchable={isSearchablePost(post)}
 	routePath={getPostPath(post)}
 	slidesPath={getPostSlidesPath(post)}
 >

@@ -29,7 +29,7 @@ const sortedPosts = [...posts].sort(
 			label={`Back to ${context.title}`}
 			class="mb-10"
 		/>
-		<header class="posts-header">
+		<header class="posts-header" data-search-body data-search-title={`${context.title} field guides`} data-search-parent={context.title}>
 			<h1 class="text-4xl md:text-5xl font-light mb-4 text-gray-900">Field guides</h1>
 			<p class="text-xl text-gray-600 mb-16 font-light leading-relaxed">
 				Practical, source-backed guidance for {context.title}.

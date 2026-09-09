@@ -14,6 +14,7 @@ type Props = {
   tags?: string[];
   canonicalPath?: string;
   noindex?: boolean;
+  searchable?: boolean;
   routePath: string;
   slidesPath: string;
 };
@@ -27,6 +28,7 @@ const {
   tags,
   canonicalPath,
   noindex,
+  searchable = false,
   routePath,
   slidesPath,
 } = Astro.props;
@@ -48,7 +50,7 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 	noindex={noindex}
 	ogType="article"
 >
-	<article class="mx-auto max-w-2xl pb-16">
+	<article class="mx-auto max-w-2xl pb-16" data-search-body={searchable || undefined} data-search-title={title} data-search-parent={siteContext.title}>
 		<ScrollBackNav
 			href={fieldGuideListPath}
 			label="Back to field guides"
@@ -71,7 +73,7 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 						))}
 					</div>
 				)}
-				<div class="post-actions">
+				<div class="post-actions" data-search-ignore>
 					<a
 						href={slidesPath}
 						class="post-action"
@@ -100,7 +102,7 @@ const shareUrl = new URL(postPath, Astro.site ?? Astro.url.origin).toString();
 			<slot />
 		</div>
 
-		<div class="mt-16 border-t border-gray-200 pt-8">
+		<div class="mt-16 border-t border-gray-200 pt-8" data-search-ignore>
 			<p class="text-gray-800 font-light text-lg">
 				<span class="text-gray-600">Continue exploring?</span>
 				<a href={`/${context}`} class="ml-1 text-indigo-700 hover:text-indigo-500 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 rounded-sm">

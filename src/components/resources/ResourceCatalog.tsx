@@ -20,6 +20,7 @@ type ResourceCatalogProps = {
   resources: Resource[];
   topicOptions: readonly ResourceTopicOption[];
   emptyMessage: string;
+  searchableResourceIds?: number[];
 };
 
 const ResourceCatalog = ({
@@ -27,6 +28,7 @@ const ResourceCatalog = ({
   resources,
   topicOptions,
   emptyMessage,
+  searchableResourceIds = [],
 }: ResourceCatalogProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
@@ -312,11 +314,17 @@ const ResourceCatalog = ({
               key={resource.id}
               id={`resource-${resource.id}`}
               className="scroll-mt-24"
+              data-search-body={
+                searchableResourceIds.includes(resource.id) ? '' : undefined
+              }
             >
               <ResourceListItem
                 title={resource.title}
                 badge={
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                  <span
+                    data-search-ignore
+                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800"
+                  >
                     {titleCase(resource.type)}
                   </span>
                 }
@@ -329,7 +337,7 @@ const ResourceCatalog = ({
                   )
                 }
               >
-                <div className="flex flex-col gap-4 w-full">
+                <div data-search-ignore className="flex flex-col gap-4 w-full">
                   <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:gap-4 md:items-start w-full">
                     <div className="flex flex-col gap-2">
                       <div className="text-sm text-gray-500 flex flex-wrap items-center gap-x-4 gap-y-1">
