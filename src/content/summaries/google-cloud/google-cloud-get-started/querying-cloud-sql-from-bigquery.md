@@ -7,13 +7,13 @@ order: 8
 videoId: "0cyTHbkARwY"
 ---
 
-This example configures a BigQuery federated query to read MySQL or PostgreSQL data in Cloud SQL without first copying it into BigQuery. [00:00:01]-[00:01:03]
+This example configures a BigQuery federated query to read MySQL or PostgreSQL data in Cloud SQL without first copying it into BigQuery. [00:01–01:03](https://www.youtube.com/watch?v=0cyTHbkARwY&t=1s)
 
 ### Key Points Covered
 
-- Setup enables the BigQuery Connection API, configures Cloud SQL connectivity, creates a location-compatible connection with database credentials, and grants access to it. [00:01:03]-[00:04:12]
-- `EXTERNAL_QUERY` uses the external database's SQL dialect and can supply results to joins with native BigQuery tables. [00:03:09]-[00:05:13]
-- BigQuery cannot estimate the external data processed before the federated query runs. [00:03:09]-[00:04:12]
+- Setup enables the BigQuery Connection API, configures Cloud SQL connectivity, creates a location-compatible connection with database credentials, and grants access to it. [01:03–04:12](https://www.youtube.com/watch?v=0cyTHbkARwY&t=63s)
+- `EXTERNAL_QUERY` uses the external database's SQL dialect and can supply results to joins with native BigQuery tables. [03:09–05:13](https://www.youtube.com/watch?v=0cyTHbkARwY&t=189s)
+- BigQuery cannot estimate the external data processed before the federated query runs. [03:09–04:12](https://www.youtube.com/watch?v=0cyTHbkARwY&t=189s)
 
 Treat the public-IP setup and 2020 screens as historical teaching shortcuts, not modern defaults; use current live Google Cloud documentation for connectivity, credentials, IAM, and procedures.
 

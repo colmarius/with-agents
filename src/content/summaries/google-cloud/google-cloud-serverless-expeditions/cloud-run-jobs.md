@@ -11,10 +11,10 @@ A Cloud Run product manager presents the then-new Jobs capability for unattended
 
 ### Key points
 
-- **Jobs target a different completion model:** The presenter names migrations, cleanup, imports, exports, and reports as workloads that may run for minutes without a user request [00:00:00]-[00:01:52].
-- **The demo packages an end-to-end batch step:** Its code reads invoices, extracts vendor names and totals, stores the results, and moves processed files aside [00:01:52]-[00:02:55]. That flow still needs idempotency and partial-failure recovery.
-- **Invocation was explicit:** In the May 2022 walkthrough, a container is built with Cloud Build, a job is created with `gcloud run jobs create`, and execution starts from the console or CLI [00:02:55]-[00:03:57]. Cloud Scheduler then calls the Cloud Run Admin API with an OAuth token and a service account described as having Cloud Run Invoker permission on the job [00:03:57]-[00:05:00].
-- **Parallel tasks require application partitioning:** The presenter explains how multiple tasks can divide a larger input set, but leaves the implementation to the application [00:05:00]-[00:06:04].
+- **Jobs target a different completion model:** The presenter names migrations, cleanup, imports, exports, and reports as workloads that may run for minutes without a user request [00:00–01:52](https://www.youtube.com/watch?v=e07TvWMmVI8&t=0s).
+- **The demo packages an end-to-end batch step:** Its code reads invoices, extracts vendor names and totals, stores the results, and moves processed files aside [01:52–02:55](https://www.youtube.com/watch?v=e07TvWMmVI8&t=112s). That flow still needs idempotency and partial-failure recovery.
+- **Invocation was explicit:** In the May 2022 walkthrough, a container is built with Cloud Build, a job is created with `gcloud run jobs create`, and execution starts from the console or CLI [02:55–03:57](https://www.youtube.com/watch?v=e07TvWMmVI8&t=175s). Cloud Scheduler then calls the Cloud Run Admin API with an OAuth token and a service account described as having Cloud Run Invoker permission on the job [03:57–05:00](https://www.youtube.com/watch?v=e07TvWMmVI8&t=237s).
+- **Parallel tasks require application partitioning:** The presenter explains how multiple tasks can divide a larger input set, but leaves the implementation to the application [05:00–06:04](https://www.youtube.com/watch?v=e07TvWMmVI8&t=300s).
 
 Treat this as a May 2022 introduction, not current setup instructions. Recheck commands, IAM roles, API endpoints, console steps, limits, retry semantics, and pricing before using Cloud Run Jobs today.
 

@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: summary-timestamps
+        name: Validate summary timestamp citations
+        entry: node .agents/scripts/summary-timestamps.mjs
+        language: system
+        files: ^src/content/summaries/.*\.md$

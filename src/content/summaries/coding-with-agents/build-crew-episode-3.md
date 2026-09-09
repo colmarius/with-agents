@@ -34,7 +34,7 @@ The main discussion covers practical approaches to agentic coding:
 * **The Problem with MCP (Model Context Protocol)**: The panel describes MCP as "too heavy weight" and "terrible for the internet" because of long-running processes, dependency management, and tool explosion. It jokingly riffs on a lighter "minimal context protocol" rather than presenting MCP2 as a concrete proposal.
 * **Lua as a Sandbox for Agents**: The panel describes an idea from the Elixir community: one Lua tool that lets agents write and chain scripts for various actions. It acts as a sandboxed execution engine and combines calls to multiple files into one tool call.
 * **Camden's Tip: Encouraging Agents to Write Code**: Camden says recent models such as GPT-5 and Sonnet 4.5 can write small, one-off scripts for broad codebase tasks. In his example, Amp debugged an issue by building a bash script to manage logs, configure settings, and run Amp. He presents this as agent self-correction and automated debugging.
-* **Memory Is Still Unsettled**: The group agrees that `AGENTS.md` files help, but do not yet provide coworker-like memory. Agents can remember the wrong things, and it remains hard to decide what should be persisted across threads [19:36]-[22:38].
+* **Memory Is Still Unsettled**: The group agrees that `AGENTS.md` files help, but do not yet provide coworker-like memory. Agents can remember the wrong things, and it remains hard to decide what should be persisted across threads [19:36–22:38](https://www.youtube.com/watch?v=VoZvTi27_Io&t=1176s).
 
 ### The Future of Agents: Background and Cloud Agents
 

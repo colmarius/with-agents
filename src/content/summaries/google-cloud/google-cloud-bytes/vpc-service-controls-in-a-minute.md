@@ -11,9 +11,9 @@ The source names neither its presenter nor an affiliation. This 2021 security pr
 
 ### Key Points Covered
 
-- **A perimeter controls selected service data flows**: The primer compares the boundary to a membrane around projects and protected services, with Private Google Access and ingress and egress rules in its examples [00:00:00].
-- **Dry-run and enforce modes serve different rollout roles**: Dry run records violations without blocking them, while enforce mode denies disallowed requests; denial and activity logs are presented as feedback [00:00:54].
-- **Use cases and pricing are point-in-time claims**: Threat monitoring, cross-cloud transfer, private API access, and no additional service charge describe the 2021 presentation rather than current guarantees [00:00:54]-[00:01:49].
+- **A perimeter controls selected service data flows**: The primer compares the boundary to a membrane around projects and protected services, with Private Google Access and ingress and egress rules in its examples [00:00](https://www.youtube.com/watch?v=ABlY7FexJJI&t=0s).
+- **Dry-run and enforce modes serve different rollout roles**: Dry run records violations without blocking them, while enforce mode denies disallowed requests; denial and activity logs are presented as feedback [00:54](https://www.youtube.com/watch?v=ABlY7FexJJI&t=54s).
+- **Use cases and pricing are point-in-time claims**: Threat monitoring, cross-cloud transfer, private API access, and no additional service charge describe the 2021 presentation rather than current guarantees [00:54–01:49](https://www.youtube.com/watch?v=ABlY7FexJJI&t=54s).
 
 Security synthesis here is limited to the service-perimeter orientation and does not imply a complete security posture. Use this as historical orientation and verify current supported services, ingress and egress rules, access levels, perimeter behavior, limitations, logging, quotas, and pricing in current documentation.
 

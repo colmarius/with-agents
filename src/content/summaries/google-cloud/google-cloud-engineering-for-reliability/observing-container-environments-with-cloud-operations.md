@@ -11,10 +11,10 @@ This episode compares 2021 observability across containers on GKE, Cloud Run, an
 
 ### Key Points Covered
 
-- **Platform defaults differ**: The episode compares then-current infrastructure control, operations, Google Cloud integration, and pricing across the three environments ([00:00:00]-[00:02:05]).
-- **GKE exposes infrastructure and workload evidence**: With the demonstrated settings, system and workload logs plus cluster and container metrics are collected, and dashboards connect alerts to pods and containers ([00:02:05]-[00:04:10]).
-- **Application tracing is a separate boundary**: The presenter says GKE workloads are not automatically traced and points to OpenTelemetry instrumentation ([00:03:08]-[00:04:10]).
-- **Similar dashboards do not imply equivalent coverage**: Cloud Run and Anthos expose different managed signals, scopes, and operational responsibilities ([00:04:10]-[00:06:18]).
+- **Platform defaults differ**: The episode compares then-current infrastructure control, operations, Google Cloud integration, and pricing across the three environments ([00:00–02:05](https://www.youtube.com/watch?v=ilY4-Aw1Z2M&t=0s)).
+- **GKE exposes infrastructure and workload evidence**: With the demonstrated settings, system and workload logs plus cluster and container metrics are collected, and dashboards connect alerts to pods and containers ([02:05–04:10](https://www.youtube.com/watch?v=ilY4-Aw1Z2M&t=125s)).
+- **Application tracing is a separate boundary**: The presenter says GKE workloads are not automatically traced and points to OpenTelemetry instrumentation ([03:08–04:10](https://www.youtube.com/watch?v=ilY4-Aw1Z2M&t=188s)).
+- **Similar dashboards do not imply equivalent coverage**: Cloud Run and Anthos expose different managed signals, scopes, and operational responsibilities ([04:10–06:18](https://www.youtube.com/watch?v=ilY4-Aw1Z2M&t=250s)).
 
 Treat all 2021 product names, defaults, integrations, automatic-instrumentation claims, pricing, metrics, and UI paths as historical; verify current behavior for each platform.
 

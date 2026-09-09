@@ -11,9 +11,9 @@ The source names neither its presenter nor an affiliation. This 2020 primer dist
 
 ### Key Points Covered
 
-- **Applications exchange objects through buckets**: The primer shows uploads and downloads through project-associated buckets, with console and `gsutil` access [00:00:00].
-- **Storage classes represent access patterns**: Standard, Nearline, Coldline, and Archive are mapped to progressively less frequent access in the 2020 product and pricing model [00:00:00].
-- **Lifecycle rules can move data between classes**: Object Lifecycle Management is presented as a way to transition aging or superseded data while retaining one storage API [00:01:04].
+- **Applications exchange objects through buckets**: The primer shows uploads and downloads through project-associated buckets, with console and `gsutil` access [00:00](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=0s).
+- **Storage classes represent access patterns**: Standard, Nearline, Coldline, and Archive are mapped to progressively less frequent access in the 2020 product and pricing model [00:00](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=0s).
+- **Lifecycle rules can move data between classes**: Object Lifecycle Management is presented as a way to transition aging or superseded data while retaining one storage API [01:04](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=64s).
 
 Use this as historical object-storage orientation, not class-selection guidance. Validate current class names, durations, retrieval and operation charges, locations, consistency, lifecycle behavior, IAM, limits, and egress pricing in current documentation.
 

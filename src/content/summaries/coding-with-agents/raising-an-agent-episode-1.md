@@ -10,15 +10,15 @@ In episode 1 of the Sourcegraph series "Raising an Agent", CEO Quinn and softwar
 
 ### Key Takeaways from the Prototype
 
-- LLMs as Agents: They say they were surprised by how easily they reached the prototype state. They attribute the result to the underlying models' ability to use the tools they receive strategically [06:40].
+- LLMs as Agents: They say they were surprised by how easily they reached the prototype state. They attribute the result to the underlying models' ability to use the tools they receive strategically [06:40](https://www.youtube.com/watch?v=auVu08nXKOw&t=400s).
 
-- Problem Solving: In one instance, a direct file edit failed. The model created a new file with the intended content, then used a terminal command to move or overwrite the old file and complete the goal [08:44].
+- Problem Solving: In one instance, a direct file edit failed. The model created a new file with the intended content, then used a terminal command to move or overwrite the old file and complete the goal [08:44](https://www.youtube.com/watch?v=auVu08nXKOw&t=524s).
 
-- Refactoring by Example (The Recording Feature): A new feature allows a developer to "record" a complex refactor. The agent uses that diff—even of single-character edits—to mimic and apply the change across the rest of the codebase [03:10].
+- Refactoring by Example (The Recording Feature): A new feature allows a developer to "record" a complex refactor. The agent uses that diff—even of single-character edits—to mimic and apply the change across the rest of the codebase [03:10](https://www.youtube.com/watch?v=auVu08nXKOw&t=190s).
 
-- Feedback: They say agents need the same real-world feedback that human developers receive. Compiler errors, test results, and linter messages allow the agent to debug its own code. In one case, it fixed a null pointer error by inserting debug statements to trace values, behaving "just like us" [10:27], [16:50].
+- Feedback: They say agents need the same real-world feedback that human developers receive. Compiler errors, test results, and linter messages allow the agent to debug its own code. In one case, it fixed a null pointer error by inserting debug statements to trace values, behaving "just like us" [10:27](https://www.youtube.com/watch?v=auVu08nXKOw&t=627s), [16:50](https://www.youtube.com/watch?v=auVu08nXKOw&t=1010s).
 
-- They conclude that improving the code agent is now primarily a software engineering problem involving speed, cost, tool descriptions, and feedback loops. In their view, progress does not depend solely on model breakthroughs [18:57].
+- They conclude that improving the code agent is now primarily a software engineering problem involving speed, cost, tool descriptions, and feedback loops. In their view, progress does not depend solely on model breakthroughs [18:57](https://www.youtube.com/watch?v=auVu08nXKOw&t=1137s).
 
 Full video: <https://www.youtube.com/watch?v=auVu08nXKOw>
 

@@ -11,11 +11,11 @@ This episode explains how seek changes acknowledgement state in bulk for recover
 
 ### Key points
 
-- **Seek can make acknowledged messages eligible again**: The recovery example uses either a snapshot or timestamp after faulty subscriber code acknowledged work too early ([00:00:00]-[00:01:03]).
-- **Snapshots capture subscription acknowledgement state**: They can be used by subscriptions on the same topic, but the episode ties snapshot lifetime to retained-message age ([00:01:03]-[00:02:07]).
-- **Time-based replay has prerequisites and tradeoffs**: It requires retaining acknowledged messages and is described as potentially more costly and sensitive to clock skew ([00:01:03]-[00:02:07]).
-- **Snapshots can support deployment recovery and repeated tests**: Reusing input data makes the test repeatable, but replay itself does not make downstream side effects idempotent ([00:02:07]-[00:03:10]).
-- **Seeking into the future discards backlog by marking it acknowledged**: That is a destructive purge operation, not a harmless reset ([00:03:10]).
+- **Seek can make acknowledged messages eligible again**: The recovery example uses either a snapshot or timestamp after faulty subscriber code acknowledged work too early ([00:00–01:03](https://www.youtube.com/watch?v=VyLmmamuOVo&t=0s)).
+- **Snapshots capture subscription acknowledgement state**: They can be used by subscriptions on the same topic, but the episode ties snapshot lifetime to retained-message age ([01:03–02:07](https://www.youtube.com/watch?v=VyLmmamuOVo&t=63s)).
+- **Time-based replay has prerequisites and tradeoffs**: It requires retaining acknowledged messages and is described as potentially more costly and sensitive to clock skew ([01:03–02:07](https://www.youtube.com/watch?v=VyLmmamuOVo&t=63s)).
+- **Snapshots can support deployment recovery and repeated tests**: Reusing input data makes the test repeatable, but replay itself does not make downstream side effects idempotent ([02:07–03:10](https://www.youtube.com/watch?v=VyLmmamuOVo&t=127s)).
+- **Seeking into the future discards backlog by marking it acknowledged**: That is a destructive purge operation, not a harmless reset ([03:10](https://www.youtube.com/watch?v=VyLmmamuOVo&t=190s)).
 
 **Current-use note:** Verify current seek, snapshot, consistency, retention, and pricing semantics. Rehearse recovery before an incident, make repeated processing safe, and require explicit impact review before purging backlog.
 

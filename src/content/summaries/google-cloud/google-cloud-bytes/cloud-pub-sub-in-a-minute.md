@@ -11,9 +11,9 @@ The source names neither its presenter nor an affiliation. This 2020 primer pres
 
 ### Key Points Covered
 
-- **Topics and subscriptions reduce direct coupling**: Producers publish to topics, while subscriptions distribute messages to one or more consuming services [00:00:00]-[00:00:47].
-- **The examples span work queues and fan-out**: The primer includes parallel work distribution, archival and analytics consumers, streaming into BigQuery or Dataflow, and operational notifications [00:00:47].
-- **Reliability labels omit consumer responsibilities**: Claims about durable, global, ordered messaging do not define acknowledgement, redelivery, idempotency, dead-letter handling, or flow control [00:00:00]-[00:00:47].
+- **Topics and subscriptions reduce direct coupling**: Producers publish to topics, while subscriptions distribute messages to one or more consuming services [00:00–00:47](https://www.youtube.com/watch?v=jLI-84UjZLE&t=0s).
+- **The examples span work queues and fan-out**: The primer includes parallel work distribution, archival and analytics consumers, streaming into BigQuery or Dataflow, and operational notifications [00:47](https://www.youtube.com/watch?v=jLI-84UjZLE&t=47s).
+- **Reliability labels omit consumer responsibilities**: Claims about durable, global, ordered messaging do not define acknowledgement, redelivery, idempotency, dead-letter handling, or flow control [00:00–00:47](https://www.youtube.com/watch?v=jLI-84UjZLE&t=0s).
 
 Use this as historical messaging orientation, not an implementation design. Validate current delivery semantics, ordering scope, filtering, retention, replay, regional behavior, quotas, limits, and pricing in current documentation.
 

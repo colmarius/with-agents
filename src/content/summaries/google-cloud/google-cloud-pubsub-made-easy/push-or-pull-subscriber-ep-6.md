@@ -11,10 +11,10 @@ Priyanka, whose affiliation is not established by the source, compares push and 
 
 ### Key points
 
-- **The endpoint identities differ**: A pull endpoint is an authorized client calling the Pub/Sub API; a push endpoint is the receiving application's DNS-reachable HTTPS service ([00:00:00]-[00:01:04]).
-- **Shared pull workers and push fan-in are different topologies**: Pull workers divide work from one shared subscription, while multiple subscriptions can target the same push webhook or load balancer ([00:01:04]-[00:02:07]).
-- **Backpressure ownership changes**: Pull clients control intake and acknowledgement deadlines; push delivery backs off when the endpoint fails or responds slowly ([00:02:07]-[00:03:09]).
-- **The episode associates pull with high-volume or private services and push with webhooks and scale-to-zero services**: Those are scenario-based recommendations, not universal performance guarantees ([00:03:09]-[00:04:12]).
+- **The endpoint identities differ**: A pull endpoint is an authorized client calling the Pub/Sub API; a push endpoint is the receiving application's DNS-reachable HTTPS service ([00:00–01:04](https://www.youtube.com/watch?v=KObJkda4ZfY&t=0s)).
+- **Shared pull workers and push fan-in are different topologies**: Pull workers divide work from one shared subscription, while multiple subscriptions can target the same push webhook or load balancer ([01:04–02:07](https://www.youtube.com/watch?v=KObJkda4ZfY&t=64s)).
+- **Backpressure ownership changes**: Pull clients control intake and acknowledgement deadlines; push delivery backs off when the endpoint fails or responds slowly ([02:07–03:09](https://www.youtube.com/watch?v=KObJkda4ZfY&t=127s)).
+- **The episode associates pull with high-volume or private services and push with webhooks and scale-to-zero services**: Those are scenario-based recommendations, not universal performance guarantees ([03:09–04:12](https://www.youtube.com/watch?v=KObJkda4ZfY&t=189s)).
 
 **Current-use note:** This comparison predates newer delivery options and current serverless behavior. Recheck endpoint, authentication, certificate, throughput, and retry guidance, then test overload and failure behavior for the actual workload.
 

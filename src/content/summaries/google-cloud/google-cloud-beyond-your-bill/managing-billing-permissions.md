@@ -11,9 +11,9 @@ An unnamed presenter separates project ownership, Cloud Billing administration, 
 
 ### Key Points Covered
 
-- Projects, billing accounts, and payments profiles govern different resource, cost, and payment responsibilities. [00:00:00]-[00:01:03]
-- The presenter recommends multiple administrators or groups, periodic access reviews, and restrained account sprawl. [00:01:03]
-- The historical setup flow covers billing location, payment identity, contacts, and backup payment methods. [00:02:04]
-- The episode distinguishes billing administrator, viewer, and user access from project-scoped visibility. [00:03:07]
+- Projects, billing accounts, and payments profiles govern different resource, cost, and payment responsibilities. [00:00–01:03](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=0s)
+- The presenter recommends multiple administrators or groups, periodic access reviews, and restrained account sprawl. [01:03](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=63s)
+- The historical setup flow covers billing location, payment identity, contacts, and backup payment methods. [02:04](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=124s)
+- The episode distinguishes billing administrator, viewer, and user access from project-scoped visibility. [03:07](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=187s)
 
 Full video: <https://www.youtube.com/watch?v=TDHTcS2V4wI>

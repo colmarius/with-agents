@@ -11,10 +11,10 @@ James, identified only as a technical manager at Niantic Labs, describes Pokémo
 
 ### Key Points Covered
 
-- James reports GKE and Spanner deployment scale for the game's single shared realm. [00:01:14]-[00:03:21]
-- He explains the move from Datastore to Spanner for relational schemas, indexing, and globally consistent transactions. [00:03:21]-[00:05:29]
-- Catch and shared-location interactions use different stores and consistency models. [00:06:31]-[00:08:39]
-- Analytics, anti-cheat processing, map construction, pre-scaling, and monitoring use separate pipelines and tools. [00:07:36]-[00:11:47]
+- James reports GKE and Spanner deployment scale for the game's single shared realm. [01:14–03:21](https://www.youtube.com/watch?v=YG7GXjZ8En4&t=74s)
+- He explains the move from Datastore to Spanner for relational schemas, indexing, and globally consistent transactions. [03:21–05:29](https://www.youtube.com/watch?v=YG7GXjZ8En4&t=201s)
+- Catch and shared-location interactions use different stores and consistency models. [06:31–08:39](https://www.youtube.com/watch?v=YG7GXjZ8En4&t=391s)
+- Analytics, anti-cheat processing, map construction, pre-scaling, and monitoring use separate pipelines and tools. [07:36–11:47](https://www.youtube.com/watch?v=YG7GXjZ8En4&t=456s)
 - This 2021 customer story is not a reusable reference design; verify current documentation with production-shaped tests and current privacy, anti-abuse, data-governance, and security review.
 
 Full video: <https://www.youtube.com/watch?v=YG7GXjZ8En4>

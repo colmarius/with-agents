@@ -11,9 +11,9 @@ This episode describes an enterprise observability model built around centralize
 
 ### Key Points Covered
 
-- **Shared data supports cross-team diagnosis**: Centralized monitoring, audit, and observability data can help architecture work, incident response, and root-cause analysis ([00:01:04]-[00:02:07]).
-- **Audit trails need controlled access**: Logs should answer who changed what, where, and when; least privilege and safe pre-production tests remain part of the design ([00:02:07]-[00:03:11]).
-- **Retention follows explicit requirements**: Compliance, security, access, and analysis needs can require different destinations, controls, and retention periods ([00:03:11]-[00:04:13]).
+- **Shared data supports cross-team diagnosis**: Centralized monitoring, audit, and observability data can help architecture work, incident response, and root-cause analysis ([01:04–02:07](https://www.youtube.com/watch?v=rMOXWc5BUkc&t=64s)).
+- **Audit trails need controlled access**: Logs should answer who changed what, where, and when; least privilege and safe pre-production tests remain part of the design ([02:07–03:11](https://www.youtube.com/watch?v=rMOXWc5BUkc&t=127s)).
+- **Retention follows explicit requirements**: Compliance, security, access, and analysis needs can require different destinations, controls, and retention periods ([03:11–04:13](https://www.youtube.com/watch?v=rMOXWc5BUkc&t=191s)).
 - **Centralization is not free**: It can improve correlation while enlarging security boundaries, administrative blast radius, cost, and long-lived exposure.
 
 This is a 2021 walkthrough. Verify current audit-log defaults, IAM permissions, sink destinations, retention controls, resource schemas, and console paths before implementing it.

@@ -10,6 +10,8 @@
     "astro": "astro",
     "check": "astro check",
     "content:guard": "node .agents/scripts/public-content-guard.mjs",
+    "summaries:check": "node .agents/scripts/summary-timestamps.mjs",
+    "hooks:install": "prek install",
     "youtube:transcript": "node .agents/scripts/save-youtube-transcript.mjs",
     "youtube:library": "node .agents/scripts/youtube-library.mjs",
     "test": "node --test 'src/**/*.test.ts' '.agents/scripts/*.test.mjs'",
@@ -37,6 +39,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.7",
+    "@j178/prek": "0.5.2",
     "@types/node": "24.13.3",
     "linkedom": "0.18.13",
     "typescript": "6.0.3",

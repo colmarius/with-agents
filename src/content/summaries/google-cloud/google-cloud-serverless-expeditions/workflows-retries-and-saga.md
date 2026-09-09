@@ -11,9 +11,9 @@ The presenters use an order and credit-reservation flow to separate service orch
 
 ### Key points
 
-- **The orchestrator owns call order:** Workflows calls the order and customer services in sequence so those services do not call one another directly [00:00:00]-[00:02:08]. This reduces direct coupling while moving sequencing and recovery policy into the workflow.
-- **Transient and permanent failures differ:** The demonstration wraps an HTTP call with the Workflows default retry policy for an intermittently failing credit service [00:02:08]-[00:04:15]. A permanent business failure, such as insufficient credit, needs a different path.
-- **Compensation follows an earlier side effect:** If credit cannot be reserved, the Saga example cancels the pending order; if reservation succeeds, it approves the order [00:04:15]-[00:05:19]. The presenter characterizes this as eventual consistency where a database transaction cannot span the operations.
+- **The orchestrator owns call order:** Workflows calls the order and customer services in sequence so those services do not call one another directly [00:00–02:08](https://www.youtube.com/watch?v=yqMKr37mGJw&t=0s). This reduces direct coupling while moving sequencing and recovery policy into the workflow.
+- **Transient and permanent failures differ:** The demonstration wraps an HTTP call with the Workflows default retry policy for an intermittently failing credit service [02:08–04:15](https://www.youtube.com/watch?v=yqMKr37mGJw&t=128s). A permanent business failure, such as insufficient credit, needs a different path.
+- **Compensation follows an earlier side effect:** If credit cannot be reserved, the Saga example cancels the pending order; if reservation succeeds, it approves the order [04:15–05:19](https://www.youtube.com/watch?v=yqMKr37mGJw&t=255s). The presenter characterizes this as eventual consistency where a database transaction cannot span the operations.
 
 The YAML, default retry behavior, and console flow are a May 2023 snapshot. Verify current syntax and defaults, and explicitly design idempotency, retry limits, backoff, duplicate calls, and what happens when compensation itself fails.
 

@@ -7,14 +7,14 @@ order: 8
 videoId: "GANi9eRxhHs"
 ---
 
-An unnamed presenter explains a workflow that turns repeated stack traces into grouped, trackable triage units. [00:00:00]-[00:02:06]
+An unnamed presenter explains a workflow that turns repeated stack traces into grouped, trackable triage units. [00:00–02:06](https://www.youtube.com/watch?v=GANi9eRxhHs&t=0s)
 
 ### Key Points Covered
 
-- Error Reporting extracts error and critical log events, groups them, and can notify teams when a new group appears. [00:00:00]-[00:01:05]
-- Stack-trace analysis deduplicates occurrences while summaries expose first occurrence, frequency, and recency. [00:01:05]-[00:02:06]
-- Open, acknowledged, resolved, and muted states provide a lightweight lifecycle with external issue-tracker links. [00:01:05]-[00:02:06]
-- Error grouping complements logging and debugging tools used to understand and repair underlying causes. [00:02:06]-[00:02:06]
+- Error Reporting extracts error and critical log events, groups them, and can notify teams when a new group appears. [00:00–01:05](https://www.youtube.com/watch?v=GANi9eRxhHs&t=0s)
+- Stack-trace analysis deduplicates occurrences while summaries expose first occurrence, frequency, and recency. [01:05–02:06](https://www.youtube.com/watch?v=GANi9eRxhHs&t=65s)
+- Open, acknowledged, resolved, and muted states provide a lightweight lifecycle with external issue-tracker links. [01:05–02:06](https://www.youtube.com/watch?v=GANi9eRxhHs&t=65s)
+- Error grouping complements logging and debugging tools used to understand and repair underlying causes. [02:06](https://www.youtube.com/watch?v=GANi9eRxhHs&t=126s)
 
 The 2020 Error Reporting UI, notification paths, integrations, and serverless setup claims are historical, and Cloud Run functions convergence changes old product boundaries; use current Google Cloud documentation.
 

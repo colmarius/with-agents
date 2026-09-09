@@ -11,9 +11,9 @@ This episode shows how logs can become notifications, metrics, and grouped appli
 
 ### Key Points Covered
 
-- **Log queries can become alerts**: The example notifies operators when audit logs show an IAM policy change ([00:00:00]).
-- **Logs can supply metric inputs**: Counter metrics count matching entries, while distribution metrics extract numeric payload values for charts and alert conditions ([00:02:06]-[00:03:09]).
-- **Error grouping accelerates triage**: Error Reporting connects frequency, stack traces, samples, resource context, and source logs ([00:04:13]).
+- **Log queries can become alerts**: The example notifies operators when audit logs show an IAM policy change ([00:00](https://www.youtube.com/watch?v=M2bQxpyBpH0&t=0s)).
+- **Logs can supply metric inputs**: Counter metrics count matching entries, while distribution metrics extract numeric payload values for charts and alert conditions ([02:06–03:09](https://www.youtube.com/watch?v=M2bQxpyBpH0&t=126s)).
+- **Error grouping accelerates triage**: Error Reporting connects frequency, stack traces, samples, resource context, and source logs ([04:13](https://www.youtube.com/watch?v=M2bQxpyBpH0&t=253s)).
 - **Derived signals need controls**: Noisy filters and high-cardinality labels can increase cost and alert fatigue, while automatic grouping still needs validation.
 
 The query syntax, metric limits and pricing, recognizable error formats, APIs, integrations, schemas, and UI are from 2021. Verify current behavior before implementing these examples.

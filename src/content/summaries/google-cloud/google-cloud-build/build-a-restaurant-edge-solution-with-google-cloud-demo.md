@@ -11,11 +11,11 @@ Priyanka Vergadia presents a 2022 edge-computing demo for Abe's Burger, a fictit
 
 ### Key Points Covered
 
-- **The scenario spans local sensing and centralized analysis**: The fictitious chain uses camera and sensor examples for table cleanliness, drive-through waits, refrigeration, food quality, personalization, and demand forecasting across more than 5,000 locations [00:01:03]-[00:03:08].
-- **The demo gives fleet control and data processing distinct roles**: Vergadia presents Anthos as the 2022 control plane, while Pub/Sub and Dataflow carry, enrich, window, and aggregate store events for dashboards and models [00:03:08]-[00:06:21].
-- **The forecast is deliberately simplistic**: The demonstrated BigQuery ML model uses historical sales to calculate demand, and Vergadia says a production model would likely be more complex [00:06:21]-[00:07:23].
-- **MySQL replication is a proposed distribution path**: The presentation offers daily scheduled calculations stored in Cloud SQL and replication to existing edge MySQL instances as one option; it does not establish production replication behavior or reliability [00:07:23]-[00:08:26].
-- **Local image inference is part of the demo**: The restaurant UI combines a Vertex AI AutoML table classifier with a public TensorFlow Hub people-detection model, but the small image set and reported recall do not establish field accuracy [00:08:26]-[00:10:32].
+- **The scenario spans local sensing and centralized analysis**: The fictitious chain uses camera and sensor examples for table cleanliness, drive-through waits, refrigeration, food quality, personalization, and demand forecasting across more than 5,000 locations [01:03–03:08](https://www.youtube.com/watch?v=c2I4G7UH408&t=63s).
+- **The demo gives fleet control and data processing distinct roles**: Vergadia presents Anthos as the 2022 control plane, while Pub/Sub and Dataflow carry, enrich, window, and aggregate store events for dashboards and models [03:08–06:21](https://www.youtube.com/watch?v=c2I4G7UH408&t=188s).
+- **The forecast is deliberately simplistic**: The demonstrated BigQuery ML model uses historical sales to calculate demand, and Vergadia says a production model would likely be more complex [06:21–07:23](https://www.youtube.com/watch?v=c2I4G7UH408&t=381s).
+- **MySQL replication is a proposed distribution path**: The presentation offers daily scheduled calculations stored in Cloud SQL and replication to existing edge MySQL instances as one option; it does not establish production replication behavior or reliability [07:23–08:26](https://www.youtube.com/watch?v=c2I4G7UH408&t=443s).
+- **Local image inference is part of the demo**: The restaurant UI combines a Vertex AI AutoML table classifier with a public TensorFlow Hub people-detection model, but the small image set and reported recall do not establish field accuracy [08:26–10:32](https://www.youtube.com/watch?v=c2I4G7UH408&t=506s).
 
 This is a historical vendor demonstration, not a current edge blueprint. Validate present-day platform support, disconnected operation, replication semantics, model quality, privacy, fleet identity, rollout, observability, and cost before adapting it.
 

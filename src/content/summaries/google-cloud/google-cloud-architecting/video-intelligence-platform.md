@@ -11,10 +11,10 @@ Ben, identified as Arcules' cloud and security architect, describes the company'
 
 ### Key Points Covered
 
-- Ben describes an edge appliance that buffers data and runs containerized processing on bare metal or VMware. [00:01:05]-[00:04:12]
-- GKE microservices, load balancers, and an IoT Core-to-Pub/Sub path handle cloud traffic and metadata. [00:03:09]-[00:05:15]
-- Distinct stores serve configuration, permissions, ingestion, analytics, and chunked H.264 video. [00:04:12]-[00:07:21]
-- Ben reports monitoring and security-testing controls; distributed tracing and customer-specific ML retraining were future work. [00:07:21]-[00:10:30]
+- Ben describes an edge appliance that buffers data and runs containerized processing on bare metal or VMware. [01:05–04:12](https://www.youtube.com/watch?v=xg_Z0rVftPs&t=65s)
+- GKE microservices, load balancers, and an IoT Core-to-Pub/Sub path handle cloud traffic and metadata. [03:09–05:15](https://www.youtube.com/watch?v=xg_Z0rVftPs&t=189s)
+- Distinct stores serve configuration, permissions, ingestion, analytics, and chunked H.264 video. [04:12–07:21](https://www.youtube.com/watch?v=xg_Z0rVftPs&t=252s)
+- Ben reports monitoring and security-testing controls; distributed tracing and customer-specific ML retraining were future work. [07:21–10:30](https://www.youtube.com/watch?v=xg_Z0rVftPs&t=441s)
 - This 2021 vendor account is not a reusable reference design; verify current services and workload behavior, with current security, privacy, retention, access, and surveillance-domain review.
 
 Full video: <https://www.youtube.com/watch?v=xg_Z0rVftPs>

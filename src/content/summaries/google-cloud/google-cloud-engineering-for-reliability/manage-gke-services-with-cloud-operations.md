@@ -11,9 +11,9 @@ This episode demonstrates service-level triage for a workload on GKE: begin with
 
 ### Key Points Covered
 
-- **Service health comes before infrastructure detail**: SLIs and SLOs describe user experience, while infrastructure signals help explain the cause ([00:00:00]-[00:01:04]).
-- **Correlate symptoms with workload changes**: Revision history shows a rollout shortly before the alert, making it a strong suspect ([00:01:04]-[00:03:10]).
-- **Rollback is a mitigation and a test**: In the example, the SLI recovers and the alert stops after rollback ([00:02:07]-[00:03:10]).
+- **Service health comes before infrastructure detail**: SLIs and SLOs describe user experience, while infrastructure signals help explain the cause ([00:00–01:04](https://www.youtube.com/watch?v=L6JnAhp3E-c&t=0s)).
+- **Correlate symptoms with workload changes**: Revision history shows a rollout shortly before the alert, making it a strong suspect ([01:04–03:10](https://www.youtube.com/watch?v=L6JnAhp3E-c&t=64s)).
+- **Rollback is a mitigation and a test**: In the example, the SLI recovers and the alert stops after rollback ([02:07–03:10](https://www.youtube.com/watch?v=L6JnAhp3E-c&t=127s)).
 - **Correlation is not proof**: Timing and recovery support the hypothesis but do not establish root cause; deeper diagnosis is still required to prevent recurrence.
 
 The Cloud Operations and GKE screens, alert configuration, revision model, commands, and rollback procedure are from 2021. Verify current interfaces and test rollback before depending on it.

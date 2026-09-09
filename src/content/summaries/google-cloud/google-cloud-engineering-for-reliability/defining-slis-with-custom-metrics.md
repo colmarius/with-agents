@@ -11,9 +11,9 @@ This episode demonstrates SLIs and SLOs built from application-specific metrics,
 
 ### Key Points Covered
 
-- **Custom metrics fill semantic gaps**: They can represent transactions or user outcomes unavailable in platform telemetry ([00:00:00]).
-- **Prometheus and direct export are distinct paths**: One example scrapes counters and histograms and forwards them through a collector; the OpenCensus example configures a direct exporter and does not use scraping ([00:01:02]-[00:04:11]).
-- **Histogram design shapes the SLI**: Bucket boundaries should surround the SLO threshold and retain additional ranges for analyses such as tail latency ([00:02:04]-[00:03:08]).
+- **Custom metrics fill semantic gaps**: They can represent transactions or user outcomes unavailable in platform telemetry ([00:00](https://www.youtube.com/watch?v=eCcsxDln6I0&t=0s)).
+- **Prometheus and direct export are distinct paths**: One example scrapes counters and histograms and forwards them through a collector; the OpenCensus example configures a direct exporter and does not use scraping ([01:02–04:11](https://www.youtube.com/watch?v=eCcsxDln6I0&t=62s)).
+- **Histogram design shapes the SLI**: Bucket boundaries should surround the SLO threshold and retain additional ranges for analyses such as tail latency ([02:04–03:08](https://www.youtube.com/watch?v=eCcsxDln6I0&t=124s)).
 - **Collection choices create trade-offs**: Prometheus introduces collection infrastructure; direct export couples the application to an export path.
 
 The 2021 Prometheus patches, collector configuration, APIs, schemas, Cloud Monitoring integration, and OpenCensus code are historical. Verify current OpenTelemetry, Prometheus, GKE, and backend guidance.

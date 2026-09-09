@@ -11,10 +11,10 @@ An unnamed presenter uses cluster bin packing as a diagnostic practice: compare 
 
 ### Key Points Covered
 
-- Administrators need CPU, memory, and pod-capacity evidence before reducing stranded resources. [00:00:00]
-- Cluster averages can conceal an inefficient node pool, so monitoring should retain actionable boundaries. [00:01:06]
-- The historical dashboard separates allocatable, requested, recommended, and used CPU or memory. [00:02:09]
-- Requested-versus-used CPU must be interpreted alongside memory pressure before changing machine shape. [00:03:11]
-- Pod-density and IP constraints can strand compute capacity even when the pod limit is reached. [00:03:11]-[00:04:14]
+- Administrators need CPU, memory, and pod-capacity evidence before reducing stranded resources. [00:00](https://www.youtube.com/watch?v=lPSdlTIJ00c&t=0s)
+- Cluster averages can conceal an inefficient node pool, so monitoring should retain actionable boundaries. [01:06](https://www.youtube.com/watch?v=lPSdlTIJ00c&t=66s)
+- The historical dashboard separates allocatable, requested, recommended, and used CPU or memory. [02:09](https://www.youtube.com/watch?v=lPSdlTIJ00c&t=129s)
+- Requested-versus-used CPU must be interpreted alongside memory pressure before changing machine shape. [03:11](https://www.youtube.com/watch?v=lPSdlTIJ00c&t=191s)
+- Pod-density and IP constraints can strand compute capacity even when the pod limit is reached. [03:11–04:14](https://www.youtube.com/watch?v=lPSdlTIJ00c&t=191s)
 
 Full video: <https://www.youtube.com/watch?v=lPSdlTIJ00c>

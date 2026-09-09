@@ -11,9 +11,9 @@ This episode explains how Cloud Monitoring metric scopes provide visibility acro
 
 ### Key Points Covered
 
-- **Separate shared monitoring from workload lifecycle**: A dedicated scoping project can retain cross-project configuration when workload projects change ([00:00:00]-[00:02:07]).
-- **Visibility still follows IAM**: Access to one monitored project does not automatically grant access to another through the shared scope ([00:02:07]-[00:03:12]).
-- **Enrollment can be automated**: The walkthrough uses the Cloud Monitoring API to add a monitored-project resource to a metric scope ([00:05:18]-[00:06:21]).
+- **Separate shared monitoring from workload lifecycle**: A dedicated scoping project can retain cross-project configuration when workload projects change ([00:00–02:07](https://www.youtube.com/watch?v=_FKdug6B5FM&t=0s)).
+- **Visibility still follows IAM**: Access to one monitored project does not automatically grant access to another through the shared scope ([02:07–03:12](https://www.youtube.com/watch?v=_FKdug6B5FM&t=127s)).
+- **Enrollment can be automated**: The walkthrough uses the Cloud Monitoring API to add a monitored-project resource to a metric scope ([05:18–06:21](https://www.youtube.com/watch?v=_FKdug6B5FM&t=318s)).
 - **Central configuration concentrates ownership**: Consistency improves, but teams still need boundaries for who can view or change shared operational data.
 
 The terminology, API shape, resource schema, limits, recommended topology, and console flow shown are from 2021. Validate the current model and IAM roles before adopting the design.

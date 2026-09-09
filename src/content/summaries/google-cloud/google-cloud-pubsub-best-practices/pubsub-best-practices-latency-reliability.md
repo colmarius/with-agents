@@ -11,11 +11,11 @@ Chloe, whose affiliation is not established by the source, connects publishing l
 
 ### Key points
 
-- **Disabling batching chooses latency over throughput and cost**: Messages avoid waiting for a client-side batch, but each publication can carry more overhead ([00:00:00]-[00:01:04]).
-- **Regional placement can affect latency**: The episode says regional publisher-to-subscriber traffic is lower latency than cross-region traffic, a topology claim to validate for the actual service path and workload ([00:00:00]-[00:01:04]).
-- **Multi-region publication is a narrow disaster-recovery tactic**: For what it calls extreme reliability, the episode suggests publishing every message twice or more in different regions ([00:00:00]-[00:01:04]).
-- **Delivery health and dashboards aid diagnosis**: Delivery-latency health scores can identify contributors to growing backlog, while built-in metrics provide resource and usage context ([00:01:04]-[00:02:06]).
-- **Quota alerts should precede exhaustion**: The episode recommends alerting when usage reaches a fraction of relevant limits ([00:02:06]).
+- **Disabling batching chooses latency over throughput and cost**: Messages avoid waiting for a client-side batch, but each publication can carry more overhead ([00:00–01:04](https://www.youtube.com/watch?v=vY56eo74DNo&t=0s)).
+- **Regional placement can affect latency**: The episode says regional publisher-to-subscriber traffic is lower latency than cross-region traffic, a topology claim to validate for the actual service path and workload ([00:00–01:04](https://www.youtube.com/watch?v=vY56eo74DNo&t=0s)).
+- **Multi-region publication is a narrow disaster-recovery tactic**: For what it calls extreme reliability, the episode suggests publishing every message twice or more in different regions ([00:00–01:04](https://www.youtube.com/watch?v=vY56eo74DNo&t=0s)).
+- **Delivery health and dashboards aid diagnosis**: Delivery-latency health scores can identify contributors to growing backlog, while built-in metrics provide resource and usage context ([01:04–02:06](https://www.youtube.com/watch?v=vY56eo74DNo&t=64s)).
+- **Quota alerts should precede exhaustion**: The episode recommends alerting when usage reaches a fraction of relevant limits ([02:06](https://www.youtube.com/watch?v=vY56eo74DNo&t=126s)).
 
 **Current-use note:** Treat these as 2023 tactics, not guarantees. Multi-region duplicate publication adds cost, ordering, deduplication, and reconciliation concerns the episode does not evaluate; verify current regional behavior, metrics, and quotas before adopting it.
 

@@ -7,13 +7,13 @@ order: 4
 videoId: "Sdt-i-Q7tyA"
 ---
 
-This item-level access-control example demonstrates the relationship among a principal, an IAM role, and observed resource access. [00:00:00]-[00:00:53]
+This item-level access-control example demonstrates the relationship among a principal, an IAM role, and observed resource access. [00:00–00:53](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
 
 ### Key Points Covered
 
-- Granting a person the Storage Admin role gives that account broad control over Cloud Storage resources after policy propagation. [00:00:00]-[00:00:53]
-- Removing the principal from the policy revokes access, confirmed by a permission error. [00:00:00]-[00:00:53]
-- IAM policy changes can take time to propagate, so an immediate check may briefly reflect the previous state. [00:00:00]
+- Granting a person the Storage Admin role gives that account broad control over Cloud Storage resources after policy propagation. [00:00–00:53](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
+- Removing the principal from the policy revokes access, confirmed by a permission error. [00:00–00:53](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
+- IAM policy changes can take time to propagate, so an immediate check may briefly reflect the previous state. [00:00](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
 
 Treat the broad role and 2019 console flow as historical teaching shortcuts, not modern defaults or a complete security guide; use current live Google Cloud IAM documentation for procedures and least-privilege design.
 

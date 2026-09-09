@@ -11,10 +11,10 @@ This episode introduces Cloud Logging as the investigation layer used after metr
 
 ### Key Points Covered
 
-- **A log entry combines event and context**: Timestamp, payload, monitored resource, log name, and severity make a record useful for investigation ([00:00:00]).
-- **Routing determines where evidence survives**: Log Router sinks apply inclusion and exclusion filters before data reaches destinations and indexed log buckets ([00:01:01]-[00:03:07]).
-- **Views constrain access within storage**: Log views provide a finer boundary inside buckets, supporting centralized data without universal visibility ([00:02:05]-[00:03:07]).
-- **Queries connect symptoms to resources**: Logs Explorer can narrow GKE resource, container, severity, payload, and metadata before streaming relevant entries ([00:04:11]-[00:05:13]).
+- **A log entry combines event and context**: Timestamp, payload, monitored resource, log name, and severity make a record useful for investigation ([00:00](https://www.youtube.com/watch?v=IlUCyV8mcS0&t=0s)).
+- **Routing determines where evidence survives**: Log Router sinks apply inclusion and exclusion filters before data reaches destinations and indexed log buckets ([01:01–03:07](https://www.youtube.com/watch?v=IlUCyV8mcS0&t=61s)).
+- **Views constrain access within storage**: Log views provide a finer boundary inside buckets, supporting centralized data without universal visibility ([02:05–03:07](https://www.youtube.com/watch?v=IlUCyV8mcS0&t=125s)).
+- **Queries connect symptoms to resources**: Logs Explorer can narrow GKE resource, container, severity, payload, and metadata before streaming relevant entries ([04:11–05:13](https://www.youtube.com/watch?v=IlUCyV8mcS0&t=251s)).
 
 The 2021 names, CLI commands, routing and exclusion semantics, schemas, retention defaults, and UI paths may have changed. Revalidate them, especially before excluding evidence needed later.
 

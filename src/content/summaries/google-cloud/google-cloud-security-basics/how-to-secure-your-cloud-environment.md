@@ -11,10 +11,10 @@ This series opener uses Google Cloud's shared-responsibility model to separate p
 
 ### Key Points Covered
 
-- **Start with explicit ownership**: The video's model assigns the physical platform to Google, application security to the customer, and infrastructure controls such as VMs, networks, and data access to a shared boundary where Google supplies tools and customers configure them [00:01:02]-[00:03:05].
-- **Preventive controls reduce exposure**: IAM and Identity-Aware Proxy illustrate controls for limiting access to applications and resources [00:03:05]-[00:04:08].
-- **Forensic controls make activity visible**: Logging, automated monitoring, and manual review are presented as ways to detect and investigate suspicious behavior [00:03:05]-[00:04:08].
-- **Cloud hosting is not automatic security**: Provider controls do not remove customer responsibility for identities, data, workloads, configuration, monitoring, and recovery planning [00:04:08]-[00:05:11].
+- **Start with explicit ownership**: The video's model assigns the physical platform to Google, application security to the customer, and infrastructure controls such as VMs, networks, and data access to a shared boundary where Google supplies tools and customers configure them [01:02–03:05](https://www.youtube.com/watch?v=MHtg2Au78LI&t=62s).
+- **Preventive controls reduce exposure**: IAM and Identity-Aware Proxy illustrate controls for limiting access to applications and resources [03:05–04:08](https://www.youtube.com/watch?v=MHtg2Au78LI&t=185s).
+- **Forensic controls make activity visible**: Logging, automated monitoring, and manual review are presented as ways to detect and investigate suspicious behavior [03:05–04:08](https://www.youtube.com/watch?v=MHtg2Au78LI&t=185s).
+- **Cloud hosting is not automatic security**: Provider controls do not remove customer responsibility for identities, data, workloads, configuration, monitoring, and recovery planning [04:08–05:11](https://www.youtube.com/watch?v=MHtg2Au78LI&t=248s).
 - **Treat this as dated guidance**: This is a 2020 explanation; current users should verify current Google Cloud documentation, IAM behavior, defaults, products, UI, pricing, and incident-response guidance before applying it.
 
 Full video: <https://www.youtube.com/watch?v=MHtg2Au78LI>

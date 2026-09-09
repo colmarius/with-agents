@@ -11,10 +11,10 @@ This episode shows how platform and logs-based metrics can supply service-level 
 
 ### Key Points Covered
 
-- **Two SLI shapes answer different questions**: Request-based SLIs divide good work by total work, while window-based SLIs count intervals meeting a threshold ([00:00:00]).
-- **Filters encode product judgment**: The load-balancer example counts HTTP 200 responses as good and asks teams to decide deliberately whether responses such as 404s belong in the total ([00:02:06]-[00:04:11]).
-- **Pipelines may need windowed freshness**: A Dataflow example evaluates average system lag when per-element good-versus-total counting is unavailable ([00:05:13]-[00:06:17]).
-- **Logs can bridge telemetry gaps**: Structured request status can become good and total event counts through logs-based metrics ([00:07:19]-[00:08:22]).
+- **Two SLI shapes answer different questions**: Request-based SLIs divide good work by total work, while window-based SLIs count intervals meeting a threshold ([00:00](https://www.youtube.com/watch?v=uhpAScSerec&t=0s)).
+- **Filters encode product judgment**: The load-balancer example counts HTTP 200 responses as good and asks teams to decide deliberately whether responses such as 404s belong in the total ([02:06–04:11](https://www.youtube.com/watch?v=uhpAScSerec&t=126s)).
+- **Pipelines may need windowed freshness**: A Dataflow example evaluates average system lag when per-element good-versus-total counting is unavailable ([05:13–06:17](https://www.youtube.com/watch?v=uhpAScSerec&t=313s)).
+- **Logs can bridge telemetry gaps**: Structured request status can become good and total event counts through logs-based metrics ([07:19–08:22](https://www.youtube.com/watch?v=uhpAScSerec&t=439s)).
 
 The console workflow, metric semantics, API and resource schemas, product names, defaults, and queries are from 2021. Verify current behavior and historical data before operational use.
 

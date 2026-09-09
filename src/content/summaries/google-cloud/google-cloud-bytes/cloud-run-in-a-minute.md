@@ -11,9 +11,9 @@ The source names neither its presenter nor an affiliation. This 2022 primer pres
 
 ### Key Points Covered
 
-- **Services and jobs share a managed container runtime**: The primer says Cloud Run scales instances up and down from zero and ties billing to when code runs [00:00:00].
-- **The endpoint claim has a specific boundary**: Services are said to receive an endpoint with TLS termination on custom domains; jobs support parallel batch processing, and buildpacks offer a source-deployment path [00:00:00]-[00:01:01].
-- **Portability is narrower than application portability**: The presenter links portability to an API compatible with Kubernetes, which does not establish that every application, configuration, or operating model moves unchanged [00:01:01].
+- **Services and jobs share a managed container runtime**: The primer says Cloud Run scales instances up and down from zero and ties billing to when code runs [00:00](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=0s).
+- **The endpoint claim has a specific boundary**: Services are said to receive an endpoint with TLS termination on custom domains; jobs support parallel batch processing, and buildpacks offer a source-deployment path [00:00–01:01](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=0s).
+- **Portability is narrower than application portability**: The presenter links portability to an API compatible with Kubernetes, which does not establish that every application, configuration, or operating model moves unchanged [01:01](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=61s).
 
 Use this as historical service-family orientation, not implementation or cost guidance. Verify current endpoint and domain behavior, billing units, minimum instances, concurrency, networking, limits, jobs, and deployment paths in current documentation.
 

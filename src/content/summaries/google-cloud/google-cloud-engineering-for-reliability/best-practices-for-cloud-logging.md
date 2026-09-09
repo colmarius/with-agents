@@ -11,9 +11,9 @@ This episode outlines Cloud Logging practices for structured records, centralize
 
 ### Key Points Covered
 
-- **Structure makes records queryable**: JSON fields can be filtered directly instead of requiring regular expressions over text payloads ([00:00:00]-[00:02:04]).
-- **Routing and storage need an organizational design**: User-defined buckets and sinks can centralize logs across projects, with retention and location chosen for the use case ([00:02:04]-[00:03:07]).
-- **Access has multiple layers**: IAM governs broader permissions while log views can narrow access within a bucket ([00:03:07]-[00:04:09]).
+- **Structure makes records queryable**: JSON fields can be filtered directly instead of requiring regular expressions over text payloads ([00:00–02:04](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=0s)).
+- **Routing and storage need an organizational design**: User-defined buckets and sinks can centralize logs across projects, with retention and location chosen for the use case ([02:04–03:07](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=124s)).
+- **Access has multiple layers**: IAM governs broader permissions while log views can narrow access within a bucket ([03:07–04:09](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=187s)).
 - **Centralization creates trade-offs**: It can simplify governance and investigation while expanding blast radius, tenant-isolation demands, cost, privacy exposure, and access complexity.
 
 This is a 2021 architecture and UI walkthrough. Confirm current bucket defaults, retention limits, IAM roles, agent parsers, export integrations, schemas, and console procedures before use.

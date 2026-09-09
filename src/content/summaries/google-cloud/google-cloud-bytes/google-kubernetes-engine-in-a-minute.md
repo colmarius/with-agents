@@ -11,9 +11,9 @@ The source names neither its presenter nor an affiliation. This 2020 primer posi
 
 ### Key Points Covered
 
-- **Google operates the described control plane**: The primer pairs a managed, highly available Kubernetes control plane with cluster nodes that run application pods and connect to other Google Cloud services [00:00:00].
-- **The platform bundles cluster operations features**: Deployment templates, autoscaling, auto-upgrades, auto-repair, image scanning, and integrated monitoring are presented as GKE capabilities [00:00:00].
-- **The suggested uses are orientation**: Application modernization, continuous delivery, and migration of an existing two-tier application are examples, not evidence that GKE is the right runtime for those workloads [00:00:00]-[00:01:03].
+- **Google operates the described control plane**: The primer pairs a managed, highly available Kubernetes control plane with cluster nodes that run application pods and connect to other Google Cloud services [00:00](https://www.youtube.com/watch?v=pQ87vVMZK-A&t=0s).
+- **The platform bundles cluster operations features**: Deployment templates, autoscaling, auto-upgrades, auto-repair, image scanning, and integrated monitoring are presented as GKE capabilities [00:00](https://www.youtube.com/watch?v=pQ87vVMZK-A&t=0s).
+- **The suggested uses are orientation**: Application modernization, continuous delivery, and migration of an existing two-tier application are examples, not evidence that GKE is the right runtime for those workloads [00:00–01:03](https://www.youtube.com/watch?v=pQ87vVMZK-A&t=0s).
 
 Use this as historical service-family orientation, not a production configuration. Verify current cluster modes, supported versions, user and provider responsibilities, upgrades, security defaults, quotas, and pricing in current documentation.
 

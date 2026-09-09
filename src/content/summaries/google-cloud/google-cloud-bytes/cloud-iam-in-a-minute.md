@@ -11,9 +11,9 @@ The source names neither its presenter nor an affiliation. This 2021 security pr
 
 ### Key Points Covered
 
-- **Policies apply at fine-grained resource levels**: The primer connects organizations, folders, and projects with organization-wide policy visibility and auditing [00:00:00].
-- **Resource Manager supports hierarchy-wide changes**: It is paired with IAM for policy administration across the resource hierarchy [00:00:00].
-- **Recommendations assist rather than decide**: Policy Intelligence and IAM Recommender are described as finding and helping reduce overly permissive access, but the primer does not cover business context, separation of duties, or safe rollout [00:00:54].
+- **Policies apply at fine-grained resource levels**: The primer connects organizations, folders, and projects with organization-wide policy visibility and auditing [00:00](https://www.youtube.com/watch?v=zd5d9Vv1ZFE&t=0s).
+- **Resource Manager supports hierarchy-wide changes**: It is paired with IAM for policy administration across the resource hierarchy [00:00](https://www.youtube.com/watch?v=zd5d9Vv1ZFE&t=0s).
+- **Recommendations assist rather than decide**: Policy Intelligence and IAM Recommender are described as finding and helping reduce overly permissive access, but the primer does not cover business context, separation of duties, or safe rollout [00:54](https://www.youtube.com/watch?v=zd5d9Vv1ZFE&t=54s).
 
 Security synthesis here is limited to IAM's resource-authorization role; it does not establish a complete identity, authentication, or security architecture. Use this as historical orientation and check current policy types, conditions, deny behavior, recommender scope, audit coverage, quotas, and limits in current documentation.
 

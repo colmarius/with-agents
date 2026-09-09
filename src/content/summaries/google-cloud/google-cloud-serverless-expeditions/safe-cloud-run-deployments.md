@@ -11,11 +11,11 @@ The presenters order four practices for safer releases: CI/CD, reliable rollback
 
 ### Key points
 
-- **Automate build and verification first:** CI builds and tests submitted code; delivery may deploy automatically to test while an operator still decides when an automated production pipeline proceeds [00:01:03]-[00:04:14].
-- **Recover before debugging under pressure:** The presenter recommends a fast, reliable rollback to a known version, then investigating once service is restored [00:04:14]-[00:06:21].
-- **Canaries limit initial exposure:** The demonstration uses Cloud Run traffic splitting and session affinity, then suggests progressively larger cohorts and observation windows [00:06:21]-[00:10:35]. Its percentages and timing are heuristics, not universal rollout formulas.
-- **Feature controls separate deployment from exposure:** Hidden code can be activated for selected cohorts and disabled without a code rollback, but requires management tooling, application integration, metrics, and capacity planning [00:10:35]-[00:14:46].
-- **Adopt in priority order:** The presenter explicitly recommends starting with CI/CD, then adding rollback, canaries, and experiments only as their value justifies the cost [00:14:46]-[00:16:51].
+- **Automate build and verification first:** CI builds and tests submitted code; delivery may deploy automatically to test while an operator still decides when an automated production pipeline proceeds [01:03–04:14](https://www.youtube.com/watch?v=ArDuQDjW-DQ&t=63s).
+- **Recover before debugging under pressure:** The presenter recommends a fast, reliable rollback to a known version, then investigating once service is restored [04:14–06:21](https://www.youtube.com/watch?v=ArDuQDjW-DQ&t=254s).
+- **Canaries limit initial exposure:** The demonstration uses Cloud Run traffic splitting and session affinity, then suggests progressively larger cohorts and observation windows [06:21–10:35](https://www.youtube.com/watch?v=ArDuQDjW-DQ&t=381s). Its percentages and timing are heuristics, not universal rollout formulas.
+- **Feature controls separate deployment from exposure:** Hidden code can be activated for selected cohorts and disabled without a code rollback, but requires management tooling, application integration, metrics, and capacity planning [10:35–14:46](https://www.youtube.com/watch?v=ArDuQDjW-DQ&t=635s).
+- **Adopt in priority order:** The presenter explicitly recommends starting with CI/CD, then adding rollback, canaries, and experiments only as their value justifies the cost [14:46–16:51](https://www.youtube.com/watch?v=ArDuQDjW-DQ&t=886s).
 
 This February 2024 episode describes design practices, while its Cloud Run controls, product names, and delivery interfaces are point-in-time. Fit cohort assignment, session affinity, observation windows, feature controls, metrics, rollback safety, and capacity to the current application.
 

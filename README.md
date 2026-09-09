@@ -23,6 +23,11 @@ npm run build    # Build for production
 npm run preview  # Preview build locally
 ```
 
+Run `npm run hooks:install` once per checkout to install the pinned `prek`
+pre-commit hook. It validates timestamp citations only in staged summaries,
+without network requests or rewriting content. Run `npm run summaries:check`
+to check every summary; `npm test` also checks the full corpus in CI.
+
 ## Site search
 
 Use the Search button or ⌘/Ctrl+K on any page, including slides. Search covers

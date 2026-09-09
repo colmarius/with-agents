@@ -11,9 +11,9 @@ Independent iOS developer Ryan Chitwood asks whether a designer with development
 
 ### Key Points Covered
 
-- **The use case depends on criticality**: Hansson says agents can expand what independent builders create, but scale, fidelity, sensitive data, and the consequence of failure should determine the release standard [00:01:43]-[00:03:49].
-- **Low-stakes prototypes are a strong starting point**: Builders can make ideas tangible, learn quickly, and discard approaches without exposing important data [00:03:49]-[00:04:51].
-- **Maintenance competence remains a boundary**: Fried warns that a solo builder can move beyond their understanding and become unable to diagnose or repair the system when the model cannot recover [00:04:51]-[00:06:52].
+- **The use case depends on criticality**: Hansson says agents can expand what independent builders create, but scale, fidelity, sensitive data, and the consequence of failure should determine the release standard [01:43–03:49](https://www.youtube.com/watch?v=GifToS0FTII&t=103s).
+- **Low-stakes prototypes are a strong starting point**: Builders can make ideas tangible, learn quickly, and discard approaches without exposing important data [03:49–04:51](https://www.youtube.com/watch?v=GifToS0FTII&t=229s).
+- **Maintenance competence remains a boundary**: Fried warns that a solo builder can move beyond their understanding and become unable to diagnose or repair the system when the model cannot recover [04:51–06:52](https://www.youtube.com/watch?v=GifToS0FTII&t=291s).
 
 The advice is practitioner judgment rather than comparative evidence about solo-agent teams. The remainder of the episode covers co-founders, succession, and product ideas rather than coding agents.
 
