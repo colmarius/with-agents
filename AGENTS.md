@@ -121,6 +121,14 @@ X-only livestreams or broadcasts do not need transcript sidecars. If an entry in
 
 When reviewing or updating transcript-backed summaries, compare the summary against the transcript before editing. Fix copied-forward episode content, placeholder summaries, unsupported claims, wrong speaker/name/model attributions, and misleading timestamp citations. Prefer concise timestamped bullets for the main transcript-backed themes. Keep external bio/context claims only when they are present in the transcript or already trusted in the resource manifest.
 
+#### Summary readability review
+
+- Explain the mechanism, not just its label: state what causes what and why it matters. Replace abstract shorthand such as "a tension between objectives" with the concrete behaviors that conflict; define necessary technical terms in place.
+- Make comparisons explicit: explain what the existing approach does, what a proposal adds, and how behavior would differ. Prefer a source-backed example. Do not imply that an existing approach lacks a capability merely because the proposal implements it differently.
+- Keep each bullet focused. Split a claim from a separate mechanism, objection, or consequence when it becomes overloaded. Prefer short sentences, but retain the explanation rather than compressing it into jargon. Check whether a reader can explain the point without opening the transcript.
+- State whether the summary paraphrases original-language or translated/auto-generated captions; do not imply an original-audio check that was not performed. Preserve speaker attribution and distinguish observations, proposals, and forecasts. Do not add training methods, implementation details, or model-specific claims absent from the source. Label editorial implications and any added illustrations.
+- After splitting or expanding a passage, check each explanation and example against the saved transcript. Keep citations beside the claims they support, with ranges covering the full supporting passage; do not reuse a broad anchor without checking it.
+
 Store committed transcripts under `src/content/transcripts/**` using the same relative slug as the matching summary. Example:
 
 ```text
