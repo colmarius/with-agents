@@ -1,5 +1,6 @@
 ---
 import { siteContexts } from '../data/site-contexts';
+import SearchTrigger from './SearchTrigger.astro';
 
 type Props = {
   currentPath: string;
@@ -34,8 +35,8 @@ const isActive = (item: (typeof navigationItems)[number]) =>
   <a href="/" class="text-bold text-3xl hover:text-indigo-600 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 rounded-sm">
     with-agents
   </a>
-  <nav>
-    <ul class="hidden space-x-6 md:flex">
+  <nav class="flex items-center gap-2 lg:gap-5" aria-label="Main navigation">
+    <ul class="hidden space-x-6 lg:flex">
       {navigationItems.map((item) => (
         <li>
           <a
@@ -51,10 +52,12 @@ const isActive = (item: (typeof navigationItems)[number]) =>
       ))}
     </ul>
 
+    <SearchTrigger />
+
     <button
       type="button"
       id="mobile-menu-button"
-      class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-md text-gray-900 hover:text-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 relative z-50"
+      class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-md text-gray-900 hover:text-indigo-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2 relative z-50"
       aria-controls="mobile-menu"
       aria-expanded="false"
       aria-label="Open menu"
@@ -151,6 +154,8 @@ const isActive = (item: (typeof navigationItems)[number]) =>
     setMenuState(false);
   }
 
+  document.addEventListener('site-search:open', closeMobileMenu);
+
   function isMobileMenuOpen() {
     return document
       .getElementById('mobile-menu')
@@ -202,7 +207,7 @@ const isActive = (item: (typeof navigationItems)[number]) =>
     }
   });
 
-  window.matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+  window.matchMedia('(min-width: 1024px)').addEventListener('change', (e) => {
     if (e.matches && isMobileMenuOpen()) closeMobileMenu();
   });
 

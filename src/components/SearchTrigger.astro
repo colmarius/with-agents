@@ -1,0 +1,46 @@
+---
+type Props = { compact?: boolean };
+const { compact = false } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={['search-trigger', { compact }]}
+  data-search-trigger
+  aria-label="Search site"
+  aria-haspopup="dialog"
+  aria-controls="site-search"
+  hidden
+>
+  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+    <circle cx="10.75" cy="10.75" r="6.75" />
+    <path d="m16 16 4.5 4.5" stroke-linecap="round" />
+  </svg>
+  {!compact && <span>Search</span>}
+</button>
+
+<style>
+  .search-trigger {
+    display: inline-flex;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    background: #fff;
+    padding: 0.5rem 0.75rem;
+    color: #475569;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  .search-trigger[hidden] { display: none; }
+  .search-trigger:hover { border-color: #a5b4fc; color: #4f46e5; }
+  .search-trigger:focus-visible { outline: 2px solid #4f46e5; outline-offset: 3px; }
+  .compact { padding: 0.5rem; }
+  @media (max-width: 63.99rem) {
+    .search-trigger span { display: none; }
+    .search-trigger { padding: 0.5rem; }
+  }
+</style>

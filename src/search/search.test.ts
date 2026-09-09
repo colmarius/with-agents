@@ -142,7 +142,7 @@ test('post search eligibility composes public listing with robots and canonical 
   );
 });
 
-test('generic parent/title ranking, AND terms and final prefix work without query exceptions', () => {
+test('generic parent/title ranking, AND terms and final prefix work without query exceptions', async () => {
   const series = {
     ...document,
     id: '/episode',
@@ -162,7 +162,7 @@ test('generic parent/title ranking, AND terms and final prefix work without quer
     title: 'Agentic coding',
     body: 'Coding tips',
   };
-  const engine = createSearch([bodyMatch, partial, series]);
+  const engine = await createSearch([bodyMatch, partial, series]);
   assert.deepEqual(
     engine.search('StAtE of agentic cod').map(({ id }) => id),
     ['/episode', '/guide'],

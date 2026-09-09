@@ -10,12 +10,12 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
   skip:
     !existsSync('dist/search/documents.json') &&
     'Run npm run build first for production-corpus coverage',
-}, () => {
+}, async () => {
   const { documents } = validatePayload(
     JSON.parse(readFileSync('dist/search/documents.json', 'utf8')),
   );
   const byUrl = new Map(documents.map((document) => [document.url, document]));
-  const engine = createSearch(documents);
+  const engine = await createSearch(documents);
   const summarySources = globSync('src/content/summaries/**/*.md').map(
     (path) => {
       const source = readFileSync(path, 'utf8');

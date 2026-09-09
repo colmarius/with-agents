@@ -1,6 +1,6 @@
 # Minimalistic site-wide search implementation
 
-Add a native search dialog backed by MiniSearch and one generated corpus extracted from built HTML. [Research](research.md) owns comparisons, Pagefind experiments and Oracle feedback. This plan describes future implementation, not completed feature work.
+Native search dialog backed by MiniSearch and one generated corpus extracted from built HTML. [Research](research.md) preserves planning comparisons; [progress](progress.md) records final implementation evidence and the explicit performance-budget revision.
 
 ## Goals
 
@@ -10,28 +10,28 @@ Add a native search dialog backed by MiniSearch and one generated corpus extract
 
 ## Tasks
 
-- [ ] **Task 1: Generate and qualify the rendered search corpus**
+- [x] **Task 1: Generate and qualify the rendered search corpus**
   - Scope: `package.json`/lockfile, `astro.config.mjs`, a focused build-time HTML extractor and tests, a shared MiniSearch configuration module; post eligibility in `src/utils/posts.ts`, post route/PostLayout, summary route, landing/list owners, `ResourceCatalogPage.astro` and `ResourceCatalog.tsx`.
   - Depends on: none.
   - Acceptance: Pin MiniSearch and a build-time HTML parser (use LinkeDOM, already exercised for HTML extraction in research). Add application-owned `data-search-body`/`data-search-ignore` and title/parent metadata in owning templates. Generate one validated `dist/search/documents.json` before `generateSW`; include URL, title, parent title, description and searchable body in each record. Build fails on extraction/validation errors. Nothing generated enters Git or `public/`.
-  - Acceptance: The actual emitted payload, using the browser's MiniSearch configuration, satisfies the corpus table and unquoted example query: a State of Agentic Coding episode in the top five and all nine published episodes reachable. Test body-only terms, another series, cloud/security titles, mixed case, blank and zero-hit queries. Test draft, unlisted, noindex and alternate-canonical exclusion independently. Use generic title/parent boosts; do not copy Pagefind's weight 7 as a validated MiniSearch setting.
-  - Acceptance: Record document count, raw/gzip payload bytes and real-browser cold load, index construction and warm-query timings before UI polish. Working budgets: payload ≤2 MiB gzip, index construction ≤500 ms at 4× Chromium CPU slowdown, warm query/render first batch ≤100 ms. These are proposed qualification budgets, not measurements or real-device claims. If missed, record evidence and revise the plan before adding workers, serialization or sharding; do not silently weaken corpus coverage or relevance.
+  - Acceptance: The actual emitted payload, using the browser's MiniSearch configuration, satisfies the corpus table and unquoted example query: a State of Agentic Coding episode in the top five and all ten published episodes reachable. Test body-only terms, another series, cloud/security titles, mixed case, blank and zero-hit queries. Test draft, unlisted, noindex and alternate-canonical exclusion independently. Use generic title/parent boosts; do not copy Pagefind's weight 7 as a validated MiniSearch setting.
+  - Acceptance: Record document count, raw/gzip payload bytes and real-browser cold load, index construction and warm-query timings. The original ≤500 ms synchronous indexing target failed at 4× Chromium CPU slowdown (665–906 ms). Revised implementation uses eight-document asynchronous batches: qualify total initialization ≤1500 ms, individual blocking tasks ≤100 ms, and warm query/render first batch ≤100 ms at 4× slowdown. Keep payload ≤2 MiB gzip and full coverage/relevance. These are Chromium qualification budgets, not real-device guarantees; no worker, serialization or sharding is needed if yielding meets them.
 
-- [ ] **Task 2: Implement one native dialog and complete-payload loading**
+- [x] **Task 2: Implement one native dialog and complete-payload loading**
   - Scope: new `src/components/Search.astro`, focused client script and shared search types/configuration; `Layout.astro`, `Navigation.astro`, standalone slide shell; scoped styles using existing theme tokens.
   - Depends on: Task 1.
   - Acceptance: One modal per document, no React island or provider modal. Visible responsive control and Mod+K open it; input receives focus, Escape closes with populated input, Tab cannot reach background controls. Restore original focus if visible/usable, otherwise the persistent search trigger or menu button. A visible Close control works on touch.
-  - Acceptance: Lazy-load MiniSearch and the complete corpus on first opening; check HTTP status, parse and validate the payload, construct one in-memory index, then publish readiness atomically. Never turn failed/partial loading into an empty corpus. One 10-second asynchronous loading deadline, abort where possible, and ignore late work. Failed corpus loads offer fresh Retry; failed module imports may require Reload. Timers do not interrupt synchronous indexing/search: Task 1's measurement qualifies those.
+  - Acceptance: Lazy-load MiniSearch and the complete corpus on first opening; check HTTP status, parse and validate the payload, construct one in-memory index in yielding batches, then publish readiness atomically. Never turn failed/partial loading into an empty corpus. One 10-second asynchronous loading deadline, abort where possible, and ignore late work. Failed corpus loads offer fresh Retry; failed module imports may require Reload. Timers do not interrupt individual synchronous batches/search: Task 1's measurement qualifies those.
   - Acceptance: Idle, loading, results, no-results and unavailable states differ visibly and through an appropriate live status announcement. Title, parent series when needed and a short plain-text snippet explain each result. Render ten results initially with a More results control. After initialization, queries and further result batches make no search-data requests. Stale success/error after query change, clear, close or retry cannot overwrite current state.
 
-- [ ] **Task 3: Reconcile search with page shells, offline use and development**
+- [x] **Task 3: Reconcile search with page shells, offline use and development**
   - Scope: navigation mobile-menu coordination, slide controls and key handling, `astro.config.mjs` precache verification, `README.md` search preview guidance.
   - Depends on: Tasks 1–2.
   - Acceptance: Opening search closes the mobile menu before opening the dialog. Search remains touch-discoverable in image-only slides and notes mode. Slide navigation does not respond while search is open; existing catalog filtering and summary navigation still work afterward.
   - Acceptance: Workbox includes the generated corpus and search code with no size-limit omissions. Existing globs already include JSON/JS; verify actual manifest membership rather than adding unnecessary extension rules. Offline searches work after successful installation. Preserve the existing update prompt and controller-change reload; no search-specific SW activation or version-pinning framework.
   - Acceptance: Build-and-preview is the authoritative search workflow. `astro dev` explains that the production search index requires a build instead of repeatedly requesting missing files or copying a stale index into `public/`. Without JS, site navigation works and no deceptively functional search trigger is shown.
 
-- [ ] **Task 4: Verify the delivered behavior and build artifact**
+- [x] **Task 4: Verify the delivered behavior and build artifact**
   - Scope: focused unit/build-output tests, production preview via repository orb/browser workflow, observed work-local implementation evidence.
   - Depends on: Tasks 1–3.
   - Acceptance: Required checks below pass. Follow representative results in a real browser, inspect keyboard/focus and mobile states, inject corpus failures, and test installed-offline/two-build updates. Record observed proof and limitations in `progress.md` when implementation starts.
@@ -75,7 +75,7 @@ Compose search eligibility from `isPublicListedPost` plus noindex/canonical chec
 
 ## Acceptance criteria
 
-- From every human-facing route family, open search, enter `state of agentic coding` without quotes, see an episode in the top five and follow it to its rendered summary. Further results expose all nine current episodes.
+- From every human-facing route family, open search, enter `state of agentic coding` without quotes, see an episode in the top five and follow it to its rendered summary. Further results expose all ten current episodes.
 - Body-only summary text and canonical description/subtitle text remain discoverable. Other series and representative Cloud/Security titles work without query-specific exceptions.
 - No slide duplicates, drafts, unlisted/noindex/alternate-canonical posts, 404 or source evidence are results. Summary-less resources remain discoverable via one owning section.
 - Failed corpus loading is never presented as valid zero results or partial search. Keyboard, mobile, rapid input and installed-offline use meet task contracts without breaking existing controls.

@@ -1,6 +1,6 @@
 # Minimalistic site-wide search
 
-Status: planned
+Status: completed
 Category: feature
 Updated: 2026-09-09
 
@@ -10,17 +10,18 @@ Visitors should be able to open a minimal search interface from any page, enter 
 
 ## Summary
 
-Research and Oracle-reviewed planning are complete; no production feature changes. Select MiniSearch with a native dialog and one generated document payload. A high-orb Pagefind experiment established HTML coverage and useful ranking, but real browser failures exposed silently incorrect results that a custom UI cannot detect. Oracle reviewed the plan and new evidence, recommended switching engines, and supplied the incorporated corpus, focus, failure and PWA corrections. MiniSearch qualification is the first implementation task, not a claimed completed benchmark.
+Implemented and verified MiniSearch with a native dialog on `feature/site-wide-search`. Integrated the high-orb corpus work, addressed Oracle findings, qualified yielding indexing, and verified the production portal, failures, offline/update behavior and every recorded video frame. Reusable findings are promoted to `.agents/research/static-site-search.md`; this completed snapshot is retained in Git before work-item removal. No push or deployment occurred.
 
 ## Artifacts
 
 - [Research and experiment evidence](research.md)
 - [Implementation plan](plan.md)
+- [Implementation evidence](progress.md)
 
 ## Next Action
 
-- When implementation is requested, begin [Task 1: generate and qualify the rendered search corpus](plan.md#tasks). Preserve its relevance/performance gate before UI polish; do not restart the Pagefind investigation.
+- None.
 
 ## Open Questions
 
-- MiniSearch corpus size, ranking and browser initialization cost remain measured acceptance work in Task 1. No user decision or external account is required to start.
+- None. Browser timings are Chromium/orb measurements, not physical-device guarantees.

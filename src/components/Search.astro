@@ -1,0 +1,109 @@
+---
+const corpusUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/search/documents.json`;
+---
+
+<dialog
+  id="site-search"
+  aria-labelledby="site-search-title"
+  data-corpus-url={corpusUrl}
+  data-development={import.meta.env.DEV ? 'true' : undefined}
+>
+  <div class="search-panel">
+    <div class="search-heading">
+      <h2 id="site-search-title">Search</h2>
+      <button type="button" class="search-close" data-search-close aria-label="Close search">
+        <span>Close</span><kbd aria-hidden="true">Esc</kbd>
+      </button>
+    </div>
+    <div class="search-input-wrap">
+      <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <circle cx="10.75" cy="10.75" r="6.75" />
+        <path d="m16 16 4.5 4.5" stroke-linecap="round" />
+      </svg>
+      <label for="site-search-input" class="sr-only">Search field guides and resources</label>
+      <input
+        id="site-search-input"
+        type="search"
+        placeholder="Search field guides and resources"
+        autocomplete="off"
+        spellcheck="false"
+        enterkeyhint="search"
+      />
+    </div>
+    <div class="search-content">
+      <p id="site-search-status" role="status" aria-live="polite" aria-atomic="true">
+        Search field guides and resources across the site.
+      </p>
+      <div class="search-recovery" data-search-recovery hidden>
+        <button type="button" data-search-retry>Try again</button>
+        <button type="button" data-search-reload>Reload page</button>
+      </div>
+      <ol id="site-search-results" aria-label="Search results"></ol>
+      <button type="button" class="search-more" data-search-more hidden>More results</button>
+    </div>
+    <div class="search-footer">
+      <span>Field guides · Resources</span>
+      <span>Search stays in your browser</span>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  import { initializeSearch } from '../scripts/site-search';
+  initializeSearch();
+</script>
+
+<style>
+  dialog {
+    width: min(40rem, calc(100vw - 2rem));
+    max-width: none;
+    max-height: min(82dvh, 48rem);
+    margin: 8dvh auto auto;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: #fff;
+    color: #0f172a;
+    box-shadow: 0 24px 80px rgb(15 23 42 / 0.2);
+  }
+  dialog::backdrop { background: rgb(15 23 42 / 0.4); }
+  .search-panel { display: flex; max-height: inherit; flex-direction: column; }
+  .search-heading { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.5rem 0.5rem; }
+  h2 { margin: 0; font-size: 1rem; font-weight: 600; }
+  button { cursor: pointer; }
+  button:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+  .search-close { display: flex; min-height: 2.75rem; align-items: center; gap: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 0.375rem; color: #475569; font-size: 0.875rem; }
+  .search-close:hover { background: #f1f5f9; }
+  kbd { border: 1px solid #cbd5e1; border-radius: 0.25rem; padding: 0.05rem 0.3rem; font-size: 0.7rem; }
+  .search-input-wrap { display: flex; align-items: center; gap: 0.75rem; margin: 0 1.5rem 1rem; padding: 0 0.875rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; color: #64748b; }
+  .search-input-wrap:focus-within { border-color: #6366f1; box-shadow: 0 0 0 2px rgb(99 102 241 / 0.15); }
+  .search-input-wrap svg { flex-shrink: 0; }
+  input { min-width: 0; width: 100%; height: 3rem; outline: none; background: transparent; color: #0f172a; font: inherit; font-size: 1rem; }
+  input::placeholder { color: #64748b; }
+  .search-content { overflow-y: auto; overscroll-behavior: contain; min-height: 6rem; padding: 0 1.5rem 1.25rem; }
+  #site-search-status { margin: 0; padding: 0.25rem 0 0.75rem; color: #475569; font-size: 0.875rem; line-height: 1.5; }
+  ol { margin: 0; padding: 0; list-style: none; }
+  :global(#site-search-results li + li) { border-top: 1px solid #e2e8f0; }
+  :global(#site-search-results a) { display: block; border-radius: 0.5rem; padding: 0.875rem 0.5rem; text-decoration: none; }
+  :global(#site-search-results a:hover) { background: #f8fafc; }
+  :global(#site-search-results a:focus-visible) { outline: 2px solid #4f46e5; outline-offset: -2px; background: #eef2ff; }
+  :global(#site-search-results .search-result-title) { display: block; color: #0f172a; font-size: 1rem; line-height: 1.5; font-weight: 600; }
+  :global(#site-search-results .search-result-parent) { display: block; margin-bottom: 0.2rem; color: #4f46e5; font-size: 0.75rem; line-height: 1.4; }
+  :global(#site-search-results .search-result-excerpt) { display: block; margin-top: 0.25rem; color: #475569; font-size: 0.875rem; line-height: 1.55; overflow-wrap: anywhere; }
+  .search-recovery { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 0.5rem 0; }
+  .search-recovery button, .search-more { min-height: 2.75rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; padding: 0.5rem 0.875rem; font-size: 0.875rem; color: #334155; }
+  .search-recovery button:hover, .search-more:hover { background: #f1f5f9; }
+  .search-more { width: 100%; margin-top: 0.75rem; }
+  .search-footer { display: flex; flex-shrink: 0; justify-content: space-between; flex-wrap: wrap; gap: 0.25rem 1rem; border-top: 1px solid #e2e8f0; padding: 0.75rem 1.5rem; color: #64748b; font-size: 0.7rem; }
+  [hidden] { display: none; }
+  @media (max-width: 40rem) {
+    dialog { margin-top: 1rem; max-height: calc(100dvh - 2rem); }
+    .search-heading { padding-right: 1rem; padding-left: 1rem; }
+    .search-input-wrap { margin-right: 1rem; margin-left: 1rem; }
+    .search-content { padding-right: 1rem; padding-left: 1rem; }
+    .search-footer { padding-right: 1rem; padding-left: 1rem; }
+    kbd { display: none; }
+  }
+  @media print { dialog { display: none; } }
+</style>

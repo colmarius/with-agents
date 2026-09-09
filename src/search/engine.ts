@@ -1,7 +1,7 @@
 import MiniSearch from 'minisearch';
 import type { SearchDocument } from './documents.ts';
 
-export function createSearch(documents: SearchDocument[]) {
+export async function createSearch(documents: SearchDocument[]) {
   const documentsById = new Map(
     documents.map((document) => [document.id, document]),
   );
@@ -13,7 +13,9 @@ export function createSearch(documents: SearchDocument[]) {
       prefix: (_term, position, terms) => position === terms.length - 1,
     },
   });
-  index.addAll(documents);
+  // Yield between batches so opening/closing the dialog never waits for the
+  // entire corpus to be indexed on a slower device.
+  await index.addAllAsync(documents, { chunkSize: 8 });
   return {
     search(query: string): SearchDocument[] {
       if (!query.trim()) return [];

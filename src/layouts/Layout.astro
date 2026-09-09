@@ -4,6 +4,7 @@ import Footer from '@components/Footer.astro';
 import Navigation from '@components/Navigation.astro';
 import PwaHead from '@components/PwaHead.astro';
 import PwaUpdatePrompt from '@components/PwaUpdatePrompt.astro';
+import Search from '@components/Search.astro';
 
 type Props = {
   title: string;
@@ -62,5 +63,6 @@ const canonicalUrl = new URL(
     </div>
 
     <PwaUpdatePrompt />
+    <Search />
   </body>
 </html>
