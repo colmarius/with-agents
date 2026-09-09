@@ -1,5 +1,23 @@
 [
   {
+    "id": 121,
+    "primarySection": "reliability",
+    "title": "AGI, benchmark e altri spinosissimi problemi: ZiP 5",
+    "subtitle": "AGI labels, uneven capabilities, persistent memory, and evaluation through useful work",
+    "url": "https://www.youtube.com/watch?v=1-JEiQl7kzc",
+    "description": "Salvatore Sanfilippo and his ZiP co-host debate why an AGI label does not remove hallucinations or the need for verification. They contrast benchmark scores with measurable software improvements, discuss repeated-interaction and safety evaluations, and explore speculative trade-offs around persistent model state and consciousness. An Italian-language discussion with English (US) captions; proposals, forecasts, and project anecdotes are not controlled evaluation results.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-09-08",
+    "duration": "1h 28m",
+    "topics": [
+      "models-evaluation",
+      "review-verification",
+      "context-memory",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 119,
     "primarySection": "teams-ecosystem",
     "title": "Sam Altman on Astra, AGI, and the future of OpenAI",
