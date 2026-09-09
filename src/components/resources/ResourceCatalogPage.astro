@@ -5,6 +5,7 @@ import {
   resourceCatalogs,
 } from '../../data/resources/catalogs';
 import Layout from '../../layouts/Layout.astro';
+import { getSearchableResourceIds } from '../../search/build';
 import type { ResourceCatalog, ResourceSection } from '../../types/resources';
 import FeaturedPeople from './FeaturedPeople.astro';
 import ResourceCatalogList from './ResourceCatalog';
@@ -19,17 +20,12 @@ type Props = {
 const { catalog, section } = Astro.props;
 const resources = getCatalogResources(catalog, section?.key);
 const manifest = (await getCollection('summaries')).map(toManifestEntry);
-const searchableResourceIds = section
-  ? resources
-      .filter(
-        (resource) =>
-          !manifest.some((entry) => entry.resourceId === resource.id) &&
-          resourceCatalogs.find((owner) =>
-            owner.resourceIds.includes(resource.id),
-          )?.slug === catalog.slug,
-      )
-      .map((resource) => resource.id)
-  : [];
+const searchableResourceIds = getSearchableResourceIds(
+  catalog,
+  section?.key,
+  resourceCatalogs,
+  manifest,
+);
 const heading = section?.label ?? catalog.title;
 const description = section?.description ?? catalog.description;
 const canonicalPath = section

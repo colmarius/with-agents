@@ -2,10 +2,27 @@ import { mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 import { gzipSync } from 'node:zlib';
 import { parseHTML } from 'linkedom';
+import type { ResourceCatalog } from '../types/resources.ts';
 import { type SearchDocument, validatePayload } from './documents.ts';
 
 export const maximumSearchFileBytes = 4 * 1024 * 1024;
 const normalizePath = (path: string) => path.replace(/\/$/, '') || '/';
+
+export function getSearchableResourceIds(
+  catalog: ResourceCatalog,
+  sectionKey: string | undefined,
+  catalogs: readonly ResourceCatalog[],
+  summaries: readonly { resourceId: number }[],
+): number[] {
+  if (sectionKey === undefined) return [];
+  return catalog.resourceIds.filter(
+    (id) =>
+      catalog.sectionByResourceId[id] === sectionKey &&
+      !summaries.some((entry) => entry.resourceId === id) &&
+      catalogs.find((owner) => owner.resourceIds.includes(id))?.slug ===
+        catalog.slug,
+  );
+}
 
 export function extractDocument(
   html: string,

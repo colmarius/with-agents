@@ -3,11 +3,13 @@ import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import test from 'node:test';
+import type { ResourceCatalog } from '../types/resources.ts';
 import { isSearchablePost } from '../utils/posts.ts';
 import {
   assertSearchPrecache,
   buildSearch,
   extractDocument,
+  getSearchableResourceIds,
   maximumSearchFileBytes,
 } from './build.ts';
 import { type SearchDocument, validatePayload } from './documents.ts';
@@ -173,6 +175,116 @@ test('generic parent/title ranking, AND terms and final prefix work without quer
   assert.deepEqual(engine.search('   '), []);
   assert.deepEqual(engine.search('""'), []);
   assert.deepEqual(engine.search('sta of agentic coding'), []);
+});
+
+test('cross-listed summary-less metadata belongs only to the first catalog owning section', () => {
+  const first: ResourceCatalog = {
+    slug: 'z-first',
+    title: 'First catalog',
+    description: 'Introduction',
+    indexDescription: 'Index',
+    sections: [],
+    topicOptions: [],
+    resourceIds: [17, 23, 41],
+    sectionByResourceId: { 17: 'beta', 23: 'beta', 41: 'alpha' },
+  };
+  const second: ResourceCatalog = {
+    ...first,
+    slug: 'a-second',
+    title: 'Second catalog',
+    sectionByResourceId: { 17: 'alpha', 23: 'alpha', 41: 'beta' },
+  };
+  const catalogs = [first, second];
+  const summaries = [{ resourceId: 23 }];
+  const cards = [
+    {
+      id: 17,
+      title: 'Unsummarized title',
+      description: 'Unsummarized description',
+      subtitle: 'Unsummarized subtitle',
+    },
+    {
+      id: 23,
+      title: 'Summarized title',
+      description: 'Summarized description',
+      subtitle: 'Summarized subtitle',
+    },
+    {
+      id: 41,
+      title: 'Other section title',
+      description: 'Other section description',
+      subtitle: 'Other section subtitle',
+    },
+  ];
+  const cases: [ResourceCatalog, string | undefined, number[]][] = [
+    [first, undefined, []],
+    [first, 'alpha', [41]],
+    [first, 'beta', [17]],
+    [second, undefined, []],
+    [second, 'alpha', []],
+    [second, 'beta', []],
+  ];
+  const documents = cases.map(([catalog, section, expectedIds]) => {
+    // The same selector is called by ResourceCatalogPage, not a test copy of
+    // its ownership rules. Synthetic HTML isolates the corpus boundary.
+    const selectedIds = getSearchableResourceIds(
+      catalog,
+      section,
+      catalogs,
+      summaries,
+    );
+    assert.deepEqual(selectedIds, expectedIds, `${catalog.slug}/${section}`);
+    const markup = `<h1 data-search-title="Catalog" data-search-body>Introduction</h1>${cards
+      .map(
+        (card) =>
+          `<div ${selectedIds.includes(card.id) ? 'data-search-body' : ''}><h3>${card.title}</h3><p>${card.subtitle}</p><p>${card.description}</p><div data-search-ignore>Controls</div></div>`,
+      )
+      .join('')}`;
+    const result = extract(
+      '',
+      markup,
+      `/resources/${catalog.slug}${section ? `/${section}` : ''}`,
+    );
+    assert.ok(result);
+    return result;
+  });
+  for (const value of [
+    cards[0].title,
+    cards[0].description,
+    cards[0].subtitle,
+  ]) {
+    assert.deepEqual(
+      documents
+        .filter(({ body }) => body.includes(value))
+        .map(({ url }) => url),
+      ['/resources/z-first/beta'],
+    );
+  }
+  for (const value of [
+    cards[1].title,
+    cards[1].description,
+    cards[1].subtitle,
+  ]) {
+    assert.ok(documents.every(({ body }) => !body.includes(value)));
+  }
+  assert.ok(documents.every(({ body }) => !body.includes('Controls')));
+  // Registry order, not lexical slug order, defines ownership. Adding a
+  // summary removes metadata from both memberships, including the owner.
+  assert.deepEqual(
+    getSearchableResourceIds(second, 'alpha', [second, first], summaries),
+    [17],
+  );
+  assert.deepEqual(
+    getSearchableResourceIds(first, 'beta', [second, first], summaries),
+    [],
+  );
+  assert.deepEqual(
+    getSearchableResourceIds(first, 'beta', catalogs, [
+      ...summaries,
+      { resourceId: 17 },
+    ]),
+    [],
+  );
 });
 
 test('excerpt selects late body matches, uses plain text, and falls back to description', () => {
