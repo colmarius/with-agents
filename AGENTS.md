@@ -71,6 +71,8 @@ Important routes:
 
 ### Resource catalog maintenance
 
+- When adding a new video or resource, update the Amp thread title as soon as the source title is known, using `Add resource: <video or resource title>`.
+- After verifying the new resource in an orb browser, include a clickable portal link to its summary or resource route in the final response. Use the portal URL returned by `amp orb services ensure` with the verified route and the Markdown link title `amp-portal`; never substitute a localhost URL or imply the preview is deployed.
 - Keep one canonical resource record in a registered manifest under `src/data/resources/`; resource IDs are globally unique, and public summaries under `src/content/summaries/**` join that record through `resourceId`.
 - `src/data/resources/catalogs.ts` owns catalog metadata, display order, membership, and per-catalog section assignment. Cross-list a resource by reusing its canonical ID in each catalog's `resourceIds` and `sectionByResourceId`; never duplicate the resource record or its summaries.
 - For a public playlist collection, follow `src/content/youtube/AGENTS.md`. The public children's `collection`, `order`, and `videoId` values must exactly match reviewed curation, and source summaries plus the playlist overview must be reviewed before publication.
