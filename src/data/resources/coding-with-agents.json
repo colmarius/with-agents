@@ -5,7 +5,7 @@
     "title": "Building Codex with Tibo Sottiaux",
     "subtitle": "Codex's Rust CLI, open-source harness, and development workflow",
     "url": "https://www.youtube.com/watch?v=sLSTM9znQNs",
-    "description": "The Pragmatic Engineer interviews Tibo Sottiaux about building Codex: the Rust CLI, open-source and multi-provider choices, harness and model improvements, and OpenAI's use of Codex for code review, maintenance, and architecture. Catalog description and overview based on the publisher's description and chapter list, not transcript review.",
+    "description": "Tibo Sottiaux explains Codex's Rust agent–interface boundary, open-source trade-offs, model–harness co-design, and local versus cloud execution. He describes OpenAI's connected-agent workflow and argues for reviewing intent and invariants as verification and maintenance become more automated. A transcript-backed product-team interview; capability claims and forecasts are not independently validated results.",
     "type": "video",
     "source": "The Pragmatic Engineer",
     "date": "2026-09-09",
