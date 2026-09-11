@@ -6,7 +6,7 @@ date: "2026-09-09"
 
 The Pragmatic Engineer interviews Tibo Sottiaux about how Codex was built and how OpenAI uses it in software development. The publisher describes Sottiaux as one of Codex's creators and the head of OpenAI's Core Products & Platform organization.
 
-**Evidence limit:** This is an overview of the publisher's description and chapter list, not a transcript-backed summary. YouTube caption retrieval failed; the interview audio has not been reviewed. The links below identify chapter starts, not independently checked evidence for technical conclusions.
+**Evidence limit:** This is an overview of the publisher's description and chapter list, not a transcript-backed summary. English auto-generated YouTube captions have been captured, but this overview has not been reviewed against them or the interview audio. The links below identify chapter starts, not independently checked evidence for technical conclusions.
 
 ### What the episode covers
 
