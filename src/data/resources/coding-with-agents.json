@@ -1,5 +1,23 @@
 [
   {
+    "id": 122,
+    "primarySection": "agent-systems",
+    "title": "Building Codex with Tibo Sottiaux",
+    "subtitle": "Codex's Rust CLI, open-source harness, and development workflow",
+    "url": "https://www.youtube.com/watch?v=sLSTM9znQNs",
+    "description": "The Pragmatic Engineer interviews Tibo Sottiaux about building Codex: the Rust CLI, open-source and multi-provider choices, harness and model improvements, and OpenAI's use of Codex for code review, maintenance, and architecture. Catalog description based on the publisher's description and chapter list; captions could not be retrieved, so no transcript-backed summary is available.",
+    "type": "video",
+    "source": "The Pragmatic Engineer",
+    "date": "2026-09-09",
+    "duration": "1h 14m",
+    "topics": [
+      "tools-harnesses",
+      "open-source-ecosystem",
+      "review-verification",
+      "architecture-maintainability"
+    ]
+  },
+  {
     "id": 121,
     "primarySection": "reliability",
     "title": "AGI, benchmark e altri spinosissimi problemi: ZiP 5",
