@@ -25,6 +25,7 @@ Choose worker capability by uncertainty, not urgency. Bounded, known-done tasks 
 
 - The coordinating thread owns scope, durable work-item state, integration, and final acceptance.
 - Ground review in intent, acceptance criteria, actual changes, and verification evidence rather than a worker's summary.
+- When a correctness or security conclusion depends on a dependency's behavior, verify that behavior in the version in use through source inspection or a focused test; do not rely on documentation alone. If verification is unavailable, mark the assumption as unverified.
 - Never accept a delegated report by itself: inspect the resulting artifacts and changes directly.
 - Run combined verification after integration and reconcile findings into the work item.
 
