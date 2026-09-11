@@ -18,6 +18,19 @@
     ]
   },
   {
+    "id": 123,
+    "primarySection": "teams-ecosystem",
+    "title": "AI's mathematical results are not a bad thing",
+    "subtitle": "Salvatore Sanfilippo on AI-generated proofs, human expertise, and learning from machine results",
+    "url": "https://www.youtube.com/watch?v=wef0bxq_25g",
+    "description": "Salvatore Sanfilippo argues that AI-generated mathematical proofs can add knowledge and become material for human study, simplification, and new techniques. He connects reactions to these results with the loss of professional status felt when coding agents outperform familiar work. Opinion commentary based on Italian auto-generated captions, not an independent verification of the mathematical result or of Terence Tao's position.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-09-09",
+    "duration": "9m",
+    "topics": ["models-evaluation", "business-adoption"]
+  },
+  {
     "id": 121,
     "primarySection": "reliability",
     "title": "AGI, benchmark e altri spinosissimi problemi: ZiP 5",
