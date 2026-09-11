@@ -1,6 +1,6 @@
 ---
 authorId: antirez
-status: reviewed
+status: draft
 coveredVideoIds:
   - 8gg-oJr4dTY
   - 2VnxJafIfEI
@@ -82,6 +82,14 @@ coveredVideoIds:
   - yFa1BHzkzn8
   - sJ5E7P1i5b8
   - oNhkt0kKWA8
+  - UgRiVUce9sY
+  - ii6JRLJSBNw
+  - 44KvcNh4vm0
+  - ug74Hk0_PB4
+  - -l4tMg4JqfQ
+  - iF9CEScWzrc
+  - sW9R6wCeMOI
+  - I-5j_nzqnAo
 ---
 
 ## Source Identities
@@ -91,6 +99,9 @@ coveredVideoIds:
 
 ## Cross-Playlist Synthesis
 
+- Editorial: The eight additions incorporated on 2026-09-11 extend the existing evidence standard: prediction and compression analogies need explicit limits, output fluency must be separated from truth, and useful-work evaluation must not inherit certainty from an AGI headline. This revised synthesis remains draft ([summary](../videos/UgRiVUce9sY/summary.md), [summary](../videos/ug74Hk0_PB4/summary.md), [summary](../videos/I-5j_nzqnAo/summary.md)).
+- Editorial: Sampling, speculative acceptance, gated short-sequence lookup, and asymmetric memory placement operate at different parts of inference. Read together, the new reports reinforce the need to distinguish storage, computation, distribution fidelity, and measured task quality ([summary](../videos/iF9CEScWzrc/summary.md), [summary](../videos/-l4tMg4JqfQ/summary.md), [summary](../videos/sW9R6wCeMOI/summary.md), [summary](../videos/44KvcNh4vm0/summary.md)).
+- Editorial: Sanfilippo's opposition to text watermarks and preference for human-written project rationale are compatible distinctions between provenance, quality, and communication. His watermark-removal sketch is not a demonstrated method, while his documentation advice explicitly allows reviewed AI assistance for rapidly changing reference material ([summary](../videos/ii6JRLJSBNw/summary.md), [summary](../videos/-l4tMg4JqfQ/summary.md)).
 - Editorial: The [AI concepts overview](../playlists/antirez-ai-concepts/overview.md) examines representations, reasoning, evidence, architecture, model limits, and speculative extrapolation; the [Coding with AI overview](../playlists/antirez-coding-with-ai/overview.md) examines what those limits mean for agent selection, supervision, testing, and local systems. Read together, they connect conceptual caution to engineering practice without establishing that one caused the other ([summary](../videos/497EK7ZQ2FY/summary.md), [summary](../videos/PHsxD4X2V2A/summary.md), [summary](../videos/cNYwbDI1QOY/summary.md), [summary](../videos/N-iwRfCFbHE/summary.md), [summary](../videos/XZZ_ddBvELc/summary.md)).
 - Sanfilippo treats next-token prediction as an incomplete level of description: contextual representations and generated context can support planning-like behavior, while a coding agent's behavior depends on the model together with its runtime, tools, context handling, and harness ([summary](../videos/TlGrAretPQw/summary.md), [summary](../videos/MWUHmOqapi0/summary.md), [summary](../videos/Yy7pRTHbbf4/summary.md), [summary](../videos/N-iwRfCFbHE/summary.md)).
 - Sanfilippo describes representations and specifications as useful but lossy. Embeddings compress information, deeper states become less token-local, and natural-language specifications cannot preserve every edge case carried by mature code; implementation references therefore remain part of the working evidence ([summary](../videos/T5b69_8f5MI/summary.md), [summary](../videos/KNUw11_4Btc/summary.md), [summary](../videos/0buzDrn0aIY/summary.md)).

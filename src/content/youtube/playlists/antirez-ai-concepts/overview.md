@@ -62,15 +62,24 @@ coveredVideoIds:
   - hcpJK1_iuQw
   - rqXLtmCPcwk
   - cNYwbDI1QOY
+  - UgRiVUce9sY
+  - ii6JRLJSBNw
+  - 44KvcNh4vm0
+  - ug74Hk0_PB4
+  - -l4tMg4JqfQ
+  - iF9CEScWzrc
+  - sW9R6wCeMOI
+  - I-5j_nzqnAo
 ---
 
 ## Coverage
 
-- Manifest: 66 entries representing 65 unique video IDs.
-- Captured: 61 manifest occurrences representing 60 unique source-language transcript and summary pairs.
-- Summaries: 60 unique summaries, represented by 61 manifest occurrences because `8gg-oJr4dTY` occurs twice; the duplicate occurrence is not a second summary.
-- Incorporated: all 60 unique summaries and all 61 summarized manifest occurrences.
+- Manifest: 75 entries representing 74 unique video IDs; 74 available occurrences and one deleted entry.
+- Captured: 69 manifest occurrences representing 68 unique source-language transcript and summary pairs.
+- Summaries: 68 unique summaries, represented by 69 manifest occurrences because `8gg-oJr4dTY` occurs twice; the duplicate occurrence is not a second summary.
+- Incorporated: all 68 unique summaries and all 69 summarized manifest occurrences.
 - Unavailable-recorded video IDs without summaries: `9mHKjgFMsQA`, `LG3q-sqMG0g`, `aAWdlLfJmqw`, `RDGe3_87cSY`, and `HUh7zFiTi-I`.
+- Deleted entry without a transcript or summary: `FoQSc-2XvzA`.
 - Pending video IDs: none.
 
 ## Current Thesis
@@ -91,6 +100,11 @@ coveredVideoIds:
 
 ## Emerging Ideas
 
+- Editorial: The new conceptual discussions distinguish prediction incentives from outcome-based post-training and distinguish fluent output from truth, understanding, and intent. Sanfilippo's proposed explanations remain qualitative rather than mechanistically established ([summary](../../videos/UgRiVUce9sY/summary.md), [summary](../../videos/ug74Hk0_PB4/summary.md)).
+- Sanfilippo describes sampling as changing the next input as well as the current output, and separates candidate diversity, loop avoidance, answer synthesis, and training exploration. His optional mixed speculative-decoding mode trades adherence to a sampling distribution for reported speed ([summary](../../videos/iF9CEScWzrc/summary.md), [summary](../../videos/-l4tMg4JqfQ/summary.md)).
+- Sanfilippo describes a learned short-sequence lookup table with context-dependent gating as a way to enrich existing tokens without adding context positions. He distinguishes this from speculative decoding and argues that RAM-resident lookup can reduce expensive model computation ([summary](../../videos/sW9R6wCeMOI/summary.md)).
+- Sanfilippo's DGX Station report extends local inference to shared enterprise workloads using asymmetric RAM/VRAM placement, but the hardware recommendation and throughput figures remain his account. His watermarking discussion separately argues for local control and proposes minimal-edit removal; that proposal is not a demonstrated result or a legal assessment ([summary](../../videos/44KvcNh4vm0/summary.md), [summary](../../videos/ii6JRLJSBNw/summary.md)).
+- Sanfilippo interprets reported Astra symbolic modeling as evidence of reasoning capability moving into models and proposes evaluating progress through budgeted Redis optimization. The recording does not demonstrate AGI, establish Astra's architecture, or remove the harness from the reported setup ([summary](../../videos/I-5j_nzqnAo/summary.md)).
 - Editorial: Several paper discussions explore selective computation without treating every selection mechanism as equivalent: diffusion-style generation, sparse token attention, learned depth-wise residual mixing, block removal or duplication, and model-specific indexed attention each trade representational flexibility against compute, training, or quality risk ([summary](../../videos/witc6AVdm84/summary.md), [summary](../../videos/4YISBw_4vLU/summary.md), [summary](../../videos/S8iuzrkYpIk/summary.md), [summary](../../videos/BBAD-8vanro/summary.md), [summary](../../videos/IMGJL9ZghJg/summary.md)).
 - Sanfilippo's DwarfStar reports describe and propose an integrated local-inference product built around selected model and hardware targets, checked implementation patterns, persistent compressed context, SSD-backed expert or cache movement, correctness checks, and hardware-specific extensions ([summary](../../videos/0buzDrn0aIY/summary.md), [summary](../../videos/9AjeHE_VReY/summary.md), [summary](../../videos/uxAhuNPSBuE/summary.md), [summary](../../videos/Yajmt1CeiHg/summary.md), [summary](../../videos/CBoPGYCyArQ/summary.md), [summary](../../videos/x6Vq0IWoLUs/summary.md), [summary](../../videos/rqXLtmCPcwk/summary.md)).
 - Sanfilippo proposes useful work per joule as a potentially better conceptual objective than tokens per second or token price because model size, tokenizer, reasoning path, precision, and task completion all change what one token accomplishes ([summary](../../videos/ibcqRGQ7BKY/summary.md)).
