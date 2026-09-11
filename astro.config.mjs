@@ -90,6 +90,12 @@ export default defineConfig({
   output: 'static',
 
   vite: {
+    // Astro's virtual scripts are not HTML entrypoints for Vite's dep scanner.
+    // Avoid discovering this dependency late and forcing a second page load.
+    optimizeDeps: {
+      include: ['workbox-window'],
+    },
+
     server: {
       allowedHosts: ['.e2b.app', '.onamp.dev'],
       cors: {

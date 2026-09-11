@@ -35,6 +35,16 @@ const canonicalUrl = new URL(
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {
+      // Vite serves these as separate modules in dev. Fetch the search chain
+      // together instead of discovering each import after another round trip.
+      import.meta.env.DEV && (
+        <>
+          <link rel="modulepreload" href="/src/scripts/site-search.ts" />
+          <link rel="modulepreload" href="/src/search/documents.ts" />
+        </>
+      )
+    }
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex,follow" />}
     <link rel="canonical" href={canonicalUrl} />
