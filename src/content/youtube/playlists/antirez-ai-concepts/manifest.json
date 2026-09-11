@@ -528,6 +528,78 @@
       "publishedAt": "2026-08-09T15:02:11Z",
       "privacyStatus": "public",
       "available": true
+    },
+    {
+      "videoId": "UgRiVUce9sY",
+      "position": 66,
+      "title": "Predire dunque è comprimere? Similitudini e differenze profonde tra concetti tangenti",
+      "publishedAt": "2026-08-13T15:58:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "FoQSc-2XvzA",
+      "position": 67,
+      "title": "Deleted video",
+      "privacyStatus": "privacyStatusUnspecified",
+      "available": false,
+      "unavailableReason": "deleted"
+    },
+    {
+      "videoId": "ii6JRLJSBNw",
+      "position": 68,
+      "title": "Contro il watermarking",
+      "publishedAt": "2026-08-18T13:44:43Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "44KvcNh4vm0",
+      "position": 69,
+      "title": "DGX Station: l'hardware ideale per le aziende",
+      "publishedAt": "2026-08-19T18:08:25Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ug74Hk0_PB4",
+      "position": 70,
+      "title": "Linguaggio plausibile è un'espressione antiscientifica",
+      "publishedAt": "2026-08-20T20:05:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-l4tMg4JqfQ",
+      "position": 71,
+      "title": "Super vlog: quattro argomenti belli succosi con gli scorci e le mandorle di Campobello",
+      "publishedAt": "2026-08-24T08:00:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "iF9CEScWzrc",
+      "position": 72,
+      "title": "Capire il sampling negli LLM",
+      "publishedAt": "2026-08-28T08:00:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "sW9R6wCeMOI",
+      "position": 73,
+      "title": "Gli n-gram di Qwen 3.8 Flash Next",
+      "publishedAt": "2026-08-29T08:19:40Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "I-5j_nzqnAo",
+      "position": 74,
+      "title": "Sento puzza di AGI: Chollet, GPT Astra e Fable 5 1",
+      "publishedAt": "2026-09-04T10:13:52Z",
+      "privacyStatus": "public",
+      "available": true
     }
   ]
 }
