@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 990
 ---
 
+Source identity note: The prior public summary recorded that AI Engineer's official schedule listed this as Thais Castello Branco's “Ending AI Slop” session on the Data Quality track on June 30, 2026, distinct from her July 1 Design Engineering session, “Training Taste.” This preserves that earlier identification, not a new schedule verification.
+
 ## Transcript
 
 [00:00:13] Hello everyone. It's great to meet you all. I'm Thais. I'm the founder of Taste Labs. For those of you who don't know us, we came out of stealth a few weeks ago. And our whole mission is basically: how do we end AI slop? And we believe that to really solve this problem, we have to first decompose and understand subjective domains. Right? I think, as probably all of you know, AI has gotten quite good at things like coding and math, but it's still super behind on things like design, creative writing, personality, emotional intelligence. And to understand these domains, I think we have to take a little bit of a different approach than we do with objective ones. So our idea is: how do we become this data and infrastructure layer to really understand these problems and to become the solution for them across the stack? So from the foundation model layer all the way to how do we build solutions for agents as well. So we work primarily in two ways. We work with the top frontier labs on how to evaluate and benchmark their models, understand where they're breaking, understand how we can fix them, and determine also which

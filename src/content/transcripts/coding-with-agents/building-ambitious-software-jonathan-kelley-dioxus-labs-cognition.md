@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 1154
 ---
 
+Source note: The prior public summary recorded use of these English auto-generated captions without translation or audio verification, with names taken from the video's title and description where applicable. This preserves the prior editorial basis rather than claiming a new title, description, or audio check.
+
 ## Transcript
 
 [00:00:01] [music] Hello, my name is Jonathan Kelly and today we're going to talk about what it means to build ambitious software in the age of AI. 5 years ago, I made the first commit ever to a project called Diosis. I used the last summer I had as an undergraduate and instead of getting an internship at Google or doing research in AI like many of my friends at the time, I spent it exploring an idea I had for a crossplatform app framework written in the Rust programming language. In 2021, Rust was still pretty niche, but the ecosystem was growing, the tooling was improving, and the pitch of native performance, a solid type system, and simple cross compilation really sold me. It's extremely nerdy.
