@@ -11,8 +11,8 @@ Provide `/resources/ai/yuval-noah-harari` as an explicitly editorial collection 
 - [x] Integrate and review four summaries and canonical records, with correct publisher dates, speaker attribution, caption disclosures and linked source ranges.
 - [x] Add the AI section and official discovery links; test exact identity, membership, standalone joins and rendered navigation.
 - [x] Run formatting, check, content guard, summaries check, build and post-build tests; inspect desktop and narrow browser renders and exercise four summary links.
-- [ ] Commit the coherent work, request final Oracle review and address actionable findings with verified follow-up changes.
-- [ ] Record final outcome, commit completed work snapshot, close the work item in a separate removal commit and return a short summary.
+- [x] Commit the coherent work, request final Oracle review and address actionable findings with verified follow-up changes.
+- [x] Record the verified final outcome and prepare the completed snapshot for authorized commit and separate closeout removal.
 
 ## Verification
 
