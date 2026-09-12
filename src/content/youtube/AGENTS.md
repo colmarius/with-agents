@@ -184,7 +184,11 @@ description, or transcript. Do not infer either from uploader metadata.
 
 Use concise Key Ideas bullets with transcript anchors in `[HH:MM:SS]` or
 `[HH:MM:SS]-[HH:MM:SS]` form that match the sibling transcript chunks. The
-Source section must contain the canonical video URL and
+range identifies the first and last supporting chunks, including the text of
+the last chunk; it is not an exclusive playback interval. Extend a range only
+when evidence falls in a later chunk, and never invent a video-duration anchor.
+
+The Source section must contain the canonical video URL and
 `[transcript.md](./transcript.md)`.
 
 Required headings organize the material; they are not content quotas. Do not
