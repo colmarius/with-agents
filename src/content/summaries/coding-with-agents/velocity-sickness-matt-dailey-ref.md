@@ -6,8 +6,6 @@ date: "2026-08-09"
 
 Ref CEO and founder Matt Dailey calls the gap between higher agent output and unchanged team impact “velocity sickness.” He argues for moving the hardest review earlier, keeping consequential decisions with people, and using durable shared plans as agent state.
 
-This is a founder presenting both a workflow argument and the problem his product addresses. The talk offers useful operating guidance, but it does not measure a 10x productivity gain or compare shared documents with other coordination approaches.
-
 ### Key Points Covered
 
 - **More output can overwhelm the team around it**: Dailey connects coding-agent adoption to unmergeable pull-request volume, merge conflicts, and fragmented work. He also connects it to “agent bankruptcy,” where developers abandon sessions they can no longer reconstruct [01:00–03:35](https://www.youtube.com/watch?v=Kz4QJmNrVXU&t=60s).

@@ -4,55 +4,38 @@ resourceId: 5
 date: "2025-06-30"
 ---
 
-Beyang Liu, CTO and co-founder of Sourcegraph, discusses AI coding agents and the skills developers use to work with them.
+Beyang Liu argues that effective coding-agent use requires two skills: giving agents enough context to act independently, and building feedback loops that let them check their work. The Sourcegraph CTO and co-founder draws on Amp users and a live code change to explain why delegating implementation still requires understanding the code.
 
-### The Agent Discourse: Hype vs. Reality
+### From Suggested Code to Executed Work
 
-Liu describes the debate over the usefulness of AI coding agents. He contrasts skepticism from developers such as Jonathan Blow and Alex Albert with Jessie Frazelle's and Eric S. Raymond's view that agents are useful, especially for most programmers. Liu and the audience lean toward that view.
-
-### Evolution of AI Coding Tools: From Co-pilots to Agents
-
-Liu outlines three distinct eras driven by advancements in frontier model capabilities:
-
-* **GPT-3 Era (Co-pilots/Autocomplete):** Models were primarily text-completion tools. Applications followed a dominant "type some stuff, it types some stuff" interaction pattern.
-* **ChatGPT Era (RAGbots):** With GPT-3.5 and instruct-tuned chatbots, users could ask questions like a human. The ability to copy-paste code for pattern matching led to the rise of RAGbots (chatbot + retrieval engine).
-* **Agent Era:** Liu says the current era of tool-using, agentic LLMs requires a new application architecture. This means moving beyond chat-based LLMs and designing agents from the ground up.
+Liu distinguishes autocomplete, chatbots that retrieve code to inform answers, and agents that use tools to act on a repository. He argues that stronger tool use changes the interface developers need: instead of repeatedly copying context and applying suggested edits, they can delegate work and inspect the result [04:15–08:11](https://www.youtube.com/watch?v=F_RyElT_gJk&t=255s).
 
 ### Controversial Design Decisions in the Age of Agents
 
-Liu shares "spicy takes" on design decisions for the agent era, often contrasting them with chatbot-era practices:
+Liu presents these as design choices behind Amp, not universal requirements:
 
-* **Autonomous Edits:** Agents should make edits directly without constant prompts for approval. If an agent is wrong, asking for approval still wastes time. Humans should steer and guide, rather than micromanage.
-* **Minimal UI:** Liu questions the need for "thick clients" or VS Code forks. If an agent's contract is "ask it to do stuff, and it does stuff," extensive UI for context management and applying changes matters less.
-* **Model Coupling:** Swapping models in and out, easy in the chatbot era, is much harder with agents due to the deeper coupling between the LLM and the agentic chains. Many LLMs aren't even proficient at basic tool use yet.
-* **Beyond Fixed Pricing:** Agents consume more tokens, making them seem expensive. However, their value lies in the human time they save. Fixed pricing can incentivize using "dumber" models, ultimately wasting user time.
-* **Unix Philosophy:** The power of simple, composable tools, especially command-line interfaces, will likely be more potent than vertically integrated solutions.
-* **Building for the New Era:** Sourcegraph built Amp from scratch for agentic workflows without previous assumptions. Liu compares the internet's move from portal sites to a single search bar with the goal of a simple text box for agentic UIs.
+* **Let agents edit, then review meaningful changes:** Liu wants humans to steer the work rather than approve every mechanical edit. He also questions how much interface is needed for manually supplying context and applying suggestions once agents can do those things themselves [07:09–08:11](https://www.youtube.com/watch?v=F_RyElT_gJk&t=429s).
+* **Evaluate models with their tools:** An agent relies on the model to choose and sequence tool calls, so replacing the model can change the whole workflow. Liu says model swaps are less straightforward than in a retrieval chatbot [08:11–09:14](https://www.youtube.com/watch?v=F_RyElT_gJk&t=491s).
+* **Compare cost with human time saved:** Liu argues that flat-rate pricing can reward vendors for using cheaper, less capable models even when those models waste users' time [09:14–10:17](https://www.youtube.com/watch?v=F_RyElT_gJk&t=554s).
+* **Keep tools composable:** He favors command-line interfaces that users can script and combine with other tools. Amp's early VS Code and CLI clients reflect that preference for a small interface [09:14–12:22](https://www.youtube.com/watch?v=F_RyElT_gJk&t=554s).
 
 ### Amp: A Coding Agent in Practice
 
-Liu introduces Amp, Sourcegraph's coding agent, with two bare-bones clients: a VS Code extension for viewing diffs and a CLI for invocation and scripting. He demonstrates Amp finding and implementing a request to customize a connector icon. It uses several tools, including a search sub-agent and a structured to-do list, then makes edits, checks diagnostics, and writes tests.
+Liu asks Amp to find a Linear issue and customize the Linear connector's icon. It retrieves the issue, searches the codebase, makes edits, and checks diagnostics. The first result updates the admin page but misses settings [13:26–20:38](https://www.youtube.com/watch?v=F_RyElT_gJk&t=806s).
+
+The missing icon exposes an access boundary: the endpoint identifying Linear lives in configuration that can also contain secrets. After Liu asks it to investigate, the agent reuses an existing mechanism to send only the permitted field to the settings page. Liu inspects the diff and judges that it preserved the boundary [19:33–20:38](https://www.youtube.com/watch?v=F_RyElT_gJk&t=1173s), [25:48–27:42](https://www.youtube.com/watch?v=F_RyElT_gJk&t=1548s).
 
 ### Power User Patterns and Best Practices
 
-Insights from Amp's power users reveal emerging best practices:
+Liu reports these patterns among Amp's active users:
 
-* **Longer, Detailed Prompts:** Power users write elaborate prompts because LLMs are highly programmable and follow detailed instructions to achieve better results.
-* **Directing Context & Feedback:** Intentionally guiding the agent to relevant context and feedback mechanisms, even for specific build or test commands, helps it complete tasks in out-of-distribution codebases.
-* **Front-End Feedback Loops:** Constructing fast feedback loops, often using tools like Playwright and Storybook, allows agents to quickly iterate on UI changes.
-* **Understanding Code:** Liu says power users employ agents to **better understand** code rather than avoid it. He describes them as an onboarding tool that can speed up reviews by providing summaries and identifying entry points.
-* **Sub-Agents for Complexity:** Liu says sub-agents help with longer, more complex tasks by preserving the main agent's context window and preventing degradation in LLM quality.
-
-### Common Anti-Patterns to Avoid
-
-Liu identifies common mistakes users make with coding agents:
-
-* **Micromanaging:** Treating agents like chatbots, requiring steering at every interaction or reviewing every edit.
-* **Underprompting:** Not providing enough detail. While simple prompts work for well-represented tasks (e.g., Flappy Bird), complex changes to large codebases require the same level of detail as explaining to a human colleague.
-* **TL;DR-ing Code:** Liu warns against using agents to avoid understanding code. He says they should support faster, thorough reviews because the human remains responsible for shipped code.
+* **Supply the context a colleague would need:** Detailed prompts help with unfamiliar project conventions. Naming the right build or test command can let an otherwise stuck agent check and correct its own work [22:46–25:48](https://www.youtube.com/watch?v=F_RyElT_gJk&t=1366s).
+* **Make visual feedback fast:** Playwright lets the agent open a browser and capture the result. Storybook isolates a UI component so it can inspect a change without loading the whole application, then edit and check again [24:47–26:50](https://www.youtube.com/watch?v=F_RyElT_gJk&t=1487s).
+* **Use explanations to start a review:** Liu asks for a high-level diff summary and a useful entry point, then reads the changes. The agent lowers the effort of getting oriented rather than replacing comprehension [27:42–29:30](https://www.youtube.com/watch?v=F_RyElT_gJk&t=1662s).
+* **Isolate bounded work in subagents:** A separate agent can consume the context needed for a search or small feature without putting all that intermediate detail into the main conversation. Liu uses this to limit the degradation he observes in long sessions [29:30–30:30](https://www.youtube.com/watch?v=F_RyElT_gJk&t=1770s).
 
 ### The Future of Coding with Agents
 
-Liu says top users run **multiple agents in parallel** on complex projects such as compilers. He describes working with coding agents as a **high-ceiling skill** that requires practice, like learning an editor or programming language. Sourcegraph supports sharing workflows through Amp threads and offers an "Amp Owners Manual" for new users.
+Liu describes experienced users running multiple agents on compiler work with deliberately constructed prompts and feedback loops. He treats agent use as a skill learned through practice and shared workflows, while keeping the human responsible for shipped code [30:30–33:38](https://www.youtube.com/watch?v=F_RyElT_gJk&t=1830s).
 
 Full video: <https://www.youtube.com/watch?v=F_RyElT_gJk>

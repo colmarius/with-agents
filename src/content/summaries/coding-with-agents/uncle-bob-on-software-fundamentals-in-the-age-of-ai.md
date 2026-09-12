@@ -7,20 +7,19 @@ order: 1
 videoId: "zcLPGC-tvgk"
 ---
 
-[Uncle Bob Martin](https://www.cleancoder.com/), author of *Clean Code* and *Clean Architecture*, describes a coding-agent workflow built around deterministic checks. He argues that clean boundaries and software fundamentals still matter for agents.
-
-This is a practitioner conversation, not a controlled evaluation. Uncle Bob's reported productivity factors, quality claims, complexity thresholds, and conclusions about TDD and spec-driven development come from his own recent experiments. The recording provides no task set, code artifacts, baseline protocol, or independent measurements with which to generalize them.
+[Uncle Bob Martin](https://www.cleancoder.com/), author of *Clean Code* and *Clean Architecture*, describes using automated checks to keep agents from accumulating code they can no longer change safely. His experimental workflow gives separate agents implementation, cleanup, test-strengthening, and system-testing roles. He still inspects architecture and redesigns boundaries when needed.
 
 ### Deterministic Checks Over Prompted Guidelines
 
-- **Messy code eventually makes agents thrash**: Uncle Bob says his early agent work accumulated changes until the model started breaking one thing while fixing another. He says it sometimes could not continue. His response was to revisit CRAP analysis—which combines test coverage and cyclomatic complexity—and mutation testing. These provided repeatable feedback rather than faster output alone [04:09–12:04](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=249s).
+- **Messy code can trap agents in repeated repairs**: Uncle Bob says his early agent work accumulated changes until fixing one thing broke another. He responded with CRAP analysis, which combines test coverage with a measure of branching complexity to identify risky functions [04:09–12:04](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=249s).
+- **Test whether the tests notice wrong behavior**: Mutation testing deliberately changes code, such as reversing a comparison, then runs the tests. If they still pass, the change exposes a possible gap in what they check. Uncle Bob has agents use those results to strengthen the suite [06:16–08:56](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=376s).
 - **Keep prompts short and enforce important properties with tools**: Uncle Bob found that long clean-code and TDD instructions softened as sessions grew. He connects that behavior to “lost in the middle” and recommends minimizing initial instructions while moving enforceable expectations into deterministic checks [12:04–15:38](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=724s).
 - **Quality gates have a throughput cost**: Tool-driven loops make agents add tests, reduce complexity, and keep iterating until checks pass. Uncle Bob reports that agents remain roughly two to four times faster than a person in his work. But he has not found the point at which additional checks cost more than they return [15:38–17:33](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=938s).
 
 ### A Specialized Agent Gauntlet
 
 - **Separate roles to narrow context and reset trajectory**: Uncle Bob names parallelism and smaller context windows as benefits of specialized agents. A short-lived agent can focus on one outcome, then hand off to a fresh context instead of carrying implementation, cleanup, and review history together [17:33–20:29](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=1053s), [22:27–24:34](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=1347s).
-- **Turn a human story into several kinds of evidence**: His experimental pipeline uses a specifier to produce Gherkin acceptance criteria and a human-oriented QA procedure. A coder implements the story and tests, while a cleaner reduces CRAP scores and reviews code. A hardener runs mutation testing, and a QA agent automates the system-level procedure [20:29–22:27](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=1229s).
+- **Turn a human story into several kinds of evidence**: His experimental pipeline uses a specifier to produce given–when–then acceptance criteria in Gherkin and a procedure for checking the system through its UI. A coder implements the story and tests, while a cleaner reduces CRAP scores and reviews code. A hardener runs mutation testing, and a QA agent automates the UI procedure [20:29–22:27](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=1229s).
 - **Treat the claimed speedup as a first-person report**: Uncle Bob says one agent takes about five minutes to produce questionable results. He says this pipeline takes about an hour, versus roughly half a day for a person. That claimed four- or five-fold advantage is not supported by shared tasks, outputs, or measurements in the recording [22:27–23:31](https://www.youtube.com/watch?v=zcLPGC-tvgk&t=1347s).
 
 ### Architecture and Process Still Need Judgment

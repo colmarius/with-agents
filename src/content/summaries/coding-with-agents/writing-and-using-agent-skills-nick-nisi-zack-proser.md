@@ -6,8 +6,6 @@ date: "2026-05-06"
 
 WorkOS developer experience engineers Nick Nisi and Zack Proser lead a hands-on workshop on agent skills. A skill is a small folder—sometimes only a `SKILL.md` file—that packages instructions for a specific kind of task and may also include references or scripts. Its description helps the agent decide when to load those instructions, keeping task-specific context out of unrelated runs.
 
-The workshop demonstrates skill authoring and evaluation, not a settled system for team governance. The speakers discuss ways to distribute skills but leave ownership, review, forks, conflicts, and model-change maintenance open. Their evaluation scores are directional, and they explicitly describe the percentages as approximate.
-
 ### Key Points Covered
 
 - **Describe when the skill applies**: Write the description for the agent, naming the task and conditions that should trigger the skill. In the body, prefer a few clear constraints over an exhaustive procedure [07:46–09:24](https://www.youtube.com/watch?v=pFsfax19yOM&t=466s), [14:12–16:04](https://www.youtube.com/watch?v=pFsfax19yOM&t=852s).

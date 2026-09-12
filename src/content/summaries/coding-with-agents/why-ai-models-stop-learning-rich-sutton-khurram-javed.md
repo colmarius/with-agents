@@ -4,9 +4,7 @@ resourceId: 49
 date: "2026-08-18"
 ---
 
-Rich Sutton and Khurram Javed argue for agents whose weights keep adapting after deployment. They discuss fixed weights, finite training data, catastrophic forgetting, and learning abstractions from experience.
-
-This is Oak Lab’s research thesis, not a demonstrated frontier-scale system. The episode names concrete algorithmic ideas and efficiency targets, but does not present comparative results showing that they can train a modern frontier model or outperform the current LLM stack.
+Rich Sutton and Khurram Javed want agents to keep learning from their own experience after deployment. They distinguish adding information to a conversation from changing model weights, the learned parameters that shape how the model processes information. Their Oak Lab research proposal aims to let those parameters adapt without destroying earlier knowledge; the episode does not demonstrate this at frontier-model scale.
 
 ### Key Points Covered
 
