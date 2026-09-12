@@ -7,14 +7,11 @@ order: 9
 videoId: "ExtyhPqE_Hs"
 ---
 
-This walkthrough demonstrates Cloud Storage Object Versioning with legacy `gsutil` commands. [00:01–01:05](https://www.youtube.com/watch?v=ExtyhPqE_Hs&t=1s)
+Cloud Storage Object Versioning keeps older versions of stored objects when the live version is overwritten or deleted. The walkthrough uses a bucket of tiny-house photos to show how to retain and access those earlier versions. [00:01–01:05](https://www.youtube.com/watch?v=ExtyhPqE_Hs&t=1s)
 
 ### Key Points Covered
 
-- With Object Versioning enabled, overwriting or deleting a live object creates or retains a noncurrent generation. [00:01–01:05](https://www.youtube.com/watch?v=ExtyhPqE_Hs&t=1s)
-- The example enables, disables, and checks versioning on a bucket. [00:01–01:05](https://www.youtube.com/watch?v=ExtyhPqE_Hs&t=1s)
-- Older versions are identified and addressed by generation number, while the current version remains the default visible object. [01:05](https://www.youtube.com/watch?v=ExtyhPqE_Hs&t=65s)
-
-Treat the 2020 `gsutil` procedure as historical and use current live Google Cloud documentation. Object Versioning is distinct from soft delete; do not conflate their retention, restoration, lifecycle, or cost behavior.
+- The 2020 demonstration uses `gsutil versioning` to enable, disable, and check versioning on a bucket. [00:01–01:05](https://www.youtube.com/watch?v=ExtyhPqE_Hs&t=1s)
+- Only the newest photo is visible by default. Listing all versions reveals their generation numbers; appending one of those numbers to the object address selects that specific older version. [01:05](https://www.youtube.com/watch?v=ExtyhPqE_Hs&t=65s)
 
 Full video: <https://www.youtube.com/watch?v=ExtyhPqE_Hs>

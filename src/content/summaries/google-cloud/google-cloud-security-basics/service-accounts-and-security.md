@@ -11,11 +11,10 @@ This episode presents service accounts as dedicated identities for applications 
 
 ### Key Points Covered
 
-- **User credentials are a poor automation boundary**: Persistent scripts create sharing and storage risks when they reuse a person's credentials [01:02–02:04](https://www.youtube.com/watch?v=wEGZXSd4uS4&t=62s).
-- **Give workloads dedicated, narrow identities**: Service accounts can call APIs without exposing user credentials, but their permissions and who may use or manage them require regular review [02:04–03:08](https://www.youtube.com/watch?v=wEGZXSd4uS4&t=124s).
-- **Avoid turning identity into secret distribution**: The episode recommends attaching service accounts to Google Cloud resources and warns that downloaded keys create a secrets-management problem [03:08–04:12](https://www.youtube.com/watch?v=wEGZXSd4uS4&t=188s).
+- **Do not make a script depend on a person's credentials**: If automation stores those credentials, anyone who obtains them may use the person's access for something else. Sharing the script can also mean sharing the credentials it needs [01:02–02:04](https://www.youtube.com/watch?v=wEGZXSd4uS4&t=62s).
+- **Give applications dedicated identities with limited permissions**: A service account can call APIs without exposing a user's credentials. Administrators control both what it can access and who can use it; the episode recommends reviewing that access regularly [02:04–04:12](https://www.youtube.com/watch?v=wEGZXSd4uS4&t=124s).
+- **Attaching an identity avoids distributing a key file**: For Google Cloud workloads, the episode recommends attaching a service account to the resource so the platform handles authentication. Downloading a key instead creates a file whose storage and access must be protected, much like a password [03:08–05:15](https://www.youtube.com/watch?v=wEGZXSd4uS4&t=188s).
 - **If keys are unavoidable, handle them deliberately**: Its 2021 advice covers secure storage, avoiding source-control commits, and rotation; this is historical guidance, not a current endorsement of long-lived keys [04:12–05:15](https://www.youtube.com/watch?v=wEGZXSd4uS4&t=252s).
 - **Track the identity lifecycle**: Descriptive naming, usage logging, and disabling unused service accounts help reduce forgotten access [05:15–07:22](https://www.youtube.com/watch?v=wEGZXSd4uS4&t=315s).
-- **Treat this as dated guidance**: This is a 2021 explanation; verify current Google Cloud service-account and IAM behavior, keyless authentication guidance, defaults, products, UI, pricing, and incident-response documentation.
 
 Full video: <https://www.youtube.com/watch?v=wEGZXSd4uS4>

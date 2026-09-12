@@ -7,16 +7,13 @@ order: 10
 videoId: "VyLmmamuOVo"
 ---
 
-This episode explains how seek changes acknowledgement state in bulk for recovery, repeatable testing, or backlog removal.
+A new subscriber version can mistakenly acknowledge messages before processing them. Pub/Sub's seek operation offers a recovery path: change many messages back to unacknowledged so they can be delivered again. The episode compares restoring a saved snapshot with selecting a timestamp ([00:00–01:03](https://www.youtube.com/watch?v=VyLmmamuOVo&t=0s)).
 
 ### Key points
 
-- **Seek can make acknowledged messages eligible again**: The recovery example uses either a snapshot or timestamp after faulty subscriber code acknowledged work too early ([00:00–01:03](https://www.youtube.com/watch?v=VyLmmamuOVo&t=0s)).
-- **Snapshots capture subscription acknowledgement state**: They can be used by subscriptions on the same topic, but the episode ties snapshot lifetime to retained-message age ([01:03–02:07](https://www.youtube.com/watch?v=VyLmmamuOVo&t=63s)).
-- **Time-based replay has prerequisites and tradeoffs**: It requires retaining acknowledged messages and is described as potentially more costly and sensitive to clock skew ([01:03–02:07](https://www.youtube.com/watch?v=VyLmmamuOVo&t=63s)).
-- **Snapshots can support deployment recovery and repeated tests**: Reusing input data makes the test repeatable, but replay itself does not make downstream side effects idempotent ([02:07–03:10](https://www.youtube.com/watch?v=VyLmmamuOVo&t=127s)).
+- **Snapshots preserve a point to replay from**: A snapshot retains messages unacknowledged at creation plus later publications. It can be used by subscriptions on the same topic. In the episode's example, a seven-day retention window with a one-day-old backlog leaves the snapshot six days before expiry ([01:03–02:07](https://www.youtube.com/watch?v=VyLmmamuOVo&t=63s)).
+- **Time-based replay divides messages around a timestamp**: Earlier messages become acknowledged; later ones become unacknowledged. This requires retaining acknowledged messages. The episode notes added cost and possible inaccuracies from differences between server clocks ([01:03–03:10](https://www.youtube.com/watch?v=VyLmmamuOVo&t=63s)).
+- **Take a snapshot before changing subscriber code**: The episode recommends including snapshots in deployment so a buggy release has a recovery point. The same snapshot can also supply the same input messages across repeated tests ([02:07–03:10](https://www.youtube.com/watch?v=VyLmmamuOVo&t=127s)).
 - **Seeking into the future discards backlog by marking it acknowledged**: That is a destructive purge operation, not a harmless reset ([03:10](https://www.youtube.com/watch?v=VyLmmamuOVo&t=190s)).
-
-**Current-use note:** Verify current seek, snapshot, consistency, retention, and pricing semantics. Rehearse recovery before an incident, make repeated processing safe, and require explicit impact review before purging backlog.
 
 Full video: <https://www.youtube.com/watch?v=VyLmmamuOVo>

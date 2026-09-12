@@ -7,16 +7,14 @@ order: 1
 videoId: "Oo5PXA4idI8"
 ---
 
-Chloe, whose affiliation is not established by the source, presents six publishing practices centered on explicit throughput, latency, ordering, and retry tradeoffs.
+Publishing settings determine how long messages wait before being sent and how much work a Pub/Sub client can handle. Chloe explains the tradeoff between batching for throughput and sending ordered messages one at a time.
 
 ### Key points
 
-- **Batching exchanges latency for throughput and request efficiency**: Message size, publisher count, flow control, cost, and latency objectives should determine settings rather than one universal batch size ([00:00–01:03](https://www.youtube.com/watch?v=Oo5PXA4idI8&t=0s)).
-- **Ordering keys narrow the safe publishing pattern**: The episode recommends one-message batches and waiting for server acknowledgement before publishing the next message for that ordered stream ([01:03–02:06](https://www.youtube.com/watch?v=Oo5PXA4idI8&t=63s)).
+- **Batching sends more messages together, but makes them wait**: Larger batches can increase throughput while adding delay before publication. Chloe recommends choosing settings from message size, publisher throughput, cost, and acceptable latency ([00:00–01:03](https://www.youtube.com/watch?v=Oo5PXA4idI8&t=0s)).
+- **Ordering changes the batching recommendation**: An ordering key identifies messages whose order must be preserved. Retrying a failed batch can disrupt publication order, so the episode recommends one-message batches and waiting for the server to receive one message before publishing the next ([00:00–02:06](https://www.youtube.com/watch?v=Oo5PXA4idI8&t=0s)).
 - **Its ordered-delivery recommendation is regional**: It says ordering is guaranteed only within a region and recommends a regional endpoint so messages using ordering keys enter the same region ([01:03–02:06](https://www.youtube.com/watch?v=Oo5PXA4idI8&t=63s)).
 - **Publishers have client-side resource limits**: Bandwidth, network latency, request rate, CPU, memory, and threads constrain throughput, while flow control can bound pressure ([02:06–03:10](https://www.youtube.com/watch?v=Oo5PXA4idI8&t=126s)).
-- **Retry settings need measurement**: The episode identifies initial timeout, retry multiplier, and total timeout as tunable rather than universally safe defaults ([02:06–03:10](https://www.youtube.com/watch?v=Oo5PXA4idI8&t=126s)).
-
-**Current-use note:** Treat the regional ordering, client behavior, and retry specifics as 2023 guidance. Verify current documentation and benchmark the actual library and workload; retries can still create duplicate application effects that require idempotent handling.
+- **Timed-out requests are retried by the client library**: A publish timeout produces a deadline-exceeded error. Chloe points to the initial timeout, retry multiplier, and total timeout as settings that can be adjusted rather than always accepting the defaults ([02:06–03:53](https://www.youtube.com/watch?v=Oo5PXA4idI8&t=126s)).
 
 Full video: <https://www.youtube.com/watch?v=Oo5PXA4idI8>

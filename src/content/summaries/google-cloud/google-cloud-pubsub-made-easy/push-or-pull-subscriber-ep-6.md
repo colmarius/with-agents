@@ -7,15 +7,13 @@ order: 6
 videoId: "KObJkda4ZfY"
 ---
 
-Priyanka, whose affiliation is not established by the source, compares push and pull as workload-dependent delivery choices.
+With pull delivery, the subscriber asks Pub/Sub for messages. With push delivery, Pub/Sub sends requests to the subscriber's HTTPS endpoint. Priyanka compares how that choice changes access requirements, work distribution, and control over delivery rate.
 
 ### Key points
 
-- **The endpoint identities differ**: A pull endpoint is an authorized client calling the Pub/Sub API; a push endpoint is the receiving application's DNS-reachable HTTPS service ([00:00–01:04](https://www.youtube.com/watch?v=KObJkda4ZfY&t=0s)).
-- **Shared pull workers and push fan-in are different topologies**: Pull workers divide work from one shared subscription, while multiple subscriptions can target the same push webhook or load balancer ([01:04–02:07](https://www.youtube.com/watch?v=KObJkda4ZfY&t=64s)).
-- **Backpressure ownership changes**: Pull clients control intake and acknowledgement deadlines; push delivery backs off when the endpoint fails or responds slowly ([02:07–03:09](https://www.youtube.com/watch?v=KObJkda4ZfY&t=127s)).
+- **The connection requirements differ**: Pull clients need credentials to call the Pub/Sub API. Push needs a DNS-reachable HTTPS endpoint with a certificate that is not self-signed, under the episode's 2020 requirements ([00:00–02:07](https://www.youtube.com/watch?v=KObJkda4ZfY&t=0s)).
+- **Workers can share incoming work in different ways**: Multiple pull workers on one subscription each receive a subset of its messages. A push endpoint can instead be a load balancer that distributes requests, or one webhook receiving messages from several subscriptions ([01:04–03:09](https://www.youtube.com/watch?v=KObJkda4ZfY&t=64s)).
+- **Control over delivery rate moves between client and service**: Pull clients choose how quickly to retrieve messages and can extend acknowledgement deadlines. With push, Pub/Sub slows delivery when the endpoint returns errors or takes too long to respond ([02:07–03:09](https://www.youtube.com/watch?v=KObJkda4ZfY&t=127s)).
 - **The episode associates pull with high-volume or private services and push with webhooks and scale-to-zero services**: Those are scenario-based recommendations, not universal performance guarantees ([03:09–04:12](https://www.youtube.com/watch?v=KObJkda4ZfY&t=189s)).
-
-**Current-use note:** This comparison predates newer delivery options and current serverless behavior. Recheck endpoint, authentication, certificate, throughput, and retry guidance, then test overload and failure behavior for the actual workload.
 
 Full video: <https://www.youtube.com/watch?v=KObJkda4ZfY>
