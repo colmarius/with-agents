@@ -50,6 +50,19 @@
     ]
   },
   {
+    "id": 124,
+    "primarySection": "teams-ecosystem",
+    "title": "AI's Hidden Debt Problem Explained",
+    "subtitle": "Hyperscaler spending commitments, future leases, and financial guarantees",
+    "url": "https://www.youtube.com/watch?v=v824SHV6COE",
+    "description": "The Plain Bagel separates AI hyperscalers' purchase commitments, funding obligations, uncommenced leases, and financial guarantees. The video explains why headline totals are not equivalent to ordinary debt while arguing that fixed infrastructure payments reduce flexibility if AI demand disappoints. Financial commentary from company filings, summarized from captions; figures and accounting interpretations are the presenter's analysis, not independently audited findings or investment advice.",
+    "type": "video",
+    "source": "The Plain Bagel",
+    "date": "2026-09-11",
+    "duration": "22m",
+    "topics": ["business-adoption"]
+  },
+  {
     "id": 122,
     "primarySection": "agent-systems",
     "title": "Building Codex with Tibo Sottiaux",
