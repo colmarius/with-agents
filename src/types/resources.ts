@@ -50,7 +50,13 @@ export type ResourceSection = {
   label: string;
   description: string;
   routeSlug: string;
-  discoveryLinks?: readonly { label: string; href: string }[];
+  featuredSelection?: {
+    anchor: string;
+    label: string;
+    description: string;
+    resourceIds: readonly number[];
+    discoveryLinks: readonly { label: string; href: string }[];
+  };
 };
 
 export type ResourceCatalog = {

@@ -82,12 +82,55 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
       ?.getAttribute('href'),
     '/resources/ai/concepts-capabilities#resource-121',
   );
-  const { document: harariSection } = parseHTML(
+  const { document: implications } = parseHTML(
+    readFileSync('dist/resources/ai/implications-risks/index.html', 'utf8'),
+  );
+  const harariSelection = implications.querySelector('#yuval-noah-harari');
+  assert.ok(harariSelection);
+  assert.ok(harariSelection.hasAttribute('data-search-ignore'));
+  assert.match(
+    harariSelection.textContent ?? '',
+    /not a single official playlist/,
+  );
+  assert.equal(
+    implications.querySelectorAll('div.scroll-mt-24[id^="resource-"]').length,
+    9,
+  );
+  const { document: allAI } = parseHTML(
+    readFileSync('dist/resources/ai/index.html', 'utf8'),
+  );
+  assert.equal(
+    allAI.querySelectorAll('div.scroll-mt-24[id^="resource-"]').length,
+    19,
+  );
+  for (const document of [implications, allAI]) {
+    assert.deepEqual(
+      [...document.querySelectorAll('nav[aria-label="AI collections"] a')].map(
+        (a) => a.textContent?.trim(),
+      ),
+      [
+        'All',
+        'Concepts & capabilities',
+        'Economics & industry',
+        'Implications & risks',
+      ],
+    );
+  }
+  const { document: oldHarariRoute } = parseHTML(
     readFileSync('dist/resources/ai/yuval-noah-harari/index.html', 'utf8'),
   );
+  const destination = '/resources/ai/implications-risks#yuval-noah-harari';
+  assert.equal(
+    oldHarariRoute
+      .querySelector('meta[http-equiv="refresh"]')
+      ?.getAttribute('content'),
+    `0; url=${destination}`,
+  );
+  assert.ok(oldHarariRoute.querySelector(`a[href="${destination}"]`));
+  assert.ok(!byUrl.has('/resources/ai/yuval-noah-harari'));
   assert.deepEqual(
     [
-      ...harariSection.querySelectorAll(
+      ...harariSelection.querySelectorAll(
         'nav[aria-label="Further discovery — official sources"] a',
       ),
     ].map((link) => link.getAttribute('href')),
@@ -97,22 +140,60 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
       'https://www.youtube.com/playlist?list=PLfc2WtGuVPdkfwPMfvU0PNkOYPzDDCBxt',
     ],
   );
-  for (const [id, slug] of [
-    [125, 'the-next-50-years-humanity-ai-power'],
-    [126, 'ai-has-hacked-the-code-of-human-civilization'],
-    [127, 'ezra-klein-trump-core-delusion'],
-    [128, 'building-trust-age-of-disinformation'],
+  assert.equal(
+    harariSelection.querySelectorAll('a[href^="/summaries/"]').length,
+    4,
+  );
+  for (const [id, slug, videoId, publisher] of [
+    [
+      125,
+      'the-next-50-years-humanity-ai-power',
+      '_V_ed5fuexA',
+      'Yuval Noah Harari',
+    ],
+    [
+      126,
+      'ai-has-hacked-the-code-of-human-civilization',
+      'hBtVGwuJzpk',
+      'Yuval Noah Harari',
+    ],
+    [
+      127,
+      'ezra-klein-trump-core-delusion',
+      '9NCxS__rtAo',
+      'The Ezra Klein Show',
+    ],
+    [
+      128,
+      'building-trust-age-of-disinformation',
+      't_KKNNeH8jU',
+      'Yuval Noah Harari',
+    ],
   ]) {
     const url = `/summaries/ai/yuval-noah-harari/${slug}`;
-    assert.ok(harariSection.querySelector(`a[href="${url}/"]`), url);
+    assert.ok(harariSelection.querySelector(`a[href="${url}/"]`), url);
+    assert.ok(byUrl.has(url));
+    assert.ok(engine.search('Harari').some((result) => result.url === url));
     const { document } = parseHTML(
       readFileSync(`dist${url}/index.html`, 'utf8'),
+    );
+    const original = [...document.querySelectorAll('a')].find((a) =>
+      a.textContent?.includes('Watch original video'),
+    );
+    assert.equal(
+      original?.getAttribute('href'),
+      `https://www.youtube.com/watch?v=${videoId}`,
+    );
+    assert.ok(
+      [...document.querySelectorAll('span')].some(
+        (span) => span.textContent === publisher,
+      ),
     );
     assert.equal(
       document
         .querySelector('nav[aria-label="Parent page"] a')
         ?.getAttribute('href'),
-      `/resources/ai/yuval-noah-harari#resource-${id}`,
+      `/resources/ai/implications-risks#resource-${id}`,
     );
   }
   const summarySources = globSync('src/content/summaries/**/*.md').map(

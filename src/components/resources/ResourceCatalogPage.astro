@@ -10,7 +10,11 @@ import type { ResourceCatalog, ResourceSection } from '../../types/resources';
 import FeaturedPeople from './FeaturedPeople.astro';
 import ResourceCatalogList from './ResourceCatalog';
 import ResourcesNav from './ResourcesNav.astro';
-import { toManifestEntry } from './summaryResolver';
+import {
+  getSummaryPath,
+  resolveSummaryEntries,
+  toManifestEntry,
+} from './summaryResolver';
 
 type Props = {
   catalog: ResourceCatalog;
@@ -36,6 +40,17 @@ const pageTitle = section
   : `With Agents – ${catalog.title} Resources`;
 const showFeaturedPeople =
   catalog.slug === 'coding-with-agents' && section === undefined;
+const selection = section?.featuredSelection;
+const selectedSummaries = selection?.resourceIds.map((resourceId) => {
+  const entries = manifest.filter((entry) => entry.resourceId === resourceId);
+  const ref = resolveSummaryEntries(entries);
+  if (ref?.kind !== 'single') {
+    throw new Error(
+      `Featured selection ${selection.anchor} requires a standalone summary for resource ${resourceId}`,
+    );
+  }
+  return { title: entries[0].title, href: getSummaryPath(ref.slug) };
+});
 ---
 
 <Layout
@@ -59,11 +74,24 @@ const showFeaturedPeople =
       {description}
     </p>
 
-    {section?.discoveryLinks && (
-      <nav aria-label="Further discovery — official sources" class="mb-10 -mt-6 text-sm">
+    {selection && (
+      <aside id={selection.anchor} aria-labelledby={`${selection.anchor}-title`} data-search-ignore class="mb-10 -mt-6 scroll-mt-24 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+        <p class="mb-2 text-xs font-medium uppercase tracking-wide text-gray-500">Editorial selection</p>
+        <h2 id={`${selection.anchor}-title`} class="text-lg font-medium text-gray-900">{selection.label}</h2>
+        <p class="mt-2 text-sm leading-relaxed text-gray-600">{selection.description}</p>
+        <nav aria-label={`${selection.label} summaries`} class="mt-4">
+          <ul class="grid gap-3 sm:grid-cols-2">
+            {selectedSummaries?.map((summary) => (
+              <li>
+                <a href={summary.href} class="block text-sm font-medium text-indigo-700 underline decoration-indigo-200 underline-offset-4 hover:text-indigo-500 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">{summary.title}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <nav aria-label="Further discovery — official sources" class="mt-5 border-t border-gray-100 pt-4 text-sm">
         <p class="mb-2 font-medium text-gray-700">Further discovery — official sources</p>
         <ul class="flex flex-wrap gap-x-5 gap-y-3">
-          {section.discoveryLinks.map((link) => (
+          {selection.discoveryLinks.map((link) => (
             <li>
               <a
                 href={link.href}
@@ -75,6 +103,7 @@ const showFeaturedPeople =
           ))}
         </ul>
       </nav>
+      </aside>
     )}
 
     {showFeaturedPeople && <FeaturedPeople manifest={manifest} />}

@@ -200,27 +200,28 @@ const aiSections = [
     description:
       'AI and work, learning, research, human agency, societal choices, and safety.',
     routeSlug: 'implications-risks',
-  },
-  {
-    key: 'yuval-noah-harari',
-    label: 'Yuval Noah Harari — talks & interviews',
-    description:
-      'An editorial selection of standalone talks and interviews on AI, trust, institutions, and human agency—not a single official playlist. These are Harari’s arguments and forecasts, with interviewer counterpoints, rather than independent findings. Some conversations also cover politics and history.',
-    routeSlug: 'yuval-noah-harari',
-    discoveryLinks: [
-      {
-        label: 'Official video index',
-        href: 'https://www.ynharari.com/category/video/',
-      },
-      {
-        label: 'Official YouTube channel',
-        href: 'https://www.youtube.com/@YuvalNoahHarari',
-      },
-      {
-        label: 'Yuval Addresses Artificial Intelligence — additional playlist',
-        href: 'https://www.youtube.com/playlist?list=PLfc2WtGuVPdkfwPMfvU0PNkOYPzDDCBxt',
-      },
-    ],
+    featuredSelection: {
+      anchor: 'yuval-noah-harari',
+      label: 'Yuval Noah Harari — selected talks & interviews',
+      description:
+        'An editorial selection of standalone talks and interviews on AI, trust, institutions, and human agency—not a single official playlist. These are Harari’s arguments and forecasts, with interviewer counterpoints, rather than independent findings. Some conversations also cover politics and history.',
+      resourceIds: [125, 126, 127, 128],
+      discoveryLinks: [
+        {
+          label: 'Official video index',
+          href: 'https://www.ynharari.com/category/video/',
+        },
+        {
+          label: 'Official YouTube channel',
+          href: 'https://www.youtube.com/@YuvalNoahHarari',
+        },
+        {
+          label:
+            'Yuval Addresses Artificial Intelligence — additional playlist',
+          href: 'https://www.youtube.com/playlist?list=PLfc2WtGuVPdkfwPMfvU0PNkOYPzDDCBxt',
+        },
+      ],
+    },
   },
 ] as const satisfies readonly ResourceSection[];
 
@@ -363,6 +364,29 @@ export const validateResourceCatalogs = (
         throw new Error(
           `${prefix} resource ID ${resourceId} has unknown topic ${unknownTopic}`,
         );
+      }
+    }
+
+    for (const section of catalog.sections) {
+      const selection = section.featuredSelection;
+      if (!selection) continue;
+      if (
+        !selection.resourceIds.length ||
+        new Set(selection.resourceIds).size !== selection.resourceIds.length
+      ) {
+        throw new Error(
+          `${prefix} selection ${selection.anchor} must have nonempty unique resource IDs`,
+        );
+      }
+      for (const resourceId of selection.resourceIds) {
+        if (
+          !catalog.resourceIds.includes(resourceId) ||
+          catalog.sectionByResourceId[resourceId] !== section.key
+        ) {
+          throw new Error(
+            `${prefix} selection ${selection.anchor} resource ID ${resourceId} must belong to section ${section.key}`,
+          );
+        }
       }
     }
 

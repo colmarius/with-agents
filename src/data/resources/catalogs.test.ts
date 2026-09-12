@@ -76,6 +76,14 @@ test('AI groups broad resources while preserving substantive coding cross-listin
   const ai = requireCatalog('ai');
   const coding = requireCatalog('coding-with-agents');
   assert.deepEqual(
+    ai.sections.map(({ key }) => key),
+    ['concepts-capabilities', 'economics-industry', 'implications-risks'],
+  );
+  assert.deepEqual(
+    ai.sections[2].featuredSelection?.resourceIds,
+    [125, 126, 127, 128],
+  );
+  assert.deepEqual(
     ai.resourceIds,
     [
       124, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 125,
@@ -85,15 +93,14 @@ test('AI groups broad resources while preserving substantive coding cross-listin
   for (const [section, ids] of [
     ['concepts-capabilities', [121, 108, 49, 23, 33]],
     ['economics-industry', [124, 120, 52, 55, 73]],
-    ['implications-risks', [123, 119, 110, 107, 111]],
-    ['yuval-noah-harari', [125, 126, 127, 128]],
+    ['implications-risks', [123, 119, 110, 107, 111, 125, 126, 127, 128]],
   ] as const) {
     assert.deepEqual(
       getCatalogResources(ai, section).map(({ id }) => id),
       ids,
     );
   }
-  for (const id of [124, 123, 120, 119, 52, 49, 23]) {
+  for (const id of [124, 123, 120, 119, 52, 49, 23, 125, 126, 127, 128]) {
     assert.ok(!coding.resourceIds.includes(id), `${id} is AI-only`);
     assert.equal(coding.sectionByResourceId[id], undefined);
     assert.equal(resources.filter((resource) => resource.id === id).length, 1);
@@ -195,4 +202,44 @@ test('registry validation rejects duplicate IDs and invalid membership', () => {
       validateResourceCatalogs([resource], [{ ...catalog, topicOptions: [] }]),
     /has unknown topic topic/,
   );
+});
+
+test('featured selections reference distinct resources in their own section', () => {
+  const withSelection = (resourceIds: number[]): ResourceCatalog => ({
+    ...catalog,
+    resourceIds: [1, 2],
+    sectionByResourceId: { 1: 'section', 2: 'other' },
+    sections: [
+      {
+        ...catalog.sections[0],
+        featuredSelection: {
+          anchor: 'selection',
+          label: 'Selection',
+          description: 'Editorial links',
+          resourceIds,
+          discoveryLinks: [],
+        },
+      },
+      {
+        key: 'other',
+        label: 'Other',
+        description: 'Other section',
+        routeSlug: 'other',
+      },
+    ],
+  });
+  const values = [resource, { ...resource, id: 2 }];
+  validateResourceCatalogs(values, [withSelection([1])]);
+  for (const ids of [[], [1, 1]]) {
+    assert.throws(
+      () => validateResourceCatalogs(values, [withSelection(ids)]),
+      /nonempty unique resource IDs/,
+    );
+  }
+  for (const ids of [[2], [99]]) {
+    assert.throws(
+      () => validateResourceCatalogs(values, [withSelection(ids)]),
+      /must belong to section section/,
+    );
+  }
 });
