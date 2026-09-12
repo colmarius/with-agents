@@ -10,6 +10,10 @@ kind: "auto-generated"
 durationSeconds: 3004
 ---
 
+## Editorial provenance
+
+The inherited public summary records an English auto-generated caption basis without audio verification. It attributes the October 2025 Zagreb event date, IMC & 24Sata organization, and conversation with Prof. Marijana Grbeša to the YouTube description; February 26, 2026 is the displayed publication date. This preserves the previous source record, not a new metadata check. Political and historical interpretations, AI capability claims, and predictions are Harari's arguments, not independently verified findings.
+
 ## Transcript
 
 [00:00:01] Hello Mr. Harrari. >> Hello. >> It's great to have you back. >> Thank you. >> It's great great to have you back in Croatia. You are here after more than 10 years, right? A lot has happened since your last year. You became one of the most prominent global phenomenon. Um you became famous. Um and Croatia, our small country, has become football giant something. So um and that's on the bright side. On the grim side, things got a bit messy in the world, right? So things changed a lot and the world we knew it back then when you were first here um are not here. So as so it seems. So um my question and I'm just going to start with this conversation with a question that you yourself so very often ask. So if we humans are so intelligent, why are we so stupid?

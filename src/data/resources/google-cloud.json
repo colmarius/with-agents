@@ -191,7 +191,7 @@
     "title": "Professional Network Engineer Certification",
     "subtitle": "A sixteen-activity learning path for Google Cloud networking",
     "url": "https://www.skills.google/paths/14",
-    "description": "A practical learning path spanning Google Cloud networking fundamentals, routing, load balancing, security, architecture, hybrid connectivity, observability, GKE, and skill-badge labs.",
+    "description": "Courses, labs, and skill badges for practicing Google Cloud network configuration, operation, and troubleshooting in preparation for the Professional Cloud Network Engineer exam. Completing the learning path is not itself certification.",
     "type": "article",
     "source": "Google Cloud Skills",
     "date": "2026-08-29",

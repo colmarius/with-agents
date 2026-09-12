@@ -10,6 +10,10 @@ kind: "auto-generated"
 durationSeconds: 2812
 ---
 
+## Editorial provenance
+
+The inherited public summary records an English auto-generated caption basis, limited correction of obvious transcription errors, and no original-audio validation. The resource manifest identifies the event as the 2026 Tanner Lecture at Linacre College, Oxford. These are preserved source-history assertions, not new event or audio verification. Harari's capability claims, historical interpretations, analogies, and predictions are his argument, not independently established findings.
+
 ## Transcript
 
 [00:00:00] Please join me in welcoming Professor Yuval Noah Harari. [applause] Thank you. [applause] Thank you so much. Hello everyone. Uh I hope I open my mic and you can hear me. Okay. So it's really a great honor for me to give this year's Tanner lecture and it's also a personal joy to come back to Oxford. I did my DPhil here uh 25 years ago under the guidance of Dr. Steven Gunn. Back then I specialized in medieval and early modern military history. But today I will not be talking about knights and castles and the gunpowder revolution. I'll talk about AI bureaucrats and religions and boyfriends and more generally about the AI revolution.

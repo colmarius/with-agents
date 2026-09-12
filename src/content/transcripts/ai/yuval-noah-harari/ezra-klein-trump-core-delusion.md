@@ -10,6 +10,10 @@ kind: "auto-generated"
 durationSeconds: 6936
 ---
 
+## Editorial provenance
+
+The inherited public summary records an English auto-generated caption basis without audio verification and identifies its date as the publication date displayed on YouTube. This preserves the previous source record, not a new publication-date check. Political and historical interpretations, AI capability claims, and forecasts are the speakers' arguments, not independently verified findings.
+
 ## Transcript
 
 [00:00:00] I think if you look across his mega-bestselling books like Sapiens and Homo Deus, Yuval Noah Harari really has one major topic. [music] That topic is cooperation. Cooperation and the ability to cooperate across scale, across time, as being the fundamental engine of human progress. Cooperation as the way we go from being this [music] creature that absolutely cannot beat a bear or a lion in a fight to being able to create and command the societies we have now. I think right now there's something interestingly challenging about Harari's work [music] because we live in this moment of Trumpism, of right-wing populism, and one of the messages of those movements is that this emphasis on cooperation, on positive-sum relationships, >> [music] >> is a lie.

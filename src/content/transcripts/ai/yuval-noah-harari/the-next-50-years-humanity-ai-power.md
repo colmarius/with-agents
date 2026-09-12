@@ -10,6 +10,10 @@ kind: "auto-generated"
 durationSeconds: 2886
 ---
 
+## Editorial provenance
+
+The inherited public summary records an English auto-generated caption basis without an original-audio check. The resource manifest identifies the conversation as part of EDP's July 2026 anniversary gala. These are preserved source-history assertions, not new event or audio verification. Harari's analysis, analogies, and forecasts are not independently verified claims about AI capabilities, law, or geopolitics.
+
 ## Transcript
 
 [00:00:02] Good evening, everybody. Good evening, Yuval. >> Hey, it's good to be here. >> Looking forward to this conversation very much. I'm just going to give a little brief introduction just before we get stuck into the questions. Cuz I've been fascinated about this topic and looking forward to to interviewing you because for most of history, change moved slowly enough that one generation could pass its its wisdom to the next with some confidence it would still apply. This is no longer true. In the space of a single lifetime, we are now being asked to absorb three revolutions at once. A new form of intelligence that doesn't just calculate, but also decides. A scramble to power and control that intelligence. And an explosion of data that lets that intelligence know us better than we know ourselves.

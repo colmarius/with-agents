@@ -10,6 +10,10 @@ kind: "auto-generated"
 durationSeconds: 1352
 ---
 
+## Editorial provenance
+
+The public summary uses these English auto-generated captions. The financial figures and accounting interpretations are the presenter's analysis, not an independent audit of company filings. This preserves the source-basis note previously displayed in the public summary. The readability review checked the saved transcript, not company filings or original audio.
+
 ## Transcript
 
 [00:00:00] Does AI have a hidden debt problem? That's a question that's been circulating the past couple of months amid reports that some of the biggest tech companies in the world have acred over $1 trillion in quote hidden debt borrowings that they managed to keep off of their balance sheets. With these companies being the big five AI hyperscalers, the companies building the data centers to power these models, Alphabet or Google, Amazon, Meta, Microsoft, and Oracle. Now, the AI spending spree has already been subject to plenty of skepticism and scrutiny. OpenAI itself has single-handedly committed to over $600 billion in spending by 2030. Their accusations of circular financing deals with Nvidia and other players. And companies that had previously been money printers have quickly become money furnaces, burning cash faster than your Studio Ghibli prompts have been burning GPUs. But the concern now is that with these companies needing to raise so much money for this spending, they've started to accumulate a bunch of debt. And rather than just
