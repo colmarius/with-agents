@@ -6,8 +6,6 @@ date: "2026-09-11"
 
 Jonathan Kelley describes adopting coding agents on Dioxus, a cross-platform Rust app framework. The team initially generated large amounts of code that did not meet its merge standards. Its more useful applications combined agents' patience with maintainers' judgment: researching unfamiliar platforms, checking releases, and building testing infrastructure while people continued to own architecture and review.
 
-Based on the saved English auto-generated YouTube transcript, without translation or audio verification. The captions contain transcription errors; names in this summary use the video's title and description where applicable. Timelines, capability claims, and quality judgments are Kelley's account, not independently validated results.
-
 ### Main takeaways
 
 - **More generated code did not immediately mean more shippable features.** [05:28–07:22](https://www.youtube.com/watch?v=H7vFrcNWXzs&t=328s): after seeing agents improve at Rust, the team produced tens of thousands of lines covering long-desired features. Kelley says very little cleared its quality bar and much remained in draft. The failure was not an inability to generate implementations, but an inability to turn that output into acceptable changes.
@@ -18,10 +16,6 @@ Based on the saved English auto-generated YouTube transcript, without translatio
 - **Fuzzing harnesses were a stronger fit than blindly generated tests.** [14:44–16:50](https://www.youtube.com/watch?v=H7vFrcNWXzs&t=884s): Kelley describes fuzzing as exercising software with millions of inputs, including malformed inputs and unintended usage. He says agents are good at building the harnesses that drive this process. That is a claim about constructing test infrastructure, not a guarantee that the resulting tests establish correctness.
 - **Architecture and intent remain the maintainer's responsibility.** [15:46–17:52](https://www.youtube.com/watch?v=H7vFrcNWXzs&t=946s): a poor underlying design gives agents a poor foundation for their changes. Kelley says the team now spends much of its time thinking about future features and how the system should evolve. Dioxus still reviews every pull request line by line, using AI review to spot bugs beforehand. Outside contributors may describe a local fix without communicating the project's longer-term design needs, so a plausible implementation can still fit badly.
 
-### Practical interpretation
-
-Give agents bounded research, maintenance, and harness-building tasks, then evaluate the resulting behavior rather than the volume of code. Reserve explicit human attention for architecture, consequential test conditions, and whether a change belongs in the project. This is editorial synthesis of Kelley's experience, not a workflow benchmarked in the talk.
-
 ### Source
 
-[AI Engineer — Building ambitious software — Jonathan Kelley, Dioxus Labs & Cognition](https://www.youtube.com/watch?v=H7vFrcNWXzs), published September 11, 2026. Timestamp links use the original recording's absolute timeline.
+[AI Engineer — Building ambitious software — Jonathan Kelley, Dioxus Labs & Cognition](https://www.youtube.com/watch?v=H7vFrcNWXzs), published September 11, 2026.

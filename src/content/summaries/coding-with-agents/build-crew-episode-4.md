@@ -6,42 +6,19 @@ episode: 4
 date: "2025-10-14"
 ---
 
-In Episode 4 of "Build Crew Live" the team (Thorsten Ball, Ryan Carson, and Graham McBain) is joined by community member Colleen Brady to discuss databases, custom tools, and workflow automation. The conversation covers what they've recently "changed their minds" about, a series of pro-tips for working with agentic coding tools like Amp, and a deep dive into the difference between slash commands and toolboxes.
+Test data, temporary UI controls, and documentation checks can make software easier to verify, but developers often skip the setup. Thorsten Ball, Ryan Carson, Graham McBain, and guest Colleen Brady show how they use agents to do that preparation and automate recurring development tasks.
 
-### **What's New? The "Changed Your Mind" Round**
+### Make the states you need to test easy to reach
 
-The team kicks off with a lightning round on what they've changed their minds about in the last week.
+* **Seed a local database with deliberate scenarios.** Ball asks Amp to create threads belonging to different users with different visibility settings so he can test a new starring feature. The agent initially guesses column names incorrectly, then inspects the schema and inserts the data. He also describes temporary UI controls that let a developer toggle billing-page states without constructing a separate test application [14:49–18:43](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=889s).
+* **Use mock data while exploring a design.** Brady iterates on a page using a TypeScript data file before moving the data into a database. This lets her settle the UI's data needs without repeatedly changing the database during design work [19:33–20:34](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=1173s).
+* **Start the next task from the diff.** Ball gives a fresh agent conversation `git diff` or `git show` output. The diff supplies the changes and shows which files were edited together, helping the agent pick up related work without a long verbal reconstruction [23:13–24:16](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=1393s).
 
-* **Physical Books:** Ryan shares that he has rediscovered the joy of reading physical books, like "The Making of Prince of Persia," after being an all-digital reader.
-* **Workflow Tools:** Colleen has switched from ChatGPT to Claude for generating JSON for her n8n automation workflows, finding Claude more reliable and less prone to inventing nodes or invalid connections.
-* **Sharing Agentic Work:** Thorsten is starting to see more value in sharing and bookmarking agent conversation threads, especially after seeing a post by Mitchell Hashimoto detailing how he built a real feature with Amp.
-* **The Future of SaaS:** Graham built a niche scene-planning tool for the show's producer to use with Sora, leading him to change his mind that "SaaS probably isn't dead." He now believes there will be a rise in many small, vertical SaaS products with specialized agent workflows.
+### Automate a specific job, then expose it to the agent
 
-### **Pro-Tips for Working with AI Agents**
-
-The group shared several practical tips for getting the most out of coding agents.
-
-* **Generate Test Data:** Thorsten demonstrated how he tasked an agent with seeding his local database with test data to try out a new feature. The agent was able to discover the database schema and create varied entries on its own.
-* **Use `git diff` for Context:** A powerful tip from Thorsten is to start a new agent thread by feeding it the output of `git diff` or `git show commit`. This instantly provides the agent with rich context about which files are related and what changes have just been made.
-* **Use Mock Data for UI:** Colleen shared her workflow of using a mock data file (like a `.ts` file) to rapidly iterate on UI design before worrying about the database setup.
-* **Add Throwaway Test Controls:** Tim's pattern of adding temporary controls to toggle UI component states shows how "stupid work" can make frontend testing and review much easier for both humans and agents.
-* **Know When *Not* to Use an LLM:** In an "anti-tip," Ryan explained his struggle with getting LLMs to reliably extract data from PDFs. He found a much better solution in Google's **Document AI**. This specialized tool allows you to fine-tune a model by tagging just a few sample documents, resulting in a cheap, fast, and highly accurate API for data extraction.
-
-### **Automating the "Stupid Work"**
-
-A recurring theme is using agents to eliminate "stupid work." Colleen provided a prime example: she built an `npm run commit` script that checks changed files, helps formulate the commit message, and scans the docs folder for pages that are now stale, should be archived, or need updates.
-
-### **Deep Dive: Amp Slash Commands vs. Toolboxes**
-
-Thorsten gave a master class on two powerful Amp features and their key difference:
-
-* **Slash Commands:** These are triggered *by the human user*. A custom slash command (e.g., `/ship`) executes a script and feeds its output to the agent as your message. This is useful for starting a workflow, like running tests and linters.
-* **Toolboxes:** These are tools given *to the agent*. You define a script that the agent can choose to run *on its own* when it deems it necessary. This allows the agent to have its own capabilities, like running commands in a background `tmux` session.
-* **The Main Difference:** Who is the trigger? The **human** triggers slash commands; the **agent** triggers tools.
-
-### **Final Thoughts & Community**
-
-The episode wrapped up with a few final tips, including asking an agent questions you already know the answer to as a way to efficiently load context. The team also discussed Sonnet 4.5's tendency to create extra Markdown files, Steve Yegge's Beads memory-system idea, and prompt-library workflows in tools like Obsidian. Everyone is still figuring out the best way to work with these tools, and viewers are invited to join the conversation at **buildcrew.team** for daily standups and community support.
+* **Choose a specialized extractor when it fits the data.** Carson reports better results on financial PDFs with Google's Document AI than with his earlier general-model attempts. He describes defining the fields to extract, labeling examples, and calling the resulting processor through an API. His speed, cost, and accuracy assessments concern his workflow, not a comparison across all document types [25:07–30:03](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=1507s).
+* **Check documentation when committing.** Brady says stale instructions repeatedly sent her agent back into the same mistakes. Her `npm run commit` workflow inspects changed files, helps prepare the commit message, and checks which documents need updating or archiving [32:59–35:41](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=1979s).
+* **Distinguish a user command from an agent tool.** In the Amp version demonstrated, a custom slash command runs a script when the user invokes it and sends its output as a message. A toolbox exposes scripts that the agent can choose to call while working. Both reuse ordinary scripts; the difference is who decides when to run them [36:43–40:59](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=2203s).
 
 Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=9lsg6dU7EZQ)
 

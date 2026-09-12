@@ -17,6 +17,4 @@ REWORK host Kimberly Rhodes speaks with 37signals co-founder and CTO David Heine
 - **Accessibility can precede embedded AI**: Hansson recommends exposing a product through CLIs and skills rather than adding native AI features that do not yet improve the workflow [10:23–14:05](https://www.youtube.com/watch?v=oE1Y_6W4Mj8&t=623s).
 - **Agents can build their own on-ramp**: He reports that agents produced much of the Basecamp CLI and says the approach will extend to HEY and Fizzy [15:04–17:02](https://www.youtube.com/watch?v=oE1Y_6W4Mj8&t=904s).
 
-The episode does not detail authentication, permission scoping, auditability, recovery, or comparative evaluation, so the demonstrated convenience is not a complete production-safety case.
-
 Full video: <https://www.youtube.com/watch?v=oE1Y_6W4Mj8>

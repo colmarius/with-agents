@@ -6,45 +6,21 @@ episode: 7
 date: "2025-11-27"
 ---
 
-## Build Crew Live: Episode 7 Highlights
+Focused agent tasks still depend on a human who understands the system's boundaries. Thorsten Ball demonstrates small changes with explicit constraints, while community guest Mike shows how he narrows broad codebase research into reviewed refactoring plans. Ryan Carson then demonstrates a workflow that combines fixed program steps with flexible language-model input.
 
-In this episode, the Build Crew discusses strategies for optimizing agent workflows, deep refactoring techniques, and the importance of documentation. They also explore agent orchestration frameworks like Mastra and BAML.
+### Keep implementation focused and research reviewable
 
-### Optimizing Agent Workflows with Small Threads
+* **Ask for the data the program actually needs.** Ball shows an update check that fetched every package version when it only needed the latest. After checking the alternative API response, the agent makes a small change; Ball reports reducing the response from 3.5 MB to 35 bytes. A second location needs different data, so the same optimization does not apply there [03:55–09:01](https://www.youtube.com/watch?v=fVx5M2GVjEQ&t=235s).
+* **Explain architectural constraints when carrying work forward.** In a separate registry-configuration fix, Ball uses a fresh thread to copy helper logic into a standalone bootstrap script. He explicitly tells the agent not to extract shared code because that script must run independently. This is a different task from the response-size optimization [09:01–15:58](https://www.youtube.com/watch?v=fVx5M2GVjEQ&t=541s).
+* **Separate description, critique, and the decision to change.** Mike has agents describe an Elixir package's features, then critique each description against the code. He reads both, records where he agrees or disagrees, and edits a proposed plan before implementation. He uses parallel agents for research and sequential agents for code changes [16:53–24:12](https://www.youtube.com/watch?v=fVx5M2GVjEQ&t=1013s).
+* **Cut speculative improvements before implementation.** Mike welcomes broad ideas during research, then removes unnecessary work as the plan narrows. He concentrates his own design effort on the public API—its types, inputs, outputs, and intended use—while delegating implementation. The panel stresses that producing a long plan is not a substitute for reading it [24:12–33:26](https://www.youtube.com/watch?v=fVx5M2GVjEQ&t=1452s).
+* **Maintain repository instructions like other project knowledge.** Carson splits a large `AGENTS.md` into guidance for the directories where it applies. Ball gives a concrete example of missing guidance: after a formatter changes a file, the agent must reread it rather than edit from an outdated view [37:10–40:59](https://www.youtube.com/watch?v=fVx5M2GVjEQ&t=2230s).
 
-Thorsten shared his strategy for getting higher-quality code from agents by keeping interactions focused and modular.
+### Combine fixed steps with flexible input
 
-* **Small, Focused Threads:** Instead of long, winding conversations, use short invocations with clear inputs and outputs. Smaller context windows often lead to better reasoning and less degradation of quality.
-* **The "Bob and Weave" Technique:** An iterative process where the developer directs the agent, reviews the output, and then pivots to a new, clean thread for the next task. For example, Thorsten used one thread to optimize an API request (reducing data fetched from 3.5MB to 35 bytes) and a completely separate thread to port that logic to a different part of the codebase where code sharing wasn't possible.
-* **Be the Director:** You still need to know your architecture. The agent is the implementer, but the human must direct it to avoid pitfalls like inappropriate code sharing between isolated systems.
+Carson's Mastra demo replaces a rigid onboarding form with a chat. Code defines the workflow steps and expected outputs; a model interprets answers such as “I'm thinking about my options” into the required status. The workflow view exposes which step ran and what it received, making the process easier to inspect than one large system prompt [44:02–50:12](https://www.youtube.com/watch?v=fVx5M2GVjEQ&t=2642s).
 
-### Deep Refactoring with "Research Flows"
-
-Mike demonstrated a sophisticated "research flow" for modernizing legacy codebases, specifically an Elixir package.
-
-* **The Oracle/Sub-Agent Approach:** Use high-reasoning analysis and focused sub-agents to inspect existing code and write detailed Markdown reports on every feature.
-* **Critique and Roast:** After the initial analysis, spin up sub-agents to "roast" the code and find design weaknesses.
-* **Markdown-First Development:** Mike discussed a rough **5:1 ratio of planning/research effort to code-writing effort**, not necessarily literal file volume. He generates extensive plans, critiques, and architectural documents before writing code. This "measure twice, cut once" approach prevents the agent from hallucinating inefficient solutions.
-* **Opinionated API Design:** When refactoring, Mike focuses his energy on strictly defining the public API surface (types, inputs, outputs) and lets the agent handle the underlying implementation details.
-
-### The Importance of `agents.md`
-
-The crew discussed the critical role of documentation files (often called `agents.md` in Amp) that live in the repository.
-
-* **Context is King:** These files act as the agent's "long-term memory" or "spidey sense," containing project-specific rules (e.g., "always run this specific formatter," "this directory is for frontend only").
-* **Maintenance:** These files degrade over time as the project evolves. Regularly updating them prevents the agent from making repetitive mistakes or trying to run outdated commands.
-
-### Agent Orchestration Frameworks (Mastra & BAML)
-
-Ryan showcased **Mastra**, an open-source framework for building agentic workflows using TypeScript.
-
-* **Deterministic vs. Non-Deterministic:** The group discussed the future of agents being a mix of strict, deterministic code (state machines, loops, conditions) and fuzzy, non-deterministic LLM reasoning. Frameworks like Mastra help bridge this gap by defining strict workflow steps (e.g., "Ask Divorce Status") while allowing the LLM to handle the flexible parsing of user intent.
-* **Observability:** Using frameworks allows for better debugging and visualization of complex agent steps, rather than relying on a "black box" system prompt.
-* **BAML:** Mike mentioned **BAML** as a complementary tool—a specialized language for generating structured LLM prompts and handling complex data outputs.
-
-### Build Crew Leaderboard
-
-The session concluded with a look at the community leaderboard, tracking metrics like "Diff Maxer" (most lines changed) and "Agent Whisperer" (most messages sent), gamifying the process of coding with AI agents.
+Ball emphasizes the distinction between asking a model to follow a procedure and enforcing that procedure in code. A request to launch a precise number of subagents may not run consistently; explicit loops and conditions supply control while the model handles flexible interpretation. Mike mentions BAML as a complementary language for structured model calls and outputs [53:09–58:13](https://www.youtube.com/watch?v=fVx5M2GVjEQ&t=3189s).
 
 Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=fVx5M2GVjEQ)
 

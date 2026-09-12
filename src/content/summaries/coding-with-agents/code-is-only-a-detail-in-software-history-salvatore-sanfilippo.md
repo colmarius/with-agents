@@ -4,8 +4,6 @@ resourceId: 39
 date: "2026-08-10"
 ---
 
-*All English wording below is an editorial translation/paraphrase of Italian captions; nothing is a verbatim quotation.*
-
 Salvatore Sanfilippo responds to a widely shared essay about whether saying code was never the hard part devalues programmers. He rejects both the claim that implementation is trivial and the idea that implementation effort alone explains software's value.
 
 His distinction is between implementation effort and the conceptual choices that decide what a system should be. Coding agents can automate part of the former because they inherit a programming culture built by people; that makes product intent, design, architecture, experiments, and judgment more consequential, not less.
@@ -19,6 +17,5 @@ His distinction is between implementation effort and the conceptual choices that
 - **Automation depends on programming culture rather than nullifying it**: Because stable code was difficult to produce, people built a large programming culture around it. Sanfilippo argues that language models can automate some coding precisely because people created that culture ([10:06–11:09](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=606s)).
 - **Cheaper implementation raises the relative value of invention**: He divides programming into implementation and conceptual work, then argues that reducing manual implementation effort puts more emphasis on program design, architecture, and genuinely new capabilities ([11:09–13:16](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=669s)).
 - **Coding agents change who can realize ambitious systems**: Sanfilippo contrasts programmers who could implement assigned work but lacked a larger product idea with people whose ideas exceeded their implementation capacity. He uses his roughly 150,000-line DwarfStar project as an example of automation making a previously impractical build possible ([12:12–14:20](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=732s)).
-- **The examples illustrate a thesis rather than prove a universal split**: The talk does not measure how much value belongs to design versus implementation, and its categories overlap in practice. Its useful challenge is to stop treating implementation effort and conceptual judgment as interchangeable when deciding what agents automate and what humans still need to own.
 
 [Watch the video on YouTube](https://www.youtube.com/watch?v=Ye6UFH2LfXU).

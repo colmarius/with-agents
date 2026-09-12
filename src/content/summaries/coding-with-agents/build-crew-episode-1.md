@@ -6,40 +6,22 @@ episode: 1
 date: "2025-09-17"
 ---
 
-Episode 1 of "Build Crew Live" video features the Amp team introducing their new community, Build Crew, and discussing their personal best practices for prompting and working with AI agents.
+An agent can investigate a bug more independently when it can reproduce the failure and inspect the result of each attempted fix. In the first Build Crew Live, the Amp team shows how they provide that feedback, keep conversations focused, and carry useful context into the next task.
 
-### **Launching the Build Crew Community**
+### Give the agent a way to check its work
 
-The core of the episode is the announcement of **Build Crew**, a free community for developers shipping with AI agents, launched by the Amp team.
+* **Make reproduction repeatable.** Thorsten Ball shows a small script that launches Amp's CLI with the right settings. Instead of repeatedly copying errors back into chat, he lets the agent run the program, add logging, and inspect the output itself [06:13–11:19](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=373s).
+* **Expose interactive programs through a controllable terminal.** His example uses tmux, a terminal multiplexer, because the CLI stays open waiting for input. The agent can send keystrokes and read the terminal's text rather than wait for a command to exit [11:19–13:50](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=679s).
+* **Separate diagnosis from a focused design question.** Once logging identifies startup waiting on an MCP server, Ball asks Oracle, Amp's reasoning subagent, how to remove that wait. His “desk” analogy describes context: the main conversation holds the investigation, while Oracle receives the diagnosed problem and relevant files without the discarded debugging paths [13:50–17:47](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=830s).
 
-* **Purpose:** The community aims to connect developers, share knowledge, and provide support for the challenges of building with agents.
-* **Features:** Joining gives access to a private Twitter DM group, a leaderboard, and badges, and offers a \$100 credit for those who use Amp.
-* **Shared Learning:** The team hopes sharing public threads will become a standard way to move the industry forward and combat "imposter syndrome" by normalizing the learning process.
+### Make intent and context explicit
 
-### **AI Agent Best Practices & Workflow Strategies**
+* **Check the agent's understanding before implementation.** Jason Harris starts larger requests with a goal and phases, then asks the agent to restate its mission and ask clarifying questions. He uses the response to catch ambiguity in his own prompt [19:32–24:28](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=1172s).
+* **Carry decisions forward, not an entire tangled conversation.** When Ball needs a fresh thread, he asks for a file containing the problem, background, current state, and remaining work. Graham McBain describes a different approach: ask the agent to inspect the repository afresh against the next goal. Both prefer focused context, but they differ on how much conversation history to preserve [27:09–31:48](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=1629s).
+* **Use a prepared starting point to compare approaches.** The team describes forking a thread after loading the relevant context, then exploring separate directions from that same starting point [31:48–33:40](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=1908s).
+* **Define how a fix will be confirmed.** Ball's closing advice is to create a failing test or reproduction script, let the agent investigate, and then run the confirmation again. Other panelists similarly recommend making decisions before prompting and keeping threads small rather than filling the available context window [52:54–57:38](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=3174s).
 
-The Amp team shared several practical and advanced techniques for effective agent interaction:
-
-* **Provide a Feedback Loop:** The agent can do a much better job if it can reproduce a bug or get feedback on its code, similar to how a developer uses simple scripts to reliably reproduce an issue.
-* **The "Desk" Analogy for Context:** Think of the context window as your desk. Keep all necessary information there, but move high-level, complex questions over to the "senior engineer"—the **Oracle** (a smart reasoning sub-agent)—to prevent cluttering your main thread's context.
-* **Handling Long-Running Processes:** Use a terminal multiplexer like **tmux** to start processes that wait for user input (like a CLI), allowing the agent to remote control the terminal and interact with the process.
-
-### **Structuring Prompts for Success**
-
-Effective prompt structure is key to managing complexity and ensuring clarity:
-
-* **Goal, Phases, and Confirmation:** Start with a clear goal (TLDR), break the task into phases, and ask the agent to **repeat its mission** back to you before coding. This acts as a proofreading/chain-of-thought mechanism to ensure alignment.
-* **External Memory for Context:** When starting a new thread or reaching a context limit, ask the agent to summarize all the relevant information (problem, background, current state, next steps) and write it into a **markdown file**. A new thread can then simply reference this file, maintaining long-term memory.
-* **Forking Threads:** Use the "fork" feature to freeze the context of a thread and create variations from a specific message point. This lets you experiment with different approaches without modifying the core context.
-
-### **The Team's Pro-Tips for Developers**
-
-The team concluded with quick-fire advice for improving agent development:
-
-* **Slow Down and Plan:** Take the time to think through the problem and let the agent plan the solution. This slower approach often leads to smoother, faster results.
-* **Confirm the Fix:** When asking the agent to fix a bug, instruct it to confirm the fix with a new test or a reliable confirmation step.
-* **"Don't Get Drunk on Tokens":** Even with massive context windows, don't try to fill them up. Keep your threads small, fork, and compact when necessary to reduce noise and maintain focus.
-* **Ask for Anything:** Do not limit what you ask an agent to do; you would be surprised at what the latest models are capable of achieving.
+The episode also launches Build Crew as a community for learning from shared agent conversations. The team warns that automatic secret redaction is incomplete: an agent may read a sensitive script into its conversation, so sharing a thread still requires care [47:58–49:58](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=2878s).
 
 Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=PLtf26LtCcQ)
 

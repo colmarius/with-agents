@@ -4,9 +4,7 @@ resourceId: 122
 date: "2026-09-09"
 ---
 
-Tibo Sottiaux explains how Codex grew from tools for OpenAI researchers into a coding-agent product. The useful thread is how the team separates the agent from its interface, decides which problems belong in the harness or model, and changes engineering workflows as agents take on more implementation and verification work.
-
-Based on the saved English auto-generated YouTube transcript, without translation or audio verification. This is a product-team interview: internal practices and capability claims are Sottiaux's account, not independently validated results. Sponsor segments are excluded.
+Codex separates its agent from the interface people use to control it. Tibo Sottiaux explains why that boundary matters as OpenAI brings the agent into more products, and how the team decides whether to improve the model or the harness—the instructions, tools, and execution controls around it.
 
 ### Main takeaways
 
@@ -21,10 +19,6 @@ Based on the saved English auto-generated YouTube transcript, without translatio
 - **Cheaper changes make good boundaries more useful, not obsolete.** [52:50–55:57](https://www.youtube.com/watch?v=sLSTM9znQNs&t=3170s): Sottiaux expects dependency upgrades and other maintenance to become increasingly automated, with good changelogs and documentation helping models reason through changes. He also describes rearchitecture as faster. But stable abstractions still limit how far a change propagates, letting a team iterate inside one component without disrupting the rest.
 - **Merging Codex into ChatGPT was an execution and scaling project.** [1:02:53–1:06:57](https://www.youtube.com/watch?v=sLSTM9znQNs&t=3773s): Sottiaux contrasts a locally executed agent with ChatGPT's managed cloud stack. The work included running the full harness with a cloud computer efficiently at a much larger user scale and reconciling plugin and library differences. He describes a unified product as the direction of travel, rather than claiming every capability was already identical across interfaces.
 
-### Practical interpretation
-
-Separate durable execution boundaries from temporary model workarounds. Revisit model-specific reminders when models change, removing them only after checking that the required behavior still holds; retain explicit checks for behavior, permissions, and invariants. Use agent access to team knowledge deliberately, and keep the decision about what should be built distinct from whether generated code passes checks. This is editorial synthesis, not a workflow benchmarked in the interview.
-
 ### Source
 
-[The Pragmatic Engineer — Building Codex with Tibo Sottiaux](https://www.youtube.com/watch?v=sLSTM9znQNs), published September 9, 2026. Timestamp ranges use the YouTube recording's absolute timeline, not the publisher's separate podcast edition.
+[The Pragmatic Engineer — Building Codex with Tibo Sottiaux](https://www.youtube.com/watch?v=sLSTM9znQNs), published September 9, 2026.

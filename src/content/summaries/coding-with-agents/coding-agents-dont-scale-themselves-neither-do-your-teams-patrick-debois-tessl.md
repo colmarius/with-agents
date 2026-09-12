@@ -6,8 +6,6 @@ date: "2026-08-22"
 
 Patrick Debois of Tessl argues that coding-agent advantage will come less from a single developer’s prompting skill than from the shared systems an organization builds around agents. He moves from developer identity and team rituals through platform ownership, hiring, cost control, and risk-based autonomy.
 
-This is a practitioner talk about an emerging operating model, not an organizational study. Debois does not provide comparative delivery data, quality measures, adoption samples, or evidence that his proposed “human touches” and reuse metrics predict business outcomes. His dark-factory direction is a forecast; even his closing version is a risk-dependent “dim factory,” not full autonomy for every change.
-
 ### Improve the System Around the Agent
 
 - **Give skeptical engineers a technical path into adoption**: Debois says developers who resist a role centered on prompts and specifications can apply their criticism to reusable context, tools, harnesses, and loops. Rather than dismissing quality concerns, teams can turn them into improvements to the system that produces the code ([02:42–05:36](https://www.youtube.com/watch?v=zCJtYuqwm7E&t=162s)).
@@ -25,6 +23,6 @@ This is a practitioner talk about an emerging operating model, not an organizati
 
 - **Generic transformation rituals are not ownership**: Hackathons, lunch-and-learns, Slack channels, and champion programs may spread awareness, but Debois argues that leaders must give team leads and platform groups an explicit mandate and resources to change how work is done ([13:43–15:40](https://www.youtube.com/watch?v=zCJtYuqwm7E&t=823s)).
 - **Hiring should test leverage, judgment, and collaboration separately**: His suggested sequence lets candidates use AI freely on an exercise, asks them to explain the result and tradeoffs, then evaluates whether they share and collaborate. He treats these as distinct capabilities rather than collapsing them into a generic AI job title or seniority label ([15:40–17:27](https://www.youtube.com/watch?v=zCJtYuqwm7E&t=940s)).
-- **Autonomy should vary with risk**: Debois expects a “dim factory” in which teams choose different approval levels by feature risk, add auditing and verification, and capture organizational knowledge in context, skills, and harnesses. His end state is continuous learning: changing more of the system without losing reliability ([19:15–21:16](https://www.youtube.com/watch?v=zCJtYuqwm7E&t=1155s)).
+- **Autonomy should vary with risk**: Debois expects a “dim factory”: partially autonomous development in which teams choose approval levels by feature risk. He calls for auditing and verification, with organizational knowledge retained in context, skills, and harnesses. His proposed end state is continuous learning: changing more of the system without losing reliability ([19:15–21:16](https://www.youtube.com/watch?v=zCJtYuqwm7E&t=1155s)).
 
 [Watch the full talk on YouTube](https://www.youtube.com/watch?v=zCJtYuqwm7E).

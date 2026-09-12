@@ -4,11 +4,7 @@ resourceId: 26
 date: "2026-07-31"
 ---
 
-This guide selects nine question-driven stops from the rolling Coding Agents playlist curated and published by the AI Engineer channel. It is an editorial route, not complete coverage of an event or AI Engineer's broader catalog. AI Engineer is the source channel, not the author; each speaker remains the source for that talk's claims.
-
-The talks mix product demonstrations, practitioner reports, research prototypes, and commercial claims, so the useful question is not whether they agree. It is which talk helps with the engineering decision in front of you.
-
-This route is organized by reader question, not playlist position or implied chronology. Each stop names the speaker and the affiliation established by the source, then keeps the talk's limits visible.
+Choose a talk for the decision in front of you: aligning a team, understanding a repository, checking generated code, or operating agents across an organization. This editorial guide selects nine talks from the Coding Agents playlist curated by AI Engineer and organizes them by question rather than viewing order. Each speaker offers a distinct workflow, demonstration, or proposal.
 
 ### Where to start
 
@@ -22,8 +18,8 @@ This route is organized by reader question, not playlist position or implied chr
 8. **How do you distinguish attention from durable product use?** [Quinn Slack](https://www.youtube.com/watch?v=Up6WVA07QdE&t=63s), a Sourcegraph co-founder, argues that subscriptions, survey interest, suggestion exposure, and sustained active use are different signals; he favors frequent workflows with low verification cost and explicit correction paths ([01:03–04:12](https://www.youtube.com/watch?v=Up6WVA07QdE&t=63s), [13:43–16:54](https://www.youtube.com/watch?v=Up6WVA07QdE&t=823s)). His market estimates mix public figures, private information, and intuition, and Sourcegraph has a commercial stake in the adoption claims ([08:28–12:40](https://www.youtube.com/watch?v=Up6WVA07QdE&t=508s)).
 9. **How do you turn an agent session into a durable workstream?** [Jason Liu](https://www.youtube.com/watch?v=il1c1a2FufU&t=2089s), who says he works at OpenAI, combines named project threads and persistent context with scheduled heartbeat messages, observable goal checks, and explicit stopping criteria ([03:02–07:11](https://www.youtube.com/watch?v=il1c1a2FufU&t=182s), [34:49–41:08](https://www.youtube.com/watch?v=il1c1a2FufU&t=2089s), [1:11:47–1:13:46](https://www.youtube.com/watch?v=il1c1a2FufU&t=4307s)). These are evolving personal workflows rather than controlled reliability evidence: Liu notes unusually generous token access, difficult-to-reproduce connector workflows, and unresolved cross-project memory scoping ([23:42–26:53](https://www.youtube.com/watch?v=il1c1a2FufU&t=1422s), [1:01:36–1:04:29](https://www.youtube.com/watch?v=il1c1a2FufU&t=3696s)).
 
-### Use the playlist as a map, not a verdict
+### Related summaries
 
-Appleton, Zechner, and Liu also have dedicated talk summaries in this resource hub. [Beyang Liu's related Sourcegraph/Amp talk](https://www.youtube.com/watch?v=F_RyElT_gJk&t=680s) provides another view of detailed prompts, explicit context, review, subagents, and selective parallelism ([11:20–33:38](https://www.youtube.com/watch?v=F_RyElT_gJk&t=680s)). These artifacts are useful companions, but they do not turn a multi-speaker playlist into consensus.
+Appleton, Zechner, and Liu also have dedicated talk summaries in this resource hub. [Beyang Liu's related Sourcegraph/Amp talk](https://www.youtube.com/watch?v=F_RyElT_gJk&t=680s) provides another view of detailed prompts, explicit context, review, subagents, and selective parallelism ([11:20–33:38](https://www.youtube.com/watch?v=F_RyElT_gJk&t=680s)).
 
-[Watch the full Coding Agents playlist](https://www.youtube.com/playlist?list=PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt), then use the selected talk's caveats to decide what evidence you would need before adopting the idea.
+[Watch the full Coding Agents playlist](https://www.youtube.com/playlist?list=PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt).

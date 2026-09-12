@@ -6,45 +6,20 @@ episode: 6
 date: "2025-10-28"
 ---
 
-## Build Crew Live: Episode 6 Highlights
+Long-running agent projects need a way to retain decisions, resume work, and check outputs without losing track of the original goal. Build Crew guest Brian Jones shows the project-management tool he built for that purpose. The Amp team also demonstrates targeted retrieval from past conversations and a small evaluation tool for an AI legal assistant.
 
-In this episode, the Build Crew team (Thorsten Ball, Ryan Carson, and Graham McBain) is joined by community member **Brian Jones**, a flooring representative who taught himself to code with AI. The group discusses new Amp features, the pros and cons of specialized AI tools, and the philosophy of working with agents.
+### Keep work and context manageable
 
-### The "Changed Your Mind" Round
+* **Sequence work when attention is the limit.** Jones breaks a plan into phases and tasks, implements one task, and tests it before continuing. He says generic subagents lose details as instructions pass between them. Thorsten Ball adds a different limitation: even separate agents can leave work unfinished when the human gets absorbed in reviewing one result [08:55–10:46](https://www.youtube.com/watch?v=maggx2Z57aw&t=535s), [17:18–21:11](https://www.youtube.com/watch?v=maggx2Z57aw&t=1038s).
+* **Store the decisions needed to resume.** Jones wanted to build an application for the flooring industry but first built a development project manager. His demo tracks projects, tasks, decisions, session history, changed files, and context handoffs. The intended flooring application was still ahead of him; the panel encourages him to start using the tool rather than keep refining it [29:57–40:08](https://www.youtube.com/watch?v=maggx2Z57aw&t=1797s).
+* **Retrieve an answer from an old conversation instead of copying it all.** Ball demonstrates Amp's then-new `read_thread` tool. A separate model reads the referenced thread and extracts the information requested, such as which feature flag was removed. Only that answer enters the current conversation. Unlike preparing a handoff at the end of a session, this also works when the need to revisit old work arises later [40:56–50:08](https://www.youtube.com/watch?v=maggx2Z57aw&t=2456s).
 
-The team kicks off with their weekly segment on what they've changed their minds about in AI development.
+### Evaluate the behavior your product needs
 
-* **Thorsten** is leaning towards making Amp **more opinionated**. He argues that the team has learned enough about what works to encode those practices into the product, guide users toward better workflows, and even remove generic features that push people in brittle directions.
-* **Brian** has changed his mind on **sub-agents**, finding that the main agent consistently produces higher-quality, more detailed results. He compares using sub-agents to a game of "telephone," where the original intent gets lost.
-* **Ryan** is all in on **Gemini 2.5 Flash**. He's found it to be an "unbelievable model" that is extremely fast, excellent at tool calling, and dramatically cheaper for his workflow: roughly half a cent for an interaction that cost around 10 cents with Sonnet 4.5.
-* **Graham** now believes Amp is building **"AI for developers"** rather than just a "coding agent." He sees Amp as a broader suite of specialized AI tools (like Librarian for search, Oracle for debugging) that help with all aspects of a developer's job.
+* **Compare models on your own task.** Ryan Carson reports that Gemini 2.5 Flash gave him similar results at much lower cost than Sonnet 4.5 for tool calls in his divorce-assistant application. He explicitly distinguishes that experience from coding-model performance [11:38–13:35](https://www.youtube.com/watch?v=maggx2Z57aw&t=698s).
+* **Make prompt changes traceable to output changes.** Carson demonstrates a custom evaluation interface after struggling to integrate a third-party service. It runs batches of likely user questions, records the model and prompt versions, displays tool calls, and lets his chief legal officer rate legal correctness, tone, and helpfulness. Versioned prompts and tool descriptions let him inspect what changed between runs; they do not replace the legal review [50:54–54:56](https://www.youtube.com/watch?v=maggx2Z57aw&t=3054s).
 
-### Guest Showcase: Building the Tool to Build the Tool
-
-Build Crew member Brian Jones, who comes from the flooring industry, shares the remarkable project he's been building.
-
-* **The Problem:** Brian started learning to code in February to build a complex app for his industry. He quickly ran into the major pitfalls of long-term AI projects: managing context, tracking tasks, and handing off work from one session to the next.
-* **The Solution:** Instead of building the app, he first built a **custom project management tool specifically for AI-driven development**.
-* **The Tool:** Brian's app manages projects, tasks, and context. It tracks every session, stores important decisions, saves context "handoffs" (similar to Amp's new feature), and even visualizes code dependencies. He built this complex tool entirely with the help of AI agents to solve his own workflow problems.
-* **One Task at a Time:** Brian cautions against assuming more parallel agents always help. His experience is that clear sequencing, explicit context, and finishing one task before starting the next often produce better results for large non-expert projects.
-
----
-
-### Agentic Coding Tips & New Features
-
-The team demonstrates new tools and workflows for getting the most out of AI agents.
-
-* **Amp Tip: Referencing Other Threads**
-    Thorsten demos a brand new, experimental Amp feature: the ability to **reference other threads as context**. By simply pasting a thread URL, the agent uses a tool (`read_thread`) and a Gemini model to summarize that entire conversation and extract the specific information you asked for, all without bloating your new context window.
-
-* **Ryan's Tip: "Roll Your Own" Evals**
-    Ryan shares his experience trying to use a third-party SaaS tool for evaluating his AI's legal-correctness. After finding it too complex and incompatible with his stack, he used Amp to **build his own custom evaluation system** in just two days. His new tool allows him to version his prompts and tool descriptions, run batch tests, and have his legal officer review every output for correctness, giving him a perfectly tailored solution.
-
-### Final Thoughts: Be Nice to Your AI
-
-The episode concludes with a philosophical discussion about whether you should be polite to AI. The consensus: yes. The team agrees that treating the agent like a partner or teammate, using "please" and "thank you," and even giving it compliments ("great job so far, but...") subjectively and anecdotally leads to better, more cooperative results.
-
-Brian's final advice to new, non-technical builders: "Find your tribe... The door is wide open right now. You can learn whatever you want to learn... you can just do stuff now. So go do stuff."
+The panel also prefers courteous interaction with agents, but describes that preference through personal experience and analogy rather than a measured performance result [23:13–28:01](https://www.youtube.com/watch?v=maggx2Z57aw&t=1393s).
 
 Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=maggx2Z57aw)
 
