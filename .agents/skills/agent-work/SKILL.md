@@ -32,7 +32,7 @@ Create a work item when resumption, coordination, handoff, auditability, durable
    - Delegate only when isolation, parallelism, durable follow-up, or a different execution environment genuinely helps. Follow **Coordinating Workers And Reviewers** below.
    - Follow [handoff context](references/handoff-context.md) when a fresh thread or worker is useful.
 6. **Finish the work**
-   - Reconcile plan checkboxes and observed evidence, promote reusable outcomes, and follow **Completing And Removing Work Items**.
+   - Reconcile plan checkboxes and observed evidence, promote reusable outcomes, and follow **Closing Completed Work**.
 
 ## Coordinating Workers And Reviewers
 

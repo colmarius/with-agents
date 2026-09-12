@@ -9,6 +9,10 @@ Use `agent-browser` when work needs a real browser, repeatable UI checks, screen
 
 This checked-in skill is a discovery stub. Ask the installed CLI for current workflow details instead of vendoring fast-changing runtime instructions.
 
+In an Amp orb, also load `using-agent-browser` and follow root `AGENTS.md`'s
+Orb Proof Loop for service startup, portal access, and verification. CLI runtime
+instructions do not replace environment-specific authentication or service rules.
+
 ## Workflow
 
 1. Check whether the CLI is available:

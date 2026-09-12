@@ -35,7 +35,8 @@ src/
 ├── data/          # Canonical resource manifests and catalog registry
 ├── hooks/         # React hooks
 ├── layouts/       # Astro layouts
-├── pages/         # Routes and API endpoints
+├── pages/         # Static page routes
+├── search/        # Build-time search index and search tests
 ├── scripts/       # Client scripts
 ├── styles/        # Global styles
 ├── types/         # Type definitions
@@ -46,11 +47,11 @@ Important routes:
 
 - `/` - umbrella landing page
 - `/coding`, `/cloud`, and `/security` - context landing pages
-- `/posts` and `/posts/[slug]` - article path
-- `/posts/[slug]/slides` - generated slide view for each published post
+- `/[context]/posts` and `/[context]/posts/[slug]` - context-specific article index and articles
+- `/[context]/posts/[slug]/slides` - generated slide view for each published post
 - `/resources` - catalog index
 - `/resources/[topic]` and `/resources/[topic]/[section]` - catalog and section pages
-- `/api/summaries/[slug].json` - prerendered summary JSON for the React resource modal
+- `/summaries/[...slug]` - standalone summary pages, including series and collection navigation
 
 ## Code Conventions
 
@@ -85,14 +86,14 @@ When a request includes **“refresh amp resources”**, run a narrow delta audi
 1. Load the `research` skill and read the existing `.agents/research/amp-*.md` notes before fetching sources.
 2. Force-refresh the supplied official URLs and Amp Chronicle. Compare only items newer than the latest dated research baseline, then read the current Docs pages directly implicated by those items. Treat Docs as current behavior and Chronicle/News as dated evidence.
 3. Update reusable research when the delta adds or changes a durable fact. Update public posts only when a supported claim, workflow contract, or citation is stale; load the `article-writing` skill first. Keep interface details, routing, pricing, and one-off announcements research-only by default, and do not add a resource-manifest entry without a durable catalog use case.
-4. Search the full owning article for the changed concept and validate exact links, not only domains. Use Oracle only for a specific unresolved, high-impact evidence judgment—not as a routine review step.
+4. Search the full owning article for the changed concept and validate exact links, not only domains. Use Oracle when explicitly requested or for a specific unresolved, high-impact evidence judgment—not as an automatic review step.
 5. Run the checks required for the files changed, including link and browser checks for rendered updates. Report the source delta, files changed, deliberately unchanged public content, and decisive verification. Do not ship or archive unless explicitly requested.
 
 ### Article writing
 
 When writing or refreshing public posts under `src/content/posts/`, follow this contract and load the `article-writing` skill for the full workflow and checklists.
 
-- **Audience:** experienced developers, tech leads, and agent-heavy practitioners who want practical coding-agent workflows.
+- **Audience:** experienced developers, tech leads, and agent-heavy practitioners who want practical coding-agent, cloud/platform, and security workflows.
 - **Tone:** direct, calm, source-backed, concise; skeptical but constructive. Not salesy, manifesto-like, or slangy.
 - **Concision:** important point first; active sentences; short paragraphs; concrete examples; no throat-clearing. Prefer the shortest version the intended reader can understand without losing the reasoning or evidence boundary.
 - **Source anchors:** anchors must support the specific claim they sit beside. Mark author synthesis as synthesis. Do not pad posts with repeated source recaps.

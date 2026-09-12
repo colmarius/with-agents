@@ -1,11 +1,11 @@
 ---
 name: article-writing
-description: "Writes and reviews concise source-backed posts. Use for drafting, refreshing, simplifying, source checks, or draft retirement. Triggers on: write article, review article, refresh, simplify article, source-fidelity review, retire draft, remove draft."
+description: "Writes and reviews source-backed posts. Use for drafting, refreshing, simplifying, source checks, or draft retirement. Triggers on: write article, review article, refresh article, simplify article, source-fidelity review, retire draft, remove draft."
 ---
 
 # Article Writing Skill
 
-Write, review, and maintain the public coding-agent series with a consistent,
+Write, review, and maintain public posts across site contexts with a consistent,
 source-backed house style. Use this skill for new posts, editorial and
 source-fidelity reviews, refresh passes, draft retirement, and explicitly approved
 draft removal.
@@ -15,12 +15,8 @@ skill adds the repeatable workflow and the checklists.
 
 ## House Style
 
-- **Audience:** experienced developers, tech leads, and agent-heavy practitioners
-  who want practical coding-agent workflows.
-- **Tone:** direct, calm, source-backed, concise; skeptical but constructive. Not
-  salesy, not manifesto-like, not slangy.
-- **Structure:** important point first. Active sentences. Short paragraphs. Concrete
-  examples and prompts over abstraction. No throat-clearing or meta-history.
+Apply root `AGENTS.md`'s audience, tone, and concision contract across all contexts.
+
 - **Skim test:** the title, description, headings, slide messages, and one practical
   artifact should expose the reader job, argument, and next action in 30 seconds.
 - **Shape:** choose sections for the argument and slide sequence, not a fixed
@@ -67,18 +63,19 @@ skill adds the repeatable workflow and the checklists.
 
 ## Product Freshness And Incorporation
 
-Before publishing or materially changing an Amp product claim, recheck the current
-[Amp Manual](https://ampcode.com/manual),
-[Orbs manual](https://ampcode.com/manual/orbs),
-[Models page](https://ampcode.com/models),
-[Plugin API](https://ampcode.com/manual/plugin-api),
-[Chronicle](https://ampcode.com/chronicle), and
-[Pricing page](https://ampcode.com/pricing). Treat canonical documentation as the
+Before publishing or materially changing an Amp product claim, recheck the
+relevant current [Amp Docs](https://ampcode.com/docs) pages. Use
+[Orbs](https://ampcode.com/docs/orbs),
+[Models](https://ampcode.com/models),
+[Plugin API](https://ampcode.com/docs/plugin-api), or
+[Pricing](https://ampcode.com/pricing) when the claim concerns those areas, and
+[Chronicle](https://ampcode.com/chronicle) for dated changes. Do not fetch every
+page for a claim confined to one area. Treat canonical documentation as the
 current product authority. Use dated announcements and workflow notes as dated
 direction or examples, not timeless feature documentation. Date-stamp exact
-product details as verified on the publication date or omit them. If first-party
-sources conflict, record the conflict and prefer the newer dedicated source or
-announcement for the changed feature.
+product details with the actual verification date or omit them. If first-party
+sources conflict, record the conflict; distinguish documented current behavior
+from announced direction rather than silently choosing an announcement.
 
 A fresh source belongs in research by default. Before drafting public prose,
 classify it as `incorporate`, `research-only`, or `ignore`. Incorporate it only
@@ -127,14 +124,17 @@ paper database or create a recurring refresh schedule by default.
 
 ## Internal-Link Hygiene
 
-- Link only to routes that exist in this repo. Confirm with:
+- Link only to production routes. For posts, inspect the target frontmatter and
+  `src/utils/posts.ts`: paths are `/<context>/posts/<id>` and drafts are excluded
+  from production. A text search finds references, not proof of a route. After
+  building, confirm the exact output exists, for example:
 
   ```sh
-  rg "/posts/<slug>" src/pages src/content
+  test -f dist/<context>/posts/<slug>/index.html
   ```
 
 - Never link retired drafts or old/unavailable article routes from a public post.
-- Keep the public series coherent and cross-linked by role: field guide as the map,
+- Within the coding-agent series, keep posts cross-linked by role: field guide as the map,
   durable-context as repo memory, prove-it as the evidence ladder, small-threads as
   the operating procedure, Amp as the case study.
 
@@ -152,13 +152,17 @@ presentation slide.
   practical.
 - Keep the blockquote presentation-friendly: usually one sentence, no citation
   clutter, and no more than 1-3 short clauses.
-- Only contiguous visual blocks immediately after the blockquote stay on the
-  slide. Once normal prose, lists, or non-visual code starts, the rest of the
-  section is speaker/reader notes.
+- By default, without an explicit notes delimiter, only contiguous visual blocks
+  immediately after the blockquote stay on the slide. Once normal prose, lists,
+  or non-visual code starts, the rest of the section is speaker/reader notes.
+- An explicit `<!-- notes -->`, `<!-- notes: -->`, or `Notes:` paragraph keeps
+  meaningful content before it on the slide, including prose and lists. Existing
+  configured `visual` and `image` layouts may start with a visual instead of a
+  blockquote. Preserve these intentional layouts when editing a deck.
 - Keep any qualification that changes the truth of the takeaway visible in the
   slide message. Put supporting detail, citations, examples, prompts, and
-  read-along context in prose after the blockquote; that prose becomes
-  speaker/reader notes in slide mode.
+  read-along context in the notes region: after the default visual sequence or
+  after an explicit notes delimiter.
 - Optional visuals may immediately follow the blockquote: Mermaid, text diagrams,
   tables, inline SVG, figures, or Markdown images. Make them accessible with alt
   text, captions, or nearby prose that does not rely on color/image-only meaning.
@@ -214,8 +218,9 @@ independent review so feedback can be judged instead of applied mechanically.
 
 - Re-read each source anchor against the sentence it supports.
 - Confirm every internal link resolves to a real route.
-- Check frontmatter still matches `src/content.config.ts` (title, description,
-  pubDate, tags, draft, order).
+- Check frontmatter still matches `src/content.config.ts`, including required
+  `context`, title, description, pubDate, and order, plus optional visibility and
+  canonical-path fields when used.
 
 ### 4. Build and record
 
@@ -300,8 +305,8 @@ When deletion is explicitly approved:
       setting/time boundary, and material affiliation or conflict.
 - [ ] Presenter or vendor figures illustrate bounded mechanisms rather than
       silently becoming transferable benchmarks.
-- [ ] Amp claims were checked against Manual, Orbs, Models, Plugin API, Chronicle,
-      and Pricing on the publication date.
+- [ ] Amp claims were checked against relevant current Docs and dedicated sources;
+      exact product details carry the actual verification date.
 - [ ] New source items were classified as `incorporate`, `research-only`, or
       `ignore` using all six incorporation checks.
 - [ ] A transcript-backed post adds a distinct thesis beyond its matching resource

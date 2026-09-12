@@ -43,8 +43,8 @@ The description determines when the skill gets loaded:
 
 **Constraints:**
 
-- Keep under 250 characters
-- Use kebab-case for skill names
+- Keep descriptions under 250 characters as a repository convention (the Amp limit is 1024)
+- Use lowercase kebab-case for skill names, at most 64 characters; prefer gerunds for new skills
 - Match the `name` to the parent directory exactly
 - Start with action verb or noun describing capability
 - **Always quote description values** - Required for YAML parsing when values contain colons (`:`)
@@ -95,13 +95,13 @@ Verify your skill by loading it and checking:
 - Workflows produce expected outputs
 - Referenced scripts, assets, and relative links exist
 
-In the dot-agents source repository, run `./scripts/skills-lint.sh` to validate core skill metadata and links.
+Check metadata and relative links against the actual files in this checkout, and
+run `bash -n` on changed shell helpers. The upstream dot-agents
+`./scripts/skills-lint.sh` is not installed here. Loading a skill verifies discovery
+and readability, not every trigger or the workflow's behavior; exercise relevant
+commands separately. In Amp, use `reload_skills` after edits.
 
 ## Available Skills
 
-| Skill | Purpose |
-| ----- | ------- |
-| `adapt` | Analyze project and fill in AGENTS.md after installation |
-| `agent-browser` | Discover current real-browser automation workflows from the installed CLI |
-| `agent-work` | Manage durable work from requirements and plans through execution and handoffs |
-| `research` | Research technical topics, saving work-local or reusable findings |
+Use the `name` and `description` in each `*/SKILL.md` as the inventory. Do not
+maintain a second list that can drift when project-specific skills are added.

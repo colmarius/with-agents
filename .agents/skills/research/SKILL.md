@@ -36,7 +36,7 @@ Use the smallest toolset that can answer the question.
 | --- | --- |
 | Web search | Find authoritative sources when local docs are insufficient |
 | Web page reading | Extract relevant details from specific URLs |
-| Oracle or another reasoning model | Synthesize trade-offs after evidence is gathered |
+| Oracle | User-requested review, or a specific unresolved high-impact judgment after direct investigation |
 | Repository search | Inspect local implementations and patterns |
 | GitHub tooling | Inspect issues, PRs, releases, or external repository examples |
 
@@ -48,6 +48,8 @@ Guidelines:
 4. Target 2-5 high-quality sources instead of broad source dumps.
 5. Use deeper reasoning after collecting evidence, not as a substitute for evidence.
 6. If the user asks for latest or recent information, force a fresh fetch when your tools support it.
+7. Read full source content when auditing claims, checking numbers, or looking for
+   contradictory evidence; relevance-selected excerpts can omit qualifications.
 
 ### 3. Synthesize Recommendation
 
@@ -76,7 +78,7 @@ Create or update `.agents/research/<topic-slug>.md` when:
 - The topic needs multiple sources or non-obvious trade-offs.
 - The user explicitly asks to document reusable research.
 
-If work-local findings later become broadly reusable, add a concise promoted synthesis to `.agents/research/` and link between the files.
+If work-local findings later become broadly reusable, add a concise promoted synthesis to `.agents/research/` and link to it from the work item. Reusable notes must stand alone after work-item removal; do not depend on links back to the temporary folder.
 
 Use this template:
 

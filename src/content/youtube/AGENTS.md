@@ -124,8 +124,10 @@ The resulting IDs and order must exactly match the catalog's reviewed curation.
 Public posts and resources may cite selected source evidence only after the
 individual source summary and playlist overview are reviewed.
 
-The status tooling currently reads only `status` and `coveredVideoIds`, and it
-does so tolerantly. All other frontmatter is durable editorial provenance.
+The status reader tolerantly extracts `status` and `coveredVideoIds`. The
+structural audit separately validates frontmatter keys, source identity,
+language, caption kind, publication date, headings, links, and anchors. A status
+report is not a substitute for `audit` or source-fidelity review.
 
 ### Video summaries
 
@@ -150,8 +152,8 @@ date. Copy `sourceLanguage` and `captionKind` from `metadata.json`, and copy
 `publishedAt` from the playlist manifest; do not re-fetch or infer these
 values. `captionKind` must be `auto-generated` or `caption`, matching the
 metadata `kind`. `status` must be `draft` or `reviewed`; status tooling treats
-any other value as draft/not reviewed. Only `status` is currently machine-read
-from summary frontmatter.
+any other value as draft/not reviewed. The status reader uses only `status`
+from summary frontmatter; the structural audit validates the fuller contract.
 
 When `sourceLanguage` differs from `summaryLanguage`, the first body line must
 be this italic disclosure, adapted only for the actual languages and caption

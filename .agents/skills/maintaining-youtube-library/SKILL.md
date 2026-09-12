@@ -10,9 +10,9 @@ keeping editorial and publication decisions explicit. Read and follow the
 [authoritative library contract](../../../src/content/youtube/AGENTS.md) before
 changing `src/content/youtube/`; do not restate or bypass it.
 
-This skill is only for the tracked playlist library. A request to summarize one
-standalone YouTube video follows the root `AGENTS.md` single-video transcript
-workflow instead.
+This skill covers tracked playlists and their resource-intake queues. A direct
+request to summarize one standalone YouTube video follows the root `AGENTS.md`
+single-video transcript workflow instead.
 
 ## Choose One Mode
 
@@ -212,9 +212,9 @@ standalone public resources, not a public playlist collection.
 5. Self-review reader understanding using root `AGENTS.md`'s Summary readability
    review, claim-to-transcript fidelity, and catalog novelty, then use an
    independent high-mode reviewer when useful and address actionable feedback.
-   Consult Oracle only when direct investigation leaves a specific,
-   high-impact source-fidelity or publication judgment unresolved; Oracle is
-   not a routine approval gate.
+   Consult Oracle when explicitly requested or when direct investigation leaves
+   a specific, high-impact source-fidelity or publication judgment unresolved;
+   Oracle is not an automatic approval gate.
 6. Recommend `keep` only when the item adds a durable workflow, mechanism,
    evidence boundary, or perspective not already represented strongly in the
    catalog. Recommend `remove` when it is substantially duplicative,
@@ -261,10 +261,11 @@ the structural audit does not score prose or infer whether a claim is accurate.
 Apply this review to every authoritative sync diff or manual playlist identity
 change before completing a mutating workflow.
 
-1. For every retitled, removed, or availability-changed video ID, run:
+1. For every retitled, removed, availability-changed, or publication-date-changed
+   video ID, run a literal search (`-e` also handles leading-dash IDs):
 
    ```sh
-   rg -l -e '<video-id>' src/content/posts src/content/summaries src/data/resources
+   rg -l -F -e '<video-id>' src/content/posts src/content/summaries src/data/resources
    ```
 
 2. Inspect every matching artifact. Record an explicit `keep` or `fix` decision
@@ -274,7 +275,7 @@ change before completing a mutating workflow.
    `src/content/youtube/videos/<video-id>/summary.md` and review whether its
    framing still attributes the correct speakers and affiliations. Record a
    `keep` or `fix` decision, but never rewrite editorial prose automatically.
-4. Search playlist IDs with the same `rg -l -e '<playlist-id>'` form in the
+4. Search playlist IDs with the same `rg -l -F -e '<playlist-id>'` form in the
    public paths when playlist-level identity or availability changes, inspect
    every hit, and record the same decisions.
 5. For additions, review public playlist orientation, resource dates, corpus
@@ -298,10 +299,14 @@ change before completing a mutating workflow.
 
    ```sh
    npm run check
+   npm test
    npm run build
    ```
 
-3. Verify the source-only boundary; both searches must return no matches:
+3. Verify the source-only boundary; both searches must return no matches. If
+   `dist/` is absent or predates this work, build first; missing or stale output
+   does not verify the boundary. Ripgrep exit `1` means no matches, while exit
+   `2` is a check error:
 
    ```sh
    rg -n "src/content/youtube" src/content.config.ts src/pages src/components src/layouts
