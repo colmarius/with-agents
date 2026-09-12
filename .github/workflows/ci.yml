@@ -22,9 +22,9 @@ jobs:
         run: npx biome ci .
       - name: Astro and TypeScript check
         run: npm run check
-      - name: Tests
-        run: npm test
       - name: Content guard
         run: npm run content:guard
       - name: Build
         run: npm run build
+      - name: Tests
+        run: npm test

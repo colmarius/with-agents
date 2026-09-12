@@ -1,6 +1,6 @@
 # with-agents
 
-A multi-context Astro site for practical engineering: articles, generated slides, and source-backed resource collections for coding agents, cloud/GCP, and security.
+A multi-context Astro site for practical engineering: articles, generated slides, and source-backed resource collections for coding agents, cloud/GCP, security, and broader AI concepts, economics, and implications.
 
 **Live site target**: [with-agents.dev](https://with-agents.dev)
 
@@ -46,6 +46,20 @@ results. There is no query analytics or saved search history.
 The installed site's service worker precaches search data and code, so search
 works offline after installation. This downloads the corpus even if search has
 not been opened. The existing update prompt reloads the site with the new corpus.
+
+## Resource catalogs
+
+The AI context at `/ai` leads to `/resources/ai`, grouped into Concepts &
+capabilities, Economics & industry, and Implications & risks. It covers AI itself
+and its broader consequences; Coding with Agents remains focused on software
+workflows, agent systems, verification, and developer practice.
+
+Keep one canonical record in a registered manifest under `src/data/resources/`.
+Use `catalogs.ts` to cross-list a resource only when its source has substantive
+material for both audiences. Moving catalog membership does not require changing
+summary or transcript paths: existing summary URLs remain stable, including
+legacy `coding-with-agents` slugs now owned by AI. Shared resources keep their
+existing primary catalog and expose an additional AI link.
 
 ## Project Structure
 

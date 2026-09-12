@@ -10,6 +10,7 @@ test('site contexts own the stable landing and catalog routes', () => {
       { slug: 'coding', catalogSlug: 'coding-with-agents' },
       { slug: 'cloud', catalogSlug: 'cloud' },
       { slug: 'security', catalogSlug: 'security' },
+      { slug: 'ai', catalogSlug: 'ai' },
     ],
   );
 
@@ -37,6 +38,7 @@ test('only coding curates public field guides', () => {
       },
       { slug: 'cloud', featuredPostIds: null },
       { slug: 'security', featuredPostIds: null },
+      { slug: 'ai', featuredPostIds: null },
     ],
   );
 });

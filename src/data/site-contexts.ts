@@ -1,4 +1,4 @@
-export const siteContextSlugs = ['coding', 'cloud', 'security'] as const;
+export const siteContextSlugs = ['coding', 'cloud', 'security', 'ai'] as const;
 
 export type SiteContextSlug = (typeof siteContextSlugs)[number];
 
@@ -45,5 +45,14 @@ export const siteContexts = [
     description:
       'Reviewed, source-backed guidance across cloud security, applications, identity, data protection, threat response, governance, and compliance.',
     catalogSlug: 'security',
+  },
+  {
+    slug: 'ai',
+    navigationLabel: 'AI',
+    title: 'AI',
+    promise: 'Understand AI capabilities, economics, and consequences.',
+    description:
+      'Source-backed resources and commentary on how AI works, its industry and economics, and its implications for work, learning, research, and society.',
+    catalogSlug: 'ai',
   },
 ] as const satisfies readonly SiteContext[];

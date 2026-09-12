@@ -3,7 +3,7 @@
 ## Stack & Architecture
 
 - **Astro v7** + React 19 + TailwindCSS v4
-- **Static multi-context knowledge site** for practical coding-agent, cloud/GCP, and security workflows, posts, slides, and curated resources
+- **Static multi-context knowledge site** for practical coding-agent, cloud/GCP, and security workflows, plus broader AI concepts, economics, and implications, with posts, slides, and curated resources
 - **Site**: <https://with-agents.dev>
 - **Repository**: `colmarius/with-agents` (public source repository)
 - **Path aliases**: `@components`, `@types`, `@layouts`, `@utils`, `@scripts` (defined in `tsconfig.json`)
@@ -46,7 +46,7 @@ src/
 Important routes:
 
 - `/` - umbrella landing page
-- `/coding`, `/cloud`, and `/security` - context landing pages
+- `/coding`, `/cloud`, `/security`, and `/ai` - context landing pages
 - `/[context]/posts` and `/[context]/posts/[slug]` - context-specific article index and articles
 - `/[context]/posts/[slug]/slides` - generated slide view for each published post
 - `/resources` - catalog index
@@ -64,7 +64,7 @@ Important routes:
 
 ## Content Guidelines
 
-- Keep the site focused on practical coding-agent, cloud/platform, and security engineering knowledge and their supporting developer practices.
+- Keep the site focused on practical coding-agent, cloud/platform, and security engineering knowledge, supporting developer practices, and broader AI concepts, economics, and implications.
 - Avoid personal-site pages, personal-only assets, or unrelated resource collections.
 - Draft posts must use `draft: true`; production builds should not publish drafts.
 - Internal links should point only to routes that exist in this repository, unless intentionally linking to an external site.
@@ -76,6 +76,7 @@ Important routes:
 - After verifying the new resource in an orb browser, include a clickable portal link to its summary or resource route in the final response. Use the portal URL returned by `amp orb services ensure` with the verified route and the Markdown link title `amp-portal`; never substitute a localhost URL or imply the preview is deployed.
 - Keep one canonical resource record in a registered manifest under `src/data/resources/`; resource IDs are globally unique, and public summaries under `src/content/summaries/**` join that record through `resourceId`.
 - `src/data/resources/catalogs.ts` owns catalog metadata, display order, membership, and per-catalog section assignment. Cross-list a resource by reusing its canonical ID in each catalog's `resourceIds` and `sectionByResourceId`; never duplicate the resource record or its summaries.
+- The AI catalog covers concepts and capabilities, economics and industry, and broader implications and risks. Move general-AI resources there; cross-list in Coding only when the source contains substantive software-engineering, agent-system, or developer-practice material. Opinion and forecasts must retain their evidence labels. Preserve existing summary URLs when moving membership; legacy directory names do not determine catalog ownership.
 - For a public playlist collection, follow `src/content/youtube/AGENTS.md`. The public children's `collection`, `order`, and `videoId` values must exactly match reviewed curation, and source summaries plus the playlist overview must be reviewed before publication.
 - Run `npm run content:guard` after resource or public-summary changes. When tracked YouTube source evidence changes, also run `npm run youtube:library -- status` and `npm run youtube:library -- audit`.
 

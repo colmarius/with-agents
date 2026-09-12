@@ -4,6 +4,7 @@ import type {
   ResourceSection,
   ResourceTopicOption,
 } from '../../types/resources.ts';
+import { aiResources } from './ai.ts';
 import { codingResources } from './coding-with-agents.ts';
 import { googleCloudResources } from './google-cloud.ts';
 import { resourceSections } from './sections.ts';
@@ -147,6 +148,7 @@ export const resources: Resource[] = [
   ...codingResources,
   ...googleCloudResources,
   ...securityResources,
+  ...aiResources,
 ].map(({ primarySection: _primarySection, ...resource }) => resource);
 
 const codingSectionByResourceId = Object.fromEntries(
@@ -175,6 +177,59 @@ const securitySectionByResourceId = {
     securityResources.map((resource) => [resource.id, resource.primarySection]),
   ),
   58: 'threat-detection-response',
+};
+
+const aiSections = [
+  {
+    key: 'concepts-capabilities',
+    label: 'Concepts & capabilities',
+    description:
+      'Model behavior, learning, reasoning, representations, and how capabilities are evaluated.',
+    routeSlug: 'concepts-capabilities',
+  },
+  {
+    key: 'economics-industry',
+    label: 'Economics & industry',
+    description:
+      'Compute investment, infrastructure obligations, adoption economics, and AI industry strategy.',
+    routeSlug: 'economics-industry',
+  },
+  {
+    key: 'implications-risks',
+    label: 'Implications & risks',
+    description:
+      'AI and work, learning, research, human agency, societal choices, and safety.',
+    routeSlug: 'implications-risks',
+  },
+] as const satisfies readonly ResourceSection[];
+
+const aiTopicOptions = [
+  { slug: 'models-evaluation', label: 'Models & evaluation' },
+  { slug: 'business-adoption', label: 'Business & adoption' },
+  { slug: 'collaboration-teams', label: 'Collaboration & teams' },
+  { slug: 'context-memory', label: 'Context & memory' },
+  { slug: 'safety-permissions', label: 'Safety & permissions' },
+  { slug: 'open-source-ecosystem', label: 'Open source ecosystem' },
+  { slug: 'tools-harnesses', label: 'Tools & harnesses' },
+  { slug: 'review-verification', label: 'Review & verification' },
+] as const satisfies readonly ResourceTopicOption[];
+
+const aiResourceIds = [
+  124, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73,
+];
+
+const aiSectionByResourceId = {
+  ...Object.fromEntries(
+    aiResources.map((resource) => [resource.id, resource.primarySection]),
+  ),
+  121: 'concepts-capabilities',
+  108: 'concepts-capabilities',
+  33: 'concepts-capabilities',
+  55: 'economics-industry',
+  73: 'economics-industry',
+  107: 'implications-risks',
+  111: 'implications-risks',
+  110: 'implications-risks',
 };
 
 export const resourceCatalogs: readonly ResourceCatalog[] = [
@@ -213,6 +268,18 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
     topicOptions: securityTopicOptions,
     resourceIds: securityResourceIds,
     sectionByResourceId: securitySectionByResourceId,
+  },
+  {
+    slug: 'ai',
+    title: 'AI',
+    description:
+      'Source-backed resources and commentary on AI concepts, capabilities, economics, industry, and broader implications.',
+    indexDescription:
+      'Understand AI beyond coding: how models work, what they change, and the economics and risks behind adoption.',
+    sections: aiSections,
+    topicOptions: aiTopicOptions,
+    resourceIds: aiResourceIds,
+    sectionByResourceId: aiSectionByResourceId,
   },
 ];
 

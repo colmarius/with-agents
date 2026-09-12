@@ -24,7 +24,7 @@ const codingSections = (codingCatalog?.sections ?? []).map((section) => ({
 
 <Layout
   title="With Agents – Resources"
-  description="Curated, source-backed resources for coding agents, cloud engineering, and security."
+  description="Curated, source-backed resources for coding agents, cloud engineering, security, and broader AI topics."
   canonicalPath="/resources"
 >
   <div class="max-w-4xl mx-auto">
@@ -34,12 +34,12 @@ const codingSections = (codingCatalog?.sections ?? []).map((section) => ({
     </h1>
     <p class="text-xl text-gray-600 mb-12 font-light leading-relaxed" data-search-body>
       Browse practical, source-backed collections for coding agents, cloud
-      engineering, and security.
+      engineering, and security, alongside broader AI concepts, economics, and implications.
     </p>
 
     <section aria-labelledby="topics-heading">
       <h2 id="topics-heading" class="sr-only">Resource topics</h2>
-      <div class="grid gap-6 md:grid-cols-3">
+      <div class="grid gap-6 md:grid-cols-2">
         {
           catalogs.map((catalog) => (
             <a

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { existsSync, globSync, readFileSync } from 'node:fs';
 import test from 'node:test';
+import { parseHTML } from 'linkedom';
 import { resourceCatalogs, resources } from '../data/resources/catalogs.ts';
 import { validatePayload } from './documents.ts';
 import { createSearch } from './engine.ts';
@@ -16,6 +17,71 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
   );
   const byUrl = new Map(documents.map((document) => [document.url, document]));
   const engine = await createSearch(documents);
+  for (const url of [
+    '/ai',
+    '/resources/ai',
+    '/resources/ai/concepts-capabilities',
+    '/resources/ai/economics-industry',
+    '/resources/ai/implications-risks',
+  ]) {
+    assert.ok(byUrl.has(url), `Missing AI page ${url}`);
+  }
+  assert.ok(!existsSync('dist/ai/posts/index.html'), 'No empty AI post index');
+  for (const [slug, id, section] of [
+    ['ais-hidden-debt-problem-explained', 124, 'economics-industry'],
+    ['ai-mathematical-results', 123, 'implications-risks'],
+    [
+      'paul-graham-on-startups-ambition-and-great-founders',
+      120,
+      'economics-industry',
+    ],
+    [
+      'sam-altman-on-astra-agi-and-the-future-of-openai',
+      119,
+      'implications-risks',
+    ],
+    [
+      'sam-altman-on-building-openai-betting-on-the-impossible',
+      52,
+      'economics-industry',
+    ],
+    [
+      'why-ai-models-stop-learning-rich-sutton-khurram-javed',
+      49,
+      'concepts-capabilities',
+    ],
+    ['salvatore-sanfilippo-ai-concepts', 23, 'concepts-capabilities'],
+  ] as const) {
+    const url = `/summaries/coding-with-agents/${slug}`;
+    assert.ok(byUrl.has(url), `Preserve legacy summary URL ${url}`);
+    const { document } = parseHTML(
+      readFileSync(`dist${url}/index.html`, 'utf8'),
+    );
+    const parent = document.querySelector('nav[aria-label="Parent page"] a');
+    assert.equal(
+      parent?.getAttribute('href'),
+      `/resources/ai/${section}#resource-${id}`,
+    );
+    assert.match(parent?.textContent ?? '', /Back to AI resources/);
+  }
+  const { document: sharedSummary } = parseHTML(
+    readFileSync(
+      'dist/summaries/coding-with-agents/antirez-zip-5-agi-benchmarks/index.html',
+      'utf8',
+    ),
+  );
+  assert.equal(
+    sharedSummary
+      .querySelector('nav[aria-label="Parent page"] a')
+      ?.getAttribute('href'),
+    '/resources/coding-with-agents/reliability#resource-121',
+  );
+  assert.equal(
+    sharedSummary
+      .querySelector('nav[aria-label="Other resource catalogs"] a')
+      ?.getAttribute('href'),
+    '/resources/ai/concepts-capabilities#resource-121',
+  );
   const summarySources = globSync('src/content/summaries/**/*.md').map(
     (path) => {
       const source = readFileSync(path, 'utf8');

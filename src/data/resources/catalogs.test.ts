@@ -6,6 +6,7 @@ import {
   getCatalogResources,
   getResourceCatalog,
   resourceCatalogs,
+  resources,
   validateResourceCatalogs,
 } from './catalogs.ts';
 
@@ -47,7 +48,7 @@ const requireCatalog = (slug: string): ResourceCatalog => {
 test('registry exposes catalogs and cross-listed security resources', () => {
   assert.deepEqual(
     resourceCatalogs.map((entry) => entry.slug),
-    ['coding-with-agents', 'cloud', 'security'],
+    ['coding-with-agents', 'cloud', 'security', 'ai'],
   );
   assert.deepEqual(
     getCatalogResources(requireCatalog('security')).map(({ id }) => id),
@@ -69,6 +70,42 @@ test('registry exposes catalogs and cross-listed security resources', () => {
     ),
     [100, 101, 102, 103, 105, 106],
   );
+});
+
+test('AI groups broad resources while preserving substantive coding cross-listings', () => {
+  const ai = requireCatalog('ai');
+  const coding = requireCatalog('coding-with-agents');
+  assert.deepEqual(
+    ai.resourceIds,
+    [124, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73],
+  );
+  for (const [section, ids] of [
+    ['concepts-capabilities', [121, 108, 49, 23, 33]],
+    ['economics-industry', [124, 120, 52, 55, 73]],
+    ['implications-risks', [123, 119, 110, 107, 111]],
+  ] as const) {
+    assert.deepEqual(
+      getCatalogResources(ai, section).map(({ id }) => id),
+      ids,
+    );
+  }
+  for (const id of [124, 123, 120, 119, 52, 49, 23]) {
+    assert.ok(!coding.resourceIds.includes(id), `${id} is AI-only`);
+    assert.equal(coding.sectionByResourceId[id], undefined);
+    assert.equal(resources.filter((resource) => resource.id === id).length, 1);
+  }
+  for (const id of [121, 108, 33, 55, 73, 107, 111, 110]) {
+    assert.ok(coding.resourceIds.includes(id), `${id} remains in Coding`);
+    assert.strictEqual(
+      getCatalogResources(ai).find((resource) => resource.id === id),
+      getCatalogResources(coding).find((resource) => resource.id === id),
+      `${id} uses one canonical record`,
+    );
+  }
+  for (const id of [122, 118, 44, 45, 21, 20]) {
+    assert.ok(coding.resourceIds.includes(id));
+    assert.ok(!ai.resourceIds.includes(id), `${id} stays coding-specific`);
+  }
 });
 
 test('new Cloud and Security articles have one standalone summary each', () => {

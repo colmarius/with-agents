@@ -1,0 +1,101 @@
+[
+  {
+    "id": 124,
+    "primarySection": "economics-industry",
+    "title": "AI's Hidden Debt Problem Explained",
+    "subtitle": "Hyperscaler spending commitments, future leases, and financial guarantees",
+    "url": "https://www.youtube.com/watch?v=v824SHV6COE",
+    "description": "The Plain Bagel separates AI hyperscalers' purchase commitments, funding obligations, uncommenced leases, and financial guarantees. The video explains why headline totals are not equivalent to ordinary debt while arguing that fixed infrastructure payments reduce flexibility if AI demand disappoints. Financial commentary from company filings, summarized from captions; figures and accounting interpretations are the presenter's analysis, not independently audited findings or investment advice.",
+    "type": "video",
+    "source": "The Plain Bagel",
+    "date": "2026-09-11",
+    "duration": "22m",
+    "topics": ["business-adoption"]
+  },
+  {
+    "id": 123,
+    "primarySection": "implications-risks",
+    "title": "AI's mathematical results are not a bad thing",
+    "subtitle": "Salvatore Sanfilippo on AI-generated proofs, human expertise, and learning from machine results",
+    "url": "https://www.youtube.com/watch?v=wef0bxq_25g",
+    "description": "Salvatore Sanfilippo argues that AI-generated mathematical proofs can add knowledge and become material for human study, simplification, and new techniques. He connects reactions to these results with the loss of professional status felt when coding agents outperform familiar work. Opinion commentary based on Italian auto-generated captions, not an independent verification of the mathematical result or of Terence Tao's position.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-09-09",
+    "duration": "9m",
+    "topics": ["models-evaluation", "business-adoption"]
+  },
+  {
+    "id": 120,
+    "primarySection": "economics-industry",
+    "title": "Paul Graham On Startups, Ambition, and Great Founders",
+    "subtitle": "Founder motivation, milestone funding, and why AI does not remove the need to ship",
+    "url": "https://www.youtube.com/watch?v=5bxp78i96S8",
+    "description": "Paul Graham discusses ambition, founder determination, starting with limited capital, and YC's batch model. The AI-relevant sections cover uneven model capabilities, shipping speed as a continuing signal, and inference bills as a new startup cost. A founder interview offering experience and opinion, not a coding-agent tutorial or a measured forecast of AI economics.",
+    "type": "video",
+    "source": "Y Combinator",
+    "date": "2026-09-08",
+    "duration": "21m",
+    "topics": ["business-adoption", "collaboration-teams"]
+  },
+  {
+    "id": 119,
+    "primarySection": "implications-risks",
+    "title": "Sam Altman on Astra, AGI, and the future of OpenAI",
+    "subtitle": "Frontier training safety, computer-use agents, and the convergence of chat and coding",
+    "url": "https://www.youtube.com/watch?v=VeizK1M7V7E",
+    "description": "Sam Altman discusses delayed frontier reinforcement-learning runs, alignment as following user intent, Astra computer use, and a unified ChatGPT/Codex experience. He also addresses compute constraints, privacy, and OpenAI's product priorities. A company leader's account and roadmap, not an independent evaluation of model capabilities or safety guarantees.",
+    "type": "video",
+    "source": "Sources Podcast",
+    "date": "2026-09-01",
+    "duration": "1h 9m",
+    "topics": [
+      "models-evaluation",
+      "safety-permissions",
+      "tools-harnesses",
+      "business-adoption"
+    ]
+  },
+  {
+    "id": 52,
+    "primarySection": "economics-industry",
+    "title": "Sam Altman on Building OpenAI & Betting on the Impossible",
+    "subtitle": "Hands-on adoption, context-rich agents, iterative deployment, and research feedback loops",
+    "url": "https://www.youtube.com/watch?v=kG8AoExkX40",
+    "description": "David Senra asks Sam Altman how AI adoption, context, product strategy, and research management shape OpenAI. Altman points to Tobi Lütke’s hands-on agent use, admits that habits and product gaps slow adoption, argues for iterative deployment and accident reporting, and proposes context-rich persistent agents. His capability, safety, and market claims are first-party reports or forecasts, and the privacy implications of broad context access go unaddressed.",
+    "type": "video",
+    "source": "David Senra",
+    "date": "2026-08-23",
+    "duration": "1h 18m",
+    "topics": [
+      "business-adoption",
+      "context-memory",
+      "models-evaluation",
+      "safety-permissions"
+    ]
+  },
+  {
+    "id": 49,
+    "primarySection": "concepts-capabilities",
+    "title": "Why AI Models Stop Learning — Rich Sutton and Khurram Javed",
+    "subtitle": "Continual learning, the Big World Hypothesis, and a research path beyond frozen model weights",
+    "url": "https://www.youtube.com/watch?v=xH7U7w9Qzlo",
+    "description": "Rich Sutton and Khurram Javed argue that deployed LLMs stay static because their weights do not update from experience. They propose continual learning from the real world, per-weight step-size optimization, Continual Backprop, and self-discovered abstractions as a path toward agents that keep adapting. Their claims about synthetic data, forgetting, and replacing the current LLM paradigm describe Oak Lab’s research agenda, not a system demonstrated at frontier scale.",
+    "type": "video",
+    "source": "Sequoia Capital",
+    "date": "2026-08-18",
+    "duration": "54m",
+    "topics": ["context-memory", "models-evaluation"]
+  },
+  {
+    "id": 23,
+    "primarySection": "concepts-capabilities",
+    "title": "AI concepts — Salvatore Sanfilippo",
+    "url": "https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
+    "description": "An Italian-language research notebook on model representations, reasoning, interpretability, architecture claims, open weights, local inference, efficiency, and speculative questions about AI and cosmology. The guided summary frames the playlist as conceptual grounding for evaluating coding agents rather than as a settled theory of AI.",
+    "type": "playlist",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-08-09",
+    "topics": ["models-evaluation", "tools-harnesses", "open-source-ecosystem"]
+  }
+]
