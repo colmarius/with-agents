@@ -87,21 +87,15 @@ The core `agent-browser` skill follows this pattern.
 
 ## Testing Skills
 
-Verify your skill by loading it and checking:
+Check discovery and behavior separately:
 
-- Triggers fire on expected phrases
-- Instructions are clear and actionable
-- Examples cover common use cases
-- Workflows produce expected outputs
-- Referenced scripts, assets, and relative links exist
+- Load the skill and confirm its metadata and references are available; this alone does not prove automatic trigger selection.
+- Exercise a representative task and check its actual output against the intended workflow.
+- Report workflows or trigger behavior that were not exercised.
+- Check that referenced scripts, assets, and relative links exist.
 
 Check metadata and relative links against the actual files in this checkout, and
 run `bash -n` on changed shell helpers. The upstream dot-agents
-`./scripts/skills-lint.sh` is not installed here. Loading a skill verifies discovery
-and readability, not every trigger or the workflow's behavior; exercise relevant
-commands separately. In Amp, use `reload_skills` after edits.
+`./scripts/skills-lint.sh` is not installed here. In Amp, use `reload_skills` after edits.
 
-## Available Skills
-
-Use the `name` and `description` in each `*/SKILL.md` as the inventory. Do not
-maintain a second list that can drift when project-specific skills are added.
+Use each skill's `SKILL.md` metadata as the current inventory rather than maintaining a second list here.
