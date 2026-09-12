@@ -7,15 +7,12 @@ order: 3
 videoId: "Sd0iznXSVcc"
 ---
 
-Yuri, identified in the transcript as an SRE at Google Cloud, decomposes missing VM telemetry into four boundaries: agent installation, service startup, source collection, and API delivery. This stage-by-stage model helps distinguish one failure class from another instead of treating absent logs or metrics as a single problem ([00:00–03:06](https://www.youtube.com/watch?v=Sd0iznXSVcc&t=0s)).
+When a virtual machine is running but its application logs or resource measurements are missing, the Ops Agent may be failing before that data reaches Google Cloud. Yuri, an SRE at Google Cloud, separates troubleshooting into installation, startup, collection, and delivery so that each check narrows the failure ([00:00–03:06](https://www.youtube.com/watch?v=Sd0iznXSVcc&t=0s)).
 
 ### Key Points Covered
 
 - **Installation and startup are separate checks**: In the demonstrated environment, unsupported operating systems, legacy-agent conflicts, or invalid configuration can stop the pipeline early ([01:01–02:04](https://www.youtube.com/watch?v=Sd0iznXSVcc&t=61s)).
-- **Collection modules have their own dependencies**: Credentials, proxies, network paths, and API reachability can prevent logging or monitoring modules from starting ([02:04](https://www.youtube.com/watch?v=Sd0iznXSVcc&t=124s)).
-- **Inspect source and destination boundaries**: The workflow checks module status, source readability, local metrics, module logs, API permissions, access scopes, and quotas ([03:06](https://www.youtube.com/watch?v=Sd0iznXSVcc&t=186s)).
-- **Missing data is not automatically data loss**: The episode does not explain fleet-wide diagnosis or how to distinguish delayed ingestion from permanent loss.
-
-This is a 2022 troubleshooting guide. Verify current supported systems, service and module names, commands, permissions, access-scope behavior, quotas, and legacy-agent compatibility; do not reconstruct exact errors from auto-captions.
+- **A running agent still needs working collection modules**: The logging and monitoring components can fail to start if invalid credentials, a proxy configuration, or a network problem prevents them from reaching their APIs ([02:04–03:06](https://www.youtube.com/watch?v=Sd0iznXSVcc&t=124s)).
+- **Separate reading data from sending it**: For missing logs, check the logging module, then its local metrics to see whether it can read the source logs. If collection works, inspect the module's own log for API errors such as missing permissions or exhausted quota. The metrics module's logs provide a similar way to check startup and delivery failures ([03:06–04:10](https://www.youtube.com/watch?v=Sd0iznXSVcc&t=186s)).
 
 Full video: <https://www.youtube.com/watch?v=Sd0iznXSVcc>

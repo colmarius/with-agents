@@ -7,14 +7,12 @@ order: 5
 videoId: "_tw3md6k8aw"
 ---
 
-This item-level application-access walkthrough deploys an App Engine sample and places Identity-Aware Proxy in front of it. [00:01–01:06](https://www.youtube.com/watch?v=_tw3md6k8aw&t=1s)
+Identity-Aware Proxy (IAP) restricts entry to an application according to who is signed in. This walkthrough protects an App Engine sample, then compares an authorized account's successful visit with another account's access-denied response. [00:01–01:43](https://www.youtube.com/watch?v=_tw3md6k8aw&t=1s)
 
 ### Key Points Covered
 
 - The presenter deploys a sample with the gcloud CLI and first confirms that the unprotected app responds. [00:01–01:06](https://www.youtube.com/watch?v=_tw3md6k8aw&t=1s)
-- A person or group receives the IAP-secured Web App User role. [00:01–01:06](https://www.youtube.com/watch?v=_tw3md6k8aw&t=1s)
-- After IAP is enabled, the authorized account can enter while another account receives an access-denied response. [01:06](https://www.youtube.com/watch?v=_tw3md6k8aw&t=66s)
-
-Treat the 2019 screens and activation flow as historical and this item as focused app-access orientation, not a complete security design; use current live Google Cloud IAP and App Engine documentation for procedures.
+- The presenter grants a person or group the IAP-secured Web App User role, then enables IAP for the application. The role specifies who is allowed through that access check. [00:01–01:43](https://www.youtube.com/watch?v=_tw3md6k8aw&t=1s)
+- The authorized account still sees the welcome page; another account receives an access-denied error. Testing both accounts demonstrates that the app is reachable but no longer equally accessible to everyone. [01:06–01:43](https://www.youtube.com/watch?v=_tw3md6k8aw&t=66s)
 
 Full video: <https://www.youtube.com/watch?v=_tw3md6k8aw>

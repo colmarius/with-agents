@@ -7,14 +7,11 @@ order: 2
 videoId: "NPs_-Y5nFgE"
 ---
 
-This walkthrough contrasts creating auto mode and custom mode VPC networks in the 2018 Cloud console. [00:00–01:05](https://www.youtube.com/watch?v=NPs_-Y5nFgE&t=0s)
+This short walkthrough compares automatic and custom subnet creation for a Virtual Private Cloud (VPC) network. The custom example makes the regional layout explicit: one network contains subnets in the US, Europe, and Asia. [00:00–02:02](https://www.youtube.com/watch?v=NPs_-Y5nFgE&t=0s)
 
 ### Key Points Covered
 
-- Auto mode uses a predefined subnet mode, while custom mode requires each regional subnet and address range to be specified. [00:00–01:05](https://www.youtube.com/watch?v=NPs_-Y5nFgE&t=0s)
-- The custom example places subnets in three regions, showing that one VPC network can contain regional subnets. [00:00–01:05](https://www.youtube.com/watch?v=NPs_-Y5nFgE&t=0s)
-- The demonstration stops after network creation and does not configure firewall policy, routes, or connectivity. [01:05](https://www.youtube.com/watch?v=NPs_-Y5nFgE&t=65s)
-
-Treat the 2018 screens and procedures as historical; use current live Google Cloud documentation for network design and implementation.
+- Auto mode lets the platform create subnets automatically. In custom mode, the operator adds each subnet and supplies its region and IP address range. [00:00–01:05](https://www.youtube.com/watch?v=NPs_-Y5nFgE&t=0s)
+- The custom example uses `us-central1`, `europe-west1`, and `asia-east1`. It demonstrates network creation, but does not test whether traffic can pass between resources or configure firewall rules. [00:00–02:02](https://www.youtube.com/watch?v=NPs_-Y5nFgE&t=0s)
 
 Full video: <https://www.youtube.com/watch?v=NPs_-Y5nFgE>

@@ -7,15 +7,12 @@ order: 7
 videoId: "4-rZd5DwEww"
 ---
 
-This walkthrough finds an American Community Survey public dataset, inspects it, and runs a sample BigQuery query. [00:01–03:10](https://www.youtube.com/watch?v=4-rZd5DwEww&t=1s)
+BigQuery's public datasets let you practice SQL analysis or combine shared records with your own data without importing a copy first. This walkthrough uses American Community Survey housing data to examine rent as a share of income in King County. [00:01–03:10](https://www.youtube.com/watch?v=4-rZd5DwEww&t=1s)
 
 ### Key Points Covered
 
-- Public datasets offer reusable records, such as census and weather data, that can be queried or joined without first importing a private copy. [00:01–01:03](https://www.youtube.com/watch?v=4-rZd5DwEww&t=1s)
-- The listing exposes description, update metadata, tables, schema, size, row count, preview data, and sample queries. [01:03–02:06](https://www.youtube.com/watch?v=4-rZd5DwEww&t=63s)
-- The example runs a prebuilt King County rent query and presents the BigQuery sandbox as a bounded starting path. [02:06–03:10](https://www.youtube.com/watch?v=4-rZd5DwEww&t=126s)
-- The episode points to Data Studio as a no-code visualization path. [02:06–03:10](https://www.youtube.com/watch?v=4-rZd5DwEww&t=126s)
-
-Treat the 2020 Marketplace screens and pricing language as historical. Data Studio is now named Looker Studio; use current live Google Cloud documentation for BigQuery procedures and visualization workflows.
+- **Inspect a table before querying it.** The dataset listing describes the data and its update frequency. Opening a table reveals its schema—the available columns—along with its size, row count, and sample rows. [01:03–02:06](https://www.youtube.com/watch?v=4-rZd5DwEww&t=63s)
+- **Start from a question or a sample query.** The demonstrated query asks how rent as a percentage of median income changed from 2011 to 2017. Its result breaks that comparison down by ZIP code, rather than returning a single county-wide figure. [02:06–03:10](https://www.youtube.com/watch?v=4-rZd5DwEww&t=126s)
+- The video presents the BigQuery sandbox as a way to start within the free tier and points to the then-named Data Studio for visualization without writing SQL. [02:06–03:10](https://www.youtube.com/watch?v=4-rZd5DwEww&t=126s)
 
 Full video: <https://www.youtube.com/watch?v=4-rZd5DwEww>

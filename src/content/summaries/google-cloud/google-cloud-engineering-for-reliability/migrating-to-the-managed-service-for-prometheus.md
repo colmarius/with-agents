@@ -7,15 +7,12 @@ order: 21
 videoId: "YjEh_V7MRc4"
 ---
 
-Yuri, identified in the transcript as an SRE at Google Cloud, demonstrates moving one application's scrape configuration from Prometheus Operator to Google Cloud managed collection. Querying the same application metric with PromQL after migration confirms the shown ingestion path; it does not establish complete configuration, resource, or feature parity ([00:00–03:03](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=0s)).
+Prometheus collects measurements by reading, or **scraping**, an application's metrics endpoint. Yuri, an SRE at Google Cloud, demonstrates moving one application's collection configuration to Google's managed service so the team no longer has to operate its own Prometheus infrastructure ([00:00–02:11](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=0s)).
 
 ### Key Points Covered
 
-- **The starting boundary is a ServiceMonitor**: Prometheus Operator uses it to discover and scrape the application's `/metrics` endpoint ([01:04](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=64s)).
-- **The migration translates one scrape resource**: The walkthrough replaces that ServiceMonitor with a similar `PodMonitoring` resource ([02:11](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=131s)).
-- **Validation checks the application metric**: PromQL and Metrics Explorer confirm ingestion after the new resource is applied ([03:03](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=183s)).
-- **Important migration questions remain open**: The episode does not assess full parity, rollback, cost, data residency, rules, or historical data; the auto-captioned traffic term near the collector explanation is uncertain ([02:11](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=131s)).
-
-The enablement commands, resource schemas, collection behavior, and UI are from 2022. Inventory current configuration and verify authoritative migration guidance before changing production.
+- **Establish the working configuration first**: Prometheus Operator manages the existing Prometheus deployment. A `ServiceMonitor` resource tells it to discover and scrape the application's `/metrics` endpoint; the presenter confirms that the app is a target and that its measurements are arriving ([00:00–02:11](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=0s)).
+- **Translate the collection configuration**: After enabling managed collection, the walkthrough replaces the `ServiceMonitor` with a `PodMonitoring` resource. The configuration is similar, but the presenter explicitly warns that some fields may need to change ([02:11–03:03](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=131s)).
+- **Check data, not just successful configuration**: Queries in PromQL, Prometheus's query language, and Metrics Explorer confirm that the application's measurements arrive after migration. This validates the example's collection path, not complete compatibility for every Prometheus feature or configuration ([03:03–03:55](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=183s)).
 
 Full video: <https://www.youtube.com/watch?v=YjEh_V7MRc4>

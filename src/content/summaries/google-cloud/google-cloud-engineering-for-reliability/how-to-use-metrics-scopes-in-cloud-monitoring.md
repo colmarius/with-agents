@@ -7,15 +7,12 @@ order: 9
 videoId: "_FKdug6B5FM"
 ---
 
-This episode explains how Cloud Monitoring metric scopes provide visibility across projects while a scoping project stores dashboards, alerts, uptime checks, and groups. The transcript identifies neither the presenter nor an affiliation.
+Cloud Monitoring metric scopes let a team view measurements from several Google Cloud projects together. A **scoping project** hosts the shared dashboards, alerts, uptime checks, and monitoring groups; the workloads can remain in other projects ([00:00–02:07](https://www.youtube.com/watch?v=_FKdug6B5FM&t=0s)).
 
 ### Key Points Covered
 
-- **Separate shared monitoring from workload lifecycle**: A dedicated scoping project can retain cross-project configuration when workload projects change ([00:00–02:07](https://www.youtube.com/watch?v=_FKdug6B5FM&t=0s)).
-- **Visibility still follows IAM**: Access to one monitored project does not automatically grant access to another through the shared scope ([02:07–03:12](https://www.youtube.com/watch?v=_FKdug6B5FM&t=127s)).
+- **Keep monitoring independent of workload deletion**: The presenter recommends a dedicated scoping project so that deleting a workload project does not also delete the dashboards and alerts used for the remaining projects ([01:03–02:07](https://www.youtube.com/watch?v=_FKdug6B5FM&t=63s)).
+- **Grant access at the intended scope**: In the example, an appropriate Identity and Access Management (IAM) role on the monitoring project lets a user see staging and production metrics. Access only to staging does not grant that combined view ([01:03–03:12](https://www.youtube.com/watch?v=_FKdug6B5FM&t=63s)).
 - **Enrollment can be automated**: The walkthrough uses the Cloud Monitoring API to add a monitored-project resource to a metric scope ([05:18–06:21](https://www.youtube.com/watch?v=_FKdug6B5FM&t=318s)).
-- **Central configuration concentrates ownership**: Consistency improves, but teams still need boundaries for who can view or change shared operational data.
-
-The terminology, API shape, resource schema, limits, recommended topology, and console flow shown are from 2021. Validate the current model and IAM roles before adopting the design.
 
 Full video: <https://www.youtube.com/watch?v=_FKdug6B5FM>

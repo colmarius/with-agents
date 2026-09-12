@@ -7,14 +7,12 @@ order: 10
 videoId: "LxDHd0MsFXI"
 ---
 
-This item-level security and data-governance quickstart uses the product now named Sensitive Data Protection; despite the title, the shown path inspects text for findings and does not demonstrate redaction. [00:01–02:06](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=1s)
+This Node.js example sends text to the Data Loss Prevention (DLP) API to find potentially sensitive information. Despite the title, it **detects a name and email address; it does not redact them**. [00:01–02:45](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=1s)
 
 ### Key Points Covered
 
-- The setup enables the API, grants a service account the Cloud DLP User role, and configures local application credentials. [00:01–02:06](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=1s)
+- The setup enables the API and gives a service account the Cloud DLP User role. The local sample uses that account's credentials to authenticate its requests. [00:01–02:06](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=1s)
 - The Node.js path clones sample code, installs the client library, and supplies a project ID through an environment variable. [01:03–02:06](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=63s)
-- Running `inspectString.js` identifies a name and email address as potentially sensitive findings. [02:06](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=126s)
-
-Treat the downloaded key and 2021 Cloud DLP procedure as historical teaching shortcuts, not modern defaults or a complete security program; use current live Sensitive Data Protection documentation for procedures, credentials, and governance.
+- Running `inspectString.js` prints findings to the console. The result identifies potentially sensitive text rather than returning a version with that text removed or masked. [02:06–02:45](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=126s)
 
 Full video: <https://www.youtube.com/watch?v=LxDHd0MsFXI>

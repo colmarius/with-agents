@@ -7,17 +7,12 @@ order: 7
 videoId: "gyDp-Cl_MdA"
 ---
 
-An unnamed presenter places managed logging within SRE practices rather than treating tooling as an operational strategy by itself. [00:00–01:02](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=0s)
+Cloud Logging collects records from applications and infrastructure in one place, so an investigation does not require searching each system separately. Google manages the log storage, while queries select the events relevant to a problem. [00:00–03:09](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=0s)
 
 ### Key Points Covered
 
-- Service-level objectives, error budgets, and blameless postmortems provide the reliability context in which monitoring tools become useful. [00:00–01:02](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=0s)
-- Cloud Logging centralizes service, third-party, and application logs without teams provisioning storage infrastructure. [01:02–02:06](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=62s)
-- Payload and monitored-resource identity support queries by source, namespace, severity, and time. [01:02–03:09](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=62s)
-- Exclusions, ingestion alerts, and routing to Cloud Storage, BigQuery, or Pub/Sub support volume control, retention, and downstream analysis. [02:06–03:09](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=126s)
-
-The auto-captions leave the video's free-ingestion quantity unresolved, so this summary does not use it. [02:06–03:09](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=126s)
-
-The 2020 Logs Explorer, routing, retention, integration, and pricing surfaces are historical; use current Google Cloud documentation for all procedures and costs.
+- **Keep the event and its source together.** Each log entry contains a payload—the message as text or structured data—and identifies the resource that produced it. Examples include a VM starting, a file upload, and application output. Queries filter records by resource, severity, and time. [01:02–03:09](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=62s)
+- **Control how much is stored.** The video shows alerts on monthly ingestion volume and exclusions that prevent selected logs from being stored. These address different needs: one warns about volume, while the other reduces it. [02:06–03:09](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=126s)
+- **Route logs for other uses.** Exporting to Cloud Storage supports archiving; BigQuery supports further analysis; Pub/Sub can pass logs to other storage systems. [03:09–04:02](https://www.youtube.com/watch?v=gyDp-Cl_MdA&t=189s)
 
 Full video: <https://www.youtube.com/watch?v=gyDp-Cl_MdA>

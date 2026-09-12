@@ -7,15 +7,12 @@ order: 11
 videoId: "E_ZDB4S6mSQ"
 ---
 
-This example creates, deploys, and executes a Workflows integration that combines a deployed Cloud Function with the Wikipedia API. [00:01–03:07](https://www.youtube.com/watch?v=E_ZDB4S6mSQ&t=1s)
+Workflows connects service calls in an order you define without requiring you to manage a server for that coordination. This example gets the current date from a Cloud Function, passes the weekday to Wikipedia, and returns articles about that day. [00:01–03:07](https://www.youtube.com/watch?v=E_ZDB4S6mSQ&t=1s)
 
 ### Key Points Covered
 
-- Workflows is introduced as serverless orchestration for performing related tasks in a defined order. [00:01–01:03](https://www.youtube.com/watch?v=E_ZDB4S6mSQ&t=1s)
-- Setup enables the Workflows API and gives a service account the Logging Logs Writer role for the sample. [00:01–01:03](https://www.youtube.com/watch?v=E_ZDB4S6mSQ&t=1s)
-- The workflow gets a date from a Cloud Function, passes the weekday to Wikipedia, and returns relevant articles. [01:03–03:07](https://www.youtube.com/watch?v=E_ZDB4S6mSQ&t=63s)
+- The workflow uses a service account as its identity for service calls. The sample enables the Workflows API, creates that account, and assigns the Logging Logs Writer role before selecting it for the workflow. [00:01–02:05](https://www.youtube.com/watch?v=E_ZDB4S6mSQ&t=1s)
+- Deploying saves the workflow; executing runs its steps and displays the final result. In the demonstration, a Thursday execution returns articles including Thursday Night Football and Thursday Afternoon. [02:05–03:07](https://www.youtube.com/watch?v=E_ZDB4S6mSQ&t=125s)
 - The service can connect custom services, Google Cloud services, and internet APIs. [02:05–03:07](https://www.youtube.com/watch?v=E_ZDB4S6mSQ&t=125s)
-
-Treat the 2021 syntax, screens, sample dependencies, Cloud Functions terminology, and role assignment as historical; use current live Google Cloud Workflows documentation for procedures, authentication, retries, and failure handling.
 
 Full video: <https://www.youtube.com/watch?v=E_ZDB4S6mSQ>
