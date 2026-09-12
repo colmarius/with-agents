@@ -16,6 +16,4 @@ REWORK host Kimberly Rhodes speaks with 37signals co-founder and CEO Jason Fried
 - **Separate native features from external agents**: Fried expects selective embedded AI alongside customers bringing agents into Basecamp through simpler surfaces and command-line access [13:56–20:01](https://www.youtube.com/watch?v=EwFT3h55oOc&t=836s).
 - **Keep optional power out of the way**: AI should help interested customers without making the product harder for people who do not want it [21:05–24:56](https://www.youtube.com/watch?v=EwFT3h55oOc&t=1265s).
 
-These personal workflow examples demonstrate faster iteration but provide no measurements for implementation quality, rework, or time saved.
-
 Full video: <https://www.youtube.com/watch?v=EwFT3h55oOc>

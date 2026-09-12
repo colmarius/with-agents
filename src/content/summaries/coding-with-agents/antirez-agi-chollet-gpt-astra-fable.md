@@ -4,9 +4,7 @@ resourceId: 108
 date: "2026-09-04"
 ---
 
-Salvatore Sanfilippo argues that recent model progress challenges claims that LLMs cannot reason, then asks how developers should evaluate that progress in practice. This English summary is based on the video's Italian auto-generated transcript.
-
-The practical focus is evaluation through useful software work. His AGI framing is an interpretation, not a demonstrated result; the benchmark discussion reports his reading of François Chollet's statements rather than an independently checked evaluation.
+Salvatore Sanfilippo argues that recent model progress challenges claims that language models cannot reason, then asks how developers should evaluate that progress in practice. His practical focus is useful software work: can a new model complete a task that previously resisted automation? He interprets that progress as movement toward artificial general intelligence (AGI), rather than demonstrating that a threshold has been reached.
 
 ### Reasoning and the role of the harness
 

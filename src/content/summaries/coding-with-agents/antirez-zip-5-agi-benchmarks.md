@@ -4,9 +4,7 @@ resourceId: 121
 date: "2026-09-08"
 ---
 
-Salvatore Sanfilippo and his ZiP co-host ask what an AGI label actually changes for people using models. Their practical answer is that stronger capabilities do not remove uneven performance, hallucinations, or the need to evaluate the work you intend to delegate.
-
-This summary paraphrases the video's English (US) auto-generated captions, available alongside Italian captions, and includes a labeled editorial takeaway. The conversation mixes practitioner observations, evaluation proposals, and speculation; it does not establish an AGI threshold or demonstrate machine consciousness.
+Salvatore Sanfilippo and his ZiP co-host ask what an artificial general intelligence (AGI) label actually changes for people using models. Their practical answer is that stronger capabilities do not remove uneven performance, hallucinations, or the need to evaluate the work you intend to delegate.
 
 ### Capability is not a blanket guarantee
 

@@ -4,11 +4,7 @@ resourceId: 45
 date: "2026-08-15"
 ---
 
-*All English wording below is an editorial translation/paraphrase of Italian auto-generated captions; nothing is a verbatim quotation.*
-
-Salvatore Sanfilippo follows his first FOMO video by separating three anxieties: not running enough agent sessions, missing an opportunity to become wealthy, and becoming professionally irrelevant. His strongest practical claim is that visible agent activity is not the same as useful output. While people still supply product direction and integrate results, attention remains the bottleneck.
-
-The workflow recommendations, project reports, business advice, and employment forecasts are Sanfilippo's judgments rather than measured comparisons. The recording provides no tasks, outputs, labor data, or economic analysis with which to generalize them.
+Salvatore Sanfilippo follows his first video on the fear of missing out by separating three anxieties: not running enough agent sessions, missing an opportunity to become wealthy, and becoming professionally irrelevant. His strongest practical claim is that visible agent activity is not the same as useful output. While people still supply product direction and integrate results, attention remains the bottleneck.
 
 ### Attention, Not Session Count
 
@@ -20,7 +16,7 @@ The workflow recommendations, project reports, business advice, and employment f
 
 ### Wealth and Professional Relevance
 
-- **Agent intensity and startup economics are different problems**: If wealth is the objective, Sanfilippo recommends deliberately building a company around a problem customers, investors, and buyers care about. He warns against defining the company by a transient implementation technique such as RAG when the durable problem is access to information. This is strategic advice, not evidence that the proposed approach produces successful companies ([14:14–17:04](https://www.youtube.com/watch?v=L1pff4cmNCI&t=854s)).
+- **Agent intensity and startup economics are different problems**: If wealth is the objective, Sanfilippo recommends deliberately building a company around a problem customers, investors, and buyers care about. He warns against defining the company by a transient implementation technique such as retrieval-augmented generation (RAG), which supplies retrieved information to a model before it answers. The durable customer problem is access to information, not the technique used to provide it. This is strategic advice, not evidence that the proposed approach produces successful companies ([14:14–17:04](https://www.youtube.com/watch?v=L1pff4cmNCI&t=854s)).
 - **Professional displacement is a credible but uncertain concern**: He expects routine implementation roles to face pressure while specialist technical knowledge and builder-like product ownership become more useful. He also expects job creation and displacement to coexist across sectors and periods. The video offers no employment data, causal model, or timeframe for those forecasts ([18:02–21:57](https://www.youtube.com/watch?v=L1pff4cmNCI&t=1082s)).
 - **Individual overwork cannot solve a broad labor transition**: Sanfilippo ultimately treats widespread displacement as a political and socioeconomic problem rather than something one developer can outrun by opening more sessions. His broader claims about future abundance, distribution, and AI energy use are opinions in this recording and are not supported with sources or measurements ([21:57–25:03](https://www.youtube.com/watch?v=L1pff4cmNCI&t=1317s)).
 

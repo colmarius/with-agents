@@ -18,6 +18,4 @@ REWORK host Kimberly Rhodes asks 37signals co-founders Jason Fried and David Hei
 - **More capacity needs more restraint**: Fried and Hansson warn that a larger menu of feasible features can bloat a product rather than improve it [14:31–18:30](https://www.youtube.com/watch?v=pdPXbXE5xw0&t=871s).
 - **Output and value diverge**: More generated code or features do not guarantee proportional revenue, while agent costs can continue to rise [27:31–32:51](https://www.youtube.com/watch?v=pdPXbXE5xw0&t=1651s).
 
-These are 37signals' first-party observations, not a controlled comparison of productivity, quality, or cost.
-
 Full video: <https://www.youtube.com/watch?v=pdPXbXE5xw0>

@@ -4,9 +4,7 @@ resourceId: 44
 date: "2026-08-12"
 ---
 
-*This summary paraphrases Italian auto-generated captions and includes a labeled editorial implication; it contains no verbatim quotations.*
-
-Salvatore Sanfilippo's answer to coding-agent FOMO is to separate fast-expiring tool knowledge from capabilities that compound: domain and software knowledge, practical intuition about model behavior, and clear communication. His preferred workflow follows from that distinction: keep orchestration simple, communicate intent quickly, and reuse working implementations as context.
+Salvatore Sanfilippo's answer to coding-agent FOMO—the fear of missing out—is to separate fast-expiring tool knowledge from capabilities that compound: domain and software knowledge, practical intuition about model behavior, and clear communication. His preferred workflow follows from that distinction: keep orchestration simple, communicate intent quickly, and reuse working implementations as context.
 
 ### What fades, what compounds
 
@@ -20,4 +18,4 @@ Salvatore Sanfilippo's answer to coding-agent FOMO is to separate fast-expiring 
 - **Use working implementations as executable references**: For `H3.c`, he reports supplying a short brief plus named projects as references for the interface, internal design, kernels, and SSD streaming. He says the agent produced a working base that he later extended, and that those references embodied choices accumulated through months of steering. This is his project account, not an independent quality assessment [12:03–16:17](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=723s).
 - **Use models to explore, not certify**: He recommends capable models as interactive tutors for unfamiliar technical concepts [17:20–18:23](https://www.youtube.com/watch?v=j-Hh4i5R7aI&t=1040s). **Editorial implication:** use this for exploration, not as acceptance evidence; consequential claims still require independent verification.
 
-This summary was checked against the original Italian captions. [Watch with YouTube's English (US) dubbed audio](https://www.youtube.com/watch?v=j-Hh4i5R7aI&hl=en), or select the Italian original in the player. Then continue with [Sanfilippo's follow-up on session overload, wealth, and professional relevance](https://www.youtube.com/watch?v=L1pff4cmNCI).
+[Watch with YouTube's English (US) dubbed audio](https://www.youtube.com/watch?v=j-Hh4i5R7aI&hl=en), or select the Italian original in the player. Then continue with [Sanfilippo's follow-up on session overload, wealth, and professional relevance](https://www.youtube.com/watch?v=L1pff4cmNCI).
