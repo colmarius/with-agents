@@ -28,7 +28,7 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
   }
   assert.ok(!existsSync('dist/ai/posts/index.html'), 'No empty AI post index');
   for (const [slug, id, section] of [
-    ['ais-hidden-debt-problem-explained', 124, 'economics-industry'],
+    ['ais-hidden-debt-problem-explained', 127, 'economics-industry'],
     ['ai-mathematical-results', 123, 'implications-risks'],
     [
       'paul-graham-on-startups-ambition-and-great-founders',
@@ -146,25 +146,25 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
   );
   for (const [id, slug, videoId, publisher] of [
     [
-      125,
+      128,
       'the-next-50-years-humanity-ai-power',
       '_V_ed5fuexA',
       'Yuval Noah Harari',
     ],
     [
-      126,
+      129,
       'ai-has-hacked-the-code-of-human-civilization',
       'hBtVGwuJzpk',
       'Yuval Noah Harari',
     ],
     [
-      127,
+      130,
       'ezra-klein-trump-core-delusion',
       '9NCxS__rtAo',
       'The Ezra Klein Show',
     ],
     [
-      128,
+      131,
       'building-trust-age-of-disinformation',
       't_KKNNeH8jU',
       'Yuval Noah Harari',

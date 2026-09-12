@@ -1,6 +1,6 @@
 ---
 title: "AI has hacked the code of human civilization | Yuval Noah Harari"
-resourceId: 126
+resourceId: 129
 date: "2026-06-30"
 ---
 

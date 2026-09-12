@@ -1,6 +1,6 @@
 ---
 title: "The next 50 years: humanity, AI, power | Yuval Noah Harari"
-resourceId: 125
+resourceId: 128
 date: "2026-07-30"
 ---
 

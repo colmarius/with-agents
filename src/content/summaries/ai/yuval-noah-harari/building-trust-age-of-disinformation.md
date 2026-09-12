@@ -1,6 +1,6 @@
 ---
 title: "Building Trust in the Age of Disinformation – What Future Awaits Us? | Yuval Noah Harari"
-resourceId: 128
+resourceId: 131
 date: "2026-02-26"
 ---
 

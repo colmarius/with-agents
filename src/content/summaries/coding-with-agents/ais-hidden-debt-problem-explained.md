@@ -1,6 +1,6 @@
 ---
 title: "AI's Hidden Debt Problem Explained"
-resourceId: 124
+resourceId: 127
 date: "2026-09-11"
 ---
 

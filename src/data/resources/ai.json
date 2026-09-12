@@ -1,6 +1,6 @@
 [
   {
-    "id": 125,
+    "id": 128,
     "primarySection": "implications-risks",
     "title": "The next 50 years: humanity, AI, power | Yuval Noah Harari",
     "subtitle": "Language, economic power, and human agency",
@@ -13,7 +13,7 @@
     "topics": ["society-governance", "information-trust", "business-adoption"]
   },
   {
-    "id": 126,
+    "id": 129,
     "primarySection": "implications-risks",
     "title": "AI has hacked the code of human civilization | Yuval Noah Harari",
     "subtitle": "AI agency, bureaucracy, and language-based institutions",
@@ -26,7 +26,7 @@
     "topics": ["society-governance", "information-trust", "models-evaluation"]
   },
   {
-    "id": 127,
+    "id": 130,
     "primarySection": "implications-risks",
     "title": "Yuval Noah Harari on Donald Trump’s Core Delusion | The Ezra Klein Show",
     "subtitle": "Cooperation, political narratives, and AI's influence on intimacy and accountability",
@@ -39,7 +39,7 @@
     "topics": ["society-governance", "information-trust"]
   },
   {
-    "id": 128,
+    "id": 131,
     "primarySection": "implications-risks",
     "title": "Building Trust in the Age of Disinformation – What Future Awaits Us? | Yuval Noah Harari",
     "subtitle": "Algorithmic trust, European AI dependence, and language-based authority",
@@ -52,7 +52,7 @@
     "topics": ["society-governance", "information-trust", "models-evaluation"]
   },
   {
-    "id": 124,
+    "id": 127,
     "primarySection": "economics-industry",
     "title": "AI's Hidden Debt Problem Explained",
     "subtitle": "Hyperscaler spending commitments, future leases, and financial guarantees",

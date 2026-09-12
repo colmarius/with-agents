@@ -1,6 +1,6 @@
 ---
 title: "Yuval Noah Harari on Donald Trump’s Core Delusion | The Ezra Klein Show"
-resourceId: 127
+resourceId: 130
 date: "2026-05-26"
 ---
 

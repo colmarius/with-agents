@@ -205,7 +205,7 @@ const aiSections = [
       label: 'Yuval Noah Harari — selected talks & interviews',
       description:
         'An editorial selection of standalone talks and interviews on AI, trust, institutions, and human agency—not a single official playlist. These are Harari’s arguments and forecasts, with interviewer counterpoints, rather than independent findings. Some conversations also cover politics and history.',
-      resourceIds: [125, 126, 127, 128],
+      resourceIds: [128, 129, 130, 131],
       discoveryLinks: [
         {
           label: 'Official video index',
@@ -239,8 +239,8 @@ const aiTopicOptions = [
 ] as const satisfies readonly ResourceTopicOption[];
 
 const aiResourceIds = [
-  124, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 125, 126,
-  127, 128,
+  127, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 128, 129,
+  130, 131,
 ];
 
 const aiSectionByResourceId = {
