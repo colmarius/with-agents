@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 1232
 ---
 
+Source note: The English summary paraphrases these Italian auto-generated captions. Its English wording is an editorial translation, not a verbatim quotation.
+
 ## Transcript
 
 [00:00:00] Io dico che oggi è un giorno abbastanza importante, non perché Astra in sé un salto particolarmente significativo, nel senso che anche gli altri salti che abbiamo visto finora sono significativi, cioè il salto di Fable è significativo così come lo è quello di Astra, ma secondo me con questo tweet di François Cholet Si chiude il capitolo per sempre degli LLM che sono meno in grado di ragionare, che sono meno modelli in grado di comprendere. e si chiude con l'affermazione di uno dei ricercatori che era stato si era schierato nella maniera, diciamo, poi storicamente non corretta, ma che per una questione di intelligenza, di onestà

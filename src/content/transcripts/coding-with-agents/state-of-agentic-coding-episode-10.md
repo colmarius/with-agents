@@ -12,6 +12,8 @@ kind: "auto-generated"
 durationSeconds: 6106
 ---
 
+Source note: The summary uses these English auto-generated captions, not an audio review. The prior public summary also recorded uncertainty in the hosts' opening discussion of watermarking; that discussion does not establish a provider's implementation. This preserves the earlier evidence limitation outside the public summary's selected themes.
+
 ## Transcript
 
 [00:00:00] A lot of the innovation is just how can I put coding agents everywhere I possibly can. >> One of the things that we have been starting to do at Pi is getting rid of tests. Why? Because like it has become too annoying to run all the tests. >> Hello. Welcome back to State of Achantic Coding with Ben and me Armen. This is episode 10. Quite far. So, hi Ben. What have you been up to? >> Oh yeah. Um, my name is Ben Vinegar and the co-founder of this company called Modem. And we help companies basically connect to all of the product conversations about their products happening on different places on the internet like Discord and soon social media. Um, and I also build this like diff tool called Hunk. Armen, who are you? I'm still Armen and I work for a company called Arendel uh which I founded together with a friend of mine. Um and right now I think we're turned into an AI infrastructure company because we're

@@ -10,6 +10,10 @@ kind: "auto-generated"
 durationSeconds: 5310
 ---
 
+## Editorial provenance
+
+The inherited public summary states that it paraphrases English (US) auto-generated captions available alongside Italian captions and includes a labeled editorial takeaway. This note preserves that source-basis assertion; the readability review did not newly verify caption availability or the original audio.
+
 ## Transcript
 
 [00:00:14] Naturally, it's an ironic page and we are walking away. Let's redo it. You're exaggerating. Damn. Dear friends, ZIP episode 5, almost a round number. And so, with the arrival of GPT6 Astra, we thought we’d do a bit of a monolithic, anthological episode. Today's topic is AGI, this artificial general intelligence that everyone is talking about. There are economic issues involved, there are questions of definition, and I thought, dear Salvatore, that it might be a good idea to approach the topic by first going through a prologue, the benchmarks, meaning how we evaluate a model. Having said that for the audience, how are you?

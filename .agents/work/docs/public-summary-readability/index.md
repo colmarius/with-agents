@@ -37,9 +37,10 @@ Workers read matching transcripts or reviewed evidence before edits, report per-
 
 ## Next Action
 
-- Launch high-mode workers, inspect and integrate each batch, and commit logical batches locally.
-- Ask Oracle to review integrated consistency, readability, and fidelity, prioritizing substantial rewrites and uncertain claims. Address findings, run check/test/build/content guard/timestamp checks, and inspect representative rendered routes.
+- All twelve batches integrated: 287 reviewed, 238 changed after coordinator cleanup. Exact summary frontmatter/source identities and all 13 edited transcript bodies preserved. Per-file ledgers are under `evidence/` for the final historical snapshot.
+- First Oracle review completed. Fixed ambiguous OpenAI incident wording (observed disallowed access, not blocked access), labeled the WIF applied example as editorial synthesis, and clarified that Serverless Expeditions includes its two AI examples within fourteen items. Combined check: zero diagnostics; build: 332 pages; tests: 114 pass, no skip; content guard and timestamps: 287 pass. An initial corpus test failed on stale build output and passed after rebuilding.
+- Rebase on latest origin/main, review the five newly added summaries and associated resources, then complete final Oracle, integrated checks, and browser verification. No push or deployment.
 
 ## Open Questions
 
-- Source gaps and ambiguities will be recorded from worker evidence; missing evidence does not authorize invented explanation.
+- Review is based on saved evidence and primary references, not original audio or exhaustive claim-by-claim certification of every long interview. Three X-only broadcasts lack substantive transcripts. Optional cloud source-summary range maintenance remains recorded in cloud-4 evidence; public anchors were corrected. The network learning-path activity inventory could not be retrieved, so detailed curriculum claims were removed rather than guessed.

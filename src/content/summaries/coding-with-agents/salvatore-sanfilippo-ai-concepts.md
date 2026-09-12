@@ -4,8 +4,6 @@ resourceId: 23
 date: "2026-08-09"
 ---
 
-*All English wording below is an editorial translation/paraphrase of Italian captions; nothing is a verbatim quotation.*
-
 Salvatore Sanfilippo's Italian-language playlist works best as a research and engineering notebook rather than a course with one settled thesis. It moves between model representations, reasoning, interpretability, architecture papers, open weights, local inference, the economics of useful computation, and speculative questions about AI and cosmology.
 
 The practical question running through these talks is how to check an explanation: change the system, remove a component, or measure it on a relevant task, then see whether the result supports the proposed cause.

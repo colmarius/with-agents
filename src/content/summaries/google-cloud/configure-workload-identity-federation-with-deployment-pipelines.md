@@ -25,7 +25,7 @@ Cloud Run shows why the compatibility matrix matters: its Admin API supports fed
 
 ### Apply it: Vercel Function to private Cloud Run
 
-In this example, the Vercel Function authorizes the user while Google authenticates the Function's workload identity:
+**Applied example—editorial synthesis:** the Vercel Function authorizes the user while Google authenticates the Function's workload identity:
 
 1. The browser sends its [Better Auth session](/summaries/security/better-auth-security) to a server-side Vercel Function. The Function validates the session and performs application authorization.
 2. Inside the request handler—not at module initialization—obtain the Vercel OIDC token for the Google provider audience. Google STS exchanges that external subject token for a federated access token.

@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 1518
 ---
 
+Source note: The English summary is an editorial translation and paraphrase of these Italian auto-generated captions; its English wording is not a verbatim quotation. This provenance was previously recorded in the public summary.
+
 ## Transcript
 
 [00:00:01] [musica] [musica] sotto il video di Fear of Missing Out, la paura di rimanere indietro, di perdere le opportunità più che altro, se dobbiamo, diciamo, eh operare una traduzione semanticamente più attenta, o meglio psicologicamente più attenta, ci sono stati un sacco di commenti molto molto interessanti che tirano fuori varie questioni che sono certamente connesse a questa a questa sensazione ansiogena di base di eh perdere ciò che sta accadendo.

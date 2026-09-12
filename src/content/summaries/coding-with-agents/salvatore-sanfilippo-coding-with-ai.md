@@ -4,8 +4,6 @@ resourceId: 22
 date: "2026-08-10"
 ---
 
-*All English wording below is an editorial translation/paraphrase of Italian captions; nothing is a verbatim quotation.*
-
 Salvatore Sanfilippo's Italian-language playlist follows coding agents through real systems work rather than presenting one fixed workflow. Its recurring subjects are architecture, specifications, model selection, behavioral testing, local inference, the changing value of implementation work, and the human cost of supervising more work than one person can understand.
 
 The practical thread is expert supervision: agents can generate large implementations quickly, but the human still supplies constraints, representative experiments, product judgment, and the decision about which evidence is enough.
