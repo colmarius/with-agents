@@ -4,9 +4,7 @@ resourceId: 69
 date: "2026-08-18"
 ---
 
-AI Native Dev interviews Don Syme, GitHub Principal Researcher, about “continuous AI”: recurring, shared agent work that operates beside deterministic CI/CD. The discussion covers GitHub Agentic Workflows, bounded repository context, permissions, cross-repository limits, cost and model evaluation, and quality gates before human review.
-
-This is a product-adjacent practitioner interview, not an independent assessment of GitHub’s implementation. Syme works on the system he describes. Claims about guardrails, pull-request merge rates, and operational readiness are first-party reports without a threat model, evaluation dataset, or comparative measurements in the recording. GitHub Agentic Workflows was in public preview when the episode was published, so its described behavior is not a durable product contract.
+GitHub Principal Researcher Don Syme describes “continuous AI”: recurring agent work such as documentation, issue triage, and performance research, shared by a team rather than confined to individual chats. In this AI Native Dev interview, he argues that these judgment-based tasks should run beside deterministic CI/CD, with quality checks that keep weak proposals from consuming human review time. He draws on his work on GitHub Agentic Workflows, then in public preview.
 
 ### Keep Subjective Automation Beside Deterministic Delivery
 

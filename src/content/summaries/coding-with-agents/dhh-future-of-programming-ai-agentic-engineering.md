@@ -4,9 +4,7 @@ resourceId: 76
 date: "2026-08-26"
 ---
 
-Lex Fridman interviews David Heinemeier Hansson (DHH), creator of Ruby on Rails and Omarchy and CTO of 37signals. They discuss DHH's shift from writing code by hand to directing coding agents.
-
-The episode ranges into Linux, work, politics, parenthood, and longevity; this summary focuses on its coding-agent material. DHH's output, speed, cost, model-quality, security, plugin-adoption, and open-source contribution figures are first-party reports without controlled comparison or enough methodology to generalize. His claims about employment, manual programming, AGI, and future model capability are forecasts or practitioner judgments.
+David Heinemeier Hansson (DHH) describes shifting from writing code by hand to directing agents, while still judging product direction and architecture. In this interview with Lex Fridman, the creator of Ruby on Rails and Omarchy and CTO of 37signals contrasts fast agent-written features with the accumulated design damage that humans may need to repair.
 
 ### Product Direction and Architecture
 

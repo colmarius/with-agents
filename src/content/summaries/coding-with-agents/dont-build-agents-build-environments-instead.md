@@ -6,8 +6,6 @@ date: "2026-08-25"
 
 Modal's Adam Azzam argues that background coding-agent systems are converging on similar harnesses and that the harder engineering work now sits in the environments where agents build and run software. His proposed architecture treats those environments as resumable, task-ready dev boxes and keeps the agent's durable state separate from risky execution.
 
-This is a practitioner and product talk. Its claims about Modal, Ramp, scale, startup time, and pull-request share are first-party reports without comparative measurements in the presentation.
-
 ### Key Points Covered
 
 - **A dev box is more than a bare sandbox**: An agent working on a web application may need exposed ports, browser and screenshot tools, while data or machine-learning tasks may require specialized hardware. Giving it only an isolated Linux machine can prevent it from evaluating its own work ([05:58–08:02](https://www.youtube.com/watch?v=JolFqvXj3BE&t=358s)).
