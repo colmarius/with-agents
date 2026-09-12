@@ -7,17 +7,15 @@ order: 14
 videoId: "o3aE4tw3vrI"
 ---
 
-**Fast-moving 2025–2026 appendix:** This July 2026 demonstration uses ADK and a managed BigQuery MCP server, with Cloud Run as one deployment choice. It is separate from the stable serverless core.
-
-The auto-generated captions render the guest's name and organization as “Muslim Tossun” and “Group Bes,” but those spellings are not independently established by this source record. This summary therefore refers to him as the guest rather than inventing proper nouns or affiliations.
+An AI agent can let people ask questions of a database without writing SQL themselves. In this July 2026 demonstration, Martin and his guest build one with Google's Agent Development Kit (ADK) and a managed BigQuery server using Model Context Protocol (MCP), a shared interface for agent tools.
 
 ### Key points
 
-- **The agent turns questions into database operations:** In a football demo, the guest says the agent inspects BigQuery tables and writes SQL rather than searching keywords [00:51–02:36](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=51s). Reading actual tables can ground an answer, but it does not prove the SQL, interpretation, or output is free from hallucination or other error.
-- **Instructions supply operational context:** A system instruction documents tables, columns, query steps, and business rules [02:36–04:28](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=156s). The guest later recommends evolving those instructions with schemas and rules and storing them in separate Markdown files [06:18–07:07](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=378s).
-- **Managed tool availability is point-in-time:** The guest presents the managed BigQuery MCP server as a reusable adapter and names Cloud SQL, Pub/Sub, and Cloud Storage servers available at that time [04:28–05:16](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=268s).
+- **The agent queries data rather than searching keywords:** Asked for France's top scorers in the 2022 World Cup, the agent uses a goals-scored column and writes SQL to return players from the BigQuery database. The guest argues that reading real tables prevents hallucination; the demo grounds the answer in data, but does not prove the SQL or interpretation cannot be wrong [00:51–02:36](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=51s).
+- **Instructions explain how to use this database:** The system instruction describes tables, columns, query steps, and business rules such as calculating a team's performance rating. The guest compares it to an operating procedure: access to a database does not tell the agent how the business organizes or interprets its data [02:36–04:28](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=156s).
+- **MCP reduces custom connection code:** A hand-written Python tool could also compose and send SQL. The guest favors a managed MCP server because agents can discover its tools at runtime and different agent clients can reuse the same interface, rather than each project building its own adapter [03:23–05:16](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=203s).
 - **The deployment choices have bounded behavior:** The guest presents Cloud Run as a container and service under developer control, and Agent Engine as managing sessions, application versions, and a test UI. He says the Agent Engine setup shown does not expose a REST API directly and needs a client-facing proxy [05:16–06:18](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=316s).
 
-Revalidate current ADK, managed MCP servers, Agent Engine, Cloud Run, model, and authentication behavior. Production use also needs least-privilege data access, query validation, answer evaluation, versioned instructions, observability, and failure handling.
+The guest recommends updating instructions as tables and business rules change, and keeping them in separate Markdown files so non-developers can edit them without changing Python code [06:18–08:10](https://www.youtube.com/watch?v=o3aE4tw3vrI&t=378s).
 
 Full video: <https://www.youtube.com/watch?v=o3aE4tw3vrI>

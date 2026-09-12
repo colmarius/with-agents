@@ -7,15 +7,12 @@ order: 6
 videoId: "IqAe1WRPjfU"
 ---
 
-The presenters consider Cloud Spanner for a hypothetical NoSQL-backed application that now needs ACID transactions, cross-record aggregation, stronger consistency, and managed scaling. Product capability, scale, availability, pricing, and tuning statements are April 2022 claims rather than demonstrated guarantees.
+An application's first database may stop fitting as its queries and consistency needs grow. In this April 2022 example, Martin and database developer advocate Derek consider Cloud Spanner for a NoSQL-backed application that struggles with consistent transactions and sums or averages across thousands of records.
 
 ### Key points
 
 - **Managed does not mean responsibility-free:** The presenter says Spanner handles patching, server maintenance, load-balancing and failover architecture, and default encryption, while customers retain access control, backup scheduling, schema migrations, and optional key management [01:03–03:07](https://www.youtube.com/watch?v=IqAe1WRPjfU&t=63s).
-- **The scale figure is product-wide and unqualified:** The presenter says Spanner processes more than one billion requests per second at peak [02:05–03:07](https://www.youtube.com/watch?v=IqAe1WRPjfU&t=125s). The episode does not frame that as Google's aggregate traffic, a per-instance capacity, or a result available to the sample application.
-- **Consistency and availability need their original qualifications:** The presenter attributes global consistency to TrueTime and states an SLA of up to 99.999% [03:07–04:12](https://www.youtube.com/watch?v=IqAe1WRPjfU&t=187s). The console walkthrough separately says a multi-region configuration is appropriate when five-nines availability is required [04:12–05:16](https://www.youtube.com/watch?v=IqAe1WRPjfU&t=252s).
-- **The price and scaling demo are point-in-time:** A regional development instance with 100 processing units is quoted at $0.09 per hour, about $65 per month. The load test adds processing units after CPU crosses an unnamed recommended threshold, then observes more requests without reporting reproducible throughput or latency [04:12–07:21](https://www.youtube.com/watch?v=IqAe1WRPjfU&t=252s).
-
-Validate current Spanner editions, pricing, processing-unit guidance, CPU thresholds, scaling behavior, SLA terms, backup policy, IAM, and migration requirements. The demo does not establish instance capacity or an application's achievable performance.
+- **The application does not select a replica:** Derek explains that Spanner keeps copies across zones or regions to handle maintenance and outages. The sample Node.js code supplies an instance and database and uses SQL; Spanner handles which copy serves the request. His “up to 99.999%” availability claim is qualified by the later recommendation to use a multi-region configuration for that requirement [03:07–06:19](https://www.youtube.com/watch?v=IqAe1WRPjfU&t=187s).
+- **Capacity remains a choice even with managed servers:** The demo starts with a small regional development instance. Under a load test of roughly three reads per write, CPU crosses the recommended threshold; Derek warns that further load would increase response times. They add processing units, the instance's capacity allocation, and observe more requests per second without changing the application. The demonstration does not report enough throughput or latency data to establish capacity for another workload [04:12–08:25](https://www.youtube.com/watch?v=IqAe1WRPjfU&t=252s).
 
 Full video: <https://www.youtube.com/watch?v=IqAe1WRPjfU>

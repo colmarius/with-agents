@@ -7,14 +7,12 @@ order: 10
 videoId: "Ce93fpQrKCk"
 ---
 
-The presenters introduce Terraform as a way to replace fragile deployment instructions with machine-readable infrastructure intent. The argument is for repeatability and review, not that configuration alone solves state and delivery management.
+Long deployment checklists are easy to follow inconsistently. This April 2021 introduction explains infrastructure as code: describing the resources a deployment needs in a machine-readable Terraform configuration, so teams can repeat the setup without manually recreating every step.
 
 ### Key points
 
-- **Desired state replaces an imperative checklist:** The 2021 comparison shows a repeated `gcloud` bucket-creation command failing while Terraform checks declared state before acting [01:03–02:07](https://www.youtube.com/watch?v=Ce93fpQrKCk&t=63s). The simplified demonstration does not establish that Terraform automatically adopts a bucket that already exists outside its state; managing existing infrastructure may require import and deliberate state reconciliation.
-- **Configuration can express variation and order:** HCL variables capture environment differences, while Terraform derives dependencies and can create independent resources in parallel [02:07–03:13](https://www.youtube.com/watch?v=Ce93fpQrKCk&t=127s).
-- **Infrastructure deployment is not artifact creation:** The presenter says Terraform expects containers or compiled code to exist already; a team can run it after artifact creation or add it to a Cloud Build pipeline [03:13–04:16](https://www.youtube.com/watch?v=Ce93fpQrKCk&t=193s).
-
-This April 2021 introduction omits remote state, locking, imports, drift review, secrets, and plan approval. Verify current Terraform, Google provider, Cloud Build, Cloud Run, and state/import behavior before applying it; repeatability depends on disciplined state and change management.
+- **Describe the result instead of every command:** The comparison starts with a `gcloud` command that fails when repeated because the bucket already exists. Terraform instead declares the desired result—a bucket exists—and checks whether changes are needed. The example does not explain how Terraform tracks managed resources, so it should not be read as showing automatic adoption of any existing bucket [01:03–03:13](https://www.youtube.com/watch?v=Ce93fpQrKCk&t=63s).
+- **One configuration can describe intentional differences:** HashiCorp Configuration Language (HCL) supports variables such as a project ID or a smaller database size for testing. Terraform also works out dependencies: a bucket needed by a service must exist first, while independent resources can be created in parallel [02:07–04:16](https://www.youtube.com/watch?v=Ce93fpQrKCk&t=127s).
+- **Build the application before deploying its infrastructure:** In the workflow described, Terraform expects the container or compiled code to exist already. Teams can run it after their build process or include it as a step in Cloud Build, keeping the infrastructure configuration alongside application code in source control [03:13–05:22](https://www.youtube.com/watch?v=Ce93fpQrKCk&t=193s).
 
 Full video: <https://www.youtube.com/watch?v=Ce93fpQrKCk>

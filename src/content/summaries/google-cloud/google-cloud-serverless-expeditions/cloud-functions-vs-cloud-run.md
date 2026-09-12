@@ -7,14 +7,12 @@ order: 1
 videoId: "zRjOSxTpC3A"
 ---
 
-This episode compares two serverless execution models through a fictional wildlife-camera system. The useful foundation is to choose from the workload's trigger, packaging, protocol, and rollout needs—not from the “serverless” label alone.
+Martin and Grant compare two ways to run a fictional wildlife-camera system: a function that reacts to uploaded images, and a containerized API that serves animal sightings to web and mobile apps. Their October 2020 comparison explains the choices available then, rather than today's product boundary.
 
 ### Key points
 
 - **An event handler fits the image pipeline shown:** A finalized Cloud Storage upload invokes a function, which calls the Vision API, filters detected labels, and writes selected sightings to Firestore [01:04–06:22](https://www.youtube.com/watch?v=zRjOSxTpC3A&t=64s). The presenters favor a function because the 2020 platform connected that storage event with less setup.
-- **A container fits the REST API requirements shown:** The second workload needs an HTTP server, container packaging, revision traffic splitting, and a custom domain, so the presenters choose Cloud Run and configure the Express server and port themselves [08:30–10:36](https://www.youtube.com/watch?v=zRjOSxTpC3A&t=510s).
-- **The rollout is a demonstration, not a general result:** The presenters build and deploy a container with the then-current CLI and registry flow, allow unauthenticated access, and use the console to send 10% of traffic to a new revision [12:45–18:02](https://www.youtube.com/watch?v=zRjOSxTpC3A&t=765s).
-
-This is an October 2020 product comparison. Cloud Functions has since converged into Cloud Run functions, and the runtimes, registry, commands, domain mapping, and service boundaries shown are historical rather than a current selection matrix. Verify today's documentation, and separately design authentication, idempotency, retries, and partial-failure handling.
+- **A container fits the API requirements shown:** The team wants container packaging, a custom domain, and the ability to send only some requests to a new version. The presenters choose Cloud Run and configure an Express HTTP server themselves. Its endpoint looks up an animal in Firestore and returns a sighting or a not-found response [08:30–11:39](https://www.youtube.com/watch?v=zRjOSxTpC3A&t=510s).
+- **Traffic splitting limits exposure to a new version:** The presenters deploy the demo API with unauthenticated access, then send 10% of requests to its newest revision and the rest to the previous version. This illustrates a canary release: trying new code on a fraction of traffic before exposing everyone to it [12:45–18:02](https://www.youtube.com/watch?v=zRjOSxTpC3A&t=765s).
 
 Full video: <https://www.youtube.com/watch?v=zRjOSxTpC3A>

@@ -7,14 +7,12 @@ order: 7
 videoId: "yqMKr37mGJw"
 ---
 
-The presenters use an order and credit-reservation flow to separate service orchestration, transient retries, and compensation for permanent failure. Their example makes failure policy visible, but does not make distributed failure disappear.
+An order can be created successfully even when the next step—reserving the customer's credit—fails. In this May 2023 demonstration, Mete uses Google Cloud Workflows to coordinate those steps, retry temporary failures, and cancel the pending order when credit cannot be reserved.
 
 ### Key points
 
-- **The orchestrator owns call order:** Workflows calls the order and customer services in sequence so those services do not call one another directly [00:00–02:08](https://www.youtube.com/watch?v=yqMKr37mGJw&t=0s). This reduces direct coupling while moving sequencing and recovery policy into the workflow.
-- **Transient and permanent failures differ:** The demonstration wraps an HTTP call with the Workflows default retry policy for an intermittently failing credit service [02:08–04:15](https://www.youtube.com/watch?v=yqMKr37mGJw&t=128s). A permanent business failure, such as insufficient credit, needs a different path.
-- **Compensation follows an earlier side effect:** If credit cannot be reserved, the Saga example cancels the pending order; if reservation succeeds, it approves the order [04:15–05:19](https://www.youtube.com/watch?v=yqMKr37mGJw&t=255s). The presenter characterizes this as eventual consistency where a database transaction cannot span the operations.
-
-The YAML, default retry behavior, and console flow are a May 2023 snapshot. Verify current syntax and defaults, and explicitly design idempotency, retry limits, backoff, duplicate calls, and what happens when compensation itself fails.
+- **Put call order in a workflow:** Instead of having the order service call the customer service directly, an orchestrator calls each in sequence: create a pending order, reserve credit, then approve the order. Mete argues that separating this sequence from the services makes them less dependent on one another's implementation [00:00–02:08](https://www.youtube.com/watch?v=yqMKr37mGJw&t=0s).
+- **Retry temporary errors, not an impossible business operation:** The demo applies the Workflows default retry policy to an intermittently failing HTTP call. A temporary outage may clear on another attempt; a customer with insufficient credit needs a different response because retries will not supply that credit [02:08–04:15](https://www.youtube.com/watch?v=yqMKr37mGJw&t=128s).
+- **Compensate for work already completed:** The Saga pattern adds a later action that undoes an earlier one when the whole operation cannot finish. Here, failure to reserve credit cancels the pending order; success approves it. Mete calls this eventual consistency: when one database transaction cannot cover all services, later steps restore a consistent outcome rather than making every step succeed together [04:15–06:29](https://www.youtube.com/watch?v=yqMKr37mGJw&t=255s).
 
 Full video: <https://www.youtube.com/watch?v=yqMKr37mGJw>

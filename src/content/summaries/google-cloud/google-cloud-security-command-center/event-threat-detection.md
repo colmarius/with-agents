@@ -7,15 +7,12 @@ order: 3
 videoId: "0f5Dh8cGbyQ"
 ---
 
-This 2019 walkthrough explains Event Threat Detection's log-based findings, investigates an anomalous IAM grant, and demonstrates a selective Splunk export path.
+Event Threat Detection examines system logs for signs of attacks or risky permission changes. This 2019 walkthrough investigates an external account receiving broad access, then describes sending selected events to Splunk for further analysis.
 
 ### Key Points Covered
 
-- **ETD analyzed several log signals**: The presentation describes detectors using Linux authentication logs, VPC flow logs, IAM changes, known-bad destinations, and traffic patterns for threats including SSH brute force, cryptomining, malware, outgoing DDoS, and port scanning [00:04–01:08](https://www.youtube.com/watch?v=0f5Dh8cGbyQ&t=4s).
-- **An anomalous grant is evidence to investigate**: The example flags an external Gmail account receiving the editor role, then pivots to the granting account, its other actions, and affected projects. A flag is not by itself proof of compromise [01:08–02:12](https://www.youtube.com/watch?v=0f5Dh8cGbyQ&t=68s).
-- **Investigation should precede restriction**: The demonstrated response continues pivoting by user or project before restricting permissions, preserving the distinction between detector evidence and a response decision [02:12](https://www.youtube.com/watch?v=0f5Dh8cGbyQ&t=132s).
-- **The Splunk path is not an automatic SCC-findings export**: The demo describes sending selected high-value, ETD-processed log output through a Splunk connector. That exported output should not be collapsed into, or assumed to be identical to, Security Command Center findings [02:12](https://www.youtube.com/watch?v=0f5Dh8cGbyQ&t=132s).
-
-This is a historical 2019 workflow. Current users should verify current Google Cloud documentation for product names, roles, APIs, UI, detector coverage, logging and SIEM setup, defaults, integrations, export behavior, and remediation guidance.
+- **Different threats leave different log patterns**: Repeated failed SSH sign-ins followed by success can indicate a password-guessing attack. Network logs showing connections to known malicious domains can indicate cryptocurrency mining or malware. Event Threat Detection turns these signals into findings in Security Command Center [00:04–01:08](https://www.youtube.com/watch?v=0f5Dh8cGbyQ&t=4s).
+- **Investigate both sides of a risky permission change**: The example flags an external Gmail account receiving the editor role. The presenter then filters by the account that granted access to find its other actions and affected projects before proposing permission restrictions. The flag is a reason to investigate, not by itself proof of compromise [01:08–03:03](https://www.youtube.com/watch?v=0f5Dh8cGbyQ&t=68s).
+- **Export selected events for further analysis**: The presenter says forwarding only high-value incidents can reduce the time and cost of analysis in Splunk, a security-log analysis system. The path described uses a connector for processed log output; it does not establish an automatic export of all Security Command Center findings [02:12–03:03](https://www.youtube.com/watch?v=0f5Dh8cGbyQ&t=132s).
 
 Full video: <https://www.youtube.com/watch?v=0f5Dh8cGbyQ>

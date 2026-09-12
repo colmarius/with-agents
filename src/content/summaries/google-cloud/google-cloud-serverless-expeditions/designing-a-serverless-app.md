@@ -7,14 +7,12 @@ order: 2
 videoId: "HbsHC8gq_NQ"
 ---
 
-The presenters sketch an internal application for requesting, approving, scanning, and auditing open server ports. It is a design exercise, not a completed or validated implementation, but it illustrates how access, operational state, fan-out, notifications, and reporting can remain separate responsibilities.
+Martin and Dina design an internal application for controlling which server ports may be open. Developers request access, administrators approve it, and nightly scans compare actual access with those approvals. This June 2021 design exercise separates the request system, scanning, alerts, and audit reports; it is not a completed implementation.
 
 ### Key points
 
-- **Access and data choices follow the proposed users and queries:** The design puts 2021-era Identity-Aware Proxy in front of App Engine for internal developer and administrator access, then chooses Firestore for hierarchical request state without substantial aggregation [01:03–04:15](https://www.youtube.com/watch?v=HbsHC8gq_NQ&t=63s).
-- **Fan-out narrows the retry scope:** Cloud Scheduler starts a nightly scan; an orchestration function reads targets and publishes work to Pub/Sub so a worker handles one server—or, later in the discussion, possibly one server-port pair [04:15–08:26](https://www.youtube.com/watch?v=HbsHC8gq_NQ&t=255s). The final unit remains unresolved, but the aim is to retry only failed work rather than the full scan.
+- **Choose storage around the request data:** The proposed app uses Identity-Aware Proxy to restrict employee access. Firestore holds a document for each server, with its ports and permissions underneath. That structure fits the operational queries, which do not need large sums or averages across records [01:03–04:15](https://www.youtube.com/watch?v=HbsHC8gq_NQ&t=63s).
+- **Split scans into independently retryable work:** Cloud Scheduler starts a function that reads target servers and publishes messages to Pub/Sub, a messaging service. Worker functions consume those messages rather than scanning every target in one long loop. If one worker fails, only its work needs retrying. The speakers leave the exact work unit open: one server or one server-port pair [04:15–08:26](https://www.youtube.com/watch?v=HbsHC8gq_NQ&t=255s).
 - **One result stream can feed independent consumers:** The design publishes scan results once, sends mismatches through a filtered subscription for administrator email, and sends all results to BigQuery for audit reporting in Data Studio [07:24–12:38](https://www.youtube.com/watch?v=HbsHC8gq_NQ&t=444s).
-
-This June 2021 architecture preserves useful separation of concerns, but its products, console paths, IAM guidance, quotas, networking assumptions, and integrations are point-in-time. Verify current behavior and define duplicate delivery, idempotency, credentials, private-network reachability, and recovery before implementation.
 
 Full video: <https://www.youtube.com/watch?v=HbsHC8gq_NQ>
