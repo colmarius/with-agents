@@ -4,34 +4,34 @@ resourceId: 101
 date: "2026-08-28"
 ---
 
-Treat Workload Identity Federation as a programmable trust boundary, not automatic safety from removing keys. A secure design separates provider admission, principal authorization, and the permissions available after exchange.
+Workload Identity Federation lets software running outside Google Cloud exchange its existing identity token for short-lived Google credentials instead of storing a service-account key. Removing that key reduces secret-management work, but security still depends on two decisions: which external workloads may exchange tokens, and what each accepted identity may access.
 
-### Harden admission
+### Decide which workloads Google should trust
 
-An external OIDC credential reaches a workload identity provider, which verifies the token and evaluates attribute mappings and conditions before STS exchanges it for a federated token. For shared issuers such as GitHub, require an explicit provider condition for the trusted tenant and workload. Use the provider's `https://iam.googleapis.com/projects/.../providers/...` URL as the external OIDC token audience to reduce confused-deputy risk. Keep it distinct from the `//iam.googleapis.com/projects/.../providers/...` target resource used by external-account configuration and STS.
+The workload identity provider verifies the external OpenID Connect (OIDC) token. Attribute mappings turn its claims into a Google subject and attributes; conditions decide whether to accept it. Security Token Service (STS) then exchanges it for a federated token. For shared issuers such as GitHub, require a condition that restricts the trusted organization and workload, not merely a valid signature from GitHub.
+
+Use the provider's `https://iam.googleapis.com/projects/.../providers/...` URL as the external token's audience. This helps prevent a token intended for another service from being reused to obtain Google credentials, a confused-deputy attack. The STS target resource is a different value: `//iam.googleapis.com/projects/.../providers/...`, without `https:`.
 
 Map immutable, authoritative, non-reusable identifiers. Names, email addresses, repositories, or organizations can be renamed, deleted, and reused; stale IAM bindings can then admit a different identity. A field named “ID” is not proof of those properties: require the issuer's stability and non-reuse contract or record the residual assumption.
 
-Keep `google.subject` unique in both directions so audit records map back to exactly one external identity. Restrict who can modify provider mappings and conditions because changing either can change who is trusted.
+Each external identity should map to exactly one `google.subject`, and that subject should identify no other external identity. This keeps permissions and audit records unambiguous. Restrict who can modify mappings and conditions because changing either changes who is trusted.
 
 Google recommends a dedicated project for pools and providers, organization-policy restrictions on providers elsewhere, and one provider per pool to avoid subject collisions. Avoid representing the same identity through duplicate providers.
 
 ### Constrain authorization and impact
 
-Grant roles to the smallest exact principal; do not grant an entire pool by default:
+An IAM principal is the identity receiving permissions. Grant roles to the narrowest principal or deliberately scoped set, using the pool project's number rather than its project ID:
 
 - One subject: `principal://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/subject/SUBJECT`
 - A deliberately scoped set: `principalSet://iam.googleapis.com/projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/attribute.ATTRIBUTE_NAME/ATTRIBUTE_VALUE`
 
 Prefer direct access on resources that support federated identities. Where an API requires service-account impersonation, grant the external principal `roles/iam.workloadIdentityUser` on a dedicated per-application service account—not just `roles/iam.serviceAccountUser`—and limit that account's resource roles. Recheck the compatibility matrix because support changes by product and method: the Cloud Run Admin API accepts federated callers, while direct route invocation requires service-account impersonation.
 
-Short-lived federated, access, and ID tokens are still bearer credentials and cannot be revoked before expiry. Removing a provider or impersonation binding prevents future minting; resource IAM removal can stop current authorization, but incident response must still account for token lifetimes and caches. Never persist or log the raw subject token.
+Federated tokens and the service-account access or ID tokens minted through impersonation are bearer credentials: possession is enough to use them. They cannot be revoked before expiry. Blocking future issuance is therefore different from stopping use of an already issued token. Resource IAM changes can remove access, but incident response must account for token lifetimes and policy propagation. Never persist or log the raw subject token.
 
 Enable Data Access logs for STS and IAM APIs and correlate them with identity-provider logs. Validate externally supplied credential-configuration JSON before use; its URLs and file paths can redirect a workload to malicious endpoints.
 
-Troubleshoot by boundary, in order: issuer/JWKS and token claims; provider audience, mapping, and condition; STS exchange errors; then the exact IAM principal and impersonation role. An API rejecting an STS token may require impersonation rather than a broader grant.
-
-Google marked the guidance updated on 2026-08-28.
+For troubleshooting, follow the exchange in order: the issuer's signing keys and token claims; provider audience, mapping, and condition; STS errors; then the IAM principal and impersonation role. An API rejecting an STS token may require impersonation rather than broader permissions.
 
 Sources:
 

@@ -4,11 +4,11 @@ resourceId: 100
 date: "2026-08-28"
 ---
 
-Replace stored service-account keys with a token exchange that admits only the intended workload. The trust path: a deployment job obtains an external OIDC token; the Google Cloud provider verifies its signature, issuer, audience, mappings, and admission condition; Security Token Service (STS) exchanges it for a short-lived federated token.
+Workload Identity Federation (WIF) lets a deployment job access Google Cloud without storing a service-account key. The job obtains an OpenID Connect (OIDC) token from its platform. A configured Google provider verifies the token, maps its claims to an identity, and checks conditions restricting which jobs are trusted. Security Token Service (STS) exchanges an accepted token for a short-lived federated token.
 
 ### Bind the workload that actually deploys
 
-For GitHub, map and constrain immutable `repository_id` and `repository_owner_id` claims, plus the required branch, environment, or workflow context. For Vercel, prefer the ID-valued `owner_id` and `project_id` claims over explicitly mutable names, map `environment`, and require exact admission. Vercel's public OIDC reference does not promise that these IDs are immutable and non-reusable, so confirm that vendor-contract assumption for high-assurance use. Prefer Vercel's team issuer; the shared global issuer requires an exact team-ID condition.
+For GitHub, restrict access using immutable `repository_id` and `repository_owner_id` claims, plus the required branch, environment, or workflow context. For Vercel, prefer `owner_id` and `project_id` over names that can change, and require the intended `environment`. Vercel does not document an immutability and non-reuse guarantee for those IDs, so high-assurance deployments still need to confirm that assumption. Prefer the team issuer; with the shared global issuer, restrict the team explicitly.
 
 Vercel's documented claims do not distinguish a build from a Function, or one preview branch from another. A production build and production runtime in one Vercel project therefore share the same documented identity boundary. If deployment needs more authority than runtime, use a distinct CI identity such as GitHub Actions OIDC or isolate deployment in another Vercel project; a caller-selectable custom audience is not that separation.
 
@@ -25,7 +25,7 @@ Cloud Run shows why the compatibility matrix matters: its Admin API supports fed
 
 ### Apply it: Vercel Function to private Cloud Run
 
-The following composition is editorial synthesis across the Vercel, Google Cloud, Better Auth, and OAuth sources:
+In this example, the Vercel Function authorizes the user while Google authenticates the Function's workload identity:
 
 1. The browser sends its [Better Auth session](/summaries/security/better-auth-security) to a server-side Vercel Function. The Function validates the session and performs application authorization.
 2. Inside the request handler—not at module initialization—obtain the Vercel OIDC token for the Google provider audience. Google STS exchanges that external subject token for a federated access token.
@@ -50,9 +50,7 @@ Here, “private Cloud Run” means IAM-protected with no anonymous invoker, not
 
 **Vercel token handling.** Builds get one-hour tokens through `VERCEL_OIDC_TOKEN`. Functions receive request-scoped tokens through `x-vercel-oidc-token`; Vercel can reuse them for up to 90 minutes and gives them a two-hour lifetime. Development tokens last 12 hours, and local `vercel env pull` writes one to `.env.local`. Keep that file untracked, admit development separately, retrieve Function tokens lazily, and do not add an application-level raw-token cache.
 
-**Vercel's GCP walkthrough.** It is a mutable setup guide, not the authority for Google IAM roles or STS syntax. Its current wording around service-account access and its custom-audience example can be read as `roles/iam.serviceAccountUser` and the `https://...` audience at both boundaries. Follow Google's current `roles/iam.workloadIdentityUser` and `//iam.googleapis.com/...` STS contracts instead, and test the actual exchange with pinned library versions.
-
-Google marked the deployment guide updated on 2026-08-28.
+**Vercel's GCP walkthrough.** Its “Service account users role” wording and custom-audience example can mislead implementers. Use Google's `roles/iam.workloadIdentityUser` for impersonation. Keep the external JWT audience and STS target distinct as shown above; the walkthrough's custom-audience example uses the `https://...` value for both. Test the exchange with the library versions you deploy.
 
 Sources:
 

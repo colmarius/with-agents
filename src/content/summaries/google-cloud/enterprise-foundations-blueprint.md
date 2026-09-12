@@ -4,15 +4,15 @@ resourceId: 98
 date: "2025-05-15"
 ---
 
-Build the foundation before individual workload teams invent incompatible controls. Google's blueprint defines a baseline of resource hierarchy, identity, networking, policy, logging, secrets, encryption keys, and detection that platform teams can deploy consistently, then adapt to their own requirements.
+Google's enterprise foundations blueprint defines the shared infrastructure and security controls that workload teams build on. It covers resource hierarchy, identity, networking, policy, logging, secrets, encryption keys, and detection. A common foundation lets teams deploy workloads without independently rebuilding those controls.
 
 ### The control model
 
 The design combines three layers:
 
-- **Architecture controls** establish the organization, environment-oriented folders and projects, centrally managed Shared VPC networks, private connectivity, and shared security services.
-- **Policy controls** use organization policies plus infrastructure-as-code validation to prevent risky configurations before and after deployment.
-- **Detective controls** centralize audit and security logs and connect Security Command Center findings to operational response.
+- **Architecture controls** establish folders and projects for each environment, private connectivity, and shared security services. Shared VPC lets a central team manage networks that workload projects use.
+- **Policy controls** restrict what can be deployed. Organization policies enforce resource constraints, while infrastructure-as-code checks catch disallowed configurations before deployment.
+- **Detective controls** reveal problems that need a response. Centralized audit and security logs, together with Security Command Center findings, support investigation and response.
 
 Cloud Identity integrates the existing identity provider, while IAM grants job-based access through groups. Foundation changes flow through privileged CI/CD identities rather than routine user access.
 
@@ -22,11 +22,9 @@ Central projects separate responsibilities for logging, Secret Manager, Cloud KM
 
 The companion [Terraform example foundation](https://github.com/terraform-google-modules/terraform-example-foundation) turns the architecture into staged infrastructure: bootstrap, organization-wide services, environment folders, networks, projects, and sample application infrastructure. Its default Cloud Build pipelines, protected environment branches, remote state, and policy validation demonstrate a GitOps operating model.
 
-The repository is explicitly an example to fork, customize, and maintain—not a remote module or turnkey guarantee. Its maintainers cannot account for local modifications or workloads and do not promise to avoid breaking changes. Review the repository's errata against the written blueprint, pin and test dependencies, and design migration and recovery paths before production rollout.
+The repository is an example to fork, customize, and maintain, not a reusable remote module. Upgrades can break customized deployments, including between minor versions. Before production rollout, review its errata against the written blueprint and test migration and recovery paths.
 
-Use the blueprint either to create a new baseline or to compare an existing environment with Google's recommendations. Smaller organizations should select only controls they can operate effectively rather than copying enterprise separation of duties without the teams to sustain it.
-
-Google marks the blueprint as last reviewed on 2025-05-15.
+Use the blueprint to create a baseline or assess an existing environment. For a smaller organization, a practical adaptation is to select controls it can operate effectively rather than copying a separation of duties that assumes larger teams.
 
 Sources:
 

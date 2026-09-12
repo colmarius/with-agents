@@ -4,28 +4,29 @@ resourceId: 106
 date: "2026-08-29"
 ---
 
-The [Better Auth security page](https://www.better-auth.com/docs/reference/security) is a useful review point for a fast-moving TypeScript authentication implementation, not a protocol foundation. This summary reflects the mutable documentation as reviewed in August 2026; verify the current docs and code before adopting or changing a production configuration.
+Better Auth provides authentication and session handling for TypeScript applications. Its [security page](https://www.better-auth.com/docs/reference/security) explains the protections built into its authentication routes and the configuration choices that can weaken them. The application still decides what each signed-in user may do.
 
-The [framework documentation](https://www.better-auth.com/docs) describes defaults and extension points for authentication and authorization. The reviewed security page documents these controls:
+The [framework documentation](https://www.better-auth.com/docs) covers defaults and extension points. Important protections include:
 
-- scrypt password hashing by default and versioned secret rotation;
-- database- or secondary-storage-backed sessions when configured;
-- origin and Fetch Metadata checks, with `SameSite=Lax` and `HttpOnly` cookies;
-- OAuth state and PKCE, plus refusal to follow redirects for server-side OAuth/OIDC requests;
-- route rate limits and configurable proxy trust.
+- **Password and secret handling:** scrypt hashing by default, plus versioned secret rotation.
+- **Browser request checks:** origin and Fetch Metadata checks help reject forged requests from other sites. `HttpOnly` prevents JavaScript from reading session cookies; `SameSite=Lax` limits when browsers send them across sites.
+- **OAuth protections:** state and PKCE bind the login response and code exchange to the originating transaction. Server-side OAuth/OIDC requests do not follow redirects to unexpected destinations.
+- **Abuse controls:** route rate limits depend on correctly identifying the client, including behind a proxy.
 
-These controls reduce common mistakes; they do not define application authorization policy or remove the need to follow OAuth, OIDC, WebAuthn, and cookie standards.
+### Session storage changes revocation behavior
 
-### Material configuration trade-offs
+The [session-management guide](https://www.better-auth.com/docs/concepts/session-management) describes two different choices:
 
-- **Session storage and revocation:** the [session-management guide](https://www.better-auth.com/docs/concepts/session-management) says that omitting a database enables stateless session management, while a configured database supports durable lookup and individual revocation. Cookie caching can serve a signed session snapshot without a database read, so a session revoked elsewhere can remain usable until the cache `maxAge` expires unless a sensitive request bypasses the cache. Fully stateless cookie sessions cannot be individually revoked without external state; changing the cookie version invalidates all sessions, not one.
+- **Stored sessions:** a database or secondary store keeps session records that the server can look up and revoke individually. Optional cookie caching avoids repeated lookups by accepting a signed session snapshot. A revoked session can remain usable until that cache expires; bypass the cache for sensitive operations that need current session state.
+- **Stateless sessions:** omitting a database enables cookie-based validation without a database lookup. Without external session state, individual revocation is unavailable. Changing the cookie-cache version invalidates all sessions with the old version, not just one.
+
+### Origin and proxy settings define who is trusted
+
 - **Origin checks:** `disableOriginCheck` disables callback and redirect URL validation **and**, for backward compatibility, CSRF protection. Broad wildcard trusted origins expand who can submit trusted requests or receive redirects; protocol-agnostic patterns also accept multiple schemes. Prefer exact HTTPS origins.
 - **Proxy trust:** `trustedProxyHeaders` may derive the base URL from `X-Forwarded-Host` and `X-Forwarded-Proto` when no configured or environment base URL exists. Enable it only when a trusted proxy overwrites those headers and clients cannot forge them. Apply the same boundary discipline to client-IP headers used for rate limiting.
 
-Better Auth's checks protect its authentication routes; the surrounding application's state-changing routes still need authorization and CSRF defenses. Prefer a same-origin, host-only session boundary where possible, and do not treat `SameSite=Lax` as the only CSRF control.
+Better Auth's checks protect its authentication routes; the surrounding application's state-changing routes still need authorization and cross-site request forgery (CSRF) defenses. `SameSite=Lax` alone is not sufficient.
 
-Treat plugins as separate security surfaces. The [OAuth provider](https://www.better-auth.com/docs/plugins/oauth-provider) and [SSO](https://www.better-auth.com/docs/plugins/sso) plugins introduce issuer, redirect, client-registration, discovery, tenant, provisioning, and key-management decisions. The [passkey plugin](https://www.better-auth.com/docs/plugins/passkey) still requires correct RP ID, origin, challenge, user-verification, and recovery policy. The [API-key plugin](https://www.better-auth.com/docs/plugins/api-key) adds ownership, expiry, permissions, quotas, storage, and rotation decisions.
+For a deployment review, check each enabled plugin's own documentation: [OAuth provider](https://www.better-auth.com/docs/plugins/oauth-provider), [SSO](https://www.better-auth.com/docs/plugins/sso), [passkeys](https://www.better-auth.com/docs/plugins/passkey), or [API keys](https://www.better-auth.com/docs/plugins/api-key). Test rejected requests as well as successful sign-ins, and inspect relevant behavior in the [open-source repository](https://github.com/better-auth/better-auth) when upgrading.
 
-Before deployment, pin and review the dependency, inspect relevant behavior in the [open-source repository](https://github.com/better-auth/better-auth), test negative flows, and re-review these mutable pages during upgrades. Framework defaults are a starting control set, not evidence that the surrounding application's identity and authorization boundaries are correct.
-
-In the [Vercel-to-private-Cloud-Run composition](/summaries/google-cloud/configure-workload-identity-federation-with-deployment-pipelines), Better Auth owns the end-user session and application authorization boundary. Vercel OIDC, Google WIF, and Cloud Run IAM separately authenticate and admit the server workload; their tokens do not identify or authorize the end user.
+In the [Vercel-to-private-Cloud-Run example](/summaries/google-cloud/configure-workload-identity-federation-with-deployment-pipelines), the Vercel Function uses Better Auth to validate the user session, then enforces application authorization. Vercel OIDC, Google Workload Identity Federation, and Cloud Run IAM authenticate the server workload separately; their tokens do not authorize the end user.

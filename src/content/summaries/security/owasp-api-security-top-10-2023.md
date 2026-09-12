@@ -4,18 +4,28 @@ resourceId: 104
 date: "2023-06-05"
 ---
 
-The [OWASP API Security Top 10 — 2023](https://owasp.org/API-Security/editions/2023/en/0x00-header/) is a risk taxonomy and awareness document, not an API implementation standard or a compliance checklist. OWASP publicly released the stable edition on June 5, 2023. Use its categories to challenge an API design and test plan, then choose concrete controls from standards, platform guidance, and the application's threat model.
+The [OWASP API Security Top 10 — 2023](https://owasp.org/API-Security/editions/2023/en/0x00-header/) groups common ways APIs expose data, grant unintended access, or enable costly abuse. It is useful for finding gaps in a design and test plan, not for proving compliance or deciding which risks matter most to a particular system.
 
-The list spans several different failure boundaries:
+### A valid login does not settle authorization
 
-- **Authorization:** broken object-level, property-level, and function-level authorization ask whether every request may act on this exact object, field, or operation—not merely whether the caller is authenticated.
-- **Identity and abuse controls:** broken authentication covers credentials and tokens, while unrestricted resource consumption and access to sensitive business flows cover technical exhaustion, cost amplification, and harmful automation that may use otherwise valid requests.
-- **Platform and supply chain:** server-side request forgery and security misconfiguration test network destinations, parsers, services, and deployment defaults. Improper inventory management asks whether every host, version, endpoint, and data flow is known and maintained. Unsafe consumption of APIs treats third-party responses as untrusted input.
+Three categories distinguish what a caller may access. As an illustration, an account API needs separate checks for:
+
+- **Objects:** may this caller access this particular account, even if they know its ID?
+- **Properties:** which fields may they read or change? Access to an account does not imply permission to change every field.
+- **Functions:** may they perform this operation at all, such as an administrator-only action?
+
+Broken authentication is a separate category: credentials or tokens fail to establish the caller's identity correctly. Fixing it does not fix missing authorization checks.
+
+### Abuse can use otherwise valid requests
+
+- **Unrestricted resource consumption** can exhaust compute, storage, bandwidth, or a paid downstream service. Rate and resource limits bound both availability and cost exposure.
+- **Unrestricted access to sensitive business flows** concerns harmful automation of legitimate operations. The business can suffer even when each request is valid and the infrastructure stays healthy.
+- **Server-side request forgery** lets an attacker influence a URL the API fetches, potentially reaching unintended services through the server's network access.
+- **Security misconfiguration** exposes weaknesses in deployment settings and components. **Improper inventory management** leaves hosts, API versions, endpoints, or data flows untracked and insufficiently maintained.
+- **Unsafe consumption of APIs** arises when a service trusts third-party responses more than other input. Validate downstream data rather than assuming an external provider makes it safe.
 
 ### Turn the taxonomy into engineering work
 
-For each endpoint, record the caller types, object relationships, allowed actions and properties, data classification, resource limits, downstream calls, expected business frequency, and detectable abuse signals. Add negative tests across tenants and roles, varying object IDs and fields independently. Test deprecated versions and shadow hosts, constrain outbound destinations, and observe authorization failures, throttling, and abnormal business-flow activity without logging secrets.
+An applied review can start with each endpoint's allowed callers, objects, fields, and actions. Add negative tests that vary tenant, role, object ID, and field independently. Then inspect resource limits, outbound calls, and the expected frequency of business operations. Include old API versions and untracked hosts rather than testing only the current public endpoint.
 
-Use the [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) to make the three access-control categories concrete: enforce least privilege, deny by default, validate permission on every request, and check the specific object or function even when an identifier can be guessed. Centralize policy where practical, but test the actual request paths with unit and integration coverage and log failed decisions in a useful, non-sensitive form.
-
-The Top 10 deliberately compresses many root causes into ten memorable families. Do not infer that lower-numbered risks are the only priorities, that covering each heading proves security, or that one control closes a category. Prioritize using system-specific likelihood, exposure, and impact.
+The [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html) supplies concrete access-control guidance: least privilege, deny by default, and validate permission on every request at the server. Test the actual request paths and log failed decisions without exposing secrets. Prioritize the resulting work by the system's exposure and likely impact, not by the category number.
