@@ -7,14 +7,12 @@ order: 7
 videoId: "xVW1m-uBWAM"
 ---
 
-An unnamed presenter treats committed use as a trade of flexibility for lower rates when durable demand can consume the commitment. All pricing, eligibility, scope, purchase, IAM, renewal, and report details are from 2019 and require current pricing, product, and contract validation.
+Committed use discounts exchange a promise to pay for compute capacity for a lower rate. This 2019 walkthrough explains how to judge whether predictable demand will use that commitment—and how to spot capacity you are paying for but not consuming.
 
 ### Key Points Covered
 
-- The historical offer uses one- or three-year Compute Engine commitments and differs from sustained-use discounts. [00:00](https://www.youtube.com/watch?v=xVW1m-uBWAM&t=0s)
-- Coverage, savings, and utilization are the central questions for commitment analysis. [01:01](https://www.youtube.com/watch?v=xVW1m-uBWAM&t=61s)
-- The episode scopes commitments by project, region, and resource characteristics, with charges continuing without matching active resources. [01:01–02:03](https://www.youtube.com/watch?v=xVW1m-uBWAM&t=61s)
-- The report compares commitment quantity, eligible usage, coverage, and utilization. [02:03–03:07](https://www.youtube.com/watch?v=xVW1m-uBWAM&t=123s)
-- Project and region filters can expose underutilization before another commitment is purchased. [04:09–05:11](https://www.youtube.com/watch?v=xVW1m-uBWAM&t=249s)
+- **The lower rate comes with an ongoing charge.** The offer shown uses one- or three-year Compute Engine commitments scoped to a project, region, and resource type. Payment continues even when matching resources are not running. [00:00–02:03](https://www.youtube.com/watch?v=xVW1m-uBWAM&t=0s)
+- **Coverage and utilization answer different questions.** Coverage asks how much eligible usage receives the committed rate. Utilization asks how much of the purchased commitment is actually used. The report plots usage against commitment quantity so both uncovered demand and unused commitments are visible. [01:01–04:09](https://www.youtube.com/watch?v=xVW1m-uBWAM&t=61s)
+- **Investigate the scope before buying more.** In the example, filtering by region and project reveals fewer virtual CPUs used on several days while the commitment stayed fixed. The presenter recommends examining recurring demand and existing utilization when deciding whether additional commitments make sense. [03:07–05:11](https://www.youtube.com/watch?v=xVW1m-uBWAM&t=187s)
 
 Full video: <https://www.youtube.com/watch?v=xVW1m-uBWAM>

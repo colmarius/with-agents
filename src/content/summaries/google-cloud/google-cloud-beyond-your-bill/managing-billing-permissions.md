@@ -7,13 +7,12 @@ order: 2
 videoId: "TDHTcS2V4wI"
 ---
 
-An unnamed presenter separates project ownership, Cloud Billing administration, and payments administration into distinct control planes. Treat the roles, policies, account behavior, and console paths as a 2019 snapshot and verify them in current IAM, Billing, and payments documentation.
+Managing cloud resources, reviewing their cost, and paying for them are different responsibilities. This 2019 walkthrough separates project access, Cloud Billing accounts, and Google payments profiles so teams know who can view charges, manage billing, and resolve payment issues.
 
 ### Key Points Covered
 
-- Projects, billing accounts, and payments profiles govern different resource, cost, and payment responsibilities. [00:00–01:03](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=0s)
-- The presenter recommends multiple administrators or groups, periodic access reviews, and restrained account sprawl. [01:03](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=63s)
-- The historical setup flow covers billing location, payment identity, contacts, and backup payment methods. [02:04](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=124s)
-- The episode distinguishes billing administrator, viewer, and user access from project-scoped visibility. [03:07](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=187s)
+- **Follow the relationship from resource to payment.** Projects contain cloud resources and link to a billing account, which can collect charges for several projects. The account links to a Google payments profile for payment and invoice information; that profile also serves Google products outside Cloud and has its own permissions. [00:00–02:04](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=0s)
+- **Avoid depending on one administrator.** The presenter recommends multiple administrators or groups for both billing and payments, regular access reviews, and a backup payment method. These address different failure points: reaching an authorized person and having a working way to pay. [01:03–03:07](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=63s)
+- **Match visibility to responsibility.** In the role model shown, project-level viewing reveals that project's costs, while a billing-account viewer sees costs across associated projects. Billing-account users can associate projects with the account; administrators manage the account and serve as the team's contact for billing support. [03:07–04:57](https://www.youtube.com/watch?v=TDHTcS2V4wI&t=187s)
 
 Full video: <https://www.youtube.com/watch?v=TDHTcS2V4wI>

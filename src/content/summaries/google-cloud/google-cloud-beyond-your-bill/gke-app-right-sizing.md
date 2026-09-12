@@ -7,14 +7,12 @@ order: 11
 videoId: "3bbVOp4y3MI"
 ---
 
-An unnamed presenter frames application right-sizing as a shared discipline: platform teams expose evidence and application owners tune workloads over time. The 2021 GKE metrics, recommendations, RBAC, quotas, autoscaling, and dashboard specifics require current docs and controlled workload testing.
+Application right-sizing means adjusting requested CPU and memory to reflect what a workload needs as demand changes. This 2021 Google Kubernetes Engine (GKE) walkthrough shows how platform teams can give application owners the measurements to reduce waste without ignoring performance and stability.
 
 ### Key Points Covered
 
-- Right-sizing repeatedly adjusts workload requests as demand and application behavior change. [00:00](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=0s)
-- Namespace or team views can expose overprovisioning to accountable owners. [01:02](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=62s)
-- The historical approach compares requested CPU and memory with platform recommendations, then drills into workloads. [02:06](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=126s)
-- Per-application views combine utilization, requests, limits, and autoscaler targets; low utilization warrants investigation, not an automatic cut. [03:08](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=188s)
-- The presenter says cost optimization should balance cost with performance and stability. [03:08–04:11](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=188s)
+- **Make waste visible to the team that can change it.** Namespaces group Kubernetes workloads; the example aligns them with teams. Comparing requested resources with recommendations at that level reveals teams whose applications consistently ask for more than they need, then lets owners drill into individual workloads. [01:02–03:08](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=62s)
+- **Compare requests with usage and recommendations.** Requests specify the CPU and memory a container asks Kubernetes to allocate; limits constrain its use. The demo charts these alongside actual consumption and Vertical Pod Autoscaler recommendations to identify candidates for adjustment. [00:00–01:02](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=0s), [02:06–04:11](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=126s)
+- **Low utilization can indicate too many minimum replicas.** If average use remains well below the Horizontal Pod Autoscaler's target, the presenter suggests considering fewer always-running copies while retaining the ability to scale up. The same monitoring can also reveal underprovisioned applications that need more resources for performance and stability. [03:08–04:57](https://www.youtube.com/watch?v=3bbVOp4y3MI&t=188s)
 
 Full video: <https://www.youtube.com/watch?v=3bbVOp4y3MI>
