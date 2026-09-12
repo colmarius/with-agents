@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 520
 ---
 
+Source note: The English summary is an editorial translation and paraphrase of these Italian auto-generated captions. It was not checked against the original audio. This provenance was previously recorded in the public summary.
+
 ## Transcript
 
 [00:00:01] Lei non ha come unico effetto potenziale quello di fare crollare il mercato del lavoro, l'occupazione, ma anche, diciamo, di creare delle scoperte fondamentali che cambieranno il mondo, eccetera. Uno degli effetti collaterali che ormai si è visto e si è rivisto nei negli ultimi tempi è quello di in qualche modo sminuire le capacità degli esseri umani da certi punti di vista. questi risultati nella matematica, così come non lo so, vedere un codig agent che dopo che riceve un prompt dopo mezz'ora ha fatto un programma che magari tu avresti fatto in una settimana, in un mese, può avere in alcune persone, non in tutte, può produrre la sensazione di una percezione di un valore minore di se

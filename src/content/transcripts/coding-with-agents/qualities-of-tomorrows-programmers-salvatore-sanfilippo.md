@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 1386
 ---
 
+Source note: The English summary is an editorial translation and paraphrase of these Italian auto-generated captions; its English wording is not a verbatim quotation. This provenance was previously recorded in the public summary.
+
 ## Transcript
 
 [00:00:01] [musica] [musica] Questo è un video che bisognava fare per forza, è un po' complicato, ma eh volevo fare un video su come si sopravvive da programmatori al futuro che sta venendo. Ovviamente è un video ad altissimo rischio, nel senso che eh è difficile prevedere, è difficile beccarci su tutto, però mi sono fatto nel corso dei mesi sempre di più un'idea. Eh, stavolta però non parlerò dal punto di vista solito. Io di solito vi dico dovete avere un'idea dei software, del prodotto che volete fare e tutte queste belle cose. Ciò vale per chi sviluppa software open source, per chi ha una startup e sviluppa un proprio prodotto, ma la maggior parte di voi, utile, diciamo,

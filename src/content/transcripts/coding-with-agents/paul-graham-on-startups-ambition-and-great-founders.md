@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 1285
 ---
 
+Source note: The summary uses these English auto-generated captions and was not checked against the audio. This provenance was previously recorded in the public summary.
+
 ## Transcript
 
 [00:00:00] So, we're here in Mountain View today with PG himself at the original offices doing your talk that you do for the YC batch. I looked it up, this is actually the 47th YC batch. >> You know, I've been trying to calculate that number. I wasn't sure exactly what it was. >> As so >> No wonder I'm not too worried about this talk. You know. >> You've done it a >> that many times. It changes a little bit. >> Yes, it's the 21st year also of YC. >> You know, the weird thing is I make the talk from scratch every time. >> Really? >> I probably say the same things over and over. But I always feel like I should I think oh my god, think a couple hours beforehand. Oops, I better I'm just talking to YC. I better think in advance a little bit about what to say. And so I open up a text file and start typing things. And that's how it always is. >> Any tidbits from today that are new from winter?

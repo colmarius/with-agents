@@ -10,6 +10,8 @@ kind: "caption"
 durationSeconds: 2882
 ---
 
+Source note: The summary uses the saved English captions without translation or audio verification. The captions contain transcription errors, so the summary paraphrases clear passages. This provenance was previously recorded in the public summary; product and performance claims remain the interview's account.
+
 ## Transcript
 
 [00:00:00] I seen people making like millions of dollars in a very quick amount of time Your startup will be irrelevant after that feature roll out How do you look at this? I am from Google, right? even before the whole AI like whenever someone of us to start something, they always say. Oh, what if Google does it. But the thing is that Google can't do everything right. Has your mindset before joining YC and after joining YC how much does that change? Number one thing I kind of erase and learn from scratch is Learn how to focus. Our biggest secret to marketing is just embrace everything that's coming at you. How do you look at this trend of open weight versus proprietary models that are there? Very soon we're going to get to a point where the open weight models are actually going to outperform the close weight models. thank you so much Jinjing for making it to the podcast. It's called The West Coast Builders, you are one of those guests that have been approaching your marketing, your marketing, and in a very organic or bootstrapped way. I have talked to other ten companies on my podcast, and most of them have a mixture of doing a lot of non like paid and non paid marketing.

@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 2271
 ---
 
+Source note: The prior public summary recorded light name and product-casing cleanup of these auto-generated captions. That editorial-history note is preserved here; the September 2026 readability review did not independently repeat or certify the cleanup.
+
 ## Transcript
 
 [00:00:00] There's been a lot of misinformation about AI. >> This is Andrew. He co-founded Google Brain and Coursera. His machine learning course has reached millions of learners and he is one of the most influential voices in AI today. >> So, a handful of leading AI companies have been very loud voices of fear-mongering around AI to try to get regulations passed. This drum beat of fear-based messaging has skewed societal perception to be really negative on AI. People talk to me about data centers and job loss. >> Maybe AI could do 30 40% of many jobs. And what that means is well that 60% that the human does has become even more valuable. >> What about loss of human control over AI? >> I think about something else that we can't control. I think you're one of the voices in AI who comes with a huge background in machine learning and teaching AI and also you're a positive voice because this is something that I've been seeing especially this summer how poor the society has become especially on social

@@ -12,6 +12,8 @@ kind: "auto-generated"
 durationSeconds: 3198
 ---
 
+Source note: The prior public summary recorded that speaker attribution was checked against the official episode transcript. This preserves that review history; the September 2026 readability review does not claim a new official-transcript or original-audio check.
+
 ## Transcript
 
 [00:00:00] We've been talking about like the end of local dev, the local environment is dead and obviously we say blah blah blah is dead every second day. But I'm looking at how I work like so much stuff in these orbs that stuff I would have bet money on it like half a year ago that this will be a local dev thing and now you're kind of doing it with software on the spot and talking to the model at the same time in this other environment. And I'm no longer just skeptical of local development. I'm now wondering what is the role of the computer as a personal device in the future. I think it's wild. Like I'm getting nauseous just thinking about like what's happening to the computer, you know? >> Yeah. Well, the most enjoyable tool is the one that has just what you need and that the agent can drive at the rate that I am using my computer or the distinguishing characteristics of my computer. if that continues. Yeah, people know this. I love Dev Tools like as much as anybody. And then the first

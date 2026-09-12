@@ -10,6 +10,8 @@ kind: "auto-generated"
 durationSeconds: 1121
 ---
 
+Source note: The English summary is an editorial paraphrase of these Italian auto-generated captions, not a verbatim quotation. The prior public summary recorded a check against the original Italian captions; this preserves that review history, not a claim of an original-audio check.
+
 ## Transcript
 
 [00:00:01] di questa paura di rimanere indietro eh rispetto alle AI me n'ero accorto parlando con Mister Rip eh sia pubblicamente durante qualche live, ma anche in conversazioni private. Io eh io pensavo che eh fosse una paura più ancorata a quelli della mia generazione che vedono, diciamo, un mondo scomparire, un altro che ne nasce. Ma in realtà poi l'altro giorno parlavo con un ragazzo pugliese che lavora ad Nvidia e mi ha menzionato questo termine FOMO che è questa fear of missing out che secondo me ha un'accezione un po' diversa rispetto alla paura di rimanere indietro. La FOMO è proprio la paura, secondo me, anche di non partecipare alla novità che avanza, al nuovo che avanza, ma sicuramente i due aspetti sono correlati. Poi oggi ho aperto YouTube,
