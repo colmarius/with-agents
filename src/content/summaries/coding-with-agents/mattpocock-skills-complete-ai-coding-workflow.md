@@ -17,6 +17,4 @@ Matt Pocock demonstrates the main path through his skills repository in an exist
 - **Use durable artifacts only when the task crosses contexts**: Bounded work can proceed directly; larger work can become a destination specification and context-sized tickets that survive fresh sessions [09:36–14:48](https://www.youtube.com/watch?v=M6mYodf0dJM&t=576s).
 - **Separate implementation from fresh review**: The demonstrated implementation runs repository checks and delegates specification and standards review to fresh sub-agents before committing [14:48–16:52](https://www.youtube.com/watch?v=M6mYodf0dJM&t=888s).
 
-The walkthrough uses one repository, task, harness, and model configuration. It illustrates the procedure but does not establish comparative delivery, defect, or maintenance improvements.
-
 Full video: <https://www.youtube.com/watch?v=M6mYodf0dJM>

@@ -4,9 +4,7 @@ resourceId: 34
 date: "2025-08-06"
 ---
 
-This guide selects six question-driven talks from the Agent Reliability playlist curated and published by the AI Engineer channel. It is an editorial route, not complete event coverage. AI Engineer is the source channel, not the author; each speaker remains the source for that talk's claims.
-
-The collection focuses on operating production agents rather than proving one generated change. The talks cover where model discretion belongs, who owns long-running state and recovery, how plans and tools stay bounded, and whether automation improves human outcomes. They do not establish which framework or scaling strategy is most reliable, and several speakers present products their organizations build.
+Running agents in production requires more than checking one generated change: someone must own state, retries, recovery, and the consequences of failure. This editorial selection of six talks from AI Engineer's Agent Reliability playlist approaches those decisions from different angles, from when automation is worth its cost to whether it improves human control.
 
 ### Where to start
 

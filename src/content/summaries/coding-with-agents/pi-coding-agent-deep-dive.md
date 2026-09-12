@@ -4,9 +4,7 @@ resourceId: 53
 date: "2026-08-21"
 ---
 
-0xSero gives a live code tour of Pi, moving from its provider abstraction and streamed agent loop to its tools, extensions, sessions, SDK, and local-model workflows. The recording is most useful as an implementation guide: it connects Pi's small core to concrete ways users can extend or orchestrate it.
-
-The performance discussion is exploratory rather than a controlled evaluation. The presenter shows cache-hit, latency, token-cost, and Terminal-Bench comparisons without enough linked model versions, harness configurations, task details, or methodology to generalize the rankings.
+Pi separates model access, the tool-calling loop, and the coding interface so users can extend one without rebuilding the others. In this live code tour, 0xSero follows those layers and shows how sessions, extensions, and the SDK support custom workflows.
 
 ### The Harness Core
 
@@ -16,7 +14,7 @@ The performance discussion is exploratory rather than a controlled evaluation. T
 
 ### Context and Extensibility
 
-- **Prompt caching matters more for local and metered inference**: The presenter explains how conversation history contributes to the KV cache and argues that Pi's small prompt and stable context improve cache reuse. His relative cache-hit and cost claims are not accompanied by a reproducible comparison in the recording ([14:16–16:22](https://www.youtube.com/watch?v=5kLL0xUC28Q&t=856s), [20:54–22:58](https://www.youtube.com/watch?v=5kLL0xUC28Q&t=1254s)).
+- **Reusing prompt computation can save time and cost**: A key-value, or KV, cache retains computed state for earlier tokens so the model need not process them again. The presenter argues that Pi's small prompt and stable context improve reuse. His relative cache-hit and cost claims are not accompanied by a reproducible comparison in the recording ([14:16–16:22](https://www.youtube.com/watch?v=5kLL0xUC28Q&t=856s), [20:54–22:58](https://www.youtube.com/watch?v=5kLL0xUC28Q&t=1254s)).
 - **Extensions keep optional behavior outside the core**: The coding-agent package adds the terminal interface and an extension surface, allowing users to add tools or interface behavior without changing the provider and loop layers ([17:24–18:16](https://www.youtube.com/watch?v=5kLL0xUC28Q&t=1044s)).
 - **Files and an SDK make sessions composable**: Pi stores session history as JSONL and offers an SDK and headless mode. A running agent can also use bash or tmux to launch another Pi process with a different model, producing a simple route to delegated or mixed local-and-cloud work ([18:16–19:11](https://www.youtube.com/watch?v=5kLL0xUC28Q&t=1096s)).
 

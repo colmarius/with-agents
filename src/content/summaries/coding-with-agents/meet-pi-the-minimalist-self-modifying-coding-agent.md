@@ -4,9 +4,7 @@ resourceId: 51
 date: "2026-08-20"
 ---
 
-CultRepo's short profile combines interviews with Pi creator Mario Zechner and Earendil co-founder Armin Ronacher. Compared with the catalog's longer Pi talks and demonstrations, its distinct value is the connection between Zechner's open-source history, Pi's deliberately small architecture, self-extension, and their stated ambition to sustain an open, model-neutral foundation.
-
-The film is an edited profile rather than an independent technical evaluation. Its adoption figures and leaderboard placement are first-party reports without defined scope or methodology; the commercial and open-foundation discussion describes an ambition rather than a detailed business or governance plan.
+Pi keeps its core small and lets users add behavior through extensions the agent can write itself. In this CultRepo profile, creator Mario Zechner and Earendil co-founder Armin Ronacher connect that design to a broader goal: sustaining an open-source agent that is not tied to one model provider.
 
 ### Why Pi Stays Small
 

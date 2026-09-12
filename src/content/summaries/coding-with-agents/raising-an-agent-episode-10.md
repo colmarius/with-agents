@@ -6,11 +6,11 @@ episode: 10
 date: "2026-02-05"
 ---
 
-In episode 10 of "Raising an Agent", the hosts discuss Amp's deep mode and retirement of its editor-sidebar workflow. They argue that frontier teams need to reorganize around autonomous agents.
+When agents can work for longer without input, a single editor sidebar becomes a poor place to manage several tasks. In this February 2026 episode of "Raising an Agent", Quinn and Thorsten explain Amp's move away from that interface and toward longer-running work with later human review.
 
 ### Key Points Covered
 
-- **Deep mode is a workflow, not just a model selector**: Amp's new deep mode uses GPT-5.2 Codex Medium. It targets longer, well-scoped tasks that benefit from thorough research and delayed review. The hosts contrast it with smart mode for interactive work and rush mode for small fast changes [00:55–05:21](https://www.youtube.com/watch?v=4rx36wc9ugw&t=55s).
+- **Deep mode is a workflow, not just a model selector**: At the time of recording, Amp's new deep mode used GPT-5.2 Codex Medium for longer, well-scoped tasks that benefited from thorough research and delayed review. The hosts contrast it with smart mode for interactive work and rush mode for small fast changes [00:55–05:21](https://www.youtube.com/watch?v=4rx36wc9ugw&t=55s).
 - **Modes should change user expectations**: Quinn and Thorsten argue that putting a model in a drop-down is not enough. A product should help users feel when they are writing a short text-message-style prompt versus a longer letter to an agent that will go away and work [05:52–07:31](https://www.youtube.com/watch?v=4rx36wc9ugw&t=352s).
 - **The factory pattern becomes more natural as models run longer**: If an agent can work for 45-60 minutes without needing input, watching one sidebar thread stops making sense. The hosts expect more parallel agents, long-running tasks, and check-ins after completion [08:03–10:17](https://www.youtube.com/watch?v=4rx36wc9ugw&t=483s).
 - **Skills are accumulating operational knowledge**: Amp uses skills to encode release workflows, tmux testing details, G-Cloud log analysis, and BigQuery usage. These and other team-specific procedures help agents navigate common tasks without repeated prompting [10:17–16:18](https://www.youtube.com/watch?v=4rx36wc9ugw&t=617s).

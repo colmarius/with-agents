@@ -5,7 +5,7 @@ collection: "the-west-coast-builders"
 date: "2026-05-20"
 ---
 
-Thorsten Ball argues that improving frontier models need less harness scaffolding and simpler tools. He discusses how humans may coordinate many cheap, capable agents.
+Thorsten Ball argues that better models need less specialized software around them. That surrounding software—the agent harness—supplies tools, context, and the loop that returns tool results to the model. He expects it to become simpler while coordinating many agents becomes a larger product problem.
 
 ### Key Points Covered
 

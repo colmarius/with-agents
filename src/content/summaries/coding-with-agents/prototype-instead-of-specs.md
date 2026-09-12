@@ -13,10 +13,8 @@ Matt Pocock argues for throwaway prototypes when prose cannot resolve how a feat
 
 - **Prototype to answer a named question**: Cheaper code generation makes spikes more accessible, but discussion remains the lower-cost tool when the unresolved decision does not need working behavior [00:00–02:53](https://www.youtube.com/watch?v=n0VhIVtviC0&t=0s).
 - **Use alternatives to expose design choices**: The diagram-search demonstration generates several materially different approaches so feedback can address grouping, filtering, placement, and layout rather than one assumed implementation [03:57–06:03](https://www.youtube.com/watch?v=n0VhIVtviC0&t=237s).
-- **Increase fidelity only when it improves feedback**: Pocock iterates toward a preferred alternative and favors testing inside the live route for a more representative experience [06:03–07:55](https://www.youtube.com/watch?v=n0VhIVtviC0&t=363s).
+- **Increase fidelity only when it improves feedback**: Pocock iterates toward a preferred alternative and favors testing inside the live route for a more representative experience. The demonstration leaves isolation and regression safeguards for those experiments unresolved [06:03–07:55](https://www.youtube.com/watch?v=n0VhIVtviC0&t=363s).
 - **Separate exploration from production cleanup**: After accepting the prototype, he proposes a fresh implementation pass that removes prototype code and restores conformance with the original requirements [07:55–08:58](https://www.youtube.com/watch?v=n0VhIVtviC0&t=475s).
 - **Prototype logic as well as interfaces**: Small terminal harnesses can exercise state transitions and edge cases when the uncertainty lies in back-end behavior rather than presentation [08:58–10:01](https://www.youtube.com/watch?v=n0VhIVtviC0&t=538s).
-
-The video does not compare prototype cost or implementation quality with a specification-only workflow, and it leaves isolation and regression safeguards for live-route experiments unresolved.
 
 Full video: <https://www.youtube.com/watch?v=n0VhIVtviC0>
