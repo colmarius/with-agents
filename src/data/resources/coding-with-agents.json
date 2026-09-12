@@ -19,6 +19,19 @@
     ]
   },
   {
+    "id": 126,
+    "primarySection": "reliability",
+    "title": "Trying the new Claude Eval tool",
+    "subtitle": "Hamel Husain's livestream on Claude evaluation tooling",
+    "url": "https://www.youtube.com/watch?v=K85b9r-4RvI",
+    "description": "Hamel Husain's livestream titled ‘Trying the new Claude Eval tool’. Metadata-only entry: transcript capture was unavailable, so no claims about the demonstration or its conclusions have been summarized. The date is the catalog addition date, not a verified broadcast date.",
+    "type": "video",
+    "source": "Hamel Husain",
+    "date": "2026-09-12",
+    "duration": "59m",
+    "topics": ["models-evaluation", "review-verification", "tools-harnesses"]
+  },
+  {
     "id": 124,
     "primarySection": "reliability",
     "title": "Building ambitious software — Jonathan Kelley, Dioxus Labs & Cognition",
