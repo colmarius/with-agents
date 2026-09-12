@@ -1,5 +1,23 @@
 [
   {
+    "id": 124,
+    "primarySection": "reliability",
+    "title": "Building ambitious software — Jonathan Kelley, Dioxus Labs & Cognition",
+    "subtitle": "Agent-assisted Rust development, release maintenance, and the limits of generated tests",
+    "url": "https://www.youtube.com/watch?v=H7vFrcNWXzs",
+    "description": "Jonathan Kelley describes where coding agents helped the Dioxus team: platform integrations, CSS debugging, release checklists, backports, documentation, and fuzzing harnesses. He contrasts fast code generation with the harder work of architecture, meaningful test design, and line-by-line review. A maintainer's experience report, not an independently measured productivity study.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-09-11",
+    "duration": "19m",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "tools-harnesses",
+      "open-source-ecosystem"
+    ]
+  },
+  {
     "id": 122,
     "primarySection": "agent-systems",
     "title": "Building Codex with Tibo Sottiaux",
