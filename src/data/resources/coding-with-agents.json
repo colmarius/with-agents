@@ -1,5 +1,24 @@
 [
   {
+    "id": 125,
+    "primarySection": "agent-systems",
+    "title": "50,000 GitHub Stars in Four Months | Jinjing Liang (Orca ADE, Co-founder & CEO)",
+    "subtitle": "Multi-agent worktrees, portable session history, and developer-tool adoption",
+    "url": "https://www.youtube.com/watch?v=PcsdNYfR6Ag",
+    "description": "Orca founder Jinjing Liang describes an agentic development environment for coordinating different coding agents across parallel tasks, inspecting session history, and resuming automated work interactively. The interview also covers vendor lock-in, open-source adoption, inference costs, and community-led marketing. Product capabilities, productivity claims, and market forecasts are the speaker's account, not independently verified results.",
+    "type": "video",
+    "source": "Mayank Gupta — The West Coast Builders",
+    "date": "2026-08-29",
+    "duration": "48m",
+    "topics": [
+      "tools-harnesses",
+      "prompting-orchestration",
+      "context-memory",
+      "open-source-ecosystem",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 124,
     "primarySection": "reliability",
     "title": "Building ambitious software — Jonathan Kelley, Dioxus Labs & Cognition",
