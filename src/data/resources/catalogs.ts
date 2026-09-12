@@ -201,9 +201,32 @@ const aiSections = [
       'AI and work, learning, research, human agency, societal choices, and safety.',
     routeSlug: 'implications-risks',
   },
+  {
+    key: 'yuval-noah-harari',
+    label: 'Yuval Noah Harari — talks & interviews',
+    description:
+      'An editorial selection of standalone talks and interviews on AI, trust, institutions, and human agency—not a single official playlist. These are Harari’s arguments and forecasts, with interviewer counterpoints, rather than independent findings. Some conversations also cover politics and history.',
+    routeSlug: 'yuval-noah-harari',
+    discoveryLinks: [
+      {
+        label: 'Official video index',
+        href: 'https://www.ynharari.com/category/video/',
+      },
+      {
+        label: 'Official YouTube channel',
+        href: 'https://www.youtube.com/@YuvalNoahHarari',
+      },
+      {
+        label: 'Yuval Addresses Artificial Intelligence — additional playlist',
+        href: 'https://www.youtube.com/playlist?list=PLfc2WtGuVPdkfwPMfvU0PNkOYPzDDCBxt',
+      },
+    ],
+  },
 ] as const satisfies readonly ResourceSection[];
 
 const aiTopicOptions = [
+  { slug: 'society-governance', label: 'Society & governance' },
+  { slug: 'information-trust', label: 'Information & trust' },
   { slug: 'models-evaluation', label: 'Models & evaluation' },
   { slug: 'business-adoption', label: 'Business & adoption' },
   { slug: 'collaboration-teams', label: 'Collaboration & teams' },
@@ -215,7 +238,8 @@ const aiTopicOptions = [
 ] as const satisfies readonly ResourceTopicOption[];
 
 const aiResourceIds = [
-  124, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73,
+  124, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 125, 126,
+  127, 128,
 ];
 
 const aiSectionByResourceId = {

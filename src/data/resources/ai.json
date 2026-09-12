@@ -1,5 +1,57 @@
 [
   {
+    "id": 125,
+    "primarySection": "yuval-noah-harari",
+    "title": "The next 50 years: humanity, AI, power | Yuval Noah Harari",
+    "subtitle": "Language, economic power, and human agency",
+    "url": "https://www.youtube.com/watch?v=_V_ed5fuexA",
+    "description": "Yuval Noah Harari and Tom Parker discuss AI's growing role in economic and legal systems, risks for democracy, and approaches to regulation. A conversation at EDP's July 2026 anniversary gala, summarized from English auto-generated captions. Harari's arguments and forecasts are attributed commentary, not independently verified findings.",
+    "type": "video",
+    "source": "Yuval Noah Harari",
+    "date": "2026-07-30",
+    "duration": "48m",
+    "topics": ["society-governance", "information-trust", "business-adoption"]
+  },
+  {
+    "id": 126,
+    "primarySection": "yuval-noah-harari",
+    "title": "AI has hacked the code of human civilization | Yuval Noah Harari",
+    "subtitle": "AI agency, bureaucracy, and language-based institutions",
+    "url": "https://www.youtube.com/watch?v=hBtVGwuJzpk",
+    "description": "Yuval Noah Harari's 2026 Tanner Lecture at Linacre College, Oxford examines bureaucracy as a basis of human cooperation and warns about delegating consequential decisions to AI. The summary distinguishes his analogies, interpretations, and forecasts from demonstrated capabilities and independently verified findings, using English auto-generated captions.",
+    "type": "video",
+    "source": "Yuval Noah Harari",
+    "date": "2026-06-30",
+    "duration": "47m",
+    "topics": ["society-governance", "information-trust", "models-evaluation"]
+  },
+  {
+    "id": 127,
+    "primarySection": "yuval-noah-harari",
+    "title": "Yuval Noah Harari on Donald Trump’s Core Delusion | The Ezra Klein Show",
+    "subtitle": "Cooperation, political narratives, and AI's influence on intimacy and accountability",
+    "url": "https://www.youtube.com/watch?v=9NCxS__rtAo",
+    "description": "Ezra Klein and Yuval Noah Harari discuss cooperation, liberal institutions, Israel and Palestine, then algorithmic media, AI relationships, and accountability. The first hour is primarily politics and history; the later AI discussion weighs personalized assistance against manipulation and loss of human control. An attributed interview summary from English auto-generated captions, not independently verified political findings or measured AI outcomes.",
+    "type": "video",
+    "source": "The Ezra Klein Show",
+    "date": "2026-05-26",
+    "duration": "1h 55m",
+    "topics": ["society-governance", "information-trust"]
+  },
+  {
+    "id": 128,
+    "primarySection": "yuval-noah-harari",
+    "title": "Building Trust in the Age of Disinformation – What Future Awaits Us? | Yuval Noah Harari",
+    "subtitle": "Algorithmic trust, European AI dependence, and language-based authority",
+    "url": "https://www.youtube.com/watch?v=t_KKNNeH8jU",
+    "description": "Yuval Noah Harari and Marijana Grbeša discuss how algorithms mediate trust, Europe's AI dependence, and the distinction between language-based intelligence and human experience. Harari forecasts changes to financial and religious authority; closing passages address war rather than AI. A conversation recorded in Zagreb in October 2025, summarized from English auto-generated captions; political interpretations and forecasts remain the speaker's arguments.",
+    "type": "video",
+    "source": "Yuval Noah Harari",
+    "date": "2026-02-26",
+    "duration": "50m",
+    "topics": ["society-governance", "information-trust", "models-evaluation"]
+  },
+  {
     "id": 124,
     "primarySection": "economics-industry",
     "title": "AI's Hidden Debt Problem Explained",

@@ -50,6 +50,7 @@ export type ResourceSection = {
   label: string;
   description: string;
   routeSlug: string;
+  discoveryLinks?: readonly { label: string; href: string }[];
 };
 
 export type ResourceCatalog = {

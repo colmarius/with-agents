@@ -82,6 +82,39 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
       ?.getAttribute('href'),
     '/resources/ai/concepts-capabilities#resource-121',
   );
+  const { document: harariSection } = parseHTML(
+    readFileSync('dist/resources/ai/yuval-noah-harari/index.html', 'utf8'),
+  );
+  assert.deepEqual(
+    [
+      ...harariSection.querySelectorAll(
+        'nav[aria-label="Further discovery — official sources"] a',
+      ),
+    ].map((link) => link.getAttribute('href')),
+    [
+      'https://www.ynharari.com/category/video/',
+      'https://www.youtube.com/@YuvalNoahHarari',
+      'https://www.youtube.com/playlist?list=PLfc2WtGuVPdkfwPMfvU0PNkOYPzDDCBxt',
+    ],
+  );
+  for (const [id, slug] of [
+    [125, 'the-next-50-years-humanity-ai-power'],
+    [126, 'ai-has-hacked-the-code-of-human-civilization'],
+    [127, 'ezra-klein-trump-core-delusion'],
+    [128, 'building-trust-age-of-disinformation'],
+  ]) {
+    const url = `/summaries/ai/yuval-noah-harari/${slug}`;
+    assert.ok(harariSection.querySelector(`a[href="${url}/"]`), url);
+    const { document } = parseHTML(
+      readFileSync(`dist${url}/index.html`, 'utf8'),
+    );
+    assert.equal(
+      document
+        .querySelector('nav[aria-label="Parent page"] a')
+        ?.getAttribute('href'),
+      `/resources/ai/yuval-noah-harari#resource-${id}`,
+    );
+  }
   const summarySources = globSync('src/content/summaries/**/*.md').map(
     (path) => {
       const source = readFileSync(path, 'utf8');

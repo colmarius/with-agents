@@ -77,12 +77,16 @@ test('AI groups broad resources while preserving substantive coding cross-listin
   const coding = requireCatalog('coding-with-agents');
   assert.deepEqual(
     ai.resourceIds,
-    [124, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73],
+    [
+      124, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 125,
+      126, 127, 128,
+    ],
   );
   for (const [section, ids] of [
     ['concepts-capabilities', [121, 108, 49, 23, 33]],
     ['economics-industry', [124, 120, 52, 55, 73]],
     ['implications-risks', [123, 119, 110, 107, 111]],
+    ['yuval-noah-harari', [125, 126, 127, 128]],
   ] as const) {
     assert.deepEqual(
       getCatalogResources(ai, section).map(({ id }) => id),
@@ -108,8 +112,14 @@ test('AI groups broad resources while preserving substantive coding cross-listin
   }
 });
 
-test('new Cloud and Security articles have one standalone summary each', () => {
-  const resourceIds = Array.from({ length: 10 }, (_, index) => index + 97);
+test('Cloud, Security, and Harari resources have one standalone summary each', () => {
+  const resourceIds = [
+    ...Array.from({ length: 10 }, (_, index) => index + 97),
+    125,
+    126,
+    127,
+    128,
+  ];
   const summaryCountByResourceId = new Map(
     resourceIds.map((resourceId) => [resourceId, 0]),
   );
@@ -122,6 +132,22 @@ test('new Cloud and Security articles have one standalone summary each', () => {
 
     assert.doesNotMatch(summary, /^collection:/m, `${path} must be standalone`);
     summaryCountByResourceId.set(resourceId, count + 1);
+    if (resourceId >= 125) {
+      assert.doesNotMatch(summary, /^(series|order|videoId):/m);
+      const transcript = readFileSync(
+        path.replace('/summaries/', '/transcripts/'),
+        'utf8',
+      );
+      const source = resources.find(({ id }) => id === resourceId);
+      assert.ok(source);
+      assert.equal(resources.filter(({ id }) => id === resourceId).length, 1);
+      assert.ok(transcript.includes(`sourceUrl: "${source.url}"`));
+      assert.ok(
+        transcript.includes(
+          `summarySlug: "${path.replace('src/content/summaries/', '').replace(/\.md$/, '')}"`,
+        ),
+      );
+    }
   }
 
   assert.deepEqual(
