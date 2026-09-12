@@ -12,9 +12,9 @@ Episode 6 of the "Raising an Agent" series explains how Claude Sonnet 4 changed 
 
 - **Amp opens up with an opinionated product philosophy**: The episode starts with the waitlist opening and a reminder that Amp is intentionally simple: no model selector, no artificial token ceilings, and a focus on quality over configurability [03:31–06:25](https://www.youtube.com/watch?v=HVihMH5j8KQ&t=211s).
 
-- **Sonnet 4 raises the task-size ceiling**: Sonnet 4 lets the team attempt larger end-to-end features in the Amp repo, though Thorsten still describes a hybrid workflow of reviewing, hand-editing, and moving guardrails as the agent works [07:28–10:39](https://www.youtube.com/watch?v=HVihMH5j8KQ&t=448s).
+- **Sonnet 4 raises the task-size ceiling**: The hosts report attempting larger end-to-end features in the Amp repo. Thorsten's subagent-progress UI mostly worked, but he still had to correct a missing frontend connection [07:28–11:43](https://www.youtube.com/watch?v=HVihMH5j8KQ&t=448s). He also describes letting the agent draft an implementation, then exploring and hand-editing the code to understand its constraints before delegating more work [00:58–02:42](https://www.youtube.com/watch?v=HVihMH5j8KQ&t=58s).
 
-- **Sub-agents preserve context and isolate risk**: Sonnet 4 is more eager to use task tools. Sub-agents help with repeated or self-contained work because each one gets a separate context window; if one gets lost, it does not pollute the parent thread [11:43–14:44](https://www.youtube.com/watch?v=HVihMH5j8KQ&t=703s).
+- **Subagents keep repeated work out of the main context**: Sonnet 4 is more eager to use task tools. In Thorsten's example, it divides frontmatter edits across four agents. Each has its own context window, so failed edits and retries do not fill the parent conversation [11:43–14:44](https://www.youtube.com/watch?v=HVihMH5j8KQ&t=703s).
 
 - **Model providers are aiming at different agent philosophies**: The hosts compare Anthropic's practical coding-agent behavior with models that feel more optimized for one-shot app generation. The useful agent is not just the smartest model, but the model whose habits fit the workflow [16:36–22:16](https://www.youtube.com/watch?v=HVihMH5j8KQ&t=996s).
 

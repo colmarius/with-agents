@@ -23,8 +23,4 @@ Armin Ronacher and Ben Vinegar discuss model economics, coding agents moving int
 
 Editorial synthesis: separate functional checks from architecture review. Automate checks against regressions you cannot afford, keep their running cost manageable, and inspect whether successful implementations preserve the intended interfaces and dependencies. Judge parallel agent work by useful, maintainable outcomes rather than how many jobs or tokens it consumes.
 
-### Source and evidence limits
-
-Based on the video's English auto-generated captions, not an audio review. Product news, pricing comparisons, and adoption claims are the hosts' dated accounts. Their opening discussion of watermarking explicitly leaves implementation details uncertain; it should not be used as documentation of a provider's watermarking scheme.
-
 Full video: [State of Agentic Coding #10 with Armin and Ben](https://www.youtube.com/watch?v=9UAxrdcDjjU).

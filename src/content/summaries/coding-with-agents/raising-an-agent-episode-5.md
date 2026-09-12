@@ -6,7 +6,7 @@ episode: 5
 date: "2025-05-14"
 ---
 
-Episode 5 of the "Raising an Agent" series explains Amp's power-tool philosophy: strong models plus a simple tool loop, curated feedback, and human architectural judgment beat magical thinking or piles of generic tools.
+Amp's team argues that a coding agent needs clear instructions and usable feedback, not just more tools. Their power-tool philosophy pairs a model that can act with tests, compiler output, and browser access that let it check its work. Developers still supply the intended behavior and architectural constraints.
 
 ### Key Points Covered
 

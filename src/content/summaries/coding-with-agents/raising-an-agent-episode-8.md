@@ -6,12 +6,12 @@ episode: 8
 date: "2025-08-21"
 ---
 
-In episode 8 of "Raising an Agent", Camden from the Amp Core team discusses how the team evaluates and integrates Large Language Models (LLMs) into Amp.
+Choosing a coding model means testing more than the code it writes: can it find relevant files, call tools correctly, recover from errors, and finish without repeated human help? Camden from Amp's Core team explains how those behaviors shape model selection and why the surrounding prompts and tools need tuning for each model.
 
 ### Amp's Multi-Model Philosophy
 
 * **Alloying Models** [01:09](https://www.youtube.com/watch?v=doTI08ukee0&t=69s): Amp's core philosophy is to integrate the best models from various providers to create a more effective coding product.
-* **Current Models in Use** [01:32](https://www.youtube.com/watch?v=doTI08ukee0&t=92s):
+* **Models used at the time of this episode** [01:32–02:48](https://www.youtube.com/watch?v=doTI08ukee0&t=92s):
   * **Sonnet 4**: The primary driver for the main agent, excelling in tool calling, exploring codebases, and iterative self-correction.
   * **OpenAI o3**: Used for the **Oracle agent** [01:46](https://www.youtube.com/watch?v=doTI08ukee0&t=106s), a deep-reasoning agent for code review and planning.
   * **Gemini Flash**: Employed for quick and cost-effective **summarization** [02:08](https://www.youtube.com/watch?v=doTI08ukee0&t=128s).
@@ -20,27 +20,24 @@ In episode 8 of "Raising an Agent", Camden from the Amp Core team discusses how 
 
 ### Model Performance and Iteration
 
-* **Gemini Pro's Limitations** [03:02](https://www.youtube.com/watch?v=doTI08ukee0&t=182s): While good at "oneshotting" tasks, Gemini Pro struggled with complex, iterative tasks requiring codebase exploration and self-correction, often failing at low-level mechanics of tool calling schemas.
-* **Sonnet's Strengths** [07:05](https://www.youtube.com/watch?v=doTI08ukee0&t=425s): Camden says Sonnet self-corrects and finds workarounds, such as using `sed` or `cat` commands when initial file-editing tools fail. The team initially questioned its overlapping toolset but now sees it as useful for navigating errors.
+* **A strong first answer does not guarantee reliable tool use**: Camden found Gemini Pro good at producing an app from a single request, but less reliable at exploring an existing codebase and correcting its work. Even incorrectly formatted tool calls could interrupt a task before the reasoning about code mattered [02:48–05:46](https://www.youtube.com/watch?v=doTI08ukee0&t=168s).
 * **Opus Was Tested but Not Adopted** [09:35](https://www.youtube.com/watch?v=doTI08ukee0&t=575s): The team tried Opus separately from o3, but the extra cost and latency did not justify using it as Amp's main loop over Sonnet.
-* **Open Models: Speed vs. Quality** [10:08](https://www.youtube.com/watch?v=doTI08ukee0&t=608s): Open models such as Kimi K2 and Qwen 3 Coder show useful tool-calling capabilities and speed, especially with custom hardware such as Groq and Cerebras [11:16](https://www.youtube.com/watch?v=doTI08ukee0&t=676s). However, the team finds them about 80% as effective as Sonnet for complex multi-step tasks.
-* **The "Exponential Decay" Problem** [06:31](https://www.youtube.com/watch?v=doTI08ukee0&t=391s): In multi-step tasks, a small failure or degradation rate at each step can substantially reduce overall reliability. Camden says this makes the "last 20%" of model quality important for fire-and-forget agentic workflows.
+* **Speed helps only if the task completes**: Camden finds Kimi K2 and Qwen 3 Coder promising for tool use, with fast serving from providers such as Groq and Cerebras. His rough “80%” assessment means succeeding at four out of five small tasks—not achieving 80% of Sonnet's whole-feature success rate. A feature can require many such tasks, giving failures repeated opportunities to interrupt the run [10:27–11:32](https://www.youtube.com/watch?v=doTI08ukee0&t=627s), [14:25–17:09](https://www.youtube.com/watch?v=doTI08ukee0&t=865s).
+* **Recovery matters as much as avoiding errors**: The speakers contrast Gemini getting progressively off track with Sonnet trying another editing method after a tool failure. Without reliable self-correction and feedback from tests or type checks, the human becomes the fallback who must restart or redirect the work [05:46–08:43](https://www.youtube.com/watch?v=doTI08ukee0&t=346s), [15:15–17:09](https://www.youtube.com/watch?v=doTI08ukee0&t=915s).
 * **GPT-5's Potential** [17:53](https://www.youtube.com/watch?v=doTI08ukee0&t=1073s): Camden says GPT-5's improved tool calling makes it a contender for the main agent driver. It also appears more "steerable" and responsive to instructions than Sonnet, which sometimes disregards commands because of its "strong personality" [25:01](https://www.youtube.com/watch?v=doTI08ukee0&t=1501s).
 
 ### The Art of Model Evaluation
 
-* **Qualitative Evals over Quantitative** [38:36](https://www.youtube.com/watch?v=doTI08ukee0&t=2316s): Camden emphasizes a heavy reliance on **qualitative evaluations** (e.g., "vibe checks," manual testing with real-world GitHub issues) over quantitative benchmarks. This is because the complexity of desired user experience cannot be condensed into simple numbers.
-* **"Model Taster" Approach** [42:55](https://www.youtube.com/watch?v=doTI08ukee0&t=2575s): Evaluation involves understanding the "personality" and unique strengths of each model, rather than just measuring against arbitrary benchmarks. This allows for discovering unexpected capabilities and building "alloys of models" for a better overall experience [20:10](https://www.youtube.com/watch?v=doTI08ukee0&t=1210s).
-* **Scaffolding and Tuning** [19:27](https://www.youtube.com/watch?v=doTI08ukee0&t=1167s): Camden says putting a new model into scaffolding designed for another model can misrepresent its capabilities. He says system prompts and tool descriptions require tuning for each model.
-* **Human Reinforcement Learning** [30:31](https://www.youtube.com/watch?v=doTI08ukee0&t=1831s): Models need to be "good enough" for daily use to facilitate human reinforcement learning, where user interaction provides valuable feedback for continuous improvement.
-* **Beyond Horse Races** [46:10](https://www.youtube.com/watch?v=doTI08ukee0&t=2770s): The goal is not to find a single "winner" model, but to understand the unique characteristics and strengths of each to steer users towards their optimal use cases.
+* **Use scores to shortlist, then inspect real work**: Camden uses published benchmarks as an initial filter. He then repeatedly runs a standard set of tasks, including GitHub issues and prompted checklists, while observing tool choice, delegation, and failure recovery. He wants to discover unexpected strengths as well as check known requirements [38:44–42:44](https://www.youtube.com/watch?v=doTI08ukee0&t=2324s).
+* **Measurements still help catch regressions and test impressions**: The team treats repeatable tasks as regression checks. Camden also tracks trends across runs—latency, tool-call counts, generated lines, and verbosity—to see whether an impression such as “this model is wordier” holds up in the data [43:48–46:42](https://www.youtube.com/watch?v=doTI08ukee0&t=2628s).
+* **Tune the harness before judging the model**: The harness is the prompts, tools, and execution loop around the model. Instructions written to make Sonnet concise caused GPT-5 to produce ungrammatical four-word replies; its longer search requests also sent the search agent down slow, broad investigations. These examples show how the same setup can produce different behavior across models [19:10–20:51](https://www.youtube.com/watch?v=doTI08ukee0&t=1150s), [22:58–28:35](https://www.youtube.com/watch?v=doTI08ukee0&t=1378s).
+* **Daily use teaches the developers what to change**: Once a model is useful enough for routine work, the team can discover recurring behaviors and adjust prompts, tool descriptions, and personal habits. The speakers call this “human reinforcement learning”: they describe people learning to use and configure the model, not a method for updating its weights from user interactions [29:30–31:23](https://www.youtube.com/watch?v=doTI08ukee0&t=1770s).
 
 ### The Future of Agentic Development
 
 * **Model Speed** [34:06](https://www.youtube.com/watch?v=doTI08ukee0&t=2046s): The team is exploring model speed. Camden says high-quality real-time feedback could eliminate the "distraction effect" [35:35](https://www.youtube.com/watch?v=doTI08ukee0&t=2135s), in which users switch tasks while waiting for agents. It could also require new UI abstractions for rapid tool calls.
 * **"Cutting with the Grain of the Model"** [49:18](https://www.youtube.com/watch?v=doTI08ukee0&t=2958s): Camden says prompts and tools should align with a model's behavior and training rather than fight its "personality."
 * **Steering Users to Model Sweet Spots**: The goal is not to expose raw model names as a horse race, but to understand each model's strengths and guide users toward the workflows where that model is most effective [46:10](https://www.youtube.com/watch?v=doTI08ukee0&t=2770s).
-* **Constant Change**: The overarching theme is that everything in the AI/agentic coding landscape is constantly changing, requiring nimbleness, short bets, and a continuous learning mindset.
 
 Full video: <https://www.youtube.com/watch?v=doTI08ukee0>
 

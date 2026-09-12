@@ -6,8 +6,6 @@ date: "2026-08-18"
 
 After a week using skills from Matt Pocock’s collection and Lauren Tan’s pstack, Theo Browne reviews how he chose, tested, adapted, and managed them. His main recommendation is not to copy a published setup: use collections as reference material, inspect the instructions, try the relevant pieces, and keep only what improves your own work.
 
-The examples come from Browne’s projects and agent history. They show his preferences and reported results, not a controlled comparison of skill effectiveness.
-
 ### Key Points Covered
 
 - **Audit skills against real work before adopting them**: Browne asked an agent to inspect his usage history across several machines, compare that evidence with the available skills, and rank the likely fit and benefit. He recommends using other people’s collections as inputs to judgment rather than as installation checklists [02:57–05:06](https://www.youtube.com/watch?v=0oXOOlqVu5M&t=177s).

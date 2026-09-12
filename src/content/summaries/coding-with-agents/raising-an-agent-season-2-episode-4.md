@@ -8,8 +8,6 @@ date: "2026-09-10"
 
 Quinn Slack and Thorsten Ball describe extending agent work beyond implementation into deployment checks, user follow-up, and operations. They also discuss Amp's recent outages and ask whether remotely running agents and task-specific software will make the personal computer less central to their work.
 
-This summary is based on English auto-generated captions, with speaker attribution checked against the official episode transcript. Workflow examples and incident figures are the hosts' accounts, not independently verified results; predictions about devices and model capabilities remain speculative.
-
 ### Key Points Covered
 
 - **Delegate follow-through, not just code changes**: Thorsten recounts an agent coordinating a change across three repositories. Quinn describes longer-lived threads that wait for deployment, identify affected users from feedback and logs, prepare follow-up emails, and monitor feature usage and errors. Their internal plugins provide the necessary access; the email example includes a human send-or-cancel review [02:52–08:55](https://www.youtube.com/watch?v=7pstrDQ4xLs&t=172s).

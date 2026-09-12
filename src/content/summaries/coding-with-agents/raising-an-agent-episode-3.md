@@ -6,13 +6,13 @@ episode: 3
 date: "2025-03-28"
 ---
 
-In episode 3 of the Sourcegraph series "Raising an Agent", CEO Quinn and software engineer Thorsten discuss changes in coding work, feedback loops, and agentic code search.
+Quinn Slack and Thorsten Ball describe how a coding agent can answer repository questions by searching, reading files, and returning a report. Keeping that investigation in a separate conversation leaves the main agent focused on the implementation. The episode connects this design to human architectural guidance, shared thread history, and faster ways to check changes.
 
 ### The New Developer Mental Model
 
 - The "Paint by Numbers" Approach: The hosts agree that developers are shifting from writing every line to guiding and instructing the agent [03:51](https://www.youtube.com/watch?v=N04FM1e3sbY&t=231s). They say the human must "draw the lines in the sand" by defining architecture, intent, and constraints. The agent then "fills in the numbers" by writing boilerplate, imports, and component logic [04:17](https://www.youtube.com/watch?v=N04FM1e3sbY&t=257s).
 
-- Laziness as Productivity: Thorsten asks the agent to handle even minor tasks, such as changing five lines. He says eliminating the "toil" of version control, testing, commit messages, and PR creation makes him faster overall [07:23](https://www.youtube.com/watch?v=N04FM1e3sbY&t=443s).
+- **Compare the whole task, not just typing time**: Thorsten delegates even small edits. Quinn points out that a one-line change can still require branch setup, tests, a commit message, and a pull request; an agent can handle that surrounding work while the developer does something else [06:58–07:55](https://www.youtube.com/watch?v=N04FM1e3sbY&t=418s).
 
 ### Capturing Intent with Thread Sharing
 
@@ -24,15 +24,15 @@ In episode 3 of the Sourcegraph series "Raising an Agent", CEO Quinn and softwar
 
 - Need for Validation: They say a reliable agent needs fast feedback loops, such as tests, static analysis, and browser-based visual diagnostics [16:44](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1004s).
 
-- Build Systems Must Adapt: Currently, the agent often struggles with build system specifics (like running a granular, fast test instead of the entire test suite) [17:18](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1038s). The hosts hypothesize that in the future, codebases will "bend to the agents," with companies simplifying their build systems to make it easy for an agent to quickly validate a code change [22:27](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1347s).
+- **Make the right check easy to run**: The prototype sometimes runs too many tests, gets relative paths wrong, or leaves a test runner waiting for interactive input. Repository instructions help, but the hosts want more reliable selection of a fast, relevant check—for example, running the changed server test rather than the whole repository suite. They predict teams will adapt build systems to support these feedback loops [16:39–23:18](https://www.youtube.com/watch?v=N04FM1e3sbY&t=999s).
 
-### Code Search as a Senior Engineer Ghost
+### Search without filling the main conversation
 
-- The "Search Agent" Concept: Thorsten built an inner agent for code search. When the main agent has a semantic question, such as "How does authentication work?", it delegates to this inner "search agent," which finds and summarizes the answer. It uses keyword search, file globbing, and directory listing [25:34](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1534s).
+- **Search is an investigation, not just one query**: For a question such as how authentication works, the search agent runs keyword searches, reads plausible files, finds related filenames, and lists directories. It returns a report for the main agent to use, rather than asking the human to supply each file [25:23–28:17](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1523s).
 
-- Preventing Context "Pollution": The search agent operates with its own context window, ensuring that irrelevant or fallible search results (like old, complex migration files) do not "dirty" the main agent's working context [31:31](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1891s).
+- **Separate context contains the search history, not every possible mistake**: Without a subagent, every opened file and failed search would enter the main conversation. Thorsten gives old migration files as an example of irrelevant material that could influence later work. A separate context window keeps those intermediate steps out, although the returned report can still be wrong and require another search [31:05–34:16](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1865s).
 
-- The Intended Scenario: Thorsten's goal is for this agent to act as the "ghost of a senior engineer," answering codebase questions that a human senior developer would know. He says every CTO would pay "a lot of money for" that capability [26:47](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1607s).
+- **The goal is accessible repository knowledge**: Thorsten compares the desired experience to asking a senior engineer a codebase question. The hosts are encouraged by the reports but acknowledge that the prototype is slow and fallible [26:27–28:17](https://www.youtube.com/watch?v=N04FM1e3sbY&t=1587s).
 
 Full video: <https://www.youtube.com/watch?v=N04FM1e3sbY>
 

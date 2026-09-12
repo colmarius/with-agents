@@ -4,9 +4,7 @@ resourceId: 119
 date: "2026-09-01"
 ---
 
-Sam Altman discusses OpenAI's safety work, Astra, computer-use agents, and the convergence of chat and coding products. For developers, the most relevant themes are following user intent, monitoring autonomous execution, and making agents useful across existing software.
-
-This is a company leader's account and roadmap, not an independent capability or safety evaluation. Claims about incidents, commercial performance, and future models are presented as Altman's statements; the interview does not establish that AGI has been achieved.
+OpenAI CEO Sam Altman discusses a problem that grows with agent capability: completing a task is not enough if the model ignores what the user intended or acts outside its authority. He describes OpenAI's monitoring and safety work, his experience with Astra's computer use, and plans to combine chat and coding into one interface.
 
 ### Key Points Covered
 
