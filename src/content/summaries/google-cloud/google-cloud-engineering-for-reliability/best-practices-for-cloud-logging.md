@@ -7,15 +7,12 @@ order: 6
 videoId: "hh_z8qEwGfQ"
 ---
 
-This episode outlines Cloud Logging practices for structured records, centralized storage, retention, access control, and export. The transcript identifies neither the presenter nor an affiliation.
+Useful logs need to be easy to query, kept for the right amount of time, and accessible to the right people. This episode explains how structured records and centrally stored logs support those goals in Cloud Logging ([00:00–03:07](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=0s)).
 
 ### Key Points Covered
 
 - **Structure makes records queryable**: JSON fields can be filtered directly instead of requiring regular expressions over text payloads ([00:00–02:04](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=0s)).
-- **Routing and storage need an organizational design**: User-defined buckets and sinks can centralize logs across projects, with retention and location chosen for the use case ([02:04–03:07](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=124s)).
-- **Access has multiple layers**: IAM governs broader permissions while log views can narrow access within a bucket ([03:07–04:09](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=187s)).
-- **Centralization creates trade-offs**: It can simplify governance and investigation while expanding blast radius, tenant-isolation demands, cost, privacy exposure, and access complexity.
-
-This is a 2021 architecture and UI walkthrough. Confirm current bucket defaults, retention limits, IAM roles, agent parsers, export integrations, schemas, and console procedures before use.
+- **Route related logs to shared storage**: Log buckets hold records; sinks route records to a destination. The presenter recommends using sinks to collect logs from multiple projects into a shared bucket, with audit logs as an example. Retention and location should follow the business's requirements ([02:04–03:07](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=124s)).
+- **Central storage need not mean identical access**: Identity and Access Management (IAM) controls permissions, while log views narrow which records a user can see within a bucket. The example gives one user access to a single project's logs and another access to all projects' logs in the same central store ([03:07–04:09](https://www.youtube.com/watch?v=hh_z8qEwGfQ&t=187s)).
 
 Full video: <https://www.youtube.com/watch?v=hh_z8qEwGfQ>

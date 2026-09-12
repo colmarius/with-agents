@@ -7,15 +7,12 @@ order: 14
 videoId: "NQeK8Kbu6UM"
 ---
 
-This episode explains how distributed traces separate end-to-end request latency from time spent in individual services. A trace's parent and child spans only form one cross-service path when the application propagates and extracts trace context at each boundary ([00:00–03:07](https://www.youtube.com/watch?v=NQeK8Kbu6UM&t=0s)). The transcript identifies neither the presenter nor an affiliation.
+When a frontend waits for a backend before responding, either service can contribute to the delay a user sees. This episode uses distributed tracing to follow that request across services and separate its total duration from time spent in individual calls ([00:00–02:04](https://www.youtube.com/watch?v=NQeK8Kbu6UM&t=0s)).
 
 ### Key Points Covered
 
-- **Spans divide end-to-end latency**: The parent represents latency seen by the user while child spans capture calls and responses inside the distributed system ([01:02–02:04](https://www.youtube.com/watch?v=NQeK8Kbu6UM&t=62s)).
-- **Propagation is explicit**: Passing context in HTTP headers lets a backend attach its spans to the same trace; without that boundary work, frontend and backend activity will not form the demonstrated trace ([02:04](https://www.youtube.com/watch?v=NQeK8Kbu6UM&t=124s)).
-- **Trace views support comparison, not automatic diagnosis**: A waterfall highlights large latency contributors, while span events and details add context ([03:07](https://www.youtube.com/watch?v=NQeK8Kbu6UM&t=187s)).
-- **Instrumentation has costs**: The walkthrough does not cover sampling, data volume, overhead, or sensitive attributes.
-
-The exporters, SDK APIs, semantic conventions, configuration, and Cloud Trace UI shown are from 2021. Use current OpenTelemetry and Google Cloud guidance.
+- **Spans time individual operations within one trace**: The parent span records the overall user request. Child spans record the calls made to serve it, so their durations can be compared with the total. OpenTelemetry supplies the instrumentation, and an exporter sends the traces to Cloud Trace ([00:00–02:04](https://www.youtube.com/watch?v=NQeK8Kbu6UM&t=0s)).
+- **Pass context so the backend joins the same trace**: In the manual example, the frontend sends identifying context in HTTP headers. The backend extracts it when creating its own spans, connecting the two services' measurements. Custom spans can also time specific backend tasks ([02:04–03:07](https://www.youtube.com/watch?v=NQeK8Kbu6UM&t=124s)).
+- **Compare durations in a waterfall view**: Cloud Trace places the parent span above its children and shows each duration. Added span events—annotations written by the application—provide detail about what happened during an operation, helping the engineer locate major contributors to latency ([03:07–04:14](https://www.youtube.com/watch?v=NQeK8Kbu6UM&t=187s)).
 
 Full video: <https://www.youtube.com/watch?v=NQeK8Kbu6UM>

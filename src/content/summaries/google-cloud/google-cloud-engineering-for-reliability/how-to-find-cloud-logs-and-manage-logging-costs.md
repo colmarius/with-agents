@@ -7,15 +7,13 @@ order: 5
 videoId: "z6hpL8J-jG4"
 ---
 
-This episode demonstrates querying and sampling Cloud Logging data, then traces cost to ingestion, retention, routing, exclusions, and application log volume. The transcript identifies neither the presenter nor an affiliation.
+Finding the relevant logs and deciding which logs to keep are different tasks. This episode uses queries to narrow an investigation, then shows how billing and ingestion measurements reveal the sources of logging cost. Reducing that cost can also remove evidence needed to diagnose failures ([00:00–01:02](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=0s), [03:08–06:29](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=188s)).
 
 ### Key Points Covered
 
-- **Queries narrow the evidence**: Logs Explorer can filter source, service, time, metadata, user-defined fields, and samples, then save the resulting query ([00:00–01:02](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=0s)).
-- **Use cost and volume views together**: Billing reports show charges, while ingestion metrics help locate the resources producing log volume ([03:08](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=188s)).
-- **Exclusions exchange cost for evidence**: In the behavior described, excluded entries disappear from Logs Explorer and Cloud Debugger, and entries reaching no log bucket are unavailable to Error Reporting ([04:11–05:15](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=251s)).
-- **Reduce volume deliberately**: Application-side controls and narrowly scoped routing can lower ingestion, but retained data must still support incident response and reliability analysis.
-
-The pricing, default retention, routing semantics, exclusion behavior, user-defined metric behavior, queries, and UI are all from 2021 and may have changed. Revalidate them before trading away operational evidence.
+- **Use queries to find a subset of existing logs**: Logs Explorer converts field selections into an editable query. The demo filters for a frontend service, negates an error condition, restricts the time range, and samples entries. Saving the query makes a recurring investigation easier to repeat ([00:00–02:05](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=0s)).
+- **Use cost and volume views together**: Billing reports show logging charges, while ingestion metrics identify the resources producing log volume. The latter helps explain the former ([03:08–04:11](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=188s)).
+- **Exclusions affect what remains available for investigation**: Unlike a query over stored logs, an exclusion on a sink filters what that route ingests. In the 2021 behavior described, excluded entries are unavailable in Logs Explorer and Cloud Debugger; entries routed to no log bucket are also unavailable to Error Reporting. These are the product behaviors in the example, not current guarantees ([04:11–06:29](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=251s)).
+- **Producing fewer logs is another control**: The presenter recommends adjusting application log levels as well as using exclusions, balancing diagnostic visibility against volume. This is especially important in the serverless example, where excluded logs cannot be viewed afterward ([05:15–06:29](https://www.youtube.com/watch?v=z6hpL8J-jG4&t=315s)).
 
 Full video: <https://www.youtube.com/watch?v=z6hpL8J-jG4>

@@ -7,14 +7,11 @@ order: 9
 videoId: "5j8LfmRhHKQ"
 ---
 
-The source names neither its presenter nor an affiliation. This 2021 primer uses the Cloud Operations Suite name for observability tools spanning logs, metrics, traces, debugging, and profiling.
+When an application is slow or failing, different tools reveal different parts of the problem. This 2021 overview of Cloud Operations Suite distinguishes logs of application activity, measurements of service health, and tools that locate where a request or function spends its time [00:00–01:41](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=0s).
 
 ### Key Points Covered
 
-- **Logging and monitoring cover different evidence**: Cloud Logging centralizes application and infrastructure logs, while Cloud Monitoring supplies metrics, dashboards, alerts, and service-level objectives [00:00–00:50](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=0s).
-- **The suite also names request and code-level tools**: Trace is presented for request flow and latency, Debugger for inspecting deployed applications, and Profiler for function-level performance and cost analysis [00:50–01:41](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=50s).
-- **The bundle and pricing claims are historical**: Console and API access and a broad free-tier claim describe the 2021 suite, not current product availability or pricing [01:41](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=101s).
-
-Use this as historical observability-family orientation, not an implementation recommendation. Check current branding, tool availability, query languages, retention, ingestion limits, quotas, and pricing in current documentation.
+- **Logging supports investigation; Monitoring tracks health**: Cloud Logging gathers application and infrastructure logs in one place so users can search them. Cloud Monitoring analyzes numerical measurements, including custom metrics, and uses them for alerts and service-level objectives—reliability targets [00:00–01:41](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=0s).
+- **Trace and Profiler look at different scales**: Trace follows request flow and latency between services. Profiler analyzes performance within individual functions. The 2021 suite also includes Debugger for inspecting deployed applications; this describes the historical bundle, not a current tool-availability guarantee [00:50–02:21](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=50s).
 
 Full video: <https://www.youtube.com/watch?v=5j8LfmRhHKQ>

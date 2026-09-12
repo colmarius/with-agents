@@ -7,14 +7,12 @@ order: 3
 videoId: "AL2rAmWFZjM"
 ---
 
-The source names neither its presenter nor an affiliation. This 2022 primer presents Cloud Run as managed compute for containerized services and jobs.
+Cloud Run runs applications packaged as containers while managing the infrastructure underneath them. This 2022 primer distinguishes services that respond to requests or events from jobs that perform batch processing [00:00–01:33](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=0s).
 
 ### Key Points Covered
 
-- **Services and jobs share a managed container runtime**: The primer says Cloud Run scales instances up and down from zero and ties billing to when code runs [00:00](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=0s).
-- **The endpoint claim has a specific boundary**: Services are said to receive an endpoint with TLS termination on custom domains; jobs support parallel batch processing, and buildpacks offer a source-deployment path [00:00–01:01](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=0s).
+- **Deploy a container or start from source**: The primer shows container deployment with `gcloud run deploy` and describes buildpacks as a way to deploy directly from source. It presents automatic scaling from zero as the way Cloud Run adjusts running instances to the workload [00:00–01:01](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=0s).
+- **Services expose an endpoint; jobs divide batch work**: Services are presented as receiving a secure endpoint, while job instances can process work in parallel [00:00–01:33](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=0s).
 - **Portability is narrower than application portability**: The presenter links portability to an API compatible with Kubernetes, which does not establish that every application, configuration, or operating model moves unchanged [01:01](https://www.youtube.com/watch?v=AL2rAmWFZjM&t=61s).
-
-Use this as historical service-family orientation, not implementation or cost guidance. Verify current endpoint and domain behavior, billing units, minimum instances, concurrency, networking, limits, jobs, and deployment paths in current documentation.
 
 Full video: <https://www.youtube.com/watch?v=AL2rAmWFZjM>

@@ -7,15 +7,12 @@ order: 2
 videoId: "hB8Oc-xudQc"
 ---
 
-Yuri, identified in the transcript as an SRE at Google Cloud, presents a narrow migration from an operator-managed Prometheus deployment on GKE to Google Managed Service for Prometheus. The walkthrough validates local collection, replaces the server image in the shown custom resource, validates again, and confirms remote ingestion ([00:59–02:57](https://www.youtube.com/watch?v=hB8Oc-xudQc&t=59s)).
+Google Managed Service for Prometheus provides a managed backend for metrics, letting teams query across clusters with PromQL, Prometheus's query language. Yuri, a site reliability engineer at Google Cloud, demonstrates a 2022 migration of an existing Prometheus installation on Google Kubernetes Engine (GKE), retaining local collection while sending data to that backend ([00:00–02:57](https://www.youtube.com/watch?v=hB8Oc-xudQc&t=0s)).
 
 ### Key Points Covered
 
-- **Establish a working baseline first**: The demo checks the Prometheus server, node exporter, Grafana, and local queries before changing the deployment ([00:59–01:59](https://www.youtube.com/watch?v=hB8Oc-xudQc&t=59s)).
-- **Validate both sides of the migration**: It repeats local checks after the image change, then confirms that the managed backend can query the metrics ([01:59–02:57](https://www.youtube.com/watch?v=hB8Oc-xudQc&t=119s)).
-- **PromQL continuity is useful but limited evidence**: Querying the same data supports the demonstrated chart-and-alert workflow; it does not prove complete feature, resource, rule, or configuration parity ([02:57](https://www.youtube.com/watch?v=hB8Oc-xudQc&t=177s)).
-- **Production concerns remain outside scope**: The short example does not cover high availability, historical data, authentication, cost, rollback, or failure recovery.
-
-This is a 2022 image-replacement example, not a general migration recipe. Check current supported paths, images, resource schemas, compatibility constraints, console steps, and rollback guidance.
+- **Confirm collection works before changing it**: The demo checks the Prometheus server, the node exporter that gathers node-level infrastructure metrics, and Grafana. A local query confirms that metrics are being collected and can be read ([00:59–01:59](https://www.youtube.com/watch?v=hB8Oc-xudQc&t=59s)).
+- **Change the collector, then test local and remote queries**: The shown installation is managed by the Prometheus operator. Yuri changes its server image to Google's fork, which sends collected metrics to the managed backend. He repeats the local query after restart, then queries in the Cloud console to confirm remote ingestion. This image replacement is the specific 2022 migration demonstrated, not a general migration recipe ([00:59–02:57](https://www.youtube.com/watch?v=hB8Oc-xudQc&t=59s)).
+- **Use the ingested metrics for charts and alerts**: The same measurements become available in Metrics Explorer. The demo establishes collection and query access; it does not demonstrate migration of historical data or alerting rules ([01:59–03:46](https://www.youtube.com/watch?v=hB8Oc-xudQc&t=119s)).
 
 Full video: <https://www.youtube.com/watch?v=hB8Oc-xudQc>

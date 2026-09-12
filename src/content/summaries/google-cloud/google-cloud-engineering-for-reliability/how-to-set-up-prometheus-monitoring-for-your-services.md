@@ -7,15 +7,12 @@ order: 1
 videoId: "qyfOE_78nT0"
 ---
 
-Yuri, identified in the transcript as an SRE at Google, demonstrates one Python service instrumented for Google Managed Service for Prometheus. The application exposes request, failure, and latency metrics; managed collection scrapes them; and a PromQL query verifies ingestion before the data is used in charts or alerts ([00:00–03:11](https://www.youtube.com/watch?v=qyfOE_78nT0&t=0s)).
+Infrastructure metrics alone do not tell you how often an application fails or how long its users wait. Yuri, a site reliability engineer at Google, instruments a Python service to expose those measurements, then configures Google Managed Service for Prometheus to collect them ([00:00–02:06](https://www.youtube.com/watch?v=qyfOE_78nT0&t=0s)).
 
 ### Key Points Covered
 
-- **Application signals complement infrastructure metrics**: The sample adds counters and a latency distribution for service behavior that infrastructure telemetry alone cannot explain ([00:00–01:03](https://www.youtube.com/watch?v=qyfOE_78nT0&t=0s)).
-- **Collection starts at an explicit endpoint**: The application exposes a Prometheus `/metrics` endpoint, while a `PodMonitoring` resource selects pods and defines how the collector should scrape it ([01:03–03:11](https://www.youtube.com/watch?v=qyfOE_78nT0&t=63s)).
-- **Verify the path end to end**: The walkthrough checks collector self-metrics and then queries the application metric before relying on Metrics Explorer, dashboards, or alerts ([02:06–03:11](https://www.youtube.com/watch?v=qyfOE_78nT0&t=126s)).
-- **The example is deliberately bounded**: It does not address cardinality, retention, cost, authentication, or alert thresholds, and the auto-captioned port number may be wrong.
-
-This is a 2022 walkthrough, not current configuration guidance. Verify today's commands, managed-collection behavior, resource schema, metric conventions, and console UI before use.
+- **Record application behavior and expose it for collection**: The Flask example increments total-request and failed-request counters and times a route to record a latency distribution. It exposes the resulting values on `/metrics`, an endpoint the collector can scrape—read to collect measurements ([01:03–02:06](https://www.youtube.com/watch?v=qyfOE_78nT0&t=63s)).
+- **Tell the collector which application to read**: In the demonstrated setup, a `PodMonitoring` resource selects pods by their labels and specifies their metrics endpoint. Installing the collector alone does not complete the application's monitoring configuration ([02:06–03:11](https://www.youtube.com/watch?v=qyfOE_78nT0&t=126s)).
+- **Verify collection in stages**: First the demo checks that the application exposes metrics, then queries the collector's own metrics to confirm collection is running. Finally it queries an application metric to prove that the selected workload's data reached the backend, where it can be used in charts and alerts ([02:06–04:13](https://www.youtube.com/watch?v=qyfOE_78nT0&t=126s)).
 
 Full video: <https://www.youtube.com/watch?v=qyfOE_78nT0>

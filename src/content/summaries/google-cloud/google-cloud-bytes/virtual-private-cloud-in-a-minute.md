@@ -7,14 +7,12 @@ order: 10
 videoId: "hS_uvz4ohbo"
 ---
 
-The source names neither its presenter nor an affiliation. This 2021 primer presents Virtual Private Cloud (VPC) as the network-topology and connectivity layer for Google Cloud resources, not as a complete security system.
+Virtual Private Cloud (VPC) provides a virtual network for Google Cloud resources. This 2021 primer explains how a single network can connect resources across regions and connect cloud workloads to infrastructure outside Google Cloud [00:00–01:53](https://www.youtube.com/watch?v=hS_uvz4ohbo&t=0s).
 
 ### Key Points Covered
 
-- **Network scope and subnet scope differ**: The primer describes a globally scoped VPC with regional subnets and internal communication that does not traverse the public internet [00:00](https://www.youtube.com/watch?v=hS_uvz4ohbo&t=0s).
-- **Sharing has an explicit qualification**: VPCs are presented as shareable across projects and, in some cases, organizations so isolated projects can use common private address space [00:00](https://www.youtube.com/watch?v=hS_uvz4ohbo&t=0s).
-- **Hybrid connectivity has several paths**: The 2021 options include Dedicated or Partner Interconnect, Cloud VPN, and partner-supported SD-WAN, while Packet Mirroring is presented for traffic inspection [00:54–01:53](https://www.youtube.com/watch?v=hS_uvz4ohbo&t=54s).
-
-Use this as historical networking orientation, not a topology or security recommendation. Verify current Shared VPC boundaries and roles, routing, firewall policy, subnet constraints, hybrid products, default-network behavior, quotas, and limits in current documentation.
+- **One network can contain regional subnets**: The VPC spans regions without internal communication crossing the public internet. Within it, users can choose subnets, their regions, and their IP address ranges [00:00–01:53](https://www.youtube.com/watch?v=hS_uvz4ohbo&t=0s).
+- **Teams can share private connectivity**: The primer describes teams in separate projects using a common private address space to reach shared services. Its broader statement about sharing across organizations is qualified to “some cases,” without explaining those conditions [00:00–00:54](https://www.youtube.com/watch?v=hS_uvz4ohbo&t=0s).
+- **Connect and inspect traffic**: The 2021 options for connecting external infrastructure include Interconnect and Cloud VPN. Packet Mirroring copies compute-instance traffic for inspection, helping analysts investigate performance problems or threats [00:54–01:53](https://www.youtube.com/watch?v=hS_uvz4ohbo&t=54s).
 
 Full video: <https://www.youtube.com/watch?v=hS_uvz4ohbo>

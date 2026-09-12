@@ -7,15 +7,13 @@ order: 17
 videoId: "t1BGo-Il1AM"
 ---
 
-This episode explains error-budget burn rate as a way to detect user-impacting degradation while limiting transient alert noise. Multi-window, multi-burn-rate logic balances fast detection with confidence that budget consumption is sustained ([00:00–02:07](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=0s)). The transcript identifies neither the presenter nor an affiliation.
+An error budget is the amount of failure a service can tolerate while meeting its service-level objective (SLO), its reliability target over a period of time. This episode explains how to alert when that budget is being consumed too quickly, before the service misses its overall target ([00:00–02:07](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=0s)).
 
 ### Key Points Covered
 
-- **Burn rate connects alerts to an SLO**: It measures error-budget consumption relative to the objective and evaluation period ([00:00–02:07](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=0s)).
-- **Long and short windows serve different purposes**: Their combination can detect quickly while allowing an alert to reset after mitigation ([02:07](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=127s)).
-- **Investigate the alert with adjacent evidence**: The example compares SLI degradation and budget consumption with an increase in HTTP 500 logs ([04:12–05:14](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=252s)).
-- **The threshold demonstration is internally inconsistent**: The calculation gives 5.6 for one six-hour condition, but the UI walkthrough says to enter 6 ([01:04–02:07](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=64s), [03:09–04:12](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=189s)).
-
-The 2021 UI appears to configure individual windows even though the episode describes multi-window logic. Verify current capabilities, syntax, formulas, and authoritative SRE threshold guidance rather than copying the values.
+- **Burn rate expresses how quickly failures spend the budget**: A rate of one consumes the whole budget over the SLO evaluation period; a rate of two consumes it in half that time. This relates the alert to the service's reliability target rather than to an isolated error count ([00:00–02:07](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=0s)).
+- **Watch for both fast and slow deterioration**: For a 28-day evaluation period, the example calculates a burn rate of 13.44 for consuming 2% of the budget in one hour, and 5.6 for consuming 5% in six hours. The later walkthrough enters 6 for the latter condition, so its values are not internally consistent ([01:04–02:07](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=64s), [03:09–04:12](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=189s)).
+- **Pair a long window with a short one**: The long window captures sustained budget consumption; the short window checks that it is still happening, so an alert can stop soon after mitigation. The episode describes this combined logic, although its 2021 UI walkthrough shows individual lookback and threshold settings rather than demonstrating the full combination ([01:04–04:12](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=64s)).
+- **Use logs to investigate the symptom**: In the example, the service-level indicator (SLI), the measured reliability signal, deteriorates as budget consumption rises. A concurrent increase in HTTP 500 server-error logs confirms that the service is having problems ([04:12–05:14](https://www.youtube.com/watch?v=t1BGo-Il1AM&t=252s)).
 
 Full video: <https://www.youtube.com/watch?v=t1BGo-Il1AM>

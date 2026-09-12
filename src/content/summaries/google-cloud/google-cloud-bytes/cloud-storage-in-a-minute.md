@@ -7,14 +7,12 @@ order: 4
 videoId: "wNOs3LlsH6k"
 ---
 
-The source names neither its presenter nor an affiliation. This 2020 primer distinguishes Cloud Storage as object storage organized around objects and buckets rather than a conventional filesystem.
+Cloud Storage stores objects such as images, videos, and documents in containers called buckets. This 2020 primer explains how applications upload and retrieve those objects, then choose storage classes according to how often the data is needed [00:00–01:04](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=0s).
 
 ### Key Points Covered
 
 - **Applications exchange objects through buckets**: The primer shows uploads and downloads through project-associated buckets, with console and `gsutil` access [00:00](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=0s).
 - **Storage classes represent access patterns**: Standard, Nearline, Coldline, and Archive are mapped to progressively less frequent access in the 2020 product and pricing model [00:00](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=0s).
-- **Lifecycle rules can move data between classes**: Object Lifecycle Management is presented as a way to transition aging or superseded data while retaining one storage API [01:04](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=64s).
-
-Use this as historical object-storage orientation, not class-selection guidance. Validate current class names, durations, retrieval and operation charges, locations, consistency, lifecycle behavior, IAM, limits, and egress pricing in current documentation.
+- **Automate moves as data ages**: Object Lifecycle Management can transition data to lower-cost classes when it reaches a specified age or when a newer version is stored. Applications use the same API to access objects across storage classes [01:04–01:45](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=64s).
 
 Full video: <https://www.youtube.com/watch?v=wNOs3LlsH6k>
