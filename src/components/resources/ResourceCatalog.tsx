@@ -327,21 +327,23 @@ const ResourceCatalog = ({
             </summary>
             <dl className="mt-2 space-y-1">
               <div>
-                <dt className="inline font-medium">Essential</dt>
+                <dt className="inline font-medium text-indigo-700">
+                  Essential
+                </dt>
                 {' — '}
                 <dd className="inline">
                   A starting point or working reference.
                 </dd>
               </div>
               <div>
-                <dt className="inline font-medium">Useful</dt>
+                <dt className="inline font-medium text-indigo-700">Useful</dt>
                 {' — '}
                 <dd className="inline">
                   Adds distinct examples or perspectives.
                 </dd>
               </div>
               <div>
-                <dt className="inline font-medium">Context</dt>
+                <dt className="inline font-medium text-indigo-700">Context</dt>
                 {' — '}
                 <dd className="inline">
                   Background or supplementary coverage.
