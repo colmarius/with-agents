@@ -87,20 +87,20 @@ test('AI groups broad resources while preserving substantive coding cross-listin
     ai.resourceIds,
     [
       127, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 128,
-      129, 130, 131, 134, 132,
+      129, 130, 131, 134, 135,
     ],
   );
   for (const [section, ids] of [
     ['concepts-capabilities', [121, 108, 49, 23, 33]],
     ['economics-industry', [127, 120, 52, 55, 73]],
-    ['implications-risks', [123, 119, 110, 107, 111, 128, 129, 130, 131, 134, 132]],
+    ['implications-risks', [123, 119, 110, 107, 111, 128, 129, 130, 131, 134, 135]],
   ] as const) {
     assert.deepEqual(
       getCatalogResources(ai, section).map(({ id }) => id),
       ids,
     );
   }
-  for (const id of [127, 123, 120, 119, 52, 49, 23, 128, 129, 130, 131, 134, 132]) {
+  for (const id of [127, 123, 120, 119, 52, 49, 23, 128, 129, 130, 131, 134, 135]) {
     assert.ok(!coding.resourceIds.includes(id), `${id} is AI-only`);
     assert.equal(coding.sectionByResourceId[id], undefined);
     assert.equal(resources.filter((resource) => resource.id === id).length, 1);
