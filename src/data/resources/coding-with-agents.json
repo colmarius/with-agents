@@ -15,6 +15,24 @@
     ]
   },
   {
+    "id": 133,
+    "primarySection": "teams-ecosystem",
+    "title": "Kotlin 2026: Layoffs, AI, Google — Is the Golden Age Over? Jake Wharton Explains",
+    "subtitle": "Developer autonomy, maintainable code, and shared responsibility for open source",
+    "url": "https://www.youtube.com/watch?v=9WjPdgOK-68",
+    "description": "Jake Wharton discusses Kotlin's evolution, opposition to mandatory AI adoption, and why language tooling and shared libraries matter beyond generating code. He also explains Cash App's native-UI multiplatform architecture and argues that consumers should help maintain their dependencies. A JetBrains interview based on engineering experience and personal values; his AI cost and quality forecasts are opinions, not results from using coding agents.",
+    "type": "video",
+    "source": "JetBrains",
+    "date": "2026-09-10",
+    "duration": "2h 17m",
+    "topics": [
+      "collaboration-teams",
+      "business-adoption",
+      "architecture-maintainability",
+      "open-source-ecosystem"
+    ]
+  },
+  {
     "id": 125,
     "primarySection": "agent-systems",
     "title": "50,000 GitHub Stars in Four Months | Jinjing Liang (Orca ADE, Co-founder & CEO)",
