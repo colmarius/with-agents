@@ -1,4 +1,7 @@
 import assert from 'node:assert/strict';
+import { mkdtempSync, rmSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import test from 'node:test';
 import { parseHTML } from 'linkedom';
 import { createElement } from 'react';
@@ -6,10 +9,14 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { createServer } from 'vite';
 import type { Resource, ResourceCatalog } from '../../types/resources.ts';
 
-test('sparse catalog assessments render independently without grading or reordering other resources', async () => {
+test('sparse catalog assessments render independently without grading or reordering other resources', async (t) => {
+  // Keep the SSR fixture's optimizer from replacing a running dev server's cache.
+  const cacheDir = mkdtempSync(join(tmpdir(), 'resource-catalog-test-'));
+  t.after(() => rmSync(cacheDir, { recursive: true, force: true }));
   // Use the installed Vite JSX transform, without starting an HTTP server.
   const server = await createServer({
     configFile: false,
+    cacheDir,
     oxc: { jsx: { runtime: 'automatic' } },
     server: { middlewareMode: true },
     appType: 'custom',
