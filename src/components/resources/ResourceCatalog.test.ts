@@ -82,6 +82,31 @@ test('sparse catalog assessments render independently without grading or reorder
     assert.ok(
       sparse.querySelector('#resource-relevance-legend[data-search-ignore]'),
     );
+    const legend = sparse.querySelector('#resource-relevance-legend');
+    assert.match(
+      legend?.textContent ?? '',
+      /not source reliability or freshness/,
+    );
+    const definitions = legend?.nextElementSibling;
+    assert.equal(definitions?.tagName, 'DETAILS');
+    assert.equal(definitions?.hasAttribute('open'), false);
+    assert.equal(
+      definitions?.querySelector('summary')?.textContent,
+      'What do the labels mean?',
+    );
+    assert.deepEqual(
+      [...(definitions?.querySelectorAll('dt') ?? [])].map(
+        (term) => term.textContent,
+      ),
+      ['Essential', 'Useful', 'Context'],
+    );
+    assert.ok(definitions?.closest('[data-search-ignore]'));
+    assert.equal(
+      sparse
+        .querySelector('#resource-1 [data-resource-relevance]')
+        ?.getAttribute('aria-describedby'),
+      legend?.id,
+    );
     assert.match(
       sparse.querySelector('#resource-1')?.textContent ?? '',
       /not comparative evidence/,

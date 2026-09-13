@@ -313,18 +313,44 @@ const ResourceCatalog = ({
       </div>
 
       {resources.some((resource) => assessmentsByResourceId?.[resource.id]) && (
-        <p
-          id="resource-relevance-legend"
+        <div
           data-search-ignore
           className="mb-6 text-sm leading-relaxed text-gray-600"
         >
-          <span className="font-medium text-gray-700">Catalog relevance:</span>{' '}
-          Essential — a starting point or working reference; Useful — distinct
-          examples or perspectives; Context — specialist background, opinion,
-          history, or overlap. These are relevance judgments within this
-          catalog, not ratings of source reliability or freshness. Source
-          caveats still apply; resources without a label are ungraded.
-        </p>
+          <p id="resource-relevance-legend" data-search-ignore>
+            Labels reflect relevance within this catalog, not source reliability
+            or freshness. Unlabeled resources are ungraded.
+          </p>
+          <details className="mt-2">
+            <summary className="cursor-pointer rounded-sm font-medium text-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">
+              What do the labels mean?
+            </summary>
+            <dl className="mt-2 space-y-1">
+              <div>
+                <dt className="inline font-medium">Essential</dt>
+                {' — '}
+                <dd className="inline">
+                  A starting point or working reference.
+                </dd>
+              </div>
+              <div>
+                <dt className="inline font-medium">Useful</dt>
+                {' — '}
+                <dd className="inline">
+                  Adds distinct examples or perspectives.
+                </dd>
+              </div>
+              <div>
+                <dt className="inline font-medium">Context</dt>
+                {' — '}
+                <dd className="inline">
+                  Background or supplementary coverage.
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-2">Source caveats apply at every level.</p>
+          </details>
+        </div>
       )}
 
       <h2 className="sr-only">Resources</h2>

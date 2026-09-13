@@ -423,9 +423,16 @@ test('built catalogs preserve cards and search while exposing exact editorial pi
         assert.ok(legend.hasAttribute('data-search-ignore'));
         assert.match(
           legend.textContent ?? '',
-          /not ratings of source reliability or freshness/,
+          /not source reliability or freshness/,
         );
-        assert.match(legend.textContent ?? '', /Source caveats still apply/);
+        const definitions = legend.nextElementSibling;
+        assert.equal(definitions?.tagName, 'DETAILS');
+        assert.equal(definitions?.hasAttribute('open'), false);
+        assert.ok(definitions?.closest('[data-search-ignore]'));
+        assert.match(
+          definitions?.textContent ?? '',
+          /Source caveats apply at every level/,
+        );
       }
       for (const card of cards) {
         const id = Number(card.id.replace('resource-', ''));
