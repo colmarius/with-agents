@@ -12,6 +12,7 @@ import ResourceCatalogList from './ResourceCatalog';
 import ResourcesNav from './ResourcesNav.astro';
 import {
   getSummaryPath,
+  resolveCatalogStartHere,
   resolveSummaryEntries,
   toManifestEntry,
 } from './summaryResolver';
@@ -40,6 +41,10 @@ const pageTitle = section
   : `With Agents – ${catalog.title} Resources`;
 const showFeaturedPeople =
   catalog.slug === 'coding-with-agents' && section === undefined;
+const startHere = section === undefined ? catalog.startHere : undefined;
+const startingSummaries = startHere
+  ? resolveCatalogStartHere(catalog, manifest)
+  : [];
 const selection = section?.featuredSelection;
 const selectedSummaries = selection?.resourceIds.map((resourceId) => {
   const entries = manifest.filter((entry) => entry.resourceId === resourceId);
@@ -73,6 +78,25 @@ const selectedSummaries = selection?.resourceIds.map((resourceId) => {
     >
       {description}
     </p>
+
+    {startHere && (
+      <aside id="start-here" aria-labelledby="start-here-title" data-search-ignore class="mb-8 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+          <h2 id="start-here-title" class="text-lg font-medium text-gray-900">{startHere.title}</h2>
+          <a href="#all-resources" class="text-sm text-indigo-700 underline underline-offset-4 hover:text-indigo-500 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">Browse all resources</a>
+        </div>
+        <p class="mt-2 text-sm leading-relaxed text-gray-600">{startHere.description}</p>
+        <ol class="mt-4 list-decimal space-y-4 pl-5 marker:text-gray-500">
+          {startingSummaries.map((summary) => (
+            <li class="pl-1 text-sm leading-relaxed">
+              <a href={summary.href} class="font-medium text-indigo-700 underline decoration-indigo-200 underline-offset-4 hover:text-indigo-500 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600/50 focus-visible:ring-offset-2">{summary.title}</a>
+              <p class="mt-1 text-gray-600">{summary.reason}</p>
+              <p class="mt-1 text-gray-500"><span class="font-medium">For:</span> {summary.audience}</p>
+            </li>
+          ))}
+        </ol>
+      </aside>
+    )}
 
     {selection && (
       <aside id={selection.anchor} aria-labelledby={`${selection.anchor}-title`} data-search-ignore class="mb-10 -mt-6 scroll-mt-24 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
@@ -115,6 +139,7 @@ const selectedSummaries = selection?.resourceIds.map((resourceId) => {
       resources={resources}
       searchableResourceIds={searchableResourceIds}
       topicOptions={catalog.topicOptions}
+      assessmentsByResourceId={catalog.assessmentsByResourceId}
     />
   </div>
 </Layout>

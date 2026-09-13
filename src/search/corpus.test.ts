@@ -3,6 +3,7 @@ import { existsSync, globSync, readFileSync } from 'node:fs';
 import test from 'node:test';
 import { parseHTML } from 'linkedom';
 import { resourceCatalogs, resources } from '../data/resources/catalogs.ts';
+import { extractDocument } from './build.ts';
 import { validatePayload } from './documents.ts';
 import { createSearch } from './engine.ts';
 
@@ -329,5 +330,143 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
     const slug = path.split('/').at(-1)?.replace(/\.md$/, '');
     if (/^(?:draft|unlisted|noindex):\s*true/m.test(source))
       assert.ok(!byUrl.has(`/${context}/posts/${slug}`), path);
+  }
+});
+
+test('built catalogs preserve cards and search while exposing exact editorial picks', {
+  skip:
+    !existsSync('dist/search/documents.json') &&
+    'Run npm run build first for production-corpus coverage',
+}, () => {
+  const { documents } = validatePayload(
+    JSON.parse(readFileSync('dist/search/documents.json', 'utf8')),
+  );
+  for (const catalog of resourceCatalogs) {
+    for (const section of [undefined, ...catalog.sections]) {
+      const route = `/resources/${catalog.slug}${section ? `/${section.routeSlug}` : ''}`;
+      const html = readFileSync(`dist${route}/index.html`, 'utf8');
+      const { document } = parseHTML(html);
+      const startHere = document.querySelector('#start-here');
+      if (!section && catalog.startHere) {
+        assert.ok(startHere, route);
+        assert.ok(startHere.hasAttribute('data-search-ignore'));
+        assert.equal(
+          startHere.querySelector('h2')?.textContent,
+          catalog.startHere.title,
+        );
+        assert.equal(
+          catalog.startHere.title,
+          catalog.slug === 'ai' ? 'Selected perspectives' : 'Start here',
+        );
+        const picks = [...startHere.querySelectorAll('ol > li')];
+        assert.deepEqual(
+          picks.map((pick) => pick.querySelector('a')?.getAttribute('href')),
+          catalog.startHere.entries.map(
+            ({ summarySlug }) =>
+              `/summaries/${summarySlug.split('/').map(encodeURIComponent).join('/')}/`,
+          ),
+          route,
+        );
+        picks.forEach((pick, index) => {
+          const configured = catalog.startHere?.entries[index];
+          assert.ok(configured);
+          const assessment =
+            catalog.assessmentsByResourceId?.[configured.resourceId];
+          assert.ok(assessment);
+          assert.equal(pick.querySelector('p')?.textContent, assessment.reason);
+          assert.ok(pick.textContent?.includes(configured.audience));
+          const href = pick.querySelector('a')?.getAttribute('href');
+          const { document: summary } = parseHTML(
+            readFileSync(`dist${href}index.html`, 'utf8'),
+          );
+          assert.equal(
+            pick.querySelector('a')?.textContent,
+            summary.querySelector('h1')?.textContent?.trim(),
+          );
+        });
+        assert.ok(startHere.querySelector('a[href="#all-resources"]'));
+        assert.ok(document.querySelector('#all-resources #resource-search'));
+        if (catalog.slug === 'coding-with-agents') {
+          const discoveryOrder = [
+            ...document.querySelectorAll('#start-here, details'),
+          ];
+          const featured = discoveryOrder.findIndex((element) =>
+            element
+              .querySelector('summary')
+              ?.textContent?.includes('Featured practitioners'),
+          );
+          assert.ok(featured > discoveryOrder.indexOf(startHere));
+        }
+      } else {
+        assert.equal(startHere, null, `No starting panel on ${route}`);
+      }
+
+      const expectedIds = catalog.resourceIds.filter(
+        (id) => !section || catalog.sectionByResourceId[id] === section.key,
+      );
+      const cards = [
+        ...document.querySelectorAll('div.scroll-mt-24[id^="resource-"]'),
+      ];
+      assert.deepEqual(
+        cards
+          .map((card) => Number(card.id.replace('resource-', '')))
+          .sort((a, b) => a - b),
+        [...expectedIds].sort((a, b) => a - b),
+        `Preserve membership and anchors on ${route}`,
+      );
+      const gradedIds = expectedIds.filter(
+        (id) => catalog.assessmentsByResourceId?.[id],
+      );
+      const legend = document.querySelector('#resource-relevance-legend');
+      assert.equal(Boolean(legend), gradedIds.length > 0, route);
+      if (legend) {
+        assert.ok(legend.hasAttribute('data-search-ignore'));
+        assert.match(
+          legend.textContent ?? '',
+          /not ratings of source reliability or freshness/,
+        );
+        assert.match(legend.textContent ?? '', /Source caveats still apply/);
+      }
+      for (const card of cards) {
+        const id = Number(card.id.replace('resource-', ''));
+        const assessment = catalog.assessmentsByResourceId?.[id];
+        const row = card.querySelector('[data-resource-relevance]');
+        if (!assessment) {
+          assert.equal(row, null, `Ungraded resource ${id} on ${route}`);
+          continue;
+        }
+        assert.ok(row);
+        assert.ok(row.hasAttribute('data-search-ignore'));
+        assert.equal(
+          row.getAttribute('aria-describedby'),
+          'resource-relevance-legend',
+        );
+        assert.equal(
+          row.querySelector('span')?.textContent?.toLowerCase(),
+          assessment.tier,
+        );
+        assert.ok(row.textContent?.includes(assessment.reason));
+        if (id === 33) {
+          assert.equal(
+            assessment.tier,
+            catalog.slug === 'ai' ? 'essential' : 'useful',
+          );
+        }
+      }
+      // Removing editorial chrome must not change the indexed source content.
+      document
+        .querySelectorAll(
+          '#start-here, #resource-relevance-legend, [data-resource-relevance]',
+        )
+        .forEach((node) => {
+          node.remove();
+        });
+      assert.equal(
+        documents.find(({ url }) => url === route)?.body,
+        extractDocument(document.toString(), route, 'https://with-agents.dev')
+          ?.body,
+        `Editorial text must not enter search on ${route}`,
+      );
+    }
   }
 });

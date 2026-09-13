@@ -61,6 +61,31 @@ summary or transcript paths: existing summary URLs remain stable, including
 legacy `coding-with-agents` slugs now owned by AI. Shared resources keep their
 existing primary catalog and expose an additional AI link.
 
+### Editorial relevance and starting selections
+
+Catalog-owned curation in `src/data/resources/curation.ts` adds ordered starting
+selections and optional relevance assessments. Grade usefulness **within each
+catalog**, not source reliability: Essential is a strong starting or working
+reference, Useful adds distinct value, and Context supplies narrower background
+or perspectives. Keep reasons concise and preserve source limitations; age,
+opinion, and vendor authorship do not by themselves make a resource irrelevant.
+Unassessed resources remain valid, and no grade hides a resource or changes the
+newest-first ordering.
+
+Each starting selection names a catalog member, a specific slash-separated
+summary ID (without `.md`), and its intended audience or task. It must have an
+assessment. Choose an introductory episode explicitly rather than relying on
+the latest series entry. Starting links are validated against summary ownership
+at build time. AI uses “Selected perspectives” rather than implying a complete
+fundamentals curriculum.
+
+Editorial annotations are excluded from local and site search. Preserve catalog
+membership, summary links, and `resource-{id}` anchors when changing curation.
+Run `npm run check`, `npm run content:guard`, `npm run build`, then `npm test`;
+the final test run checks the newly built catalog and search corpus. Verify root
+and section pages, selected links, search/filter behavior, and narrow layouts in
+the browser after rendered changes.
+
 ## Project Structure
 
 ```text

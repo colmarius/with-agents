@@ -1,3 +1,5 @@
+import type { ResourceCatalog } from '../../types/resources.ts';
+
 export type ManifestEntry = {
   slug: string;
   resourceId: number;
@@ -197,3 +199,42 @@ export const resolveSummaryEntries = (
 
   return invalid('Invalid summary configuration for this resource.');
 };
+
+/** Resolve editorial picks exactly; ordinary cards keep their default summary. */
+export const resolveCatalogStartHere = (
+  catalog: ResourceCatalog,
+  manifest: readonly ManifestEntry[],
+) =>
+  (catalog.startHere?.entries ?? []).map((pick) => {
+    const fail = (message: string): never => {
+      throw new Error(
+        `Catalog ${catalog.slug} start here resource ${pick.resourceId} summary ${pick.summarySlug}: ${message}`,
+      );
+    };
+    if (!catalog.resourceIds.includes(pick.resourceId)) {
+      fail('Resource does not belong to this catalog.');
+    }
+    const assessment = catalog.assessmentsByResourceId?.[pick.resourceId];
+    if (!assessment) return fail('Selected resource requires an assessment.');
+
+    const slug = encodeSummarySlug(pick.summarySlug);
+    const summary = manifest.find((entry) => entry.slug === slug);
+    if (!summary) return fail('Summary does not exist.');
+    if (summary.resourceId !== pick.resourceId) {
+      fail('Summary belongs to a different resource.');
+    }
+    const ref = resolveSummaryEntries(
+      manifest.filter((entry) => entry.resourceId === pick.resourceId),
+    );
+    if (ref?.kind === 'error') return fail(ref.message);
+    if (!ref || resolveSummarySlug(ref, slug) !== slug) {
+      return fail('Summary is not a valid selected entry.');
+    }
+    return {
+      resourceId: pick.resourceId,
+      title: summary.title,
+      href: getSummaryPath(slug),
+      audience: pick.audience,
+      reason: assessment.reason,
+    };
+  });

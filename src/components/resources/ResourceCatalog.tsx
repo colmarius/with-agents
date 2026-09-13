@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import type { Resource, ResourceTopicOption } from '../../types/resources';
+import type {
+  Resource,
+  ResourceCatalog as ResourceCatalogDefinition,
+  ResourceTopicOption,
+} from '../../types/resources';
 import { formatDate, titleCase } from '../../utils';
 import { Button, ChevronDownIcon, DocumentIcon, ExternalLinkIcon } from '../ui';
 import ResourceListItem from './ResourceListItem';
@@ -21,6 +25,7 @@ type ResourceCatalogProps = {
   topicOptions: readonly ResourceTopicOption[];
   emptyMessage: string;
   searchableResourceIds?: number[];
+  assessmentsByResourceId?: ResourceCatalogDefinition['assessmentsByResourceId'];
 };
 
 const ResourceCatalog = ({
@@ -29,6 +34,7 @@ const ResourceCatalog = ({
   topicOptions,
   emptyMessage,
   searchableResourceIds = [],
+  assessmentsByResourceId,
 }: ResourceCatalogProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTopic, setSelectedTopic] = useState<Topic | null>(null);
@@ -217,7 +223,7 @@ const ResourceCatalog = ({
   }, [sortedResources, resolveSummaryRef]);
 
   return (
-    <section>
+    <section id="all-resources" className="scroll-mt-24">
       <div className="mb-8 rounded-lg border border-gray-100 bg-white p-5 shadow-sm">
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-2">
@@ -306,89 +312,126 @@ const ResourceCatalog = ({
         </div>
       </div>
 
+      {resources.some((resource) => assessmentsByResourceId?.[resource.id]) && (
+        <p
+          id="resource-relevance-legend"
+          data-search-ignore
+          className="mb-6 text-sm leading-relaxed text-gray-600"
+        >
+          <span className="font-medium text-gray-700">Catalog relevance:</span>{' '}
+          Essential — a starting point or working reference; Useful — distinct
+          examples or perspectives; Context — specialist background, opinion,
+          history, or overlap. These are relevance judgments within this
+          catalog, not ratings of source reliability or freshness. Source
+          caveats still apply; resources without a label are ungraded.
+        </p>
+      )}
+
       <h2 className="sr-only">Resources</h2>
       <div className="space-y-8">
         {filteredResources.length > 0 ? (
-          filteredResources.map((resource) => (
-            <div
-              key={resource.id}
-              id={`resource-${resource.id}`}
-              className="scroll-mt-24"
-              data-search-body={
-                searchableResourceIds.includes(resource.id) ? '' : undefined
-              }
-            >
-              <ResourceListItem
-                title={resource.title}
-                badge={
-                  <span
-                    data-search-ignore
-                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800"
-                  >
-                    {titleCase(resource.type)}
-                  </span>
-                }
-                description={resource.description}
-                metadata={
-                  resource.subtitle && (
-                    <p className="text-base font-medium text-gray-700 mb-1">
-                      {resource.subtitle}
-                    </p>
-                  )
+          filteredResources.map((resource) => {
+            const assessment = assessmentsByResourceId?.[resource.id];
+            return (
+              <div
+                key={resource.id}
+                id={`resource-${resource.id}`}
+                className="scroll-mt-24"
+                data-search-body={
+                  searchableResourceIds.includes(resource.id) ? '' : undefined
                 }
               >
-                <div data-search-ignore className="flex flex-col gap-4 w-full">
-                  <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:gap-4 md:items-start w-full">
-                    <div className="flex flex-col gap-2">
-                      <div className="text-sm text-gray-500 flex flex-wrap items-center gap-x-4 gap-y-1">
-                        <span className="font-medium">{resource.source}</span>
-                        <span>{getDisplayDateLabel(resource)}</span>
+                <ResourceListItem
+                  title={resource.title}
+                  badge={
+                    <span
+                      data-search-ignore
+                      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800"
+                    >
+                      {titleCase(resource.type)}
+                    </span>
+                  }
+                  description={resource.description}
+                  metadata={
+                    <>
+                      {assessment && (
+                        <p
+                          data-resource-relevance
+                          data-search-ignore
+                          aria-describedby="resource-relevance-legend"
+                          className="text-sm leading-relaxed text-gray-600"
+                        >
+                          <span className="font-medium text-indigo-700">
+                            {titleCase(assessment.tier)}
+                          </span>
+                          {' — '}
+                          {assessment.reason}
+                        </p>
+                      )}
+                      {resource.subtitle && (
+                        <p className="text-base font-medium text-gray-700 mb-1">
+                          {resource.subtitle}
+                        </p>
+                      )}
+                    </>
+                  }
+                >
+                  <div
+                    data-search-ignore
+                    className="flex flex-col gap-4 w-full"
+                  >
+                    <div className="flex flex-col gap-4 md:grid md:grid-cols-[1fr_auto] md:gap-4 md:items-start w-full">
+                      <div className="flex flex-col gap-2">
+                        <div className="text-sm text-gray-500 flex flex-wrap items-center gap-x-4 gap-y-1">
+                          <span className="font-medium">{resource.source}</span>
+                          <span>{getDisplayDateLabel(resource)}</span>
+                        </div>
+
+                        {resource.topics.length > 0 && (
+                          <div className="flex flex-wrap gap-2">
+                            {resource.topics.map((topic) => (
+                              <span
+                                key={topic}
+                                className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs"
+                              >
+                                {topicLabels[topic]}
+                              </span>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
-                      {resource.topics.length > 0 && (
-                        <div className="flex flex-wrap gap-2">
-                          {resource.topics.map((topic) => (
-                            <span
-                              key={topic}
-                              className="px-2 py-0.5 bg-gray-100 text-gray-600 rounded text-xs"
-                            >
-                              {topicLabels[topic]}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 md:justify-self-end md:flex-shrink-0">
-                      {summaryPaths[resource.id] && (
+                      <div className="flex flex-wrap gap-2 md:justify-self-end md:flex-shrink-0">
+                        {summaryPaths[resource.id] && (
+                          <Button
+                            as="a"
+                            variant="secondary"
+                            href={summaryPaths[resource.id]}
+                          >
+                            <DocumentIcon />
+                            {resource.type === 'playlist'
+                              ? 'Read Summaries'
+                              : 'Read Summary'}
+                          </Button>
+                        )}
                         <Button
                           as="a"
-                          variant="secondary"
-                          href={summaryPaths[resource.id]}
+                          variant="primary"
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                          <DocumentIcon />
-                          {resource.type === 'playlist'
-                            ? 'Read Summaries'
-                            : 'Read Summary'}
+                          {getLinkText(resource.type)}
+                          <ExternalLinkIcon />
+                          <span className="sr-only">(opens in a new tab)</span>
                         </Button>
-                      )}
-                      <Button
-                        as="a"
-                        variant="primary"
-                        href={resource.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {getLinkText(resource.type)}
-                        <ExternalLinkIcon />
-                        <span className="sr-only">(opens in a new tab)</span>
-                      </Button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ResourceListItem>
-            </div>
-          ))
+                </ResourceListItem>
+              </div>
+            );
+          })
         ) : (
           <div className="rounded-lg border border-dashed border-gray-300 bg-white p-8 text-center">
             <h2 className="text-lg font-medium text-gray-900">

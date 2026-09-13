@@ -6,6 +6,12 @@ import type {
 } from '../../types/resources.ts';
 import { aiResources } from './ai.ts';
 import { codingResources } from './coding-with-agents.ts';
+import {
+  aiCuration,
+  cloudCuration,
+  codingCuration,
+  securityCuration,
+} from './curation.ts';
 import { googleCloudResources } from './google-cloud.ts';
 import { resourceSections } from './sections.ts';
 import { securityResources } from './security.ts';
@@ -269,6 +275,7 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
     topicOptions: codingTopicOptions,
     resourceIds: codingResources.map((resource) => resource.id),
     sectionByResourceId: codingSectionByResourceId,
+    ...codingCuration,
   },
   {
     slug: 'cloud',
@@ -281,6 +288,7 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
     topicOptions: cloudTopicOptions,
     resourceIds: cloudResourceIds,
     sectionByResourceId: cloudSectionByResourceId,
+    ...cloudCuration,
   },
   {
     slug: 'security',
@@ -293,6 +301,7 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
     topicOptions: securityTopicOptions,
     resourceIds: securityResourceIds,
     sectionByResourceId: securitySectionByResourceId,
+    ...securityCuration,
   },
   {
     slug: 'ai',
@@ -305,6 +314,7 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
     topicOptions: aiTopicOptions,
     resourceIds: aiResourceIds,
     sectionByResourceId: aiSectionByResourceId,
+    ...aiCuration,
   },
 ];
 
@@ -364,6 +374,61 @@ export const validateResourceCatalogs = (
         throw new Error(
           `${prefix} resource ID ${resourceId} has unknown topic ${unknownTopic}`,
         );
+      }
+    }
+
+    for (const [resourceId, assessment] of Object.entries(
+      catalog.assessmentsByResourceId ?? {},
+    )) {
+      if (!catalog.resourceIds.includes(Number(resourceId))) {
+        throw new Error(
+          `${prefix} has an assessment for non-member resource ID ${resourceId}`,
+        );
+      }
+      if (
+        !assessment ||
+        !['essential', 'useful', 'context'].includes(assessment.tier)
+      ) {
+        throw new Error(
+          `${prefix} resource ID ${resourceId} has an invalid assessment tier`,
+        );
+      }
+      if (!assessment.reason.trim()) {
+        throw new Error(
+          `${prefix} resource ID ${resourceId} must have a nonblank assessment reason`,
+        );
+      }
+    }
+
+    const startHere = catalog.startHere;
+    if (startHere) {
+      if (!startHere.title.trim() || !startHere.description.trim()) {
+        throw new Error(
+          `${prefix} start here must have a nonblank title and description`,
+        );
+      }
+      const startIds = startHere.entries.map(({ resourceId }) => resourceId);
+      if (!startIds.length || new Set(startIds).size !== startIds.length) {
+        throw new Error(
+          `${prefix} start here must have nonempty unique resource IDs`,
+        );
+      }
+      for (const entry of startHere.entries) {
+        if (!catalog.resourceIds.includes(entry.resourceId)) {
+          throw new Error(
+            `${prefix} start here references non-member resource ID ${entry.resourceId}`,
+          );
+        }
+        if (!catalog.assessmentsByResourceId?.[entry.resourceId]) {
+          throw new Error(
+            `${prefix} start here resource ID ${entry.resourceId} must have an assessment`,
+          );
+        }
+        if (!entry.summarySlug.trim() || !entry.audience.trim()) {
+          throw new Error(
+            `${prefix} start here resource ID ${entry.resourceId} must have a nonblank summary slug and audience`,
+          );
+        }
       }
     }
 

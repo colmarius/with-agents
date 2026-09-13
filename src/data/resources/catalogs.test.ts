@@ -1,7 +1,11 @@
 import assert from 'node:assert/strict';
 import { globSync, readFileSync } from 'node:fs';
 import test from 'node:test';
-import type { Resource, ResourceCatalog } from '../../types/resources.ts';
+import type {
+  Resource,
+  ResourceAssessment,
+  ResourceCatalog,
+} from '../../types/resources.ts';
 import {
   getCatalogResources,
   getResourceCatalog,
@@ -246,5 +250,232 @@ test('featured selections reference distinct resources in their own section', ()
       () => validateResourceCatalogs(values, [withSelection(ids)]),
       /must belong to section section/,
     );
+  }
+});
+
+test('curation preserves catalog-specific grades without changing canonical resources', () => {
+  assert.equal(
+    requireCatalog('coding-with-agents').assessmentsByResourceId?.[33]?.tier,
+    'useful',
+  );
+  assert.equal(
+    requireCatalog('ai').assessmentsByResourceId?.[33]?.tier,
+    'essential',
+  );
+  for (const [slug, ids] of [
+    ['coding-with-agents', [4, 6, 10, 51, 116]],
+    ['cloud', [58, 64, 66]],
+    ['security', [58]],
+    ['ai', [120, 130]],
+  ] as const) {
+    for (const id of ids) {
+      assert.equal(
+        requireCatalog(slug).assessmentsByResourceId?.[id]?.tier,
+        'context',
+      );
+    }
+  }
+  for (const entry of resources) {
+    assert.ok(!('tier' in entry));
+    assert.ok(!('assessmentsByResourceId' in entry));
+  }
+});
+
+test('starting routes preserve editorial order and point to summaries owned by their resources', () => {
+  assert.deepEqual(
+    resourceCatalogs.map(({ startHere }) =>
+      startHere?.entries.map(({ resourceId }) => resourceId),
+    ),
+    [
+      [14, 38, 17, 72, 77],
+      [97, 59, 63, 100, 61],
+      [104, 102, 103, 100, 101],
+      [127, 33, 49, 129],
+    ],
+  );
+  assert.equal(requireCatalog('ai').startHere?.title, 'Selected perspectives');
+  for (const slug of ['coding-with-agents', 'cloud', 'security']) {
+    assert.equal(requireCatalog(slug).startHere?.title, 'Start here');
+  }
+  assert.equal(
+    requireCatalog('cloud').startHere?.entries[1].summarySlug,
+    'google-cloud/google-cloud-serverless-expeditions/workflows-retries-and-saga',
+  );
+  assert.equal(
+    requireCatalog('cloud').startHere?.entries[2].summarySlug,
+    'google-cloud/google-cloud-engineering-for-reliability/getting-started-with-slos',
+  );
+  for (const entry of resourceCatalogs.flatMap(
+    ({ startHere }) => startHere?.entries ?? [],
+  )) {
+    assert.match(entry.summarySlug, /^[a-z0-9-]+(?:\/[a-z0-9-]+)*$/);
+    assert.ok(!entry.summarySlug.startsWith('summaries/'));
+    const summary = readFileSync(
+      `src/content/summaries/${entry.summarySlug}.md`,
+      'utf8',
+    );
+    assert.equal(
+      Number(summary.match(/^resourceId: (\d+)$/m)?.[1]),
+      entry.resourceId,
+      entry.summarySlug,
+    );
+  }
+});
+
+const contextAssessment: ResourceAssessment = {
+  tier: 'context',
+  reason: 'Background for a specialist task.',
+};
+const startingEntry = {
+  resourceId: 1,
+  summarySlug: 'topic/intro',
+  audience: 'Developers learning the topic',
+};
+const startingRoute = {
+  title: 'Start here',
+  description: 'A scoped route.',
+  entries: [startingEntry],
+};
+
+test('curation remains optional and sparse, and starting entries may use any tier', () => {
+  const sparse: ResourceCatalog = {
+    ...catalog,
+    resourceIds: [1, 2],
+    sectionByResourceId: { 1: 'section', 2: 'section' },
+    assessmentsByResourceId: { 1: contextAssessment },
+  };
+  const values = [resource, { ...resource, id: 2 }];
+  validateResourceCatalogs(values, [catalog]);
+  validateResourceCatalogs(values, [
+    { ...catalog, assessmentsByResourceId: {} },
+  ]);
+  validateResourceCatalogs(values, [sparse]);
+  validateResourceCatalogs(values, [{ ...sparse, startHere: startingRoute }]);
+  assert.equal(sparse.assessmentsByResourceId?.[2], undefined);
+});
+
+test('assessment validation rejects non-members, unknown tiers, and blank reasons', () => {
+  assert.throws(
+    () =>
+      validateResourceCatalogs(
+        [resource, { ...resource, id: 2 }],
+        [{ ...catalog, assessmentsByResourceId: { 2: contextAssessment } }],
+      ),
+    /assessment for non-member resource ID 2/,
+  );
+  assert.throws(
+    () =>
+      validateResourceCatalogs(
+        [resource],
+        [
+          {
+            ...catalog,
+            assessmentsByResourceId: {
+              1: {
+                ...contextAssessment,
+                tier: 'recommended',
+              } as unknown as ResourceAssessment,
+            },
+          },
+        ],
+      ),
+    /invalid assessment tier/,
+  );
+  for (const reason of ['', ' \n\t ']) {
+    assert.throws(
+      () =>
+        validateResourceCatalogs(
+          [resource],
+          [
+            {
+              ...catalog,
+              assessmentsByResourceId: { 1: { ...contextAssessment, reason } },
+            },
+          ],
+        ),
+      /nonblank assessment reason/,
+    );
+  }
+});
+
+test('starting routes reject empty or duplicate entries and non-member or unassessed picks', () => {
+  const assessed: ResourceCatalog = {
+    ...catalog,
+    assessmentsByResourceId: { 1: contextAssessment },
+  };
+  for (const entries of [[], [startingEntry, startingEntry]]) {
+    assert.throws(
+      () =>
+        validateResourceCatalogs(
+          [resource],
+          [{ ...assessed, startHere: { ...startingRoute, entries } }],
+        ),
+      /nonempty unique resource IDs/,
+    );
+  }
+  assert.throws(
+    () =>
+      validateResourceCatalogs(
+        [resource, { ...resource, id: 2 }],
+        [
+          {
+            ...assessed,
+            startHere: {
+              ...startingRoute,
+              entries: [{ ...startingEntry, resourceId: 2 }],
+            },
+          },
+        ],
+      ),
+    /start here references non-member resource ID 2/,
+  );
+  for (const assessmentsByResourceId of [undefined, {}]) {
+    assert.throws(
+      () =>
+        validateResourceCatalogs(
+          [resource],
+          [{ ...catalog, assessmentsByResourceId, startHere: startingRoute }],
+        ),
+      /must have an assessment/,
+    );
+  }
+});
+
+test('starting routes reject blank panel text, summary slugs, and audiences', () => {
+  const assessed: ResourceCatalog = {
+    ...catalog,
+    assessmentsByResourceId: { 1: contextAssessment },
+  };
+  for (const field of ['title', 'description'] as const) {
+    for (const value of ['', ' \n ']) {
+      assert.throws(
+        () =>
+          validateResourceCatalogs(
+            [resource],
+            [{ ...assessed, startHere: { ...startingRoute, [field]: value } }],
+          ),
+        /nonblank title and description/,
+      );
+    }
+  }
+  for (const field of ['summarySlug', 'audience'] as const) {
+    for (const value of ['', ' \t ']) {
+      assert.throws(
+        () =>
+          validateResourceCatalogs(
+            [resource],
+            [
+              {
+                ...assessed,
+                startHere: {
+                  ...startingRoute,
+                  entries: [{ ...startingEntry, [field]: value }],
+                },
+              },
+            ],
+          ),
+        /nonblank summary slug and audience/,
+      );
+    }
   }
 });

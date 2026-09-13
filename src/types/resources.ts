@@ -59,6 +59,11 @@ export type ResourceSection = {
   };
 };
 
+export type ResourceAssessment = {
+  tier: 'essential' | 'useful' | 'context';
+  reason: string;
+};
+
 export type ResourceCatalog = {
   slug: string;
   title: string;
@@ -68,4 +73,16 @@ export type ResourceCatalog = {
   topicOptions: readonly ResourceTopicOption[];
   resourceIds: readonly number[];
   sectionByResourceId: Readonly<Record<number, string>>;
+  assessmentsByResourceId?: Readonly<
+    Partial<Record<number, ResourceAssessment>>
+  >;
+  startHere?: {
+    title: string;
+    description: string;
+    entries: readonly {
+      resourceId: number;
+      summarySlug: string;
+      audience: string;
+    }[];
+  };
 };

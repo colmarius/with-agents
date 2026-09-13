@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import type { ResourceCatalog } from '../../types/resources.ts';
 import {
   getSummaryPath,
   type ManifestEntry,
+  resolveCatalogStartHere,
   resolveSummaryEntries,
   resolveSummarySlug,
 } from './summaryResolver.ts';
@@ -149,4 +151,157 @@ test('builds canonical paths from encoded nested summary slugs', () => {
     getSummaryPath('coding-with-agents__series__episode-one'),
     '/summaries/coding-with-agents/series/episode-one/',
   );
+});
+
+const catalog = (
+  overrides: Partial<ResourceCatalog> = {},
+): ResourceCatalog => ({
+  slug: 'coding',
+  title: 'Coding',
+  description: 'Coding resources',
+  indexDescription: 'Coding resources',
+  sections: [],
+  topicOptions: [],
+  resourceIds: [1, 2],
+  sectionByResourceId: { 1: 'workflows', 2: 'workflows' },
+  assessmentsByResourceId: {
+    1: { tier: 'essential', reason: 'Specific evidence, with limitations.' },
+  },
+  startHere: {
+    title: 'Start here',
+    description: 'A selected route',
+    entries: [
+      { resourceId: 1, summarySlug: 'coding/chosen', audience: 'Teams' },
+    ],
+  },
+  ...overrides,
+});
+
+test('editorial picks honor an explicit child rather than default summary order', () => {
+  const chosen = entry({ slug: 'coding__chosen', title: 'Chosen summary' });
+  const other = entry({ slug: 'coding__other', title: 'Other summary' });
+  for (const entries of [
+    [chosen],
+    [
+      { ...other, series: 'show', episode: 8, date: '2026-09-01' },
+      { ...chosen, series: 'show', episode: 1, date: '2025-01-01' },
+    ],
+    [
+      {
+        ...other,
+        collection: 'talks',
+        date: '2026-09-01',
+        order: 1,
+        videoId: 'new',
+      },
+      {
+        ...chosen,
+        collection: 'talks',
+        date: '2025-01-01',
+        order: 2,
+        videoId: 'old',
+      },
+    ],
+  ]) {
+    assert.deepEqual(resolveCatalogStartHere(catalog(), entries), [
+      {
+        resourceId: 1,
+        title: 'Chosen summary',
+        href: '/summaries/coding/chosen/',
+        audience: 'Teams',
+        reason: 'Specific evidence, with limitations.',
+      },
+    ]);
+  }
+});
+
+test('editorial pick order and catalog-owned reasons are independent of manifest order', () => {
+  const definition = catalog({
+    assessmentsByResourceId: {
+      1: { tier: 'useful', reason: 'Workflow context' },
+      2: { tier: 'essential', reason: 'Evaluation starting point' },
+    },
+    startHere: {
+      title: 'Selected perspectives',
+      description: 'Read by task',
+      entries: [
+        { resourceId: 2, summarySlug: 'ai/evaluation', audience: 'Evaluators' },
+        { resourceId: 1, summarySlug: 'coding/chosen', audience: 'Teams' },
+      ],
+    },
+  });
+  const picks = resolveCatalogStartHere(definition, [
+    entry({ slug: 'coding__chosen' }),
+    entry({ resourceId: 2, slug: 'ai__evaluation' }),
+  ]);
+  assert.deepEqual(
+    picks.map(({ resourceId, reason }) => [resourceId, reason]),
+    [
+      [2, 'Evaluation starting point'],
+      [1, 'Workflow context'],
+    ],
+  );
+  assert.deepEqual(
+    resolveCatalogStartHere(catalog({ startHere: undefined }), []),
+    [],
+  );
+});
+
+test('invalid editorial picks fail with catalog, resource, and requested slug', () => {
+  const chosen = entry({ slug: 'coding__chosen' });
+  const invalidCases: [ResourceCatalog, ManifestEntry[], RegExp][] = [
+    [catalog({ resourceIds: [2] }), [chosen], /does not belong/],
+    [
+      catalog({ assessmentsByResourceId: undefined }),
+      [chosen],
+      /requires an assessment/,
+    ],
+    [catalog(), [], /does not exist/],
+    [catalog(), [entry({ slug: 'coding__other' })], /does not exist/],
+    [catalog(), [{ ...chosen, resourceId: 2 }], /different resource/],
+    [
+      catalog(),
+      [chosen, entry({ slug: 'coding__duplicate' })],
+      /Multiple standalone/,
+    ],
+    [
+      catalog(),
+      [{ ...chosen, series: 'show', episode: null }],
+      /must have an episode/,
+    ],
+    [
+      catalog(),
+      [
+        {
+          ...chosen,
+          collection: 'talks',
+          date: '2026-01-01',
+          order: 1,
+          videoId: 'one',
+        },
+        entry({
+          slug: 'coding__other',
+          collection: 'talks',
+          date: '2026-02-01',
+          order: 1,
+          videoId: 'two',
+        }),
+      ],
+      /Duplicate summary orders/,
+    ],
+  ];
+  for (const [definition, entries, detail] of invalidCases) {
+    assert.throws(
+      () => resolveCatalogStartHere(definition, entries),
+      (error) => {
+        assert.ok(error instanceof Error);
+        assert.match(
+          error.message,
+          /Catalog coding start here resource 1 summary coding\/chosen:/,
+        );
+        assert.match(error.message, detail);
+        return true;
+      },
+    );
+  }
 });
