@@ -1,5 +1,18 @@
 [
   {
+    "id": 132,
+    "primarySection": "implications-risks",
+    "title": "Il rischio AI è ormai accettato",
+    "subtitle": "Salvatore Sanfilippo on AI risk, cautious progress, and model-size limits",
+    "url": "https://www.youtube.com/watch?v=k8oLNzvInX4",
+    "description": "Salvatore Sanfilippo distinguishes acknowledging AI risk from predicting imminent extinction. He discusses cyber and biological misuse, recursive self-improvement, and international coordination, then proposes limits on model parameter counts rather than a complete research stop. Italian-language opinion commentary; his risk assessments and proposed safeguards are not validated safety findings.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-09-13",
+    "duration": "29m",
+    "topics": ["society-governance", "models-evaluation", "safety-permissions"]
+  },
+  {
     "id": 128,
     "primarySection": "implications-risks",
     "title": "The next 50 years: humanity, AI, power | Yuval Noah Harari",
