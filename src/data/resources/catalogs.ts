@@ -148,6 +148,9 @@ const securityTopicOptions = [
   { slug: 'threat-detection', label: 'Threat detection' },
   { slug: 'application-security', label: 'Application security' },
   { slug: 'governance-compliance', label: 'Governance & compliance' },
+  { slug: 'safety-permissions', label: 'Safety & permissions' },
+  { slug: 'models-evaluation', label: 'Models & evaluation' },
+  { slug: 'tools-harnesses', label: 'Tools & harnesses' },
 ] as const satisfies readonly ResourceTopicOption[];
 
 export const resources: Resource[] = [
@@ -172,7 +175,7 @@ const cloudSectionByResourceId = Object.fromEntries(
   ]),
 );
 
-const securityResourceIds = [98, 57, 100, 101, 102, 103, 105, 106, 58, 104];
+const securityResourceIds = [98, 57, 100, 101, 102, 103, 105, 106, 58, 104, 37];
 
 const securitySectionByResourceId = {
   98: 'cloud-security',
@@ -183,6 +186,7 @@ const securitySectionByResourceId = {
     securityResources.map((resource) => [resource.id, resource.primarySection]),
   ),
   58: 'threat-detection-response',
+  37: 'threat-detection-response',
 };
 
 const aiSections = [

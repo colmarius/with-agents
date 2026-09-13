@@ -56,7 +56,7 @@ test('registry exposes catalogs and cross-listed security resources', () => {
   );
   assert.deepEqual(
     getCatalogResources(requireCatalog('security')).map(({ id }) => id),
-    [98, 57, 100, 101, 102, 103, 105, 106, 58, 104],
+    [98, 57, 100, 101, 102, 103, 105, 106, 58, 104, 37],
   );
   assert.deepEqual(
     getCatalogResources(requireCatalog('cloud')).map(({ id }) => id),
@@ -73,6 +73,19 @@ test('registry exposes catalogs and cross-listed security resources', () => {
       ({ id }) => id,
     ),
     [100, 101, 102, 103, 105, 106],
+  );
+  assert.deepEqual(
+    getCatalogResources(
+      requireCatalog('security'),
+      'threat-detection-response',
+    ).map(({ id }) => id),
+    [58, 37],
+  );
+  assert.strictEqual(
+    getCatalogResources(requireCatalog('security')).find(({ id }) => id === 37),
+    getCatalogResources(requireCatalog('coding-with-agents')).find(
+      ({ id }) => id === 37,
+    ),
   );
 });
 
@@ -287,9 +300,9 @@ test('starting routes preserve editorial order and point to summaries owned by t
       startHere?.entries.map(({ resourceId }) => resourceId),
     ),
     [
-      [14, 38, 17, 72, 77],
+      [14, 38, 17, 124, 35],
       [97, 59, 63, 100, 61],
-      [104, 102, 103, 100, 101],
+      [104, 102, 57, 37, 101],
       [127, 33, 49, 129],
     ],
   );
@@ -304,6 +317,24 @@ test('starting routes preserve editorial order and point to summaries owned by t
   assert.equal(
     requireCatalog('cloud').startHere?.entries[2].summarySlug,
     'google-cloud/google-cloud-engineering-for-reliability/getting-started-with-slos',
+  );
+  assert.deepEqual(
+    requireCatalog('coding-with-agents')
+      .startHere?.entries.slice(3)
+      .map(({ summarySlug }) => summarySlug),
+    [
+      'coding-with-agents/building-ambitious-software-jonathan-kelley-dioxus-labs-cognition',
+      'coding-with-agents/measuring-the-impact-of-ai-on-software-engineering-laura-tacho',
+    ],
+  );
+  assert.deepEqual(
+    requireCatalog('security')
+      .startHere?.entries.slice(2, 4)
+      .map(({ summarySlug }) => summarySlug),
+    [
+      'google-cloud/google-cloud-security-basics/how-to-use-cloud-audit-logging',
+      'coding-with-agents/black-hat-usa-2026-the-breaking-news-the-openai-hugging-face-incident',
+    ],
   );
   for (const entry of resourceCatalogs.flatMap(
     ({ startHere }) => startHere?.entries ?? [],

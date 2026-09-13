@@ -25,7 +25,7 @@ export const codingCuration = {
     35: {
       tier: 'essential',
       reason:
-        'Offers a curated route into measurement, property-based testing, and bounded agent loops.',
+        'Across the selected Pragmatic Engineer conversations, episodes cover measurement, property-based testing, and bounded agent loops.',
     },
     74: {
       tier: 'essential',
@@ -55,7 +55,7 @@ export const codingCuration = {
     124: {
       tier: 'essential',
       reason:
-        'Uses maintained-framework examples to connect ambitious agent work with meaningful testing.',
+        'Describes maintained-framework experience with release chores, meaningful test design, and agent-built fuzzing harnesses, not comparative effectiveness evidence.',
     },
     34: {
       tier: 'essential',
@@ -426,7 +426,7 @@ export const codingCuration = {
   startHere: {
     title: 'Start here',
     description:
-      'A short route through verification, context, and human judgment, followed by specialist browser-testing and background-agent practices.',
+      'A summary-first route through verification, context, human judgment, software maintenance, and measuring adoption impact.',
     entries: [
       {
         resourceId: 14,
@@ -447,16 +447,17 @@ export const codingCuration = {
         audience: 'Reviewers deciding where human judgment matters',
       },
       {
-        resourceId: 72,
+        resourceId: 124,
         summarySlug:
-          'coding-with-agents/beyond-code-coverage-functionality-testing-with-playwright-mcp-marlene-mhangami',
-        audience: 'Web developers checking browser behavior',
+          'coding-with-agents/building-ambitious-software-jonathan-kelley-dioxus-labs-cognition',
+        audience: 'Maintainers designing tests and sustaining releases',
       },
       {
-        resourceId: 77,
+        resourceId: 35,
         summarySlug:
-          'coding-with-agents/dont-build-agents-build-environments-instead',
-        audience: 'Platform engineers running background agents',
+          'coding-with-agents/measuring-the-impact-of-ai-on-software-engineering-laura-tacho',
+        audience:
+          'Tech leads evaluating adoption through baselines, impact, and cost',
       },
     ],
   },
@@ -628,7 +629,12 @@ export const securityCuration = {
     57: {
       tier: 'useful',
       reason:
-        'Introduces cloud identity and audit foundations through historical GCP examples.',
+        'Across the Security Basics collection, historical GCP examples explain identity and audit evidence; collecting logs is not the same as detecting threats.',
+    },
+    37: {
+      tier: 'useful',
+      reason:
+        'Explains shared-service containment failures and chained infrastructure weaknesses in a preliminary responder account, not an independent completed postmortem.',
     },
     106: {
       tier: 'useful',
@@ -644,7 +650,7 @@ export const securityCuration = {
   startHere: {
     title: 'Start here',
     description:
-      'Begin with API authorization and abuse, then follow complementary authentication and GCP workload-identity references. This is not a comprehensive security curriculum.',
+      'Begin with API authorization and OAuth, then explore audit evidence, incident containment, and workload trust. This is not a comprehensive security curriculum.',
     entries: [
       {
         resourceId: 104,
@@ -657,15 +663,18 @@ export const securityCuration = {
         audience: 'Engineers securing OAuth deployments',
       },
       {
-        resourceId: 103,
-        summarySlug: 'security/openid-connect-core-1-0',
-        audience: 'Engineers validating sign-in identity',
+        resourceId: 57,
+        summarySlug:
+          'google-cloud/google-cloud-security-basics/how-to-use-cloud-audit-logging',
+        audience:
+          'Cloud teams preparing investigation evidence before an incident',
       },
       {
-        resourceId: 100,
+        resourceId: 37,
         summarySlug:
-          'google-cloud/configure-workload-identity-federation-with-deployment-pipelines',
-        audience: 'Platform engineers configuring keyless workload access',
+          'coding-with-agents/black-hat-usa-2026-the-breaking-news-the-openai-hugging-face-incident',
+        audience:
+          'Security teams reviewing containment and shared-service boundaries',
       },
       {
         resourceId: 101,
