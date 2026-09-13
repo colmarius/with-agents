@@ -1,5 +1,20 @@
 [
   {
+    "id": 132,
+    "primarySection": "reliability",
+    "title": "Astra for Coding: Why Are We Doing This Again?",
+    "url": "https://lucumr.pocoo.org/2026/9/7/astra-why/",
+    "description": "Armin Ronacher critiques Astra's code readability and review burden after an unattended CPython experiment and everyday coding use. Concrete examples distinguish disposable tool-call scripts from maintainable committed code; his explanation involving training incentives is a hypothesis, not a verified account of model training.",
+    "type": "article",
+    "source": "Armin Ronacher",
+    "date": "2026-09-07",
+    "topics": [
+      "architecture-maintainability",
+      "review-verification",
+      "models-evaluation"
+    ]
+  },
+  {
     "id": 125,
     "primarySection": "agent-systems",
     "title": "50,000 GitHub Stars in Four Months | Jinjing Liang (Orca ADE, Co-founder & CEO)",
