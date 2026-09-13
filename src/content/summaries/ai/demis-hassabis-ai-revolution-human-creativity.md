@@ -1,6 +1,6 @@
 ---
 title: "Sir Demis Hassabis on the AI Revolution, the Future of AI and Human Creativity | Hannah Fry"
-resourceId: 135
+resourceId: 137
 date: "2026-09-11"
 ---
 
