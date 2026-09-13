@@ -53,6 +53,25 @@
     ]
   },
   {
+    "id": 136,
+    "primarySection": "workflows",
+    "title": "Pi Agent dev reveals his Agentic Engineering Workflow",
+    "subtitle": "Armin Ronacher on local environments, inspectable agents, and measuring useful work",
+    "url": "https://www.youtube.com/watch?v=SxuQs9GGYbk",
+    "description": "Armin Ronacher discusses his mostly local coding-agent workflow with David Ondrej: investigating problems with an agent, keeping test dependencies running, and preserving human understanding of the resulting system. He questions whether greater agent concurrency produces better business outcomes and discusses resumable agents, persistent interfaces, open-source maintenance, and inference costs. Practitioner observations and forecasts, not a benchmark or setup tutorial.",
+    "type": "video",
+    "source": "David Ondrej",
+    "date": "2026-09-12",
+    "duration": "1h 5m",
+    "topics": [
+      "tools-harnesses",
+      "review-verification",
+      "context-memory",
+      "open-source-ecosystem",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 125,
     "primarySection": "agent-systems",
     "title": "50,000 GitHub Stars in Four Months | Jinjing Liang (Orca ADE, Co-founder & CEO)",
