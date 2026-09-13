@@ -1,6 +1,6 @@
 ---
 title: "Il rischio AI è ormai accettato"
-resourceId: 132
+resourceId: 134
 date: "2026-09-13"
 ---
 
