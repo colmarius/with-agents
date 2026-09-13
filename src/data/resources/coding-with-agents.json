@@ -33,6 +33,26 @@
     ]
   },
   {
+    "id": 135,
+    "primarySection": "workflows",
+    "title": "How a Cloudflare Engineer Ships Production Code He Didn't Write | Dillon Mulroy",
+    "subtitle": "Code-shaped specs, deliberate context selection, and local review",
+    "url": "https://www.youtube.com/watch?v=sYNOgpDKTvE",
+    "description": "Dillon Mulroy explains how he steers coding agents with TypeScript types, call paths, planned tests, Pi conversation branches, and local review of small stacked changes. He also discusses lost flow, human accountability, overlapping team roles, and the cost of autonomous loops. A practitioner interview, not an independently measured productivity study or a verification of provider policies.",
+    "type": "video",
+    "source": "Jan-Niklas Wortmann",
+    "date": "2026-09-10",
+    "duration": "1h 5m",
+    "topics": [
+      "prompting-orchestration",
+      "context-memory",
+      "review-verification",
+      "architecture-maintainability",
+      "tools-harnesses",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 125,
     "primarySection": "agent-systems",
     "title": "50,000 GitHub Stars in Four Months | Jinjing Liang (Orca ADE, Co-founder & CEO)",
