@@ -18,8 +18,10 @@ export default function ResourceListItem({
   return (
     <div className="flex flex-col md:flex-row gap-6 p-6 bg-white rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-gray-300 transition-all duration-200 group focus-within:ring-2 focus-within:ring-indigo-600/50 focus-within:ring-offset-2 focus-within:ring-offset-white">
       <div className="flex-1 flex flex-col gap-3 md:gap-4">
-        <div className="flex items-center gap-2">
-          <h3 className="text-xl font-medium text-gray-900">{title}</h3>
+        <div className="flex items-start gap-3">
+          <h3 className="min-w-0 flex-1 text-xl font-medium text-gray-900">
+            {title}
+          </h3>
           {badge}
         </div>
         {metadata}

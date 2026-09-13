@@ -346,7 +346,7 @@ const ResourceCatalog = ({
                   badge={
                     <span
                       data-search-ignore
-                      className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800"
+                      className="mt-1 inline-flex shrink-0 items-center whitespace-nowrap px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800"
                     >
                       {titleCase(resource.type)}
                     </span>
