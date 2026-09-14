@@ -12,11 +12,11 @@ const code = ts.transpileModule(
 
 function setup() {
   const { document, window } = parseHTML(`<html><body><main><article>
-    <h1>Summary</h1><button data-reader-open hidden>Reading mode</button>
+    <h1>Summary</h1><button data-reader-open hidden>Focus mode</button>
     <div class="prose-post"><p>First passage</p><p>Second passage</p></div>
     </article></main><dialog data-summary-reader><div data-reader-panel>
-    <div data-reader-toolbar><button data-reader-fullscreen><svg><path data-reader-fullscreen-icon /></svg><span data-reader-fullscreen-label>Full screen</span></button>
-    <button data-reader-exit>Exit reading mode <span data-reader-exit-hint aria-hidden="true">· Esc</span></button><p data-reader-status></p></div>
+    <div data-reader-toolbar>Focus mode
+    <button data-reader-exit>Exit focus mode <span aria-hidden="true">· Esc</span></button></div>
     <div data-reader-content></div></div></dialog></body></html>`);
   const get = <T extends HTMLElement = HTMLElement>(selector: string): T => {
     const element = document.querySelector<T>(selector);
@@ -39,17 +39,6 @@ function setup() {
   }
   const panel = get('[data-reader-panel]');
   panel.scrollTop = 0;
-  Object.assign(document, { fullscreenEnabled: true, fullscreenElement: null });
-  panel.requestFullscreen = async () => {
-    Object.assign(document, { fullscreenElement: panel });
-    document.dispatchEvent(new window.Event('fullscreenchange'));
-  };
-  Object.assign(document, {
-    exitFullscreen: async () => {
-      Object.assign(document, { fullscreenElement: null });
-      document.dispatchEvent(new window.Event('fullscreenchange'));
-    },
-  });
   window.scrollBy = () => {};
   runInNewContext(code, { document, window, Event: window.Event, exports: {} });
   const click = (selector: string) =>
@@ -73,99 +62,31 @@ test('reader moves one article and synchronously releases its lock for search', 
   assert.equal(document.body.style.overflow, 'clip');
 });
 
-test('fullscreen denial leaves reading available with an explanatory status', async () => {
-  const { panel, click, dialog, get } = setup();
-  panel.requestFullscreen = async () => {
-    throw new Error('denied');
-  };
-  click('[data-reader-open]');
-  click('[data-reader-fullscreen]');
-  await new Promise(setImmediate);
-  assert.equal(dialog.open, true);
-  assert.match(get('[data-reader-status]').textContent, /unavailable/);
-  assert.equal(
-    get<HTMLButtonElement>('[data-reader-fullscreen]').disabled,
-    false,
-  );
-});
-
-test('a fullscreen request completing after reader exit relinquishes fullscreen', async () => {
-  const { panel, click, document, dialog } = setup();
-  let finish: () => void = () => {};
-  panel.requestFullscreen = () =>
-    new Promise<void>((resolve) => {
-      finish = () => {
-        Object.assign(document, { fullscreenElement: panel });
-        resolve();
-      };
-    });
-  click('[data-reader-open]');
-  click('[data-reader-fullscreen]');
-  click('[data-reader-exit]');
-  finish();
-  await new Promise(setImmediate);
-  assert.equal(document.fullscreenElement, null);
-  assert.equal(dialog.open, false);
-});
-
-test('native fullscreen exit leaves the reader open and Escape closes it', async () => {
+test('Escape closes focus mode directly', () => {
   const { click, document, dialog, window, get } = setup();
-  const icon = get('[data-reader-fullscreen-icon]');
-  const expandPath = icon.getAttribute('d');
+  document.body.style.overflow = 'clip';
   click('[data-reader-open]');
-  click('[data-reader-fullscreen]');
-  await new Promise(setImmediate);
-  assert.equal(
-    get('[data-reader-fullscreen-label]').textContent,
-    'Leave full screen',
-  );
-  assert.equal(get('[data-reader-fullscreen-icon]'), icon);
-  assert.notEqual(icon.getAttribute('d'), expandPath);
-  assert.equal(get('[data-reader-exit-hint]').hidden, true);
-  assert.match(get('[data-reader-exit]').textContent, /^Exit reading mode/);
-  await document.exitFullscreen();
-  assert.equal(dialog.open, true);
-  assert.equal(
-    get('[data-reader-fullscreen-label]').textContent,
-    'Full screen',
-  );
-  assert.equal(icon.getAttribute('d'), expandPath);
-  assert.equal(get('[data-reader-exit-hint]').hidden, false);
-  assert.equal(
-    get('[data-reader-exit-hint]').getAttribute('aria-hidden'),
-    'true',
-  );
-  assert.equal(
-    get('[data-reader-fullscreen]').getAttribute('aria-pressed'),
-    'false',
-  );
   dialog.dispatchEvent(new window.Event('cancel', { cancelable: true }));
   assert.equal(dialog.open, false);
+  assert.equal(document.body.style.overflow, 'clip');
+  assert.ok(get('main article'));
 });
 
-test('stale fullscreen completion cannot affect a reopened reader', async () => {
-  for (const rejected of [false, true]) {
-    const { panel, click, document, dialog, get } = setup();
-    let finish: () => void = () => {};
-    panel.requestFullscreen = () =>
-      new Promise<void>((resolve, reject) => {
-        finish = () => {
-          if (rejected) reject(new Error('denied'));
-          else {
-            Object.assign(document, { fullscreenElement: panel });
-            resolve();
-          }
-        };
-      });
+test('reopening ignores a queued close event from the previous session', () => {
+  const { click, document, dialog, window, get } = setup();
+  document.body.style.overflow = 'clip';
+  for (let cycle = 0; cycle < 2; cycle += 1) {
     click('[data-reader-open]');
-    click('[data-reader-fullscreen]');
     click('[data-reader-exit]');
     click('[data-reader-open]');
-    finish();
-    await new Promise(setImmediate);
+    dialog.dispatchEvent(new window.Event('close'));
     assert.equal(dialog.open, true);
-    assert.equal(document.fullscreenElement, null);
-    assert.equal(get('[data-reader-status]').textContent, '');
+    assert.equal(document.body.style.overflow, 'hidden');
+    assert.ok(get('[data-reader-content] article'));
+    click('[data-reader-exit]');
+    assert.equal(document.body.style.overflow, 'clip');
+    assert.equal(document.querySelectorAll('article').length, 1);
+    assert.ok(get('main article'));
   }
 });
 
