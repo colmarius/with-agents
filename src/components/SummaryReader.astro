@@ -1,0 +1,76 @@
+<dialog data-summary-reader aria-label="Read only summary">
+  <div data-reader-panel tabindex="-1">
+    <div class="reader-toolbar" data-reader-toolbar>
+      <span class="reader-label">Read only</span>
+      <div class="reader-actions">
+        <button type="button" data-reader-fullscreen hidden>Full screen</button>
+        <button type="button" data-reader-exit>Exit <span aria-hidden="true">· Esc</span></button>
+      </div>
+      <p data-reader-status role="status"></p>
+    </div>
+    <div data-reader-content></div>
+  </div>
+</dialog>
+
+<script>
+  import '../scripts/summary-reader';
+</script>
+
+<style is:global>
+  [data-summary-reader] {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    overflow: clip;
+    border: 0;
+    background: white;
+    color: #0f172a;
+  }
+  [data-reader-panel] {
+    height: 100%;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: white;
+    scroll-padding-top: 6rem;
+  }
+  .reader-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 1rem;
+    padding: max(0.5rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.5rem max(1rem, env(safe-area-inset-left));
+    border-bottom: 1px solid #e2e8f0;
+    background: white;
+    font-size: 0.875rem;
+  }
+  .reader-label { color: #64748b; }
+  .reader-actions { display: flex; gap: 0.5rem; margin-left: auto; }
+  .reader-actions button {
+    min-height: 44px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+  .reader-actions button:hover { background: #f1f5f9; }
+  .reader-actions button:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+  .reader-actions button:disabled { opacity: 0.5; cursor: wait; }
+  [data-reader-status]:empty { display: none; }
+  [data-reader-status] { flex-basis: 100%; color: #475569; }
+  [data-reader-content] { max-width: 46rem; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+  [data-reader-content] :is([data-scroll-back-nav], [data-reader-open], article > details, article > nav, article > footer, nav[aria-label="Other resource catalogs"]) { display: none; }
+  @media (max-width: 40rem) {
+    [data-reader-content] { padding: 2rem 1.25rem 4rem; }
+  }
+  @media print {
+    [data-reader-open] { display: none !important; }
+  }
+</style>

@@ -11,6 +11,7 @@ import {
   toManifestEntry,
 } from '@components/resources/summaryResolver';
 import ScrollBackNav from '@components/ScrollBackNav.astro';
+import SummaryReader from '@components/SummaryReader.astro';
 import Layout from '@layouts/Layout.astro';
 import { formatDate } from '@utils';
 import { resourceCatalogs, resources } from '../../data/resources/catalogs';
@@ -276,6 +277,12 @@ if (!primaryMembership) {
           </div>
 
           <div class="mt-5 flex flex-wrap items-center gap-3" data-search-ignore>
+            <button type="button" data-reader-open hidden class="min-h-11 items-center gap-2 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-indigo-600 [&:not([hidden])]:inline-flex">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 4h6v6m0-6-7 7M10 20H4v-6m0 6 7-7" />
+              </svg>
+              Read only
+            </button>
             <a
               href={resource.url}
               target="_blank"
@@ -440,6 +447,7 @@ if (!primaryMembership) {
       </article>
     </div>
   </div>
+  <SummaryReader />
 </Layout>
 
 <script>

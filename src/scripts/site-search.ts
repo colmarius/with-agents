@@ -160,11 +160,11 @@ export function initializeSearch() {
 
   function openSearch() {
     if (dialog.open) return;
+    document.dispatchEvent(new Event('site-search:open'));
     opener =
       document.activeElement instanceof HTMLElement
         ? document.activeElement
         : null;
-    document.dispatchEvent(new Event('site-search:open'));
     previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     dialog.showModal();
@@ -211,7 +211,7 @@ export function initializeSearch() {
     const target = usable(opener)
       ? opener
       : Array.from(triggers).find((trigger) => usable(trigger));
-    target?.focus();
+    target?.focus({ preventScroll: true });
   });
   input.addEventListener('input', (event) => {
     ++revision;
