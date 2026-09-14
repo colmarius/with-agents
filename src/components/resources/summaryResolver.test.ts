@@ -22,6 +22,20 @@ const entry = (overrides: Partial<ManifestEntry> = {}): ManifestEntry => ({
   ...overrides,
 });
 
+test('a singleton curated selection remains a collection', () => {
+  const selected = entry({
+    collection: 'selected',
+    date: '2026-09-01',
+    order: 1,
+    videoId: 'eU4WlADVgM8',
+  });
+  assert.deepEqual(resolveSummaryEntries([selected]), {
+    kind: 'collection',
+    collection: 'selected',
+    entries: [selected],
+  });
+});
+
 test('resolves standalone, numbered series, and collection summaries', () => {
   assert.deepEqual(resolveSummaryEntries([entry()]), {
     kind: 'single',

@@ -49,10 +49,26 @@ const requireCatalog = (slug: string): ResourceCatalog => {
   return result;
 };
 
+test('Knowledge Project belongs only to the product decision-making catalog', () => {
+  assert.deepEqual(
+    resourceCatalogs
+      .filter((catalog) => catalog.resourceIds.includes(139))
+      .map(({ slug }) => slug),
+    ['product-decisions'],
+  );
+  assert.deepEqual(
+    getCatalogResources(
+      requireCatalog('product-decisions'),
+      'judgment-execution',
+    ).map(({ id }) => id),
+    [139],
+  );
+});
+
 test('registry exposes catalogs and cross-listed security resources', () => {
   assert.deepEqual(
     resourceCatalogs.map((entry) => entry.slug),
-    ['coding-with-agents', 'cloud', 'security', 'ai'],
+    ['coding-with-agents', 'cloud', 'security', 'ai', 'product-decisions'],
   );
   assert.deepEqual(
     getCatalogResources(requireCatalog('security')).map(({ id }) => id),
@@ -304,6 +320,7 @@ test('starting routes preserve editorial order and point to summaries owned by t
       [97, 59, 63, 100, 61],
       [104, 102, 57, 37, 101],
       [127, 33, 49, 129],
+      undefined,
     ],
   );
   assert.equal(requireCatalog('ai').startHere?.title, 'Selected perspectives');

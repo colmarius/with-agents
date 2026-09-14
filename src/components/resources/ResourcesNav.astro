@@ -13,15 +13,11 @@ const context = siteContexts.find(
   (siteContext) => siteContext.catalogSlug === catalog.slug,
 );
 
-if (!context) {
-  throw new Error(
-    `Resource catalog ${catalog.slug} has no owning site context`,
-  );
-}
-
 const parentLink =
   active === 'all'
-    ? { href: `/${context.slug}`, label: `Back to ${context.title}` }
+    ? context
+      ? { href: `/${context.slug}`, label: `Back to ${context.title}` }
+      : { href: '/resources', label: 'Back to Resources' }
     : {
         href: `/resources/${catalog.slug}`,
         label: `Back to all ${catalog.title} resources`,

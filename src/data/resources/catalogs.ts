@@ -13,6 +13,7 @@ import {
   securityCuration,
 } from './curation.ts';
 import { googleCloudResources } from './google-cloud.ts';
+import { productResources } from './product-decisions.ts';
 import { resourceSections } from './sections.ts';
 import { securityResources } from './security.ts';
 
@@ -158,6 +159,7 @@ export const resources: Resource[] = [
   ...googleCloudResources,
   ...securityResources,
   ...aiResources,
+  ...productResources,
 ].map(({ primarySection: _primarySection, ...resource }) => resource);
 
 const codingSectionByResourceId = Object.fromEntries(
@@ -319,6 +321,35 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
     resourceIds: aiResourceIds,
     sectionByResourceId: aiSectionByResourceId,
     ...aiCuration,
+  },
+  {
+    slug: 'product-decisions',
+    title: 'Product & Decision-Making',
+    description:
+      'Selected resources on product strategy, organizational decisions, expert judgment, and learning from failure for developers and technology leaders.',
+    indexDescription:
+      'Explore product judgment, leadership, and the decisions that turn technical work into useful products.',
+    sections: [
+      {
+        key: 'judgment-execution',
+        label: 'Judgment & Execution',
+        description:
+          'Product trade-offs, learning from feedback, and giving teams the authority to execute.',
+        routeSlug: 'judgment-execution',
+      },
+    ],
+    topicOptions: [
+      { slug: 'product-strategy', label: 'Product strategy' },
+      { slug: 'decision-making', label: 'Decision-making' },
+      { slug: 'leadership', label: 'Leadership' },
+    ],
+    resourceIds: productResources.map((resource) => resource.id),
+    sectionByResourceId: Object.fromEntries(
+      productResources.map((resource) => [
+        resource.id,
+        resource.primarySection,
+      ]),
+    ),
   },
 ];
 
