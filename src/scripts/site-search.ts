@@ -242,6 +242,9 @@ export function initializeSearch() {
   });
   document.addEventListener('keydown', (event) => {
     if (
+      event.defaultPrevented ||
+      event.repeat ||
+      event.isComposing ||
       !(event.metaKey || event.ctrlKey) ||
       event.altKey ||
       event.shiftKey ||

@@ -3,7 +3,7 @@
     <div class="reader-toolbar" data-reader-toolbar>
       <span class="reader-label">Focus mode</span>
       <div class="reader-actions">
-        <button type="button" data-reader-exit>Exit focus mode <span aria-hidden="true">· Esc</span></button>
+        <button type="button" data-reader-exit aria-keyshortcuts="Escape Alt+Shift+F">Exit focus mode <span aria-hidden="true">· Esc</span></button>
       </div>
     </div>
     <div data-reader-content></div>
@@ -62,6 +62,17 @@
   .reader-actions button:hover { background: #f1f5f9; }
   .reader-actions button:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
   [data-reader-content] { max-width: 46rem; margin: 0 auto; padding: 2.5rem 2rem 5rem; }
+  [data-reader-content] [data-reader-focus-target]:focus-visible {
+    outline: none;
+    box-shadow: -3px 0 0 #4f46e5;
+  }
+  @media (forced-colors: active) {
+    [data-reader-content] [data-reader-focus-target]:focus-visible {
+      box-shadow: none;
+      outline: 2px solid Highlight;
+      outline-offset: 3px;
+    }
+  }
   [data-reader-content] .prose-post a { max-width: 100%; overflow-wrap: anywhere; }
   [data-reader-content] :is([data-scroll-back-nav], [data-reader-open], article > details, article > nav, article > footer, nav[aria-label="Other resource catalogs"]) { display: none; }
   @media (max-width: 40rem) {

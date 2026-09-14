@@ -13,11 +13,15 @@ const code = ts.transpileModule(
 function setup() {
   const { document, window } = parseHTML(`<html><body><main><article>
     <h1>Summary</h1><button data-reader-open hidden>Focus mode</button>
+    <details><summary>Browse summaries</summary></details>
+    <nav data-scroll-back-nav-sticky><a href="/resources">Back</a></nav>
     <div class="prose-post"><p>First passage</p><p>Second passage</p></div>
     </article></main><dialog data-summary-reader><div data-reader-panel>
     <div data-reader-toolbar>Focus mode
     <button data-reader-exit>Exit focus mode <span aria-hidden="true">· Esc</span></button></div>
     <div data-reader-content></div></div></dialog></body></html>`);
+  let focused: Element = document.body;
+  Object.defineProperty(document, 'activeElement', { get: () => focused });
   const get = <T extends HTMLElement = HTMLElement>(selector: string): T => {
     const element = document.querySelector<T>(selector);
     if (!element) throw new Error(`Missing fixture: ${selector}`);
@@ -34,16 +38,43 @@ function setup() {
     Object.assign(element, {
       getBoundingClientRect: () => ({ top: 100, bottom: 140 }),
       getClientRects: () => [1],
-      focus: () => {},
+      focus: () => {
+        focused = element;
+      },
     });
   }
   const panel = get('[data-reader-panel]');
   panel.scrollTop = 0;
   window.scrollBy = () => {};
-  runInNewContext(code, { document, window, Event: window.Event, exports: {} });
+  runInNewContext(code, {
+    document,
+    window,
+    Event: window.Event,
+    HTMLElement: window.HTMLElement,
+    navigator: { platform: 'Linux' },
+    exports: {},
+  });
   const click = (selector: string) =>
     get(selector).dispatchEvent(new window.Event('click'));
-  return { document, window, get, click, panel, dialog };
+  const key = (
+    properties: Record<string, unknown> = {},
+    target: Element = document.body,
+  ) => {
+    const event = new window.Event('keydown', {
+      bubbles: true,
+      cancelable: true,
+    });
+    Object.assign(event, {
+      code: 'KeyF',
+      key: 'F',
+      altKey: true,
+      shiftKey: true,
+      ...properties,
+    });
+    target.dispatchEvent(event);
+    return event;
+  };
+  return { document, window, get, click, key, panel, dialog };
 }
 
 test('reader moves one article and synchronously releases its lock for search', () => {
@@ -123,4 +154,105 @@ test('printing synchronously restores the normal article', () => {
   window.dispatchEvent(new window.Event('beforeprint'));
   assert.equal(dialog.open, false);
   assert.ok(get('main article'));
+});
+
+test('focus shortcut toggles once and restores the previously focused control', () => {
+  const { key, get, dialog, document } = setup();
+  const source = get('.prose-post p');
+  source.setAttribute('tabindex', '0');
+  source.focus();
+  assert.equal(key({ key: 'Ï' }, source).defaultPrevented, true);
+  assert.equal(dialog.open, true);
+  key({ repeat: true });
+  assert.equal(dialog.open, true);
+  key();
+  assert.equal(dialog.open, false);
+  assert.equal(document.activeElement, source);
+});
+
+test('focus shortcut ignores typing, other modifiers, composition and competing UI', () => {
+  const { key, get, dialog, document } = setup();
+  for (const properties of [
+    { altKey: false },
+    { shiftKey: false },
+    { ctrlKey: true },
+    { metaKey: true },
+    { code: 'KeyK' },
+    { repeat: true },
+    { isComposing: true },
+    { defaultPrevented: true },
+  ]) {
+    key(properties);
+    assert.notEqual(dialog.open, true, JSON.stringify(properties));
+  }
+  for (const html of [
+    '<input>',
+    '<textarea></textarea>',
+    '<select></select>',
+    '<div contenteditable="true"><span>edit</span></div>',
+  ]) {
+    const holder = document.createElement('div');
+    holder.innerHTML = html;
+    document.body.append(holder);
+    const target = holder.querySelector('span') ?? holder.firstElementChild;
+    assert.ok(target);
+    assert.equal(key({}, target).defaultPrevented, false);
+    assert.notEqual(dialog.open, true);
+    holder.remove();
+  }
+  const other = document.createElement('dialog');
+  other.setAttribute('open', '');
+  document.body.append(other);
+  assert.equal(key().defaultPrevented, false);
+  assert.notEqual(dialog.open, true);
+  other.remove();
+  const menu = document.createElement('button');
+  menu.id = 'mobile-menu-button';
+  menu.setAttribute('aria-expanded', 'true');
+  document.body.append(menu);
+  assert.equal(key().defaultPrevented, false);
+  assert.notEqual(dialog.open, true);
+  menu.remove();
+  key();
+  assert.equal(dialog.open, true);
+  assert.ok(get('[data-reader-content] article'));
+});
+
+test('shortcut return focus falls back when the original control disappears', () => {
+  const { key, get, document } = setup();
+  const control = get('.prose-post p');
+  control.setAttribute('tabindex', '0');
+  control.focus();
+  key();
+  control.remove();
+  key();
+  assert.equal(document.activeElement, get('[data-reader-open]'));
+});
+
+test('temporary passage focus styling is removed on blur without losing existing tabindex', () => {
+  for (const original of [null, '0']) {
+    const { key, get, window } = setup();
+    const heading = get('h1');
+    if (original !== null) heading.setAttribute('tabindex', original);
+    key();
+    assert.equal(heading.getAttribute('tabindex'), '-1');
+    assert.equal(heading.hasAttribute('data-reader-focus-target'), true);
+    heading.dispatchEvent(new window.Event('blur'));
+    assert.equal(heading.getAttribute('tabindex'), original);
+    assert.equal(heading.hasAttribute('data-reader-focus-target'), false);
+  }
+});
+
+test('shortcut restores disclosure focus but not the sticky navigation hidden on exit', () => {
+  for (const selector of ['summary', '[data-scroll-back-nav-sticky] a']) {
+    const { key, get, document } = setup();
+    const origin = get(selector);
+    origin.focus();
+    key();
+    key();
+    assert.equal(
+      document.activeElement,
+      selector === 'summary' ? origin : get('[data-reader-open]'),
+    );
+  }
 });

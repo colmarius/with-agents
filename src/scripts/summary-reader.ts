@@ -16,6 +16,13 @@ if (dialog && opener && article && panel && content && toolbar && exit) {
   document.body.append(dialog);
   let active = false;
   let previousOverflow = '';
+  let returnFocus: HTMLElement = opener;
+  const shortcutHint = opener.querySelector('[data-focus-shortcut]');
+  const shortcut = /Mac|iPhone|iPad/.test(navigator.platform)
+    ? '⌥⇧F'
+    : 'Alt+Shift+F';
+  if (shortcutHint) shortcutHint.textContent = shortcut;
+  opener.title = `Toggle focus mode (${shortcut}). Read without site navigation; keep browser controls visible.`;
 
   const capture = () => {
     const top = active ? toolbar.getBoundingClientRect().bottom : 0;
@@ -54,31 +61,91 @@ if (dialog && opener && article && panel && content && toolbar && exit) {
     marker.after(article);
     dialog.close();
     document.body.style.overflow = previousOverflow;
-    opener.focus({ preventScroll: true });
+    const target =
+      returnFocus.isConnected &&
+      returnFocus.getClientRects().length &&
+      !returnFocus.closest(
+        '[hidden], [inert], :disabled, [data-scroll-back-nav-sticky]',
+      )
+        ? returnFocus
+        : opener;
+    target.focus({ preventScroll: true });
     restore(passage);
     document.dispatchEvent(new Event('summary-reader:close'));
   };
   opener.hidden = false;
-  opener.addEventListener('click', () => {
+  const open = (focusTarget: HTMLElement = opener) => {
     if (active) return;
+    returnFocus = focusTarget;
     const passage = capture();
     previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     content.append(article);
     active = true;
     dialog.showModal();
-    const focusTarget = passage.block ?? panel;
-    focusTarget.setAttribute('tabindex', '-1');
-    focusTarget.focus({ preventScroll: true });
-    if (focusTarget !== panel) {
-      focusTarget.addEventListener(
+    const passageTarget = passage.block ?? panel;
+    const previousTabindex = passageTarget.getAttribute('tabindex');
+    if (passageTarget !== panel)
+      passageTarget.setAttribute('data-reader-focus-target', '');
+    passageTarget.setAttribute('tabindex', '-1');
+    passageTarget.focus({ preventScroll: true });
+    if (passageTarget !== panel) {
+      passageTarget.addEventListener(
         'blur',
-        () => focusTarget.removeAttribute('tabindex'),
+        () => {
+          passageTarget.removeAttribute('data-reader-focus-target');
+          if (previousTabindex === null)
+            passageTarget.removeAttribute('tabindex');
+          else passageTarget.setAttribute('tabindex', previousTabindex);
+        },
         { once: true },
       );
     }
     panel.scrollTop = 0;
     restore(passage);
+  };
+  opener.addEventListener('click', () => open());
+  document.addEventListener('keydown', (event) => {
+    if (
+      event.defaultPrevented ||
+      event.repeat ||
+      event.isComposing ||
+      !event.altKey ||
+      !event.shiftKey ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.code !== 'KeyF'
+    )
+      return;
+    const target = event.target;
+    if (
+      target instanceof HTMLElement &&
+      (target.isContentEditable ||
+        target.closest(
+          'input, textarea, select, [contenteditable]:not([contenteditable="false"])',
+        ))
+    )
+      return;
+    if (
+      Array.from(document.querySelectorAll('dialog[open]')).some(
+        (other) => other !== dialog,
+      ) ||
+      document.querySelector('#mobile-menu-button[aria-expanded="true"]')
+    )
+      return;
+    event.preventDefault();
+    if (active) close();
+    else {
+      const focused = document.activeElement;
+      open(
+        focused instanceof HTMLElement &&
+          focused.matches(
+            'a[href], button, summary, [tabindex]:not([tabindex="-1"])',
+          )
+          ? focused
+          : opener,
+      );
+    }
   });
   exit.addEventListener('click', close);
   dialog.addEventListener('cancel', (event) => {
