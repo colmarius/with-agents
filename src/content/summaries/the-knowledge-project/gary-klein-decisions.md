@@ -3,7 +3,7 @@ title: "Insights for Making Better Decisions | Gary Klein | Knowledge Project 14
 resourceId: 139
 date: "2022-08-09"
 collection: "the-knowledge-project"
-order: 4
+order: 5
 videoId: "UbXIugEQQsI"
 ---
 

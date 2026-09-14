@@ -3,7 +3,7 @@ title: "Bret Taylor: Facebook, Salesforce, OpenAI, and Sierra"
 resourceId: 139
 date: "2025-04-15"
 collection: "the-knowledge-project"
-order: 2
+order: 3
 videoId: "XEz-NXTJv3g"
 ---
 

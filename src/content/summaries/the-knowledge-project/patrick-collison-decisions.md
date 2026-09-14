@@ -3,7 +3,7 @@ title: "Patrick Collison: Philosophies for Running Stripe, Hiring, Decision Maki
 resourceId: 139
 date: "2022-09-13"
 collection: "the-knowledge-project"
-order: 3
+order: 4
 videoId: "8MuNDps3m6A"
 ---
 
