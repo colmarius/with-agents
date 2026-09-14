@@ -1,5 +1,5 @@
 ---
-title: "What 12 Years of Failure Taught Steve Jobs About Success"
+title: "Geoffrey Cain: Steve Jobs, product failure, and delegation"
 resourceId: 139
 date: "2026-09-01"
 collection: "the-knowledge-project"

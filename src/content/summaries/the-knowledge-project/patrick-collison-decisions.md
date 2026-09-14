@@ -1,5 +1,5 @@
 ---
-title: "Patrick Collison: Philosophies for Running Stripe, Hiring, Decision Making, and Reading"
+title: "Patrick Collison: Product bets, decisions, and learning at Stripe"
 resourceId: 139
 date: "2022-09-13"
 collection: "the-knowledge-project"

@@ -1,5 +1,5 @@
 ---
-title: "Why Everyone Is Wrong About AI (Including You) | Benedict Evans"
+title: "Benedict Evans: AI adoption and competitive advantage"
 resourceId: 139
 date: "2025-09-02"
 collection: "the-knowledge-project"
@@ -21,7 +21,7 @@ Technology analyst Benedict Evans talks with Shane Parrish about AI adoption, pr
 
 Evans asks why someone who understands a chatbot's usefulness might still return only weekly. Rapid initial adoption is easier when a product is a free website, needs no new hardware, and can reach an already-online population. He therefore separates trying a chatbot, using it repeatedly, and finding frequent work for it. He wants adoption measures to distinguish deliberate use of consumer-facing chatbots such as ChatGPT or Claude from use of any product containing AI. [33:48–35:52](https://www.youtube.com/watch?v=2NgdQf2GzJg&t=2028s), [36:42–37:48](https://www.youtube.com/watch?v=2NgdQf2GzJg&t=2202s)
 
-**A blank prompt makes the user discover the use case.** Evans distinguishes people with obvious suitable tasks, people whose tasks might fit but require experimentation, and people less inclined to rethink their tools. A hypothetical “draft a reply” button inside Salesforce makes the task visible; a blank chatbot asks the user to invent it and form a new habit. This is a product-design explanation, not evidence that a particular embedded button achieved adoption. [37:48–40:55](https://www.youtube.com/watch?v=2NgdQf2GzJg&t=2268s)
+**A blank prompt makes the user discover the use case.** Evans distinguishes people with obvious suitable tasks, people whose tasks might fit but require experimentation, and people less inclined to rethink their tools. In Evans's hypothetical Salesforce example, a “draft a reply” button makes the task visible; a blank chatbot leaves the user to invent a task and form a new habit. [37:48–40:55](https://www.youtube.com/watch?v=2NgdQf2GzJg&t=2268s)
 
 **An inaccurate draft can still help someone able to check it.** Evans recalls receiving an AI-written biography from conference organizers, who sent it to him for checking. Its details were plausible but wrong; because he knew the facts, he could correct the draft quickly instead of writing from scratch. The same output can save work for a knowledgeable reviewer and create risk for someone unable to check it. The example is from early 2023, not a benchmark of current models. [40:55–43:35](https://www.youtube.com/watch?v=2NgdQf2GzJg&t=2455s)
 

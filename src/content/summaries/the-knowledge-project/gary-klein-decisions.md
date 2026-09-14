@@ -1,5 +1,5 @@
 ---
-title: "Insights for Making Better Decisions | Gary Klein | Knowledge Project 144"
+title: "Gary Klein: Building expertise and making better decisions"
 resourceId: 139
 date: "2022-08-09"
 collection: "the-knowledge-project"
@@ -32,6 +32,6 @@ Klein's pre-mortem makes it easier to raise concerns before a project begins. In
 
 Editorial implications: use incident scenarios to expose gaps in understanding without deliberately creating real failures. Separate learning exercises from high-stakes personnel evaluation: Klein recounts a confident petrochemical worker failing to understand the plant's dynamics; after his panel assignment was deferred, others avoided the training. [17:27–20:07](https://www.youtube.com/watch?v=UbXIugEQQsI&t=1047s), [44:12–48:55](https://www.youtube.com/watch?v=UbXIugEQQsI&t=2652s)
 
-Klein explicitly identifies his skepticism about debiasing as an outlier position. [1:00:56–1:05:26](https://www.youtube.com/watch?v=UbXIugEQQsI&t=3656s)
+Klein questions the effectiveness of debiasing—efforts to reduce cognitive biases in judgment—and explicitly identifies his view as an outlier position. [1:00:56–1:05:26](https://www.youtube.com/watch?v=UbXIugEQQsI&t=3656s)
 
-Editorial caution: his defense of experience-based heuristics is not evidence that intuition is always reliable. Elsewhere he emphasizes noticing contradictions and revising an initial impression rather than protecting it. Likewise, matching expert rankings in training is not the same as demonstrating better outcomes under real-world pressure. [38:31–41:21](https://www.youtube.com/watch?v=UbXIugEQQsI&t=2311s), [1:30:17–1:34:38](https://www.youtube.com/watch?v=UbXIugEQQsI&t=5417s)
+Editorial caution: his defense of experience-based rules of thumb is not evidence that intuition is always reliable. Elsewhere he emphasizes noticing contradictions and revising an initial impression rather than protecting it. Likewise, matching expert rankings in training is not the same as demonstrating better outcomes under real-world pressure. [38:31–41:21](https://www.youtube.com/watch?v=UbXIugEQQsI&t=2311s), [1:30:17–1:34:38](https://www.youtube.com/watch?v=UbXIugEQQsI&t=5417s)

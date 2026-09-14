@@ -1,5 +1,5 @@
 ---
-title: "Bret Taylor: Facebook, Salesforce, OpenAI, and Sierra"
+title: "Bret Taylor: Building AI products and adaptable organizations"
 resourceId: 139
 date: "2025-04-15"
 collection: "the-knowledge-project"
@@ -11,7 +11,7 @@ Bret Taylor, Sierra co-founder and OpenAI board member, talks with Shane Parrish
 
 *Based on English auto-generated captions, without an original-audio check. Company practices and results are Taylor's account, not independent product evaluations. Forecasts reflect this conversation; the date above is the video's YouTube publication date, not a verified recording date.*
 
-## Building around cheaper code generation
+## Building AI products that complete work
 
 - **Shift effort from producing code to verifying its behavior.** Taylor argues that AI can multiply code volume without removing security flaws or functional bugs. Human reviewers still have to reconstruct what that code does. He proposes exploring languages designed for safety and reviewability, formal verification—checking specified properties through mathematical reasoning—and extensive tests as parts of a new programming system. This is a research direction, not a demonstrated system or measured productivity gain. [27:35–35:45](https://www.youtube.com/watch?v=XEz-NXTJv3g&t=1655s)
 - **Automation still needs an accountable operator.** For Taylor, the person producing a system remains responsible for security, reliability, intended behavior, and appropriate limits on autonomy. Using AI to supervise other AI may help, but does not make switching on an unattended system the goal. [45:17–48:25](https://www.youtube.com/watch?v=XEz-NXTJv3g&t=2717s)
