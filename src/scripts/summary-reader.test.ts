@@ -10,9 +10,9 @@ const code = ts.transpileModule(
   { compilerOptions: { module: ts.ModuleKind.CommonJS } },
 ).outputText;
 
-function setup() {
+function setup(platform = 'Linux') {
   const { document, window } = parseHTML(`<html><body><main><article>
-    <h1>Summary</h1><button data-reader-open hidden>Focus mode</button>
+    <h1>Summary</h1><button data-reader-open hidden>Focus mode <kbd data-focus-shortcut></kbd></button>
     <details><summary>Browse summaries</summary></details>
     <nav data-scroll-back-nav-sticky><a href="/resources">Back</a></nav>
     <div class="prose-post"><p>First passage</p><p>Second passage</p></div>
@@ -51,7 +51,7 @@ function setup() {
     window,
     Event: window.Event,
     HTMLElement: window.HTMLElement,
-    navigator: { platform: 'Linux' },
+    navigator: { platform },
     exports: {},
   });
   const click = (selector: string) =>
@@ -67,7 +67,9 @@ function setup() {
     Object.assign(event, {
       code: 'KeyF',
       key: 'F',
-      altKey: true,
+      ctrlKey: true,
+      altKey: false,
+      metaKey: false,
       shiftKey: true,
       ...properties,
     });
@@ -173,10 +175,12 @@ test('focus shortcut toggles once and restores the previously focused control', 
 test('focus shortcut ignores typing, other modifiers, composition and competing UI', () => {
   const { key, get, dialog, document } = setup();
   for (const properties of [
-    { altKey: false },
+    { ctrlKey: false },
     { shiftKey: false },
-    { ctrlKey: true },
+    { altKey: true },
     { metaKey: true },
+    { ctrlKey: false, altKey: true },
+    { ctrlKey: false, metaKey: true },
     { code: 'KeyK' },
     { repeat: true },
     { isComposing: true },
@@ -254,5 +258,21 @@ test('shortcut restores disclosure focus but not the sticky navigation hidden on
       document.activeElement,
       selector === 'summary' ? origin : get('[data-reader-open]'),
     );
+  }
+});
+
+test('shortcut hints distinguish Mac Control from Command and Option', () => {
+  for (const [platform, hint] of [
+    ['MacIntel', '⌃⇧F'],
+    ['Linux', 'Ctrl+Shift+F'],
+  ]) {
+    const { get, key, dialog } = setup(platform);
+    assert.equal(get('[data-focus-shortcut]').textContent, hint);
+    assert.match(
+      get('[data-reader-open]').title,
+      /Control, not Command, on Mac/,
+    );
+    key();
+    assert.equal(dialog.open, true);
   }
 });

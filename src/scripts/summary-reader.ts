@@ -19,10 +19,11 @@ if (dialog && opener && article && panel && content && toolbar && exit) {
   let returnFocus: HTMLElement = opener;
   const shortcutHint = opener.querySelector('[data-focus-shortcut]');
   const shortcut = /Mac|iPhone|iPad/.test(navigator.platform)
-    ? '⌥⇧F'
-    : 'Alt+Shift+F';
+    ? '⌃⇧F'
+    : 'Ctrl+Shift+F';
   if (shortcutHint) shortcutHint.textContent = shortcut;
-  opener.title = `Toggle focus mode (${shortcut}). Read without site navigation; keep browser controls visible.`;
+  opener.title =
+    'Toggle focus mode (Control+Shift+F; Control, not Command, on Mac). Read without site navigation; keep browser controls visible.';
 
   const capture = () => {
     const top = active ? toolbar.getBoundingClientRect().bottom : 0;
@@ -110,9 +111,9 @@ if (dialog && opener && article && panel && content && toolbar && exit) {
       event.defaultPrevented ||
       event.repeat ||
       event.isComposing ||
-      !event.altKey ||
+      !event.ctrlKey ||
       !event.shiftKey ||
-      event.ctrlKey ||
+      event.altKey ||
       event.metaKey ||
       event.code !== 'KeyF'
     )
