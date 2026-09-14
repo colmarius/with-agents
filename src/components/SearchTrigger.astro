@@ -10,7 +10,7 @@ const { compact = false } = Astro.props;
   aria-label="Search site"
   aria-haspopup="dialog"
   aria-keyshortcuts="Control+K Meta+K"
-  title="Search site (Ctrl+K / ⌘K)"
+  title="Search site"
   aria-controls="site-search"
   hidden
 >
@@ -19,7 +19,6 @@ const { compact = false } = Astro.props;
     <path d="m16 16 4.5 4.5" stroke-linecap="round" />
   </svg>
   {!compact && <span>Search</span>}
-  {!compact && <kbd aria-hidden="true">Ctrl/⌘ K</kbd>}
 </button>
 
 <style>
@@ -41,10 +40,9 @@ const { compact = false } = Astro.props;
   .search-trigger[hidden] { display: none; }
   .search-trigger:hover { border-color: #a5b4fc; color: #4f46e5; }
   .search-trigger:focus-visible { outline: 2px solid #4f46e5; outline-offset: 3px; }
-  kbd { border: 1px solid #e2e8f0; border-radius: 0.25rem; padding: 0 0.25rem; font-size: 0.7rem; color: #64748b; }
   .compact { padding: 0.5rem; }
   @media (max-width: 63.99rem) {
-    .search-trigger span, .search-trigger kbd { display: none; }
+    .search-trigger span { display: none; }
     .search-trigger { padding: 0.5rem; }
   }
 </style>

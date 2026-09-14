@@ -11,8 +11,8 @@ const corpusUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/search/documen
   <div class="search-panel">
     <div class="search-heading">
       <h2 id="site-search-title">Search</h2>
-      <button type="button" class="search-close" data-search-close aria-label="Close search">
-        <span>Close</span><kbd aria-hidden="true">Esc</kbd>
+      <button type="button" class="search-close" data-search-close aria-label="Close search" aria-keyshortcuts="Escape">
+        <span>Close</span>
       </button>
     </div>
     <div class="search-input-wrap">
@@ -42,7 +42,7 @@ const corpusUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/search/documen
       <button type="button" class="search-more" data-search-more hidden>More results</button>
     </div>
     <div class="search-footer">
-      <span>Field guides · Resources</span>
+      <button type="button" data-shortcuts-open hidden aria-haspopup="dialog" aria-controls="keyboard-shortcuts">Keyboard shortcuts</button>
       <span>Search stays in your browser</span>
     </div>
   </div>
@@ -75,7 +75,6 @@ const corpusUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/search/documen
   button:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
   .search-close { display: flex; min-height: 2.75rem; align-items: center; gap: 0.5rem; padding: 0.25rem 0.5rem; border-radius: 0.375rem; color: #475569; font-size: 0.875rem; }
   .search-close:hover { background: #f1f5f9; }
-  kbd { border: 1px solid #cbd5e1; border-radius: 0.25rem; padding: 0.05rem 0.3rem; font-size: 0.7rem; }
   .search-input-wrap { display: flex; align-items: center; gap: 0.75rem; margin: 0 1.5rem 1rem; padding: 0 0.875rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; color: #64748b; }
   .search-input-wrap:focus-within { border-color: #6366f1; box-shadow: 0 0 0 2px rgb(99 102 241 / 0.15); }
   .search-input-wrap svg { flex-shrink: 0; }
@@ -103,7 +102,6 @@ const corpusUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/search/documen
     .search-input-wrap { margin-right: 1rem; margin-left: 1rem; }
     .search-content { padding-right: 1rem; padding-left: 1rem; }
     .search-footer { padding-right: 1rem; padding-left: 1rem; }
-    kbd { display: none; }
   }
   @media print { dialog { display: none; } }
 </style>

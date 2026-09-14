@@ -10,15 +10,15 @@ const code = ts.transpileModule(
   { compilerOptions: { module: ts.ModuleKind.CommonJS } },
 ).outputText;
 
-function setup(platform = 'Linux') {
+function setup() {
   const { document, window } = parseHTML(`<html><body><main><article>
-    <h1>Summary</h1><button data-reader-open hidden>Focus mode <kbd data-focus-shortcut></kbd></button>
+    <h1>Summary</h1><button data-reader-open hidden>Focus mode</button>
     <details><summary>Browse summaries</summary></details>
     <nav data-scroll-back-nav-sticky><a href="/resources">Back</a></nav>
     <div class="prose-post"><p>First passage</p><p>Second passage</p></div>
     </article></main><dialog data-summary-reader><div data-reader-panel>
     <div data-reader-toolbar>Focus mode
-    <button data-reader-exit>Exit focus mode <span aria-hidden="true">· Esc</span></button></div>
+    <button data-reader-exit>Exit focus mode</button></div>
     <div data-reader-content></div></div></dialog></body></html>`);
   let focused: Element = document.body;
   Object.defineProperty(document, 'activeElement', { get: () => focused });
@@ -51,7 +51,6 @@ function setup(platform = 'Linux') {
     window,
     Event: window.Event,
     HTMLElement: window.HTMLElement,
-    navigator: { platform },
     exports: {},
   });
   const click = (selector: string) =>
@@ -261,18 +260,17 @@ test('shortcut restores disclosure focus but not the sticky navigation hidden on
   }
 });
 
-test('shortcut hints distinguish Mac Control from Command and Option', () => {
-  for (const [platform, hint] of [
-    ['MacIntel', '⌃⇧F'],
-    ['Linux', 'Ctrl+Shift+F'],
-  ]) {
-    const { get, key, dialog } = setup(platform);
-    assert.equal(get('[data-focus-shortcut]').textContent, hint);
-    assert.match(
-      get('[data-reader-open]').title,
-      /Control, not Command, on Mac/,
-    );
-    key();
+test('reader closes shortcut help before releasing its own scroll lock', () => {
+  const { click, document, window, dialog } = setup();
+  document.body.style.overflow = 'clip';
+  click('[data-reader-open]');
+  let closedHelp = false;
+  document.addEventListener('keyboard-shortcuts:close', () => {
     assert.equal(dialog.open, true);
-  }
+    assert.equal(document.body.style.overflow, 'hidden');
+    closedHelp = true;
+  });
+  window.dispatchEvent(new window.Event('beforeprint'));
+  assert.equal(closedHelp, true);
+  assert.equal(document.body.style.overflow, 'clip');
 });

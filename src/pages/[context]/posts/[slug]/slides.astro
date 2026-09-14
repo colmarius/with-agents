@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BackNav from '@components/BackNav.astro';
+import KeyboardShortcuts from '@components/KeyboardShortcuts.astro';
 import PwaHead from '@components/PwaHead.astro';
 import PwaUpdatePrompt from '@components/PwaUpdatePrompt.astro';
 import Search from '@components/Search.astro';
@@ -725,8 +726,9 @@ const slidesDescription = `${post.data.description} Slide view.`;
       <Content />
     </div>
 
-    <div class="slide-search fixed bottom-4 sm:bottom-8 left-4 sm:left-8 z-50">
+    <div class="slide-search fixed bottom-4 sm:bottom-8 left-4 sm:left-8 z-50 flex items-center gap-2 bg-white rounded-lg">
       <SearchTrigger compact />
+      <button type="button" data-shortcuts-open hidden aria-haspopup="dialog" aria-controls="keyboard-shortcuts">Keyboard shortcuts</button>
     </div>
 
     <div class="slide-controls fixed bottom-4 sm:bottom-8 right-4 sm:right-8 flex gap-2 z-50">
@@ -748,6 +750,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
 
     <PwaUpdatePrompt />
     <Search />
+    <KeyboardShortcuts />
 
     <script>
       import { mermaidConfig } from '@scripts/mermaid-config';
@@ -1344,7 +1347,7 @@ const slidesDescription = `${post.data.description} Slide view.`;
         event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
 
       const handleKeydown = (event: KeyboardEvent) => {
-        if (document.querySelector('#site-search[open]')) return;
+        if (event.defaultPrevented || event.repeat || event.isComposing || document.querySelector('dialog[open]')) return;
         if (focusedInteractiveElement() || hasModifierKey(event)) return;
 
         let didNavigate = false;

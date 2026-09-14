@@ -2,9 +2,6 @@
   <button class="pwa-update-action" data-pwa-update-action type="button">
     <span class="pwa-update-icon" aria-hidden="true">↻</span>
     <span data-pwa-update-label>Reload to update</span>
-    <kbd class="pwa-update-shortcut" data-pwa-update-shortcut hidden aria-hidden="true">
-      ⌘ R
-    </kbd>
   </button>
 </div>
 
@@ -16,7 +13,6 @@
   const prompt = document.querySelector<HTMLElement>('[data-pwa-update-prompt]');
   const action = document.querySelector<HTMLButtonElement>('[data-pwa-update-action]');
   const label = document.querySelector<HTMLElement>('[data-pwa-update-label]');
-  const shortcut = document.querySelector<HTMLElement>('[data-pwa-update-shortcut]');
   const status = document.querySelector<HTMLElement>('[data-pwa-update-status]');
 
   if (
@@ -25,7 +21,6 @@
     prompt &&
     action &&
     label &&
-    shortcut &&
     status
   ) {
     const isMac = /Mac/.test(navigator.platform) && navigator.maxTouchPoints <= 1;
@@ -40,8 +35,6 @@
     let updateAvailable = false;
     let accepting = false;
     let reloading = false;
-
-    shortcut.hidden = !isMac;
 
     const showUpdate = () => {
       updateAvailable = true;
@@ -94,6 +87,7 @@
     document.addEventListener(
       'keydown',
       (event) => {
+        if (document.querySelector('#keyboard-shortcuts[open]')) return;
         const isUpdateShortcut =
           isMac &&
           !prompt.hidden &&
@@ -140,8 +134,7 @@
     transform: translateX(-50%);
   }
 
-  .pwa-update-prompt[hidden],
-  .pwa-update-shortcut[hidden] {
+  .pwa-update-prompt[hidden] {
     display: none;
   }
 
@@ -195,23 +188,6 @@
     color: #4f46e5;
     font-size: 1.25rem;
     line-height: 1;
-  }
-
-  .pwa-update-shortcut {
-    display: inline-flex;
-    min-width: 3.25rem;
-    min-height: 1.75rem;
-    margin-left: auto;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #dbe1e8;
-    border-radius: 0.4rem;
-    background: #f8fafc;
-    color: #475569;
-    font-family: inherit;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
   }
 
   .pwa-update-status {

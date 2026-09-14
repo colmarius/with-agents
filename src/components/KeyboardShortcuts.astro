@@ -1,0 +1,70 @@
+<dialog id="keyboard-shortcuts" aria-labelledby="keyboard-shortcuts-title">
+  <header>
+    <h2 id="keyboard-shortcuts-title" tabindex="-1">Keyboard shortcuts</h2>
+    <button type="button" data-shortcuts-close>Close</button>
+  </header>
+  <p>Press <kbd>?</kbd> to open this guide (usually Shift + /). Close it before using other site shortcuts.</p>
+  <dl>
+    <div><dt>Show keyboard shortcuts</dt><dd><kbd>?</kbd></dd></div>
+    <div><dt>Search site</dt><dd><kbd data-search-shortcut>Ctrl + K</kbd></dd></div>
+    <div data-summary-shortcut hidden><dt>Toggle Focus mode</dt><dd><kbd>Control + Shift + F</kbd></dd></div>
+    <div><dt>Close the current dialog or menu</dt><dd><kbd>Esc</kbd></dd></div>
+    <div data-slides-shortcut hidden><dt>Previous slide</dt><dd><kbd>←</kbd> / <kbd>↑</kbd></dd></div>
+    <div data-slides-shortcut hidden><dt>Next slide</dt><dd><kbd>→</kbd> / <kbd>↓</kbd> / <kbd>Space</kbd></dd></div>
+    <div data-slides-shortcut hidden><dt>Toggle slide notes</dt><dd><kbd>N</kbd></dd></div>
+    <div data-update-shortcut hidden><dt>Accept an available site update</dt><dd><kbd>Command + R</kbd></dd></div>
+  </dl>
+  <p data-summary-shortcut hidden>On Mac, Focus mode uses <strong>Control</strong>, not Command or Option. The F shortcut uses the physical F key position.</p>
+  <p>Site shortcuts are ignored while typing. Browser and extension shortcuts may take priority.</p>
+</dialog>
+
+<script>
+  import '../scripts/keyboard-shortcuts';
+</script>
+
+<style is:global>
+  [data-shortcuts-open] {
+    min-height: 44px;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    font: inherit;
+    font-size: 0.875rem;
+    color: #475569;
+    cursor: pointer;
+  }
+  [data-shortcuts-open]:hover { color: #4338ca; background: #f8fafc; }
+  [data-shortcuts-open]:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+  [data-shortcuts-open][hidden] { display: none; }
+  [data-shortcuts-focus-target]:focus-visible { outline: none; box-shadow: -3px 0 0 #4f46e5; }
+  #keyboard-shortcuts {
+    width: min(36rem, calc(100vw - 2rem));
+    max-width: none;
+    max-height: calc(100dvh - 2rem);
+    margin: auto;
+    padding: 1.5rem;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    background: #fff;
+    color: #0f172a;
+    box-shadow: 0 24px 80px rgb(15 23 42 / 0.2);
+  }
+  #keyboard-shortcuts::backdrop { background: rgb(15 23 42 / 0.4); }
+  #keyboard-shortcuts header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  #keyboard-shortcuts h2 { margin: 0; font-size: 1.125rem; font-weight: 600; }
+  #keyboard-shortcuts h2:focus-visible { outline: none; box-shadow: -3px 0 0 #4f46e5; }
+  #keyboard-shortcuts button { min-height: 44px; padding: 0.5rem; border-radius: 0.375rem; cursor: pointer; }
+  #keyboard-shortcuts button:hover { background: #f1f5f9; }
+  #keyboard-shortcuts :is(button, input):focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+  #keyboard-shortcuts p { margin: 0.75rem 0; font-size: 0.875rem; line-height: 1.5; color: #475569; }
+  #keyboard-shortcuts dl { margin: 1rem 0; }
+  #keyboard-shortcuts dl > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; border-bottom: 1px solid #e2e8f0; padding: 0.75rem 0; font-size: 0.875rem; }
+  #keyboard-shortcuts dd { margin: 0; }
+  #keyboard-shortcuts kbd { display: inline-block; border: 1px solid #cbd5e1; border-radius: 0.25rem; padding: 0.1rem 0.3rem; font-size: 0.75rem; }
+  #keyboard-shortcuts [hidden] { display: none; }
+  @media (forced-colors: active) {
+    #keyboard-shortcuts h2:focus-visible, [data-shortcuts-focus-target]:focus-visible { box-shadow: none; outline: 2px solid Highlight; }
+  }
+  @media print { #keyboard-shortcuts, [data-shortcuts-open] { display: none !important; } }
+</style>

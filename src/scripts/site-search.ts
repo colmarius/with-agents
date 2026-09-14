@@ -159,7 +159,8 @@ export function initializeSearch() {
   }
 
   function openSearch() {
-    if (dialog.open) return;
+    if (dialog.open || document.querySelector('#keyboard-shortcuts[open]'))
+      return;
     document.dispatchEvent(new Event('site-search:open'));
     opener =
       document.activeElement instanceof HTMLElement
@@ -245,6 +246,7 @@ export function initializeSearch() {
       event.defaultPrevented ||
       event.repeat ||
       event.isComposing ||
+      document.querySelector('#keyboard-shortcuts[open]') ||
       !(event.metaKey || event.ctrlKey) ||
       event.altKey ||
       event.shiftKey ||
