@@ -130,9 +130,22 @@ if (
     fullscreen.hidden = !document.fullscreenEnabled || !panel.requestFullscreen;
     fullscreen.disabled =
       pending || exitingFullscreen || (!!document.fullscreenElement && !owned);
-    fullscreen.textContent = owned ? 'Leave full screen' : 'Full screen';
+    const label = fullscreen.querySelector('[data-reader-fullscreen-label]');
+    if (label) label.textContent = owned ? 'Leave full screen' : 'Full screen';
+    fullscreen.title = owned
+      ? 'Show browser controls; stay in reading mode.'
+      : 'Hide browser controls';
+    fullscreen
+      .querySelector('[data-reader-fullscreen-icon]')
+      ?.setAttribute(
+        'd',
+        owned
+          ? 'M20 10h-6V4m0 6 7-7M4 14h6v6m0-6-7 7'
+          : 'M14 4h6v6m0-6-7 7M10 20H4v-6m0 6 7-7',
+      );
     fullscreen.setAttribute('aria-pressed', String(owned));
-    exit.textContent = owned ? 'Exit read only' : 'Exit · Esc';
+    const hint = exit.querySelector<HTMLElement>('[data-reader-exit-hint]');
+    if (hint) hint.hidden = owned;
   };
   document.addEventListener('fullscreenchange', syncFullscreen);
   syncFullscreen();

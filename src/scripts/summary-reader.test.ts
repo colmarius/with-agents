@@ -12,11 +12,11 @@ const code = ts.transpileModule(
 
 function setup() {
   const { document, window } = parseHTML(`<html><body><main><article>
-    <h1>Summary</h1><button data-reader-open hidden>Read only</button>
+    <h1>Summary</h1><button data-reader-open hidden>Reading mode</button>
     <div class="prose-post"><p>First passage</p><p>Second passage</p></div>
     </article></main><dialog data-summary-reader><div data-reader-panel>
-    <div data-reader-toolbar><button data-reader-fullscreen></button>
-    <button data-reader-exit></button><p data-reader-status></p></div>
+    <div data-reader-toolbar><button data-reader-fullscreen><svg><path data-reader-fullscreen-icon /></svg><span data-reader-fullscreen-label>Full screen</span></button>
+    <button data-reader-exit>Exit reading mode <span data-reader-exit-hint aria-hidden="true">· Esc</span></button><p data-reader-status></p></div>
     <div data-reader-content></div></div></dialog></body></html>`);
   const get = <T extends HTMLElement = HTMLElement>(selector: string): T => {
     const element = document.querySelector<T>(selector);
@@ -110,11 +110,31 @@ test('a fullscreen request completing after reader exit relinquishes fullscreen'
 
 test('native fullscreen exit leaves the reader open and Escape closes it', async () => {
   const { click, document, dialog, window, get } = setup();
+  const icon = get('[data-reader-fullscreen-icon]');
+  const expandPath = icon.getAttribute('d');
   click('[data-reader-open]');
   click('[data-reader-fullscreen]');
   await new Promise(setImmediate);
+  assert.equal(
+    get('[data-reader-fullscreen-label]').textContent,
+    'Leave full screen',
+  );
+  assert.equal(get('[data-reader-fullscreen-icon]'), icon);
+  assert.notEqual(icon.getAttribute('d'), expandPath);
+  assert.equal(get('[data-reader-exit-hint]').hidden, true);
+  assert.match(get('[data-reader-exit]').textContent, /^Exit reading mode/);
   await document.exitFullscreen();
   assert.equal(dialog.open, true);
+  assert.equal(
+    get('[data-reader-fullscreen-label]').textContent,
+    'Full screen',
+  );
+  assert.equal(icon.getAttribute('d'), expandPath);
+  assert.equal(get('[data-reader-exit-hint]').hidden, false);
+  assert.equal(
+    get('[data-reader-exit-hint]').getAttribute('aria-hidden'),
+    'true',
+  );
   assert.equal(
     get('[data-reader-fullscreen]').getAttribute('aria-pressed'),
     'false',

@@ -277,11 +277,11 @@ if (!primaryMembership) {
           </div>
 
           <div class="mt-5 flex flex-wrap items-center gap-3" data-search-ignore>
-            <button type="button" data-reader-open hidden class="min-h-11 items-center gap-2 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-indigo-600 [&:not([hidden])]:inline-flex">
+            <button type="button" data-reader-open hidden aria-haspopup="dialog" title="Read without site navigation; keep browser controls visible." class="min-h-11 items-center gap-2 rounded-md border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-indigo-600 [&:not([hidden])]:inline-flex">
               <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 4h6v6m0-6-7 7M10 20H4v-6m0 6 7-7" />
+                <path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1V5Z" />
               </svg>
-              Read only
+              Reading mode
             </button>
             <a
               href={resource.url}
