@@ -435,6 +435,18 @@
       }
     },
     {
+      "id": "PLfSdLxXHrKiSAoUBh0IHubmbW9NOvgaVP",
+      "slug": "the-knowledge-project",
+      "title": "The Knowledge Project",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": ["eU4WlADVgM8"]
+      }
+    },
+    {
       "id": "PLCyc6uqoq0jFIe5r2llH52HcdBN890DV6",
       "slug": "coding-agents-resource-intake",
       "title": "Coding with Agents Resource Intake",

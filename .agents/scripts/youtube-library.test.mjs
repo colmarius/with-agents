@@ -255,6 +255,7 @@ test('loads and validates the committed source-only catalog', async () => {
       'google-cloud-beyond-your-bill',
       'google-cloud-architecting',
       'rework-coding-with-agents',
+      'the-knowledge-project',
       'coding-agents-resource-intake',
     ],
   );
