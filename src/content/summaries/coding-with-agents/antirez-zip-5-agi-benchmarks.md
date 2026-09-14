@@ -36,4 +36,4 @@ Salvatore Sanfilippo and his ZiP co-host ask what an artificial general intellig
 
 [Watch the full discussion on YouTube](https://www.youtube.com/watch?v=1-JEiQl7kzc). In the subtitle menu, select English (US) for the English caption track.
 
-**More ZiP:** [Episode 4 and the combined episode guide](/summaries/ai/zip-04-watermarking-local-models) link both hosts' playlists and the earlier episodes. Episodes 1–3 are available on YouTube but not yet summarized here.
+**More ZiP:** [Episode 4 and the combined episode guide](/summaries/ai/zip-04-watermarking-local-models) link both hosts' playlists and the earlier episodes, with current summary coverage.

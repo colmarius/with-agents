@@ -33,12 +33,12 @@ Enkk and Salvatore Sanfilippo connect three questions: what a text watermark can
 
 ### ZiP episode guide
 
-This site's combined series currently summarizes episodes **4 and 5**. The hosts alternate channels; neither [Enkk's playlist](https://www.youtube.com/playlist?list=PLNYj5B1tjzls) nor [Sanfilippo's playlist](https://www.youtube.com/playlist?list=PLUxl0pxM2E-w) contains all five episodes in the September 14, 2026 check.
+This site's combined series currently summarizes episodes **1, 4, and 5**. The hosts alternate channels; neither [Enkk's playlist](https://www.youtube.com/playlist?list=PLNYj5B1tjzls) nor [Sanfilippo's playlist](https://www.youtube.com/playlist?list=PLUxl0pxM2E-w) contains all five episodes in the September 14, 2026 check.
 
-Earlier episodes are available to watch but **not yet summarized here**:
+Earlier episodes:
 
-- [Episode 1 — GPT 5.6, Fable e i moscerini della frutta](https://www.youtube.com/watch?v=mRRV8BbvNVM) — July 11, 2026.
-- [Episode 2 — L'evasione di GPT, la congettura Jacobiana e… ha ancora senso leggere il codice?](https://www.youtube.com/watch?v=v2jJwgmWEVw) — July 23, 2026.
-- [Episode 3 — Sviluppo AI responsabile, Kimi K3, DS4 Flash e la frontiera a fette](https://www.youtube.com/watch?v=IBqKnPrF7K4) — August 2, 2026; absent from both checked playlists.
+- [Episode 1 — GPT 5.6, Fable e i moscerini della frutta](/summaries/ai/zip-01-gpt-fable-fruit-flies) — July 11, 2026; transcript-backed summary.
+- [Episode 2 — L'evasione di GPT, la congettura Jacobiana e… ha ancora senso leggere il codice?](https://www.youtube.com/watch?v=v2jJwgmWEVw) — July 23, 2026; not yet summarized here.
+- [Episode 3 — Sviluppo AI responsabile, Kimi K3, DS4 Flash e la frontiera a fette](https://www.youtube.com/watch?v=IBqKnPrF7K4) — August 2, 2026; not yet summarized here and absent from both checked playlists.
 
 [Read episode 5: AGI and benchmarks](/summaries/coding-with-agents/antirez-zip-5-agi-benchmarks), or [watch episode 4 on YouTube](https://www.youtube.com/watch?v=xCBEDnPKtBI).

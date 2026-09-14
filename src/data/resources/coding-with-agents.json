@@ -162,7 +162,7 @@
     "title": "ZiP — Salvatore Sanfilippo & Enkk",
     "subtitle": "AI capabilities, evaluation, local models, and social implications",
     "url": "https://www.youtube.com/playlist?list=PLNYj5B1tjzls",
-    "description": "A combined episode guide to Salvatore Sanfilippo and Enkk's Italian-language conversations across both channels. Summaries cover episodes 4 and 5: text watermarking, local-model safety and provenance, reactions to AI, AGI labels, persistent state, and evaluation through useful work. Episodes 1–3 are linked for discovery but not yet summarized. The hosts' separate YouTube playlists are incomplete; opinions, proposals, and project anecdotes are not controlled evaluation results.",
+    "description": "A combined episode guide to Salvatore Sanfilippo and Enkk's Italian-language conversations across both channels: coding-model workflows, local inference, AI safety, interpretability, text watermarking, AGI labels, and evaluation through useful work. The guide records summary coverage because the hosts' separate YouTube playlists are incomplete. Opinions, proposals, and project anecdotes are not controlled evaluation results.",
     "type": "playlist",
     "source": "Salvatore Sanfilippo & Enkk",
     "date": "2026-09-08",
