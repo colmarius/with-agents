@@ -4,6 +4,8 @@ summarySlug: "coding-with-agents/antirez-zip-5-agi-benchmarks"
 sourceUrl: "https://www.youtube.com/watch?v=1-JEiQl7kzc"
 videoId: "1-JEiQl7kzc"
 capturedAt: "2026-09-09T06:12:04.344Z"
+series: "zip"
+episode: 5
 channel: "Salvatore Sanfilippo"
 language: "en-US"
 kind: "auto-generated"

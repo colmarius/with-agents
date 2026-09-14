@@ -1,6 +1,8 @@
 ---
 title: "AGI, benchmark e altri spinosissimi problemi: ZiP 5"
 resourceId: 121
+series: "zip"
+episode: 5
 date: "2026-09-08"
 ---
 
@@ -33,3 +35,5 @@ Salvatore Sanfilippo and his ZiP co-host ask what an artificial general intellig
 **Editorial takeaway:** Judge a candidate model on representative work with explicit correctness and performance checks. Treat capability gains, safety behavior, and persistent-state design as separate evaluation questions rather than collapsing them into a single AGI claim.
 
 [Watch the full discussion on YouTube](https://www.youtube.com/watch?v=1-JEiQl7kzc). In the subtitle menu, select English (US) for the English caption track.
+
+**More ZiP:** [Episode 4 and the combined episode guide](/summaries/ai/zip-04-watermarking-local-models) link both hosts' playlists and the earlier episodes. Episodes 1–3 are available on YouTube but not yet summarized here.
