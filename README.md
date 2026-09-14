@@ -104,5 +104,9 @@ src/
 
 ## Deployment
 
-Pushes to `main` deploy to GitHub Pages via `.github/workflows/deploy.yml`.
+Pushes to `main` deploy to GitHub Pages via `.github/workflows/ci.yml` only after
+lint, type checks, the content guard, the build, and tests pass. Deployment uses
+the same `dist/` artifact that passed the post-build tests, without rebuilding.
+Pull requests run the checks but cannot deploy. Manual runs of the CI workflow
+deploy only when targeting `main`, after the same checks pass.
 The production site uses the custom domain `with-agents.dev`, configured by `public/CNAME`.
