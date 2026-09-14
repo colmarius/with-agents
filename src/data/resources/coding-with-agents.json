@@ -4,7 +4,7 @@
     "primarySection": "agent-systems",
     "title": "How We Solved Agent Building — Andrew Qu, Vercel",
     "url": "https://www.youtube.com/watch?v=9dYcwOkpCE8",
-    "description": "Andrew Qu traces Vercel's internal data science agent from a large prompt through scoped-agent chains to a single agent using a sandbox file system, then describes turning recurring queries into reusable skills and introducing the Eve framework. Based on AI Engineer's video description; captions could not be retrieved for transcript review. Reported evaluation gains are a practitioner account, not an independently verified benchmark.",
+    "description": "Andrew Qu traces Vercel's D0 data science agent from a large prompt and scoped-agent chains to a sandbox file system with company context, then explains recurring-query skills and the Eve framework. Transcript-backed practitioner account of context preservation, familiar tools, and company-specific knowledge; reported evaluation and productivity gains are not independently verified benchmarks.",
     "type": "video",
     "source": "AI Engineer",
     "date": "2026-09-14",
