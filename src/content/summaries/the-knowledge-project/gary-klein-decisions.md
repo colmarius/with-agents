@@ -3,7 +3,7 @@ title: "Insights for Making Better Decisions | Gary Klein | Knowledge Project 14
 resourceId: 139
 date: "2022-08-09"
 collection: "the-knowledge-project"
-order: 3
+order: 4
 videoId: "UbXIugEQQsI"
 ---
 
@@ -24,7 +24,7 @@ Cognitive psychologist Gary Klein talks with Shane Parrish about developing expe
 Klein's pre-mortem makes it easier to raise concerns before a project begins. Instead of asking vaguely what might go wrong, the team assumes a future failure and explains it. In his account, surfacing a credible problem becomes a contribution rather than an objection to a plan everyone has just endorsed. [50:44–1:00:56](https://www.youtube.com/watch?v=UbXIugEQQsI&t=3044s)
 
 1. After explaining the plan, choose a future point and ask the team to imagine that the project has already failed badly.
-2. Give everyone two minutes to write reasons why the imagined failure happened privately.
+2. Give everyone two minutes to privately write reasons why the imagined failure happened.
 3. Have the leader offer a genuine concern first. Go around the group, recording one new reason per person per round; avoid letting one speaker deliver their whole list.
 4. Give everyone another two minutes to write what they personally can do to reduce the listed risks.
 

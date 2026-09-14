@@ -3,18 +3,20 @@ title: "The Knowledge Project"
 status: reviewed
 coveredVideoIds:
   - eU4WlADVgM8
+  - XEz-NXTJv3g
   - 8MuNDps3m6A
   - UbXIugEQQsI
 ---
 
 ## Coverage
 
-The manifest contains 120 entries (119 available entries and 1 private entry), including a duplicate occurrence of one unselected video. The reviewed selection contains 3 videos, with 3 standalone transcripts and summaries reused and 3 summaries incorporated. Pending selected video IDs: none. The other 117 entries are tracked but unselected; this is not a review of the whole podcast.
+The manifest contains 120 entries (119 available entries and 1 private entry), including a duplicate occurrence of one unselected video. The reviewed selection contains 4 videos, with 4 standalone transcripts and summaries reused and 4 summaries incorporated. Pending selected video IDs: none. The other 116 entries are tracked but unselected; this is not a review of the whole podcast.
 
-The Knowledge Project Podcast is the source channel, not a shared author. The selected episodes feature Geoffrey Cain, Stripe co-founder Patrick Collison, and cognitive psychologist Gary Klein with host Shane Parrish; Steve Jobs is the subject of Cain's episode. English auto-generated captions supply the evidence, without an original-audio check. Dates used for collection order are YouTube publication dates, not verified recording dates.
+The Knowledge Project Podcast is the source channel, not a shared author. The selected episodes feature Geoffrey Cain, Sierra co-founder and OpenAI board member Bret Taylor, Stripe co-founder Patrick Collison, and cognitive psychologist Gary Klein with host Shane Parrish; Steve Jobs is the subject of Cain's episode. English auto-generated captions supply the evidence, without an original-audio check. Dates used for collection order are YouTube publication dates, not verified recording dates.
 
 ## Current Thesis
 
+- Sierra co-founder and OpenAI board member Bret Taylor argues that cheaper code generation should shift attention toward verification, while responsibility for system behavior remains with its operators ([summary](../../../summaries/the-knowledge-project/bret-taylor-ai-products.md)).
 - Geoffrey Cain, speaking with Knowledge Project host Shane Parrish, portrays Jobs's NeXT years as learning to adapt product vision to commercial constraints and trust specialists ([summary](../../../summaries/the-knowledge-project/steve-jobs-failure.md)).
 - Stripe co-founder Patrick Collison distinguishes consequential, hard-to-reverse decisions from choices that can be corrected quickly, and asks teams to agree on goals before arguing over tactics ([summary](../../../summaries/the-knowledge-project/patrick-collison-decisions.md)).
 - Cognitive psychologist Gary Klein distinguishes reducing errors from discovering insights, and describes learning through scenarios, explicit reasoning, and attention to unexpected evidence ([summary](../../../summaries/the-knowledge-project/gary-klein-decisions.md)).
@@ -33,6 +35,7 @@ The Knowledge Project Podcast is the source channel, not a shared author. The se
 
 ## Revisions and Tensions
 
+- Editorial: Taylor proposes research into new programming systems; his claims about Sierra are vendor accounts, not independently validated results ([summary](../../../summaries/the-knowledge-project/bret-taylor-ai-products.md)).
 - Cain recounts both admiration for Jobs and the personal costs of working with him ([summary](../../../summaries/the-knowledge-project/steve-jobs-failure.md)).
 - Collison explicitly declines to claim that Stripe has solved its organizational feedback mechanisms at its then-current scale ([summary](../../../summaries/the-knowledge-project/patrick-collison-decisions.md)).
 - Cognitive psychologist Gary Klein identifies his skepticism about debiasing as an outlier position ([summary](../../../summaries/the-knowledge-project/gary-klein-decisions.md)).
