@@ -1,5 +1,22 @@
 [
   {
+    "id": 141,
+    "primarySection": "workflows",
+    "title": "How I manage 15 AI agents 24/7 as a solo founder | Ryan Carson",
+    "url": "https://www.youtube.com/watch?v=zPfxlcVpFgs",
+    "description": "How I AI interviews Ryan Carson about coordinating concurrent Devin agents, account-monitoring playbooks, automated PR review loops, and keeping agent work focused on customer needs rather than output volume. This listing is based on the publisher's episode description and chapters; a transcript could not be retrieved. Agent counts and workflow outcomes are publisher-reported, not independently verified.",
+    "type": "video",
+    "source": "How I AI",
+    "date": "2026-08-24",
+    "duration": "44m",
+    "topics": [
+      "prompting-orchestration",
+      "tools-harnesses",
+      "review-verification",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 140,
     "primarySection": "agent-systems",
     "title": "Agents Without Code: Skills, YAML, and Filesystems Replaced Python — Philipp Schmid, Google DeepMind",
