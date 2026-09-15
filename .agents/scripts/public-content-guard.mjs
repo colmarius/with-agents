@@ -24,7 +24,7 @@ export const publicSourceExceptions = [
     id: '-czzyDaV9PA',
     path: 'src/data/resources/coding-with-agents.json',
     reason:
-      'Resource 142 retains the transcript-backed standalone Syntax Weekly summary; this upload is intentionally outside the reviewed six-video collection.',
+      'Resource 143 retains the transcript-backed standalone Syntax Weekly summary; this upload is intentionally outside the reviewed six-video collection.',
   },
 ];
 
