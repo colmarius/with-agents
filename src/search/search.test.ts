@@ -89,6 +89,36 @@ test('extraction combines owned regions, preserves details and inline words, and
   });
 });
 
+test('group descriptions stay visible but do not become episode search evidence', async () => {
+  const make = (route: string, grouped: boolean, body: string) => {
+    const result = extract(
+      '<meta name="description" content="Guest Zebra discusses databases">',
+      `<article data-search-body data-search-title="Interview" data-search-parent="Engineering conversations" ${grouped ? 'data-search-description=""' : ''}><p ${grouped ? 'data-search-ignore' : ''}>Guest Zebra discusses databases</p><p ${grouped ? 'data-search-ignore' : ''}>Distributed systems</p><p>${body}</p></article>`,
+      route,
+    );
+    assert.ok(result);
+    return result;
+  };
+  const unrelated = make('/unrelated', true, 'Testing techniques');
+  const relevant = make('/relevant', true, 'Zebra explains testing');
+  const standalone = make('/standalone', false, 'Testing techniques');
+  assert.equal(unrelated.description, '');
+  assert.equal(unrelated.body, 'Testing techniques');
+  const engine = await createSearch([unrelated, relevant, standalone]);
+  assert.deepEqual(
+    engine
+      .search('Zebra')
+      .map(({ id }) => id)
+      .sort(),
+    ['/relevant', '/standalone'],
+  );
+  assert.deepEqual(
+    engine.search('distributed systems').map(({ id }) => id),
+    ['/standalone'],
+  );
+  assert.equal(engine.search('engineering conversations').length, 3);
+});
+
 test('extraction excludes opt-out routes, robots, alternate canonicals and redirects independently', () => {
   assert.equal(extract('', '<article>Not opted in</article>'), null);
   for (const head of [

@@ -218,7 +218,7 @@ if (!primaryMembership) {
         )
       }
 
-      <article class="min-w-0" data-search-body data-search-title={summary.data.title} data-search-parent={resource.title}>
+      <article class="min-w-0" data-search-body data-search-title={summary.data.title} data-search-parent={resource.title} data-search-description={isGrouped ? '' : resource.description}>
         {
           isGrouped ? (
             <div class="lg:hidden">
@@ -249,9 +249,9 @@ if (!primaryMembership) {
             {summary.data.title}
           </h1>
           {resource.subtitle && resource.subtitle !== resource.description && (
-            <p class="mt-4 text-base font-medium leading-relaxed text-slate-700">{resource.subtitle}</p>
+            <p data-search-ignore={isGrouped ? '' : undefined} class="mt-4 text-base font-medium leading-relaxed text-slate-700">{resource.subtitle}</p>
           )}
-          <p class="mt-4 text-base leading-relaxed text-slate-600">{resource.description}</p>
+          <p data-search-ignore={isGrouped ? '' : undefined} class="mt-4 text-base leading-relaxed text-slate-600">{resource.description}</p>
           <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-600">
             <span class="font-medium text-slate-700">{resource.source}</span>
             <span aria-hidden="true">·</span>

@@ -218,15 +218,14 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
     );
     assert.ok(resource);
     assert.equal(document.parentTitle, resource.title);
-    assert.ok(
-      document.body.includes(resource.description.replace(/\s+/gu, ' ')),
-      source.url,
-    );
-    if (resource.subtitle)
-      assert.ok(
-        document.body.includes(resource.subtitle.replace(/\s+/gu, ' ')),
-        source.url,
-      );
+    const grouped = /^(series|collection):\s*\S/m.test(source.source);
+    assert.equal(document.description, grouped ? '' : resource.description);
+    for (const text of [resource.description, resource.subtitle]) {
+      if (!text) continue;
+      const normalized = text.replace(/\s+/gu, ' ');
+      if (!grouped || !source.source.includes(text))
+        assert.equal(document.body.includes(normalized), !grouped, source.url);
+    }
     assert.ok(!document.body.includes('Back to Coding with Agents resources'));
     assert.ok(!document.body.includes('Browse 10 summaries'));
   }
@@ -250,10 +249,20 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
   );
   assert.ok(episodeTen && !episodeTen.source.includes('monthly conversations'));
   assert.ok(
-    engine
+    !engine
       .search('monthly conversations')
       .some(({ url }) => url === episodeTen.url),
-    'Description-only phrase remains searchable',
+    'Shared series description must not match an individual episode',
+  );
+  assert.deepEqual(
+    engine
+      .search('DHH')
+      .map(({ url }) => url)
+      .sort(),
+    [
+      '/summaries/coding-with-agents/dhh-future-of-programming-ai-agentic-engineering',
+      '/summaries/coding-with-agents/dhhs-new-way-of-writing-code',
+    ],
   );
   const oauth = summarySources.find(({ url }) =>
     url.endsWith('/rfc-9700-oauth-2-security-bcp'),

@@ -238,7 +238,7 @@ const ResourceCatalog = ({
               type="search"
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder="Search titles, sources, topics, or summaries"
+              placeholder="Search titles, sources, topics, or summary titles"
               className="w-full rounded-md border border-gray-300 px-3 py-2 text-base text-gray-900 placeholder:text-gray-400 focus:border-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600/20"
             />
           </div>
@@ -360,6 +360,14 @@ const ResourceCatalog = ({
         {filteredResources.length > 0 ? (
           filteredResources.map((resource) => {
             const assessment = assessmentsByResourceId?.[resource.id];
+            const ref = resolveSummaryRef(resource.id);
+            const matchingSummaries =
+              normalizedSearchQuery &&
+              (ref?.kind === 'series' || ref?.kind === 'collection')
+                ? ref.entries.filter((entry) =>
+                    entry.title.toLowerCase().includes(normalizedSearchQuery),
+                  )
+                : [];
             return (
               <div
                 key={resource.id}
@@ -430,18 +438,19 @@ const ResourceCatalog = ({
                       </div>
 
                       <div className="flex flex-wrap gap-2 md:justify-self-end md:flex-shrink-0">
-                        {summaryPaths[resource.id] && (
-                          <Button
-                            as="a"
-                            variant="secondary"
-                            href={summaryPaths[resource.id]}
-                          >
-                            <DocumentIcon />
-                            {resource.type === 'playlist'
-                              ? 'Read Summaries'
-                              : 'Read Summary'}
-                          </Button>
-                        )}
+                        {matchingSummaries.length === 0 &&
+                          summaryPaths[resource.id] && (
+                            <Button
+                              as="a"
+                              variant="secondary"
+                              href={summaryPaths[resource.id]}
+                            >
+                              <DocumentIcon />
+                              {resource.type === 'playlist'
+                                ? 'Read Summaries'
+                                : 'Read Summary'}
+                            </Button>
+                          )}
                         <Button
                           as="a"
                           variant="primary"
@@ -455,6 +464,24 @@ const ResourceCatalog = ({
                         </Button>
                       </div>
                     </div>
+                    {matchingSummaries.length > 0 && (
+                      <nav
+                        aria-label={`Matching summaries for ${resource.title}`}
+                      >
+                        <ul className="space-y-2">
+                          {matchingSummaries.map((entry) => (
+                            <li key={entry.slug}>
+                              <a
+                                className="text-indigo-700 underline underline-offset-2 hover:text-indigo-900"
+                                href={getSummaryPath(entry.slug)}
+                              >
+                                {entry.title}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </nav>
+                    )}
                   </div>
                 </ResourceListItem>
               </div>
