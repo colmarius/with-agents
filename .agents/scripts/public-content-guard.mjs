@@ -11,7 +11,22 @@ import {
 
 const resourceTypes = new Set(['article', 'playlist', 'podcast', 'video']);
 
-export const publicSourceExceptions = [];
+export const publicSourceExceptions = [
+  {
+    kind: 'video',
+    id: '-czzyDaV9PA',
+    path: 'src/content/summaries/coding-with-agents/syntax-weekly-pi-radius-agent-workflows.md',
+    reason:
+      'Existing editorially reviewed standalone summary backed by its matching English transcript. Tracking Syntax uploads does not add this weekly roundup to the six-video curated collection.',
+  },
+  {
+    kind: 'video',
+    id: '-czzyDaV9PA',
+    path: 'src/data/resources/coding-with-agents.json',
+    reason:
+      'Resource 142 retains the transcript-backed standalone Syntax Weekly summary; this upload is intentionally outside the reviewed six-video collection.',
+  },
+];
 
 const defaultRepoRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),

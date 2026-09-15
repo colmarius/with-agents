@@ -14,6 +14,25 @@
   ],
   "playlists": [
     {
+      "id": "UUyU5wkjgQYGRB0hIHMwm2Sg",
+      "slug": "syntax-agent-workflows",
+      "title": "Syntax: Practical Agent Workflows",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "GsLyhrxaMIo",
+          "6tZ_R4m_Oc4",
+          "S916GQVhRb8",
+          "cWBVMEHPgQU",
+          "CCaUnet8SB4",
+          "1FqiNnOsrgM"
+        ]
+      }
+    },
+    {
       "id": "PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",
       "slug": "antirez-ai-concepts",
       "title": "AI concepts",

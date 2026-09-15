@@ -232,6 +232,7 @@ test('loads and validates the committed source-only catalog', async () => {
   assert.deepEqual(
     catalog.playlists.map((playlist) => playlist.slug),
     [
+      'syntax-agent-workflows',
       'antirez-ai-concepts',
       'antirez-coding-with-ai',
       'matt-pocock-agent-skills',

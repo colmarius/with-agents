@@ -445,16 +445,21 @@
   },
   {
     "id": 94,
-    "primarySection": "teams-ecosystem",
-    "title": "The Workflow of the Future With Zed",
-    "subtitle": "Fine-grained conversation and code provenance for collaborative agent worktrees",
-    "url": "https://www.youtube.com/watch?v=GsLyhrxaMIo",
-    "description": "Syntax hosts Wes Bos and Scott Tolinski interview Zed co-founder Nathan Sobo about Delta, a collaborative agent editor backed by DeltaDB. Sobo describes versioning below commits, conversation-to-code provenance, replicated worktrees, shared sessions, and inline review annotations. This is a founder account of a just-launched beta with no team outcomes or reliability data; conflict-free replication can still merge semantically conflicting code.",
-    "type": "podcast",
+    "primarySection": "workflows",
+    "title": "Syntax: Practical Agent Workflows",
+    "subtitle": "Six selected videos on collaboration, review, remote execution, memory, and MCP",
+    "url": "https://www.youtube.com/playlist?list=UUyU5wkjgQYGRB0hIHMwm2Sg",
+    "description": "An editorial selection from Syntax's channel uploads, combining the existing Zed/Delta interview with five videos on code review, remote coding agents, long-term memory, and MCP. The summaries distinguish demonstrations, practitioner reports, proposals, and product claims from independently measured outcomes. This is not an official Syntax course or a summary of the full uploads playlist.",
+    "type": "playlist",
     "source": "Syntax",
     "date": "2026-08-12",
-    "duration": "1h",
-    "topics": ["collaboration-teams", "context-memory", "tools-harnesses"]
+    "topics": [
+      "collaboration-teams",
+      "context-memory",
+      "tools-harnesses",
+      "review-verification",
+      "safety-permissions"
+    ]
   },
   {
     "id": 92,

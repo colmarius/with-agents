@@ -375,7 +375,7 @@ export const codingCuration = {
     94: {
       tier: 'context',
       reason:
-        'Explores a beta collaboration design rather than measured team outcomes.',
+        'Collects practical demonstrations and practitioner accounts; tool capabilities and workflow outcomes are not independently evaluated.',
     },
     96: {
       tier: 'context',
