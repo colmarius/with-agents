@@ -1,5 +1,22 @@
 [
   {
+    "id": 142,
+    "primarySection": "workflows",
+    "title": "The Centrifuge Method: Spin the Stupid Out of AI",
+    "url": "https://www.youtube.com/watch?v=luf6zSOCKH4",
+    "description": "Lada Kesseler describes refining agent output through focused write-read-revise loops, teaching TDD through reusable skills, and separating agent-facing tests from human-readable behavior checks. A practitioner interview covering review, exploratory prototypes, and the limits of software factories; improvements are speaker-reported, not benchmark results.",
+    "type": "video",
+    "source": "AI Native Dev",
+    "date": "2026-08-25",
+    "duration": "46m",
+    "topics": [
+      "prompting-orchestration",
+      "context-memory",
+      "review-verification",
+      "architecture-maintainability"
+    ]
+  },
+  {
     "id": 141,
     "primarySection": "workflows",
     "title": "How I manage 15 AI agents 24/7 as a solo founder | Ryan Carson",
