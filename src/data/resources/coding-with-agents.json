@@ -1,5 +1,22 @@
 [
   {
+    "id": 140,
+    "primarySection": "agent-systems",
+    "title": "Agents Without Code: Skills, YAML, and Filesystems Replaced Python — Philipp Schmid, Google DeepMind",
+    "url": "https://www.youtube.com/watch?v=fjF8EKnxKCU",
+    "description": "Philipp Schmid compares a Python tool loop, an agent framework, and a hosted agent on the same GitHub PR-review task. He explains how instructions, skills, CLI tools, and sandbox files replace application-level orchestration while developers retain responsibility for evaluations and outcomes. A Google DeepMind product demonstration, not an independent reliability or security assessment.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-09-14",
+    "duration": "18m",
+    "topics": [
+      "tools-harnesses",
+      "prompting-orchestration",
+      "context-memory",
+      "models-evaluation"
+    ]
+  },
+  {
     "id": 138,
     "primarySection": "agent-systems",
     "title": "How We Solved Agent Building — Andrew Qu, Vercel",
