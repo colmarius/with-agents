@@ -17,6 +17,24 @@
     ]
   },
   {
+    "id": 143,
+    "primarySection": "workflows",
+    "title": "Developing for the iPhone Duo ⟡ React 19.3 Is Here ⟡ Pi announces Radius ⌁ Syntax Weekly ⌁",
+    "subtitle": "Selected agent-workflow segments: Pi Radius, remote sessions, permissions, and validation",
+    "url": "https://www.youtube.com/watch?v=-czzyDaV9PA",
+    "description": "Syntax discusses Pi Radius as a managed model gateway, remote agent sessions with Herder, and the trade-off between personal-agent access and prompt-injection risk. A concrete validation anecdote shows an agent accepting malformed metadata instead of rejecting it. This summary selects coding-agent material from a broader weekly roundup; product descriptions and workflow outcomes are host-reported, based on English auto-generated captions.",
+    "type": "video",
+    "source": "Syntax",
+    "date": "2026-09-14",
+    "duration": "1h 34m",
+    "topics": [
+      "tools-harnesses",
+      "prompting-orchestration",
+      "review-verification",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 141,
     "primarySection": "workflows",
     "title": "How I manage 15 AI agents 24/7 as a solo founder | Ryan Carson",
