@@ -54,6 +54,23 @@
     ]
   },
   {
+    "id": 148,
+    "primarySection": "reliability",
+    "title": "AWS's Marc Brooker: Specs, Not Code, Are the Hard Part",
+    "url": "https://www.youtube.com/watch?v=nSRpnjkLqgc",
+    "description": "Marc Brooker discusses testable specifications, learning from production incidents, enforceable agent policies, and shared team context. He forecasts increasing automation of implementation while emphasizing the human work of defining good outcomes. A practitioner interview with AWS product claims, not an independent evaluation; based on English YouTube captions.",
+    "type": "video",
+    "source": "AI Native Dev",
+    "date": "2026-09-16",
+    "duration": "57m",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "safety-permissions",
+      "context-memory"
+    ]
+  },
+  {
     "id": 142,
     "primarySection": "workflows",
     "title": "The Centrifuge Method: Spin the Stupid Out of AI",
