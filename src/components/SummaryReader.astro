@@ -76,6 +76,9 @@
   }
   [data-reader-content] .prose-post a { max-width: 100%; overflow-wrap: anywhere; }
   [data-reader-content] :is([data-scroll-back-nav], [data-reader-open], article > details, article > nav, article > footer, nav[aria-label="Other resource catalogs"]) { display: none; }
+  @media (hover: none) and (pointer: coarse) {
+    .reader-actions [data-shortcuts-open]:not([hidden]) { display: none; }
+  }
   @media (max-width: 40rem) {
     [data-reader-content] { padding: 2rem 1.25rem 4rem; }
   }
