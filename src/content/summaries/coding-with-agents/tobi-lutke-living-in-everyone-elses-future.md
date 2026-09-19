@@ -15,12 +15,12 @@ Shopify CEO Tobi Lütke describes a practical progression from experimenting wit
 
 ## Supply enough context to make success plausible
 
-Lütke defines context engineering as stating a problem with enough information that it is plausibly solvable without further input. He acknowledges that agents were already improving at finding missing information, but recommends practicing explicit context because it reduces cost, raises the chance of success, and exposes assumptions that would otherwise remain implicit in human instructions too. [45:44–47:50](https://www.youtube.com/watch?v=ewnNv8pxdM0&t=2744s)
+Lütke defines context engineering as giving a model enough information to make a task plausibly solvable without further input. He acknowledges that agents can find missing information themselves. Even so, he argues that supplying it upfront can lower costs and improve the chance of success. He also says this practice makes instructions to colleagues clearer by exposing assumptions that would otherwise go unstated. [45:44–47:50](https://www.youtube.com/watch?v=ewnNv8pxdM0&t=2744s)
 
 ## Make product judgment inspectable
 
 - **Write choices, not platitudes.** Lütke recommends documenting principles where another competent organization could reasonably choose the opposite trade-off. Shopify calls these documents constitutions. The useful content is the organization's distinctive choice and the context in which it applies, not generic values such as teamwork. [47:50–49:49](https://www.youtube.com/watch?v=ewnNv8pxdM0&t=2870s)
-- **Let disagreements improve the principles.** Shopify runs projects against product principles to locate worthwhile discussion. When the model calls a principle contradictory or applies it incorrectly, the team may reject the critique—but it can also discover that the wording is too broad, imprecise, or missing an example. The loop evaluates both the work and the instructions used to judge it. [49:49–50:51](https://www.youtube.com/watch?v=ewnNv8pxdM0&t=2989s)
+- **Use AI critiques to test both projects and principles.** Lütke says Shopify asks AI to compare projects with written product principles and flag points for discussion. A disputed critique can reveal a model mistake, but it can also expose a principle that is too broad, imprecise, or missing an example. The team therefore examines both the project and the criteria used to judge it. [49:49–50:51](https://www.youtube.com/watch?v=ewnNv8pxdM0&t=2989s)
 - **Integrate the critique into review rather than treating it as a gate.** Lütke later describes AI analysis against product principles as part of Shopify's recurring project reviews. He frames it as discussion support, not automated approval, and supplies no comparison showing that it improves product outcomes. [1:21:13–1:22:17](https://www.youtube.com/watch?v=ewnNv8pxdM0&t=4873s)
 
 ## What held up as agents evolved
