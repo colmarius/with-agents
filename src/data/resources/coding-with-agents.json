@@ -1,5 +1,23 @@
 [
   {
+    "id": 144,
+    "primarySection": "teams-ecosystem",
+    "title": "Tobi Lütke: The Skills AI Makes More Valuable",
+    "subtitle": "Shopify's shared agent workflow, human responsibility, judgment, and taste",
+    "url": "https://www.youtube.com/watch?v=G9P9D9hptq8",
+    "description": "Tobi Lütke describes Shopify's shared Slack agent, agent-assisted coding, and his use of multiple agents to prepare decision material. He argues that people remain responsible for choices and warns that cheap generation can shift lazy work from too little output to unreviewed excess. His adoption figures, workflow outcomes, and forecasts are speaker-reported, not independently verified.",
+    "type": "video",
+    "source": "The Knowledge Project Podcast",
+    "date": "2026-09-15",
+    "duration": "1h 5m",
+    "topics": [
+      "collaboration-teams",
+      "business-adoption",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 142,
     "primarySection": "workflows",
     "title": "The Centrifuge Method: Spin the Stupid Out of AI",

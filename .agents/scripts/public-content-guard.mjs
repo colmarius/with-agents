@@ -26,6 +26,20 @@ export const publicSourceExceptions = [
     reason:
       'Resource 143 retains the transcript-backed standalone Syntax Weekly summary; this upload is intentionally outside the reviewed six-video collection.',
   },
+  {
+    kind: 'video',
+    id: 'G9P9D9hptq8',
+    path: 'src/content/summaries/coding-with-agents/tobi-lutke-skills-ai-makes-more-valuable.md',
+    reason:
+      'Transcript-backed standalone summary; tracking The Knowledge Project does not add this interview to the reviewed five-video collection.',
+  },
+  {
+    kind: 'video',
+    id: 'G9P9D9hptq8',
+    path: 'src/data/resources/coding-with-agents.json',
+    reason:
+      'Resource 144 is a transcript-backed standalone interview outside The Knowledge Project reviewed five-video collection.',
+  },
 ];
 
 const defaultRepoRoot = path.resolve(

@@ -4,15 +4,15 @@
     {
       "videoId": "G9P9D9hptq8",
       "position": 0,
-      "title": "Private video",
-      "privacyStatus": "private",
-      "available": false,
-      "unavailableReason": "private"
+      "title": "Tobi Lütke: The Skills AI Makes More Valuable",
+      "publishedAt": "2026-09-15T10:00:17Z",
+      "privacyStatus": "public",
+      "available": true
     },
     {
       "videoId": "eU4WlADVgM8",
       "position": 1,
-      "title": "What 12 Years of Failure Taught Steve Jobs About Success",
+      "title": "The 12 Years that Changed Steve Jobs",
       "publishedAt": "2026-09-01T10:00:27Z",
       "privacyStatus": "public",
       "available": true
