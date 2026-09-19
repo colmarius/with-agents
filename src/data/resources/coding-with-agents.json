@@ -1,5 +1,24 @@
 [
   {
+    "id": 149,
+    "primarySection": "workflows",
+    "title": "AI Skills with Matt Pocock",
+    "url": "https://www.youtube.com/watch?v=4DhcSPkEbwI",
+    "description": "Matt Pocock explains how interview-style skills, durable specs, ticketed context windows, shared domain language, feedback loops, and independent review can make coding-agent workflows more reliable. A practitioner interview based on English auto-generated captions; workflow results, model-behavior claims, and organizational recommendations are speaker-reported rather than controlled findings.",
+    "type": "video",
+    "source": "The Pragmatic Engineer",
+    "date": "2026-09-17",
+    "duration": "1h 37m",
+    "topics": [
+      "prompting-orchestration",
+      "context-memory",
+      "tools-harnesses",
+      "review-verification",
+      "architecture-maintainability",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 147,
     "primarySection": "teams-ecosystem",
     "title": "Tobi Lütke – Building Shopify and the Future of AI | Ep. 50",
