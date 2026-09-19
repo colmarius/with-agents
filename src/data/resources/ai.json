@@ -1,5 +1,23 @@
 [
   {
+    "id": 146,
+    "primarySection": "concepts-capabilities",
+    "title": "AI and eCommerce with Shopify CEO Tobias Lütke",
+    "subtitle": "Shopper-agent simulation, outcome signals, and human–AI evaluation",
+    "url": "https://www.youtube.com/watch?v=lqQkGapkkEc",
+    "description": "Tobi Lütke, Richard Sutton, Sendhil Mullainathan, and fellow panelists examine Shopify's SimGym shopper agents, which navigate stores through a vision-model browser loop. They distinguish interface operation, predictive validity, real commercial outcomes, and benchmarks for people working with AI. Product accuracy and benefits are participant accounts, not independent evaluations.",
+    "type": "podcast",
+    "source": "Intrepid Growth Partners",
+    "date": "2025-12-18",
+    "duration": "1h 19m",
+    "topics": [
+      "models-evaluation",
+      "tools-harnesses",
+      "business-adoption",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 134,
     "primarySection": "implications-risks",
     "title": "Il rischio AI è ormai accettato",

@@ -1,5 +1,41 @@
 [
   {
+    "id": 147,
+    "primarySection": "teams-ecosystem",
+    "title": "Tobi Lütke – Building Shopify and the Future of AI | Ep. 50",
+    "subtitle": "AI adoption metrics, small teams, customer feedback, and experienced judgment",
+    "url": "https://www.youtube.com/watch?v=tH95ZCciOqk",
+    "description": "Tobi Lütke describes Shopify's AI mandate, why a token-usage leaderboard produced bad incentives, and how agent-summarized customer feedback supports smaller teams. He argues that experienced engineers still steer coding agents through problem understanding. Shopify's adoption, cost, and workflow outcomes are speaker-reported, not independently measured.",
+    "type": "podcast",
+    "source": "Uncapped with Jack Altman",
+    "date": "2026-05-20",
+    "duration": "58m",
+    "topics": [
+      "business-adoption",
+      "collaboration-teams",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
+    "id": 145,
+    "primarySection": "workflows",
+    "title": "ACQ2: How to Live in Everyone Else's Future (with Shopify CEO Tobi Lütke)",
+    "subtitle": "Personal evals, context engineering, and product-principle review loops",
+    "url": "https://www.youtube.com/watch?v=ewnNv8pxdM0",
+    "description": "Tobi Lütke explains how he retains failed tasks as model evaluations, supplies enough context to make work plausibly solvable, and codifies non-platitudinous product principles. Shopify uses AI critiques to find discussion points and refine those principles rather than as an automated approval gate. The practices and outcomes are Lütke's account.",
+    "type": "podcast",
+    "source": "Acquired",
+    "date": "2025-09-18",
+    "duration": "1h 49m",
+    "topics": [
+      "models-evaluation",
+      "context-memory",
+      "review-verification",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 144,
     "primarySection": "teams-ecosystem",
     "title": "Tobi Lütke: The Skills AI Makes More Valuable",
