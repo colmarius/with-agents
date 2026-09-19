@@ -11,6 +11,7 @@
     "check": "astro check",
     "content:guard": "node .agents/scripts/public-content-guard.mjs",
     "summaries:check": "node .agents/scripts/summary-timestamps.mjs",
+    "summaries:fix": "node .agents/scripts/summary-timestamps.mjs --fix",
     "hooks:install": "prek install",
     "youtube:transcript": "node .agents/scripts/save-youtube-transcript.mjs",
     "youtube:library": "node .agents/scripts/youtube-library.mjs",

@@ -148,6 +148,7 @@ Do not create long-lived draft, review, or apply artifacts for summaries. Keep t
 ### Summary timestamp citations
 
 - Use one linked point or en-dash range: `[17:49–25:32](https://www.youtube.com/watch?v=9UAxrdcDjjU&t=1069s)`. Labels use `MM:SS` or `H:MM:SS` (`56:14–1:03:18`); identical endpoints become one timestamp. Keep “onward” outside the link.
+- Place timestamp links directly after the claims they support; do not wrap the links in parentheses. Separate multiple supporting links with commas.
 - Link to the original source's absolute start time (`t=0s` included), and to the correct talk in multi-video guides. Other publishers need verified seek links and validator support; never invent fragments.
 - Preserve claims, citation placement, and evidence ranges. Leave source-only transcript timestamps unchanged. Source identity and claim support still require editorial review.
 - Run `npm run summaries:check`; `npm test` checks the whole corpus in CI. Install the changed-summary pre-commit check once per checkout with `npm run hooks:install`. Inspect representative rendered summaries after citation changes.

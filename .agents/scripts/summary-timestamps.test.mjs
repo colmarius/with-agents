@@ -3,6 +3,7 @@ import test from 'node:test';
 import {
   allSummaryFiles,
   checkSummaryFiles,
+  normalizeSummaryTimestampStyle,
   validateSummaryTimestamps,
 } from './summary-timestamps.mjs';
 
@@ -42,6 +43,32 @@ test('rejects bare, split, noncanonical, backwards, and empty ranges', () => {
   ]) {
     assert.ok(validateSummaryTimestamps(value).length, value);
   }
+});
+
+test('rejects and normalizes parenthesized timestamp-only groups', () => {
+  const parenthesized = `(${cite('56:14')})`;
+  const input = [
+    `Claim (${cite('56:14')}, ${cite('1:04:05–1:07:55', '3845')}). Keep (ordinary prose).`,
+    `Keep inline \`${parenthesized}\`.`,
+    '```text',
+    parenthesized,
+    '```',
+  ].join('\n');
+  assert.deepEqual(validateSummaryTimestamps(input), [
+    'line 1: timestamp links must not be wrapped in parentheses',
+  ]);
+  const normalized = normalizeSummaryTimestampStyle(input);
+  assert.equal(
+    normalized,
+    [
+      `Claim ${cite('56:14')}, ${cite('1:04:05–1:07:55', '3845')}. Keep (ordinary prose).`,
+      `Keep inline \`${parenthesized}\`.`,
+      '```text',
+      parenthesized,
+      '```',
+    ].join('\n'),
+  );
+  assert.deepEqual(validateSummaryTimestamps(normalized), []);
 });
 
 test('rejects wrong seek times, URL forms, and declared video identities', () => {

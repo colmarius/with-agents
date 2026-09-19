@@ -17,6 +17,6 @@ Tyler Slaton, who leads open source at CopilotKit, uses a simplified Mastra inci
 
 ### Practical interpretation
 
-Start with controlled components when predictable presentation matters. Add declarative composition when users benefit from task-specific layouts; consider open-ended generation only where that flexibility justifies a separate execution and security review. This is an editorial interpretation of the design spectrum, not a production-readiness claim. The Q&A also discusses button-triggered workflows and bidirectional shared state outside chat ([22:41–24:47](https://www.youtube.com/watch?v=mGyyTVk8Ggw&t=1361s)).
+Start with controlled components when predictable presentation matters. Add declarative composition when users benefit from task-specific layouts; consider open-ended generation only where that flexibility justifies a separate execution and security review. This is an editorial interpretation of the design spectrum, not a production-readiness claim. The Q&A also discusses button-triggered workflows and bidirectional shared state outside chat [22:41–24:47](https://www.youtube.com/watch?v=mGyyTVk8Ggw&t=1361s).
 
 Full video: [Agentic UX: Three Ways to Let an Agent Build Its Own UI](https://www.youtube.com/watch?v=mGyyTVk8Ggw).
