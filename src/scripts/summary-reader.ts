@@ -78,24 +78,7 @@ if (dialog && opener && article && panel && content && toolbar && exit) {
     content.append(article);
     active = true;
     dialog.showModal();
-    const passageTarget = passage.block ?? panel;
-    const previousTabindex = passageTarget.getAttribute('tabindex');
-    if (passageTarget !== panel)
-      passageTarget.setAttribute('data-reader-focus-target', '');
-    passageTarget.setAttribute('tabindex', '-1');
-    passageTarget.focus({ preventScroll: true });
-    if (passageTarget !== panel) {
-      passageTarget.addEventListener(
-        'blur',
-        () => {
-          passageTarget.removeAttribute('data-reader-focus-target');
-          if (previousTabindex === null)
-            passageTarget.removeAttribute('tabindex');
-          else passageTarget.setAttribute('tabindex', previousTabindex);
-        },
-        { once: true },
-      );
-    }
+    panel.focus({ preventScroll: true });
     panel.scrollTop = 0;
     restore(passage);
   };

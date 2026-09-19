@@ -16,7 +16,7 @@ function setup() {
     <details><summary>Browse summaries</summary></details>
     <nav data-scroll-back-nav-sticky><a href="/resources">Back</a></nav>
     <div class="prose-post"><p>First passage</p><p>Second passage</p></div>
-    </article></main><dialog data-summary-reader><div data-reader-panel>
+    </article></main><dialog data-summary-reader><div data-reader-panel tabindex="-1">
     <div data-reader-toolbar>Focus mode
     <button data-reader-exit>Exit focus mode</button></div>
     <div data-reader-content></div></div></dialog></body></html>`);
@@ -232,17 +232,14 @@ test('shortcut return focus falls back when the original control disappears', ()
   assert.equal(document.activeElement, get('[data-reader-open]'));
 });
 
-test('temporary passage focus styling is removed on blur without losing existing tabindex', () => {
+test('opening focuses the reader panel without modifying passage focusability', () => {
   for (const original of [null, '0']) {
-    const { key, get, window } = setup();
+    const { key, get, document } = setup();
     const heading = get('h1');
     if (original !== null) heading.setAttribute('tabindex', original);
     key();
-    assert.equal(heading.getAttribute('tabindex'), '-1');
-    assert.equal(heading.hasAttribute('data-reader-focus-target'), true);
-    heading.dispatchEvent(new window.Event('blur'));
     assert.equal(heading.getAttribute('tabindex'), original);
-    assert.equal(heading.hasAttribute('data-reader-focus-target'), false);
+    assert.equal(document.activeElement, get('[data-reader-panel]'));
   }
 });
 
