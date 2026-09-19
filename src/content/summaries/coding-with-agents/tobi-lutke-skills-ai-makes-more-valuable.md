@@ -11,21 +11,30 @@ Shopify CEO Tobi Lütke describes agents as shared participants in software work
 ### Make agent use visible to the team
 
 - **Shopify's River agent works in shared Slack channels.** Lütke says River can use company tools and code, answer questions, and propose pull requests from team conversations. He reports that up to roughly half of Shopify pull requests now begin in shared-chat conversations rather than traditional individual implementation. That is a speaker-reported estimate, not a measured productivity result. [07:15–08:56](https://www.youtube.com/watch?v=G9P9D9hptq8&t=435s)
-- **Public interaction turns agent use into observable practice.** Lütke says Shopify restricted River to open channels so colleagues could see how others prompt it, ask it to research, summarize discussions, create tickets, or prototype ideas. His intended mechanism is workplace learning by observation, replacing some of the informal exposure lost in distributed work. [08:56–10:53](https://www.youtube.com/watch?v=G9P9D9hptq8&t=536s)
-- **The agent revises its own instruction files.** He describes an off-hours reflection process that reviews River's conversations and mistakes, then proposes changes to text-based skills and instructions. The interview does not provide evaluation results or enough implementation detail to establish how safely those changes are accepted. [10:53–11:45](https://www.youtube.com/watch?v=G9P9D9hptq8&t=653s)
+- **Colleagues learn by watching agent use.** Lütke says Shopify restricted River to open channels so colleagues could see how others prompt it, ask it to research, summarize discussions, create tickets, or prototype ideas. His intended mechanism is workplace learning by observation, replacing some of the informal exposure lost in distributed work. [08:56–10:53](https://www.youtube.com/watch?v=G9P9D9hptq8&t=536s)
+- **River reflects on mistakes to improve its instructions.** Lütke says Shopify gives River its conversations during off-hours and asks how its skills—packets of instructions—could be improved after mistakes. He describes the output as skill and instruction text files, but does not explain how changes are checked or put into use. [10:53–12:48](https://www.youtube.com/watch?v=G9P9D9hptq8&t=653s)
 
 ### Use agents to prepare judgment, not replace it
 
-Lütke describes an AI chief of staff that asks several role-based subagents to investigate the same decision, synthesizes their positions, and returns an audio briefing. He uses this to create a richer decision surface, while arguing that machines cannot take responsibility for the final choice. The multi-agent process may broaden the material considered, but the conversation offers no comparison showing that it produces better decisions. [12:48–15:43](https://www.youtube.com/watch?v=G9P9D9hptq8&t=768s)
+Separately, Lütke uses a personal AI chief of staff to prepare decisions. It assigns other agents different perspectives, such as data analysis, research, business, and engineering, then combines their findings into an audio briefing. The aim is to inform his judgment, not hand over the choice: he argues that machines cannot take responsibility for the result. The interview provides no comparison showing that this process produces better decisions. [12:48–15:43](https://www.youtube.com/watch?v=G9P9D9hptq8&t=768s)
 
-His practical warning is that cheap generation changes the failure mode of lazy work. Instead of producing too little, someone can send an unreviewed pull request or an inflated memo that transfers reading and verification costs to colleagues. He calls these “slop grenades” and argues that people should synthesize their point rather than forcing recipients to compress generated output again. [15:43–17:40](https://www.youtube.com/watch?v=G9P9D9hptq8&t=943s)
+That responsibility also applies to everyday handoffs. Lütke warns that AI lets someone produce more without doing the work of checking or explaining it. He calls unreviewed pull requests and inflated messages “slop grenades”: the sender saves effort by making colleagues check the code or extract the point from a long message. [15:43–17:40](https://www.youtube.com/watch?v=G9P9D9hptq8&t=943s)
 
 ### Cultivate taste through depth and repeated practice
 
-Lütke expects taste and judgment to become more valuable as generation becomes easier. He connects taste to sustained practice and close study of durable designs and institutions, then defines judgment as choosing among several plausible options after understanding their trade-offs. This is his framework, not evidence that intuition is reliable in every domain. [30:55–36:15](https://www.youtube.com/watch?v=G9P9D9hptq8&t=1855s)
+Lütke expects taste and judgment to become more valuable as generation becomes easier.
 
-He also argues that teams cannot improve indefinitely by adding layers. Products, systems, and departments sometimes need pruning or a “refounding” that preserves what works while removing accumulated structure. The SpaceX comparison in the interview is illustrative and includes unverified performance claims; the durable engineering point is to make subtraction and replacement available alongside incremental addition. [56:41–1:00:55](https://www.youtube.com/watch?v=G9P9D9hptq8&t=3401s)
+- **Develop taste through practice and close study.** His example is a designer whose quick logo sketch draws on decades of work. He also recommends studying why designs and institutions endure: what human problems they solve and how their systems address people's limitations. [30:55–35:11](https://www.youtube.com/watch?v=G9P9D9hptq8&t=1855s)
+- **Use judgment when no option is obviously best.** He describes judgment as understanding a system well enough to choose among plausible paths and their trade-offs. Agents can help build that understanding; choosing remains a separate task. [35:11–36:15](https://www.youtube.com/watch?v=G9P9D9hptq8&t=2111s)
 
-### Practical reading
+### Consider subtraction, not only addition
 
-The interview supports three bounded practices: keep consequential agent work visible where colleagues can learn from and challenge it; require the sender to review and compress generated output before handing it off; and reserve explicit human ownership for decisions whose consequences matter. These are editorial implications from Lütke's account, not a validated Shopify playbook.
+Lütke argues that repeated additions can bury the original purpose of a product or department. By “refounding,” he means starting a new version based on what works, rather than retaining every accumulated layer. His recommendation is to consider removing or rebuilding parts of a system, not only adding more. [58:50–1:01:54](https://www.youtube.com/watch?v=G9P9D9hptq8&t=3530s)
+
+### Practical implications
+
+These are editorial implications from Lütke's account, not a validated Shopify playbook:
+
+- Keep consequential agent work visible to the relevant colleagues so they can learn from it and question it.
+- Review generated changes before requesting review; distill generated messages before sending them.
+- Name the person responsible for a decision and its consequences.
