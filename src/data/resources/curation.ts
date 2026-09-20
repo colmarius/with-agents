@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    152: {
+      tier: 'useful',
+      reason:
+        'Connects coding-tool adoption, model economics, and agent-review UX while keeping company claims and financial examples explicitly first-party.',
+    },
     149: {
       tier: 'useful',
       reason:
@@ -692,6 +697,21 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    152: {
+      tier: 'useful',
+      reason:
+        'Separates model-generation economics, adoption friction, and agent-review UX while keeping company claims and financial examples explicitly first-party.',
+    },
+    151: {
+      tier: 'useful',
+      reason:
+        'Organizes five risk mechanisms and proposed responses while separating laboratory evidence, reported incidents, forecasts, and unresolved limitations.',
+    },
+    150: {
+      tier: 'useful',
+      reason:
+        'Explains how intelligence interacts with experimental, institutional, and deployment bottlenecks within a conditional future scenario.',
+    },
     149: {
       tier: 'useful',
       reason:

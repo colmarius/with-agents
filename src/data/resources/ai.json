@@ -1,5 +1,51 @@
 [
   {
+    "id": 152,
+    "primarySection": "economics-industry",
+    "title": "A Cheeky Pint with Anthropic CEO Dario Amodei",
+    "subtitle": "AI product adoption, model economics, and review interfaces",
+    "url": "https://www.youtube.com/watch?v=GcqQ1ebBqkc",
+    "description": "Dario Amodei and John Collison discuss why coding tools diffuse faster than other AI applications, how overlapping model generations affect company economics, and why agent products need manageable review interfaces. The financial examples, customer outcomes, timelines, and product strategy are Amodei's first-party claims and advocacy, not audited results.",
+    "type": "podcast",
+    "source": "Cheeky Pint",
+    "date": "2025-08-06",
+    "topics": [
+      "business-adoption",
+      "collaboration-teams",
+      "context-memory",
+      "review-verification"
+    ]
+  },
+  {
+    "id": 151,
+    "primarySection": "implications-risks",
+    "title": "The Adolescence of Technology",
+    "subtitle": "A five-part framework for risks from powerful AI",
+    "url": "https://darioamodei.com/essay/the-adolescence-of-technology",
+    "description": "Dario Amodei separates risks from autonomous model behavior, destructive misuse, deliberate power concentration, economic disruption, and indirect effects, then proposes technical and policy responses. This conditional framework and advocacy from Anthropic's CEO assumes powerful AI; it is not a complete or consensus risk taxonomy.",
+    "type": "article",
+    "source": "Dario Amodei",
+    "date": "2026-01-26",
+    "topics": [
+      "society-governance",
+      "safety-permissions",
+      "models-evaluation",
+      "business-adoption"
+    ]
+  },
+  {
+    "id": 150,
+    "primarySection": "implications-risks",
+    "title": "Machines of Loving Grace",
+    "subtitle": "How intelligence interacts with real-world bottlenecks",
+    "url": "https://darioamodei.com/essay/machines-of-loving-grace",
+    "description": "Dario Amodei explores a favorable powerful-AI scenario through marginal returns to intelligence and constraints from experiments, missing evidence, institutions, deployment, and physical reality. Its sector outcomes and timelines are speculative first-party forecasts conditional on the assumed arrival of powerful AI.",
+    "type": "article",
+    "source": "Dario Amodei",
+    "date": "2024-10-11",
+    "topics": ["society-governance", "business-adoption"]
+  },
+  {
     "id": 149,
     "primarySection": "concepts-capabilities",
     "title": "Dario Amodei: Anthropic CEO on Claude, AGI & the Future of AI & Humanity",
