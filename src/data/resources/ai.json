@@ -1,5 +1,23 @@
 [
   {
+    "id": 149,
+    "primarySection": "concepts-capabilities",
+    "title": "Dario Amodei: Anthropic CEO on Claude, AGI & the Future of AI & Humanity",
+    "subtitle": "Scaling, model steering, computer use, prompting, and mechanistic interpretability",
+    "url": "https://www.youtube.com/watch?v=ugvHCXCOmm4",
+    "description": "Lex Fridman interviews Anthropic's Dario Amodei, Amanda Askell, and Chris Olah about scaling, model behavior, computer use, responsible scaling, prompt design, constitutional AI, and mechanistic interpretability. The episode combines technical explanations with Anthropic leaders' first-party accounts and dated forecasts; it is not an independent evaluation of Claude's capabilities or safety.",
+    "type": "podcast",
+    "source": "Lex Fridman",
+    "date": "2024-11-11",
+    "duration": "5h 15m",
+    "topics": [
+      "models-evaluation",
+      "safety-permissions",
+      "tools-harnesses",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 146,
     "primarySection": "concepts-capabilities",
     "title": "AI and eCommerce with Shopify CEO Tobias Lütke",

@@ -162,9 +162,17 @@ export const resources: Resource[] = [
   ...productResources,
 ].map(({ primarySection: _primarySection, ...resource }) => resource);
 
-const codingSectionByResourceId = Object.fromEntries(
-  codingResources.map((resource) => [resource.id, resource.primarySection]),
-);
+const codingResourceIds = [
+  149,
+  ...codingResources.map((resource) => resource.id),
+];
+
+const codingSectionByResourceId = {
+  ...Object.fromEntries(
+    codingResources.map((resource) => [resource.id, resource.primarySection]),
+  ),
+  149: 'agent-systems',
+};
 
 const cloudResourceIds = [
   97, 98, 99, 62, 64, 66, 100, 59, 60, 61, 63, 68, 65, 67, 101, 57, 58,
@@ -251,8 +259,8 @@ const aiTopicOptions = [
 ] as const satisfies readonly ResourceTopicOption[];
 
 const aiResourceIds = [
-  146, 127, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 128,
-  129, 130, 131, 134, 137,
+  149, 146, 127, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73,
+  128, 129, 130, 131, 134, 137,
 ];
 
 const aiSectionByResourceId = {
@@ -279,7 +287,7 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
       'Search practical coding-agent workflows, systems, reliability practices, and team experience.',
     sections: resourceSections,
     topicOptions: codingTopicOptions,
-    resourceIds: codingResources.map((resource) => resource.id),
+    resourceIds: codingResourceIds,
     sectionByResourceId: codingSectionByResourceId,
     ...codingCuration,
   },

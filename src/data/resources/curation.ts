@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    149: {
+      tier: 'useful',
+      reason:
+        'Explains model steering, prompting, computer use, and interpretability through a dated Anthropic leadership interview.',
+    },
     14: {
       tier: 'essential',
       reason:
@@ -687,6 +692,11 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    149: {
+      tier: 'useful',
+      reason:
+        'Connects scaling, model steering, safety policy, and interpretability while remaining a first-party and historically dated account.',
+    },
     23: {
       tier: 'essential',
       reason:
