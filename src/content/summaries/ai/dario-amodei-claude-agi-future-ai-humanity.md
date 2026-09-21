@@ -1,6 +1,6 @@
 ---
 title: "Dario Amodei on Claude, AI safety, and interpretability"
-resourceId: 149
+resourceId: 153
 date: "2024-11-11"
 ---
 

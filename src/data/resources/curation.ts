@@ -12,7 +12,7 @@ export const codingCuration = {
       reason:
         'Connects coding-tool adoption, model economics, and agent-review UX while keeping company claims and financial examples explicitly first-party.',
     },
-    149: {
+    153: {
       tier: 'useful',
       reason:
         'Explains model steering, prompting, computer use, and interpretability through a dated Anthropic leadership interview.',
@@ -712,7 +712,7 @@ export const aiCuration = {
       reason:
         'Explains how intelligence interacts with experimental, institutional, and deployment bottlenecks within a conditional future scenario.',
     },
-    149: {
+    153: {
       tier: 'useful',
       reason:
         'Connects scaling, model steering, safety policy, and interpretability while remaining a first-party and historically dated account.',
