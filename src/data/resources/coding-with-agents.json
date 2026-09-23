@@ -1,5 +1,22 @@
 [
   {
+    "id": 154,
+    "primarySection": "reliability",
+    "title": "Peter Naur - Programming as Theory Building",
+    "subtitle": "Program understanding, design rationale, and the limits of code generation",
+    "url": "https://rss.com/podcasts/computer-science-off-course/2968986/",
+    "description": "Felienne Hermans and Hanna Schraffenberger discuss Peter Naur's view of programming as building the understanding needed to explain and adapt a solution. The summary draws on their official companion article and homework response, not an audio transcript, and preserves their differing views on documentation. Their arguments about AI are interpretations rather than measured capability results.",
+    "type": "podcast",
+    "source": "Computer Science Off Course",
+    "date": "2026-07-07",
+    "duration": "40m 54s",
+    "topics": [
+      "architecture-maintainability",
+      "collaboration-teams",
+      "review-verification"
+    ]
+  },
+  {
     "id": 149,
     "primarySection": "workflows",
     "title": "AI Skills with Matt Pocock",
