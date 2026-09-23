@@ -15,7 +15,7 @@ function setup(context = '', platform = 'Linux') {
     <button data-shortcuts-open hidden>Keyboard shortcuts</button>${context}
     <dialog id="keyboard-shortcuts"><h2 id="keyboard-shortcuts-title" tabindex="-1">Shortcuts</h2>
     <button data-shortcuts-close>Close</button><span data-search-shortcut></span>
-    <div data-summary-shortcut hidden></div><div data-slides-shortcut hidden></div>
+    <div data-slides-shortcut hidden></div>
     <div data-update-shortcut hidden></div></dialog></body></html>`);
   let focused: Element = document.body;
   Object.defineProperty(document, 'activeElement', { get: () => focused });
@@ -153,7 +153,7 @@ test('close restores exact overflow and ignores queued close events after reopen
   dialog.dispatchEvent(new window.Event('close'));
   assert.equal(dialog.open, true);
   assert.equal(document.body.style.overflow, 'hidden');
-  document.dispatchEvent(new window.Event('keyboard-shortcuts:close'));
+  window.dispatchEvent(new window.Event('beforeprint'));
   assert.equal(dialog.open, false);
   assert.equal(document.body.style.overflow, 'clip');
   window.dispatchEvent(new window.Event('beforeprint'));
@@ -177,7 +177,7 @@ test('restored reading passage keeps temporary focusability only until blur', ()
   const passage = get('#passage');
   passage.focus();
   key();
-  // Focus mode removes its initial temporary tabindex when help takes focus.
+  // A caller may remove temporary focusability when help takes focus.
   passage.removeAttribute('tabindex');
   close();
   assert.equal(document.activeElement, passage);
@@ -188,21 +188,13 @@ test('restored reading passage keeps temporary focusability only until blur', ()
   assert.equal(passage.hasAttribute('data-shortcuts-focus-target'), false);
 });
 
-test('help lists only applicable summary, slide and Mac update shortcuts', () => {
-  for (const [context, platform, summary, slides, update, search] of [
-    ['', 'Linux', false, false, false, 'Ctrl + K'],
-    [
-      '<button data-reader-open></button>',
-      'MacIntel',
-      true,
-      false,
-      false,
-      'Command + K',
-    ],
+test('help lists only applicable slide and Mac update shortcuts', () => {
+  for (const [context, platform, slides, update, search] of [
+    ['', 'Linux', false, false, 'Ctrl + K'],
+    ['', 'MacIntel', false, false, 'Command + K'],
     [
       '<div id="slides-container"></div><div data-pwa-update-prompt></div>',
       'MacIntel',
-      false,
       true,
       true,
       'Command + K',
@@ -210,7 +202,6 @@ test('help lists only applicable summary, slide and Mac update shortcuts', () =>
   ] as const) {
     const { key, get } = setup(context, platform);
     key();
-    assert.equal(get('[data-summary-shortcut]').hidden, !summary);
     assert.equal(get('[data-slides-shortcut]').hidden, !slides);
     assert.equal(get('[data-update-shortcut]').hidden, !update);
     assert.equal(get('[data-search-shortcut]').textContent, search);

@@ -44,9 +44,6 @@ if (dialog && heading && closeButton) {
       if (document.activeElement === returnFocus) return;
     }
     const fallback =
-      document.querySelector<HTMLElement>(
-        '[data-summary-reader][open] [data-reader-panel]',
-      ) ??
       document.querySelector<HTMLElement>('#site-search[open] input') ??
       Array.from(triggers).find(
         (trigger) =>
@@ -66,11 +63,6 @@ if (dialog && heading && closeButton) {
       /Mac/.test(navigator.platform) && navigator.maxTouchPoints <= 1;
     const searchKey = dialog.querySelector('[data-search-shortcut]');
     if (searchKey) searchKey.textContent = isMac ? 'Command + K' : 'Ctrl + K';
-    dialog
-      .querySelectorAll<HTMLElement>('[data-summary-shortcut]')
-      .forEach((row) => {
-        row.hidden = !document.querySelector('[data-reader-open]');
-      });
     dialog
       .querySelectorAll<HTMLElement>('[data-slides-shortcut]')
       .forEach((row) => {
@@ -106,7 +98,6 @@ if (dialog && heading && closeButton) {
   dialog.addEventListener('close', () => {
     if (!dialog.open) close();
   });
-  document.addEventListener('keyboard-shortcuts:close', close);
   window.addEventListener('beforeprint', close);
   document.addEventListener('keydown', (event) => {
     if (

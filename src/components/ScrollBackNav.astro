@@ -76,11 +76,6 @@ const {
 
       measureSource();
       window.addEventListener('resize', measureSource);
-      document.addEventListener('summary-reader:close', () => {
-        measureSource();
-        previousScrollY = Math.max(window.scrollY, 0);
-        sticky.classList.remove('is-visible');
-      });
       window.addEventListener(
         'scroll',
         () => {
