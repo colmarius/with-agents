@@ -1,6 +1,6 @@
 ---
 title: "Peter Thiel: The AI Crisis, Europe’s Decline & the Battle for America"
-resourceId: 156
+resourceId: 158
 date: "2026-09-24"
 ---
 
