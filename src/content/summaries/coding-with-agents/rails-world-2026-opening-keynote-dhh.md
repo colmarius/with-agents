@@ -6,7 +6,7 @@ date: "2026-09-23"
 
 David Heinemeier Hansson argues that coding agents change not only who writes code, but which products and architectures small teams can afford to build. He describes 37signals making handwritten code exceptional, early work on native HEY apps, and a preference for applications that users can operate through their own agents.
 
-This summary uses the saved English captions, identified by the capture tool as `caption`, not auto-generated captions. It is not an independent audio or benchmark review. Project results are DHH's reports; his predictions about programming careers and AI's wider benefits remain forecasts.
+This summary uses the saved English captions, labeled `caption` by the capture tool. It is not an independent audio or benchmark review. Project results are DHH's reports; his predictions about programming careers and AI's wider benefits remain forecasts.
 
 ### Agent-first development at 37signals
 
