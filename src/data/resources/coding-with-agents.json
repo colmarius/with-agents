@@ -1,5 +1,18 @@
 [
   {
+    "id": 156,
+    "primarySection": "teams-ecosystem",
+    "title": "Nell'era AI il tuo prodotto non è così facile da copiare come credi",
+    "subtitle": "Why cheaper code does not replace product judgment",
+    "url": "https://www.youtube.com/watch?v=AZCMN2_OCfE",
+    "description": "Salvatore Sanfilippo uses an AI-assisted CAD prototype to argue that useful products depend on accumulated design choices, domain experience, and refined interactions—not implementation cost alone. He acknowledges that cheaper implementation can also lower the barrier to copying a successful product. An opinion-led discussion based on Italian auto-generated captions, summarized in English; product ideas and competitive claims are not validated market findings.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-09-25",
+    "duration": "13m 10s",
+    "topics": ["business-adoption", "architecture-maintainability"]
+  },
+  {
     "id": 155,
     "primarySection": "workflows",
     "title": "Design Engineering with Maggie Appleton",
