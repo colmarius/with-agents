@@ -13,6 +13,25 @@
     "topics": ["business-adoption", "architecture-maintainability"]
   },
   {
+    "id": 157,
+    "primarySection": "teams-ecosystem",
+    "title": "Rails World 2026 Opening Keynote - DHH",
+    "subtitle": "Agent-first development, native apps, and bring-your-own-agent interfaces",
+    "url": "https://www.youtube.com/watch?v=vDjW_dRyKXY",
+    "description": "DHH describes 37signals making handwritten code exceptional, early native HEY apps, a Rust backend, and CLIs that let users bring their own agents. He argues that cheaper implementation changes architecture trade-offs while preserving the web's no-install advantage. Project results and efficiency figures are speaker-reported; claims about productivity, programming careers, and AI abundance are opinions and forecasts rather than controlled findings.",
+    "type": "video",
+    "source": "Ruby on Rails",
+    "date": "2026-09-23",
+    "duration": "1h 3m",
+    "topics": [
+      "business-adoption",
+      "architecture-maintainability",
+      "prompting-orchestration",
+      "tools-harnesses",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 155,
     "primarySection": "workflows",
     "title": "Design Engineering with Maggie Appleton",

@@ -63,6 +63,7 @@ export const codingWithAgentsFeaturedPeople = [
   {
     name: 'David Heinemeier Hansson (DHH)',
     summaryIds: [
+      'coding-with-agents/rails-world-2026-opening-keynote-dhh',
       'coding-with-agents/dhh-future-of-programming-ai-agentic-engineering',
       'coding-with-agents/dhhs-new-way-of-writing-code',
       'coding-with-agents/pencils-down-rework',
