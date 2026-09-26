@@ -1,5 +1,18 @@
 [
   {
+    "id": 156,
+    "primarySection": "implications-risks",
+    "title": "Peter Thiel: The AI Crisis, Europe’s Decline & the Battle for America",
+    "subtitle": "AI progress, stagnation risks, and European technology strategy",
+    "url": "https://www.youtube.com/watch?v=B7yl7fEHeKM",
+    "description": "Peter Thiel and Mathias Döpfner discuss whether AI can restart broad growth, the risks of stagnation and global slowdown proposals, and Europe's ability to build and scale technology companies. Thiel's political judgments, analogies, and forecasts are attributed arguments, not established causal findings; his Palantir adoption example is a first-party account.",
+    "type": "podcast",
+    "source": "MDMEETS - Essential Talks with Mathias Döpfner",
+    "date": "2026-09-24",
+    "duration": "1h 5m",
+    "topics": ["society-governance", "business-adoption"]
+  },
+  {
     "id": 152,
     "primarySection": "economics-industry",
     "title": "A Cheeky Pint with Anthropic CEO Dario Amodei",
