@@ -66,7 +66,7 @@ message: small
 
 Amp documents modes as capability presets, not promises about a fixed model
 ([The Dial](https://ampcode.com/docs/the-dial),
-[Models](https://ampcode.com/models)). An orb is a remote machine rebuilt from
+[Models](https://ampcode.com/modes)). An orb is a remote machine rebuilt from
 committed setup and resume hooks; project settings can add pre-clone prerequisites
 and a pre-setup script outside the repository
 ([Customizing Orbs](https://ampcode.com/docs/orbs/customizing)). Keep stable team
@@ -143,7 +143,7 @@ before accepting, and add concurrency or automation only when ownership is clear
 - Product behavior was checked on 2026-08-26 against
   [Amp Docs](https://ampcode.com/docs),
   [Orbs](https://ampcode.com/docs/orbs),
-  [Models](https://ampcode.com/models),
+  [Models](https://ampcode.com/modes),
   [Plugin API](https://ampcode.com/docs/plugin-api),
   [Pricing](https://ampcode.com/pricing), and
   [Chronicle](https://ampcode.com/chronicle). The Docs take precedence; model
