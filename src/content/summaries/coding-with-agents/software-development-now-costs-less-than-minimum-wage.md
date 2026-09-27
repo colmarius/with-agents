@@ -26,3 +26,5 @@ Geoffrey Huntley argues that cheap model inference and persistent coding-agent l
 - **Learn personally, then help someone else learn**: The constructive close is to build agent literacy and mentor another person through the same exercise. This advice is separable from Huntley's categorical recommendation to leave employers that ban AI, which gives insufficient weight to security, privacy, contractual, and regulatory constraints [48:13–49:54](https://www.youtube.com/watch?v=7Pkwv353DeI&t=2893s).
 
 [Watch the full talk on YouTube](https://www.youtube.com/watch?v=7Pkwv353DeI).
+
+**Shorter version:** Huntley's [eighteen-month recap](https://ghuntley.com/eighteen-month-recap/) presents similar arguments in an edited article and a roughly 17-minute Singapore talk from May 2026. One useful additional prompt for engineering managers: what have you changed in your systems and processes in response to AI? [2:09:00–2:09:54](https://www.youtube.com/watch?v=m12vGjfbNlo&t=7740s).

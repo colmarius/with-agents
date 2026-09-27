@@ -1,6 +1,6 @@
 ---
 title: "The eighteen-month recap: AI Engineer, Singapore, May 2026"
-summarySlug: "ai/geoffrey-huntley-eighteen-month-recap"
+summarySlug: "coding-with-agents/software-development-now-costs-less-than-minimum-wage"
 sourceUrl: "https://www.youtube.com/watch?v=m12vGjfbNlo"
 videoId: "m12vGjfbNlo"
 capturedAt: "2026-09-27T17:05:11.811Z"
