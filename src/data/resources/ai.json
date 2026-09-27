@@ -1,5 +1,17 @@
 [
   {
+    "id": 159,
+    "primarySection": "economics-industry",
+    "title": "AI, tools and transformation",
+    "subtitle": "Why cheaper tools do not eliminate workflow discovery or organizational change",
+    "url": "https://www.ben-evans.com/benedictevans/2026/9/3/ai-tools-and-transformation",
+    "description": "Benedict Evans argues that AI makes tools easier to build without resolving which problems to solve, how shared workflows should change, or who takes responsibility for them. He explains the movement between improvised spreadsheets and institutionalized software, then separates deployment choices from operational change and competitive strategy. An analytical essay using examples and historical analogies, not a measured study of enterprise AI outcomes.",
+    "type": "article",
+    "source": "Benedict Evans",
+    "date": "2026-09-03",
+    "topics": ["business-adoption", "collaboration-teams"]
+  },
+  {
     "id": 158,
     "primarySection": "implications-risks",
     "title": "Peter Thiel: The AI Crisis, Europe’s Decline & the Battle for America",
