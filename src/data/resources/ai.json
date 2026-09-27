@@ -1,5 +1,17 @@
 [
   {
+    "id": 159,
+    "primarySection": "economics-industry",
+    "title": "The eighteen-month recap: AI Engineer, Singapore, May 2026",
+    "subtitle": "Geoffrey Huntley on deliberate practice, agent literacy, and lean-company economics",
+    "url": "https://ghuntley.com/eighteen-month-recap/",
+    "description": "Geoffrey Huntley's edited Singapore talk argues that broader access to coding agents changes software economics and favors small teams that redesign their workflows. He recommends deliberate practice, building an agent to learn its mechanics, and removing organizational waste. The linked recording supports the practical themes; minimum-wage, staffing, and competitive-disruption claims remain anecdotes or forecasts rather than measured delivery economics.",
+    "type": "article",
+    "source": "Geoffrey Huntley",
+    "date": "2026-09-27",
+    "topics": ["business-adoption", "collaboration-teams", "tools-harnesses"]
+  },
+  {
     "id": 158,
     "primarySection": "implications-risks",
     "title": "Peter Thiel: The AI Crisis, Europe’s Decline & the Battle for America",
