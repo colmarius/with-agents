@@ -1,5 +1,24 @@
 [
   {
+    "id": 160,
+    "primarySection": "agent-systems",
+    "title": "Software Engineering Is Becoming Factory Engineering — Zach Lloyd, Warp",
+    "subtitle": "Lifecycle automation, human checkpoints, and feedback-driven skills",
+    "url": "https://www.youtube.com/watch?v=tUPPVhBBcoM",
+    "description": "Zach Lloyd proposes software factories that coordinate agents across triage, specs, implementation, review, verification, and monitoring. Drawing on Warp's open-source workflow, he describes human checkpoints and observer agents that improve skills from feedback. Based on English auto-generated captions; the factory model and career predictions are recommendations and forecasts, not measured productivity or reliability findings.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-09-27",
+    "duration": "20m 36s",
+    "topics": [
+      "prompting-orchestration",
+      "tools-harnesses",
+      "review-verification",
+      "open-source-ecosystem",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 156,
     "primarySection": "teams-ecosystem",
     "title": "Nell'era AI il tuo prodotto non è così facile da copiare come credi",
