@@ -21,33 +21,33 @@
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
-    "@astrojs/react": "6.0.2",
+    "@astrojs/react": "7.0.0",
     "@tailwindcss/typography": "0.5.20",
     "@tailwindcss/vite": "4.3.3",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.4",
-    "astro": "7.2.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "astro": "7.3.5",
     "clsx": "2.1.1",
     "minisearch": "7.2.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "react-markdown": "10.1.0",
     "rehype-sanitize": "6.0.0",
     "remark-gfm": "4.0.1",
-    "tailwind-merge": "3.6.0",
+    "tailwind-merge": "3.7.0",
     "tailwindcss": "4.3.3",
     "workbox-window": "7.4.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.7",
-    "@j178/prek": "0.5.2",
-    "@types/node": "24.13.3",
+    "@biomejs/biome": "2.5.14",
+    "@j178/prek": "0.5.4",
+    "@types/node": "24.19.0",
     "linkedom": "0.18.13",
     "typescript": "6.0.3",
     "workbox-build": "7.4.1",
-    "youtube-transcript-plus": "2.0.1"
+    "youtube-transcript-plus": "2.0.3"
   },
   "allowScripts": {
-    "esbuild@0.28.1": true
+    "esbuild@0.28.2": true
   }
 }
