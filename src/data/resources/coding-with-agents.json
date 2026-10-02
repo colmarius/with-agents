@@ -1,5 +1,24 @@
 [
   {
+    "id": 161,
+    "primarySection": "reliability",
+    "title": "Uncle Bob: Why I Stopped Reading Code and Building Harnesses",
+    "subtitle": "Simpler agent workflows, executable checks, and architecture-level supervision",
+    "url": "https://www.youtube.com/watch?v=5kCISBJwoZo",
+    "description": "Robert Martin tells Aviator's Ankur Jain why he abandoned an elaborate multi-agent pipeline while retaining unit tests, complexity-and-coverage checks, mutation testing, and human sign-off. He describes inspecting architecture through an agent-linked diagram tool instead of routinely reading code. Based on English auto-generated captions; workflow benefits are personal observations, and claims about replacing code review or shrinking teams are hypotheses rather than validated team outcomes.",
+    "type": "video",
+    "source": "Aviator",
+    "date": "2026-09-24",
+    "duration": "35m 3s",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "tools-harnesses",
+      "prompting-orchestration",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 160,
     "primarySection": "agent-systems",
     "title": "Software Engineering Is Becoming Factory Engineering — Zach Lloyd, Warp",
