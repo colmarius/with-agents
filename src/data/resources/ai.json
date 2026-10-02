@@ -1,5 +1,24 @@
 [
   {
+    "id": 164,
+    "primarySection": "concepts-capabilities",
+    "title": "WWC26-NA - 2026 in LLMs (so far)",
+    "subtitle": "Simon Willison on coding-agent progress, verification, costs, and human judgment",
+    "url": "https://www.youtube.com/watch?v=GAkIytR7vcc",
+    "description": "Simon Willison surveys 2026 through coding agents, personal agents, local models, software factories, and reported training-time security incidents. He argues that stronger agents shift engineering effort toward goals, constraints, verification, and product judgment. His demonstrations and capability assessments are personal observations; incident accounts are attributed reports, not independently verified here.",
+    "type": "video",
+    "source": "WeAreDevelopers",
+    "date": "2026-09-21",
+    "duration": "32m",
+    "topics": [
+      "models-evaluation",
+      "tools-harnesses",
+      "review-verification",
+      "safety-permissions",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 159,
     "primarySection": "economics-industry",
     "title": "AI, tools and transformation",
