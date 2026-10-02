@@ -19,6 +19,24 @@
     ]
   },
   {
+    "id": 162,
+    "primarySection": "reliability",
+    "title": "Kent Beck: Software Engineering in the Age of AI | Prodacity 2026",
+    "subtitle": "Features, future change, and the value of feedback between agent tasks",
+    "url": "https://www.youtube.com/watch?v=F8fBgDCf2Y4",
+    "description": "Kent Beck argues for alternating feature delivery with refactoring and learning to preserve future options. He discusses generated-code verification, one-shot versus iterative development, and measuring mission outcomes rather than code volume. Based on English auto-generated captions; project experiences and critiques are practitioner observations, not controlled productivity or reliability findings.",
+    "type": "video",
+    "source": "Rise8",
+    "date": "2026-09-29",
+    "duration": "51m 52s",
+    "topics": [
+      "architecture-maintainability",
+      "review-verification",
+      "collaboration-teams",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 160,
     "primarySection": "agent-systems",
     "title": "Software Engineering Is Becoming Factory Engineering — Zach Lloyd, Warp",
