@@ -5,7 +5,7 @@
     "title": "Fixing the PR Bottleneck — Matt Pocock, AIHero",
     "subtitle": "Behavioral tests, separate standards review, and risk-based human review",
     "url": "https://www.youtube.com/watch?v=LlgiOCmFG_w",
-    "description": "Matt Pocock proposes stronger behavioral tests, deep modules, a separate standards-review agent, and human review based on reversibility and blast radius. His Retro skill turns recurring feedback into checks and team standards. Practitioner advice, not measured productivity findings; based on an English transcript with an early gap and unverified caption kind, from an upload labelled bad audio.",
+    "description": "Matt Pocock proposes stronger behavioral tests, deep modules, a separate standards-review agent, and human review based on reversibility and blast radius. His Retro skill suggests automated checks and team-standard updates from review feedback. Practitioner advice, not measured productivity findings; based on an English transcript with an early gap and unverified caption kind, from an upload labelled bad audio.",
     "type": "video",
     "source": "AI Engineer",
     "date": "2026-09-25",
