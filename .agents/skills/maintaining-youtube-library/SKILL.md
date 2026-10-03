@@ -10,9 +10,31 @@ keeping editorial and publication decisions explicit. Read and follow the
 [authoritative library contract](../../../src/content/youtube/AGENTS.md) before
 changing `src/content/youtube/`; do not restate or bypass it.
 
-This skill covers tracked playlists and their resource-intake queues. A direct
-request to summarize one standalone YouTube video follows the root `AGENTS.md`
-single-video transcript workflow instead.
+This skill covers tracked playlists, collection placement, and resource-intake
+queues. Before treating a direct video request as standalone, apply the root
+`AGENTS.md` collection-first placement rule. Videos without a suitable existing
+collection follow the root single-video transcript workflow.
+
+## Collection Placement
+
+Before creating a standalone resource, search the exact video ID in configured
+playlist manifests and public collection summaries. Check likely stale playlists
+read-only when needed; shared channel or publisher identity is not membership.
+For an authorized addition with confirmed membership and editorial fit, prefer
+the existing public collection. In particular, relevant Pragmatic Engineer
+podcast episodes use resource 35 and collection
+`pragmatic-engineer-selected-conversations`; Summit talks outside that playlist
+remain standalone.
+
+Follow the authoritative curated-playlist contract: sync the selected playlist
+when needed, obtain selection approval, reuse valid transcript/summary evidence,
+and complete the evidence and overview review gates. Preserve existing summary
+slugs and transcripts. Match public `resourceId`, `collection`, `videoId`, and
+`order` to reviewed curation, update collection metadata and overview coverage,
+and remove superseded standalone records and catalog curation references only
+after checking their consumers. Do not create duplicate cards or evidence to
+satisfy intake. If selection approval or evidence is pending, report that blocker
+rather than silently publishing a standalone fallback.
 
 ## Choose One Mode
 
@@ -179,7 +201,7 @@ failures. Do not retry them during every routine check or sync.
 Use this bounded mode when asked to **refresh coding-agent intake** or **process
 coding-agent intake**. The configured slug is
 `coding-agents-resource-intake`. It is a temporary multi-speaker queue for
-standalone public resources, not a public playlist collection.
+public resources, not itself a public playlist collection.
 
 1. A refresh-only request is read-only:
 
@@ -203,8 +225,10 @@ standalone public resources, not a public playlist collection.
 3. Work in a bounded batch. For each pending ID, first search exact video IDs
    and canonical URLs in `src/data/resources/`, `src/content/summaries/`, and
    `src/content/transcripts/`. Reuse and repair complete existing artifacts;
-   never duplicate a canonical resource.
-4. For a genuinely new video, follow the root standalone YouTube workflow:
+   never duplicate a canonical resource. Apply Collection Placement above before
+   creating a standalone record, including when a video arrives through intake.
+4. For a genuinely new video without a suitable existing collection, follow the
+   root standalone YouTube workflow:
    capture the transcript, read it fully, add one canonical resource under
    `coding-with-agents`, assign its strongest catalog section and topics, and
    write the public summary. Preserve source-supported attribution and qualify
