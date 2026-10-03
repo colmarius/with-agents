@@ -2,6 +2,9 @@
 title: "The Pragmatic Engineer Podcast"
 status: reviewed
 coveredVideoIds:
+  - KZSzF0KEFRg
+  - 4DhcSPkEbwI
+  - sLSTM9znQNs
   - CQmI4XKTa0U
   - Usufn8IQJgw
   - julbw1JuAz0
@@ -21,10 +24,13 @@ coveredVideoIds:
 
 ## Coverage
 
-The full manifest tracks 73 available videos for membership and drift. This overview covers all 15 human-selected videos, all 15 of which have reviewed source evidence: 12 source-library summaries and 3 reused standalone transcript/public-summary chains. All 15 are incorporated and 0 selected videos remain pending. The other 58 manifest entries are deliberately unselected and create no transcript or summary obligation. The Pragmatic Engineer curates the playlist; speakers and affiliations vary by video.
+The full manifest tracks 78 available videos for membership and drift. This overview covers all 18 human-selected videos, all 18 of which have reviewed source evidence: 12 source-library summaries and 6 reused transcript/public-summary chains. All 18 are incorporated and 0 selected videos remain pending. The other 60 manifest entries are deliberately unselected and create no transcript or summary obligation. The Pragmatic Engineer curates the playlist; speakers and affiliations vary by video. The three September additions appear newest first, followed by the existing editorial sequence.
 
 ## Current Thesis
 
+- Maggie Appleton, discussing her prototyping work at GitHub Next, combines paper sketches, browser prototypes, and agent-built controls to make design choices visible; her shared decision interfaces remain proposals rather than established solutions ([summary](../../../summaries/coding-with-agents/design-engineering-maggie-appleton.md)).
+- Matt Pocock describes reusable skills that interview the developer, save specifications across sessions, and give agents executable feedback; he scales planning to the cost of correction and warns that automated review still needs evaluation ([summary](../../../summaries/coding-with-agents/ai-skills-with-matt-pocock.md)).
+- Tibo Sottiaux of OpenAI explains how separating Codex's agent core from its interfaces supports reuse across products, while model improvements change which instructions the harness needs; his capability claims and forecasts remain product-team reports, not independently validated findings ([summary](../../../summaries/coding-with-agents/building-codex-with-tibo-sottiaux.md)).
 - Martin Fowler argues that LLMs make software construction non-deterministic, so teams should use faster generation to shorten learning loops while preserving incremental delivery, review, testing, and refactoring ([summary](../../videos/CQmI4XKTa0U/summary.md)).
 - Dex Horthy of HumanLayer argues that durable coding-agent leverage comes from controlling model context, using bounded loops with observable feedback, and placing human judgment before consequential implementation ([summary](../../videos/Usufn8IQJgw/summary.md)).
 - Boris Cherny of Anthropic describes Claude Code as shifting engineering effort toward planning, parallel delegation, verification, rapid prototyping, and coordination across disciplines, while retaining layered safety and review controls ([summary](../../videos/julbw1JuAz0/summary.md)).
@@ -51,6 +57,7 @@ The full manifest tracks 73 available videos for membership and drift. This over
 
 ## Emerging Ideas
 
+- Editorial: Appleton's visual decision tools and Pocock's interview skills offer different ways to resolve intent before implementation. Sottiaux likewise separates discussion of a change's purpose from checking its code; none establishes that tests or a polished prototype can decide what a team should build ([Appleton summary](../../../summaries/coding-with-agents/design-engineering-maggie-appleton.md); [Pocock summary](../../../summaries/coding-with-agents/ai-skills-with-matt-pocock.md); [Sottiaux summary](../../../summaries/coding-with-agents/building-codex-with-tibo-sottiaux.md)).
 - Editorial: Cherny's parallel plan-and-implement sessions and Horthy's intentionally compacted research, design, and planning stages both shift human effort toward shaping context and architecture before agents produce expensive-to-redirect code ([Cherny summary](../../videos/julbw1JuAz0/summary.md); [Horthy summary](../../videos/Usufn8IQJgw/summary.md)).
 - Editorial: Zechner and Ronacher's self-modifying Pi harness extends context engineering into the tool itself: an agent can add project-specific capabilities, but each extension also increases the system future agents must understand ([Pi summary](../../../summaries/coding-with-agents/building-pi-and-what-makes-self-modifying-software-so-fascinating.md)).
 - Editorial: Wayne's formal-specification examples suggest a stronger role for executable properties as agent feedback, while his experiments also show the central limit: models may produce valid formal syntax without identifying what the system should guarantee ([summary](../../../summaries/coding-with-agents/formal-methods-with-hillel-wayne.md)).

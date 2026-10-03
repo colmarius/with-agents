@@ -3,7 +3,7 @@ title: "Formal methods with Hillel Wayne"
 resourceId: 35
 date: "2026-07-29"
 collection: "pragmatic-engineer-selected-conversations"
-order: 6
+order: 9
 videoId: "KSkcgIYQy0U"
 ---
 

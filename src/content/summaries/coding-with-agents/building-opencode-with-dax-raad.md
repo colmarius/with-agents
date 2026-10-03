@@ -3,7 +3,7 @@ title: "Building OpenCode with Dax Raad"
 resourceId: 35
 date: "2026-05-27"
 collection: "pragmatic-engineer-selected-conversations"
-order: 13
+order: 16
 videoId: "1VqKUrxR2C8"
 ---
 

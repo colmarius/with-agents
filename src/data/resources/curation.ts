@@ -297,11 +297,6 @@ export const codingCuration = {
       reason:
         'Uses contrasting harness architectures and negative results to explain design trade-offs.',
     },
-    122: {
-      tier: 'useful',
-      reason:
-        'Explores the boundary between agents and their interfaces, and how those parts evolve together.',
-    },
     126: {
       tier: 'useful',
       reason:

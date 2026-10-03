@@ -3,7 +3,7 @@ title: "Mitchell Hashimoto’s new way of writing code"
 resourceId: 35
 date: "2026-02-25"
 collection: "pragmatic-engineer-selected-conversations"
-order: 7
+order: 10
 videoId: "WjckELpzLOU"
 ---
 

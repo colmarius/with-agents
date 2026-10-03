@@ -1,7 +1,10 @@
 ---
 title: "Design Engineering with Maggie Appleton"
-resourceId: 155
+resourceId: 35
 date: "2026-09-23"
+collection: "pragmatic-engineer-selected-conversations"
+order: 1
+videoId: "KZSzF0KEFRg"
 ---
 
 Maggie Appleton discusses design engineering, her prototyping work at GitHub Next, and how coding agents change the work before implementation. Her practical approach combines paper sketches, browser prototypes, and agent-built controls for adjusting a design directly.

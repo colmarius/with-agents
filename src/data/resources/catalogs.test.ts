@@ -152,10 +152,40 @@ test('AI groups broad resources while preserving substantive coding cross-listin
       `${id} uses one canonical record`,
     );
   }
-  for (const id of [124, 125, 126, 122, 118, 44, 45, 21, 20]) {
+  for (const id of [124, 125, 126, 118, 44, 45, 21, 20]) {
     assert.ok(coding.resourceIds.includes(id));
     assert.ok(!ai.resourceIds.includes(id), `${id} stays coding-specific`);
   }
+});
+
+test('Pragmatic Engineer episodes reuse the collection without duplicate cards', () => {
+  const episodes = [
+    ['design-engineering-maggie-appleton', 'KZSzF0KEFRg', 155, 1],
+    ['ai-skills-with-matt-pocock', '4DhcSPkEbwI', 149, 2],
+    ['building-codex-with-tibo-sottiaux', 'sLSTM9znQNs', 122, 3],
+  ] as const;
+  for (const [slug, videoId, oldId, order] of episodes) {
+    assert.ok(!resources.some(({ id }) => id === oldId));
+    const summary = readFileSync(
+      `src/content/summaries/coding-with-agents/${slug}.md`,
+      'utf8',
+    );
+    assert.match(summary, /^resourceId: 35$/m);
+    assert.match(
+      summary,
+      /^collection: "pragmatic-engineer-selected-conversations"$/m,
+    );
+    assert.match(summary, new RegExp(`^videoId: "${videoId}"$`, 'm'));
+    assert.match(summary, new RegExp(`^order: ${order}$`, 'm'));
+  }
+  assert.equal(resources.find(({ id }) => id === 14)?.type, 'video');
+  assert.doesNotMatch(
+    readFileSync(
+      'src/content/summaries/coding-with-agents/simon-willison-engineering-practices-that-make-coding-agents-work.md',
+      'utf8',
+    ),
+    /^collection:/m,
+  );
 });
 
 test('Cloud, Security, and Harari resources have one standalone summary each', () => {

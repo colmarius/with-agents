@@ -1,10 +1,15 @@
 ---
 title: "Building Codex with Tibo Sottiaux"
-resourceId: 122
+resourceId: 35
 date: "2026-09-09"
+collection: "pragmatic-engineer-selected-conversations"
+order: 3
+videoId: "sLSTM9znQNs"
 ---
 
 Codex separates its agent from the interface people use to control it. Tibo Sottiaux explains why that boundary matters as OpenAI brings the agent into more products, and how the team decides whether to improve the model or the harness—the instructions, tools, and execution controls around it.
+
+*Based on the video's English auto-generated captions, without an original-audio check. Capability claims and forecasts are Sottiaux's product-team reports, not independently validated findings.*
 
 ### Main takeaways
 

@@ -3,7 +3,7 @@ title: "How AI will change software engineering – with Martin Fowler"
 resourceId: 35
 date: "2025-11-19"
 collection: "pragmatic-engineer-selected-conversations"
-order: 1
+order: 4
 videoId: "CQmI4XKTa0U"
 ---
 

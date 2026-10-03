@@ -3,7 +3,7 @@ title: "DHH’s new way of writing code"
 resourceId: 35
 date: "2026-04-08"
 collection: "pragmatic-engineer-selected-conversations"
-order: 12
+order: 15
 videoId: "JiWgKRgdgpI"
 ---
 

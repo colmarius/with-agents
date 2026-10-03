@@ -3,7 +3,7 @@ title: "TDD, AI agents and coding with Kent Beck"
 resourceId: 35
 date: "2025-06-11"
 collection: "pragmatic-engineer-selected-conversations"
-order: 8
+order: 11
 videoId: "aSXaxOdVtAQ"
 ---
 

@@ -1,7 +1,10 @@
 ---
 title: "AI Skills with Matt Pocock"
-resourceId: 149
+resourceId: 35
 date: "2026-09-17"
+collection: "pragmatic-engineer-selected-conversations"
+order: 2
+videoId: "4DhcSPkEbwI"
 ---
 
 Gergely Orosz, host of The Pragmatic Engineer podcast, interviews Matt Pocock about packaging his coding-agent workflow as skills: folders of Markdown instructions that a developer or agent can invoke [30:45–31:37](https://www.youtube.com/watch?v=4DhcSPkEbwI&t=1845s).

@@ -106,24 +106,6 @@
     ]
   },
   {
-    "id": 155,
-    "primarySection": "workflows",
-    "title": "Design Engineering with Maggie Appleton",
-    "subtitle": "Sketching, live design controls, and collaborative agent planning",
-    "url": "https://www.youtube.com/watch?v=KZSzF0KEFRg",
-    "description": "Maggie Appleton explains how she combines paper sketches, browser prototypes, and agent-built controls to refine interfaces, and proposes richer shared decision tools for agent planning. A practitioner interview based on English auto-generated captions; workflow outcomes and model limitations are her observations, while collaborative interfaces are prototype proposals rather than established solutions.",
-    "type": "video",
-    "source": "The Pragmatic Engineer",
-    "date": "2026-09-23",
-    "duration": "1h 28m",
-    "topics": [
-      "prompting-orchestration",
-      "tools-harnesses",
-      "review-verification",
-      "collaboration-teams"
-    ]
-  },
-  {
     "id": 154,
     "primarySection": "reliability",
     "title": "Peter Naur - Programming as Theory Building",
@@ -138,25 +120,6 @@
       "architecture-maintainability",
       "collaboration-teams",
       "review-verification"
-    ]
-  },
-  {
-    "id": 149,
-    "primarySection": "workflows",
-    "title": "AI Skills with Matt Pocock",
-    "url": "https://www.youtube.com/watch?v=4DhcSPkEbwI",
-    "description": "Matt Pocock explains how interview-style skills, durable specs, ticketed context windows, shared domain language, feedback loops, and independent review can make coding-agent workflows more reliable. A practitioner interview based on English auto-generated captions; workflow results, model-behavior claims, and organizational recommendations are speaker-reported rather than controlled findings.",
-    "type": "video",
-    "source": "The Pragmatic Engineer",
-    "date": "2026-09-17",
-    "duration": "1h 37m",
-    "topics": [
-      "prompting-orchestration",
-      "context-memory",
-      "tools-harnesses",
-      "review-verification",
-      "architecture-maintainability",
-      "collaboration-teams"
     ]
   },
   {
@@ -436,24 +399,6 @@
       "architecture-maintainability",
       "tools-harnesses",
       "open-source-ecosystem"
-    ]
-  },
-  {
-    "id": 122,
-    "primarySection": "agent-systems",
-    "title": "Building Codex with Tibo Sottiaux",
-    "subtitle": "Codex's Rust CLI, open-source harness, and development workflow",
-    "url": "https://www.youtube.com/watch?v=sLSTM9znQNs",
-    "description": "Tibo Sottiaux explains Codex's Rust agent–interface boundary, open-source trade-offs, model–harness co-design, and local versus cloud execution. He describes OpenAI's connected-agent workflow and argues for reviewing intent and invariants as verification and maintenance become more automated. A transcript-backed product-team interview; capability claims and forecasts are not independently validated results.",
-    "type": "video",
-    "source": "The Pragmatic Engineer",
-    "date": "2026-09-09",
-    "duration": "1h 14m",
-    "topics": [
-      "tools-harnesses",
-      "open-source-ecosystem",
-      "review-verification",
-      "architecture-maintainability"
     ]
   },
   {
@@ -1244,13 +1189,15 @@
     "id": 35,
     "primarySection": "reliability",
     "title": "The Pragmatic Engineer — selected conversations",
-    "subtitle": "Fifteen curated conversations on agent workflows, verification, context, and software quality",
+    "subtitle": "Eighteen curated conversations on agent workflows, design, harnesses, and software quality",
     "url": "https://www.youtube.com/playlist?list=PLzwJJv8h-iciW53inSOkQA4mkG8TuQAUh",
-    "description": "A manually reviewed selection of Pragmatic Engineer conversations with Martin Fowler, Dex Horthy, Boris Cherny, Mario Zechner and Armin Ronacher, Laura Tacho, Hillel Wayne, Mitchell Hashimoto, Kent Beck, Peter Steinberger, Grady Booch, Steve Yegge, DHH, Dax Raad, Charity Majors, and Addy Osmani. Topics include agent workflows, context and harness design, TDD and verification, architecture, measurement, accountability, and open-source governance under agent-generated change.",
+    "description": "A manually reviewed selection of Pragmatic Engineer conversations with Maggie Appleton, Matt Pocock, Tibo Sottiaux, Martin Fowler, Dex Horthy, Boris Cherny, Mario Zechner and Armin Ronacher, Laura Tacho, Hillel Wayne, Mitchell Hashimoto, Kent Beck, Peter Steinberger, Grady Booch, Steve Yegge, DHH, Dax Raad, Charity Majors, and Addy Osmani. Topics include design prototyping, reusable skills, agent workflows, context and harness design, TDD and verification, architecture, measurement, accountability, and open-source governance. Practitioner observations, product-team claims, and forecasts are not controlled findings.",
     "type": "playlist",
     "source": "The Pragmatic Engineer",
-    "date": "2026-08-19",
+    "date": "2026-09-23",
     "topics": [
+      "prompting-orchestration",
+      "collaboration-teams",
       "tools-harnesses",
       "context-memory",
       "architecture-maintainability",
