@@ -1,10 +1,15 @@
 ---
-title: "50,000 GitHub Stars in Four Months | Jinjing Liang (Orca ADE, Co-founder & CEO)"
-resourceId: 125
+title: "What Changes After You Join YC? | Jinjing Liang (Orca ADE, Co-founder & CEO)"
+resourceId: 31
 date: "2026-08-29"
+collection: "the-west-coast-builders"
+order: 1
+videoId: "PcsdNYfR6Ag"
 ---
 
 Jinjing Liang, Orca's co-founder and CEO, joins Mayank Gupta on The West Coast Builders to discuss an **agentic development environment (ADE)**: an IDE designed around working with multiple agents. The practical material covers parallel task execution, coordination between different coding agents, and session history that lets a person inspect or resume their work.
+
+*Based on the saved English caption track (kind: caption), without translation or original-audio verification. The captions contain transcription errors; clear passages are paraphrased. Product and performance claims remain Liang's account, not independently verified results.*
 
 ### Main takeaways
 
@@ -22,4 +27,4 @@ Editorial synthesis: test a multi-agent environment on a real handoff. Can you s
 
 ### Source
 
-[Mayank Gupta — 50,000 GitHub Stars in Four Months](https://www.youtube.com/watch?v=PcsdNYfR6Ag), published August 29, 2026.
+[Mayank Gupta — What Changes After You Join YC? | Jinjing Liang](https://www.youtube.com/watch?v=PcsdNYfR6Ag), published August 29, 2026. The same recording was previously titled “50,000 GitHub Stars in Four Months”; the saved transcript retains that capture-time title.

@@ -3,7 +3,7 @@ title: "Matt Pocock’s Agentic Engineering Workflow (just copy him)"
 resourceId: 32
 date: "2026-06-18"
 collection: "david-ondrej-agentic-engineering"
-order: 3
+order: 4
 videoId: "nQwJVHCtDDY"
 ---
 

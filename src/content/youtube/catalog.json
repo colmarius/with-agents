@@ -103,7 +103,20 @@
       "title": "The West Coast Builders",
       "transcriptLanguage": "en",
       "summaryLanguage": "en",
-      "multiSpeaker": true
+      "multiSpeaker": true,
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "PcsdNYfR6Ag",
+          "C6u5CBIXRf0",
+          "wbsDZpVB4Lg",
+          "thMFsqe8kbQ",
+          "5H862RhMgOU",
+          "_L8xxUXOTk0",
+          "PZ-sko1NWa0",
+          "fu7th5HiADo"
+        ]
+      }
     },
     {
       "id": "PL2xnrU4RbY0AamUB7lEm8-ZJsq0yzELRz",
@@ -115,6 +128,7 @@
       "curation": {
         "status": "reviewed",
         "videoIds": [
+          "SxuQs9GGYbk",
           "xgkjtF89-44",
           "FU5_kpTAVDo",
           "nQwJVHCtDDY",

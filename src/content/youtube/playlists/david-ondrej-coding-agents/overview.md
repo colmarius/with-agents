@@ -2,6 +2,7 @@
 title: "David Ondrej Podcast"
 status: reviewed
 coveredVideoIds:
+  - SxuQs9GGYbk
   - xgkjtF89-44
   - FU5_kpTAVDo
   - nQwJVHCtDDY
@@ -11,10 +12,11 @@ coveredVideoIds:
 
 ## Coverage
 
-The full manifest tracks 55 available videos for membership and drift. This overview covers all 5 human-selected videos, all 5 of which have reviewed source evidence: 3 source-library summaries and 2 reused standalone transcript/public-summary chains. All 5 are incorporated and 0 selected videos remain pending. The other 50 manifest entries are deliberately unselected and create no transcript or summary obligation. David Ondrej curates and hosts the playlist; speakers and affiliations vary by video.
+The full manifest tracks 63 videos: 62 available and 1 deleted/unavailable. This overview covers all 6 human-selected videos, all 6 of which have reviewed source evidence: 3 source-library summaries and 3 reused transcript/public-summary chains. All 6 are incorporated and 0 selected videos remain pending. The other 57 manifest entries are deliberately unselected and create no transcript or summary obligation. David Ondrej curates and hosts the playlist; speakers and affiliations vary by video. Ronacher's September interview leads the existing editorial sequence.
 
 ## Current Thesis
 
+- Armin Ronacher describes a mostly local, collaborative workflow in which real dependencies and tests, inspectable systems, and useful outcomes matter more than agent concurrency; he has not established an autonomous software factory ([summary](../../../summaries/coding-with-agents/pi-agent-agentic-engineering-workflow.md)).
 - Dexter Horthy of HumanLayer argues that faster generation moves the delivery bottleneck toward product definition, architecture, maintainability, and review rather than eliminating those responsibilities ([summary](../../../summaries/coding-with-agents/forget-loops-build-a-software-factory-instead-dexter-horthy.md)).
 - Thorsten Ball, a founding engineer at Amp, argues that cheap implementation increases the value of product judgment, first-principles workflow design, discoverable context, and asynchronous evidence-based review ([summary](../../../summaries/coding-with-agents/agentic-engineering-explained-by-a-10x-developer.md)).
 - Matt Pocock of AI Hero similarly keeps architecture, prioritization, and acceptance criteria human-owned while using isolated agents for bounded implementation and review queues ([summary](../../videos/nQwJVHCtDDY/summary.md)).
@@ -37,6 +39,7 @@ The full manifest tracks 55 available videos for membership and drift. This over
 
 ## Revisions and Tensions
 
+- Editorial: Ronacher's preference for environments he controls qualifies the selection's emphasis on isolated parallel agents: a separate code directory does not itself provide a working database or Kafka cluster, and higher activity does not establish business value. He acknowledges that managed cloud setups may solve these problems; his account is not a universal argument against cloud agents ([summary](../../../summaries/coding-with-agents/pi-agent-agentic-engineering-workflow.md)).
 - Dexter Horthy of HumanLayer rejects unread “lights-off” code for maintainable products, while Thorsten Ball of Amp is comfortable reviewing architecture, tests, screenshots, and behavior rather than every generated line; both retain human responsibility, but at different review granularity ([Horthy summary](../../../summaries/coding-with-agents/forget-loops-build-a-software-factory-instead-dexter-horthy.md); [Ball summary](../../../summaries/coding-with-agents/agentic-engineering-explained-by-a-10x-developer.md)).
 - Matt Pocock of AI Hero wants checkpoints to move later for low-risk work but still needs review evidence to improve the harness; Kun makes the same cost trade-off explicit by reserving his heaviest validation pipeline for consequential changes ([Pocock summary](../../videos/nQwJVHCtDDY/summary.md); [Kun summary](../../videos/8ZgpAXe5V5w/summary.md)).
 - Magnus Müller of Browser Use presents human approval as a safety boundary for external actions, yet also describes approval volume as a throughput constraint and proposal acceptance as an optimization target ([summary](../../videos/k8o_UgtrGyA/summary.md)).

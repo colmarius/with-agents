@@ -333,44 +333,6 @@
     ]
   },
   {
-    "id": 136,
-    "primarySection": "workflows",
-    "title": "Pi Agent dev reveals his Agentic Engineering Workflow",
-    "subtitle": "Armin Ronacher on local environments, inspectable agents, and measuring useful work",
-    "url": "https://www.youtube.com/watch?v=SxuQs9GGYbk",
-    "description": "Armin Ronacher discusses his mostly local coding-agent workflow with David Ondrej: investigating problems with an agent, keeping test dependencies running, and preserving human understanding of the resulting system. He questions whether greater agent concurrency produces better business outcomes and discusses resumable agents, persistent interfaces, open-source maintenance, and inference costs. Practitioner observations and forecasts, not a benchmark or setup tutorial.",
-    "type": "video",
-    "source": "David Ondrej",
-    "date": "2026-09-12",
-    "duration": "1h 5m",
-    "topics": [
-      "tools-harnesses",
-      "review-verification",
-      "context-memory",
-      "open-source-ecosystem",
-      "business-adoption"
-    ]
-  },
-  {
-    "id": 125,
-    "primarySection": "agent-systems",
-    "title": "50,000 GitHub Stars in Four Months | Jinjing Liang (Orca ADE, Co-founder & CEO)",
-    "subtitle": "Multi-agent worktrees, portable session history, and developer-tool adoption",
-    "url": "https://www.youtube.com/watch?v=PcsdNYfR6Ag",
-    "description": "Orca founder Jinjing Liang describes an agentic development environment for coordinating different coding agents across parallel tasks, inspecting session history, and resuming automated work interactively. The interview also covers vendor lock-in, open-source adoption, inference costs, and community-led marketing. Product capabilities, productivity claims, and market forecasts are the speaker's account, not independently verified results.",
-    "type": "video",
-    "source": "Mayank Gupta — The West Coast Builders",
-    "date": "2026-08-29",
-    "duration": "48m",
-    "topics": [
-      "tools-harnesses",
-      "prompting-orchestration",
-      "context-memory",
-      "open-source-ecosystem",
-      "business-adoption"
-    ]
-  },
-  {
     "id": 126,
     "primarySection": "reliability",
     "title": "Trying the new Claude Eval tool",
@@ -1227,12 +1189,12 @@
     "id": 32,
     "primarySection": "workflows",
     "title": "David Ondrej Podcast — selected agentic engineering conversations",
-    "subtitle": "Five curated interviews on software factories, agent orchestration, review, and harness design",
+    "subtitle": "Six curated interviews on software factories, agent environments, review, and harness design",
     "url": "https://www.youtube.com/playlist?list=PL2xnrU4RbY0AamUB7lEm8-ZJsq0yzELRz",
-    "description": "A manually reviewed selection from the David Ondrej Podcast featuring Dexter Horthy, Thorsten Ball, Matt Pocock, Kun, and Magnus Müller. The conversations examine how agentic engineering shifts attention from code generation toward product judgment, architecture, context, orchestration, verification, and small adaptable harnesses.",
+    "description": "A manually reviewed selection from the David Ondrej Podcast featuring Armin Ronacher, Dexter Horthy, Thorsten Ball, Matt Pocock, Kun, and Magnus Müller. The conversations examine how agentic engineering shifts attention from code generation toward product judgment, architecture, working environments, context, orchestration, verification, and small adaptable harnesses. Practitioner observations and forecasts are not controlled findings.",
     "type": "playlist",
     "source": "David Ondrej",
-    "date": "2026-08-07",
+    "date": "2026-09-12",
     "topics": [
       "tools-harnesses",
       "prompting-orchestration",
@@ -1259,13 +1221,17 @@
     "id": 31,
     "primarySection": "agent-systems",
     "title": "The West Coast Builders — coding-agent collection",
+    "subtitle": "Eight selected interviews on harnesses, multi-agent workflows, context, and review",
     "url": "https://www.youtube.com/playlist?list=PLV_xLvHFOwiuvtEhsFIW55AdFFP7Rpnvg",
-    "description": "A selected coding-agent route through Mayank Gupta's broader interview playlist, covering agent harnesses, review, architecture, model economics, context, and the changing work of software developers. The guests remain the sources for their individual claims.",
+    "description": "Eight selected conversations with Jinjing Liang, Gil Feig, Ben Vinegar, Thorsten Ball, Li Yin, Quinn Slack, Mario Zechner, and Peter Steinberger from Mayank Gupta's broader interview playlist. Topics include agent harnesses, parallel worktrees, inspectable session history, review, architecture, model economics, and durable context. Product claims and forecasts remain the guests' accounts, not independently verified results.",
     "type": "playlist",
     "source": "Mayank Gupta",
-    "date": "2026-04-25",
+    "date": "2026-08-29",
     "topics": [
       "tools-harnesses",
+      "prompting-orchestration",
+      "context-memory",
+      "review-verification",
       "architecture-maintainability",
       "models-evaluation",
       "business-adoption"

@@ -2,6 +2,8 @@
 title: "Building the future of AI Coding Agents"
 resourceId: 31
 collection: "the-west-coast-builders"
+order: 5
+videoId: "5H862RhMgOU"
 date: "2026-05-04"
 ---
 

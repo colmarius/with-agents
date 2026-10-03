@@ -1,7 +1,10 @@
 ---
 title: "Pi Agent dev reveals his Agentic Engineering Workflow"
-resourceId: 136
+resourceId: 32
 date: "2026-09-12"
+collection: "david-ondrej-agentic-engineering"
+order: 1
+videoId: "SxuQs9GGYbk"
 ---
 
 Armin Ronacher describes a mostly local, collaborative way of working with coding agents: investigate problems together, keep a functioning development environment, and retain the ability to understand what the agent did. In this conversation with David Ondrej, he treats higher agent concurrency and more generated code as means to an outcome, not evidence of success.

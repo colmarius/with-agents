@@ -3,7 +3,7 @@ title: "Agentic Engineering, explained by a 10x developer"
 resourceId: 32
 date: "2026-07-27"
 collection: "david-ondrej-agentic-engineering"
-order: 2
+order: 3
 videoId: "FU5_kpTAVDo"
 ---
 

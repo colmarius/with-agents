@@ -2,6 +2,8 @@
 title: "LLMs are killing Agent Harness"
 resourceId: 31
 collection: "the-west-coast-builders"
+order: 4
+videoId: "thMFsqe8kbQ"
 date: "2026-05-20"
 ---
 

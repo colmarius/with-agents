@@ -152,7 +152,7 @@ test('AI groups broad resources while preserving substantive coding cross-listin
       `${id} uses one canonical record`,
     );
   }
-  for (const id of [124, 125, 126, 118, 44, 45, 21, 20]) {
+  for (const id of [124, 126, 118, 44, 45, 21, 20]) {
     assert.ok(coding.resourceIds.includes(id));
     assert.ok(!ai.resourceIds.includes(id), `${id} stays coding-specific`);
   }
@@ -182,6 +182,43 @@ test('Pragmatic Engineer episodes reuse the collection without duplicate cards',
   assert.doesNotMatch(
     readFileSync(
       'src/content/summaries/coding-with-agents/simon-willison-engineering-practices-that-make-coding-agents-work.md',
+      'utf8',
+    ),
+    /^collection:/m,
+  );
+});
+
+test('Ondrej and West Coast migrations preserve summary routes without duplicate cards', () => {
+  for (const [slug, oldId, ownerId, collection, videoId] of [
+    [
+      'pi-agent-agentic-engineering-workflow',
+      136,
+      32,
+      'david-ondrej-agentic-engineering',
+      'SxuQs9GGYbk',
+    ],
+    [
+      'orca-ade-jinjing-liang',
+      125,
+      31,
+      'the-west-coast-builders',
+      'PcsdNYfR6Ag',
+    ],
+  ] as const) {
+    assert.ok(!resources.some(({ id }) => id === oldId));
+    assert.equal(resources.find(({ id }) => id === ownerId)?.type, 'playlist');
+    const summary = readFileSync(
+      `src/content/summaries/coding-with-agents/${slug}.md`,
+      'utf8',
+    );
+    assert.match(summary, new RegExp(`^resourceId: ${ownerId}$`, 'm'));
+    assert.match(summary, new RegExp(`^collection: "${collection}"$`, 'm'));
+    assert.match(summary, new RegExp(`^videoId: "${videoId}"$`, 'm'));
+  }
+  assert.equal(resources.find(({ id }) => id === 117)?.type, 'video');
+  assert.doesNotMatch(
+    readFileSync(
+      'src/content/summaries/coding-with-agents/my-agentic-engineering-workflow.md',
       'utf8',
     ),
     /^collection:/m,

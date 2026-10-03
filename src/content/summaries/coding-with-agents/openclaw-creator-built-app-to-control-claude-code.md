@@ -2,6 +2,8 @@
 title: "OpenClaw Creator built App to Control Claude Code"
 resourceId: 31
 collection: "the-west-coast-builders"
+order: 8
+videoId: "fu7th5HiADo"
 date: "2025-07-02"
 ---
 

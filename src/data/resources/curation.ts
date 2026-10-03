@@ -307,11 +307,6 @@ export const codingCuration = {
       reason:
         'Offers a practitioner critique of autonomy and readability; the examples are anecdotal.',
     },
-    136: {
-      tier: 'useful',
-      reason:
-        'Emphasizes real dependencies, inspectability, and completed outcomes rather than concurrency alone.',
-    },
     2: {
       tier: 'context',
       reason:
@@ -406,11 +401,6 @@ export const codingCuration = {
       tier: 'context',
       reason:
         'Places useful-work evaluation within a much broader debate about AGI and persistent model state.',
-    },
-    125: {
-      tier: 'context',
-      reason:
-        'Contains agent-coordination detail within a broader founder and project-growth interview.',
     },
     133: {
       tier: 'context',

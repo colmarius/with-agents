@@ -2,6 +2,8 @@
 title: "How to Ship 100x Faster as a Developer?"
 resourceId: 31
 collection: "the-west-coast-builders"
+order: 2
+videoId: "C6u5CBIXRf0"
 date: "2026-08-06"
 ---
 
