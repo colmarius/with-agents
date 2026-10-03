@@ -1,6 +1,6 @@
 ---
 name: maintaining-youtube-library
-description: "Maintains tracked YouTube sources and the coding-agent resource intake. Triggers on: check or sync tracked playlists, retry captions, add a playlist, refresh coding-agent intake, process coding-agent intake."
+description: "Maintains YouTube sources, collection placement, and resource intake. Triggers on: check or sync tracked playlists, retry captions, add a playlist, collection placement, refresh coding-agent intake, process coding-agent intake."
 ---
 
 # Maintaining the YouTube Library
@@ -20,6 +20,11 @@ collection follow the root single-video transcript workflow.
 Before creating a standalone resource, search the exact video ID in configured
 playlist manifests and public collection summaries. Check likely stale playlists
 read-only when needed; shared channel or publisher identity is not membership.
+Confirm that the destination is a consolidated collection with catalog curation
+and collection-child metadata, not an editorial guide linking independent cards.
+Preserve intentionally independent cards and applicable standalone exceptions in
+`.agents/scripts/public-content-guard.mjs`. Converting a guide or migrating other
+resources requires separate authorization; playlist membership alone is not enough.
 For an authorized addition with confirmed membership and editorial fit, prefer
 the existing public collection. In particular, relevant Pragmatic Engineer
 podcast episodes use resource 35 and collection
@@ -227,12 +232,18 @@ public resources, not itself a public playlist collection.
    `src/content/transcripts/`. Reuse and repair complete existing artifacts;
    never duplicate a canonical resource. Apply Collection Placement above before
    creating a standalone record, including when a video arrives through intake.
-4. For a genuinely new video without a suitable existing collection, follow the
-   root standalone YouTube workflow:
-   capture the transcript, read it fully, add one canonical resource under
-   `coding-with-agents`, assign its strongest catalog section and topics, and
-   write the public summary. Preserve source-supported attribution and qualify
-   anecdotes, vendor claims, forecasts, and demonstrations.
+4. For every video, reuse or capture a full transcript sidecar under
+   `src/content/transcripts/` using the root YouTube transcript workflow, read it
+   fully, and write or update its matching public summary. Intake completion
+   requires this public evidence chain regardless of resource ownership;
+   source-library-only transcripts or excerpts do not complete intake.
+   For an approved collection addition, reuse its canonical resource and apply
+   the reviewed child metadata and publication gates in Collection Placement.
+   When no suitable collection owns the video or a documented exception applies,
+   add a standalone canonical resource only when needed and assign its strongest
+   catalog section and topics. Pending collection approval remains a blocker,
+   not a standalone fallback. Preserve source-supported
+   attribution and qualify anecdotes, vendor claims, forecasts, and demonstrations.
 5. Self-review reader understanding using root `AGENTS.md`'s Summary readability
    review, claim-to-transcript fidelity, and catalog novelty, then use an
    independent high-mode reviewer when useful and address actionable feedback.

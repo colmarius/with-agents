@@ -81,17 +81,22 @@ Ambiguous, duplicate, or broken associations fail checks.
 
 ### Resource-intake playlists
 
-A temporary playlist that queues standalone public resources may set
+A temporary playlist that queues public resources may set
 `resourceIntake: true` in its catalog record. It must not also define
 `curation`. Sync still owns its complete remote manifest, but it creates no
 library capture, video-summary, playlist-overview, or author-synthesis
-obligation. Process each pending video through the root standalone transcript
-and resource workflow instead of `youtube:library capture`.
+obligation. Process each pending video through the root YouTube transcript
+workflow and the skill's collection placement procedure instead of
+`youtube:library capture`. A public summary may belong to an approved curated
+collection or a standalone resource; intake does not require a separate card.
 
 Status derives the queue directly from current manifest membership and complete
-standalone public evidence. A video is integrated only when the shared resolver
-connects its canonical resource, transcript, and public summary; otherwise it
-remains pending. A playlist-backed series episode must carry matching `series`
+public evidence. A video is integrated only when the shared resolver connects
+its canonical resource, full transcript sidecar under `src/content/transcripts/`,
+and matching public summary; source-library-only transcripts and excerpt
+sidecars leave it pending. Collection children must carry the reviewed
+`resourceId`, `collection`, `videoId`, and positive `order` metadata.
+A playlist-backed series episode must carry matching `series`
 and `episode` metadata in its transcript and public summary; the transcript's
 `videoId` identifies the source. Structural audit owns source-library shape,
 while `content:guard` owns public resource validity and forbids publishing the

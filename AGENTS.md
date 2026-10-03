@@ -81,7 +81,7 @@ Important routes:
 - The AI catalog covers concepts and capabilities, economics and industry, and broader implications and risks. Move general-AI resources there; cross-list in Coding only when the source contains substantive software-engineering, agent-system, or developer-practice material. Opinion and forecasts must retain their evidence labels. Preserve existing summary URLs when moving membership; legacy directory names do not determine catalog ownership.
 - Keep AI sections thematic. Author-based discovery belongs in a section's `featuredSelection`, referencing existing resource IDs without changing summary ownership or resource counts; it is not a playlist or a summary `collection`.
 - For a public playlist collection, follow `src/content/youtube/AGENTS.md`. The public children's `collection`, `order`, and `videoId` values must exactly match reviewed curation, and source summaries plus the playlist overview must be reviewed before publication.
-- Before creating a standalone YouTube resource, check its exact video ID against existing public curated playlists. Prefer an existing collection when membership and editorial fit are confirmed; a shared publisher alone is insufficient. Relevant Pragmatic Engineer podcast episodes belong in “selected conversations” (resource 35); nonmembers such as Summit talks remain standalone. Load `maintaining-youtube-library` for collection placement, preserve existing summary URLs and transcripts, and complete the playlist review gates before publication.
+- Before creating a standalone YouTube resource, check its exact video ID against existing public curated playlists. Prefer an existing consolidated collection when membership and editorial fit are confirmed; a shared publisher or inclusion in an editorial guide does not establish ownership. Preserve intentionally independent cards and documented standalone exceptions. Relevant Pragmatic Engineer podcast episodes belong in “selected conversations” (resource 35); nonmembers such as Summit talks remain standalone. Load `maintaining-youtube-library` for collection placement, preserve existing summary URLs and transcripts, and complete the playlist review gates before publication.
 - Run `npm run content:guard` after resource or public-summary changes. When tracked YouTube source evidence changes, also run `npm run youtube:library -- status` and `npm run youtube:library -- audit`.
 
 ### Amp resource refresh
@@ -109,7 +109,7 @@ When writing or refreshing public posts under `src/content/posts/`, follow this 
 
 When asked to check, sync, or update tracked YouTube playlists, retry unavailable library captions, or add a tracked playlist, load the `maintaining-youtube-library` skill. Standalone-video summaries continue to use the transcript workflow below. Follow [`src/content/youtube/AGENTS.md`](src/content/youtube/AGENTS.md); keep that tree source-only and never publish it through Astro.
 
-When asked to **refresh coding-agent intake** or **process coding-agent intake**, load the same skill; it owns the temporary-playlist queue and standalone-resource workflow.
+When asked to **refresh coding-agent intake** or **process coding-agent intake**, load the same skill; it owns the temporary-playlist queue and public-resource workflow, including collection placement.
 
 ### YouTube transcript workflow
 
