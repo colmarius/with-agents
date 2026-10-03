@@ -4,7 +4,7 @@
     {
       "videoId": "fu7th5HiADo",
       "position": 0,
-      "title": "OpenClaw Creator built App to Control Claude Code",
+      "title": "OpenClaw founder Peter Steinberger built App to Control Claude Code",
       "publishedAt": "2025-07-02T04:34:04Z",
       "privacyStatus": "public",
       "available": true
@@ -76,7 +76,7 @@
     {
       "videoId": "wbsDZpVB4Lg",
       "position": 9,
-      "title": "Is Agent Harness relevant in 2026",
+      "title": "Is Agent Harness relevant in 2026 | Ben Vinegar (Co-founder, Modem.dev)",
       "publishedAt": "2026-07-30T15:30:37Z",
       "privacyStatus": "public",
       "available": true
@@ -84,8 +84,96 @@
     {
       "videoId": "C6u5CBIXRf0",
       "position": 10,
-      "title": "How to Ship 100x Faster as a Developer?",
+      "title": "How to Ship 100x Faster as a Developer? | Gill Feig (Co-founder, Merge.dev)",
       "publishedAt": "2026-08-06T14:00:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "uqfWWP_LO-8",
+      "position": 11,
+      "title": "Writing Code Was Never the Hard Part ft.Ben Vinegar | Co-founder of Modem.dev",
+      "publishedAt": "2026-08-13T15:21:55Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_6mGmfMgQyo",
+      "position": 12,
+      "title": "6 Years Building Merge.dev: The Real Reason We Refuse to Sell ft.Gil Feig (Co-founder, Merge.dev)",
+      "publishedAt": "2026-08-17T12:41:03Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AnyxL8HyuCI",
+      "position": 13,
+      "title": "Why AI Agent Frameworks will not DIE? | Sam Bhagwat (Mastra.ai Founder & CEO)",
+      "publishedAt": "2026-08-20T15:30:46Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vrE-s7B09DI",
+      "position": 14,
+      "title": "Why Developers HATE Marketing | Sam Bhagwat (Founder and CEO of Mastra.ai)",
+      "publishedAt": "2026-08-27T10:28:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "f5G5wxxparw",
+      "position": 15,
+      "title": "Memory Is A Feature, NOT A Product 🧠",
+      "publishedAt": "2026-08-28T10:27:54Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "DxsU5sKZ2xA",
+      "position": 16,
+      "title": "Why RAG Isn't Dead? | Gill Feig (Co-founder of Merge.dev)",
+      "publishedAt": "2026-08-29T10:39:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PcsdNYfR6Ag",
+      "position": 17,
+      "title": "What Changes After You Join YC? | Jinjing Liang (Orca ADE, Co-founder & CEO)",
+      "publishedAt": "2026-08-29T15:30:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "uLse6HMIGnQ",
+      "position": 18,
+      "title": "When To BREAK UP With Your Co-Founder 💔 | Sam Bhagwat (Founder of Mastra.ai)",
+      "publishedAt": "2026-08-31T10:15:47Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "cBcRAXI1Ils",
+      "position": 19,
+      "title": "Why Gatsby Failed | Sam Bhagwat (Founder of Mastra.ai)",
+      "publishedAt": "2026-09-01T10:26:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kocQ7ZPboQ4",
+      "position": 20,
+      "title": "Don't Build Dev Tools | Jinjing Liang (Co-founder & CEO of Orca ADE)",
+      "publishedAt": "2026-09-03T10:42:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9CUBPPoYHwE",
+      "position": 21,
+      "title": "Open Models Will Beat Closed Ones | Jinjing Liang (Co-founder & CEO of Orca ADE)",
+      "publishedAt": "2026-09-05T17:06:37Z",
       "privacyStatus": "public",
       "available": true
     }
