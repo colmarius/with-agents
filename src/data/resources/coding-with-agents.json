@@ -67,6 +67,24 @@
     ]
   },
   {
+    "id": 169,
+    "primarySection": "reliability",
+    "title": "The Death of the Code Review: What the Data Actually Says — Laurie Voss, Arize AI",
+    "subtitle": "Review harnesses, mergeability, and the limits of automated approval",
+    "url": "https://www.youtube.com/watch?v=_mi3alkqy4s",
+    "description": "Laurie Voss argues that agent-generated code shifts the bottleneck from writing to verification. He surveys automated reviewers and proposes codifying team context and merge criteria in review harnesses, while retaining human judgment for high-risk or poorly specified changes. Based on English auto-generated captions; study figures and vendor outcomes are reported by the speaker, not independently verified here.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-09-30",
+    "duration": "24m 40s",
+    "topics": [
+      "review-verification",
+      "tools-harnesses",
+      "models-evaluation",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 163,
     "primarySection": "reliability",
     "title": "Fixing the PR Bottleneck — Matt Pocock, AIHero",
