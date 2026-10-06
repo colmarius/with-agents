@@ -49,6 +49,24 @@
     ]
   },
   {
+    "id": 168,
+    "primarySection": "teams-ecosystem",
+    "title": "The state of the tech industry in 2026 - LDX3 New York",
+    "subtitle": "Gergely Orosz on parallel agents, verification pressure, and engineering leadership",
+    "url": "https://www.youtube.com/watch?v=Ru99FGJ_yuE",
+    "description": "Gergely Orosz surveys parallel agents, migrations, smaller projects, review overload, and cloud harnesses while arguing that teams, planning, testing, and learning remain essential. Based on English auto-generated captions; company practices and platform data are his reporting, broad adoption claims are not a representative industry survey, and future workflow changes are forecasts.",
+    "type": "video",
+    "source": "The Pragmatic Engineer",
+    "date": "2026-10-06",
+    "duration": "29m 39s",
+    "topics": [
+      "collaboration-teams",
+      "review-verification",
+      "tools-harnesses",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 163,
     "primarySection": "reliability",
     "title": "Fixing the PR Bottleneck — Matt Pocock, AIHero",
