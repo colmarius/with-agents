@@ -13,6 +13,24 @@
     "topics": ["collaboration-teams", "architecture-maintainability"]
   },
   {
+    "id": 167,
+    "primarySection": "agent-systems",
+    "title": "Pi Durable: Agents That Survive Crashes — Mario Zechner & Armin Ronacher",
+    "subtitle": "Recoverable tasks, versioned application state, and the limits of safe retries",
+    "url": "https://www.youtube.com/watch?v=ja_7AF54OtE",
+    "description": "Mario Zechner and Armin Ronacher explain Pi Durable through persisted task intent, effect execution, saved results, and versioned application documents. They discuss why external actions still need safe retry semantics, where human architecture work remains useful, and why shared agent interfaces introduce browser-side trust problems. A first-party design discussion, not an independent reliability test.",
+    "type": "video",
+    "source": "0xSero",
+    "date": "2026-10-07",
+    "duration": "57m 41s",
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "context-memory",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 165,
     "primarySection": "workflows",
     "title": "My approach to automated programming",
