@@ -260,6 +260,7 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
       .map(({ url }) => url)
       .sort(),
     [
+      '/summaries/coding-with-agents/antirez-when-code-is-no-longer-yours',
       '/summaries/coding-with-agents/dhh-future-of-programming-ai-agentic-engineering',
       '/summaries/coding-with-agents/dhhs-new-way-of-writing-code',
       '/summaries/coding-with-agents/rails-world-2026-opening-keynote-dhh',
