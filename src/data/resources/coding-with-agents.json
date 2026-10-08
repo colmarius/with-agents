@@ -1,5 +1,24 @@
 [
   {
+    "id": 170,
+    "primarySection": "teams-ecosystem",
+    "title": "Nobody Agrees About Agentic Development",
+    "subtitle": "James Cowling, Jean-Denis Greze, David Cramer, and Theo Browne at Convex Abstract",
+    "url": "https://www.youtube.com/watch?v=tU0leMxkqzE",
+    "description": "A panel debate on risk-based code review, architectural learning through cheaper experiments, engineering ownership, and distribution when software is easier to build. The speakers disagree about how much agents change established practice. Practitioner accounts and forecasts, not measured productivity results; summarized in English from French auto-generated captions.",
+    "type": "video",
+    "source": "Convex",
+    "date": "2026-10-08",
+    "duration": "48m 50s",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "collaboration-teams",
+      "open-source-ecosystem",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 166,
     "primarySection": "teams-ecosystem",
     "title": "Se il codice non è più tuo",
