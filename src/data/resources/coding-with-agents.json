@@ -1,5 +1,18 @@
 [
   {
+    "id": 166,
+    "primarySection": "teams-ecosystem",
+    "title": "Se il codice non è più tuo",
+    "subtitle": "When code is no longer yours: attachment, shared ownership, and team change",
+    "url": "https://www.youtube.com/watch?v=v0WVsLQo3-k",
+    "description": "Salvatore Sanfilippo explores a suggestion he attributes to DHH: generating code with LLMs may reduce attachment to a particular implementation and make teams more willing to replace it. He distinguishes ownership of a project's design from attachment to its code. A psychological hypothesis from a mostly solo developer, not measured team outcomes; based on Italian auto-generated captions, summarized in English.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-10-08",
+    "duration": "11m 2s",
+    "topics": ["collaboration-teams", "architecture-maintainability"]
+  },
+  {
     "id": 165,
     "primarySection": "workflows",
     "title": "My approach to automated programming",
