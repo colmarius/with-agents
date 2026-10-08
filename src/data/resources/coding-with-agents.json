@@ -1,5 +1,23 @@
 [
   {
+    "id": 165,
+    "primarySection": "workflows",
+    "title": "My approach to automated programming",
+    "subtitle": "Salvatore Sanfilippo on design investigation, iterative steering, and visual checks",
+    "url": "https://www.youtube.com/watch?v=9h-Way-APlM",
+    "description": "Salvatore Sanfilippo explains his AI-assisted CAD workflow: investigate representation and algorithms, build a small prototype, steer interaction and performance, and give the agent screenshot-based checks. He argues for tools usable by both people and agents. Based on Italian auto-generated captions, summarized in English; development time and project outcomes are personal reports, while predictions about AI and design remain forecasts.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-10-07",
+    "duration": "23m 28s",
+    "topics": [
+      "prompting-orchestration",
+      "architecture-maintainability",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 163,
     "primarySection": "reliability",
     "title": "Fixing the PR Bottleneck — Matt Pocock, AIHero",
