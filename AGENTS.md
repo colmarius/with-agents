@@ -181,3 +181,4 @@ Do not create long-lived draft, review, or apply artifacts for summaries. Keep t
 - Use `git status --short --branch` before staging.
 - Commit after each logical step with a clear message.
 - Keep generated directories (`node_modules/`, `dist/`, `.astro/`) out of commits.
+- ID-collision fixes are allowed without additional confirmation, including during rebases and shipping to `main`. Preserve upstream IDs and both additions; assign unused IDs to unpublished additions, update all their references, and validate uniqueness and relationships before continuing. This applies to IDs generally, not only resource IDs. Ask only if resolution also requires a substantive content or behavior decision, or changing an already published identity.
