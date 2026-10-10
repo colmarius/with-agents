@@ -23,6 +23,7 @@ const { compact = false } = Astro.props;
 
 <style>
   .search-trigger {
+    position: relative;
     display: inline-flex;
     min-width: 2.75rem;
     min-height: 2.75rem;
@@ -37,9 +38,17 @@ const { compact = false } = Astro.props;
     font-size: 0.875rem;
     cursor: pointer;
   }
-  /* Reserve the control's space while search initializes, including without JS. */
-  .search-trigger:disabled { visibility: hidden; }
-  .search-trigger:hover { border-color: #a5b4fc; color: #4f46e5; }
+  /* Keep the same geometry until initialization enables the control. */
+  .search-trigger:disabled { cursor: default; }
+  .search-trigger:disabled > * { visibility: hidden; }
+  .search-trigger:disabled::after {
+    content: '';
+    position: absolute;
+    inset: 0.75rem;
+    border-radius: 0.25rem;
+    background: #e2e8f0;
+  }
+  .search-trigger:enabled:hover { border-color: #a5b4fc; color: #4f46e5; }
   .search-trigger:focus-visible { outline: 2px solid #4f46e5; outline-offset: 3px; }
   .compact { padding: 0.5rem; }
   @media (max-width: 63.99rem) {
