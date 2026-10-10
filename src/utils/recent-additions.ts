@@ -11,7 +11,6 @@ import { getPostPath, isSearchablePost } from './posts.ts';
 
 export type AdditionHistory = {
   estimates: Record<string, { date: string; commit: string }>;
-  legacyUndated: readonly string[];
 };
 
 export type AdditionPost = {
@@ -56,9 +55,7 @@ export function buildRecentAdditions(input: {
 }) {
   const { resources, catalogs, posts, summaries, history } = input;
   const items: RecentAddition[] = [];
-  const legacy = new Set(history.legacyUndated);
   const seen = new Set<string>();
-  let undatedCount = 0;
   const topics: RecentTopic[] = catalogs.map((catalog) => ({
     slug: catalog.slug,
     label:
@@ -70,18 +67,11 @@ export function buildRecentAdditions(input: {
     if (seen.has(item.key)) throw new Error(`Duplicate addition ${item.key}`);
     seen.add(item.key);
     const estimate = history.estimates[item.key];
-    if (legacy.has(item.key) && (addedDate !== undefined || estimate)) {
-      throw new Error(`Remove dated addition ${item.key} from legacyUndated`);
-    }
     const date = addedDate ?? estimate?.date;
     if (date === undefined) {
-      if (!legacy.has(item.key)) {
-        throw new Error(
-          `Missing addedDate for new public addition ${item.key}. Record its first library addition day; do not use the source publication date.`,
-        );
-      }
-      undatedCount++;
-      return;
+      throw new Error(
+        `Missing addedDate for new public addition ${item.key}. Record its first library addition day; do not use the source publication date.`,
+      );
     }
     if (!isCalendarDate(date))
       throw new Error(`Invalid addedDate for ${item.key}: ${date}`);
@@ -201,17 +191,11 @@ export function buildRecentAdditions(input: {
       post.data.addedDate,
     );
   }
-  for (const key of legacy) {
-    if (!seen.has(key))
-      throw new Error(
-        `Unused legacyUndated identity ${key}: remove it or migrate it with the original content identity`,
-      );
-  }
   items.sort(
     (a, b) =>
       b.addedDate.localeCompare(a.addedDate) || a.key.localeCompare(b.key),
   );
-  return { items, topics, undatedCount };
+  return { items, topics };
 }
 
 export const getRecentPath = (topic = 'all', page = 1) =>

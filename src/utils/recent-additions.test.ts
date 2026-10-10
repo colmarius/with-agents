@@ -62,7 +62,7 @@ const base = {
   catalogs: [catalog],
   summaries: [summary],
   posts: [post],
-  history: { estimates: {}, legacyUndated: [] },
+  history: { estimates: {} },
 };
 
 test('recent feed sorts by addition day, mixes posts and resources, and deduplicates catalog memberships', () => {
@@ -85,63 +85,42 @@ test('recent feed sorts by addition day, mixes posts and resources, and deduplic
   );
 });
 
-test('missing dates omit only frozen legacy entries; new public items must record a date', () => {
+test('public additions require a date; recorded dates take precedence over historical estimates', () => {
   const input = { ...base, resources: [{ ...resource, addedDate: undefined }] };
   assert.throws(
     () => buildRecentAdditions(input),
     /Missing addedDate.*resource:1/,
   );
-  const { items, undatedCount } = buildRecentAdditions({
-    ...input,
-    history: { estimates: {}, legacyUndated: ['resource:1'] },
-  });
-  assert.deepEqual(
-    items.map((item) => item.key),
-    ['post:newer-source'],
-  );
-  assert.equal(undatedCount, 1);
   const estimate = {
     'resource:1': { date: '2026-10-08', commit: 'a'.repeat(40) },
   };
   const estimated = buildRecentAdditions({
     ...input,
-    history: { estimates: estimate, legacyUndated: [] },
+    history: { estimates: estimate },
   });
   assert.equal(estimated.items[0].addedDate, '2026-10-08');
   assert.equal(estimated.items[0].estimateCommit, 'a'.repeat(40));
   const recorded = buildRecentAdditions({
     ...base,
-    history: { estimates: estimate, legacyUndated: [] },
+    history: { estimates: estimate },
   });
   assert.equal(recorded.items[0].addedDate, '2026-10-09');
   assert.equal(recorded.items[0].estimateCommit, undefined);
   assert.throws(
     () =>
       buildRecentAdditions({
-        ...base,
-        history: { estimates: {}, legacyUndated: ['resource:1'] },
-      }),
-    /Remove dated addition/,
-  );
-  assert.throws(
-    () =>
-      buildRecentAdditions({
         ...input,
-        history: { estimates: estimate, legacyUndated: ['resource:1'] },
+        history: {
+          estimates: {
+            'resource:1': { date: '2026-10-08', commit: 'invalid' },
+          },
+        },
       }),
-    /Remove dated addition/,
-  );
-  assert.throws(
-    () =>
-      buildRecentAdditions({
-        ...base,
-        history: { estimates: {}, legacyUndated: ['resource:retired'] },
-      }),
-    /Unused legacyUndated/,
+    /Missing history evidence.*resource:1/,
   );
 });
 
-test('discovery exclusions do not enter the timeline or qualify a future publication for an exemption', () => {
+test('hidden posts stay out of the timeline and require a date when published', () => {
   for (const exclusion of [
     { draft: true },
     { unlisted: true },
@@ -208,6 +187,18 @@ test('collection children keep their own dates and exact links rather than the p
     ],
   );
   assert.equal(groupRecentAdditions(items).length, 2);
+  assert.throws(
+    () =>
+      buildRecentAdditions({
+        ...base,
+        resources: [{ ...resource, addedDate: undefined }],
+        summaries: children.map((child) => ({
+          ...child,
+          addedDate: undefined,
+        })),
+      }),
+    /Missing addedDate.*summary:collection\/first/,
+  );
   assert.throws(
     () => buildRecentAdditions({ ...base, summaries: children }),
     /move addedDate to its individual summaries/,

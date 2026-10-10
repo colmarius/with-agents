@@ -69,29 +69,19 @@ date to the child. A later standalone summary is not a second addition event.
 Existing publication/source dates keep their current meaning.
 
 `src/data/recent-additions-history.json` is a frozen migration baseline, not an
-automatic activity log. All 352 additions discoverable on 2026-10-10 have been
-backfilled from their first public repository appearances, with evidence commits.
-The UI marks affected day groups with “Includes estimated dates”; individual
-commit evidence stays in the baseline rather than appearing as timeline links.
-Use the commit's committer calendar day, not its author date (which may precede
-rebased incorporation), source date, or latest edit. The 24 entries already in
-the initial site import use 2026-06-24 as an estimated baseline, including
-existing episode listings later expanded into full summaries. Post dates start
-when articles become publicly discoverable, not when their drafts were created.
-Renames, source-link corrections, and standalone-to-collection moves preserve
-the original addition date. Three replacement articles first published on June
-28 were confirmed against their linked publication threads, rather than
-inheriting the dates of the older drafts they replaced.
+automatic activity log. It covers the 352 additions discoverable on 2026-10-10
+with evidence commits and estimated first-public dates. The 24 initial-import
+entries use 2026-06-24, including episode listings later expanded into summaries.
+These are repository dates, not confirmed deployment dates. The UI marks
+affected days with “Includes estimated dates”; explicit owner dates take priority.
 
-Explicit owner dates take precedence. `legacyUndated` is now empty; never add
-new content to that exemption list. Move historical keys with an identity
-migration, preserving dates and evidence rather than treating a move as new.
-
-The build fails for a new eligible addition without a date. No Git access is
-needed during ordinary builds. To extend historical coverage, review identity,
-membership, and publication eligibility in history; do not blindly use file
-creation, source dates, or last-modified timestamps. Keep estimates separate
-from recorded owner dates and never regenerate the baseline from current files.
+For historical corrections, follow content identity and public eligibility across
+renames and moves. Use the first public commit's committer day, not its author
+date, draft creation, source date, or latest edit. Preserve historical keys,
+dates, and evidence during identity migrations. Keep estimates separate from
+recorded dates; never regenerate the baseline from current files or use it for
+new additions. The build rejects eligible additions without a recorded date or
+historical estimate and requires no Git access.
 
 ## Resource catalogs
 

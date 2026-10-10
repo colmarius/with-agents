@@ -68,7 +68,7 @@ Important routes:
 - Avoid personal-site pages, personal-only assets, or unrelated resource collections.
 - Draft posts must use `draft: true`; production builds should not publish drafts.
 - Internal links should point only to routes that exist in this repository, unless intentionally linking to an external site.
-- New public posts, standalone resources, and collection/series summaries require an explicit `addedDate` for `/recent/`. Preserve it through edits and moves; never substitute a source date or expand the legacy exemption list. Follow [README.md → Recently added](README.md#recently-added) for date ownership and historical estimates.
+- New public additions require `addedDate`; preserve it through edits and moves. Follow [README.md → Recently added](README.md#recently-added) for date ownership and historical estimates.
 - Publishable posts, public summaries, and resources may cite a video or playlist tracked in `src/content/youtube/` only when its source summary or playlist overview is `reviewed`, unless `.agents/scripts/public-content-guard.mjs` records a path-specific exception with a reason. Draft posts may cite draft sources for work in progress, but the guard reports them as warnings.
 
 ### Resource catalog maintenance
