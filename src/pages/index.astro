@@ -1,14 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { getRecentAdditions } from '../data/recent-additions';
 import {
   getCatalogResources,
   getResourceCatalog,
 } from '../data/resources/catalogs';
 import { siteContexts } from '../data/site-contexts';
-import { formatCalendarDate } from '../utils/calendar-date';
-
-const { items: additions } = await getRecentAdditions();
 
 const contexts = siteContexts.map((context) => {
   const catalog = getResourceCatalog(context.catalogSlug);
@@ -84,19 +80,6 @@ const contexts = siteContexts.map((context) => {
           ))
         }
       </div>
-    </section>
-    <section aria-labelledby="recent-heading" class="space-y-6" data-search-ignore>
-      <div class="flex flex-wrap items-baseline justify-between gap-3">
-        <h2 id="recent-heading" class="text-3xl font-light text-gray-900">Recently added</h2>
-        <a href="/recent/" class="text-sm font-medium text-indigo-700 hover:underline">View all additions →</a>
-      </div>
-      <p class="text-sm text-gray-600">New to the library, across all topics. Historical addition dates are approximate.</p>
-      <ul class="divide-y divide-gray-200">
-        {additions.slice(0, 3).map((item) => <li class="py-5 first:pt-0">
-          <p class="mb-2 text-xs text-gray-500">{item.format} · Added {formatCalendarDate(item.addedDate)}{item.estimateCommit ? ' · approximate' : ''}</p>
-          <a href={item.href} class="text-lg font-medium text-gray-900 hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-600">{item.title} →</a>
-        </li>)}
-      </ul>
     </section>
   </div>
 </Layout>
