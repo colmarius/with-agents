@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "Building OpenCode with Dax Raad"
 resourceId: 35
 date: "2026-05-27"

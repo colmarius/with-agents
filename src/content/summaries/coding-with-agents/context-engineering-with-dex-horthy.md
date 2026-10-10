@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "Context engineering with Dex Horthy"
 resourceId: 35
 date: "2026-07-15"

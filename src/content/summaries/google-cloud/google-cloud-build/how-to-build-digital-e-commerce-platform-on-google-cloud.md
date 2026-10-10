@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to build digital e-commerce platform on Google Cloud"
 resourceId: 65
 date: "2022-01-20"

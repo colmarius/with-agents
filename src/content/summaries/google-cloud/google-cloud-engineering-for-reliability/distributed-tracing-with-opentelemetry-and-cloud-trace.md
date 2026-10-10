@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Distributed tracing with OpenTelemetry and Cloud Trace"
 resourceId: 63
 date: "2021-08-11"

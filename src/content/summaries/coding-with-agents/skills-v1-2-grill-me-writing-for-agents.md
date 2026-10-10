@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-26'
 title: "New Skills! v1.2 brings /wait-what, /writing-for-agents, and fixes /grill-me"
 resourceId: 74
 date: "2026-08-05"

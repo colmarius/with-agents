@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-25'
 title: "AI Revisited"
 resourceId: 70
 date: "2026-01-21"

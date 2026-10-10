@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "BigQuery in a minute"
 resourceId: 66
 date: "2020-09-07"

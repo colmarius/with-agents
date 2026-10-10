@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Using Cloud Pub/Sub with Cloud Run - ep. 9"
 resourceId: 60
 date: "2020-03-13"

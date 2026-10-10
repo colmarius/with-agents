@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "What is Google Cloud?"
 resourceId: 62
 date: "2022-04-09"

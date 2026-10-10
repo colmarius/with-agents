@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-27'
 title: "Building Pi, and what makes self-modifying software so fascinating"
 resourceId: 35
 date: "2026-04-29"

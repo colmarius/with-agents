@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: How to build a Video Intelligence Platform on Google Cloud
 resourceId: 68
 date: 2021-08-28

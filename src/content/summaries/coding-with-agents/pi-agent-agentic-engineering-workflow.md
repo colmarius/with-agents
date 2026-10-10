@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-13'
 title: "Pi Agent dev reveals his Agentic Engineering Workflow"
 resourceId: 32
 date: "2026-09-12"

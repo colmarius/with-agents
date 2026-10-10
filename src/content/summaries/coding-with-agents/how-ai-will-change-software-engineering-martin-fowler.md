@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "How AI will change software engineering – with Martin Fowler"
 resourceId: 35
 date: "2025-11-19"

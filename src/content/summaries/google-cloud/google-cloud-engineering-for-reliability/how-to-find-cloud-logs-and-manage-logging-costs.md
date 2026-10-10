@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to find cloud logs and manage logging costs"
 resourceId: 63
 date: "2021-12-15"

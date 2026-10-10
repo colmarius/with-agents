@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Top 3 ways to run your containers on Google Cloud"
 resourceId: 62
 date: "2020-01-04"

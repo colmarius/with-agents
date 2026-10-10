@@ -62,7 +62,6 @@ const base = {
   catalogs: [catalog],
   summaries: [summary],
   posts: [post],
-  history: { estimates: {} },
 };
 
 test('recent feed sorts by addition day, mixes posts and resources, and deduplicates catalog memberships', () => {
@@ -85,39 +84,14 @@ test('recent feed sorts by addition day, mixes posts and resources, and deduplic
   );
 });
 
-test('public additions require a date; recorded dates take precedence over historical estimates', () => {
+test('public additions require their owner date even when a source date exists', () => {
   const input = { ...base, resources: [{ ...resource, addedDate: undefined }] };
   assert.throws(
     () => buildRecentAdditions(input),
     /Missing addedDate.*resource:1/,
   );
-  const estimate = {
-    'resource:1': { date: '2026-10-08', commit: 'a'.repeat(40) },
-  };
-  const estimated = buildRecentAdditions({
-    ...input,
-    history: { estimates: estimate },
-  });
-  assert.equal(estimated.items[0].addedDate, '2026-10-08');
-  assert.equal(estimated.items[0].estimateCommit, 'a'.repeat(40));
-  const recorded = buildRecentAdditions({
-    ...base,
-    history: { estimates: estimate },
-  });
+  const recorded = buildRecentAdditions(base);
   assert.equal(recorded.items[0].addedDate, '2026-10-09');
-  assert.equal(recorded.items[0].estimateCommit, undefined);
-  assert.throws(
-    () =>
-      buildRecentAdditions({
-        ...input,
-        history: {
-          estimates: {
-            'resource:1': { date: '2026-10-08', commit: 'invalid' },
-          },
-        },
-      }),
-    /Missing history evidence.*resource:1/,
-  );
 });
 
 test('hidden posts stay out of the timeline and require a date when published', () => {

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Organizing your GCP resources"
 resourceId: 67
 date: 2019-08-27

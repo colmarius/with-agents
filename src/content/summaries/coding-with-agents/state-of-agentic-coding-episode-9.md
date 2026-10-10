@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-18'
 title: "Autonomy, Lock-In, and the Price of Tokens"
 resourceId: 21
 series: "state-of-agentic-coding"

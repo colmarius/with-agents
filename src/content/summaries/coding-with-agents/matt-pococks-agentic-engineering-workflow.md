@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "Matt Pocock’s Agentic Engineering Workflow (just copy him)"
 resourceId: 32
 date: "2026-06-18"

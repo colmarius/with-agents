@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-25'
 title: "Stop Boxing In Your Agent"
 resourceId: 20
 series: "raising-an-agent-season-2"

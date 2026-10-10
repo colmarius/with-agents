@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "What are Google Cloud quickstarts?"
 resourceId: 64
 date: "2022-02-15"

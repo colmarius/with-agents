@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-07-17'
 title: "Models Optimized for the Harness"
 resourceId: 21
 series: "state-of-agentic-coding"

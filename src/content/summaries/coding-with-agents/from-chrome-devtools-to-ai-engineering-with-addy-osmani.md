@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-19'
 title: "From Chrome DevTools to AI Engineering, with Addy Osmani"
 resourceId: 35
 date: "2026-08-19"

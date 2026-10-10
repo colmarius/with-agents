@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-07-17'
 title: "The End of Cheap Tokens"
 resourceId: 21
 series: "state-of-agentic-coding"

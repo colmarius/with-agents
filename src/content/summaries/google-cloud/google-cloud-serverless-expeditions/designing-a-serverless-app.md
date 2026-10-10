@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Designing a serverless app on Google Cloud"
 resourceId: 59
 date: "2021-06-03"

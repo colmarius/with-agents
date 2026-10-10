@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "Amp features & specialized AI tools"
 resourceId: 3
 series: "build-crew"

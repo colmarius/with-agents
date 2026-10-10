@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Safe serverless deployments with Cloud Run"
 resourceId: 59
 date: "2024-02-20"

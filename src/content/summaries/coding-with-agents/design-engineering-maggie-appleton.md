@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-23'
 title: "Design Engineering with Maggie Appleton"
 resourceId: 35
 date: "2026-09-23"

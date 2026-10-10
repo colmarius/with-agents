@@ -1,6 +1,7 @@
 [
   {
     "id": 170,
+    "addedDate": "2026-10-08",
     "primarySection": "teams-ecosystem",
     "title": "Nobody Agrees About Agentic Development",
     "subtitle": "James Cowling, Jean-Denis Greze, David Cramer, and Theo Browne at Convex Abstract",
@@ -20,6 +21,7 @@
   },
   {
     "id": 166,
+    "addedDate": "2026-10-08",
     "primarySection": "teams-ecosystem",
     "title": "Se il codice non è più tuo",
     "subtitle": "When code is no longer yours: attachment, shared ownership, and team change",
@@ -33,6 +35,7 @@
   },
   {
     "id": 167,
+    "addedDate": "2026-10-08",
     "primarySection": "agent-systems",
     "title": "Pi Durable: Agents That Survive Crashes — Mario Zechner & Armin Ronacher",
     "subtitle": "Recoverable tasks, versioned application state, and the limits of safe retries",
@@ -51,6 +54,7 @@
   },
   {
     "id": 165,
+    "addedDate": "2026-10-08",
     "primarySection": "workflows",
     "title": "My approach to automated programming",
     "subtitle": "Salvatore Sanfilippo on design investigation, iterative steering, and visual checks",
@@ -69,6 +73,7 @@
   },
   {
     "id": 168,
+    "addedDate": "2026-10-08",
     "primarySection": "teams-ecosystem",
     "title": "The state of the tech industry in 2026 - LDX3 New York",
     "subtitle": "Gergely Orosz on parallel agents, verification pressure, and engineering leadership",
@@ -87,6 +92,7 @@
   },
   {
     "id": 169,
+    "addedDate": "2026-10-08",
     "primarySection": "reliability",
     "title": "The Death of the Code Review: What the Data Actually Says — Laurie Voss, Arize AI",
     "subtitle": "Review harnesses, mergeability, and the limits of automated approval",
@@ -105,6 +111,7 @@
   },
   {
     "id": 163,
+    "addedDate": "2026-10-02",
     "primarySection": "reliability",
     "title": "Fixing the PR Bottleneck — Matt Pocock, AIHero",
     "subtitle": "Behavioral tests, separate standards review, and risk-based human review",
@@ -123,6 +130,7 @@
   },
   {
     "id": 161,
+    "addedDate": "2026-10-02",
     "primarySection": "reliability",
     "title": "Uncle Bob: Why I Stopped Reading Code and Building Harnesses",
     "subtitle": "Simpler agent workflows, executable checks, and architecture-level supervision",
@@ -142,6 +150,7 @@
   },
   {
     "id": 162,
+    "addedDate": "2026-10-02",
     "primarySection": "reliability",
     "title": "Kent Beck: Software Engineering in the Age of AI | Prodacity 2026",
     "subtitle": "Features, future change, and the value of feedback between agent tasks",
@@ -160,6 +169,7 @@
   },
   {
     "id": 160,
+    "addedDate": "2026-09-29",
     "primarySection": "agent-systems",
     "title": "Software Engineering Is Becoming Factory Engineering — Zach Lloyd, Warp",
     "subtitle": "Lifecycle automation, human checkpoints, and feedback-driven skills",
@@ -179,6 +189,7 @@
   },
   {
     "id": 156,
+    "addedDate": "2026-09-26",
     "primarySection": "teams-ecosystem",
     "title": "Nell'era AI il tuo prodotto non è così facile da copiare come credi",
     "subtitle": "Why cheaper code does not replace product judgment",
@@ -192,6 +203,7 @@
   },
   {
     "id": 157,
+    "addedDate": "2026-09-26",
     "primarySection": "teams-ecosystem",
     "title": "Rails World 2026 Opening Keynote - DHH",
     "subtitle": "Agent-first development, native apps, and bring-your-own-agent interfaces",
@@ -211,6 +223,7 @@
   },
   {
     "id": 154,
+    "addedDate": "2026-09-23",
     "primarySection": "reliability",
     "title": "Peter Naur - Programming as Theory Building",
     "subtitle": "Program understanding, design rationale, and the limits of code generation",
@@ -228,6 +241,7 @@
   },
   {
     "id": 147,
+    "addedDate": "2026-09-20",
     "primarySection": "teams-ecosystem",
     "title": "Tobi Lütke – Building Shopify and the Future of AI | Ep. 50",
     "subtitle": "AI adoption metrics, small teams, customer feedback, and experienced judgment",
@@ -246,6 +260,7 @@
   },
   {
     "id": 145,
+    "addedDate": "2026-09-20",
     "primarySection": "workflows",
     "title": "ACQ2: How to Live in Everyone Else's Future (with Shopify CEO Tobi Lütke)",
     "subtitle": "Personal evals, context engineering, and product-principle review loops",
@@ -264,6 +279,7 @@
   },
   {
     "id": 144,
+    "addedDate": "2026-09-20",
     "primarySection": "teams-ecosystem",
     "title": "Tobi Lütke: The Skills AI Makes More Valuable",
     "subtitle": "Shopify's shared agent workflow, human responsibility, judgment, and taste",
@@ -282,6 +298,7 @@
   },
   {
     "id": 148,
+    "addedDate": "2026-09-20",
     "primarySection": "reliability",
     "title": "AWS's Marc Brooker: Specs, Not Code, Are the Hard Part",
     "url": "https://www.youtube.com/watch?v=nSRpnjkLqgc",
@@ -299,6 +316,7 @@
   },
   {
     "id": 142,
+    "addedDate": "2026-09-15",
     "primarySection": "workflows",
     "title": "The Centrifuge Method: Spin the Stupid Out of AI",
     "url": "https://www.youtube.com/watch?v=luf6zSOCKH4",
@@ -316,6 +334,7 @@
   },
   {
     "id": 143,
+    "addedDate": "2026-09-15",
     "primarySection": "workflows",
     "title": "Developing for the iPhone Duo ⟡ React 19.3 Is Here ⟡ Pi announces Radius ⌁ Syntax Weekly ⌁",
     "subtitle": "Selected agent-workflow segments: Pi Radius, remote sessions, permissions, and validation",
@@ -334,6 +353,7 @@
   },
   {
     "id": 141,
+    "addedDate": "2026-09-15",
     "primarySection": "workflows",
     "title": "How I manage 15 AI agents 24/7 as a solo founder | Ryan Carson",
     "url": "https://www.youtube.com/watch?v=zPfxlcVpFgs",
@@ -351,6 +371,7 @@
   },
   {
     "id": 140,
+    "addedDate": "2026-09-15",
     "primarySection": "agent-systems",
     "title": "Agents Without Code: Skills, YAML, and Filesystems Replaced Python — Philipp Schmid, Google DeepMind",
     "url": "https://www.youtube.com/watch?v=fjF8EKnxKCU",
@@ -368,6 +389,7 @@
   },
   {
     "id": 138,
+    "addedDate": "2026-09-14",
     "primarySection": "agent-systems",
     "title": "How We Solved Agent Building — Andrew Qu, Vercel",
     "url": "https://www.youtube.com/watch?v=9dYcwOkpCE8",
@@ -385,6 +407,7 @@
   },
   {
     "id": 132,
+    "addedDate": "2026-09-13",
     "primarySection": "reliability",
     "title": "Astra for Coding: Why Are We Doing This Again?",
     "url": "https://lucumr.pocoo.org/2026/9/7/astra-why/",
@@ -400,6 +423,7 @@
   },
   {
     "id": 133,
+    "addedDate": "2026-09-13",
     "primarySection": "teams-ecosystem",
     "title": "Kotlin 2026: Layoffs, AI, Google — Is the Golden Age Over? Jake Wharton Explains",
     "subtitle": "Developer autonomy, maintainable code, and shared responsibility for open source",
@@ -418,6 +442,7 @@
   },
   {
     "id": 135,
+    "addedDate": "2026-09-13",
     "primarySection": "workflows",
     "title": "How a Cloudflare Engineer Ships Production Code He Didn't Write | Dillon Mulroy",
     "subtitle": "Code-shaped specs, deliberate context selection, and local review",
@@ -438,6 +463,7 @@
   },
   {
     "id": 126,
+    "addedDate": "2026-09-12",
     "primarySection": "reliability",
     "title": "Trying the new Claude Eval tool",
     "subtitle": "A first-use critique of skill evaluation, generated graders, and missing feedback loops",
@@ -451,6 +477,7 @@
   },
   {
     "id": 124,
+    "addedDate": "2026-09-12",
     "primarySection": "reliability",
     "title": "Building ambitious software — Jonathan Kelley, Dioxus Labs & Cognition",
     "subtitle": "Agent-assisted Rust development, release maintenance, and the limits of generated tests",
@@ -487,6 +514,7 @@
   },
   {
     "id": 118,
+    "addedDate": "2026-09-07",
     "primarySection": "agent-systems",
     "title": "Why The Harness Matters More Than The Model | YC Paper Club",
     "subtitle": "Prime Agent, OpenJarvis, and QM on persistent state, local optimization, and shared-agent permissions",
@@ -505,6 +533,7 @@
   },
   {
     "id": 115,
+    "addedDate": "2026-09-07",
     "primarySection": "agent-systems",
     "title": "Agentic UX: Three Ways to Let an Agent Build Its Own UI - Tyler Slaton, CopilotKit",
     "subtitle": "Controlled components, declarative composition, and sandbox-generated UI over AG-UI",
@@ -522,6 +551,7 @@
   },
   {
     "id": 116,
+    "addedDate": "2026-09-07",
     "primarySection": "workflows",
     "title": "Anthropic Just Revealed 7 New Rules for Prompting Claude 5 Models",
     "subtitle": "Ben AI on complete task briefs, clarification interviews, intent, and exit criteria",
@@ -539,6 +569,7 @@
   },
   {
     "id": 117,
+    "addedDate": "2026-09-07",
     "primarySection": "workflows",
     "title": "My Agentic Engineering Workflow (after 6,775 sessions)",
     "subtitle": "David Ondrej on reusable skills, human-owned decisions, parallel agents, and bounded review",
@@ -557,6 +588,7 @@
   },
   {
     "id": 114,
+    "addedDate": "2026-09-07",
     "primarySection": "workflows",
     "title": "Just stop looking at the code - Kent C. Dodds",
     "subtitle": "Kody, reusable automation, system-level review, and human product ownership",
@@ -575,6 +607,7 @@
   },
   {
     "id": 113,
+    "addedDate": "2026-09-06",
     "primarySection": "workflows",
     "title": "Refactoring Legacy Codebases",
     "subtitle": "Cursor workshop on coverage audits, scoped migration plans, Jira handoffs, and cloud-agent review",
@@ -592,6 +625,7 @@
   },
   {
     "id": 110,
+    "addedDate": "2026-09-05",
     "primarySection": "reliability",
     "title": "The OpenAI/Hugging Face attack, clearly explained",
     "subtitle": "Dwarkesh Patel on cross-agent coordination, reward hacking, and the limits of the incident investigations",
@@ -605,6 +639,7 @@
   },
   {
     "id": 112,
+    "addedDate": "2026-09-05",
     "primarySection": "teams-ecosystem",
     "title": "How to Stop Building Products Nobody Wants",
     "subtitle": "Teresa Torres and Hamel Husain on continuous discovery, customer interviews, and AI evals",
@@ -618,6 +653,7 @@
   },
   {
     "id": 108,
+    "addedDate": "2026-09-05",
     "primarySection": "agent-systems",
     "title": "Sento puzza di AGI: Chollet, GPT Astra e Fable 5 1",
     "subtitle": "Salvatore Sanfilippo on reasoning, harnesses, and evaluating models through useful software optimizations",
@@ -631,6 +667,7 @@
   },
   {
     "id": 109,
+    "addedDate": "2026-09-05",
     "primarySection": "agent-systems",
     "title": "Giving AI agents a SQL tool is unreasonably effective",
     "subtitle": "Scoped SQL access, schema-as-tool design, and query-log-driven context improvements",
@@ -644,6 +681,7 @@
   },
   {
     "id": 107,
+    "addedDate": "2026-09-03",
     "primarySection": "teams-ecosystem",
     "title": "AI made me doubt everything about programming by Felienne Hermans - DDD Europe 2026",
     "subtitle": "A social critique of complexity, benchmark culture, and treating AI adoption as inevitable",
@@ -657,6 +695,7 @@
   },
   {
     "id": 111,
+    "addedDate": "2026-09-05",
     "primarySection": "teams-ecosystem",
     "title": "Andrew Ng: The Biggest Opportunities in AI Aren't Where You Think",
     "subtitle": "Task automation, learning with AI, hiring people who build, and the product management bottleneck",
@@ -670,6 +709,7 @@
   },
   {
     "id": 96,
+    "addedDate": "2026-08-28",
     "primarySection": "reliability",
     "title": "The Last Human Code Review: Building Trust in AI-Generated Code — Itamar Friedman, Qodo",
     "subtitle": "Rule-cited review, intervention-based calibration, and graph-scoped approval policy",
@@ -705,6 +745,7 @@
   },
   {
     "id": 92,
+    "addedDate": "2026-08-28",
     "primarySection": "agent-systems",
     "title": "How Anthropic uses Claude Code: Agentic Software Engineering at Scale - Daisy Hollman",
     "subtitle": "Context-budgeted plugins, event-driven feedback, and isolated coordination across persistent agents",
@@ -723,6 +764,7 @@
   },
   {
     "id": 86,
+    "addedDate": "2026-08-28",
     "primarySection": "agent-systems",
     "title": "Google's Open Knowledge Format: Just Markdown for AI Agents",
     "subtitle": "A portable concept-and-bundle contract for agent knowledge, with reference producer and consumer tools",
@@ -736,6 +778,7 @@
   },
   {
     "id": 85,
+    "addedDate": "2026-08-28",
     "primarySection": "reliability",
     "title": "High Leverage - Ep. #9, The AI Coding Paradigm Shift with Simon Willison",
     "subtitle": "Deterministic cores, risk-based review, and real-use evidence for generated software",
@@ -753,6 +796,7 @@
   },
   {
     "id": 82,
+    "addedDate": "2026-08-28",
     "primarySection": "workflows",
     "title": "I can't sleep gud anymore - A Practical Guide to Agentic Computering",
     "subtitle": "Mario Zechner on disk-backed agent state, queryable context, compaction recovery, and review checkpoints",
@@ -772,6 +816,7 @@
   },
   {
     "id": 79,
+    "addedDate": "2026-08-28",
     "primarySection": "agent-systems",
     "title": "Agentic SDLC at Uber — Uday Kiran Medisetty & Adam Huda, Uber",
     "subtitle": "Shared agent infrastructure, pre-CI validation, and managed maintenance loops",
@@ -790,6 +835,7 @@
   },
   {
     "id": 78,
+    "addedDate": "2026-08-28",
     "primarySection": "workflows",
     "title": "Stop Writing Prompts. Start Writing Specs.",
     "subtitle": "Roelant Dieben demonstrates an end-to-end GitHub Spec Kit workflow",
@@ -808,6 +854,7 @@
   },
   {
     "id": 76,
+    "addedDate": "2026-08-27",
     "primarySection": "workflows",
     "title": "DHH: Future of Programming, AI, Agentic Engineering, Vibe Coding & Linux",
     "subtitle": "Problem-first prompting, architecture, parallel agents, cross-model review, and agent-ready systems",
@@ -827,6 +874,7 @@
   },
   {
     "id": 77,
+    "addedDate": "2026-08-27",
     "primarySection": "agent-systems",
     "title": "Don't Build Agents, Build Environments Instead",
     "subtitle": "Adam Azzam on dev boxes, resumable sessions, secret isolation, and control-plane design",
@@ -845,6 +893,7 @@
   },
   {
     "id": 75,
+    "addedDate": "2026-08-26",
     "primarySection": "reliability",
     "title": "How AI Is Changing Software Development with Simon Willison",
     "subtitle": "Production accountability, review discipline, conceptual integrity, and the cognitive cost of cheap code",
@@ -882,6 +931,7 @@
   },
   {
     "id": 73,
+    "addedDate": "2026-08-25",
     "primarySection": "teams-ecosystem",
     "title": "Software Development Now Costs Less Than Minimum Wage",
     "subtitle": "Geoffrey Huntley on model-first companies, agent literacy, and the changing economics of implementation",
@@ -895,6 +945,7 @@
   },
   {
     "id": 72,
+    "addedDate": "2026-08-25",
     "primarySection": "reliability",
     "title": "Beyond Code Coverage: Functionality Testing with Playwright MCP",
     "subtitle": "Marlene Mhangami on behavior-first agent testing and human-owned refactoring",
@@ -912,6 +963,7 @@
   },
   {
     "id": 71,
+    "addedDate": "2026-08-25",
     "primarySection": "reliability",
     "title": "Creator of TypeScript: 10x Faster TypeScript, Why AI Won't Replace SWEs | Anders Hejlsberg",
     "subtitle": "Anders Hejlsberg on TypeScript's Go port, deterministic AI assistance, compiler feedback, and software responsibility",
@@ -948,6 +1000,7 @@
   },
   {
     "id": 69,
+    "addedDate": "2026-08-25",
     "primarySection": "agent-systems",
     "title": "Every Repo Is a Software Factory Now | Don Syme, GitHub",
     "subtitle": "Continuous AI, bounded repository automation, cost controls, and evidence-rich review",
@@ -966,6 +1019,7 @@
   },
   {
     "id": 56,
+    "addedDate": "2026-08-24",
     "primarySection": "workflows",
     "title": "The Era of Compound Engineering",
     "subtitle": "Kieran Klaassen on preserving judgment so each agent-assisted delivery improves the next",
@@ -984,6 +1038,7 @@
   },
   {
     "id": 55,
+    "addedDate": "2026-08-24",
     "primarySection": "teams-ecosystem",
     "title": "How to Build a Self-Improving Company with AI",
     "subtitle": "Tom Blomfield on recursive AI loops, legible company context, and flatter organizations",
@@ -1002,6 +1057,7 @@
   },
   {
     "id": 54,
+    "addedDate": "2026-08-23",
     "primarySection": "teams-ecosystem",
     "title": "Coding Agents Don't Scale Themselves. Neither Do Your Teams.",
     "subtitle": "Patrick Debois on shared context, platform ownership, team rituals, and organization-wide agent enablement",
@@ -1020,6 +1076,7 @@
   },
   {
     "id": 53,
+    "addedDate": "2026-08-23",
     "primarySection": "agent-systems",
     "title": "Pi Coding Agent - Deep Dive",
     "subtitle": "0xSero on Pi's provider abstraction, agent loop, tools, extensions, and local-model workflows",
@@ -1038,6 +1095,7 @@
   },
   {
     "id": 51,
+    "addedDate": "2026-08-20",
     "primarySection": "agent-systems",
     "title": "Meet Pi: The Minimalist, Self-Modifying Coding Agent",
     "subtitle": "Mario Zechner and Armin Ronacher on Pi's small core, self-extension, and open ecosystem",
@@ -1056,6 +1114,7 @@
   },
   {
     "id": 48,
+    "addedDate": "2026-08-19",
     "primarySection": "workflows",
     "title": "So I tried Matt's skills...",
     "subtitle": "Theo Browne on auditing, testing, and adapting agent skills instead of blindly installing them",
@@ -1074,6 +1133,7 @@
   },
   {
     "id": 47,
+    "addedDate": "2026-08-17",
     "primarySection": "reliability",
     "title": "The Qualities of Tomorrow’s Programmers — Salvatore Sanfilippo",
     "subtitle": "Beyond line-by-line review: system understanding, testability, reversibility, and scope judgment",
@@ -1091,6 +1151,7 @@
   },
   {
     "id": 46,
+    "addedDate": "2026-08-17",
     "primarySection": "reliability",
     "title": "A Year of Agents — Armin Ronacher, CodeCrafts 2026",
     "subtitle": "When cheap code generation outruns understanding and review",
@@ -1109,6 +1170,7 @@
   },
   {
     "id": 45,
+    "addedDate": "2026-08-15",
     "primarySection": "workflows",
     "title": "AI FOMO, Part 2: Attention, Wealth, and Professional Relevance — Salvatore Sanfilippo",
     "subtitle": "Why more terminals are not more leverage, when asynchronous work helps, and which fears need a different response",
@@ -1126,6 +1188,7 @@
   },
   {
     "id": 44,
+    "addedDate": "2026-08-14",
     "primarySection": "workflows",
     "title": "AI FOMO, Part 1: What Actually Compounds — Salvatore Sanfilippo",
     "subtitle": "What to stop chasing and what to practice: domain judgment, model intuition, clear briefs, and simple orchestration",
@@ -1139,6 +1202,7 @@
   },
   {
     "id": 43,
+    "addedDate": "2026-08-13",
     "primarySection": "workflows",
     "title": "Writing & Using Skills — Nick Nisi and Zack Proser",
     "subtitle": "How to package repeatable agent tasks, load the right context, and test whether a skill helps",
@@ -1157,6 +1221,7 @@
   },
   {
     "id": 42,
+    "addedDate": "2026-08-12",
     "primarySection": "agent-systems",
     "title": "Evolution of Agentic Surfaces — Gagan Bhat & Isabella Kai He",
     "subtitle": "Anthropic engineers on adaptable harnesses, durable sessions, isolated execution, and production agent infrastructure",
@@ -1175,6 +1240,7 @@
   },
   {
     "id": 40,
+    "addedDate": "2026-08-12",
     "primarySection": "teams-ecosystem",
     "title": "Velocity Sickness — Matt Dailey, Ref",
     "subtitle": "Moving team alignment and consequential review ahead of agent implementation",
@@ -1188,6 +1254,7 @@
   },
   {
     "id": 39,
+    "addedDate": "2026-08-11",
     "primarySection": "teams-ecosystem",
     "title": "Il codice è solo un dettaglio? — Salvatore Sanfilippo",
     "subtitle": "Why agent automation shifts attention from implementation effort toward software ideas, design, and architecture",
@@ -1205,6 +1272,7 @@
   },
   {
     "id": 38,
+    "addedDate": "2026-08-23",
     "primarySection": "workflows",
     "title": "Think Harder: How I Prompt — Thorsten Ball",
     "subtitle": "Thorsten Ball on prompts as information routing, screenshots, diagnostics, and agent-friendly codebases",
@@ -1222,6 +1290,7 @@
   },
   {
     "id": 37,
+    "addedDate": "2026-08-08",
     "primarySection": "reliability",
     "title": "The OpenAI–Hugging Face Incident — Eric Wallace & Michael Dalton",
     "subtitle": "How evaluation agents built a shared exploit board, escaped intended controls, and reached external infrastructure",
@@ -1235,6 +1304,7 @@
   },
   {
     "id": 36,
+    "addedDate": "2026-08-07",
     "primarySection": "workflows",
     "title": "Setting Yourself Up for Success — Jason Liu’s Codex Workshop",
     "subtitle": "Jason Liu on persistent project threads, recurring wake-ups, goal verification, and coordinated workstreams",
@@ -1275,6 +1345,7 @@
   },
   {
     "id": 34,
+    "addedDate": "2026-08-07",
     "primarySection": "reliability",
     "title": "Production agent reliability — AI Engineer guided collection",
     "url": "https://www.youtube.com/playlist?list=PLcfpQ4tk2k0VLQeSLhVinP0lVhNcXa-Ai",
@@ -1310,6 +1381,7 @@
   },
   {
     "id": 33,
+    "addedDate": "2026-08-07",
     "primarySection": "reliability",
     "title": "Ending AI Slop — Thais Castello Branco, Taste Labs",
     "subtitle": "Thais Castello Branco on decomposing subjective evaluation, plural preferences, and data quality",
@@ -1343,6 +1415,7 @@
   },
   {
     "id": 29,
+    "addedDate": "2026-08-03",
     "primarySection": "agent-systems",
     "title": "Boris Cherny: We Cut 80% of Claude Code’s Prompt",
     "subtitle": "Boris Cherny on prompt ablation, model elicitation, and long-running agent workflows",
@@ -1360,6 +1433,7 @@
   },
   {
     "id": 28,
+    "addedDate": "2026-08-02",
     "primarySection": "workflows",
     "title": "Field Guide to Fable — Thariq Shihipar, Anthropic",
     "subtitle": "Thariq Shihipar on capability overhang, unknowns, and ambitious agent workflows",
@@ -1373,6 +1447,7 @@
   },
   {
     "id": 27,
+    "addedDate": "2026-08-02",
     "primarySection": "reliability",
     "title": "An AI state of the union: We’ve passed the inflection point & dark factories are coming",
     "subtitle": "Simon Willison on dark factories, agentic engineering, and proving AI-written code",
@@ -1386,6 +1461,7 @@
   },
   {
     "id": 26,
+    "addedDate": "2026-07-31",
     "primarySection": "workflows",
     "title": "Coding-agent talks from AI Engineer — guided collection",
     "url": "https://www.youtube.com/playlist?list=PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt",
@@ -1402,6 +1478,7 @@
   },
   {
     "id": 24,
+    "addedDate": "2026-07-27",
     "primarySection": "reliability",
     "title": "Architecture, AI agents, and product empathy with Robert C. Martin",
     "subtitle": "Robert C. Martin on durable architecture, agent guardrails, and customer understanding",
@@ -1419,6 +1496,7 @@
   },
   {
     "id": 22,
+    "addedDate": "2026-07-27",
     "primarySection": "reliability",
     "title": "Coding with AI — Salvatore Sanfilippo",
     "url": "https://www.youtube.com/playlist?list=PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA",
@@ -1462,6 +1540,7 @@
   },
   {
     "id": 18,
+    "addedDate": "2026-06-27",
     "primarySection": "teams-ecosystem",
     "title": "Collaborative AI Engineering: One Dev, Two Dozen Agents, Zero Alignment — Maggie Appleton, GitHub",
     "subtitle": "Maggie Appleton on team alignment and multiplayer agent environments",
@@ -1475,6 +1554,7 @@
   },
   {
     "id": 17,
+    "addedDate": "2026-06-27",
     "primarySection": "reliability",
     "title": "The Friction is Your Judgment — Armin Ronacher & Cristina Poncela Cubeiro, Earendil",
     "subtitle": "Armin Ronacher and Cristina Poncela Cubeiro on useful friction in agentic engineering",
@@ -1492,6 +1572,7 @@
   },
   {
     "id": 14,
+    "addedDate": "2026-06-27",
     "primarySection": "reliability",
     "title": "Simon Willison: Engineering practices that make coding agents work",
     "subtitle": "Simon Willison on TDD, verification, sandboxing, and agentic engineering",
@@ -1509,6 +1590,7 @@
   },
   {
     "id": 13,
+    "addedDate": "2026-06-27",
     "primarySection": "workflows",
     "title": "A love letter to Pi | Lucas Meijer",
     "subtitle": "Lucas Meijer on Pi, context management, and evaluating agent work",
@@ -1522,6 +1604,7 @@
   },
   {
     "id": 12,
+    "addedDate": "2026-06-27",
     "primarySection": "agent-systems",
     "title": "I Hated Every Coding Agent, So I Built My Own — Mario Zechner (Pi)",
     "subtitle": "Mario Zechner on why Pi strips coding agents down to a malleable core",
@@ -1535,6 +1618,7 @@
   },
   {
     "id": 10,
+    "addedDate": "2026-06-27",
     "primarySection": "agent-systems",
     "title": "Building Pi in a World of Slop — Mario Zechner",
     "subtitle": "Mario Zechner on Pi, self-modifying agents, and agent slop",
@@ -1552,6 +1636,7 @@
   },
   {
     "id": 9,
+    "addedDate": "2026-06-27",
     "primarySection": "agent-systems",
     "title": "Pi Building Pi, OpenClaw's Minimalist Coding Agent",
     "subtitle": "Mario Zechner on building and using Pi",
@@ -1569,6 +1654,7 @@
   },
   {
     "id": 7,
+    "addedDate": "2026-06-24",
     "primarySection": "teams-ecosystem",
     "title": "Keynote: Linus Torvalds, Creator of Linux & Git, in Conversation with Dirk Hohndel",
     "url": "https://www.youtube.com/watch?v=tWx769t1JKg",
@@ -1580,6 +1666,7 @@
   },
   {
     "id": 6,
+    "addedDate": "2026-06-24",
     "primarySection": "teams-ecosystem",
     "title": "The Truth About Coding Agents: Why 90% of Your Time Is Now Code Review",
     "subtitle": "Beyang Liu in conversation with a16z",
@@ -1592,6 +1679,7 @@
   },
   {
     "id": 5,
+    "addedDate": "2026-06-24",
     "primarySection": "workflows",
     "title": "The Emerging Skillset of Wielding Coding Agents",
     "subtitle": "Beyang Liu at AI Engineer Conference",
@@ -1641,6 +1729,7 @@
   },
   {
     "id": 2,
+    "addedDate": "2026-06-24",
     "primarySection": "teams-ecosystem",
     "title": "Amp: The Emperor Has No Clothes",
     "subtitle": "Quinn Slack & Thorsten Ball on Building Amp Code",

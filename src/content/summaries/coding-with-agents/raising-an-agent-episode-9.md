@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-27'
 title: "The Assistant Is Dead, Long Live the Factory"
 resourceId: 1
 series: "raising-an-agent"

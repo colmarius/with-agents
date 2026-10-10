@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Power your AI agents with MCP tools on Google Cloud Run"
 resourceId: 59
 date: "2025-11-06"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "McKay Wrigley on Agent-Driven Development"
 resourceId: 4
 series: "next-token"

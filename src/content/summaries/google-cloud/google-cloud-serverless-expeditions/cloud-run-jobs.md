@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Introducing Cloud Run Jobs"
 resourceId: 59
 date: "2022-05-19"

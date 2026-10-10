@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: How Twitter maximizes performance with BigQuery
 resourceId: 68
 date: 2022-10-08

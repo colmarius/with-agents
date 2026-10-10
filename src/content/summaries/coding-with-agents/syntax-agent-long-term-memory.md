@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-15'
 title: "How to Give Your AI Agent Long-Term Memory"
 resourceId: 94
 date: "2025-12-13"

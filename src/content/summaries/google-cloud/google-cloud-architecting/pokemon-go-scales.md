@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: How does Pokémon Go scale to millions of requests?
 resourceId: 68
 date: 2021-10-16

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Manage GKE services with Cloud Operations"
 resourceId: 63
 date: "2021-06-30"

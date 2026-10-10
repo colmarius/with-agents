@@ -44,11 +44,14 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
       );
     }
   }
-  const history = JSON.parse(
-    readFileSync('src/data/recent-additions-history.json', 'utf8'),
-  );
-  for (const key of Object.keys(history.estimates)) {
-    assert.ok(additionDates.has(key), `Backfilled addition absent: ${key}`);
+  for (const resource of resources) {
+    if (resource.addedDate) {
+      assert.equal(
+        additionDates.get(`resource:${resource.id}`),
+        resource.addedDate,
+        `Standalone resource date: ${resource.id}`,
+      );
+    }
   }
   // Evidence: ef4e761 lists the draft; 081c758 publishes the later-renamed
   // article; 69acdf1 adds Pi before its October collection consolidation.
@@ -284,6 +287,17 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
     assert.ok(resource);
     assert.equal(document.parentTitle, resource.title);
     const grouped = /^(series|collection):\s*\S/m.test(source.source);
+    if (grouped) {
+      const addedDate = source.source.match(
+        /^addedDate:\s*['"]?(\d{4}-\d{2}-\d{2})/m,
+      )?.[1];
+      assert.ok(addedDate, source.url);
+      assert.equal(
+        additionDates.get(`summary:${source.url.replace('/summaries/', '')}`),
+        addedDate,
+        `Collection child date: ${source.url}`,
+      );
+    }
     assert.equal(document.description, grouped ? '' : resource.description);
     for (const text of [resource.description, resource.subtitle]) {
       if (!text) continue;
@@ -406,6 +420,13 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
     const slug = path.split('/').at(-1)?.replace(/\.md$/, '');
     if (/^(?:draft|unlisted|noindex):\s*true/m.test(source))
       assert.ok(!byUrl.has(`/${context}/posts/${slug}`), path);
+    if (byUrl.has(`/${context}/posts/${slug}`)) {
+      const addedDate = source.match(
+        /^addedDate:\s*['"]?(\d{4}-\d{2}-\d{2})/m,
+      )?.[1];
+      assert.ok(addedDate, path);
+      assert.equal(additionDates.get(`post:${slug}`), addedDate, path);
+    }
   }
 });
 

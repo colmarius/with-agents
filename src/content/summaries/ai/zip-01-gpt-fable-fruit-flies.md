@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "GPT 5.6, Fable e i moscerini della frutta | Zip episodio 01"
 resourceId: 121
 series: "zip"

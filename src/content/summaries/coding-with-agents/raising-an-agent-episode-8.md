@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "Model Evaluation"
 resourceId: 1
 series: "raising-an-agent"

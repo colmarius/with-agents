@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-14'
 title: 'Brief the Agent Like a Capable Co-Worker'
 description: 'A practical assignment model for giving coding agents purpose, context, acceptance criteria, authority boundaries, and human ownership.'
 context: coding

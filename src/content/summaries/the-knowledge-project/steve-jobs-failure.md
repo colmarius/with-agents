@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "Geoffrey Cain: Steve Jobs, product failure, and delegation"
 resourceId: 139
 date: "2026-09-01"

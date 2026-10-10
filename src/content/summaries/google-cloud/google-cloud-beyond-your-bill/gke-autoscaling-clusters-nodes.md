@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Autoscaling with GKE: Clusters and nodes"
 resourceId: 67
 date: 2020-12-08

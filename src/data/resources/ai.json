@@ -1,6 +1,7 @@
 [
   {
     "id": 164,
+    "addedDate": "2026-10-03",
     "primarySection": "concepts-capabilities",
     "title": "WWC26-NA - 2026 in LLMs (so far)",
     "subtitle": "Simon Willison on coding-agent progress, verification, costs, and human judgment",
@@ -20,6 +21,7 @@
   },
   {
     "id": 159,
+    "addedDate": "2026-09-27",
     "primarySection": "economics-industry",
     "title": "AI, tools and transformation",
     "subtitle": "Why cheaper tools do not eliminate workflow discovery or organizational change",
@@ -32,6 +34,7 @@
   },
   {
     "id": 158,
+    "addedDate": "2026-09-26",
     "primarySection": "implications-risks",
     "title": "Peter Thiel: The AI Crisis, Europe’s Decline & the Battle for America",
     "subtitle": "AI progress, stagnation risks, and European technology strategy",
@@ -45,6 +48,7 @@
   },
   {
     "id": 152,
+    "addedDate": "2026-09-21",
     "primarySection": "economics-industry",
     "title": "A Cheeky Pint with Anthropic CEO Dario Amodei",
     "subtitle": "AI product adoption, model economics, and review interfaces",
@@ -62,6 +66,7 @@
   },
   {
     "id": 151,
+    "addedDate": "2026-09-21",
     "primarySection": "implications-risks",
     "title": "The Adolescence of Technology",
     "subtitle": "A five-part framework for risks from powerful AI",
@@ -79,6 +84,7 @@
   },
   {
     "id": 150,
+    "addedDate": "2026-09-21",
     "primarySection": "implications-risks",
     "title": "Machines of Loving Grace",
     "subtitle": "How intelligence interacts with real-world bottlenecks",
@@ -91,6 +97,7 @@
   },
   {
     "id": 153,
+    "addedDate": "2026-09-21",
     "primarySection": "concepts-capabilities",
     "title": "Dario Amodei: Anthropic CEO on Claude, AGI & the Future of AI & Humanity",
     "subtitle": "Scaling, model steering, computer use, prompting, and mechanistic interpretability",
@@ -109,6 +116,7 @@
   },
   {
     "id": 146,
+    "addedDate": "2026-09-20",
     "primarySection": "concepts-capabilities",
     "title": "AI and eCommerce with Shopify CEO Tobias Lütke",
     "subtitle": "Shopper-agent simulation, outcome signals, and human–AI evaluation",
@@ -127,6 +135,7 @@
   },
   {
     "id": 134,
+    "addedDate": "2026-09-13",
     "primarySection": "implications-risks",
     "title": "Il rischio AI è ormai accettato",
     "subtitle": "Salvatore Sanfilippo on AI risk, cautious progress, and model-size limits",
@@ -140,6 +149,7 @@
   },
   {
     "id": 137,
+    "addedDate": "2026-09-13",
     "primarySection": "implications-risks",
     "title": "Sir Demis Hassabis on the AI Revolution, the Future of AI and Human Creativity | Hannah Fry",
     "subtitle": "RSA Albert Medal conversation on AI and human creativity",
@@ -152,6 +162,7 @@
   },
   {
     "id": 128,
+    "addedDate": "2026-09-12",
     "primarySection": "implications-risks",
     "title": "The next 50 years: humanity, AI, power | Yuval Noah Harari",
     "subtitle": "Language, economic power, and human agency",
@@ -165,6 +176,7 @@
   },
   {
     "id": 129,
+    "addedDate": "2026-09-12",
     "primarySection": "implications-risks",
     "title": "AI has hacked the code of human civilization | Yuval Noah Harari",
     "subtitle": "AI agency, bureaucracy, and language-based institutions",
@@ -178,6 +190,7 @@
   },
   {
     "id": 130,
+    "addedDate": "2026-09-12",
     "primarySection": "implications-risks",
     "title": "Yuval Noah Harari on Donald Trump’s Core Delusion | The Ezra Klein Show",
     "subtitle": "Cooperation, political narratives, and AI's influence on intimacy and accountability",
@@ -191,6 +204,7 @@
   },
   {
     "id": 131,
+    "addedDate": "2026-09-12",
     "primarySection": "implications-risks",
     "title": "Building Trust in the Age of Disinformation – What Future Awaits Us? | Yuval Noah Harari",
     "subtitle": "Algorithmic trust, European AI dependence, and language-based authority",
@@ -204,6 +218,7 @@
   },
   {
     "id": 127,
+    "addedDate": "2026-09-12",
     "primarySection": "economics-industry",
     "title": "AI's Hidden Debt Problem Explained",
     "subtitle": "Hyperscaler spending commitments, future leases, and financial guarantees",
@@ -217,6 +232,7 @@
   },
   {
     "id": 123,
+    "addedDate": "2026-09-11",
     "primarySection": "implications-risks",
     "title": "AI's mathematical results are not a bad thing",
     "subtitle": "Salvatore Sanfilippo on AI-generated proofs, human expertise, and learning from machine results",
@@ -230,6 +246,7 @@
   },
   {
     "id": 120,
+    "addedDate": "2026-09-08",
     "primarySection": "economics-industry",
     "title": "Paul Graham On Startups, Ambition, and Great Founders",
     "subtitle": "Founder motivation, milestone funding, and why AI does not remove the need to ship",
@@ -243,6 +260,7 @@
   },
   {
     "id": 119,
+    "addedDate": "2026-09-08",
     "primarySection": "implications-risks",
     "title": "Sam Altman on Astra, AGI, and the future of OpenAI",
     "subtitle": "Frontier training safety, computer-use agents, and the convergence of chat and coding",
@@ -261,6 +279,7 @@
   },
   {
     "id": 52,
+    "addedDate": "2026-08-23",
     "primarySection": "economics-industry",
     "title": "Sam Altman on Building OpenAI & Betting on the Impossible",
     "subtitle": "Hands-on adoption, context-rich agents, iterative deployment, and research feedback loops",
@@ -279,6 +298,7 @@
   },
   {
     "id": 49,
+    "addedDate": "2026-08-19",
     "primarySection": "concepts-capabilities",
     "title": "Why AI Models Stop Learning — Rich Sutton and Khurram Javed",
     "subtitle": "Continual learning, the Big World Hypothesis, and a research path beyond frozen model weights",
@@ -292,6 +312,7 @@
   },
   {
     "id": 23,
+    "addedDate": "2026-07-27",
     "primarySection": "concepts-capabilities",
     "title": "AI concepts — Salvatore Sanfilippo",
     "url": "https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6",

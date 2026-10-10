@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Managing GKE infrastructure at scale"
 resourceId: 63
 date: "2021-06-23"

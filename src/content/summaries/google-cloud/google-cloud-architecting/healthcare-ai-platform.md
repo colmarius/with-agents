@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: How to architect an AI/ML powered Healthcare platform on Google Cloud
 resourceId: 68
 date: 2021-09-04

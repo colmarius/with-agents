@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "Craft & Chaos: Episode 2 Highlights"
 resourceId: 8
 series: "craft-and-chaos"

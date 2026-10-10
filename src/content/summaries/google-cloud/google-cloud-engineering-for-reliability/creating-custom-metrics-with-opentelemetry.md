@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Creating custom metrics with OpenTelemetry"
 resourceId: 63
 date: "2022-05-25"

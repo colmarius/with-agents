@@ -9,10 +9,6 @@ import type { Resource, ResourceCatalog } from '../types/resources.ts';
 import { isCalendarDate } from './calendar-date.ts';
 import { getPostPath, isSearchablePost } from './posts.ts';
 
-export type AdditionHistory = {
-  estimates: Record<string, { date: string; commit: string }>;
-};
-
 export type AdditionPost = {
   id: string;
   data: {
@@ -38,7 +34,6 @@ export type RecentAddition = {
   source: string;
   sourceDate: string | null;
   addedDate: string;
-  estimateCommit?: string;
   topics: string[];
   collection?: { key: string; title: string; description: string };
 };
@@ -51,9 +46,8 @@ export function buildRecentAdditions(input: {
   catalogs: readonly ResourceCatalog[];
   posts: readonly AdditionPost[];
   summaries: readonly (ManifestEntry & { addedDate?: string })[];
-  history: AdditionHistory;
 }) {
-  const { resources, catalogs, posts, summaries, history } = input;
+  const { resources, catalogs, posts, summaries } = input;
   const items: RecentAddition[] = [];
   const seen = new Set<string>();
   const topics: RecentTopic[] = catalogs.map((catalog) => ({
@@ -66,23 +60,14 @@ export function buildRecentAdditions(input: {
   function add(item: Omit<RecentAddition, 'addedDate'>, addedDate?: string) {
     if (seen.has(item.key)) throw new Error(`Duplicate addition ${item.key}`);
     seen.add(item.key);
-    const estimate = history.estimates[item.key];
-    const date = addedDate ?? estimate?.date;
-    if (date === undefined) {
+    if (addedDate === undefined) {
       throw new Error(
         `Missing addedDate for new public addition ${item.key}. Record its first library addition day; do not use the source publication date.`,
       );
     }
-    if (!isCalendarDate(date))
-      throw new Error(`Invalid addedDate for ${item.key}: ${date}`);
-    if (addedDate === undefined && !/^[a-f0-9]{40}$/.test(estimate.commit)) {
-      throw new Error(`Missing history evidence for ${item.key}`);
-    }
-    items.push({
-      ...item,
-      addedDate: date,
-      ...(addedDate === undefined ? { estimateCommit: estimate.commit } : {}),
-    });
+    if (!isCalendarDate(addedDate))
+      throw new Error(`Invalid addedDate for ${item.key}: ${addedDate}`);
+    items.push({ ...item, addedDate });
   }
 
   const resourceIds = new Set(resources.map((resource) => resource.id));

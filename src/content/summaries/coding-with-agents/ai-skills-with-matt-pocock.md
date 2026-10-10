@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-20'
 title: "AI Skills with Matt Pocock"
 resourceId: 35
 date: "2026-09-17"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Retries and Saga pattern in Workflows"
 resourceId: 59
 date: "2023-05-18"

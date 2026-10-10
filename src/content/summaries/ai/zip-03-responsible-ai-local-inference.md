@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "Sviluppo AI responsabile, Kimi K3, DS4 Flash e la frontiera a fette: ZiP 3"
 resourceId: 121
 series: "zip"

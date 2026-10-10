@@ -1,7 +1,6 @@
 import { getCollection } from 'astro:content';
 import { toManifestEntry } from '../components/resources/summaryResolver';
 import { buildRecentAdditions } from '../utils/recent-additions';
-import history from './recent-additions-history.json';
 import { resourceCatalogs, resources } from './resources/catalogs';
 
 export async function getRecentAdditions() {
@@ -17,6 +16,5 @@ export async function getRecentAdditions() {
       ...toManifestEntry(entry),
       addedDate: entry.data.addedDate,
     })),
-    history,
   });
 }

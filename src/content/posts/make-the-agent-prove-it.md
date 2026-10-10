@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-28'
 title: 'Make the Agent Prove It'
 description: 'A practical acceptance framework for agent-written code: the harder a failure is to undo, the stronger the evidence required.'
 context: coding

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-25'
 title: "Bring your AI agents to Basecamp"
 resourceId: 70
 date: "2026-03-25"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "Databases, Custom Tools, & Workflow Automation"
 resourceId: 3
 series: "build-crew"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "Gary Klein: Building expertise and making better decisions"
 resourceId: 139
 date: "2022-08-09"

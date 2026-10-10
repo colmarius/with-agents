@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Pub/Sub Best Practices: Client Library"
 resourceId: 61
 date: "2023-03-04"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Cloud Run scalability"
 resourceId: 59
 date: "2023-12-01"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to use Event Threat Detection - Getting Started with Cloud Security Command Center"
 resourceId: 58
 date: "2019-09-25"

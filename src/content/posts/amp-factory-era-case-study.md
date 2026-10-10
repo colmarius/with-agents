@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-28'
 title: 'Using Amp for Real Coding Work'
 description: 'How to brief, place, delegate, and verify a coding task with Amp.'
 context: coding

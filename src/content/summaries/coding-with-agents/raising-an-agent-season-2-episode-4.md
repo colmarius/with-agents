@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-12'
 title: "What Is the Computer For Now?"
 resourceId: 20
 series: "raising-an-agent-season-2"

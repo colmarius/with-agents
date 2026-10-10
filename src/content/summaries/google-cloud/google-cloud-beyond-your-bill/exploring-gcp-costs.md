@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Exploring your GCP costs with Billing reports"
 resourceId: 67
 date: 2019-09-09

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Understanding your GCP invoice"
 resourceId: 67
 date: 2019-09-19

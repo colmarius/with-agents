@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Cloud Pub/Sub Overview - ep. 1"
 resourceId: 60
 date: "2019-10-30"

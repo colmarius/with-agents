@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to secure your cloud environment"
 resourceId: 57
 date: "2020-02-05"

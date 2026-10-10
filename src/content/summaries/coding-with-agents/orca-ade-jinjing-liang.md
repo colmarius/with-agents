@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-12'
 title: "What Changes After You Join YC? | Jinjing Liang (Orca ADE, Co-founder & CEO)"
 resourceId: 31
 date: "2026-08-29"

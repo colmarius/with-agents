@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to run code on Google Cloud"
 resourceId: 62
 date: "2022-07-29"

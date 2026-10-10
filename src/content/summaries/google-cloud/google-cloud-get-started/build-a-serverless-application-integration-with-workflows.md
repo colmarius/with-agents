@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Build a serverless application integration with Workflows"
 resourceId: 64
 date: "2021-03-31"

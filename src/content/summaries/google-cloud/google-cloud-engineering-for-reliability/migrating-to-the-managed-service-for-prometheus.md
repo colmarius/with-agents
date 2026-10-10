@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Migrating to the managed service for Prometheus"
 resourceId: 63
 date: "2022-04-13"

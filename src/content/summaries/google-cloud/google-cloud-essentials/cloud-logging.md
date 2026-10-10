@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Cloud logging"
 resourceId: 62
 date: "2020-07-24"

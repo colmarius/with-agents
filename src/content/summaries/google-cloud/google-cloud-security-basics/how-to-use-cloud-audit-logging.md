@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to use Cloud Audit Logging"
 resourceId: 57
 date: "2021-07-03"

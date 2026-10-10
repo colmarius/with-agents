@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "What is Cloud Pub/Sub? - ep. 2"
 resourceId: 60
 date: "2019-11-28"

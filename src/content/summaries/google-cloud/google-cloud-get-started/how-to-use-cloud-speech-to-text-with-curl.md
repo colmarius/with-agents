@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to use Cloud Speech-to-Text with cURL"
 resourceId: 64
 date: "2022-03-22"

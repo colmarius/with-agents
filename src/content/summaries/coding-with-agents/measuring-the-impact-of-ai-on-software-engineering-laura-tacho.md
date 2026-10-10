@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "Measuring the impact of AI on software engineering – with Laura Tacho"
 resourceId: 35
 date: "2025-07-23"

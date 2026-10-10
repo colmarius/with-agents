@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Getting started with Managed Service for Prometheus: Ingestion"
 resourceId: 63
 date: "2022-03-16"

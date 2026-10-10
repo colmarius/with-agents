@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "How to Ship 100x Faster as a Developer?"
 resourceId: 31
 collection: "the-west-coast-builders"

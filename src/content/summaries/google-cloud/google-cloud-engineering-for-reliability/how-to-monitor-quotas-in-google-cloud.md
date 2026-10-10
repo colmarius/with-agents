@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to monitor quotas in Google Cloud"
 resourceId: 63
 date: "2022-02-16"

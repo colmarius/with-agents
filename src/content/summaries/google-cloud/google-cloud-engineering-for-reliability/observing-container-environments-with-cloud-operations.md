@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Observing container environments with Cloud Operations"
 resourceId: 63
 date: "2021-10-06"

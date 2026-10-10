@@ -1,6 +1,7 @@
 [
   {
     "id": 102,
+    "addedDate": "2026-09-02",
     "primarySection": "identity-access",
     "title": "RFC 9700: Best Current Practice for OAuth 2.0 Security",
     "subtitle": "Current OAuth deployment requirements for redirect flows, tokens, clients, and proxies",
@@ -13,6 +14,7 @@
   },
   {
     "id": 103,
+    "addedDate": "2026-09-02",
     "primarySection": "identity-access",
     "title": "OpenID Connect Core 1.0 incorporating errata set 2",
     "subtitle": "The normative identity layer over OAuth 2.0 and its token-validation contract",
@@ -25,6 +27,7 @@
   },
   {
     "id": 104,
+    "addedDate": "2026-09-02",
     "primarySection": "application-platform",
     "title": "OWASP API Security Top 10 — 2023",
     "subtitle": "A practical risk taxonomy for API authorization, business logic, resources, inventory, and dependencies",
@@ -42,6 +45,7 @@
   },
   {
     "id": 105,
+    "addedDate": "2026-09-02",
     "primarySection": "identity-access",
     "title": "Web Authentication: An API for accessing Public Key Credentials Level 2",
     "subtitle": "The stable W3C baseline for origin-bound public-key registration and authentication",
@@ -54,6 +58,7 @@
   },
   {
     "id": 106,
+    "addedDate": "2026-09-02",
     "primarySection": "identity-access",
     "title": "Better Auth Security",
     "subtitle": "A review point for a fast-moving TypeScript authentication framework's controls and trade-offs",

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Getting started with SLOs"
 resourceId: 63
 date: "2021-05-26"

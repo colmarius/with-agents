@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Understanding serverless relational data at scale"
 resourceId: 59
 date: "2022-04-14"

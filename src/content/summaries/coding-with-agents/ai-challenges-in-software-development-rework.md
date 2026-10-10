@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-25'
 title: "AI Challenges in Software Development"
 resourceId: 70
 date: "2026-07-01"

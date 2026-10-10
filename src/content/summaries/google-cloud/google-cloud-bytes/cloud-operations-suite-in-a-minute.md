@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Cloud Operations Suite in a minute"
 resourceId: 66
 date: "2021-04-19"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-19'
 title: 'What Is AI Slop? When Generated Output Only Looks Finished'
 description: 'AI slop looks finished even though something important is missing: a clear purpose, evidence that it works, or someone who owns the result.'
 context: coding

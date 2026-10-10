@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Exporting your billing data and creating custom dashboards"
 resourceId: 67
 date: 2019-09-14

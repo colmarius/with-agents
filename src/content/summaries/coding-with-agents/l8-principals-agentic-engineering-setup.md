@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "L8 Principal's Agentic Engineering Setup (just copy him)"
 resourceId: 32
 collection: "david-ondrej-agentic-engineering"

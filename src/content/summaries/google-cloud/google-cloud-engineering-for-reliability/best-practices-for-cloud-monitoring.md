@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Best Practices for Cloud Monitoring"
 resourceId: 63
 date: "2021-11-17"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-27'
 title: "Pi Agent Creator on future of Agentic Coding"
 resourceId: 31
 collection: "the-west-coast-builders"

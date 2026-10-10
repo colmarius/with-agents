@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-07-17'
 title: "Parallel Experiments and Slop Forks"
 resourceId: 21
 series: "state-of-agentic-coding"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Compute Engine in a minute"
 resourceId: 66
 date: "2020-07-20"

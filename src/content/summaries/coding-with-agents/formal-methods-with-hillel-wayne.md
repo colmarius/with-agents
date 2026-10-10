@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-04'
 title: "Formal methods with Hillel Wayne"
 resourceId: 35
 date: "2026-07-29"

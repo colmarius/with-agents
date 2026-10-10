@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-25'
 title: "Building with LLMs, finding a co-founder & other listener questions"
 resourceId: 70
 date: "2025-08-20"

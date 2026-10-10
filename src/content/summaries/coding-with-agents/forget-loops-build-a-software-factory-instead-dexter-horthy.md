@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "“Forget Loops, build a Software Factory instead” – Dexter Horthy"
 resourceId: 32
 date: "2026-08-07"

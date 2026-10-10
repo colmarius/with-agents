@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-11'
 title: "Building Codex with Tibo Sottiaux"
 resourceId: 35
 date: "2026-09-09"

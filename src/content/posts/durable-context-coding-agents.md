@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-28'
 title: 'Your Repo Is the Memory: Durable Context for AI Coding Agents'
 description: 'How to decide which coding-agent context belongs in chat, AGENTS.md, skills, work items, docs, tests, and saved results.'
 context: coding

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "The third golden age of software engineering – thanks to AI, with Grady Booch"
 resourceId: 35
 date: "2026-02-04"

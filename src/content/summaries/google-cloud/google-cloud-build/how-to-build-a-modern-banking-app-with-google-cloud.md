@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to build a modern banking app with Google Cloud"
 resourceId: 65
 date: "2022-03-31"

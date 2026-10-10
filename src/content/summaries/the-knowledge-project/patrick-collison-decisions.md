@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "Patrick Collison: Product bets, decisions, and learning at Stripe"
 resourceId: 139
 date: "2022-09-13"

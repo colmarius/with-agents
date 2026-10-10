@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Manage resource access with Cloud IAM"
 resourceId: 57
 date: "2021-05-07"

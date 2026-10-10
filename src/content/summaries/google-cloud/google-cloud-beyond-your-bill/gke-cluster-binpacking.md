@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Monitoring for efficient cluster binpacking in GKE"
 resourceId: 67
 date: 2021-08-04

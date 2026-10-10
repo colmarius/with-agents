@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-26'
 title: "mattpocock/skills: A complete AI Coding workflow, end-to-end"
 resourceId: 74
 date: "2026-07-16"

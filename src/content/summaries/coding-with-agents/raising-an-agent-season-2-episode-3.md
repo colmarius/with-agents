@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-27'
 title: "When Tokens Flow Like Electricity"
 resourceId: 20
 series: "raising-an-agent-season-2"

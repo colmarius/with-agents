@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "DHH’s new way of writing code"
 resourceId: 35
 date: "2026-04-08"

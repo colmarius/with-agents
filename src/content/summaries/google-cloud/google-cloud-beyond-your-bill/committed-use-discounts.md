@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Understanding and analyzing your committed use discounts"
 resourceId: 67
 date: 2019-11-05

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Setting up cost controls for BigQuery"
 resourceId: 64
 date: "2020-08-12"

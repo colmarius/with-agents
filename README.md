@@ -85,20 +85,11 @@ When consolidating a standalone item into a collection, transfer its original
 date to the child. A later standalone summary is not a second addition event.
 Existing publication/source dates keep their current meaning.
 
-`src/data/recent-additions-history.json` is a frozen migration baseline, not an
-automatic activity log. It covers the 352 additions discoverable on 2026-10-10
-with evidence commits and estimated first-public dates. The 24 initial-import
-entries use 2026-06-24, including episode listings later expanded into summaries.
-These are repository dates, not confirmed deployment dates. The UI marks
-affected days with “Includes estimated dates”; explicit owner dates take priority.
-
 For historical corrections, follow content identity and public eligibility across
 renames and moves. Use the first public commit's committer day, not its author
-date, draft creation, source date, or latest edit. Preserve historical keys,
-dates, and evidence during identity migrations. Keep estimates separate from
-recorded dates; never regenerate the baseline from current files or use it for
-new additions. The build rejects eligible additions without a recorded date or
-historical estimate and requires no Git access.
+date, draft creation, source date, or latest edit. Store the date directly on the
+owner; initial-import entries retain their import day. The build rejects eligible
+additions without an owner date and requires no Git access.
 
 ## Resource catalogs
 

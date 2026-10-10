@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Top 3 access risks in Cloud Security"
 resourceId: 57
 date: "2020-02-19"

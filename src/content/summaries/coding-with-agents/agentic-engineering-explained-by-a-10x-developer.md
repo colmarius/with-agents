@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-07-31'
 title: "Agentic Engineering, explained by a 10x developer"
 resourceId: 32
 date: "2026-07-27"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to use metrics scopes in Cloud Monitoring"
 resourceId: 63
 date: "2021-10-20"

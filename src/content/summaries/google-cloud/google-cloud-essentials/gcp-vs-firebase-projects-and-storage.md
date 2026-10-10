@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "GCP vs. Firebase - Projects & storage"
 resourceId: 62
 date: "2020-01-22"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "Essential AI Agent Workflows: Context Management and Prompting Best Practices"
 resourceId: 3
 series: "build-crew"

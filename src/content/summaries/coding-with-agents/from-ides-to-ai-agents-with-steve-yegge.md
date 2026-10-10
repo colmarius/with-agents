@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "From IDEs to AI Agents with Steve Yegge"
 resourceId: 35
 date: "2026-03-11"

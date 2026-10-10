@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-15'
 title: "How to Build MCP Servers"
 resourceId: 94
 collection: syntax-agent-workflows

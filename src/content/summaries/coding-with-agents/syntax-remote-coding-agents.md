@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-15'
 title: "Remote Coding Agents"
 resourceId: 94
 date: "2026-03-16"

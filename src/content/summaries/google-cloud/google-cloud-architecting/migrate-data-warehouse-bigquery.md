@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: How to migrate a data warehouse to BigQuery
 resourceId: 68
 date: 2021-11-20

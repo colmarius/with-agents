@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: How Google Photos scales to store 4 trillion photos and videos
 resourceId: 68
 date: 2023-07-31

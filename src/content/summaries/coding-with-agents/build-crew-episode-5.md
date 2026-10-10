@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "ChatGPT Atlas Browser, Handoffs, and AR Apps"
 resourceId: 3
 series: "build-crew"

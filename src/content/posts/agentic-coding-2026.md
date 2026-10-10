@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-28'
 title: 'Agentic Coding in 2026: A Practical Map'
 description: 'A 2026 map of coding-agent work: brief the task, preserve context, verify behavior, keep consequential decisions human, and scale only what works.'
 context: coding

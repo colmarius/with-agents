@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-28'
 title: 'Right-Sized Threads, Durable State'
 description: 'How to keep connected agent work in one thread, split only when separation helps, and carry accepted state across the boundary.'
 context: coding

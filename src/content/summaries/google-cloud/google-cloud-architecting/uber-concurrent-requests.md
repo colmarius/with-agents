@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: How does Uber scale to millions of concurrent requests?
 resourceId: 68
 date: 2022-01-23

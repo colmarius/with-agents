@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-27'
 title: "Killing the Sidebar"
 resourceId: 1
 series: "raising-an-agent"

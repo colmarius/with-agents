@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "L'evasione di GPT, la congettura Jacobiana e... ha ancora senso leggere il codice? | ZIP 02"
 resourceId: 121
 series: "zip"

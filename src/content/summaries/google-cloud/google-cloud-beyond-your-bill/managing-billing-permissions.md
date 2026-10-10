@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Managing billing permissions"
 resourceId: 67
 date: 2019-09-03

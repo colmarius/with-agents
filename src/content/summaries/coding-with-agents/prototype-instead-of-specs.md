@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-26'
 title: "Don't waste time on specs: /prototype instead"
 resourceId: 74
 date: "2026-07-23"

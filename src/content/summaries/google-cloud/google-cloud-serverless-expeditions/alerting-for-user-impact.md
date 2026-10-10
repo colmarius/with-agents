@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to do alerting right"
 resourceId: 59
 date: "2023-10-05"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Google Cloud VPC"
 resourceId: 64
 date: "2018-08-07"

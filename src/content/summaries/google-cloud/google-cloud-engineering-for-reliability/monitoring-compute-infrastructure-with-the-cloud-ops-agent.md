@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Monitoring compute infrastructure with the Cloud Ops Agent"
 resourceId: 63
 date: "2021-09-22"

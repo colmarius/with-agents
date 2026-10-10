@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to use Cloud Security Scanner - Getting Started with Cloud Security Command Center"
 resourceId: 58
 date: "2019-09-11"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "Navigating the AI Agent Landscape"
 resourceId: 3
 series: "build-crew"

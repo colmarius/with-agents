@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Securing App Engine apps with IAP"
 resourceId: 64
 date: "2019-10-06"

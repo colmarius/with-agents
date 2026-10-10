@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "Live hacking + win $500 Amp credit"
 resourceId: 3
 series: "build-crew"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-28'
 title: "The Workflow of the Future With Zed"
 resourceId: 94
 date: "2026-08-12"

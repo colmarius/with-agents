@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-26'
 title: "/wayfinder: Nothing is too big to plan anymore"
 resourceId: 74
 date: "2026-07-30"

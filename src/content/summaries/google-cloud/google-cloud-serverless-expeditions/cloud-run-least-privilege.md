@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Cloud Run Principle of Least Privilege"
 resourceId: 59
 date: "2024-05-23"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to build a social media photo sharing app on Google Cloud"
 resourceId: 65
 date: "2022-09-08"

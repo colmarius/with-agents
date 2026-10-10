@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Build a BigQuery AI agent with ADK & Cloud Run"
 resourceId: 59
 date: "2026-07-23"

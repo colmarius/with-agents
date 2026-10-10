@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "The creator of OpenClaw: \"I ship code I don't read\""
 resourceId: 35
 date: "2026-01-28"

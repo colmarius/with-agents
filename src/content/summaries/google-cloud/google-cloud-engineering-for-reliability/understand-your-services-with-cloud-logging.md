@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Understand your services with Cloud Logging"
 resourceId: 63
 date: "2021-08-25"

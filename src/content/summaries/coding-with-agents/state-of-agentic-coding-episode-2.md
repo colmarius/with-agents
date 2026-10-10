@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-07-17'
 title: "Harnesses Become the Product"
 resourceId: 21
 series: "state-of-agentic-coding"

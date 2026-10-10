@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-09'
 title: "Testing, Architecture, and the Limits of Agent Productivity"
 resourceId: 21
 series: "state-of-agentic-coding"

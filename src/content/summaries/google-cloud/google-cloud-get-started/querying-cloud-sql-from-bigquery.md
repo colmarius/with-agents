@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Querying Cloud SQL from BigQuery"
 resourceId: 64
 date: "2020-10-21"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-26'
 title: "Can Cursor's HARDCORE Review Skill Stop The Slop?"
 resourceId: 74
 date: "2026-05-28"

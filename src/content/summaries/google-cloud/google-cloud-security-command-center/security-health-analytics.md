@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Getting Started with Security Health Analytics"
 resourceId: 58
 date: "2019-10-23"

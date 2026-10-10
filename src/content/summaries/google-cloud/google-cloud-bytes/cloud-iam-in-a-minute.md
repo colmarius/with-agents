@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Cloud IAM in a minute"
 resourceId: 66
 date: "2021-07-18"

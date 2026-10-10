@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-27'
 title: "Amp Code Founder on future of Coding Agents"
 resourceId: 31
 collection: "the-west-coast-builders"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Cloud Functions vs. Cloud Run"
 resourceId: 59
 date: "2020-10-15"

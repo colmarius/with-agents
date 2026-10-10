@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-07-17'
 title: "The Local Dev Env is Dead"
 resourceId: 20
 series: "raising-an-agent-season-2"

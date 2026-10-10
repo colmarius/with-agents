@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "Watermarking, l'odio per l'AI e modelli locali senza censura | ZIP 04"
 resourceId: 121
 series: "zip"

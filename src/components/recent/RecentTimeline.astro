@@ -19,7 +19,6 @@ const linkClass =
       <h2 class="text-sm font-medium text-gray-900">
         <span class="mb-1 block text-xs font-normal uppercase tracking-wider text-gray-500">Added</span>
         <time datetime={date}>{formatCalendarDate(date)}</time>
-        {groups.some((group) => group.some((item) => item.estimateCommit !== undefined)) && <span class="mt-1 block text-xs font-normal text-gray-500">Includes estimated dates</span>}
       </h2>
       <div class="divide-y divide-gray-100 border-l-2 border-indigo-100 pl-5 sm:pl-7">
         {groups.map((group) => {

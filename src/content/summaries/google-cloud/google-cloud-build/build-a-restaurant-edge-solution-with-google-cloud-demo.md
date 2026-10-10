@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Build a restaurant edge solution with Google Cloud | demo"
 resourceId: 65
 date: "2022-08-18"

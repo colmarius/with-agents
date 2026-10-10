@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to store data on Google Cloud"
 resourceId: 62
 date: "2022-07-22"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "Bret Taylor: Building AI products and adaptable organizations"
 resourceId: 139
 date: "2025-04-15"

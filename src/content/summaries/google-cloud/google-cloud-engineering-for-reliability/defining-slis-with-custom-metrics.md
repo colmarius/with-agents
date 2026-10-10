@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Defining SLIs with custom metrics"
 resourceId: 63
 date: "2021-06-09"

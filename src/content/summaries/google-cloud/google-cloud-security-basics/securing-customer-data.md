@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Securing customer data"
 resourceId: 57
 date: "2020-04-14"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Infrastructure as code with Terraform and Cloud Run"
 resourceId: 59
 date: "2021-04-08"

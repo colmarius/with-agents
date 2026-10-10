@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-14'
 title: "Benedict Evans: AI adoption and competitive advantage"
 resourceId: 139
 date: "2025-09-02"

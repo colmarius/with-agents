@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "How to classify and redact sensitive data"
 resourceId: 64
 date: "2021-03-24"

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-26'
 title: "9 Things People Get Wrong With My /grill-* skills"
 resourceId: 74
 date: "2026-05-25"

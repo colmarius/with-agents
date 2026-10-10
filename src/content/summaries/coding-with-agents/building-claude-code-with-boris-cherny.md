@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "Building Claude Code with Boris Cherny"
 resourceId: 35
 date: "2026-03-04"

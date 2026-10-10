@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Best practices for Cloud Logging"
 resourceId: 63
 date: "2021-12-01"

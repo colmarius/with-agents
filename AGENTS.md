@@ -44,7 +44,7 @@ Follow the README's Development checks after code or content changes: lint/forma
 - Keep content within the site's engineering and AI scope. Avoid personal-site pages, personal-only assets, and unrelated collections.
 - Draft posts must use `draft: true`; production builds must not publish drafts.
 - Internal links must target existing routes; never link retired drafts or unavailable article routes from public content.
-- New public additions require `addedDate`; preserve it through edits and moves. Follow [README → Recently added](README.md#recently-added) for ownership and historical estimates.
+- New public additions require `addedDate`; preserve it through edits and moves. Follow [README → Recently added](README.md#recently-added) for ownership and historical corrections.
 - Keep `src/content/youtube/` source-only; never register it as an Astro collection or import it into rendered pages.
 - Public posts, summaries, and resources may cite tracked videos/playlists only when their source summary or playlist overview is `reviewed`, unless `.agents/scripts/public-content-guard.mjs` records a path-specific exception with a reason. Draft posts may cite draft sources; the guard reports warnings.
 - For any summary or transcript task, including resource work outside `src/content/`, read [the content authoring and review guide](src/content/AGENTS.md). It owns transcript capture, the required Summary readability review, and timestamp citations. Metadata-only changes need no new prose review.

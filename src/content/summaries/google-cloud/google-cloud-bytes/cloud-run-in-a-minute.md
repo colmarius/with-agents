@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-24'
 title: "Cloud Run in a minute"
 resourceId: 66
 date: "2022-12-21"

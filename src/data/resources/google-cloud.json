@@ -163,6 +163,7 @@
   },
   {
     "id": 97,
+    "addedDate": "2026-09-02",
     "primarySection": "foundations-platform",
     "title": "Google Cloud Well-Architected Framework",
     "subtitle": "Six pillars for reviewing cloud architecture and operations",
@@ -175,6 +176,7 @@
   },
   {
     "id": 98,
+    "addedDate": "2026-09-02",
     "primarySection": "foundations-platform",
     "title": "Enterprise foundations blueprint",
     "subtitle": "A Terraform-backed baseline for enterprise governance and security",
@@ -187,6 +189,7 @@
   },
   {
     "id": 99,
+    "addedDate": "2026-09-02",
     "primarySection": "foundations-platform",
     "title": "Professional Network Engineer Certification",
     "subtitle": "A sixteen-activity learning path for Google Cloud networking",
@@ -199,6 +202,7 @@
   },
   {
     "id": 100,
+    "addedDate": "2026-09-02",
     "primarySection": "applications-serverless",
     "title": "Configure Workload Identity Federation with deployment pipelines",
     "subtitle": "Keyless authentication from external CI/CD systems to Google Cloud",
@@ -211,6 +215,7 @@
   },
   {
     "id": 101,
+    "addedDate": "2026-09-02",
     "primarySection": "security",
     "title": "Best practices for using Workload Identity Federation",
     "subtitle": "Trust, least-privilege, and audit controls for external workloads",

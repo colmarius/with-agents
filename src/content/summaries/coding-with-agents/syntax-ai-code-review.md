@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-09-15'
 title: "LGTM, Ship It: The AI Code Review Problem"
 resourceId: 94
 collection: syntax-agent-workflows

@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-08-07'
 title: "TDD, AI agents and coding with Kent Beck"
 resourceId: 35
 date: "2025-06-11"

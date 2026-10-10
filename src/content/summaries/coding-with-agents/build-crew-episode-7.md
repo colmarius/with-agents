@@ -1,4 +1,5 @@
 ---
+addedDate: '2026-06-24'
 title: "Agent workflows, better threads and more"
 resourceId: 3
 series: "build-crew"
