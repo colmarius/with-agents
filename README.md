@@ -13,20 +13,37 @@ A multi-context Astro site for practical engineering: articles, generated slides
 
 ## Development
 
-```text
-npm ci           # Install dependencies from the lockfile
-npm run dev      # Start dev server
-npm run check    # Astro/TypeScript check
-npm test         # Unit tests
-npm run lint:fix # Lint and format
-npm run build    # Build for production
-npm run preview  # Preview build locally
+Use the Node.js version pinned in [`.nvmrc`](.nvmrc), matching CI. With nvm:
+
+```sh
+nvm install
+nvm use
+npm ci
+npm run dev
 ```
+
+Before committing code or content changes, run:
+
+```sh
+npm run lint:fix     # Lint and format
+npm run check        # Astro/TypeScript check
+npm run content:guard
+npm run build
+npm test
+```
+
+**Build before testing:** some tests inspect the generated site and search
+index in `dist/`. Testing first can check stale output or skip build-dependent
+coverage. Run `npm run preview` to inspect the production build locally.
 
 Run `npm run hooks:install` once per checkout to install the pinned `prek`
 pre-commit hook. It validates timestamp citations only in staged summaries,
 without network requests or rewriting content. Run `npm run summaries:check`
 to check every summary; `npm test` also checks the full corpus in CI.
+
+For content changes, follow [the repository guidance](AGENTS.md) and, for tracked
+YouTube sources, [the source-library publication rules](src/content/youtube/AGENTS.md).
+Source-only evidence is committed but must not be published as site pages.
 
 ## Site search
 
@@ -117,10 +134,9 @@ fundamentals curriculum.
 
 Editorial annotations are excluded from local and site search. Preserve catalog
 membership, summary links, and `resource-{id}` anchors when changing curation.
-Run `npm run check`, `npm run content:guard`, `npm run build`, then `npm test`;
-the final test run checks the newly built catalog and search corpus. Verify root
-and section pages, selected links, search/filter behavior, and narrow layouts in
-the browser after rendered changes.
+Run the [development checks](#development), then verify root and section pages,
+selected links, search/filter behavior, and narrow layouts in the browser after
+rendered changes.
 
 ## Project Structure
 
@@ -131,7 +147,8 @@ src/
 ├── data/          # Canonical resource manifests and catalog registry
 ├── hooks/         # React hooks
 ├── layouts/       # Astro layouts
-├── pages/         # Routes and API endpoints
+├── pages/         # Static page routes
+├── search/        # Build-time index, browser search engine, and tests
 ├── scripts/       # Client scripts
 ├── styles/        # Global styles
 ├── types/         # Type definitions
