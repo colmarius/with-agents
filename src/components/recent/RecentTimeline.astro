@@ -19,6 +19,7 @@ const linkClass =
       <h2 class="text-sm font-medium text-gray-900">
         <span class="mb-1 block text-xs font-normal uppercase tracking-wider text-gray-500">Added</span>
         <time datetime={date}>{formatCalendarDate(date)}</time>
+        {groups.some((group) => group.some((item) => item.estimateCommit !== undefined)) && <span class="mt-1 block text-xs font-normal text-gray-500">Includes estimated dates</span>}
       </h2>
       <div class="divide-y divide-gray-100 border-l-2 border-indigo-100 pl-5 sm:pl-7">
         {groups.map((group) => {
@@ -41,19 +42,17 @@ const linkClass =
               </p>
               {batch ? (
                 <details class="mt-3 rounded-lg border border-gray-200 px-4 py-3">
-                  <summary class:list={['cursor-pointer text-sm font-medium', linkClass]}>{group.length} summaries added on this page — explore the batch</summary>
+                  <summary class:list={['cursor-pointer text-sm font-medium', linkClass]}>{group.length} summaries on this page</summary>
                   <ul class="mt-4 space-y-4 border-l-2 border-indigo-100 pl-4">
                     {group.map((item) => <li data-addition-key={item.key}>
                       <a href={item.href} class:list={['text-sm', linkClass]}>{item.title} →</a>
                       {item.sourceDate && <p class="mt-1 text-xs text-gray-500">Source dated {formatCalendarDate(item.sourceDate)}</p>}
-                      {item.estimateCommit && <a class:list={['mt-1 inline-block text-xs', linkClass]} href={`https://github.com/colmarius/with-agents/commit/${item.estimateCommit}`}>Approximate addition date · history</a>}
                     </li>)}
                   </ul>
                 </details>
               ) : (
                 <div data-addition-key={first.key} class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
                   <a href={first.href} class:list={['text-sm font-medium', linkClass]}>{first.kind === 'post' ? 'Read field guide' : first.href.startsWith('/summaries/') ? 'Read summary' : 'View resource'} →</a>
-                  {first.estimateCommit && <a class:list={['text-xs', linkClass]} href={`https://github.com/colmarius/with-agents/commit/${first.estimateCommit}`}>Approximate addition date · history</a>}
                 </div>
               )}
             </article>

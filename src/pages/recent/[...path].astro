@@ -7,7 +7,6 @@ import {
   getRecentPath,
   paginateRecentAdditions,
   type RecentTopic,
-  recentPageSize,
 } from '../../utils/recent-additions';
 
 export const getStaticPaths = (async () => {
@@ -45,9 +44,8 @@ const title = `Recently added${topic.slug === 'all' ? '' : ` · ${topic.label}`}
 <Layout title={`${title} | With Agents`} description="New to this library, not necessarily new to the world. Explore recently added posts, resources, and collection summaries across all topics." canonicalPath={getRecentPath(topic.slug, result.page)} noindex={!first}>
   <div class="mx-auto max-w-5xl">
     <div class="mb-9 max-w-3xl" data-search-body data-search-title="Recently added">
-      <p class="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-indigo-600">Catch up across the site</p>
       <h1 class="text-4xl font-light tracking-tight text-gray-950 sm:text-5xl">Recently added</h1>
-      <p class="mt-4 text-lg font-light leading-relaxed text-gray-600">New to this library, not necessarily new to the world. Posts, resources, and collection additions in one place.</p>
+      <p class="mt-4 text-lg font-light leading-relaxed text-gray-600">New to this library, not necessarily new to the world.</p>
     </div>
     <nav aria-label="Topics" class="mb-6">
       <p class="mb-2 text-xs font-medium uppercase tracking-wider text-gray-500">Topics</p>
@@ -57,13 +55,9 @@ const title = `Recently added${topic.slug === 'all' ? '' : ` · ${topic.label}`}
         </li>)}
       </ul>
     </nav>
-    <div class="mb-7 space-y-3 text-sm text-gray-500" data-search-ignore>
-      <p>{result.total === 0 ? 'No dated additions yet' : `${(result.page - 1) * recentPageSize + 1}–${(result.page - 1) * recentPageSize + result.items.length} of ${result.total} dated additions`} · {topic.label} · newest added first</p>
-    </div>
     {result.total === 0 ? (
       <div class="rounded-lg bg-gray-50 p-8 text-center">
-        <h2 class="text-xl font-medium text-gray-900">No dated additions in this topic yet</h2>
-        <p class="mt-2 text-gray-600">This does not mean the library is empty. Older entries may not have a recorded addition date.</p>
+        <h2 class="text-xl font-medium text-gray-900">No additions yet</h2>
         <a href="/resources" class="mt-4 inline-block text-indigo-700 hover:underline">Browse the resource library →</a>
       </div>
     ) : <RecentTimeline items={result.items} topics={topics} />}

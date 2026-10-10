@@ -71,7 +71,8 @@ Existing publication/source dates keep their current meaning.
 `src/data/recent-additions-history.json` is a frozen migration baseline, not an
 automatic activity log. All 352 additions discoverable on 2026-10-10 have been
 backfilled from their first public repository appearances, with evidence commits.
-The UI labels these dates as approximate, not confirmed deployment dates.
+The UI marks affected day groups with “Includes estimated dates”; individual
+commit evidence stays in the baseline rather than appearing as timeline links.
 Use the commit's committer calendar day, not its author date (which may precede
 rebased incorporation), source date, or latest edit. The 24 entries already in
 the initial site import use 2026-06-24 as an estimated baseline, including
