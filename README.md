@@ -64,6 +64,15 @@ The installed site's service worker precaches search data and code, so search
 works offline after installation. This downloads the corpus even if search has
 not been opened. The existing update prompt reloads the site with the new corpus.
 
+The site checks for deployments after service-worker registration, on return to
+the page or reconnection, and every five minutes while visible and online.
+Checks share a one-minute cooldown and do not overlap. Once a new offline snapshot
+has finished installing, **Reload to update** activates it and reloads controlled
+tabs together, keeping pages, assets, and search on the same deployment. Reading
+is not interrupted automatically. Existing installations acquire this checking
+policy after accepting their first update; offline or suspended apps cannot
+discover deployments until they reconnect or resume.
+
 ## Recently added
 
 `/recent/` mixes public posts, standalone resources, and individual collection or

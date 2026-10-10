@@ -24,7 +24,8 @@
     status
   ) {
     const isMac = /Mac/.test(navigator.platform) && navigator.maxTouchPoints <= 1;
-    const updateIntervalMs = 60 * 60 * 1000;
+    const updateIntervalMs = 5 * 60 * 1000;
+    const updateCooldownMs = 60 * 1000;
     const workbox = new Workbox('/sw.js', {
       scope: '/',
       updateViaCache: 'none',
@@ -35,6 +36,8 @@
     let updateAvailable = false;
     let accepting = false;
     let reloading = false;
+    let checking = false;
+    let lastUpdateAttempt: number | undefined;
 
     const showUpdate = () => {
       updateAvailable = true;
@@ -58,15 +61,22 @@
         document.visibilityState !== 'visible' ||
         !navigator.onLine ||
         registration.installing ||
-        registration.waiting
+        registration.waiting ||
+        checking ||
+        (lastUpdateAttempt !== undefined &&
+          performance.now() - lastUpdateAttempt < updateCooldownMs)
       ) {
         return;
       }
 
+      checking = true;
+      lastUpdateAttempt = performance.now();
       try {
         await workbox.update();
       } catch (error) {
         console.error('Service worker update check failed.', error);
+      } finally {
+        checking = false;
       }
     };
 
@@ -109,12 +119,26 @@
       if (document.visibilityState === 'visible') void checkForUpdate();
     });
     window.addEventListener('pageshow', () => void checkForUpdate());
+    window.addEventListener('focus', () => void checkForUpdate());
+    window.addEventListener('online', () => void checkForUpdate());
 
     try {
       registration = await workbox.register();
 
       if (registration?.active && registration.waiting) showUpdate();
       if (registration) {
+        // Workbox can stop forwarding waiting events after an external update
+        // fails. Observe every native install, including successful retries.
+        const watchInstalling = () => {
+          registration?.installing?.addEventListener('statechange', () => {
+            if (registration?.active && registration.waiting && !accepting) {
+              showUpdate();
+            }
+          });
+        };
+        registration.addEventListener('updatefound', watchInstalling);
+        watchInstalling();
+        void checkForUpdate();
         window.setInterval(() => void checkForUpdate(), updateIntervalMs);
       }
     } catch (error) {
