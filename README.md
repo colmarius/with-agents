@@ -69,14 +69,22 @@ date to the child. A later standalone summary is not a second addition event.
 Existing publication/source dates keep their current meaning.
 
 `src/data/recent-additions-history.json` is a frozen migration baseline, not an
-automatic activity log. Its small reviewed estimate set records first public
-repository appearances with evidence commits; the UI explicitly labels these
-as approximate, not confirmed deployment dates. Explicit owner dates take
-precedence. Its `legacyUndated` list exempts only content already public before
-this feature; those entries stay in the catalogs but are absent from the dated
-archive. Never add new content to that exemption list. Remove an exemption when
-recording an owner's date. Move historical keys with an identity migration,
-preserving dates and evidence rather than treating a move as a new addition.
+automatic activity log. All 352 additions discoverable on 2026-10-10 have been
+backfilled from their first public repository appearances, with evidence commits.
+The UI labels these dates as approximate, not confirmed deployment dates.
+Use the commit's committer calendar day, not its author date (which may precede
+rebased incorporation), source date, or latest edit. The 24 entries already in
+the initial site import use 2026-06-24 as an estimated baseline, including
+existing episode listings later expanded into full summaries. Post dates start
+when articles become publicly discoverable, not when their drafts were created.
+Renames, source-link corrections, and standalone-to-collection moves preserve
+the original addition date. Three replacement articles first published on June
+28 were confirmed against their linked publication threads, rather than
+inheriting the dates of the older drafts they replaced.
+
+Explicit owner dates take precedence. `legacyUndated` is now empty; never add
+new content to that exemption list. Move historical keys with an identity
+migration, preserving dates and evidence rather than treating a move as new.
 
 The build fails for a new eligible addition without a date. No Git access is
 needed during ordinary builds. To extend historical coverage, review identity,

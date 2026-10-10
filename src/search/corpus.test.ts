@@ -25,6 +25,47 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
     ['/recent'],
     'Only the recent archive introduction belongs in site search',
   );
+  const additionDates = new Map<string, string | null>();
+  for (const file of [
+    'dist/recent/index.html',
+    ...globSync('dist/recent/page/*/index.html'),
+  ]) {
+    const { document } = parseHTML(readFileSync(file, 'utf8'));
+    for (const row of document.querySelectorAll('[data-addition-key]')) {
+      const key = row.getAttribute('data-addition-key');
+      assert.ok(key);
+      assert.ok(!additionDates.has(key), `Repeated archive entry: ${key}`);
+      additionDates.set(
+        key,
+        row
+          .closest('section')
+          ?.querySelector('time')
+          ?.getAttribute('datetime') ?? null,
+      );
+    }
+  }
+  const history = JSON.parse(
+    readFileSync('src/data/recent-additions-history.json', 'utf8'),
+  );
+  for (const key of Object.keys(history.estimates)) {
+    assert.ok(additionDates.has(key), `Backfilled addition absent: ${key}`);
+  }
+  // Evidence: ef4e761 lists the draft; 081c758 publishes the later-renamed
+  // article; 69acdf1 adds Pi before its October collection consolidation.
+  for (const [key, date] of [
+    ['post:durable-context-coding-agents', '2026-06-28'],
+    ['post:right-sized-threads-durable-state', '2026-06-28'],
+    [
+      'summary:coding-with-agents/building-pi-and-what-makes-self-modifying-software-so-fascinating',
+      '2026-06-27',
+    ],
+  ]) {
+    assert.equal(
+      additionDates.get(key),
+      date,
+      `Preserve first public date: ${key}`,
+    );
+  }
   const { document: recent } = parseHTML(
     readFileSync('dist/recent/index.html', 'utf8'),
   );

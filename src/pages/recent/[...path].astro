@@ -11,7 +11,7 @@ import {
 } from '../../utils/recent-additions';
 
 export const getStaticPaths = (async () => {
-  const { items, topics, undatedCount } = await getRecentAdditions();
+  const { items, topics } = await getRecentAdditions();
   return [{ slug: 'all', label: 'All topics' }, ...topics].flatMap((topic) => {
     const firstPage = paginateRecentAdditions(items, topic.slug);
     return Array.from({ length: firstPage.totalPages }, (_, index) => {
@@ -26,7 +26,6 @@ export const getStaticPaths = (async () => {
           topic,
           topics,
           result: paginateRecentAdditions(items, topic.slug, page),
-          undatedCount,
         },
       };
     });
@@ -37,9 +36,8 @@ type Props = {
   topic: RecentTopic;
   topics: RecentTopic[];
   result: ReturnType<typeof paginateRecentAdditions>;
-  undatedCount: number;
 };
-const { topic, topics, result, undatedCount } = Astro.props;
+const { topic, topics, result } = Astro.props;
 const first = topic.slug === 'all' && result.page === 1;
 const title = `Recently added${topic.slug === 'all' ? '' : ` · ${topic.label}`}${result.page === 1 ? '' : ` · Page ${result.page}`}`;
 ---
@@ -61,11 +59,6 @@ const title = `Recently added${topic.slug === 'all' ? '' : ` · ${topic.label}`}
     </nav>
     <div class="mb-7 space-y-3 text-sm text-gray-500" data-search-ignore>
       <p>{result.total === 0 ? 'No dated additions yet' : `${(result.page - 1) * recentPageSize + 1}–${(result.page - 1) * recentPageSize + result.items.length} of ${result.total} dated additions`} · {topic.label} · newest added first</p>
-      <details class="max-w-3xl rounded-lg border border-gray-200 px-4 py-3">
-        <summary class="cursor-pointer font-medium text-gray-600 focus-visible:outline-2 focus-visible:outline-indigo-600">About addition dates · historical coverage is partial</summary>
-        <p class="mt-3 leading-relaxed">Dates describe when something joined the library, not when its source was published. Historical entries marked “Approximate” use reviewed repository history, not confirmed deployment dates. New additions record their own addition day.</p>
-        <p class="mt-2 leading-relaxed">{undatedCount} older additions have no recorded date and remain available in the <a class="text-indigo-700 hover:underline" href="/resources">resource catalogs</a> and topic field-guide lists. An edit or a move between topics does not make an item new again.</p>
-      </details>
     </div>
     {result.total === 0 ? (
       <div class="rounded-lg bg-gray-50 p-8 text-center">
