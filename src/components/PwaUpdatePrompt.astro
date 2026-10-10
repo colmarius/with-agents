@@ -38,16 +38,26 @@
     let reloading = false;
     let checking = false;
     let lastUpdateAttempt: number | undefined;
+    // A reload consents to its startup update, not to later background checks.
+    let reloadCheck =
+      (performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined)
+        ?.type === 'reload';
+    let reloadWorker: ServiceWorker | undefined;
 
     const showUpdate = () => {
       updateAvailable = true;
       prompt.hidden = false;
       status.textContent = 'A site update is available.';
+      if (!reloadCheck && reloadWorker && registration?.waiting === reloadWorker) {
+        acceptUpdate();
+      }
     };
 
     const acceptUpdate = () => {
       if (!updateAvailable || accepting) return;
 
+      reloadCheck = false;
+      reloadWorker = undefined;
       accepting = true;
       action.disabled = true;
       label.textContent = 'Updating…';
@@ -55,13 +65,13 @@
       workbox.messageSkipWaiting();
     };
 
-    const checkForUpdate = async () => {
+    const checkForUpdate = async (refresh = false) => {
       if (
         !registration ||
         document.visibilityState !== 'visible' ||
         !navigator.onLine ||
         registration.installing ||
-        registration.waiting ||
+        (registration.waiting && !refresh) ||
         checking ||
         (lastUpdateAttempt !== undefined &&
           performance.now() - lastUpdateAttempt < updateCooldownMs)
@@ -130,7 +140,12 @@
         // Workbox can stop forwarding waiting events after an external update
         // fails. Observe every native install, including successful retries.
         const watchInstalling = () => {
-          registration?.installing?.addEventListener('statechange', () => {
+          const worker = registration?.installing;
+          if (reloadCheck && worker) reloadWorker = worker;
+          worker?.addEventListener('statechange', () => {
+            if (worker.state === 'redundant' && reloadWorker === worker) {
+              reloadWorker = undefined;
+            }
             if (registration?.active && registration.waiting && !accepting) {
               showUpdate();
             }
@@ -138,11 +153,22 @@
         };
         registration.addEventListener('updatefound', watchInstalling);
         watchInstalling();
-        void checkForUpdate();
+        // A refresh checks for a newer deployment even if an older one is waiting.
+        await checkForUpdate(reloadCheck);
+        // update() resolves with installing set before updatefound is dispatched.
+        // Keep consent attached to that worker after the startup check finishes.
+        if (reloadCheck) {
+          reloadWorker = registration.installing ?? registration.waiting ?? undefined;
+        }
         window.setInterval(() => void checkForUpdate(), updateIntervalMs);
       }
     } catch (error) {
       console.error('Service worker registration failed.', error);
+    } finally {
+      reloadCheck = false;
+      if (registration?.active && registration.waiting === reloadWorker) {
+        showUpdate();
+      }
     }
   }
 </script>

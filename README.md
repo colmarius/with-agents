@@ -69,9 +69,15 @@ the page or reconnection, and every five minutes while visible and online.
 Checks share a one-minute cooldown and do not overlap. Once a new offline snapshot
 has finished installing, **Reload to update** activates it and reloads controlled
 tabs together, keeping pages, assets, and search on the same deployment. Reading
-is not interrupted automatically. Existing installations acquire this checking
-policy after accepting their first update; offline or suspended apps cannot
-discover deployments until they reconnect or resume.
+is not interrupted by background discoveries. A browser refresh also accepts an
+update already waiting or discovered by that refresh's startup check, once its
+installation finishes. It checks for newer deployments even if an older update
+is waiting. This prevents a hard refresh from showing fresh network
+content only for the next normal refresh to return to an older offline snapshot.
+Refresh consent expires after that check or installation; later discoveries
+still show the prompt. Existing installations acquire this policy after accepting
+their first update or loading the new page code with a hard refresh; offline or
+suspended apps cannot discover deployments until they reconnect or resume.
 
 ## Recently added
 

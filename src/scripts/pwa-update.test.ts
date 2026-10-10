@@ -17,7 +17,17 @@ const code = ts.transpileModule(
   { compilerOptions: { target: ts.ScriptTarget.ES2022 } },
 ).outputText;
 
-async function setup(controlled = true) {
+async function setup(
+  controlled = true,
+  navigation = 'navigate',
+  startup:
+    | 'none'
+    | 'waiting'
+    | 'installing'
+    | 'discovered'
+    | 'superseded'
+    | 'pending-event' = 'none',
+) {
   const { document, window } = parseHTML(source.split('<script>')[0]);
   Object.defineProperty(document, 'visibilityState', {
     value: 'visible',
@@ -30,15 +40,29 @@ async function setup(controlled = true) {
     serviceWorker: { controller: controlled ? {} : null },
   };
   const registration = Object.assign(new EventTarget(), {
-    active: controlled ? {} : null,
-    installing: null as EventTarget | null,
-    waiting: null as object | null,
+    active: controlled || startup !== 'none' ? {} : null,
+    installing: (startup === 'installing'
+      ? new EventTarget()
+      : null) as EventTarget | null,
+    waiting: (startup === 'waiting' || startup === 'superseded' ? {} : null) as
+      | object
+      | null,
   });
   let now = 0;
   let checks = 0;
   let reloads = 0;
   let accepted = 0;
-  let update = async () => {};
+  let update = async () => {
+    if (
+      startup === 'discovered' ||
+      startup === 'pending-event' ||
+      startup === 'superseded'
+    ) {
+      registration.installing = new EventTarget();
+      if (startup === 'discovered')
+        registration.dispatchEvent(new Event('updatefound'));
+    }
+  };
   let interval: (() => void) | undefined;
   let intervalMs = 0;
   const events = new Map<string, () => void>();
@@ -62,7 +86,10 @@ async function setup(controlled = true) {
     document,
     navigator,
     Workbox,
-    performance: { now: () => now },
+    performance: {
+      now: () => now,
+      getEntriesByType: () => [{ type: navigation }],
+    },
     console: { error() {} },
     window: {
       addEventListener(name: string, callback: () => void) {
@@ -243,4 +270,51 @@ test('a successful retry shows the prompt even without a Workbox waiting event',
   assert.equal(page.reloads, 0);
   page.accept();
   assert.equal(page.accepted, 1);
+});
+
+test('reload accepts only its startup update, including an uncontrolled hard refresh', async () => {
+  for (const controlled of [true, false]) {
+    const ready = await setup(controlled, 'reload', 'waiting');
+    assert.equal(ready.accepted, 1);
+    assert.equal(ready.reloads, 0, 'wait for activation before reloading');
+    ready.worker('controlling');
+    ready.worker('controlling');
+    assert.equal(ready.reloads, 1);
+  }
+  for (const startup of [
+    'installing',
+    'discovered',
+    'pending-event',
+    'superseded',
+  ] as const) {
+    const page = await setup(true, 'reload', startup);
+    const worker = page.registration.installing;
+    assert.ok(worker);
+    if (startup === 'pending-event' || startup === 'superseded')
+      page.registration.dispatchEvent(new Event('updatefound'));
+    assert.equal(page.accepted, 0, 'do not accept an older waiting snapshot');
+    page.registration.installing = null;
+    page.registration.waiting = worker;
+    worker.dispatchEvent(new Event('statechange'));
+    assert.equal(page.accepted, 1, 'finish the installation started by reload');
+  }
+  const later = await setup(true, 'reload');
+  later.worker('waiting');
+  assert.equal(
+    later.accepted,
+    0,
+    'reload consent expires after a no-update check',
+  );
+  assert.equal(later.reloads, 0);
+  const failed = await setup(true, 'reload', 'installing');
+  const worker = failed.registration.installing;
+  assert.ok(worker);
+  Object.assign(worker, { state: 'redundant' });
+  failed.registration.installing = null;
+  worker.dispatchEvent(new Event('statechange'));
+  failed.registration.waiting = {};
+  failed.worker('waiting');
+  assert.equal(failed.accepted, 0, 'a later retry still requires acceptance');
+  const navigation = await setup(true, 'navigate', 'waiting');
+  assert.equal(navigation.accepted, 0, 'ordinary navigation preserves reading');
 });
