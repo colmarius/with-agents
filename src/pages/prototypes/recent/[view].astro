@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import RecentPrototype from '../../../components/prototypes/RecentPrototype';
+import {
+  buildRecentPrototype,
+  recentScopes,
+} from '../../../components/prototypes/recent-data';
+import Layout from '../../../layouts/Layout.astro';
+
+// Feedback routes only. No demo dates or prototype pages enter production output.
+export function getStaticPaths() {
+  return import.meta.env.DEV
+    ? ['timeline', 'compact'].map((view) => ({ params: { view } }))
+    : [];
+}
+
+const view = Astro.params.view === 'compact' ? 'compact' : 'timeline';
+const items = buildRecentPrototype(
+  await getCollection('summaries'),
+  await getCollection('posts'),
+);
+---
+
+<Layout title="Recently added — prototype | With Agents" noindex>
+  <div class="mx-auto max-w-5xl">
+    <aside class="mb-9 rounded-lg border border-indigo-100 bg-indigo-50 px-5 py-4 text-sm leading-relaxed text-indigo-950">
+      <strong>Prototype · real content, illustrative addition dates.</strong>
+      Dates labelled “Added” demonstrate the interaction; they are not historical records. Publication dates and destinations come from the existing site.
+    </aside>
+    <nav aria-label="Prototype options" class="mb-8 flex flex-wrap gap-5 text-sm">
+      <a href="/prototypes/recent/timeline" aria-current={view === 'timeline' ? 'page' : undefined} class:list={['pb-2 text-indigo-700 hover:underline', { 'border-b-2 border-indigo-600 font-medium': view === 'timeline' }]}>A · Full timeline</a>
+      <a href="/prototypes/recent/compact" aria-current={view === 'compact' ? 'page' : undefined} class:list={['pb-2 text-indigo-700 hover:underline', { 'border-b-2 border-indigo-600 font-medium': view === 'compact' }]}>B · Compact panel</a>
+    </nav>
+    <div class="mb-9 max-w-3xl">
+      <p class="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-indigo-600">{view === 'timeline' ? 'Catch up across the site' : 'An alternative for the home page'}</p>
+      <h1 class="text-4xl font-light tracking-tight text-gray-950 sm:text-5xl">{view === 'timeline' ? 'Recently added' : 'A little space for what’s new.'}</h1>
+      <p class="mt-4 text-lg font-light leading-relaxed text-gray-600">{view === 'timeline' ? 'New to this library, not necessarily new to the world. Posts, resources, and collection additions in one place.' : 'Keep the curated starting points. Add a compact catch-up panel for returning readers, with older additions one click away.'}</p>
+    </div>
+    <RecentPrototype client:load items={items} scopes={recentScopes} view={view} />
+    <p class="mt-10 text-sm leading-relaxed text-gray-500">Feedback: is the date-grouped archive useful, or is the compact panel enough? Try the context filters and expand a collection batch. Use the floating review button to comment on this page.</p>
+  </div>
+</Layout>
