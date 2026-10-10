@@ -85,8 +85,8 @@ A temporary playlist that queues public resources may set
 `resourceIntake: true` in its catalog record. It must not also define
 `curation`. Sync still owns its complete remote manifest, but it creates no
 library capture, video-summary, playlist-overview, or author-synthesis
-obligation. Process each pending video through the root YouTube transcript
-workflow and the skill's collection placement procedure instead of
+obligation. Process each pending video through the [content transcript
+workflow](../AGENTS.md#youtube-transcript-workflow) and the skill's collection placement procedure instead of
 `youtube:library capture`. A public summary may belong to an approved curated
 collection or a standalone resource; intake does not require a separate card.
 
@@ -119,7 +119,7 @@ capture, and status tooling must not silently generate or replace them, and no
 LLM API belongs in this workflow. New editorial artifacts begin as `draft`.
 Set `reviewed` only after an explicit human or dedicated review pass.
 
-Apply root `AGENTS.md`'s Summary readability review to summaries and syntheses.
+Apply the [Summary readability review](../AGENTS.md#summary-readability-review) to summaries and syntheses.
 The schemas, headings, disclosures, and publication gates below remain
 authoritative.
 

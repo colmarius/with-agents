@@ -3,183 +3,102 @@
 ## Stack & Architecture
 
 - **Astro v7** + React 19 + TailwindCSS v4
-- **Static multi-context knowledge site** for practical coding-agent, cloud/GCP, and security workflows, plus broader AI concepts, economics, and implications, with posts, slides, and curated resources
+- **Static knowledge site** for coding-agent, cloud/GCP, security, and broader AI workflows, concepts, economics, and implications, with posts, slides, and curated resources
 - **Site**: <https://with-agents.dev>
 - **Repository**: `colmarius/with-agents` (public source repository)
 - **Path aliases**: `@components`, `@types`, `@layouts`, `@utils`, `@scripts` (defined in `tsconfig.json`)
+- See [README](README.md#project-structure) for the directory map and [Development](README.md#development) for setup and commands.
 
-## Commands
+## Verification
 
-- `npm run dev` - Dev server
-- `npm run build` - Production build
-- `npm run preview` - Preview build
-- `npm run check` - Astro/TypeScript check
-- `npm test` - Unit tests (site data/resolver logic and `.agents/scripts`)
-- `npm run lint:fix` - Lint and format with Biome
+Follow the README's Development checks after code or content changes: lint/format, Astro check, content guard, **build, then tests**. Tests inspect generated output, so build first. For documentation-only changes, validate affected instructions and links; application tests are unnecessary unless behavior or configuration also changes.
 
-Run `npm run check`, `npm test`, and `npm run build` after code or content changes. Run `npm run lint:fix` before committing when files may need formatting.
+### Orb Proof Loop
 
-## Orb Proof Loop
-
-- Before browser verification in an Amp orb, run `amp orb services ensure` and use the portal URL it returns. Do not hardcode portal hostnames.
-- For changes to rendered routes, layout, styling, or client interactivity, verify the affected route in a real browser with the `agent-browser` skill after `npm run check` and `npm run build`.
-- Report the route and observed behavior. Capture a screenshot when visual evidence helps review; an HTTP 200 alone does not prove correct rendering.
+- Before browser verification in an Amp orb, run `amp orb services ensure` and use the returned portal URL; never hardcode portal hostnames or share localhost URLs.
+- For changes to rendered routes, layout, styling, or client interactivity, verify affected states in a real browser with the `agent-browser` skill after check and build. Report the route and observed behavior; an HTTP 200 alone does not prove correct rendering. Capture and inspect screenshots for visual changes.
+- After verifying a new resource, include its summary or resource portal link in the final response with the Markdown link title `amp-portal`. Do not imply the preview is deployed.
 - Do not edit or commit `.amp/portals/**`. Restart `web` only after changing its service declaration, command, or dependencies.
 
-## Project Structure
-
-```text
-src/
-├── components/    # Astro and React components
-├── content/       # Astro content plus source-only YouTube evidence
-├── data/          # Canonical resource manifests and catalog registry
-├── hooks/         # React hooks
-├── layouts/       # Astro layouts
-├── pages/         # Static page routes
-├── search/        # Build-time search index and search tests
-├── scripts/       # Client scripts
-├── styles/        # Global styles
-├── types/         # Type definitions
-└── utils/         # Utilities
-```
-
-Important routes:
+## Important Routes
 
 - `/` - umbrella landing page
 - `/coding`, `/cloud`, `/security`, and `/ai` - context landing pages
-- `/[context]/posts` and `/[context]/posts/[slug]` - context-specific article index and articles
-- `/[context]/posts/[slug]/slides` - generated slide view for each published post
+- `/[context]/posts` and `/[context]/posts/[slug]` - article index and articles
+- `/[context]/posts/[slug]/slides` - generated slides for each published post
+- `/recent/` - additions across topics, with static topic filters and pagination
 - `/resources` - catalog index
 - `/resources/[topic]` and `/resources/[topic]/[section]` - catalog and section pages
-- `/summaries/[...slug]` - standalone summary pages, including series and collection navigation
+- `/summaries/[...slug]` - public summaries with series and collection navigation
 
 ## Code Conventions
 
-- Use `type` aliases rather than `interface`.
-- Prefer functional patterns over classes.
+- Use `type` aliases rather than `interface`; prefer functional patterns over classes.
 - Keep single quotes, semicolons, and 2-space indentation (Biome enforced).
-- Use `client:load` or `client:only="react"` for React components when browser interactivity is required.
+- Prefer static Astro and native HTML where sufficient. For React interactivity, use the appropriate client directive; reserve `client:only` for components that cannot render on the server.
 - Access browser APIs only in client-side code or behind environment checks.
 - Keep content frontmatter compatible with `src/content.config.ts`.
 
-## Content Guidelines
+## Content and Publication Boundaries
 
-- Keep the site focused on practical coding-agent, cloud/platform, and security engineering knowledge, supporting developer practices, and broader AI concepts, economics, and implications.
-- Avoid personal-site pages, personal-only assets, or unrelated resource collections.
-- Draft posts must use `draft: true`; production builds should not publish drafts.
-- Internal links should point only to routes that exist in this repository, unless intentionally linking to an external site.
-- New public additions require `addedDate`; preserve it through edits and moves. Follow [README.md → Recently added](README.md#recently-added) for date ownership and historical estimates.
-- Publishable posts, public summaries, and resources may cite a video or playlist tracked in `src/content/youtube/` only when its source summary or playlist overview is `reviewed`, unless `.agents/scripts/public-content-guard.mjs` records a path-specific exception with a reason. Draft posts may cite draft sources for work in progress, but the guard reports them as warnings.
+- Keep content within the site's engineering and AI scope. Avoid personal-site pages, personal-only assets, and unrelated collections.
+- Draft posts must use `draft: true`; production builds must not publish drafts.
+- Internal links must target existing routes; never link retired drafts or unavailable article routes from public content.
+- New public additions require `addedDate`; preserve it through edits and moves. Follow [README → Recently added](README.md#recently-added) for ownership and historical estimates.
+- Keep `src/content/youtube/` source-only; never register it as an Astro collection or import it into rendered pages.
+- Public posts, summaries, and resources may cite tracked videos/playlists only when their source summary or playlist overview is `reviewed`, unless `.agents/scripts/public-content-guard.mjs` records a path-specific exception with a reason. Draft posts may cite draft sources; the guard reports warnings.
+- For any summary or transcript task, including resource work outside `src/content/`, read [the content authoring and review guide](src/content/AGENTS.md). It owns transcript capture, the required Summary readability review, and timestamp citations. Metadata-only changes need no new prose review.
 
-### Resource catalog maintenance
+### Resource Catalog Maintenance
 
-- When adding a new video or resource, update the Amp thread title as soon as the source title is known, using `Add resource: <video or resource title>`.
-- After adding or substantively revising a public resource summary, complete the Summary readability review below before declaring the resource complete. Use the saved transcript for transcript-backed summaries and the original source otherwise. Metadata-only changes do not require a new prose review.
-- After verifying the new resource in an orb browser, include a clickable portal link to its summary or resource route in the final response. Use the portal URL returned by `amp orb services ensure` with the verified route and the Markdown link title `amp-portal`; never substitute a localhost URL or imply the preview is deployed.
-- In the final response, after self-review and verification, offer an optional Oracle review against the Summary readability review criteria once per task or batch for resource additions with new or substantially revised summaries. Skip metadata-only changes and summaries Oracle already reviewed during the task. Wait for the user's agreement before this optional review; it is not a completion gate.
-- Keep one canonical resource record in a registered manifest under `src/data/resources/`; resource IDs are globally unique, and public summaries under `src/content/summaries/**` join that record through `resourceId`.
-- `src/data/resources/catalogs.ts` owns catalog metadata, display order, membership, and per-catalog section assignment. Cross-list a resource by reusing its canonical ID in each catalog's `resourceIds` and `sectionByResourceId`; never duplicate the resource record or its summaries.
-- The AI catalog covers concepts and capabilities, economics and industry, and broader implications and risks. Move general-AI resources there; cross-list in Coding only when the source contains substantive software-engineering, agent-system, or developer-practice material. Opinion and forecasts must retain their evidence labels. Preserve existing summary URLs when moving membership; legacy directory names do not determine catalog ownership.
-- Keep AI sections thematic. Author-based discovery belongs in a section's `featuredSelection`, referencing existing resource IDs without changing summary ownership or resource counts; it is not a playlist or a summary `collection`.
-- For a public playlist collection, follow `src/content/youtube/AGENTS.md`. The public children's `collection`, `order`, and `videoId` values must exactly match reviewed curation, and source summaries plus the playlist overview must be reviewed before publication.
-- Before creating a standalone YouTube resource, check its exact video ID against existing public curated playlists. Prefer an existing consolidated collection when membership and editorial fit are confirmed; a shared publisher or inclusion in an editorial guide does not establish ownership. Preserve intentionally independent cards and documented standalone exceptions. Relevant Pragmatic Engineer podcast episodes belong in “selected conversations” (resource 35); nonmembers such as Summit talks remain standalone. Load `maintaining-youtube-library` for collection placement, preserve existing summary URLs and transcripts, and complete the playlist review gates before publication.
-- Run `npm run content:guard` after resource or public-summary changes. When tracked YouTube source evidence changes, also run `npm run youtube:library -- status` and `npm run youtube:library -- audit`.
+- When adding a video or resource, update the Amp thread title once its title is known: `Add resource: <video or resource title>`.
+- Keep one canonical record in a registered manifest under `src/data/resources/`. IDs are globally unique; public summaries join their resource through `resourceId`.
+- `src/data/resources/catalogs.ts` owns catalog metadata, display order, membership, and section assignment. Cross-list by reusing the canonical ID in `resourceIds` and `sectionByResourceId`; never duplicate records or summaries.
+- General-AI resources belong in AI; cross-list in Coding only for substantive software-engineering, agent-system, or developer-practice material. Preserve opinion/forecast labels and existing summary URLs; directory names do not determine catalog ownership.
+- Keep AI sections thematic. Author discovery belongs in a section's `featuredSelection` using existing resource IDs, not a playlist or summary `collection`.
+- Before adding a standalone YouTube resource, load `maintaining-youtube-library` and check its exact video ID against public curated playlists. Prefer an existing collection only when membership and editorial fit are confirmed; shared publishers or editorial-guide mentions do not establish ownership. Preserve independent cards and documented exceptions. Relevant Pragmatic Engineer podcast episodes belong in resource 35; nonmembers such as Summit talks remain standalone.
+- Public playlist children must match reviewed curation exactly in `collection`, `order`, and `videoId`. Source summaries and the playlist overview must be reviewed before publication; follow [the source-library contract](src/content/youtube/AGENTS.md).
+- When tracked source evidence changes, also run `npm run youtube:library -- status` and `npm run youtube:library -- audit`.
 
-### Amp resource refresh
+### Article Writing
 
-When a request includes **“refresh amp resources”**, run a narrow delta audit rather than a general catalog sweep:
+Load `article-writing` when writing or refreshing public posts under `src/content/posts/`.
 
-1. Load the `research` skill and read the existing `.agents/research/amp-*.md` notes before fetching sources.
-2. Force-refresh the supplied official URLs and Amp Chronicle. Compare only items newer than the latest dated research baseline, then read the current Docs pages directly implicated by those items. Treat Docs as current behavior and Chronicle/News as dated evidence.
-3. Update reusable research when the delta adds or changes a durable fact. Update public posts only when a supported claim, workflow contract, or citation is stale; load the `article-writing` skill first. Keep interface details, routing, pricing, and one-off announcements research-only by default, and do not add a resource-manifest entry without a durable catalog use case.
-4. Search the full owning article for the changed concept and validate exact links, not only domains. Use Oracle when explicitly requested or for a specific unresolved, high-impact evidence judgment—not as an automatic review step.
-5. Run the checks required for the files changed, including link and browser checks for rendered updates. Report the source delta, files changed, deliberately unchanged public content, and decisive verification. Do not ship or archive unless explicitly requested.
-
-### Article writing
-
-When writing or refreshing public posts under `src/content/posts/`, follow this contract and load the `article-writing` skill for the full workflow and checklists.
-
-- **Audience:** experienced developers, tech leads, and agent-heavy practitioners who want practical coding-agent, cloud/platform, and security workflows.
+- **Audience:** experienced developers, tech leads, and agent-heavy practitioners seeking practical engineering workflows.
 - **Tone:** direct, calm, source-backed, concise; skeptical but constructive. Not salesy, manifesto-like, or slangy.
-- **Concision:** important point first; active sentences; short paragraphs; concrete examples; no throat-clearing. Prefer the shortest version the intended reader can understand without losing the reasoning or evidence boundary.
-- **Source anchors:** anchors must support the specific claim they sit beside. Mark author synthesis as synthesis. Do not pad posts with repeated source recaps.
-- **Internal links:** link only to routes that exist in this repo. Never link retired drafts or old/unavailable article routes from public posts.
-- **Post/slide convention:** public posts also generate `/slides` views. Normal rendered `##` sections should usually start with a concise blockquote slide message. Optional immediate visuals need accessible alt text, captions, or nearby explanatory prose. Use exact `## Sources` or `## Sources used` headings for source appendices; they are not normal slides.
+- **Concision:** important point first; active sentences; short paragraphs; concrete examples; no throat-clearing. Cut repetition without losing reasoning or evidence boundaries.
+- **Sources:** citations must support adjacent claims. Mark author synthesis as synthesis; do not pad posts with repeated source recaps.
+- **Slides:** normal rendered `##` sections should usually start with a concise blockquote slide message. Visuals need accessible alt text, captions, or nearby explanation. Use exact `## Sources` or `## Sources used` for source appendices; these are not normal slides.
 
-### YouTube library maintenance
+### Task Routing and Review
 
-When asked to check, sync, or update tracked YouTube playlists, retry unavailable library captions, or add a tracked playlist, load the `maintaining-youtube-library` skill. Standalone-video summaries continue to use the transcript workflow below. Follow [`src/content/youtube/AGENTS.md`](src/content/youtube/AGENTS.md); keep that tree source-only and never publish it through Astro.
+- Load `maintaining-youtube-library` for tracked playlist checks/sync, caption retries, adding playlists, collection placement, and **refresh/process coding-agent intake**. Follow the source-library contract; standalone videos use the content guide's transcript workflow.
+- Consult Oracle when explicitly requested or when direct investigation leaves a specific, high-impact judgment unresolved—not as an automatic approval gate. An optional review offer is discretionary, not required closing boilerplate. Dedicated source-library reviews remain mandatory where specified.
 
-When asked to **refresh coding-agent intake** or **process coding-agent intake**, load the same skill; it owns the temporary-playlist queue and public-resource workflow, including collection placement.
+### Amp Resource Refresh
 
-### YouTube transcript workflow
+For **“refresh amp resources”**, perform a narrow delta audit:
 
-Use this workflow when the user provides a YouTube video link/title or asks for a video summary.
+1. Load `research` and read `.agents/research/amp-*.md` before fetching sources.
+2. Force-refresh supplied official URLs and Amp Chronicle. Compare only items newer than the latest dated baseline, then read directly implicated Docs pages. Docs establish current behavior; Chronicle/News are dated evidence.
+3. Update reusable research for durable changes. Update public posts only for stale supported claims, workflow contracts, or citations, loading `article-writing` first. Keep interface details, routing, pricing, and one-off announcements research-only by default; do not add a resource without a durable catalog use case.
+4. Search the full owning article for the changed concept and validate exact links, not just domains. Apply the review policy above.
+5. Run applicable checks, including link/browser checks for rendered changes. Report source delta, changed files, deliberately unchanged public content, and verification. Do not ship or archive unless requested.
 
-X-only livestreams or broadcasts do not need transcript sidecars. If an entry intentionally points only to X and no public YouTube recording/transcript is being summarized, say that explicitly in the summary body instead of leaving a "coming soon" placeholder.
+## Deployment and Safety
 
-1. For a new YouTube video, save a transcript sidecar first:
-
-   ```sh
-   npm run youtube:transcript -- <youtube-url> --summary-slug <relative-summary-slug> --title "<video title>"
-   ```
-
-2. If regenerating an existing transcript, do the mechanical regeneration first. `--force` replaces the transcript sidecar with current YouTube caption output and will overwrite any prior manual transcript fixes.
-3. After the final regeneration for a video, do an editorial transcript pass only when needed. Fix obvious source-faithful auto-caption issues: names, product/model casing, obvious substitutions, punctuation that changes meaning, and stray caption markers. Do not rewrite or editorialize the transcript.
-4. For a summary request, read the saved transcript and write/update the public summary by hand as normal content work. Update the applicable registered manifest under `src/data/resources/` and its catalog membership only when a new canonical resource record is needed.
-5. After drafting, complete the Summary readability review below and resolve material findings before final validation and rendered-page verification.
-
-When reviewing or updating transcript-backed summaries, compare the summary against the transcript before editing. Fix copied-forward episode content, placeholder summaries, unsupported claims, wrong speaker/name/model attributions, and misleading timestamp citations. Prefer concise timestamped bullets for the main transcript-backed themes. Keep external bio/context claims only when they are present in the transcript or already trusted in the resource manifest.
-
-#### Summary readability review
-
-Review in two passes: first read the summary on its own for reader understanding, then compare its claims, explanations, examples, and qualifications with the source. Revise as needed, and recheck affected source passages and citations after every substantive edit, including edits prompted by another reviewer. Finish only when the intended reader can explain each main point and its important limits without reopening the source.
-
-- Explain source-supported mechanisms, not just their labels; define necessary terms in place. State what causes what and why it matters. If the source offers an analogy, proposal, or unexplained effect, preserve that status rather than supplying a missing mechanism.
-- Make comparisons explicit: explain the existing approach, what the proposal changes, and which behavioral differences the source establishes. Prefer a source-backed example. Do not imply that an existing approach lacks a capability merely because the proposal implements it differently.
-- Keep each claim with the explanation, exception, or qualification needed to interpret it correctly. Preserve cases where a simpler or existing approach remains adequate. Split distinct questions or lessons when a bullet becomes overloaded. Prefer narrowly accurate claims and clearly scoped attribution over repeated generic caveats; keep local qualifications wherever omitting them would change the takeaway. Cut repetition, not needed explanation, and do not expand every point into a tutorial.
-- Disclose known transcript language, caption kind, and editorial translation once when that basis applies throughout; follow any stricter source-library disclosure rules. Do not guess provenance or imply an original-audio check that was not performed. Preserve speaker attribution and distinguish observations, proposals, and forecasts. Label editorial implications and added illustrations; neither may supply unsupported training methods, implementation details, or model-specific claims.
-- Keep citations beside the claims they support. Read each affected citation range and surrounding context before retaining or changing it; check both endpoints so the range covers the complete supporting passage.
-
-Independent review is optional when useful. Give the reviewer the summary and source; request concrete comprehension or source-fidelity findings with passage evidence, separated from wording preferences. The owning thread decides which edits to accept. Consult Oracle when explicitly requested or when direct investigation leaves a specific, high-impact source-fidelity or publication judgment unresolved—not as an automatic approval gate. Keep findings in the active conversation. Source-library dedicated review and `reviewed` publication gates still apply.
-
-Store committed transcripts under `src/content/transcripts/**` using the same relative slug as the matching summary. Example:
-
-```text
-src/content/summaries/coding-with-agents/raising-an-agent-episode-9.md
-src/content/transcripts/coding-with-agents/raising-an-agent-episode-9.md
-```
-
-Transcript files must use this frontmatter contract: `title`, `summarySlug`, `sourceUrl`, `videoId`, `capturedAt`, and optional `series`, `episode`, `channel`, `language`, `kind`, `durationSeconds`, and paired `sourceStartSeconds`/`sourceEndSeconds` for an excerpt. Excerpt ranges are half-open intervals on the original video timeline, and `durationSeconds` remains the full source-video duration. Body text should live under `## Transcript` and use coarse timestamped chunks such as `[00:01:00] text...`; the timestamps are absolute source anchors for checking and summary citations, not per-caption timing. Do not store transcripts under `src/content/summaries/**`, because those files are rendered as summaries. Treat transcript regeneration as destructive source capture; do editorial transcript cleanup after regeneration, not before.
-
-Do not create long-lived draft, review, or apply artifacts for summaries. Keep transcript capture scripted; keep summary writing as explicit agent/human editorial work from the saved transcript.
-
-### Summary timestamp citations
-
-- Use one linked point or en-dash range: `[17:49–25:32](https://www.youtube.com/watch?v=9UAxrdcDjjU&t=1069s)`. Labels use `MM:SS` or `H:MM:SS` (`56:14–1:03:18`); identical endpoints become one timestamp. Keep “onward” outside the link.
-- Place timestamp links directly after the claims they support; do not wrap the links in parentheses. Separate multiple supporting links with commas.
-- Link to the original source's absolute start time (`t=0s` included), and to the correct talk in multi-video guides. Other publishers need verified seek links and validator support; never invent fragments.
-- Preserve claims, citation placement, and evidence ranges. Leave source-only transcript timestamps unchanged. Source identity and claim support still require editorial review.
-- Run `npm run summaries:check`; `npm test` checks the whole corpus in CI. Install the changed-summary pre-commit check once per checkout with `npm run hooks:install`. Inspect representative rendered summaries after citation changes.
-
-## Deployment Notes
-
-- Build output goes to `dist/`.
-- GitHub Pages is configured through GitHub Actions and `public/CNAME` for `with-agents.dev`.
-- The source repository is public by explicit project decision; do not add private or sensitive material.
+- Build output goes to `dist/`; GitHub Pages uses GitHub Actions and `public/CNAME`.
+- This repository is public by explicit project decision. Do not commit private or sensitive material.
 
 ## dot-agents Workflow
 
-- Keep self-contained planning and execution in the current conversation.
-- Create a work item under `.agents/work/<category>/<slug>/` when resumption, coordination, handoff, auditability, durable decisions, or an explicit request makes repository context useful.
-- Use the `agent-work` skill for durable requirements, planning, refinement, execution, coordination, and handoffs. Read the work item's `index.md` first and follow `.agents/work/AGENTS.md` for the canonical artifact and lifecycle contract.
-- Implement in the current thread by default. Handoffs are optional and should be created only when another worker, thread, or environment is useful.
-- After verification, promote reusable outcomes and follow `.agents/work/AGENTS.md`'s completion-and-removal contract for authorization, the final snapshot commit, and a separate removal commit.
-- Keep `.agents/research/` for reusable findings that apply across unrelated work. External reference checkouts belong in `.agents/references/` and should not be committed.
+- Keep self-contained planning and execution in the current thread. Create `.agents/work/<category>/<slug>/` when resumption, coordination, handoff, auditability, durable decisions, or an explicit request makes repository context useful.
+- Use `agent-work` for durable planning and execution. Read the work item's `index.md` first; [.agents/work/AGENTS.md](.agents/work/AGENTS.md) owns its lifecycle, verification, promotion, and completion/removal contract, including authorization and separate snapshot/removal commits.
+- Handoffs are optional when another worker, thread, or environment is useful.
+- Reusable findings belong in `.agents/research/`. External reference checkouts belong in `.agents/references/` and must not be committed.
 
 ## Git Workflow
 
-- Use `git status --short --branch` before staging.
-- Commit after each logical step with a clear message.
+- Run `git status --short --branch` before staging; commit each logical step with a clear message.
 - Keep generated directories (`node_modules/`, `dist/`, `.astro/`) out of commits.
-- ID-collision fixes are allowed without additional confirmation, including during rebases and shipping to `main`. Preserve upstream IDs and both additions; assign unused IDs to unpublished additions, update all their references, and validate uniqueness and relationships before continuing. This applies to IDs generally, not only resource IDs. Ask only if resolution also requires a substantive content or behavior decision, or changing an already published identity.
+- ID-collision fixes need no additional confirmation, including during rebases and shipping to `main`. Preserve upstream IDs and both additions; assign unused IDs to unpublished additions, update references, and validate uniqueness and relationships. Ask only if resolution also requires a substantive content/behavior decision or changes an already published identity.

@@ -13,7 +13,7 @@ changing `src/content/youtube/`; do not restate or bypass it.
 This skill covers tracked playlists, collection placement, and resource-intake
 queues. Before treating a direct video request as standalone, apply the root
 `AGENTS.md` collection-first placement rule. Videos without a suitable existing
-collection follow the root single-video transcript workflow.
+collection follow the [content guide's transcript workflow](../../../src/content/AGENTS.md#youtube-transcript-workflow).
 
 ## Collection Placement
 
@@ -233,7 +233,7 @@ public resources, not itself a public playlist collection.
    never duplicate a canonical resource. Apply Collection Placement above before
    creating a standalone record, including when a video arrives through intake.
 4. For every video, reuse or capture a full transcript sidecar under
-   `src/content/transcripts/` using the root YouTube transcript workflow, read it
+   `src/content/transcripts/` using the content guide's YouTube transcript workflow, read it
    fully, and write or update its matching public summary. Intake completion
    requires this public evidence chain regardless of resource ownership;
    source-library-only transcripts or excerpts do not complete intake.
@@ -244,8 +244,8 @@ public resources, not itself a public playlist collection.
    catalog section and topics. Pending collection approval remains a blocker,
    not a standalone fallback. Preserve source-supported
    attribution and qualify anecdotes, vendor claims, forecasts, and demonstrations.
-5. Self-review reader understanding using root `AGENTS.md`'s Summary readability
-   review, claim-to-transcript fidelity, and catalog novelty, then use an
+5. Self-review reader understanding using the [Summary readability review](../../../src/content/AGENTS.md#summary-readability-review),
+   claim-to-transcript fidelity, and catalog novelty, then use an
    independent high-mode reviewer when useful and address actionable feedback.
    Consult Oracle when explicitly requested or when direct investigation leaves
    a specific, high-impact source-fidelity or publication judgment unresolved;
@@ -285,7 +285,7 @@ duplicates without deduping or mutating them.
 A passing audit is not an editorial review. Before setting an artifact to
 `reviewed`, a human or dedicated reviewer must compare each claim with the full
 adjacent transcript context and verify that both the start and end of every
-anchor range cover the complete claim. Apply root `AGENTS.md`'s Summary
+anchor range cover the complete claim. Apply the content guide's Summary
 readability review: the intended reader must be able to follow each main point
 and its necessary explanation without reopening the transcript. Also judge
 translation fidelity, attribution, qualification, and unsupported certainty;
