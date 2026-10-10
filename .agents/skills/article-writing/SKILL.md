@@ -224,13 +224,8 @@ independent review so feedback can be judged instead of applied mechanically.
 
 ### 4. Build and record
 
-```sh
-npm run lint:fix
-npm run check
-npm test
-npm run build
-npm run content:guard
-```
+Run the [README Development checks](../../../README.md#development) in order,
+building before tests so artifact-dependent checks use current output.
 
 Run the affected article and slide routes in a real browser. Check representative
 desktop and mobile article states plus the final and most content-dense slides.
@@ -327,11 +322,8 @@ When deletion is explicitly approved:
 
 ### Verification
 
-- [ ] `npm run lint:fix` passes without unintended changes.
-- [ ] `npm run check` passes.
-- [ ] `npm test` passes.
-- [ ] `npm run build` passes.
-- [ ] `npm run content:guard` passes.
+- [ ] [README Development checks](../../../README.md#development) pass in order,
+      with no unintended formatting changes and tests run after the build.
 - [ ] Article and slide routes pass representative desktop and mobile browser
       checks; intended slide artifacts are visible and unclipped.
 - [ ] `git diff --check` is clean.

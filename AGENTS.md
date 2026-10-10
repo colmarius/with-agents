@@ -11,7 +11,7 @@
 
 ## Verification
 
-Follow the README's Development checks after code or content changes: lint/format, Astro check, content guard, **build, then tests**. Tests inspect generated output, so build first. For documentation-only changes, validate affected instructions and links; application tests are unnecessary unless behavior or configuration also changes.
+Follow the README's Development checks after code or content changes: lint/format, Astro check, content guard, **build, then tests**. Tests inspect generated output, so build first. For changes limited to non-published repository documentation (README, AGENTS, or skills), validate affected instructions and links; application tests are unnecessary unless behavior or configuration also changes. Public posts, summaries, and source evidence are content, not documentation-only changes.
 
 ### Orb Proof Loop
 
@@ -73,7 +73,7 @@ Load `article-writing` when writing or refreshing public posts under `src/conten
 ### Task Routing and Review
 
 - Load `maintaining-youtube-library` for tracked playlist checks/sync, caption retries, adding playlists, collection placement, and **refresh/process coding-agent intake**. Follow the source-library contract; standalone videos use the content guide's transcript workflow.
-- Consult Oracle when explicitly requested or when direct investigation leaves a specific, high-impact judgment unresolved—not as an automatic approval gate. An optional review offer is discretionary, not required closing boilerplate. Dedicated source-library reviews remain mandatory where specified.
+- Consult Oracle when explicitly requested or when direct investigation leaves a specific, high-impact judgment unresolved—not as an automatic approval gate. An optional review offer is discretionary, not required closing boilerplate. If offering an optional follow-up review, wait for the user's agreement before running it. Dedicated source-library reviews remain mandatory where specified.
 
 ### Amp Resource Refresh
 

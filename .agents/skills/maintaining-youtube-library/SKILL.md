@@ -330,13 +330,9 @@ change before completing a mutating workflow.
      .agents/scripts/youtube-library-structural-audit.test.mjs
    ```
 
-2. When code or public content changed, also run:
-
-   ```sh
-   npm run check
-   npm test
-   npm run build
-   ```
+2. When code or public content changed, also run the
+   [README Development checks](../../../README.md#development) in order,
+   building before tests so artifact-dependent checks use current output.
 
 3. Verify the source-only boundary; both searches must return no matches. If
    `dist/` is absent or predates this work, build first; missing or stale output
