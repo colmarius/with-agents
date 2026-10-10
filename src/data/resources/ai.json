@@ -1,5 +1,19 @@
 [
   {
+    "id": 171,
+    "primarySection": "implications-risks",
+    "title": "Bill Gates: A.I. ‘Makes Nuclear Weapons Look Like Nothing’ | The Ezra Klein Show",
+    "subtitle": "AI misuse, job displacement, government oversight, and access to benefits",
+    "url": "https://www.youtube.com/watch?v=A_156w0aYtU",
+    "description": "Bill Gates and Ezra Klein discuss AI-enabled cyber and biological threats, job displacement, government oversight, and whether AI will reduce or deepen inequality. Gates's risk assessments and policy proposals are attributed views, not established forecasts or demonstrated safety guarantees.",
+    "type": "podcast",
+    "source": "The Ezra Klein Show",
+    "date": "2026-09-29",
+    "addedDate": "2026-10-10",
+    "duration": "1h 14m",
+    "topics": ["society-governance", "safety-permissions", "business-adoption"]
+  },
+  {
     "id": 164,
     "addedDate": "2026-10-03",
     "primarySection": "concepts-capabilities",
