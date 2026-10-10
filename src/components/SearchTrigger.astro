@@ -12,7 +12,7 @@ const { compact = false } = Astro.props;
   aria-keyshortcuts="Control+K Meta+K"
   title="Search site"
   aria-controls="site-search"
-  hidden
+  disabled
 >
   <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
     <circle cx="10.75" cy="10.75" r="6.75" />
@@ -37,7 +37,8 @@ const { compact = false } = Astro.props;
     font-size: 0.875rem;
     cursor: pointer;
   }
-  .search-trigger[hidden] { display: none; }
+  /* Reserve the control's space while search initializes, including without JS. */
+  .search-trigger:disabled { visibility: hidden; }
   .search-trigger:hover { border-color: #a5b4fc; color: #4f46e5; }
   .search-trigger:focus-visible { outline: 2px solid #4f46e5; outline-offset: 3px; }
   .compact { padding: 0.5rem; }

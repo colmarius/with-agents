@@ -175,7 +175,7 @@ export function initializeSearch() {
 
   for (const trigger of triggers) {
     trigger.addEventListener('click', openSearch);
-    trigger.hidden = false;
+    trigger.disabled = false;
   }
   dialog
     .querySelector('[data-search-close]')
