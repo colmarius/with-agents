@@ -47,6 +47,43 @@ The installed site's service worker precaches search data and code, so search
 works offline after installation. This downloads the corpus even if search has
 not been opened. The existing update prompt reloads the site with the new corpus.
 
+## Recently added
+
+`/recent/` mixes public posts, standalone resources, and individual collection or
+series summaries. Topic pills use the broad catalog memberships, including
+cross-listed items, and work without JavaScript. Pages hold at most 20 additions;
+same-day collection children are grouped only after pagination. The home page
+and resource index link to the archive. Only its first-page introduction is
+searchable; repeated entries and topic/pagination variants are excluded.
+
+For every new public addition, record `addedDate: 'YYYY-MM-DD'` on the owner:
+
+- Post: post frontmatter when it becomes discoverable (not when drafted).
+- Standalone resource: the canonical resource manifest record.
+- Collection/series child: that public summary's frontmatter, not the parent.
+
+This is the first library-addition day, not the source's publication date. Keep
+it unchanged during edits, transcript regeneration, cross-listing, and moves.
+When consolidating a standalone item into a collection, transfer its original
+date to the child. A later standalone summary is not a second addition event.
+Existing publication/source dates keep their current meaning.
+
+`src/data/recent-additions-history.json` is a frozen migration baseline, not an
+automatic activity log. Its small reviewed estimate set records first public
+repository appearances with evidence commits; the UI explicitly labels these
+as approximate, not confirmed deployment dates. Explicit owner dates take
+precedence. Its `legacyUndated` list exempts only content already public before
+this feature; those entries stay in the catalogs but are absent from the dated
+archive. Never add new content to that exemption list. Remove an exemption when
+recording an owner's date. Move historical keys with an identity migration,
+preserving dates and evidence rather than treating a move as a new addition.
+
+The build fails for a new eligible addition without a date. No Git access is
+needed during ordinary builds. To extend historical coverage, review identity,
+membership, and publication eligibility in history; do not blindly use file
+creation, source dates, or last-modified timestamps. Keep estimates separate
+from recorded owner dates and never regenerate the baseline from current files.
+
 ## Resource catalogs
 
 The AI context at `/ai` leads to `/resources/ai`, grouped into Concepts &

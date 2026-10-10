@@ -18,6 +18,30 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
   );
   const byUrl = new Map(documents.map((document) => [document.url, document]));
   const engine = await createSearch(documents);
+  assert.deepEqual(
+    documents
+      .filter((document) => document.url.startsWith('/recent'))
+      .map((document) => document.url),
+    ['/recent'],
+    'Only the recent archive introduction belongs in site search',
+  );
+  const { document: recent } = parseHTML(
+    readFileSync('dist/recent/index.html', 'utf8'),
+  );
+  const before = extractDocument(
+    recent.toString(),
+    '/recent',
+    'https://with-agents.dev',
+  )?.body;
+  recent.querySelectorAll('[data-addition-key], article').forEach((node) => {
+    node.remove();
+  });
+  assert.equal(
+    extractDocument(recent.toString(), '/recent', 'https://with-agents.dev')
+      ?.body,
+    before,
+    'Timeline entries must not duplicate source search documents',
+  );
   for (const url of [
     '/ai',
     '/resources/ai',

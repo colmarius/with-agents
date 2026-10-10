@@ -1,0 +1,65 @@
+---
+import { formatCalendarDate } from '../../utils/calendar-date';
+import {
+  groupRecentAdditions,
+  type RecentAddition,
+  type RecentTopic,
+} from '../../utils/recent-additions';
+
+type Props = { items: RecentAddition[]; topics: RecentTopic[] };
+const { items, topics } = Astro.props;
+const days = groupRecentAdditions(items);
+const linkClass =
+  'text-indigo-700 hover:underline focus-visible:outline-2 focus-visible:outline-indigo-600 focus-visible:outline-offset-4 rounded-sm';
+---
+
+<div data-search-ignore>
+  {days.map(({ date, groups }) => (
+    <section aria-label={`Added ${formatCalendarDate(date)}`} class="grid gap-4 border-t border-gray-200 py-8 md:grid-cols-[145px_1fr] md:gap-8">
+      <h2 class="text-sm font-medium text-gray-900">
+        <span class="mb-1 block text-xs font-normal uppercase tracking-wider text-gray-500">Added</span>
+        <time datetime={date}>{formatCalendarDate(date)}</time>
+      </h2>
+      <div class="divide-y divide-gray-100 border-l-2 border-indigo-100 pl-5 sm:pl-7">
+        {groups.map((group) => {
+          const first = group[0];
+          const batch = group.length > 1 ? first.collection : undefined;
+          return (
+            <article class="min-w-0 py-6 first:pt-0 last:pb-0">
+              <div class="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+                <span class="rounded bg-indigo-50 px-2 py-1 font-medium capitalize text-indigo-700">{batch ? 'Collection additions' : first.format}</span>
+                {first.topics.map((slug) => <span class="text-gray-600">{topics.find((topic) => topic.slug === slug)?.label}</span>)}
+              </div>
+              <h3 class="text-xl font-medium leading-snug text-gray-900">
+                {batch ? batch.title : <a href={first.href} class="hover:text-indigo-700 focus-visible:outline-2 focus-visible:outline-indigo-600">{first.title}</a>}
+              </h3>
+              {!batch && first.collection && <p class="mt-2 text-sm text-gray-500">From {first.collection.title}</p>}
+              {(batch ? batch.description : first.description) && <p class="mt-2 max-w-3xl text-sm leading-relaxed text-gray-600">{batch ? batch.description : first.description}</p>}
+              <p class="mt-2 text-xs leading-relaxed text-gray-500">
+                {first.source}
+                {!batch && first.sourceDate && ` · ${first.kind === 'post' ? 'Post published' : 'Source dated'} ${formatCalendarDate(first.sourceDate)}`}
+              </p>
+              {batch ? (
+                <details class="mt-3 rounded-lg border border-gray-200 px-4 py-3">
+                  <summary class:list={['cursor-pointer text-sm font-medium', linkClass]}>{group.length} summaries added on this page — explore the batch</summary>
+                  <ul class="mt-4 space-y-4 border-l-2 border-indigo-100 pl-4">
+                    {group.map((item) => <li data-addition-key={item.key}>
+                      <a href={item.href} class:list={['text-sm', linkClass]}>{item.title} →</a>
+                      {item.sourceDate && <p class="mt-1 text-xs text-gray-500">Source dated {formatCalendarDate(item.sourceDate)}</p>}
+                      {item.estimateCommit && <a class:list={['mt-1 inline-block text-xs', linkClass]} href={`https://github.com/colmarius/with-agents/commit/${item.estimateCommit}`}>Approximate addition date · history</a>}
+                    </li>)}
+                  </ul>
+                </details>
+              ) : (
+                <div data-addition-key={first.key} class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+                  <a href={first.href} class:list={['text-sm font-medium', linkClass]}>{first.kind === 'post' ? 'Read field guide' : first.href.startsWith('/summaries/') ? 'Read summary' : 'View resource'} →</a>
+                  {first.estimateCommit && <a class:list={['text-xs', linkClass]} href={`https://github.com/colmarius/with-agents/commit/${first.estimateCommit}`}>Approximate addition date · history</a>}
+                </div>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+</div>

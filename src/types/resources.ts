@@ -31,6 +31,7 @@ export type Resource = {
   type: ResourceType;
   source: string;
   date: string;
+  addedDate?: string;
   duration?: string;
   topics: string[];
 };

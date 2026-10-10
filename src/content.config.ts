@@ -2,7 +2,13 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { siteContextSlugs } from './data/site-contexts';
+import { isCalendarDate } from './utils/calendar-date';
 import { isPostCanonicalPath } from './utils/posts';
+
+const addedDate = z
+  .string()
+  .refine(isCalendarDate, 'Use a valid YYYY-MM-DD calendar day')
+  .optional();
 
 const posts = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
@@ -13,6 +19,7 @@ const posts = defineCollection({
       context: z.enum(siteContextSlugs),
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
+      addedDate,
       tags: z.array(z.string()).optional(),
       draft: z.boolean().default(false),
       unlisted: z.boolean().default(false),
@@ -46,6 +53,7 @@ const summaries = defineCollection({
       order: z.number().int().positive().optional(),
       videoId: z.string().trim().min(1).optional(),
       date: z.coerce.date().optional(),
+      addedDate,
     })
     .superRefine((summary, context) => {
       const hasCuratedCollectionMetadata =

@@ -1,6 +1,6 @@
 # Recently added content exploration
 
-Status: blocked
+Status: completed
 Category: feature
 Updated: 2026-10-10
 
@@ -10,11 +10,12 @@ Make newly added posts and resources easy to discover even when their sources we
 
 ## Summary
 
-Two development-only prototypes are ready for feedback: `/prototypes/recent/timeline` and `/prototypes/recent/compact`. They use real canonical content and destinations with explicitly illustrative addition dates. Existing schemas, content, navigation, search, and production routes remain unchanged. Production implementation awaits design and historical-date policy feedback.
+Implemented the production static archive with mixed content and topic-pill navigation, explicit addition dates, and 23 evidence-linked historical estimates. The 329 undated legacy identities remain in the library. Oracle review findings about stale exemptions and wrong-owner dates are addressed with build validation and tests. Ownership and migration rules are retained in README.md; historical evidence is retained in src/data/recent-additions-history.json.
 
 ## Artifacts
 
 - [Research and proposed integration](research.md)
+- [Implementation plan](plan.md)
 - Prototype data: `src/components/prototypes/recent-data.ts`
 - Interactive views: `src/components/prototypes/RecentPrototype.tsx`
 - Development-only route: `src/pages/prototypes/recent/[view].astro`
@@ -22,9 +23,8 @@ Two development-only prototypes are ready for feedback: `/prototypes/recent/time
 
 ## Next Action
 
-- Gather user feedback on the full timeline versus compact panel and the historical-date policy. Do not promote demo dates to real metadata. Then scope production implementation.
+- None.
 
 ## Open Questions
 
-- Full archive with a small home teaser, or compact panel only?
-- Start reliable tracking at a cutover with a small reviewed backfill, or invest in a wider historical backfill?
+- None blocking. Historical coverage is intentionally partial and labelled approximate; no prototype dates enter production.

@@ -1,0 +1,83 @@
+---
+import type { GetStaticPaths } from 'astro';
+import RecentTimeline from '../../components/recent/RecentTimeline.astro';
+import { getRecentAdditions } from '../../data/recent-additions';
+import Layout from '../../layouts/Layout.astro';
+import {
+  getRecentPath,
+  paginateRecentAdditions,
+  type RecentTopic,
+  recentPageSize,
+} from '../../utils/recent-additions';
+
+export const getStaticPaths = (async () => {
+  const { items, topics, undatedCount } = await getRecentAdditions();
+  return [{ slug: 'all', label: 'All topics' }, ...topics].flatMap((topic) => {
+    const firstPage = paginateRecentAdditions(items, topic.slug);
+    return Array.from({ length: firstPage.totalPages }, (_, index) => {
+      const page = index + 1;
+      const path =
+        getRecentPath(topic.slug, page)
+          .slice('/recent/'.length)
+          .replace(/\/$/, '') || undefined;
+      return {
+        params: { path },
+        props: {
+          topic,
+          topics,
+          result: paginateRecentAdditions(items, topic.slug, page),
+          undatedCount,
+        },
+      };
+    });
+  });
+}) satisfies GetStaticPaths;
+
+type Props = {
+  topic: RecentTopic;
+  topics: RecentTopic[];
+  result: ReturnType<typeof paginateRecentAdditions>;
+  undatedCount: number;
+};
+const { topic, topics, result, undatedCount } = Astro.props;
+const first = topic.slug === 'all' && result.page === 1;
+const title = `Recently added${topic.slug === 'all' ? '' : ` · ${topic.label}`}${result.page === 1 ? '' : ` · Page ${result.page}`}`;
+---
+
+<Layout title={`${title} | With Agents`} description="New to this library, not necessarily new to the world. Explore recently added posts, resources, and collection summaries across all topics." canonicalPath={getRecentPath(topic.slug, result.page)} noindex={!first}>
+  <div class="mx-auto max-w-5xl">
+    <div class="mb-9 max-w-3xl" data-search-body data-search-title="Recently added">
+      <p class="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-indigo-600">Catch up across the site</p>
+      <h1 class="text-4xl font-light tracking-tight text-gray-950 sm:text-5xl">Recently added</h1>
+      <p class="mt-4 text-lg font-light leading-relaxed text-gray-600">New to this library, not necessarily new to the world. Posts, resources, and collection additions in one place.</p>
+    </div>
+    <nav aria-label="Topics" class="mb-6">
+      <p class="mb-2 text-xs font-medium uppercase tracking-wider text-gray-500">Topics</p>
+      <ul class="inline-flex max-w-full flex-wrap gap-1 rounded-lg bg-gray-100 p-1">
+        {[{ slug: 'all', label: 'All topics' }, ...topics].map((option) => <li>
+          <a href={getRecentPath(option.slug)} aria-current={option.slug === topic.slug ? 'page' : undefined} class:list={['block rounded-md px-3 py-2 text-sm focus-visible:outline-2 focus-visible:outline-indigo-600', option.slug === topic.slug ? 'bg-white font-medium text-indigo-700 shadow-sm' : 'text-gray-600 hover:text-gray-900']}>{option.label}</a>
+        </li>)}
+      </ul>
+    </nav>
+    <div class="mb-7 space-y-3 text-sm text-gray-500" data-search-ignore>
+      <p>{result.total === 0 ? 'No dated additions yet' : `${(result.page - 1) * recentPageSize + 1}–${(result.page - 1) * recentPageSize + result.items.length} of ${result.total} dated additions`} · {topic.label} · newest added first</p>
+      <details class="max-w-3xl rounded-lg border border-gray-200 px-4 py-3">
+        <summary class="cursor-pointer font-medium text-gray-600 focus-visible:outline-2 focus-visible:outline-indigo-600">About addition dates · historical coverage is partial</summary>
+        <p class="mt-3 leading-relaxed">Dates describe when something joined the library, not when its source was published. Historical entries marked “Approximate” use reviewed repository history, not confirmed deployment dates. New additions record their own addition day.</p>
+        <p class="mt-2 leading-relaxed">{undatedCount} older additions have no recorded date and remain available in the <a class="text-indigo-700 hover:underline" href="/resources">resource catalogs</a> and topic field-guide lists. An edit or a move between topics does not make an item new again.</p>
+      </details>
+    </div>
+    {result.total === 0 ? (
+      <div class="rounded-lg bg-gray-50 p-8 text-center">
+        <h2 class="text-xl font-medium text-gray-900">No dated additions in this topic yet</h2>
+        <p class="mt-2 text-gray-600">This does not mean the library is empty. Older entries may not have a recorded addition date.</p>
+        <a href="/resources" class="mt-4 inline-block text-indigo-700 hover:underline">Browse the resource library →</a>
+      </div>
+    ) : <RecentTimeline items={result.items} topics={topics} />}
+    {result.totalPages > 1 && <nav aria-label="Recent additions pages" class="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-gray-200 pt-6 text-sm">
+      {result.page > 1 ? <a rel="prev" class="text-indigo-700 hover:underline" href={getRecentPath(topic.slug, result.page - 1)}>← Newer additions</a> : <span />}
+      <span class="text-gray-500">Page {result.page} of {result.totalPages}</span>
+      {result.page < result.totalPages ? <a rel="next" class="text-indigo-700 hover:underline" href={getRecentPath(topic.slug, result.page + 1)}>Older additions →</a> : <span />}
+    </nav>}
+  </div>
+</Layout>

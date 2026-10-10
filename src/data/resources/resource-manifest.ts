@@ -1,4 +1,5 @@
 import { type Resource, resourceTypes } from '../../types/resources.ts';
+import { isCalendarDate } from '../../utils/calendar-date.ts';
 
 export type CatalogResource<
   Topic extends string = string,
@@ -17,16 +18,6 @@ type ResourceManifestOptions<Topic extends string, Section extends string> = {
 const resourceTypeSet = new Set<string>(resourceTypes);
 const requiredStringFields = ['title', 'url', 'description', 'source'] as const;
 const optionalStringFields = ['subtitle', 'duration'] as const;
-
-const isValidDate = (value: unknown): value is string => {
-  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(value)) {
-    return false;
-  }
-  const date = new Date(`${value}T00:00:00Z`);
-  return (
-    !Number.isNaN(date.valueOf()) && date.toISOString().slice(0, 10) === value
-  );
-};
 
 export const validateResourceManifest = <
   Topic extends string,
@@ -70,9 +61,14 @@ export const validateResourceManifest = <
         `${prefix} has invalid type ${JSON.stringify(fields.type)}`,
       );
     }
-    if (!isValidDate(fields.date)) {
+    if (!isCalendarDate(fields.date)) {
       throw new TypeError(
         `${prefix} has invalid date ${JSON.stringify(fields.date)}`,
+      );
+    }
+    if (fields.addedDate !== undefined && !isCalendarDate(fields.addedDate)) {
+      throw new TypeError(
+        `${prefix} has invalid addedDate ${JSON.stringify(fields.addedDate)}`,
       );
     }
     if (
