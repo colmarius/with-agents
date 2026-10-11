@@ -14,6 +14,34 @@ const resourceTypes = new Set(['article', 'playlist', 'podcast', 'video']);
 export const publicSourceExceptions = [
   {
     kind: 'video',
+    id: '9h-Way-APlM',
+    path: 'src/content/summaries/coding-with-agents/my-approach-to-automated-programming.md',
+    reason:
+      'Existing standalone summary backed by its matching full Italian auto-generated transcript. Membership in Antirez’s Coding with AI editorial guide does not convert it into a collection child or imply source-library review.',
+  },
+  {
+    kind: 'video',
+    id: '9h-Way-APlM',
+    path: 'src/data/resources/coding-with-agents.json',
+    reason:
+      'Resource 165 retains its existing standalone summary and full Italian auto-generated transcript; Antirez’s Coding with AI playlist is an editorial guide, not a consolidated collection.',
+  },
+  {
+    kind: 'video',
+    id: 'v0WVsLQo3-k',
+    path: 'src/content/summaries/coding-with-agents/antirez-when-code-is-no-longer-yours.md',
+    reason:
+      'Existing standalone summary backed by its matching full Italian auto-generated transcript. Membership in Antirez’s Coding with AI editorial guide does not convert it into a collection child or imply source-library review.',
+  },
+  {
+    kind: 'video',
+    id: 'v0WVsLQo3-k',
+    path: 'src/data/resources/coding-with-agents.json',
+    reason:
+      'Resource 166 retains its existing standalone summary and full Italian auto-generated transcript; Antirez’s Coding with AI playlist is an editorial guide, not a consolidated collection.',
+  },
+  {
+    kind: 'video',
     id: '-czzyDaV9PA',
     path: 'src/content/summaries/coding-with-agents/syntax-weekly-pi-radius-agent-workflows.md',
     reason:

@@ -1,0 +1,10 @@
+{
+  "videoId": "9h-Way-APlM",
+  "attemptedAt": "2026-10-11T20:51:53.297Z",
+  "requestedLanguage": "it",
+  "availableLanguages": [],
+  "unavailable": {
+    "errorName": "YoutubeTranscriptVideoUnavailableError",
+    "detail": "Could not list available transcript languages: YoutubeTranscriptVideoUnavailableError: The video with ID \"9h-Way-APlM\" is no longer available or has been removed. Please check the video URL or ID and try again."
+  }
+}

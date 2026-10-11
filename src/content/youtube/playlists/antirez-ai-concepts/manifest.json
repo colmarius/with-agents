@@ -538,16 +538,8 @@
       "available": true
     },
     {
-      "videoId": "FoQSc-2XvzA",
-      "position": 67,
-      "title": "Deleted video",
-      "privacyStatus": "privacyStatusUnspecified",
-      "available": false,
-      "unavailableReason": "deleted"
-    },
-    {
       "videoId": "ii6JRLJSBNw",
-      "position": 68,
+      "position": 67,
       "title": "Contro il watermarking",
       "publishedAt": "2026-08-18T13:44:43Z",
       "privacyStatus": "public",
@@ -555,7 +547,7 @@
     },
     {
       "videoId": "44KvcNh4vm0",
-      "position": 69,
+      "position": 68,
       "title": "DGX Station: l'hardware ideale per le aziende",
       "publishedAt": "2026-08-19T18:08:25Z",
       "privacyStatus": "public",
@@ -563,7 +555,7 @@
     },
     {
       "videoId": "ug74Hk0_PB4",
-      "position": 70,
+      "position": 69,
       "title": "Linguaggio plausibile è un'espressione antiscientifica",
       "publishedAt": "2026-08-20T20:05:20Z",
       "privacyStatus": "public",
@@ -571,7 +563,7 @@
     },
     {
       "videoId": "-l4tMg4JqfQ",
-      "position": 71,
+      "position": 70,
       "title": "Super vlog: quattro argomenti belli succosi con gli scorci e le mandorle di Campobello",
       "publishedAt": "2026-08-24T08:00:39Z",
       "privacyStatus": "public",
@@ -579,7 +571,7 @@
     },
     {
       "videoId": "iF9CEScWzrc",
-      "position": 72,
+      "position": 71,
       "title": "Capire il sampling negli LLM",
       "publishedAt": "2026-08-28T08:00:30Z",
       "privacyStatus": "public",
@@ -587,7 +579,7 @@
     },
     {
       "videoId": "sW9R6wCeMOI",
-      "position": 73,
+      "position": 72,
       "title": "Gli n-gram di Qwen 3.8 Flash Next",
       "publishedAt": "2026-08-29T08:19:40Z",
       "privacyStatus": "public",
@@ -595,9 +587,25 @@
     },
     {
       "videoId": "I-5j_nzqnAo",
-      "position": 74,
+      "position": 73,
       "title": "Sento puzza di AGI: Chollet, GPT Astra e Fable 5 1",
       "publishedAt": "2026-09-04T10:13:52Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "-Km-bQ1uQl4",
+      "position": 74,
+      "title": "Chi se ne frega di Jev?",
+      "publishedAt": "2026-09-20T17:04:19Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "PE3pKdRrTkA",
+      "position": 75,
+      "title": "Looped transformer: rapporto tra layer e chain of thoughts",
+      "publishedAt": "2026-10-06T17:30:27Z",
       "privacyStatus": "public",
       "available": true
     }

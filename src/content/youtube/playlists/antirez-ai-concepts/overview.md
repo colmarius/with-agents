@@ -74,12 +74,11 @@ coveredVideoIds:
 
 ## Coverage
 
-- Manifest: 75 entries representing 74 unique video IDs; 74 available occurrences and one deleted entry.
+- Manifest: 76 entries representing 75 unique video IDs; all 76 occurrences are available in the playlist API.
 - Captured: 69 manifest occurrences representing 68 unique source-language transcript and summary pairs.
 - Summaries: 68 unique summaries, represented by 69 manifest occurrences because `8gg-oJr4dTY` occurs twice; the duplicate occurrence is not a second summary.
 - Incorporated: all 68 unique summaries and all 69 summarized manifest occurrences.
-- Unavailable-recorded video IDs without summaries: `9mHKjgFMsQA`, `LG3q-sqMG0g`, `aAWdlLfJmqw`, `RDGe3_87cSY`, and `HUh7zFiTi-I`.
-- Deleted entry without a transcript or summary: `FoQSc-2XvzA`.
+- Unavailable-recorded video IDs without summaries: `9mHKjgFMsQA`, `LG3q-sqMG0g`, `aAWdlLfJmqw`, `RDGe3_87cSY`, `HUh7zFiTi-I`, `-Km-bQ1uQl4`, and `PE3pKdRrTkA`. The two newest captures failed on 2026-10-11; the transcript provider's unavailable response does not establish deletion.
 - Pending video IDs: none.
 
 ## Current Thesis

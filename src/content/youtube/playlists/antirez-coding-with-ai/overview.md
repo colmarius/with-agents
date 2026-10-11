@@ -32,11 +32,12 @@ coveredVideoIds:
 
 ## Coverage
 
-- Manifest: 32 entries representing 32 unique video IDs.
+- Manifest: 37 entries representing 37 unique video IDs; 36 available entries and one deleted entry.
 - Captured: 26 manifest entries representing 26 unique source-language transcript and summary pairs.
 - Summaries: 26 unique summaries.
 - Incorporated: all 26 summaries and all 26 summarized manifest entries.
-- Unavailable-recorded video IDs without summaries: `H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`, `qipoQGqMCp0`, `_pLlet9Jrzc`, and `b7E-4jBPUec`.
+- Unavailable-recorded video IDs without source-library summaries: `H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`, `qipoQGqMCp0`, `_pLlet9Jrzc`, `b7E-4jBPUec`, `ohAjXWjY8Nk`, `v0WVsLQo3-k`, `9h-Way-APlM`, and `mKriLwS6Kek`. The four newest captures failed on 2026-10-11; the transcript provider's unavailable response does not establish deletion. Existing standalone public transcripts and summaries for `v0WVsLQo3-k` and `9h-Way-APlM` remain separate from this source-library synthesis.
+- Deleted entry without a transcript or summary: `3mbcL-GHHAQ`.
 - Pending video IDs: none.
 
 ## Current Thesis
