@@ -8,12 +8,14 @@ Salvatore Sanfilippo's Italian-language playlist follows coding agents through r
 
 The practical thread is expert supervision: agents can generate large implementations quickly, but the human still supplies constraints, representative experiments, product judgment, and the decision about which evidence is enough.
 
+*This guide paraphrases Italian auto-generated captions in English; the original audio and video were not independently checked.*
+
 ### Key themes
 
 - **Automation changes where value concentrates without making coding trivial.** Sanfilippo separates implementation effort from the conceptual choices that determine what software should be, then argues that models automate part of a programming culture people built rather than erase it [00:57–03:03](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=57s), [10:06–12:12](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=606s).
 - **Review shifts toward ideas, architecture, and behavior.** Sanfilippo argues for spending less time on exhaustive line reading and more on constraints, targeted design questions, manual QA, and model-assisted testing [00:01–03:55](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=1s).
 - **Specifications complement source code rather than replacing it.** Mature implementations retain edge cases and interactions that natural language loses, while curated related programs can teach agents reusable implementation patterns [03:20–05:34](https://www.youtube.com/watch?v=0buzDrn0aIY&t=200s).
-- **Model evaluation belongs on representative work.** In one systems-programming test, a passing suite hid ineffective complexity and semantic breakage; Sanfilippo argues that benchmark gains can overstate practical gains [12:09–15:13](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=729s).
+- **Model evaluation belongs on representative work.** In one systems-programming test, a passing suite hid ineffective complexity and semantic breakage; Sanfilippo argues that benchmark gains can overstate practical gains [12:09–15:13](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=729s). In his emulator rewrite, he reports matching old/new outputs in comparison tests, yet the device remained too slow. He redirected optimization toward video emulation [37:46–40:33](https://www.youtube.com/watch?v=ohAjXWjY8Nk&t=2266s), [45:34–49:29](https://www.youtube.com/watch?v=ohAjXWjY8Nk&t=2734s).
 - **A persuasive explanation is not independent evidence.** He describes challenging a strong model's plausible diagnosis with observed failure behavior before it reconsidered the conclusion [05:44–09:03](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s).
 - **Behavioral QA can explore states that fixed suites miss.** Sanfilippo proposes durable QA missions for bounded agents, followed by a separate confirmation pass before a suspected failure becomes an issue [03:15–09:23](https://www.youtube.com/watch?v=SiOadQFUx2k&t=195s).
 - **Human attention is part of the system.** Parallel and asynchronous agents can fragment the developer's working model, extend the workday, and create chronic supervision fatigue [04:03–09:48](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s).
@@ -21,22 +23,14 @@ The practical thread is expert supervision: agents can generate large implementa
 ### Where to start
 
 1. [Implementation effort, software ideas, and coding agents](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=57s) for the playlist's clearest argument about what automation changes without trivializing programming.
-2. [Check the ideas, not every generated line](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=1s) for its sharpest review argument.
-3. [Why specifications do not replace code](https://www.youtube.com/watch?v=0buzDrn0aIY&t=200s) for a concrete research-to-reference-to-implementation workflow.
-4. [Automatic programming fatigue](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s) for the attention and wellbeing limits of parallel agent work.
-5. [When a convincing model diagnosis is wrong](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s) for reciprocal review and the need for behavioral evidence.
-6. [Testing alternative models on real systems work](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=729s) for the gap between benchmarks, passing tests, and useful implementation.
-7. [When local inference makes sense](https://www.youtube.com/watch?v=IoE3Hi2zpwk&t=252s) for an end-to-end view of quality, prefill, generation, privacy, control, and hardware use.
+2. [My approach to automated programming](/summaries/coding-with-agents/my-approach-to-automated-programming) for feasibility investigation, a bounded prototype, and visual checks the agent can perform.
+3. [Check the ideas, not every generated line](https://www.youtube.com/watch?v=XZZ_ddBvELc&t=1s) for its sharpest review argument.
+4. [Why specifications do not replace code](https://www.youtube.com/watch?v=0buzDrn0aIY&t=200s) for a concrete research-to-reference-to-implementation workflow.
+5. [Automatic programming fatigue](https://www.youtube.com/watch?v=id9QG-mQSOo&t=243s) for the attention and wellbeing limits of parallel agent work.
+6. [When a convincing model diagnosis is wrong](https://www.youtube.com/watch?v=WoaulxVqUUA&t=344s) for reciprocal review and the need for behavioral evidence.
+7. [Testing alternative models on real systems work](https://www.youtube.com/watch?v=N-iwRfCFbHE&t=729s) for the gap between benchmarks, passing tests, and useful implementation.
+8. [When local inference makes sense](https://www.youtube.com/watch?v=IoE3Hi2zpwk&t=252s) for an end-to-end view of quality, prefill, generation, privacy, control, and hardware use.
 
 The August 16 standalone talk [The Qualities of Tomorrow’s Programmers](https://www.youtube.com/watch?v=ONeJRuhsoi4) turns the same shift in developer responsibility into practical advice on scope, system understanding, testability, reversibility, consolidation, and communication.
-
-### Recent playlist additions
-
-These notes are editorial translations/paraphrases of Italian auto-generated captions, without an independent audio or visual review.
-
-- **October 11, 2026 — ZX2040 optimization and Commodore 64 emulation.** Sanfilippo describes directing Opus 5.5 through separate emulator-conversion, comparison, and device-testing stages. Matching the old emulator's output did not mean the new version was fast enough: an initial conversion yielded only a reported 1.6% speedup. He and the agent then targeted the video-chip bottleneck, separating observable machine state from rendering. The recording reports a working dual-machine device after further changes, not independently verified performance or exhaustive game compatibility. [29:23–42:32](https://www.youtube.com/watch?v=ohAjXWjY8Nk&t=1763s), [53:57–57:53](https://www.youtube.com/watch?v=ohAjXWjY8Nk&t=3237s)
-- October 8, 2026: [When code is no longer yours](/summaries/coding-with-agents/antirez-when-code-is-no-longer-yours).
-- October 7, 2026: [My approach to automated programming](/summaries/coding-with-agents/my-approach-to-automated-programming).
-- **September 29, 2026 — Improving a human-designed optimization.** Sanfilippo reports that Astra improved his shift-and-add approximation for rotating points on the ZX Spectrum: reuse earlier shifts instead of recalculating each from the original value, then generate angle-specific machine instructions rather than interpret a table at runtime. He also credits the model with framebuffer memory tricks for Another World. These are concrete collaboration anecdotes; they do not establish whether the ideas were novel or absent from training data. [02:09–09:19](https://www.youtube.com/watch?v=mKriLwS6Kek&t=129s)
 
 For the full risk-scaled acceptance workflow, read [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it), or [watch the full Coding with AI playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA).

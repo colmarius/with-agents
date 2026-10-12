@@ -8,10 +8,13 @@ Salvatore Sanfilippo's Italian-language playlist works best as a research and en
 
 The practical question running through these talks is how to check an explanation: change the system, remove a component, or measure it on a relevant task, then see whether the result supports the proposed cause.
 
+*This guide paraphrases Italian auto-generated captions in English; the original audio was not independently checked.*
+
 ### Key themes
 
 - **Representations preserve selected information, not the whole object.** Sanfilippo introduces embeddings as lossy numeric representations [00:57–10:48](https://www.youtube.com/watch?v=T5b69_8f5MI&t=57s) and follows the trade-offs through similarity search, quantization, and dimensionality reduction [11:59–32:12](https://www.youtube.com/watch?v=T5b69_8f5MI&t=719s).
 - **Next-token prediction is a mechanism, not a complete behavioral description.** He argues that the prediction-versus-reasoning binary obscures hidden nonlinear computation and the model's uneven profile of task-specific abilities [01:13–08:17](https://www.youtube.com/watch?v=497EK7ZQ2FY&t=73s).
+- **More computation need not mean more reasoning tokens.** Sanfilippo describes reusing transformer layers for additional internal steps: the weights are reused, but computation and cache memory still cost [01:54–03:51](https://www.youtube.com/watch?v=PE3pKdRrTkA&t=114s). Generating reasoning tokens commits intermediate choices to text; he proposes combining the approaches, without demonstrating an efficiency gain [05:40–07:40](https://www.youtube.com/watch?v=PE3pKdRrTkA&t=340s).
 - **Interpretability claims become stronger when they survive intervention.** In his account of Anthropic's work, feature labels and a surrogate model remain interpretations; perturbing the original model and observing the predicted change supplies more direct evidence [06:12–09:27](https://www.youtube.com/watch?v=TlGrAretPQw&t=372s).
 - **Remove components to test what causes an improvement.** Sanfilippo describes an ablation study: researchers reimplemented a hierarchical reasoning model, then removed features to measure their contribution. The hierarchy mattered less than repeatedly refining a proposed answer and trying transformed versions of the problem [03:53–07:58](https://www.youtube.com/watch?v=PHsxD4X2V2A&t=233s).
 - **Open weights, reproducibility, licensing, and operational independence are different properties.** Sanfilippo values downloadable weights and inference code while acknowledging that they do not reproduce the original data or training pipeline [12:16–15:43](https://www.youtube.com/watch?v=n3rdoQnN7Co&t=736s).
@@ -27,12 +30,5 @@ The practical question running through these talks is how to check an explanatio
 5. [Open weights versus open source](https://www.youtube.com/watch?v=n3rdoQnN7Co&t=736s) for the practical and unresolved meanings of model openness.
 6. [Useful work per token and per joule](https://www.youtube.com/watch?v=ibcqRGQ7BKY&t=499s) for a speculative but useful prompt about measuring whole-task efficiency.
 7. [AI and the Fermi paradox](https://www.youtube.com/watch?v=cNYwbDI1QOY&t=183s) for a clear example of using a conceptual framework while preserving its evidentiary limits.
-
-### Recent playlist additions
-
-These notes are editorial translations/paraphrases of Italian auto-generated captions, without an independent audio review.
-
-- **October 6, 2026 — Looped transformers and chain-of-thought.** Sanfilippo explains how reusing intermediate layers adds sequential computation without duplicating their weights; cache memory and computation still have costs. Generating more reasoning tokens also adds computation, but commits intermediate results to discrete tokens and creates further sampling opportunities. He proposes that internal refinement and verbalized reasoning could complement each other, rather than being interchangeable. This is a conceptual comparison, not a measured efficiency result or confirmation that Astra uses a looped architecture. [01:54–07:40](https://www.youtube.com/watch?v=PE3pKdRrTkA&t=114s), [08:44–09:46](https://www.youtube.com/watch?v=PE3pKdRrTkA&t=524s)
-- **September 20, 2026 — Classification utility versus technological novelty.** In his critique of Jev, Sanfilippo distinguishes fast, inexpensive classification from harder tasks that benefit from generated reasoning. Calibrated scores aim to reflect how likely a label is to be correct, allowing uncertain cases to go to human review. He accepts that practical niche while questioning the attention around it. His architecture guesses and capability comparisons remain opinions based on limited public information, not benchmark findings. [00:01–04:03](https://www.youtube.com/watch?v=-Km-bQ1uQl4&t=1s)
 
 For the coding-agent application of this evidence standard, read [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it), or [watch the full AI concepts playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6).
