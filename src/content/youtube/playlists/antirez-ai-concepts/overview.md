@@ -70,15 +70,17 @@ coveredVideoIds:
   - iF9CEScWzrc
   - sW9R6wCeMOI
   - I-5j_nzqnAo
+  - -Km-bQ1uQl4
+  - PE3pKdRrTkA
 ---
 
 ## Coverage
 
 - Manifest: 76 entries representing 75 unique video IDs; all 76 occurrences are available in the playlist API.
-- Captured: 69 manifest occurrences representing 68 unique source-language transcript and summary pairs.
-- Summaries: 68 unique summaries, represented by 69 manifest occurrences because `8gg-oJr4dTY` occurs twice; the duplicate occurrence is not a second summary.
-- Incorporated: all 68 unique summaries and all 69 summarized manifest occurrences.
-- Unavailable-recorded video IDs without summaries: `9mHKjgFMsQA`, `LG3q-sqMG0g`, `aAWdlLfJmqw`, `RDGe3_87cSY`, `HUh7zFiTi-I`, `-Km-bQ1uQl4`, and `PE3pKdRrTkA`. The two newest captures failed on 2026-10-11; the transcript provider's unavailable response does not establish deletion.
+- Captured: 71 manifest occurrences representing 70 unique source-language transcript and summary pairs.
+- Summaries: 70 unique summaries, represented by 71 manifest occurrences because `8gg-oJr4dTY` occurs twice; the duplicate occurrence is not a second summary.
+- Incorporated: all 70 unique summaries and all 71 summarized manifest occurrences.
+- Unavailable-recorded video IDs without summaries: `9mHKjgFMsQA`, `LG3q-sqMG0g`, `aAWdlLfJmqw`, `RDGe3_87cSY`, and `HUh7zFiTi-I`.
 - Pending video IDs: none.
 
 ## Current Thesis
@@ -99,6 +101,8 @@ coveredVideoIds:
 
 ## Emerging Ideas
 
+- Sanfilippo distinguishes the practical value of fast, calibrated classification from technical novelty. His Jev critique accepts a low-cost classification niche while leaving its architecture and comparative performance unverified ([summary](../../videos/-Km-bQ1uQl4/summary.md)).
+- Sanfilippo compares reused transformer layers with longer chain-of-thought: both add sequential computation, but internal continuous refinement differs from sampling and verbalizing discrete tokens. He proposes complementarity without establishing a training result, efficiency gain, or Astra's rumored architecture ([summary](../../videos/PE3pKdRrTkA/summary.md)).
 - Editorial: The new conceptual discussions distinguish prediction incentives from outcome-based post-training and distinguish fluent output from truth, understanding, and intent. Sanfilippo's proposed explanations remain qualitative rather than mechanistically established ([summary](../../videos/UgRiVUce9sY/summary.md), [summary](../../videos/ug74Hk0_PB4/summary.md)).
 - Sanfilippo describes sampling as changing the next input as well as the current output, and separates candidate diversity, loop avoidance, answer synthesis, and training exploration. His optional mixed speculative-decoding mode trades adherence to a sampling distribution for reported speed ([summary](../../videos/iF9CEScWzrc/summary.md), [summary](../../videos/-l4tMg4JqfQ/summary.md)).
 - Sanfilippo describes a learned short-sequence lookup table with context-dependent gating as a way to enrich existing tokens without adding context positions. He distinguishes this from speculative decoding and argues that RAM-resident lookup can reduce expensive model computation ([summary](../../videos/sW9R6wCeMOI/summary.md)).

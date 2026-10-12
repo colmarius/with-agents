@@ -28,15 +28,17 @@ coveredVideoIds:
   - yFa1BHzkzn8
   - sJ5E7P1i5b8
   - oNhkt0kKWA8
+  - mKriLwS6Kek
+  - ohAjXWjY8Nk
 ---
 
 ## Coverage
 
 - Manifest: 37 entries representing 37 unique video IDs; 36 available entries and one deleted entry.
-- Captured: 26 manifest entries representing 26 unique source-language transcript and summary pairs.
-- Summaries: 26 unique summaries.
-- Incorporated: all 26 summaries and all 26 summarized manifest entries.
-- Unavailable-recorded video IDs without source-library summaries: `H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`, `qipoQGqMCp0`, `_pLlet9Jrzc`, `b7E-4jBPUec`, `ohAjXWjY8Nk`, `v0WVsLQo3-k`, `9h-Way-APlM`, and `mKriLwS6Kek`. The four newest captures failed on 2026-10-11; the transcript provider's unavailable response does not establish deletion. Existing standalone public transcripts and summaries for `v0WVsLQo3-k` and `9h-Way-APlM` remain separate from this source-library synthesis.
+- Captured: 28 manifest entries representing 28 unique source-language transcript and summary pairs.
+- Summaries: 28 unique summaries.
+- Incorporated: all 28 summaries and all 28 summarized manifest entries.
+- Unavailable-recorded video IDs without source-library summaries: `H5cvtoSxdxI`, `D1_wPWzNkJ4`, `rCIZflYEpEk`, `qipoQGqMCp0`, `_pLlet9Jrzc`, `b7E-4jBPUec`, `v0WVsLQo3-k`, and `9h-Way-APlM`. A transcript-provider failure does not establish deletion. Existing standalone public transcripts and summaries for `v0WVsLQo3-k` and `9h-Way-APlM` remain separate from this source-library synthesis.
 - Deleted entry without a transcript or summary: `3mbcL-GHHAQ`.
 - Pending video IDs: none.
 
@@ -58,6 +60,8 @@ coveredVideoIds:
 
 ## Emerging Ideas
 
+- Sanfilippo reports that Astra improved his shift-based rotation approximation by reusing intermediate shifts and generating angle-specific Z80 instructions. He also attributes framebuffer and hidden-screen-memory tricks to the model; useful collaboration does not establish historical novelty or training-data provenance ([summary](../../videos/mKriLwS6Kek/summary.md)).
+- Sanfilippo's ZX2040 session separates emulator conversion, behavioral comparison, and device throughput. Matching old outputs still left a video bottleneck; he and Opus 5.5 reworked video-state tracking and rendering before reporting a combined Spectrum/C64 device. The short tests and demanding demos are not exhaustive compatibility or stability evidence ([summary](../../videos/ohAjXWjY8Nk/summary.md)).
 - Sanfilippo proposes agent-driven exploratory QA: keep a mission in source control, vary realistic stateful scenarios, and hand suspected failures to a separate session for confirmation. The source presents this as a testing direction, not demonstrated coverage or an independent oracle ([summary](../../videos/SiOadQFUx2k/summary.md)).
 - Sanfilippo proposes reciprocal review between strong models as a way to challenge omissions and confident mistakes, but the motivating incident also shows that behavioral evidence and human challenge—not another fluent answer alone—caused reconsideration ([summary](../../videos/WoaulxVqUUA/summary.md)).
 - Sanfilippo presents related implementations, compact reference programs, project instructions, and checked specifications as a reusable culture from which agents can transfer architecture and optimization patterns without treating repository search as understanding ([summary](../../videos/0buzDrn0aIY/summary.md), [summary](../../videos/1HTtYNaCtcM/summary.md), [summary](../../videos/c95W__muKyI/summary.md)).

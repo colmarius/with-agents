@@ -28,4 +28,11 @@ The practical question running through these talks is how to check an explanatio
 6. [Useful work per token and per joule](https://www.youtube.com/watch?v=ibcqRGQ7BKY&t=499s) for a speculative but useful prompt about measuring whole-task efficiency.
 7. [AI and the Fermi paradox](https://www.youtube.com/watch?v=cNYwbDI1QOY&t=183s) for a clear example of using a conceptual framework while preserving its evidentiary limits.
 
+### Recent playlist additions
+
+These notes are editorial translations/paraphrases of Italian auto-generated captions, without an independent audio review.
+
+- **October 6, 2026 — Looped transformers and chain-of-thought.** Sanfilippo explains how reusing intermediate layers adds sequential computation without duplicating their weights; cache memory and computation still have costs. Generating more reasoning tokens also adds computation, but commits intermediate results to discrete tokens and creates further sampling opportunities. He proposes that internal refinement and verbalized reasoning could complement each other, rather than being interchangeable. This is a conceptual comparison, not a measured efficiency result or confirmation that Astra uses a looped architecture. [01:54–07:40](https://www.youtube.com/watch?v=PE3pKdRrTkA&t=114s), [08:44–09:46](https://www.youtube.com/watch?v=PE3pKdRrTkA&t=524s)
+- **September 20, 2026 — Classification utility versus technological novelty.** In his critique of Jev, Sanfilippo distinguishes fast, inexpensive classification from harder tasks that benefit from generated reasoning. Calibrated scores aim to reflect how likely a label is to be correct, allowing uncertain cases to go to human review. He accepts that practical niche while questioning the attention around it. His architecture guesses and capability comparisons remain opinions based on limited public information, not benchmark findings. [00:01–04:03](https://www.youtube.com/watch?v=-Km-bQ1uQl4&t=1s)
+
 For the coding-agent application of this evidence standard, read [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it), or [watch the full AI concepts playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3eW1UK1D5coDp75wTf62jj6).

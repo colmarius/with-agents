@@ -90,6 +90,10 @@ coveredVideoIds:
   - iF9CEScWzrc
   - sW9R6wCeMOI
   - I-5j_nzqnAo
+  - -Km-bQ1uQl4
+  - PE3pKdRrTkA
+  - mKriLwS6Kek
+  - ohAjXWjY8Nk
 ---
 
 ## Source Identities
@@ -99,6 +103,7 @@ coveredVideoIds:
 
 ## Cross-Playlist Synthesis
 
+- Editorial: The four additions incorporated on 2026-10-12 distinguish mechanisms from stronger conclusions. Calibrated classification can be useful without representing a major advance; internal layer reuse and generated reasoning can be compared without knowing Astra's architecture; model-assisted optimization can be useful without proving novelty or universal capability. The emulator session makes the evidence boundary concrete: matching behavior and meeting a device's performance budget require different tests ([summary](../videos/-Km-bQ1uQl4/summary.md), [summary](../videos/PE3pKdRrTkA/summary.md), [summary](../videos/mKriLwS6Kek/summary.md), [summary](../videos/ohAjXWjY8Nk/summary.md)).
 - Editorial: The eight additions incorporated on 2026-09-11 extend the existing evidence standard: prediction and compression analogies need explicit limits, output fluency must be separated from truth, and useful-work evaluation must not inherit certainty from an AGI headline. This revised synthesis remains draft ([summary](../videos/UgRiVUce9sY/summary.md), [summary](../videos/ug74Hk0_PB4/summary.md), [summary](../videos/I-5j_nzqnAo/summary.md)).
 - Editorial: Sampling, speculative acceptance, gated short-sequence lookup, and asymmetric memory placement operate at different parts of inference. Read together, the new reports reinforce the need to distinguish storage, computation, distribution fidelity, and measured task quality ([summary](../videos/iF9CEScWzrc/summary.md), [summary](../videos/-l4tMg4JqfQ/summary.md), [summary](../videos/sW9R6wCeMOI/summary.md), [summary](../videos/44KvcNh4vm0/summary.md)).
 - Editorial: Sanfilippo's opposition to text watermarks and preference for human-written project rationale are compatible distinctions between provenance, quality, and communication. His watermark-removal sketch is not a demonstrated method, while his documentation advice explicitly allows reviewed AI assistance for rapidly changing reference material ([summary](../videos/ii6JRLJSBNw/summary.md), [summary](../videos/-l4tMg4JqfQ/summary.md)).

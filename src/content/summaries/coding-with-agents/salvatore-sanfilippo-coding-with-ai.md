@@ -32,7 +32,11 @@ The August 16 standalone talk [The Qualities of Tomorrow’s Programmers](https:
 
 ### Recent playlist additions
 
+These notes are editorial translations/paraphrases of Italian auto-generated captions, without an independent audio or visual review.
+
+- **October 11, 2026 — ZX2040 optimization and Commodore 64 emulation.** Sanfilippo describes directing Opus 5.5 through separate emulator-conversion, comparison, and device-testing stages. Matching the old emulator's output did not mean the new version was fast enough: an initial conversion yielded only a reported 1.6% speedup. He and the agent then targeted the video-chip bottleneck, separating observable machine state from rendering. The recording reports a working dual-machine device after further changes, not independently verified performance or exhaustive game compatibility. [29:23–42:32](https://www.youtube.com/watch?v=ohAjXWjY8Nk&t=1763s), [53:57–57:53](https://www.youtube.com/watch?v=ohAjXWjY8Nk&t=3237s)
 - October 8, 2026: [When code is no longer yours](/summaries/coding-with-agents/antirez-when-code-is-no-longer-yours).
 - October 7, 2026: [My approach to automated programming](/summaries/coding-with-agents/my-approach-to-automated-programming).
+- **September 29, 2026 — Improving a human-designed optimization.** Sanfilippo reports that Astra improved his shift-and-add approximation for rotating points on the ZX Spectrum: reuse earlier shifts instead of recalculating each from the original value, then generate angle-specific machine instructions rather than interpret a table at runtime. He also credits the model with framebuffer memory tricks for Another World. These are concrete collaboration anecdotes; they do not establish whether the ideas were novel or absent from training data. [02:09–09:19](https://www.youtube.com/watch?v=mKriLwS6Kek&t=129s)
 
 For the full risk-scaled acceptance workflow, read [Make the Agent Prove It](/coding/posts/make-the-agent-prove-it), or [watch the full Coding with AI playlist](https://www.youtube.com/playlist?list=PLrEMgOSrS_3cU-ndLheq6TZiO3gWTAszA).
