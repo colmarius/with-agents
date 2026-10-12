@@ -1,10 +1,7 @@
 {
   "videoId": "-Km-bQ1uQl4",
-  "attemptedAt": "2026-10-11T20:51:41.420Z",
+  "capturedAt": "2026-10-12T11:26:51.152Z",
   "requestedLanguage": "it",
-  "availableLanguages": [],
-  "unavailable": {
-    "errorName": "YoutubeTranscriptVideoUnavailableError",
-    "detail": "Could not list available transcript languages: YoutubeTranscriptVideoUnavailableError: The video with ID \"-Km-bQ1uQl4\" is no longer available or has been removed. Please check the video URL or ID and try again."
-  }
+  "language": "it",
+  "kind": "auto-generated"
 }
