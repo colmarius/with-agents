@@ -1,5 +1,24 @@
 [
   {
+    "id": 172,
+    "primarySection": "economics-industry",
+    "title": "OpenAI’s Head of ChatGPT: We’re entering a new era of AI (again) | Tibo Sottiaux",
+    "subtitle": "Persistent agents, plugin economics, orchestration, and monitored device access",
+    "url": "https://www.youtube.com/watch?v=MM-C3JqCXBk",
+    "description": "Tibo Sottiaux discusses OpenAI's direction for persistent assistants, changing multi-agent workflows, plugin discovery and revenue sharing, and agents that connect to multiple devices. His production-alert anecdote distinguishes useful awareness from authority to repair systems, while his monitoring discussion describes a safety approach rather than proven guarantees. A first-party product and engineering interview with forecasts about agent-driven internet traffic.",
+    "type": "podcast",
+    "source": "Lenny's Podcast",
+    "date": "2026-10-04",
+    "addedDate": "2026-10-13",
+    "duration": "37m",
+    "topics": [
+      "tools-harnesses",
+      "context-memory",
+      "safety-permissions",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 171,
     "primarySection": "implications-risks",
     "title": "Bill Gates: A.I. ‘Makes Nuclear Weapons Look Like Nothing’ | The Ezra Klein Show",
