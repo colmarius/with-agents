@@ -1,5 +1,19 @@
 [
   {
+    "id": 172,
+    "addedDate": "2026-10-13",
+    "primarySection": "workflows",
+    "title": "Staying in the flow: some updates on my experience",
+    "subtitle": "Salvatore Sanfilippo on agent latency, progress updates, and staying involved in design",
+    "url": "https://www.youtube.com/watch?v=QobBTNIIX04",
+    "description": "Salvatore Sanfilippo describes retaining creative involvement through detailed product decisions, asking agents to announce significant steps, and using observed display behavior to steer changes. He distinguishes reducing idle time with parallel projects from preserving flow, and cautions against making automation more stressful. Personal experience and advice, not measured productivity findings; summarized in English from Italian auto-generated captions.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-10-13",
+    "duration": "11m 38s",
+    "topics": ["prompting-orchestration", "review-verification"]
+  },
+  {
     "id": 170,
     "addedDate": "2026-10-08",
     "primarySection": "teams-ecosystem",
