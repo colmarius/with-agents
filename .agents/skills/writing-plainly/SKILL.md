@@ -38,8 +38,7 @@ workflow. Do not rewrite existing content unless it is part of the task.
 - Keep terminology consistent for the same thing. Keep distinct concepts distinct:
   a document, a parsed record, and a database row may not be interchangeable.
 - Use established technical terms when they are precise; define them where readers
-  need help. Avoid invented shorthand and compressed compound adjectives. A
-  dictionary is not a test of whether a technical term is valid.
+  need help. Avoid invented shorthand and compressed compound adjectives.
 - Contractions are fine when natural. Keep the tone descriptive and explanatory,
   rather than promotional or deliberately punchy.
 
@@ -101,7 +100,7 @@ checks and rendered-page verification."
 
 1. Identify the reader, purpose, and facts that must survive the edit. Read the
    source before revising source-backed claims.
-2. Draft or revise the prose using the rules above. Stay within the requested scope.
+2. Draft or revise the prose using the rules above.
 3. Read the text on its own. Can the reader state the main point, understand the
    important terms, and follow the sequence without reopening the conversation?
 4. Compare the revision with the original and its evidence. Check attribution,
@@ -117,16 +116,9 @@ agent response if no text is supplied. Use the intended audience; if none is giv
 write for a technical reader without project context. Lead with the conclusion,
 then explain the necessary background and sequence. Return only the rewrite unless
 the user asks for commentary. Preserve facts and uncertainty without inventing
-missing context. In Amp, load `writing-plainly` through the skill tool; no
-Claude-specific command or installation is needed.
+missing context.
 
-## Source and adaptation
+## Source
 
-Adapted from [docwriter-org/plain-writing-skill](https://github.com/docwriter-org/plain-writing-skill)
-at [revision f0d3630](https://github.com/docwriter-org/plain-writing-skill/blob/f0d3630983ac7a82aa580f1c1509d72df739ee12/skills/plain-writing/SKILL.md).
-The upstream MIT notice is retained in [LICENSE](LICENSE).
-
-The adaptation uses Amp skill discovery and this repository's writing workflows.
-It replaces absolute bans on jargon, analogies, punctuation, demonstratives,
-sentence length, and list length with reader-focused guidance. Source fidelity,
-technical accuracy, and required formats take priority over stylistic preferences.
+Adapted from [docwriter-org/plain-writing-skill, revision f0d3630](https://github.com/docwriter-org/plain-writing-skill/blob/f0d3630983ac7a82aa580f1c1509d72df739ee12/skills/plain-writing/SKILL.md).
+See [LICENSE](LICENSE) for the retained MIT notice.
