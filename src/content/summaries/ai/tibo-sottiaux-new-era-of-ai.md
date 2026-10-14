@@ -1,6 +1,6 @@
 ---
 title: "OpenAI’s Head of ChatGPT: We’re entering a new era of AI (again) | Tibo Sottiaux"
-resourceId: 172
+resourceId: 173
 date: "2026-10-04"
 ---
 

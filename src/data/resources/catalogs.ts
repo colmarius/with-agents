@@ -163,7 +163,7 @@ export const resources: Resource[] = [
 ].map(({ primarySection: _primarySection, ...resource }) => resource);
 
 const codingResourceIds = [
-  172,
+  173,
   164,
   152,
   153,
@@ -177,7 +177,7 @@ const codingSectionByResourceId = {
   164: 'teams-ecosystem',
   152: 'teams-ecosystem',
   153: 'agent-systems',
-  172: 'agent-systems',
+  173: 'agent-systems',
 };
 
 const cloudResourceIds = [
@@ -265,7 +265,7 @@ const aiTopicOptions = [
 ] as const satisfies readonly ResourceTopicOption[];
 
 const aiResourceIds = [
-  172, 171, 164, 159, 158, 153, 152, 151, 150, 146, 127, 123, 121, 120, 108,
+  173, 171, 164, 159, 158, 153, 152, 151, 150, 146, 127, 123, 121, 120, 108,
   119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 128, 129, 130, 131, 134, 137,
 ];
 
