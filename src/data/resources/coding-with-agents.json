@@ -1,5 +1,24 @@
 [
   {
+    "id": 174,
+    "addedDate": "2026-10-14",
+    "primarySection": "workflows",
+    "title": "How Thorsten Ball Uses Amp, October 2026",
+    "subtitle": "Asynchronous work, end-to-end evidence, and agents across the delivery lifecycle",
+    "url": "https://www.youtube.com/watch?v=Z7l1EHfCMU8",
+    "description": "Thorsten Ball demonstrates his Amp workflow: batch alternatives instead of waiting on agents, request end-to-end evidence before reviewing critical code, make development and production tools discoverable, and evaluate repository instructions in fresh environments. Includes rollout monitoring and a feature-flagged memory-warning case study. Amp-team experience and product demonstrations, not controlled productivity or safety findings.",
+    "type": "video",
+    "source": "Amp, Inc.",
+    "date": "2026-10-13",
+    "duration": "34m 31s",
+    "topics": [
+      "prompting-orchestration",
+      "review-verification",
+      "tools-harnesses",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 172,
     "addedDate": "2026-10-13",
     "primarySection": "workflows",
