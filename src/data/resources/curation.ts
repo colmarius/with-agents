@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    176: {
+      tier: 'useful',
+      reason:
+        'Connects agent iteration, output scrutiny, and clarification boundaries with concrete internal engineering examples, while preserving their first-party anecdotal status.',
+    },
     174: {
       tier: 'useful',
       reason:
@@ -812,6 +817,16 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    176: {
+      tier: 'useful',
+      reason:
+        'Explains writing feedback and model-assisted research workflows, and distinguishes long reasoning from many tool turns; internal results remain vendor reports.',
+    },
+    175: {
+      tier: 'context',
+      reason:
+        'Offers an early practitioner perspective on document quality versus coding performance; benchmark criticism is unverified and token-limit claims need the linked documentation caveat.',
+    },
     173: {
       tier: 'context',
       reason:

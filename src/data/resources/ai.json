@@ -1,5 +1,38 @@
 [
   {
+    "id": 176,
+    "primarySection": "concepts-capabilities",
+    "title": "Gemini 4 Argon: What’s new and what’s next",
+    "subtitle": "Google's Release Notes on writing quality, model-building agents, long reasoning, and review",
+    "url": "https://www.youtube.com/watch?v=Jh6mgf9M06M",
+    "description": "Logan Kilpatrick and Google's product and research team discuss Argon's writing feedback, agents assisting model development, engineering use cases, long-decode reasoning, and balancing persistence with clarification. They recommend scrutinizing and iterating on outputs. A first-party launch conversation with internal anecdotes, not independent evidence of reliability or autonomous self-improvement.",
+    "type": "podcast",
+    "source": "Google for Developers",
+    "date": "2026-10-14",
+    "addedDate": "2026-10-14",
+    "duration": "30m",
+    "topics": [
+      "models-evaluation",
+      "context-memory",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
+    "id": 175,
+    "primarySection": "concepts-capabilities",
+    "title": "Gemini 4 Argon and Muse Wonder",
+    "subtitle": "Salvatore Sanfilippo on language quality, coding performance, and benchmark skepticism",
+    "url": "https://www.youtube.com/watch?v=sw0iNg6_rXs",
+    "description": "Salvatore Sanfilippo contrasts his positive early impressions of Gemini 4 Argon's document understanding and concise writing with skepticism about Muse Wonder's benchmark claims. Italian-language opinion commentary, not a controlled model comparison. The summary separates his assessments from Google's documented shared token budget and introductory pricing.",
+    "type": "video",
+    "source": "Salvatore Sanfilippo",
+    "date": "2026-10-14",
+    "addedDate": "2026-10-14",
+    "duration": "12m",
+    "topics": ["models-evaluation", "context-memory", "information-trust"]
+  },
+  {
     "id": 173,
     "primarySection": "economics-industry",
     "title": "OpenAI’s Head of ChatGPT: We’re entering a new era of AI (again) | Tibo Sottiaux",
