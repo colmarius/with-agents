@@ -10,6 +10,7 @@ import {
   aiCuration,
   cloudCuration,
   codingCuration,
+  productCuration,
   securityCuration,
 } from './curation.ts';
 import { googleCloudResources } from './google-cloud.ts';
@@ -358,6 +359,7 @@ export const resourceCatalogs: readonly ResourceCatalog[] = [
       { slug: 'leadership', label: 'Leadership' },
     ],
     resourceIds: productResources.map((resource) => resource.id),
+    ...productCuration,
     sectionByResourceId: Object.fromEntries(
       productResources.map((resource) => [
         resource.id,

@@ -7,6 +7,136 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    174: {
+      tier: 'useful',
+      reason:
+        'Demonstrates asynchronous work and end-to-end review evidence across delivery, based on Amp-team experience rather than controlled outcomes.',
+    },
+    173: {
+      tier: 'useful',
+      reason:
+        'Connects persistent agents, orchestration, and device permissions through a first-party interview, not a validated operating guide.',
+    },
+    172: {
+      tier: 'useful',
+      reason:
+        'Adds practical steering and progress-update advice while distinguishing reduced idle time from sustained creative involvement.',
+    },
+    170: {
+      tier: 'useful',
+      reason:
+        'Contrasts practitioner positions on risk-based review, architectural learning, and engineering ownership without claiming measured team outcomes.',
+    },
+    169: {
+      tier: 'useful',
+      reason:
+        'Explains review harnesses and explicit merge criteria while retaining human judgment; cited study and vendor results remain speaker-reported.',
+    },
+    168: {
+      tier: 'context',
+      reason:
+        'Surveys parallel agents and review pressure through industry reporting and forecasts rather than a focused implementation workflow.',
+    },
+    167: {
+      tier: 'useful',
+      reason:
+        'Explains durable task state and external-action retry boundaries in a first-party design discussion, not an independent reliability test.',
+    },
+    166: {
+      tier: 'context',
+      reason:
+        'Offers a psychological hypothesis about code attachment and shared ownership, not demonstrated changes in team behavior.',
+    },
+    165: {
+      tier: 'useful',
+      reason:
+        'Connects design investigation, small prototypes, iterative steering, and screenshot checks through a practitioner CAD workflow.',
+    },
+    164: {
+      tier: 'useful',
+      reason:
+        'Places verification and engineering judgment within a broad agent-capability survey; demonstrations and incident reports are not independent evaluations.',
+    },
+    163: {
+      tier: 'useful',
+      reason:
+        'Combines behavioral tests, separate standards review, and risk-based human review as practitioner advice, with a known early transcript gap.',
+    },
+    162: {
+      tier: 'essential',
+      reason:
+        'Provides a durable framework for alternating delivery, refactoring, and learning while measuring outcomes rather than generated code volume.',
+    },
+    161: {
+      tier: 'useful',
+      reason:
+        'Offers a concrete simplification of agent orchestration while retaining executable checks and human sign-off; review-replacement claims remain hypotheses.',
+    },
+    160: {
+      tier: 'useful',
+      reason:
+        'Connects lifecycle automation, human checkpoints, and feedback-driven skills through a proposed software-factory model, not measured reliability gains.',
+    },
+    157: {
+      tier: 'useful',
+      reason:
+        'Adds concrete native-app and agent-facing CLI examples to architecture trade-offs, with efficiency claims limited to the speaker’s account.',
+    },
+    156: {
+      tier: 'context',
+      reason:
+        'Adds a product-judgment argument about copying and design experience rather than validated competitive or market findings.',
+    },
+    154: {
+      tier: 'useful',
+      reason:
+        'Explains why maintaining software requires shared understanding and design rationale; AI implications are arguments based on written companion sources.',
+    },
+    148: {
+      tier: 'useful',
+      reason:
+        'Connects testable specifications, incident learning, enforceable policies, and shared context in a practitioner interview with first-party product claims.',
+    },
+    147: {
+      tier: 'useful',
+      reason:
+        'Provides an adoption-metric failure example and customer-feedback practices while keeping Shopify outcomes explicitly speaker-reported.',
+    },
+    145: {
+      tier: 'useful',
+      reason:
+        'Shows how failed tasks become personal evaluations and product principles support critique rather than automatic approval.',
+    },
+    144: {
+      tier: 'useful',
+      reason:
+        'Connects shared agents and decision preparation to human responsibility and the cost of unreviewed output, through a first-party adoption account.',
+    },
+    143: {
+      tier: 'context',
+      reason:
+        'Adds a validation failure anecdote and permission trade-offs within a broader weekly product roundup, not a durable setup guide.',
+    },
+    142: {
+      tier: 'useful',
+      reason:
+        'Explains focused revision loops, reusable TDD skills, and human-readable behavior checks as practitioner techniques rather than benchmarked improvements.',
+    },
+    141: {
+      tier: 'useful',
+      reason:
+        'Describes concurrent task prioritization and video approval before merging; outcomes are self-reported and the speaker discloses vendor credits.',
+    },
+    140: {
+      tier: 'useful',
+      reason:
+        'Compares three implementations of one review task to explain runtime responsibilities, while leaving evaluation ownership with developers.',
+    },
+    138: {
+      tier: 'useful',
+      reason:
+        'Traces a concrete move from prompt chains to sandbox tools and reusable query skills, with evaluation gains limited to the presenter’s account.',
+    },
     152: {
       tier: 'useful',
       reason:
@@ -682,6 +812,41 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    173: {
+      tier: 'context',
+      reason:
+        'Records OpenAI’s direction for persistent assistants and plugin economics, with company forecasts rather than independent market or safety evidence.',
+    },
+    171: {
+      tier: 'useful',
+      reason:
+        'Connects misuse, displacement, oversight, and access to benefits through attributed risk assessments and policy proposals, not established forecasts.',
+    },
+    164: {
+      tier: 'useful',
+      reason:
+        'Provides a dated survey of agents, local models, costs, and security concerns while distinguishing personal observations from attributed incident reports.',
+    },
+    159: {
+      tier: 'useful',
+      reason:
+        'Separates cheaper tool creation from workflow discovery, organizational responsibility, and strategy through analysis rather than measured enterprise outcomes.',
+    },
+    158: {
+      tier: 'context',
+      reason:
+        'Adds a political and economic viewpoint on AI progress and stagnation, with broad forecasts and first-party adoption anecdotes.',
+    },
+    146: {
+      tier: 'useful',
+      reason:
+        'Distinguishes operating a browser from predictive validity and commercial outcomes in shopper-agent evaluation; product benefits remain participant accounts.',
+    },
+    137: {
+      tier: 'context',
+      reason:
+        'Offers a research leader’s perspective on creativity, education, and distributing AI benefits, not independently established outcomes.',
+    },
     152: {
       tier: 'useful',
       reason:
@@ -832,5 +997,15 @@ export const aiCuration = {
         audience: 'Readers considering AI and institutional power',
       },
     ],
+  },
+} satisfies CatalogCuration;
+
+export const productCuration = {
+  assessmentsByResourceId: {
+    139: {
+      tier: 'useful',
+      reason:
+        'Collects distinct perspectives on product judgment, expertise, and execution; selected conversations offer attributed experience, not validated management prescriptions.',
+    },
   },
 } satisfies CatalogCuration;

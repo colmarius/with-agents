@@ -353,6 +353,17 @@ test('featured selections reference distinct resources in their own section', ()
   }
 });
 
+test('every published catalog member has an editorial relevance assessment', () => {
+  for (const catalog of resourceCatalogs) {
+    for (const id of catalog.resourceIds) {
+      assert.ok(
+        catalog.assessmentsByResourceId?.[id],
+        `${catalog.slug}: resource ${id} needs a tier and reason in curation.ts`,
+      );
+    }
+  }
+});
+
 test('curation preserves catalog-specific grades without changing canonical resources', () => {
   assert.equal(
     requireCatalog('coding-with-agents').assessmentsByResourceId?.[33]?.tier,

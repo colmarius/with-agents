@@ -123,13 +123,18 @@ existing primary catalog and expose an additional AI link.
 ### Editorial relevance and starting selections
 
 Catalog-owned curation in `src/data/resources/curation.ts` adds ordered starting
-selections and optional relevance assessments. Grade usefulness **within each
-catalog**, not source reliability: Essential is a strong starting or working
+selections and relevance assessments for every published resource. Grade usefulness
+**within each catalog**, not source reliability: Essential is a strong starting or working
 reference, Useful adds distinct value, and Context supplies narrower background
 or perspectives. Keep reasons concise and preserve source limitations; age,
 opinion, and vendor authorship do not by themselves make a resource irrelevant.
-Unassessed resources remain valid, and no grade hides a resource or changes the
-newest-first ordering.
+Add a tier and resource-specific reason for every catalog membership when adding
+or cross-listing a resource, using its description and available summary/source
+evidence. Reassess when its scope, collection contents, or evidence changes, and
+remove assessments when removing membership. `npm test` checks coverage across
+the published catalogs. The reusable schema and renderer still support unassessed
+resources, but published catalog membership must be fully assessed. No grade hides
+a resource or changes the newest-first ordering.
 
 Each starting selection names a catalog member, a specific slash-separated
 summary ID (without `.md`), and its intended audience or task. It must have an
