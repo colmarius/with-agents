@@ -39,6 +39,15 @@ Follow the README's Development checks after code or content changes: lint/forma
 - Access browser APIs only in client-side code or behind environment checks.
 - Keep content frontmatter compatible with `src/content.config.ts`.
 
+## Writing guidance
+
+Load [writing-plainly](.agents/skills/writing-plainly/SKILL.md) before writing or
+revising prose, including posts, summaries, resources, slides, UI copy, repository
+documentation, research, plans, and agent responses. Apply it by default, alongside
+the task's specialized workflow. Preserve technical accuracy, source fidelity,
+citations, and required formats; do not style-rewrite code or captured evidence.
+Keep edits within the requested scope rather than rewriting existing content wholesale.
+
 ## Content and Publication Boundaries
 
 - Keep content within the site's engineering and AI scope. Avoid personal-site pages, personal-only assets, and unrelated collections.
