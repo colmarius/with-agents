@@ -771,6 +771,11 @@ export const securityCuration = {
       reason:
         'Explains framework-specific configuration and revocation trade-offs; mutable implementation documentation does not replace standards.',
     },
+    177: {
+      tier: 'useful',
+      reason:
+        'Connects session revocation, JWT storage, OAuth delegation, and OIDC login through concrete architecture choices; an introduction rather than a protocol implementation reference.',
+    },
     58: {
       tier: 'context',
       reason:

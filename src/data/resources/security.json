@@ -68,5 +68,19 @@
     "source": "Better Auth",
     "date": "2026-08-29",
     "topics": ["identity-access", "application-security"]
+  },
+  {
+    "id": 177,
+    "addedDate": "2026-10-15",
+    "primarySection": "identity-access",
+    "title": "Stop Choosing JWT by Default! Sessions vs JWT vs OAuth Explained",
+    "subtitle": "Choosing session state, token formats, delegated access, and identity-provider login",
+    "url": "https://www.youtube.com/watch?v=KKlLRN58Dhw",
+    "description": "Time To Program explains server-side sessions, JWT validation and revocation, OAuth delegated authorization, and OpenID Connect login through web, mobile, and multi-service scenarios. A practical introduction to choosing and combining these mechanisms, not a complete protocol implementation guide.",
+    "type": "video",
+    "source": "Time To Program",
+    "date": "2026-10-12",
+    "duration": "23 min",
+    "topics": ["identity-access", "application-security"]
   }
 ]

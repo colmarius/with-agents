@@ -194,7 +194,9 @@ const cloudSectionByResourceId = Object.fromEntries(
   ]),
 );
 
-const securityResourceIds = [98, 57, 100, 101, 102, 103, 105, 106, 58, 104, 37];
+const securityResourceIds = [
+  98, 57, 100, 101, 102, 103, 105, 106, 177, 58, 104, 37,
+];
 
 const securitySectionByResourceId = {
   98: 'cloud-security',
