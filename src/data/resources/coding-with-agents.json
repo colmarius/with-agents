@@ -1,5 +1,24 @@
 [
   {
+    "id": 178,
+    "addedDate": "2026-10-16",
+    "primarySection": "teams-ecosystem",
+    "title": "How Amp Builds Amp: Quinn Slack at Paradigm Frontiers 2026",
+    "subtitle": "Agent verification, production follow-through, and a team without pull requests",
+    "url": "https://www.youtube.com/watch?v=kQguG4YS0d0",
+    "description": "Quinn Slack describes Amp's use of agents for design alternatives, frame-by-frame verification, small evaluations, feature-flag monitoring, and support follow-up. He argues for replacing pull-request review with shared agent threads and organizing a small team around common tooling. First-party practices, reported metrics, and organizational opinions, not comparative safety or productivity findings.",
+    "type": "video",
+    "source": "Amp, Inc.",
+    "date": "2026-10-15",
+    "duration": "29m 35s",
+    "topics": [
+      "prompting-orchestration",
+      "review-verification",
+      "collaboration-teams",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 174,
     "addedDate": "2026-10-14",
     "primarySection": "workflows",

@@ -1,0 +1,44 @@
+---
+title: 'How Amp Builds Amp: Quinn Slack at Paradigm Frontiers 2026'
+resourceId: 178
+date: '2026-10-15'
+---
+
+Quinn Slack describes how Amp uses agents across development, verification, deployment, and support. His practical argument is to delegate a complete outcome, give the agent access to the tools needed to check it, and inspect evidence rather than wait through every edit. He also advocates removing pull-request review and reorganizing companies around agents. These are first-party practices and opinions, not controlled evidence that other teams should adopt the same process.
+
+Based on English auto-generated captions. The account reflects the talk's October 2026 examples; the transcript alone does not independently verify the demonstrations or company metrics.
+
+## Delegate more than implementation
+
+- **Give agents work before and after coding.** Slack recommends involving agents in deciding what to build, verifying the implementation, shipping it, and checking whether it fixes the production issue. His objection to waiting on agents is that a narrowly scoped edit leaves the human coordinating every next step. [05:06–06:58](https://www.youtube.com/watch?v=kQguG4YS0d0&t=306s)
+- **Request alternatives together.** Ask the agent to return a menu of options rather than change one detail and wait repeatedly. Slack gives Amp's dictation waveform as a visual-design example: seeing candidates helped him choose a result he could not specify precisely in advance. [05:55–08:01](https://www.youtube.com/watch?v=kQguG4YS0d0&t=355s)
+- **Make communication and execution available away from the laptop.** He favors dictation for conveying intent and cloud environments, called orbs in Amp, so work is not tied to keeping a laptop open. He describes moving his team's workflow away from editor and CLI use toward cloud agents accessible through web and native apps. This is his team's reported transition, not evidence that all development has moved to the cloud. [10:01–11:05](https://www.youtube.com/watch?v=kQguG4YS0d0&t=601s), [12:07–14:58](https://www.youtube.com/watch?v=kQguG4YS0d0&t=727s)
+- **Slack favors the latest models and generous token budgets.** He argues that restricting model spending undermines the value of expensive human time. His claim that cheaper models fail on 10% of tasks is not accompanied by evaluation data; it is part of his recommendation, not an established error rate. [11:05–12:57](https://www.youtube.com/watch?v=kQguG4YS0d0&t=665s)
+
+## Ask for evidence suited to the failure
+
+- **A screenshot cannot establish that an icon stopped moving.** Slack asked an agent to analyze every frame of a recording to check a jiggling icon. His phrase "irrefutable proof" means making the agent produce evidence appropriate to the suspected defect; neither that prompt nor a recording guarantees that software has no bugs. [06:58–08:59](https://www.youtube.com/watch?v=kQguG4YS0d0&t=418s)
+- **Run small evaluations of nondeterministic behavior.** When changing system prompts, tools, or instructions, the team asks Amp to exercise the local development app several times and inspect whether the intended behavior occurs. Slack mentions three or ten runs and extending checks across models. These are focused probes, not a statistically established reliability threshold. [08:59–11:05](https://www.youtube.com/watch?v=kQguG4YS0d0&t=539s)
+- **Leave intent where future agents can find it.** Without exclusive code ownership, Slack wants tests and nearby explanations of why code works a certain way to help later agents avoid mistakes. The organizational aim is to let teammates fix problems across the codebase without waiting for another team's permission. [14:58–16:47](https://www.youtube.com/watch?v=kQguG4YS0d0&t=898s)
+
+## Keep the agent involved after shipping
+
+- **Use feature flags to limit initial exposure and gather feedback.** A feature flag lets selected users enable new behavior before a wider release. Slack describes agents checking who enabled it, whether usage changed, whether users encountered errors, and whether they turned it off. Agents can also request feedback by email and read the responses. These investigations depend on integrations with production data and logs. He describes read-only access to many database tables and human-approved, three-hour temporary grants, but also says "by default it can access anything." The transcript does not reconcile those access descriptions. [16:47–19:26](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1007s)
+- **Keep threads open to monitor rollouts.** An agent thread can retain the investigation and follow the change into production. Slack gives an example in which monitoring exposed errors and the team reverted the change. He does not establish that rollback was autonomous. [18:25–19:26](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1105s), [21:22–22:25](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1282s)
+- **Connect bug reports to investigation and user follow-up.** Amp's internal flow starts a thread with diagnostics, logs, and access to the particular reported thread. The agent can investigate, help ship a fix, and prepare an email or credit grant. Slack explicitly says email text requires human review and confirmation. These capabilities come from the team's integrations, not from the model alone. [22:25–24:16](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1345s)
+
+## Replace pull-request review with a different collaboration process?
+
+Slack says Amp does no code review or pull requests, ships about 90 times a day, and takes about seven minutes from push to production. Those are speaker-reported figures. He argues that required review introduces delay, but the talk supplies no comparative defect or incident data establishing that removing review improves safety. [04:03–05:55](https://www.youtube.com/watch?v=kQguG4YS0d0&t=243s), [19:26–21:22](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1166s)
+
+Asked about financial code, Slack asserts that banks care about regulatory acceptance and product outcomes rather than code review itself. He contrasts them with software companies attached to established processes. This is his characterization of customers, not evidence of regulatory approval or equivalent safety. [20:19–21:22](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1219s)
+
+His proposed transition for other teams is to risk-score changes and start by omitting review on 20% of pull requests. He does not define the scoring method or a validated cutoff. For collaboration, he favors inviting teammates into the running agent thread, where they can discuss the issue, ask the agent questions, and make decisions together. Avoiding a mandatory pull-request gate does not mean avoiding all teammate feedback. [21:22–22:25](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1282s), [24:16–25:10](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1456s)
+
+The live example starts with Slack dictating a conference-credit offer and authorizing a push to `main` without his review. Near the end, he reports that it has pushed and says the offer should appear soon. He wishes it had finished faster but attributes the wait to allowing more verification. The transcript does not confirm successful redemption or completed deployment. [00:04–02:09](https://www.youtube.com/watch?v=kQguG4YS0d0&t=4s), [28:14–29:35](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1694s)
+
+## Organizational claims and limits
+
+- **Standardizing on one agent can make shared integrations worthwhile.** Slack argues that using the same agent lets a team build common support, logging, and collaboration workflows. He acknowledges the self-interest of an agent vendor making this argument and says it need not be Amp. This is a case for shared tooling, not a measured comparison of single-agent and multi-agent teams. [23:21–25:10](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1401s)
+- **Amp's small-team model has specific conditions.** Slack describes 21 people, no roadmap, one meeting a week, broad freedom to choose work, and a co-founder model built on people who have worked together for at least a year. He links trust and ownership to willingness to experiment. The talk does not isolate agents as the cause of those organizational outcomes. [02:09–04:03](https://www.youtube.com/watch?v=kQguG4YS0d0&t=129s), [13:54–16:47](https://www.youtube.com/watch?v=kQguG4YS0d0&t=834s), [25:10–27:10](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1510s)
+- **His broader economic conclusion is a forecast.** By saying "software is dead," Slack means that more technical talent will work on problems in manufacturing, finance, and other industries rather than software for software companies. He also points to custom internal tools, including his slide app. Neither claim establishes that software demand or engineering work disappears. [27:10–29:13](https://www.youtube.com/watch?v=kQguG4YS0d0&t=1630s)

@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    178: {
+      tier: 'useful',
+      reason:
+        'Connects verification, rollout monitoring, support integrations, and shared agent threads to team organization; the no-review policy remains a first-party position without comparative safety data.',
+    },
     176: {
       tier: 'useful',
       reason:
