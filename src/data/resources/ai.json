@@ -1,5 +1,19 @@
 [
   {
+    "id": 179,
+    "primarySection": "economics-industry",
+    "title": "Where’s the Beef? Blackstone's Jon Gray on the Payoff From the Enormous AI CapEx Spend | Sept '26",
+    "subtitle": "Portfolio-company returns, physical supply constraints, and the case for AI infrastructure investment",
+    "url": "https://www.youtube.com/watch?v=4rhShOPHl50",
+    "description": "Jon Gray argues that returns from AI adoption will sustain demand for chips, power, and data centers. He cites Blackstone portfolio-company examples, distinguishes today's contracted demand from historical infrastructure overbuilding, and discusses disruption and investment risks. A capital allocator's investment thesis with first-party performance claims and forecasts, not independent proof that aggregate AI capital expenditure will pay off.",
+    "type": "video",
+    "source": "Blackstone",
+    "date": "2026-09-20",
+    "addedDate": "2026-10-17",
+    "duration": "31m",
+    "topics": ["business-adoption"]
+  },
+  {
     "id": 176,
     "primarySection": "concepts-capabilities",
     "title": "Gemini 4 Argon: What’s new and what’s next",

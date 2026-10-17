@@ -827,6 +827,11 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    179: {
+      tier: 'useful',
+      reason:
+        'Connects reported enterprise returns to physical infrastructure constraints and investment risks, adding a capital allocator perspective; selected company results do not establish aggregate returns.',
+    },
     176: {
       tier: 'useful',
       reason:
