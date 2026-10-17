@@ -7,7 +7,7 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
-    179: {
+    180: {
       tier: 'useful',
       reason:
         'Connects cloud-agent execution with staged migrations, scoped credentials, and customizable internal apps; the CI and code-review arguments remain first-party opinions without comparative reliability data.',

@@ -1,6 +1,6 @@
 ---
 title: 'Orbs: Shifting Coding to Cloud — Quinn Slack, Amp Code'
-resourceId: 179
+resourceId: 180
 date: '2026-09-07'
 ---
 
