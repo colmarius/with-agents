@@ -18,6 +18,24 @@
     ]
   },
   {
+    "id": 181,
+    "addedDate": "2026-10-17",
+    "primarySection": "workflows",
+    "title": "Matt Pocock: The Most Valuable Skill to Learn in the Age of AI",
+    "subtitle": "Clear communication, maintainable code, and observable agent work",
+    "url": "https://www.youtube.com/watch?v=Z8lf5oWKfj0",
+    "description": "Matt Pocock discusses design interviews, shared domain language, and improving the code and feedback available to agents. His video-editor case contrasts a failed spec-centered workflow with renewed attention to maintainability and browser access. Includes primary-source learning and gradual delegation. Practitioner experience, not controlled comparisons; based on a recovered English transcript with unverified caption kind.",
+    "type": "podcast",
+    "source": "Nate Herk | AI Automation",
+    "date": "2026-10-16",
+    "duration": "44m 50s",
+    "topics": [
+      "prompting-orchestration",
+      "architecture-maintainability",
+      "review-verification"
+    ]
+  },
+  {
     "id": 178,
     "addedDate": "2026-10-16",
     "primarySection": "teams-ecosystem",

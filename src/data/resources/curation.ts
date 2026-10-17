@@ -12,6 +12,11 @@ export const codingCuration = {
       reason:
         'Connects cloud-agent execution with staged migrations, scoped credentials, and customizable internal apps; the CI and code-review arguments remain first-party opinions without comparative reliability data.',
     },
+    181: {
+      tier: 'useful',
+      reason:
+        'Adds a concrete account of spec-centered development failing and browser access improving agent feedback, alongside shared domain language; outcomes are practitioner-reported, not comparative evidence.',
+    },
     178: {
       tier: 'useful',
       reason:
