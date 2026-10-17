@@ -15,7 +15,7 @@ export const codingCuration = {
     181: {
       tier: 'useful',
       reason:
-        'Adds a concrete account of spec-centered development failing and browser access improving agent feedback, alongside shared domain language; outcomes are practitioner-reported, not comparative evidence.',
+        'Adds a concrete account of a spec-centered workflow that failed for Pocock and browser access improving agent feedback, alongside shared domain language; outcomes are practitioner-reported, not comparative evidence.',
     },
     178: {
       tier: 'useful',
