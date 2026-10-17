@@ -1,5 +1,23 @@
 [
   {
+    "id": 179,
+    "addedDate": "2026-10-17",
+    "primarySection": "workflows",
+    "title": "Orbs: Shifting Coding to Cloud — Quinn Slack, Amp Code",
+    "url": "https://www.youtube.com/watch?v=hvwtHZ5E27c",
+    "description": "Quinn Slack discusses cloud sandboxes for parallel agent work, staged production migrations with log monitoring, short-lived read-only credentials, and agent-customizable internal apps. Includes a debate over whether agent-run tests can replace CI and Amp's no-mandatory-review policy. First-party experience and forecasts, not comparative security or reliability evidence.",
+    "type": "podcast",
+    "source": "Latent Space",
+    "date": "2026-09-07",
+    "duration": "40m 13s",
+    "topics": [
+      "prompting-orchestration",
+      "tools-harnesses",
+      "safety-permissions",
+      "review-verification"
+    ]
+  },
+  {
     "id": 178,
     "addedDate": "2026-10-16",
     "primarySection": "teams-ecosystem",
