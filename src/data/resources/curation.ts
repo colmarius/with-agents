@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    182: {
+      tier: 'useful',
+      reason:
+        'Connects engineering fundamentals and customer context to product decisions, with stage-dependent planning advice; labor-market and learning claims remain attributed rather than independently verified.',
+    },
     180: {
       tier: 'useful',
       reason:

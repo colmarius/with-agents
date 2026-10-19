@@ -1,5 +1,22 @@
 [
   {
+    "id": 182,
+    "addedDate": "2026-10-19",
+    "primarySection": "teams-ecosystem",
+    "title": "Andrew Ng on Coding Agents and Deciding What to Build",
+    "url": "https://www.youtube.com/watch?v=qeMMnOiF51A",
+    "description": "Andrew Ng explains an AI engineering skills map, why engineering fundamentals help developers steer coding agents, and how direct customer feedback expands their role in product decisions. He recommends adapting planning depth to project stage and risk, and distinguishes completing work with AI from learning. Practitioner guidance and attributed research claims, not a comparative productivity study.",
+    "type": "video",
+    "source": "Supabase Library",
+    "date": "2026-10-12",
+    "duration": "26m 17s",
+    "topics": [
+      "collaboration-teams",
+      "architecture-maintainability",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 180,
     "addedDate": "2026-10-17",
     "primarySection": "workflows",
