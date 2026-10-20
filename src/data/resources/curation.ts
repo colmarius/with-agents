@@ -12,6 +12,11 @@ export const codingCuration = {
       reason:
         'Explains task-level crash recovery and unsafe retry boundaries, then separates multiplayer plumbing from plugin trust; the experimental design is described by its creators rather than independently validated.',
     },
+    185: {
+      tier: 'context',
+      reason:
+        'Offers a dated view of software and AI news, including model comparisons and developer-industry changes; short explanations, satire, and reported claims make it background reading rather than a validated engineering guide.',
+    },
     182: {
       tier: 'useful',
       reason:

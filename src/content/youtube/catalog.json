@@ -10,9 +10,78 @@
       "id": "matt-pocock",
       "slug": "matt-pocock",
       "displayName": "Matt Pocock"
+    },
+    {
+      "id": "fireship",
+      "slug": "fireship",
+      "displayName": "Fireship"
     }
   ],
   "playlists": [
+    {
+      "id": "UUsBjURrPoezykLs9EqgamOA",
+      "slug": "fireship",
+      "title": "Fireship: Software and AI News",
+      "transcriptLanguage": "en",
+      "summaryLanguage": "en",
+      "curation": {
+        "status": "reviewed",
+        "videoIds": [
+          "b2tjnxX8IHU",
+          "l3L_lETiSzc",
+          "QZVzuq28eFw",
+          "wajoP_5Cpw8",
+          "WrCjAAl9okA",
+          "_5p1_TNSWqQ",
+          "No-JPdFvYWU",
+          "I_KVMFrUtPk",
+          "OuNKBjuV7A4",
+          "c1rPlzxSZ8E",
+          "ylO0DQeVEBQ",
+          "TbkUKCm3CHQ",
+          "LoLYw--s-5w",
+          "7r4ikZHm9AI",
+          "aspmNhKAFMc",
+          "2Xiljy4xzbc",
+          "Y5rSSvXfL4g",
+          "FluKUJyeYD8",
+          "0Rp9KJCEIvg",
+          "r-tzcMlQISk",
+          "UuqSy1jPSUw",
+          "xBByvFrqmWU",
+          "iuZPTE5qsJY",
+          "E7la7-dtfVM",
+          "G55HSGpuh1M",
+          "aB5LGrHISqY",
+          "2X2V3xv_jik",
+          "jxGJT1weu4w",
+          "KOpTWx1Eou4",
+          "YP73B9D20V4",
+          "M51asSwRLxA",
+          "5D4Zqp9GLSc",
+          "CXSvKcLovAk",
+          "URKml8lgw8Y",
+          "KGtko3y2RXQ",
+          "7B0ydm64cV8",
+          "a2i9h2ip-nY",
+          "Sntj4HmuykI",
+          "ML3q7Ok4hJg",
+          "ey_GaPdC9zk",
+          "1PBRhm5ZnjU",
+          "0pgCBV8CTZY",
+          "JfPWbttemYE",
+          "qPuzWFvRajk",
+          "9OQ5vaYbGV0",
+          "3tbB2dffx0s",
+          "gwTQLZSIlsU",
+          "MtxP2pyCvYA",
+          "lkifbWtxxlk",
+          "d53Zk28esmU",
+          "FM5-R4VPArw",
+          "jeA-KBv0b68"
+        ]
+      }
+    },
     {
       "id": "UUyU5wkjgQYGRB0hIHMwm2Sg",
       "slug": "syntax-agent-workflows",
@@ -509,6 +578,10 @@
     {
       "authorId": "matt-pocock",
       "playlistIds": ["UUswG6FSbgZjbWtdf_hMLaow"]
+    },
+    {
+      "authorId": "fireship",
+      "playlistIds": ["UUsBjURrPoezykLs9EqgamOA"]
     }
   ]
 }

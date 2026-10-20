@@ -18,6 +18,22 @@
     ]
   },
   {
+    "id": 185,
+    "primarySection": "teams-ecosystem",
+    "title": "Fireship: Software and AI News",
+    "subtitle": "Regular videos from April–October 2026",
+    "url": "https://www.youtube.com/playlist?list=UUsBjURrPoezykLs9EqgamOA",
+    "description": "A dated collection of Fireship's regular videos published from 20 April through 20 October 2026, with individual English summaries. Covers software, AI, and technology news. The summaries distinguish technical explanations from reported claims, subjective demonstrations, predictions, satire, and sponsorships. This is an editorial selection from the channel's uploads, not an official course or a summary of its full archive.",
+    "type": "playlist",
+    "source": "Fireship",
+    "date": "2026-10-20",
+    "topics": [
+      "open-source-ecosystem",
+      "models-evaluation",
+      "business-adoption"
+    ]
+  },
+  {
     "id": 182,
     "addedDate": "2026-10-19",
     "primarySection": "teams-ecosystem",
