@@ -4,7 +4,7 @@ title: "The creator of OpenClaw: \"I ship code I don't read\""
 resourceId: 35
 date: "2026-01-28"
 collection: "pragmatic-engineer-selected-conversations"
-order: 12
+order: 13
 videoId: "8lF7HmQ_RgY"
 ---
 

@@ -2,6 +2,7 @@
 title: "The Pragmatic Engineer Podcast"
 status: reviewed
 coveredVideoIds:
+  - MDUYSMJmi8A
   - KZSzF0KEFRg
   - 4DhcSPkEbwI
   - sLSTM9znQNs
@@ -24,10 +25,11 @@ coveredVideoIds:
 
 ## Coverage
 
-The full manifest tracks 78 available videos for membership and drift. This overview covers all 18 human-selected videos, all 18 of which have reviewed source evidence: 12 source-library summaries and 6 reused transcript/public-summary chains. All 18 are incorporated and 0 selected videos remain pending. The other 60 manifest entries are deliberately unselected and create no transcript or summary obligation. The Pragmatic Engineer curates the playlist; speakers and affiliations vary by video. The three September additions appear newest first, followed by the existing editorial sequence.
+The full manifest tracks 80 available videos for membership and drift. This overview incorporates all 19 human-selected videos: 12 source-library summaries and 7 reused transcript/public-summary chains. All 19 selected videos have reviewed source evidence and are incorporated; no selected video IDs remain pending. The other 61 manifest entries are deliberately unselected and create no transcript or summary obligation. The Pragmatic Engineer curates the playlist; speakers and affiliations vary by video. The October addition and three September additions appear newest first, followed by the existing editorial sequence. The Uber episode uses the publisher's English transcript, whose timestamps are not aligned to YouTube; its public summary discloses that basis and uses non-seeking publisher citations.
 
 ## Current Thesis
 
+- Uday Kiran Medisetty, distinguished engineer at Uber, describes how standardized workspaces, service contracts, organizational context, and test infrastructure support agents across the development lifecycle. He says Uber still requires human PR review and describes feature-level productivity measurement as ongoing work ([summary](../../../summaries/coding-with-agents/uber-ai-infra.md)).
 - Maggie Appleton, discussing her prototyping work at GitHub Next, combines paper sketches, browser prototypes, and agent-built controls to make design choices visible; her shared decision interfaces remain proposals rather than established solutions ([summary](../../../summaries/coding-with-agents/design-engineering-maggie-appleton.md)).
 - Matt Pocock describes reusable skills that interview the developer, save specifications across sessions, and give agents executable feedback; he scales planning to the cost of correction and warns that automated review still needs evaluation ([summary](../../../summaries/coding-with-agents/ai-skills-with-matt-pocock.md)).
 - Tibo Sottiaux of OpenAI explains how separating Codex's agent core from its interfaces supports reuse across products, while model improvements change which instructions the harness needs; his capability claims and forecasts remain product-team reports, not independently validated findings ([summary](../../../summaries/coding-with-agents/building-codex-with-tibo-sottiaux.md)).
@@ -57,6 +59,7 @@ The full manifest tracks 78 available videos for membership and drift. This over
 
 ## Emerging Ideas
 
+- Editorial: Medisetty's account adds concrete organizational infrastructure to the selection's feedback-loop theme: agents can reuse branch-routing environments, captured service exchanges, and existing ownership records. These mechanisms depend on Uber's earlier platform investment, not only on model capability ([summary](../../../summaries/coding-with-agents/uber-ai-infra.md)).
 - Editorial: Appleton's visual decision tools and Pocock's interview skills offer different ways to resolve intent before implementation. Sottiaux likewise separates discussion of a change's purpose from checking its code; none establishes that tests or a polished prototype can decide what a team should build ([Appleton summary](../../../summaries/coding-with-agents/design-engineering-maggie-appleton.md); [Pocock summary](../../../summaries/coding-with-agents/ai-skills-with-matt-pocock.md); [Sottiaux summary](../../../summaries/coding-with-agents/building-codex-with-tibo-sottiaux.md)).
 - Editorial: Cherny's parallel plan-and-implement sessions and Horthy's intentionally compacted research, design, and planning stages both shift human effort toward shaping context and architecture before agents produce expensive-to-redirect code ([Cherny summary](../../videos/julbw1JuAz0/summary.md); [Horthy summary](../../videos/Usufn8IQJgw/summary.md)).
 - Editorial: Zechner and Ronacher's self-modifying Pi harness extends context engineering into the tool itself: an agent can add project-specific capabilities, but each extension also increases the system future agents must understand ([Pi summary](../../../summaries/coding-with-agents/building-pi-and-what-makes-self-modifying-software-so-fascinating.md)).

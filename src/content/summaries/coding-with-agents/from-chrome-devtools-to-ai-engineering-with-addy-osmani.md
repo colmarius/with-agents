@@ -4,7 +4,7 @@ title: "From Chrome DevTools to AI Engineering, with Addy Osmani"
 resourceId: 35
 date: "2026-08-19"
 collection: "pragmatic-engineer-selected-conversations"
-order: 18
+order: 19
 videoId: "2fyPnxKu8ZM"
 ---
 

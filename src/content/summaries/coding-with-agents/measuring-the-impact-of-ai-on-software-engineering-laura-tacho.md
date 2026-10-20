@@ -4,7 +4,7 @@ title: "Measuring the impact of AI on software engineering – with Laura Tacho"
 resourceId: 35
 date: "2025-07-23"
 collection: "pragmatic-engineer-selected-conversations"
-order: 8
+order: 9
 videoId: "xHHlhoRC8W4"
 ---
 

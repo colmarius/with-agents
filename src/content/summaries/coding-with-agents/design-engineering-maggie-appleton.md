@@ -4,7 +4,7 @@ title: "Design Engineering with Maggie Appleton"
 resourceId: 35
 date: "2026-09-23"
 collection: "pragmatic-engineer-selected-conversations"
-order: 1
+order: 2
 videoId: "KZSzF0KEFRg"
 ---
 

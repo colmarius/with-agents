@@ -200,7 +200,7 @@ export const codingCuration = {
     35: {
       tier: 'essential',
       reason:
-        'Across the selected Pragmatic Engineer conversations, episodes cover measurement, property-based testing, and bounded agent loops.',
+        'Connects measurement, property-based testing, bounded agent loops, and developer-platform feedback; company reports are not controlled findings.',
     },
     74: {
       tier: 'essential',

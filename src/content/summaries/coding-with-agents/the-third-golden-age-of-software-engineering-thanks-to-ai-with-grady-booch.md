@@ -4,7 +4,7 @@ title: "The third golden age of software engineering – thanks to AI, with Grad
 resourceId: 35
 date: "2026-02-04"
 collection: "pragmatic-engineer-selected-conversations"
-order: 13
+order: 14
 videoId: "OfMAtaocvJw"
 ---
 

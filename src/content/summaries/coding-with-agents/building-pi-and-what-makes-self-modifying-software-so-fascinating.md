@@ -4,7 +4,7 @@ title: "Building Pi, and what makes self-modifying software so fascinating"
 resourceId: 35
 date: "2026-04-29"
 collection: "pragmatic-engineer-selected-conversations"
-order: 7
+order: 8
 videoId: "n5f51gtuGHE"
 ---
 

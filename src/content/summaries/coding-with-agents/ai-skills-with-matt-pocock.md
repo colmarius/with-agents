@@ -4,7 +4,7 @@ title: "AI Skills with Matt Pocock"
 resourceId: 35
 date: "2026-09-17"
 collection: "pragmatic-engineer-selected-conversations"
-order: 2
+order: 3
 videoId: "4DhcSPkEbwI"
 ---
 
