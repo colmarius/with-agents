@@ -842,6 +842,11 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    183: {
+      tier: 'useful',
+      reason:
+        "Connects AI accountability and intimate persuasion to smaller countries' policy choices and infrastructure dependence; forecasts and proposed safeguards remain Harari's arguments, not validated outcomes.",
+    },
     179: {
       tier: 'useful',
       reason:

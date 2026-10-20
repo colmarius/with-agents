@@ -1,5 +1,19 @@
 [
   {
+    "id": 183,
+    "primarySection": "implications-risks",
+    "title": "Democracy in the Age of AI | 30th Forum 2000 Conference",
+    "subtitle": "Yuval Noah Harari on political choice, AI accountability, and technological dependence",
+    "url": "https://www.youtube.com/watch?v=8iuDWlySHTo",
+    "description": "Yuval Noah Harari and Robert Guest discuss AI's effects on democratic institutions, surveillance, intimate persuasion, jobs, and national sovereignty. Harari proposes restrictions on AI personhood and impersonation, human accountability, and cooperation among smaller countries. Political analysis and speculative scenarios, not demonstrated predictions or validated safeguards.",
+    "type": "video",
+    "source": "Forum 2000",
+    "date": "2026-10-16",
+    "addedDate": "2026-10-20",
+    "duration": "1h 3m",
+    "topics": ["society-governance", "information-trust", "business-adoption"]
+  },
+  {
     "id": 179,
     "primarySection": "economics-industry",
     "title": "Where’s the Beef? Blackstone's Jon Gray on the Payoff From the Enormous AI CapEx Spend | Sept '26",
