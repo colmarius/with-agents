@@ -265,7 +265,7 @@ export const codingCuration = {
     20: {
       tier: 'useful',
       reason:
-        'Provides remote-agent operating experience alongside product-launch context.',
+        'Provides remote-agent operating and team-coordination practices, with self-reported outcomes and product-launch context.',
     },
     21: {
       tier: 'useful',
