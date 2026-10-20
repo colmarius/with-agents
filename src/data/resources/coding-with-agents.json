@@ -1,5 +1,23 @@
 [
   {
+    "id": 184,
+    "addedDate": "2026-10-20",
+    "primarySection": "agent-systems",
+    "title": "Understanding Pi Durable with Mario & Armin of Earendil",
+    "url": "https://www.youtube.com/watch?v=7mBQknCnovM",
+    "description": "Mario Zechner and Armin Ronacher explain Pi Durable's explicit tasks, crash recovery, replay-safe tools, and building blocks for subagents and shared sessions. They distinguish plugin compatibility from client security and explain why self-improving harnesses need constrained goals. First-party design discussion of experimental systems, not an independent reliability evaluation.",
+    "type": "podcast",
+    "source": "Fragmented - AI Developer Podcast",
+    "date": "2026-10-20",
+    "duration": "1h 0m 43s",
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "safety-permissions",
+      "review-verification"
+    ]
+  },
+  {
     "id": 182,
     "addedDate": "2026-10-19",
     "primarySection": "teams-ecosystem",

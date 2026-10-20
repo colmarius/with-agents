@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    184: {
+      tier: 'useful',
+      reason:
+        'Explains task-level crash recovery and unsafe retry boundaries, then separates multiplayer plumbing from plugin trust; the experimental design is described by its creators rather than independently validated.',
+    },
     182: {
       tier: 'useful',
       reason:
