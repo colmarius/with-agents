@@ -20,6 +20,22 @@ All 1,669 returned segments are retained in order, grouped mechanically with the
 
 These are the publisher's media timestamps, not verified YouTube timestamps. They do not align with the page's linked YouTube chapters: the YouTube chapter at 1:30:40 is labeled "Uday's favorite new products", while the publisher transcript reaches the closing remarks near that time. Do not use these anchors as YouTube seek links without independently establishing alignment. Direct YouTube retrieval in this orb failed: the repository capture command reported no accessible transcripts, and yt-dlp (also with Node.js enabled) required sign-in to confirm the client was not a bot.
 
+## YouTube chapter citation evidence
+
+On 2026-10-21, the canonical YouTube watch page was fetched with curl. Its description and `ytInitialData` chapter renderers agreed on the chapter starts below. The public summary uses these as chapter navigation, not as aligned transcript or exact claim-level timestamps. YouTube playback and caption retrieval still required bot-confirmation sign-in; no audio alignment was performed. These markers are separate from the publisher transcript anchors below.
+
+| YouTube chapter start | Publisher's chapter title |
+| --- | --- |
+| 16:03 | DevPods |
+| 19:28 | Building for AI agents |
+| 29:27 | MCP gateway |
+| 34:37 | Agent Skills repo |
+| 38:46 | The context graph and Cortana |
+| 50:45 | Minion |
+| 54:46 | Testing and code review with Bazel, Slate, and Capri |
+| 1:12:26 | Edge Gateway, Shepherd, and Wisdom |
+| 1:21:33 | The changing role of engineer and measuring productivity |
+
 ## Transcript
 
 [00:00:00] What kind of internal tools do software engineers at Uber use to build software today? We get an exclusive, insider, and visuals-heavy look from one of Uber's longest-tenured engineers, Udaykira Mendicetti. Today, Uday leads much of the work on agentic AI at Uber. In this conversation, we get into internal developer systems Uber has built and used pre-AI like UOwn, M3DB, Michelangelo, Cadence, Morpheus, and others. AI Foundational Systems is a company built like its MCP Gateway, AI Guard, and AI FX. Recent systems used by nearly all engineers like Minion, CodeInbox, Slate, Shepard, Wisdom, and others. If you want to understand what AI native development looks inside of a modern tech company with thousands of engineers like Uber, and why it's much easier to retrofit AI on top of BattleTest's developer Infra, this episode is for you. This episode is presented by TurboPuffer, Vector, and Full-Text Search built on object storage.

@@ -25,7 +25,7 @@ coveredVideoIds:
 
 ## Coverage
 
-The full manifest tracks 80 available videos for membership and drift. This overview incorporates all 19 human-selected videos: 12 source-library summaries and 7 reused transcript/public-summary chains. All 19 selected videos have reviewed source evidence and are incorporated; no selected video IDs remain pending. The other 61 manifest entries are deliberately unselected and create no transcript or summary obligation. The Pragmatic Engineer curates the playlist; speakers and affiliations vary by video. The October addition and three September additions appear newest first, followed by the existing editorial sequence. The Uber episode uses the publisher's English transcript, whose timestamps are not aligned to YouTube; its public summary discloses that basis and uses non-seeking publisher citations.
+The full manifest tracks 80 available videos for membership and drift. This overview incorporates all 19 human-selected videos: 12 source-library summaries and 7 reused transcript/public-summary chains. All 19 selected videos have reviewed source evidence and are incorporated; no selected video IDs remain pending. The other 61 manifest entries are deliberately unselected and create no transcript or summary obligation. The Pragmatic Engineer curates the playlist; speakers and affiliations vary by video. The October addition and three September additions appear newest first, followed by the existing editorial sequence. The Uber episode uses the publisher's English transcript, whose timestamps are not aligned to YouTube; its public summary discloses that basis and links to the publisher's verified YouTube chapter starts rather than inferred claim-level timestamps.
 
 ## Current Thesis
 
