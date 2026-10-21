@@ -45,14 +45,14 @@ export const publicSourceExceptions = [
     id: '-czzyDaV9PA',
     path: 'src/content/summaries/coding-with-agents/syntax-weekly-pi-radius-agent-workflows.md',
     reason:
-      'Existing editorially reviewed standalone summary backed by its matching English transcript. Tracking Syntax uploads does not add this weekly roundup to the six-video curated collection.',
+      'Existing editorially reviewed standalone summary backed by its matching English transcript. Tracking Syntax uploads does not add this weekly roundup to the curated collection.',
   },
   {
     kind: 'video',
     id: '-czzyDaV9PA',
     path: 'src/data/resources/coding-with-agents.json',
     reason:
-      'Resource 143 retains the transcript-backed standalone Syntax Weekly summary; this upload is intentionally outside the reviewed six-video collection.',
+      'Resource 143 retains the transcript-backed standalone Syntax Weekly summary; this upload is intentionally outside the reviewed collection.',
   },
   {
     kind: 'video',

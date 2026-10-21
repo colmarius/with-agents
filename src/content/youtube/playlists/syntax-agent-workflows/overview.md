@@ -2,6 +2,7 @@
 title: "Syntax: Practical Agent Workflows"
 status: reviewed
 coveredVideoIds:
+  - aYz9G3__Z4g
   - GsLyhrxaMIo
   - 6tZ_R4m_Oc4
   - S916GQVhRb8
@@ -12,11 +13,11 @@ coveredVideoIds:
 
 ## Coverage
 
-- Manifest: 1,437 available entries from Syntax's channel uploads playlist.
-- Reviewed curation: 6 selected videos; 1,431 unselected entries create no capture or summary obligations.
-- Captured: all 6 selected English auto-generated transcripts.
-- Summaries: 6 reviewed standalone summaries; dedicated Oracle reviews completed and citation/attribution corrections applied.
-- Incorporated: all 6 summaries, reusing public summaries and transcripts without duplicate source-library files.
+- Manifest: 1,457 available entries from Syntax's channel uploads playlist.
+- Reviewed curation: 7 selected videos; 1,450 unselected entries create no capture or summary obligations.
+- Captured: all 7 selected English auto-generated transcripts.
+- Summaries: 7 reviewed public summaries; dedicated source-fidelity and readability review completed for the software-factory addition and revised overview.
+- Incorporated: all 7 summaries, reusing public summaries and transcripts without duplicate source-library files.
 - Pending selected video IDs: none.
 - This is an editorial selection, not an official Syntax course. Syntax is the source channel; speakers vary by video.
 - Public navigation uses descending publication dates, not a claimed teaching sequence. For prerequisites, start with the MCP explainer, then the server walkthrough; choose the other videos by workflow need.
@@ -27,6 +28,7 @@ coveredVideoIds:
 
 ## Stable Ideas
 
+- Swamp Club CEO Adam Jacob argues that automated development needs black-box acceptance tests and explicit architectural patterns, with repeated failures used to improve the production process ([summary](../../../summaries/coding-with-agents/wtf-is-a-software-factory.md)).
 - Zed co-founder Nathan Sobo describes linking evolving code versions to conversations so teams can discuss agent work before a commit ([summary](../../../summaries/coding-with-agents/workflow-of-the-future-with-zed.md)).
 - Syntax hosts Wes Bos and Scott distinguish remote chat access from moving the whole development environment; agents need repository access, installed tools, browsers, and credentials where execution happens ([summary](../../../summaries/coding-with-agents/syntax-remote-coding-agents.md)).
 - Syntax hosts Wes and Scott argue that generation can outpace human review and amplify maintenance debt; the motivating high-volume PR example is a listener report, not an audited team study ([summary](../../../summaries/coding-with-agents/syntax-ai-code-review.md)).
@@ -40,9 +42,10 @@ coveredVideoIds:
 
 ## Revisions and Tensions
 
+- Swamp Club CEO Adam Jacob questions the value of unit tests in some agent-heavy workflows but describes their removal as a possible experiment, not a completed result. He also says he has seen no large company finish the organizational transition he proposes ([summary](../../../summaries/coding-with-agents/wtf-is-a-software-factory.md)).
 - Zed co-founder Nathan Sobo distinguishes converging file replicas from ensuring that combined edits work correctly together ([summary](../../../summaries/coding-with-agents/workflow-of-the-future-with-zed.md)).
 - Syntax host Wes Bos reports a pull request followed by a failed deployment build and proposes returning build logs to the agent; he had not implemented that loop ([summary](../../../summaries/coding-with-agents/syntax-remote-coding-agents.md)).
-- Editorial: The MCP tutorials reflect July 2025 clients and SDKs, while the other videos span December 2025 through August 2026. Read compatibility statements as dated accounts, not as a current setup reference. No controlled comparison establishes the collection's productivity or reliability claims.
+- Editorial: The MCP tutorials reflect July 2025 clients and SDKs, while the other videos span December 2025 through October 2026. Read compatibility statements as dated accounts, not as a current setup reference. No controlled comparison establishes the collection's productivity or reliability claims.
 
 ## Practical Implications
 

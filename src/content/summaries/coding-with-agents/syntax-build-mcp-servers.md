@@ -3,7 +3,7 @@ addedDate: '2026-09-15'
 title: "How to Build MCP Servers"
 resourceId: 94
 collection: syntax-agent-workflows
-order: 5
+order: 6
 videoId: "CCaUnet8SB4"
 date: "2025-07-16"
 ---

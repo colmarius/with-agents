@@ -3,7 +3,7 @@ addedDate: '2026-09-15'
 title: "LGTM, Ship It: The AI Code Review Problem"
 resourceId: 94
 collection: syntax-agent-workflows
-order: 2
+order: 3
 videoId: "6tZ_R4m_Oc4"
 date: "2026-07-08"
 ---

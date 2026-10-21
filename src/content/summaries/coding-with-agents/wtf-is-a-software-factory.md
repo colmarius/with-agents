@@ -1,0 +1,25 @@
+---
+addedDate: '2026-10-21'
+title: "WTF is a Software Factory?"
+resourceId: 94
+collection: syntax-agent-workflows
+order: 1
+videoId: "aYz9G3__Z4g"
+date: "2026-10-21"
+---
+
+Swamp Club CEO Adam Jacob joins Syntax hosts Scott Tolinski and Wes Bos to describe software factories as product-specific systems that automate the software development lifecycle. His central argument is that faster code generation needs repeatable verification and explicit architecture, not merely more code flowing through an unchanged process.
+
+Based on the saved English auto-generated captions, without original-audio verification. Swamp capabilities and outcomes are vendor or practitioner reports; organizational advice and predictions are proposals, not independently measured results.
+
+### Key points
+
+- **Put repeatable execution in code and call models where judgment is needed.** Jacob contrasts asking an agent to reconstruct a folder-cleaning procedure on every run with having it build reusable components with typed inputs and outputs. In his account, Swamp connects those components into workflows, stores intermediate results, and calls models for steps such as classification. Ordinary scripts can also automate the task; Swamp's claimed benefit is managing modularity, refactoring, and connections as the automation grows. His claim of perfect reliability is not demonstrated by this interview [03:28–09:40](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=208s).
+- **A factory encodes how a particular team produces its product.** Jacob includes work intake, implementation, architectural alignment, regression checks, and delivery in the factory's scope. Teams may feed in tickets or keep a small backlog with more deliberate inputs. The system must reflect the product's design decisions and quality requirements; he does not offer one universal pipeline. Sending larger generated pull requests through unchanged meetings and review practices can simply increase the existing burden [10:18–18:58](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=618s).
+- **Build trust through black-box acceptance tests.** These exercise the deployed or usable product from outside, checking whether its features still behave as intended without relying on internal implementation details. Jacob particularly values keeping them outside the context of the agent changing the code. He argues that they provide a basis for refactoring and increasing automation, while integration tests can still catch failures earlier [14:50–16:55](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=890s), [33:51–36:03](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=2031s), [38:18–39:26](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=2298s).
+- **Treat the unit-test discussion as an open experiment, not a deletion prescription.** Jacob questions their value when humans no longer inspect internals and strong types catch some errors that tests previously caught. He suggests value may differ by language and says Swamp has not yet deleted all its unit tests. His proposed experiment would compare regressions with and without them. His reference to an external TDD study is an attributed account, not a study evaluated here [36:03–38:49](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=2163s).
+- **Give agents an architectural vocabulary and examples.** Jacob recommends recording the application's architecture in a skill and reviewing generated code against it. Domain-driven design is his suggested starting point when a team lacks a vocabulary. His example is an anti-corruption layer: a translation boundary between APIs that insulates one side from changes to the other. A concrete example in the repository helps the agent apply the intended pattern consistently [39:30–43:12](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=2370s).
+- **Use recurring failures to improve the production process.** For accessibility, Jacob proposes a separate adversarial review that checks requirements and sends failures back for revision. When a class of errors escapes, engineers should adjust the factory's checks. He also proposes selecting checks according to the change, such as omitting accessibility review when no user-facing code changes. These judgment-based checks are fallible; his reported Lighthouse score does not establish comprehensive accessibility compliance [43:12–48:32](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=2592s).
+- **Start organizational change with a small team on a real problem.** Jacob suggests giving roughly five people permission to change their work process, demonstrate reliable working software, and then help others adopt what they learn. He says he has seen large companies start this transition, but none finish it. His broader expectation that cheaper software will expand demand, including highly personalized applications, remains a forecast [19:06–28:40](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=1146s), [29:45–33:03](https://www.youtube.com/watch?v=aYz9G3__Z4g&t=1785s).
+
+Full video: <https://www.youtube.com/watch?v=aYz9G3__Z4g>

@@ -4,7 +4,7 @@ title: "Remote Coding Agents"
 resourceId: 94
 date: "2026-03-16"
 collection: syntax-agent-workflows
-order: 3
+order: 4
 videoId: S916GQVhRb8
 ---
 

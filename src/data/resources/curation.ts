@@ -540,7 +540,7 @@ export const codingCuration = {
     94: {
       tier: 'context',
       reason:
-        'Collects practical demonstrations and practitioner accounts; tool capabilities and workflow outcomes are not independently evaluated.',
+        'Connects factory verification and architecture with demonstrations of collaboration, memory, and MCP; workflow outcomes remain practitioner or vendor accounts, not independent evaluations.',
     },
     96: {
       tier: 'context',

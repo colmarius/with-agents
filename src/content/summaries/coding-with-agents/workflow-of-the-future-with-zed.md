@@ -4,7 +4,7 @@ title: "The Workflow of the Future With Zed"
 resourceId: 94
 date: "2026-08-12"
 collection: "syntax-agent-workflows"
-order: 1
+order: 2
 videoId: "GsLyhrxaMIo"
 ---
 
