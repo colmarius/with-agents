@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    186: {
+      tier: 'useful',
+      reason:
+        'Connects customer-derived technical constraints with executable architecture and testing checks for agents; the reduced-code-reading workflow is practitioner experience, not independently validated review guidance.',
+    },
     184: {
       tier: 'useful',
       reason:

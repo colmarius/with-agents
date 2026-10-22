@@ -1,5 +1,22 @@
 [
   {
+    "id": 186,
+    "addedDate": "2026-10-22",
+    "primarySection": "reliability",
+    "title": "Why Hardcore Technical Focus Still Matters Big Time | Uncle Bob (Clean Code, Clean Architecture)",
+    "url": "https://www.youtube.com/watch?v=rNdfQ6mRXAQ",
+    "description": "Robert C. Martin discusses using complexity and coverage metrics, dependency checks, acceptance tests, UI-level QA tests, and mutation testing to steer coding agents. He connects technical judgment to customer needs and describes reading less code while questioning agents and spot-checking their work. Practitioner experience, not comparative evidence that automated checks can replace code review.",
+    "type": "podcast",
+    "source": "The Product Engineers Podcast",
+    "date": "2026-09-29",
+    "duration": "41m 18s",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 184,
     "addedDate": "2026-10-20",
     "primarySection": "agent-systems",
