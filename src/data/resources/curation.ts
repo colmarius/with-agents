@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    187: {
+      tier: 'useful',
+      reason:
+        'Demonstrates a project-specific verification loop with readiness checks, user journeys, evidence, and cleanup; the sponsored walkthrough includes human intervention and does not establish comparative productivity or reliability.',
+    },
     186: {
       tier: 'useful',
       reason:

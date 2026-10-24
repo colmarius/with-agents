@@ -1,5 +1,22 @@
 [
   {
+    "id": 187,
+    "addedDate": "2026-10-24",
+    "primarySection": "workflows",
+    "title": "P-Stack Is Absolutely Incredible (Here’s How I Use It)",
+    "url": "https://www.youtube.com/watch?v=bkY2K303bdQ",
+    "description": "Jan Marshal demonstrates P-Stack task routing, model roles, and a project-specific verification loop while building a live-data product comparison feature. Covers readiness checks, user journeys, evidence capture, cleanup, and human intervention when an API integration fails. Decodo-sponsored walkthrough; productivity and reliability claims are not independently evaluated.",
+    "type": "video",
+    "source": "Jan Marshal",
+    "date": "2026-10-22",
+    "duration": "1h 7m 25s",
+    "topics": [
+      "prompting-orchestration",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
     "id": 186,
     "addedDate": "2026-10-22",
     "primarySection": "reliability",
