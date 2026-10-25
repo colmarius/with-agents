@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    188: {
+      tier: 'useful',
+      reason:
+        'Connects a lightweight harness with distributed execution, long-lived inference requests, workload variation, and agent-readable observability; migration details and outcomes are first-party reports, not a provider comparison.',
+    },
     187: {
       tier: 'useful',
       reason:

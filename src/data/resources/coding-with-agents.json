@@ -1,5 +1,22 @@
 [
   {
+    "id": 188,
+    "addedDate": "2026-10-25",
+    "primarySection": "agent-systems",
+    "title": "Thorsten Ball (Amp): All the Models Want is Tokens and Tools",
+    "url": "https://www.youtube.com/watch?v=7QkzdzwQp20",
+    "description": "Thorsten Ball and Namespace founder Hugo Santos discuss lightweight agent harnesses, separating inference from clients and tool execution, and Amp's move to distributed infrastructure. Covers long-running requests, unusually large threads, agent-readable observability, and engineering judgment. First-party experience and product opinions, not comparative reliability evidence or current provider documentation.",
+    "type": "podcast",
+    "source": "Namespace",
+    "date": "2026-10-15",
+    "duration": "44m 3s",
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 187,
     "addedDate": "2026-10-24",
     "primarySection": "workflows",
