@@ -12,6 +12,11 @@ export const codingCuration = {
       reason:
         'Connects shadow-traffic verification of an agent-assisted API port with model-release evals and separation of harness, execution, and credentials; performance and security outcomes remain first-party claims.',
     },
+    190: {
+      tier: 'useful',
+      reason:
+        'Connects incident-based evaluations with context retrieval, executable testing, and inference costs when building a review agent; model-diversity and performance claims are vendor-reported rather than independently validated.',
+    },
     188: {
       tier: 'useful',
       reason:

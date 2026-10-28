@@ -19,6 +19,19 @@
     ]
   },
   {
+    "id": 190,
+    "addedDate": "2026-10-30",
+    "primarySection": "reliability",
+    "title": "How to Build an AI Code Review Agent - Daksh Gupta, Greptile",
+    "url": "https://www.youtube.com/watch?v=4UtrRVtUN_g",
+    "description": "Daksh Gupta explains how to build a review agent with incident-based evaluations, explicit bug targets, cross-model review, codebase and product context, sandbox testing, and task-specific model routing. Greptile's catch-rate and cost claims are vendor-reported; the talk does not establish that automated review can prove code safe.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-10-26",
+    "duration": "18m 27s",
+    "topics": ["review-verification", "context-memory", "models-evaluation"]
+  },
+  {
     "id": 188,
     "addedDate": "2026-10-25",
     "primarySection": "agent-systems",
