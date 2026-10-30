@@ -185,17 +185,10 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
       ],
     );
   }
-  const { document: oldHarariRoute } = parseHTML(
-    readFileSync('dist/resources/ai/yuval-noah-harari/index.html', 'utf8'),
+  assert.ok(
+    !existsSync('dist/resources/ai/yuval-noah-harari/index.html'),
+    'The retired Harari route is no longer published',
   );
-  const destination = '/resources/ai/implications-risks#yuval-noah-harari';
-  assert.equal(
-    oldHarariRoute
-      .querySelector('meta[http-equiv="refresh"]')
-      ?.getAttribute('content'),
-    `0; url=${destination}`,
-  );
-  assert.ok(oldHarariRoute.querySelector(`a[href="${destination}"]`));
   assert.ok(!byUrl.has('/resources/ai/yuval-noah-harari'));
   assert.deepEqual(
     [
