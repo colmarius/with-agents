@@ -1,5 +1,19 @@
 [
   {
+    "id": 191,
+    "primarySection": "economics-industry",
+    "title": "The Numbers Behind Anthropic",
+    "subtitle": "Shareholder control, adjusted profits, dilution, and future compute obligations",
+    "url": "https://www.youtube.com/watch?v=6ZrgRjdJs3o",
+    "description": "The Plain Bagel examines Anthropic's prospectus, separating revenue growth and operating performance from adjusted earnings, convertible financing, shareholder control, and future infrastructure commitments. His financial commentary highlights how growth can coexist with dilution and funding risk. Figures and disclosures are reported from the video, not independently checked against the filing; this is not an investment recommendation.",
+    "type": "video",
+    "source": "The Plain Bagel",
+    "date": "2026-10-28",
+    "addedDate": "2026-10-30",
+    "duration": "18m",
+    "topics": ["business-adoption"]
+  },
+  {
     "id": 183,
     "primarySection": "implications-risks",
     "title": "Democracy in the Age of AI | 30th Forum 2000 Conference",

@@ -877,6 +877,11 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    191: {
+      tier: 'useful',
+      reason:
+        'Connects AI-provider growth to shareholder control, non-cash expenses, dilution, and future compute payments; the prospectus analysis is attributed commentary rather than an independently verified valuation.',
+    },
     183: {
       tier: 'useful',
       reason:

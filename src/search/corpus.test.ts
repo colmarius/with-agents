@@ -170,7 +170,7 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
   );
   assert.equal(
     allAI.querySelectorAll('div.scroll-mt-24[id^="resource-"]').length,
-    35,
+    36,
   );
   for (const document of [implications, allAI]) {
     assert.deepEqual(
