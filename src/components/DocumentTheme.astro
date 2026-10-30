@@ -1,0 +1,16 @@
+<meta name="color-scheme" content="light" />
+
+<style is:global>
+  @layer base {
+    html {
+      color-scheme: only light;
+    }
+
+    /* Paint the canvas explicitly, including in dark native webviews. */
+    html,
+    body {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+</style>
