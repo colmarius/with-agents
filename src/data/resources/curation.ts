@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    189: {
+      tier: 'useful',
+      reason:
+        'Connects shadow-traffic verification of an agent-assisted API port with model-release evals and separation of harness, execution, and credentials; performance and security outcomes remain first-party claims.',
+    },
     188: {
       tier: 'useful',
       reason:

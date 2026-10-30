@@ -1,5 +1,24 @@
 [
   {
+    "id": 189,
+    "addedDate": "2026-10-30",
+    "primarySection": "agent-systems",
+    "title": "How Anthropic ships the #1 LLM in the World — with Katelyn Lesse and Angela Jiang",
+    "url": "https://www.youtube.com/watch?v=MRQTlwcW-aQ",
+    "description": "Anthropic's Katelyn Lesse and Angela Jiang discuss model-release evaluations, an agent-assisted Python-to-Rust API migration, and managed agents that separate the harness, sandbox, and credentials. Covers verification, CPU constraints, safety controls, and human responsibility for generated work. First-party engineering accounts and product plans, not independent performance or security evidence.",
+    "type": "podcast",
+    "source": "Latent Space",
+    "date": "2026-10-27",
+    "duration": "1h 46m 40s",
+    "topics": [
+      "tools-harnesses",
+      "architecture-maintainability",
+      "review-verification",
+      "safety-permissions",
+      "models-evaluation"
+    ]
+  },
+  {
     "id": 188,
     "addedDate": "2026-10-25",
     "primarySection": "agent-systems",
