@@ -82,5 +82,19 @@
     "date": "2026-10-12",
     "duration": "23 min",
     "topics": ["identity-access", "application-security"]
+  },
+  {
+    "id": 192,
+    "addedDate": "2026-10-28",
+    "primarySection": "application-platform",
+    "title": "Google’s approach to security review with agents",
+    "subtitle": "Threat models, security tests, deterministic hooks, and separate agent review",
+    "url": "https://www.youtube.com/watch?v=czKuoutcwYc",
+    "description": "Google's Nick Galloway and Aron Eidelman discuss Mantis and a security-focused development workflow with host Mollie Pettit. They connect threat models to tests, static checks, separate agent critique, sandbox verification, and reviewed skill updates. First-party practice and demonstrations, not an independent accuracy benchmark.",
+    "type": "video",
+    "source": "Google Cloud Tech",
+    "date": "2026-10-20",
+    "duration": "62 min",
+    "topics": ["safety-permissions", "tools-harnesses"]
   }
 ]

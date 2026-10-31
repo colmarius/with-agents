@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    192: {
+      tier: 'useful',
+      reason:
+        'Connects threat models to agent-written tests, deterministic hooks, separate critique, and reviewed skill updates; the demonstrated development loop is first-party practice rather than measured reliability evidence.',
+    },
     189: {
       tier: 'useful',
       reason:
@@ -776,6 +781,11 @@ export const cloudCuration = {
 
 export const securityCuration = {
   assessmentsByResourceId: {
+    192: {
+      tier: 'useful',
+      reason:
+        'Explains context-aware vulnerability triage and distinguishes fast development checks from deeper exploit verification; reported Mantis results are not an independent detection benchmark.',
+    },
     102: {
       tier: 'essential',
       reason:

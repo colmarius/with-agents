@@ -164,6 +164,7 @@ export const resources: Resource[] = [
 ].map(({ primarySection: _primarySection, ...resource }) => resource);
 
 const codingResourceIds = [
+  192,
   176,
   173,
   164,
@@ -181,6 +182,7 @@ const codingSectionByResourceId = {
   153: 'agent-systems',
   173: 'agent-systems',
   176: 'agent-systems',
+  192: 'reliability',
 };
 
 const cloudResourceIds = [
@@ -195,7 +197,7 @@ const cloudSectionByResourceId = Object.fromEntries(
 );
 
 const securityResourceIds = [
-  98, 57, 100, 101, 102, 103, 105, 106, 177, 58, 104, 37,
+  98, 57, 100, 101, 102, 103, 105, 106, 177, 192, 58, 104, 37,
 ];
 
 const securitySectionByResourceId = {
