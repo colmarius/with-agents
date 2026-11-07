@@ -1738,7 +1738,7 @@
     "primarySection": "teams-ecosystem",
     "title": "State of Agentic Coding - Series",
     "url": "https://www.youtube.com/playlist?list=PLg3sejGUAdUZMKADp-KCcC6m5qKjD88bT",
-    "description": "Armin Ronacher and Ben Vinegar track agentic coding through monthly conversations about models, harnesses, software quality, open source, infrastructure, economics, and the changing role of developers. Episode 11 brings in Geoff Huntley to discuss durable agent execution, modifying running software through an LLM, the difficulty of inspecting ad hoc tool code, and experiments made affordable by subscription pricing.",
+    "description": "Armin Ronacher and Ben Vinegar track agentic coding through monthly conversations about models, harnesses, software quality, open source, infrastructure, economics, and the changing role of developers. Episode 12 compares bounded agent factories, task-specific model choices, optimization constraints, restricted production access, and local versus remote development, with practitioner accounts rather than controlled comparisons.",
     "type": "playlist",
     "source": "Armin Ronacher",
     "date": "2025-12-15",

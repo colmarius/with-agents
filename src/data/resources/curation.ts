@@ -310,7 +310,7 @@ export const codingCuration = {
     21: {
       tier: 'useful',
       reason:
-        'Contributes observations about maintaining software and changing team practices over time.',
+        'Connects evolving agent workflows with bounded automation, optimization constraints, and operational access; project outcomes and model preferences remain practitioner accounts rather than controlled comparisons.',
     },
     22: {
       tier: 'useful',
