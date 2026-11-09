@@ -4,7 +4,7 @@ resourceId: 40
 date: "2026-08-09"
 ---
 
-Ref CEO and founder Matt Dailey calls the gap between higher agent output and unchanged team impact “velocity sickness.” He argues for moving the hardest review earlier, keeping consequential decisions with people, and using durable shared plans as agent state.
+Matt Dailey, CEO and founder of Ref, a company working on helping whole teams move as fast as individual engineers using AI, calls the gap between higher agent output and unchanged team impact “velocity sickness.” He argues for moving the hardest review earlier, keeping consequential decisions with people, and using durable shared plans as agent state.
 
 ### Key Points Covered
 
@@ -15,6 +15,6 @@ Ref CEO and founder Matt Dailey calls the gap between higher agent output and un
 - **Chats hide decisions that teams need to share**: Dailey argues that implementation-oriented chats are isolated and ephemeral. By contrast, a durable document can expose the key technical decisions for discussion before code exists [10:01–12:52](https://www.youtube.com/watch?v=Kz4QJmNrVXU&t=601s).
 - **Separate action from state**: In his proposed model, the shared document holds project context and decisions while agents perform actions from that state. New agents can start from the same source, and people can rebuild their own context by rereading it [12:52–14:30](https://www.youtube.com/watch?v=Kz4QJmNrVXU&t=772s).
 - **Move review before implementation**: Dailey says exploring several plans and deliberately not building some turns code velocity into idea velocity. He says early agreement on important decisions can reduce later code-review ambiguity. It can also prevent parallel work from diverging [14:30–17:10](https://www.youtube.com/watch?v=Kz4QJmNrVXU&t=870s).
-- **Keep a durable decision log, then share it**: Dailey closes with three practices. Distinguish planning from polishing, and treat the plan as a view into the software system. Get a teammate's feedback before giving the plan to an agent [17:10–19:40](https://www.youtube.com/watch?v=Kz4QJmNrVXU&t=1030s).
+- **Keep a durable decision log, then share it**: Dailey says agreeing on decisions up front and storing them durably avoids relying on an LLM to summarize sessions later. He closes with three practices: notice whether you are planning or polishing, treat the plan as a view into the software system, and get a teammate's feedback before giving the plan to an agent [17:10–19:40](https://www.youtube.com/watch?v=Kz4QJmNrVXU&t=1030s).
 
 Full video: <https://www.youtube.com/watch?v=Kz4QJmNrVXU>

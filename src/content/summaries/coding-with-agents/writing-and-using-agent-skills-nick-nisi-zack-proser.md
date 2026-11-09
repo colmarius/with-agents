@@ -4,7 +4,7 @@ resourceId: 43
 date: "2026-05-06"
 ---
 
-WorkOS developer experience engineers Nick Nisi and Zack Proser lead a hands-on workshop on agent skills. A skill is a small folder—sometimes only a `SKILL.md` file—that packages instructions for a specific kind of task and may also include references or scripts. Its description helps the agent decide when to load those instructions, keeping task-specific context out of unrelated runs.
+WorkOS developer experience engineers Nick Nisi and Zack Proser lead a hands-on workshop on agent skills. A skill is a small folder, sometimes only a `SKILL.md` file, that packages instructions for a specific kind of task and may also include references or scripts. Its description helps the agent decide when to load those instructions, keeping task-specific context out of unrelated runs.
 
 ### Key Points Covered
 

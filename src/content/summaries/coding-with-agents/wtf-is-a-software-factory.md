@@ -8,7 +8,7 @@ videoId: "aYz9G3__Z4g"
 date: "2026-10-21"
 ---
 
-Swamp Club CEO Adam Jacob joins Syntax hosts Scott Tolinski and Wes Bos to describe software factories as product-specific systems that automate the software development lifecycle. His central argument is that faster code generation needs repeatable verification and explicit architecture, not merely more code flowing through an unchanged process.
+Adam Jacob, CEO of Swamp Club, which turns requests to AI agents into structured, deterministic automation, joins Syntax hosts Scott Tolinski and Wes Bos to describe software factories as product-specific systems that automate the software development lifecycle. His central argument is that faster code generation needs repeatable verification and explicit architecture, not merely more code flowing through an unchanged process.
 
 Based on the saved English auto-generated captions, without original-audio verification. Swamp capabilities and outcomes are vendor or practitioner reports; organizational advice and predictions are proposals, not independently measured results.
 

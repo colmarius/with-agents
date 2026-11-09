@@ -4,7 +4,7 @@ resourceId: 145
 date: "2025-09-18"
 ---
 
-Shopify CEO Tobi Lütke describes a practical progression from experimenting with models to building repeatable evaluation and review systems. The most durable part of the conversation is not its forecast of rapid AI progress, but its method for preserving failures, supplying context, and making product judgment explicit enough to challenge.
+Shopify CEO Tobi Lütke describes a practical progression from experimenting with models to building repeatable evaluation and review systems. The most durable part of the conversation is its method for preserving failures, supplying context, and making product judgment explicit enough to challenge, rather than its forecast of rapid AI progress.
 
 **Evidence basis:** This summary uses the saved English auto-generated captions, captured September 19, 2026, without an original-audio check. Shopify practices and outcomes are Lütke's account, not independent measurements. The recording predates the summary by about a year, so the final section evaluates which ideas remained useful as agents gained stronger tool use and context retrieval.
 
