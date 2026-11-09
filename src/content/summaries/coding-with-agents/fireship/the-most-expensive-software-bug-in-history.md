@@ -12,8 +12,8 @@ Fireship retells Knight Capital's 2012 trading failure as a combination of dorma
 
 ## Key ideas
 
-- Knight's order router split large trades into smaller orders. Fireship says adapting it to a new exchange program introduced the change that activated a long-unused flag, making a business requirement interact with legacy behavior. [01:02–03:07](https://www.youtube.com/watch?v=UuqSy1jPSUw&t=62s)
-- In the video's account, engineers reused a flag formerly attached to Power Peg rather than creating a distinct control. Updated servers interpreted it as the new feature, while old code still interpreted it as aggressive test-trading behavior. [02:05–03:07](https://www.youtube.com/watch?v=UuqSy1jPSUw&t=125s)
+- Knight's order router split large trades into smaller orders. Fireship says adapting it to a new exchange program led to a change that reactivated a feature flag unused since 2003, tying the new business requirement to legacy behavior. [01:02–03:07](https://www.youtube.com/watch?v=UuqSy1jPSUw&t=62s)
+- In the video's account, engineers reused a flag formerly attached to Power Peg rather than creating a distinct control. Updated servers interpreted it as the new feature, while old code still treated it as the switch for Power Peg, a test function that bought aggressively at the current market price. [02:05–03:07](https://www.youtube.com/watch?v=UuqSy1jPSUw&t=125s)
 - A manual rollout reportedly updated only seven of eight servers. When the flag was enabled, the remaining server ran the dormant behavior; rolling the other seven back then expanded the failure because the flag remained active. The rollback was therefore not equivalent to restoring the earlier safe system state. [03:07–04:10](https://www.youtube.com/watch?v=UuqSy1jPSUw&t=187s)
 - Fireship reports roughly 45 minutes of unintended trading and a loss exceeding $440 million, followed by a corporate acquisition. Some numeric wording in the captions is unclear, so this summary does not repeat the inconsistent position-size figure. [03:07–05:12](https://www.youtube.com/watch?v=UuqSy1jPSUw&t=187s)
 

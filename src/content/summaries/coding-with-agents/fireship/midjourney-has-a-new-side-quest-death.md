@@ -8,7 +8,7 @@ order: 37
 videoId: a2i9h2ip-nY
 ---
 
-Fireship describes a proposed Midjourney medical-imaging program and spa, balancing its access ambitions against technical and regulatory limits. This summary uses English auto-generated captions, not medical research, regulatory records, or device inspection. Performance targets and health claims are attributed proposals, not established clinical capabilities or medical advice.
+Fireship describes a proposed Midjourney medical-imaging program and spa, weighing its goal of cheap, fast, accessible scans against technical and regulatory limits. This summary uses English auto-generated captions, not medical research, regulatory records, or device inspection. Performance targets and health claims are attributed proposals, not established clinical capabilities or medical advice.
 
 ## Key ideas
 
