@@ -10,7 +10,7 @@ Workload Identity Federation lets software running outside Google Cloud exchange
 
 The workload identity provider verifies the external OpenID Connect (OIDC) token. Attribute mappings turn its claims into a Google subject and attributes; conditions decide whether to accept it. Security Token Service (STS) then exchanges it for a federated token. For shared issuers such as GitHub, require a condition that restricts the trusted organization and workload, not merely a valid signature from GitHub.
 
-Use the provider's `https://iam.googleapis.com/projects/.../providers/...` URL as the external token's audience. This helps prevent a token intended for another service from being reused to obtain Google credentials, a confused-deputy attack. The STS target resource is a different value: `//iam.googleapis.com/projects/.../providers/...`, without `https:`.
+Use the provider's `https://iam.googleapis.com/projects/.../providers/...` URL as the external token's audience. This helps prevent a confused-deputy attack, in which a token intended for another service is reused to obtain Google credentials. The STS target resource is a different value: `//iam.googleapis.com/projects/.../providers/...`, without `https:`.
 
 Map immutable, authoritative, non-reusable identifiers. Names, email addresses, repositories, or organizations can be renamed, deleted, and reused; stale IAM bindings can then admit a different identity. A field named “ID” is not proof of those properties: require the issuer's stability and non-reuse contract or record the residual assumption.
 

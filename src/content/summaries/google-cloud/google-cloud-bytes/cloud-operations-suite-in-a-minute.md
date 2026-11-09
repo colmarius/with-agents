@@ -13,6 +13,6 @@ When an application is slow or failing, different tools reveal different parts o
 ### Key Points Covered
 
 - **Logging supports investigation; Monitoring tracks health**: Cloud Logging gathers application and infrastructure logs in one place so users can search them. Cloud Monitoring analyzes numerical measurements, including custom metrics, and uses them for alerts and service-level objectives—reliability targets [00:00–01:41](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=0s).
-- **Trace and Profiler look at different scales**: Trace follows request flow and latency between services. Profiler analyzes performance within individual functions. The 2021 suite also includes Debugger for inspecting deployed applications; this describes the historical bundle, not a current tool-availability guarantee [00:50–02:21](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=50s).
+- **Trace and Profiler look at different scales**: Trace follows request flow and latency between services. Profiler analyzes performance within individual functions. The 2021 suite also includes Debugger for inspecting deployed applications. This list reflects the suite in 2021, not a guarantee that every tool is still available [00:50–02:21](https://www.youtube.com/watch?v=5j8LfmRhHKQ&t=50s).
 
 Full video: <https://www.youtube.com/watch?v=5j8LfmRhHKQ>

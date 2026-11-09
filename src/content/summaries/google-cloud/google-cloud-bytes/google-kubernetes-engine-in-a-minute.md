@@ -13,6 +13,6 @@ Google Kubernetes Engine (GKE) runs containerized applications on managed Kubern
 ### Key Points Covered
 
 - **The platform bundles cluster operations features**: Deployment templates, autoscaling, auto-upgrades, auto-repair, image scanning, and integrated monitoring are presented as GKE capabilities [00:00](https://www.youtube.com/watch?v=pQ87vVMZK-A&t=0s).
-- **The suggested uses are orientation**: Application modernization, continuous delivery, and migration of an existing two-tier application are examples, not evidence that GKE is the right runtime for those workloads [00:00–01:03](https://www.youtube.com/watch?v=pQ87vVMZK-A&t=0s).
+- **The suggested uses are examples only**: Application modernization, continuous delivery, and migration of an existing two-tier application are examples, not evidence that GKE is the right runtime for those workloads [00:00–01:03](https://www.youtube.com/watch?v=pQ87vVMZK-A&t=0s).
 
 Full video: <https://www.youtube.com/watch?v=pQ87vVMZK-A>

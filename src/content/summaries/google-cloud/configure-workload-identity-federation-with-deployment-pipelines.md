@@ -10,7 +10,7 @@ Workload Identity Federation (WIF) lets a deployment job access Google Cloud wit
 
 For GitHub, restrict access using immutable `repository_id` and `repository_owner_id` claims, plus the required branch, environment, or workflow context. For Vercel, prefer `owner_id` and `project_id` over names that can change, and require the intended `environment`. Vercel does not document an immutability and non-reuse guarantee for those IDs, so high-assurance deployments still need to confirm that assumption. Prefer the team issuer; with the shared global issuer, restrict the team explicitly.
 
-Vercel's documented claims do not distinguish a build from a Function, or one preview branch from another. A production build and production runtime in one Vercel project therefore share the same documented identity boundary. If deployment needs more authority than runtime, use a distinct CI identity such as GitHub Actions OIDC or isolate deployment in another Vercel project; a caller-selectable custom audience is not that separation.
+Vercel's documented claims do not distinguish a build from a Function, or one preview branch from another. A production build and production runtime in one Vercel project therefore share the same documented identity boundary. If deployment needs more authority than runtime, use a distinct CI identity such as GitHub Actions OIDC or isolate deployment in another Vercel project. A custom audience does not provide that separation, because the caller selects it.
 
 ### Grant IAM to the exact identity
 
@@ -21,7 +21,7 @@ Bind roles to the narrowest principal. Both forms use the pool project's **numbe
 
 Prefer direct resource access where the target API supports federated principals. Where it does not, let the federated identity impersonate a dedicated service account: grant `roles/iam.workloadIdentityUser` on that account—not merely `roles/iam.serviceAccountUser`—then grant the account only its workload permissions.
 
-Cloud Run shows why the compatibility matrix matters: its Admin API supports federated API callers, but direct WIF invocation through `run.routes.invoke` does not. A private service therefore needs a dedicated caller service account with `roles/run.invoker` on the exact receiving service.
+Cloud Run shows why Google's federated identity compatibility list matters: its Admin API supports federated API callers, but direct WIF invocation through `run.routes.invoke` does not. A private service therefore needs a dedicated caller service account with `roles/run.invoker` on the exact receiving service.
 
 ### Apply it: Vercel Function to private Cloud Run
 
