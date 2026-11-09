@@ -8,7 +8,7 @@ order: 8
 videoId: "7naCIxIaV1M"
 ---
 
-Autoscaling adds capacity when demand rises and removes it when demand falls. This 2020 Google Kubernetes Engine (GKE) episode compares adding more pods—units running containerized applications—with giving each pod more CPU or memory, and explains why both choices depend on application behavior.
+Autoscaling adds capacity when demand rises and removes it when demand falls. This 2020 Google Kubernetes Engine (GKE) episode compares adding more pods (units running containerized applications) with giving each pod more CPU or memory, and explains why both choices depend on application behavior.
 
 ### Key Points Covered
 

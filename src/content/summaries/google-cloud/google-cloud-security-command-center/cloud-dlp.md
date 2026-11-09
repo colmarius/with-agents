@@ -13,7 +13,7 @@ Cloud Data Loss Prevention (DLP) scans stored data for sensitive information suc
 ### Key Points Covered
 
 - **Choose what sensitive data to look for**: An information type, or “info type,” is a category such as a name, email address, or credit-card number. DLP uses these categories to define what a scan looks for [02:39–03:27](https://www.youtube.com/watch?v=ra_hnxqBzOc&t=159s).
-- **The SCC integration required separate setup**: The demo enables the DLP API and named IAM roles for a repository project in the same organization, then enables DLP Data Discovery as an SCC security source [00:55–02:39](https://www.youtube.com/watch?v=ra_hnxqBzOc&t=55s).
+- **The SCC integration required separate setup**: The demo opens the project that holds the data to scan, which must be in the same organization as SCC, and enables the Cloud DLP API there. An organization administrator then grants the Security Center Admin and DLP Jobs Editor roles and enables Cloud DLP Data Discovery as an SCC security source [00:55–02:39](https://www.youtube.com/watch?v=ra_hnxqBzOc&t=55s).
 - **Trace a match to the affected data**: Once the integration is enabled, DLP findings appear on the SCC dashboard. The presenter follows a credit-card finding to its bucket and source link, then proposes further BigQuery analysis or contacting the owner to remediate it. A match identifies potentially sensitive data, not by itself a policy violation [02:39–04:02](https://www.youtube.com/watch?v=ra_hnxqBzOc&t=159s).
 
 Full video: <https://www.youtube.com/watch?v=ra_hnxqBzOc>

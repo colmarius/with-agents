@@ -12,9 +12,9 @@ Cloud Anomaly Detection looked for signs that cloud resources were being abused.
 
 ### Key Points Covered
 
-- **Unusual behavior provides clues**: One example is possible data exfiltration: a sudden increase in data leaving a virtual machine for a previously unseen IP address range. Other findings identify leaked credentials or resources apparently being used to attack other systems [00:00–01:42](https://www.youtube.com/watch?v=n70BdI7apXI&t=0s).
-- **Enablement exposed findings in the SCC dashboard**: In the then-current UI, an Organization Administrator enabled the security source and its cards then displayed anomaly findings [00:00–00:50](https://www.youtube.com/watch?v=n70BdI7apXI&t=0s).
+- **Findings flag unusual behavior that may indicate abuse**: One example is possible data exfiltration: a sudden increase in data leaving a virtual machine for a previously unseen IP address range. Other findings identify leaked credentials or resources apparently being used to attack other systems [00:00–01:42](https://www.youtube.com/watch?v=n70BdI7apXI&t=0s).
+- **Findings appear after the source is enabled**: In the then-current UI, an Organization Administrator enabled Cloud Anomaly Detection as a security source in SCC settings. Its card on the SCC dashboard then displayed anomaly findings [00:00–00:50](https://www.youtube.com/watch?v=n70BdI7apXI&t=0s).
 - **Follow the finding back to activity**: The presenter uses the coin-mining event's time, destination URL, public IP, and affected project to locate audit logs and the responsible instance. This connects the alert to evidence for investigation; a behavioral signal alone does not prove a breach [01:42–03:28](https://www.youtube.com/watch?v=n70BdI7apXI&t=102s).
-- **Containment follows investigation**: The presenter proposes removing the resource or its public IP and adding firewall rules, but these are response options to assess against the accumulated evidence rather than proof that one action is universally appropriate [02:32](https://www.youtube.com/watch?v=n70BdI7apXI&t=152s).
+- **Containment options follow the investigation**: To remediate, the presenter suggests removing the resource or its public IP and adding new firewall rules. These are response options to weigh against the evidence, not one action that fits every case [02:32](https://www.youtube.com/watch?v=n70BdI7apXI&t=152s).
 
 Full video: <https://www.youtube.com/watch?v=n70BdI7apXI>

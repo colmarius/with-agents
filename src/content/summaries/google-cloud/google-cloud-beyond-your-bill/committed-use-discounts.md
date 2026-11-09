@@ -8,7 +8,7 @@ order: 7
 videoId: "xVW1m-uBWAM"
 ---
 
-Committed use discounts exchange a promise to pay for compute capacity for a lower rate. This 2019 walkthrough explains how to judge whether predictable demand will use that commitment—and how to spot capacity you are paying for but not consuming.
+Committed use discounts exchange a promise to pay for compute capacity for a lower rate. This 2019 walkthrough explains how to judge whether predictable demand will use that commitment, and how to spot capacity you are paying for but not consuming.
 
 ### Key Points Covered
 
