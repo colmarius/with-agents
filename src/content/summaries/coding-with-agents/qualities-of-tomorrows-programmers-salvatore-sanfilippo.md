@@ -6,6 +6,8 @@ date: "2026-08-16"
 
 Salvatore Sanfilippo asks how developers can contribute when agents write the code and someone else sets product direction. He argues that developers still need to reject unnecessary complexity, understand the system, and make it testable. His advice shifts attention from reading every generated line to governing what the software does and how its parts fit together.
 
+*This English summary paraphrases Italian auto-generated captions. It is an editorial translation, not a verbatim quotation or an original-audio review.*
+
 ### From Reading Lines to Governing the System
 
 - **Junior learning and production work need different workflows**: Sanfilippo recommends that juniors use models as tutors while writing varied small programs themselves. For experienced developers, he argues that reading every generated line cannot keep pace with generation and should become a targeted activity. That is his proposed review policy; appropriate review depth still depends on failure impact and the checks available [01:54–05:10](https://www.youtube.com/watch?v=ONeJRuhsoi4&t=114s).

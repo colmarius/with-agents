@@ -6,6 +6,8 @@ date: "2026-09-04"
 
 Salvatore Sanfilippo argues that recent model progress challenges claims that language models cannot reason, then asks how developers should evaluate that progress in practice. His practical focus is useful software work: can a new model complete a task that previously resisted automation? He interprets that progress as movement toward artificial general intelligence (AGI), rather than demonstrating that a threshold has been reached.
 
+*This English summary paraphrases Italian auto-generated captions. It is an editorial translation, not a verbatim quotation or an original-audio review.*
+
 ### Reasoning and the role of the harness
 
 - **A reported shift: the model builds its own symbolic representations**: Reading a post attributed to François Chollet, Sanfilippo describes GPT Astra constructing symbolic representations and game-specific notation for interactive reasoning tasks. He interprets this as capabilities previously supplied by sophisticated harnesses moving into the model. The discussed setup still includes a harness, with continuous reasoning and custom compaction in one configuration; this is not evidence of harness-free performance [01:52–07:31](https://www.youtube.com/watch?v=I-5j_nzqnAo&t=112s).

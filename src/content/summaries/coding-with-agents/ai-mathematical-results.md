@@ -6,6 +6,8 @@ date: "2026-09-09"
 
 Salvatore Sanfilippo argues that AI-generated mathematical results need not diminish human research: a difficult proof can become something people study, simplify, and use to develop new techniques. He connects the reaction to these results with the discomfort of seeing a coding agent quickly perform work that once distinguished a skilled programmer.
 
+*This English summary paraphrases Italian auto-generated captions. It is an editorial translation, not a verbatim quotation or an original-audio review.*
+
 ### Key points
 
 - **Capability gains can feel like a loss of personal value**: Sanfilippo suggests that when a rare skill becomes readily reproducible by AI, some practitioners experience it as a reduction in their own worth. He compares mathematical breakthroughs with a coding agent producing a program in half an hour that might have taken its user a week or a month; this is an illustration, not a measured productivity comparison [00:01–01:05](https://www.youtube.com/watch?v=wef0bxq_25g&t=1s).

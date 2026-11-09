@@ -8,6 +8,8 @@ Salvatore Sanfilippo responds to a widely shared essay about whether saying code
 
 His distinction is between implementation effort and the conceptual choices that decide what a system should be. Coding agents can automate part of the implementation work because they inherit a programming culture built by people. In his view, that makes product intent, design, architecture, experiments, and judgment more consequential, not less.
 
+*This English summary paraphrases Italian auto-generated captions. It is an editorial translation, not a verbatim quotation or an original-audio review.*
+
 ### Key Points Covered
 
 - **Code is a means inside the larger software problem**: Sanfilippo says the disputed phrase need not mean programming was easy. In his framing, software also includes deciding what to build and designing how it should work; once a feasible goal and sufficient resources exist, implementation is difficult work in service of that goal [00:57–03:03](https://www.youtube.com/watch?v=Ye6UFH2LfXU&t=57s).

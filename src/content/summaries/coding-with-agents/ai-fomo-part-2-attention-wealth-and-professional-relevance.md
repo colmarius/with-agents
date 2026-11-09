@@ -6,6 +6,8 @@ date: "2026-08-15"
 
 Salvatore Sanfilippo follows his first video on the fear of missing out by separating three anxieties: not running enough agent sessions, missing an opportunity to become wealthy, and becoming professionally irrelevant. His strongest practical claim is that visible agent activity is not the same as useful output. While people still supply product direction and integrate results, attention remains the bottleneck.
 
+*This English summary paraphrases Italian auto-generated captions. It is an editorial translation, not a verbatim quotation or an original-audio review.*
+
 ### Attention, Not Session Count
 
 - **Many terminals can reduce the quality of the human contribution**: Sanfilippo says constant context switching makes it harder to remember each project's state, notice details, and steer work with care. He recommends two or three simultaneous projects, preferably in the same area, rather than dozens of interactive sessions [05:58–07:01](https://www.youtube.com/watch?v=L1pff4cmNCI&t=358s).
