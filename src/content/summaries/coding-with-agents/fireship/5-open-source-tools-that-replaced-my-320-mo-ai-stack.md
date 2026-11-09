@@ -8,14 +8,14 @@ order: 17
 videoId: Y5rSSvXfL4g
 ---
 
-Fireship outlines a self-hostable stack for model serving, provider routing, context compression, visual workflows, and autonomous coding. This summary uses English auto-generated captions, not an independently deployed stack. Hostinger sponsors the video, and the claimed savings are not supported by a complete operating-cost comparison.
+Fireship outlines a self-hosted AI stack that he presents as a replacement for his paid AI subscriptions: Ollama runs models locally, Nine Router routes requests across providers, Headroom compresses context, Dify builds visual workflows, and OpenHands runs autonomous coding agents. This summary is based on English auto-generated captions; the stack was not deployed or tested for it. Hostinger sponsors the video, and the claimed savings are not supported by a complete operating-cost comparison.
 
 ## Key ideas
 
 - Ollama supplies a CLI and API for running downloaded models locally. Fireship emphasizes local prompt handling but acknowledges that small consumer machines cannot run models comparable in size to frontier services. "Zero inference cost" here means avoiding per-token provider charges, not eliminating hardware or electricity costs. [00:00–02:05](https://www.youtube.com/watch?v=Y5rSSvXfL4g&t=0s)
-- Nine Router is described as an OpenAI-compatible local proxy that routes requests across providers and fallback tiers. Existing subscriptions, paid APIs, and free allowances can be ordered so usage rolls over when one tier is exhausted; using a local endpoint does not make remote inference local or private. [01:02–03:08](https://www.youtube.com/watch?v=Y5rSSvXfL4g&t=62s)
-- Headroom compresses tool output and logs before they enter billable model context. Fireship says original content remains cached for retrieval, distinguishing reversible compression from simply discarding information the model might later need. [02:05–04:10](https://www.youtube.com/watch?v=Y5rSSvXfL4g&t=125s)
-- Dify provides a visual workflow exposed as an API, while OpenHands supplies background coding-agent orchestration. The described stack can use local models or commercial providers; the fictional horse-matching example explains application flow rather than demonstrating production reliability. [03:08–05:26](https://www.youtube.com/watch?v=Y5rSSvXfL4g&t=188s)
+- Nine Router is described as an OpenAI-compatible proxy on localhost that sits between AI tools and many model providers. Its fallback tiers order existing subscriptions, paid APIs, and free allowances, so usage rolls over automatically to the next tier when one is used up. Sending requests to a local endpoint does not make the remote inference behind it local or private. [01:02–03:08](https://www.youtube.com/watch?v=Y5rSSvXfL4g&t=62s)
+- Headroom compresses tool output and logs before they enter billable model context. Fireship says the original content stays cached on the local machine, so the model can retrieve it if it needs it later. That makes the compression reversible, unlike simply discarding information. [02:05–04:10](https://www.youtube.com/watch?v=Y5rSSvXfL4g&t=125s)
+- Dify lets users build an LLM workflow by dragging nodes on a canvas, then exposes the finished workflow as an API for an app to call. OpenHands is a self-hosted autonomous coding agent that works on GitHub issues in the background. The described stack can use local models or commercial providers. The fictional horse-matching app shows how a Dify workflow fits into an application; it does not demonstrate production reliability. [03:08–05:26](https://www.youtube.com/watch?v=Y5rSSvXfL4g&t=188s)
 
 ## Practical implications
 

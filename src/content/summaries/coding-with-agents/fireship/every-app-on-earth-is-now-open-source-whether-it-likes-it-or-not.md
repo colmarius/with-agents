@@ -13,9 +13,9 @@ Fireship explores agent-assisted reverse engineering while questioning whether q
 ## Key ideas
 
 - Fireship introduces ArtCraft as an open-source, Rust-based attempt to reproduce several Adobe applications. His reported FilmCraft trial found slow playback feedback and poor transitions despite a familiar interface, illustrating the difference between reproducing a UI and matching production behavior. This is a personal trial, not a systematic benchmark. [00:00–03:58](https://www.youtube.com/watch?v=wajoP_5Cpw8&t=0s)
-- The proposed reverse-engineering workflow starts from a compiled executable rather than the original source. Fireship describes using reverse-engineer-anything with Ghidra to inspect local executables and DLLs, yielding C-like pseudocode, assembly, strings, and references that can inform a separate implementation. [02:58–03:58](https://www.youtube.com/watch?v=wajoP_5Cpw8&t=178s)
+- The proposed reverse-engineering workflow starts from a compiled executable rather than the original source. Fireship describes using the reverse-engineer-anything agent tool with its Ghidra integration, which does read-only analysis of local executables and DLLs, to inspect his installed copy of Premiere, yielding C-like pseudocode, assembly, strings, and references that can inform a separate implementation. [02:58–03:58](https://www.youtube.com/watch?v=wajoP_5Cpw8&t=178s)
 - Fireship proposes passing that analysis to a coding agent to recreate only the features he needs. The proposed smaller Premiere replacement is an aspiration, not evidence that he completed a production-ready substitute. [03:58–04:57](https://www.youtube.com/watch?v=wajoP_5Cpw8&t=238s)
-- He also describes examining API interactions and UI changes to recreate a narrower backend. His claimed performance advantage for the fictional "Studbase" is explicitly a made-up benchmark and part of the satire, not a measured result. [03:58–04:57](https://www.youtube.com/watch?v=wajoP_5Cpw8&t=238s)
+- He also describes analyzing Supabase's API interactions and UI changes to build a smaller backend with only the features he wants. His claimed performance advantage for the fictional "Studbase" is explicitly a made-up benchmark and part of the satire, not a measured result. [03:58–04:57](https://www.youtube.com/watch?v=wajoP_5Cpw8&t=238s)
 
 ## Practical implications
 
