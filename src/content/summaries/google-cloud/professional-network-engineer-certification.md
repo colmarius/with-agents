@@ -22,7 +22,7 @@ The linked certification overview describes the skills the exam assesses:
 - Monitor and troubleshoot network operations.
 - Design and manage network security, including VPC and firewall controls.
 
-The emphasis is on keeping networks available, scalable, resilient, and secure—not just recognizing product names.
+The emphasis is on keeping networks available, scalable, resilient, and secure, rather than on recognizing product names.
 
 ### Make the path operational
 

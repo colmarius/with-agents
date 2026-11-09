@@ -8,7 +8,7 @@ order: 1
 videoId: "zRjOSxTpC3A"
 ---
 
-Martin and Grant compare two ways to run a fictional wildlife-camera system: a function that reacts to uploaded images, and a containerized API that serves animal sightings to web and mobile apps. Their October 2020 comparison explains the choices available then, rather than today's product boundary.
+Martin and Grant compare two ways to run a fictional wildlife-camera system: a function that reacts to uploaded images, and a containerized API that serves animal sightings to web and mobile apps. Their October 2020 comparison reflects what each product supported then, not today's feature sets.
 
 ### Key points
 

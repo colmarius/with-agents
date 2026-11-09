@@ -12,7 +12,7 @@ Yuri, a site reliability engineer at Google Cloud, adds measurements to a Python
 
 ### Key Points Covered
 
-- **Count events and record a distribution of durations**: The application increments counters for requests and errors. It records processing times in a histogram, preserving a distribution of latency measurements rather than only a request count [01:03–02:04](https://www.youtube.com/watch?v=SCNObWlILqk&t=63s).
+- **Count events and record a distribution of durations**: The application increments counters for requests and errors. It records processing times in a histogram, which keeps the full distribution of latencies [01:03–02:04](https://www.youtube.com/watch?v=SCNObWlILqk&t=63s).
 - **Attach service information before exporting**: The application's metric setup includes information identifying the service, so its measurements can be found and grouped later. Its exporter sends the recorded values to the Collector [01:03–02:04](https://www.youtube.com/watch?v=SCNObWlILqk&t=63s).
 - **Deploy the Collector separately from the application**: In the demo, three copies of the application run on Google Kubernetes Engine (GKE). The Collector runs alongside them in the same namespace and forwards their measurements to Cloud Monitoring [02:04–03:10](https://www.youtube.com/watch?v=SCNObWlILqk&t=124s).
 - **Turn measurements into health signals**: Cloud Monitoring divides failed requests by total requests to show the error ratio and displays the latency histogram as a heat map. The application records the measurements; the monitoring backend performs the displayed analysis [03:10–04:12](https://www.youtube.com/watch?v=SCNObWlILqk&t=190s).

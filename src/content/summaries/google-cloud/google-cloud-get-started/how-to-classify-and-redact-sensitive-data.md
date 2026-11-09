@@ -13,7 +13,7 @@ This Node.js example sends text to the Data Loss Prevention (DLP) API to find po
 ### Key Points Covered
 
 - The setup enables the API and gives a service account the Cloud DLP User role. The local sample uses that account's credentials to authenticate its requests. [00:01–02:06](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=1s)
-- The Node.js path clones sample code, installs the client library, and supplies a project ID through an environment variable. [01:03–02:06](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=63s)
+- For Node.js, the setup clones the sample code with Git, installs the DLP client library, and supplies a project ID through an environment variable. [01:03–02:06](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=63s)
 - Running `inspectString.js` prints findings to the console. The result identifies potentially sensitive text rather than returning a version with that text removed or masked. [02:06–02:45](https://www.youtube.com/watch?v=LxDHd0MsFXI&t=126s)
 
 Full video: <https://www.youtube.com/watch?v=LxDHd0MsFXI>

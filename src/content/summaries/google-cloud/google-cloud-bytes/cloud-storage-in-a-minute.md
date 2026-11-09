@@ -13,7 +13,7 @@ Cloud Storage stores objects such as images, videos, and documents in containers
 ### Key Points Covered
 
 - **Applications exchange objects through buckets**: The primer shows uploads and downloads through project-associated buckets, with console and `gsutil` access [00:00](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=0s).
-- **Storage classes represent access patterns**: Standard, Nearline, Coldline, and Archive are mapped to progressively less frequent access in the 2020 product and pricing model [00:00](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=0s).
+- **Choose a storage class by how often data is read**: In the 2020 product and pricing model, Standard suits frequent access, Nearline about once a month, Coldline less than once a quarter, and Archive data kept for years [00:00](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=0s).
 - **Automate moves as data ages**: Object Lifecycle Management can transition data to lower-cost classes when it reaches a specified age or when a newer version is stored. Applications use the same API to access objects across storage classes [01:04–01:45](https://www.youtube.com/watch?v=wNOs3LlsH6k&t=64s).
 
 Full video: <https://www.youtube.com/watch?v=wNOs3LlsH6k>

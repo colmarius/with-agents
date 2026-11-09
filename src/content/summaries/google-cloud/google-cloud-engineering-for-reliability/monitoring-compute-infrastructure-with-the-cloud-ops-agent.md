@@ -12,7 +12,7 @@ The system hosting a virtual machine knows how much memory it allocated to that 
 
 ### Key Points Covered
 
-- **Install once, then inspect the added data**: After manually installing the agent on one VM, the presenter checks its reported version and opens views of memory, disk, running processes, and logs. These show what the VM is doing beyond the host's infrastructure measurements [01:03–04:26](https://www.youtube.com/watch?v=Fzd6WP0_bWM&t=63s).
+- **Install on one VM, then inspect the added data**: After manually installing the agent on one VM, the presenter checks its reported version and opens views of memory, disk, running processes, and logs. These show what the VM is doing beyond the host's infrastructure measurements [01:03–04:26](https://www.youtube.com/watch?v=Fzd6WP0_bWM&t=63s).
 - **Apply one policy to many VMs**: The 2021 demonstration uses an agent policy to select machines by operating system, version, and zone, then install and automatically upgrade their agents [04:26–05:31](https://www.youtube.com/watch?v=Fzd6WP0_bWM&t=266s).
 - **Put the policy in code and verify its effect**: Terraform records which agent to install, whether to upgrade it automatically, and which VMs it covers. The presenter validates and applies the configuration, then checks both that the policy exists and that the selected VMs actually received the agent [05:31–06:34](https://www.youtube.com/watch?v=Fzd6WP0_bWM&t=331s).
 

@@ -4,7 +4,7 @@ resourceId: 97
 date: "2026-01-28"
 ---
 
-Google Cloud's Well-Architected Framework helps teams review how a system runs, not just what features it delivers. It organizes decisions across six pillars: operational excellence; security, privacy, and compliance; reliability; cost optimization; performance optimization; and sustainability.
+Google Cloud's Well-Architected Framework helps teams review how a system runs, in addition to what features it delivers. It organizes decisions across six pillars: operational excellence; security, privacy, and compliance; reliability; cost optimization; performance optimization; and sustainability.
 
 ### What it adds
 

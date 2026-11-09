@@ -12,7 +12,7 @@ Dataflow processes data into the format downstream systems need. This 2020 prime
 
 ### Key Points Covered
 
-- **One pipeline model covers batch and streaming data**: Apache Beam supplies open-source libraries for defining the processing, and Dataflow executes it as a job. The primer's portability claim concerns that pipeline model, not every deployment or operational choice [00:00–00:55](https://www.youtube.com/watch?v=XdsuDOQ9nkU&t=0s).
+- **One pipeline model covers batch and streaming data**: Apache Beam supplies open-source libraries for defining the processing in a language of your choice, and Dataflow executes it as a job. The primer says Beam makes these pipelines portable. That claim concerns the pipeline definition, not every deployment or operational choice [00:00–00:55](https://www.youtube.com/watch?v=XdsuDOQ9nkU&t=0s).
 - **Write a pipeline or reuse a template**: The 2020 overview includes custom code, prebuilt and custom templates, and SQL-based authoring. Suggested uses include stream analytics and preparing data for a warehouse [00:55–01:49](https://www.youtube.com/watch?v=XdsuDOQ9nkU&t=55s).
 
 Full video: <https://www.youtube.com/watch?v=XdsuDOQ9nkU>
