@@ -26,6 +26,6 @@ For browser clients, [RFC 10017](https://www.rfc-editor.org/rfc/rfc10017.html) c
 - A **token-mediating backend** handles token acquisition and keeps refresh tokens, but gives access tokens to the browser to call APIs directly.
 - A **browser-only client** acquires and uses tokens itself, exposing more of the OAuth flow to malicious JavaScript.
 
-RFC 10017 strongly recommends a BFF for business, sensitive, and personal-data applications. It must protect its session cookie, implement CSRF defenses, and restrict outbound destinations; limiting methods per endpoint can further reduce attack opportunities. For a first-party same-domain application, OIDC login plus a cookie session may not require OAuth between the browser and its own backend.
+RFC 10017 strongly recommends a BFF for business, sensitive, and personal-data applications. It must protect its session cookie, implement CSRF defenses, and restrict outbound destinations; limiting methods per endpoint can further reduce attack opportunities. For a first-party same-domain application, OpenID Connect (OIDC) login plus a cookie session may not require OAuth between the browser and its own backend.
 
 A BFF prevents browser token extraction, but malicious code running in the application's origin can still issue requests through the user's session. Preventing script injection and enforcing API authorization remain necessary.

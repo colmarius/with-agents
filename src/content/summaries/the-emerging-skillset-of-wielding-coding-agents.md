@@ -15,7 +15,7 @@ Liu distinguishes autocomplete, chatbots that retrieve code to inform answers, a
 Liu presents these as design choices behind Amp, not universal requirements:
 
 * **Let agents edit, then review meaningful changes:** Liu wants humans to steer the work rather than approve every mechanical edit. He also questions how much interface is needed for manually supplying context and applying suggestions once agents can do those things themselves [07:09–08:11](https://www.youtube.com/watch?v=F_RyElT_gJk&t=429s).
-* **Evaluate models with their tools:** An agent relies on the model to choose and sequence tool calls, so replacing the model can change the whole workflow. Liu says model swaps are less straightforward than in a retrieval chatbot [08:11–09:14](https://www.youtube.com/watch?v=F_RyElT_gJk&t=491s).
+* **Expect the model to be hard to swap:** An agent relies on the model to choose and sequence tool calls, so replacing the model can change the whole workflow. Liu says model swaps are less straightforward than in a retrieval chatbot [08:11–09:14](https://www.youtube.com/watch?v=F_RyElT_gJk&t=491s).
 * **Compare cost with human time saved:** Liu argues that flat-rate pricing can reward vendors for using cheaper, less capable models even when those models waste users' time [09:14–10:17](https://www.youtube.com/watch?v=F_RyElT_gJk&t=554s).
 * **Keep tools composable:** He favors command-line interfaces that users can script and combine with other tools. Amp's early VS Code and CLI clients reflect that preference for a small interface [09:14–12:22](https://www.youtube.com/watch?v=F_RyElT_gJk&t=554s).
 
