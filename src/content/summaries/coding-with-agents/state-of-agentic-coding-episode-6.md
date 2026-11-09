@@ -7,14 +7,14 @@ episode: 6
 date: "2026-05-11"
 ---
 
-Armin Ronacher and Ben Vinegar discuss agentic coding economics. They cover infrastructure costs, declining subsidies, Pi joining Earendil, and the data and platforms that may determine control of future coding models.
+Armin Ronacher and Ben Vinegar discuss agentic coding economics. They cover infrastructure costs, declining subsidies, Earendil (Armin's company) acquiring Pi, and the data and platforms that may determine control of future coding models.
 
 ### Key Points Covered
 
 - **AI demand is raising costs beyond GPUs**: The hosts connect more expensive RAM and storage to inference infrastructure, caching, energy, and data-center build-out, while treating further price moves as predictions rather than certainties [09:59–16:39](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=599s).
 - **Security harnesses make existing models materially more capable**: Purpose-built systems can find large numbers of real vulnerabilities, creating pressure for maintainers and companies to run comparable audits rather than dismiss AI-assisted reports as slop [16:39–22:11](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=999s).
-- **Enterprises are starting to constrain model and token use**: Once companies pay API rates at workforce scale, cache efficiency, extensions, and per-developer limits become budget concerns; the hosts see standardization beginning [22:11–25:46](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=1331s).
-- **The subsidy era is starting to unwind**: Subscription restrictions and SaaS products moving toward usage pricing expose the cost of long-running agents, while downstream vendors have little room for margins when inference dominates their expenses [25:46–32:29](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=1546s).
+- **Enterprises are starting to constrain model and token use**: Armin says that when a large company pays API rates instead of using subscriptions, cache efficiency matters, and one extension rolled out across the company can drive everyone's token spend up. He sees early signs of companies standardizing which tools developers run [22:11–25:46](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=1331s).
+- **Ben sees the beginning of the end of subsidized AI pricing**: His evidence includes Claude subscription restrictions and SaaS tools such as Greptile moving from per-seat to usage-based pricing. Armin adds that products which now run agents are no longer cheap to operate, and that companies building on top of inference providers have little room for margins [25:46–32:29](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=1546s).
 - **Higher prices will test whether agent usage produces durable value**: Ben argues that less-subsidized pricing could force more selective use. Armin compares the transition to industrial investment cycles in which productivity rose but many firms misjudged capital needs [32:29–35:55](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=1949s).
 - **Open models need useful agent traces, not only model weights**: Armin argues that open-weight providers need authentic coding trajectories for reinforcement learning, but voluntary sharing faces privacy, consent, and critical-mass problems [51:43–57:13](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=3103s).
 - **GitHub's dominance is no longer unquestioned**: Reliability problems and agent-driven load are prompting projects and investors to explore alternatives, although GitHub's integrations and ecosystem still make leaving costly [57:13–1:19:16](https://www.youtube.com/watch?v=JM1sIVIZYRg&t=3433s).
