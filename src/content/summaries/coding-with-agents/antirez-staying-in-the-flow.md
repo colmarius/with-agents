@@ -6,7 +6,7 @@ date: "2026-10-13"
 
 Salvatore Sanfilippo argues that delegating implementation need not remove the pleasure of programming: choosing behavior and seeing its effects can still be absorbing. In his experience, the main interruption is waiting for the agent between those decisions. He describes ways to stay involved without turning every pause into another concurrent project. [04:59–09:03](https://www.youtube.com/watch?v=QobBTNIIX04&t=299s), [10:05–11:38](https://www.youtube.com/watch?v=QobBTNIIX04&t=605s)
 
-*This summary is translated and paraphrased from Italian auto-generated captions. The original audio was not independently checked. The talk offers personal experience, recommendations, and expectations—not measured effects on productivity or developer well-being.*
+*This summary is translated and paraphrased from Italian auto-generated captions. The original audio was not independently checked. The talk offers personal experience, recommendations, and expectations, not measured effects on productivity or developer well-being.*
 
 ### Main points
 

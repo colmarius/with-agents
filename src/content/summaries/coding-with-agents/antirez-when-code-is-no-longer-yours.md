@@ -6,7 +6,7 @@ date: "2026-10-08"
 
 Salvatore Sanfilippo explores a possible social benefit of coding agents: when developers no longer write every line themselves, they may find it easier to replace an implementation without treating the change as a rejection of their own work. His distinction is between caring about a project's purpose and design and becoming attached to the particular code that implements them.
 
-This English summary is editorially translated from Italian auto-generated captions, without an independent audio or visual review. Sanfilippo develops an idea he attributes to a DHH tweet; the tweet itself was not independently checked. He mostly works alone and presents the team benefits as a hypothesis, not measured results.
+This English summary is editorially translated from Italian auto-generated captions, without an independent audio or visual review. Sanfilippo develops an idea he attributes to a tweet by DHH (David Heinemeier Hansson); the tweet itself was not independently checked. He mostly works alone and presents the team benefits as a hypothesis, not measured results.
 
 ### Key points
 

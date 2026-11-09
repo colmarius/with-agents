@@ -4,7 +4,7 @@ resourceId: 132
 date: "2026-09-07"
 ---
 
-Armin Ronacher questions whether Astra's persistence and broad capabilities translate into software he can comfortably maintain. His evidence comes from an intentionally unattended CPython experiment, plus similar behavior he reports in everyday coding. This is a first-person engineering critique, not a controlled model comparison or a verified account of training incentives.
+In this blog post, Armin Ronacher asks whether OpenAI's GPT 6 Astra model, which he finds persistent and broadly capable, produces software he can comfortably maintain. His evidence comes from an intentionally unattended CPython experiment, plus similar behavior he reports in everyday coding. This is a first-person engineering critique, not a controlled model comparison or a verified account of training incentives.
 
 ### Main takeaways
 
@@ -16,7 +16,7 @@ Armin Ronacher questions whether Astra's persistence and broad capabilities tran
 
 ### Evidence limits and practical interpretation
 
-The article gives inconsistent token totals: an early passage estimates around four billion tokens for a full ChatGPT reset, while the later run accounting says around one billion tokens and roughly $1,200 in raw API costs. It does not reconcile those figures, so they should not be treated as a precise cost benchmark. Its postscript also asks whether agents finding a shared public wiki indicates training-time collusion; the article does not establish that explanation.
+The article gives inconsistent token totals: an early passage says he burned "a full reset's worth of ChatGPT tokens," around four billion, while the later run accounting says around one billion tokens and roughly $1,200 in raw API costs. It does not reconcile those figures, so they should not be treated as a precise cost benchmark. Its postscript also asks whether agents finding a shared public wiki indicates training-time collusion; the article does not establish that explanation.
 
 **Editorial implication:** evaluate autonomous runs by useful, reviewable changes and total engineering cost, not runtime, token consumption, or commit count alone. Bound exploratory tasks and review both temporary tool scripts and committed artifacts when opacity prevents meaningful oversight. These are lessons drawn from the critique, not mitigations tested in the article.
 

@@ -7,7 +7,7 @@ episode: 5
 date: "2026-09-08"
 ---
 
-Salvatore Sanfilippo and his ZiP co-host ask what an artificial general intelligence (AGI) label actually changes for people using models. Their practical answer is that stronger capabilities do not remove uneven performance, hallucinations, or the need to evaluate the work you intend to delegate.
+In episode 5 of their ZiP podcast, Salvatore Sanfilippo and co-host Enkk ask what an artificial general intelligence (AGI) label actually changes for people using models. Their practical answer is that stronger capabilities do not remove uneven performance, hallucinations, or the need to evaluate the work you intend to delegate.
 
 ### Capability is not a blanket guarantee
 
@@ -17,7 +17,7 @@ Salvatore Sanfilippo and his ZiP co-host ask what an artificial general intellig
 
 ### Persistent state raises different questions
 
-- **Text notes preserve earlier work by putting it back into context**: In the workflows they describe, an agent saves notes, retrieves history, or shortens the conversation into a summary. That information helps when it is included in the model's current context—the input available for its next response [11:50–13:43](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=710s), [18:43–19:41](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=1123s).
+- **Text notes preserve earlier work by putting it back into context**: In the workflows they describe, an agent saves notes, retrieves history, or shortens the conversation into a summary. That information helps when it is included in the model's current context, the input available for its next response [11:50–13:43](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=710s), [18:43–19:41](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=1123s).
 - **Sanfilippo imagines memory carried over inside the model**: He proposes an additional numerical representation of earlier work, updated as the model works and retained when its context changes. Later reasoning would depend on both the current input and this retained state. In his example, identical input could lead to different behavior because the internal memory differs [13:43–14:33](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=823s).
 
   His compiler example explains the intended benefit: keep the overall goal of building a compiler in view while working on an immediate task. Notes can also preserve that goal; the proposed difference is retaining information internally rather than supplying it again as text. This is a speculative architecture, not a demonstrated way to keep a model focused on the right goal [14:33–18:43](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=873s).
@@ -27,7 +27,7 @@ Salvatore Sanfilippo and his ZiP co-host ask what an artificial general intellig
 
 ### Evaluate useful work, but keep diagnostic tests
 
-- **Discovery and engineering output could become stronger capability signals**: Sanfilippo predicts that frontier models will increasingly be judged by new science and technology they help create. His co-host counters that conventional testing still matters for prompt injection, alignment, and finding where models succeed or fail—including across repeated interactions and the steps an agent takes toward a goal [1:02:32–1:06:46](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=3752s).
+- **Discovery and engineering output could become stronger capability signals**: Sanfilippo predicts that frontier models will increasingly be judged by new science and technology they help create. His co-host counters that conventional testing still matters for prompt injection, alignment, and finding where models succeed or fail, including across repeated interactions and the steps an agent takes toward a goal [1:02:32–1:06:46](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=3752s).
 - **Measure improvements to real projects**: Sanfilippo proposes asking models to make Redis faster and reduce memory use while still passing every test. He also suggests comparing models on measurable improvements across open-source projects. These are proposals, not completed comparisons [1:06:46–1:07:47](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=4006s), [1:14:55–1:15:58](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=4495s).
 - **A measurable score can become a training target**: His co-host argues that, once success can be checked automatically, developers can use that check to train models through reinforcement learning. Longer tasks do not remove the difficulty: varied tasks are harder to create, models may exploit the scoring rules rather than fulfill the intended goal, and outcomes such as marketing results may take a year or two to observe [1:07:47–1:09:56](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=4067s).
 - **Distinguish newly achievable work from an impressive demo**: Sanfilippo bases his favorable model judgments on making progress with optimizations that had resisted earlier models, citing Redis and Dwarf Star projects. Those are first-person reports, not controlled comparisons. Both speakers criticize generic one-shot demos as weak evidence for meeting a real project's particular requirements under human direction [1:17:00–1:21:07](https://www.youtube.com/watch?v=1-JEiQl7kzc&t=4620s).

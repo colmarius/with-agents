@@ -4,7 +4,7 @@ resourceId: 46
 date: "2026-07-16"
 ---
 
-Agent output can grow faster than people can understand or review it. Armin Ronacher argues that developers must keep responsibility for the result and build tools that bring consequential decisions back to a human. He draws on his work at Earendil and experiences with other engineering teams.
+In this CodeCrafts 2026 talk, Armin Ronacher starts from a problem: agent output can grow faster than people can understand or review it. He argues that developers must keep responsibility for the result and build tools that bring consequential decisions back to a human. He draws on his work at Earendil and experiences with other engineering teams.
 
 ### Agency, Understanding, and Review
 
@@ -15,9 +15,9 @@ Agent output can grow faster than people can understand or review it. Armin Rona
 
 ### Let code handle repeatable work
 
-- **Programming gives agents executable actions and clearer feedback**: Ronacher contrasts commit-or-discard outcomes with subjective text evaluation. His claim that coding-session traces feed later model training is not supported with provider documentation in the talk [18:12–20:38](https://www.youtube.com/watch?v=u_k9cwDNPcM&t=1092s).
+- **Programming gives agents executable actions and clearer feedback**: Ronacher says coding results are measurable: a session ends with the change either committed or thrown away, while judging whether text is good is much harder. His claim that coding-session traces feed later model training is not supported with provider documentation in the talk [18:12–20:38](https://www.youtube.com/watch?v=u_k9cwDNPcM&t=1092s).
 - **Use models to interpret input and code to calculate**: An invoice workflow may need optical character recognition to extract text from scans. Once the numbers are available, a program can add them repeatably instead of asking the model to generate a plausible total. Ronacher uses this example to explain why even non-coding agents benefit from executing code [20:38–23:00](https://www.youtube.com/watch?v=u_k9cwDNPcM&t=1238s).
-- **Constrain execution rather than trusting behavior**: Gondolin runs agent code in a microVM and handles networking outside the guest, allowing credentials to be injected without exposing tokens inside the VM. Ronacher presents this sandbox model as experimental, not settled [23:00–24:09](https://www.youtube.com/watch?v=u_k9cwDNPcM&t=1380s).
+- **Constrain execution rather than trusting behavior**: Gondolin, a sandbox Ronacher has worked on, runs agent code in a microVM. Its network layer injects credentials into outgoing requests, so the agent inside the VM never receives the tokens. Ronacher presents this sandbox model as experimental, not settled [23:00–24:09](https://www.youtube.com/watch?v=u_k9cwDNPcM&t=1380s).
 
 ### Keep the Right Friction
 
