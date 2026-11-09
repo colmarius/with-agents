@@ -8,7 +8,7 @@ Maggie Appleton argues that coding agents make implementation cheap enough that 
 
 ### Key Points Covered
 
-- **Single-player agent tooling optimizes the wrong unit**: Appleton critiques the image of one developer running two dozen terminal agents, because software is a team sport, not a solo throughput contest [00:07–01:53](https://www.youtube.com/watch?v=ClWD8OEYgp8&t=7s).
+- **Current agent tooling is built for one developer at a time**: Appleton critiques the image of one developer running two dozen terminal agents, because software is a team sport, not a solo throughput contest [00:07–01:53](https://www.youtube.com/watch?v=ClWD8OEYgp8&t=7s).
 - **Implementation is becoming cheap; alignment is the bottleneck**: As code generation gets faster and cheaper, the harder question becomes whether the team is building the right thing at all [01:53–02:42](https://www.youtube.com/watch?v=ClWD8OEYgp8&t=113s).
 - **Current coordination tools predate agentic speed**: GitHub, Slack, Jira, Linear, issues, and PRs still matter, but they were not designed for large volumes of fast agent-generated work [02:42–03:35](https://www.youtube.com/watch?v=ClWD8OEYgp8&t=162s).
 - **Agent speed pushes alignment too late**: When an issue becomes a pull request in minutes, local plan-mode thinking often remains private and the PR becomes the first shared checkpoint [03:35–04:24](https://www.youtube.com/watch?v=ClWD8OEYgp8&t=215s).
