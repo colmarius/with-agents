@@ -4,7 +4,7 @@ resourceId: 174
 date: '2026-10-13'
 ---
 
-Thorsten Ball delegates work to agents, asks them to test and demonstrate the results, and reviews the code where mistakes would matter most. His central argument: agents become more useful when they can investigate, build, test, and follow a change into production—not just edit files. The examples come from building Amp and describe one team's practices, not controlled productivity or safety findings.
+Thorsten Ball delegates work to agents, asks them to test and demonstrate the results, and reviews the code where mistakes would matter most. His central argument is that agents become more useful when they can investigate, build, test, and follow a change into production, rather than only edit files. The examples come from building Amp and describe one team's practices, not controlled productivity or safety findings.
 
 Based on English auto-generated captions, cross-checked against [Amp's Time Capsule page](https://ampcode.com/time-capsules/6), which includes chapters and a lightly edited transcript. Examples and preferences reflect Ball's October 2026 account.
 
@@ -23,12 +23,12 @@ Based on English auto-generated captions, cross-checked against [Amp's Time Caps
 
 ## Follow changes into production
 
-- **Check the result after deployment.** Amp's schedules wake an agent at a requested time—for example, two hours after shipping—to inspect the rollout. In one example, model-inference errors stayed flat but the agent reported a user-visible regression, so Ball told it to revert. Monitoring supplied evidence for a human decision, rather than establishing an automatic rollback policy. [09:11–11:52](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=551s)
+- **Check the result after deployment.** Amp's schedules wake an agent at a requested time, for example two hours after shipping, to inspect the rollout. In one example, model-inference errors stayed flat but the agent reported a user-visible regression, so Ball told it to revert. Monitoring supplied evidence for a human decision, rather than establishing an automatic rollback policy. [09:11–11:52](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=551s)
 - **Connect agents to operational data.** Team-written plugins let an agent retrieve client and server diagnostics by bug-report ID and query monitoring APIs for system health. These integrations make investigation possible without a person manually assembling all the evidence. They are tools the Amp team built, not capabilities a model gains simply by seeing the repository. [25:58–29:05](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=1558s)
 
 ## Case study: a memory warning tested behind a feature flag
 
-A report about orbs running out of memory starts an investigation through Slack. The agent gathers diagnostics, logs, related reports, and previous threads. Ball questions the proposed fix rather than accepting the first implementation. The eventual change is deployed behind a feature flag—a switch that limits who receives the new behavior. [30:08–33:12](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=1808s)
+A report about orbs running out of memory starts an investigation through Slack. The agent gathers diagnostics, logs, related reports, and previous threads. Ball questions the proposed fix rather than accepting the first implementation. The eventual change is deployed behind a feature flag, a switch that limits who receives the new behavior. [30:08–33:12](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=1808s)
 
 After Ball approves enabling the flag for himself, agents start orbs that deliberately consume memory. He checks the warning and the button for stopping processes, then sends the agent a video confirming it works. He says the feature affects only him at this stage. [32:13–34:07](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=1933s)
 
@@ -38,4 +38,4 @@ Ball argues that agents make this setup and testing cheaper. The example relies 
 
 - **Model choice:** Ball prefers stronger models for open-ended engineering because cheaper models may require more corrective turns and human rechecking. He allows cheaper models for predefined tasks when they pass task-specific evaluations. [07:16–09:11](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=436s)
 - **Context management:** He favors following a plan over manually trimming conversation context to save tokens. He judges that effort greater than the problems caused by automatic context compaction, which compresses conversation history. This is his assessment of the tradeoff. [08:08–09:11](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=488s)
-- **Merge process:** His team pushes directly to `main` without pull requests, alongside senior engineers, feature flags, and using Amp themselves. That does not mean Ball never reviews code: he describes inspecting critical code and checking behavior. The talk does not establish that the same merge process suits other organizations. [24:56–27:01](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=1496s), [33:12–34:07](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=1992s)
+- **Merge process:** His team pushes directly to `main` without pull requests. He ties this to a team of senior engineers who used AI from the start, the team's daily use of Amp, feature flags, and agents that can see what is happening. That does not mean Ball never reviews code: he describes inspecting critical code and checking behavior. The talk does not establish that the same merge process suits other organizations. [24:56–27:01](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=1496s), [33:12–34:07](https://www.youtube.com/watch?v=Z7l1EHfCMU8&t=1992s)
