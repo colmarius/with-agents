@@ -13,8 +13,8 @@ An attacker claims to have compromised a server and urges the administrator to i
 ### Key Points Covered
 
 - **Do not rush into a suspected host**: Logging directly into a possibly compromised server can expose administrator credentials to an attacker anticipating that response [01:03–02:06](https://www.youtube.com/watch?v=dLOyUy1BlIs&t=63s).
-- **Keep forensic evidence outside the affected environment**: A separate monitoring project lets responders inspect activity without depending on or modifying the suspected system [02:06–03:09](https://www.youtube.com/watch?v=dLOyUy1BlIs&t=126s).
-- **Route logs before they are needed for an investigation**: A sink is a filtered export of log entries. The demonstration creates one in the application project and sends matching logs to a Cloud Logging bucket in a monitoring project. Unlike the Cloud Storage destination it compares, Cloud Logging indexes the entries for analysis [02:06–04:14](https://www.youtube.com/watch?v=dLOyUy1BlIs&t=126s).
-- **The investigation concludes there was no full breach**: The logs show no suspicious activity, and the scenario's claimed attacker admits the objective was to capture administrator credentials during an attempted login [03:09–04:14](https://www.youtube.com/watch?v=dLOyUy1BlIs&t=189s).
+- **Keep forensic evidence outside the affected environment**: Storing logs in a separate Google Cloud project lets responders examine the problem without alerting the attacker [02:06–03:09](https://www.youtube.com/watch?v=dLOyUy1BlIs&t=126s).
+- **Route logs before they are needed for an investigation**: A sink is a filtered export of log entries. The demonstration creates one in the application project and sends matching logs to a Cloud Logging bucket in a monitoring project. The team chose a Cloud Logging bucket over Cloud Storage because Cloud Logging indexes the entries for analysis in close to real time [02:06–04:14](https://www.youtube.com/watch?v=dLOyUy1BlIs&t=126s).
+- **The investigation concludes there was no full breach**: The logs show no suspicious activity, and the scenario's attacker admits the objective was to capture administrator credentials during an attempted login [03:09–04:14](https://www.youtube.com/watch?v=dLOyUy1BlIs&t=189s).
 
 Full video: <https://www.youtube.com/watch?v=dLOyUy1BlIs>

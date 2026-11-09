@@ -14,7 +14,7 @@ Google Cloud Identity and Access Management (IAM) controls which people and appl
 
 - **Access must balance least privilege and timely work**: Manual approval may work at very small scale but becomes unwieldy as organizations and remote teams grow [01:02–02:05](https://www.youtube.com/watch?v=LznrFv7iRNI&t=62s).
 - **A role bundles permissions; a policy grants it on a resource**: Permissions define allowed operations. A role collects those permissions, and a policy attached to a resource connects an identity to a role. Resources include VMs, storage buckets, and the projects and folders that organize them [02:05–05:15](https://www.youtube.com/watch?v=LznrFv7iRNI&t=125s).
-- **Groups scale assignment**: Granting roles to groups lets membership changes control inherited access instead of repeatedly changing individual grants [04:13–05:15](https://www.youtube.com/watch?v=LznrFv7iRNI&t=253s).
+- **Grant roles to groups, not individuals**: Each member of a group inherits the roles granted to that group. When people are hired, leave, or move, administrators change their group membership instead of editing each person's permissions [04:13–05:15](https://www.youtube.com/watch?v=LznrFv7iRNI&t=253s).
 - **Keep group membership in one place**: For organizations with an existing directory such as Active Directory, the episode describes synchronizing group membership rather than maintaining two independent copies. Descriptive group names also help administrators avoid assigning access to the wrong group [05:15–06:18](https://www.youtube.com/watch?v=LznrFv7iRNI&t=315s).
 
 Full video: <https://www.youtube.com/watch?v=LznrFv7iRNI>

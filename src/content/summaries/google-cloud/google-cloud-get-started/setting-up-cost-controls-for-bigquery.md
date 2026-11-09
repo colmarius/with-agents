@@ -8,7 +8,7 @@ order: 6
 videoId: "3Z1SzQsYnH8"
 ---
 
-BigQuery can process large amounts of data in a single query. This walkthrough shows how daily quotas limit the amount of query data processed, helping control runaway queries rather than setting a cap on every kind of BigQuery charge. [00:01–01:06](https://www.youtube.com/watch?v=3Z1SzQsYnH8&t=1s)
+BigQuery can process large amounts of data in a single query. This walkthrough sets custom daily quotas on the amount of query data processed, which protects against runaway queries. The quotas limit query processing only, not every kind of BigQuery charge. [00:01–01:06](https://www.youtube.com/watch?v=3Z1SzQsYnH8&t=1s)
 
 ### Key Points Covered
 

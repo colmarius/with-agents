@@ -12,8 +12,8 @@ Identity and Access Management (IAM) connects an identity to the actions it may 
 
 ### Key Points Covered
 
-- Storage Admin is broad: the added account can view, modify, or delete the stored photo, not just read it. [00:00–00:53](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
+- The Storage Admin role gives the added account control over Cloud Storage resources, so it can view, modify, or delete the stored photo. [00:00–00:53](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
 - The first access attempt still fails because the permission change has not finished propagating. After a short wait and reload, the photo becomes visible. [00:00–00:53](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
-- Removing this account from the policy makes the next reload return a permission error. The demonstration checks the result from the affected account rather than relying only on what the policy editor displays. [00:00–01:10](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
+- After the account is removed from the IAM list, reloading the storage browser as that account returns a permissions error, because it is no longer allowed to view storage resources. [00:00–01:10](https://www.youtube.com/watch?v=Sdt-i-Q7tyA&t=0s)
 
 Full video: <https://www.youtube.com/watch?v=Sdt-i-Q7tyA>
