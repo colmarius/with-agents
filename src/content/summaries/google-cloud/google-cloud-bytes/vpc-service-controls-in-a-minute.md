@@ -8,11 +8,11 @@ order: 12
 videoId: "ABlY7FexJJI"
 ---
 
-VPC Service Controls places a service perimeter—a boundary controlling access to protected services—around Google Cloud projects. This 2021 primer presents it as a way to reduce unauthorized copying or transfer of data while allowing selected interactions across the boundary [00:00–00:54](https://www.youtube.com/watch?v=ABlY7FexJJI&t=0s).
+VPC Service Controls places a service perimeter, a boundary that controls access to protected services, around Google Cloud projects. This 2021 one-minute primer from Google Cloud Tech presents it as a way to help keep data from being retrieved, copied, or transferred without authorization while still allowing selected access across the boundary [00:00–00:54](https://www.youtube.com/watch?v=ABlY7FexJJI&t=0s).
 
 ### Key Points Covered
 
-- **Rules permit selected crossings**: The examples connect on-premises services through Private Google Access and connect multiple perimeters through ingress and egress rules—rules for traffic entering and leaving the boundary [00:00–00:54](https://www.youtube.com/watch?v=ABlY7FexJJI&t=0s).
-- **Dry-run and enforce modes serve different rollout roles**: Dry run records violations without blocking them, while enforce mode denies disallowed requests; denial and activity logs are presented as feedback [00:54](https://www.youtube.com/watch?v=ABlY7FexJJI&t=54s).
+- **Perimeters can still connect to on-premises services and to each other**: The video's examples connect on-premises services through Private Google Access. They connect multiple perimeters through ingress and egress rules, which govern traffic entering and leaving a perimeter [00:00–00:54](https://www.youtube.com/watch?v=ABlY7FexJJI&t=0s).
+- **Enforce mode blocks violations, and dry-run mode only logs them**: Enforce mode prevents access to protected services, while dry-run mode records violations without blocking them. The video also describes near real-time security logs that report denials and potentially malicious activity [00:54](https://www.youtube.com/watch?v=ABlY7FexJJI&t=54s).
 
 Full video: <https://www.youtube.com/watch?v=ABlY7FexJJI>
