@@ -8,7 +8,7 @@ order: 7
 videoId: "yqMKr37mGJw"
 ---
 
-An order can be created successfully even when the next step—reserving the customer's credit—fails. In this May 2023 demonstration, Mete uses Google Cloud Workflows to coordinate those steps, retry temporary failures, and cancel the pending order when credit cannot be reserved.
+An order can be created successfully even when the next step, reserving the customer's credit, fails. In this May 2023 demonstration, Mete uses Google Cloud Workflows to coordinate those steps, retry temporary failures, and cancel the pending order when credit cannot be reserved.
 
 ### Key points
 

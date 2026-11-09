@@ -12,7 +12,7 @@ Passwords in source code are visible to repository readers and difficult to vary
 
 ### Key points
 
-- **Moving a secret out of code is only the first boundary:** The presenter contrasts hard-coded credentials with environment files, which avoid the repository but still require protected storage [00:00–02:05](https://www.youtube.com/watch?v=JIE89dneaGo&t=0s).
+- **Environment files keep secrets out of the repository but still need protecting:** The presenter contrasts hard-coded credentials with environment files, which avoid the repository but still require protected storage [00:00–02:05](https://www.youtube.com/watch?v=JIE89dneaGo&t=0s).
 - **The demo applies per-secret least privilege:** A custom Cloud Run service account that already has only a Cloud SQL role receives access to one database-password secret, then the plaintext environment value is replaced with a Secret Manager reference [02:05–04:11](https://www.youtube.com/watch?v=JIE89dneaGo&t=125s).
 - **The logging claim has a specific scope:** The presenter says secret creation and updates are logged by default, and that he usually enables additional logging for secret access [04:11–05:14](https://www.youtube.com/watch?v=JIE89dneaGo&t=251s). The episode does not say every access is logged by default.
 - **How the code reads the secret affects updates:** Martin describes three access paths: an environment variable, a mounted file, or a call to the Secret Manager client library. In the 2021 behavior shown, file reads and client-library calls can obtain the current value; an environment variable requires redeploying the Cloud Run service after the secret changes. Calling the library also requires application-code changes [04:11–06:15](https://www.youtube.com/watch?v=JIE89dneaGo&t=251s).
