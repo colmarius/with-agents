@@ -4,7 +4,7 @@ resourceId: 154
 date: "2026-07-07"
 ---
 
-Producing code is only part of programming: someone must also understand why the solution works, which choices shaped it, and how it relates to the problem. Felienne Hermans and Hanna Schraffenberger explore that distinction through Peter Naur's 1985 paper in the first episode of *Computer Science Off Course*.
+In the first episode of *Computer Science Off Course*, Felienne Hermans and Hanna Schraffenberger discuss Peter Naur's 1985 paper. They explore the distinction it draws: producing code is only part of programming, and someone must also understand why the solution works, which choices shaped it, and how it relates to the problem.
 
 **Evidence basis:** This summary covers the [official companion article and Hanna's written homework response](https://www.felienne.nl/csoc-s01-e01/), not a verified audio transcript. Pocket Casts offers an automatically generated transcript behind its Plus subscription, which was not accessed. No audio check or timestamp matching was performed. The AI claims below are the authors' arguments, not empirical evaluations of coding agents.
 
@@ -24,7 +24,7 @@ Hanna began with a Pomodoro work-and-break timer tutorial, but started over when
 
 ### Implications for AI and teaching
 
-- **Generating code is not the same as understanding its design.** Felienne argues that an LLM does not build and retain an understanding of why a solution was chosen over alternatives. Hanna argues that even digital products serve real people: deciding which needs matter requires understanding those people and the context in which they use the software—an understanding she argues AI lacks. [Companion article and homework](https://www.felienne.nl/csoc-s01-e01/)
+- **Generating code is not the same as understanding its design.** Felienne argues that an LLM does not build and retain an understanding of why a solution was chosen over alternatives. Hanna argues that even digital products serve real people: deciding which needs matter requires understanding those people and the context in which they use the software, and she argues AI lacks that understanding. [Companion article and homework](https://www.felienne.nl/csoc-s01-e01/)
 - **Make learning and decisions visible.** Felienne proposes having students record what they learned and which approaches they rejected after an hour of programming. She also suggests using an existing program to discover further requirements, rather than assuming customers can specify everything beforehand. Hanna distinguishes beginners learning a language or IDE from experienced developers building understanding of an application domain. [Companion article and homework](https://www.felienne.nl/csoc-s01-e01/)
 
 **Editorial takeaway for coding-agent work:** Alongside tests and working code, ask whether the responsible developer can explain the important choices and their consequences. Record useful rationale and discuss gaps with collaborators; incomplete documentation is still worth having.

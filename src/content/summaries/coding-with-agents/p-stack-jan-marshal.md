@@ -4,7 +4,7 @@ resourceId: 187
 date: '2026-10-22'
 ---
 
-Jan Marshal demonstrates P-Stack by extending Shortlist, a demo product-research app, with web search, product import, and AI-generated comparisons. His main workflow lesson is to give agents a repeatable way to run the application, exercise user journeys, and inspect evidence before handing work back to a person.
+Jan Marshal demonstrates P-Stack, Lauren Tan's framework for coordinating coding agents through reusable engineering workflows. He uses it to extend Shortlist, a demo product-research app, with web search, product import, and AI-generated comparisons. His main workflow lesson is to give agents a repeatable way to run the application, exercise user journeys, and inspect evidence before handing work back to a person.
 
 This summary is based on the English auto-generated captions. The video is sponsored by Decodo, the web-data service used in the demonstration. Its productivity anecdotes and vendor performance claims are not independent evaluations.
 

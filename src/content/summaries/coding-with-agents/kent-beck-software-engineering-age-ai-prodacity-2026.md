@@ -26,7 +26,7 @@ This summary is based on the recording's English auto-generated captions, withou
 
 ### Measure What the Software Accomplishes
 
-- **Separate effort, output, outcome, and mission.** Beck traces a chain from engineering effort, to a delivered feature, to changes in users' behavior, to progress on a purpose shared by builders and users. Lines of code and pull-request counts do not establish that final contribution. Mission-level results are harder to measure and attribute—and may only become visible during a crisis—but he warns that rewarding easier upstream counts can distort the whole system away from its purpose [43:58–49:36](https://www.youtube.com/watch?v=F8fBgDCf2Y4&t=2638s).
+- **Separate effort, output, outcome, and mission.** Beck traces a chain from engineering effort, to a delivered feature, to changes in users' behavior, to progress on a purpose shared by builders and users. Lines of code and pull-request counts do not establish that final contribution. Mission-level results are harder to measure and attribute, and may only become visible during a crisis. Even so, he warns that rewarding easier upstream counts can distort the whole system away from its purpose [43:58–49:36](https://www.youtube.com/watch?v=F8fBgDCf2Y4&t=2638s).
 - **Leadership makes the shared purpose repeatable.** Beck advises expressing the mission in a way that appeals to both reason and emotion, then repeating it until others adopt it as their own. For him, that adoption matters more than retaining credit for the idea [49:36–51:41](https://www.youtube.com/watch?v=F8fBgDCf2Y4&t=2976s).
 
 [Watch the full talk on YouTube](https://www.youtube.com/watch?v=F8fBgDCf2Y4).
