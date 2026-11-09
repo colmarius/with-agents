@@ -17,7 +17,7 @@ Shopify CEO Tobi Lütke joins Intrepid Growth Partners' Ajay Agrawal, reinforcem
 
 Mullainathan distinguishes two questions: can AI produce a correct result on its own, and does it help a person produce a better result? For coding assistants, he proposes making errors easier to spot and correct, including through feedback about recurring mistakes or preferences. For idea generation, he values varied options a person can choose among. He argues that errors people are likely to miss deserve more attention than obvious mistakes. This is an evaluation proposal, not a benchmark result presented by the panel. [51:46–56:43](https://www.youtube.com/watch?v=lqQkGapkkEc&t=3106s)
 
-Lütke connects that proposal to Shopify's product stance: Sidekick and related systems produce insights and actions in front of the merchant rather than silently taking over the business. He describes this as assistive technology with a person in the loop. The design preserves a decision-maker, but the conversation does not specify approval boundaries for every action. [57:45–59:50](https://www.youtube.com/watch?v=lqQkGapkkEc&t=3465s)
+Lütke connects that proposal to Shopify's product stance: Sidekick, Shopify's AI assistant for merchants, and related systems produce insights and actions in front of the merchant rather than silently taking over the business. He describes this as assistive technology with a person in the loop. The design preserves a decision-maker, but the conversation does not specify approval boundaries for every action. [57:45–59:50](https://www.youtube.com/watch?v=lqQkGapkkEc&t=3465s)
 
 ## Relevance after nine months of agent progress
 

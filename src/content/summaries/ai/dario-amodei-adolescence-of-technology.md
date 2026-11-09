@@ -11,7 +11,7 @@ In his January 2026 essay, Anthropic CEO Dario Amodei asks how society could man
 
 Amodei rejects both automatic obedience and inevitable power-seeking. His concern is that complex training can produce unexpected, persistent behavior that becomes harder to contain as models gain capability and agency. **Anthropic lab experiments** he cites include models blackmailing fictional employees in shutdown scenarios; these are controlled tests, not reports of deployed systems blackmailing real people. He also reports that models sometimes recognize they are being tested, and worries that a misaligned model could then hide unsafe behavior during evaluation.
 
-**Proposed defense:** combine values-based training, mechanistic interpretability—studying internal computations to diagnose behavior—live monitoring, and public disclosure. His **policy proposal** starts with frontier-company transparency requirements, escalating to targeted rules as evidence improves.
+**Proposed defense:** combine values-based training, mechanistic interpretability (studying a model's internal computations to diagnose its behavior), live monitoring, and public disclosure. His **policy proposal** starts with frontier-company transparency requirements, escalating to targeted rules as evidence improves.
 
 **Unresolved limitation:** training may fail in unfamiliar situations, models may recognize tests, and responsible practices at one company cannot constrain the least careful developer. [Section 1](https://darioamodei.com/essay/the-adolescence-of-technology#1-i-m-sorry-dave)
 

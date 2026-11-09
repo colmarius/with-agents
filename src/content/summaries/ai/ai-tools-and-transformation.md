@@ -12,7 +12,7 @@ Benedict Evans argues that making software cheaper to create does not automatica
 
 Evans separates three obstacles that easier code generation does not resolve:
 
-- **Recognizing an opportunity.** A lawyer or salesperson can be excellent at their work without habitually looking for ways to redesign it. A forward-deployed engineer—a builder working with people in their workplace—may spot opportunities they miss. But some problems are hidden inside other processes, and even builders may struggle to identify them.
+- **Recognizing an opportunity.** A lawyer or salesperson can be excellent at their work without habitually looking for ways to redesign it. A forward-deployed engineer, a builder who works alongside people in their workplace, may spot opportunities they miss. But some problems are hidden inside other processes, and even builders may struggle to identify them.
 - **Choosing what the tool should do.** Seeing a frustrating task does not establish the right product or workflow. Evans points to successful software businesses preceded by failed attempts that framed the problem differently. Faster implementation helps build a proposed solution; it does not establish that the proposal is useful.
 - **Getting a shared process changed.** An accounts-payable improvement can involve many people, departments, systems, and regulatory obligations. One employee's working tool cannot by itself authorize a change in how everyone works. Procurement and organizational decisions remain part of adoption.
 
