@@ -4,7 +4,7 @@ resourceId: 52
 date: "2026-08-23"
 ---
 
-Better models do not automatically change how people work. In David Senra’s interview, OpenAI CEO Sam Altman describes habits that slow adoption—even his own—and argues that useful agents need more context about their users. The conversation connects those product questions to OpenAI's focus and the feedback a research team needs before it has customers.
+Better models do not automatically change how people work. In David Senra’s interview, OpenAI CEO Sam Altman describes habits that slow adoption, including his own, and argues that useful agents need more context about their users. The conversation connects those product questions to OpenAI's focus and the feedback a research team needs before it has customers.
 
 ### Adoption Requires Direct Contact
 

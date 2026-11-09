@@ -4,7 +4,7 @@ resourceId: 119
 date: "2026-09-01"
 ---
 
-OpenAI CEO Sam Altman discusses a problem that grows with agent capability: completing a task is not enough if the model ignores what the user intended or acts outside its authority. He describes OpenAI's monitoring and safety work, his experience with Astra's computer use, and plans to combine chat and coding into one interface.
+OpenAI CEO Sam Altman discusses a problem that grows with agent capability: completing a task is not enough if the model ignores what the user intended or acts outside its authority. He describes OpenAI's monitoring and safety work, his experience with computer use in Astra, OpenAI's coming class of larger and more expensive models, and plans to combine chat and coding into one interface.
 
 ### Key Points Covered
 
