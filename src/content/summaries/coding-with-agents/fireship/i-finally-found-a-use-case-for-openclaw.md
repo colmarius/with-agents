@@ -8,18 +8,18 @@ order: 51
 videoId: FM5-R4VPArw
 ---
 
-Fireship demonstrates an OpenClaw assistant that turns forwarded technical-support messages into voice replies using his own voice profile. The deliberately comic example still shows a concrete integration: Telegram receives the request, OpenClaw drafts a response, and speech-generation and audio-conversion tools create a voice memo for the human to forward. This summary uses English auto-generated captions, not an independent test of the setup.
+Fireship demonstrates an assistant built with OpenClaw, a personal AI assistant project, that turns forwarded technical-support messages into voice replies using his own voice profile. The deliberately comic example still shows a concrete integration: Telegram receives the request, OpenClaw drafts a response, and speech-generation and audio-conversion tools create a voice memo for the human to forward. This summary uses English auto-generated captions, not an independent test of the setup.
 
 ## Key ideas
 
 - **The use case is narrow despite the broad personal-assistant framing.** Fireship wants to handle relatives' requests for printer and internet help. The demonstrated flow produces a proposed voice reply; it does not establish that the bot diagnoses or repairs the hardware correctly. [02:46–05:15](https://www.youtube.com/watch?v=FM5-R4VPArw&t=166s)
 - **Instructions and tools play separate roles.** The walkthrough stores the bot's personality in `SOUL.md` and describes a `TOOLS.md` file that explains the speech workflow. An ElevenLabs voice profile supplies generated speech, and FFmpeg converts the MP3 output into an Ogg voice memo. [03:49–04:52](https://www.youtube.com/watch?v=FM5-R4VPArw&t=229s)
 - **A human remains in the message path.** Fireship forwards a request to the Telegram bot, receives the generated audio, and then forwards it to the relative. The example is not an independently operating support service that sends unsolicited replies. [03:49–05:15](https://www.youtube.com/watch?v=FM5-R4VPArw&t=229s)
-- **Security concerns are acknowledged, not resolved by the demonstration.** Fireship cites Peter Steinberger's account of OpenClaw security reports and fixes. The reported counts and discussion of low-quality reports do not establish that the assistant or its connected services are safe. [01:56–03:49](https://www.youtube.com/watch?v=FM5-R4VPArw&t=116s)
+- **Security concerns are acknowledged, not resolved by the demonstration.** Fireship cites OpenClaw creator Peter Steinberger: the project received over 1,100 security advisories and resolved or closed about 650, and Steinberger considers most of the rest AI-generated "slop". Those counts and his filter for low-quality reports do not establish that the assistant or its connected services are safe. [01:56–03:49](https://www.youtube.com/watch?v=FM5-R4VPArw&t=116s)
 
 ## Practical implications
 
-- Editorial: The reusable pattern is a bounded input-to-artifact workflow with a human forwarding the result. Evaluate the quality of the proposed reply separately from whether the integrations produce a playable audio file.
+- Editorial: The reusable pattern is a narrow workflow that turns one kind of incoming message into one output file, with a human forwarding the result. Evaluate the quality of the proposed reply separately from whether the integrations produce a playable audio file.
 
 ## Questions and limits
 
