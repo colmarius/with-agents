@@ -4,7 +4,7 @@ resourceId: 7
 date: "2025-11-12"
 ---
 
-AI can make a first working program easier to create without making a long-lived project easy to maintain. In conversation with Dirk Hohndel, Linus Torvalds welcomes that lower entry barrier while describing the costs AI crawlers and fabricated reports already impose on open-source maintainers.
+In this keynote conversation with Dirk Hohndel, Linus Torvalds says AI can make a first working program easier to create without making a long-lived project easier to maintain. He welcomes that lower entry barrier, and he describes the costs that AI crawlers and fabricated reports already impose on open-source maintainers.
 
 ### AI's Impact on Open Source Infrastructure
 
@@ -15,7 +15,7 @@ AI can make a first working program easier to create without making a long-lived
 
 * **A demo is not a maintained product:** Torvalds says he does not use coding agents himself. He suspects prompt-led “vibe coding” may be a poor fit for long-term maintenance. Hohndel says agents get him 90% of the way; Torvalds replies that the last 10% can take 34 years of a 35-year project [18:23–21:31](https://www.youtube.com/watch?v=tWx769t1JKg&t=1103s).
 * **Small projects can draw beginners into programming:** Torvalds compares agent-built personal programs with typing programs from magazines when he was young. Lowering the initial hurdle can help people get excited about computers, even if the result is not ready to become a durable product [18:23–20:27](https://www.youtube.com/watch?v=tWx769t1JKg&t=1103s).
-* **Kernel assistance remains experimental:** He describes work on helping maintainers process patches and backport them to stable versions, rather than claiming established use for complex kernel code generation [15:25–16:28](https://www.youtube.com/watch?v=tWx769t1JKg&t=925s).
+* **Kernel assistance remains experimental:** He says people are using AI mainly to help maintainers handle the flow of patches and backport them to stable versions, and that much of this work is experimental. He does not describe established use of AI to write complex kernel code [15:25–16:28](https://www.youtube.com/watch?v=tWx769t1JKg&t=925s).
 
 ### The Future of Software Jobs
 

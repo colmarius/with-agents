@@ -23,7 +23,7 @@ The [session-management guide](https://www.better-auth.com/docs/concepts/session
 ### Origin and proxy settings define who is trusted
 
 - **Origin checks:** `disableOriginCheck` disables callback and redirect URL validation **and**, for backward compatibility, CSRF protection. Broad wildcard trusted origins expand who can submit trusted requests or receive redirects; protocol-agnostic patterns also accept multiple schemes. Prefer exact HTTPS origins.
-- **Proxy trust:** `trustedProxyHeaders` may derive the base URL from `X-Forwarded-Host` and `X-Forwarded-Proto` when no configured or environment base URL exists. Enable it only when a trusted proxy overwrites those headers and clients cannot forge them. Apply the same boundary discipline to client-IP headers used for rate limiting.
+- **Proxy trust:** `trustedProxyHeaders` may derive the base URL from `X-Forwarded-Host` and `X-Forwarded-Proto` when no configured or environment base URL exists. Enable it only when a trusted proxy overwrites those headers and clients cannot forge them. Apply the same rule to client-IP headers used for rate limiting: trust them only when a trusted proxy sets them.
 
 Better Auth's checks protect its authentication routes; the surrounding application's state-changing routes still need authorization and cross-site request forgery (CSRF) defenses. `SameSite=Lax` alone is not sufficient.
 

@@ -8,12 +8,12 @@ Beyang Liu argues that as agents write more code, understanding their changes be
 
 ### Sourcegraph’s New Agent: Amp
 
-Sourcegraph built its coding agent, **Amp**, from first principles once tool-using models became reliable enough for programming work. The company kept Amp separate from existing code-search or RAG products. This allowed it to design around models that edit files, run tools, and recover from feedback [05:39–07:30](https://www.youtube.com/watch?v=Jxz4GJSG8ZA&t=339s).
+Sourcegraph started its coding agent, **Amp**, once models could reliably call tools and combine that with reasoning. The team first planned to add this to existing products, then decided to build Amp almost completely separately and from first principles, so it could work out which tools an agent actually needs [05:39–07:30](https://www.youtube.com/watch?v=Jxz4GJSG8ZA&t=339s).
 
 * **Enterprise and hobby use cases:** Amp inherits Sourcegraph's experience with large enterprise codebases, but Liu also emphasizes hobbyists and non-programmers. One example is his dad using agents to build iPad math games, showing that the tool is not only for professional software teams [07:30–08:18](https://www.youtube.com/watch?v=Jxz4GJSG8ZA&t=450s).
 * **Smart and fast agents:** At the time of the interview, Liu describes a smart paid agent for harder work and a fast, ad-supported path for cheap targeted edits. The distinction reflects a tradeoff between response time, capability, and cost [08:18–11:25](https://www.youtube.com/watch?v=Jxz4GJSG8ZA&t=498s), [20:09–21:56](https://www.youtube.com/watch?v=Jxz4GJSG8ZA&t=1209s).
 * **The agent is the product abstraction:** Liu argues that users should think about the agent, not only the raw model. Behavior comes from the model plus the system prompt, tools, tool descriptions, and feedback-loop instructions [13:23–15:15](https://www.youtube.com/watch?v=Jxz4GJSG8ZA&t=803s).
-* **Specialized workflows matter:** Sourcegraph uses closed and open models. It sees open-weight models as particularly suitable for post-training specialized workflows such as context retrieval, library fetching, and targeted edits [21:56–27:35](https://www.youtube.com/watch?v=Jxz4GJSG8ZA&t=1316s).
+* **Open-weight models suit narrow tasks:** Sourcegraph uses closed and open models. Liu says teams can post-train (further train) open-weight models for constrained tasks such as context retrieval, library fetching, and targeted edits, which Amp hands to specialized subagents or smaller, faster models [21:56–27:35](https://www.youtube.com/watch?v=Jxz4GJSG8ZA&t=1316s).
 
 ### The Shift From Coding to Orchestrating
 
