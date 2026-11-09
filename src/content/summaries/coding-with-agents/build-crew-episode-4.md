@@ -7,13 +7,13 @@ episode: 4
 date: "2025-10-14"
 ---
 
-Test data, temporary UI controls, and documentation checks can make software easier to verify, but developers often skip the setup. Thorsten Ball, Ryan Carson, Graham McBain, and guest Colleen Brady show how they use agents to do that preparation and automate recurring development tasks.
+Test data, temporary UI controls, and documentation checks can make software easier to verify, but developers often skip the setup. In this Build Crew episode, Thorsten Ball, Ryan Carson, Graham McBain, and guest Colleen Brady show how they use agents to do that preparation and automate recurring development tasks.
 
 ### Make the states you need to test easy to reach
 
-* **Seed a local database with deliberate scenarios.** Ball asks Amp to create threads belonging to different users with different visibility settings so he can test a new starring feature. The agent initially guesses column names incorrectly, then inspects the schema and inserts the data. He also describes temporary UI controls that let a developer toggle billing-page states without constructing a separate test application [14:49–18:43](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=889s).
+* **Seed a local database with deliberate scenarios.** Ball asks Amp to create threads belonging to different users with different visibility settings so he can test a new starring feature. The agent initially guesses column names incorrectly, then inspects the schema and inserts the data. He also describes how a designer, Tim, had Amp add temporary test-only controls to the billing page so he could toggle its states without building a separate test application [14:49–18:43](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=889s).
 * **Use mock data while exploring a design.** Brady iterates on a page using a TypeScript data file before moving the data into a database. This lets her settle the UI's data needs without repeatedly changing the database during design work [19:33–20:34](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=1173s).
-* **Start the next task from the diff.** Ball gives a fresh agent conversation `git diff` or `git show` output. The diff supplies the changes and shows which files were edited together, helping the agent pick up related work without a long verbal reconstruction [23:13–24:16](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=1393s).
+* **Start the next task from the diff.** In a new thread, Ball tells the agent to run `git diff` or `git show`. The diff supplies the changes and shows which files were edited together, helping the agent pick up related work without a long verbal reconstruction [23:13–24:16](https://www.youtube.com/watch?v=9lsg6dU7EZQ&t=1393s).
 
 ### Automate a specific job, then expose it to the agent
 

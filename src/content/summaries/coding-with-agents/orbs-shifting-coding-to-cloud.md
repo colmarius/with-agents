@@ -4,7 +4,7 @@ resourceId: 180
 date: '2026-09-07'
 ---
 
-Quinn Slack discusses how Amp's team uses cloud sandboxes, called orbs, to run agents independently of developers' laptops. The practical examples extend beyond writing code: agents monitor staged migrations, use limited production credentials, and modify internal apps. The conversation also debates mandatory code review, CI, and small-team organization. These are first-party experiences and opinions, not evidence that cloud execution or removing review makes every team safer or faster.
+In this Latent Space conversation, Quinn Slack discusses how Amp's team uses cloud sandboxes, called orbs, to run agents independently of developers' laptops. The practical examples extend beyond writing code: agents monitor staged migrations, use limited production credentials, and modify internal apps. The conversation also debates mandatory code review, CI, and small-team organization. These are first-party experiences and opinions, not evidence that cloud execution or removing review makes every team safer or faster.
 
 Based on English auto-generated captions. Product descriptions and forecasts reflect the September 2026 conversation; the transcript does not independently verify the demonstrations or company claims.
 
@@ -22,7 +22,7 @@ Based on English auto-generated captions. Product descriptions and forecasts ref
 ## Internal apps can be customized through the agent
 
 - **An agent can modify an app instead of navigating a settings system.** Slack shows an internal dashboard running as an HTTP process in an orb, with an agent available to change it. He contrasts this with buying a dashboard product, adding queries, and maintaining integrations. The host describes a related pattern of forkable apps whose interfaces can change while backend contracts, security, and privacy remain stable. These are proposed software-distribution patterns, not a demonstration that all packaged software is replaceable. [08:55–13:12](https://www.youtube.com/watch?v=hvwtHZ5E27c&t=535s)
-- **Custom software for one organization has different requirements from a shared product.** The speakers distinguish solving one user's problem from supporting multiple customers, configuration, and service guarantees. Slack later proposes releasing reusable internal apps that other people could adapt with their agents, using the term "jellyware." He presents this as a plan; a marketing-automation app is still something the team wants to build. [22:16–23:20](https://www.youtube.com/watch?v=hvwtHZ5E27c&t=1336s), [31:24–33:23](https://www.youtube.com/watch?v=hvwtHZ5E27c&t=1884s)
+- **Custom software for one organization has different requirements from a shared product.** The speakers distinguish solving one user's problem from supporting multiple customers, configuration, and service guarantees. Slack later proposes releasing reusable internal apps that other people could adapt with their agents, using the term "jellyware" for software that is "softer than software" but not totally vibe-coded. He presents this as a plan; a marketing-automation app is still something the team wants to build. [22:16–23:20](https://www.youtube.com/watch?v=hvwtHZ5E27c&t=1336s), [31:24–33:23](https://www.youtube.com/watch?v=hvwtHZ5E27c&t=1884s)
 
 ## Agent-run verification and CI are not the same claim
 
