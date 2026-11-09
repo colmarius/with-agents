@@ -8,7 +8,7 @@ order: 10
 videoId: "ilY4-Aw1Z2M"
 ---
 
-Which logs, measurements, and request traces can you use to investigate a containerized application? This 2021 comparison shows the data available in Google Kubernetes Engine (GKE), Cloud Run, and the then-named Anthos platform, including where application code needs extra instrumentation [00:00–07:22](https://www.youtube.com/watch?v=ilY4-Aw1Z2M&t=0s).
+The logs, measurements, and request traces available for investigating a containerized application depend on where it runs. This 2021 comparison shows the data available in Google Kubernetes Engine (GKE), Cloud Run, and the then-named Anthos platform, including where application code needs extra instrumentation [00:00–07:22](https://www.youtube.com/watch?v=ilY4-Aw1Z2M&t=0s).
 
 ### Key Points Covered
 

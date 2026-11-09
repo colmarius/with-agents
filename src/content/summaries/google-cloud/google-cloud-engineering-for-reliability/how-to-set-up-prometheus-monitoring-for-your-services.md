@@ -12,7 +12,7 @@ Infrastructure metrics alone do not tell you how often an application fails or h
 
 ### Key Points Covered
 
-- **Record application behavior and expose it for collection**: The Flask example increments total-request and failed-request counters and times a route to record a latency distribution. It exposes the resulting values on `/metrics`, an endpoint the collector can scrape—read to collect measurements [01:03–02:06](https://www.youtube.com/watch?v=qyfOE_78nT0&t=63s).
+- **Record application behavior and expose it for collection**: The Flask example increments total-request and failed-request counters and times a route to record a latency distribution. It exposes the resulting values on `/metrics`, an endpoint the collector can scrape, meaning read to collect measurements [01:03–02:06](https://www.youtube.com/watch?v=qyfOE_78nT0&t=63s).
 - **Tell the collector which application to read**: In the demonstrated setup, a `PodMonitoring` resource selects pods by their labels and specifies their metrics endpoint. Installing the collector alone does not complete the application's monitoring configuration [02:06–03:11](https://www.youtube.com/watch?v=qyfOE_78nT0&t=126s).
 - **Verify collection in stages**: First the demo checks that the application exposes metrics, then queries the collector's own metrics to confirm collection is running. Finally it queries an application metric to prove that the selected workload's data reached the backend, where it can be used in charts and alerts [02:06–04:13](https://www.youtube.com/watch?v=qyfOE_78nT0&t=126s).
 

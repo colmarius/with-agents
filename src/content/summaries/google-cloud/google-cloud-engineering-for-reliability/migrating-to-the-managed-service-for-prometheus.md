@@ -8,7 +8,7 @@ order: 21
 videoId: "YjEh_V7MRc4"
 ---
 
-Prometheus collects measurements by reading, or **scraping**, an application's metrics endpoint. Yuri, an SRE at Google Cloud, demonstrates moving one application's collection configuration to Google's managed service so the team no longer has to operate its own Prometheus infrastructure [00:00–02:11](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=0s).
+Prometheus collects measurements by reading, or **scraping**, an application's metrics endpoint. Yuri, a site reliability engineer at Google Cloud, demonstrates moving one application's collection configuration to Google's managed service so the team no longer has to operate its own Prometheus infrastructure [00:00–02:11](https://www.youtube.com/watch?v=YjEh_V7MRc4&t=0s).
 
 ### Key Points Covered
 

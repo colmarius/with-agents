@@ -14,6 +14,6 @@ Cloud Monitoring metric scopes let a team view measurements from several Google 
 
 - **Keep monitoring independent of workload deletion**: The presenter recommends a dedicated scoping project so that deleting a workload project does not also delete the dashboards and alerts used for the remaining projects [01:03–02:07](https://www.youtube.com/watch?v=_FKdug6B5FM&t=63s).
 - **Grant access at the intended scope**: In the example, an appropriate Identity and Access Management (IAM) role on the monitoring project lets a user see staging and production metrics. Access only to staging does not grant that combined view [01:03–03:12](https://www.youtube.com/watch?v=_FKdug6B5FM&t=63s).
-- **Enrollment can be automated**: The walkthrough uses the Cloud Monitoring API to add a monitored-project resource to a metric scope [05:18–06:21](https://www.youtube.com/watch?v=_FKdug6B5FM&t=318s).
+- **Adding projects to a scope can be automated**: The walkthrough uses the Cloud Monitoring API to add a monitored-project resource to a metric scope [05:18–06:21](https://www.youtube.com/watch?v=_FKdug6B5FM&t=318s).
 
 Full video: <https://www.youtube.com/watch?v=_FKdug6B5FM>
