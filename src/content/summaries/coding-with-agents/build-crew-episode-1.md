@@ -13,7 +13,7 @@ An agent can investigate a bug more independently when it can reproduce the fail
 
 * **Make reproduction repeatable.** Thorsten Ball shows a small script that launches Amp's CLI with the right settings. Instead of repeatedly copying errors back into chat, he lets the agent run the program, add logging, and inspect the output itself [06:13–11:19](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=373s).
 * **Expose interactive programs through a controllable terminal.** His example uses tmux, a terminal multiplexer, because the CLI stays open waiting for input. The agent can send keystrokes and read the terminal's text rather than wait for a command to exit [11:19–13:50](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=679s).
-* **Separate diagnosis from a focused design question.** Once logging identifies startup waiting on an MCP server, Ball asks Oracle, Amp's reasoning subagent, how to remove that wait. His “desk” analogy describes context: the main conversation holds the investigation, while Oracle receives the diagnosed problem and relevant files without the discarded debugging paths [13:50–17:47](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=830s).
+* **Separate diagnosis from a focused design question.** Once logging identifies startup waiting on an MCP server, Ball asks Oracle, Amp's reasoning subagent, how to remove that wait. Ball compares context to a desk. The main conversation's desk is cluttered with logs, searches, and tmux details from the investigation. Oracle's desk gets only the diagnosed problem and relevant files, without the discarded debugging paths [13:50–17:47](https://www.youtube.com/watch?v=PLtf26LtCcQ&t=830s).
 
 ### Make intent and context explicit
 

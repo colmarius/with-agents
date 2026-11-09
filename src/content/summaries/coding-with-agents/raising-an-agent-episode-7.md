@@ -13,7 +13,7 @@ Coding agents can find files, edit them, and run checks without asking the user 
 
 - **An agent acts on tool results**: Unlike a chat assistant that returns code for the user to apply, an agent can edit files and run tests itself. Each tool result becomes input to the next model call, letting it continue or correct an error. It can also stop because it runs out of tokens or cannot find a way forward [03:47–07:50](https://www.youtube.com/watch?v=p8a0PePNWlA&t=227s).
 
-- Up-Front Intent: Agent prompting needs clearer initial direction because the agent acts instead of stopping to ask clarifying questions. The more specific the task, constraints, and desired outcome, the less likely the agent is to wander into expensive or unwanted work [07:49–08:37](https://www.youtube.com/watch?v=p8a0PePNWlA&t=469s).
+- **State the intended result up front**: Agent prompting needs clearer initial direction because the agent acts instead of stopping to ask clarifying questions. The more specific the task, constraints, and desired outcome, the less likely the agent is to wander into expensive or unwanted work [07:49–08:37](https://www.youtube.com/watch?v=p8a0PePNWlA&t=469s).
 
 - **Keep the context relevant to the task**: The context window holds the conversation, supplied files, and tool results available to the model. The hosts report less reliable behavior as it fills. Their practical example is starting a database migration in a fresh conversation rather than one already crowded with unrelated UI work [26:02–33:25](https://www.youtube.com/watch?v=p8a0PePNWlA&t=1562s).
 

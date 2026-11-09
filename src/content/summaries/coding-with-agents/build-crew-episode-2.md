@@ -9,7 +9,7 @@ date: "2025-10-01"
 
 ## Build Crew Live: Episode 2
 
-In episode 2 of "Build Crew Live", Thorsten Ball, Nico, Ryan Carson, and Tim—an Amp product manager who started building with agents—discuss AI agents. They cover changing product and engineering roles, small focused threads, and preserving context across longer projects.
+In episode 2 of "Build Crew Live", Thorsten Ball, Nico, Ryan Carson, and Build Crew member Tim, a product manager who started building with agents, discuss AI agents. They cover changing product and engineering roles, small focused threads, and preserving context across longer projects.
 
 ### Key Points Covered
 
@@ -21,13 +21,13 @@ In episode 2 of "Build Crew Live", Thorsten Ball, Nico, Ryan Carson, and Tim—a
 
 * **Manual coding decreases, but review responsibility increases**: The group discusses how much code they write by hand and when they still edit load-bearing logic themselves. They say reviewing generated code becomes the main skill [14:17–23:04](https://www.youtube.com/watch?v=VkV4p-eDPmM&t=857s).
 
-* **Agent-friendly verification matters**: Ryan uses Playwright, unified frontend/backend logs, and predictable dev accounts. These let the agent test its work and read relevant output instead of relying on manual screenshots or scattered logs [17:08–20:17](https://www.youtube.com/watch?v=VkV4p-eDPmM&t=1028s).
+* **Give the agent ways to test its own work**: Ryan uses Playwright, unified frontend/backend logs, and predictable dev accounts. These let the agent test its work and read relevant output instead of relying on manual screenshots or scattered logs [17:08–20:17](https://www.youtube.com/watch?v=VkV4p-eDPmM&t=1028s).
 
-* **Custom slash commands provide deterministic context**: Nico demonstrates slash commands that fetch Linear issues and GitHub PR comments into a prompt. His goal is to provide exact structured context rather than ask the agent to discover everything through broad, noisy MCP-style tools [28:03–38:45](https://www.youtube.com/watch?v=VkV4p-eDPmM&t=1683s).
+* **Custom slash commands put exact context into the prompt**: Nico demonstrates slash commands that fetch Linear issues and GitHub PR comments into a prompt. Because the user runs the command, the same structured context arrives every time. He prefers this to asking the agent to discover everything through broad, noisy MCP-style tools [28:03–38:45](https://www.youtube.com/watch?v=VkV4p-eDPmM&t=1683s).
 
 * **Break big work into artifacts and fresh threads**: Tim describes a "loop of doom" when a project becomes too large for one conversation. He creates PRDs, divides them into granular tasks, writes explicit artifacts, and restarts with clean context when needed [41:39–57:45](https://www.youtube.com/watch?v=VkV4p-eDPmM&t=2499s).
 
-* **Context hygiene is a discipline**: The panel uses the "don't cut fruit on the chicken board" metaphor for agent context: carry forward distilled plans and decisions, not every failed attempt from a messy thread [49:33–57:45](https://www.youtube.com/watch?v=VkV4p-eDPmM&t=2973s).
+* **Carry forward plans and decisions, not failed attempts**: The panel closes on a kitchen metaphor credited to Erica, the team's head of engineering: you would not cut fruit on the board you just used for chicken. Applied to agents, a fresh thread should receive the distilled plans and decisions, not every failed attempt from a messy debugging thread [49:33–57:45](https://www.youtube.com/watch?v=VkV4p-eDPmM&t=2973s).
 
 Full Video: [Watch on YouTube](https://www.youtube.com/watch?v=VkV4p-eDPmM)
 
