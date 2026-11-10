@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    193: {
+      tier: 'useful',
+      reason:
+        'Connects plugin packaging and data context with enterprise deployment, evaluation, permission boundaries, and auditable write-back; the finance workflow is a first-party workshop rather than validated production guidance.',
+    },
     192: {
       tier: 'useful',
       reason:

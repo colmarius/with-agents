@@ -1,5 +1,23 @@
 [
   {
+    "id": 193,
+    "addedDate": "2026-11-07",
+    "primarySection": "agent-systems",
+    "title": "Build Your Own Finance Agent Inside ChatGPT - Stefano Fabbri & Oliver Steffmann, OpenAI",
+    "url": "https://www.youtube.com/watch?v=ZJjRgvjhq3M",
+    "description": "OpenAI workshop on extending financial workflows with reusable skills, MCP data connections, and plugin interfaces. Covers data context, deployment inside an existing enterprise app, model-cost evaluations, permission boundaries, and writing results back to auditable systems. First-party demonstrations and recommendations, not independent evidence of financial accuracy or production safety.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-11-07",
+    "duration": "1h 50m 32s",
+    "topics": [
+      "tools-harnesses",
+      "context-memory",
+      "models-evaluation",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 189,
     "addedDate": "2026-10-30",
     "primarySection": "agent-systems",
