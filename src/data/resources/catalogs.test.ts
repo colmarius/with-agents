@@ -72,7 +72,7 @@ test('registry exposes catalogs and cross-listed security resources', () => {
   );
   assert.deepEqual(
     getCatalogResources(requireCatalog('security')).map(({ id }) => id),
-    [98, 57, 100, 101, 102, 103, 105, 106, 177, 192, 58, 104, 37],
+    [98, 57, 100, 101, 102, 103, 105, 106, 177, 192, 194, 58, 104, 37],
   );
   assert.deepEqual(
     getCatalogResources(requireCatalog('cloud')).map(({ id }) => id),
@@ -95,7 +95,7 @@ test('registry exposes catalogs and cross-listed security resources', () => {
       requireCatalog('security'),
       'threat-detection-response',
     ).map(({ id }) => id),
-    [58, 37],
+    [194, 58, 37],
   );
   assert.strictEqual(
     getCatalogResources(requireCatalog('security')).find(({ id }) => id === 37),

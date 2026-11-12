@@ -197,10 +197,11 @@ const cloudSectionByResourceId = Object.fromEntries(
 );
 
 const securityResourceIds = [
-  98, 57, 100, 101, 102, 103, 105, 106, 177, 192, 58, 104, 37,
+  98, 57, 100, 101, 102, 103, 105, 106, 177, 192, 194, 58, 104, 37,
 ];
 
 const securitySectionByResourceId = {
+  194: 'threat-detection-response',
   98: 'cloud-security',
   57: 'cloud-security',
   100: 'identity-access',

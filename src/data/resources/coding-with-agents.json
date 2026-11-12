@@ -1,5 +1,18 @@
 [
   {
+    "id": 194,
+    "addedDate": "2026-11-12",
+    "primarySection": "reliability",
+    "title": "Geoffrey Huntley: Patch the Planet With Nix and Agents",
+    "url": "https://www.youtube.com/watch?v=TgwcuZViDo8",
+    "description": "Geoffrey Huntley connects Nix-based environments with agent-assisted dependency patching, a Git build without force push, infrastructure tests, and property-based testing. Explains how shared package definitions can reduce environment drift and propagate patches through dependencies. Practitioner demonstrations and security-response anecdotes, not proof of sandbox safety or a replacement for review.",
+    "type": "video",
+    "source": "Geoffrey Huntley",
+    "date": "2026-11-11",
+    "duration": "30m 11s",
+    "topics": ["safety-permissions", "tools-harnesses"]
+  },
+  {
     "id": 193,
     "addedDate": "2026-11-07",
     "primarySection": "agent-systems",

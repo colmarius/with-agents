@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    194: {
+      tier: 'useful',
+      reason:
+        'Connects reproducible agent environments with patched tools, infrastructure tests, and property-based checks; claims about eliminating review and making privileged agents safe are not established by the talk.',
+    },
     193: {
       tier: 'useful',
       reason:
@@ -786,6 +791,11 @@ export const cloudCuration = {
 
 export const securityCuration = {
   assessmentsByResourceId: {
+    194: {
+      tier: 'useful',
+      reason:
+        'Explains a dependency-patching workflow that propagates local fixes through shared build definitions, with explicit production-access warnings; response-time benefits remain practitioner anecdotes.',
+    },
     192: {
       tier: 'useful',
       reason:
