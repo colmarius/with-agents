@@ -4,7 +4,7 @@ title: "Don't waste time on specs: /prototype instead"
 resourceId: 74
 date: "2026-07-23"
 collection: "matt-pocock-agent-skills"
-order: 4
+order: 5
 videoId: "n0VhIVtviC0"
 ---
 

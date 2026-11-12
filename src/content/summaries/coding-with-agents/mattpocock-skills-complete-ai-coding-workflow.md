@@ -4,7 +4,7 @@ title: "mattpocock/skills: A complete AI Coding workflow, end-to-end"
 resourceId: 74
 date: "2026-07-16"
 collection: "matt-pocock-agent-skills"
-order: 5
+order: 6
 videoId: "M6mYodf0dJM"
 ---
 

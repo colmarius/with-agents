@@ -4,7 +4,7 @@ title: "9 Things People Get Wrong With My /grill-* skills"
 resourceId: 74
 date: "2026-05-25"
 collection: "matt-pocock-agent-skills"
-order: 7
+order: 8
 videoId: "UzMNBN6xLLA"
 ---
 

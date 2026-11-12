@@ -2,6 +2,7 @@
 title: "Matt Pocock: Agent Skills and Engineering Workflows"
 status: reviewed
 coveredVideoIds:
+  - hWe-j78vNpc
   - UzMNBN6xLLA
   - mh5XZ-L5SFQ
   - M6mYodf0dJM
@@ -13,11 +14,11 @@ coveredVideoIds:
 
 ## Coverage
 
-- Manifest: 299 available entries representing 299 unique video IDs.
-- Reviewed curation: 7 selected videos and 292 unselected videos.
-- Captured: 6 selected source-language transcripts in the source library; 1 selected video reuses its reviewed standalone transcript.
-- Summaries: 6 reviewed source summaries and 1 reviewed standalone public summary.
-- Incorporated: all 7 selected summaries.
+- Manifest: 319 available entries representing 319 unique video IDs.
+- Reviewed curation: 8 selected videos and 311 unselected videos.
+- Captured: 6 selected source-language transcripts in the source library; 2 selected videos reuse public transcript sidecars.
+- Summaries: 6 reviewed source summaries and 2 reviewed public summaries.
+- Incorporated: all 8 selected summaries.
 - Pending selected video IDs: none.
 
 ## Current Thesis
@@ -37,6 +38,7 @@ coveredVideoIds:
 
 ## Emerging Ideas
 
+- Pocock's home repo provides a versioned starting directory for shared instructions, skills, tools, and navigation to separate repositories. Cross-repository editing already works; the proposal addresses duplicated team setup and gives business integrations a common home ([Home Repo summary](../../../summaries/coding-with-agents/home-repo-pattern-matt-pocock.md)).
 - Pocock models large planning work as a dependency graph whose current frontier can be handled while blocked decisions remain in fog; the same dependency framing now lets Grill Me ask independent questions in rounds rather than strictly one at a time ([Wayfinder summary](../../videos/F3lL98Pj90o/summary.md), [v1.2 summary](../../videos/gaDdrDdczO4/summary.md)).
 - Pocock extends skills beyond coding turns into collaboration and environment setup: To Questionnaire moves unresolved decisions through a shared document, while Wizard generates a deterministic script intended to keep sensitive actions and values outside an agent session ([summary](../../videos/gaDdrDdczO4/summary.md)).
 - Pocock's ambitious review example invites structural proposals beyond a changed diff and accepts false positives as a trade-off for surfacing options that narrow review would miss ([summary](../../videos/mh5XZ-L5SFQ/summary.md)).
@@ -44,6 +46,7 @@ coveredVideoIds:
 
 ## Revisions and Tensions
 
+- Pocock still prefers a monorepo where feasible. His home repo is an alternative when access boundaries or organizational constraints keep repositories separate, and his proposed grouped navigation for hundreds of repositories is not a measured scaling result ([Home Repo summary](../../../summaries/coding-with-agents/home-repo-pattern-matt-pocock.md)).
 - Pocock's 2026-05-25 guidance emphasizes active conversational steering and warns against runaway interviews; by 2026-08-05, version 1.2 changes Grill Me from strictly one-at-a-time questions to dependency-aware rounds intended to reduce waiting without mixing blocked decisions (`UzMNBN6xLLA` [00:05:08]-[00:07:07]; `gaDdrDdczO4` [00:03:58]-[00:06:44]; [Grill summary](../../videos/UzMNBN6xLLA/summary.md), [v1.2 summary](../../videos/gaDdrDdczO4/summary.md)).
 - Pocock's complete workflow preserves optional specifications for multi-session work, while his prototype guidance warns against using prose when the decision depends on seeing behavior. Together they narrow the role of a spec rather than rejecting or requiring one universally ([workflow summary](../../videos/M6mYodf0dJM/summary.md), [Prototype summary](../../videos/n0VhIVtviC0/summary.md)).
 - Uncle Bob's preference for short story-by-story feedback loops reinforces the collection's skepticism about exhaustive upfront plans, while his deterministic quality gates add proof layers that Pocock's skills demonstrations discuss less directly ([summary](../../../summaries/coding-with-agents/uncle-bob-on-software-fundamentals-in-the-age-of-ai.md)).

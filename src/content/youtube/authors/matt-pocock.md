@@ -2,6 +2,7 @@
 authorId: matt-pocock
 status: reviewed
 coveredVideoIds:
+  - hWe-j78vNpc
   - UzMNBN6xLLA
   - mh5XZ-L5SFQ
   - M6mYodf0dJM
@@ -26,6 +27,7 @@ coveredVideoIds:
 
 ## Changes Over Time
 
+- Editorial: The 2026-11-12 Home Repo video extends the collection from procedures within a project to shared setup across repositories. Pocock centralizes instructions, skills, and business tools while leaving application code in separate repositories, distinguishing this from the already possible act of editing several repositories in one session ([collection overview](../playlists/matt-pocock-agent-skills/overview.md), [00:00–03:58](https://www.youtube.com/watch?v=hWe-j78vNpc&t=0s)).
 - On 2026-05-25, Pocock describes Grill Me as an actively steered conversation and warns that passivity can let interviews and scope expand; by 2026-08-05, version 1.2 batches independent questions in dependency-aware rounds while retaining recommended answers and follow-up rounds (`UzMNBN6xLLA` [00:05:08]-[00:07:07]; `gaDdrDdczO4` [00:03:58]-[00:06:44]; [Grill summary](../videos/UzMNBN6xLLA/summary.md), [v1.2 summary](../videos/gaDdrDdczO4/summary.md)).
 - On 2026-07-16, Pocock presents a mostly linear route from repository interview to optional spec, tickets, implementation, and review; the 2026-07-23 Prototype and 2026-07-30 Wayfinder videos expand the planning phase into explicit high-fidelity experiments and a dependency map for uncertainty that crosses sessions (`M6mYodf0dJM` [00:06:58]-[00:14:48]; `n0VhIVtviC0` [00:02:53]-[00:08:58]; `F3lL98Pj90o` [00:02:02]-[00:09:23]; [workflow summary](../videos/M6mYodf0dJM/summary.md), [Prototype summary](../videos/n0VhIVtviC0/summary.md), [Wayfinder summary](../videos/F3lL98Pj90o/summary.md)).
 - Editorial: On 2026-08-19, Pocock's Uncle Bob conversation broadens the channel selection from skill procedures into software-engineering controls for agent output, while leaving the guest's first-person productivity and quality claims unverified ([collection overview](../playlists/matt-pocock-agent-skills/overview.md)).

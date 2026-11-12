@@ -4,7 +4,7 @@ title: "New Skills! v1.2 brings /wait-what, /writing-for-agents, and fixes /gril
 resourceId: 74
 date: "2026-08-05"
 collection: "matt-pocock-agent-skills"
-order: 2
+order: 3
 videoId: "gaDdrDdczO4"
 ---
 

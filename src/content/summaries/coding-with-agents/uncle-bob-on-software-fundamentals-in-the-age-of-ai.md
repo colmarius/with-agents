@@ -4,7 +4,7 @@ title: "Software Fundamentals in the Age of AI"
 resourceId: 74
 date: "2026-08-19"
 collection: "matt-pocock-agent-skills"
-order: 1
+order: 2
 videoId: "zcLPGC-tvgk"
 ---
 

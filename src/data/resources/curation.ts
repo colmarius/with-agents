@@ -245,7 +245,7 @@ export const codingCuration = {
     74: {
       tier: 'essential',
       reason:
-        'Connects repository-aware skills with deliberate planning and engineering workflows.',
+        'Connects shared multi-repository setup and repository-aware skills with deliberate planning, review, and engineering workflows; demonstrations are practitioner evidence, not controlled comparisons.',
     },
     77: {
       tier: 'essential',

@@ -4,7 +4,7 @@ title: "/wayfinder: Nothing is too big to plan anymore"
 resourceId: 74
 date: "2026-07-30"
 collection: "matt-pocock-agent-skills"
-order: 3
+order: 4
 videoId: "F3lL98Pj90o"
 ---
 
