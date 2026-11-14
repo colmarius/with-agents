@@ -84,7 +84,7 @@
     {
       "videoId": "C6u5CBIXRf0",
       "position": 10,
-      "title": "How to Ship 100x Faster as a Developer? | Gill Feig (Co-founder, Merge.dev)",
+      "title": "How to Ship 100x Faster as a Developer? | Gil Feig (Co-founder, Merge.dev)",
       "publishedAt": "2026-08-06T14:00:24Z",
       "privacyStatus": "public",
       "available": true
@@ -108,7 +108,7 @@
     {
       "videoId": "AnyxL8HyuCI",
       "position": 13,
-      "title": "Why AI Agent Frameworks will not DIE? | Sam Bhagwat (Mastra.ai Founder & CEO)",
+      "title": "Why AI Agent Frameworks will not DIE?",
       "publishedAt": "2026-08-20T15:30:46Z",
       "privacyStatus": "public",
       "available": true
@@ -140,7 +140,7 @@
     {
       "videoId": "PcsdNYfR6Ag",
       "position": 17,
-      "title": "What Changes After You Join YC? | Jinjing Liang (Orca ADE, Co-founder & CEO)",
+      "title": "What Changes After You Join YC?",
       "publishedAt": "2026-08-29T15:30:29Z",
       "privacyStatus": "public",
       "available": true
@@ -174,6 +174,38 @@
       "position": 21,
       "title": "Open Models Will Beat Closed Ones | Jinjing Liang (Co-founder & CEO of Orca ADE)",
       "publishedAt": "2026-09-05T17:06:37Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hwnNXRKO2Oo",
+      "position": 22,
+      "title": "Deleted video",
+      "privacyStatus": "privacyStatusUnspecified",
+      "available": false,
+      "unavailableReason": "deleted"
+    },
+    {
+      "videoId": "HLXR5evAXmE",
+      "position": 23,
+      "title": "Building Europe's largest Voice AI Startup | Neil Zeghidour (CEO & Co-founder of Gradium.ai)",
+      "publishedAt": "2026-10-19T15:35:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dJBOrDIm6T0",
+      "position": 24,
+      "title": "Netlify CTO on future of agentic coding | Dana Lawson",
+      "publishedAt": "2026-10-22T19:22:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "D_or7cP7-Nw",
+      "position": 25,
+      "title": "Will AI Agents Change Programming Languages?",
+      "publishedAt": "2026-11-05T15:49:54Z",
       "privacyStatus": "public",
       "available": true
     }

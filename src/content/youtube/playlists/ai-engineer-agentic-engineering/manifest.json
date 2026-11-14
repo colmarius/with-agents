@@ -2,8 +2,48 @@
   "playlistId": "PLQorOn5nOmSA",
   "entries": [
     {
-      "videoId": "aeTb5BdmTTc",
+      "videoId": "3Krz7Rdd4JI",
       "position": 0,
+      "title": "Every Company Is Building Agents That Can't Work Together - Justin Schroeder, Standard Agents",
+      "publishedAt": "2026-11-10T20:00:31Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "yH7_SIIgI-Y",
+      "position": 1,
+      "title": "An Agent That Fixes Its Own Mistakes - Saloni Gandhi & Ziwei Guo, LinkedIn",
+      "publishedAt": "2026-11-10T00:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YIhvrvHtonk",
+      "position": 2,
+      "title": "We Kept Rebuilding Our AI Agent. Here's What Survived - Fuad Ali, Arize AI",
+      "publishedAt": "2026-10-27T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZGzthw4BZiA",
+      "position": 3,
+      "title": "Build with Perception Agents — Emile Baizel & Shruti Arora, Amazon AGI Lab",
+      "publishedAt": "2026-10-11T20:00:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "toq-jyGLZDk",
+      "position": 4,
+      "title": "Why Your AI Agents Can't Talk to Each Other (Yet) — Vlad Luzin, BAND",
+      "publishedAt": "2026-10-07T18:30:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aeTb5BdmTTc",
+      "position": 5,
       "title": "Agents, codebases, and teams — Aditya Khandelwal, Amazon AGI Lab",
       "publishedAt": "2026-08-11T00:03:17Z",
       "privacyStatus": "public",
@@ -11,15 +51,15 @@
     },
     {
       "videoId": "shRR1e2HXMk",
-      "position": 1,
-      "title": "Codex, Behind the Harness — Dominik Kundel, OpenAI",
+      "position": 6,
+      "title": "How Codex Works — Dominik Kundel, OpenAI",
       "publishedAt": "2026-08-10T16:00:06Z",
       "privacyStatus": "public",
       "available": true
     },
     {
       "videoId": "OL7kfezynJM",
-      "position": 2,
+      "position": 7,
       "title": "Multiplayer agentic engineering — Arjun Singh, Superconductor",
       "publishedAt": "2026-08-09T20:30:34Z",
       "privacyStatus": "public",
@@ -27,7 +67,7 @@
     },
     {
       "videoId": "03l29gJXpCE",
-      "position": 3,
+      "position": 8,
       "title": "Guide, Verify, Solve — Anirban Chatterjee, Sonar",
       "publishedAt": "2026-08-09T17:45:13Z",
       "privacyStatus": "public",
@@ -35,7 +75,7 @@
     },
     {
       "videoId": "Kz4QJmNrVXU",
-      "position": 4,
+      "position": 9,
       "title": "Velocity Sickness: What Happens When Your Whole Team Gets 10x Faster — Matt Dailey, Ref.",
       "publishedAt": "2026-08-09T16:30:28Z",
       "privacyStatus": "public",
@@ -43,7 +83,7 @@
     },
     {
       "videoId": "vSx5IULvBns",
-      "position": 5,
+      "position": 10,
       "title": "Always-on agents run production without the on-call tax — Justin Smith, Resolve AI",
       "publishedAt": "2026-08-09T14:45:06Z",
       "privacyStatus": "public",
@@ -51,7 +91,7 @@
     },
     {
       "videoId": "iQ5xldZ9StU",
-      "position": 6,
+      "position": 11,
       "title": "Realtime multiplayer, automation, and you! — Idan Gazit, GitHub",
       "publishedAt": "2026-08-08T21:30:06Z",
       "privacyStatus": "public",
@@ -59,7 +99,7 @@
     },
     {
       "videoId": "7vn4WpqNpck",
-      "position": 7,
+      "position": 12,
       "title": "Benchmarking Coding Agents on New vs Legacy Codebases — Denys Linkov, Wisedocs",
       "publishedAt": "2026-08-08T19:00:06Z",
       "privacyStatus": "public",
@@ -67,7 +107,7 @@
     },
     {
       "videoId": "Z-c11pV_uvU",
-      "position": 8,
+      "position": 13,
       "title": "Anthropic's CCA Exam as a Field-Guide for Agentic Engineering — Frank Coyle, UC Berkeley",
       "publishedAt": "2026-08-08T16:00:06Z",
       "privacyStatus": "public",
@@ -75,7 +115,7 @@
     },
     {
       "videoId": "CoEIs6Xm8m8",
-      "position": 9,
+      "position": 14,
       "title": "Open Source Is Dead. Long Live Open Source. — Saoud Rizwan, Cline",
       "publishedAt": "2026-08-07T23:26:51Z",
       "privacyStatus": "public",
@@ -83,9 +123,65 @@
     },
     {
       "videoId": "Yk87oUPVaxU",
-      "position": 10,
+      "position": 15,
       "title": "DeepSWE: A Contamination-Resistant Coding Benchmark — James Shi, Datacurve",
       "publishedAt": "2026-07-26T18:10:56Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "u6jJcIFDLE4",
+      "position": 16,
+      "title": "Why We Killed Our Multi-Agent Pipeline — Subbiah Sethuraman and Abhilash Asokan, ZS Associates",
+      "publishedAt": "2026-07-23T05:00:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "aHhB3sjGjkI",
+      "position": 17,
+      "title": "Agents Building Agents - Alfonso Graziano, Nearform",
+      "publishedAt": "2026-06-28T16:00:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZD9-4fW2HhM",
+      "position": 18,
+      "title": "Build Systems, Not Code - Angie Jones, Agentic AI Foundation",
+      "publishedAt": "2026-06-25T18:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "A48uhxfxbsM",
+      "position": 19,
+      "title": "Agent Optimization with Pydantic AI: GEPA, Evals, Feedback Loops — Samuel Colvin, Pydantic",
+      "publishedAt": "2026-05-07T17:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "2czYyrTzILg",
+      "position": 20,
+      "title": "From Chaos to Choreography: Multi-Agent Orchestration Patterns That Actually Work — Sandipan Bhaumik",
+      "publishedAt": "2026-04-08T10:23:12Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BEKc4P87XKo",
+      "position": 21,
+      "title": "Agentic Engineering: Working With AI, Not Just Using It — Brendan O'Leary",
+      "publishedAt": "2026-04-07T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5N33E9tC400",
+      "position": 22,
+      "title": "Why Agent Engineering — swyx",
+      "publishedAt": "2025-03-24T19:15:01Z",
       "privacyStatus": "public",
       "available": true
     }

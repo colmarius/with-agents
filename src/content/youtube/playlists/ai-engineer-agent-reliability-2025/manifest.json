@@ -72,6 +72,134 @@
       "publishedAt": "2025-08-02T18:15:06Z",
       "privacyStatus": "public",
       "available": true
+    },
+    {
+      "videoId": "-aM2EDTiaMs",
+      "position": 9,
+      "title": "Everything You Need To Know About Agent Observability — Danny Gollapalli & Zubin Koticha, Raindrop",
+      "publishedAt": "2026-05-07T13:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "0RNNfxpdbQk",
+      "position": 10,
+      "title": "Medic for Apache Spark - First Aid for Failing Jobs - Drasko Profirovic, Pinterest",
+      "publishedAt": "2026-07-20T06:24:50Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9HbzAWnKbo4",
+      "position": 11,
+      "title": "From Signal to PR: Anatomy of a Self-Improving Agent — Jason Lopatecki, Arize",
+      "publishedAt": "2026-07-24T20:15:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IQkVMvXQKLY",
+      "position": 12,
+      "title": "Your LLM Deception Monitor Is Broken. The Fix Is in the Training Data - Sachin Kumar, LexisNexis",
+      "publishedAt": "2026-07-08T08:05:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JsCCrBF7F1g",
+      "position": 13,
+      "title": "LLM Observability, Evaluation, Experimentation Platform — Dat Ngo, Arize",
+      "publishedAt": "2026-06-07T18:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Lc8zRh9muoY",
+      "position": 14,
+      "title": "Your Agent Failed in Prod. Good Luck Reproducing It. - Tisha Chawla & Susheem Koul, Microsoft",
+      "publishedAt": "2026-06-29T00:00:39Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "LrGCT7G_rU8",
+      "position": 15,
+      "title": "Using RL Agent to Detect and Remediate ETL Pipeline Failures - Anna Marie Benzon",
+      "publishedAt": "2026-06-29T00:30:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kZsf_Sfm7RU",
+      "position": 16,
+      "title": "The Missing Layer After Launch - Raphael Kalandadze, Wandero AI",
+      "publishedAt": "2026-07-05T03:15:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "u1yaOeEX4e8",
+      "position": 17,
+      "title": "Learned Execution Graphs for Anomaly Detection & Drift in APIs — Ritvik Pandya, JP Morgan Chase",
+      "publishedAt": "2026-07-23T00:00:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "wEc9aG7cRQc",
+      "position": 18,
+      "title": "Why Your Agent Disagrees With Itself (And What To Do About It) - Diane Lin, Datadog",
+      "publishedAt": "2026-07-20T06:25:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zU4EagB311U",
+      "position": 19,
+      "title": "Agents Need Feature Flags - Sachin Gupta",
+      "publishedAt": "2026-07-18T07:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YNT7Plf9KIg",
+      "position": 20,
+      "title": "Your AI Agent Has No Nervous System — Matt Gibiec, Dynatrace",
+      "publishedAt": "2026-10-08T18:30:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YiFqcu9YA38",
+      "position": 21,
+      "title": "Dashboards Are Dead — Sarah Simionescu, Composio",
+      "publishedAt": "2026-10-04T01:30:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "rTojoVotlD8",
+      "position": 22,
+      "title": "Your LLM App Returned 200 OK. It Was Still Wrong. — Marina Petzel, Datadog",
+      "publishedAt": "2026-10-03T01:30:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "y-OVWZD4j6U",
+      "position": 23,
+      "title": "The 5 Levels of Self-Driving Production — Eric Schwartz, Traversal",
+      "publishedAt": "2026-10-02T23:30:30Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "v5tm5EAzsAs",
+      "position": 24,
+      "title": "Your Agent Fix Just Broke Something Else - Sofia Jakovcevic, Arize AI",
+      "publishedAt": "2026-10-24T19:00:09Z",
+      "privacyStatus": "public",
+      "available": true
     }
   ]
 }

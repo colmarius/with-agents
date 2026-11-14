@@ -2,8 +2,168 @@
   "playlistId": "PLcfpQ4tk2k0XFXogv-as7Zu9SrGdiQLgt",
   "entries": [
     {
-      "videoId": "zkX03APVj0M",
+      "videoId": "iK9gmxXyBR0",
       "position": 0,
+      "title": "Pick Problems That Survive When AI Solves Coding - Ara Khan, Cline",
+      "publishedAt": "2026-11-11T00:00:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "MQiojLnK-E0",
+      "position": 1,
+      "title": "60% of Our Data PRs Now Merge With No Human Review - Chetas Joshi, Robinhood",
+      "publishedAt": "2026-11-10T01:00:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "BTtyguoPvBU",
+      "position": 2,
+      "title": "How One Founder Manages 20 AI Coding Agents at Once - Ryan Carson, Untangle",
+      "publishedAt": "2026-11-09T18:00:27Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Enn9dVrRXAo",
+      "position": 3,
+      "title": "Stop Doing Agent Archaeology on Your Team's Code - Richard Feldman, Delta",
+      "publishedAt": "2026-11-09T08:00:16Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "hX140a5klW0",
+      "position": 4,
+      "title": "AI Writes Code Faster Than Uber Can Merge It - Preetam Dwivedi & Manjari Akella, Uber",
+      "publishedAt": "2026-11-09T07:00:15Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6TjFjHPjVH0",
+      "position": 5,
+      "title": "I Let Agents Refactor My Codebase for 3 Weeks. Then I Read the Code. — Keiji Kanazawa, Microsoft",
+      "publishedAt": "2026-11-09T03:30:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "21tuT-e4NVo",
+      "position": 6,
+      "title": "What the Top Companies Do Differently With AI Coding - Martin Harrysson & Prakhar Dixit, McKinsey",
+      "publishedAt": "2026-11-08T20:00:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "maitMe9HCvw",
+      "position": 7,
+      "title": "How to Get Frontier Coding Results at 70% Lower Cost - Nouha Dziri, Cohere",
+      "publishedAt": "2026-11-07T08:00:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Ok6QdZHCcI8",
+      "position": 8,
+      "title": "How Revolut Cut AI Coding Costs 90% With Self-Hosted Open Models - David Abitbol, Revolut",
+      "publishedAt": "2026-10-29T09:00:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "AnsXWH2_EBU",
+      "position": 9,
+      "title": "How Anthropic Merges 30,000 Code Changes a Day - Manish Kapur, Sonar & Addy Osmani, Anthropic",
+      "publishedAt": "2026-10-28T23:00:26Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "4UtrRVtUN_g",
+      "position": 10,
+      "title": "How to Build an AI Code Review Agent - Daksh Gupta, Greptile",
+      "publishedAt": "2026-10-26T09:00:23Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kspZP5BgkEU",
+      "position": 11,
+      "title": "AI Writes the Code. So What's Left for Engineers? - Laurie Voss, Arize AI",
+      "publishedAt": "2026-10-24T23:00:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bU5gDVyu_28",
+      "position": 12,
+      "title": "Does Code Quality Still Matter? It Depends on This — Max Kanat-Alexander, Capital One",
+      "publishedAt": "2026-10-21T19:01:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "adfw3xJBx1o",
+      "position": 13,
+      "title": "A Bank Built Its Own Coding Agent. It Took Off — Felippe Felisola Caso & Francesco Galletta, Monzo",
+      "publishedAt": "2026-10-20T19:00:34Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "I2LL_wd89-A",
+      "position": 14,
+      "title": "How VS Code Went from Monthly to Weekly Releases with AI — Harald Kirschner",
+      "publishedAt": "2026-10-03T15:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "HLTa7Vcs4X0",
+      "position": 15,
+      "title": "Why AI Didn't Actually Make You Ship Faster — Gabriel Spencer-Harper, Meticulous",
+      "publishedAt": "2026-10-02T21:30:22Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "LlgiOCmFG_w",
+      "position": 16,
+      "title": "Fixing the PR Bottleneck — Matt Pocock, AIHero",
+      "publishedAt": "2026-09-26T00:07:54Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "17-YSUHo6Lk",
+      "position": 17,
+      "title": "Building Blocks for Uber’s Software Factory— Uday Kiran Medisetty & Adam Huda, Uber",
+      "publishedAt": "2026-08-21T13:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "s-aixZYJG4c",
+      "position": 18,
+      "title": "The Last Human Code Review: Building Trust in AI-Generated Code — Itamar Friedman, Qodo",
+      "publishedAt": "2026-08-20T13:30:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "YgEv7IQzGdM",
+      "position": 19,
+      "title": "How to Kill the Code Review — Ankit Jain, Aviator",
+      "publishedAt": "2026-08-17T20:00:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zkX03APVj0M",
+      "position": 20,
       "title": "Emulated: The Data for Fully Autonomous Software Engineers and Companies — Joseph Wang",
       "publishedAt": "2026-07-31T21:00:03Z",
       "privacyStatus": "public",
@@ -11,7 +171,7 @@
     },
     {
       "videoId": "AMiyLItEtLA",
-      "position": 1,
+      "position": 21,
       "title": "fighting slop with slop — Vaibhav Gupta, Boundary",
       "publishedAt": "2026-07-31T01:11:30Z",
       "privacyStatus": "public",
@@ -19,7 +179,7 @@
     },
     {
       "videoId": "CgsWxRUY5Eo",
-      "position": 2,
+      "position": 22,
       "title": "AI Agents for Performance: Ship Faster, Pay Less — Rajat Shah, Netflix",
       "publishedAt": "2026-07-28T00:59:04Z",
       "privacyStatus": "public",
@@ -27,7 +187,7 @@
     },
     {
       "videoId": "Yk87oUPVaxU",
-      "position": 3,
+      "position": 23,
       "title": "DeepSWE: A Contamination-Resistant Coding Benchmark — James Shi, Datacurve",
       "publishedAt": "2026-07-26T18:10:56Z",
       "privacyStatus": "public",
@@ -35,31 +195,87 @@
     },
     {
       "videoId": "xIt_mTQp6mY",
-      "position": 4,
+      "position": 24,
       "title": "Loop Engineering from First Principles — Kyle Mistele, HumanLayer",
       "publishedAt": "2026-07-25T20:41:40Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "9HbzAWnKbo4",
+      "position": 25,
+      "title": "From Signal to PR: Anatomy of a Self-Improving Agent — Jason Lopatecki, Arize",
+      "publishedAt": "2026-07-24T20:15:32Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "il1c1a2FufU",
-      "position": 5,
+      "position": 26,
       "title": "Full Workshop: Setting Yourself Up for Success —Jason Liu, OpenAI Codex",
       "publishedAt": "2026-07-24T15:00:06Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "Ib5GBkD555M",
+      "position": 27,
+      "title": "Why Software Factories Fail",
+      "publishedAt": "2026-07-23T16:30:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "Cz4v1WHVyZc",
-      "position": 6,
+      "position": 28,
       "title": "HTML Is All Agents Need — James Russo, HeyGen",
       "publishedAt": "2026-07-21T18:54:01Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "LqLoYksJ6do",
+      "position": 29,
+      "title": "We Gave an Agent Production Code Access and Then Tried to Sleep at Night — Moritz Johner, Form3",
+      "publishedAt": "2026-07-20T17:17:53Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "JJGbw4ggaFs",
+      "position": 30,
+      "title": "From Blind Spots to Merged PRs: Continuous Agentic Performance Optimization - May Walter, Hud",
+      "publishedAt": "2026-07-19T13:45:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "yv6xovSsB1U",
+      "position": 31,
+      "title": "Content Is Code - Matt Palmer, Conductor",
+      "publishedAt": "2026-07-18T16:15:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zU4EagB311U",
+      "position": 32,
+      "title": "Agents Need Feature Flags - Sachin Gupta",
+      "publishedAt": "2026-07-18T07:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "RGSFUqzqErE",
+      "position": 33,
+      "title": "On AI and Knowledge — Pablo Castro, Distinguished Engineer & CVP for AI Knowledge, Microsoft",
+      "publishedAt": "2026-07-17T16:30:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "1P1hJ36rxM0",
-      "position": 7,
+      "position": 34,
       "title": "\"Software engineering is not about writing code\" — Benoit Schillings, Google DeepMind VP of Research",
       "publishedAt": "2026-07-17T15:24:44Z",
       "privacyStatus": "public",
@@ -67,15 +283,79 @@
     },
     {
       "videoId": "q4Tr-DknG2M",
-      "position": 8,
+      "position": 35,
       "title": "Recursive Model Improvement — Lee Robinson, Cursor, SpaceXAI",
       "publishedAt": "2026-07-15T20:13:51Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "uU5Gv2h8-9g",
+      "position": 36,
+      "title": "Claude Fable, Claude Tag, and Anthropic's Culture — Cat Wu & Thariq Shihipar ft Simon Willison",
+      "publishedAt": "2026-07-15T15:05:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8oyalrfwgjw",
+      "position": 37,
+      "title": "RLM: Recursive Language Models for Large Codebases - Shashi, Superagentic AI",
+      "publishedAt": "2026-07-12T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "7JgIS42mz7U",
+      "position": 38,
+      "title": "The AI bugpocalypse is here. Now what? - Jack Cable, Corridor",
+      "publishedAt": "2026-07-12T22:00:09Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "TJPInBjhE4Q",
+      "position": 39,
+      "title": "ReviewDebt: a practical framework for scoring every pull request — Sachin Gupta, Ebay",
+      "publishedAt": "2026-07-12T12:15:38Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "5192csoTkVo",
+      "position": 40,
+      "title": "remobi.app: Don't change your terminal workflow for mobile",
+      "publishedAt": "2026-07-12T08:47:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WLXxTaPagA8",
+      "position": 41,
+      "title": "Every Solo Agent Builder Eventually Reinvents a Worse Version of CI/CD - Sumaiya Shrabony",
+      "publishedAt": "2026-07-11T16:30:04Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9arM9b7JgOo",
+      "position": 42,
+      "title": "Develop at Idea Velocity - Jeffrey Lee-Chan, Snapchat",
+      "publishedAt": "2026-07-11T14:45:18Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "GdvKNwMcfd0",
+      "position": 43,
+      "title": "From Writing Code to Designing Systems: How the Developer Role is Changing — Chris Noring, Microsoft",
+      "publishedAt": "2026-07-11T14:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "xUnRQ9vLXxo",
-      "position": 9,
+      "position": 44,
       "title": "Everything we knew about software has changed — Theo Browne, @t3dotgg ​",
       "publishedAt": "2026-07-08T19:59:33Z",
       "privacyStatus": "public",
@@ -83,7 +363,7 @@
     },
     {
       "videoId": "HsxQICTLF84",
-      "position": 10,
+      "position": 45,
       "title": "Building an ACP-Compatible Agent Live — Bennet Fenner, Zed",
       "publishedAt": "2026-07-08T12:00:07Z",
       "privacyStatus": "public",
@@ -91,23 +371,199 @@
     },
     {
       "videoId": "HEFSExa0xl0",
-      "position": 11,
+      "position": 46,
       "title": "Teaching Coding Agents to do Spreadsheets - Nuno Campos, Witan Labs",
       "publishedAt": "2026-07-08T09:03:25Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "CLttOU7n6sI",
+      "position": 47,
+      "title": "Respect The Process - Andrew Dumit, Watershed Technology Inc.",
+      "publishedAt": "2026-07-07T23:31:49Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "bRnoEpoK5m4",
+      "position": 48,
+      "title": "The Pipeline Is Dead - Iris ten Teije, Sky Valley Ambient Computing",
+      "publishedAt": "2026-07-07T03:46:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "Rx8f05JI_WA",
+      "position": 49,
+      "title": "SWE-Marathon: Evaluating Coding Agents at Billion-Token Scale - Rishi Desai, Abundant AI",
+      "publishedAt": "2026-07-07T03:45:51Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "9fubhllmsBU",
+      "position": 50,
+      "title": "Field Guide to Fable — Thariq Shihipar, Anthropic",
+      "publishedAt": "2026-07-06T16:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "kZsf_Sfm7RU",
+      "position": 51,
+      "title": "The Missing Layer After Launch - Raphael Kalandadze, Wandero AI",
+      "publishedAt": "2026-07-05T03:15:05Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "6bmM45jkMDY",
+      "position": 52,
+      "title": "You Can't Prompt the Room: The Last Skill AI Won't Replace - Balázs Horváth, VisualLabs",
+      "publishedAt": "2026-06-29T02:30:20Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "DqtmZE6Hl0g",
+      "position": 53,
+      "title": "The Prompt is the Platform - Dominik Tornow, Resonate HQ",
+      "publishedAt": "2026-06-29T01:00:36Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "dRmWYHuIJxM",
+      "position": 54,
+      "title": "We Cut 94% of AI Coding Tokens With a Local Code Index - Rajkumar Sakthivel, Tesco",
+      "publishedAt": "2026-06-28T22:30:29Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "OXMMN-XbxwA",
+      "position": 55,
+      "title": "Research to Reality: Bringing Frontier ML Research to Production - Vaidas Razgaitis, Higharc",
+      "publishedAt": "2026-06-28T19:30:02Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "whue9_YquGA",
+      "position": 56,
+      "title": "Building an Autonomous Engineering Org - Angie Jones, Agentic AI Foundation",
+      "publishedAt": "2026-06-28T19:00:10Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "IddXPepIAS4",
+      "position": 57,
+      "title": "Using Spec-Driven Development for Production Workflows - Erik Hanchett, AWS",
+      "publishedAt": "2026-06-28T17:30:24Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "jVjt-2g8NMY",
+      "position": 58,
+      "title": "A Genius With Amnesia - Victor Savkin, Nx",
+      "publishedAt": "2026-06-26T01:15:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "3hXJI2q0Jz8",
+      "position": 59,
+      "title": "Recursive Coding Agents - Raymond Weitekamp, OpenProse",
+      "publishedAt": "2026-06-25T21:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "ZD9-4fW2HhM",
+      "position": 60,
+      "title": "Build Systems, Not Code - Angie Jones, Agentic AI Foundation",
+      "publishedAt": "2026-06-25T18:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "zMiSRliEzv4",
+      "position": 61,
+      "title": "Self Driving Products: Product Signals to Pull Requests — Joshua Snyder, PostHog",
+      "publishedAt": "2026-06-10T13:00:17Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "EcqMYoIV57A",
-      "position": 12,
+      "position": 62,
       "title": "Why More Context Makes Your Agent Dumber and What to Do About It — Nupur Sharma, Qodo",
       "publishedAt": "2026-06-08T15:00:17Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "wcUJWP6WpGM",
+      "position": 63,
+      "title": "SWE-rebench: Lessons from Evaluating Coding Agents — Ibragim Badertdinov, Nebius",
+      "publishedAt": "2026-06-04T14:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "504PvfXou5Y",
+      "position": 64,
+      "title": "BDD, ADR, PRD, WTF: Capturing Decisions for Humans and AI Alike — Michal Cichra, Safe Intelligence",
+      "publishedAt": "2026-06-03T13:00:08Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "KA5kPbdkK2E",
+      "position": 65,
+      "title": "How Lovable self-improves every hour — Benjamin Verbeek, Lovable",
+      "publishedAt": "2026-06-02T16:00:33Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "NuePCNMpWGc",
+      "position": 66,
+      "title": "Can LLMs generate Enterprise Quality Code? — Prasenjit Sarkar, Sonar",
+      "publishedAt": "2026-05-31T18:00:21Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "vy7o1g2iHY8",
+      "position": 67,
+      "title": "How I deleted 95% of my agent skills and got better results — Nick Nisi, WorkOS",
+      "publishedAt": "2026-05-30T18:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "phchDt63qAA",
+      "position": 68,
+      "title": "How We Built Zeta2: Training an Edit Prediction Model in Production — Ben Kunkle, Zed",
+      "publishedAt": "2026-05-30T16:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "V-L0INGTEOg",
+      "position": 69,
+      "title": "Reverse engineering a Viking VOIP phone protocol with Claude Code — Boris Starkov, Eleven Labs",
+      "publishedAt": "2026-05-29T14:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "li0SaBt9RDM",
-      "position": 13,
+      "position": 70,
       "title": "The AI Skill I Rely On Daily — Priscila Andre de Oliveira, Sentry",
       "publishedAt": "2026-05-27T17:00:06Z",
       "privacyStatus": "public",
@@ -115,7 +571,7 @@
     },
     {
       "videoId": "ugUeZ8-b-u0",
-      "position": 14,
+      "position": 71,
       "title": "Why Rust is the Ideal Language for Vibe-Coding — Daniel Szoke, Sentry",
       "publishedAt": "2026-05-27T15:00:06Z",
       "privacyStatus": "public",
@@ -123,7 +579,7 @@
     },
     {
       "videoId": "7gujZrJ9L5I",
-      "position": 15,
+      "position": 72,
       "title": "How Google DeepMind Runs Agents at Scale — KP Sawhney & Ian Ballantyne, Google DeepMind",
       "publishedAt": "2026-05-24T18:00:06Z",
       "privacyStatus": "public",
@@ -131,7 +587,7 @@
     },
     {
       "videoId": "W-SX_srBa3Y",
-      "position": 16,
+      "position": 73,
       "title": "Let's Talk About FOMAT: Fear of Missing Agent Time — Michael Richman, Cmd+Ctrl",
       "publishedAt": "2026-05-24T16:00:06Z",
       "privacyStatus": "public",
@@ -139,7 +595,7 @@
     },
     {
       "videoId": "5Sui_OnSRlY",
-      "position": 17,
+      "position": 74,
       "title": "The Missing Primitive for Agent Swarms — Lou Bichard, Ona",
       "publishedAt": "2026-05-23T16:00:06Z",
       "privacyStatus": "public",
@@ -147,7 +603,7 @@
     },
     {
       "videoId": "TeGsFFNqRLA",
-      "position": 18,
+      "position": 75,
       "title": "Fast Models Need Slow Developers — Sarah Chieng, Cerebras",
       "publishedAt": "2026-05-22T18:00:06Z",
       "privacyStatus": "public",
@@ -155,7 +611,7 @@
     },
     {
       "videoId": "dyHpnnlkTc8",
-      "position": 19,
+      "position": 76,
       "title": "Cooking with Agents in VS Code — Liam Hampton, Microsoft",
       "publishedAt": "2026-05-21T17:00:06Z",
       "privacyStatus": "public",
@@ -163,15 +619,23 @@
     },
     {
       "videoId": "VaS2h-dY1-4",
-      "position": 20,
+      "position": 77,
       "title": "Scaling Agents on Kubernetes with acpx and ACP — Onur Solmaz, OpenClaw",
       "publishedAt": "2026-05-21T15:00:06Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "JomVvNDjGb8",
+      "position": 78,
+      "title": "Your Coding Agent Should Do AI System Engineering — Ben Burtenshaw, Hugging Face",
+      "publishedAt": "2026-05-21T13:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "yUmS-F9IX90",
-      "position": 21,
+      "position": 79,
       "title": "Don't Build Slop (4 Levels of AI Agent Maturity) - Ara Khan, Cline",
       "publishedAt": "2026-05-19T15:00:06Z",
       "privacyStatus": "public",
@@ -179,7 +643,7 @@
     },
     {
       "videoId": "L2r6vLlLgs8",
-      "position": 22,
+      "position": 80,
       "title": "Fighting AI with AI — Lawrence Jones, Incident",
       "publishedAt": "2026-05-17T16:30:07Z",
       "privacyStatus": "public",
@@ -187,7 +651,7 @@
     },
     {
       "videoId": "4_VQBbs2iQA",
-      "position": 23,
+      "position": 81,
       "title": "How Building with AI Can Double the Throughput of Your Engineering Team — Brian Scanlan, Intercom",
       "publishedAt": "2026-05-15T13:00:06Z",
       "privacyStatus": "public",
@@ -195,7 +659,7 @@
     },
     {
       "videoId": "VktrqzQgytY",
-      "position": 24,
+      "position": 82,
       "title": "CI/CD Is Dead, Agents Need Continuous Compute and Computers — Hugo Santos and Madison Faulkner",
       "publishedAt": "2026-05-13T13:00:06Z",
       "privacyStatus": "public",
@@ -203,7 +667,7 @@
     },
     {
       "videoId": "4VhbYlfC7Gs",
-      "position": 25,
+      "position": 83,
       "title": "Malleable Evals: Why Are We Evaluating Adaptive Systems with Static Tests? — Vincent Koc, OpenClaw",
       "publishedAt": "2026-05-12T16:00:06Z",
       "privacyStatus": "public",
@@ -211,15 +675,23 @@
     },
     {
       "videoId": "vAIDdLKB6-w",
-      "position": 26,
+      "position": 84,
       "title": "A Piece of Pi: Embedding The OpenClaw Coding Agent In Your Product — Matthias Luebken, Tavon",
       "publishedAt": "2026-05-11T17:00:06Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "Wmp2Tku2PrI",
+      "position": 85,
+      "title": "Vibe Engineering Effect Apps — Michael Arnaldi, Effectful",
+      "publishedAt": "2026-05-07T15:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "ow1we5PzK-o",
-      "position": 27,
+      "position": 86,
       "title": "The Multi-Agent Architecture That Actually Ships — Luke Alvoeiro, Factory",
       "publishedAt": "2026-05-06T15:00:06Z",
       "privacyStatus": "public",
@@ -227,7 +699,7 @@
     },
     {
       "videoId": "2TLXsxkz0zI",
-      "position": 28,
+      "position": 87,
       "title": "Ralph Loops: Build Dumb AI Loops That Ship — Chris Parsons, Cherrypick",
       "publishedAt": "2026-05-04T14:00:17Z",
       "privacyStatus": "public",
@@ -235,15 +707,31 @@
     },
     {
       "videoId": "W76woOYHlvY",
-      "position": 29,
+      "position": 88,
       "title": "Software Engineering Is Becoming Plan and Review — Louis Knight-Webb, Vibe Kanban",
       "publishedAt": "2026-05-02T21:00:06Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "juoNbJiZUi0",
+      "position": 89,
+      "title": "LLM codegen fails and how to stop 'em — Danilo Campos, PostHog",
+      "publishedAt": "2026-04-30T14:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "WE_Gnowy3uw",
+      "position": 90,
+      "title": "Replacing 12K LoC with a 200 LoC Skill — David Gomes, Cursor",
+      "publishedAt": "2026-04-30T12:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "MhHEGMFCEB0",
-      "position": 30,
+      "position": 91,
       "title": "OpenAI Codex Masterclass  — Vaibhav Srivastav & Katia Gil Guzman",
       "publishedAt": "2026-04-29T16:00:06Z",
       "privacyStatus": "public",
@@ -251,7 +739,7 @@
     },
     {
       "videoId": "rnDm57Py54A",
-      "position": 31,
+      "position": 92,
       "title": "Building your own software factory — Eric Zakariasson, Cursor",
       "publishedAt": "2026-04-28T18:00:06Z",
       "privacyStatus": "public",
@@ -259,7 +747,7 @@
     },
     {
       "videoId": "ClWD8OEYgp8",
-      "position": 32,
+      "position": 93,
       "title": "Collaborative AI Engineering: One Dev, Two Dozen Agents, Zero Alignment — Maggie Appleton, GitHub",
       "publishedAt": "2026-04-26T15:00:06Z",
       "privacyStatus": "public",
@@ -267,7 +755,7 @@
     },
     {
       "videoId": "kR64LOqBBCU",
-      "position": 33,
+      "position": 94,
       "title": "AgentCraft: Putting the Orc in Orchestration — Ido Salomon",
       "publishedAt": "2026-04-25T16:00:06Z",
       "privacyStatus": "public",
@@ -275,23 +763,79 @@
     },
     {
       "videoId": "-QFHIoCo-Ko",
-      "position": 34,
+      "position": 95,
       "title": "Full Walkthrough: Workflow for AI Coding — Matt Pocock",
       "publishedAt": "2026-04-24T15:15:38Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "v4F1gFy-hqg",
+      "position": 96,
+      "title": "\"Software Fundamentals Matter More Than Ever\" — Matt Pocock",
+      "publishedAt": "2026-04-23T15:15:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "CS5Cmz5FssI",
+      "position": 97,
+      "title": "How AI is changing Software Engineering: A Conversation with Gergely Orosz, @pragmaticengineer",
+      "publishedAt": "2026-04-21T16:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "8txf05vVVl4",
+      "position": 98,
+      "title": "Code Mode: Let the Code do the Talking - Sunil Pai, Cloudflare",
+      "publishedAt": "2026-04-19T17:19:35Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "_Zcw_sVF6hU",
+      "position": 99,
+      "title": "The Friction is Your Judgment — Armin Ronacher & Cristina Poncela Cubeiro, Earendil",
+      "publishedAt": "2026-04-18T10:30:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "RjfbvDXpFls",
-      "position": 35,
+      "position": 100,
       "title": "Building pi in a World of Slop — Mario Zechner",
       "publishedAt": "2026-04-16T22:58:06Z",
       "privacyStatus": "public",
       "available": true
     },
     {
+      "videoId": "BEKc4P87XKo",
+      "position": 101,
+      "title": "Agentic Engineering: Working With AI, Not Just Using It — Brendan O'Leary",
+      "publishedAt": "2026-04-07T23:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "eIoohUmYpGI",
+      "position": 102,
+      "title": "The Infinite Software Crisis – Jake Nations, Netflix",
+      "publishedAt": "2025-12-20T17:00:06Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
+      "videoId": "DdaAABdAqZY",
+      "position": 103,
+      "title": "Piloting agents in GitHub Copilot - Christopher Harrison, Microsoft",
+      "publishedAt": "2025-07-26T07:00:13Z",
+      "privacyStatus": "public",
+      "available": true
+    },
+    {
       "videoId": "1oySeF37SZc",
-      "position": 36,
+      "position": 104,
       "title": "GitHub Next Explorations: Rahul Pandita",
       "publishedAt": "2025-02-08T21:31:24Z",
       "privacyStatus": "public",
@@ -299,7 +843,7 @@
     },
     {
       "videoId": "prttz9_1XDc",
-      "position": 37,
+      "position": 105,
       "title": "Enhancing Quality and Security in CI: Gunjan Patel",
       "publishedAt": "2024-11-27T19:56:40Z",
       "privacyStatus": "public",
@@ -307,7 +851,7 @@
     },
     {
       "videoId": "Up6WVA07QdE",
-      "position": 38,
+      "position": 106,
       "title": "The AI emperor has no DAUs  why most devs still don't use code AI: Quinn Slack",
       "publishedAt": "2024-11-20T20:28:33Z",
       "privacyStatus": "public",
@@ -315,7 +859,7 @@
     },
     {
       "videoId": "Ve-akpov78Q",
-      "position": 39,
+      "position": 107,
       "title": "Code Generation and Maintenance at Scale: Morgante Pell",
       "publishedAt": "2024-10-17T18:52:20Z",
       "privacyStatus": "public",
@@ -323,7 +867,7 @@
     },
     {
       "videoId": "DuZXbinJ4Uc",
-      "position": 40,
+      "position": 108,
       "title": "How Codeium Breaks Through the Ceiling for Retrieval: Kevin Hou",
       "publishedAt": "2024-07-31T20:04:07Z",
       "privacyStatus": "public",
@@ -331,7 +875,7 @@
     },
     {
       "videoId": "pAbRL0h_SNs",
-      "position": 41,
+      "position": 109,
       "title": "Private video",
       "privacyStatus": "private",
       "available": false,
