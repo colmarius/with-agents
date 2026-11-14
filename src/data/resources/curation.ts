@@ -310,7 +310,7 @@ export const codingCuration = {
     35: {
       tier: 'essential',
       reason:
-        'Connects measurement, property-based testing, bounded agent loops, and developer-platform feedback; company reports are not controlled findings.',
+        'Connects measurement, property-based testing, bounded agent loops, developer-platform feedback, spec-based verification and resilience, and engineering leadership; company reports are not controlled findings.',
     },
     74: {
       tier: 'essential',
@@ -420,12 +420,12 @@ export const codingCuration = {
     31: {
       tier: 'useful',
       reason:
-        'Collects practitioner interviews on harness design and supplying useful context.',
+        "Collects practitioner interviews on harness design, supplying useful context, and when automation can replace review; claims and forecasts remain the guests' accounts.",
     },
     32: {
       tier: 'useful',
       reason:
-        'Offers selected orchestration and verification discussions, with some overlap across collections.',
+        'Offers selected orchestration, verification, and security discussions, including first-party vendor claims, with some overlap across collections.',
     },
     33: {
       tier: 'useful',
@@ -650,7 +650,7 @@ export const codingCuration = {
     94: {
       tier: 'context',
       reason:
-        'Connects factory verification and architecture with demonstrations of collaboration, memory, and MCP; workflow outcomes remain practitioner or vendor accounts, not independent evaluations.',
+        'Connects factory verification and architecture with demonstrations of durable agent runs, collaboration, memory, and MCP; workflow outcomes remain practitioner or vendor accounts, not independent evaluations.',
     },
     96: {
       tier: 'context',

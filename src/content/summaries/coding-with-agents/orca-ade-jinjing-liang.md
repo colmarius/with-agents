@@ -4,7 +4,7 @@ title: "What Changes After You Join YC? | Jinjing Liang (Orca ADE, Co-founder & 
 resourceId: 31
 date: "2026-08-29"
 collection: "the-west-coast-builders"
-order: 1
+order: 2
 videoId: "PcsdNYfR6Ag"
 ---
 

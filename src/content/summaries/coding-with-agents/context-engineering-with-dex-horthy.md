@@ -4,7 +4,7 @@ title: "Context engineering with Dex Horthy"
 resourceId: 35
 date: "2026-07-15"
 collection: "pragmatic-engineer-selected-conversations"
-order: 6
+order: 8
 videoId: "Usufn8IQJgw"
 ---
 

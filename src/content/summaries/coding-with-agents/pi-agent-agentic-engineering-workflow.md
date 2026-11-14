@@ -4,7 +4,7 @@ title: "Pi Agent dev reveals his Agentic Engineering Workflow"
 resourceId: 32
 date: "2026-09-12"
 collection: "david-ondrej-agentic-engineering"
-order: 1
+order: 2
 videoId: "SxuQs9GGYbk"
 ---
 

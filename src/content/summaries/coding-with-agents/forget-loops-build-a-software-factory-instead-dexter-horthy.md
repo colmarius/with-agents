@@ -4,7 +4,7 @@ title: "“Forget Loops, build a Software Factory instead” – Dexter Horthy"
 resourceId: 32
 date: "2026-08-07"
 collection: "david-ondrej-agentic-engineering"
-order: 2
+order: 3
 videoId: "xgkjtF89-44"
 ---
 

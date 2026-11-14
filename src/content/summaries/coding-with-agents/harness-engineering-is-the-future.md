@@ -3,7 +3,7 @@ addedDate: '2026-08-07'
 title: "Harness Engineering is the future… trust me."
 resourceId: 32
 collection: "david-ondrej-agentic-engineering"
-order: 6
+order: 7
 videoId: k8o_UgtrGyA
 date: "2026-05-13"
 ---

@@ -4,7 +4,7 @@ title: "From IDEs to AI Agents with Steve Yegge"
 resourceId: 35
 date: "2026-03-11"
 collection: "pragmatic-engineer-selected-conversations"
-order: 15
+order: 17
 videoId: "aFsAOu2bgFk"
 ---
 

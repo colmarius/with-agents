@@ -3,7 +3,7 @@ addedDate: '2026-09-15'
 title: "MCP Explained | What, Why and How"
 resourceId: 94
 collection: syntax-agent-workflows
-order: 7
+order: 8
 videoId: "1FqiNnOsrgM"
 date: "2025-07-01"
 ---

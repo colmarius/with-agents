@@ -4,7 +4,7 @@ title: "How to Give Your AI Agent Long-Term Memory"
 resourceId: 94
 date: "2025-12-13"
 collection: syntax-agent-workflows
-order: 5
+order: 6
 videoId: cWBVMEHPgQU
 ---
 

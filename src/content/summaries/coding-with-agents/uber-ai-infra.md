@@ -4,7 +4,7 @@ title: "Uber’s AI infra, from the inside"
 resourceId: 35
 date: "2026-10-14"
 collection: "pragmatic-engineer-selected-conversations"
-order: 1
+order: 2
 videoId: "MDUYSMJmi8A"
 ---
 

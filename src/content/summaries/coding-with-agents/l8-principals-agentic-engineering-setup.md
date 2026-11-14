@@ -3,7 +3,7 @@ addedDate: '2026-08-07'
 title: "L8 Principal's Agentic Engineering Setup (just copy him)"
 resourceId: 32
 collection: "david-ondrej-agentic-engineering"
-order: 5
+order: 6
 videoId: "8ZgpAXe5V5w"
 date: "2026-07-17"
 ---

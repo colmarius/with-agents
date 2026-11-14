@@ -4,7 +4,7 @@ title: "Building Claude Code with Boris Cherny"
 resourceId: 35
 date: "2026-03-04"
 collection: "pragmatic-engineer-selected-conversations"
-order: 7
+order: 9
 videoId: "julbw1JuAz0"
 ---
 

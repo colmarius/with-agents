@@ -169,9 +169,9 @@ test('AI groups broad resources while preserving substantive coding cross-listin
 
 test('Pragmatic Engineer episodes reuse the collection without duplicate cards', () => {
   const episodes = [
-    ['design-engineering-maggie-appleton', 'KZSzF0KEFRg', 155, 2],
-    ['ai-skills-with-matt-pocock', '4DhcSPkEbwI', 149, 3],
-    ['building-codex-with-tibo-sottiaux', 'sLSTM9znQNs', 122, 4],
+    ['design-engineering-maggie-appleton', 'KZSzF0KEFRg', 155, 4],
+    ['ai-skills-with-matt-pocock', '4DhcSPkEbwI', 149, 5],
+    ['building-codex-with-tibo-sottiaux', 'sLSTM9znQNs', 122, 6],
   ] as const;
   for (const [slug, videoId, oldId, order] of episodes) {
     assert.ok(!resources.some(({ id }) => id === oldId));

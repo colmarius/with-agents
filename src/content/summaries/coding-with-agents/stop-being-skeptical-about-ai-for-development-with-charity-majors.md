@@ -4,7 +4,7 @@ title: "Stop being skeptical about AI for development with Charity Majors"
 resourceId: 35
 date: "2026-08-12"
 collection: "pragmatic-engineer-selected-conversations"
-order: 18
+order: 20
 videoId: "HC8T1OlgYi0"
 ---
 
