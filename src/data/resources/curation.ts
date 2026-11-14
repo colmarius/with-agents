@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    216: {
+      tier: 'useful',
+      reason:
+        'Connects hidden tool-call failures to trace scoring and reviewable skill fixes, with concrete environment and configuration examples; score trends and improvements are vendor-reported rather than independently validated.',
+    },
     215: {
       tier: 'useful',
       reason:

@@ -1,0 +1,20 @@
+---
+title: "Your AI Agent Is Hiding Its Mistakes From You - Ben Holmes, Warp"
+resourceId: 216
+date: "2026-11-06"
+---
+
+Ben Holmes, a DevEx engineering lead at Warp, describes a feedback loop for improving agent skills and configuration: collect execution traces, score completed runs, group recurring failures, propose changes, and keep measuring. His motivating example is an agent that successfully completes a task despite stale setup instructions, without telling the team how much effort it wasted working around them.
+
+This summary is based on the English auto-generated captions. The examples come from Holmes's work and Warp demonstrations; they do not independently establish reliability or productivity gains.
+
+### Key points
+
+- **Successful completion can conceal broken instructions.** Holmes reports agents repeatedly probing ports and rediscovering their environment because testing skills were out of date. The agents eventually succeeded, so the visible symptom was a slower run rather than an explicit failure report. Inspecting tool calls exposes this wasted work even when the final response says the task worked. [07:52–08:46](https://www.youtube.com/watch?v=pz74r-4dGfQ&t=472s)
+- **Collect what the agent said, did, and produced.** Centralize conversations from local agent folders or shared cloud runners. Include tool calls, filesystem operations, and MCP interactions, plus the resulting code diff or a pull request pinned to a commit. Conversation text alone cannot show whether the agent used tools efficiently or produced a good change. Holmes describes local traces as sufficient for improving an individual setup; shared storage makes team-wide analysis possible. [03:12–06:00](https://www.youtube.com/watch?v=pz74r-4dGfQ&t=192s)
+- **Define team-specific grading criteria.** Use an LLM as a judge: give a separate agent a rubric that describes acceptable and unacceptable behavior. Holmes's examples are redundant tests, verbosity in comments and responses, and inefficient tool use. The test criterion depends on the team's testing policy, rather than assuming that fewer tests are always better. Start with a short rubric and explicit pass/fail thresholds, then refine it through use. [06:00–07:52](https://www.youtube.com/watch?v=pz74r-4dGfQ&t=360s), [08:46–10:40](https://www.youtube.com/watch?v=pz74r-4dGfQ&t=526s)
+- **Keep explanations alongside scores.** A grading run can follow a merged pull request and evaluate either every conversation or a random sample to limit token costs. Record why each criterion passed or failed, not just the grade. Those explanations give the next agent evidence about recurring causes, such as missing environment instructions or tests that contradict team guidelines. [10:40–13:50](https://www.youtube.com/watch?v=pz74r-4dGfQ&t=640s)
+- **Turn repeated failures into proposed changes.** Holmes describes a scheduled agent reading failed-run reports, finding common problems, and using access to the skills repository to suggest fixes. In his Skill Doctor example, this produces clearer port-selection instructions for end-to-end testing and more prescriptive changelog guidance. Skill Doctor offers a one-time local analysis; Warp Factories applies the scoring and proposal loop continuously, with proposed pull requests waiting for team review. [12:46–16:39](https://www.youtube.com/watch?v=pz74r-4dGfQ&t=766s), [17:42–18:45](https://www.youtube.com/watch?v=pz74r-4dGfQ&t=1062s)
+- **Track grades after changing the setup.** Holmes proposes plotting rubric scores over time and comparing changes with when a skill was merged, making the effects of self-improvement visible rather than leaving them inside an opaque memory process. He also shows a proposed configuration fix for a triage agent that repeatedly failed to spawn subagents. These examples illustrate the feedback loop, but the talk does not provide a controlled evaluation showing that higher judge scores cause better engineering outcomes. [15:47–19:19](https://www.youtube.com/watch?v=pz74r-4dGfQ&t=947s)
+
+Full video: <https://www.youtube.com/watch?v=pz74r-4dGfQ>

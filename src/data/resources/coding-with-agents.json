@@ -1,5 +1,18 @@
 [
   {
+    "id": 216,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "Your AI Agent Is Hiding Its Mistakes From You - Ben Holmes, Warp",
+    "url": "https://www.youtube.com/watch?v=pz74r-4dGfQ",
+    "description": "Ben Holmes explains how to collect agent conversations, tool calls, and outputs, score them against team-defined rubrics, and turn recurring failures into proposed skill and configuration changes. Warp examples show agents working around stale instructions without reporting the wasted effort. First-party demonstrations, not independent evidence of reliability gains.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-11-06",
+    "duration": "19m 19s",
+    "topics": ["review-verification", "models-evaluation", "tools-harnesses"]
+  },
+  {
     "id": 215,
     "addedDate": "2026-11-14",
     "primarySection": "workflows",
