@@ -4,7 +4,7 @@ title: "Netlify CTO on future of agentic coding | Dana Lawson"
 resourceId: 31
 date: "2026-10-22"
 collection: "the-west-coast-builders"
-order: 1
+order: 2
 videoId: "dJBOrDIm6T0"
 ---
 

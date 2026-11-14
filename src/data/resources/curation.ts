@@ -470,7 +470,7 @@ export const codingCuration = {
     31: {
       tier: 'useful',
       reason:
-        "Collects practitioner interviews on harness design, supplying useful context, and when automation can replace review; claims and forecasts remain the guests' accounts.",
+        "Collects practitioner interviews on harness design, supplying useful context, automating bug triage, and when automation can replace review; claims and forecasts remain the guests' accounts.",
     },
     32: {
       tier: 'useful',

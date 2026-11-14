@@ -3,7 +3,7 @@ addedDate: '2026-08-07'
 title: "Is Agent Harness relevant in 2026"
 resourceId: 31
 collection: "the-west-coast-builders"
-order: 4
+order: 5
 videoId: "wbsDZpVB4Lg"
 date: "2026-07-30"
 ---
