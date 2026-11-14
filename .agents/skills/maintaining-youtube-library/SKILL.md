@@ -1,6 +1,6 @@
 ---
 name: maintaining-youtube-library
-description: "Maintains YouTube sources, collection placement, and resource intake. Triggers on: check or sync tracked playlists, retry captions, add a playlist, collection placement, refresh coding-agent intake, process coding-agent intake."
+description: "Maintains YouTube sources, collection placement, and resource intake. Triggers on: refresh resources, check or sync tracked playlists, retry captions, add a playlist, collection placement, refresh or process coding-agent intake."
 ---
 
 # Maintaining the YouTube Library
@@ -97,50 +97,19 @@ Enter this mode only when the user explicitly requests repository mutation.
    approval before force regeneration, then keep it narrowly bounded.
 8. Finish with the mutating-workflow checks below and reviewable commits.
 
-## Coding Agents Bounded Maintenance Contract
+## AI Engineer Watch Playlists
 
-`ai-engineer-coding-agents` is an active cross-event playlist with a stricter
-session contract than the generic maintenance path:
+The AI Engineer playlists (`ai-engineer-coding-agents`,
+`ai-engineer-agentic-engineering`, `ai-engineer-agent-reliability-2025`) use
+the `watch` refresh tier. Their reviewed curation lists the talks already
+captured in the source library, so a sync records new talks as unselected
+without creating capture work. Do not backfill them with library `capture`.
 
-- Routine monitoring is read-only and selected-playlist only:
-  `npm run youtube:library -- check --playlist ai-engineer-coding-agents`.
-  Report additions, retitles, removals, moves, availability changes,
-  publication-date changes, and expected overview staleness. Do not sync,
-  capture, edit, or create a schedule from that report. Exit `0` is complete,
-  exit `2` is partial and authorizes no mutation, and exit `1` stops the
-  workflow.
-- A mutating update requires explicit authorization and is exactly one bounded,
-  reviewable session. Start from understood Git state, run exactly one selected
-  check, then exactly one selected authoritative sync. Treat the sync report and
-  manifest diff—not the earlier check—as authoritative.
-- Inspect and record every authoritative change. Run the exact-ID public-impact
-  search for every affected identity, membership, availability, or
-  publication-date ID, including leading-dash IDs, and record `keep`, `fix`, or
-  `block`. Stop rather than broadening source maintenance when a public
-  correction is required or provenance is unresolved.
-- Recompute the manifest, available/unavailable, captured, pending, private,
-  caption-unavailable, missing/draft/reviewed summary, incorporated,
-  overview-current/stale, overlap, and global-artifact-reuse baseline. Leave the
-  still-pending tail explicit for a later session.
-- After impact review, run at most one selected capture command for at most two
-  pending videos, normally `capture --playlist ai-engineer-coding-agents
-  --limit 2`. Never refill or run a second capture command in the same session,
-  even if fewer than two items finish. Stop immediately on throttle. Exit `1` is
-  fatal; interpret exit `2` per item and pause with unfinished items pending.
-  Retry is a separate explicit decision, never an automatic continuation.
-- For each successful capture, review the transcript source-faithfully, write or
-  update the summary at `draft`, and deliberately refresh the overview in that
-  session. A later dedicated review is required for any `reviewed` promotion.
-  Preserve source-supported speaker/affiliation attribution, `Editorial:`
-  labels, the curator-only AI Engineer boundary, and author-less
-  `multiSpeaker: true` state.
-- Keep commits reviewable and separate: manifest sync, capture artifacts,
-  editorial artifacts, and work-item state. Record the final baseline and
-  pending tail before ending the session.
-
-The credential boundary for this contract is strict: load credentials only in the
-selected remote command process, never print or persist them, and do not load them
-for local status, audit, or editorial review.
+A talk the user picks during a refresh becomes a public resource through the
+intake path below, not a source-library capture. Preserve source-supported
+speaker and affiliation attribution, treat AI Engineer as the curator and
+source channel rather than the author, and keep `Editorial:` labels in any
+overview you revise. `ai-engineer-swe-agents-2025` is frozen.
 
 ## Mode C — Add a Tracked Playlist
 
@@ -200,6 +169,75 @@ failures. Do not retry them during every routine check or sync.
    metadata changes, then handle any newly possible editorial work deliberately
    at `draft` under the authoritative contract.
 3. Finish with the mutating-workflow checks below.
+
+## Mode R — Refresh Resources
+
+Use this mode when the user asks to **refresh resources**. The request
+authorizes the steps below: syncing the playlists the report lists and
+processing intake videos. It does not authorize processing watch candidates
+the user has not picked, changing the external YouTube playlists, or pushing.
+
+Every playlist has a `refresh` tier in `catalog.json`:
+
+| Tier | During a refresh |
+| --- | --- |
+| `intake` | Process every pending video. |
+| `watch` | Propose at most five new videos in total; process only the ones the user picks. |
+| `quiet` | Never propose videos. Report only changes that affect public pages. |
+| `frozen` | Finished series. Report unexpected changes; never sync routinely. |
+
+Rank watch candidates in this playlist priority, highest first:
+`ai-engineer-coding-agents`, `ai-engineer-agentic-engineering`,
+`pragmatic-engineer-podcast`, `antirez-coding-with-ai`,
+`matt-pocock-agent-skills`, `ai-engineer-agent-reliability-2025`,
+`mayank-gupta-west-coast-builders`. Ask the user before changing a tier or
+this order.
+
+1. Apply the Mode B clean-or-understood Git gate to `src/content/youtube`,
+   `src/content`, and `src/data/resources`.
+2. Run the read-only report:
+
+   ```sh
+   npm run youtube:library -- refresh
+   ```
+
+   Exit `2` means some playlists failed to fetch; leave those out of the sync.
+3. For each entry under "Public impact", apply the Mandatory Public-Impact
+   Review below and record `keep` or `fix` in the sync commit message. Fix
+   only clear factual drift, such as a corrected speaker name. Intake removals
+   are already excluded: removing a processed video from the intake playlist
+   is how it is finished.
+4. Sync exactly the playlists on the report's "Sync after review" line, in one
+   command. Treat the sync report as authoritative and commit the manifests
+   on their own. Syncing records every watch candidate as seen, so later
+   refreshes propose only newer videos.
+5. Run `npm run youtube:library -- status` and process every pending intake
+   video with steps 3 to 7 of Coding-Agent Resource Intake below. Run batches
+   of up to three videos in parallel subagents or orbs. Workers write only
+   their own transcript and summary files and return the resource record,
+   catalog membership, and curation assessment. The owning thread edits the
+   shared files under `src/data/resources/`, updates catalog test
+   expectations, runs the combined checks, and commits the batch as one
+   resource commit that lists every added resource. Check each transcript's
+   `summarySlug` against its path; caption fixes can break it. If the session cannot finish every
+   video, leave the rest pending and list them in the digest.
+6. Choose at most five watch picks across all watch playlists. Prefer the
+   priority order above, durable workflows or evidence the catalog lacks, and
+   named practitioners over product announcements. Search the catalog for the
+   topic before proposing a talk that may duplicate an existing resource. For
+   each pick, give the playlist, title, date, and a one-sentence reason. Do not
+   process a pick until the user names it; then process it like an intake
+   video, applying Collection Placement. `antirez-coding-with-ai` is a
+   full-capture author playlist that the report marks check-only: its new
+   videos repeat until the user picks them, and a pick runs Mode B for that
+   playlist.
+7. Publish one document artifact named "Resource refresh YYYY-MM-DD" with
+   these sections: published resources (two-line summary, keep or remove
+   with one reason, resource and portal links), proposed watch picks,
+   public-impact decisions, intake videos still pending, and one line each
+   for quiet and frozen playlists. Keep the rest of the report out of it.
+8. Finish with the mutating-workflow checks, the README Development checks,
+   and browser verification of the new resources.
 
 ## Coding-Agent Resource Intake
 

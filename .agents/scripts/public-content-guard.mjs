@@ -580,7 +580,13 @@ const readTrackedLibrary = async (repoRoot, notices) => {
     const scope = resolvePlaylistEditorialScope(playlist, manifest);
     playlistScopes.set(playlist.id, scope);
     if (scope.mode === 'curated' && scope.status === 'reviewed') {
-      for (const videoId of scope.selectedVideoIds) {
+      // Watch-tier picks become standalone public resources, so an unselected
+      // watch video may rely on its own complete standalone evidence.
+      const eligibleVideoIds =
+        playlist.refresh === 'watch'
+          ? [...scope.selectedVideoIds, ...scope.unselectedVideoIds]
+          : scope.selectedVideoIds;
+      for (const videoId of eligibleVideoIds) {
         standaloneEligibleVideoIds.add(videoId);
       }
     }

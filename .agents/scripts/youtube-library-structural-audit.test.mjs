@@ -137,6 +137,7 @@ const writeValidLibrary = async (root) => {
         title: 'Example Playlist',
         transcriptLanguage: 'en',
         summaryLanguage: 'en',
+        refresh: 'watch',
       },
     ],
     relationships: [{ authorId: 'author-id', playlistIds: ['playlist-id'] }],
@@ -201,6 +202,7 @@ test('structural audit accepts resource intake without editorial artifacts', asy
     const catalogPath = path.join(root, 'catalog.json');
     const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
     catalog.playlists[0].resourceIntake = true;
+    catalog.playlists[0].refresh = 'intake';
     await writeFixture(root, 'catalog.json', catalog);
     await Promise.all([
       rm(path.join(root, 'playlists/playlist/overview.md')),

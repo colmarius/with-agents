@@ -83,7 +83,7 @@ Load `article-writing` when writing or refreshing public posts under `src/conten
 
 ### Task Routing and Review
 
-- Load `maintaining-youtube-library` for tracked playlist checks/sync, caption retries, adding playlists, collection placement, and **refresh/process coding-agent intake**. Follow the source-library contract; standalone videos use the content guide's transcript workflow.
+- Load `maintaining-youtube-library` for **refresh resources**, tracked playlist checks/sync, caption retries, adding playlists, collection placement, and **refresh/process coding-agent intake**. Follow the source-library contract; standalone videos use the content guide's transcript workflow.
 - Consult Oracle when explicitly requested or when direct investigation leaves a specific, high-impact judgment unresolved—not as an automatic approval gate. An optional review offer is discretionary, not required closing boilerplate. If offering an optional follow-up review, wait for the user's agreement before running it. Dedicated source-library reviews remain mandatory where specified.
 
 ### Amp Resource Refresh

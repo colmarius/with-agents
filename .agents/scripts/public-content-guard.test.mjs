@@ -143,6 +143,7 @@ Watch https://www.youtube.com/watch?v=AbCdEfGhI12&t=5s.
         title: 'Fixture',
         transcriptLanguage: 'en',
         summaryLanguage: 'en',
+        refresh: 'watch',
         multiSpeaker: true,
       },
     ],
@@ -680,6 +681,71 @@ capturedAt: "2026-07-31T00:00:00.000Z"
     const result = await runPublicContentGuard({ repoRoot: root });
     assert.match(
       result.errors.join('\n'),
+      /cites tracked video AbCdEfGhI12 with source status missing/,
+    );
+  } finally {
+    await rm(root, { recursive: true, force: true });
+  }
+});
+
+test('guard lets standalone evidence satisfy only unselected watch-playlist videos', async () => {
+  const root = await createFixture({
+    post: `---
+title: 'Post'
+draft: false
+---
+`,
+    resourceValue: resources({
+      type: 'video',
+      url: 'https://www.youtube.com/watch?v=AbCdEfGhI12',
+    }),
+  });
+  try {
+    const catalogPath = path.join(root, 'src/content/youtube/catalog.json');
+    const catalog = JSON.parse(await readFile(catalogPath, 'utf8'));
+    catalog.playlists[0].curation = {
+      status: 'reviewed',
+      videoIds: ['-LeadingId1'],
+    };
+    await writeFixture(root, 'src/content/youtube/catalog.json', catalog);
+    const manifestPath = path.join(
+      root,
+      'src/content/youtube/playlists/fixture/manifest.json',
+    );
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    manifest.entries = manifest.entries.map((entry) => ({
+      ...entry,
+      available: true,
+    }));
+    await writeFixture(
+      root,
+      'src/content/youtube/playlists/fixture/manifest.json',
+      manifest,
+    );
+    await rm(
+      path.join(root, 'src/content/youtube/videos/AbCdEfGhI12/summary.md'),
+    );
+    await writeFixture(
+      root,
+      'src/content/transcripts/summary.md',
+      `---
+title: "Standalone"
+summarySlug: "summary"
+sourceUrl: "https://www.youtube.com/watch?v=AbCdEfGhI12"
+videoId: "AbCdEfGhI12"
+capturedAt: "2026-07-31T00:00:00.000Z"
+---
+`,
+    );
+
+    const watched = await runPublicContentGuard({ repoRoot: root });
+    assert.doesNotMatch(watched.errors.join('\n'), /AbCdEfGhI12/);
+
+    catalog.playlists[0].refresh = 'quiet';
+    await writeFixture(root, 'src/content/youtube/catalog.json', catalog);
+    const quiet = await runPublicContentGuard({ repoRoot: root });
+    assert.match(
+      quiet.errors.join('\n'),
       /cites tracked video AbCdEfGhI12 with source status missing/,
     );
   } finally {

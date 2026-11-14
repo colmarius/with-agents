@@ -28,6 +28,13 @@ src/content/youtube/
 
 - `catalog.json` owns configured authors, playlists, relationships,
   source/summary languages, and explicit multi-speaker attribution decisions.
+- Every playlist sets `refresh` to `intake`, `watch`, `quiet`, or `frozen`.
+  The tier decides how `youtube:library refresh` reports it and whether a
+  routine refresh syncs it; see the `maintaining-youtube-library` skill.
+  `intake` is valid exactly when `resourceIntake` is `true`.
+  A curated `watch` playlist's unselected videos may be published as
+  standalone resources; the public-content guard accepts their complete
+  standalone evidence (canonical resource, full transcript, and summary).
 - Every playlist must use exactly one attribution mode: appear in at least one
   author relationship, or set `multiSpeaker: true`. The marker is valid only
   when its value is exactly `true`, and a marked playlist must not appear in an

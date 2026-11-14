@@ -14,6 +14,12 @@ import {
   synchronizeCatalogPlaylists,
 } from './lib/youtube-library-core.mjs';
 import {
+  buildRefreshReport,
+  findPublicReferences,
+  formatRefreshReport,
+  refreshVideoIds,
+} from './lib/youtube-library-refresh.mjs';
+import {
   auditYoutubeLibraryStructure,
   formatYoutubeLibraryStructuralAudit,
 } from './lib/youtube-library-structural-audit.mjs';
@@ -30,6 +36,12 @@ Commands:
   check [--playlist <slug>]... [--json]
            Compare remote playlists with committed manifests and combine the
            result with local library status. This command never writes files.
+  refresh [--json]
+           Check every playlist and group the result by its catalog refresh
+           tier: intake videos to process, watch candidates to propose, quiet
+           and frozen counts, public pages affected by removals, retitles, or
+           availability changes, and the playlists safe to sync afterwards.
+           This command never writes files.
   sync [--playlist <slug>]... [--dry-run]
            Synchronize all configured playlists, or a selected subset, through
            the YouTube Data API. Fetch and report only with --dry-run.
@@ -81,6 +93,24 @@ const main = async () => {
       options.json
         ? JSON.stringify(check.report, null, 2)
         : formatLibraryCheckReport(check.report),
+    );
+    return check.exitCode;
+  }
+
+  if (command === 'refresh') {
+    const check = await checkLibrary({ catalog });
+    const references = await findPublicReferences(
+      refreshVideoIds(check.report),
+    );
+    const report = buildRefreshReport({
+      catalog,
+      checkReport: check.report,
+      references,
+    });
+    console.log(
+      options.json
+        ? JSON.stringify(report, null, 2)
+        : formatRefreshReport(report),
     );
     return check.exitCode;
   }

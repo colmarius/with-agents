@@ -15,9 +15,13 @@ const commandNames = new Set([
   'capture',
   'check',
   'help',
+  'refresh',
   'status',
   'sync',
 ]);
+
+export const refreshTiers = ['intake', 'watch', 'quiet', 'frozen'];
+
 const forbiddenCredentialKey =
   /^(?:api[-_]?key|credentials?|secrets?|youtube[-_]?api[-_]?key)$/i;
 
@@ -118,6 +122,19 @@ export const validateCatalog = (catalog) => {
     ) {
       throw new Error(
         `catalog.playlists[${index}] cannot combine resourceIntake with curation.`,
+      );
+    }
+    if (!refreshTiers.includes(playlist.refresh)) {
+      throw new Error(
+        `catalog.playlists[${index}].refresh must be one of: ${refreshTiers.join(', ')}.`,
+      );
+    }
+    if (
+      (playlist.refresh === 'intake') !==
+      (playlist.resourceIntake === true)
+    ) {
+      throw new Error(
+        `catalog.playlists[${index}].refresh must be intake exactly when resourceIntake is true.`,
       );
     }
     validatePlaylistCuration(playlist, `catalog.playlists[${index}]`);
@@ -264,7 +281,10 @@ export const parseLibraryArgs = (argv) => {
       continue;
     }
 
-    if (command === 'check' && argument === '--json') {
+    if (
+      (command === 'check' || command === 'refresh') &&
+      argument === '--json'
+    ) {
       json = true;
       continue;
     }
@@ -279,7 +299,7 @@ export const parseLibraryArgs = (argv) => {
       continue;
     }
 
-    if (argument === '--playlist') {
+    if (command !== 'refresh' && argument === '--playlist') {
       const value = argv[index + 1];
       if (!value || value.startsWith('-')) {
         throw new Error('Option --playlist requires a value.');
@@ -318,6 +338,9 @@ export const parseLibraryArgs = (argv) => {
   }
   if (command === 'check') {
     return { command, playlistSlugs, json };
+  }
+  if (command === 'refresh') {
+    return { command, json };
   }
 
   if (force && retry) {

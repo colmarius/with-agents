@@ -40,6 +40,11 @@ import {
   writeManifestAtomic,
 } from './lib/youtube-library-core.mjs';
 import { resolvePlaylistEditorialScope } from './lib/youtube-library-curation.mjs';
+import {
+  buildRefreshReport,
+  formatRefreshReport,
+  refreshVideoIds,
+} from './lib/youtube-library-refresh.mjs';
 
 const validCatalog = () => ({
   publication: 'source-only',
@@ -57,6 +62,7 @@ const validCatalog = () => ({
       title: 'Example Playlist',
       transcriptLanguage: 'it',
       summaryLanguage: 'en',
+      refresh: 'watch',
     },
   ],
   relationships: [
@@ -363,6 +369,131 @@ test('catalog validation strictly validates playlist markers and attribution', (
     () => validateCatalog(intakeWithCuration),
     /cannot combine resourceIntake with curation/,
   );
+
+  for (const refresh of [undefined, 'later', 'intake']) {
+    const invalidTier = structuredClone(catalog);
+    invalidTier.playlists[1].refresh = refresh;
+    assert.throws(() => validateCatalog(invalidTier), /refresh must be/);
+  }
+  const intakeWithoutTier = structuredClone(catalog);
+  intakeWithoutTier.playlists[1].resourceIntake = true;
+  assert.throws(
+    () => validateCatalog(intakeWithoutTier),
+    /refresh must be intake exactly when resourceIntake is true/,
+  );
+  intakeWithoutTier.playlists[1].refresh = 'intake';
+  assert.equal(validateCatalog(intakeWithoutTier), intakeWithoutTier);
+});
+
+test('refresh report proposes only unseen watch videos and real public impact', () => {
+  const playlist = (slug, refresh, extra = {}) => ({
+    id: slug,
+    slug,
+    title: slug,
+    refresh,
+    ...extra,
+  });
+  const curation = { status: 'reviewed', videoIds: ['captured01'] };
+  const catalog = {
+    playlists: [
+      playlist('intake', 'intake', { resourceIntake: true }),
+      playlist('watched', 'watch', { curation }),
+      playlist('full', 'watch'),
+      playlist('quiet', 'quiet', { curation }),
+      playlist('frozen', 'frozen', { curation }),
+    ],
+  };
+  const entry = (videoId, publishedAt, available = true) => ({
+    videoId,
+    title: `Title ${videoId}`,
+    publishedAt,
+    available,
+  });
+  const diff = (changes = {}) => ({
+    additions: [],
+    removals: [],
+    moves: [],
+    retitles: [],
+    privacyChanges: [],
+    ...changes,
+  });
+  const checked = (slug, remoteDiff, local = {}) => ({
+    slug,
+    remote: { fetched: true, changed: true, diff: remoteDiff },
+    local,
+  });
+  const checkReport = {
+    playlists: [
+      checked(
+        'intake',
+        diff({
+          additions: [entry('queued0001', '2026-01-01T00:00:00Z')],
+          removals: [entry('published1', null), entry('dropped0001', null)],
+        }),
+        { intake: { pendingVideoIds: ['pending0001', 'dropped0001'] } },
+      ),
+      checked(
+        'watched',
+        diff({
+          additions: [
+            entry('older00001', '2026-01-01T00:00:00Z'),
+            entry('newer00001', '2026-03-01T00:00:00Z'),
+            entry('queued0001', '2026-01-01T00:00:00Z'),
+            entry('pending0001', '2026-01-01T00:00:00Z'),
+            entry('published2', '2026-02-01T00:00:00Z'),
+            entry('private001', null, false),
+          ],
+          retitles: [
+            { videoId: 'published3', from: 'Old', to: 'New' },
+            { videoId: 'unlisted01', from: 'Old', to: 'New' },
+          ],
+        }),
+      ),
+      checked('full', diff({ additions: [entry('fullnew001', null)] })),
+      checked(
+        'quiet',
+        diff({
+          additions: [entry('quiet00001', null), entry('quiet00002', null)],
+        }),
+      ),
+      checked(
+        'frozen',
+        diff({ moves: [{ videoId: 'captured01', from: 0, to: 1 }] }),
+      ),
+    ],
+  };
+  const references = new Map(
+    ['published1', 'published2', 'published3'].map((videoId) => [
+      videoId,
+      [`src/content/summaries/${videoId}.md`],
+    ]),
+  );
+
+  const report = buildRefreshReport({ catalog, checkReport, references });
+
+  assert.deepEqual(report.intake[0].pendingVideoIds, ['pending0001']);
+  assert.deepEqual(report.intake[0].droppedPendingVideoIds, ['dropped0001']);
+  assert.deepEqual(
+    report.watch.map((watch) => [
+      watch.slug,
+      watch.candidates.map((candidate) => candidate.videoId),
+      watch.alreadyCovered,
+      watch.sync,
+    ]),
+    [
+      ['watched', ['newer00001', 'older00001'], 3, true],
+      ['full', ['fullnew001'], 0, false],
+    ],
+  );
+  assert.deepEqual(
+    report.publicImpact.map((impact) => [impact.videoId, impact.change]),
+    [['published3', 'retitled']],
+  );
+  assert.equal(report.quiet[0].additions, 2);
+  assert.deepEqual(report.frozen[0].changes, []);
+  assert.deepEqual(report.syncPlaylists, ['intake', 'watched', 'quiet']);
+  assert.deepEqual(refreshVideoIds(checkReport).includes('published1'), true);
+  assert.match(formatRefreshReport(report), /Frozen: 1 playlists; no changes/);
 });
 
 test('catalog validation strictly validates optional playlist curation', () => {
@@ -560,6 +691,14 @@ test('library CLI parsing supports audit, check, sync, bounded capture modes, an
     playlistSlugs: [],
     json: false,
   });
+  assert.deepEqual(parseLibraryArgs(['refresh', '--json']), {
+    command: 'refresh',
+    json: true,
+  });
+  assert.throws(
+    () => parseLibraryArgs(['refresh', '--playlist', 'first']),
+    /Unknown refresh option: --playlist/,
+  );
   assert.deepEqual(
     parseLibraryArgs([
       'check',
