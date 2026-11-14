@@ -1,5 +1,18 @@
 [
   {
+    "id": 221,
+    "addedDate": "2026-11-14",
+    "primarySection": "teams-ecosystem",
+    "title": "Why Agents Love Supabase — with Paul Copplestone and Ant Wilson",
+    "url": "https://www.youtube.com/watch?v=zHG6sAss_kE",
+    "description": "Supabase co-founders Paul Copplestone and Ant Wilson tell swyx how coding agents changed their platform: agents carry users from sign-up to activation, create millions of databases a month, and need declarative schema files instead of long migration histories. Also covers platform skills that stopped agents from disabling row-level security, small instances with an upgrade path, and Supabase's internal AI spend. First-party claims and announcements with company-reported figures; most of the interview covers Postgres engineering and company history, and swyx discloses that he invested in Supabase and that it sponsors Latent Space.",
+    "type": "podcast",
+    "source": "Latent Space",
+    "date": "2026-10-28",
+    "duration": "1h 16m 38s",
+    "topics": ["business-adoption", "context-memory", "tools-harnesses"]
+  },
+  {
     "id": 219,
     "addedDate": "2026-11-14",
     "primarySection": "agent-systems",

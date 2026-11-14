@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    221: {
+      tier: 'context',
+      reason:
+        "Adds a backend vendor's view of agent-driven database demand and the case for schema files agents can read, but that material is a small, first-party part of a long, sponsor-disclosed company interview.",
+    },
     219: {
       tier: 'context',
       reason:
