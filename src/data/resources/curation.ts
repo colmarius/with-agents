@@ -1022,6 +1022,11 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    220: {
+      tier: 'useful',
+      reason:
+        'Explains convertible remeasurement and connects recurring model investment to compute financing and customer concentration; complements the prospectus critique with an explicitly invested, optimistic perspective.',
+    },
     209: {
       tier: 'useful',
       reason:

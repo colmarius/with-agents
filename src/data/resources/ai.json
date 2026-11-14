@@ -1,5 +1,19 @@
 [
   {
+    "id": 220,
+    "addedDate": "2026-11-14",
+    "primarySection": "economics-industry",
+    "title": "Deep Dive: Anthropic S-1 Myths and Mythos — Jamin Ball, Altimeter",
+    "subtitle": "Convertible accounting, compute commitments, and the economics of staying at the model frontier",
+    "url": "https://www.youtube.com/watch?v=P735f1xlpL0",
+    "description": "Jamin Ball explains his reading of Anthropic's IPO filing: inference economics, non-cash losses on convertible financing, future compute payments, and the need to keep producing competitive models. He also connects data-center financing risk to concentrated demand from frontier labs. An optimistic investor's analysis, not an independent filing audit or valuation; Ball discloses that Altimeter holds a large Anthropic position.",
+    "type": "video",
+    "source": "Latent Space",
+    "date": "2026-11-07",
+    "duration": "1h 42m",
+    "topics": ["business-adoption", "models-evaluation"]
+  },
+  {
     "id": 209,
     "addedDate": "2026-11-14",
     "primarySection": "concepts-capabilities",
