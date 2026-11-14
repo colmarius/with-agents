@@ -1,5 +1,22 @@
 [
   {
+    "id": 215,
+    "addedDate": "2026-11-14",
+    "primarySection": "workflows",
+    "title": "Agents Sucked At UI (Until Today)",
+    "url": "https://www.youtube.com/watch?v=xq0eB8vxeqk",
+    "description": "Theo demonstrates iterative UI refinement in T3 Code using screenshot reviews from multiple models and comparisons with other apps. Covers context-sensitive scores, target-score bias, staged reviewer usage, and a separate tool-description optimization loop backed by failure-case evaluations. First-party experiments, not independent usability evidence.",
+    "type": "video",
+    "source": "Theo - t3.gg",
+    "date": "2026-11-03",
+    "duration": "31m 44s",
+    "topics": [
+      "prompting-orchestration",
+      "review-verification",
+      "models-evaluation"
+    ]
+  },
+  {
     "id": 214,
     "addedDate": "2026-11-14",
     "primarySection": "agent-systems",

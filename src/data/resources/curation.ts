@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    215: {
+      tier: 'useful',
+      reason:
+        'Demonstrates screenshot-based UI iteration with multiple reviewers and comparison apps, while exposing score drift and target bias; the first-party experiment does not establish usability gains or reliable stopping criteria.',
+    },
     214: {
       tier: 'useful',
       reason:
