@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    217: {
+      tier: 'useful',
+      reason:
+        'Explains why agent review loops need stopping rules and feedback triage, and why recurring mistakes should first be addressed in code or static checks; combines commentary on Anthropic with unvalidated T3 Code experience.',
+    },
     216: {
       tier: 'useful',
       reason:

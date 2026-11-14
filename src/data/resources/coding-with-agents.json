@@ -1,5 +1,22 @@
 [
   {
+    "id": 217,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "How Claude Fixes It's Own Code",
+    "url": "https://www.youtube.com/watch?v=TFCDWrEBaFM",
+    "description": "Theo examines the Claude Code team's review process alongside his T3 Code experience: executable verification, agents evaluating review feedback, bounded review loops, risk-based human approval, and fast rollback. Argues for fixing recurring mistakes through architecture and static checks before adding instructions. Practitioner commentary on first-party accounts, not independent reliability evidence.",
+    "type": "video",
+    "source": "Theo - t3.gg",
+    "date": "2026-11-06",
+    "duration": "42m 14s",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "collaboration-teams"
+    ]
+  },
+  {
     "id": 216,
     "addedDate": "2026-11-14",
     "primarySection": "reliability",
