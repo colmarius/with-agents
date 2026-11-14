@@ -1,5 +1,61 @@
 [
   {
+    "id": 214,
+    "addedDate": "2026-11-14",
+    "primarySection": "agent-systems",
+    "title": "We Kept Rebuilding Our AI Agent. Here's What Survived - Fuad Ali, Arize AI",
+    "url": "https://www.youtube.com/watch?v=YIhvrvHtonk",
+    "description": "Fuad Ali traces two years of harness rewrites for Alyx, the agent in Arize AX: rendering the plan into messages from the harness while testing removal of the to-do tool, an explicit finish call the harness can reject, storing large tool results outside the context with pointers, history checkpoints, one capped Markdown memory file per user, and merging page-specific specialists into one agent that loads skills on demand. Useful for its concrete harness decisions and the reasons Arize reversed earlier designs. A first-party product talk: outcomes such as the memory file outperforming vector and graph stores are reported without the evaluations behind them, and the tracing and Signal material is vendor-specific.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-10-27",
+    "duration": "20m 6s",
+    "topics": ["tools-harnesses", "context-memory", "models-evaluation"]
+  },
+  {
+    "id": 213,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "How Anthropic Merges 30,000 Code Changes a Day - Manish Kapur, Sonar & Addy Osmani, Anthropic",
+    "url": "https://www.youtube.com/watch?v=AnsXWH2_EBU",
+    "description": "Sonar's Manish Kapur asks Anthropic's Addy Osmani how teams can merge agent-written code with confidence: lights-on versus dark software factories, Claude first-pass review that exercises changes in a browser, hooks on edits, team preferences codified in CLAUDE.md or AGENTS.md, people reviewing the agent's evidence, Sonar's three verification layers, and labeling agent-written pull requests. Useful as a short, verification-first account of review from inside Anthropic. A vendor-hosted conversation: Anthropic's workflow and merge counts are first-party, the title's 30,000-a-day figure comes from a post Kapur cites rather than from Osmani, and survey statistics are given without methods.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-10-28",
+    "duration": "18m 52s",
+    "topics": [
+      "review-verification",
+      "safety-permissions",
+      "collaboration-teams"
+    ]
+  },
+  {
+    "id": 212,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "60% of Our Data PRs Now Merge With No Human Review - Chetas Joshi, Robinhood",
+    "url": "https://www.youtube.com/watch?v=MQiojLnK-E0",
+    "description": "Chetas Joshi explains Robinhood's two-layer reviewer for data pipeline pull requests: deterministic checks against the schema registry, catalog, lineage, and staging performance, plus a repository-only agent that looks for unregistered consumers, query anti-patterns, and risky grants, with sensitive grants, intent-changing migrations, and low-confidence verdicts always escalated to people. Useful for its worked schema-change example, weekly rule-update loop, and attention to both missed bad changes and needless escalations. The 60%, 75%, 132-hour, 30%, and 2% figures are first-party results without stated baselines or methods.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-11-10",
+    "duration": "28m",
+    "topics": ["review-verification", "safety-permissions"]
+  },
+  {
+    "id": 211,
+    "addedDate": "2026-11-14",
+    "primarySection": "teams-ecosystem",
+    "title": "Stop Doing Agent Archaeology on Your Team's Code - Richard Feldman, Delta",
+    "url": "https://www.youtube.com/watch?v=Enn9dVrRXAo",
+    "description": "Richard Feldman argues that agent-assisted handoffs lose rationale, failed approaches, and side discussions, and demonstrates Delta, which keeps agent conversations, at-mentioned coworkers, line-level review, and synced terminals in shared threads that later agents can read. Useful for seeing what shared human-agent context could look like in practice. A first-party product demo of a private-beta tool; scale, the team's move away from pull requests, and other workflow claims are the maker's own reports.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-11-09",
+    "duration": "19m 24s",
+    "topics": ["collaboration-teams", "context-memory", "tools-harnesses"]
+  },
+  {
     "id": 210,
     "addedDate": "2026-11-14",
     "primarySection": "teams-ecosystem",

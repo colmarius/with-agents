@@ -7,6 +7,26 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    214: {
+      tier: 'useful',
+      reason:
+        "Explains specific harness mechanisms such as who owns the plan, how a turn ends, context offloading, and simple per-user memory, and why Arize changed them; every result is the vendor's own unmeasured report about its product.",
+    },
+    213: {
+      tier: 'context',
+      reason:
+        "States the verification-first case for reviewing agent evidence rather than code, but gives only a brief first-party outline of Anthropic's workflow in a vendor-hosted conversation without defect or review-rate data.",
+    },
+    212: {
+      tier: 'useful',
+      reason:
+        'A concrete design for review with less human involvement: scripts check facts, an agent judges repository risks, protected decisions stay with people, and errors are tracked in both directions; results are self-reported for one team without baselines.',
+    },
+    211: {
+      tier: 'context',
+      reason:
+        "Names the context lost when agent work is handed off and shows one product's shared-thread answer, but it is a maker's demo of a private-beta tool with no measured outcomes.",
+    },
     210: {
       tier: 'context',
       reason:
