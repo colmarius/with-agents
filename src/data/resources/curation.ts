@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    218: {
+      tier: 'useful',
+      reason:
+        'Explains how existing execution, collaboration, and deployment infrastructure supported Replit agents, and connects enterprise controls to adoption; customer outcomes and the self-driving company vision remain first-party claims.',
+    },
     217: {
       tier: 'useful',
       reason:

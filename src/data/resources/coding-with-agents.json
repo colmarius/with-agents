@@ -1,5 +1,18 @@
 [
   {
+    "id": 218,
+    "addedDate": "2026-11-14",
+    "primarySection": "teams-ecosystem",
+    "title": "How To Build The Future: Paul Graham & Amjad Masad",
+    "url": "https://www.youtube.com/watch?v=Q78dJ0vkWe8",
+    "description": "Paul Graham and Replit's Amjad Masad discuss turning users' manual ChatGPT loops into coding agents, reusing collaboration and deployment infrastructure, and adapting harnesses as models improve. Covers enterprise controls, token budgets, and the proposed self-driving company. Product history and customer outcomes are first-party accounts; adoption and cloud-development forecasts are not established results.",
+    "type": "podcast",
+    "source": "Y Combinator",
+    "date": "2026-11-07",
+    "duration": "44m 15s",
+    "topics": ["tools-harnesses", "collaboration-teams", "business-adoption"]
+  },
+  {
     "id": 217,
     "addedDate": "2026-11-14",
     "primarySection": "reliability",
