@@ -10,40 +10,16 @@
       "available": true
     },
     {
-      "videoId": "VNJ8P1GqxnA",
-      "position": 1,
-      "title": "Using Orbs to Eval Agent Friendliness",
-      "publishedAt": "2026-09-25T04:03:55Z",
-      "privacyStatus": "public",
-      "available": true
-    },
-    {
-      "videoId": "0WeQLAZVJ8w",
-      "position": 2,
-      "title": "Working Day to Day in Amp",
-      "publishedAt": "2026-09-14T04:32:09Z",
-      "privacyStatus": "public",
-      "available": true
-    },
-    {
       "videoId": "pqtUVssiPRc",
-      "position": 3,
+      "position": 1,
       "title": "Keep a friction log and read a sales book - product ownership with Joyce Er",
       "publishedAt": "2026-09-23T09:00:20Z",
       "privacyStatus": "public",
       "available": true
     },
     {
-      "videoId": "OSjmLh0cyVo",
-      "position": 4,
-      "title": "DHH - Omarchy the Agent OS",
-      "publishedAt": "2026-09-18T23:46:31Z",
-      "privacyStatus": "public",
-      "available": true
-    },
-    {
       "videoId": "E82ly38YEEQ",
-      "position": 5,
+      "position": 2,
       "title": "Dependency Cultures - Richard Feldman | SSW 2026",
       "publishedAt": "2026-07-28T13:16:46Z",
       "privacyStatus": "public",
@@ -51,7 +27,7 @@
     },
     {
       "videoId": "3kK3rfb1BZQ",
-      "position": 6,
+      "position": 3,
       "title": "How Kent Ships Features Without Reading the Code —  LIVE",
       "publishedAt": "2026-09-30T17:41:26Z",
       "privacyStatus": "public",
@@ -59,7 +35,7 @@
     },
     {
       "videoId": "WeiB_gLOdQE",
-      "position": 7,
+      "position": 4,
       "title": "Vercel CEO reveals his Agentic Engineering Workflow",
       "publishedAt": "2026-10-02T14:48:25Z",
       "privacyStatus": "public",
@@ -67,7 +43,7 @@
     },
     {
       "videoId": "oRjQ5UzwFyo",
-      "position": 8,
+      "position": 5,
       "title": "The Last Software Engineer - Kent C. Dodds",
       "publishedAt": "2026-10-01T14:29:45Z",
       "privacyStatus": "public",
@@ -75,7 +51,7 @@
     },
     {
       "videoId": "zoPyS9KBFDQ",
-      "position": 9,
+      "position": 6,
       "title": "Grokking: What AI Just Taught Us About How We Learn",
       "publishedAt": "2026-10-01T03:54:11Z",
       "privacyStatus": "public",
@@ -83,7 +59,7 @@
     },
     {
       "videoId": "IZAlq-V19U8",
-      "position": 10,
+      "position": 7,
       "title": "Claude Code’s Bitter Lesson: Prompts, Harnesses, Mods, and Agents — Thariq Shihipar, Anthropic",
       "publishedAt": "2026-09-29T01:17:41Z",
       "privacyStatus": "public",
@@ -91,7 +67,7 @@
     },
     {
       "videoId": "a0sZV0qIbI0",
-      "position": 11,
+      "position": 8,
       "title": "Building resilient systems with Sam Newman",
       "publishedAt": "2026-10-07T16:49:23Z",
       "privacyStatus": "public",
@@ -99,7 +75,7 @@
     },
     {
       "videoId": "qZj7sqmidqA",
-      "position": 12,
+      "position": 9,
       "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 101 — Laurie Voss, Arize AI",
       "publishedAt": "2026-10-05T22:00:36Z",
       "privacyStatus": "public",
@@ -107,7 +83,7 @@
     },
     {
       "videoId": "gEbbGyNkR2U",
-      "position": 13,
+      "position": 10,
       "title": "Rich Sutton, The OaK Architecture: A Vision of SuperIntelligence from Experience - RLC 2025",
       "publishedAt": "2025-08-21T18:13:38Z",
       "privacyStatus": "public",
@@ -115,7 +91,7 @@
     },
     {
       "videoId": "_35OxmSp5EM",
-      "position": 14,
+      "position": 11,
       "title": "Teaching Kids Programming with Pi",
       "publishedAt": "2026-10-15T14:33:27Z",
       "privacyStatus": "public",
@@ -123,7 +99,7 @@
     },
     {
       "videoId": "ja_7AF54OtE",
-      "position": 15,
+      "position": 12,
       "title": "Pi Durable: Agents That Survive Crashes — Mario Zechner & Armin Ronacher",
       "publishedAt": "2026-10-07T13:02:42Z",
       "privacyStatus": "public",
@@ -131,7 +107,7 @@
     },
     {
       "videoId": "7mBQknCnovM",
-      "position": 16,
+      "position": 13,
       "title": "312 - Understanding Pi Durable with Mario & Armin of Earendil",
       "publishedAt": "2026-10-20T04:41:13Z",
       "privacyStatus": "public",
@@ -139,7 +115,7 @@
     },
     {
       "videoId": "BLRReTwV8Fc",
-      "position": 17,
+      "position": 14,
       "title": "You need to check out Pi Durable",
       "publishedAt": "2026-10-16T11:30:18Z",
       "privacyStatus": "public",
@@ -147,7 +123,7 @@
     },
     {
       "videoId": "Z8lf5oWKfj0",
-      "position": 18,
+      "position": 15,
       "title": "Matt Pocock: The Most Valuable Skill to Learn in the Age of AI",
       "publishedAt": "2026-10-16T19:52:20Z",
       "privacyStatus": "public",
@@ -155,7 +131,7 @@
     },
     {
       "videoId": "bU5gDVyu_28",
-      "position": 19,
+      "position": 16,
       "title": "Does Code Quality Still Matter? It Depends on This — Max Kanat-Alexander, Capital One",
       "publishedAt": "2026-10-21T19:01:02Z",
       "privacyStatus": "public",
@@ -163,7 +139,7 @@
     },
     {
       "videoId": "MRQTlwcW-aQ",
-      "position": 20,
+      "position": 17,
       "title": "How Anthropic ships the #1 LLM in the World — with Katelyn Lesse and Angela Jiang",
       "publishedAt": "2026-10-27T18:37:32Z",
       "privacyStatus": "public",
@@ -171,7 +147,7 @@
     },
     {
       "videoId": "4UtrRVtUN_g",
-      "position": 21,
+      "position": 18,
       "title": "How to Build an AI Code Review Agent - Daksh Gupta, Greptile",
       "publishedAt": "2026-10-26T09:00:23Z",
       "privacyStatus": "public",
@@ -179,7 +155,7 @@
     },
     {
       "videoId": "xZX3pmaB8Hk",
-      "position": 22,
+      "position": 19,
       "title": "Exploits Now Beat Patches: Open Source Security in the AI Era - Patrick Smyth, Chainguard",
       "publishedAt": "2026-10-28T07:00:33Z",
       "privacyStatus": "public",
@@ -187,7 +163,7 @@
     },
     {
       "videoId": "dJBOrDIm6T0",
-      "position": 23,
+      "position": 20,
       "title": "Netlify CTO on future of agentic coding | Dana Lawson",
       "publishedAt": "2026-10-22T19:22:06Z",
       "privacyStatus": "public",
@@ -195,7 +171,7 @@
     },
     {
       "videoId": "czKuoutcwYc",
-      "position": 24,
+      "position": 21,
       "title": "Google’s approach to security review with agents",
       "publishedAt": "2026-10-20T20:34:09Z",
       "privacyStatus": "public",
@@ -203,7 +179,7 @@
     },
     {
       "videoId": "F8rc-ULd4_4",
-      "position": 25,
+      "position": 22,
       "title": "My Agentic Engineering Workflow (after 15,700 sessions)",
       "publishedAt": "2026-10-30T19:52:56Z",
       "privacyStatus": "public",
