@@ -7,6 +7,11 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    219: {
+      tier: 'context',
+      reason:
+        'Connects agent orchestration, experimentation, evaluation costs, and approval fatigue in an interview; uploader claims about Opus 5.5 and graph memory are unsupported by the captured captions, and reported gains are not independently validated.',
+    },
     218: {
       tier: 'useful',
       reason:

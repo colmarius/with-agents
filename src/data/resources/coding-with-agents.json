@@ -1,5 +1,22 @@
 [
   {
+    "id": 219,
+    "addedDate": "2026-11-14",
+    "primarySection": "agent-systems",
+    "title": "Stop Prompting — Head of Claude Code Uses Opus 5.5 + Graphs + Harness",
+    "url": "https://www.youtube.com/watch?v=c4kYurm0hD8",
+    "description": "An uploaded interview with Anthropic's Boris and AMD's Mark on model-directed workflows, parallel agents, experimentation, evaluations, and permission classifiers. The captured captions do not substantiate the uploader's Opus 5.5 or graph-memory framing. Productivity and security outcomes are speaker-reported claims, not independent evidence.",
+    "type": "video",
+    "source": "hyperfixation on AI | beamnxw",
+    "date": "2026-10-22",
+    "duration": "34m 27s",
+    "topics": [
+      "prompting-orchestration",
+      "review-verification",
+      "safety-permissions"
+    ]
+  },
+  {
     "id": 218,
     "addedDate": "2026-11-14",
     "primarySection": "teams-ecosystem",
