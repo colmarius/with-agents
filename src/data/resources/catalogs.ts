@@ -197,10 +197,11 @@ const cloudSectionByResourceId = Object.fromEntries(
 );
 
 const securityResourceIds = [
-  98, 57, 100, 101, 102, 103, 105, 106, 177, 192, 194, 58, 104, 37,
+  98, 57, 100, 101, 102, 103, 105, 106, 177, 192, 194, 205, 58, 104, 37,
 ];
 
 const securitySectionByResourceId = {
+  205: 'application-platform',
   194: 'threat-detection-response',
   98: 'cloud-security',
   57: 'cloud-security',
@@ -273,9 +274,9 @@ const aiTopicOptions = [
 ] as const satisfies readonly ResourceTopicOption[];
 
 const aiResourceIds = [
-  191, 183, 179, 176, 175, 173, 171, 164, 159, 158, 153, 152, 151, 150, 146,
-  127, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73, 128, 129,
-  130, 131, 134, 137,
+  209, 199, 191, 183, 179, 176, 175, 173, 171, 164, 159, 158, 153, 152, 151,
+  150, 146, 127, 123, 121, 120, 108, 119, 110, 107, 111, 52, 49, 23, 33, 55, 73,
+  128, 129, 130, 131, 134, 137,
 ];
 
 const aiSectionByResourceId = {

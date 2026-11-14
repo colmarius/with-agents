@@ -1,5 +1,31 @@
 [
   {
+    "id": 209,
+    "addedDate": "2026-11-14",
+    "primarySection": "concepts-capabilities",
+    "title": "Rich Sutton, The OaK Architecture: A Vision of SuperIntelligence from Experience - RLC 2025",
+    "url": "https://www.youtube.com/watch?v=gEbbGyNkR2U",
+    "description": "Rich Sutton presents OaK, a proposed reinforcement-learning agent that learns entirely at runtime by turning its own state features into subproblems, learning options that solve them, modeling those options, and planning with the models. Explains reward-respecting subproblems of feature attainment, feedback that ranks features by usefulness, and planning with option models. A research vision without experiments; Sutton says reliable continual deep learning and feature generation remain unsolved.",
+    "type": "video",
+    "source": "Amii",
+    "date": "2025-08-21",
+    "duration": "1h 1m 12s",
+    "topics": ["models-evaluation", "context-memory"]
+  },
+  {
+    "id": 199,
+    "addedDate": "2026-11-14",
+    "primarySection": "implications-risks",
+    "title": "Grokking: What AI Just Taught Us About How We Learn",
+    "url": "https://www.youtube.com/watch?v=zoPyS9KBFDQ",
+    "description": "A short talk uses grokking, a model's shift from fitting training data to generalizing after long training, as an analogy for how people move skills from conscious study to intuitive use. The speaker argues that memorization and scaffolded practice remain necessary for judging AI output, citing the 85% rule for optimal learning and a reported decline in IQ scores. The brain–LLM comparisons are analogies, the speaker is not named, and the talk offers no evidence for its claim that calculators and lookup habits lowered IQ.",
+    "type": "video",
+    "source": "EdHeroes",
+    "date": "2026-10-01",
+    "duration": "15m 38s",
+    "topics": ["information-trust", "society-governance"]
+  },
+  {
     "id": 191,
     "primarySection": "economics-industry",
     "title": "The Numbers Behind Anthropic",

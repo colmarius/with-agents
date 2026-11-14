@@ -163,14 +163,14 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
   );
   assert.equal(
     implications.querySelectorAll('div.scroll-mt-24[id^="resource-"]').length,
-    16,
+    17,
   );
   const { document: allAI } = parseHTML(
     readFileSync('dist/resources/ai/index.html', 'utf8'),
   );
   assert.equal(
     allAI.querySelectorAll('div.scroll-mt-24[id^="resource-"]').length,
-    36,
+    38,
   );
   for (const document of [implications, allAI]) {
     assert.deepEqual(
@@ -334,6 +334,7 @@ test('built corpus covers source-owned summaries, metadata, ranking and catalog 
     [
       '/summaries/coding-with-agents/antirez-when-code-is-no-longer-yours',
       '/summaries/coding-with-agents/dhh-future-of-programming-ai-agentic-engineering',
+      '/summaries/coding-with-agents/dhh-omarchy-the-agent-os',
       '/summaries/coding-with-agents/dhhs-new-way-of-writing-code',
       '/summaries/coding-with-agents/fireship/dhh-has-gone-completely-off-the-rails',
       '/summaries/coding-with-agents/rails-world-2026-opening-keynote-dhh',

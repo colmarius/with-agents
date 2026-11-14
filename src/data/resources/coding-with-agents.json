@@ -1,5 +1,222 @@
 [
   {
+    "id": 210,
+    "addedDate": "2026-11-14",
+    "primarySection": "teams-ecosystem",
+    "title": "Keep a friction log and read a sales book - product ownership with Joyce Er",
+    "url": "https://www.youtube.com/watch?v=pqtUVssiPRc",
+    "description": "Joyce Er and Kent C. Dodds discuss how engineers build product judgment as AI makes implementation cheaper: end-to-end feature ownership on VS Code, dogfooding and stand-up demos, friction logs, customer calls, cross-team relationships, and learning how the business sells. Useful for engineers taking on product decisions. Mostly general product practice; the AI material is Er's opinion about cheaper execution and \"UX slop\", with no agent workflow shown.",
+    "type": "video",
+    "source": "Kent C. Dodds (plus)",
+    "date": "2026-09-23",
+    "duration": "37m 24s",
+    "topics": ["collaboration-teams", "business-adoption"]
+  },
+  {
+    "id": 208,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "Dependency Cultures - Richard Feldman | SSW 2026",
+    "url": "https://www.youtube.com/watch?v=E82ly38YEEQ",
+    "description": "Richard Feldman compares dependency counts across language websites and games, then connects dependency count and automatic updates to supply-chain incidents such as event-stream and Log4Shell. Explains Go's opt-in upgrades, Mitchell Hashimoto's trim-and-vet policy, copying code with attribution, and a language-model-assisted port that replaced a syntax-highlighting package. Feldman's counts are informal comparisons, and coding agents appear only in that one porting anecdote.",
+    "type": "video",
+    "source": "Software Should Work",
+    "date": "2026-07-28",
+    "duration": "44m 51s",
+    "topics": [
+      "open-source-ecosystem",
+      "safety-permissions",
+      "architecture-maintainability"
+    ]
+  },
+  {
+    "id": 207,
+    "addedDate": "2026-11-14",
+    "primarySection": "teams-ecosystem",
+    "title": "The Last Software Engineer - Kent C. Dodds",
+    "url": "https://www.youtube.com/watch?v=oRjQ5UzwFyo",
+    "description": "Kent C. Dodds argues that product engineering, which connects implementation decisions to product consequences, is the skill that outlasts fast-changing agent techniques. He distinguishes it from product management, urges engineers to question tickets and talk to users, and describes using AI to gather evidence before he makes product decisions. A conference keynote built on metaphors, guest quotes, and historical anecdotes, with no workflow demonstration or evidence about how engineering roles are changing.",
+    "type": "video",
+    "source": "Nerdearla",
+    "date": "2026-10-01",
+    "duration": "29m 36s",
+    "topics": ["collaboration-teams"]
+  },
+  {
+    "id": 206,
+    "addedDate": "2026-11-14",
+    "primarySection": "workflows",
+    "title": "My Agentic Engineering Workflow (after 15,700 sessions)",
+    "url": "https://www.youtube.com/watch?v=F8rc-ULd4_4",
+    "description": "David Ondrej describes an all-agent workflow: one task per thread, reproducing bugs before fixing them, reviewing larger changes with another lab's model and triaging the findings, using sub-agents only for predictable parallel work, isolated cloud sandboxes, and small agent loops that run only the safest cases autonomously and queue the rest for approval. It extends his earlier 6,775-session workflow with session-history scans, a user-feedback triage pipeline, and local models for sensitive data. A founder's demo of his own Cloudroom product with self-reported, unmeasured productivity and error-reduction figures; his direct-to-production stance and full cloud-to-laptop access should not be copied as defaults.",
+    "type": "video",
+    "source": "David Ondrej",
+    "date": "2026-10-30",
+    "duration": "1h 25m 40s",
+    "topics": [
+      "prompting-orchestration",
+      "tools-harnesses",
+      "review-verification"
+    ]
+  },
+  {
+    "id": 205,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "Exploits Now Beat Patches: Open Source Security in the AI Era - Patrick Smyth, Chainguard",
+    "url": "https://www.youtube.com/watch?v=xZX3pmaB8Hk",
+    "description": "Chainguard's Patrick Smyth argues that AI-assisted attackers now exploit vulnerabilities before patches arrive. He separates malware, known CVEs, zero-days, and side doors such as CI/CD, developer laptops, and agent skills, and recommends cooldown periods, faster remediation, signed SLSA provenance, and finished CI/CD and container foundations before presenting Chainguard's rebuilt-from-source images, libraries, actions, and hardened agent skills. A short vendor talk: statistics are unchecked slide citations, and product and malicious-skill figures are vendor claims without a described method.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-10-28",
+    "duration": "21m 47s",
+    "topics": ["safety-permissions", "tools-harnesses"]
+  },
+  {
+    "id": 204,
+    "addedDate": "2026-11-14",
+    "primarySection": "teams-ecosystem",
+    "title": "DHH - Omarchy the Agent OS",
+    "url": "https://www.youtube.com/watch?v=OSjmLh0cyVo",
+    "description": "DHH and the 0xSero host discuss delegating whole tasks to agents, a plan-then-Codex-review loop for low-stakes apps, one-person teams, shared abstractions as bottlenecks for parallel agents, Omarchy's funded security-response process, and local models as a hedge against losing access. It adds Omarchy security and team-structure detail to DHH's other interviews. Timings and figures are speaker reports, productivity claims are forecasts, and about half the conversation covers AI-safety debate, Linux politics, parenting, and European regulation rather than coding practice.",
+    "type": "video",
+    "source": "0xSero",
+    "date": "2026-09-18",
+    "duration": "1h 39m 50s",
+    "topics": [
+      "collaboration-teams",
+      "architecture-maintainability",
+      "open-source-ecosystem",
+      "tools-harnesses"
+    ]
+  },
+  {
+    "id": 203,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "Does Code Quality Still Matter? It Depends on This — Max Kanat-Alexander, Capital One",
+    "url": "https://www.youtube.com/watch?v=bU5gDVyu_28",
+    "description": "Max Kanat-Alexander argues that code quality exists to help people understand a system and change it safely, so the rigor needed depends on where software sits between disposable and durable. He proposes making some software deliberately disposable and lowering the cost of rigor through standardization, automatic tooling, easy testing, and strict linting. A conceptual framework built on experience, with forecasts and no supporting data.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-10-21",
+    "duration": "16m 23s",
+    "topics": [
+      "architecture-maintainability",
+      "review-verification",
+      "tools-harnesses"
+    ]
+  },
+  {
+    "id": 202,
+    "addedDate": "2026-11-14",
+    "primarySection": "workflows",
+    "title": "Teaching Kids Programming with Pi",
+    "url": "https://www.youtube.com/watch?v=_35OxmSp5EM",
+    "description": "A short demo of an interactive guide built alongside a Pi-made game: the guide runs the game's real code, code comments link back to the guide, and an in-browser tutor agent can explain pages, find code, quiz the reader, and control the running game. The speaker suggests the same pattern could help adults understand agent-written code. It is one family project with no evidence about learning outcomes or how accurate the generated explanations are.",
+    "type": "video",
+    "source": "Armin Ronacher",
+    "date": "2026-10-15",
+    "duration": "15m 25s",
+    "topics": [
+      "context-memory",
+      "architecture-maintainability",
+      "tools-harnesses"
+    ]
+  },
+  {
+    "id": 201,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 101 — Laurie Voss, Arize AI",
+    "url": "https://www.youtube.com/watch?v=qZj7sqmidqA",
+    "description": "Laurie Voss runs a two-hour introductory workshop on agent evaluation: tracing, reading traces before writing evals, code checks, faithfulness and custom LLM-as-a-judge rubrics, checking judges against human labels, and experiments that test prompt fixes on fixed datasets. The method applies beyond any one tool, but the hands-on steps use Arize AX, and the platform claims are the vendor's own. The demo scores come from 13 traces with deliberately weak prompts and some random labels, so they illustrate the steps rather than measure anything.",
+    "type": "video",
+    "source": "AI Engineer",
+    "date": "2026-10-05",
+    "duration": "1h 51m 26s",
+    "topics": ["models-evaluation", "review-verification", "tools-harnesses"]
+  },
+  {
+    "id": 200,
+    "addedDate": "2026-11-14",
+    "primarySection": "workflows",
+    "title": "Working Day to Day in Amp",
+    "url": "https://www.youtube.com/watch?v=0WeQLAZVJ8w",
+    "description": "Amp's Thorsten records an unedited working session in which parallel threads carry changes from a bug report or performance investigation through proof, release, and rollout monitoring. Examples include requesting reproduction screenshots, testing a UI fix in a Storybook portal, approving production log access, collecting team feedback through Slack, and keeping a large refactor mechanical. This is a vendor demonstration on Amp's own codebase with internal tools and unverified internal performance numbers.",
+    "type": "video",
+    "source": "Amp, Inc.",
+    "date": "2026-09-14",
+    "duration": "26m 6s",
+    "topics": [
+      "review-verification",
+      "tools-harnesses",
+      "prompting-orchestration"
+    ]
+  },
+  {
+    "id": 198,
+    "addedDate": "2026-11-14",
+    "primarySection": "agent-systems",
+    "title": "Claude Code’s Bitter Lesson: Prompts, Harnesses, Mods, and Agents — Thariq Shihipar, Anthropic",
+    "url": "https://www.youtube.com/watch?v=IZAlq-V19U8",
+    "description": "Anthropic's Thariq Shihipar explains how he works with Claude Code as harnesses change: surface unknowns before implementation, set effort by how much verification a task needs, ask for decision notes, keep CLAUDE.md minimal, and use in-process mods and forked agents to customize the harness. The second half covers Claude Tag permissions, Anthropic's layered safeguards, and his case for pacing frontier development after the OpenAI–Hugging Face incident. Product, roadmap, and safety claims are first-party, several features were unreleased, and the incident retelling is secondhand.",
+    "type": "video",
+    "source": "Latent Space",
+    "date": "2026-09-29",
+    "duration": "1h 34m 31s",
+    "topics": [
+      "tools-harnesses",
+      "prompting-orchestration",
+      "context-memory",
+      "safety-permissions"
+    ]
+  },
+  {
+    "id": 197,
+    "addedDate": "2026-11-14",
+    "primarySection": "workflows",
+    "title": "Getting Started With Orbs",
+    "url": "https://www.youtube.com/watch?v=1Niex0BvwQk",
+    "description": "Thorsten of the Amp team has an agent prepare an existing Laravel repository for orbs, Amp's remote agent machines: committed setup and resume scripts, a services file for the development server, a browser-verified proxy fix, and fresh threads that confirm the snapshot is reused. Useful as a concrete example of making a repository start ready for cloud agents. Vendor tutorial on one small app; startup savings are estimated, not measured.",
+    "type": "video",
+    "source": "Amp, Inc.",
+    "date": "2026-09-25",
+    "duration": "14m 39s",
+    "topics": ["tools-harnesses", "review-verification"]
+  },
+  {
+    "id": 196,
+    "addedDate": "2026-11-14",
+    "primarySection": "workflows",
+    "title": "Using Orbs to Eval Agent Friendliness",
+    "url": "https://www.youtube.com/watch?v=VNJ8P1GqxnA",
+    "description": "An Amp team member tests whether fresh agents discover a development-only login route documented in AGENTS.md: the agent starts new orbs with tasks that do not mention the route, adds a control trial, and grades the trials from their tool traces before a manual check. A short, transferable demonstration of evaluating repository instructions. Vendor product demo with three passing trials on one task; no failing case or instruction revision is shown.",
+    "type": "video",
+    "source": "Amp, Inc.",
+    "date": "2026-09-25",
+    "duration": "7m 59s",
+    "topics": ["context-memory", "review-verification", "tools-harnesses"]
+  },
+  {
+    "id": 195,
+    "addedDate": "2026-11-14",
+    "primarySection": "reliability",
+    "title": "How Kent C. Dodds Ships Features Without Reading the Code",
+    "url": "https://www.youtube.com/watch?v=3kK3rfb1BZQ",
+    "description": "Kent C. Dodds takes a small Kody feature from GitHub issue to merged, deployed pull request without reading the code, and explains the safeguards he relies on instead: decision records, a friction log, primitive-based risk classification, independent AI reviewers, preview environments, feature flags, and scheduled cleanup agents. Useful as a concrete end-to-end view of one developer's agent delivery loop. A solo developer's self-reported results in a course-promotion livestream; the shipped feature is not shown working.",
+    "type": "video",
+    "source": "MEGA DEV",
+    "date": "2026-09-30",
+    "duration": "2h 4m 21s",
+    "topics": [
+      "review-verification",
+      "architecture-maintainability",
+      "context-memory",
+      "prompting-orchestration"
+    ]
+  },
+  {
     "id": 194,
     "addedDate": "2026-11-12",
     "primarySection": "reliability",

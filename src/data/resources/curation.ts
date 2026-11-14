@@ -7,6 +7,76 @@ type CatalogCuration = Pick<
 
 export const codingCuration = {
   assessmentsByResourceId: {
+    210: {
+      tier: 'context',
+      reason:
+        'Offers concrete product-ownership habits such as a daily friction log and stand-up demos, but they are general product practice and its claims about AI are opinion without agent-specific examples.',
+    },
+    208: {
+      tier: 'context',
+      reason:
+        'Gives concrete reasons and options for taking on fewer dependencies and updating them deliberately; its counts are informal comparisons and its only agent material is one model-assisted port.',
+    },
+    207: {
+      tier: 'context',
+      reason:
+        'States clearly why product judgment outlasts any particular agent technique, but rests on metaphor and anecdote rather than demonstrated practice or evidence.',
+    },
+    206: {
+      tier: 'useful',
+      reason:
+        "Gives concrete rules for when to use sub-agents, how to triage cross-model reviews, and which loop cases to run unattended; it is also a long demo of the speaker's own product, and its figures are self-reported.",
+    },
+    205: {
+      tier: 'context',
+      reason:
+        'Frames agent skills, CI/CD, and developer machines as supply-chain entry points, but the agent-specific content is brief and its malicious-skill percentages are vendor analysis without a described method.',
+    },
+    204: {
+      tier: 'context',
+      reason:
+        "Adds Omarchy's funded security-response plan and the one-person-team argument to themes DHH's other interviews cover more directly; workflow timings are anecdotes and much of the conversation is outside coding-agent practice.",
+    },
+    203: {
+      tier: 'useful',
+      reason:
+        'Turns "does code quality still matter" into a reusable framework of failure consequences, replacement cost, dependencies, and maintenance cost, with ways to make rigor cheaper; argued from experience without data.',
+    },
+    202: {
+      tier: 'context',
+      reason:
+        'Shows a code-linked guide with an in-browser tutor agent as a way to understand agent-written code, but it is one short family-project demo with no measured outcomes.',
+    },
+    201: {
+      tier: 'useful',
+      reason:
+        'The most complete step-by-step walkthrough of agent evals in the catalog, from trace review to judges checked against human labels; it is a vendor-hosted introductory workshop and its demo scores are illustrative.',
+    },
+    200: {
+      tier: 'context',
+      reason:
+        'An unedited look at running several Amp threads through proof, release, and rollout monitoring; a vendor demo whose practices resource 174 covers in more structured form.',
+    },
+    198: {
+      tier: 'useful',
+      reason:
+        'Adds concrete harness mechanics such as mods, forked agents that reuse the prompt cache, effort chosen by verification need, and decision notes; much of it is first-party roadmap and the incident account is secondhand.',
+    },
+    197: {
+      tier: 'context',
+      reason:
+        'A clear walkthrough of committed setup, resume, and services files that make a repository start ready for cloud agents; vendor tutorial on one small app with estimated rather than measured savings.',
+    },
+    196: {
+      tier: 'context',
+      reason:
+        'A compact demonstration of testing repository instructions with fresh agents and trace checks, limited to one instruction and three passing trials.',
+    },
+    195: {
+      tier: 'useful',
+      reason:
+        "Shows one developer's full agent delivery loop from issue to deploy and the mechanisms he relies on instead of reading code; the evidence is his own report, without defect or incident data.",
+    },
     194: {
       tier: 'useful',
       reason:
@@ -791,6 +861,11 @@ export const cloudCuration = {
 
 export const securityCuration = {
   assessmentsByResourceId: {
+    205: {
+      tier: 'useful',
+      reason:
+        'Separates malware, known CVEs, zero-days, and CI/CD or workstation side doors, and pairs them with baseline controls such as cooldowns, signed provenance, and faster remediation; the exploit-timing statistic is an unchecked slide citation and the solutions half is a product pitch.',
+    },
     194: {
       tier: 'useful',
       reason:
@@ -902,6 +977,16 @@ export const securityCuration = {
 
 export const aiCuration = {
   assessmentsByResourceId: {
+    209: {
+      tier: 'useful',
+      reason:
+        "Sutton's own technical account of how OaK's subproblems, options, models, and planning fit together; presented as an unpolished research vision whose central components remain unsolved.",
+    },
+    199: {
+      tier: 'context',
+      reason:
+        'Briefly argues that internalized knowledge is needed to catch AI errors, but relies on loose brain-model analogies and an unsupported claim about falling IQ.',
+    },
     191: {
       tier: 'useful',
       reason:
